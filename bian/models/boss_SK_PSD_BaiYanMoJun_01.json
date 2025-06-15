@@ -1,0 +1,576 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/PSD/Unit_PSD_BaiYanMoJun_01.Unit_PSD_BaiYanMoJun_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 600.0,
+    "CapsuleRadius": 600.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/PSD/PSD_BaiYanMoJun_01/Mesh/SK_PSD_BaiYanMoJun_01.SK_PSD_BaiYanMoJun_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/PSD/PSD_BaiYanMoJun_01/ABP_PSD_BaiYanMoJun_01.ABP_PSD_BaiYanMoJun_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/PSD/PSD_BaiYanMoJun_01/Mesh/PA_PSD_BaiYanMoJun_01.PA_PSD_BaiYanMoJun_01",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/PSD/PSD_BaiYanMoJun_01/Hair/HAIR_main.HAIR_main_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147366831"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/PSD/PSD_BaiYanMoJun_01/Hair/HAIR_beard1_gs.HAIR_beard1_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147366830"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/PSD/PSD_BaiYanMoJun_01/Hair/HAIR_beard2_gs.HAIR_beard2_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147366829"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/PSD/PSD_BaiYanMoJun_01/Hair/HAIR_back_gs.HAIR_back_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147366828"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/PSD/PSD_BaiYanMoJun_01/Hair/HAIR_pony_gs.HAIR_pony_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147366827"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/PSD/PSD_BaiYanMoJun_01/Hair/HAIR_frontclump_gs.HAIR_frontclump_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147366826"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "FX_Weapon_Trail_01",
+        "FirstRadius": 55.0,
+        "NextBoneName": "FX_Weapon_Trail_02",
+        "NextRadius": 55.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "FuZhou_04",
+        "FirstRadius": 22.0,
+        "NextBoneName": "FuZhou_07",
+        "NextRadius": 22.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "FuZhou_011",
+        "FirstRadius": 22.0,
+        "NextBoneName": "FuZhou_014",
+        "NextRadius": 22.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "FuZhou_018",
+        "FirstRadius": 22.0,
+        "NextBoneName": "FuZhou_021",
+        "NextRadius": 22.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "bone002",
+        "FirstRadius": 66.0,
+        "NextBoneName": "bone005",
+        "NextRadius": 66.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "bone006",
+        "FirstRadius": 66.0,
+        "NextBoneName": "bone010",
+        "NextRadius": 66.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "bone011",
+        "FirstRadius": 66.0,
+        "NextBoneName": "bone012",
+        "NextRadius": 35.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "hand_r",
+        "FirstRadius": 35.0,
+        "NextBoneName": "upperarm_r",
+        "NextRadius": 35.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "hand_l",
+        "FirstRadius": 35.0,
+        "NextBoneName": "upperarm_l",
+        "NextRadius": 35.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "spine_01",
+        "FirstRadius": 77.0,
+        "NextBoneName": "Head",
+        "NextRadius": 50.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 5005,
+    "Override_AbnormalDispID_Victim": 1009
+  },
+  "Name": "SK_PSD_BaiYanMoJun_01",
+  "Label": "SK_PSD_BaiYanMoJun_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 500501,
+      "Name": "未命名",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 500502,
+      "Name": "未命名",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 500503,
+      "Name": "未命名",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 500504,
+      "Name": "未命名",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 500505,
+      "Name": "未命名",
+      "Key": "Q"
+    },
+    {
+      "Id": 500506,
+      "Name": "未命名",
+      "Key": "E"
+    },
+    {
+      "Id": 500507,
+      "Name": "未命名",
+      "Key": "R"
+    },
+    {
+      "Id": 500508,
+      "Name": "未命名",
+      "Key": "T"
+    },
+    {
+      "Id": 500509,
+      "Name": "未命名",
+      "Key": "Z"
+    },
+    {
+      "Id": 500510,
+      "Name": "未命名",
+      "Key": "X"
+    },
+    {
+      "Id": 500511,
+      "Name": "未命名",
+      "Key": "C"
+    },
+    {
+      "Id": 500512,
+      "Name": "未命名",
+      "Key": "V"
+    },
+    {
+      "Id": 500513,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500514,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500515,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500516,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500517,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500518,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500520,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500521,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500523,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500524,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500525,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500526,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500529,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500530,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500531,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500532,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500533,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500534,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500535,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500540,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500541,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500542,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500543,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500544,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500545,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500546,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500547,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500548,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500549,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500550,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500551,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500552,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500553,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500554,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500555,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500556,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500560,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500561,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500563,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500564,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500566,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500567,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500571,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500572,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500576,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500579,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500580,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500581,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500582,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500583,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500584,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500585,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500586,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500587,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500588,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500589,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500590,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500591,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500592,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500593,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500594,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500595,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500596,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500597,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500598,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500599,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": {
+    "Buffers": [
+      1000095
+    ]
+  },
+  "XRate": -900.0,
+  "ZRate": 500.0,
+  "Author": "神秘人物"
+}

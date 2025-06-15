@@ -1,0 +1,152 @@
+{
+  "TamerPath": "/Game/00Main/Design/Units/GYCY/Unit_GYCY_Lang_05.Unit_GYCY_Lang_05_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 120.0,
+    "CapsuleRadius": 55.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Lang_05/Meshes/SK_GYCY_Lang_05.SK_GYCY_Lang_05",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Lang_05/ABP_GYCY_Lang_05_02.ABP_GYCY_Lang_05_02_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Lang_05/Meshes/PA_GYCY_Lang_05.PA_GYCY_Lang_05",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/GYCY_Lang_05_Weapon.GYCY_Lang_05_Weapon_C",
+        "SocketName": "weapon_r"
+      }
+    ],
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03B/Hair/02_Lang05/Tail.Tail_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03B/Materials/M_gycy_lang_05_head_hair.M_gycy_lang_05_head_hair"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03B/Hair/02_Lang05/HAIR_ponytail_gs.HAIR_ponytail_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.02,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03B/Materials/M_gycy_lang_05_ponytail_hair.M_gycy_lang_05_ponytail_hair"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03B/Hair/02_Lang05/HAIR_main.HAIR_main_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.02,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03B/Materials/M_gycy_lang_05_head_hair.M_gycy_lang_05_head_hair"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03B/Hair/02_Lang05/HAIR_beard_gs.HAIR_beard_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.02,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03B/Materials/M_gycy_lang_05_head_hair.M_gycy_lang_05_head_hair"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "weapon_bone034",
+        "FirstRadius": 5.0,
+        "NextBoneName": "Hit_Weapon_1",
+        "NextRadius": 5.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_l",
+        "FirstRadius": 20.0,
+        "NextBoneName": "foot_l",
+        "NextRadius": 15.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_r",
+        "FirstRadius": 20.0,
+        "NextBoneName": "foot_r",
+        "NextRadius": 15.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "pelvis",
+        "FirstRadius": 30.0,
+        "NextBoneName": "neck_01",
+        "NextRadius": 15.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_GYCY_Lang_05",
+  "Label": "SK_GYCY_Lang_05",
+  "Type": "BOSS",
+  "CoolDownRate": 70,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Key": "SPACE",
+      "Id": 415792,
+      "Name": "闪"
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 101402,
+      "Name": "普通砍2+拳1",
+      "CanBreak":false,
+      "Step": 1
+    },{
+      "Key": "RBUTTON",
+      "Id": 101401,
+      "CanBreak":false,
+      "Name": "砍+撞+砍"
+    },
+    {
+      "Key": "Q",
+      "Id": 101491,
+      "Name": "只是打招呼"
+    },
+    {
+      "Key": "E",
+      "Id": 415704,
+      "Name": "前冲"
+    },
+    {
+      "Key": "R",
+      "Id": 415715,
+      "Name": "后退一步 猥琐发育",
+      "Buffers": [
+        105111,
+        92211
+      ]
+    }
+  ],
+  "DisableDepthOfField": false,
+  "XRate": 0.0,
+  "ZRate": 0.0
+}

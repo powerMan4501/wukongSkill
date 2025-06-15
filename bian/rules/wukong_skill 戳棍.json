@@ -1,0 +1,94 @@
+{
+  "Name": "悟空-立棍雷电技",
+  "Description": "立棍雷电技",
+  "Rules": [
+    {
+      "Name": "蓄力戳棍全屏地火",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_mgd_jsds_atk_10_01"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74010202,
+          "TimeDelay": 1100
+        }
+      ]
+    },
+    {
+      "Name": "戳棍巴山虎",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "xuli_B_attack_4"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_b_attack_4"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_B_attack_3"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_b_attack_3"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 80009901,
+          "ForTarget": true,
+          "desc": "杨戬飞剑"
+        }
+      ]
+    },
+    {
+      "Name": "戳棍七星",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "xuli_B_attack_0"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_B_attack_1"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_B_attack_2"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_b_attack_0"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_b_attack_1"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_b_attack_2"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 80009901,
+          "ForTarget": true,
+          "desc": "杨戬飞剑"
+        }
+      ]
+    }
+  ]
+}

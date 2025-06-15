@@ -1,0 +1,230 @@
+{
+  "Name": "黑脸鬼",
+  "Label": "SK_hys_huijin_b",
+  "Type": "MAGIC",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "EnterSkill": {
+    "Id": 8486
+  },
+  "Skills": [
+    {
+      "Id": 10186,
+      "CanBreak": true,
+      "Name": "精魄技能",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000095,
+        1000116
+      ]
+    },
+    {
+      "Id": 405701,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000095,
+        1000116
+      ]
+    },
+    {
+      "Id": 405702,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405703,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405704,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405705,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405706,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405707,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405708,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405718,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405721,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405722,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405723,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405741,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405751,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405752,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405753,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405754,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405761,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405762,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405763,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405764,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 405765,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

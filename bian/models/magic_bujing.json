@@ -1,0 +1,225 @@
+{
+  "Name": "不净",
+  "Label": "SK_GYCY_Seng_04",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": 0,
+  "ZRate": 0,
+  "CoolDownRate": 25,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8124
+  },
+  "Skills": [
+    {
+      "Id": 10124,
+      "CanBreak": true,
+      "Name": "精魄技能，各种横扫",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102101,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102102,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102103,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102104,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102105,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102106,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102107,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102108,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102109,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102110,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102111,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102112,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102113,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102114,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102115,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102116,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102151,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102152,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102153,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102154,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102191,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102192,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/GYCY/Unit_GYCY_BaiYi_04.Unit_GYCY_BaiYi_04_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 250.0,
+    "CapsuleRadius": 80.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_BaYi_04/Mesh/SK_GYCY_BaiYi_04.SK_GYCY_BaiYi_04",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_BaYi_04/ABP_GYCY_BaiYi_04.ABP_GYCY_BaiYi_04_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_BaYi_04/Mesh/PA_GYCY_BaiYi_04.PA_GYCY_BaiYi_04",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "pelvis",
+        "FirstRadius": 42.0,
+        "NextBoneName": "neck_02",
+        "NextRadius": 60.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_r",
+        "FirstRadius": 30.0,
+        "NextBoneName": "foot_r",
+        "NextRadius": 20.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_l",
+        "FirstRadius": 30.0,
+        "NextBoneName": "foot_l",
+        "NextRadius": 20.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Bip001-Tail",
+        "FirstRadius": 40.0,
+        "NextBoneName": "Bip001-Tail2",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Bip001-Tail3",
+        "FirstRadius": 30.0,
+        "NextBoneName": "Bip001-Tail4",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Bip001-Tail5",
+        "FirstRadius": 30.0,
+        "NextBoneName": "Bip001-Tail7",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Bip001-Tail8",
+        "FirstRadius": 30.0,
+        "NextBoneName": "Bip001-Tail10",
+        "NextRadius": 40.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Name": "白衣秀士3阶段",
+  "Label": "SK_GYCY_BaiYi_04",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": -400.0,
+  "ZRate": 200.0,
+  "Skills": [
+    {
+      "Id": 103501,
+      "CanBreak": true,
+      "Name": "很慢A两下",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000097
+      ]
+    },
+    {
+      "Id": 103591,
+      "CanBreak": true,
+      "Name": "地里跳出来咆哮",
+      "Key": "S+LBUTTON"
+    },
+    {
+      "Id": 103532,
+      "CanBreak": true,
+      "Name": "尾巴打一下",
+      "Key": "S+RBUTTON"
+    },
+    {
+      "Id": 103542,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "A+RBUTTON"
+    },
+    {
+      "Id": 103502,
+      "CanBreak": true,
+      "Name": "尾巴打一下",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 103503,
+      "CanBreak": true,
+      "Name": "冲上去踩踏，最实用",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 103508,
+      "CanBreak": true,
+      "Name": "冲上去撞",
+      "Key": "S+XBUTTON2"
+    },
+    {
+      "Id": 103504,
+      "CanBreak": true,
+      "Name": "前摇很长，然后360横扫",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000097
+      ]
+    },
+    {
+      "Id": 103509,
+      "CanBreak": true,
+      "Name": "咆哮发射子弹",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000097
+      ]
+    },
+    {
+      "Id": 103509,
+      "CanBreak": true,
+      "Name": "咆哮发射子弹",
+      "Key": "Z",
+      "Buffs": [
+        1000097
+      ]
+    },
+    {
+      "Id": 103505,
+      "CanBreak": true,
+      "Name": "很慢踩一下",
+      "Key": ""
+    },
+    {
+      "Id": 103506,
+      "CanBreak": true,
+      "Name": "很慢踩一下",
+      "Key": ""
+    },
+    {
+      "Id": 103507,
+      "CanBreak": true,
+      "Name": "转身打一下",
+      "Key": ""
+    },
+    {
+      "Id": 103510,
+      "CanBreak": true,
+      "Name": "缓慢打2下",
+      "Key": ""
+    },
+    {
+      "Id": 103512,
+      "CanBreak": true,
+      "Name": "钻地",
+      "Key": ""
+    },
+    {
+      "Id": 103521,
+      "CanBreak": true,
+      "Name": "摆姿势",
+      "Key": ""
+    },
+    {
+      "Id": 103522,
+      "CanBreak": true,
+      "Name": "摆姿势",
+      "Key": ""
+    },
+    {
+      "Id": 103523,
+      "CanBreak": true,
+      "Name": "摆姿势",
+      "Key": ""
+    },
+    {
+      "Id": 103551,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 103552,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 103553,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 103554,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 103562,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 103572,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 103592,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

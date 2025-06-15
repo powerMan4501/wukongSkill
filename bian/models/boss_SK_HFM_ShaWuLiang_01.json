@@ -1,0 +1,234 @@
+{
+  "Name": "虎伥",
+  "Label": "SK_HFM_ShaWuLiang_01",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": -200,
+  "ZRate": 200,
+  "CoolDownRate": 30,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8117,
+  },
+  "Skills": [
+    {
+      "Id": 200501,
+      "CanBreak": true,
+      "Name": "小前摇，三连横砍，再打打打",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 200502,
+      "CanBreak": true,
+      "Name": "前摇，冲上去砍砍砍",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 200503,
+      "CanBreak": true,
+      "Name": "突进横砍",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 11317,
+      "CanBreak": true,
+      "Name": "精魄技能，突进横砍",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 200504,
+      "CanBreak": true,
+      "Name": "小前摇，然后三连砍",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 200505,
+      "CanBreak": true,
+      "Name": "慢速抓一下，慢速踹一脚，慢速砍一刀",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200506,
+      "CanBreak": true,
+      "Name": "小后退，然后突进砍杀",
+      "Key": "SPACE",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200507,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200532,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200534,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200535,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200536,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200537,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200551,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200552,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200553,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200554,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200561,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200562,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200563,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200571,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200572,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200573,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200574,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    }
+  ]
+}

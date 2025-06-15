@@ -1,0 +1,196 @@
+{
+  "Name": "无量蝠",
+  "Label": "SK_LYS_Mo3",
+  "Type": "MAGIC",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "EnterSkill": {
+    "Id": 8322
+  },
+  "TransDone": {
+    "Buffers": [
+      1000062
+    ]
+  },
+  "XRate": -600.0,
+  "ZRate": 300.0,
+  "Author": "神秘人物",
+  "Skills": [
+    {
+      "Id": 302101,
+      "CanBreak": true,
+      "Name": "平a，速度慢很一般",
+      "Key": ""
+    },
+    {
+      "Id": 302121,
+      "CanBreak": true,
+      "Name": "平A，凑合",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 302103,
+      "CanBreak": true,
+      "Name": "飞起然后踩踏，重复很多次",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 11322,
+      "CanBreak": true,
+      "Name": "精魄技能，飞起发射冰刃",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 302105,
+      "CanBreak": true,
+      "Name": "类似精魄的技能，飞起发射冰刃",
+      "Key": "",
+      "Step": 2,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 302104,
+      "CanBreak": true,
+      "Name": "前摇1秒多，然后释放大量冰刃",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 302102,
+      "CanBreak": true,
+      "Name": "喷冰爆，然后飞来飞去很久,可用左键打断",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 302111,
+      "CanBreak": true,
+      "Name": "飞起再冲撞一下目标",
+      "Key": "S+XBUTTON1"
+    },
+    {
+      "Id": 302112,
+      "CanBreak": true,
+      "Name": "飞起，在索敌撞一下",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 302109,
+      "CanBreak": true,
+      "Name": "来回冲撞很多次，位移太大，不太适合",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 302110,
+      "CanBreak": true,
+      "Name": "金身",
+      "Key": "Z"
+    },
+    {
+      "Id": 302106,
+      "CanBreak": true,
+      "Name": "前摇，然后爆冰气，然后飞起，一阵时间落下",
+      "Key": "X",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 302107,
+      "CanBreak": true,
+      "Name": "开启飞行模式",
+      "Key": "V"
+    },
+    {
+      "Id": 302116,
+      "CanBreak": true,
+      "Name": "飞起后闪",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 302108,
+      "CanBreak": true,
+      "Name": "飞起再落下",
+      "Key": ""
+    },
+    {
+      "Id": 302113,
+      "CanBreak": true,
+      "Name": "飞起再落下",
+      "Key": ""
+    },
+    {
+      "Id": 302114,
+      "CanBreak": true,
+      "Name": "飞起再落下",
+      "Key": ""
+    },
+    {
+      "Id": 302115,
+      "CanBreak": true,
+      "Name": "飞起再落下",
+      "Key": ""
+    },
+    {
+      "Id": 302151,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 302152,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 302153,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 302154,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302160,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302192,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

@@ -1,0 +1,506 @@
+{
+  "Name": "蝎子精",
+  "Label": "SK_psd_xiezijing_01a",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": -400,
+  "ZRate": 200,
+  "CoolDownRate": 50,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8130
+  },
+  "TransDone": {
+    "Buffers": [
+      96009
+    ]
+  },
+  "Skills": [
+    {
+      "Id": 10130,
+      "CanBreak": true,
+      "Name": "尾后针",
+      "Key": "XBUTTON2",
+    },
+    {
+      "Id": 499907,
+      "CanBreak": true,
+      "Name": "举起钳子，然后疯狂刺砸好几下",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 499901,
+      "CanBreak": true,
+      "Name": "快速后退然后突进，托马斯旋转攻击",
+      "Key": ""
+    },
+    {
+      "Id": 499915,
+      "CanBreak": true,
+      "Name": "各种尾巴攻击很不错",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 499906,
+      "CanBreak": true,
+      "Name": "钳子插入地面然后快速突进冲撞",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 499910,
+      "CanBreak": true,
+      "Name": "尾巴二连砸击",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 499909,
+      "CanBreak": true,
+      "Name": "尾后针",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 499911,
+      "CanBreak": true,
+      "Name": "托马斯旋转攻击好几圈，很不错",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 499912,
+      "CanBreak": true,
+      "Name": "空翻尾巴砸出毒液池",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 499931,
+      "CanBreak": true,
+      "Name": "退后+突进攻击",
+      "Key": "SPACE",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 499932,
+      "CanBreak": true,
+      "Name": "尾后针，很不错",
+      "Key": "Z",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 499934,
+      "CanBreak": true,
+      "Name": "钳子插入地面然后快速突进冲撞",
+      "Key": "X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 499938,
+      "CanBreak": true,
+      "Name": "入地",
+      "Key": "C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 499902,
+      "CanBreak": true,
+      "Name": "平A+尾后针，地上毒液",
+      "Key": "V",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 499913,
+      "CanBreak": true,
+      "Name": "尾巴刺向敌人脚下，持续生成毒液池，多段伤害，很不错",
+      "Key": "A+X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 499914,
+      "CanBreak": true,
+      "Name": "平A好几下，最后甩出毒液",
+      "Key": "NUMPAD1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 499915,
+      "CanBreak": true,
+      "Name": "各种尾巴攻击很不错",
+      "Key": "NUMPAD0",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 499903,
+      "CanBreak": true,
+      "Name": "原地等待1秒然后突进平A几下",
+      "Key": "NUMPAD2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 499904,
+      "CanBreak": true,
+      "Name": "慢速举起钳子然后快速突进平A",
+      "Key": "NUMPAD3",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 499905,
+      "CanBreak": true,
+      "Name": "慢速平A两下",
+      "Key": ""
+    },
+    {
+      "Id": 499908,
+      "CanBreak": true,
+      "Name": "钻入地面，然后钻出地面攻击敌人",
+      "Key": ""
+    },
+    {
+      "Id": 499916,
+      "CanBreak": true,
+      "Name": "会穿膜，不好",
+      "Key": ""
+    },
+    {
+      "Id": 499917,
+      "CanBreak": true,
+      "Name": "会穿膜，不好",
+      "Key": ""
+    },
+    {
+      "Id": 499918,
+      "CanBreak": true,
+      "Name": "会穿膜，不好",
+      "Key": ""
+    },
+    {
+      "Id": 499919,
+      "CanBreak": true,
+      "Name": "意义不明",
+      "Key": ""
+    },
+    {
+      "Id": 499920,
+      "CanBreak": true,
+      "Name": "意义不明",
+      "Key": ""
+    },
+    {
+      "Id": 499922,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 499924,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 499937,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q"
+    },
+    {
+      "Id": 499939,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E"
+    },
+    {
+      "Id": 499940,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R"
+    },
+    {
+      "Id": 499942,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T"
+    },
+    {
+      "Id": 499943,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499944,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499945,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499949,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499950,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499951,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499952,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499953,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499954,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499955,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499956,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499957,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499958,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499959,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499960,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499961,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499963,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499964,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499968,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499969,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499970,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499971,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499972,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499973,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499975,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499980,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499981,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499982,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499984,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499985,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499986,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499988,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499990,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499991,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499994,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499995,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499996,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499997,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499998,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 499999,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/HFM/Unit_HFM_MaGu_01A.Unit_HFM_MaGu_01A_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 220.0,
+    "CapsuleRadius": 60.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_MaGu_01A/Mesh/SK_HFM_MaGu_01A.SK_HFM_MaGu_01A",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_MaGu_01A/ABP_MaGu_01A.ABP_MaGu_01A_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_MaGu_01A/Mesh/PA_HFM_MaGu_01A.PA_HFM_MaGu_01A",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/HFM/HFM_MaGu_01A/HFM_MaGu_01A_Dao.HFM_MaGu_01A_Dao_C",
+        "SocketName": "weapon_r"
+      },
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/HFM/HFM_MaGu_01A/HFM_MaGu_01A_Dun.HFM_MaGu_01A_Dun_C",
+        "SocketName": "weapon_l"
+      }
+    ],
+    "TFXConfigs": null,
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_HFM_MaGu_01A",
+  "Label": "SK_HFM_MaGu_01A",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

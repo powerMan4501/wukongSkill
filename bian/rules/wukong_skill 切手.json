@@ -1,0 +1,237 @@
+{
+  "Name": "悟空-立棍雷电技",
+  "desc": "1000865:雷，1000866冰， 1000867火， 1000868毒",
+  "Rules": [
+    {
+      "Name": "大圣招，287识破 289连招buff",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_02_Z_1"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_03_Z_1"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_04_Z_1"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_mgd_jsds_atk_08_01"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_mgd_jsds_atk_01_01_01"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_JXSQ_Enter_B"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_mgd_jsds_atk_02_01_01"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffID": 287
+        },
+        {
+          "Type": "buff",
+          "BuffID": 289
+        }
+      ]
+    },
+    {
+      "Name": "后撤召唤子弹",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_JXSQ_Enter_B"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 131,
+          "ForTarget": true
+        }
+      ]
+    },
+    {
+      "Name": "江海翻 全屏地火",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "Dasheng_ComboA_03_Z_2"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 30160101
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74010202,
+          "TimeDelay": 1100
+        },
+        {
+          "Type": "buff",
+          "desc": "时缓",
+          "BuffID": 1000801,
+          "TimeDelay": 1250
+        }
+      ]
+    },
+    {
+      "Name": "退寸",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_wukong_combob_z_01"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 80009901,
+          "ForTarget": true,
+          "desc": "杨戬飞剑"
+        }
+      ]
+    },
+    {
+      "Name": "进尺 ",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_wukong_combob_z_02"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "OffsetX": 600,
+          "OffsetY": 600,
+          "ProjectTileID": 2403471,
+          "TimeDelay": 950,
+          "buffCondition": 1000866,
+          "desc": "有冰buff进尺触发冰暴"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "OffsetX": 800,
+          "OffsetY": 800,
+          "ProjectTileID": 30123402,
+          "TimeDelay": 950,
+          "buffCondition": 1000866,
+          "desc": "有冰buff进尺触发冰暴"
+        }
+      ]
+    },
+    {
+      "Name": "搅阵",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_wukong_combob_z_01_start"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 50,
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 80009999
+        }
+      ]
+    },
+    {
+      "Name": "10705",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboA_z_01"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 44011401,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 900,
+          "buffCondition": 1000867,
+          "desc": "有火buff 红孩儿砸地"
+        },
+        {
+          "Type": "buff",
+          "BuffID": 289
+        }
+      ]
+    },
+    {
+      "Name": "10707",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboA_z_02"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_01_Z_2"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_02_Z_2"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 140,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 1250,
+          "buffCondition": 1000867,
+          "desc": "有火buff 业火"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 40100303,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 1250,
+          "buffCondition": 1000867,
+          "desc": "有火buff 地面岩浆"
+        },
+        {
+          "Type": "buff",
+          "desc": "直接时缓",
+          "BuffID": 1000801,
+          "TimeDelay": 1250
+        }
+      ]
+    }
+  ]
+}

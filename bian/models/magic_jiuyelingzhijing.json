@@ -1,0 +1,75 @@
+{
+  "Name": "九叶灵芝精",
+  "Label": "pds_lingzhijing_03a",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": 0,
+  "ZRate": 0,
+  "CoolDownRate": 35,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8092
+  },
+  "Skills": [
+    {
+      "Key": "E",
+      "Id": 305808,
+      "Name": "双毒华斩"
+    },
+    {
+      "Key": "Q",
+      "Id": 305806,
+      "Name": "倒白毒"
+    },
+    {
+      "Key": "Z",
+      "Id": 305810,
+      "Name": "拍地"
+    },
+    {
+      "Key": "X",
+      "Id": 305814,
+      "Name": "伏地毒刺"
+    },
+    {
+      "Key": "C",
+      "Id": 305819,
+      "Name": "我没素质"
+    },
+    {
+      "Key": "SPACE",
+      "Id": 305811,
+      "Name": "后退"
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 305801,
+      "Name": "一掌",
+      "CanBreak": false,
+      "Step": 1
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 305802,
+      "Name": "冰刀一击",
+      "CanBreak": false,
+      "Step": 2
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 305803,
+      "Name": "冰刺冲天",
+      "CanBreak": false,
+      "Step": 3      
+    },
+    {  
+      "Key": "RBUTTON",
+      "Id": 305807,
+      "Name": "毒镖",
+      "CanBreak": false
+    }
+  ]
+}

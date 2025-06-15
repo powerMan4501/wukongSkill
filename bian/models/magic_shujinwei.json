@@ -1,0 +1,68 @@
+{
+  "Name": "鼠禁卫",
+  "Label": "LYS_HongPaoShu",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": 0,
+  "ZRate": 0,
+  "CoolDownRate": 25,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8064
+  },
+  "Skills": [
+    {
+      "Key": "E",
+      "Id": 300105,
+      "Name": "双毒华斩"
+    },
+    {
+      "Key": "Q",
+      "Id": 300104,
+      "Name": "倒白毒"
+    },
+    {
+      "Key": "Z",
+      "Id": 300161,
+      "Name": "拍地"
+    },
+    {
+      "Key": "X",
+      "Id": 300163,
+      "Name": "伏地毒刺"
+    },
+    {
+      "Key": "C",
+      "Id": 300106,
+      "Name": "我没素质"
+    },
+    {
+      "Key": "SPACE",
+      "Id": 300121,
+      "Name": "后退"
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 300101,
+      "Name": "小刀",
+      "CanBreak": false,
+      "Step": 1
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 300102,
+      "Name": "冰刀一击",
+      "CanBreak": false,
+      "Step": 2
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 300103,
+      "Name": "毒镖",
+      "CanBreak": false
+    }
+  ]
+}

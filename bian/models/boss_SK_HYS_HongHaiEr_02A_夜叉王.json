@@ -1,0 +1,482 @@
+{
+  "IsTrans": false,
+  "Name": "夜叉王",
+  "Label": "SK_HYS_HongHaiEr_02A",
+  "BossConf": {
+    "CapsuleHalfHeight": 240.0,
+    "CapsuleRadius": 60.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_HongHaiEr_02A/Mesh/SK_HYS_HongHaiEr_02A.SK_HYS_HongHaiEr_02A",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_HongHaiEr_02A/ABP_HYS_HongHaiEr_02A.ABP_HYS_HongHaiEr_02A_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_HongHaiEr_02A/Mesh/PA_HYS_HongHaiEr_02A.PA_HYS_HongHaiEr_02A",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_HongHaiEr_02A/Hair/Hair_per20_back_strands.Hair_per20_back_strands_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_HongHaiEr_02A/Materials/M_hys_honghaier_02a_hair_hair.M_hys_honghaier_02a_hair_hair"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_HongHaiEr_02A/Hair/Hair_per20_front.Hair_per20_front_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_HongHaiEr_02A/Materials/M_hys_honghaier_02a_hair_hair.M_hys_honghaier_02a_hair_hair"
+      }
+    ],
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Type": "BOSS",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "XRate": -500.0,
+  "ZRate": 300.0,
+  "TransDone": {
+    "Buffers": [
+      2072,
+      602
+    ]
+  },
+  "Skills": [
+    {
+      "Id": 440538,
+      "CanBreak": true,
+      "Name": "几乎无前摇低位横扫一下-可用 AM_HYS_HongHaiEr_02A_Atk_08_C2",
+      "Key": "LBUTTON",
+      "Step": 1
+    },
+    {
+      "Id": 440534,
+      "CanBreak": true,
+      "Name": "无前摇斜上横扫一下 AM_HYS_HongHaiEr_02A_Atk_08_C",
+      "Key": "LBUTTON",
+      "Step": 2
+    },
+    {
+      "Id": 440505,
+      "CanBreak": true,
+      "Name": "砍了很多下，最后扔出双刀 AM_HYS_HongHaiEr_02A_Atk_05",
+      "Key": "S+LBUTTON"
+    },
+    {
+      "Id": 440504,
+      "CanBreak": true,
+      "Name": "平A好几下，最后扫腿  AM_HYS_HongHaiEr_02A_Atk_04",
+      "Key": "A+LBUTTON"
+    },
+    {
+      "Id": 440568,
+      "CanBreak": false,
+      "Name": "小前摇+3连横扫——可用  AM_HYS_HongHaiEr_02A_Atk_08_FenShen",
+      "Key": "C+LBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000100
+      ]
+    },
+    {
+      "Id": 440508,
+      "CanBreak": false,
+      "Name": "3连中距离横扫  AM_HYS_HongHaiEr_02A_Atk_08",
+      "Key": "C+LBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000100
+      ]
+    },
+    {
+      "Id": 440537,
+      "CanBreak": false,
+      "Name": "瞬发地刺然后跳起平a——可用  AM_HYS_HongHaiEr_02A_Atk_09_C",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000100,
+        505
+      ]
+    },
+    {
+      "Id": 440536,
+      "CanBreak": false,
+      "Name": "前摇+低位大横扫一下——可用 AM_HYS_HongHaiEr_02A_Atk_16_C",
+      "Key": "A+XBUTTON1",
+      "Buffs": [
+        1000100
+      ]
+    },
+    {
+      "Id": 440525,
+      "CanBreak": false,
+      "Name": "扔飞镖  AM_HYS_HongHaiEr_02A_Atk_15",
+      "Step": 1,
+      "Key": "A+X",
+      "Buffs": [
+        1000116
+      ]
+    },
+    {
+      "Id": 440527,
+      "CanBreak": false,
+      "Name": "扔飞镖 AM_HYS_HongHaiEr_02A_Atk_15_forchenggun",
+      "Step": 2,
+      "Key": "A+X",
+      "Buffs": [
+        1000116
+      ]
+    },
+    {
+      "Id": 440512,
+      "CanBreak": true,
+      "Name": "突进，慢速砍一下，踢一脚 AM_HYS_HongHaiEr_02A_Atk_12",
+      "Key": "C+XBUTTON2",
+      "Step": 1
+    },
+    {
+      "Id": 440535,
+      "CanBreak": true,
+      "Name": "突进飞过去索敌砍+踢+砍 AM_HYS_HongHaiEr_02A_Atk_12_C",
+      "Key": "C+XBUTTON2",
+      "Step": 2
+    },
+    {
+      "Id": 440516,
+      "CanBreak": true,
+      "Name": "很长的平a连招+跳起瞬发地刺  AM_HYS_HongHaiEr_02A_Atk_10_02_01",
+      "Key": "S+XBUTTON2",
+      "Step": 1
+    },
+    {
+      "Id": 440517,
+      "CanBreak": true,
+      "Name": "较短的平A连招+跳起瞬发地刺  AM_HYS_HongHaiEr_02A_Atk_10_02_02",
+      "Key": "S+XBUTTON2",
+      "Step": 2
+    },
+    {
+      "Id": 440506,
+      "CanBreak": false,
+      "Name": "大横扫两下，带地刺  AM_HYS_HongHaiEr_02A_Atk_06",
+      "Key": "A+XBUTTON2"
+    },
+    {
+      "Id": 440515,
+      "CanBreak": false,
+      "Name": "超霸气跳起来落下瞬发地刺  AM_HYS_HongHaiEr_02A_Atk_10",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        505
+      ]
+    },
+    {
+      "Id": 440511,
+      "CanBreak": true,
+      "Name": "突进，踢一脚  AM_HYS_HongHaiEr_02A_Atk_11",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 440573,
+      "CanBreak": true,
+      "Name": "隐身突进，踢一脚,概率卡墙",
+      "Key": "",
+      "Step": 2
+    },
+    {
+      "Id": 440566,
+      "CanBreak": false,
+      "Name": "左格挡",
+      "Step": 1,
+      "Key": "RBUTTON",
+      "Buffs": [
+        412201
+      ]
+    },
+    {
+      "Id": 440565,
+      "CanBreak": false,
+      "Name": "右格挡",
+      "Step": 2,
+      "Key": "RBUTTON",
+      "Buffs": [
+        412201
+      ]
+    },
+    {
+      "Id": 440555,
+      "CanBreak": false,
+      "Name": "扔掉刀踩下去，再长出地刺，前摇挺大  AM_HYS_HongHaiEr_02A_Atk_05_02_02",
+      "Key": "S+RBUTTON"
+    },
+    {
+      "Id": 440509,
+      "CanBreak": false,
+      "Name": "前摇+360度扫腿  AM_HYS_HongHaiEr_02A_Atk_09",
+      "Key": "A+RBUTTON"
+    },
+    {
+      "Id": 440526,
+      "CanBreak": false,
+      "Name": "前摇+大横扫一下",
+      "Key": "C+RBUTTON"
+    },
+    {
+      "Id": 440579,
+      "CanBreak": false,
+      "Name": "左格挡小后退",
+      "Key": "",
+      "Buffs": [
+        1000049
+      ]
+    },
+    {
+      "Id": 440580,
+      "CanBreak": false,
+      "Name": "右格挡小后退",
+      "Key": "",
+      "Buffs": [
+        1000049
+      ]
+    },
+    {
+      "Id": 440532,
+      "CanBreak": false,
+      "Name": "前摇+大横扫+垂直砍下地刺  AM_HYS_HongHaiEr_02A_Atk_06_C",
+      "Key": "Z",
+      "Step": 2,
+      "Buffs": [
+        1000100
+      ]
+    },
+    {
+      "Id": 440596,
+      "CanBreak": false,
+      "Name": "开局横扫+垂直砍 AM_HYS_HongHaiEr_02A_Atk_06_dalei",
+      "Key": "Z",
+      "Step": 1,
+      "Buffs": [
+        1000100,
+        505
+      ]
+    },
+    {
+      "Id": 440508,
+      "CanBreak": false,
+      "Name": "3连中距离横扫  AM_HYS_HongHaiEr_02A_Atk_08",
+      "Key": "S+Z",
+      "Buffs": [
+        1000100
+      ]
+    },
+    {
+      "Id": 440537,
+      "CanBreak": false,
+      "Name": "瞬发地刺然后跳起平a——可用 AM_HYS_HongHaiEr_02A_Atk_09_C",
+      "Key": "X"
+    },
+    {
+      "Id": 440510,
+      "CanBreak": true,
+      "Name": "前摇+砍两下，满地地刺 AM_HYS_HongHaiEr_02A_Atk_10_01",
+      "Key": "A+C"
+    },
+    {
+      "Id": 440507,
+      "CanBreak": false,
+      "Name": "大前摇，放地刺  AM_HYS_HongHaiEr_02A_Atk_07",
+      "Key": "C"
+    },
+    {
+      "Id": 440506,
+      "CanBreak": false,
+      "Name": "大横扫两下，带地刺 AM_HYS_HongHaiEr_02A_Atk_06",
+      "Key": "V"
+    },
+    {
+      "Id": 440539,
+      "CanBreak": true,
+      "Name": "前进一小步扫腿，还行可当平A",
+      "Key": ""
+    },
+    {
+      "Id": 440552,
+      "CanBreak": false,
+      "Name": "转身",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 440561,
+      "CanBreak": false,
+      "Name": "右格挡",
+      "Key": ""
+    },
+    {
+      "Id": 440562,
+      "CanBreak": false,
+      "Name": "左格挡",
+      "Key": ""
+    },
+    {
+      "Id": 440501,
+      "CanBreak": true,
+      "Name": "平A好几下",
+      "Key": ""
+    },
+    {
+      "Id": 440502,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 440598,
+      "CanBreak": false,
+      "Name": "投技",
+      "Key": "",
+      "Step": 3,
+      "Buffs": [
+        1000100
+      ]
+    },
+    {
+      "Id": 440513,
+      "CanBreak": true,
+      "Name": "前摇—+很长的平a连招",
+      "Key": ""
+    },
+    {
+      "Id": 440522,
+      "CanBreak": true,
+      "Name": "飞来飞去打人",
+      "Key": ""
+    },
+    {
+      "Id": 440524,
+      "CanBreak": true,
+      "Name": "飞来飞去，打一下，但打不中",
+      "Key": ""
+    },
+    {
+      "Id": 440531,
+      "CanBreak": true,
+      "Name": "飞来飞去打人",
+      "Key": ""
+    },
+    {
+      "Id": 440541,
+      "CanBreak": true,
+      "Name": "侧身前翻突进",
+      "Key": ""
+    },
+    {
+      "Id": 440545,
+      "CanBreak": true,
+      "Name": "突进上去砍一刀，容易打空",
+      "Key": ""
+    },
+    {
+      "Id": 440551,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 440553,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 440554,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 440560,
+      "CanBreak": true,
+      "Name": "平A两下",
+      "Key": ""
+    },
+    {
+      "Id": 440563,
+      "CanBreak": true,
+      "Name": "无索敌冲上去砍一下，踢一脚",
+      "Key": ""
+    },
+    {
+      "Id": 440564,
+      "CanBreak": true,
+      "Name": "侧身前翻突进",
+      "Key": ""
+    },
+    {
+      "Id": 440567,
+      "CanBreak": true,
+      "Name": "废招，打不中人",
+      "Key": ""
+    },
+    {
+      "Id": 440570,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 440571,
+      "CanBreak": true,
+      "Name": "飞到天上，有bug",
+      "Key": ""
+    },
+    {
+      "Id": 440581,
+      "CanBreak": true,
+      "Name": "飞到空中，有bug",
+      "Key": ""
+    },
+    {
+      "Id": 440584,
+      "CanBreak": true,
+      "Name": "接 440581 ，落地地刺,会卡墙",
+      "Key": ""
+    },
+    {
+      "Id": 440583,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 440591,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 440593,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 440599,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/GYCY/Unit_GYCY_SheBang.Unit_GYCY_SheBang_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 12.0,
+    "CapsuleRadius": 4.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_SheBang/Meshes/Sk_GYCY_SheBang.SK_GYCY_SheBang",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_SheBang/ABP_GYCY_SheBang.ABP_GYCY_SheBang_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_SheBang/Meshes/PA_GYCY_SheBang.PA_GYCY_SheBang",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Root",
+        "FirstRadius": 5.0,
+        "NextBoneName": "CAMERA_LOCK",
+        "NextRadius": 5.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_GYCY_SheBang",
+  "Label": "SK_GYCY_SheBang",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "PlayTimeRate": 1.0,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "HitCount": 0,
+      "PlayTimeRate": 1.0,
+      "Id": 103801,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

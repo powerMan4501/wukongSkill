@@ -1,0 +1,289 @@
+{
+  "Name": "石双双",
+  "Label": "SK_HFM_ShanZhen_03",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": 0,
+  "ZRate": 0,
+  "CoolDownRate": 50,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8268
+  },
+  "Skills": [
+    {
+      "Key": "A+X",
+      "Id": 220301,
+      "CanBreak": true,
+      "Name": "喷射散弹，AM_HFM_ShanZhen_03_Atk_Fast_01",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 220367,
+      "CanBreak": true,
+      "Name": "前进踢两脚，劈腿",
+      "Key": "XBUTTON1",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "XBUTTON1",
+      "Id": 220307,
+      "Name": "前进踢两脚，劈腿",
+      "CanBreak": true,
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "S+XBUTTON1",
+      "Id": 220309,
+      "Name": "连环踢 -最后泰山压顶下坠",
+      "CanBreak": true,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 10168,
+      "Name": "精魄技能，飞踢",
+      "CanBreak": true,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 220305,
+      "Name": "左右轮一下",
+      "CanBreak": true,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "S+LBUTTON",
+      "Id": 220310,
+      "Name": "踢2",
+      "CanBreak": true,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 220370,
+      "CanBreak": true,
+      "Name": "索敌，上去踢一脚+扫腿",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "C+RBUTTON",
+      "Id": 220320,
+      "Name": "磕头",
+      "CanBreak": true,
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "C+RBUTTON",
+      "Id": 220325,
+      "Name": "磕头",
+      "CanBreak": true,
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 220361,
+      "CanBreak": true,
+      "Name": "突进磕头",
+      "Buffs": [
+        1000095
+      ],
+      "Key": "S+RBUTTON"
+    },
+    {
+      "Key": "A+RBUTTON",
+      "Id": 220303,
+      "Name": "连续好几踢脚",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "SPACE",
+      "Id": 220321,
+      "Name": "跪地乱晃"
+    },
+    {
+      "Id": 220312,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 220322,
+      "CanBreak": true,
+      "Name": "静止不动",
+      "Key": ""
+    },
+    {
+      "Id": 220323,
+      "CanBreak": true,
+      "Name": "地上爬起，扫腿一下，前后摇都不小",
+      "Key": ""
+    },
+    {
+      "Id": 220324,
+      "CanBreak": true,
+      "Name": "狂奔很久",
+      "Key": ""
+    },
+    {
+      "Id": 220326,
+      "CanBreak": true,
+      "Name": "闪退",
+      "Key": ""
+    },
+    {
+      "Id": 220327,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 220328,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 220351,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 220352,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 220353,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 220354,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 220355,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 220356,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 220362,
+      "CanBreak": true,
+      "Name": "地上爬起，扫腿一下，前后摇都不小",
+      "Key": ""
+    },
+    {
+      "Id": 220369,
+      "CanBreak": true,
+      "Name": "打好几下，然后飞天磕头",
+      "Key": "Z",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 220391,
+      "CanBreak": true,
+      "Name": "打好几下，然后飞天磕头",
+      "Key": "Z",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 220370,
+      "CanBreak": true,
+      "Name": "索敌，上去踢一脚+扫腿",
+      "Key": "X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 220376,
+      "CanBreak": true,
+      "Name": "喷毒之后狂奔很久，再磕一下",
+      "Key": "C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 220364,
+      "CanBreak": true,
+      "Name": "前摇一阵子+精魄飞踢",
+      "Key": "V",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 220381,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 220382,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 220383,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 220306,
+      "CanBreak": true,
+      "Name": "喷毒之后狂奔很久，再磕一下",
+      "Key": ""
+    }
+  ]
+}

@@ -1,0 +1,505 @@
+{
+  "desc": "1000865:雷，1000866冰， 1000867火， 1000868毒 ，1000168传送到目标",
+  "Rules": [
+    {
+      "Name": "空中",
+      "Description": "0~2豆",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "atk_air_heavy_start_0"
+        },
+        {
+          "Type": "montage",
+          "Name": "atk_air_heavy_start_1"
+        },
+        {
+          "Type": "montage",
+          "Name": "atk_air_heavy_start_2"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffID": 1000168
+        }
+      ]
+    },
+    {
+      "Name": "空中",
+      "Description": "3豆，待定",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "atk_air_heavy_start_3"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffID": 1000168
+        }
+      ]
+    },
+    {
+      "Name": "空中",
+      "Description": "空中大风车",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "atk_air_heavy_start_4"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_dasheng_xuli_start_4"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "summon",
+          "SummonID": 60020018,
+          "SummonCount": 3
+        }
+      ]
+    },
+    {
+      "Name": "空中落地",
+      "Description": "猪八戒血浆，待定",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "atk_air_heavy_end_0"
+        },
+        {
+          "Type": "montage",
+          "Name": "atk_air_heavy_end_1"
+        },
+        {
+          "Type": "montage",
+          "Name": "atk_air_heavy_end_2"
+        },
+        {
+          "Type": "montage",
+          "Name": "atk_air_heavy_end_3"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffID": 1000155
+        }
+      ]
+    },
+    {
+      "Name": "蓄力戳棍全屏地火",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_mgd_jsds_atk_10_01"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74010202,
+          "TimeDelay": 1100
+        }
+      ]
+    },
+    {
+      "Name": "江海翻 全屏地火",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "Dasheng_ComboA_03_Z_2"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 30160101
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74010202,
+          "TimeDelay": 1100
+        },
+        {
+          "Type": "buff",
+          "desc": "时缓",
+          "BuffID": 1000801,
+          "TimeDelay": 1250
+        }
+      ]
+    },
+    {
+      "Name": "Q5红孩儿砸地",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboA_q5"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 30050301,
+          "OffsetX": 400,
+          "OffsetY": 400,
+          "TimeDelay": 810
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 34010501,
+          "OffsetX": 400,
+          "OffsetY": 400,
+          "TimeDelay": 810
+        }
+      ]
+    },
+    {
+      "Name": "退寸 ",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_wukong_combob_z_01"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 1016901,
+          "ForTarget": true,
+          "buffCondition": 1000867,
+          "talentCondition": 0,
+          "desc": "有吉祥灯时，退寸触发火箭"
+        }
+      ]
+    },
+    {
+      "Name": "进尺 ",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_wukong_combob_z_02"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "OffsetX": 600,
+          "OffsetY": 600,
+          "ProjectTileID": 2403471,
+          "TimeDelay": 950
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "OffsetX": 800,
+          "OffsetY": 800,
+          "ProjectTileID": 30123402,
+          "TimeDelay": 950
+        }
+      ]
+    },
+    {
+      "Name": "搅阵 ",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_wukong_combob_z_01_start"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 50,
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 80009999
+        }
+      ]
+    },
+    {
+      "Name": "大圣平A1",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_01_作废"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 1713001
+        }
+      ]
+    },
+    {
+      "Name": "大圣平A1",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_03——作废"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 10289901
+        }
+      ]
+    },
+    {
+      "Name": "前进滚花",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboC_z_loop作废"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 1711001
+        }
+      ]
+    },
+    {
+      "Name": "大圣平A4",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_01作废"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 1711001
+        }
+      ]
+    },
+    {
+      "Name": "大圣蓄力4",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "Dasheng_xuli_attack_4"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "summon",
+          "SummonID": 60020015,
+          "SummonCount": 3
+        }
+      ]
+    },
+    {
+      "Name": "大圣蓄力5,大风车",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_dasheng_xuli_attack_5"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74010206,
+          "OffsetX": 800,
+          "OffsetY": 800,
+          "TimeDelay": 1850
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 44011401,
+          "OffsetX": 800,
+          "OffsetY": 800,
+          "TimeDelay": 2070
+        },
+        {
+          "Type": "buff",
+          "BuffID": 1000165
+        }
+      ]
+    },
+    {
+      "Name": "10705",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboA_z_01"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 44011401,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 900
+        },
+        {
+          "Type": "buff",
+          "BuffID": 289
+        }
+      ]
+    },
+    {
+      "Name": "10707",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboA_z_02"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_01_Z_2"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_02_Z_2"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 140,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 1250
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 40100303,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 1250
+        },
+        {
+          "Type": "buff",
+          "desc": "直接时缓",
+          "BuffID": 1000801,
+          "TimeDelay": 1400
+        }
+      ]
+    },
+    {
+      "Name": "戳棍巴山虎",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "xuli_B_attack_4"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_b_attack_4"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_B_attack_3"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_b_attack_3"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 80009901
+        }
+      ]
+    },
+    {
+      "Name": "戳棍七星",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "xuli_B_attack_0"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_B_attack_1"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_B_attack_2"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_b_attack_0"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_b_attack_1"
+        },
+        {
+          "Type": "montage",
+          "Name": "xuli_b_attack_2"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 80009901
+        }
+      ]
+    },
+    {
+      "Name": "翻滚，加凤穿花",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_Dodge"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_PreciseDodge"
+        }
+      ],
+      "AfterActions": [
+        {
+          "type": "buff",
+          "BuffID": 1129
+        }
+      ]
+    }
+  ]
+}

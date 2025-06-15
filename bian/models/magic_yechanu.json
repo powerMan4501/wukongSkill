@@ -1,0 +1,96 @@
+{
+  "Name": "夜叉奴",
+  "Label": "FTT_ShiBing_01",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": -200,
+  "ZRate": 0,
+  "CoolDownRate": 35,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8075
+  },
+  "Skills": [
+    {
+      "Key": "E",
+      "Id": 101911,
+      "Name": "双毒华斩"
+    },
+    {
+      "Key": "Q",
+      "Id": 101910,
+      "Name": "倒白毒"
+    },
+    {
+      "Key": "Z",
+      "Id": 101921,
+      "Name": "拍地"
+    },
+    {
+      "Key": "X",
+      "Id": 101905,
+      "Name": "伏地毒刺"
+    },
+    {
+      "Key": "C",
+      "Id": 101907,
+      "Name": "我没素质"
+    },
+    {
+      "Key": "SPACE",
+      "Id": 412015,
+      "Name": "后退"
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 101901,
+      "Name": "一掌",
+      "CanBreak": false,
+      "Step": 1
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 101902,
+      "Name": "冰刀一击",
+      "CanBreak": false,
+      "Step": 2
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 101903,
+      "Name": "冰刺冲天",
+      "CanBreak": false,
+      "Step": 3
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 101906,
+      "Name": "冰刺冲天",
+      "CanBreak": false,
+      "Step": 1
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 101908,
+      "Name": "冰刺冲天",
+      "CanBreak": false,
+      "Step": 2
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 101909,
+      "Name": "冰刺冲天",
+      "CanBreak": false,
+      "Step": 3      
+    },
+    {  
+      "Key": "A+E",
+      "Id": 302608,
+      "Name": "毒镖",
+      "CanBreak": false
+    }
+  ]
+}

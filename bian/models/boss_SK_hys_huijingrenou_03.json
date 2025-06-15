@@ -1,0 +1,215 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/HYS/UNIT_hys_huijingrenou_03.UNIT_hys_huijingrenou_03_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 220.0,
+    "CapsuleRadius": 60.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_huijingrenou_03/Mesh/SK_hys_huijingrenou_03.SK_hys_huijingrenou_03",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_huijingrenou_03/ABP_hys_huijingrenou_03.ABP_hys_huijingrenou_03_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_huijingrenou_03/Mesh/PA_hys_huijingrenou_03.PA_hys_huijingrenou_03",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/HFM/HFM_MaGu_01A/HFM_MaGu_01A_Dao.HFM_MaGu_01A_Dao_C",
+        "SocketName": "weapon_r"
+      },
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/HYS/HYS_huijingrenou_03/HYS_huijingrenou_03_shield.HYS_huijingrenou_03_shield_C",
+        "SocketName": "weapon_l"
+      }
+    ],
+    "TFXConfigs": null,
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_hys_huijingrenou_03",
+  "Label": "SK_hys_huijingrenou_03",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "XRate": -400.0,
+  "ZRate": 200.0,
+  "Skills": [
+    {
+      "Id": 11334,
+      "CanBreak": true,
+      "Name": "精魄技能",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000095,
+        229
+      ]
+    },
+    {
+      "Id": 581002,
+      "CanBreak": true,
+      "Name": "3连平A，冲击波",
+      "Key": "",
+      "Buffs": [
+        1000083
+      ]
+    },
+    {
+      "Id": 581018,
+      "CanBreak": true,
+      "Name": "喷火",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000089
+      ]
+    },
+    {
+      "Id": 581001,
+      "CanBreak": true,
+      "Name": "盾冲撞，巴山虎",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000095,
+        229
+      ]
+    },
+    {
+      "Id": 581003,
+      "CanBreak": true,
+      "Name": "冲上去刺一下",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 581004,
+      "CanBreak": true,
+      "Name": "盾打一下，长矛横扫一下",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 581006,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q"
+    },
+    {
+      "Id": 581007,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E"
+    },
+    {
+      "Id": 581009,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R"
+    },
+    {
+      "Id": 581010,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T"
+    },
+    {
+      "Id": 581016,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z"
+    },
+    {
+      "Id": 581019,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C"
+    },
+    {
+      "Id": 581020,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V"
+    },
+    {
+      "Id": 581021,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581022,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581031,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581032,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581033,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581034,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581035,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581036,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581037,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581038,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581051,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581052,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581053,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

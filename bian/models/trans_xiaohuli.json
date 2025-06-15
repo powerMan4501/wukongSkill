@@ -1,0 +1,17 @@
+{
+    "Id": 10439,
+    "Name": "狐狸",
+    "Label": "SK_szlc_bianshen_02",
+    "Type": "TRANS",
+    "Asset": "/Game/00Main/Design/Units/Player/Unit_Player_Chan.Default__Unit_Player_Chan_C",
+    "XRateBig": 0.3,
+    "ZRateBig": 0.1,
+    "XRateSmall": 2,
+    "Level1Scale": 1,
+    "Level2Scale": 0.6,
+    "EnterSkill": {
+      "Id": 10439,
+      "AnimPath": "AM_Wukong_trans_to_szlc_bianshen"
+    },
+    "Skills": []
+  }

@@ -1,0 +1,154 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/HYS/Unit_hys_huolingsha_01.Unit_hys_huolingsha_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 300.0,
+    "CapsuleRadius": 80.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_huolingsha_01/Mesh/SK_hys_huolingsha_01.SK_hys_huolingsha_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_huolingsha_01/ABP_hys_huolingsha_01.ABP_hys_huolingsha_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_huolingsha_01/Mesh/PA_hys_huolingsha_01.PA_hys_huolingsha_01",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_huolingsha_01/Hair/HAIR_lower_gs.HAIR_lower_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.2,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_huolingsha_01/Materials/M_hys_huolingsha_01_main_mask.M_hys_huolingsha_01_main_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_huolingsha_01/Hair/HAIR_upper_gs.HAIR_upper_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.2,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_huolingsha_01/Materials/M_hys_huolingsha_01_main_mask.M_hys_huolingsha_01_main_mask"
+      }
+    ],
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Name": "SK_hys_huolingsha_01",
+  "Label": "SK_hys_huolingsha_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": -400.0,
+  "ZRate": 200.0,
+  "Skills": [
+    {
+      "Id": 402301,
+      "CanBreak": true,
+      "Name": "喷一个慢速火球",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 402302,
+      "CanBreak": true,
+      "Name": "没啥用",
+      "Key": ""
+    },
+    {
+      "Id": 11339,
+      "CanBreak": true,
+      "Name": "精魄技能",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 402303,
+      "CanBreak": true,
+      "Name": "a几下，没啥卵用",
+      "Key": ""
+    },
+    {
+      "Id": 402324,
+      "CanBreak": true,
+      "Name": "召唤小火怪喷火",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 402304,
+      "CanBreak": true,
+      "Name": "往周围喷火",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 402305,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q"
+    },
+    {
+      "Id": 402309,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E"
+    },
+    {
+      "Id": 402311,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R"
+    },
+    {
+      "Id": 402312,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T"
+    },
+    {
+      "Id": 402313,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z"
+    },
+    {
+      "Id": 402314,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X"
+    },
+    {
+      "Id": 402315,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C"
+    },
+    {
+      "Id": 402325,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402331,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402350,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "Id": 10423,
+  "Name": "小马哥",
+  "Label": "SK_HFM_MaMian_01a",
+  "Type": "TRANS",
+  "Asset": "/Game/00Main/Design/Units/Player/Unit_player_hys_ma.Unit_player_hys_ma_C",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 10423,
+    "AnimPath": "AM_wukong_trans_to_hys_ma"
+  },
+  "TransDone": {
+    "Buffers": [
+      23070,
+      1000068
+    ]
+  },
+  "Skills": [
+    {
+      "Key": "XBUTTON1",
+      "Id": 23014,
+      "Name": "右侧抽 红色鞭",
+      "AnimPath": "AM_player_hys_ma_R1_04",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Key": "S+XBUTTON1",
+      "Id": 23025,
+      "Name": "左侧连续逗鞭",
+      "AnimPath": "AM_player_hys_ma_R1_05_electric",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 23034,
+      "Name": "左侧大范围甩鞭子--横抽",
+      "AnimPath": "AM_player_hys_ma_R2_04",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Key": "S+XBUTTON2",
+      "Id": 23041,
+      "Name": "闪电圈",
+      "AnimPath": "AM_player_hys_ma_R2_electric",
+      "Buffers": [
+        1000806,
+        1000084
+      ]
+    },
+    {
+      "Key": "S+RBUTTON",
+      "Id": 23071,
+      "Name": "加BUFF",
+      "AnimPath": "AM_player_hys_ma_F1",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Id": 200201,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200202,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200203,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200204,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200205,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200206,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200207,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200208,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200209,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200251,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200252,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200253,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200254,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    }
+  ]
+}

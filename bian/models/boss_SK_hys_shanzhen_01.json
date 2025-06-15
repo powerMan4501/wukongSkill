@@ -1,0 +1,274 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/HYS/Unit_HYS_ShanZhen_03.Unit_HYS_ShanZhen_03_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 140.0,
+    "CapsuleRadius": 45.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_Shanzhen_01/mesh/SK_hys_shanzhen_01.SK_hys_shanzhen_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_Shanzhen_01/ABP_hys_shanzhen_01.ABP_hys_shanzhen_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_Shanzhen_01/mesh/PA_hys_shanzhen_01.PA_hys_shanzhen_01",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_hys_shanzhen_01",
+  "Label": "SK_hys_shanzhen_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": -400.0,
+  "ZRate": 200.0,
+  "Skills": [
+    {
+      "Id": 580101,
+      "CanBreak": true,
+      "Name": "踢踢踢平A",
+      "Key": "LBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 580102,
+      "CanBreak": true,
+      "Name": "身体左右撞击",
+      "Key": "LBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 580165,
+      "CanBreak": true,
+      "Name": "多次磕头",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000070,
+        1000106
+      ]
+    },
+    {
+      "Id": 580104,
+      "CanBreak": true,
+      "Name": "身体左右撞击，然后砸地",
+      "Key": "S+RBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 580106,
+      "CanBreak": true,
+      "Name": "身体左右撞击，然后砸地",
+      "Key": "S+RBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 580105,
+      "CanBreak": true,
+      "Name": "多次磕头",
+      "Key": "S+XBUTTON1",
+      "Step": 1,
+      "Buffs": [
+        1000070
+      ]
+    },
+    {
+      "Id": 580109,
+      "CanBreak": true,
+      "Name": "两次磕头",
+      "Key": "S+XBUTTON1",
+      "Step": 2,
+      "Buffs": [
+        1000070
+      ]
+    },
+    {
+      "Id": 580165,
+      "CanBreak": true,
+      "Name": "多次磕头",
+      "Key": "S+XBUTTON1",
+      "Step": 3,
+      "Buffs": [
+        1000070
+      ]
+    },
+    {
+      "Id": 580107,
+      "CanBreak": true,
+      "Name": "跳起来磕头",
+      "Key": "XBUTTON1",
+      "Step": 1,
+      "Buffs": [
+        1000095,
+        1000070
+      ]
+    },
+    {
+      "Id": 580117,
+      "CanBreak": true,
+      "Name": "跳起来磕头",
+      "Key": "XBUTTON1",
+      "Step": 2,
+      "Buffs": [
+        1000095,
+        1000070
+      ]
+    },
+    {
+      "Id": 580167,
+      "CanBreak": true,
+      "Name": "跳起来磕头",
+      "Key": "XBUTTON1",
+      "Step": 3,
+      "Buffs": [
+        1000095,
+        1000070
+      ]
+    },
+    {
+      "Id": 580103,
+      "CanBreak": true,
+      "Name": "迅速冲上去撞",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000095,
+        1000070
+      ]
+    },
+    {
+      "Id": 580108,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "",
+      "Buffs": [
+        1000106
+      ]
+    },
+    {
+      "Id": 580151,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 580110,
+      "CanBreak": true,
+      "Name": "发射岩浆子弹",
+      "Key": "Z",
+      "Buffs": [
+        1000089
+      ]
+    },
+    {
+      "Id": 580130,
+      "CanBreak": true,
+      "Name": "从地里缓慢爬起来",
+      "Key": ""
+    },
+    {
+      "Id": 580131,
+      "CanBreak": true,
+      "Name": "从地里跳起来",
+      "Key": ""
+    },
+    {
+      "Id": 580132,
+      "CanBreak": true,
+      "Name": "从地里缓慢爬起来",
+      "Key": ""
+    },
+    {
+      "Id": 580151,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 580152,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 580153,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 580154,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 580163,
+      "CanBreak": true,
+      "Name": "冲上去撞，无岩浆",
+      "Key": "X",
+      "Buffs": [
+        1000070
+      ]
+    },
+    {
+      "Id": 580164,
+      "CanBreak": true,
+      "Name": "左右撞，无岩浆",
+      "Key": "C",
+      "Buffs": [
+        1000070
+      ]
+    },
+    {
+      "Id": 580166,
+      "CanBreak": true,
+      "Name": "左右撞，无岩浆",
+      "Key": ""
+    },
+    {
+      "Id": 580168,
+      "CanBreak": true,
+      "Name": "后砸",
+      "Key": ""
+    },
+    {
+      "Id": 580169,
+      "CanBreak": true,
+      "Name": "从地里跳起来",
+      "Key": ""
+    },
+    {
+      "Id": 580191,
+      "CanBreak": true,
+      "Name": "从地里跳起来",
+      "Key": ""
+    },
+    {
+      "Id": 580192,
+      "CanBreak": true,
+      "Name": "从地里跳起来",
+      "Key": ""
+    },
+    {
+      "Id": 580193,
+      "CanBreak": true,
+      "Name": "从地里跳起来",
+      "Key": ""
+    }
+  ]
+}

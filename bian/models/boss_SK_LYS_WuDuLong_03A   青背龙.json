@@ -1,0 +1,138 @@
+{
+  "TamerPath": "/Game/00Main/Design/Units/LYS/Unit_WuDuLong_03A.Unit_WuDuLong_03A_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 240.0,
+    "CapsuleRadius": 110.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_WuDuLong_03A/Mesh/SK_LYS_WuDuLong_03A.SK_LYS_WuDuLong_03A",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_WuDuLong_03A/ABP_LYS_WuDuLong_03A.ABP_LYS_WuDuLong_03A_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_WuDuLong_03A/Mesh/SK_LYS_WuDuLong_03A_PhysicsAsset.SK_LYS_WuDuLong_03A_PhysicsAsset",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/LYS/LYS_WuDuLong_03A/LYS_WuDuLong_03A_Weapon.LYS_WuDuLong_03A_Weapon_C",
+        "SocketName": "weapon_r"
+      }
+    ],
+    "TFXConfigs": null,
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "pelvis",
+        "FirstRadius": 50.0,
+        "NextBoneName": "neck_01",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "lowerarm_l",
+        "FirstRadius": 30.0,
+        "NextBoneName": "index_03_l",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Hit_1",
+        "FirstRadius": 20.0,
+        "NextBoneName": "Hit_4",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_l",
+        "FirstRadius": 30.0,
+        "NextBoneName": "foot_l",
+        "NextRadius": 40.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_r",
+        "FirstRadius": 30.0,
+        "NextBoneName": "foot_r",
+        "NextRadius": 40.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Name": "SK_LYS_WuDuLong_03A",
+  "Label": "SK_LYS_WuDuLong_03A",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 302919,
+      "Name": "向前抛一个闪电在地上",
+      "Key": "Q"
+    },
+    {
+      "Id": 302912,
+      "Name": "普通攻击",
+      "Key": "LBUTTON",
+      "Canbreak": false,
+      "Step": 1
+    },
+    {
+      "Id": 302918,
+      "Name": "普通攻击-横扫",
+      "Key": "LBUTTON",
+      "Canbreak": false,
+      "Step": 2
+    },
+    {
+      "Id": 302916,
+      "Name": "大范围闪电+石头浮空",
+      "Key": "C",
+      "Buffers":[
+        105111
+      ]
+    },
+    {
+      "Id": 302904,
+      "Name": "剑插地上+大范围闪电+石头浮空",
+      "Key": "X",
+      "Buffers":[
+        105111
+      ]
+    },
+    {
+      "Id": 302907,
+      "Name": "闪现",
+      "Key": "SPACE",
+      "Buffers": [
+        105111
+      ]
+    },
+    {
+      "Id": 302908,
+      "Name": "扔闪电",
+      "Key": "E"
+    },
+    {
+      "Id": 302919,
+      "Name": "扔大闪电",
+      "Key": "RBUTTON",
+      "Canbreak": false
+    },
+    {
+      "Id": 302915,
+      "Name": "转圈飞",
+      "Key": "Z"
+    },
+    {
+      "Id": 302970,
+      "Name": "砍+咆哮",
+      "Key": "R",
+      "Buffers":[
+        92211,
+        105111
+      ]
+    }
+  ],
+  "DisableDepthOfField": false,
+  "XRate": -500.0,
+  "ZRate": 200.0
+}

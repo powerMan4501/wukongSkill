@@ -1,0 +1,645 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/Online/SZLC/UNIT_szlc_xiniu_01.UNIT_szlc_xiniu_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 200.0,
+    "CapsuleRadius": 150.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_xiniu_01/Mesh/SK_szlc_xiniu_01.SK_szlc_xiniu_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_xiniu_01/ABP_szlc_xiniu_01.ABP_szlc_xiniu_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_xiniu_01/Mesh/PA_szlc_xiniu_01.PA_szlc_xiniu_01",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HGS_Rhino/Hair/HAIR_body.HAIR_body_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147356105"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HGS_Rhino/Hair/HAIR_beard_gs.HAIR_beard_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147356104"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HGS_Rhino/Hair/HAIR_tail.HAIR_tail_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147356103"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HGS_Rhino/Hair/HAIR_beardextra.HAIR_beardextra_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147356102"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Bip",
+        "FirstRadius": 200.0,
+        "NextBoneName": "neck_01",
+        "NextRadius": 200.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "neck_01",
+        "FirstRadius": 120.0,
+        "NextBoneName": "Bip001-HeadNub",
+        "NextRadius": 120.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Bip001-HeadNub",
+        "FirstRadius": 70.0,
+        "NextBoneName": "Hit_Head_3",
+        "NextRadius": 70.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "upperarm_l",
+        "FirstRadius": 50.0,
+        "NextBoneName": "hand_l",
+        "NextRadius": 50.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_l",
+        "FirstRadius": 50.0,
+        "NextBoneName": "foot_l",
+        "NextRadius": 50.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "upperarm_r",
+        "FirstRadius": 50.0,
+        "NextBoneName": "hand_r",
+        "NextRadius": 50.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_r",
+        "FirstRadius": 50.0,
+        "NextBoneName": "foot_r",
+        "NextRadius": 50.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 1020
+  },
+  "Name": "金甲犀",
+  "Label": "SK_szlc_xiniu_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "XRate": -500.0,
+  "ZRate": 250.0,
+  "Skills": [
+    {
+      "Key": "",
+      "Id": 470703,
+      "CanBreak": true,
+      "Name": "犀牛角从左往右上角挑",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 470706,
+      "CanBreak": true,
+      "Name": "小后退，犀牛角从左往右上角挑,索敌",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 470701,
+      "CanBreak": true,
+      "Name": "小后退，犀牛角从左往右上角挑，索敌",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "S+LBUTTON",
+      "Id": 470708,
+      "CanBreak": true,
+      "Name": "原地，抬起双前腿砸击",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "S+RBUTTON",
+      "Id": 470702,
+      "CanBreak": true,
+      "Name": "左右撞击",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 470704,
+      "CanBreak": true,
+      "Name": "前摇+抬起双腿砸击，轻微索敌",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 470713,
+      "CanBreak": true,
+      "Name": "大招，来回冲撞很多次",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "XBUTTON1",
+      "Id": 470716,
+      "CanBreak": true,
+      "Name": "大招，大范围劈雷电",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 470705,
+      "CanBreak": true,
+      "Name": "无索敌，前挑一下，老是打不中",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470707,
+      "CanBreak": true,
+      "Name": "犀牛角从右往左挑",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470709,
+      "CanBreak": true,
+      "Name": "小后退，撞",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470710,
+      "CanBreak": true,
+      "Name": "小后退，撞",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470711,
+      "CanBreak": true,
+      "Name": "左往右挑",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Key": "A+X",
+      "Id": 470712,
+      "CanBreak": true,
+      "Name": "远程技能，扬起石头",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 470714,
+      "CanBreak": true,
+      "Name": "双后腿砸",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470715,
+      "CanBreak": true,
+      "Name": "双后腿砸",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Key": "A+C",
+      "Id": 470717,
+      "CanBreak": true,
+      "Name": "前摇，然后霹雷大招，似乎还能重新长出犀牛角",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "SPACE",
+      "Id": 470721,
+      "CanBreak": true,
+      "Name": "后退",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 470722,
+      "CanBreak": true,
+      "Name": "移动",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470723,
+      "CanBreak": true,
+      "Name": "移动",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470731,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": "Q"
+    },
+    {
+      "Id": 470732,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": "E"
+    },
+    {
+      "Id": 470733,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": "R"
+    },
+    {
+      "Id": 470734,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": "T"
+    },
+    {
+      "Id": 470735,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": "Z"
+    },
+    {
+      "Id": 470736,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": "X"
+    },
+    {
+      "Id": 470737,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": "C"
+    },
+    {
+      "Id": 470738,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": "V"
+    },
+    {
+      "Id": 470739,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470740,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470741,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470742,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470743,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470744,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470745,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470746,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470747,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470748,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470749,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470750,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470751,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470752,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470753,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470754,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470755,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470756,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470757,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470758,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470759,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470760,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470761,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470762,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470763,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470764,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470765,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470766,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    },
+    {
+      "Id": 470767,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Buffs": [
+        1000095
+      ],
+      "Key": ""
+    }
+  ]
+}

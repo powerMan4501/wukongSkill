@@ -1,0 +1,205 @@
+{
+  "Name": "鼠弩手",
+  "Label": "SK_HFM_ShuNuShou_01b",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": 0,
+  "ZRate": 0,
+  "CoolDownRate": 50,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8469
+  },
+  "Skills": [
+    {
+      "Id": 202301,
+      "CanBreak": true,
+      "Name": "无前摇一发火箭 AM_HFM_ShuNuShou_01b_Atk_Fast_01",
+      "Key": "LBUTTON",
+      "Step": 1,
+    },
+    {
+      "Id": 202310,
+      "CanBreak": true,
+      "Name": "无前摇一发火箭 AM_HFM_ShuNuShou_01b_Atk_Fast_01",
+      "Key": "",
+      "Step": 2,
+    },
+    {
+      "Id": 202332,
+      "CanBreak": true,
+      "Name": "无前摇一发火箭 AM_HFM_ShuNuShou_01b_Atk_Fast_01_SandSkiing_Fast",
+      "Key": "",
+      "Buffs": [
+        1000101,
+        1000172
+      ]
+    },
+    {
+      "Id": 202333,
+      "CanBreak": true,
+      "Name": "无前摇一发火箭 AM_HFM_ShuNuShou_01b_Atk_Fast_01_SandSkiing_Slow",
+      "Key": "",
+      "Buffs": [
+        1000101,
+        1000172
+      ]
+    },
+    {
+      "Id": 202334,
+      "CanBreak": true,
+      "Name": "连续往周围发射很多火箭 AM_HFM_ShuNuShou_01b_Atk_Fast_08_SandSkiing",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000101
+      ]
+    },
+    {
+      "Id": 202302,
+      "CanBreak": true,
+      "Name": "扔手雷 AM_HFM_ShuNuShou_01b_Atk_Fast_02",
+      "Key": "RBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000116
+      ]
+    },
+    {
+      "Id": 202309,
+      "CanBreak": true,
+      "Name": "扔手雷 AM_HFM_ShuNuShou_01b_Atk_Fast_09",
+      "Key": "RBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000116
+      ]
+    },
+    {
+      "Id": 202331,
+      "CanBreak": true,
+      "Name": "扔手雷 AM_HFM_ShuNuShou_01b_Atk_Fast_09_SandSkiing_Fast",
+      "Key": "",
+      "Step": 3,
+      "Buffs": [
+        1000116
+      ]
+    },
+    {
+      "Id": 202303,
+      "CanBreak": true,
+      "Name": "前摇，连续发射很多火箭 AM_HFM_ShuNuShou_01b_Atk_Fast_03",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000101
+      ]
+    },
+    {
+      "Id": 11369,
+      "CanBreak": true,
+      "Name": "精魄技能 AM_20_hfm_shunushou_01b_atk_08_Lv6",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000101
+      ]
+    },
+    {
+      "Id": 202304,
+      "CanBreak": true,
+      "Name": "原地小横扫",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202306,
+      "CanBreak": true,
+      "Name": "前摇+冲上去打打打",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202305,
+      "CanBreak": true,
+      "Name": "后撤+发射火箭",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 11369,
+      "CanBreak": true,
+      "Name": "精魄技能",
+      "Key": "Z"
+    },
+    {
+      "Id": 202308,
+      "CanBreak": true,
+      "Name": "前摇，连续发射很多火箭",
+      "Key": "X"
+    },
+    {
+      "Id": 202322,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202323,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202335,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202341,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202351,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202352,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202353,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202354,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202361,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202362,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

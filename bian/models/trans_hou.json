@@ -1,0 +1,282 @@
+{
+    "Id": 10417,
+    "Name": "妖猴",
+    "Label": "SK_LYS_XueHou",
+    "Type": "TRANS",
+    "Asset": "/Game/00Main/Design/Units/Player/Unit_player_lys_hou.Unit_player_lys_hou_C",
+    "XRateBig": 0.3,
+    "ZRateBig": 0.1,
+    "XRateSmall": 2,
+    "Level1Scale": 1,
+    "Level2Scale": 1.2,
+    "TransDone": {
+        "Buffers": [
+            17272,
+            17273,
+            1000062,
+            1000866,
+            1000068
+        ]
+    },
+    "EnterSkill": {
+        "Id": 10417,
+        "Name": "变身技能ID",
+        "AnimPath": "AM_wukong_trans_to_lys_hou"
+    },
+    "Skills": [
+        {
+            "Key": "A+XBUTTON2",
+            "Id": 301505,
+            "CanBreak": true,
+            "Name": "举刀+砍+竖血色剑气",
+            "Buffs": [
+                505,
+                1000097,
+                1000099
+            ]
+        },
+        {
+            "Id": 301502,
+            "CanBreak": true,
+            "Name": "突进上去砍一刀，再捅一下",
+            "Key": "XBUTTON2",
+            "Buffs": [
+                1000099
+            ]
+        },
+        {
+            "Id": 405805,
+            "Name": "爆气垂直砍一刀，发射垂直剑气",
+            "Key": "S+XBUTTON2",
+            "CanBreak": true,
+            "Buffs": [
+                1000097,
+                1000116
+            ]
+        },
+        {
+            "Key": "XBUTTON1",
+            "Id": 301368,
+            "CanBreak": true,
+            "Name": "跳起+前劈+白色雪墙+爆炸",
+            "Buffs": [
+                105111,
+                1000055
+            ]
+        },
+        {
+            "Key": "S+XBUTTON1",
+            "Id": 301311,
+            "Name": "影分身+红色+连斩",
+            "CanBreak": true,
+            "Buffs": [
+                1000099
+            ]
+        },
+        {
+            "Key": "A+XBUTTON1",
+            "Id": 301357,
+            "CanBreak": true,
+            "Name": "白色冰墙+爆炸+抓"
+        },
+        {
+            "Key": "S+RBUTTON",
+            "Id": 17334,
+            "Name": "邪光斩--连斩",
+            "CanBreak": true,
+            "Buffs": [
+                505
+            ]
+        },
+        {
+            "Key": "S+LBUTTON",
+            "Id": 17027,
+            "CanBreak": true,
+            "Name": "白+连斩",
+            "Buffs": [
+                105111
+            ]
+        },
+        {
+            "Key": "Z",
+            "Id": 301321,
+            "Name": "跳起+空中+红色连斩",
+            "CanBreak": true,
+            "Buffs": [
+                1000099
+            ]
+        },
+        {
+            "Key": "X",
+            "Id": 301323,
+            "CanBreak": true,
+            "Name": "跳起+六把刀+前斩",
+            "Buffs": [
+                1000099
+            ]
+        },
+        {
+            "Id": 301504,
+            "CanBreak": true,
+            "Name": "远程技能，扔雪球，然后突进上去踩一脚",
+            "Key": "A+X",
+            "Buffs": [
+                1000094
+            ]
+        },
+        {
+            "Key": "C",
+            "Id": 301316,
+            "CanBreak": true,
+            "Name": "红色波动横扫+连斩",
+            "Buffs": [
+                1000099
+            ]
+        },
+        {
+            "Key": "V",
+            "Id": 17315,
+            "Name": "猴，R1 TO R2"
+        },
+        {
+            "Key": "",
+            "Id": 301372,
+            "Name": "放屁"
+        },
+        {
+            "Key": "",
+            "Id": 301371,
+            "Name": "跪下"
+        },
+        {
+            "Id": 301500,
+            "CanBreak": true,
+            "Name": "求饶",
+            "Key": ""
+        },
+        {
+            "Id": 301501,
+            "CanBreak": true,
+            "Name": "快慢刀，砍很多刀",
+            "Key": "",
+            "Buffs": [
+                1000099
+            ]
+        },
+        {
+            "Id": 301503,
+            "CanBreak": true,
+            "Name": "没有剑气的连斩",
+            "Key": "",
+            "Buffs": [
+                1000099
+            ]
+        },
+        {
+            "Id": 301506,
+            "CanBreak": true,
+            "Name": "快慢刀，砍很多刀",
+            "Key": "",
+            "Buffs": [
+                1000099
+            ]
+        },
+        {
+            "Id": 301524,
+            "CanBreak": true,
+            "Name": "隐身，飞起来突袭",
+            "Key": "",
+            "Buffs": [
+                1000099
+            ]
+        },
+        {
+            "Id": 301525,
+            "CanBreak": true,
+            "Name": "隐身，飞起来突袭",
+            "Key": ""
+        },
+        {
+            "Id": 301531,
+            "CanBreak": true,
+            "Name": "后翻滚",
+            "Key": ""
+        },
+        {
+            "Id": 301532,
+            "CanBreak": true,
+            "Name": "移动",
+            "Key": "",
+            "Buffs": [
+                1000094
+            ]
+        },
+        {
+            "Id": 301533,
+            "CanBreak": true,
+            "Name": "幻影突袭",
+            "Key": "",
+            "Buffs": [
+                1000094
+            ]
+        },
+        {
+            "Id": 301541,
+            "CanBreak": true,
+            "Name": "向前面超近距离呕吐",
+            "Key": "",
+            "Buffs": [
+                1000094
+            ]
+        },
+        {
+            "Id": 301551,
+            "CanBreak": true,
+            "Name": "摆姿势",
+            "Key": "A+C",
+            "Buffs": [
+                1000054,
+                1000099
+            ]
+        },
+        {
+            "Id": 301552,
+            "CanBreak": true,
+            "Name": "未命名",
+            "Key": ""
+        },
+        {
+            "Id": 301553,
+            "CanBreak": true,
+            "Name": "未命名",
+            "Key": "",
+            "Buffs": [
+                1000094
+            ]
+        },
+        {
+            "Id": 301554,
+            "CanBreak": true,
+            "Name": "未命名",
+            "Key": "",
+            "Buffs": [
+                1000094
+            ]
+        },
+        {
+            "Id": 301572,
+            "CanBreak": true,
+            "Name": "未命名",
+            "Key": "",
+            "Buffs": [
+                1000094
+            ]
+        },
+        {
+            "Id": 301573,
+            "CanBreak": true,
+            "Name": "未命名",
+            "Key": ""
+        }
+    ]
+}

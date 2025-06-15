@@ -1,0 +1,175 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/GYCY/Unit_GYCY_She_03.Unit_GYCY_She_03_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 180.0,
+    "CapsuleRadius": 42.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_She_03/Meshes/SK_GYCY_She_03.SK_GYCY_She_03",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_She_03/ABP_GYCY_She_03.ABP_GYCY_She_03_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_She_03/Meshes/PA_GYCY_She_03.PA_GYCY_She_03",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/GYCY_She_03_Weapon.GYCY_She_03_Weapon_C",
+        "SocketName": "weapon_r"
+      }
+    ],
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_SheJing_02A/Hair/HAIR_main.HAIR_main_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.4,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_SheJing_02A/Materials/MF_GYCY_She03_Hair_Head.MF_GYCY_She03_Hair_Head"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_SheJing_02A/Hair/HAIR_beard.HAIR_beard_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 0.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_SheJing_02A/Materials/MF_GYCY_She03_Hair_Head.MF_GYCY_She03_Hair_Head"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Hit_Weapon_1",
+        "FirstRadius": 5.0,
+        "NextBoneName": "Hit_Weapon_6",
+        "NextRadius": 5.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_l",
+        "FirstRadius": 20.0,
+        "NextBoneName": "foot_l",
+        "NextRadius": 15.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_r",
+        "FirstRadius": 20.0,
+        "NextBoneName": "foot_r",
+        "NextRadius": 15.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "pelvis",
+        "FirstRadius": 30.0,
+        "NextBoneName": "neck_01",
+        "NextRadius": 15.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_GYCY_She_03",
+  "Label": "SK_GYCY_She_03",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 100601,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 100602,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 100603,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 100604,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 100622,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "S+XBUTTON1"
+    },
+    {
+      "Id": 100609,
+      "CanBreak": true,
+      "Name": "后闪避",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 100621,
+      "CanBreak": true,
+      "Name": "后闪避",
+      "Key": "S+SPACE"
+    },
+    {
+      "Id": 100651,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 100652,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 100653,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 100654,
+      "CanBreak": true,
+      "Name": "咆哮",
+      "Key": ""
+    },
+    {
+      "Id": 100691,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 100692,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": {
+    "Buffers": [
+      1000093
+    ]
+  },
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

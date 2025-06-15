@@ -1,0 +1,165 @@
+{
+  "Name": "虫总兵",
+  "Label": "SK_PSD_jiachongzongbing_02",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": 0,
+  "ZRate": 0,
+  "CoolDownRate": 25,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8227
+  },
+  "Skills": [
+    {
+      "Key": "S+RBUTTON",
+      "Id": 540309,
+      "Name": "慢速砍一刀，再慢速砍出地爆",
+      "CanBreak": true,
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Key": "A+RBUTTON",
+      "Id": 540305,
+      "Name": "慢速砍出地爆",
+      "CanBreak": true,
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 540302,
+      "Name": "突进平A",
+      "CanBreak": true,
+      "Buffs": [
+        1000099,
+        1000095
+      ]
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 540301,
+      "Name": "右手平a由上往下砍一刀",
+      "CanBreak": true,
+      "Step": 1,
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 540303,
+      "Name": "右手平a由下往上砍一刀",
+      "CanBreak": true,
+      "Step": 2,
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 540304,
+      "Name": "斜着砍",
+      "Step": 3,
+      "CanBreak": true,
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Key": "S+LBUTTON",
+      "Id": 540313,
+      "Name": "斜着砍，砍出剑气",
+      "CanBreak": true,
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Key": "XBUTTON1",
+      "Id": 10127,
+      "Name": "精魄技能",
+      "CanBreak": true
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 540332,
+      "Name": "突进砍出精魄气爆",
+      "Buffs": [
+        1000095,
+        1000099
+      ]
+    },
+    {
+      "Key": "S+XBUTTON2",
+      "Id": 540310,
+      "Name": "突进之后，前摇+精魄技能",
+      "CanBreak": true,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "A+X",
+      "Id": 540318,
+      "Name": "前摇+喷射远程子弹",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "Z",
+      "Id": 540331,
+      "Name": "上前几步，前摇+释放精魄气爆",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "X",
+      "Id": 540316,
+      "Name": "前摇跑很久+慢刀砍一下",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "C",
+      "Id": 540309,
+      "Name": "慢速砍一刀，再慢速砍出地爆",
+      "CanBreak": true,
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Key": "A+C",
+      "Id": 540305,
+      "Name": "慢速砍出地爆",
+      "CanBreak": true,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "V",
+      "Id": 540310,
+      "Name": "突进之后，前摇+精魄技能",
+      "CanBreak": true,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "SPACE",
+      "Id": 540323,
+      "Name": "后退"
+    }
+  ]
+}

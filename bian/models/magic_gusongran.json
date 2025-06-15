@@ -1,0 +1,329 @@
+{
+  "Name": "骨悚然",
+  "Label": "SK_HFM_MaGu_01A",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": -400,
+  "ZRate": 100,
+  "CoolDownRate": 50,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8165
+  },
+  "Skills": [
+    {
+      "Key": "LBUTTON",
+      "Id": 202920,
+      "Name": "刺一下",
+      "CanBreak": true,
+      "Buffs": [
+        1000098
+      ]
+    },
+    {
+      "Id": 202907,
+      "CanBreak": true,
+      "Name": "横扫平A一下",
+      "Key": "S+LBUTTON"
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 202921,
+      "Name": "挡住",
+      "Buffs": [
+        1000104,
+        229,
+        413407
+      ]
+    },
+    {
+      "Id": 202942,
+      "CanBreak": true,
+      "Name": "用盾牌扫一下",
+      "Key": "S+RBUTTON"
+    },
+    {
+      "Key": "S+XBUTTON2",
+      "Id": 202915,
+      "CanBreak": true,
+      "Name": "突进冲撞,疑似投技",
+      "Buffs": [
+        229,
+        413407
+      ]
+    },
+    {
+      "Id": 202911,
+      "CanBreak": true,
+      "Name": "冲撞",
+      "Key": "XBUTTON2",
+      "Step": 1,
+      "Buffs": [
+        229,
+        413407
+      ]
+    },
+    {
+      "Id": 202901,
+      "CanBreak": true,
+      "Name": "突进冲撞,然后叉子碰一下盾牌",
+      "Key": "XBUTTON2",
+      "Step": 2,
+      "Buffs": [
+        229,
+        413407
+      ]
+    },
+    {
+      "Key": "XBUTTON1",
+      "Id": 11365,
+      "Name": "精魄技能",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202952,
+      "CanBreak": true,
+      "Name": "突进，跳起砸",
+      "Key": "S+XBUTTON1"
+    },
+    {
+      "Key": "SPACE",
+      "Id": 202914,
+      "Name": "拿着盾牌前冲 可以控制方向移动配合右键挺好"
+    },
+    {
+      "Key": "Z",
+      "Id": 202951,
+      "Name": "拿着盾牌冲",
+      "Buffs": [
+        1000104,
+        229,
+        413407
+      ]
+    },
+    {
+      "Key": "X",
+      "Id": 202916,
+      "Name": "慢速抡一下，慢速刺一下，慢速跳起砸"
+    },
+    {
+      "Id": 202904,
+      "CanBreak": true,
+      "Name": "往前走一步，再横扫",
+      "Key": "C",
+      "Buffs": [
+        1000098
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 202017,
+      "Name": "一发",
+      "CanBreak": true,
+      "Buffs": [
+        1000098
+      ]
+    },
+    {
+      "Id": 202908,
+      "CanBreak": true,
+      "Name": "重复技能  挡住 202921",
+      "Key": ""
+    },
+    {
+      "Key": "",
+      "Id": 202962,
+      "Name": "摆架势"
+    },
+    {
+      "Key": "",
+      "Id": 416116,
+      "Name": "基本招式 和 202916差不多"
+    },
+    {
+      "Id": 202902,
+      "CanBreak": true,
+      "Name": "龟速捅两下",
+      "Key": ""
+    },
+    {
+      "Id": 202903,
+      "CanBreak": true,
+      "Name": "前摇，突进龟速捅1下",
+      "Key": ""
+    },
+    {
+      "Id": 202909,
+      "CanBreak": true,
+      "Name": "盾牌放在后面，慢速捅一下",
+      "Key": ""
+    },
+    {
+      "Id": 202910,
+      "CanBreak": true,
+      "Name": "横扫一下，然后慢速斜着扫一下",
+      "Key": ""
+    },
+    {
+      "Id": 202912,
+      "CanBreak": true,
+      "Name": "捅一下，平A",
+      "Key": ""
+    },
+    {
+      "Id": 202917,
+      "CanBreak": true,
+      "Name": "类似 202901 突进冲撞,然后叉子碰一下盾牌",
+      "Key": ""
+    },
+    {
+      "Id": 202922,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202931,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202932,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202933,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202934,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202941,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202943,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202944,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202945,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202946,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202947,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202948,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202953,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202960,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202961,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202963,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202971,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202972,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202973,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202974,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202975,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202976,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202977,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202978,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    }
+  ]
+}

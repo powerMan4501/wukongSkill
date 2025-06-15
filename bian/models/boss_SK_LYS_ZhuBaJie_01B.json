@@ -1,0 +1,586 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/PSD/Unit_PSD_ZhuBaJie_Summon.Unit_PSD_ZhuBaJie_Summon_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 120.0,
+    "CapsuleRadius": 70.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_ZhuBaJie_01B/Mesh/SK_LYS_ZhuBaJie_01B.SK_LYS_ZhuBaJie_01B",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/NPC/NPC_ZhuBaJie01B/ABP_NPC_ZhuBaJie01B.ABP_NPC_ZhuBaJie01B_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_ZhuBaJie_01B/Mesh/PA_LYS_ZhuBaJie_01B.PA_LYS_ZhuBaJie_01B",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/LYS/LYS_ZhuBaJie/LYS_ZhuBaJie_01B_Weapon.LYS_ZhuBaJie_01B_Weapon_C",
+        "SocketName": "weapon_r"
+      }
+    ],
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_ZhuBaJie_01A/Hair/HAIR_headaddon.HAIR_headaddon_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.1,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/LYS/LYS_ZhuBaJie_01A/Materials/M_lys_zhubajie_01a_hair_head.M_lys_zhubajie_01a_hair_head"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_ZhuBaJie_01A/Hair/HAIR_body_chest.HAIR_body_chest_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.1,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.3,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/LYS/LYS_ZhuBaJie_01A/Materials/M_lys_zhubajie_01a_hair_body.M_lys_zhubajie_01a_hair_body"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_ZhuBaJie_01A/Hair/HAIR_head_gs.HAIR_head_gs_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.1,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/LYS/LYS_ZhuBaJie_01A/Materials/M_lys_zhubajie_01a_hair_head.M_lys_zhubajie_01a_hair_head"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "pelvis",
+        "FirstRadius": 30.0,
+        "NextBoneName": "neck_01",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_l",
+        "FirstRadius": 20.0,
+        "NextBoneName": "foot_l",
+        "NextRadius": 15.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_r",
+        "FirstRadius": 20.0,
+        "NextBoneName": "foot_r",
+        "NextRadius": 15.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "lowerarm_l",
+        "FirstRadius": 15.0,
+        "NextBoneName": "hand_l",
+        "NextRadius": 15.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "lowerarm_r",
+        "FirstRadius": 15.0,
+        "NextBoneName": "hand_r",
+        "NextRadius": 15.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "weapon_head_1",
+        "FirstRadius": 20.0,
+        "NextBoneName": "weapon_head_2",
+        "NextRadius": 20.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_LYS_ZhuBaJie_01B",
+  "Label": "SK_LYS_ZhuBaJie_01B",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 509901,
+      "CanBreak": true,
+      "Name": "前摇，撞，一阵连招",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 509902,
+      "CanBreak": true,
+      "Name": "横扫+一阵打",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 509903,
+      "CanBreak": true,
+      "Name": "横扫两次，再喷液体",
+      "Key": ""
+    },
+    {
+      "Id": 509905,
+      "CanBreak": true,
+      "Name": "小前摇，然后疯狂砸",
+      "Key": "S+XBUTTON1"
+    },
+    {
+      "Id": 509904,
+      "CanBreak": true,
+      "Name": "突进，跳起打，再用钉耙撑一下再跳起，旋风斩",
+      "Key": ""
+    },
+    {
+      "Id": 509915,
+      "CanBreak": true,
+      "Name": "突进，跳起打，再用钉耙撑一下再跳起，旋风斩",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 509911,
+      "CanBreak": true,
+      "Name": "幻影突袭：跳起突进打打打",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 509914,
+      "CanBreak": true,
+      "Name": "幻影突袭：跳起突进打打打",
+      "Key": ""
+    },
+    {
+      "Id": 509910,
+      "CanBreak": true,
+      "Name": "跳起突进打打打",
+      "Key": "S+XBUTTON2"
+    },
+    {
+      "Id": 509906,
+      "CanBreak": true,
+      "Name": "大前摇，然后360度旋转很多圈",
+      "Key": ""
+    },
+    {
+      "Id": 509907,
+      "CanBreak": true,
+      "Name": "喷液体",
+      "Key": ""
+    },
+    {
+      "Id": 509909,
+      "CanBreak": true,
+      "Name": "中度前摇，然后长连招",
+      "Key": ""
+    },
+    {
+      "Id": 509912,
+      "CanBreak": true,
+      "Name": "中度前摇，然后各种横扫，似乎可以打很远",
+      "Key": ""
+    },
+    {
+      "Id": 509913,
+      "CanBreak": true,
+      "Name": "中度前摇，然后小横扫两次",
+      "Key": ""
+    },
+    {
+      "Id": 509916,
+      "CanBreak": true,
+      "Name": "前摇，然后慢速横扫好几次",
+      "Key": ""
+    },
+    {
+      "Id": 509920,
+      "CanBreak": true,
+      "Name": "变成黑猪形态，结束后会退出变身变回马喽",
+      "Key": ""
+    },
+    {
+      "Id": 509921,
+      "CanBreak": true,
+      "Name": "没反应",
+      "Key": ""
+    },
+    {
+      "Id": 509922,
+      "CanBreak": true,
+      "Name": "变黑猪",
+      "Key": ""
+    },
+    {
+      "Id": 509923,
+      "CanBreak": true,
+      "Name": "没反应",
+      "Key": ""
+    },
+    {
+      "Id": 509924,
+      "CanBreak": true,
+      "Name": "变黑猪",
+      "Key": ""
+    },
+    {
+      "Id": 509925,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q"
+    },
+    {
+      "Id": 509926,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E"
+    },
+    {
+      "Id": 509927,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R"
+    },
+    {
+      "Id": 509928,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T"
+    },
+    {
+      "Id": 509929,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z"
+    },
+    {
+      "Id": 509930,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X"
+    },
+    {
+      "Id": 509931,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C"
+    },
+    {
+      "Id": 509932,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V"
+    },
+    {
+      "Id": 509933,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509934,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509935,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509936,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509937,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509938,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509939,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509940,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509941,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509942,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509943,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509944,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509945,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509946,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509947,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509951,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509952,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509953,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509954,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509961,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509962,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509963,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509964,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509965,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509970,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509971,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509972,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509973,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509974,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509975,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509976,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509977,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509978,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509979,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509980,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509981,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509982,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509983,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509984,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509985,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509986,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509987,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509988,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509991,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509992,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509993,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509994,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509995,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 509996,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": {
+    "Buffers": [
+      1000095
+    ]
+  },
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

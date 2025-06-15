@@ -1,0 +1,204 @@
+{
+  "Id": 10412,
+  "Name": "狼教头",
+  "Label": "SK_GYCY_Lang_04",
+  "Type": "TRANS",
+  "Asset": "/Game/00Main/Design/Units/Player/Unit_player_gycy_lang.Unit_player_gycy_lang_C",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 10412,
+    "AnimPath": "AM_wukong_trans_to_gycy_lang"
+  },
+  "Skills": [
+    {
+      "Id": 101103,
+      "CanBreak": true,
+      "Name": "前摇，然后扔出武器",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101113,
+      "CanBreak": true,
+      "Name": "换个方向的三连击",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "S+XBUTTON1",
+      "Id": 12024,
+      "Name": "火刃--旋转小风车--侧",
+      "AnimPath": "AM_player_gycy_lang_R1_04_Fire"
+    },
+    {
+      "Key": "XBUTTON1",
+      "Id": 12043,
+      "Name": "火刃--倒立刀--前劈",
+      "AnimPath": "AM_player_gycy_lang_R2_F_Fire"
+    },
+    {
+      "Key": "S+XBUTTON2",
+      "Id": 12044,
+      "Name": "火刃--旋转大风车--上跳",
+      "AnimPath": "AM_player_gycy_lang_R2_B_Fire"
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 12045,
+      "Name": "火刃--旋转大风车--横",
+      "AnimPath": "AM_player_gycy_lang_R2_S_Fire"
+    },
+    {
+      "Id": 101101,
+      "CanBreak": true,
+      "Name": "前摇长，打打打",
+      "Key": "Z",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101102,
+      "CanBreak": true,
+      "Name": "前摇，挥舞两下火刃",
+      "Key": "X",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101104,
+      "CanBreak": true,
+      "Name": "前摇，4连滚地砸击",
+      "Key": "C",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101109,
+      "CanBreak": true,
+      "Name": "前摇，三连击",
+      "Key": "V",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101105,
+      "CanBreak": true,
+      "Name": "弱化版的平A",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101106,
+      "CanBreak": true,
+      "Name": "弱化版的右键",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101107,
+      "CanBreak": true,
+      "Name": "弱化版的12045旋转大风车",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101108,
+      "CanBreak": true,
+      "Name": "弱化版的 旋转大风车--上跳",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101114,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101115,
+      "CanBreak": true,
+      "Name": "后撤",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101125,
+      "CanBreak": true,
+      "Name": "后撤",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101151,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101152,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101153,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101154,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 101191,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    }
+  ]
+}

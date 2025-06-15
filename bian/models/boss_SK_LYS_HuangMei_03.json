@@ -1,0 +1,641 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/LYS/Unit_LYS_HuangMei_03.Unit_LYS_HuangMei_03_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 300.0,
+    "CapsuleRadius": 125.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_HuangMei_03/Mesh/SK_LYS_HuangMei_03.SK_LYS_HuangMei_03",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_HuangMei_03/ABP_LYS_HuangMei_03.ABP_LYS_HuangMei_03_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_HuangMei_03/Mesh/PA_LYS_HuangMei_03.PA_LYS_HuangMei_03",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_HuangMei/Hair/Huangmei_03/HAIR_beardupper_short.HAIR_beardupper_short_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147451928"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_HuangMei/Hair/Huangmei_03/HAIR_beardmiddle_short.HAIR_beardmiddle_short_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147451927"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_HuangMei/Hair/Huangmei_03/HAIR_beardlower_short.HAIR_beardlower_short_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147451926"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_HuangMei/Hair/Huangmei_03/HAIR_eyebrow_long_gs.HAIR_eyebrow_long_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147451925"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_HuangMei/Hair/Huangmei_03/HAIR_beardupper_long_gs.HAIR_beardupper_long_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147451924"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_HuangMei/Hair/Huangmei_03/HAIR_beardmiddle_long_gs.HAIR_beardmiddle_long_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147451923"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_HuangMei/Hair/Huangmei_03/HAIR_beardlower_long_gs.HAIR_beardlower_long_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147451922"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_HuangMei/Hair/Huangmei_03/HAIR_eyebrow_short.HAIR_eyebrow_short_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147451921"
+      }
+    ],
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Name": "复战黄眉",
+  "Label": "SK_LYS_HuangMei_03",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "XRate": -400.0,
+  "ZRate": 200.0,
+  "Skills": [
+    {
+      "Id": 380001,
+      "CanBreak": true,
+      "Name": "平A，挥舞一下锤子",
+      "Key": "LBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 380002,
+      "CanBreak": true,
+      "Name": "平A，挥舞一下锤子",
+      "Key": "LBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 380003,
+      "CanBreak": true,
+      "Name": "平A，挥舞一下锤子",
+      "Key": "LBUTTON",
+      "Step": 3,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 380010,
+      "CanBreak": true,
+      "Name": "平A，360挥舞一下锤子",
+      "Key": "LBUTTON",
+      "Step": 4,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 380011,
+      "CanBreak": true,
+      "Name": "平A，360挥舞一下锤子",
+      "Key": "LBUTTON",
+      "Step": 5,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 380012,
+      "CanBreak": true,
+      "Name": "平A，360挥舞一下锤子",
+      "Key": "LBUTTON",
+      "Step": 6,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 380025,
+      "CanBreak": true,
+      "Name": "360连续大横扫好几次",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 380018,
+      "CanBreak": true,
+      "Name": "举起锤子，画地为牢，召唤雷球打击敌人",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Id": 380013,
+      "CanBreak": false,
+      "Name": "举起锤子，然后锤子带雷光往前垂直劈下来",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Id": 380016,
+      "CanBreak": true,
+      "Name": "举起锤子召唤很多落雷，索敌",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Id": 380022,
+      "CanBreak": false,
+      "Name": "身体爆发大量雷电，伤害高",
+      "Key": "S+XBUTTON1",
+      "Step": 1,
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Id": 380023,
+      "CanBreak": false,
+      "Name": "身体爆发大量雷电，伤害高",
+      "Key": "S+XBUTTON1",
+      "Step": 2,
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Id": 380005,
+      "CanBreak": true,
+      "Name": "锤子砸地面",
+      "Key": "RBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 380006,
+      "CanBreak": true,
+      "Name": "锤子砸地面",
+      "Key": "RBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 380009,
+      "CanBreak": true,
+      "Name": "锤地面发射雷光",
+      "Key": "",
+      "Step": 3
+    },
+    {
+      "Id": 380019,
+      "CanBreak": false,
+      "Name": "蓄力锤子砸地，砸的地方召唤很多落雷",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 380032,
+      "CanBreak": false,
+      "Name": "隐身，闪现到敌人旁边",
+      "Key": "SPACE",
+      "Buffers": [
+        105111
+      ]
+    },
+    {
+      "Id": 380021,
+      "CanBreak": false,
+      "Name": "咆哮对周围发出震荡波",
+      "Key": "Z",
+      "Step": 1,
+      "Buffers": [
+        105111,
+        1000095
+      ]
+    },
+    {
+      "Id": 380033,
+      "CanBreak": false,
+      "Name": "咆哮对周围发出震荡波",
+      "Key": "Z",
+      "Step": 2,
+      "Buffers": [
+        105111,
+        1000095
+      ]
+    },
+    {
+      "Id": 380004,
+      "CanBreak": true,
+      "Name": "往前捅一锤子，触发小电爆",
+      "Key": ""
+    },
+    {
+      "Id": 380007,
+      "CanBreak": true,
+      "Name": "脚踩地面",
+      "Key": ""
+    },
+    {
+      "Id": 380008,
+      "CanBreak": true,
+      "Name": "脚踩地面",
+      "Key": ""
+    },
+    {
+      "Id": 380014,
+      "CanBreak": false,
+      "Name": "慢速踩地面",
+      "Key": ""
+    },
+    {
+      "Id": 380015,
+      "CanBreak": false,
+      "Name": "挥舞两下锤子，发射两道地面雷光",
+      "Key": ""
+    },
+    {
+      "Id": 380017,
+      "CanBreak": false,
+      "Name": "以身体为中心召唤很多雷电，但似乎伤害是个谜",
+      "Key": ""
+    },
+    {
+      "Id": 380020,
+      "CanBreak": false,
+      "Name": "使用人种袋",
+      "Key": ""
+    },
+    {
+      "Id": 380030,
+      "CanBreak": false,
+      "Name": "由下往上用力挥舞锤子一下",
+      "Key": ""
+    },
+    {
+      "Id": 380031,
+      "CanBreak": false,
+      "Name": "锤子捅地面，以身体中心发出雷暴",
+      "Key": ""
+    },
+    {
+      "Id": 380034,
+      "CanBreak": false,
+      "Name": "咆哮",
+      "Key": ""
+    },
+    {
+      "Id": 380038,
+      "CanBreak": false,
+      "Name": "咆哮",
+      "Key": ""
+    },
+    {
+      "Id": 380041,
+      "CanBreak": false,
+      "Name": "画地为牢",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 380042,
+      "CanBreak": false,
+      "Name": "金身",
+      "Key": ""
+    },
+    {
+      "Id": 380043,
+      "CanBreak": false,
+      "Name": "隐身砸出扩散波",
+      "Key": "X",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Id": 380044,
+      "CanBreak": false,
+      "Name": "咆哮进入金身",
+      "Key": ""
+    },
+    {
+      "Id": 380048,
+      "CanBreak": false,
+      "Name": "原地画地为牢",
+      "Key": ""
+    },
+    {
+      "Id": 380051,
+      "CanBreak": false,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 380052,
+      "CanBreak": false,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 380053,
+      "CanBreak": false,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 380054,
+      "CanBreak": false,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 380055,
+      "CanBreak": false,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 380056,
+      "CanBreak": false,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 380057,
+      "CanBreak": false,
+      "Name": "原地隐身消失然后复原",
+      "Key": ""
+    },
+    {
+      "Id": 380058,
+      "CanBreak": false,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 380059,
+      "CanBreak": false,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 380060,
+      "CanBreak": false,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 380061,
+      "CanBreak": false,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 380062,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380063,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380064,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380065,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380066,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380067,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380072,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380073,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380080,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380081,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380082,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380083,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380084,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380085,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380086,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380087,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380088,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380089,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380090,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380091,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380092,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380093,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380094,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380095,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380096,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 380099,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

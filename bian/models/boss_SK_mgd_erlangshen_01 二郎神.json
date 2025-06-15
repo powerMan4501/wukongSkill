@@ -1,0 +1,359 @@
+{
+  "TamerPath": "/Game/00Main/Design/Units/MGD/UNIT_mgd_erlangshen_01.UNIT_mgd_erlangshen_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 350.0,
+    "CapsuleRadius": 80.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_erlangshen_01/Mesh/SK_mgd_erlangshen_01.SK_mgd_erlangshen_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_erlangshen_01/ABP_mgd_erlangshen_01.ABP_mgd_erlangshen_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_erlangshen_01/Mesh/PA_mgd_erlangshen_01.PA_mgd_erlangshen_01",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_erlangshen_01/Hair/HAIR_face_long_gs_TFX.HAIR_face_long_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/MGD/MGD_erlangshen_01/Materials/M_mgd_erlangshen_01_main_hair.M_mgd_erlangshen_01_main_hair"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_erlangshen_01/Hair/HAIR_face_short_gs_TFX.HAIR_face_short_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/MGD/MGD_erlangshen_01/Materials/M_mgd_erlangshen_01_main_hair.M_mgd_erlangshen_01_main_hair"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_erlangshen_01/Hair/HAIR_shoulder_baseshort_TFX.HAIR_shoulder_baseshort_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/MGD/MGD_erlangshen_01/Materials/M_mgd_erlangshen_01_main_hair.M_mgd_erlangshen_01_main_hair"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_erlangshen_01/Hair/HAIR_shoulder_middle_gs_TFX.HAIR_shoulder_middle_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/MGD/MGD_erlangshen_01/Materials/M_mgd_erlangshen_01_main_hair.M_mgd_erlangshen_01_main_hair"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_erlangshen_01/Hair/HAIR_waist_long_gs_TFX.HAIR_waist_long_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/MGD/MGD_erlangshen_01/Materials/M_mgd_erlangshen_01_waist_mask_battleunit.M_mgd_erlangshen_01_waist_mask_battleunit"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_erlangshen_01/Hair/HAIR_waist_short_TFX.HAIR_waist_short_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/MGD/MGD_erlangshen_01/Materials/M_mgd_erlangshen_01_waist_mask_battleunit.M_mgd_erlangshen_01_waist_mask_battleunit"
+      }
+    ],
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 102
+  },
+  "Name": "二郎神-法天象地",
+  "Label": "SK_mgd_erlangshen_01",
+  "Type": "BOSS",
+  "CoolDownRate": 30,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 199901,
+      "CanBreak": true,
+      "Name": "慢速横扫两次",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199903,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199902,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199904,
+      "CanBreak": true,
+      "Name": "刀横扫，接着斧子横扫",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000105,
+        1000115
+      ]
+    },
+    {
+      "Id": 199905,
+      "CanBreak": true,
+      "Name": "前摇，喷火电",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000095,
+        1000115
+      ]
+    },
+    {
+      "Id": 199909,
+      "CanBreak": true,
+      "Name": "鞭甩",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000115
+      ]
+    },
+    {
+      "Id": 199919,
+      "CanBreak": true,
+      "Name": "电光石火",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199906,
+      "CanBreak": true,
+      "Name": "赶山鞭",
+      "Key": "Q",
+      "Buffs": [
+        1000095,
+        1000115
+      ]
+    },
+    {
+      "Id": 199907,
+      "CanBreak": true,
+      "Name": "大刀杀到一式",
+      "Key": "E",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199908,
+      "CanBreak": true,
+      "Name": "大刀杀到二式",
+      "Key": "R",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199910,
+      "CanBreak": true,
+      "Name": "大刀杀到三式",
+      "Key": "T",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199962,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199944,
+      "CanBreak": true,
+      "Name": "银弹金弓一连",
+      "Key": "A+X",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199945,
+      "CanBreak": true,
+      "Name": "银弹金弓二连",
+      "Key": "A+X",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199951,
+      "CanBreak": true,
+      "Name": "转向",
+      "Key": "S+E",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199988,
+      "CanBreak": true,
+      "Name": "火斩斧劈",
+      "Key": "A+Q",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199957,
+      "CanBreak": true,
+      "Name": "鞭抽天眼",
+      "Key": "A+E",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199926,
+      "CanBreak": true,
+      "Name": "开山重斧",
+      "Key": "A+Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199918,
+      "CanBreak": true,
+      "Name": "火刀电斧",
+      "Key": "A+C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199970,
+      "CanBreak": true,
+      "Name": "天眼",
+      "Key": "S+Q",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199979,
+      "CanBreak": true,
+      "Name": "刀劈",
+      "Key": "S+Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199960,
+      "CanBreak": true,
+      "Name": "大刀杀刀",
+      "Key": "S+X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199961,
+      "CanBreak": true,
+      "Name": "雷火",
+      "Key": "A+T",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199966,
+      "CanBreak": true,
+      "Name": "三法宝齐出",
+      "Key": "S+C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199974,
+      "CanBreak": true,
+      "Name": "鞭抽",
+      "Key": "A+E",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199982,
+      "CanBreak": true,
+      "Name": "奔跑",
+      "Key": "SPACE",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 199987,
+      "CanBreak": true,
+      "Name": "",
+      "Key": "S+R",
+      "Buffs": [
+        1000095
+      ]
+    }
+  ],
+  "DisableDepthOfField": false,
+  "XRate": -800,
+  "ZRate": 200
+}

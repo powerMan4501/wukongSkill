@@ -1,0 +1,734 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/MGD/Unit_mgd_jsds.Unit_mgd_jsds_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 190.0,
+    "CapsuleRadius": 80.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_JSDS/Meshes/SK_mgd_jsds.SK_mgd_jsds",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_JSDS/ABP_MGD_JSDS.ABP_MGD_JSDS_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_JSDS/Meshes/PA_mgd_jsds_01.PA_mgd_jsds_01",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "pelvis",
+        "FirstRadius": 30.0,
+        "NextBoneName": "neck_01",
+        "NextRadius": 35.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "weapon_Index_05",
+        "FirstRadius": 8.0,
+        "NextBoneName": "weapon_Index_10",
+        "NextRadius": 8.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_r",
+        "FirstRadius": 20.0,
+        "NextBoneName": "foot_r",
+        "NextRadius": 17.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_l",
+        "FirstRadius": 20.0,
+        "NextBoneName": "foot_l",
+        "NextRadius": 17.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 7001,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Name": "SK_mgd_jsds",
+  "Label": "SK_mgd_jsds",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": -400.0,
+  "ZRate": 200.0,
+  "Skills": [
+    {
+      "Id": 700103,
+      "CanBreak": false,
+      "Name": "顺时针横扫一下 AM_mgd_jsds_atk_01_01_01",
+      "Key": "LBUTTON",
+      "Step": 1
+    },
+    {
+      "Id": 700102,
+      "CanBreak": false,
+      "Name": "逆时针横扫一下 AM_mgd_jsds_atk_01_01",
+      "Key": "LBUTTON",
+      "Step": 2
+    },
+    {
+      "Id": 700118,
+      "CanBreak": false,
+      "Name": "横扫 AM_mgd_jsds_atk_08_01",
+      "Key": "LBUTTON",
+      "Step": 3
+    },
+    {
+      "Id": 700121,
+      "CanBreak": false,
+      "Name": "捅一下然后顺时针逆时针各横扫一次 AM_mgd_jsds_atk_08_02",
+      "Key": "LBUTTON",
+      "Step": 4
+    },
+    {
+      "Id": 700108,
+      "CanBreak": false,
+      "Name": "江海翻 AM_mgd_jsds_atk_02_01_02",
+      "Key": "LBUTTON",
+      "Step": 5
+    },
+    {
+      "Id": 700134,
+      "CanBreak": false,
+      "Name": "横扫，跳起空中踢腿落地再横扫",
+      "Key": "A+LBUTTON"
+    },
+    {
+      "Id": 700145,
+      "CanBreak": false,
+      "Name": "捅好几下，然后大风车",
+      "Key": "C+LBUTTON"
+    },
+    {
+      "Id": 700155,
+      "CanBreak": false,
+      "Name": "突进飞到敌人跟前，连续几个超级重击 AM_mgd_jsds_atk_jdy_05",
+      "Key": "S+LBUTTON"
+    },
+    {
+      "Id": 700101,
+      "CanBreak": false,
+      "Name": "大圣模式，小横扫一下再捅一棍子",
+      "Key": "",
+      "Step": 1
+    },
+    {
+      "Id": 700123,
+      "CanBreak": false,
+      "Name": "顺时针逆时针各横扫一次,但没特效",
+      "Key": ""
+    },
+    {
+      "Id": 700107,
+      "CanBreak": false,
+      "Name": "棍子往前旋一下，然后飞起砸一下 AM_mgd_jsds_atk_02_01_01",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 700106,
+      "CanBreak": false,
+      "Name": "棍子旋一下，然后飞起砸一下",
+      "Key": "A+RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700116,
+      "CanBreak": false,
+      "Name": "跳起来，4蓄劈棍 AM_mgd_jsds_atk_07",
+      "Key": "C+RBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700154,
+      "CanBreak": false,
+      "Name": "飞起踩一下再重击劈棍 AM_mgd_jsds_atk_jdy_04",
+      "Key": "C+RBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700146,
+      "CanBreak": false,
+      "Name": "飞起，召唤分身一起重击劈棍 AM_mgd_jsds_atk_07_cm",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700153,
+      "CanBreak": false,
+      "Name": "突进飞到敌人跟前，棍子变粗大砸 AM_mgd_jsds_atk_jdy_03",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 700104,
+      "CanBreak": false,
+      "Name": "一边前进一边棍花。然后砸一下 AM_mgd_jsds_atk_02",
+      "Key": "A+XBUTTON2",
+      "Step": 1,
+      "Buffs": [
+        1000168
+      ]
+    },
+    {
+      "Id": 700119,
+      "CanBreak": false,
+      "Name": "前进棍花然后棍花重击 AM_mgd_jsds_atk_08_01_01",
+      "Key": "A+XBUTTON2",
+      "Step": 2,
+      "Buffs": [
+        1000168
+      ]
+    },
+    {
+      "Id": 700140,
+      "CanBreak": false,
+      "Name": "类似大风车 AM_mgd_jsds_atk_04_01_01",
+      "Key": "S+XBUTTON2"
+    },
+    {
+      "Id": 700141,
+      "CanBreak": false,
+      "Name": "飞起来落到敌人面前连续两个横扫 AM_mgd_jsds_atk_07a",
+      "Key": "C+XBUTTON2"
+    },
+    {
+      "Id": 700128,
+      "CanBreak": false,
+      "Name": "追击横扫连招1",
+      "Key": "",
+      "Step": 1
+    },
+    {
+      "Id": 700126,
+      "CanBreak": false,
+      "Name": "很重的横扫",
+      "Key": "",
+      "Step": 2
+    },
+    {
+      "Id": 700137,
+      "CanBreak": false,
+      "Name": "冲上去横扫",
+      "Key": "XBUTTON1",
+      "Step": 1
+    },
+    {
+      "Id": 700129,
+      "CanBreak": false,
+      "Name": "追击横扫连招2",
+      "Key": "XBUTTON1",
+      "Step": 2
+    },
+    {
+      "Id": 700130,
+      "CanBreak": false,
+      "Name": "追击横扫连招3",
+      "Key": "",
+      "Step": 3
+    },
+    {
+      "Id": 700131,
+      "CanBreak": false,
+      "Name": "追击横扫连招终结",
+      "Key": "",
+      "Step": 4
+    },
+    {
+      "Id": 700109,
+      "CanBreak": false,
+      "Name": "飞棍，丢棍子",
+      "Key": "A+XBUTTON1",
+      "Buffs": [
+        1000098,
+        1000841
+      ]
+    },
+    {
+      "Id": 700115,
+      "CanBreak": false,
+      "Name": "大风车 AM_mgd_jsds_atk_06",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700143,
+      "CanBreak": false,
+      "Name": "大风车",
+      "Key": "C+XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700162,
+      "CanBreak": false,
+      "Name": "往后闪避",
+      "Key": "SPACE",
+      "Buffs": [
+        105111,
+        1000069
+      ]
+    },
+    {
+      "Id": 700105,
+      "CanBreak": false,
+      "Name": "拍棍子，没啥卵用 AM_mgd_jsds_atk_02_01",
+      "Key": ""
+    },
+    {
+      "Id": 700110,
+      "CanBreak": false,
+      "Name": "小扫一下，没啥用的样子",
+      "Key": ""
+    },
+    {
+      "Id": 700112,
+      "CanBreak": false,
+      "Name": "捅一下，旋棍子再捅一下，距离太近没啥用",
+      "Key": ""
+    },
+    {
+      "Id": 700113,
+      "CanBreak": false,
+      "Name": "捅一下，然后扮猴子，没啥用",
+      "Key": ""
+    },
+    {
+      "Id": 700148,
+      "CanBreak": false,
+      "Name": "横扫，跳起空中踢腿落地再横扫，类似700134,威力很大",
+      "Key": "Z",
+    },
+    {
+      "Id": 700114,
+      "CanBreak": false,
+      "Name": "立棍很高，然后下来砸一下",
+      "Key": "S+X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700192,
+      "CanBreak": false,
+      "Name": "定身术",
+      "Key": "A+Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700111,
+      "CanBreak": false,
+      "Name": "往前远处扔出棍子，然后飞过去拿棍子砸击，类似大风车，帅，但耗时太长",
+      "Key": "NUMPAD7",
+      "Step": 1
+    },
+    {
+      "Id": 700135,
+      "CanBreak": false,
+      "Name": "类似大风车的招，威力很大",
+      "Key": "NUMPAD7",
+      "Step": 2
+    },
+    {
+      "Id": 700181,
+      "CanBreak": false,
+      "Name": "投技，吸过来打打打，待定是否配招",
+      "Key": "NUMPAD5",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700182,
+      "CanBreak": false,
+      "Name": "冲上去，投技，把人捅到远处，但似乎右bug",
+      "Key": "NUMPAD6",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700197,
+      "CanBreak": false,
+      "Name": "在原地留下一个完美闪避的假身，真身迅速后退，但会导致视角索自己",
+      "Key": "NUMPAD4",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700199,
+      "CanBreak": false,
+      "Name": "小横扫，戳棍，横扫",
+      "Key": "NUMPAD0",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700189,
+      "CanBreak": false,
+      "Name": "召唤一次性的分身",
+      "Key": "NUMPAD1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700185,
+      "CanBreak": false,
+      "Name": "突进上去投技，然后飞到空中砸金箍棒，但有问题",
+      "Key": "NUMPAD2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700193,
+      "CanBreak": false,
+      "Name": "铜头",
+      "Key": "NUMPAD3",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700132,
+      "CanBreak": false,
+      "Name": "立棍，然后各种发射飞棍  AM_mgd_jsds_atk_15",
+      "Key": "X",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700156,
+      "CanBreak": false,
+      "Name": "立棍，然后各种发射飞棍 AM_mgd_jsds_atk_15a",
+      "Key": "X",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 700149,
+      "CanBreak": false,
+      "Name": "飞棍，把棍子踢出去打击远程敌人",
+      "Key": "A+C",
+      "Buffs": [
+        1000109,
+        1000108
+      ]
+    },
+    {
+      "Id": 700142,
+      "CanBreak": false,
+      "Name": "大安身法",
+      "Key": "S+Z"
+    },
+    {
+      "Id": 700158,
+      "CanBreak": false,
+      "Name": "释放定海神针 AM_mgd_jsds_atk_21",
+      "Key": "V"
+    },
+    {
+      "Id": 700120,
+      "CanBreak": false,
+      "Name": "突刺，中距离 AM_mgd_jsds_atk_08_01_02",
+      "Key": "C"
+    },
+    {
+      "Id": 700125,
+      "CanBreak": false,
+      "Name": "很重的有突进的蓄力戳棍，但速度比700120慢一点 AM_mgd_jsds_atk_10_01",
+      "Key": "A+X",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 700124,
+      "CanBreak": false,
+      "Name": "残躯安身法",
+      "Key": ""
+    },
+    {
+      "Id": 700117,
+      "CanBreak": false,
+      "Name": "斜着扫放水气",
+      "Key": ""
+    },
+    {
+      "Id": 700188,
+      "CanBreak": false,
+      "Name": "召唤一次性的分身",
+      "Key": "A+V"
+    },
+    {
+      "Id": 700122,
+      "CanBreak": false,
+      "Name": "大圣模式，强力小横扫一下再捅一棍子",
+      "Key": "S+C"
+    },
+    {
+      "Id": 700127,
+      "CanBreak": false,
+      "Name": "搅阵",
+      "Key": ""
+    },
+    {
+      "Id": 700133,
+      "CanBreak": false,
+      "Name": "后翻然后打打打，实用性一般",
+      "Key": ""
+    },
+    {
+      "Id": 700136,
+      "CanBreak": false,
+      "Name": "和 追击横扫连招终结700131一样 ",
+      "Key": ""
+    },
+    {
+      "Id": 700138,
+      "CanBreak": false,
+      "Name": "意义不明",
+      "Key": ""
+    },
+    {
+      "Id": 700139,
+      "CanBreak": false,
+      "Name": "意义不明",
+      "Key": ""
+    },
+    {
+      "Id": 700144,
+      "CanBreak": false,
+      "Name": "横扫，跳起空中踢腿落地再横扫，类似700134",
+      "Key": ""
+    },
+    {
+      "Id": 700147,
+      "CanBreak": false,
+      "Name": "横扫+横扫，跟追击横扫有点像",
+      "Key": ""
+    },
+    {
+      "Id": 700150,
+      "CanBreak": false,
+      "Name": "坐在地上，意义不明",
+      "Key": ""
+    },
+    {
+      "Id": 700151,
+      "CanBreak": false,
+      "Name": "后空翻飞到空中",
+      "Key": ""
+    },
+    {
+      "Id": 700152,
+      "CanBreak": false,
+      "Name": "飞来飞去横扫，有点晕 AM_mgd_jsds_atk_jdy_02",
+      "Key": ""
+    },
+    {
+      "Id": 700159,
+      "CanBreak": false,
+      "Name": "隐身",
+      "Key": ""
+    },
+    {
+      "Id": 700160,
+      "CanBreak": false,
+      "Name": "隐身，但会导致怪刷新",
+      "Key": ""
+    },
+    {
+      "Id": 700161,
+      "CanBreak": false,
+      "Name": "往前闪避",
+      "Key": ""
+    },
+    {
+      "Id": 700163,
+      "CanBreak": false,
+      "Name": "往右边闪避",
+      "Key": ""
+    },
+    {
+      "Id": 700164,
+      "CanBreak": false,
+      "Name": "往右边闪避",
+      "Key": ""
+    },
+    {
+      "Id": 700165,
+      "CanBreak": false,
+      "Name": "挑衅，你过来啊",
+      "Key": ""
+    },
+    {
+      "Id": 700166,
+      "CanBreak": false,
+      "Name": "吃桃子回血",
+      "Key": ""
+    },
+    {
+      "Id": 700167,
+      "CanBreak": false,
+      "Name": "挑衅，你过来啊",
+      "Key": ""
+    },
+    {
+      "Id": 700169,
+      "CanBreak": false,
+      "Name": "往后翻滚",
+      "Key": ""
+    },
+    {
+      "Id": 700170,
+      "CanBreak": false,
+      "Name": "往后翻滚",
+      "Key": ""
+    },
+    {
+      "Id": 700171,
+      "CanBreak": false,
+      "Name": "往后翻滚",
+      "Key": ""
+    },
+    {
+      "Id": 700172,
+      "CanBreak": false,
+      "Name": "往后翻滚",
+      "Key": ""
+    },
+    {
+      "Id": 700173,
+      "CanBreak": false,
+      "Name": "往左翻滚",
+      "Key": ""
+    },
+    {
+      "Id": 700174,
+      "CanBreak": false,
+      "Name": "往右翻滚",
+      "Key": ""
+    },
+    {
+      "Id": 700175,
+      "CanBreak": false,
+      "Name": "翻滚",
+      "Key": ""
+    },
+    {
+      "Id": 700176,
+      "CanBreak": false,
+      "Name": "翻滚",
+      "Key": ""
+    },
+    {
+      "Id": 700177,
+      "CanBreak": false,
+      "Name": "翻滚",
+      "Key": ""
+    },
+    {
+      "Id": 700178,
+      "CanBreak": false,
+      "Name": "翻滚",
+      "Key": ""
+    },
+    {
+      "Id": 700179,
+      "CanBreak": false,
+      "Name": "挑衅",
+      "Key": ""
+    },
+    {
+      "Id": 700180,
+      "CanBreak": false,
+      "Name": "扔出棍子，小飞棍",
+      "Key": ""
+    },
+    {
+      "Id": 700183,
+      "CanBreak": false,
+      "Name": "金箍棒变大，意义不明",
+      "Key": ""
+    },
+    {
+      "Id": 700184,
+      "CanBreak": false,
+      "Name": "后翻滚",
+      "Key": ""
+    },
+    {
+      "Id": 700186,
+      "CanBreak": false,
+      "Name": "抢葫芦喝",
+      "Key": ""
+    },
+    {
+      "Id": 700187,
+      "CanBreak": false,
+      "Name": "后翻滚",
+      "Key": ""
+    },
+    {
+      "Id": 700190,
+      "CanBreak": false,
+      "Name": "后翻滚，吹毫毛，但没有分身出现",
+      "Key": ""
+    },
+    {
+      "Id": 700191,
+      "CanBreak": false,
+      "Name": "吹毫毛，但没有分身出现",
+      "Key": ""
+    },
+    {
+      "Id": 700194,
+      "CanBreak": false,
+      "Name": "小后退一步",
+      "Key": ""
+    },
+    {
+      "Id": 700195,
+      "CanBreak": false,
+      "Name": "小后退一步",
+      "Key": ""
+    },
+    {
+      "Id": 700196,
+      "CanBreak": false,
+      "Name": "在原地留下一个被定身的假身，好几秒之后真身出来打一棍子，但会导致页面刷新",
+      "Key": ""
+    },
+    {
+      "Id": 700198,
+      "CanBreak": false,
+      "Name": "摆架势",
+      "Key": ""
+    }
+  ]
+}

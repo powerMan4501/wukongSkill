@@ -1,0 +1,193 @@
+{
+  "Name": "泥塑金刚 8374",
+  "Label": "SK_LYS_NuMuJingGang_01",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "CoolDownRate": 45,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8374
+  },
+  "Skills": [
+    {
+      "Id": 300401,
+      "CanBreak": true,
+      "Name": "一边转身一边踩地喷火",
+      "Key": "LBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 10174,
+      "CanBreak": true,
+      "Name": "精魄技能，一边转身一边踩地喷火",
+      "Key": "LBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 300421,
+      "CanBreak": true,
+      "Name": "类似精魄技能，但释放的是激光",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 300402,
+      "CanBreak": true,
+      "Name": "前摇，然后胸口喷火",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 300422,
+      "CanBreak": true,
+      "Name": "前摇，然后胸口释放金色激光",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 300403,
+      "CanBreak": true,
+      "Name": "突进砸人+喷火",
+      "Key": "XBUTTON2",
+      "Step": 1,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 300406,
+      "CanBreak": true,
+      "Name": "突进砸人+喷火",
+      "Key": "XBUTTON2",
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 300423,
+      "CanBreak": true,
+      "Name": "类似突进技能，但释放的是激光",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 300405,
+      "CanBreak": true,
+      "Name": "横扫两下，后退一步，喷射远程火",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 300425,
+      "CanBreak": true,
+      "Name": "横扫两下，后退一步，喷射远程激光",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 300424,
+      "CanBreak": true,
+      "Name": "转身横扫，再转身横扫",
+      "Key": "Z",
+      "Step": 1,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 300404,
+      "CanBreak": true,
+      "Name": "转身横扫，再转身横扫",
+      "Key": "Z",
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 300430,
+      "CanBreak": true,
+      "Name": "后撤",
+      "Key": "SPACE",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 300431,
+      "CanBreak": true,
+      "Name": "往右撤",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 300432,
+      "CanBreak": true,
+      "Name": "往左撤",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 300451,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 300452,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 300453,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 300454,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    }
+  ]
+}

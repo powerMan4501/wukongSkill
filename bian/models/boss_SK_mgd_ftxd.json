@@ -1,0 +1,832 @@
+{
+  "Id": 10424,
+  "Name": "猿",
+  "Label": "SK_mgd_ftxd",
+  "Type": "TRANS",
+  "Asset": "/Game/00Main/Design/Units/Player/Unit_player_mgd_yuan.Unit_player_mgd_yuan_C",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 1,
+  "CoolDownRate": 50,
+  "TransDone": {
+    "Buffers": [
+      24072,
+      24082,
+      1000068,
+      96009,
+      92245,
+      1000097,
+      1000896
+    ]
+  },
+  "EnterSkill": {
+    "Id": 10424,
+    "AnimPath": "AM_Wukong_trans_to_mgd_yuan"
+  },
+  "Skills": [
+    {
+      "Id": 2401082,
+      "CanBreak": false,
+      "Name": "TTTB",
+      "Key": "NUMPAD0"
+    },
+    {
+      "Id": 740121,
+      "CanBreak": false,
+      "Name": "原地连续锤地面，慢速砸出地爆",
+      "Key": "NUMPAD1",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 740154,
+      "CanBreak": false,
+      "Name": "直接跳砸冰暴 AM_mgd_yuan_z_03",
+      "Key": "NUMPAD2",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 740151,
+      "CanBreak": false,
+      "Name": "瞬发跳砸火圈和地面碎片，还行",
+      "Key": "NUMPAD1"
+    },
+    {
+      "Id": 740121,
+      "CanBreak": false,
+      "Name": "原地连续锤地面，慢速砸出地爆",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 740109,
+      "CanBreak": false,
+      "Name": "跳起来追击砸地面，冻住对手 AM_mgd_yuan_z_03",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 740122,
+      "CanBreak": false,
+      "Name": "往前跳砸一次火圈 AM_mgd_yuan_z_03fire",
+      "Key": "C+XBUTTON1",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 740120,
+      "CanBreak": false,
+      "Name": "视角会锁定在自己，跳起来砸一次超大范围火圈",
+      "Key": "C+XBUTTON1",
+      "Step": 2
+    },
+    {
+      "Key": "",
+      "Id": 740106,
+      "Name": "连续捶打地面，最后慢速造成冰暴",
+      "CanBreak": false,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 740160,
+      "CanBreak": false,
+      "Name": "连续快速捶打地面爆出碎片 AM_mgd_yuan_atk_09_P",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 740162,
+      "CanBreak": false,
+      "Name": "连续快速砸地冰暴 AM_mgd_yuan_atk_09",
+      "Key": "S+RBUTTON"
+    },
+    {
+      "Id": 740143,
+      "CanBreak": false,
+      "Name": "原地慢速砸出火圈",
+      "Key": "",
+      "Buffs": [
+        1000089
+      ]
+    },
+    {
+      "Id": 740111,
+      "CanBreak": false,
+      "Name": "打地面，慢速造成冰爆",
+      "Key": "",
+      "Step": 1,
+      "Buffs": [
+        105111,
+        1000094
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 740141,
+      "Name": "四联捶地+全屏冰霜",
+      "Step": 2,
+      "Buffs": [
+        105111,
+        1000094
+      ]
+    },
+    {
+      "Id": 740126,
+      "CanBreak": false,
+      "Name": "后空翻之后，再敌人脚下生成冰面，中招就冻住",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 740161,
+      "CanBreak": false,
+      "Name": "一次又一次砸地面火圈 AM_mgd_yuan_atk_04",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 740148,
+      "CanBreak": false,
+      "Name": "原地砸出一个又一个震动圈，凑合 AM_mgd_yuan_atk_04_P",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 740128,
+      "CanBreak": false,
+      "Name": "后空翻之后，再敌人脚下生成冰面，中招就冻住",
+      "Key": "",
+      "Step": 2,
+      "Buffs": [
+        105111,
+        1000094
+      ]
+    },
+    {
+      "Id": 740127,
+      "CanBreak": false,
+      "Name": "后空翻之后，再敌人脚下生成火，中招就火焚",
+      "Key": "",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 740149,
+      "CanBreak": false,
+      "Name": "后空翻之后在敌人脚下生成石头爆炸，凑合",
+      "Key": "",
+      "Step": 2
+    },
+    {
+      "Id": 740132,
+      "CanBreak": false,
+      "Name": "铜头铁臂",
+      "Key": ""
+    },
+    {
+      "Id": 740129,
+      "CanBreak": false,
+      "Name": "连续快速砸敌人，最后一次爆发火圈 AM_mgd_yuan_atk_09_fire_C",
+      "Key": "S+LBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 740160,
+      "CanBreak": false,
+      "Name": "连续快速捶打地面爆出碎片 AM_mgd_yuan_atk_09_P",
+      "Key": "S+LBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 740122,
+      "CanBreak": false,
+      "Name": "往前跳砸一次火圈",
+      "Key": "A+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 24016,
+      "Step": 1,
+      "Name": "肘击",
+      "CanBreak": true
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 24018,
+      "Step": 2,
+      "Name": "突进平A",
+      "CanBreak": true
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 24019,
+      "CanBreak": false,
+      "Step": 3,
+      "Name": "jxsq聚形攻击"
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 24115,
+      "CanBreak": false,
+      "Step": 4,
+      "Name": "jxsq聚形攻击"
+    },
+    {
+      "Key": "Z",
+      "Id": 24234,
+      "Name": "四级大范围地面火炎",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "S+Z",
+      "Id": 25234,
+      "Name": "法天相地-火爆",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "X",
+      "Id": 25157,
+      "Name": "核爆冰拳",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Key": "S+X",
+      "Id": 25134,
+      "Name": "核爆冰拳",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 740117,
+      "CanBreak": false,
+      "Name": "连续三次，扔远程冰球",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Key": "A+X",
+      "Id": 25257,
+      "Name": "法天相地-核爆火拳",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "C",
+      "Id": 25130,
+      "Name": "法天相地-冰拳Q0",
+      "Step": 1,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Key": "C",
+      "Id": 25131,
+      "Name": "法天相地-冰拳Q1",
+      "Step": 2,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Key": "C",
+      "Id": 25132,
+      "Name": "法天相地-冰拳Q2",
+      "Step": 3,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Key": "C",
+      "Id": 25133,
+      "Name": "法天相地-冰拳Q3",
+      "Step": 4,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Key": "C",
+      "Id": 25134,
+      "Name": "法天相地-冰拳Q4",
+      "Step": 5,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Key": "V",
+      "Id": 25230,
+      "Step": 1,
+      "Name": "法天相地-火Q0",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "V",
+      "Id": 25231,
+      "Step": 2,
+      "Name": "法天相地-火Q1",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "V",
+      "Id": 25232,
+      "Step": 3,
+      "Name": "法天相地-火Q1",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "V",
+      "Id": 25233,
+      "Step": 4,
+      "Name": "法天相地-火Q1",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "V",
+      "Id": 25234,
+      "Step": 5,
+      "Name": "法天相地-火Q4",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 740101,
+      "CanBreak": false,
+      "Name": "右勾拳",
+      "Key": ""
+    },
+    {
+      "Id": 740102,
+      "CanBreak": false,
+      "Name": "左勾拳",
+      "Key": ""
+    },
+    {
+      "Id": 740103,
+      "CanBreak": false,
+      "Name": "右勾拳",
+      "Key": ""
+    },
+    {
+      "Id": 740104,
+      "CanBreak": false,
+      "Name": "左勾拳",
+      "Key": ""
+    },
+    {
+      "Id": 740105,
+      "CanBreak": false,
+      "Name": "跳砸，但视角会乱，不建议使用",
+      "Key": ""
+    },
+    {
+      "Id": 740107,
+      "CanBreak": false,
+      "Name": "右拳重打地面",
+      "Key": ""
+    },
+    {
+      "Id": 740108,
+      "CanBreak": false,
+      "Name": "左拳重打地面",
+      "Key": ""
+    },
+    {
+      "Id": 740110,
+      "CanBreak": false,
+      "Name": "跳砸，但视角会乱",
+      "Key": ""
+    },
+    {
+      "Id": 740112,
+      "CanBreak": false,
+      "Name": "平A左勾拳",
+      "Key": ""
+    },
+    {
+      "Id": 740113,
+      "CanBreak": false,
+      "Name": "平A右勾拳",
+      "Key": ""
+    },
+    {
+      "Id": 740114,
+      "CanBreak": false,
+      "Name": "慢速踩一脚，然后往前跳一步吼，用处不大",
+      "Key": ""
+    },
+    {
+      "Id": 740115,
+      "CanBreak": false,
+      "Name": "慢速左右勾拳再拍掌，太慢",
+      "Key": ""
+    },
+    {
+      "Id": 740116,
+      "CanBreak": false,
+      "Name": "往前走两步跳砸，但视角会乱",
+      "Key": ""
+    },
+    {
+      "Id": 740118,
+      "CanBreak": false,
+      "Name": "原地锤地面4次全屏火圈，但视角会锁定在自己身上不过不影响",
+      "Key": ""
+    },
+    {
+      "Id": 740119,
+      "CanBreak": false,
+      "Name": "视角会锁定在自己，连续锤地面好几次冰暴",
+      "Key": ""
+    },
+    {
+      "Id": 740123,
+      "CanBreak": false,
+      "Name": "视角锁自己",
+      "Key": ""
+    },
+    {
+      "Id": 740124,
+      "CanBreak": false,
+      "Name": "原地慢速地爆好几次，很慢",
+      "Key": ""
+    },
+    {
+      "Id": 740125,
+      "CanBreak": false,
+      "Name": "视角锁自己",
+      "Key": ""
+    },
+    {
+      "Id": 740134,
+      "CanBreak": false,
+      "Name": "后空翻之后，在敌人脚下生成冰",
+      "Key": ""
+    },
+    {
+      "Id": 740135,
+      "CanBreak": false,
+      "Name": "后空翻之后，在敌人脚下生成火",
+      "Key": ""
+    },
+    {
+      "Id": 740136,
+      "CanBreak": false,
+      "Name": "打坐",
+      "Key": ""
+    },
+    {
+      "Id": 740137,
+      "CanBreak": false,
+      "Name": "从地上跳起来，（二阶段出场）",
+      "Key": ""
+    },
+    {
+      "Id": 740138,
+      "CanBreak": false,
+      "Name": "被弹开",
+      "Key": ""
+    },
+    {
+      "Id": 740139,
+      "CanBreak": false,
+      "Name": "后空翻之后再敌人脚下生成火",
+      "Key": ""
+    },
+    {
+      "Id": 740140,
+      "CanBreak": false,
+      "Name": "视角锁自己砸敌人冰",
+      "Key": ""
+    },
+    {
+      "Id": 740141,
+      "CanBreak": false,
+      "Name": "原地慢速砸出冰圈",
+      "Key": ""
+    },
+    {
+      "Id": 740142,
+      "CanBreak": false,
+      "Name": "视角锁自己",
+      "Key": ""
+    },
+    {
+      "Id": 740144,
+      "CanBreak": false,
+      "Name": "慢速左右勾拳然后拍掌",
+      "Key": ""
+    },
+    {
+      "Id": 740145,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 740146,
+      "CanBreak": false,
+      "Name": "原地慢速砸出石头爆炸，凑合",
+      "Key": ""
+    },
+    {
+      "Id": 740147,
+      "CanBreak": false,
+      "Name": "丢冰火球，但最后一个会锁定自己身上 AM_mgd_yuan_atk_03_P",
+      "Key": "A+C"
+    },
+    {
+      "Id": 740150,
+      "CanBreak": false,
+      "Name": "跑两步跳砸出地面碎片",
+      "Key": ""
+    },
+    {
+      "Id": 740152,
+      "CanBreak": false,
+      "Name": "视角锁自己跳砸",
+      "Key": ""
+    },
+    {
+      "Id": 740153,
+      "CanBreak": false,
+      "Name": "原地慢速大火圈，凑合",
+      "Key": ""
+    },
+    {
+      "Id": 740155,
+      "CanBreak": false,
+      "Name": "视角自己砸冰暴",
+      "Key": ""
+    },
+    {
+      "Id": 740156,
+      "CanBreak": false,
+      "Name": "慢速大范围冰暴，凑合",
+      "Key": ""
+    },
+    {
+      "Id": 740157,
+      "CanBreak": false,
+      "Name": "瞬发跳砸碎片",
+      "Key": ""
+    },
+    {
+      "Id": 740158,
+      "CanBreak": false,
+      "Name": "瞬发跳砸碎片",
+      "Key": ""
+    },
+    {
+      "Id": 740159,
+      "CanBreak": false,
+      "Name": "原地慢速爆发地爆碎片",
+      "Key": ""
+    },
+    {
+      "Id": 740163,
+      "CanBreak": false,
+      "Name": "冰假身 AM_mgd_yuan_fashu_01C",
+      "Key": "S+SPACE"
+    },
+    {
+      "Id": 740164,
+      "CanBreak": false,
+      "Name": "火假身 AM_mgd_yuan_fashu_01fireC",
+      "Key": ""
+    },
+    {
+      "Id": 740131,
+      "CanBreak": false,
+      "Name": "原地留下火假身，然后视角锁自己砸 AM_mgd_yuan_fashu_01fire",
+      "Key": ""
+    },
+    {
+      "Id": 740130,
+      "CanBreak": false,
+      "Name": "原地留下冰假身，然后视角锁自己砸 AM_mgd_yuan_fashu_01",
+      "Key": ""
+    },
+    {
+      "Id": 740133,
+      "CanBreak": false,
+      "Name": "召唤分身，但这个分身会导致锁定视角 AM_mgd_yuan_fashu_03",
+      "Key": "Q"
+    },
+    {
+      "Id": 740165,
+      "CanBreak": false,
+      "Name": "变成石头逃跑，但似乎有问题",
+      "Key": ""
+    },
+    {
+      "Id": 740166,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 740167,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 740168,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 740169,
+      "CanBreak": false,
+      "Name": "不好",
+      "Key": ""
+    },
+    {
+      "Id": 740171,
+      "CanBreak": false,
+      "Name": "不好",
+      "Key": ""
+    },
+    {
+      "Id": 740172,
+      "CanBreak": false,
+      "Name": "不好",
+      "Key": ""
+    },
+    {
+      "Id": 740173,
+      "CanBreak": false,
+      "Name": "不好",
+      "Key": ""
+    },
+    {
+      "Id": 740174,
+      "CanBreak": false,
+      "Name": "类似翻滚移动，前翻滚",
+      "Key": "C+SPACE",
+    },
+    {
+      "Id": 740175,
+      "CanBreak": false,
+      "Name": "类似翻滚移动,后翻滚",
+      "Key": "",
+      "Buffs": [
+        1000175
+      ]
+    },
+    {
+      "Id": 740176,
+      "CanBreak": false,
+      "Name": "类似翻滚移动,左翻滚",
+      "Key": "A+SPACE",
+      "Buffs": [
+        1000176
+      ]
+    },
+    {
+      "Id": 740177,
+      "CanBreak": false,
+      "Name": "类似翻滚移动",
+      "Key": ""
+    },
+    {
+      "Id": 740178,
+      "CanBreak": false,
+      "Name": "类似翻滚移动",
+      "Key": ""
+    },
+    {
+      "Id": 740179,
+      "CanBreak": false,
+      "Name": "类似翻滚移动",
+      "Key": ""
+    },
+    {
+      "Id": 740180,
+      "CanBreak": false,
+      "Name": "类似翻滚移动",
+      "Key": ""
+    },
+    {
+      "Id": 740181,
+      "CanBreak": false,
+      "Name": "类似翻滚移动",
+      "Key": ""
+    },
+    {
+      "Id": 740182,
+      "CanBreak": false,
+      "Name": "类似翻滚移动",
+      "Key": ""
+    },
+    {
+      "Id": 740183,
+      "CanBreak": false,
+      "Name": "类似翻滚移动",
+      "Key": ""
+    },
+    {
+      "Id": 740184,
+      "CanBreak": false,
+      "Name": "类似翻滚移动",
+      "Key": ""
+    },
+    {
+      "Id": 740185,
+      "CanBreak": false,
+      "Name": "类似翻滚移动",
+      "Key": ""
+    },
+    {
+      "Id": 740186,
+      "CanBreak": false,
+      "Name": "视角自己",
+      "Key": ""
+    },
+    {
+      "Id": 740187,
+      "CanBreak": false,
+      "Name": "视角自己",
+      "Key": ""
+    },
+    {
+      "Id": 740188,
+      "CanBreak": false,
+      "Name": "视角自己",
+      "Key": ""
+    },
+    {
+      "Id": 740189,
+      "CanBreak": false,
+      "Name": "视角自己",
+      "Key": ""
+    },
+    {
+      "Id": 740190,
+      "CanBreak": false,
+      "Name": "移动",
+      "Key": ""
+    },
+    {
+      "Id": 740191,
+      "CanBreak": false,
+      "Name": "移动",
+      "Key": ""
+    }
+  ]
+}

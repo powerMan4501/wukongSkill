@@ -1,0 +1,20 @@
+{
+  "Name": "一个石头",
+  "Label": "SK_Stone",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": 0,
+  "ZRate": 0,
+  "CoolDownRate": 50,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8036,
+    "IsMimicry": true
+  },
+  "Skills": [
+    
+  ]
+}

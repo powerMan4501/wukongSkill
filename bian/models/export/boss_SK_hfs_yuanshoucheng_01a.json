@@ -1,0 +1,124 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/LYS/Unit_lys_yaoseng_03a_zaobi.Unit_lys_yaoseng_03a_zaobi_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 150.0,
+    "CapsuleRadius": 80.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/NPC/HFS_yuanshoucheng_01a/Mesh/SK_hfs_yuanshoucheng_01a.SK_hfs_yuanshoucheng_01a",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/NPC/LYS_yaoseng/ABP_lys_yaoseng_03a.ABP_lys_yaoseng_03a_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/NPC/HFS_yuanshoucheng_01a/Mesh/PA_hfs_yuanshoucheng_01a.PA_hfs_yuanshoucheng_01a",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/HFS_yuanshoucheng_01a/Hair/HAIR_eyebrow.HAIR_eyebrow_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HFS_yuanshoucheng_01a/Materials/M_YSC_Eyebrow.M_YSC_Eyebrow"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/HFS_yuanshoucheng_01a/Hair/HAIR_beard_upper.HAIR_beard_upper_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HFS_yuanshoucheng_01a/Materials/M_YSC_Eyebrow.M_YSC_Eyebrow"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/HFS_yuanshoucheng_01a/Hair/HAIR_beard_lower_long_gs.HAIR_beard_lower_long_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HFS_yuanshoucheng_01a/Materials/M_YSC_Beard.M_YSC_Beard"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/HFS_yuanshoucheng_01a/Hair/HAIR_beard_lower_baseshort.HAIR_beard_lower_baseshort_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HFS_yuanshoucheng_01a/Materials/M_YSC_Eyebrow.M_YSC_Eyebrow"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/HFS_yuanshoucheng_01a/Hair/HAIR_beard_long_gs.HAIR_beard_long_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HFS_yuanshoucheng_01a/Materials/M_YSC_Eyebrow.M_YSC_Eyebrow"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/HFS_yuanshoucheng_01a/Hair/HAIR_suifa_gs.HAIR_suifa_gs_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HFS_yuanshoucheng_01a/Materials/M_YSC_Eyebrow.M_YSC_Eyebrow"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/HFS_yuanshoucheng_01a/Hair/HAIR_main.HAIR_main_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HFS_yuanshoucheng_01a/Materials/M_YSC_Hair.M_YSC_Hair"
+      }
+    ],
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_hfs_yuanshoucheng_01a",
+  "Label": "SK_hfs_yuanshoucheng_01a",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "PlayTimeRate": 1.0,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

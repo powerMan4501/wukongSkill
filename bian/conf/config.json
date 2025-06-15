@@ -1,0 +1,744 @@
+{
+    "Desction": "KeyMapping中定义的为键位映射",
+    "TransDone": {
+        "Buffers": [
+            1112,
+            1000068,
+            92245
+        ]
+    },
+    "Debug": {
+        "LOG": [
+            "[PATCH]SmartCastSkill",
+            "[PATCH]CastSkillWithAnimMontageMultiCast",
+            "[PATCH]BuffAdd_Multicast",
+            "[PATCH]RequestSpawnAProjectile"
+        ]
+    },
+    "KeyMapping": [
+        {
+            "Key": "F1",
+            "Type": "TRANS",
+            "Label": "SK_mgd_ftxd",
+            "Name": "变身为【猿】"
+        },
+        {
+            "Key": "S+F1",
+            "Type": "MAGIC",
+            "Label": "SK_GYCY_YanJIanXi_01_base",
+            "Name": "变身为【复战幽魂】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_GYCY_Seng_02",
+            "Name": "变身为【不白徒弟-双刀僧】"
+        },
+        {
+            "Key": "A+F1",
+            "Type": "MAGIC",
+            "Label": "SK_LYS_SengMian",
+            "Name": "变身为【不白】"
+        },
+        {
+            "Key": "C+F1",
+            "Type": "BOSS",
+            "Name": "变身为【虎先锋】",
+            "Label": "SK_HFM_Hu_Stone_01"
+        },
+        {
+            "Key": "F2",
+            "Type": "BOSS",
+            "Label": "SK_mgd_jsds",
+            "Name": "变身为【大圣残躯】"
+        },
+        {
+            "Key": "S+F2",
+            "Type": "BOSS",
+            "Label": "SK_HYS_HongHaiEr_02A",
+            "Name": "变身为【夜叉王】"
+        },
+        {
+            "Key": "C+F2",
+            "Type": "BOSS",
+            "Label": "SK_LYS_KJLWoman",
+            "Name": "变身为【复战KJL】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Name": "变身为【雷长老】",
+            "Label": "SK_lys_leizhanglao_01"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Name": "变身为【火长老】",
+            "Label": "SK_HYS_XiZhangLao_01"
+        },
+        {
+            "Key": "A+F2",
+            "Type": "BOSS",
+            "Label": "SK_lys_mangseng_02a",
+            "Name": "变身为【盲僧】"
+        },
+        {
+            "Key": "F3",
+            "Type": "TRANS",
+            "Label": "SK_LYS_XueHou",
+            "Name": "变身为猴】"
+        },
+        {
+            "Key": "C+F3",
+            "Type": "BOSS",
+            "Label": "SK_HFM_HuanWuZhe_01a",
+            "Name": "变身为【小西天风火轮】"
+        },
+        {
+            "Key": "A+F3",
+            "Type": "MAGIC",
+            "Label": "SK_HFM_MaGu_01A",
+            "Name": "变身为【骨耸然】"
+        },
+        {
+            "Key": "S+F3",
+            "Type": "MAGIC",
+            "Label": "SK_GYCY_She_01",
+            "Name": "变身为【广谋】"
+        },
+        {
+            "Key": "F4",
+            "Type": "TRANS",
+            "Label": "SK_LYS_Dage",
+            "Name": "变身为【龙】"
+        },
+        {
+            "Key": "C+F4",
+            "Type": "BOSS",
+            "Label": "SK_psd_daoshi_02",
+            "Name": "变身为【糜道人】"
+        },
+        {
+            "Key": "S+F4",
+            "Type": "TRANS",
+            "Label": "SK_GYCY_Lang_04",
+            "Name": "变身为【广智】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_LYS_HuangMei_03",
+            "Name": "变身为【复战黄眉】"
+        },
+        {
+            "Key": "F5",
+            "Type": "BOSS",
+            "Label": "SK_HFM_HFDS_01a",
+            "Name": "变身为【黄风大圣】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_szlc_shujing_01",
+            "Name": "变身为【树精】"
+        },
+        {
+            "Key": "",
+            "Type": "TRANS",
+            "Label": "SK_HFM_MaMian_01a",
+            "Name": "变身为【马】"
+        },
+        {
+            "Key": "S+F5",
+            "Type": "BOSS",
+            "Label": "SK_LuoChaGui_01",
+            "Name": "变身为【鬼王】"
+        },
+        {
+            "Key": "",
+            "Type": "MAGIC",
+            "Label": "hys_shixianfeng",
+            "Name": "变身为【石先锋】"
+        },
+        {
+            "Key": "F6",
+            "Type": "MAGIC",
+            "Label": "SK_GYCY_Wa_01",
+            "Name": "变身为【青蛙，波波浪浪，石蛙 火蛙】"
+        },
+        {
+            "Key": "S+F6",
+            "Type": "MAGIC",
+            "Label": "SK_LYS_ChiFaGui_01A",
+            "Name": "变身为【赤发鬼】"
+        },
+        {
+            "Key": "C+F6",
+            "Type": "BOSS",
+            "Label": "SK_GYCY_Xiong_02",
+            "Name": "变身为【黑熊精二阶段】"
+        },
+        {
+            "Key": "F7",
+            "Type": "TRANS",
+            "Label": "SK_HFM_Hu_Wind_01",
+            "Name": "变身为【寅虎】"
+        },
+        {
+            "Key": "S+F7",
+            "Type": "MAGIC",
+            "Label": "SK_psd_xiezijing_01a",
+            "Name": "变身为【蝎子精】"
+        },
+        {
+            "Key": "F8",
+            "Type": "MAGIC",
+            "Label": "SK_HYS_NiaoZui",
+            "Name": "变身为【鳖宝】"
+        },
+        {
+            "Key": "S+F8",
+            "Type": "MAGIC",
+            "Label": "SK_LYS_TuiSeng_02",
+            "Name": "变身为【不能】"
+        },
+        {
+            "Key": "F9",
+            "Type": "BOSS",
+            "Label": "SK_szlc_tanglang01",
+            "Name": "变身为【螳螂】"
+        },
+        {
+            "Key": "S+F9",
+            "Type": "MAGIC",
+            "Label": "SK_LYS_Mo3",
+            "Name": "变身为【无量蝠】"
+        },
+        {
+            "Key": "A+F9",
+            "Type": "MAGIC",
+            "Label": "SK_PSD_jiachongzongbing_02",
+            "Name": "变身为【虫总兵】"
+        },
+        {
+            "Key": "",
+            "Type": "MAGIC",
+            "Label": "SK_HYS_HMS_01",
+            "Name": "变身为【石父】"
+        },
+        {
+            "Key": "F10",
+            "Type": "BOSS",
+            "Label": "SK_lys_chuilong_01a",
+            "Name": "变身为【小骊龙】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_GYCY_BaiYi_04",
+            "Name": "变身为【白衣秀士3阶段】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_HYS_HongHaiEr_01A",
+            "Name": "变身为【红孩儿】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_PSD_WuLong",
+            "Name": "变身为【八手道人】"
+        },
+        {
+            "Key": "S+F10",
+            "Type": "MAGIC",
+            "Label": "SK_LYS_NuMuJingGang_01",
+            "Name": "变身为【金刚】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_GYCY_Lang_07",
+            "Name": "变身为【狼校尉】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_szlc_yingzuilu_01",
+            "Name": "变身为【步云鹿一阶段】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_bhl_gushoufsq_01",
+            "Name": "变身为【晖月魔君】"
+        },
+        {
+            "Key": "C+F10",
+            "Type": "TRANS",
+            "Label": "SK_LYS_FSYS",
+            "Name": "变身为【海上僧】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_hys_shanzhen_01",
+            "Name": "变身为【火焰山石头人】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_szlc_xiniu_01",
+            "Name": "变身为【金甲犀】"
+        },
+        {
+            "Key": "A+F10",
+            "Type": "MAGIC",
+            "Label": "SK_PSD_ZhuSun_03A",
+            "Name": "变身为【金甲犀】"
+        },
+        {
+            "Key": "F11",
+            "Type": "BOSS",
+            "Label": "SK_HYS_Niumo",
+            "Name": "变身为【牛哥】"
+        },
+        {
+            "Key": "S+F11",
+            "Type": "MAGIC",
+            "Label": "SK_lys_baitouweng_01",
+            "Name": "变身为【隼居士】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_mgd_erlangshen_01",
+            "Name": "变身为【二郎神-法天象地】"
+        },
+        {
+            "Key": "C+F11",
+            "Type": "MAGIC",
+            "Label": "SK_hfm_bashanhu_01",
+            "Name": "变身为【疯虎】"
+        },
+        {
+            "Key": "A+F11",
+            "Type": "TRANS",
+            "Label": "SK_HFM_ShuangTouShu_01a",
+            "Name": "变身为【双头鼠】"
+        },
+        {
+            "Key": "A+F12",
+            "Type": "MAGIC",
+            "Label": "SK_HFM_ShuNuShou_01b",
+            "Name": "变身为【鼠弩手】"
+        },
+        {
+            "Key": "",
+            "Type": "MAGIC",
+            "Label": "SK_HFM_FuZiShu",
+            "Name": "变身为【沙二郎】"
+        },
+        {
+            "Key": "A+F12",
+            "Type": "BOSS",
+            "Label": "SK_mgd_tianbing_03",
+            "Name": "变身为【天兵03】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_mgd_tianbing_02",
+            "Name": "变身为【天兵02】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_HYS_TuDiGong_01A",
+            "Name": "变身为【土地公】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_GYCY_BaiYi_03_shang",
+            "Name": "变身为【白衣秀士】"
+        },
+        {
+            "Key": "C+F12",
+            "Type": "MAGIC",
+            "Label": "SK_psd_chong_03",
+            "Name": "变身为【蜻蜓精】"
+        },
+        {
+            "Key": "",
+            "Type": "MAGIC",
+            "Label": "SK_HFM_XunShanGui_01a",
+            "Name": "变身为【巡山鬼】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_mgd_yangjian_01",
+            "Name": "变身为【杨戬】"
+        },
+        {
+            "Key": "S+F12",
+            "Type": "BOSS",
+            "Label": "SK_HGS_TianJiang_01",
+            "Name": "变身为【天将】"
+        },
+        {
+            "Key": "",
+            "Type": "MAGIC",
+            "Label": "SK_LYS_JieDaoSeng",
+            "Name": "变身为【戒刀僧】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_HYS_HongHaiEr_01A",
+            "Name": "变身为【红孩儿】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_hys_yinbinghoumo_01",
+            "Name": "变身为【阴兵猴魔】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_GYCY_Lang_06",
+            "Name": "变身为【狼力士】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_psd_daoshi_01",
+            "Name": "变身为【黄色衣服的道士】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_HYS_Niumo",
+            "Name": "变身为【牛魔】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_HFM_ShiGanDang",
+            "Name": "变身为【石敢当】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_hys_huijingrenou_03",
+            "Name": "变身为【海罗刹】"
+        },
+        {
+            "Key": "",
+            "Type": "TRANS",
+            "Label": "SK_HFM_ShanZhen_01",
+            "Name": "变身为【石头人】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_hys_yinbingniumo_01",
+            "Name": "变身为【阴兵牛魔】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Name": "变身为【精英牛魔】",
+            "Label": "SK_HFM_Niu_01"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_hys_zhanche_01a",
+            "Name": "变身为【战车】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_hys_huolingsha_01",
+            "Name": "变身为【火灵元母】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_LYS_ZhuBaJie_01B",
+            "Name": "变身为【猪八戒】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_lys_mo4",
+            "Name": "变身为【魔将4】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_szlc_wanglingguan_01",
+            "Name": "变身为【王灵官】"
+        },
+        {
+            "Key": "",
+            "Type": "MAGIC",
+            "Label": "SK_HFM_ShanZhen_03",
+            "Name": "变身为【石双双】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_HFM_ShanZhen_02",
+            "Name": "变身为【尖刺石头人】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_LYS_KJLDragon",
+            "Name": "变身为【亢金龙】"
+        },
+        {
+            "Key": "A+E",
+            "Type": "COMMAND",
+            "Label": "ExportAllActors",
+            "Name": "导出当前关卡支持变身的所有BOSS的配置"
+        },
+        {
+            "Key": "J",
+            "Type": "COMMAND",
+            "Label": "SwitchPlayerTeamWithTarget",
+            "Name": "与当前锁定的目标交换阵营（无目标时恢复玩家默认阵营）",
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "D5",
+            "Type": "COMMAND",
+            "Label": "JingDouYun",
+            "Name": "筋斗云",
+            "AlawaysCanCast": false
+        },
+        {
+            "Key": "K",
+            "Type": "COMMAND",
+            "Label": "SyncTeamWithTarget",
+            "Name": "与当前锁定的目标同步阵营",
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "OEM_3",
+            "Type": "COMMAND",
+            "Label": "TransBack",
+            "Name": "一键撤销任何变身",
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "OEM_4",
+            "Type": "COMMAND",
+            "Label": "CastPrevSkill",
+            "Name": "释放上一个技能【DEBUG-遍历所有技能】",
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "OEM_6",
+            "Type": "COMMAND",
+            "Label": "CastNextSkill",
+            "Name": "释放下一个技能【DEBUG-遍历所有技能】",
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "OEM_5",
+            "Type": "COMMAND",
+            "Label": "CastCurrentSkill",
+            "Name": "再次释放当前技能【DEBUG-遍历所有技能】",
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "D7",
+            "Type": "COMMAND",
+            "Label": "MaiDongHuiLai",
+            "Name": "一键恢复状态HP MP 等",
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "O",
+            "Type": "COMMAND",
+            "Label": "ExportTargetTamer",
+            "Name": "导出锁定的BOSS变身配置文件【DEBUG】",
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_mgd_tianbing_01",
+            "Name": "变身为【天兵01鸟头】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_LYS_ZhuBaJie_01B",
+            "Name": "变身为【猪八戒】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_HFM_Hou_01",
+            "Name": "变身为【百目真人】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_hgs_guangmu",
+            "Name": "变身为【广目天王】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_hgs_duowen",
+            "Name": "变身为【多闻天王】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_hgs_chiguo",
+            "Name": "变身为【持广天王】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_GYCY_Lang_05",
+            "Name": "变身为【小狼】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_HYS_KuaiRuFeng_01",
+            "Name": "变身为【快如风】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_hgs_zhengzhang",
+            "Name": "变身为【增长天王】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_GYCY_HFDW_01a",
+            "Name": "变身为【黑风大王一段】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_szlc_xishuai_01",
+            "Name": "变身为【花果山蟋蟀】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_GYCY_Lang_02",
+            "Name": "变身为【狼刺客】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_GYCY_Lang_06",
+            "Name": "变身为【狼力士】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_GYCY_Lang_01A",
+            "Name": "变身为【狼侍卫】"
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Label": "SK_GYCY_Lang_03",
+            "Name": "变身为【狼斥候】"
+        },
+        {
+            "Key": "C+K",
+            "Type": "COMMAND",
+            "Label": "ShowUI",
+            "Name": "打开UI界面",
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "",
+            "Type": "BOSS",
+            "Name": "变身为【石苍苍】",
+            "Label": "SK_HFM_ShanZhen_02"
+        },
+        {
+            "Key": "A+W",
+            "Type": "COMMAND",
+            "Label": "SpawnProjectile",
+            "Name": "测试子弹释放",
+            "Params": [
+                "/Game/00Main/Design/Bullets/MGD/MGD_yangjian_01/DA/SP_mgd_yangjian_01_biglaser_01.SP_mgd_yangjian_01_biglaser_01"
+            ],
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "A+A",
+            "Type": "COMMAND",
+            "Label": "SpawnProjectile",
+            "Name": "测试子弹释放",
+            "Params": [
+                "/Game/00Main/Design/MagicFields/Player/Talent/BGW_player_wukong_lava.BGW_player_wukong_lava"
+            ],
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "A+D",
+            "Type": "COMMAND",
+            "Label": "SpawnProjectile",
+            "Name": "测试子弹释放",
+            "Params": [
+                "/Game/00Main/Design/Bullets/LYS/LYS_HuangMei_03/SP_LYS_HuangMei_03_B1801_Shock.SP_LYS_HuangMei_03_B1801_Shock"
+            ],
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "A+S",
+            "Type": "COMMAND",
+            "Label": "SpawnProjectile",
+            "Name": "测试子弹释放",
+            "Params": [
+                "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/HYS/HYS_HongHaiEr_01A/HHEFS_BaoZha_player.HHEFS_BaoZha_player'"
+            ],
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "",
+            "Type": "COMMAND",
+            "Label": "SpawnProjectile",
+            "Name": "测试子弹释放",
+            "Params": [
+                "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_q5.BGW_Player_Wukong_Atk_q5"
+            ],
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "S+W",
+            "Type": "ADD_BUFF",
+            "BuffId": 1000168,
+            "BuffTime": 500,
+            "Name": "测试添加buff",
+            "AlawaysCanCast": true
+        },
+        {
+            "Key": "S+S",
+            "Type": "ADD_BUFF",
+            "BuffId": 1000174,
+            "BuffTime": 500,
+            "Name": "测试添加buff",
+            "AlawaysCanCast": true
+        },
+    ]
+}

@@ -1,0 +1,49 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/Online/SZLC/Unit_SZLC_XiShuai_01.Unit_SZLC_XiShuai_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 96.0,
+    "CapsuleRadius": 42.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_XiShuai_01/Mesh/SK_szlc_xishuai_01.SK_szlc_xishuai_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_XiShuai_01/ABP_SZLC_XiShuai_01.ABP_SZLC_XiShuai_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_XiShuai_01/Mesh/SK_szlc_xishuai_01_PhysicsAsset.SK_szlc_xishuai_01_PhysicsAsset",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 102
+  },
+  "Name": "SK_szlc_xishuai_01",
+  "Label": "SK_szlc_xishuai_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "PlayTimeRate": 1.0,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "HitCount": 0,
+      "PlayTimeRate": 1.0,
+      "Id": 471101,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

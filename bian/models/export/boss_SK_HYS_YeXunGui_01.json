@@ -1,0 +1,233 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/HYS/Unit_HYS_YeXunGui_01.Unit_HYS_YeXunGui_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 180.0,
+    "CapsuleRadius": 60.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_YeXunGui_01/Mesh/SK_HYS_YeXunGui_01.SK_HYS_YeXunGui_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_YeXunGui_01/ABP_HYS_YeXunGui_01.ABP_HYS_YeXunGui_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_YeXunGui_01/Mesh/PA_HYS_YeXunGui_01.PA_HYS_YeXunGui_01",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/HYS/HYS_YeXunGui_01/HYS_YeXunGui_01_Weapon_R.HYS_YeXunGui_01_Weapon_R_C",
+        "SocketName": "weapon_r"
+      },
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/HYS/HYS_YeXunGui_01/HYS_YeXunGui_01_Weapon_L.HYS_YeXunGui_01_Weapon_L_C",
+        "SocketName": "weapon_l"
+      }
+    ],
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_XunShanGui_01/Hair/HAIR_binjiao.HAIR_binjiao_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_XunShanGui_01/Materials/M_GYCY_XunShanGui_01_hair_head.M_GYCY_XunShanGui_01_hair_head"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_XunShanGui_01/Hair/HAIR_huzi.HAIR_huzi_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_XunShanGui_01/Materials/M_GYCY_XunShanGui_01_hair_head.M_GYCY_XunShanGui_01_hair_head"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_XunShanGui_01/Hair/HAIR_toufa_top.HAIR_toufa_top_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_XunShanGui_01/Materials/M_GYCY_XunShanGui_01_hair_head.M_GYCY_XunShanGui_01_hair_head"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_XunShanGui_01/Hair/HAIR_toufa_back.HAIR_toufa_back_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_XunShanGui_01/Materials/M_GYCY_XunShanGui_01_hair_head.M_GYCY_XunShanGui_01_hair_head"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_l",
+        "FirstRadius": 30.0,
+        "NextBoneName": "ball_l",
+        "NextRadius": 20.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_r",
+        "FirstRadius": 30.0,
+        "NextBoneName": "ball_r",
+        "NextRadius": 20.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Hit_Weapon_1",
+        "FirstRadius": 13.0,
+        "NextBoneName": "Hit_Weapon_3",
+        "NextRadius": 8.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "neck_01",
+        "FirstRadius": 25.0,
+        "NextBoneName": "spine_01",
+        "NextRadius": 35.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 4014,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_HYS_YeXunGui_01",
+  "Label": "SK_HYS_YeXunGui_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 401401,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "Id": 401402,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "Id": 401403,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "Id": 401404,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "Id": 401405,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "Id": 401451,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "Id": 401452,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "Id": 401453,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "Id": 401454,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "Id": 401491,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "Id": 401492,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

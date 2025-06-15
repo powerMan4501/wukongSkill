@@ -1,0 +1,653 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/HFM/UNIT_hfm_hfds_dujiaoxian.UNIT_hfm_hfds_dujiaoxian_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 400.0,
+    "CapsuleRadius": 200.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_HFDS_01a/Mesh/SK_HFM_HFDS_01a.SK_HFM_HFDS_01a",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_HFDS_01a/ABP_hfm_hfds_dujiaoxian.ABP_hfm_hfds_dujiaoxian_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_HFDS_01a/Mesh/SK_HFM_HFDS_01a_Physics.SK_HFM_HFDS_01a_Physics",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuangFengDaSheng/Hair/HAIR_chestarm.HAIR_chestarm_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_HuangFengDaSheng/Materials/M_hfm_huangfengdasheng_mask_upperbody_battleunit.M_hfm_huangfengdasheng_mask_upperbody_battleunit"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuangFengDaSheng/Hair/HAIR_facelong.HAIR_facelong_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_HuangFengDaSheng/Materials/M_hfm_huangfengdasheng_mask_head_battleunit.M_hfm_huangfengdasheng_mask_head_battleunit"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuangFengDaSheng/Hair/HAIR_faceshort.HAIR_faceshort_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_HuangFengDaSheng/Materials/M_hfm_huangfengdasheng_mask_head_battleunit.M_hfm_huangfengdasheng_mask_head_battleunit"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuangFengDaSheng/Hair/HAIR_legsweiba.HAIR_legsweiba_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_HuangFengDaSheng/Materials/M_hfm_huangfengdasheng_mask_lowerbody_battleunit.M_hfm_huangfengdasheng_mask_lowerbody_battleunit"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_l",
+        "FirstRadius": 50.0,
+        "NextBoneName": "ball_01_l",
+        "NextRadius": 50.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_r",
+        "FirstRadius": 50.0,
+        "NextBoneName": "ball_01_r",
+        "NextRadius": 50.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Hit_Spear_1",
+        "FirstRadius": 80.0,
+        "NextBoneName": "Hit_Spear_8",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "neck_02",
+        "FirstRadius": 200.0,
+        "NextBoneName": "spine_01",
+        "NextRadius": 200.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 101
+  },
+  "Name": "打腹板的黄风大圣",
+  "Label": "SK_HFM_HFDS_01a",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 0.8,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": -600.0,
+  "ZRate": 400.0,
+  "Skills": [
+    {
+      "Id": 600827,
+      "CanBreak": true,
+      "Name": "前摇很久，插地爆炸，大范围",
+      "Key": ""
+    },
+    {
+      "Id": 600832,
+      "CanBreak": true,
+      "Name": "前摇很久，插地爆炸",
+      "Key": ""
+    },
+    {
+      "Id": 600821,
+      "CanBreak": true,
+      "Name": "翻滚，但没有伤害",
+      "Key": "",
+      "Buffs": [
+        1000049,
+        1000104
+      ]
+    },
+    {
+      "Id": 600819,
+      "CanBreak": true,
+      "Name": "脚踩，威力大",
+      "Key": ""
+    },
+    {
+      "Id": 201119,
+      "CanBreak": true,
+      "Name": "脚踩，威力大",
+      "Key": ""
+    },
+    {
+      "Id": 201126,
+      "CanBreak": true,
+      "Name": "脚踩出一排叉子",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 201118,
+      "CanBreak": true,
+      "Name": "往地刺一下长出一排叉子刺人，然后上去索敌踩一脚",
+      "Key": "C+LBUTTON"
+    },
+    {
+      "Id": 201128,
+      "CanBreak": true,
+      "Name": "飞过去索敌打人",
+      "Key": "S+LBUTTON"
+    },
+    {
+      "Id": 201103,
+      "CanBreak": true,
+      "Name": "快速打好几下",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 201109,
+      "CanBreak": true,
+      "Name": "横扫，发射剑气，威力很大",
+      "Key": "S+RBUTTON"
+    },
+    {
+      "Id": 201120,
+      "CanBreak": true,
+      "Name": "横扫一下，然后前摇，再上去横扫一下，出现地面叉子",
+      "Key": "C+RBUTTON"
+    },
+    {
+      "Id": 600823,
+      "CanBreak": true,
+      "Name": "挥舞叉子砸击，重击很远，威力太大，秒人",
+      "Key": "A+RBUTTON"
+    },
+    {
+      "Id": 201101,
+      "CanBreak": true,
+      "Name": "挥舞很多次叉子，然后打出地面叉子",
+      "Key": "XBUTTON1",
+      "Step": 1
+    },
+    {
+      "Id": 201112,
+      "CanBreak": true,
+      "Name": "挥舞很多次叉子，然后打出地面叉子",
+      "Key": "XBUTTON1",
+      "Step": 2
+    },
+    {
+      "Id": 201113,
+      "CanBreak": true,
+      "Name": "挥一下手，然后威力惊人地横扫打人",
+      "Key": "S+XBUTTON1"
+    },
+    {
+      "Id": 201129,
+      "CanBreak": true,
+      "Name": "横扫，再垂直扫出叉子",
+      "Key": "C+XBUTTON1"
+    },
+    {
+      "Id": 201123,
+      "CanBreak": true,
+      "Name": "叉子发光，然后砸出一排叉子",
+      "Key": "A+XBUTTON1"
+    },
+    {
+      "Id": 201105,
+      "CanBreak": true,
+      "Name": "发射剑气后突进打人",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 201107,
+      "CanBreak": true,
+      "Name": "往敌人身上丢叉子，然后索敌飞过去打打打",
+      "Key": "S+XBUTTON2"
+    },
+    {
+      "Id": 201122,
+      "CanBreak": true,
+      "Name": "上去一个上勾拳，然后疯狂360度横扫",
+      "Key": "C+XBUTTON2"
+    },
+    {
+      "Id": 201121,
+      "CanBreak": true,
+      "Name": "迅速冲上去翻滚到敌人面前，有伤害",
+      "Key": "A+XBUTTON2"
+    },
+    {
+      "Id": 201106,
+      "CanBreak": true,
+      "Name": "发射很多剑气",
+      "Key": "A+X"
+    },
+    {
+      "Id": 600838,
+      "CanBreak": true,
+      "Name": "往前闪",
+      "Key": "S+SPACE"
+    },
+    {
+      "Id": 201132,
+      "CanBreak": true,
+      "Name": "后闪并释放剑气",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 600830,
+      "CanBreak": true,
+      "Name": "摆架势，可用于取消后摇",
+      "Key": ""
+    },
+    {
+      "Id": 600834,
+      "CanBreak": true,
+      "Name": "后闪",
+      "Key": ""
+    },
+    {
+      "Id": 201102,
+      "CanBreak": true,
+      "Name": "慢速打三下",
+      "Key": ""
+    },
+    {
+      "Id": 201104,
+      "CanBreak": true,
+      "Name": "横扫一下，然后咆哮后摇",
+      "Key": ""
+    },
+    {
+      "Id": 201110,
+      "CanBreak": true,
+      "Name": "原地踩一下，然后各种横扫，持续发出风沙的声音",
+      "Key": ""
+    },
+    {
+      "Id": 201111,
+      "CanBreak": true,
+      "Name": "各种隐身打人，会有视角索定自己的问题",
+      "Key": ""
+    },
+    {
+      "Id": 201114,
+      "CanBreak": true,
+      "Name": "各种隐身打人，会有视角索定自己的问题",
+      "Key": ""
+    },
+    {
+      "Id": 201116,
+      "CanBreak": true,
+      "Name": "各种隐身打人，会有视角索定自己的问题",
+      "Key": ""
+    },
+    {
+      "Id": 201117,
+      "CanBreak": true,
+      "Name": "挥舞一下叉子然后后撤",
+      "Key": ""
+    },
+    {
+      "Id": 201125,
+      "CanBreak": true,
+      "Name": "打侧面",
+      "Key": ""
+    },
+    {
+      "Id": 201108,
+      "CanBreak": true,
+      "Name": "释放神风，但神风持续时间较短，待定",
+      "Key": "Z"
+    },
+    {
+      "Id": 201115,
+      "CanBreak": true,
+      "Name": "召唤神风，神风持续很久",
+      "Key": "X"
+    },
+    {
+      "Id": 201127,
+      "CanBreak": true,
+      "Name": "前摇，插地爆炸，大范围",
+      "Key": "C"
+    },
+    {
+      "Id": 600823,
+      "CanBreak": true,
+      "Name": "挥舞叉子砸击，重击很远，威力太大，秒人",
+      "Key": "V"
+    },
+    {
+      "Id": 201130,
+      "CanBreak": true,
+      "Name": "前摇很久，召唤神风",
+      "Key": ""
+    },
+    {
+      "Id": 201131,
+      "CanBreak": true,
+      "Name": "隐身打人，但有bug",
+      "Key": ""
+    },
+    {
+      "Id": 201133,
+      "CanBreak": true,
+      "Name": "后闪",
+      "Key": ""
+    },
+    {
+      "Id": 201134,
+      "CanBreak": true,
+      "Name": "左闪",
+      "Key": ""
+    },
+    {
+      "Id": 201135,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201136,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201137,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201138,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201139,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201140,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201141,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201142,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201143,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201144,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201149,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201151,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201152,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201153,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201154,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201155,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201156,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201157,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201158,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201161,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201162,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201163,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201164,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201165,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201166,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201167,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201168,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201169,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201171,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201172,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201174,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201176,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201177,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201178,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201180,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201186,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201188,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201189,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201191,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201192,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201193,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201194,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201195,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201196,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201197,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201198,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 201199,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

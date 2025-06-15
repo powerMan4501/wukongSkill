@@ -1,0 +1,347 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/HYS/Unit_hys_yinbinghoumo.Unit_hys_yinbinghoumo_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 96.0,
+    "CapsuleRadius": 42.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_yinbinghoumo_01/Mesh/SK_hys_yinbinghoumo_01.SK_hys_yinbinghoumo_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_XueHou/ABP_LYS_XueHou.ABP_LYS_XueHou_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_yinbinghoumo_01/Mesh/PA_hys_yinbinghoumo_01.PA_hys_yinbinghoumo_01",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/HYS/HYS_yinbinghoumo_01/HYS_yinbinghoumo_01_weapon.HYS_yinbinghoumo_01_weapon_C",
+        "SocketName": "weapon_r"
+      }
+    ],
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_xuehou_02/Hair/HAIR_main_short_gs.HAIR_main_short_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.02,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_xuehou_02/Materials/M_hys_xuehou_02_hair_mask.M_hys_xuehou_02_hair_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_xuehou_02/Hair/HAIR_main_long_gs.HAIR_main_long_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.02,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_xuehou_02/Materials/M_hys_xuehou_02_hair_mask.M_hys_xuehou_02_hair_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_xuehou_02/Hair/HAIR_face.HAIR_face_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.02,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_xuehou_02/Materials/M_hys_xuehou_02_hair_mask.M_hys_xuehou_02_hair_mask"
+      },
+      {
+        "TFXAsset": null,
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.02,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_xuehou_02/Materials/M_hys_xuehou_02_hair_mask.M_hys_xuehou_02_hair_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_xuehou_02/Hair/HAIR_main_baseshort.HAIR_main_baseshort_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.02,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_xuehou_02/Materials/M_hys_xuehou_02_hair_mask.M_hys_xuehou_02_hair_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_xuehou_02/Hair/HAIR_main_middle_gs.HAIR_main_middle_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.02,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_xuehou_02/Materials/M_hys_xuehou_02_hair_mask.M_hys_xuehou_02_hair_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_xuehou_02/Hair/HAIR_main_superlong_gs.HAIR_main_superlong_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.02,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_xuehou_02/Materials/M_hys_xuehou_02_hair_mask.M_hys_xuehou_02_hair_mask"
+      }
+    ],
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_hys_yinbinghoumo_01",
+  "Label": "SK_hys_yinbinghoumo_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 405803,
+      "CanBreak": true,
+      "Name": "一阵平A",
+      "Key": ""
+    },
+    {
+      "Id": 405804,
+      "CanBreak": true,
+      "Name": "意义不明",
+      "Key": ""
+    },
+    {
+      "Key": "XBUTTON1",
+      "Id": 17334,
+      "Name": "邪光斩--连斩",
+      "CanBreak": false,
+      "Buffs": [
+        505
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 17027,
+      "CanBreak": false,
+      "Name": "白+连斩",
+      "Buffs": [
+        105111
+      ]
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 17041,
+      "Name": "冰剑气平A",
+      "Step": 1,
+      "CanBreak": false
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 17042,
+      "Name": "冰剑气平A",
+      "Step": 2,
+      "CanBreak": false
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 17043,
+      "Name": "冰剑气平A",
+      "Step": 3,
+      "CanBreak": false
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 17044,
+      "Name": "冰剑气平A",
+      "Step": 4,
+      "CanBreak": false
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 17331,
+      "Name": "红剑气平a",
+      "Step": 1,
+      "CanBreak": false
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 17332,
+      "Name": "红剑气平a",
+      "Step": 2,
+      "CanBreak": false
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 17333,
+      "Name": "红剑气平a",
+      "Step": 3,
+      "CanBreak": false
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 17334,
+      "Name": "红剑气平a",
+      "Step": 4,
+      "CanBreak": false
+    },
+    {
+      "Id": 405831,
+      "CanBreak": true,
+      "Name": "后翻滚",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 405832,
+      "CanBreak": true,
+      "Name": "往左翻滚移动",
+      "Key": "S+SPACE"
+    },
+    {
+      "Id": 405833,
+      "CanBreak": true,
+      "Name": "往右翻滚移动",
+      "Key": "A+SPACE"
+    },
+    {
+      "Id": 405823,
+      "CanBreak": true,
+      "Name": "飞起来砍下去",
+      "Key": "",
+      "Step": 1,
+      "Buffs": [
+        105111,
+        1000803
+      ]
+    },
+    {
+      "Id": 405805,
+      "CanBreak": true,
+      "Name": "爆气垂直砍一刀，发射垂直剑气",
+      "Key": "Z",
+      "Buffs": [
+        1000803
+      ]
+    },
+    {
+      "Id": 405822,
+      "CanBreak": true,
+      "Name": "飞起来前进砍一刀",
+      "Key": "",
+      "Step": 2,
+      "Buffs": [
+        105111,
+        1000803
+      ]
+    },
+    {
+      "Id": 405821,
+      "CanBreak": true,
+      "Name": "飞起再落下垂直砍一刀，发射垂直剑气",
+      "Key": "",
+      "Step": 3,
+      "Buffs": [
+        105111,
+        1000803
+      ]
+    },
+    {
+      "Key": "X",
+      "Id": 301316,
+      "CanBreak": false,
+      "Name": "红色波动横扫+连斩"
+    },
+    {
+      "Key": "C",
+      "Id": 301321,
+      "Name": "跳起+空中+红色连斩",
+      "CanBreak": false,
+      "Buffs": [
+        105111
+      ]
+    },
+    {
+      "Key": "V",
+      "Id": 301323,
+      "CanBreak": false,
+      "Name": "跳起+六把刀+前斩",
+      "Buffs": [
+        105111
+      ]
+    },
+    {
+      "Id": 405841,
+      "CanBreak": true,
+      "Name": "摇晃",
+      "Key": ""
+    },
+    {
+      "Id": 405851,
+      "CanBreak": true,
+      "Name": "摇晃",
+      "Key": ""
+    },
+    {
+      "Id": 405852,
+      "CanBreak": true,
+      "Name": "摇晃",
+      "Key": ""
+    },
+    {
+      "Id": 405853,
+      "CanBreak": true,
+      "Name": "摇晃",
+      "Key": ""
+    },
+    {
+      "Id": 405854,
+      "CanBreak": true,
+      "Name": "摇晃",
+      "Key": ""
+    },
+    {
+      "Id": 405861,
+      "CanBreak": true,
+      "Name": "摇晃",
+      "Key": ""
+    },
+    {
+      "Id": 405873,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 405875,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": -400.0,
+  "ZRate": 200.0,
+  "Author": "神秘人物"
+}

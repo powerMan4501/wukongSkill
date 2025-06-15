@@ -1,0 +1,404 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/LYS/Unit_LYS_RuYiLong_01.Unit_LYS_RuYiLong_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 220.0,
+    "CapsuleRadius": 100.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_RuYiLong_01/Mesh/SK_LYS_RuYiLong_01.SK_LYS_RuYiLong_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_RuYiLong_01/ABP_LYS_RuYiLong_01.ABP_LYS_RuYiLong_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_RuYiLong_01/Mesh/PA_LYS_RuYi_Long_01.PA_LYS_RuYi_Long_01",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/LYS/LYS_RuYiLong_01/LYS_RuYiLong_01_Weapon.LYS_RuYiLong_01_Weapon_C",
+        "SocketName": "weapon_l"
+      }
+    ],
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_ShenLong_01A/Hair/HAIR_main_long_gs.HAIR_main_long_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/LYS/LYS_ShenLong_01A/Materials/M_lys_shenlong_01a_main_mask.M_lys_shenlong_01a_main_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_ShenLong_01A/Hair/HAIR_main_short.HAIR_main_short_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/LYS/LYS_ShenLong_01A/Materials/M_lys_shenlong_01a_main_mask.M_lys_shenlong_01a_main_mask"
+      }
+    ],
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_LYS_RuYiLong_01",
+  "Label": "SK_LYS_RuYiLong_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": -400.0,
+  "ZRate": 100.0,
+  "Skills": [
+    {
+      "Id": 301401,
+      "CanBreak": true,
+      "Name": "扔很多索敌雷球",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 301402,
+      "CanBreak": true,
+      "Name": "召唤小雷区",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000097
+      ]
+    },
+    {
+      "Id": 301411,
+      "CanBreak": true,
+      "Name": "大招，召唤范围落雷雷电",
+      "Key": "RBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000097
+      ]
+    },
+    {
+      "Id": 301413,
+      "CanBreak": true,
+      "Name": "大招，召唤范围落雷雷电",
+      "Key": "RBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000097
+      ]
+    },
+    {
+      "Id": 301403,
+      "CanBreak": true,
+      "Name": "飞来飞去扔雷球",
+      "Key": "A+XBUTTON1"
+    },
+    {
+      "Id": 301407,
+      "CanBreak": true,
+      "Name": "飞来飞去扔雷球",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 301406,
+      "CanBreak": true,
+      "Name": "飞来飞去扔雷球",
+      "Key": "S+XBUTTON1"
+    },
+    {
+      "Id": 301408,
+      "CanBreak": true,
+      "Name": "突进爆发雷电",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 301409,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q"
+    },
+    {
+      "Id": 301410,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E"
+    },
+    {
+      "Id": 301412,
+      "CanBreak": true,
+      "Name": "扔一下雷球",
+      "Key": "R"
+    },
+    {
+      "Id": 301414,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T"
+    },
+    {
+      "Id": 301419,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z"
+    },
+    {
+      "Id": 301420,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X"
+    },
+    {
+      "Id": 301421,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C"
+    },
+    {
+      "Id": 301422,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V"
+    },
+    {
+      "Id": 301423,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301424,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301425,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301426,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301427,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301430,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301431,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301433,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301434,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301435,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301436,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301437,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301438,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301439,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301441,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301442,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301444,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301445,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301450,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301451,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301452,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301453,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301454,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301455,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301461,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301462,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301463,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301464,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301471,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301472,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301473,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301474,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301475,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301476,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301477,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301480,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301481,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301482,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301498,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}
