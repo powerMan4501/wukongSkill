@@ -573,7 +573,8 @@ namespace bian
                 ProjectileSpawnNSInfo.ProjectileRotSpd = bGWDataAsset_ProjectileSpawnConfig.BulletRotSpd;
 
 
-                if (forTarget && target != null && isShotBull)
+
+                if (forTarget && isShotBull)
                 {
                     ProjectileSpawnNSInfo.ProjectileFlySpd.Spd.LeftValue = 10000;
                     ProjectileSpawnNSInfo.ProjectileFlySpd.Spd.RightValue = 10000;
