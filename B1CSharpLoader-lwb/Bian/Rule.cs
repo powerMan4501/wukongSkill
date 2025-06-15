@@ -206,6 +206,8 @@ namespace bian
                     if (action.noBuffCondition > 0)
                     {
                         if (BGUFunctionLibraryCS.BGUHasBuffByID(character, action.noBuffCondition))
+
+                            Console.WriteLine($"has buff {action.noBuffCondition}");
                         {
                             return false;
                         }
@@ -215,6 +217,7 @@ namespace bian
                     {
                         if (BGUFunctionLibraryCS.BGUHasTalentByID(character, action.noTalentCondition))
                         {
+                            Console.WriteLine($"has talent {action.noTalentCondition}");
                             return false;
                         }
                     }
