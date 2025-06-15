@@ -1,0 +1,224 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/HYS/Unit_hys_huijin_02b_invisible.Unit_hys_huijin_02b_invisible_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 300.0,
+    "CapsuleRadius": 80.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_huijin_02b/Mesh/SK_hys_huijin_02b.SK_hys_huijin_02b",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_huijin_02b/ABP_hys_huijin_02b.ABP_hys_huijin_02b_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_huijin_02b/Mesh/PA_hys_huijin_02b.PA_hys_huijin_02b",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Name": "灯笼妖",
+  "Label": "SK_hys_huijin_02b",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 402601,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 402602,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 402603,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 402604,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 402605,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q"
+    },
+    {
+      "Id": 402606,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E"
+    },
+    {
+      "Id": 402607,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R"
+    },
+    {
+      "Id": 402608,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T"
+    },
+    {
+      "Id": 402609,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z"
+    },
+    {
+      "Id": 402610,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X"
+    },
+    {
+      "Id": 402611,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C"
+    },
+    {
+      "Id": 402615,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V"
+    },
+    {
+      "Id": 402616,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402620,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402621,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402625,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402627,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402630,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402635,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402640,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402641,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402642,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402643,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402651,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402652,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402653,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402654,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402661,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402671,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402681,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402682,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 402699,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

@@ -1,0 +1,244 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/LYS/Unit_LYS_4ChiFu.Unit_LYS_4ChiFu_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 75.0,
+    "CapsuleRadius": 42.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_4ChiFu/Meshes/SK_LYS_4ChiFu.SK_LYS_4ChiFu",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_4ChiFu/ABP_LYS_4ChiFu_Ground.ABP_LYS_4ChiFu_Ground_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_4ChiFu/Meshes/PA_LYS_4ChiFu.PA_LYS_4ChiFu",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/LYS/LYS_4ChiFu/LYS_4ChiFu_Weapon.LYS_4ChiFu_Weapon_C",
+        "SocketName": "weapon_r"
+      }
+    ],
+    "TFXConfigs": null,
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_LYS_4ChiFu",
+  "Label": "SK_LYS_4ChiFu",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": {
+    "Buffers": [
+      1000094
+    ]
+  },
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Skills": [
+    {
+      "Id": 300301,
+      "CanBreak": true,
+      "Name": "平A三下",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 300311,
+      "CanBreak": true,
+      "Name": "平A三下",
+      "Key": "S+LBUTTON"
+    },
+    {
+      "Id": 300302,
+      "CanBreak": true,
+      "Name": "重击几下",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 300312,
+      "CanBreak": true,
+      "Name": "重击几下",
+      "Key": "S+RBUTTON"
+    },
+    {
+      "Id": 300304,
+      "CanBreak": true,
+      "Name": "发射激光",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 300314,
+      "CanBreak": true,
+      "Name": "发射雷激光",
+      "Key": "S+XBUTTON2"
+    },
+    {
+      "Id": 300313,
+      "CanBreak": true,
+      "Name": "发射小雷球",
+      "Key": "S+XBUTTON1"
+    },
+    {
+      "Id": 300303,
+      "CanBreak": true,
+      "Name": "发射小雷球",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 300305,
+      "CanBreak": true,
+      "Name": "飞天打",
+      "Key": ""
+    },
+    {
+      "Id": 300306,
+      "CanBreak": true,
+      "Name": "飞天打",
+      "Key": ""
+    },
+    {
+      "Id": 300307,
+      "CanBreak": true,
+      "Name": "飞天打",
+      "Key": ""
+    },
+    {
+      "Id": 300308,
+      "CanBreak": true,
+      "Name": "飞天打，似乎有bug",
+      "Key": ""
+    },
+    {
+      "Id": 300315,
+      "CanBreak": true,
+      "Name": "飞天打",
+      "Key": ""
+    },
+    {
+      "Id": 300316,
+      "CanBreak": true,
+      "Name": "飞天打",
+      "Key": ""
+    },
+    {
+      "Id": 300321,
+      "CanBreak": true,
+      "Name": "后退",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 300351,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 300352,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 300353,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 300354,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 300355,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 300356,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 300357,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 300358,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 300371,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 300372,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 300373,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 300374,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 300375,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 300376,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 300377,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 300391,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 300392,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 300393,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 300394,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

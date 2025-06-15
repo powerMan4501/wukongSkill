@@ -1,0 +1,89 @@
+{
+  "Name": "老人参精",
+  "Label": "pds_renshenjing_02a",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": -200,
+  "ZRate": 0,
+  "CoolDownRate": 35,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8040
+  },
+  "Skills": [
+    {
+      "Key": "E",
+      "Id": 502105,
+      "Name": "双毒华斩"
+    },
+    {
+      "Key": "Q",
+      "Id": 502106,
+      "Name": "倒白毒"
+    },
+    {
+      "Key": "Z",
+      "Id": 502108,
+      "Name": "拍地"
+    },
+    {
+      "Key": "X",
+      "Id": 502114,
+      "Name": "伏地毒刺"
+    },
+    {
+      "Key": "C",
+      "Id": 502111,
+      "Name": "我没素质"
+    },
+    {
+      "Key": "SPACE",
+      "Id": 302621,
+      "Name": "后退"
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 502113,
+      "Name": "一掌",
+      "CanBreak": false,
+      "Step": 1
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 502103,
+      "Name": "冰刀一击",
+      "CanBreak": false,
+      "Step": 2
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 502104,
+      "Name": "冰刺冲天",
+      "CanBreak": false,
+      "Step": 3
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 502109,
+      "Name": "冰刺冲天",
+      "CanBreak": false,
+      "Step": 1
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 502110,
+      "Name": "冰刺冲天",
+      "CanBreak": false,
+      "Step": 2    
+    },
+    {  
+      "Key": "A+E",
+      "Id": 302608,
+      "Name": "毒镖",
+      "CanBreak": false
+    }
+  ]
+}

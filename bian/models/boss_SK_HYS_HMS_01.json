@@ -1,0 +1,412 @@
+{
+  "Name": "石父",
+  "Label": "SK_HYS_HMS_01",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "ZRate": 400,
+  "XRate": -500.0,
+  "CoolDownRate": 50,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8433
+  },
+  "Skills": [
+    {
+      "Id": 401101,
+      "CanBreak": true,
+      "Name": "慢速打两下，不实用",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401102,
+      "CanBreak": true,
+      "Name": "慢速重击打两下，不实用",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401104,
+      "CanBreak": true,
+      "Name": "龟速打一圈，不实用",
+      "Key": ""
+    },
+    {
+      "Id": 401105,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 401106,
+      "CanBreak": true,
+      "Name": "右脚踩地爆",
+      "Key": "LBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 401107,
+      "CanBreak": true,
+      "Name": "左脚踩地爆",
+      "Key": "LBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 401146,
+      "CanBreak": true,
+      "Name": "右脚踩地爆",
+      "Key": "LBUTTON",
+      "Step": 3,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 401147,
+      "CanBreak": true,
+      "Name": "左脚踩地爆",
+      "Key": "LBUTTON",
+      "Step": 4,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 401121,
+      "CanBreak": true,
+      "Name": "右拳慢速重击，带火",
+      "Key": "RBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 401126,
+      "CanBreak": true,
+      "Name": "右拳横扫，带火",
+      "Key": "RBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 401122,
+      "CanBreak": true,
+      "Name": "双手慢速砸地，火地爆",
+      "Key": "S+RBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 401172,
+      "CanBreak": true,
+      "Name": "双手慢速砸地，火地爆",
+      "Key": "S+RBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 10133,
+      "CanBreak": true,
+      "Name": "精魄技能，咆哮攻击前面的敌人",
+      "Key": "S+XBUTTON1",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401108,
+      "CanBreak": true,
+      "Name": "类似精魄技能，咆哮攻击前面的敌人",
+      "Key": "S+XBUTTON1",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401124,
+      "CanBreak": true,
+      "Name": "咆哮360度的敌人，但只能打地面敌人，地上的打不到",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401123,
+      "CanBreak": true,
+      "Name": "往前扑压，小索敌",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401127,
+      "CanBreak": true,
+      "Name": "翻滚攻击，带索敌",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 401131,
+      "CanBreak": true,
+      "Name": "咆哮，重击两下，扔出大石头",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 401130,
+      "CanBreak": true,
+      "Name": "往前索敌中距离扑压，",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 401109,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401111,
+      "CanBreak": true,
+      "Name": "龟速打后面",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401112,
+      "CanBreak": true,
+      "Name": "垃圾",
+      "Key": ""
+    },
+    {
+      "Id": 401113,
+      "CanBreak": true,
+      "Name": "垃圾",
+      "Key": ""
+    },
+    {
+      "Id": 401114,
+      "CanBreak": true,
+      "Name": "垃圾",
+      "Key": ""
+    },
+    {
+      "Id": 401115,
+      "CanBreak": true,
+      "Name": "地上滚",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401116,
+      "CanBreak": true,
+      "Name": "地上滚",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401128,
+      "CanBreak": true,
+      "Name": "小拔拉一下",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401129,
+      "CanBreak": true,
+      "Name": "小拔拉一下",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401132,
+      "CanBreak": true,
+      "Name": "巴拉一圈",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401133,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401141,
+      "CanBreak": true,
+      "Name": "龟速左扫一下，右扫一下，然后咆哮",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401144,
+      "CanBreak": true,
+      "Name": "龟速舌头左扫一圈，右扫一圈",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401148,
+      "CanBreak": true,
+      "Name": "咆哮，但是似乎不如精魄技能",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401151,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401152,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401153,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401154,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401161,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401162,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401163,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401164,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 401171,
+      "CanBreak": true,
+      "Name": "右拳慢速重击，带火",
+      "Key": ""
+    },
+    {
+      "Id": 401174,
+      "CanBreak": true,
+      "Name": "咆哮",
+      "Key": "Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401178,
+      "CanBreak": true,
+      "Name": "小拔拉一下",
+      "Key": ""
+    },
+    {
+      "Id": 401179,
+      "CanBreak": true,
+      "Name": "小拔拉一下",
+      "Key": ""
+    },
+    {
+      "Id": 401199,
+      "CanBreak": true,
+      "Name": "翻墙出场的动作",
+      "Key": ""
+    }
+  ]
+}

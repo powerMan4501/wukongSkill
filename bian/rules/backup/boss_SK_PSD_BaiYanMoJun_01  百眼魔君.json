@@ -1,0 +1,266 @@
+{
+  "TamerPath": "/Game/00Main/Design/Units/PSD/Unit_PSD_BaiYanMoJun_01.Unit_PSD_BaiYanMoJun_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 600.0,
+    "CapsuleRadius": 600.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/PSD/PSD_BaiYanMoJun_01/Mesh/SK_PSD_BaiYanMoJun_01.SK_PSD_BaiYanMoJun_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/PSD/PSD_BaiYanMoJun_01/ABP_PSD_BaiYanMoJun_01.ABP_PSD_BaiYanMoJun_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/PSD/PSD_BaiYanMoJun_01/Mesh/PA_PSD_BaiYanMoJun_01.PA_PSD_BaiYanMoJun_01",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/PSD/PSD_BaiYanMoJun_01/Hair/HAIR_main.HAIR_main_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147337811"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/PSD/PSD_BaiYanMoJun_01/Hair/HAIR_beard1_gs.HAIR_beard1_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147337810"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/PSD/PSD_BaiYanMoJun_01/Hair/HAIR_beard2_gs.HAIR_beard2_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147337809"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/PSD/PSD_BaiYanMoJun_01/Hair/HAIR_back_gs.HAIR_back_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147337808"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/PSD/PSD_BaiYanMoJun_01/Hair/HAIR_pony_gs.HAIR_pony_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147337807"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/PSD/PSD_BaiYanMoJun_01/Hair/HAIR_frontclump_gs.HAIR_frontclump_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147337806"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "FX_Weapon_Trail_01",
+        "FirstRadius": 55.0,
+        "NextBoneName": "FX_Weapon_Trail_02",
+        "NextRadius": 55.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "FuZhou_04",
+        "FirstRadius": 22.0,
+        "NextBoneName": "FuZhou_07",
+        "NextRadius": 22.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "FuZhou_011",
+        "FirstRadius": 22.0,
+        "NextBoneName": "FuZhou_014",
+        "NextRadius": 22.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "FuZhou_018",
+        "FirstRadius": 22.0,
+        "NextBoneName": "FuZhou_021",
+        "NextRadius": 22.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "bone002",
+        "FirstRadius": 66.0,
+        "NextBoneName": "bone005",
+        "NextRadius": 66.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "bone006",
+        "FirstRadius": 66.0,
+        "NextBoneName": "bone010",
+        "NextRadius": 66.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "bone011",
+        "FirstRadius": 66.0,
+        "NextBoneName": "bone012",
+        "NextRadius": 35.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "hand_r",
+        "FirstRadius": 35.0,
+        "NextBoneName": "upperarm_r",
+        "NextRadius": 35.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "hand_l",
+        "FirstRadius": 35.0,
+        "NextBoneName": "upperarm_l",
+        "NextRadius": 35.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "spine_01",
+        "FirstRadius": 77.0,
+        "NextBoneName": "Head",
+        "NextRadius": 50.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 5005,
+    "Override_AbnormalDispID_Victim": 1009
+  },
+  "Name": "百眼魔君",
+  "Label": "SK_PSD_BaiYanMoJun_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 0.8,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 500596,
+      "CanBreak": true,
+      "Name": "翻滚",
+      "Key": "Q"
+    },
+    {
+      "Id": 500594,
+      "CanBreak": true,
+      "Name": "雷暴",
+      "Description": "以雷霆击碎黑暗",
+      "Key": "E"
+    },
+    {
+      "Id": 500593,
+      "CanBreak": true,
+      "Name": "领域",
+      "Description": "是大招吧，没印象了",
+      "Key": "X"
+    },
+    {
+      "Id": 500587,
+      "CanBreak": true,
+      "Name": "击地",
+      "Key": "C"
+    },
+    {
+      "Id": 500586,
+      "CanBreak": true,
+      "Name": "召唤雷霆",
+      "Key": "S+Q"
+    },
+    {
+      "Id": 500584,
+      "CanBreak": true,
+      "Name": "雷",
+      "Key": "S+E"
+    },
+    {
+      "Id": 500582,
+      "CanBreak": false,
+      "Name": "平A",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 500563,
+      "CanBreak": false,
+      "Name": "重击",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 500547,
+      "CanBreak": true,
+      "Name": "飞剑",
+      "Key": "S+X"
+    },
+    {
+      "Id": 500548,
+      "CanBreak": true,
+      "Name": "雷剑",
+      "Key": "S+C"
+    },
+    {
+      "Id": 500543,
+      "CanBreak": true,
+      "Name": "横扫饥饿",
+      "Key": "C+Q"
+    },
+    {
+      "Id": 500541,
+      "CanBreak": true,
+      "Name": "剑击",
+      "Key": "C+E"
+    },
+    {
+      "Id": 500533,
+      "CanBreak": true,
+      "Name": "遁地",
+      "Key": "C+X"
+    },
+    {
+      "Id": 500532,
+      "CanBreak": true,
+      "Name": "问候",
+      "Description": "骂人",
+      "Key": "C+Z"
+    }
+  ],
+  "DisableDepthOfField": false,
+  "XRate": -1400.0,
+  "ZRate": 800.0
+}

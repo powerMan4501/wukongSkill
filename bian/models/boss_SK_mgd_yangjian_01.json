@@ -1,0 +1,917 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/MGD/Unit_mgd_yangjian_01.Unit_mgd_yangjian_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 96.0,
+    "CapsuleRadius": 42.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_yangjian_01/Mesh/BattleUnit/SK_mgd_yangjian_01.SK_mgd_yangjian_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_yangjian_01/ABP_mgd_yangjian_01.ABP_mgd_yangjian_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_yangjian_01/Mesh/BattleUnit/PA_mgd_yangjian_02.PA_mgd_yangjian_02",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/MGD/MGD_yangjian_01/MGD_yangjian_01_weapon_02a.MGD_yangjian_01_weapon_02a_C",
+        "SocketName": "pelvis"
+      },
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/MGD/MGD_yangjian_01/MGD_yangjian_01_weapon_02b.MGD_yangjian_01_weapon_02b_C",
+        "SocketName": "weapon_l"
+      },
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/MGD/MGD_yangjian_01/MGD_yangjian_01_weapon_03.MGD_yangjian_01_weapon_03_C",
+        "SocketName": "weapon_fu_root"
+      }
+    ],
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_yangjian_01/Hair/HAIR_frontclump_gs.HAIR_frontclump_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.001,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.001,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147367818"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_yangjian_01/Hair/HAIR_frontclump2_gs.HAIR_frontclump2_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.001,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.001,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147367817"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_yangjian_01/Hair/HAIR_back_gs.HAIR_back_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.001,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.001,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147367816"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_yangjian_01/Hair/HAIR_main.HAIR_main_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.001,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.001,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147367815"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_yangjian_01/Hair/HAIR_fajiu.HAIR_fajiu_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.001,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.001,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147367814"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "spine_01",
+        "FirstRadius": 29.3889847,
+        "NextBoneName": "neck_01",
+        "NextRadius": 15.8221169
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_r",
+        "FirstRadius": 23.6206646,
+        "NextBoneName": "foot_r",
+        "NextRadius": 15.3489656
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_l",
+        "FirstRadius": 22.5997734,
+        "NextBoneName": "foot_l",
+        "NextRadius": 15.3489656
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "qiang_0",
+        "FirstRadius": 50.0,
+        "NextBoneName": "qiang_1",
+        "NextRadius": 20.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Hit_Sword_1",
+        "FirstRadius": 10.0,
+        "NextBoneName": "Hit_Sword_4",
+        "NextRadius": 10.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Hit_Axe_1",
+        "FirstRadius": 100.0,
+        "NextBoneName": "Hit_Axe_4",
+        "NextRadius": 50.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 5005,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "杨戬",
+  "Label": "SK_mgd_yangjian_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "XRate": -400.0,
+  "ZRate": 200.0,
+  "Skills": [
+    {
+      "Id": 800009,
+      "CanBreak": true,
+      "Name": "飞过去，用开山斧砍，冰暴1000094 冰刺：1000093 巴山虎1000095",
+      "Key": "XBUTTON2",
+      "Step": 1,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 800029,
+      "CanBreak": true,
+      "Name": "飞过去，用开山斧砍",
+      "Key": "XBUTTON2",
+      "Step": 2,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 800040,
+      "CanBreak": true,
+      "Name": "平A一下再砍出地波",
+      "Key": "S+XBUTTON2",
+      "Step": 1,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 800042,
+      "CanBreak": true,
+      "Name": "平A一下再砍出地波",
+      "Key": "S+XBUTTON2",
+      "Step": 2,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 800013,
+      "CanBreak": true,
+      "Name": "打几下，然后开山斧",
+      "Key": "C+XBUTTON2",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 800012,
+      "CanBreak": true,
+      "Name": "快慢刀，然后扔出武器砸人，再飞过去一阵打，连招很长，威力很大",
+      "Key": "C+XBUTTON2",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 800017,
+      "CanBreak": true,
+      "Name": "打打打，然后开山斧",
+      "Key": "A+XBUTTON2",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 800068,
+      "CanBreak": true,
+      "Name": "快速突上去，一阵连招，最后激光",
+      "Key": "A+XBUTTON2",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 800021,
+      "CanBreak": true,
+      "Name": "平a好几下",
+      "Key": "LBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 800061,
+      "CanBreak": true,
+      "Name": "很多平A",
+      "Key": "LBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 800064,
+      "CanBreak": true,
+      "Name": "不错的快慢刀，扔牙签激光",
+      "Key": "LBUTTON",
+      "Step": 3,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 800065,
+      "CanBreak": true,
+      "Name": "不错的快慢刀，扔牙签激光",
+      "Key": "LBUTTON",
+      "Step": 4,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 800026,
+      "CanBreak": true,
+      "Name": "很长的华丽连招，各种雷",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000110,
+        1000863
+      ]
+    },
+    {
+      "Id": 800037,
+      "CanBreak": true,
+      "Name": "华丽的雷，1000863兽棍红雷",
+      "Key": "A+LBUTTON",
+      "Buffs": [
+        1000863,
+        1000110
+      ]
+    },
+    {
+      "Id": 800035,
+      "CanBreak": true,
+      "Name": "各种快慢刀打打打",
+      "Key": "C+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 800010,
+      "CanBreak": true,
+      "Name": "飞过去，开山斧横扫",
+      "Key": "",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 800070,
+      "CanBreak": true,
+      "Name": "AM_mgd_yangjian_01_gedang05_hit",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800067,
+      "CanBreak": true,
+      "Name": "不错的招，配合哮天犬",
+      "Key": "C+RBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800015,
+      "CanBreak": true,
+      "Name": "打打打，然后开山斧",
+      "Key": "C+RBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 800019,
+      "CanBreak": true,
+      "Name": "次元斩",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 800020,
+      "CanBreak": true,
+      "Name": "很长的连招，激光/剑阵/次元斩",
+      "Key": "A+RBUTTON",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800014,
+      "CanBreak": true,
+      "Name": "无前摇一阵快慢刀，凑合",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800018,
+      "CanBreak": true,
+      "Name": "打打打，然后开山斧",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800016,
+      "CanBreak": true,
+      "Name": "长连招，威力很大",
+      "Key": "A+XBUTTON1",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800032,
+      "CanBreak": true,
+      "Name": "闪避",
+      "Key": "SPACE",
+      "Buffs": [
+        1000104
+      ]
+    },
+    {
+      "Id": 800000,
+      "CanBreak": true,
+      "Name": "前摇很长，然后射一次激光",
+      "Key": "S+X",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800041,
+      "CanBreak": true,
+      "Name": "激光横扫",
+      "Key": "A+X",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800074,
+      "CanBreak": true,
+      "Name": "远程技能",
+      "Key": "S+Z",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800001,
+      "CanBreak": true,
+      "Name": "打好几下，连招略长，不好用",
+      "Key": ""
+    },
+    {
+      "Id": 800002,
+      "CanBreak": true,
+      "Name": "快慢刀，打很多下，不好用",
+      "Key": ""
+    },
+    {
+      "Id": 800003,
+      "CanBreak": true,
+      "Name": "快慢刀，打很多下，不好用",
+      "Key": ""
+    },
+    {
+      "Id": 800004,
+      "CanBreak": true,
+      "Name": "慢速打，快速打，不好用",
+      "Key": ""
+    },
+    {
+      "Id": 800005,
+      "CanBreak": true,
+      "Name": "慢速打，快速打，不好用",
+      "Key": ""
+    },
+    {
+      "Id": 800007,
+      "CanBreak": true,
+      "Name": "连招很长，打打打",
+      "Key": ""
+    },
+    {
+      "Id": 800008,
+      "CanBreak": true,
+      "Name": "连招很长，踢踢打打",
+      "Key": ""
+    },
+    {
+      "Id": 800022,
+      "CanBreak": true,
+      "Name": "不太使用的很长连招平A",
+      "Key": ""
+    },
+    {
+      "Id": 800023,
+      "CanBreak": true,
+      "Name": "不太使用的很长连招平A",
+      "Key": ""
+    },
+    {
+      "Id": 800024,
+      "CanBreak": true,
+      "Name": "不太使用的很长连招",
+      "Key": ""
+    },
+    {
+      "Id": 800025,
+      "CanBreak": true,
+      "Name": "不太使用的很长连招",
+      "Key": ""
+    },
+    {
+      "Id": 800027,
+      "CanBreak": true,
+      "Name": "后闪避",
+      "Key": ""
+    },
+    {
+      "Id": 800028,
+      "CanBreak": true,
+      "Name": "后闪避",
+      "Key": ""
+    },
+    {
+      "Id": 800030,
+      "CanBreak": true,
+      "Name": "慢速平A一下，然后斧子中范围横扫一下",
+      "Key": ""
+    },
+    {
+      "Id": 800031,
+      "CanBreak": true,
+      "Name": "变鸟，有bug",
+      "Key": ""
+    },
+    {
+      "Id": 800033,
+      "CanBreak": true,
+      "Name": "快慢刀打几下，然后开山斧砍出地波",
+      "Key": ""
+    },
+    {
+      "Id": 800034,
+      "CanBreak": true,
+      "Name": "没反应",
+      "Key": ""
+    },
+    {
+      "Id": 800036,
+      "CanBreak": true,
+      "Name": "远程技能，飞起来放箭，1000110造成伤害黄符-循环",
+      "Key": "A+C",
+      "Buffs": [
+        1000110,
+        1000863
+      ]
+    },
+    {
+      "Id": 800038,
+      "CanBreak": true,
+      "Name": "召唤哮天犬",
+      "Key": ""
+    },
+    {
+      "Id": 800039,
+      "CanBreak": true,
+      "Name": "投技",
+      "Key": ""
+    },
+    {
+      "Id": 800043,
+      "CanBreak": true,
+      "Name": "投技",
+      "Key": ""
+    },
+    {
+      "Id": 800044,
+      "CanBreak": true,
+      "Name": "后腿一步斧子横扫",
+      "Key": ""
+    },
+    {
+      "Id": 800045,
+      "CanBreak": true,
+      "Name": "放两下激光",
+      "Key": ""
+    },
+    {
+      "Id": 800046,
+      "CanBreak": true,
+      "Name": "投技",
+      "Key": ""
+    },
+    {
+      "Id": 800047,
+      "CanBreak": true,
+      "Name": "投技",
+      "Key": ""
+    },
+    {
+      "Id": 800048,
+      "CanBreak": true,
+      "Name": "投技",
+      "Key": ""
+    },
+    {
+      "Id": 800049,
+      "CanBreak": true,
+      "Name": "投技",
+      "Key": ""
+    },
+    {
+      "Id": 800050,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 800051,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 800052,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 800053,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 800054,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 800055,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 800056,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 800057,
+      "CanBreak": true,
+      "Name": "后撤",
+      "Key": ""
+    },
+    {
+      "Id": 800058,
+      "CanBreak": true,
+      "Name": "后撤",
+      "Key": ""
+    },
+    {
+      "Id": 800059,
+      "CanBreak": true,
+      "Name": "后撤",
+      "Key": ""
+    },
+    {
+      "Id": 800060,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 800062,
+      "CanBreak": true,
+      "Name": "一阵大大打，然后踹一脚",
+      "Key": "Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 800075,
+      "CanBreak": true,
+      "Name": "DADA",
+      "Key": "X",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800083,
+      "CanBreak": true,
+      "Name": "激光分身之后，万剑归宗大招，但视角很乱",
+      "Key": "S+C",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800084,
+      "CanBreak": true,
+      "Name": "万剑归宗大招",
+      "Key": "C",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800087,
+      "CanBreak": true,
+      "Name": "挥舞两下武器，然后发射一次激光",
+      "Key": "V",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800088,
+      "CanBreak": true,
+      "Name": "开，飞天，召唤巨大开山斧",
+      "Key": "A+V",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 800098,
+      "CanBreak": true,
+      "Name": "一发激光 AM_mgd_yangjian_01_anti_xuli_c",
+      "Key": "Q",
+      "Buffs": [
+        1000863,
+        1000110,
+        1000168
+      ]
+    },
+    {
+      "Id": 800099,
+      "CanBreak": true,
+      "Name": "格挡，并把目标吸过来",
+      "Key": "E",
+      "Buffs": [
+        1000115
+      ]
+    },
+    {
+      "Id": 800037,
+      "CanBreak": true,
+      "Name": "华丽的雷，1000863兽棍红雷",
+      "Key": "NUMPAD0",
+      "Buffs": [
+        1000863,
+        1000110
+      ]
+    },
+    {
+      "Id": 800020,
+      "CanBreak": true,
+      "Name": "很长的连招，激光/剑阵/次元斩",
+      "Key": "NUMPAD1",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800016,
+      "CanBreak": true,
+      "Name": "长连招，威力很大",
+      "Key": "NUMPAD2",
+      "Buffs": [
+        1000110
+      ]
+    },
+    {
+      "Id": 800006,
+      "CanBreak": true,
+      "Name": "连招很长，各种打出雷电，很华丽",
+      "Key": "NUMPAD3"
+    },
+    {
+      "Id": 800011,
+      "CanBreak": true,
+      "Name": "各种快慢刀，打击还行，但一顿一顿的",
+      "Key": "NUMPAD4"
+    },
+    {
+      "Id": 800063,
+      "CanBreak": true,
+      "Name": "快速后撤",
+      "Key": ""
+    },
+    {
+      "Id": 800066,
+      "CanBreak": true,
+      "Name": "隐身快速后撤",
+      "Key": ""
+    },
+    {
+      "Id": 800069,
+      "CanBreak": true,
+      "Name": "摆架势AM_mgd_yangjian_01_gedang05",
+      "Key": ""
+    },
+    {
+      "Id": 800070,
+      "CanBreak": true,
+      "Name": "长连招，懒得写 AM_mgd_yangjian_01_gedang05_hit",
+      "Key": ""
+    },
+    {
+      "Id": 800071,
+      "CanBreak": true,
+      "Name": "懒得写",
+      "Key": ""
+    },
+    {
+      "Id": 800072,
+      "CanBreak": true,
+      "Name": "懒得写",
+      "Key": ""
+    },
+    {
+      "Id": 800073,
+      "CanBreak": true,
+      "Name": "懒得写",
+      "Key": ""
+    },
+    {
+      "Id": 800076,
+      "CanBreak": true,
+      "Name": "前摇+一下激光",
+      "Key": ""
+    },
+    {
+      "Id": 800077,
+      "CanBreak": true,
+      "Name": "闪戳棍",
+      "Key": ""
+    },
+    {
+      "Id": 800078,
+      "CanBreak": true,
+      "Name": "闪戳棍",
+      "Key": ""
+    },
+    {
+      "Id": 800079,
+      "CanBreak": true,
+      "Name": "长招 AM_mgd_yangjian_01_gedang05_end",
+      "Key": ""
+    },
+    {
+      "Id": 800080,
+      "CanBreak": true,
+      "Name": "长招",
+      "Key": ""
+    },
+    {
+      "Id": 800081,
+      "CanBreak": true,
+      "Name": "投机",
+      "Key": ""
+    },
+    {
+      "Id": 800082,
+      "CanBreak": true,
+      "Name": "两下激光",
+      "Key": ""
+    },
+    {
+      "Id": 800085,
+      "CanBreak": true,
+      "Name": "有视角bug",
+      "Key": ""
+    },
+    {
+      "Id": 800086,
+      "CanBreak": true,
+      "Name": "投技",
+      "Key": ""
+    },
+    {
+      "Id": 800089,
+      "CanBreak": true,
+      "Name": "各种激光分身，视角很乱",
+      "Key": ""
+    },
+    {
+      "Id": 800090,
+      "CanBreak": true,
+      "Name": "投技",
+      "Key": ""
+    },
+    {
+      "Id": 800091,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 800092,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 800093,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 800094,
+      "CanBreak": true,
+      "Name": "快速后撤",
+      "Key": ""
+    },
+    {
+      "Id": 800095,
+      "CanBreak": true,
+      "Name": "快速往左",
+      "Key": ""
+    },
+    {
+      "Id": 800096,
+      "CanBreak": true,
+      "Name": "快速往右",
+      "Key": ""
+    },
+    {
+      "Id": 800097,
+      "CanBreak": true,
+      "Name": "摆架势 gedang",
+      "Key": ""
+    }
+  ]
+}

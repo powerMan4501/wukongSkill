@@ -1,0 +1,103 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/HYS/TuDiGongYinBings/Unit_HYS_TuDiGong_01A_YinBingYuanCheng.Unit_HYS_TuDiGong_01A_YinBingYuanCheng_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 130.0,
+    "CapsuleRadius": 35.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_HJBow_01A/Mesh/SK_HFM_HJBow_01A.SK_HFM_HJBow_01A",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_HJBow_01A/ABP_HFM_HJBow_01A.ABP_HFM_HJBow_01A_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_HJBow_01A/Mesh/PA_HFM_HJBow_01A.PA_HFM_HJBow_01A",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "spine_01",
+        "FirstRadius": 50.0,
+        "NextBoneName": "neck_01",
+        "NextRadius": 40.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_r",
+        "FirstRadius": 30.0,
+        "NextBoneName": "ball_r",
+        "NextRadius": 20.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_l",
+        "FirstRadius": 30.0,
+        "NextBoneName": "ball_l",
+        "NextRadius": 20.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_HFM_HJBow_01A",
+  "Label": "SK_HFM_HJBow_01A",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "PlayTimeRate": 1.0,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "HitCount": 0,
+      "PlayTimeRate": 1.0,
+      "Id": 444202,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "PlayTimeRate": 1.0,
+      "Id": 444204,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "PlayTimeRate": 1.0,
+      "Id": 444206,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

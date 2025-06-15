@@ -1,0 +1,657 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/HFM/Unit_HFM_Hu_Stone_01.Unit_HFM_Hu_Stone_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 340.6395,
+    "CapsuleRadius": 80.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_Hu_Stone_01/Meshes/SK_HFM_Hu_Stone_01.SK_HFM_Hu_Stone_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_Hu_Stone_01/ABP_HFM_Hu_Stone_01.ABP_HFM_Hu_Stone_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_Hu_Stone_01/Meshes/PA_HFM_Hu_Stone_01.PA_HFM_Hu_Stone_01",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Yi/Hair/HAIR_arm.HAIR_arm_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147397204"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Yi/Hair/HAIR_body_gs.HAIR_body_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.1,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147397203"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Yi/Hair/HAIR_head.Hair_Head_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147397202"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Yi/Hair/HAIR_legs.HAIR_legs_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147397201"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Yi/Hair/HAIR_tail.HAIR_tail_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 0.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.1,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147397200"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Yi/Hair/HAIR_neck.HAIR_neck_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.1,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147397199"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "weapon_tou",
+        "FirstRadius": 20.0,
+        "NextBoneName": "weapon_wei",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "pelvis",
+        "FirstRadius": 50.0,
+        "NextBoneName": "neck_01",
+        "NextRadius": 50.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Head",
+        "FirstRadius": 55.0,
+        "NextBoneName": "MouthEnd",
+        "NextRadius": 40.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "lowerarm_l",
+        "FirstRadius": 55.0,
+        "NextBoneName": "middle_01_l",
+        "NextRadius": 45.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "lowerarm_r",
+        "FirstRadius": 55.0,
+        "NextBoneName": "middle_01_r",
+        "NextRadius": 45.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_l",
+        "FirstRadius": 50.0,
+        "NextBoneName": "fourthtoe_01_l",
+        "NextRadius": 35.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_r",
+        "FirstRadius": 50.0,
+        "NextBoneName": "fourthtoe_01_r",
+        "NextRadius": 35.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "weiba_01",
+        "FirstRadius": 30.0,
+        "NextBoneName": "weiba_10",
+        "NextRadius": 30.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Name": "SK_HFM_Hu_Stone_01",
+  "Label": "SK_HFM_Hu_Stone_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": -400.0,
+  "ZRate": 200.0,
+  "Author": "神秘人物",
+  "Skills": [
+    {
+      "Id": 202216,
+      "CanBreak": true,
+      "Name": "拔刀挥舞形成3道血龙卷 AM_HFM_Hu_Stone_Atk_Atk_TurnStone_01_01",
+      "Key": "NUMPAD0",
+      "Buffers": [
+        1000099
+      ]
+    },
+    {
+      "Id": 202217,
+      "CanBreak": true,
+      "Name": "等待好几秒，然后超远距离砍一刀  AM_HFM_Hu_Stone_Atk_Fast_17",
+      "Key": "NUMPAD1",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 202205,
+      "CanBreak": true,
+      "Name": "两拳+一脚然后回到原地，没有追踪 AM_HFM_Hu_Stone_Atk_Fast_05",
+      "Key": "NUMPAD2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202240,
+      "CanBreak": true,
+      "Name": "化身铜头铁臂 AM_HFM_Hu_Stone_Atk_TTTB_Part1",
+      "Key": "NUMPAD3"
+    },
+    {
+      "Id": 202220,
+      "CanBreak": false,
+      "Name": "中距离追击一拳 AM_HFM_Hu_Stone_Atk_Fast_20",
+      "Key": "NUMPAD4",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202219,
+      "CanBreak": true,
+      "Name": "跳起来垂直砸下来，巴山虎 AM_HFM_Hu_Stone_Atk_Fast_19",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000069
+      ]
+    },
+    {
+      "Id": 202215,
+      "CanBreak": false,
+      "Name": "拔刀连续挥舞三下，持续猪八戒 AM_HFM_Hu_Stone_Atk_Fast_06",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000099,
+        202210
+      ]
+    },
+    {
+      "Id": 202202,
+      "CanBreak": false,
+      "Name": "跳起来连续拳脚好几下，很猛 AM_HFM_Hu_Stone_Atk_Fast_02",
+      "Key": "RBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202242,
+      "CanBreak": false,
+      "Name": "拳脚交加，最后一拳砸地，很猛 AM_HFM_Hu_Stone_Atk_Fast_42",
+      "Key": "RBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202207,
+      "CanBreak": true,
+      "Name": "拔刀挥舞形成血龙卷 AM_HFM_Hu_Stone_Atk_Fast_07",
+      "Key": "C+RBUTTON",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 202233,
+      "CanBreak": true,
+      "Name": "拔刀挥砍三下，带剑气 AM_HFM_Hu_Stone_Atk_Wind_LV1",
+      "Key": "S+RBUTTON",
+      "Buffers": [
+        1000099
+      ]
+    },
+    {
+      "Id": 202201,
+      "CanBreak": false,
+      "Name": "踢一脚，拔刀劈砍好几下，最后一下带血剑气 AM_HFM_Hu_Stone_Atk_Fast_01",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 202210,
+      "CanBreak": false,
+      "Name": "三次挥刀带剑气，试试当平A AM_HFM_Hu_Stone_Atk_Wind_LV1",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 202213,
+      "CanBreak": false,
+      "Name": "拔刀连续挥舞三下 AM_HFM_Hu_Stone_Atk_Fast_13",
+      "Key": "C+XBUTTON1",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 202204,
+      "CanBreak": false,
+      "Name": "突进咆哮，追击打一下 AM_HFM_Hu_Stone_Atk_Fast_04",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202220,
+      "CanBreak": false,
+      "Name": "中距离追击一拳 AM_HFM_Hu_Stone_Atk_Fast_20",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202203,
+      "CanBreak": false,
+      "Name": "拔刀斩,很强的追击 AM_HFM_Hu_Stone_Atk_Fast_03",
+      "Key": "C+XBUTTON2",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 202231,
+      "CanBreak": true,
+      "Name": "跳到一旁，然后拔刀斩",
+      "Key": "A+XBUTTON2",
+      "Buffs": [
+        1000095,
+        105111
+      ]
+    },
+    {
+      "Id": 202230,
+      "CanBreak": true,
+      "Name": "后翻滚",
+      "Key": "SPACE",
+      "Buffs": [
+        105111
+      ]
+    },
+    {
+      "Id": 202244,
+      "CanBreak": true,
+      "Name": "肘击  AM_HFM_Hu_Stone_Atk_Fast_44",
+      "Key": "Z",
+      "Buffs": [
+        1000095,
+        105111
+      ]
+    },
+    {
+      "Id": 202209,
+      "CanBreak": true,
+      "Name": "咆哮（咆哮冲击波距离稍微远一点） AM_HFM_HU_Stone_Atk_Roar_V1",
+      "Key": "A+X",
+      "Buffs": [
+        1000095,
+        202210
+      ]
+    },
+    {
+      "Id": 202220,
+      "CanBreak": false,
+      "Name": "中距离追击一拳 AM_HFM_Hu_Stone_Atk_Fast_20",
+      "Key": "X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202208,
+      "CanBreak": true,
+      "Name": "上勾拳+下勾拳，然后后空翻后退 AM_HFM_Hu_Stone_Atk_Fast_08",
+      "Key": "A+C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202250,
+      "CanBreak": true,
+      "Name": "肘击一阵长连招 AM_HFM_Hu_Stone_Atk_Fast_50",
+      "Key": "C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202211,
+      "CanBreak": true,
+      "Name": "往左边跳，然后追着目标打几下 AM_HFM_Hu_Stone_Atk_DodgeAtk_L",
+      "Key": "V",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202212,
+      "CanBreak": true,
+      "Name": "往右边跳，然后追着目标打几下 AM_HFM_Hu_Stone_Atk_DodgeAtk_R",
+      "Key": "V",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202218,
+      "CanBreak": true,
+      "Name": "跳到一旁，然后跳起来垂直砸下来 AM_HFM_Hu_Stone_Atk_Fast_18",
+      "Key": "V",
+      "Step": 3,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202206,
+      "CanBreak": true,
+      "Name": "咆哮，杀伤距离很近",
+      "Key": ""
+    },
+    {
+      "Id": 202214,
+      "CanBreak": true,
+      "Name": "咆哮，似乎没卵用",
+      "Key": ""
+    },
+    {
+      "Id": 202241,
+      "CanBreak": true,
+      "Name": "踢一脚，砍好几刀",
+      "Key": ""
+    },
+    {
+      "Id": 202223,
+      "CanBreak": true,
+      "Name": "等待几秒，然后拔刀斩一下",
+      "Key": ""
+    },
+    {
+      "Id": 202232,
+      "CanBreak": true,
+      "Name": "翻跳到一旁",
+      "Key": ""
+    },
+    {
+      "Id": 202243,
+      "CanBreak": true,
+      "Name": "太长，废招",
+      "Key": ""
+    },
+    {
+      "Id": 202245,
+      "CanBreak": true,
+      "Name": "太长，废招",
+      "Key": ""
+    },
+    {
+      "Id": 202246,
+      "CanBreak": true,
+      "Name": "太长，废招",
+      "Key": ""
+    },
+    {
+      "Id": 202247,
+      "CanBreak": true,
+      "Name": "太长，废招",
+      "Key": ""
+    },
+    {
+      "Id": 202248,
+      "CanBreak": true,
+      "Name": "太长，废招",
+      "Key": ""
+    },
+    {
+      "Id": 202249,
+      "CanBreak": true,
+      "Name": "太长，废招",
+      "Key": ""
+    },
+    {
+      "Id": 202251,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 202252,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 202253,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 202254,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 202255,
+      "CanBreak": true,
+      "Name": "重复招数",
+      "Key": ""
+    },
+    {
+      "Id": 202256,
+      "CanBreak": true,
+      "Name": "快慢刀",
+      "Key": ""
+    },
+    {
+      "Id": 202257,
+      "CanBreak": true,
+      "Name": "快慢刀",
+      "Key": ""
+    },
+    {
+      "Id": 202258,
+      "CanBreak": true,
+      "Name": "重复招数",
+      "Key": ""
+    },
+    {
+      "Id": 202260,
+      "CanBreak": true,
+      "Name": "重复招数",
+      "Key": ""
+    },
+    {
+      "Id": 202261,
+      "CanBreak": true,
+      "Name": "重复招数",
+      "Key": ""
+    },
+    {
+      "Id": 202265,
+      "CanBreak": true,
+      "Name": "重复招数",
+      "Key": ""
+    },
+    {
+      "Id": 202268,
+      "CanBreak": true,
+      "Name": "重复招数",
+      "Key": ""
+    },
+    {
+      "Id": 202271,
+      "CanBreak": true,
+      "Name": "重复招数",
+      "Key": ""
+    },
+    {
+      "Id": 202272,
+      "CanBreak": true,
+      "Name": "重复招数",
+      "Key": ""
+    },
+    {
+      "Id": 202275,
+      "CanBreak": true,
+      "Name": "重复招数",
+      "Key": ""
+    },
+    {
+      "Id": 202276,
+      "CanBreak": true,
+      "Name": "重复招数",
+      "Key": ""
+    },
+    {
+      "Id": 202278,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202281,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202282,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202283,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202284,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202285,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202286,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202287,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202290,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202291,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202297,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202298,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 202299,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

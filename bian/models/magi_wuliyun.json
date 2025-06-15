@@ -1,0 +1,93 @@
+{
+  "Name": "雾里云",
+  "Label": "SK_HYS_WuLiYun",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": -400,
+  "ZRate": -100,
+  "CoolDownRate": 50,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8388
+  },
+  "Skills": [
+    {
+      "Key": "E",
+      "Id": 400605,
+      "Name": "捉猴"
+    },
+    {
+      "Key": "Q",
+      "Id": 400606,
+      "Name": "点火"
+    },
+    {
+      "Key": "Z",
+      "Id":400608,
+      "Name": "查数砸"
+    },
+    {
+      "Key": "X",
+      "Id": 400609,
+      "Name": "点完火了，开干"
+    },
+    {
+      "Key": "C",
+      "Id": 400610,
+      "Name": "闷棍"
+    },
+ {
+      "Key": "A+C",
+      "Id": 400612,
+      "Name": "找目标干"
+    },
+
+    {
+      "Key": "R",
+      "Id": 400611,
+      "Name": "点火跳砸--会锁定",
+      "Buffers": [
+        92211,
+        105111
+      ]
+    },
+    {
+      "Key": "SPACE",
+      "Id": 400613,
+      "Name": "连续后空翻"
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 400601,
+      "Name": "拿柴火抡",
+      "CanBreak": false,
+      "Step": 1
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 400602,
+      "Name": "拿柴火砸",
+      "CanBreak": false,
+      "Step": 2
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 400603,
+      "Name": "前冲砸",
+      "CanBreak": false,
+      "Step": 3
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 400607,
+      "Name": "想逃，做梦",
+      "CanBreak": false
+      
+  }
+
+
+  ]
+}

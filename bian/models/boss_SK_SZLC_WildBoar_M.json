@@ -1,0 +1,98 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/Online/SZLC/Unit_SZLC_WildBoar_01.Unit_SZLC_WildBoar_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 60.0,
+    "CapsuleRadius": 60.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_WildBoar_M/Mesh/SK_SZLC_WildBoar_M.SK_SZLC_WildBoar_M",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_WildBoar_M/ABP_SZLC_WildBoar_01.ABP_SZLC_WildBoar_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_WildBoar_M/Mesh/SK_SZLC_WildBoar_M_PhysicsAsset.SK_SZLC_WildBoar_M_PhysicsAsset",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_SZLC_WildBoar_M",
+  "Label": "SK_SZLC_WildBoar_M",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 470901,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 470902,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 470905,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 470906,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 470907,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 470994,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 470995,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 470996,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 470997,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 470998,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 470999,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

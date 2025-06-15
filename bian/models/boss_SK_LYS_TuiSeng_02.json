@@ -1,0 +1,307 @@
+{
+  "Name": "不能",
+  "Label": "SK_LYS_TuiSeng_02",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": -400,
+  "ZRate": 200,
+  "CoolDownRate": 25,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "TransDone": {
+    "Buffers": [
+      96009
+    ]
+  },
+  "EnterSkill": {
+    "Id": 8126
+  },
+  "Skills": [
+    {
+      "Id": 300541,
+      "CanBreak": true,
+      "Name": "一脚",
+      "Key": "A+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 10126,
+      "CanBreak": true,
+      "Name": "精魄技能，连招4",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        20103,
+        1000095
+      ]
+    },
+    {
+      "Id": 10126,
+      "CanBreak": true,
+      "Name": "精魄技能，连招2",
+      "Key": "LBUTTON",
+      "Step": 1,
+      "Buffs": [
+        20101,
+        1000094
+      ]
+    },
+    {
+      "Id": 10126,
+      "CanBreak": true,
+      "Name": "精魄技能，连招3",
+      "Key": "LBUTTON",
+      "Step": 2,
+      "Buffs": [
+        20102,
+        1000094
+      ]
+    },
+    {
+      "Id": 10126,
+      "CanBreak": true,
+      "Name": "精魄技能，连招4",
+      "Key": "LBUTTON",
+      "Step": 3,
+      "Buffs": [
+        20103,
+        1000095
+      ]
+    },
+    {
+      "Id": 10126,
+      "CanBreak": true,
+      "Name": "精魄技能，连招5",
+      "Key": "",
+      "Step": 4,
+      "Buffs": [
+        20104,
+        1000094
+      ]
+    },
+    {
+      "Id": 10126,
+      "CanBreak": true,
+      "Name": "精魄技能，连招5，很强的索敌",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        20104,
+        1000094
+      ]
+    },
+    {
+      "Id": 300524,
+      "CanBreak": true,
+      "Name": "突进飞起一脚 AM_LYS_TuiSeng_02_Atk_Fast_04_04_02",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300503,
+      "CanBreak": true,
+      "Name": "好几下扫堂腿，再砸出地爆",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ],
+      "Step": 1
+    },
+    {
+      "Id": 300513,
+      "CanBreak": true,
+      "Name": "扫堂腿+跳起来砸地冲击波",
+      "Buffs": [
+        1000095
+      ],
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 10126,
+      "CanBreak": true,
+      "Name": "精魄技能，爆发巴山虎",
+      "Key": "RBUTTON",
+      "Buffs": [
+        413405
+      ]
+    },
+    {
+      "Id": 300505,
+      "CanBreak": true,
+      "Name": "以武入禅：慢速打一拳+排云掌，还可以 AM_LYS_TuiSeng_02_Atk_Fast_05a",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300504,
+      "CanBreak": true,
+      "Name": "扫堂腿等很长的招，招太长，不太实用 AM_LYS_TuiSeng_02_Atk_Fast_04",
+      "Key": "A+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300508,
+      "CanBreak": true,
+      "Name": "很长的摆架势前摇之后，打出好几个排云掌 AM_LYS_TuiSeng_02_Atk_Fast_08",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300516,
+      "CanBreak": true,
+      "Name": "打一拳，然后蓄力很长时间打出威力较大的排云掌 AM_LYS_TuiSeng_02_Atk_Fast_06b",
+      "Key": "C+XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300501,
+      "CanBreak": true,
+      "Name": "连招很长的平A",
+      "Key": "C+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300512,
+      "CanBreak": true,
+      "Name": "先波动，再打一套平A，威力很大",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300502,
+      "CanBreak": true,
+      "Name": "先波动，再打一套平A，威力很大",
+      "Key": "C+RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300514,
+      "CanBreak": true,
+      "Name": "转身后撤一步",
+      "Key": "SPACE",
+      "Buffs": [
+        413405
+      ]
+    },
+    {
+      "Id": 300515,
+      "CanBreak": true,
+      "Name": "前摇+慢速打出一肘，不太实用",
+      "Key": "A+RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300502,
+      "CanBreak": true,
+      "Name": "先波动，再打一套平A，威力很大",
+      "Key": "Z",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300516,
+      "CanBreak": true,
+      "Name": "打一拳，然后蓄力很长时间打出威力较大的排云掌",
+      "Key": "Z",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300523,
+      "CanBreak": true,
+      "Name": "好几下扫堂腿，再砸出地爆",
+      "Key": "X",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300533,
+      "CanBreak": true,
+      "Name": "好几下扫堂腿，再砸出地爆",
+      "Key": "X",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300507,
+      "CanBreak": true,
+      "Name": "投技,可试试",
+      "Key": "C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300506,
+      "CanBreak": true,
+      "Name": "连续几个排云掌，还可以",
+      "Key": "V",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300525,
+      "CanBreak": true,
+      "Name": "打一圈，再好几下排云掌",
+      "Key": "V",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 300551,
+      "CanBreak": true,
+      "Name": "散步",
+      "Key": ""
+    },
+    {
+      "Id": 300552,
+      "CanBreak": true,
+      "Name": "散步",
+      "Key": ""
+    },
+    {
+      "Id": 300553,
+      "CanBreak": true,
+      "Name": "散步",
+      "Key": ""
+    },
+    {
+      "Id": 300554,
+      "CanBreak": true,
+      "Name": "散步",
+      "Key": ""
+    }
+  ]
+}

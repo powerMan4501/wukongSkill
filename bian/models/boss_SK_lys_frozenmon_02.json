@@ -1,0 +1,282 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/LYS/UNIT_lys_frozenmon_02.UNIT_lys_frozenmon_02_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 170.0,
+    "CapsuleRadius": 65.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_frozenmon_02/Mesh/SK_lys_frozenmon_02.SK_lys_frozenmon_02",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_frozenmon_02/ABP_lys_frozenmon_02.ABP_lys_frozenmon_02_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_frozenmon_02/Mesh/PA_lys_frozenmon_02.PA_lys_frozenmon_02",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/LYS/LYS_frozenmon_02/LYS_frozenmon_02_weapon.LYS_frozenmon_02_weapon_C",
+        "SocketName": "weapon_r"
+      }
+    ],
+    "TFXConfigs": null,
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_l",
+        "FirstRadius": 30.0,
+        "NextBoneName": "ball_l",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Hit_Weapon_3",
+        "FirstRadius": 10.0,
+        "NextBoneName": "Hit_Weapon_1",
+        "NextRadius": 10.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_r",
+        "FirstRadius": 30.0,
+        "NextBoneName": "ball_r",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "neck_01",
+        "FirstRadius": 15.0,
+        "NextBoneName": "Bip",
+        "NextRadius": 25.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_lys_frozenmon_02",
+  "Label": "SK_lys_frozenmon_02",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 310801,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310802,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310803,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310804,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310805,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310806,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310807,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310808,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310809,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310810,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310811,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310820,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310821,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310851,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310852,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310853,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310854,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310860,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310861,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310862,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310863,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310864,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310865,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 310870,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000093
+      ]
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

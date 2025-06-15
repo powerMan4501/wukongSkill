@@ -1,0 +1,141 @@
+{
+  "Name": "悟空-立棍雷电技",
+  "desc": "1000865:雷，1000866冰， 1000867火， 1000868毒",
+  "Rules": [
+    {
+      "Name": "大圣平A1",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_01"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 1703001,
+          "ForTarget": true,
+          "buffCondition": 1000866,
+          "desc": "有冰buff发射冰剑气",
+          "TimeDelay": 200
+        }
+      ]
+    },
+    {
+      "Name": "大圣平A2",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_02"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 1703001,
+          "ForTarget": true,
+          "buffCondition": 1000866,
+          "desc": "有冰buff发射冰剑气",
+          "TimeDelay": 200
+        }
+      ]
+    },
+    {
+      "Name": "大圣平A3",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_03"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 1703001,
+          "ForTarget": true,
+          "buffCondition": 1000866,
+          "desc": "有冰buff发射冰剑气",
+          "TimeDelay": 200
+        }
+      ]
+    },
+    {
+      "Name": "大圣平A4",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_04"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 1703001,
+          "ForTarget": true,
+          "buffCondition": 1000866,
+          "desc": "有冰buff发射冰剑气",
+          "TimeDelay": 200
+        }
+      ]
+    },
+    {
+      "Name": "大圣平A5",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_05"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74011107,
+          "OffsetX": 400,
+          "OffsetY": 400,
+          "TimeDelay": 900,
+          "desc": "金沙爆炸"
+        }
+      ]
+    },
+    {
+      "Name": "马喽Q5红孩儿砸地",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboA_q5"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 30050301,
+          "OffsetX": 400,
+          "OffsetY": 400,
+          "TimeDelay": 810,
+          "buffCondition": 1000867
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 34010501,
+          "OffsetX": 400,
+          "OffsetY": 400,
+          "TimeDelay": 810,
+          "buffCondition": 1000867
+        }
+      ]
+    }
+  ]
+}

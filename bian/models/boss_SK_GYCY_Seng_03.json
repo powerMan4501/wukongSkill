@@ -1,0 +1,200 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/GYCY/Unit_GYCY_Seng_03.Unit_GYCY_Seng_03_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 220.0,
+    "CapsuleRadius": 75.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Seng_03/Meshes/SK_GYCY_Seng_03.SK_GYCY_Seng_03",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Seng_03/ABP_GYCY_Seng_03.ABP_GYCY_Seng_03_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Seng_03/Meshes/PA_GYCY_Seng_03.PA_GYCY_Seng_03",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_MangSeng_04/Hair/Hair.Hair_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_MangSeng_04/Hair/Seng_Hair.Seng_Hair"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "spine_01",
+        "FirstRadius": 41.2578773,
+        "NextBoneName": "Head",
+        "NextRadius": 23.08684
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_r",
+        "FirstRadius": 23.7070332,
+        "NextBoneName": "foot_r",
+        "NextRadius": 18.3900585
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_l",
+        "FirstRadius": 25.2372169,
+        "NextBoneName": "foot_l",
+        "NextRadius": 18.6768055
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Name": "小西天扛着石头的石头男",
+  "Label": "SK_GYCY_Seng_03",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 101801,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 101802,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 101803,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 101804,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 101806,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q"
+    },
+    {
+      "Id": 101807,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E"
+    },
+    {
+      "Id": 101811,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R"
+    },
+    {
+      "Id": 101822,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T"
+    },
+    {
+      "Id": 101823,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z"
+    },
+    {
+      "Id": 101824,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X"
+    },
+    {
+      "Id": 101825,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C"
+    },
+    {
+      "Id": 101826,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V"
+    },
+    {
+      "Id": 101831,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 101832,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 101840,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 101841,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 101842,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 101851,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 101852,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 101853,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 101854,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 101861,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

@@ -1,0 +1,243 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/LYS/UNIT_lys_xuewa_01.UNIT_lys_xuewa_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 260.0,
+    "CapsuleRadius": 130.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Wa_01/Meshes/new/SK_GYCY_Wa_01.SK_GYCY_Wa_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Wa_01/ABP_gycy_wa_03.ABP_gycy_wa_03_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Wa_01/Meshes/new/PA_GYCY_Wa_03.PA_GYCY_Wa_03",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "foretwist_r",
+        "FirstRadius": 30.0,
+        "NextBoneName": "hand_r",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "foretwist_l",
+        "FirstRadius": 30.0,
+        "NextBoneName": "hand_l",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "foot_l",
+        "FirstRadius": 30.0,
+        "NextBoneName": "Bip001-L-Toe1Nub",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "foot_r",
+        "FirstRadius": 30.0,
+        "NextBoneName": "Bip001-R-Toe1Nub",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "water_01",
+        "FirstRadius": 30.0,
+        "NextBoneName": "Water_02",
+        "NextRadius": 30.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Name": "SK_GYCY_Wa_01",
+  "Label": "SK_GYCY_Wa_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 305101,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305102,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305103,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305104,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305105,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305106,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305107,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305108,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305109,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305110,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305111,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305112,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305113,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305114,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305121,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305122,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305123,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305124,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305125,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305126,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305127,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305128,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305130,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305131,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305151,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305152,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305153,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305154,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305155,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305156,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305157,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305158,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305159,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305161,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 305162,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

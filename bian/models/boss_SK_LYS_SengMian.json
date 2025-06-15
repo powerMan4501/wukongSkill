@@ -1,0 +1,423 @@
+{
+  "Name": "不白",
+  "Label": "SK_LYS_SengMian",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": -400,
+  "ZRate": 100,
+  "CoolDownRate": 50,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8425
+  },
+  "Skills": [
+    {
+      "Id": 301201,
+      "CanBreak": true,
+      "Name": "前摇+一阵打",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301222,
+      "CanBreak": true,
+      "Name": "前摇+一阵打",
+      "Key": "LBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 301224,
+      "CanBreak": true,
+      "Name": "前摇+横扫一排冰刺",
+      "Key": "LBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 301206,
+      "CanBreak": true,
+      "Name": "前摇+原地刺出范围毒液",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301202,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301203,
+      "CanBreak": true,
+      "Name": "往后退，再飞上去打打打",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301207,
+      "CanBreak": true,
+      "Name": "往后退，再飞上去索敌喷毒",
+      "Key": "S+XBUTTON1",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301213,
+      "CanBreak": true,
+      "Name": "往后退，再飞上去索敌打打打",
+      "Key": "S+XBUTTON1",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301210,
+      "CanBreak": true,
+      "Name": "往后飞退，再飞上去索敌砸出冰暴",
+      "Key": "S+XBUTTON2",
+      "Step": 1,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 301204,
+      "CanBreak": true,
+      "Name": "小前摇后退，然后突进飞上去刺出地爆",
+      "Key": "S+XBUTTON2",
+      "Step": 2,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 11325,
+      "CanBreak": true,
+      "Name": "精魄技能",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301205,
+      "CanBreak": true,
+      "Name": "后撤发射毒气",
+      "Key": "SPACE",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301221,
+      "CanBreak": true,
+      "Name": "前摇，然后敌人脚下长出冰刺",
+      "Key": "A+X",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 301223,
+      "CanBreak": true,
+      "Name": "打出一排冰刺",
+      "Key": "A+C",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 301225,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301226,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301227,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301228,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301229,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301230,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301231,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301232,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301233,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301234,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301235,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301236,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301237,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301238,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301239,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301240,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301241,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301242,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301251,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301252,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301253,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301254,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301261,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301263,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301264,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301267,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301271,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301272,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301273,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301281,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301282,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301283,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301284,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301291,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301292,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301293,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301295,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301296,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301297,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301298,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301299,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/LYS/Unit_LYS_XueHou_Phantom.Unit_LYS_XueHou_Phantom_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 180.0,
+    "CapsuleRadius": 65.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_XueHou/Mesh/SK_LYS_XueHou.SK_LYS_XueHou",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_XueHou/ABP_LYS_XueHou.ABP_LYS_XueHou_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_XueHou/Mesh/PA_LYS_XueHou.PA_LYS_XueHou",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/LYS/LYS_XueHou/LYS_XueHou_Phantom_Weapon.LYS_XueHou_Phantom_Weapon_C",
+        "SocketName": "weapon_r"
+      }
+    ],
+    "TFXConfigs": null,
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_l",
+        "FirstRadius": 30.0,
+        "NextBoneName": "ball_l",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_r",
+        "FirstRadius": 30.0,
+        "NextBoneName": "ball_r",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Hit_Weapon_1",
+        "FirstRadius": 3.0,
+        "NextBoneName": "Hit_Weapon_3",
+        "NextRadius": 3.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Bip",
+        "FirstRadius": 30.0,
+        "NextBoneName": "neck_01",
+        "NextRadius": 10.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "upperarm_l",
+        "FirstRadius": 15.0,
+        "NextBoneName": "hand_l",
+        "NextRadius": 15.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "ball_l",
+        "FirstRadius": 20.0,
+        "NextBoneName": "ball_r",
+        "NextRadius": 20.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_LYS_XueHou",
+  "Label": "SK_LYS_XueHou",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 301500,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301501,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301502,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301503,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301504,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301506,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301524,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301525,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301531,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301532,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301533,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301541,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301551,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301552,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301553,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301554,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301572,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301573,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

@@ -1,0 +1,286 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/HFM/Unit_HFM_Hu_01.Unit_HFM_Hu_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 200.0,
+    "CapsuleRadius": 80.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_Hu_01/SK_HFM_Hu_01.SK_HFM_Hu_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_Hu_01/ABP_HFM_Hu_01.ABP_HFM_Hu_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_Hu_01/PA_HFM_Hu_01.PA_HFM_Hu_01",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/HFM_Hu_01_Weapon.HFM_Hu_01_Weapon_C",
+        "SocketName": "weapon_r"
+      }
+    ],
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM_HuXianFeng/Hair/HAIR_bust.HAIR_bust_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFM_HuXianFeng/Material/M_hfm_hu_01_hair_bust.M_hfm_hu_01_hair_bust"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM_HuXianFeng/Hair/HAIR_limbs.HAIR_limbs_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFM_HuXianFeng/Material/M_hfm_hu_01_hair_bust.M_hfm_hu_01_hair_bust"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "ball_l",
+        "FirstRadius": 35.0,
+        "NextBoneName": "thigh_l",
+        "NextRadius": 35.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "FX_Weapon_Trail_01",
+        "FirstRadius": 20.0,
+        "NextBoneName": "FX_Weapon_Trail_02",
+        "NextRadius": 20.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "upperarm_l",
+        "FirstRadius": 35.0,
+        "NextBoneName": "hand_l",
+        "NextRadius": 35.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Head",
+        "FirstRadius": 50.0,
+        "NextBoneName": "pelvis",
+        "NextRadius": 100.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "ball_r",
+        "FirstRadius": 35.0,
+        "NextBoneName": "thigh_r",
+        "NextRadius": 35.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "upperarm_r",
+        "FirstRadius": 35.0,
+        "NextBoneName": "hand_r",
+        "NextRadius": 35.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Name": "虎先锋的父亲",
+  "Label": "SK_HFM_Hu_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 200101,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 200102,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 200103,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 200104,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 200105,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q"
+    },
+    {
+      "Id": 200106,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E"
+    },
+    {
+      "Id": 200107,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R"
+    },
+    {
+      "Id": 200108,
+      "CanBreak": true,
+      "Name": "咆哮大招",
+      "Key": "T"
+    },
+    {
+      "Id": 200109,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z"
+    },
+    {
+      "Id": 200110,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X"
+    },
+    {
+      "Id": 200111,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C"
+    },
+    {
+      "Id": 200112,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V"
+    },
+    {
+      "Id": 200113,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200114,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200115,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200116,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200117,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200118,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200119,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200121,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200122,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200123,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200124,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200125,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200126,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200130,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200138,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200140,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200142,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200166,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0
+}

@@ -1,0 +1,541 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/Online/SZLC/UNIT_szlc_wanglingguan_01.UNIT_szlc_wanglingguan_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 310.0,
+    "CapsuleRadius": 80.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_wanglingguan_01/Mesh/SK_szlc_wanglingguan_01.SK_szlc_wanglingguan_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_wanglingguan_01/ABP_szlc_wanglingguan_01.ABP_szlc_wanglingguan_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_wanglingguan_01/Mesh/PA_szlc_wanglingguan_01.PA_szlc_wanglingguan_01",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 4712,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Name": "王灵官",
+  "Label": "SK_szlc_wanglingguan_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 0.8,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": {
+    "Buffers": [
+      1000115
+    ]
+  },
+  "XRate": -900.0,
+  "ZRate": 400.0,
+  "Skills": [
+    {
+      "Id": 471201,
+      "CanBreak": true,
+      "Name": "翅膀平A三下，然后后退",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 471205,
+      "CanBreak": true,
+      "Name": "360度旋转攻击，然后后退",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 471209,
+      "CanBreak": true,
+      "Name": "左右横扫+踹一脚+召唤雷电",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000115
+      ]
+    },
+    {
+      "Id": 471206,
+      "CanBreak": true,
+      "Name": "飞上去打打打，又飞回来",
+      "Key": "S+XBUTTON1",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 471208,
+      "CanBreak": true,
+      "Name": "飞上去打一下，再退回，再上去召唤雷电打",
+      "Key": "S+XBUTTON1",
+      "Step": 2,
+      "Buffs": [
+        1000115
+      ]
+    },
+    {
+      "Id": 471207,
+      "CanBreak": true,
+      "Name": "飞上去打一下，然后后退释放飞羽",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000115
+      ]
+    },
+    {
+      "Id": 471211,
+      "CanBreak": true,
+      "Name": "突进用风火轮打人,1000100红孩儿",
+      "Key": "C+XBUTTON2",
+      "Buffs": [
+        1000100
+      ]
+    },
+    {
+      "Id": 471214,
+      "CanBreak": true,
+      "Name": "突进上去挥舞雷电",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000115
+      ]
+    },
+    {
+      "Id": 471212,
+      "CanBreak": true,
+      "Name": "地面三个风火轮",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000100
+      ]
+    },
+    {
+      "Id": 471210,
+      "CanBreak": true,
+      "Name": "后退一步，飞到空中，召唤雷电",
+      "Key": "SPACE",
+      "Buffs": [
+        1000115
+      ]
+    },
+    {
+      "Id": 471213,
+      "CanBreak": true,
+      "Name": "召唤雷电，然后打很久，连招很长",
+      "Key": ""
+    },
+    {
+      "Id": 471215,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R"
+    },
+    {
+      "Id": 471216,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T"
+    },
+    {
+      "Id": 471217,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z"
+    },
+    {
+      "Id": 471218,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X"
+    },
+    {
+      "Id": 471219,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C"
+    },
+    {
+      "Id": 471220,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V"
+    },
+    {
+      "Id": 471221,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471222,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471223,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471224,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471225,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471226,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471227,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471228,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471229,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471230,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471231,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471232,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471233,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471234,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471235,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471236,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471237,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471255,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471256,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471257,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471258,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471259,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471260,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471261,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471262,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471263,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471264,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471265,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471266,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471267,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471268,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471269,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471270,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471271,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471272,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471273,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471274,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471275,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471276,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471277,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471278,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471279,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471280,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471281,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471282,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471283,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471284,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471285,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471289,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471290,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471291,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471292,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471293,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471294,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471295,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471296,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471297,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471298,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471299,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 471202,
+      "CanBreak": true,
+      "Name": "翅膀平A一下，然后后退",
+      "Key": ""
+    },
+    {
+      "Id": 471204,
+      "CanBreak": true,
+      "Name": "飞到侧面打一下，但命中率不高",
+      "Key": ""
+    },
+    {
+      "Id": 471203,
+      "CanBreak": true,
+      "Name": "退寸，然后等待好几秒进尺捅一下",
+      "Key": ""
+    }
+  ]
+}

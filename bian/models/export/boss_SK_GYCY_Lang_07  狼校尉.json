@@ -1,0 +1,307 @@
+{
+  "TamerPath": "/Game/00Main/Design/Units/GYCY/Unit_GYCY_Lang_07a.Unit_GYCY_Lang_07a_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 130.0,
+    "CapsuleRadius": 70.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Lang_07/Meshes/SK_GYCY_Lang_07.SK_GYCY_Lang_07",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Lang_07/ABP_GYCY_Lang_07a.ABP_GYCY_Lang_07a_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Lang_07/Meshes/PA_GYCY_Lang_07.PA_GYCY_Lang_07",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/GYCY_Lang_07_Sword.GYCY_Lang_07_Sword_C",
+        "SocketName": "weapon_rSocket"
+      },
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/GYCY_Lang_07_Shield.GYCY_Lang_07_Shield_C",
+        "SocketName": "weapon_lSocket"
+      }
+    ],
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03C/Hair/HAIR_main.HAIR_main_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.02,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03C/Materials/M_gycy_lang_07_body_hair.M_gycy_lang_07_body_hair"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03C/Hair/HAIR_ponytail_gs.HAIR_ponytail_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.02,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03C/Materials/M_gycy_lang_07_body_hair.M_gycy_lang_07_body_hair"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03C/Hair/HAIR_beard_gs.HAIR_beard_gs_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.02,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03C/Materials/M_gycy_lang_07_body_hair.M_gycy_lang_07_body_hair"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03C/Hair/HAIR_tail.HAIR_tail_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_Lang_03C/Materials/M_gycy_lang_07_body_hair.M_gycy_lang_07_body_hair"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "pelvis",
+        "FirstRadius": 30.0,
+        "NextBoneName": "neck",
+        "NextRadius": 15.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "weapon_r",
+        "FirstRadius": 15.0,
+        "NextBoneName": "Hit_04",
+        "NextRadius": 5.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_r",
+        "FirstRadius": 20.0,
+        "NextBoneName": "foot_r",
+        "NextRadius": 10.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_l",
+        "FirstRadius": 20.0,
+        "NextBoneName": "foot_l",
+        "NextRadius": 10.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "weapon_l",
+        "FirstRadius": 15.0,
+        "NextBoneName": "Hit_01",
+        "NextRadius": 5.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "狼校尉",
+  "Label": "SK_GYCY_Lang_07",
+  "Type": "BOSS",
+  "CoolDownRate": 30,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "HitCount": 0,
+      "Id": 101601,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "LBUTTON",
+      "Step": 1,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 101602,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "RBUTTON",
+      "Step": 1,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 101603,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "RBUTTON",
+      "Step": 2,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 101605,
+      "CanBreak": true,
+      "Name": "三连击",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "Q",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 101621,
+      "CanBreak": true,
+      "Name": "闪",
+      "Description": "空",
+      "AnimPath": null,
+      "Bullets": null,
+      "Key": "SPACE",
+      "Buffers": [
+        105111
+      ]
+    },
+    {
+      "HitCount": 0,
+      "Id": 101631,
+      "CanBreak": true,
+      "Name": "格挡，反击，我是无敌的",
+      "Description": "空",
+      "AnimPath": null,
+      "Bullets": null,
+      "Key": "E",
+      "Buffers": [
+        105111,
+        412201
+      ]
+    },
+    {
+      "HitCount": 0,
+      "Id": 101691,
+      "CanBreak": true,
+      "Name": "拔刀，来战吧",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "Z",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 111806,
+      "CanBreak": true,
+      "Name": "盾击",
+      "Description": "空",
+      "AnimPath": null,
+      "Bullets": null,
+      "Key": "X",
+      "Buffers": [
+        412201
+      ]
+    },
+    {
+      "HitCount": 0,
+      "Id": 111803,
+      "CanBreak": true,
+      "Name": "趁你病，要你命",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "C",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 101653,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 101654,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 101691,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 101692,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    }
+  ],
+  "DisableDepthOfField": false,
+  "XRate": 0.0,
+  "ZRate": 0.0
+}

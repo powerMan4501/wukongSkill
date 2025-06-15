@@ -1,0 +1,425 @@
+{
+  "Name": "复战幽魂",
+  "Label": "SK_GYCY_YanJIanXi_01_base",
+  "Type": "MAGIC",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "XRate": -200.0,
+  "ZRate": 200.0,
+  "EnterSkill": {
+    "Id": 8413
+  },
+  "TransDone": {
+    "Buffers": [
+      96009
+    ]
+  },
+  "Skills": [
+    {
+      "Id": 102422,
+      "CanBreak": true,
+      "Name": "踩地面一次",
+      "Key": "S+SPACE",
+      "Buffs": [
+        1000095,
+        1000168
+      ]
+    },
+    {
+      "Id": 102421,
+      "CanBreak": true,
+      "Name": "摸地面一次",
+      "Key": "",
+      "Buffs": [
+        1000083
+      ]
+    },
+    {
+      "Id": 102321,
+      "CanBreak": true,
+      "Name": "摸地面一次",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000083
+      ]
+    },
+    {
+      "Id": 102425,
+      "CanBreak": true,
+      "Name": "左右各摸地面一次",
+      "Key": "S+LBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000083
+      ]
+    },
+    {
+      "Id": 102325,
+      "CanBreak": true,
+      "Name": "左右各摸地面一次",
+      "Key": "S+LBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000083
+      ]
+    },
+    {
+      "Id": 102424,
+      "CanBreak": true,
+      "Name": "磕头",
+      "Key": "RBUTTON",
+      "Step": 1,
+      "Buffs": [
+        412201
+      ]
+    },
+    {
+      "Id": 102324,
+      "CanBreak": true,
+      "Name": "磕头",
+      "Key": "RBUTTON",
+      "Step": 2,
+      "Buffs": [
+        412201
+      ]
+    },
+    {
+      "Id": 102426,
+      "CanBreak": true,
+      "Name": "原地拍地一次",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000083,
+      ]
+    },
+    {
+      "Id": 102438,
+      "CanBreak": true,
+      "Name": "狂奔前进摸地2次",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000083
+      ]
+    },
+    {
+      "Id": 102423,
+      "CanBreak": true,
+      "Name": "连续踩地面3次",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102439,
+      "CanBreak": true,
+      "Name": "狂奔上去拍手",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102437,
+      "CanBreak": true,
+      "Name": "狂奔前进拍地爆2次",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000085
+      ]
+    },
+    {
+      "Id": 102433,
+      "CanBreak": true,
+      "Name": "速度很快的排云掌 AM_GYCY_YanJianXi_01_Atk_Fast_33",
+      "Key": "A+X",
+      "Buffs": [
+        1000085
+      ]
+    },
+    {
+      "Id": 102338,
+      "CanBreak": true,
+      "Name": "冲上去二连巴掌",
+      "Key": "Z",
+      "Buffs": [
+        1000083
+      ]
+    },
+    {
+      "Id": 11313,
+      "CanBreak": true,
+      "Name": "精魄磕头",
+      "Key": "S+Z"
+    },
+    {
+      "Id": 102437,
+      "CanBreak": true,
+      "Name": "狂奔前进拍地爆2次",
+      "Key": "X",
+      "Step": 1,
+      "Buffs": [
+        1000085
+      ]
+    },
+    {
+      "Id": 102337,
+      "CanBreak": true,
+      "Name": "狂奔前进拍地爆2次",
+      "Key": "X",
+      "Step": 2,
+      "Buffs": [
+        1000083
+      ]
+    },
+    {
+      "Id": 102432,
+      "CanBreak": true,
+      "Name": "拍地大招，三次地爆",
+      "Key": "C",
+      "Step": 1
+    },
+    {
+      "Id": 102432,
+      "CanBreak": true,
+      "Name": "拍地大招，三次地爆",
+      "Key": "C",
+      "Step": 2
+    },
+    {
+      "Id": 102362,
+      "CanBreak": true,
+      "Name": "拍地大招，三次地爆",
+      "Key": "C",
+      "Step": 3
+    },
+    {
+      "Id": 102323,
+      "CanBreak": true,
+      "Name": "连续踩地面3次",
+      "Key": "S+X",
+      "Buffs": [
+        1000085
+      ]
+    },
+    {
+      "Id": 102427,
+      "CanBreak": true,
+      "Name": "跳跃2次追击",
+      "Key": "V",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 102431,
+      "CanBreak": true,
+      "Name": "转身踩一下",
+      "Key": ""
+    },
+    {
+      "Id": 102434,
+      "CanBreak": true,
+      "Name": "转身踩一下",
+      "Key": ""
+    },
+    {
+      "Id": 102435,
+      "CanBreak": true,
+      "Name": "挥手一次",
+      "Key": "S+SPACE",
+      "Step": 1
+    },
+    {
+      "Id": 102436,
+      "CanBreak": true,
+      "Name": "挥手一次",
+      "Key": "S+SPACE",
+      "Step": 2
+    },
+    {
+      "Id": 102440,
+      "CanBreak": true,
+      "Name": "后退",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 102441,
+      "CanBreak": true,
+      "Name": "后退",
+      "Key": ""
+    },
+    {
+      "Id": 102442,
+      "CanBreak": true,
+      "Name": "后退",
+      "Key": ""
+    },
+    {
+      "Id": 102451,
+      "CanBreak": true,
+      "Name": "后退",
+      "Key": ""
+    },
+    {
+      "Id": 102452,
+      "CanBreak": true,
+      "Name": "后退",
+      "Key": ""
+    },
+    {
+      "Id": 102453,
+      "CanBreak": true,
+      "Name": "后退",
+      "Key": ""
+    },
+    {
+      "Id": 102454,
+      "CanBreak": true,
+      "Name": "后退",
+      "Key": ""
+    },
+    {
+      "Id": 102461,
+      "CanBreak": true,
+      "Name": "后退",
+      "Key": ""
+    },
+    {
+      "Id": 102462,
+      "CanBreak": true,
+      "Name": "后退",
+      "Key": ""
+    },
+    {
+      "Id": 102301,
+      "CanBreak": true,
+      "Name": "左手",
+      "Key": ""
+    },
+    {
+      "Id": 102302,
+      "CanBreak": true,
+      "Name": "右手",
+      "Key": ""
+    },
+    {
+      "Id": 102309,
+      "CanBreak": true,
+      "Name": "似乎是金池呼唤小弟打人的动作",
+      "Key": ""
+    },
+    {
+      "Id": 102322,
+      "CanBreak": true,
+      "Name": "踩地面一次",
+      "Key": ""
+    },
+    {
+      "Id": 102326,
+      "CanBreak": true,
+      "Name": "地爆一次",
+      "Key": ""
+    },
+    {
+      "Id": 102327,
+      "CanBreak": true,
+      "Name": "跳跃追击二次",
+      "Key": ""
+    },
+    {
+      "Id": 102331,
+      "CanBreak": true,
+      "Name": "飞天补血",
+      "Key": ""
+    },
+    {
+      "Id": 102333,
+      "CanBreak": true,
+      "Name": "从天上落下",
+      "Key": ""
+    },
+    {
+      "Id": 102334,
+      "CanBreak": true,
+      "Name": "转身踩一下",
+      "Key": ""
+    },
+    {
+      "Id": 102335,
+      "CanBreak": true,
+      "Name": "右手挥一下",
+      "Key": ""
+    },
+    {
+      "Id": 102336,
+      "CanBreak": true,
+      "Name": "左手挥一下",
+      "Key": ""
+    },
+    {
+      "Id": 102339,
+      "CanBreak": true,
+      "Name": "冲上去双掌合十",
+      "Key": ""
+    },
+    {
+      "Id": 102340,
+      "CanBreak": true,
+      "Name": "后退",
+      "Key": ""
+    },
+    {
+      "Id": 102341,
+      "CanBreak": true,
+      "Name": "左移",
+      "Key": ""
+    },
+    {
+      "Id": 102342,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": ""
+    },
+    {
+      "Id": 102351,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": ""
+    },
+    {
+      "Id": 102352,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": ""
+    },
+    {
+      "Id": 102353,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": ""
+    },
+    {
+      "Id": 102354,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": ""
+    },
+    {
+      "Id": 102361,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": ""
+    },
+    {
+      "Id": 102363,
+      "CanBreak": true,
+      "Name": "蓄力比较久的如来神掌",
+      "Key": ""
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/MGD/Unit_mgd_tianbing_03.Unit_mgd_tianbing_03_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 220.0,
+    "CapsuleRadius": 60.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_tianbing_03/Mesh/SK_mgd_tianbing_03.SK_mgd_tianbing_03",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_tianbing_03/ABP_mgd_tianbing_03.ABP_mgd_tianbing_03_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_tianbing_03/Mesh/PA_mgd_tianbing_03.PA_mgd_tianbing_03",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_mgd_tianbing_03",
+  "Label": "SK_mgd_tianbing_03",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 188901,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 188902,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 188903,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 188904,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 188905,
+      "CanBreak": true,
+      "Name": "剑雨 AM_mgd_tianbing_03_atk_04",
+      "Key": "Q",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 188906,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 188907,
+      "CanBreak": true,
+      "Name": "剑雨 AM_mgd_tianbing_03_atk_04_01",
+      "Key": "R",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 188951,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 188952,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 188953,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 188954,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 188960,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 188961,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 188965,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": -400.0,
+  "ZRate": 200.0,
+  "Author": "神秘人物"
+}

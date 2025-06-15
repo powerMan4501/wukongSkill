@@ -1,0 +1,231 @@
+{
+  "TamerPath": "/Game/00Main/Design/Units/GYCY/Unit_GYCY_HFDW.Unit_GYCY_HFDW_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 195.0,
+    "CapsuleRadius": 104.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_HFDW_01a/Mesh/Body/SK_GYCY_HFDW_01a.SK_GYCY_HFDW_01a",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_HFDW_01a/ABP_GYCY_HFDW_01a.ABP_GYCY_HFDW_01a_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_HFDW_01a/Mesh/Body/PA_GYCY_HFDW_01a.PA_GYCY_HFDW_01a",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/GYCY/GYCY_HFDW_01a/GYCY_HFDW_01a_Weapon.GYCY_HFDW_01a_Weapon_C",
+        "SocketName": "WeaponSocket"
+      }
+    ],
+    "TFXConfigs": [
+      {
+        "TFXAsset": null,
+        "EnableSimulation": true,
+        "LodScreenSize": 0.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS_LaoHeShang/Materials/MF_HFS_LaoHeShang_Hair.MF_HFS_LaoHeShang_Hair"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS_LaoHeShang/Hair/HAIR_upperbeard.HAIR_upperbeard_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.02,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Materials/M_gycy_xiong_beard.M_gycy_xiong_beard"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS_LaoHeShang/Hair/HAIR_lowerbeard.HAIR_lowerbeard_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.02,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Materials/M_gycy_xiong_beard.M_gycy_xiong_beard"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS_LaoHeShang/Hair/HAIR_eyebrow.HAIR_eyebrow_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.02,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Materials/M_gycy_xiong_beard.M_gycy_xiong_beard"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "pelvis",
+        "FirstRadius": 42.0,
+        "NextBoneName": "neck_02",
+        "NextRadius": 24.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "HCPoint5",
+        "FirstRadius": 15.0,
+        "NextBoneName": "HCPoint0",
+        "NextRadius": 15.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_r",
+        "FirstRadius": 20.0,
+        "NextBoneName": "ball_r",
+        "NextRadius": 15.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_l",
+        "FirstRadius": 20.0,
+        "NextBoneName": "ball_l",
+        "NextRadius": 15.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "黑风大王一段",
+  "Label": "SK_GYCY_HFDW_01a",
+  "Type": "BOSS",
+  "CoolDownRate": 70,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 103706,
+      "CanBreak": false,
+      "Name": "平A",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 103771,
+      "CanBreak": false,
+      "Name": "力劈华山",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 103788,
+      "CanBreak": true,
+      "Name": "横扫",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 103741,
+      "CanBreak": true,
+      "Name": "喷火",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 103791,
+      "CanBreak": true,
+      "Name": "化风",
+      "Key": "S+XBUTTON2"
+    },
+    {
+      "Id": 103765,
+      "CanBreak": true,
+      "Name": "闪",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 103701,
+      "CanBreak": true,
+      "Name": "斩击6",
+      "Key": "C+Z"
+    },
+    {
+      "Id": 103710,
+      "CanBreak": true,
+      "Name": "演武",
+      "Key": "C+E"
+    },
+    {
+      "Id": 103720,
+      "CanBreak": true,
+      "Name": "踢击",
+      "Key": "C+Q"
+    },
+    {
+      "Id": 103724,
+      "CanBreak": true,
+      "Name": "斩击4",
+      "Key": "S+F"
+    },
+    {
+      "Id": 103725,
+      "CanBreak": true,
+      "Name": "斩击3",
+      "Key": "S+C"
+    },
+    {
+      "Id": 103726,
+      "CanBreak": true,
+      "Name": "斩击2",
+      "Key": "S+X"
+    },
+    {
+      "Id": 103729,
+      "CanBreak": true,
+      "Name": "加血",
+      "Key": "S+Z"
+    },
+    {
+      "Id": 103761,
+      "CanBreak": true,
+      "Name": "跳跃横扫",
+      "Key": "S+Q"
+    },
+    {
+      "Id": 103762,
+      "CanBreak": true,
+      "Name": "解除",
+      "Key": "R"
+    },
+    {
+      "Id": 103772,
+      "CanBreak": true,
+      "Name": "冲刺",
+      "Key": "X"
+    },
+    {
+      "Id": 103780,
+      "CanBreak": true,
+      "Name": "后撤步",
+      "Key": "F"
+    },
+    {
+      "Id": 103792,
+      "CanBreak": true,
+      "Name": "跃击",
+      "Key": "Q"
+    },
+    {
+      "Id": 103799,
+      "CanBreak": true,
+      "Name": "问候",
+      "Key": "C+X"
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0
+}

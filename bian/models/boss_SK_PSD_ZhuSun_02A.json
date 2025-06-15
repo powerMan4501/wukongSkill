@@ -1,0 +1,85 @@
+{
+  "Name": "菇男",
+  "Label": "SK_PSD_ZhuSun_02A",
+  "Type": "MAGIC",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "EnterSkill": {
+    "Id": 8542
+  },
+  "Skills": [
+    {
+      "Id": 10141,
+      "CanBreak": true,
+      "Name": "精魄技能",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 501001,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 501002,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 501003,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 501004,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q"
+    },
+    {
+      "Id": 501021,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E"
+    },
+    {
+      "Id": 501051,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R"
+    },
+    {
+      "Id": 501052,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T"
+    },
+    {
+      "Id": 501053,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z"
+    },
+    {
+      "Id": 501054,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X"
+    },
+    {
+      "Id": 501091,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C"
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "Id": 10415,
+  "Name": "鼠",
+  "Label": "SK_HFM_ShuangTouShu_01a",
+  "Type": "TRANS",
+  "Asset": "/Game/00Main/Design/Units/Player/Unit_player_lys_shu.Unit_player_lys_shu_C",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 10415
+  },
+  "Skills": [
+    {
+      "Id": 250107,
+      "CanBreak": true,
+      "Name": "给刀附魔，火",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250123,
+      "CanBreak": true,
+      "Name": "侧面砍一刀，然后喷油烟",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250101,
+      "CanBreak": true,
+      "Name": "冲上去打打打，再喷油烟",
+      "Key": "S+XBUTTON2",
+      "Step": 1,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250102,
+      "CanBreak": true,
+      "Name": "冲上去打打打，再喷油烟",
+      "Key": "S+XBUTTON2",
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250121,
+      "CanBreak": true,
+      "Name": "冲上去打打打，再喷火",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250164,
+      "CanBreak": true,
+      "Name": "后退一步喷油烟再喷火",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250103,
+      "CanBreak": true,
+      "Name": "侧面砍一刀，然后喷油烟",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250104,
+      "CanBreak": true,
+      "Name": "侧面砍一刀，然后喷火",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250105,
+      "CanBreak": true,
+      "Name": "冲上去慢速两巴掌，+一刀",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250106,
+      "CanBreak": true,
+      "Name": "给刀附魔，火",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250111,
+      "CanBreak": true,
+      "Name": "冲上去打打打，再喷火",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250120,
+      "CanBreak": true,
+      "Name": "打打。翻滚，打打，喷油烟",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250122,
+      "CanBreak": true,
+      "Name": "打打。喷油烟，翻滚， ，喷油烟",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250124,
+      "CanBreak": true,
+      "Name": "侧面打一下，然后喷火",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250125,
+      "CanBreak": true,
+      "Name": "冲上去慢速两巴掌，+一刀",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250141,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250151,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250152,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250153,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250154,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250161,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250162,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250163,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250171,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250172,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250173,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250174,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 250181,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V",
+      "Buffs": [
+        1000105
+      ]
+    }
+  ]
+}

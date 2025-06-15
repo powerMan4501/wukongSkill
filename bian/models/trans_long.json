@@ -1,0 +1,346 @@
+{
+  "Id": 10419,
+  "Name": "龙大哥",
+  "Label": "SK_LYS_Dage",
+  "Type": "TRANS",
+  "Asset": "/Game/00Main/Design/Units/Player/Unit_player_psd_long.Unit_player_psd_long_C",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 10419,
+    "AnimPath": "AM_wukong_trans_to_psd_long"
+  },
+  "Skills": [
+    {
+      "Key": "V",
+      "Id": 19041,
+      "Step": 1,
+      "CanBreak": false,
+      "Name": "蓄力跳起闪电炸地面---2级别，三千阳春1",
+      "AnimPath": "AM_player_psd_long_R2_01_Max"
+    },
+    {
+      "Key": "V",
+      "Id": 19042,
+      "Step": 2,
+      "CanBreak": false,
+      "Name": "跳起闪电炸地面---2级别，三千阳春2",
+      "AnimPath": "AM_player_psd_long_R2_02_Max"
+    },
+    {
+      "Key": "V",
+      "Id": 19043,
+      "Step": 3,
+      "CanBreak": false,
+      "Name": "跳起闪电炸地面---3级别，三千阳春2",
+      "AnimPath": "AM_player_psd_long_R2_03_Max"
+    },
+    {
+      "Id": 301605,
+      "Name": "震刀",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Id": 301616,
+      "Name": "慢速砍一刀，捅一下，然后横扫放小黄龙刀光子弹",
+      "Key": "",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Id": 301635,
+      "Name": "隐身后退一步，然后前进3连战",
+      "Key": "S+XBUTTON1"
+    },
+    {
+      "Key": "",
+      "Id": 19010,
+      "CanBreak": false,
+      "Name": "转身劈+蓝色电弧，类似连击的平a",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Key": "C+XBUTTON1",
+      "Id": 301618,
+      "Name": "跳起+前劈三下+蓝色电弧",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Key": "A+XBUTTON1",
+      "Id": 301609,
+      "Name": "前刺+转圈攻击",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 19015,
+      "Name": "AM_player_psd_long_R1_to_R2_01'"
+    },
+    {
+      "Id": 301608,
+      "Name": "爆炸一下",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 19020,
+      "Step": 1,
+      "CanBreak": false,
+      "Name": "r2end"
+    },
+    {
+      "Key": "",
+      "Id": 19021,
+      "Step": 2,
+      "CanBreak": false,
+      "Name": "r2end——max"
+    },
+    {
+      "Id": 301602,
+      "Name": "突进刺击",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000095,
+        1000084
+      ]
+    },
+    {
+      "Id": 301617,
+      "Name": "突进飞过去，砍一刀",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 301649,
+      "Name": "前翻+前劈+蓝色大电弧",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Key": "A+XBUTTON2",
+      "Id": 301613,
+      "Name": "头前冲+蓝色大电弧跟随",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Key": "C+XBUTTON2",
+      "Id": 301604,
+      "Name": "抬脚+跳起+转圈前劈两下下+蓝色电弧",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Id": 301601,
+      "Name": "慢速砍几刀",
+      "Key": ""
+    },
+    {
+      "Id": 301603,
+      "Name": "弱化版的平A",
+      "Key": ""
+    },
+    {
+      "Id": 301606,
+      "Name": "翻滚",
+      "Key": ""
+    },
+    {
+      "Id": 301607,
+      "Name": "释放雷电后飞天，悬空状态",
+      "Key": ""
+    },
+    {
+      "Id": 301610,
+      "Name": "三千阳春1",
+      "Key": ""
+    },
+    {
+      "Id": 301611,
+      "Name": "三千阳春2",
+      "Key": ""
+    },
+    {
+      "Id": 301612,
+      "Name": "三千阳春3",
+      "Key": ""
+    },
+    {
+      "Id": 301614,
+      "Name": "三千阳春，砸地",
+      "Key": ""
+    },
+    {
+      "Id": 301615,
+      "Name": "后退一步+砍一刀，反击用",
+      "Key": "S+SPACE"
+    },
+    {
+      "Id": 301619,
+      "Name": "未命名",
+      "Key": "Q"
+    },
+    {
+      "Id": 301622,
+      "Name": "未命名",
+      "Key": "E"
+    },
+    {
+      "Id": 301623,
+      "Name": "未命名",
+      "Key": "R"
+    },
+    {
+      "Id": 301625,
+      "Name": "未命名",
+      "Key": "T"
+    },
+    {
+      "Id": 301641,
+      "Name": "未命名",
+      "Key": "X"
+    },
+    {
+      "Id": 301642,
+      "Name": "未命名",
+      "Key": "C"
+    },
+    {
+      "Id": 301643,
+      "Name": "未命名",
+      "Key": "V"
+    },
+    {
+      "Id": 301644,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301645,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301646,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301647,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301648,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301650,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301651,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301652,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301653,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301654,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301655,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301661,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301662,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301663,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301664,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301665,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301666,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301667,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301668,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301669,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301670,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 301671,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

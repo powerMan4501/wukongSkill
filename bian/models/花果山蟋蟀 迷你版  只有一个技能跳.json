@@ -1,0 +1,43 @@
+{
+  "TamerPath": "/Game/00Main/Design/Units/Online/SZLC/Unit_SZLC_XiShuai_01.Unit_SZLC_XiShuai_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 96.0,
+    "CapsuleRadius": 42.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_XiShuai_01/Mesh/SK_szlc_xishuai_01.SK_szlc_xishuai_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_XiShuai_01/ABP_SZLC_XiShuai_01.ABP_SZLC_XiShuai_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_XiShuai_01/Mesh/SK_szlc_xishuai_01_PhysicsAsset.SK_szlc_xishuai_01_PhysicsAsset",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 102
+  },
+  "Name": "花果山蟋蟀 只能跳",
+  "Label": "SK_szlc_xishuai_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 0.1,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "HitCount": 0,
+      "Id": 471101,
+      "CanBreak": true,
+      "Name": "跳",
+      "Description": "跳",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "SPACE",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    }
+  ],
+  "DisableDepthOfField": false,
+  "XRate": -6900.0,
+  "ZRate": 1700.0
+}

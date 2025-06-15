@@ -1,0 +1,250 @@
+{
+  "Name": "戒刀僧",
+  "Label": "SK_LYS_JieDaoSeng",
+  "Type": "MAGIC",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "EnterSkill": {
+    "Id": 8473
+  },
+  "Skills": [
+    {
+      "Id": 10173,
+      "CanBreak": true,
+      "Name": "精魄技能",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 301032,
+      "CanBreak": true,
+      "Name": "横扫两下，垂直砍出三道剑气",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301001,
+      "CanBreak": true,
+      "Name": "横扫一下剑气",
+      "Key": "XBUTTON1",
+      "Step": 1,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 301023,
+      "CanBreak": true,
+      "Name": "横扫一下剑气",
+      "Key": "XBUTTON1",
+      "Step": 2,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 301002,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301003,
+      "CanBreak": true,
+      "Name": "砍一下",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301005,
+      "CanBreak": true,
+      "Name": "左右横扫一次",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301007,
+      "CanBreak": true,
+      "Name": "单方向横扫两次",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301011,
+      "CanBreak": true,
+      "Name": "砍出一条剑气",
+      "Key": "RBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000105,
+        1000116
+      ]
+    },
+    {
+      "Id": 301012,
+      "CanBreak": true,
+      "Name": "砍出一条剑气",
+      "Key": "RBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000105,
+        1000116
+      ]
+    },
+    {
+      "Id": 301006,
+      "CanBreak": true,
+      "Name": "左右横扫一次，再跳起砸一次",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301004,
+      "CanBreak": true,
+      "Name": "砍一下",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301009,
+      "CanBreak": true,
+      "Name": "横扫两下",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301013,
+      "CanBreak": true,
+      "Name": "横扫一下",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301014,
+      "CanBreak": true,
+      "Name": "砍出一条剑气",
+      "Key": "Z",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301024,
+      "CanBreak": true,
+      "Name": "垂直砍，无剑气",
+      "Key": "X",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301010,
+      "CanBreak": true,
+      "Name": "爆气",
+      "Key": "C",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301033,
+      "CanBreak": true,
+      "Name": "横扫一下剑气",
+      "Key": "V",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301034,
+      "CanBreak": true,
+      "Name": "垂直砍，无剑气",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301051,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "SPACE",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301052,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301053,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301054,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301061,
+      "CanBreak": true,
+      "Name": "蓄力很久",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 301088,
+      "CanBreak": true,
+      "Name": "横扫一下剑气",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    }
+  ]
+}

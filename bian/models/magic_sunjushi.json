@@ -1,0 +1,108 @@
+{
+  "Name": "隼居士",
+  "Label": "SK_lys_baitouweng_01",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": -400,
+  "ZRate": 200,
+  "CoolDownRate": 50,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8471
+  },
+  "TransDone": {
+    "Buffers": [
+      1112,
+      1000068,
+      92245
+    ]
+  },
+  "Skills": [
+    {
+      "Key": "LBUTTON",
+      "Id": 303005,
+      "Name": "左右扇风  AM_lys_baitouweng_atk_05"
+    },
+    {
+      "Key": "S+LBUTTON",
+      "Id": 303006,
+      "Name": "螺旋前冲 AM_lys_baitouweng_atk_06"
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 303002,
+      "Name": "举扇子+龙卷风 AM_lys_baitouweng_atk_02"
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 303016,
+      "Name": "螺旋前冲 AM_lys_baitouweng_atk_06_inCombo",
+    },
+    {
+      "Key": "S+XBUTTON2",
+      "Id": 303007,
+      "Name": "侧身扇扇子打 AM_lys_baitouweng_atk_07",
+    },
+    {
+      "Key": "S+RBUTTON",
+      "Id": 11371,
+      "Name": "精魄技能举扇子+龙卷风"
+    },
+    {
+      "Key": "S+XBUTTON1",
+      "Id": 303003,
+      "Name": "跳起+冰5下 AM_lys_baitouweng_atk_03"
+    },
+    {
+      "Key": "XBUTTON1",
+      "Id": 303013,
+      "Name": "跳起+冰5下（特效更多点） AM_lys_baitouweng_atk_03_landfast"
+    },
+    {
+      "Key": "Z",
+      "Id": 303001,
+      "Name": "横向前的透明風 AM_lys_baitouweng_atk_01"
+    },
+    {
+      "Key": "X",
+      "Id": 303004,
+      "Name": "转身+龙卷风 AM_lys_baitouweng_atk_04"
+    },
+    {
+      "Key": "C",
+      "Id": 303026,
+      "Name": "螺旋前冲 AM_lys_baitouweng_atk_06_surprise",
+      "Buffers": [
+        92211,
+        105111
+      ]
+    },
+    {
+      "Key": "V",
+      "Id": 303031,
+      "Name": "迅速后退",
+      "Buffers": [
+        105111
+      ]
+    },
+    {
+      "Key": "SPACE",
+      "Id": 303022,
+      "Name": "后退,带冰",
+      "Buffers": [
+        105111
+      ]
+    },
+    {
+      "Key": "E",
+      "Id": 303061,
+      "Name": "现身",
+      "Buffers": [
+        105111
+      ]
+    }
+  ]
+}

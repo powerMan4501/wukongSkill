@@ -1,0 +1,413 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/Online/SZLC/Unit_szlc_tanglang01.Unit_szlc_tanglang01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 400.0,
+    "CapsuleRadius": 100.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_TangLang01/Mesh/SK_szlc_tanglang01.SK_szlc_tanglang01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_TangLang01/ABP_szlc_tanglang01.ABP_szlc_tanglang01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_TangLang01/Mesh/PA_szlc_tanglang01.PA_szlc_tanglang01",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "spine_01",
+        "FirstRadius": 61.36571,
+        "NextBoneName": "Head",
+        "NextRadius": 52.6062927
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_r",
+        "FirstRadius": 36.9684944,
+        "NextBoneName": "foot_r",
+        "NextRadius": 24.3290138
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_l",
+        "FirstRadius": 36.96843,
+        "NextBoneName": "foot_l",
+        "NextRadius": 24.32899
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "upperarm_r",
+        "FirstRadius": 36.96843,
+        "NextBoneName": "dao_r",
+        "NextRadius": 24.32899
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "upperarm_l",
+        "FirstRadius": 36.96843,
+        "NextBoneName": "dao_l",
+        "NextRadius": 24.32899
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Name": "碧臂螳",
+  "Label": "SK_szlc_tanglang01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 0.85,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": {
+    "Buffers": [
+      1000099
+    ]
+  },
+  "XRate": -1200.0,
+  "ZRate": 300.0,
+  "Author": "神秘人物",
+  "Skills": [
+    {
+      "Id": 471306,
+      "CanBreak": true,
+      "Name": "小前摇+左右横砍，可当平a",
+      "Key": "",
+      "Step": 1
+    },
+    {
+      "Id": 471307,
+      "CanBreak": true,
+      "Name": "小前摇+左右横砍，可当平a",
+      "Key": "",
+      "Step": 2
+    },
+    {
+      "Id": 471316,
+      "CanBreak": true,
+      "Name": "平A扎扎扎",
+      "Key": "LBUTTON",
+      "Step": 1
+    },
+    {
+      "Id": 471323,
+      "CanBreak": true,
+      "Name": "上前一步，平A扎扎扎",
+      "Key": "LBUTTON",
+      "Step": 2
+    },
+    {
+      "Id": 471328,
+      "CanBreak": true,
+      "Name": "上前一步，平A扎扎扎",
+      "Key": "LBUTTON",
+      "Step": 3
+    },
+    {
+      "Id": 471302,
+      "CanBreak": true,
+      "Name": "原地双刀捅地，然后再捅一次",
+      "Key": "S+LBUTTON"
+    },
+    {
+      "Id": 471357,
+      "CanBreak": true,
+      "Name": "无前摇，三连击",
+      "Key": "S+LBUTTON",
+      "Step": 2
+    },
+    {
+      "Id": 471301,
+      "CanBreak": true,
+      "Name": "原地双刀捅地",
+      "Key": "",
+      "Step": 1
+    },
+    {
+      "Id": 471371,
+      "CanBreak": true,
+      "Name": "和471301一样，双刀捅地",
+      "Key": ""
+    },
+    {
+      "Id": 471327,
+      "CanBreak": true,
+      "Name": "无前摇，三连击",
+      "Key": "RBUTTON",
+      "Step": 1
+    },
+    {
+      "Id": 471321,
+      "CanBreak": true,
+      "Name": "索敌捅杀好几次",
+      "Key": "S+RBUTTON"
+    },
+    {
+      "Id": 471303,
+      "CanBreak": true,
+      "Name": "前摇+飞上前去一阵打",
+      "Key": "XBUTTON1",
+      "Step": 1
+    },
+    {
+      "Id": 471351,
+      "CanBreak": true,
+      "Name": "前摇+飞上前去一阵打",
+      "Key": "XBUTTON1",
+      "Step": 2
+    },
+    {
+      "Id": 471356,
+      "CanBreak": true,
+      "Name": "远程技能，飞到空中释放刀气，然后闪现到敌人面前",
+      "Key": "S+XBUTTON1"
+    },
+    {
+      "Id": 471311,
+      "CanBreak": true,
+      "Name": "索敌，一阵砍砍砍扎扎扎",
+      "Key": "S+XBUTTON2"
+    },
+    {
+      "Id": 471313,
+      "CanBreak": true,
+      "Name": "突进扎一下，然后360回旋砍",
+      "Key": "XBUTTON2",
+      "Step": 1
+    },
+    {
+      "Id": 471317,
+      "CanBreak": true,
+      "Name": "突进扎一下，然后360回旋砍",
+      "Key": "XBUTTON2",
+      "Step": 2
+    },
+    {
+      "Id": 471358,
+      "CanBreak": true,
+      "Name": "蓄力一小会，然后突进上去双刀瞬间横扫",
+      "Key": "Z"
+    },
+    {
+      "Id": 471356,
+      "CanBreak": true,
+      "Name": "远程技能，飞到空中释放刀气，然后闪现到敌人面前",
+      "Key": "X"
+    },
+    {
+      "Id": 471309,
+      "CanBreak": true,
+      "Name": "小前摇+360度回旋斩好几次",
+      "Key": "A+V",
+      "Step": 1
+    },
+    {
+      "Id": 471310,
+      "CanBreak": true,
+      "Name": "爆气+一阵乱砍",
+      "Key": "V"
+    },
+    {
+      "Id": 471341,
+      "CanBreak": true,
+      "Name": "原地，身体前倾横扫前面两次，可当平A",
+      "Key": "C",
+      "Step": 1
+    },
+    {
+      "Id": 471342,
+      "CanBreak": true,
+      "Name": "原地，身体前倾横扫前面两次，可当平A",
+      "Key": "C",
+      "Step": 2
+    },
+    {
+      "Id": 471326,
+      "CanBreak": true,
+      "Name": "远程技能，飞到空中释放刀气",
+      "Key": "A+X"
+    },
+    {
+      "Id": 471309,
+      "CanBreak": true,
+      "Name": "小前摇+360度回旋斩好几次",
+      "Key": "A+C"
+    },
+    {
+      "Id": 471329,
+      "CanBreak": true,
+      "Name": "远程技能，后退一步飞到空中释放刀气",
+      "Key": "SPACE",
+      "Step": 1
+    },
+    {
+      "Id": 471325,
+      "CanBreak": true,
+      "Name": "远程技能，后退一步飞到空中释放刀气",
+      "Key": "SPACE",
+      "Step": 2
+    },
+    {
+      "Id": 471304,
+      "CanBreak": true,
+      "Name": "飞左飞右上去索敌一阵打，位移有点大",
+      "Key": ""
+    },
+    {
+      "Id": 471305,
+      "CanBreak": true,
+      "Name": "前摇，突进砍，然后突退，再突进砍，位移有点大",
+      "Key": ""
+    },
+    {
+      "Id": 471308,
+      "CanBreak": true,
+      "Name": "前摇，尾巴扎人",
+      "Key": ""
+    },
+    {
+      "Id": 471314,
+      "CanBreak": true,
+      "Name": "后退一步，摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 471315,
+      "CanBreak": true,
+      "Name": "老是砍不中",
+      "Key": ""
+    },
+    {
+      "Id": 471324,
+      "CanBreak": true,
+      "Name": "扎身后",
+      "Key": ""
+    },
+    {
+      "Id": 471331,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 471343,
+      "CanBreak": true,
+      "Name": "尾巴扎人",
+      "Key": ""
+    },
+    {
+      "Id": 471352,
+      "CanBreak": true,
+      "Name": "飞左飞右上去索敌一阵打，位移有点大",
+      "Key": ""
+    },
+    {
+      "Id": 471353,
+      "CanBreak": true,
+      "Name": "回旋砍，再突进突退砍，位移有点大",
+      "Key": ""
+    },
+    {
+      "Id": 471354,
+      "CanBreak": true,
+      "Name": "回旋砍，再突进突退砍，位移有点大",
+      "Key": ""
+    },
+    {
+      "Id": 471355,
+      "CanBreak": true,
+      "Name": "远程技能，后退一步飞到空中释放刀气",
+      "Key": ""
+    },
+    {
+      "Id": 471374,
+      "CanBreak": true,
+      "Name": "位移大",
+      "Key": ""
+    },
+    {
+      "Id": 471375,
+      "CanBreak": true,
+      "Name": "老打不中",
+      "Key": ""
+    },
+    {
+      "Id": 471380,
+      "CanBreak": true,
+      "Name": "小后退",
+      "Key": ""
+    },
+    {
+      "Id": 471381,
+      "CanBreak": true,
+      "Name": "小后退",
+      "Key": ""
+    },
+    {
+      "Id": 471382,
+      "CanBreak": true,
+      "Name": "摆姿势",
+      "Key": ""
+    },
+    {
+      "Id": 471384,
+      "CanBreak": true,
+      "Name": "摆姿势",
+      "Key": ""
+    },
+    {
+      "Id": 471385,
+      "CanBreak": true,
+      "Name": "爆气+一阵乱砍",
+      "Key": ""
+    },
+    {
+      "Id": 471392,
+      "CanBreak": true,
+      "Name": "后退一大步",
+      "Key": ""
+    },
+    {
+      "Id": 471393,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": ""
+    },
+    {
+      "Id": 471394,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": ""
+    },
+    {
+      "Id": 471395,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": ""
+    },
+    {
+      "Id": 471396,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": ""
+    },
+    {
+      "Id": 471397,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": ""
+    },
+    {
+      "Id": 471398,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": ""
+    },
+    {
+      "Id": 471399,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": ""
+    }
+  ]
+}

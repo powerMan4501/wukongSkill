@@ -1,0 +1,220 @@
+{
+  "Name": "巡山鬼",
+  "Label": "SK_HFM_XunShanGui_01a",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": -400,
+  "ZRate": 0,
+  "CoolDownRate": 50,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8576
+  },
+  "Skills": [
+    {
+      "Key": "LBUTTON",
+      "Id": 200404,
+      "Name": "跳冲",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 111404,
+      "Name": "跳冲",
+      "Step": 2,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 200403,
+      "CanBreak": true,
+      "Name": "突进跳打",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 200405,
+      "Name": "冲刺抡刃",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Key": "S+XBUTTON2",
+      "Id": 200470,
+      "Name": "抡武器",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "XBUTTON1",
+      "Id": 111403,
+      "Name": "前冲三连1",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 200402,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "S+RBUTTON",
+      "Id": 111402,
+      "Name": "前冲三连踢",
+      "CanBreak": true,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 111401,
+      "Name": "三连前冲抡武器,最后砸地",
+      "Step": 1,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 200401,
+      "Name": "三连前冲抡武器,最后砸地",
+      "Step": 2,
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Key": "A+X",
+      "Id": 200491,
+      "Name": "扔武器",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 200492,
+      "CanBreak": true,
+      "Name": "扔武器",
+      "Key": "A+C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "SPACE",
+      "Id": 200450,
+      "Name": "后空翻",
+      "Buffs": [
+        105111
+      ]
+    },
+    {
+      "Id": 200401,
+      "CanBreak": true,
+      "Name": "精魄技能",
+      "Key": "Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200402,
+      "CanBreak": true,
+      "Name": "精魄技能",
+      "Key": "S+SPACE",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200403,
+      "CanBreak": true,
+      "Name": "精魄技能",
+      "Key": "S+Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200404,
+      "CanBreak": true,
+      "Name": "精魄技能",
+      "Key": "A+Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200405,
+      "CanBreak": true,
+      "Name": "精魄技能",
+      "Key": "X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 10176,
+      "CanBreak": true,
+      "Name": "精魄技能",
+      "Key": "C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200451,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200452,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200453,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200454,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    }
+  ]
+}

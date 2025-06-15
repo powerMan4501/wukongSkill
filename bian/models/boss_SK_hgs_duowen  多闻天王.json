@@ -1,0 +1,418 @@
+{
+  "TamerPath": "/Game/00Main/Design/Units/HGS01/UNIT_hgs_duowen.UNIT_hgs_duowen_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 350.0,
+    "CapsuleRadius": 65.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HGS/HGS_duowen/Mesh_new/SK_hgs_duowen.SK_hgs_duowen",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HGS/HGS_duowen/ABP_hgs_duowen.ABP_hgs_duowen_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HGS/HGS_duowen/Mesh_new/SK_hgs_duowen_PhysicsAsset.SK_hgs_duowen_PhysicsAsset",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/4TianWang/DuoWen/Hair/HAIR_main.HAIR_main_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.02,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147414181"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/4TianWang/DuoWen/Hair/HAIR_frontshape.HAIR_frontshape_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.02,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147414180"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/4TianWang/DuoWen/Hair/HAIR_eyebrow.HAIR_eyebrow_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.02,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147414179"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/4TianWang/DuoWen/Hair/HAIR_beardup.HAIR_beardup_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.02,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147414178"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/4TianWang/DuoWen/Hair/HAIR_beardlow.HAIR_beardlow_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.02,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147414177"
+      }
+    ],
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 102
+  },
+  "Name": "多闻天王",
+  "Label": "SK_hgs_duowen",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 199175,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q"
+    },
+    {
+      "Id": 199173,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E"
+    },
+    {
+      "Id": 199154,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "S+E"
+    },
+    {
+      "Id": 199118,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z"
+    },
+    {
+      "Id": 199164,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X",
+      "Step": 1
+    },
+    {
+      "Id": 199145,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X",
+      "Step": 2
+    },
+    {
+      "Id": 199144,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X",
+      "Step": 3
+    },
+    {
+      "Id": 199133,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C"
+    },
+    {
+      "Id": 199125,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": "LBUTTON",
+      "Step": 1
+    },
+    {
+      "Id": 199123,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": "LBUTTON",
+      "Step": 2
+    },
+    {
+      "Id": 199113,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": "LBUTTON",
+      "Step": 3
+    },
+    {
+      "Id": 199122,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": "RBUTTON",
+      "Step": 1
+    },
+    {
+      "Id": 199120,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": "RBUTTON",
+      "Step": 2
+    },
+    {
+      "Id": 199117,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": "RBUTTON",
+      "Step": 3
+    },
+    {
+      "Id": 199116,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": "RBUTTON",
+      "Step": 4
+    },
+    {
+      "Id": 199114,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": "RBUTTON",
+      "Step": 5
+    },
+    {
+      "Id": 199110,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "A+Q"
+    },
+    {
+      "Id": 199109,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "A+E"
+    },
+    {
+      "Id": 199105,
+      "CanBreak": true,
+      "Name": "伞转圈攻击",
+      "Key": "C+Z"
+    },
+    {
+      "Id": 199101,
+      "CanBreak": true,
+      "Name": "电圈+后跳+前转伞",
+      "Key": "A+X"
+    },
+    {
+      "Id": 199129,
+      "CanBreak": true,
+      "Name": "巨型伞",
+      "Key": "A+C"
+    },
+    {
+      "Id": 199125,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199126,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199127,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199129,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199130,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199131,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199132,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199133,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199144,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199145,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199149,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199151,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199152,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199153,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199154,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199160,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199161,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199162,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199164,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199169,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199171,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199173,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199174,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199175,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199179,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199180,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199181,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199183,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199184,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199187,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 199193,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ],
+  "DisableDepthOfField": false,
+  "XRate": -900,
+  "ZRate": 200
+}

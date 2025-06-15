@@ -1,0 +1,96 @@
+{
+  "Name": "鸦香客",
+  "Label": "LYS_YaXiangKe",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": 0,
+  "ZRate": 0,
+  "CoolDownRate": 35,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8077
+  },
+  "Skills": [
+    {
+      "Key": "E",
+      "Id": 300733,
+      "Name": "双毒华斩"
+    },
+    {
+      "Key": "Q",
+      "Id": 300707,
+      "Name": "倒白毒"
+    },
+    {
+      "Key": "Z",
+      "Id": 300701,
+      "Name": "拍地"
+    },
+    {
+      "Key": "X",
+      "Id": 300722,
+      "Name": "伏地毒刺"
+    },
+    {
+      "Key": "C",
+      "Id": 300703,
+      "Name": "我没素质"
+    },
+    {
+      "Key": "SPACE",
+      "Id": 300726,
+      "Name": "后退"
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 300702,
+      "Name": "一掌",
+      "CanBreak": false,
+      "Step": 1
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 300703,
+      "Name": "冰刀一击",
+      "CanBreak": false,
+      "Step": 2
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 300704,
+      "Name": "冰刺冲天",
+      "CanBreak": false,
+      "Step": 3
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 300705,
+      "Name": "冰刺冲天",
+      "CanBreak": false,
+      "Step": 1
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 300706,
+      "Name": "冰刺冲天",
+      "CanBreak": false,
+      "Step": 2
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 300723,
+      "Name": "冰刺冲天",
+      "CanBreak": false,
+      "Step": 3      
+    },
+    {
+      "Key": "A+E",
+      "Id": 300709,
+      "Name": "毒镖",
+      "CanBreak": false
+    }
+  ]
+}

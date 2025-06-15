@@ -1,0 +1,286 @@
+{
+  "TamerPath": "/Game/00Main/Design/Units/Player/Unit_MonkeySummon_FS.Unit_MonkeySummon_FS_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 120.0,
+    "CapsuleRadius": 56.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Wukong/Meshes/Preview/Simple/SK_Wukong_Simple.SK_Wukong_Simple",
+    "ABPClass": "/Game/00MainHZ/Characters/Wukong/ABP_Wukong.ABP_Wukong_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Wukong/Meshes/Main/PA_Wukong_Main.PA_Wukong_Main",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "天命人",
+  "Label": "SK_Wukong_Simple",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 1001211,
+      "CanBreak": false,
+      "Name": "AM_mgd_jsds_atk_jdy_05突进飞到敌人跟前连续重击",
+      "Description": "",
+      "Key": "S+LBUTTON"
+    },
+    {
+      "Id": 1001207,
+      "Name": "戳棍",
+      "Key": "S+RBUTTON",
+      "CanBreak": false
+    },
+    {
+      "Id": 1001217,
+      "Name": "后撤",
+      "Key": "S+SPACE",
+      "CanBreak": false
+    },
+    {
+      "Id": 1001209,
+      "Name": "分身4蓄",
+      "Key": "S+XBUTTON1",
+      "CanBreak": false
+    },
+    {
+      "Id": 1001210,
+      "Name": "突进上去砸",
+      "Key": "S+XBUTTON2",
+      "CanBreak": false
+    },
+    {
+      "Id": 50007,
+      "CanBreak": true,
+      "Name": "大圣模式，转身定身",
+      "Key": "A+LBUTTON"
+    },
+    {
+      "Id": 1001219,
+      "Name": "追击",
+      "Key": "C+LBUTTON",
+      "CanBreak": true
+    },
+    {
+      "Id": 50005,
+      "Name": "大圣切手技，小横扫",
+      "Key": "C+RBUTTON",
+      "CanBreak": true,
+      "Buffs": [
+        1000809
+      ]
+    },
+    {
+      "Id": 50003,
+      "CanBreak": true,
+      "Name": "大圣模式，横扫一下再捅一下",
+      "Key": "C+XBUTTON1"
+    },
+    {
+      "Id": 50006,
+      "CanBreak": true,
+      "Name": "大圣模式，类似10707",
+      "Key": "C+XBUTTON2"
+    },
+    {
+      "Id": 50004,
+      "CanBreak": true,
+      "Name": "大圣模式，类似10707",
+      "Key": "A+XBUTTON1"
+    },
+    {
+      "Id": 50005,
+      "CanBreak": true,
+      "Name": "大圣模式，小横扫一下",
+      "Key": ""
+    },
+    {
+      "Id": 50006,
+      "CanBreak": true,
+      "Name": "大圣模式，类似10707",
+      "Key": "A+XBUTTON2"
+    },
+    {
+      "Id": 50008,
+      "CanBreak": true,
+      "Name": "大圣模式，跳起来砸",
+      "Key": "A+RBUTTON"
+    },
+    {
+      "Id": 10713,
+      "CanBreak": true,
+      "Name": "退寸",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 10714,
+      "CanBreak": true,
+      "Name": "进尺",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 10712,
+      "CanBreak": true,
+      "Name": "平A带激光，秒远程小怪",
+      "Key": "A+X",
+      "Buffs": [
+        1000121,
+        1000253
+      ]
+    },
+    {
+      "Id": 10992,
+      "CanBreak": true,
+      "Name": "定风珠",
+      "Key": "NUMPAD9",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 10869,
+      "Name": "飞棍，天命人版扔棍子",
+      "Key": "A+C",
+      "CanBreak": false
+    },
+    {
+      "Id": 50201,
+      "Name": "飞棍，大圣模式扔棍子",
+      "Key": "",
+      "CanBreak": false
+    },
+    {
+      "Id": 1001203,
+      "Name": "测试技能",
+      "Key": "NUMPAD0",
+      "CanBreak": false
+    },
+    {
+      "Id": 1001202,
+      "CanBreak": true,
+      "Name": "大圣Q5",
+      "Description": "",
+      "Key": "NUMPAD4"
+    },
+    {
+      "Id": 50015,
+      "CanBreak": true,
+      "Name": "大圣Q5",
+      "Description": "",
+      "Key": ""
+    },
+    {
+      "Id": 1001204,
+      "CanBreak": true,
+      "Name": "Q4",
+      "Key": "NUMPAD1"
+    },
+    {
+      "Id": 50012,
+      "CanBreak": true,
+      "Name": "大圣Q1",
+      "Step": 2,
+      "Key": ""
+    },
+    {
+      "Id": 50013,
+      "CanBreak": true,
+      "Name": "大圣Q1",
+      "Step": 3,
+      "Key": ""
+    },
+    {
+      "Id": 50014,
+      "CanBreak": true,
+      "Name": "大圣Q1",
+      "Step": 4,
+      "Key": ""
+    },
+    {
+      "Id": 50015,
+      "CanBreak": true,
+      "Name": "大圣Q1",
+      "Step": 5,
+      "Key": "NUMPAD1"
+    },
+    {
+      "Id": 10707,
+      "CanBreak": true,
+      "Name": "斩棍",
+      "Key": "NUMPAD2"
+    },
+    {
+      "Id": 10509,
+      "CanBreak": true,
+      "Name": "铜头",
+      "Key": "NUMPAD3"
+    },
+    {
+      "Id": 50024,
+      "Name": "大风车",
+      "CanBreak": false,
+      "Key": "NUMPAD6"
+    },
+    {
+      "Id": 10724,
+      "Name": "江海翻",
+      "Key": "NUMPAD5",
+      "CanBreak": true
+    },
+    {
+      "Id": 10519,
+      "Name": "完美定身",
+      "Buffs": [
+        1000288,
+        1000804,
+        202
+      ],
+      "Key": "NUMPAD8",
+      "CanBreak": true
+    },
+    {
+      "Id": 10520,
+      "Name": "安身术",
+      "Key": "NUMPAD7",
+      "CanBreak": true
+    },
+    {
+      "Id": 10096,
+      "Name": "JSXQ",
+      "Key": "",
+      "CanBreak": false
+    },
+    {
+      "Id": 10096,
+      "Name": "JSXQ",
+      "Key": "",
+      "CanBreak": false
+    },
+    {
+      "Id": 10096,
+      "Name": "JSXQ",
+      "Description": "",
+      "Key": "",
+      "CanBreak": true
+    },
+    {
+      "Id": 10701,
+      "Name": "子弹buff",
+      "Description": "激光爆炸",
+      "Key": "",
+      "Buffs": [
+        1000041,
+        202
+      ],
+      "CanBreak": true
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0
+}

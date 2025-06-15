@@ -1,0 +1,208 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/LYS/Unit_LYS_Mo4.Unit_LYS_Mo4_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 800.0,
+    "CapsuleRadius": 200.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_Mo4/Mesh/SK_lys_mo4.SK_lys_mo4",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_Mo4/ABP_LYS_Mo4.ABP_LYS_Mo4_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_Mo4/Mesh/PA_lys_mo4.PA_lys_mo4",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/LYS/LYS_Mo4/LYS_Mo4_Weapon.LYS_Mo4_Weapon_C",
+        "SocketName": "weapon_r"
+      }
+    ],
+    "TFXConfigs": null,
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Name": "魔将莲眼",
+  "Label": "SK_lys_mo4",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 0.8,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": {
+    "Buffers": [
+      1000095
+    ]
+  },
+  "XRate": -1900.0,
+  "ZRate": 800.0,
+  "Skills": [
+    {
+      "Id": 302201,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 302202,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 302203,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 302204,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 302205,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q"
+    },
+    {
+      "Id": 302206,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E"
+    },
+    {
+      "Id": 302207,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R"
+    },
+    {
+      "Id": 302208,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T"
+    },
+    {
+      "Id": 302209,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z"
+    },
+    {
+      "Id": 302210,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X"
+    },
+    {
+      "Id": 302211,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C"
+    },
+    {
+      "Id": 302212,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V"
+    },
+    {
+      "Id": 302213,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302214,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302215,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302216,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302217,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302218,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302219,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302220,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302221,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302222,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302251,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302252,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302253,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302254,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302291,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 302292,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

@@ -1,0 +1,466 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/GYCY/Unit_GYCY_Xiong_02.Unit_GYCY_Xiong_02_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 600.0,
+    "CapsuleRadius": 100.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Xiong_02/Mesh/SK_GYCY_xiong_02.SK_GYCY_Xiong_02",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Xiong_02/ABP_GYCY_Xiong_02.ABP_GYCY_Xiong_02_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Xiong_02/Mesh/PA_GYCY_XIong_02_ceshi.PA_GYCY_XIong_02_ceshi",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Hair/Head.Head_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.05,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/TressFX/HeiXiong_Head.HeiXiong_Head"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Hair/HAIR_body_baseshort.HAIR_body_baseshort_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.05,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/TressFX/HeiXiong_Fur1.HeiXiong_Fur1"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Hair/HAIR_legs_new.HAIR_legs_new_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.05,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/TressFX/HeiXiong_Fur1.HeiXiong_Fur1"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Hair/HAIR_neck_gs.HAIR_neck_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.05,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/TressFX/HeiXiong_Fur1.HeiXiong_Fur1"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Hair/Hands.Hands_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.05,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/TressFX/HeiXiong_Fur1.HeiXiong_Fur1"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Hair/HAIR_body_long_gs.HAIR_body_long_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.05,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/TressFX/HeiXiong_Fur1.HeiXiong_Fur1"
+      }
+    ],
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 1008
+  },
+  "Name": "黑熊精二阶段",
+  "Label": "SK_GYCY_Xiong_02",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 0.8,
+  "Level2Scale": 1,
+  "DisableDepthOfField": false,
+  "XRate": -900.0,
+  "ZRate": 800.0,
+  "Skills": [
+    {
+      "Id": 103151,
+      "CanBreak": true,
+      "Name": "转身面对敌人",
+      "Key": "SPACE",
+      "Buffs": [
+        105111
+      ]
+    },
+    {
+      "Id": 103107,
+      "CanBreak": true,
+      "Name": "前摇，然后突进各种重击",
+      "Key": "C+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 103177,
+      "CanBreak": true,
+      "Name": "无前摇JXSQ扑上去，带火焰",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 103105,
+      "CanBreak": true,
+      "Name": "前摇，然后jxsq上去扑杀",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        105111,
+        1000095
+      ]
+    },
+    {
+      "Id": 103101,
+      "CanBreak": true,
+      "Name": "扑上去一阵砸",
+      "Key": "A+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 103104,
+      "CanBreak": true,
+      "Name": "前摇，然后3连平a",
+      "Key": ""
+    },
+    {
+      "Id": 103117,
+      "CanBreak": true,
+      "Name": "无前摇JXSQ扑上去",
+      "Key": ""
+    },
+    {
+      "Id": 103164,
+      "CanBreak": true,
+      "Name": "前摇，然后3连平a，带火焰",
+      "Key": ""
+    },
+    {
+      "Id": 103165,
+      "CanBreak": true,
+      "Name": "前摇咆哮一下，然后JXSQ冲上去连击，带火焰",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 103103,
+      "CanBreak": true,
+      "Name": "原地扑砸",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 103112,
+      "CanBreak": true,
+      "Name": "前摇咆哮一下，然后冲上去2连击",
+      "Key": "C+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 103123,
+      "CanBreak": true,
+      "Name": "原地扑砸",
+      "Key": ""
+    },
+    {
+      "Id": 103163,
+      "CanBreak": true,
+      "Name": "原地扑砸，带火焰",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 103121,
+      "CanBreak": true,
+      "Name": "跳起飞砸",
+      "Key": ""
+    },
+    {
+      "Id": 103181,
+      "CanBreak": true,
+      "Name": "跳起飞砸，带火焰",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 103111,
+      "CanBreak": true,
+      "Name": "原地打侧面一拳，然后冲上去打，索敌很远",
+      "Key": ""
+    },
+    {
+      "Id": 103171,
+      "CanBreak": true,
+      "Name": "原地打侧面一拳，然后冲上去打，索敌很远，带火焰",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 103167,
+      "CanBreak": true,
+      "Name": "前摇咆哮一下，然后冲上去3连击，带火焰",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 103102,
+      "CanBreak": true,
+      "Name": "前摇，然后两连击，似乎没有索敌",
+      "Key": ""
+    },
+    {
+      "Id": 103106,
+      "CanBreak": true,
+      "Name": "前摇，然后慢速2连巴掌",
+      "Key": ""
+    },
+    {
+      "Id": 103108,
+      "CanBreak": true,
+      "Name": "打右侧身一下",
+      "Key": ""
+    },
+    {
+      "Id": 103109,
+      "CanBreak": true,
+      "Name": "打左侧身一下",
+      "Key": ""
+    },
+    {
+      "Id": 103110,
+      "CanBreak": true,
+      "Name": "砸侧身面",
+      "Key": ""
+    },
+    {
+      "Id": 103113,
+      "CanBreak": true,
+      "Name": "抖一抖灰尘",
+      "Key": ""
+    },
+    {
+      "Id": 103114,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 103115,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 103120,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 103124,
+      "CanBreak": true,
+      "Name": "有bug，估计是jxsq",
+      "Key": ""
+    },
+    {
+      "Id": 103131,
+      "CanBreak": true,
+      "Name": "跑来跑去",
+      "Key": ""
+    },
+    {
+      "Id": 103132,
+      "CanBreak": true,
+      "Name": "跑来跑去",
+      "Key": ""
+    },
+    {
+      "Id": 103133,
+      "CanBreak": true,
+      "Name": "跑来跑去",
+      "Key": ""
+    },
+    {
+      "Id": 103150,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 103152,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 103153,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 103161,
+      "CanBreak": true,
+      "Name": "前摇咆哮一下，然后冲上去2连击，带火焰",
+      "Key": ""
+    },
+    {
+      "Id": 103162,
+      "CanBreak": true,
+      "Name": "前摇，然后突进各种重击，带火焰",
+      "Key": ""
+    },
+    {
+      "Id": 103166,
+      "CanBreak": true,
+      "Name": "前摇，然后慢速2连巴掌，带火焰",
+      "Key": ""
+    },
+    {
+      "Id": 103168,
+      "CanBreak": true,
+      "Name": "打右侧身一下，带火焰",
+      "Key": ""
+    },
+    {
+      "Id": 103169,
+      "CanBreak": true,
+      "Name": "打左侧身一下，带火焰",
+      "Key": ""
+    },
+    {
+      "Id": 103170,
+      "CanBreak": true,
+      "Name": "砸侧身面，带火焰",
+      "Key": ""
+    },
+    {
+      "Id": 103174,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 103175,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 103176,
+      "CanBreak": true,
+      "Name": "咆哮一下",
+      "Key": ""
+    },
+    {
+      "Id": 103192,
+      "CanBreak": true,
+      "Name": "跑来跑去",
+      "Key": ""
+    },
+    {
+      "Id": 103193,
+      "CanBreak": true,
+      "Name": "大招，召唤火场和jsxq火粒子",
+      "Key": "Z",
+      "Step": 1,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 103183,
+      "CanBreak": true,
+      "Name": "慢速砸一下召唤火场",
+      "Key": "Z",
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 103180,
+      "CanBreak": true,
+      "Name": "慢速召唤火粒子，然后慢速索敌打一下",
+      "Key": "X"
+    },
+    {
+      "Id": 103191,
+      "CanBreak": true,
+      "Name": "跑来跑去",
+      "Key": "C",
+      "Buffs": [
+        105111
+      ]
+    },
+    {
+      "Id": 103101,
+      "CanBreak": true,
+      "Name": "扑上去一阵砸",
+      "Key": "V",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 103194,
+      "CanBreak": true,
+      "Name": "被打硬直",
+      "Key": ""
+    },
+    {
+      "Id": 103195,
+      "CanBreak": true,
+      "Name": "被打硬直",
+      "Key": ""
+    }
+  ]
+}

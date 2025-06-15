@@ -1,0 +1,156 @@
+{
+  "Name": "赤发鬼",
+  "Label": "SK_LYS_ChiFaGui_01A",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": 0,
+  "ZRate": 100,
+  "CoolDownRate": 50,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8472
+  },
+  "Skills": [
+    {
+      "Id": 302605,
+      "CanBreak": true,
+      "Name": "平A一下",
+      "Key": ""
+    },
+    {
+      "Id": 302633,
+      "CanBreak": true,
+      "Name": "踢一下再砸一下，类似302601",
+      "Key": "S+LBUTTON"
+    },
+    {
+      "Id": 302601,
+      "CanBreak": true,
+      "Name": "踢一下再砸一下",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 302609,
+      "CanBreak": true,
+      "Name": "一阵打击，很重",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 302613,
+      "CanBreak": true,
+      "Name": "气功+一阵打击，再来小范围气功波",
+      "Key": "S+RBUTTON"
+    },
+    {
+      "Id": 302602,
+      "CanBreak": true,
+      "Name": "捅踢打几下，实用性还行",
+      "Key": "A+RBUTTON"
+    },
+    {
+      "Id": 302603,
+      "CanBreak": true,
+      "Name": "一阵打",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 302604,
+      "CanBreak": true,
+      "Name": "打两下跳起突进砸击",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 302634,
+      "CanBreak": true,
+      "Name": "类似 302604",
+      "Key": "S+XBUTTON2"
+    },
+    {
+      "Id": 302621,
+      "CanBreak": true,
+      "Name": "翻滚",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 302606,
+      "CanBreak": true,
+      "Name": "开启狂奔模式",
+      "Key": "S+SPACE"
+    },
+    {
+      "Id": 302607,
+      "CanBreak": true,
+      "Name": "狂奔+打几下",
+      "Key": "A+SPACE"
+    },
+    {
+      "Id": 302608,
+      "CanBreak": true,
+      "Name": "后退一步并射箭",
+      "Key": "V"
+    },
+    {
+      "Id": 302671,
+      "CanBreak": true,
+      "Name": "缓慢站起来射箭",
+      "Key": "Z",
+      "Step": 1
+    },
+    {
+      "Id": 302672,
+      "CanBreak": true,
+      "Name": "缓慢站起来射箭",
+      "Key": "Z",
+      "Step": 2
+    },
+    {
+      "Id": 302631,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X"
+    },
+    {
+      "Id": 302635,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C"
+    },
+    {
+      "Id": 11372,
+      "CanBreak": true,
+      "Name": "精魄技能",
+      "Key": "A+X",
+      "Buffs": [
+        1000104,
+        1000249
+      ]
+    },
+    {
+      "Id": 302652,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 302653,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 302654,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 302632,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    }
+  ]
+}

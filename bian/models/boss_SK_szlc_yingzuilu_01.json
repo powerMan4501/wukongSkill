@@ -1,0 +1,833 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/Online/SZLC/UNIT_szlc_yingzuilu_01.UNIT_szlc_yingzuilu_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 300.0,
+    "CapsuleRadius": 80.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_yingzuilu_01/Mesh/SK_szlc_yingzuilu_01.SK_szlc_yingzuilu_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_yingzuilu_01/ABP_szlc_yingzuilu_01.ABP_szlc_yingzuilu_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/Online/SZLC/SZLC_yingzuilu_01/Mesh/PA_szlc_yingzuilu_01.PA_szlc_yingzuilu_01",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_YingZuiLu/Hair/HAIR_body.HAIR_body_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.08,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147397759"
+      }
+    ],
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 1019
+  },
+  "Name": "步云鹿一阶段",
+  "Label": "SK_szlc_yingzuilu_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 0.85,
+  "Level2Scale": 1.0,
+  "XRate": -900.0,
+  "ZRate": 250.0,
+  "Skills": [
+    {
+      "Id": 470551,
+      "CanBreak": true,
+      "Name": "原地踩踏，召唤大量雪球砸",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470504,
+      "CanBreak": true,
+      "Name": "原地踩踏",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000098
+      ]
+    },
+    {
+      "Id": 470511,
+      "CanBreak": true,
+      "Name": "索敌踩踏",
+      "Key": "RBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000098
+      ]
+    },
+    {
+      "Id": 470512,
+      "CanBreak": true,
+      "Name": "索敌踩踏",
+      "Key": "RBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000098
+      ]
+    },
+    {
+      "Id": 470552,
+      "CanBreak": true,
+      "Name": "前摇，咆哮，踩踏出冰暴",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470501,
+      "CanBreak": true,
+      "Name": "左往右用角挑",
+      "Key": "XBUTTON1",
+      "Step": 1,
+      "Buffs": [
+        1000098,
+        1000069
+      ]
+    },
+    {
+      "Id": 470503,
+      "CanBreak": true,
+      "Name": "从右往左挑",
+      "Key": "XBUTTON1",
+      "Step": 2,
+      "Buffs": [
+        1000098,
+        1000069
+      ]
+    },
+    {
+      "Id": 470502,
+      "CanBreak": true,
+      "Name": "左往右用角挑",
+      "Key": "XBUTTON1",
+      "Step": 3,
+      "Buffs": [
+        1000098,
+        1000069
+      ]
+    },
+    {
+      "Id": 470543,
+      "CanBreak": true,
+      "Name": "从左往右挑,冰",
+      "Key": "S+XBUTTON1",
+      "Step": 1,
+      "Buffs": [
+        1000094,
+        1000069
+      ]
+    },
+    {
+      "Id": 470549,
+      "CanBreak": true,
+      "Name": "从右往左挑,冰",
+      "Key": "S+XBUTTON1",
+      "Step": 2,
+      "Buffs": [
+        1000094,
+        1000069
+      ]
+    },
+    {
+      "Id": 470510,
+      "CanBreak": true,
+      "Name": "后腿踢，小索敌",
+      "Key": "",
+      "Buffs": [
+        1000069
+      ]
+    },
+    {
+      "Id": 470505,
+      "CanBreak": true,
+      "Name": "突进用角挑,毒",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000069
+      ]
+    },
+    {
+      "Id": 470541,
+      "CanBreak": true,
+      "Name": "突进用角挑,冰",
+      "Key": "S+XBUTTON2",
+      "Step": 1,
+      "Buffs": [
+        1000094,
+        1000069
+      ]
+    },
+    {
+      "Id": 470542,
+      "CanBreak": true,
+      "Name": "突进用角挑,冰",
+      "Key": "S+XBUTTON2",
+      "Step": 2,
+      "Buffs": [
+        1000094,
+        1000069
+      ]
+    },
+    {
+      "Id": 470506,
+      "CanBreak": true,
+      "Name": "前摇，由下往上挑",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470507,
+      "CanBreak": true,
+      "Name": "前摇，直线挑",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470509,
+      "CanBreak": true,
+      "Name": "从右往左挑",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470513,
+      "CanBreak": true,
+      "Name": "迅速后退",
+      "Key": "SPACE",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470514,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470515,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470516,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470517,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470518,
+      "CanBreak": true,
+      "Name": "大招，咆哮，召唤巨大毒血球砸",
+      "Key": "A+X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 470520,
+      "CanBreak": true,
+      "Name": "后退一步，前摇，召唤很多毒雪球砸",
+      "Key": "A+C",
+      "Buffs": [
+        1000069
+      ]
+    },
+    {
+      "Id": 470544,
+      "CanBreak": true,
+      "Name": "大招，咆哮，召唤大量雪球砸",
+      "Key": "S+Z",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470540,
+      "CanBreak": true,
+      "Name": "大招，召唤冰龙卷",
+      "Key": "S+X",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470519,
+      "CanBreak": true,
+      "Name": "后退一步，前摇，召唤一个毒雪球砸",
+      "Key": "",
+      "Buffs": [
+        1000069
+      ]
+    },
+    {
+      "Id": 470521,
+      "CanBreak": true,
+      "Name": "前摇，由下往上挑",
+      "Key": "",
+      "Buffs": [
+        1000069
+      ]
+    },
+    {
+      "Id": 470522,
+      "CanBreak": true,
+      "Name": "前摇，由下往上挑",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470523,
+      "CanBreak": true,
+      "Name": "前摇，由下往上挑出冰龙卷，几秒后龙卷消失",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470524,
+      "CanBreak": true,
+      "Name": "前摇，由下往上挑出冰龙卷，几秒后龙卷消失",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470525,
+      "CanBreak": true,
+      "Name": "前摇，由下往上挑出冰龙卷，几秒后龙卷消失",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470526,
+      "CanBreak": true,
+      "Name": "前摇，由下往上挑出冰龙卷，几秒后龙卷消失",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470527,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470528,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470529,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470530,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470531,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470532,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470533,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470534,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470535,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470536,
+      "CanBreak": true,
+      "Name": "移动",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470539,
+      "CanBreak": true,
+      "Name": "转阶段，bug",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470546,
+      "CanBreak": true,
+      "Name": "原地，由下往上挑",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470547,
+      "CanBreak": true,
+      "Name": "前进一步，由下往上挑",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470548,
+      "CanBreak": true,
+      "Name": "来回冲撞，带冰龙卷",
+      "Key": "Z",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470508,
+      "CanBreak": true,
+      "Name": "前摇，直线往前冲撞，待配招",
+      "Key": "X",
+      "Buffs": [
+        1000069
+      ]
+    },
+    {
+      "Id": 470550,
+      "CanBreak": true,
+      "Name": "后腿踢，小索敌，冰",
+      "Key": "C",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470545,
+      "CanBreak": true,
+      "Name": "突进用角挑,冰",
+      "Key": "V",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470553,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470554,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470555,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470556,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470557,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470558,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470559,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470560,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470571,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470572,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470573,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470574,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470575,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470576,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470577,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470578,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470579,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470580,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470581,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470582,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470583,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470584,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470586,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470587,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470588,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470589,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470590,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470591,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470592,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470593,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470594,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470595,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470596,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470597,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470598,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 470599,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "",
+      "Buffs": [
+        1000094
+      ]
+    }
+  ]
+}

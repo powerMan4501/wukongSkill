@@ -1,0 +1,249 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/HYS/Unit_HYS_LuoChaGui_01.Unit_HYS_LuoChaGui_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 480.0,
+    "CapsuleRadius": 150.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_LuoChaGui_01/Mesh/SK_LuoChaGui_01.SK_LuoChaGui_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_LuoChaGui_01/ABP_HYS_LuoChaGui_01.ABP_HYS_LuoChaGui_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_LuoChaGui_01/Mesh/PA_LuoChaGui_01.PA_LuoChaGui_01",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "spine_01",
+        "FirstRadius": 90.5930939,
+        "NextBoneName": "Head",
+        "NextRadius": 63.630928
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_r",
+        "FirstRadius": 48.8800468,
+        "NextBoneName": "foot_r",
+        "NextRadius": 35.6001778
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_l",
+        "FirstRadius": 48.7922363,
+        "NextBoneName": "foot_l",
+        "NextRadius": 35.6009636
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 4014,
+    "Override_AbnormalDispID_Victim": 102
+  },
+  "Name": "鬼王",
+  "Label": "SK_LuoChaGui_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": -1200.0,
+  "ZRate": 100.0,
+  "Skills": [
+    {
+      "Id": 401206,
+      "CanBreak": true,
+      "Name": "逆时针和401205类似扇一巴掌 AM_HYS_LuoChaGui_01_Atk_06",
+      "Key": "",
+      "Step": 1
+    },
+    {
+      "Id": 401204,
+      "CanBreak": true,
+      "Name": "顺时针扇一巴掌 AM_HYS_LuoChaGui_01_Atk_04",
+      "Key": "",
+      "Step": 2
+    },
+    {
+      "Id": 401205,
+      "CanBreak": true,
+      "Name": "逆时针扇一巴掌 AM_HYS_LuoChaGui_01_Atk_05",
+      "Key": "",
+      "Step": 3
+    },
+    {
+      "Id": 401216,
+      "CanBreak": true,
+      "Name": "右脚原地踩一下 AM_HYS_LuoChaGui_01_Atk_16",
+      "Key": "",
+      "Step": 1
+    },
+    {
+      "Id": 401217,
+      "CanBreak": true,
+      "Name": "左脚原地踩一下 AM_HYS_LuoChaGui_01_Atk_17",
+      "Key": "",
+      "Step": 2
+    },
+    {
+      "Id": 401202,
+      "CanBreak": true,
+      "Name": "脚踩一次 AM_HYS_LuoChaGui_01_Atk_02",
+      "Key": "LBUTTON",
+    },
+    {
+      "Id": 401209,
+      "CanBreak": true,
+      "Name": "往后扇一巴掌 AM_HYS_LuoChaGui_01_Atk_09",
+      "Key": "S+LBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401210,
+      "CanBreak": true,
+      "Name": "往后扇一巴掌 AM_HYS_LuoChaGui_01_Atk_10",
+      "Key": "S+LBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401201,
+      "CanBreak": true,
+      "Name": "左右脚各踩一次 AM_HYS_LuoChaGui_01_Atk_01",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 401211,
+      "CanBreak": true,
+      "Name": "一拳打在地上触发范围火 AM_HYS_LuoChaGui_01_Atk_11",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401203,
+      "CanBreak": true,
+      "Name": "冲上去足球踢然后扇一巴掌 AM_HYS_LuoChaGui_01_Atk_03",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401215,
+      "CanBreak": true,
+      "Name": "左右各一巴掌，然后跳起砸出鬼火 AM_HYS_LuoChaGui_01_Atk_15",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401208,
+      "CanBreak": true,
+      "Name": "冲上去拍一掌 AM_HYS_LuoChaGui_01_Atk_08",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401212,
+      "CanBreak": true,
+      "Name": "爆发鬼火子弹，有索敌效果 AM_HYS_LuoChaGui_01_Atk_12",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401214,
+      "CanBreak": true,
+      "Name": "从地上搬起石头砸目标 AM_HYS_LuoChaGui_01_Atk_14",
+      "Key": "A+X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401218,
+      "CanBreak": true,
+      "Name": "超级鬼火 AM_HYS_LuoChaGui_01_Atk_xiuxian_02",
+      "Key": "Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401222,
+      "CanBreak": true,
+      "Name": "爆发鬼火 AM_HYS_JiaoMianGui_01_Atk_12_01",
+      "Key": "X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401228,
+      "CanBreak": true,
+      "Name": "超级鬼火 AM_HYS_JiaoMianGui_01_Atk_xiuxian_02_01",
+      "Key": "C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 401251,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 401252,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 401253,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 401254,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 401296,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 401297,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 401298,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 401299,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

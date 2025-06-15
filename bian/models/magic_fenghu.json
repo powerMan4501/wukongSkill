@@ -1,0 +1,181 @@
+{
+  "Name": "疯虎",
+  "Label": "SK_hfm_bashanhu_01",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": -400,
+  "ZRate": 200,
+  "CoolDownRate": 45,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8462,
+    "Name": "变身"
+  },
+  "Skills": [
+    {
+      "Key": "",
+      "Id": 210283,
+      "Name": "左拳",
+      "CanBreak": false,
+      "Step": 1,
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 210281,
+      "Name": "右拳",
+      "CanBreak": false,
+      "Step": 2,
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 210209,
+      "Name": "双掌拍击",
+      "CanBreak": false,
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "S+LBUTTON",
+      "Id": 210206,
+      "Name": "吼+落石+血色音波+落石",
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 11362,
+      "Name": "向前发射音波",
+      "Step": 1,
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 11362,
+      "Step": 2,
+      "Name": "疯虎精魄技能",
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "S+RBUTTON",
+      "Id": 210225,
+      "Name": "咆哮",
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 210224,
+      "Name": "前冲砸地，可在此时接精魄技能",
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "S+XBUTTON2",
+      "Id": 210295,
+      "Name": "前冲+跳起+踢地面+血色爆炸",
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "XBUTTON1",
+      "Id": 210229,
+      "Name": "跳起+3连抓+爆炸血色",
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "S+XBUTTON1",
+      "Id": 210210,
+      "Name": "全屏+掀翻地面",
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "Z",
+      "Id": 210298,
+      "Name": "吼+血色落石",
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "X",
+      "Id": 210228,
+      "Name": "咆哮+七联追击",
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "C",
+      "Id": 210235,
+      "Name": "连续抓+蓄力爆炸，连招很长",
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "SPACE",
+      "Id": 210223,
+      "Name": "闪避+抓+踩",
+      "Buffers": [
+        105111,
+        1000095
+      ]
+    },
+    {
+      "Key": "S+X",
+      "Id": 210213,
+      "Name": "前冲+冲+血色爆炸",
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "S+Q",
+      "Id": 210247,
+      "Name": "连续踩+拳+血色爆炸",
+      "Buffers": [
+        105111,
+        1000095
+      ]
+    },
+    {
+      "Key": "S+Z",
+      "Id": 210202,
+      "Name": "翻身+前爪+连续追击+血色爆炸，连招很长",
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 210267,
+      "Name": "抓取+石头砸，投技,有bug",
+      "CanBreak": false,
+      "Buffers": [
+        1000095
+      ]
+    }
+  ]
+}

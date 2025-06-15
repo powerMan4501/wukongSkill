@@ -1,0 +1,1165 @@
+{
+  "Name": "青蛙，波波浪浪",
+  "Label": "SK_GYCY_Wa_01",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": 0,
+  "ZRate": 200,
+  "CoolDownRate": 50,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8412
+  },
+  "Skills": [
+    {
+      "Id": 11396,
+      "CanBreak": true,
+      "Name": "精魄技能，火",
+      "Key": "NUMPAD0",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 11395,
+      "CanBreak": true,
+      "Name": "精魄技能，冰",
+      "Key": "NUMPAD1",
+      "Buffs": [
+        1000094
+      ]
+    },
+    {
+      "Id": 11397,
+      "CanBreak": true,
+      "Name": "精魄技能，毒",
+      "Key": "NUMPAD2",
+      "Buffs": [
+        1000119,
+        1000120
+      ]
+    },
+    {
+      "Id": 11398,
+      "CanBreak": true,
+      "Name": "精魄技能，雷",
+      "Key": "NUMPAD3"
+    },
+    {
+      "Id": 11399,
+      "CanBreak": true,
+      "Name": "精魄技能，石",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000069
+      ]
+    },
+    {
+      "Id": 416316,
+      "CanBreak": true,
+      "Name": "往前连续跳两次",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 416373,
+      "CanBreak": true,
+      "Name": "往前连续跳两下，带地爆",
+      "Key": "S+RBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 445013,
+      "CanBreak": true,
+      "Name": "二连跳-火",
+      "Key": "S+RBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 416308,
+      "CanBreak": true,
+      "Name": "舌头横扫",
+      "Key": "",
+      "Buffs": [
+        1000095,
+        1000833
+      ]
+    },
+    {
+      "Id": 445008,
+      "CanBreak": true,
+      "Name": "舌头横扫,特效不错",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 445045,
+      "CanBreak": true,
+      "Name": "投技，吸人",
+      "Key": "",
+      "Buffs": [
+        1000095,
+        1000833
+      ]
+    },
+    {
+      "Id": 416387,
+      "CanBreak": true,
+      "Name": "平A好几下",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 416331,
+      "CanBreak": true,
+      "Name": "舌头捅前方",
+      "Key": "",
+      "Buffs": [
+        1000095,
+        1000833
+      ]
+    },
+    {
+      "Id": 416310,
+      "CanBreak": true,
+      "Name": "跳到一旁，索敌打",
+      "Key": "",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 416370,
+      "CanBreak": true,
+      "Name": "跳到一旁，索敌打，打出石头爆炸",
+      "Key": "S+XBUTTON2",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 445014,
+      "CanBreak": true,
+      "Name": "跳到一旁，索敌打，火",
+      "Key": "S+XBUTTON2",
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 416374,
+      "CanBreak": true,
+      "Name": "跳到一旁，索敌打，打出石头爆炸",
+      "Key": "",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 416314,
+      "CanBreak": true,
+      "Name": "跳到一旁，索敌打",
+      "Key": "",
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 416305,
+      "CanBreak": true,
+      "Name": "冲上去扇一巴掌，火属性 1000105 ",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 416301,
+      "CanBreak": true,
+      "Name": "左右巴掌+扑击",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 445001,
+      "CanBreak": true,
+      "Name": "火蛙，左右巴掌+扑击，附带小火爆",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 416309,
+      "CanBreak": true,
+      "Name": "前摇+突进肚子撞人",
+      "Key": "S+XBUTTON1",
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 445003,
+      "CanBreak": true,
+      "Name": "火蛙，突进肚子撞人，附带小火爆",
+      "Key": "S+XBUTTON1",
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 416304,
+      "CanBreak": true,
+      "Name": "用后腿打人",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 416303,
+      "CanBreak": true,
+      "Name": "打一下",
+      "Key": ""
+    },
+    {
+      "Id": 416306,
+      "CanBreak": true,
+      "Name": "左一巴掌",
+      "Key": ""
+    },
+    {
+      "Id": 416307,
+      "CanBreak": true,
+      "Name": "右一巴掌",
+      "Key": ""
+    },
+    {
+      "Id": 416311,
+      "CanBreak": true,
+      "Name": "后腿踢人",
+      "Key": "",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 416323,
+      "CanBreak": true,
+      "Name": "远程，扔石头",
+      "Key": "A+X",
+      "Buffs": [
+        1000095,
+        1000833
+      ]
+    },
+    {
+      "Id": 445032,
+      "CanBreak": true,
+      "Name": "喷射远程火，还行",
+      "Key": "A+C",
+      "Buffs": [
+        1000249,
+        1000105
+      ]
+    },
+    {
+      "Id": 416394,
+      "CanBreak": true,
+      "Name": "远程技能，踢飞一块石头砸人",
+      "Key": "",
+      "Buffs": [
+        1000095,
+        1000833
+      ]
+    },
+    {
+      "Id": 416334,
+      "CanBreak": true,
+      "Name": "大招地爆",
+      "Key": "Z",
+      "Step": 1,
+      "Buffs": [
+        1000095,
+        1000097
+      ]
+    },
+    {
+      "Id": 416384,
+      "CanBreak": true,
+      "Name": "大招地爆",
+      "Key": "Z",
+      "Step": 2,
+      "Buffs": [
+        1000095,
+        1000097
+      ]
+    },
+    {
+      "Id": 416340,
+      "CanBreak": true,
+      "Name": "大喷火",
+      "Key": "X",
+      "Buffs": [
+        1000089
+      ]
+    },
+    {
+      "Id": 416361,
+      "CanBreak": true,
+      "Name": "大招，打击下石头地爆",
+      "Key": "C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 445035,
+      "CanBreak": true,
+      "Name": "大招，咆哮火",
+      "Key": "V",
+      "Buffs": [
+        1000249,
+        1000105
+      ]
+    },
+    {
+      "Id": 445040,
+      "CanBreak": true,
+      "Name": "大招，原地喷射大量火",
+      "Key": "A+Z",
+      "Buffs": [
+        1000249,
+        1000105
+      ]
+    },
+    {
+      "Id": 416302,
+      "CanBreak": true,
+      "Name": "往前跳打，在咆哮",
+      "Key": ""
+    },
+    {
+      "Id": 416321,
+      "CanBreak": true,
+      "Name": "后跳",
+      "Key": "SPACE",
+      "Buffs": [
+        1000833
+      ]
+    },
+    {
+      "Id": 416312,
+      "CanBreak": true,
+      "Name": "往前爬行",
+      "Key": ""
+    },
+    {
+      "Id": 416313,
+      "CanBreak": true,
+      "Name": "连续前跳两次",
+      "Key": ""
+    },
+    {
+      "Id": 416315,
+      "CanBreak": true,
+      "Name": "往前爬行",
+      "Key": ""
+    },
+    {
+      "Id": 416317,
+      "CanBreak": true,
+      "Name": "往前连续跳两下",
+      "Key": ""
+    },
+    {
+      "Id": 416319,
+      "CanBreak": true,
+      "Name": "跳到一旁，索敌打",
+      "Key": ""
+    },
+    {
+      "Id": 416320,
+      "CanBreak": true,
+      "Name": "原地起跳砸",
+      "Key": ""
+    },
+    {
+      "Id": 416322,
+      "CanBreak": true,
+      "Name": "跳到一旁，索敌打",
+      "Key": ""
+    },
+    {
+      "Id": 416324,
+      "CanBreak": true,
+      "Name": "往前连续跳两下",
+      "Key": ""
+    },
+    {
+      "Id": 416325,
+      "CanBreak": true,
+      "Name": "腿挑开石头",
+      "Key": ""
+    },
+    {
+      "Id": 416326,
+      "CanBreak": true,
+      "Name": "往前连续跳两下",
+      "Key": ""
+    },
+    {
+      "Id": 416332,
+      "CanBreak": true,
+      "Name": "摆姿势",
+      "Key": ""
+    },
+    {
+      "Id": 416333,
+      "CanBreak": true,
+      "Name": "摆姿势",
+      "Key": ""
+    },
+    {
+      "Id": 416335,
+      "CanBreak": true,
+      "Name": "废招",
+      "Key": ""
+    },
+    {
+      "Id": 416336,
+      "CanBreak": true,
+      "Name": "废招，静止不动",
+      "Key": ""
+    },
+    {
+      "Id": 416337,
+      "CanBreak": true,
+      "Name": "废招，静止不动",
+      "Key": ""
+    },
+    {
+      "Id": 416338,
+      "CanBreak": true,
+      "Name": "跳跃面对敌人",
+      "Key": ""
+    },
+    {
+      "Id": 416341,
+      "CanBreak": true,
+      "Name": "后跳+精魄技能，喷振动波，不如精魄技能",
+      "Key": ""
+    },
+    {
+      "Id": 416342,
+      "CanBreak": true,
+      "Name": "舌头一下",
+      "Key": ""
+    },
+    {
+      "Id": 416345,
+      "CanBreak": true,
+      "Name": "后退+舌头一下",
+      "Key": ""
+    },
+    {
+      "Id": 416346,
+      "CanBreak": true,
+      "Name": "打好几下",
+      "Key": ""
+    },
+    {
+      "Id": 416347,
+      "CanBreak": true,
+      "Name": "打好几下",
+      "Key": ""
+    },
+    {
+      "Id": 416348,
+      "CanBreak": true,
+      "Name": "跳跳，掀起石头",
+      "Key": ""
+    },
+    {
+      "Id": 416349,
+      "CanBreak": true,
+      "Name": "跳跳，掀起石头",
+      "Key": ""
+    },
+    {
+      "Id": 416351,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 416352,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 416353,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 416354,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 416355,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 416356,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 416357,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 416358,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 416360,
+      "CanBreak": true,
+      "Name": "前摇+跳跃咆哮",
+      "Key": ""
+    },
+    {
+      "Id": 416363,
+      "CanBreak": true,
+      "Name": "大招，前摇+打出石头地爆",
+      "Key": ""
+    },
+    {
+      "Id": 416364,
+      "CanBreak": true,
+      "Name": "转身后腿踢人",
+      "Key": ""
+    },
+    {
+      "Id": 416365,
+      "CanBreak": true,
+      "Name": "转身后腿踢人，踢飞石头",
+      "Key": ""
+    },
+    {
+      "Id": 416369,
+      "CanBreak": true,
+      "Name": "前摇+肚子撞人",
+      "Key": ""
+    },
+    {
+      "Id": 416371,
+      "CanBreak": true,
+      "Name": "后腿踢人",
+      "Key": ""
+    },
+    {
+      "Id": 416380,
+      "CanBreak": true,
+      "Name": "往前跳砸出一排石头",
+      "Key": ""
+    },
+    {
+      "Id": 416381,
+      "CanBreak": true,
+      "Name": "舌头捅前方",
+      "Key": ""
+    },
+    {
+      "Id": 416391,
+      "CanBreak": true,
+      "Name": "后跳+精魄技能，喷振动波，不如精魄技能",
+      "Key": ""
+    },
+    {
+      "Id": 416392,
+      "CanBreak": true,
+      "Name": "舌头一下，毒蛙",
+      "Key": ""
+    },
+    {
+      "Id": 416395,
+      "CanBreak": true,
+      "Name": "转身踢出石头",
+      "Key": ""
+    },
+    {
+      "Id": 416396,
+      "CanBreak": true,
+      "Name": "打几下",
+      "Key": ""
+    },
+    {
+      "Id": 416399,
+      "CanBreak": true,
+      "Name": "打几下",
+      "Key": ""
+    },
+    {
+      "Id": 445002,
+      "CanBreak": true,
+      "Name": "火蛙，左巴掌，附带小火爆",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 445003,
+      "CanBreak": true,
+      "Name": "火蛙，突进肚子撞人，附带小火爆",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 445004,
+      "CanBreak": true,
+      "Name": "转身后腿踢人，附带小火爆",
+      "Key": "",
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Id": 445005,
+      "CanBreak": true,
+      "Name": "冲上去一巴掌",
+      "Key": ""
+    },
+    {
+      "Id": 445006,
+      "CanBreak": true,
+      "Name": "一巴掌",
+      "Key": ""
+    },
+    {
+      "Id": 445007,
+      "CanBreak": true,
+      "Name": "一巴掌",
+      "Key": ""
+    },
+    {
+      "Id": 445008,
+      "CanBreak": true,
+      "Name": "舌头舔人，带火",
+      "Key": ""
+    },
+    {
+      "Id": 445009,
+      "CanBreak": true,
+      "Name": "火蛙，突进肚子撞人，附带小火爆",
+      "Key": ""
+    },
+    {
+      "Id": 445010,
+      "CanBreak": true,
+      "Name": "跳到一旁，索敌打",
+      "Key": ""
+    },
+    {
+      "Id": 445011,
+      "CanBreak": true,
+      "Name": "后腿踢人，延迟一会爆发小岩浆火",
+      "Key": ""
+    },
+    {
+      "Id": 445012,
+      "CanBreak": true,
+      "Name": "爬行摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445015,
+      "CanBreak": true,
+      "Name": "左右巴掌+扑击",
+      "Key": ""
+    },
+    {
+      "Id": 445016,
+      "CanBreak": true,
+      "Name": "后退",
+      "Key": ""
+    },
+    {
+      "Id": 445017,
+      "CanBreak": true,
+      "Name": "后退",
+      "Key": ""
+    },
+    {
+      "Id": 445019,
+      "CanBreak": true,
+      "Name": "跳到一旁，索敌打",
+      "Key": ""
+    },
+    {
+      "Id": 445020,
+      "CanBreak": true,
+      "Name": "扑击，带火",
+      "Key": ""
+    },
+    {
+      "Id": 445021,
+      "CanBreak": true,
+      "Name": "后退",
+      "Key": ""
+    },
+    {
+      "Id": 445022,
+      "CanBreak": true,
+      "Name": "跳到一旁，索敌打",
+      "Key": ""
+    },
+    {
+      "Id": 445023,
+      "CanBreak": true,
+      "Name": "后腿踢人，附带小火爆",
+      "Key": ""
+    },
+    {
+      "Id": 445024,
+      "CanBreak": true,
+      "Name": "前摇+跳跃咆哮",
+      "Key": ""
+    },
+    {
+      "Id": 445031,
+      "CanBreak": true,
+      "Name": "舌头捅前方，带火",
+      "Key": ""
+    },
+    {
+      "Id": 445033,
+      "CanBreak": true,
+      "Name": "后跳",
+      "Key": ""
+    },
+    {
+      "Id": 445034,
+      "CanBreak": true,
+      "Name": "大招，咆哮",
+      "Key": ""
+    },
+    {
+      "Id": 445038,
+      "CanBreak": true,
+      "Name": "跳跃一下",
+      "Key": ""
+    },
+    {
+      "Id": 445041,
+      "CanBreak": true,
+      "Name": "后跳，放精魄技能火",
+      "Key": ""
+    },
+    {
+      "Id": 445042,
+      "CanBreak": true,
+      "Name": "舌头扫一下，带火",
+      "Key": ""
+    },
+    {
+      "Id": 445051,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445052,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445053,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445054,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445055,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445056,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445057,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445058,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445060,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445070,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445071,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445072,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445073,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445074,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 445001,
+      "CanBreak": true,
+      "Name": "重复",
+      "Key": ""
+    },
+    {
+      "Id": 445002,
+      "CanBreak": true,
+      "Name": "重复",
+      "Key": ""
+    },
+    {
+      "Id": 445003,
+      "CanBreak": true,
+      "Name": "重复",
+      "Key": ""
+    },
+    {
+      "Id": 445004,
+      "CanBreak": true,
+      "Name": "重复",
+      "Key": ""
+    },
+    {
+      "Id": 445005,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445006,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445007,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445009,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445010,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445011,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445012,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445013,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445014,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445015,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445016,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445017,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445019,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445020,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445021,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445022,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445023,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445024,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445031,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445032,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445033,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445034,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445035,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445038,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445040,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445041,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445042,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445045,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445051,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445052,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445053,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445054,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445055,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445056,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445057,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445058,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445060,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445070,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445071,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445072,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445073,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 445074,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

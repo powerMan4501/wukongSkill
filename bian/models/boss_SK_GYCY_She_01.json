@@ -1,0 +1,161 @@
+{
+  "Name": "广谋",
+  "Label": "SK_GYCY_She_01",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": 0,
+  "ZRate": 0,
+  "CoolDownRate": 45,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8411,
+    "Name": "变身"
+  },
+  "Skills": [
+    {
+      "Id": 100301,
+      "CanBreak": false,
+      "Name": "开局技能，丢出很多光球",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 100308,
+      "CanBreak": false,
+      "Name": "刮风",
+      "Key": "S+LBUTTON",
+      "Buffers": [
+        1000077,
+        1000095
+      ]
+    },
+    {
+      "Id": 100304,
+      "CanBreak": false,
+      "Name": "近距离喷毒",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 100341,
+      "CanBreak": false,
+      "Name": "近距离震开敌人",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000104
+      ]
+    },
+    {
+      "Id": 11311,
+      "CanBreak": false,
+      "Name": "精魄技能，召唤小蛇",
+      "Key": "S+XBUTTON2"
+    },
+    {
+      "Id": 100321,
+      "CanBreak": false,
+      "Name": "闪现到敌人身后",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 100302,
+      "CanBreak": false,
+      "Name": "后退一步丢出一排光球",
+      "Key": "XBUTTON1",
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Id": 100322,
+      "CanBreak": false,
+      "Name": "后闪",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 100305,
+      "CanBreak": false,
+      "Name": "没啥用",
+      "Key": ""
+    },
+    {
+      "Id": 100306,
+      "CanBreak": false,
+      "Name": "没啥用",
+      "Key": ""
+    },
+    {
+      "Id": 100307,
+      "CanBreak": false,
+      "Name": "闪现后召唤1条小蛇",
+      "Key": "Z"
+    },
+    {
+      "Id": 100323,
+      "CanBreak": false,
+      "Name": "左翻滚",
+      "Key": "X"
+    },
+    {
+      "Id": 11311,
+      "CanBreak": false,
+      "Name": "精魄技能，召唤小蛇",
+      "Key": "C"
+    },
+    {
+      "Id": 100351,
+      "CanBreak": false,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 100352,
+      "CanBreak": false,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 100353,
+      "CanBreak": false,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 100354,
+      "CanBreak": false,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 100391,
+      "CanBreak": false,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 100392,
+      "CanBreak": false,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 100393,
+      "CanBreak": false,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 100394,
+      "CanBreak": false,
+      "Name": "转身",
+      "Key": ""
+    }
+  ]
+}

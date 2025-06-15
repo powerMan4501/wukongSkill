@@ -1,0 +1,968 @@
+{
+    "Name": "天将",
+    "Description": "天将",
+    "Author": "天将",
+    "Rules": [
+        {
+            "Name": "召唤雷电",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HGS_TianJiang_01_Atk_Fast_18"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "buff",
+                    "BuffID": 1000832
+                },
+                {
+                    "Type": "buff",
+                    "BuffID": 23441
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                    "ProjectTileID": 38001902
+                }
+            ]
+        },
+        {
+            "Name": "跳跃砍杀",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HGS_TianJiang_01_Atk_Fast_06_e"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                    "ProjectTileID": 1016262,
+                    "ForTarget": true,
+                    "OffsetX": 500,
+                    "OffsetY": 500,
+                    "TimeDelay": 1300
+                }
+            ]
+        },
+        {
+            "Name": "回旋斩",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HGS_TianJiang_01_Atk_Fast_08_new_e"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 30050301,
+                    "TimeDelay": 1800
+                }
+            ]
+        },
+        {
+            "Name": "所有攻击触发落雷",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HGS_TianJiang_01_Atk"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_LYS_WuDuLong_03A_Atk"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_LYS_ShenLong_01A_Atk"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "buff",
+                    "BuffID": 1000084
+                }
+            ]
+        },
+        {
+            "Name": "亢金龙，平A召唤落雷",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_LYS_KJLWoman_Atk_07"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_LYS_KJLWoman_Atk_22"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 152,
+                    "ForTarget": true,
+                    "TimeDelay": 3800
+                }
+            ]
+        },
+        {
+            "Name": "不能的攻击带冲击波",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_psd_xiezijing_og_atk_"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_bhl_gushoufsq_01_atk"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_HFM_ShiGanDang_01_Atk"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "buff",
+                    "BuffID": 1000083
+                }
+            ]
+        },
+        {
+            "Name": "不能的精魄q4，几个排云掌",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_30_lys_tuiseng_02_comboAq4_atk_05a"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016262,
+                    "ForTarget": true,
+                    "TimeDelay": 500
+                }
+            ]
+        },
+        {
+            "Name": "不能的精魄q5带冰暴和冲击波",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_30_lys_tuiseng_02_comboAq5_atk_03"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 144,
+                    "ForTarget": true,
+                    "TimeDelay": 1300
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 30050301,
+                    "ForTarget": false,
+                    "TimeDelay": 1300
+                }
+            ]
+        },
+        {
+            "Name": "步云鹿右键踩踏，带冰暴",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_szlc_yingzuilu_01_atk_13_p3"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 144,
+                    "ForTarget": true,
+                    "TimeDelay": 1900
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 30050301,
+                    "ForTarget": false,
+                    "TimeDelay": 3300
+                }
+            ]
+        },
+        {
+            "Name": "步云鹿右键踩踏，带毒",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_szlc_yingzuilu_01_atk_11"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016262,
+                    "ForTarget": true,
+                    "TimeDelay": 900
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016262,
+                    "ForTarget": false,
+                    "TimeDelay": 1600
+                }
+            ]
+        },
+        {
+            "Name": "尾后针给目标上冲击波",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_40_psd_xiezijing_01a_atk_02"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 30050601,
+                    "ForTarget": true,
+                    "TimeDelay": 1000
+                },
+                {
+                    "Type": "buff",
+                    "BuffID": 1000099
+                }
+            ]
+        },
+        {
+            "Name": "杨戬开山斧召唤地波",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_mgd_yangjian_01_atk09"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 152,
+                    "TimeDelay": 2900
+                }
+            ]
+        },
+        {
+            "Name": "大圣残躯释放金箍棒，定海神针，给目标上巴山虎和振动波",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_mgd_jsds_atk_21"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016262,
+                    "ForTarget": true,
+                    "TimeDelay": 1900
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 30050301,
+                    "ForTarget": true,
+                    "TimeDelay": 1900
+                }
+            ]
+        },
+        {
+            "Name": "鬼王跺脚召唤地波",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_LuoChaGui_01_Atk_16"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_LuoChaGui_01_Atk_17"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 30050301,
+                    "TimeDelay": 1900
+                },
+                {
+                    "Type": "buff",
+                    "BuffID": 1000047,
+                    "TimeDelay": 1900
+                }
+            ]
+        },
+        {
+            "Name": "鬼王很重跺脚召唤地波",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_LuoChaGui_01_Atk_02"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 30050301,
+                    "TimeDelay": 2600
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 30050301,
+                    "TimeDelay": 2650
+                }
+            ]
+        },
+        {
+            "Name": "鬼王左右脚各跺脚召唤地波",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_LuoChaGui_01_Atk_01"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 30050301,
+                    "TimeDelay": 2500
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 30050301,
+                    "TimeDelay": 5400
+                }
+            ]
+        },
+        {
+            "Name": "鬼王冲上去拍掌给目标上巴山虎",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_LuoChaGui_01_Atk_08"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016262,
+                    "ForTarget": true,
+                    "TimeDelay": 2400
+                }
+            ]
+        },
+        {
+            "Name": "夜叉王攻击，猪八戒血浆",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_HongHaiEr_02A_Atk"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "buff",
+                    "BuffID": 1000099
+                }
+            ]
+        },
+        {
+            "Name": "夜叉王横扫攻击，地刺",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_HongHaiEr_02A_Atk_08_C2"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_HongHaiEr_02A_Atk_08_C"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                    "ProjectTileID": 44051006,
+                    "ForTarget": false,
+                    "TimeDelay": 1000
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                    "ProjectTileID": 44051007,
+                    "ForTarget": false,
+                    "TimeDelay": 1100
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                    "ProjectTileID": 44051004,
+                    "ForTarget": false,
+                    "TimeDelay": 950
+                }
+            ]
+        },
+        {
+            "Name": "夜叉王格挡，地刺  44011402  1016202巴山虎",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_HongHaiEr_02A_Gedang_tandao"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                    "ProjectTileID": 44051001,
+                    "ForTarget": false,
+                    "TimeDelay": 300
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                    "ProjectTileID": 44051002,
+                    "ForTarget": false,
+                    "TimeDelay": 400
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                    "ProjectTileID": 44051003,
+                    "ForTarget": false,
+                    "TimeDelay": 450
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                    "ProjectTileID": 44051004,
+                    "ForTarget": false,
+                    "TimeDelay": 500
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016202,
+                    "ForTarget": true,
+                    "TimeDelay": 350
+                }
+            ]
+        },
+        {
+            "Name": "夜叉王踢一脚，发射火焰",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_HongHaiEr_02A_Atk_11"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                    "ProjectTileID": 44010202
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 40550101,
+                    "ForTarget": true,
+                    "TimeDelay": 550
+                }
+            ]
+        },
+        {
+            "Name": "骨耸然",
+            "Description": "巴山虎",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HFM_MaGu_01A_Atk_"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_LYS_WuDuLong_02A_Atk"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_LYS_ChiFaGui_01A_Atk"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_GYCY_Xiong_02_Atk"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_GYCY_BaiYi_04_Atk_Fast_"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_PSD_Chong_01_Atk"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "buff",
+                    "BuffID": 1000095
+                }
+            ]
+        },
+        {
+            "Name": "石先锋远程",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_ShiXianFeng_02_atk_22"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 44010101,
+                    "ForTarget": true,
+                    "TimeDelay": 1900
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 44017101,
+                    "ForTarget": true,
+                    "TimeDelay": 2900
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 44010103,
+                    "ForTarget": true,
+                    "TimeDelay": 3900
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 44010201,
+                    "ForTarget": true,
+                    "TimeDelay": 4900
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 58111003,
+                    "ForTarget": true,
+                    "TimeDelay": 6900
+                }
+            ]
+        },
+        {
+            "Name": "鳖宝",
+            "Description": "右键给目标上火",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_NiaoZui_Atk_04"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 140,
+                    "ForTarget": true,
+                    "TimeDelay": 1450
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 44011401,
+                    "ForTarget": true,
+                    "TimeDelay": 1400
+                }
+            ]
+        },
+        {
+            "Name": "鳖宝",
+            "Description": "左键 上鳖宝子弹",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_NiaoZui_Atk_01"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 142,
+                    "ForTarget": true,
+                    "TimeDelay": 1240
+                }
+            ]
+        },
+        {
+            "Name": "鳖宝",
+            "Description": "左键 上鳖宝子弹",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_NiaoZui_Atk_05_1"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 142,
+                    "ForTarget": true,
+                    "TimeDelay": 1540
+                }
+            ]
+        },
+        {
+            "Name": "鳖宝",
+            "Description": "右键键 上红孩儿",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_NiaoZui_Atk_02_1"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "buff",
+                    "BuffId": 1000122,
+                    "TimeDelay": 1540
+                }
+            ]
+        },
+        {
+            "Name": "黑熊精",
+            "Description": "侧键1上火圈",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_GYCY_Xiong_02_Atk_Fast_11_F"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 140,
+                    "ForTarget": false,
+                    "TimeDelay": 440
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 142,
+                    "ForTarget": true,
+                    "TimeDelay": 1840
+                }
+            ]
+        },
+        {
+            "Name": "黑熊精",
+            "Description": "右键上火圈",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_GYCY_Xiong_02_Atk_Fast_11_01_F"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 2403372,
+                    "ForTarget": false,
+                    "TimeDelay": 1140
+                }
+            ]
+        },
+        {
+            "Name": "小黄龙，骨耸然格挡",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_LYS_Dage_Atk_05"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_HFM_MaGu_01A_ShieldDown"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_HFM_MaGu_01A_Atk_Fast_14_Monster"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016202,
+                    "ForTarget": true,
+                    "TimeDelay": 850
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016262,
+                    "TimeDelay": 850
+                }
+            ]
+        },
+        {
+            "Name": "杨戬格挡",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_mgd_yangjian_01_FSFJ_03_Seq"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016262,
+                    "ForTarget": true,
+                    "TimeDelay": 1450
+                }
+            ]
+        },
+        {
+            "Name": "杨戬激光",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_mgd_yangjian_01_MagicDog"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 50058603,
+                    "ForTarget": true,
+                    "TimeDelay": 2950
+                }
+            ]
+        },
+        {
+            "Name": "小黄龙爆炸一下",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_LYS_Dage_Atk_08"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 34013020,
+                    "ForTarget": true
+                }
+            ]
+        },
+        {
+            "Name": "螳螂蓄力砍",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_SZLC_tanglang_block_04"
+                },
+                {
+                    "Type": "montage",
+                    "Name": "AM_SZLC_tanglang_atk_10"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 51002002,
+                    "ForTarget": true,
+                    "TimeDelay": 1350
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016262,
+                    "ForTarget": true,
+                    "TimeDelay": 1390
+                }
+            ]
+        },
+        {
+            "Name": "牛魔王飞天砸",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_hys_niumo_01_atk_06_1"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 140,
+                    "ForTarget": true,
+                    "TimeDelay": 1750
+                }
+            ]
+        },
+        {
+            "Name": "不能，精魄技能",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "30_lys_tuiseng_02_comboAq1_atk_06a"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016262,
+                    "ForTarget": true,
+                    "TimeDelay": 350
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016262,
+                    "ForTarget": false,
+                    "TimeDelay": 350
+                }
+            ]
+        },
+        {
+            "Name": "虫总兵，精魄技能",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_40_psd_jiachongzongbing_02_atk_10"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016262,
+                    "ForTarget": true,
+                    "TimeDelay": 350
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016262,
+                    "ForTarget": false,
+                    "TimeDelay": 350
+                }
+            ]
+        },
+        {
+            "Name": "虫总兵，远程技能",
+            "Description": "",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_PSD_jiachongzongbing_02_Atk_18"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 1016262,
+                    "ForTarget": true,
+                    "TimeDelay": 1450
+                }
+            ]
+        },
+        {
+            "Name": "红孩儿",
+            "Description": "目标上火",
+            "Filters": [
+                {
+                    "Type": "montage",
+                    "Name": "AM_HYS_HongHaiEr_01A_Atk_06"
+                }
+            ],
+            "AfterActions": [
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 44017101,
+                    "ForTarget": true,
+                    "TimeDelay": 1400
+                },
+                {
+                    "Type": "bullet",
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+                    "ProjectTileID": 44010401,
+                    "ForTarget": true,
+                    "TimeDelay": 1450
+                }
+            ]
+        }
+    ]
+}

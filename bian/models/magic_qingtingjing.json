@@ -1,0 +1,203 @@
+{
+  "Name": "蜻蜓精",
+  "Label": "SK_psd_chong_03",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": -100,
+  "ZRate": 100,
+  "CoolDownRate": 50,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8579
+  },
+  "Skills": [
+    {
+      "Key": "RBUTTON",
+      "Id": 11279,
+      "Name": "一发三箭1",
+      "CanBreak": false,
+      "Step": 1,
+      "Buffs": [
+        1000069
+      ]
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 11379,
+      "Name": "一发三箭2",
+      "CanBreak": false,
+      "Step": 2,
+      "Buffs": [
+        1000069
+      ]
+    },
+    {
+      "Key": "S+RBUTTON",
+      "Id": 10179,
+      "Name": "还是一箭三",
+      "CanBreak": false,
+      "Buffs": [
+        1000249
+      ]
+    },
+    {
+      "Id": 420110,
+      "CanBreak": true,
+      "Name": "快速射箭 AM_psd_chong_03_atk_10",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000116
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 420108,
+      "Name": "还是二连 AM_psd_chong_03_atk_08",
+      "CanBreak": false,
+      "Buffs": [
+        1000249
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 420103,
+      "Name": "前冲打一下 AM_psd_chong_03_atk_03_Close",
+      "CanBreak": false,
+      "Buffs": [
+        1000069
+      ]
+    },
+    {
+      "Key": "S+XBUTTON2",
+      "Id": 420109,
+      "Name": "二连发 AM_psd_chong_03_atk_09",
+      "CanBreak": false,
+      "Buffs": [
+        92211,
+        105111
+      ]
+    },
+    {
+      "Id": 420106,
+      "CanBreak": true,
+      "Name": "威力超大的射箭 AM_psd_chong_03_atk_06",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Key": "",
+      "Id": 420104,
+      "Name": "后退三连",
+      "CanBreak": false
+    },
+    {
+      "Key": "Z",
+      "Id": 420105,
+      "Name": "还是蓄力射 AM_psd_chong_03_atk_05",
+      "Buffs": [
+        105111
+      ]
+    },
+    {
+      "Key": "X",
+      "Id": 420107,
+      "Name": "蓄力射 AM_psd_chong_03_atk_07",
+      "Buffs": [
+        105111
+      ]
+    },
+    {
+      "Key": "C",
+      "Id": 420101,
+      "Name": "闪身射 AM_psd_chong_03_atk_01"
+    },
+    {
+      "Key": "SPACE",
+      "Id": 420130,
+      "Name": "闪一下",
+      "Buffs": [
+        105111
+      ]
+    },
+    {
+      "Id": 420102,
+      "CanBreak": true,
+      "Name": "落地踩一下",
+      "Key": ""
+    },
+    {
+      "Id": 420107,
+      "CanBreak": true,
+      "Name": "蓄力很久射箭",
+      "Key": ""
+    },
+    {
+      "Id": 420111,
+      "CanBreak": true,
+      "Name": "蓄力很久射箭",
+      "Key": ""
+    },
+    {
+      "Id": 420112,
+      "CanBreak": true,
+      "Name": "蓄力很久射箭",
+      "Key": ""
+    },
+    {
+      "Id": 420113,
+      "CanBreak": true,
+      "Name": "蓄力很久射箭",
+      "Key": ""
+    },
+    {
+      "Id": 420131,
+      "CanBreak": true,
+      "Name": "飘逸飞一下",
+      "Key": ""
+    },
+    {
+      "Id": 420132,
+      "CanBreak": true,
+      "Name": "飘逸飞一下",
+      "Key": ""
+    },
+    {
+      "Id": 420151,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 420152,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 420153,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 420154,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 420155,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 420156,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    }
+  ]
+}

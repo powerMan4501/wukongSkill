@@ -1,0 +1,506 @@
+{
+  "Id": 10414,
+  "Name": "寅虎",
+  "Label": "SK_HFM_Hu_Wind_01",
+  "Type": "TRANS",
+  "Asset": "/Game/00Main/Design/Units/Player/Unit_player_hfm_hu.Unit_player_hfm_hu_C",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "TransDone": {
+    "Buffers": [
+      1000068,
+      1000095
+    ]
+  },
+  "EnterSkill": {
+    "Id": 10414,
+    "AnimPath": "AM_wukong_trans_to_hfm_hu",
+    "Key": "enter"
+  },
+  "Skills": [
+    {
+      "Id": 202801,
+      "CanBreak": true,
+      "Name": "慢速砍一下，然后横扫一下",
+      "Key": ""
+    },
+    {
+      "Id": 202815,
+      "CanBreak": true,
+      "Name": "平A,左往右斜着砍",
+      "Step": 1,
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202816,
+      "CanBreak": true,
+      "Name": "平A,右往左斜着砍",
+      "Step": 2,
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202817,
+      "CanBreak": true,
+      "Name": "平A,突进二连横扫",
+      "Step": 3,
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202818,
+      "CanBreak": true,
+      "Name": "平A,慢速斜着扫",
+      "Step": 4,
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202819,
+      "CanBreak": true,
+      "Name": "平A,小跳砍",
+      "Step": 5,
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202838,
+      "CanBreak": true,
+      "Name": "飞到上空，索敌落下砍人",
+      "Key": "A+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202837,
+      "CanBreak": true,
+      "Name": "慢速横扫一下，再横扫一下地爆",
+      "Key": "C+LBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "S+RBUTTON",
+      "Id": 202840,
+      "Name": "凤鸣",
+      "AnimPath": "AM_HFM_Hu_Wind_01_Atk_Fast_40",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202840,
+      "CanBreak": true,
+      "Name": "蓄力突进大横扫，很强",
+      "Key": "C+RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202878,
+      "CanBreak": true,
+      "Name": "慢速横扫一下，再横扫一下地爆",
+      "Key": "A+RBUTTON",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202807,
+      "CanBreak": true,
+      "Name": "狼星碎：横扫一下再横扫地爆",
+      "Key": "C+XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 14050,
+      "CanBreak": true,
+      "Name": "变身技能,架刀，AM_player_hfm_hu_L2_Start",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 202876,
+      "CanBreak": true,
+      "Name": "蓄力较快，砍出近距离大地爆",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202803,
+      "CanBreak": true,
+      "Name": "虎啸跃身斩：吼一声，然后突进上去砍一刀",
+      "Key": ""
+    },
+    {
+      "Id": 202833,
+      "CanBreak": true,
+      "Name": "虎啸跃身斩：吼一声，然后突进上去砍一刀",
+      "Key": "C+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202838,
+      "CanBreak": true,
+      "Name": "飞到上空，索敌落下砍人",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202873,
+      "CanBreak": true,
+      "Name": "虎啸跃身斩：吼一声，然后突进上去砍一刀",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202802,
+      "CanBreak": true,
+      "Name": "砍几刀，可接：快速跑上去砍几刀",
+      "Key": "A+XBUTTON2",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202821,
+      "CanBreak": true,
+      "Name": "后退躲避",
+      "Key": "S+SPACE"
+    },
+    {
+      "Id": 202835,
+      "CanBreak": true,
+      "Name": "隐身上去砍",
+      "Key": "Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202875,
+      "CanBreak": true,
+      "Name": "远程：蓄力砍出一道中近距离的长条地面地面",
+      "Key": "X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202870,
+      "CanBreak": true,
+      "Name": "格挡",
+      "Key": "",
+      "Buffs": [
+        1000104
+      ]
+    },
+    {
+      "Id": 202810,
+      "CanBreak": true,
+      "Name": "横扫几下，最后一下把人打上天",
+      "Key": "C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 14043,
+      "CanBreak": true,
+      "Name": "变身技能14043:AM_player_hfm_hu_R2_04_Rise",
+      "Key": "C+Z",
+      "Buffs": [
+        1000104
+      ]
+    },
+    {
+      "Key": "A+Z",
+      "Id": 14070,
+      "Name": "飒沓",
+      "AnimPath": "AM_player_hfm_hu_F1",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202804,
+      "CanBreak": true,
+      "Name": "快速跑上去砍几刀",
+      "Key": "S+Z",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202807,
+      "CanBreak": true,
+      "Name": "狼星碎：横扫一下再横扫地爆",
+      "Key": "A+C",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202846,
+      "CanBreak": true,
+      "Name": "蓄力较久砍出大地爆,然后地面再次爆炸",
+      "Key": "A+V",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202806,
+      "CanBreak": true,
+      "Name": "蓄力砍出大地爆",
+      "Key": "A+X",
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Id": 202805,
+      "CanBreak": true,
+      "Name": "爆一下，砍后面",
+      "Key": "NUMPAD5"
+    },
+    {
+      "Id": 202811,
+      "CanBreak": true,
+      "Name": "慢速平A横扫一下",
+      "Key": ""
+    },
+    {
+      "Id": 202812,
+      "CanBreak": true,
+      "Name": "慢速平A垂直砍一下",
+      "Key": ""
+    },
+    {
+      "Id": 202813,
+      "CanBreak": true,
+      "Name": "隐身后现身爆气，打不中人",
+      "Key": "NUMPAD1"
+    },
+    {
+      "Id": 202814,
+      "CanBreak": true,
+      "Name": "隐身后投技，，打不中人",
+      "Key": "NUMPAD2"
+    },
+    {
+      "Id": 202822,
+      "CanBreak": true,
+      "Name": "往左边躲避",
+      "Step": 1,
+      "Key": "NUMPAD0"
+    },
+    {
+      "Id": 202823,
+      "CanBreak": true,
+      "Name": "往右边躲避",
+      "Step": 2,
+      "Key": "NUMPAD0"
+    },
+    {
+      "Id": 202828,
+      "CanBreak": true,
+      "Name": "慢刀平a",
+      "Key": ""
+    },
+    {
+      "Id": 202829,
+      "CanBreak": true,
+      "Name": "慢刀平a",
+      "Key": ""
+    },
+    {
+      "Id": 202831,
+      "CanBreak": true,
+      "Name": "慢刀平a",
+      "Key": ""
+    },
+    {
+      "Id": 202832,
+      "CanBreak": true,
+      "Name": "慢刀平a",
+      "Key": ""
+    },
+    {
+      "Id": 202836,
+      "CanBreak": true,
+      "Name": "蓄力砍一下",
+      "Key": ""
+    },
+    {
+      "Id": 202839,
+      "CanBreak": true,
+      "Name": "慢速斜着砍",
+      "Key": ""
+    },
+    {
+      "Id": 202841,
+      "CanBreak": true,
+      "Name": "奔跑上去慢刀二连横扫",
+      "Key": "NUMPAD3"
+    },
+    {
+      "Id": 202842,
+      "CanBreak": true,
+      "Name": "后退躲避",
+      "Key": ""
+    },
+    {
+      "Id": 202851,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 202852,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 202853,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 202854,
+      "CanBreak": true,
+      "Name": "转身",
+      "Key": ""
+    },
+    {
+      "Id": 202855,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202856,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202857,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202858,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 202861,
+      "CanBreak": true,
+      "Name": "慢速垂直砍，再砍出小地爆，凑合",
+      "Key": "NUMPAD4"
+    },
+    {
+      "Id": 202871,
+      "CanBreak": true,
+      "Name": "慢速垂直砍，再横扫",
+      "Key": ""
+    },
+    {
+      "Id": 202872,
+      "CanBreak": true,
+      "Name": "格挡",
+      "Key": ""
+    },
+    {
+      "Id": 202877,
+      "CanBreak": true,
+      "Name": "慢速横扫一下，再横扫一下地爆",
+      "Key": ""
+    },
+    {
+      "Id": 202879,
+      "CanBreak": true,
+      "Name": "被弹开",
+      "Key": ""
+    },
+    {
+      "Id": 202881,
+      "CanBreak": true,
+      "Name": "隐身后各种砍人，但打不中",
+      "Key": ""
+    },
+    {
+      "Id": 202882,
+      "CanBreak": true,
+      "Name": "隐身砍人，但打不中",
+      "Key": ""
+    },
+    {
+      "Id": 202883,
+      "CanBreak": true,
+      "Name": "隐身砍人，但打不中",
+      "Key": ""
+    },
+    {
+      "Id": 202886,
+      "CanBreak": true,
+      "Name": "隐身砍人，但打不中",
+      "Key": ""
+    },
+    {
+      "Id": 202887,
+      "CanBreak": true,
+      "Name": "隐身砍人，但打不中",
+      "Key": ""
+    },
+    {
+      "Id": 202888,
+      "CanBreak": true,
+      "Name": "隐身砍人，但打不中",
+      "Key": ""
+    },
+    {
+      "Id": 202891,
+      "CanBreak": true,
+      "Name": "隐身砍人，但打不中",
+      "Key": ""
+    },
+    {
+      "Id": 202894,
+      "CanBreak": true,
+      "Name": "被弹开",
+      "Key": ""
+    }
+  ]
+}

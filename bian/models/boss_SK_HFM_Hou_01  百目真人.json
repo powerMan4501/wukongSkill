@@ -1,0 +1,212 @@
+{
+  "TamerPath": "/Game/00Main/Design/Units/HFM/Unit_HFM_Hou_01a.Unit_HFM_Hou_01a_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 170.0,
+    "CapsuleRadius": 70.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_Hou_01a/Mesh/SK_HFM_Hou_01.SK_HFM_Hou_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_Hou_01a/ABP_HFM_Hou_01a.ABP_HFM_Hou_01a_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_Hou_01a/Mesh/PA_HFM_Hou_01.PA_HFM_Hou_01",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/HFM/HFM_Hou_01a/HFM_Hou_01a_Weapon_01.HFM_Hou_01a_Weapon_01_C",
+        "SocketName": "weapon_r"
+      }
+    ],
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_FengXiaoGang_01/Hair/HAIR_main_gs.HAIR_main_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.2,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147304522"
+      }
+    ],
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 2006,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "百目真人",
+  "Label": "SK_HFM_Hou_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "HitCount": 0,
+      "Id": 200661,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "LBUTTON",
+      "Step": 1,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200662,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "LBUTTON",
+      "Step": 2,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200666,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "RBUTTON",
+      "Step": 1,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200664,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "RBUTTON",
+      "Step": 2,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200651,
+      "CanBreak": true,
+      "Name": "转向",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "S+E",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200665,
+      "CanBreak": true,
+      "Name": "精神焕发",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "Q",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200668,
+      "CanBreak": true,
+      "Name": "三声喝断长江水，止住红门血不流",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "E",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200673,
+      "CanBreak": true,
+      "Name": "不能停，不能行，不能定，不能明，不学，狂",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "Z",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200671,
+      "CanBreak": true,
+      "Name": "鲜血飞溅",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "X",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200666,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Buffs": null,
+      "Bullets": null,
+      "Key": "C",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200688,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Bullets": null,
+      "Key": "SPACE",
+      "Buffers":[
+        105111
+      ]
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0
+}

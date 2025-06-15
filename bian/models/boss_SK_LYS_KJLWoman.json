@@ -1,0 +1,707 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/LYS/Unit_LYS_KJLWoman.Unit_LYS_KJLWoman_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 200.0,
+    "CapsuleRadius": 50.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_KJLWoman/Mesh/SK_LYS_KJLWoman.SK_LYS_KJLWoman",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_KJLWoman/ABP_KJLWoman.ABP_KJLWoman_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_KJLWoman/Mesh/PA_LYS_KJLWoman.PA_LYS_KJLWoman",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_KangJinLong_01/Hair/HAIR_backmain_gs.HAIR_backmain_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.02,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.02,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147440960"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_KangJinLong_01/Hair/HAIR_frontclump_gs.HAIR_frontclump_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.02,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.02,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147440959"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_KangJinLong_01/Hair/HAIR_noise.HAIR_noise_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.02,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.02,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147440958"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_KangJinLong_01/Hair/HAIR_eyebrow.HAIR_eyebrow_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 3.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147440957"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "pelvis",
+        "FirstRadius": 30.0,
+        "NextBoneName": "neck_01",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_l",
+        "FirstRadius": 20.0,
+        "NextBoneName": "foot_l",
+        "NextRadius": 25.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "calf_r",
+        "FirstRadius": 20.0,
+        "NextBoneName": "foot_r",
+        "NextRadius": 25.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "lowerarm_l",
+        "FirstRadius": 20.0,
+        "NextBoneName": "hand_l",
+        "NextRadius": 15.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "lowerarm_r",
+        "FirstRadius": 20.0,
+        "NextBoneName": "hand_r",
+        "NextRadius": 15.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_LYS_KJLWoman",
+  "Label": "SK_LYS_KJLWoman",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": -200.0,
+  "ZRate": 100.0,
+  "Author": "神秘人物",
+  "Skills": [
+    {
+      "Id": 340107,
+      "CanBreak": false,
+      "Name": "平A召唤雷电",
+      "Key": "LBUTTON",
+      "Buffs": [
+        1000806
+      ]
+    },
+    {
+      "Id": 340105,
+      "CanBreak": false,
+      "Name": "左手右手各赋雷，劈敌人一下，然后召唤很多雷电砸在自己脚下周围",
+      "Key": "C+LBUTTON",
+      "Buffs": [
+        1000806
+      ]
+    },
+    {
+      "Id": 340122,
+      "CanBreak": false,
+      "Name": "地面索敌冰锥",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000806
+      ]
+    },
+    {
+      "Id": 340113,
+      "CanBreak": false,
+      "Name": "变成龙释放雷电再变回人形",
+      "Key": "A+LBUTTON",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Id": 340130,
+      "CanBreak": false,
+      "Name": "3连击打",
+      "Key": "RBUTTON",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Id": 340124,
+      "CanBreak": false,
+      "Name": "三连击",
+      "Key": "C+RBUTTON",
+      "Step": 1
+    },
+    {
+      "Id": 340125,
+      "CanBreak": false,
+      "Name": "四五次连续击打最后释放索敌雷",
+      "Key": "C+RBUTTON",
+      "Step": 2
+    },
+    {
+      "Id": 340115,
+      "CanBreak": false,
+      "Name": "扇一巴掌释放3道索敌雷丝",
+      "Key": "S+RBUTTON"
+    },
+    {
+      "Id": 340102,
+      "CanBreak": false,
+      "Name": "以身体为中心释放结界雷",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        105111,
+        1000806
+      ]
+    },
+    {
+      "Id": 340109,
+      "CanBreak": false,
+      "Name": "飞到空中，发射很多索敌闪电",
+      "Key": "S+XBUTTON1",
+      "Buffs": [
+        105111,
+        1000806
+      ]
+    },
+    {
+      "Id": 340104,
+      "CanBreak": false,
+      "Name": "身体爆发一下雷电，然后迅速飞到敌人身上扇一巴掌",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000084
+      ]
+    },
+    {
+      "Id": 340103,
+      "CanBreak": false,
+      "Name": "在敌人身上生成落雷，然后各种飞来飞去，最后扔飞镖",
+      "Key": "S+XBUTTON2",
+      "Step": 1
+    },
+    {
+      "Id": 340101,
+      "CanBreak": false,
+      "Name": "原地晃来晃去发射索敌雷丝",
+      "Key": "S+XBUTTON2",
+      "Step": 2
+    },
+    {
+      "Id": 340106,
+      "CanBreak": false,
+      "Name": "飞过去打一下",
+      "Key": "S+XBUTTON2",
+      "Step": 3
+    },
+    {
+      "Id": 340112,
+      "CanBreak": false,
+      "Name": "往后闪避",
+      "Key": ""
+    },
+    {
+      "Id": 340131,
+      "CanBreak": false,
+      "Name": "飘逸前进",
+      "Key": "S+SPACE",
+      "Buffs": [
+        105111
+      ]
+    },
+    {
+      "Id": 340132,
+      "CanBreak": false,
+      "Name": "飘逸后撤",
+      "Key": "SPACE",
+      "Buffs": [
+        105111
+      ]
+    },
+    {
+      "Id": 340108,
+      "CanBreak": false,
+      "Name": "左右开弓各扇一巴掌，再发射+字雷，然后飞到后面一步",
+      "Key": "Z"
+    },
+    {
+      "Id": 340120,
+      "CanBreak": false,
+      "Name": "很长的连招，最后是神戈",
+      "Key": "X"
+    },
+    {
+      "Id": 340116,
+      "CanBreak": false,
+      "Name": "飞到空中释放4道索敌雷丝",
+      "Key": "C"
+    },
+    {
+      "Id": 340116,
+      "CanBreak": false,
+      "Name": "飞到空中释放4道索敌雷丝",
+      "Key": "A+X",
+      "Buffs": [
+        1000806
+      ]
+    },
+    {
+      "Id": 340110,
+      "CanBreak": false,
+      "Name": "扇一巴掌，身体隐身一下，飞到空中再落下",
+      "Key": ""
+    },
+    {
+      "Id": 340111,
+      "CanBreak": false,
+      "Name": "改变天气飞到空中召唤大量落雷，伤害高",
+      "Key": ""
+    },
+    {
+      "Id": 340114,
+      "CanBreak": false,
+      "Name": "生成地面飞镖冰刺索敌打击",
+      "Key": ""
+    },
+    {
+      "Id": 340117,
+      "CanBreak": false,
+      "Name": "平A好几下，然后发射十字架雷",
+      "Key": ""
+    },
+    {
+      "Id": 340118,
+      "CanBreak": false,
+      "Name": "挥击一下，似乎很难打中",
+      "Key": ""
+    },
+    {
+      "Id": 340119,
+      "CanBreak": false,
+      "Name": "挥击一下，带电",
+      "Key": ""
+    },
+    {
+      "Id": 340121,
+      "CanBreak": false,
+      "Name": "很长的连招，最后是神戈",
+      "Key": ""
+    },
+    {
+      "Id": 340123,
+      "CanBreak": false,
+      "Name": "平A两下",
+      "Key": ""
+    },
+    {
+      "Id": 340126,
+      "CanBreak": false,
+      "Name": "飞起扔一个飞镖，再后侧",
+      "Key": ""
+    },
+    {
+      "Id": 340127,
+      "CanBreak": false,
+      "Name": "后侧两下",
+      "Key": ""
+    },
+    {
+      "Id": 340128,
+      "CanBreak": false,
+      "Name": "两击打",
+      "Key": ""
+    },
+    {
+      "Id": 340129,
+      "CanBreak": false,
+      "Name": "转身后撤步",
+      "Key": ""
+    },
+    {
+      "Id": 340133,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340134,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340135,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340136,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340137,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340138,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340139,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340140,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340141,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340142,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340143,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340145,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340146,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340147,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340148,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340149,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340151,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340152,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340153,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340154,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340155,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340156,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340157,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340158,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340159,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340161,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340162,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340163,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340164,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340165,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340166,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340167,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340168,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340169,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340171,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340172,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340173,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340175,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340176,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340177,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340178,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340179,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340181,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340182,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340183,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340185,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340186,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340187,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340188,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340190,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340191,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340192,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340193,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340194,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340196,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340197,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340198,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 340199,
+      "CanBreak": false,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

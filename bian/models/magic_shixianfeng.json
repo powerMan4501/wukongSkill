@@ -1,0 +1,409 @@
+{
+  "Name": "石先锋",
+  "Label": "hys_shixianfeng",
+  "Type": "MAGIC",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRate": -600,
+  "ZRate": 250,
+  "CoolDownRate": 50,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 8437
+  },
+  "TransDone": null,
+  "Skills": [
+    {
+      "Key": "",
+      "Id": 201202,
+      "Name": "左手平A",
+      "CanBreak": true,
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 201201,
+      "Name": "右手平A",
+      "CanBreak": true,
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 400301,
+      "Name": "左手平A，带岩浆",
+      "CanBreak": true,
+      "Step": 1,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "LBUTTON",
+      "Id": 400302,
+      "Name": "右手平A，带岩浆",
+      "CanBreak": true,
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "S+LBUTTON",
+      "Id": 400310,
+      "Name": "往前走两步，砸出岩浆",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "A+RBUTTON",
+      "Id": 201203,
+      "Name": "双手很慢下砸，砸出地爆",
+      "CanBreak": true,
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "S+RBUTTON",
+      "Id": 400313,
+      "Name": "原地起跳，落地砸，砸出范围岩浆",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 400314,
+      "Name": "右往左横扫平A，带岩浆",
+      "CanBreak": true,
+      "Step": 1,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "RBUTTON",
+      "Id": 400315,
+      "Name": "左往右横扫平A，带岩浆",
+      "CanBreak": true,
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 400303,
+      "Name": "双手很慢下砸，砸出岩浆",
+      "CanBreak": true,
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "XBUTTON1",
+      "Id": 400304,
+      "Name": "类似精魄技能",
+      "CanBreak": true,
+      "Step": 1,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "XBUTTON1",
+      "Id": 11337,
+      "Name": "精魄技能",
+      "CanBreak": true,
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "S+XBUTTON1",
+      "Id": 201211,
+      "Name": "疯狂捶地，捶地很多下，锤地时召唤石头人撞击敌人",
+      "CanBreak": true,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 201209,
+      "Name": "跳起索敌砸",
+      "CanBreak": true,
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 400309,
+      "Name": "跳起索敌砸，打出岩浆",
+      "CanBreak": true,
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 400309,
+      "Name": "跳起索敌砸，打出岩浆",
+      "CanBreak": true,
+      "Step": 3,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "S+XBUTTON2",
+      "Id": 201210,
+      "Name": "突进二连击，打出地爆",
+      "CanBreak": true,
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "S+XBUTTON2",
+      "Id": 400310,
+      "Name": "突进二连击，打出小范围岩浆 ",
+      "CanBreak": true,
+      "Step": 2,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 201204,
+      "Name": "动作跟精魄技能差不多，但索敌差，没异常",
+      "CanBreak": true,
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "Z",
+      "Id": 201205,
+      "Name": "转身砸（老是打不中），然后延迟触发中范围地爆",
+      "CanBreak": true,
+      "Step": 1,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "Z",
+      "Id": 201206,
+      "Name": "转身砸（老是打不中），然后延迟触发中范围地爆",
+      "CanBreak": true,
+      "Step": 2,
+      "Buffs": [
+        1000095
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 201207,
+      "Name": "扇一巴掌，能扇出石头，但命中率一般",
+      "CanBreak": true
+    },
+    {
+      "Key": "",
+      "Id": 201208,
+      "Name": "左右各一巴掌，能扇出石头，但命中率一般",
+      "CanBreak": true
+    },
+    {
+      "Key": "",
+      "Id": 201213,
+      "Name": "原地飞起落下砸人",
+      "CanBreak": true
+    },
+    {
+      "Key": "",
+      "Id": 201214,
+      "Name": "转身，能近距离撞人",
+      "CanBreak": true
+    },
+    {
+      "Key": "",
+      "Id": 201215,
+      "Name": " 转身，能近距离撞人",
+      "CanBreak": true
+    },
+    {
+      "Key": "",
+      "Id": 201227,
+      "Name": "扇一巴掌，能扇出石头，但命中率一般",
+      "CanBreak": true
+    },
+    {
+      "Key": "V",
+      "Id": 400305,
+      "Name": "转身砸（老是打不中），然后延迟触发中范围岩浆",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "V",
+      "Id": 400306,
+      "Name": " 转身砸（老是打不中），然后延迟触发中范围岩浆",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 400307,
+      "Name": "扇一巴掌，能扇出岩浆，但命中率一般",
+      "CanBreak": true
+    },
+    {
+      "Key": "",
+      "Id": 400308,
+      "Name": "左右各一巴掌，能扇出岩浆，但命中率一般",
+      "CanBreak": true
+    },
+    {
+      "Key": "A+X",
+      "Id": 400322,
+      "Name": "大招，360横扫岩浆之后，喷出大量远程火球岩浆",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 400331,
+      "Name": "右拳较慢砸地平A",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 400332,
+      "Name": "左拳较慢砸地平A",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 400333,
+      "Name": "双手慢速砸地",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 400334,
+      "Name": "慢速连续砸地",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 400335,
+      "Name": "转身砸（老是打不中）",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 400336,
+      "Name": "转身砸（老是打不中）",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 400339,
+      "Name": "突进砸人",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 400340,
+      "Name": "慢速二连击",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "X",
+      "Id": 400343,
+      "Name": "原地飞起落下砸人",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 400344,
+      "Name": " 转身，能近距离撞人",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "",
+      "Id": 400345,
+      "Name": "扇一巴掌，能扇出岩浆，但命中率一般",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    },
+    {
+      "Key": "C",
+      "Id": 400346,
+      "Name": "先前摇，然后砸地爆岩浆",
+      "CanBreak": true,
+      "Buffs": [
+        1000105
+      ]
+    }
+  ]
+}

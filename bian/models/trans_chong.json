@@ -1,0 +1,48 @@
+{
+  "Id": 10418,
+  "Name": "毒虫",
+  "Label": "SK_psd_duchongsishi",
+  "Type": "TRANS",
+  "Asset": "/Game/00Main/Design/Units/Player/Unit_player_psd_chong.Unit_player_psd_chong_C",
+  "XRateBig": 0.7,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "EnterSkill": {
+    "Id": 10418,
+    "AnimPath": "AM_wukong_trans_to_psd_chong"
+  },
+  "Skills": [
+    {
+      "Key": "E",
+      "Id": 18014,
+      "Name": "自己打自己 右侧",
+      "AnimPath": "AM_player_psd_chong_R1_04"
+    },
+    {
+      "Key": "Q",
+      "Id": 18031,
+      "Name": "自己打自己 左侧",
+      "AnimPath": "AM_player_psd_chong_R2_end"
+    },
+    {
+      "Key": "Z",
+      "Id": 18043,
+      "Name": "左侧毒斩",
+      "AnimPath": "AM_player_psd_chong_R1_03_p_max"
+    },
+    {
+      "Key": "X",
+      "Id": 18071,
+      "Name": "向前 BUFF?",
+      "AnimPath": "AM_player_psd_chong_fashu"
+    },
+    {
+      "Key": "C",
+      "Id": 18044,
+      "Name": "右侧毒斩",
+      "AnimPath": "AM_player_psd_chong_R1_04_p_max"
+    }
+  ]
+}

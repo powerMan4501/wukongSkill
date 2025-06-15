@@ -1,0 +1,154 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/HFM/Unit_HFM_ShanZhen_01a.Unit_HFM_ShanZhen_01a_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 280.0,
+    "CapsuleRadius": 45.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_ShanZhen_01/SK_HFM_ShanZhen_01.SK_HFM_ShanZhen_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_ShanZhen_01/ABP_HFM_ShanZhen_01.ABP_HFM_ShanZhen_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_ShanZhen_01/PA_HFM_ShanZhen_01.PA_HFM_ShanZhen_01",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "SK_HFM_ShanZhen_01",
+  "Label": "SK_HFM_ShanZhen_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": {
+    "Buffers": [
+      96009
+    ]
+  },
+  "XRate": -400.0,
+  "ZRate": 100.0,
+  "Skills": [
+    {
+      "Id": 200701,
+      "CanBreak": true,
+      "Name": "踢踢踢平A",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 200708,
+      "CanBreak": true,
+      "Name": "后砸",
+      "Key": "S+LBUTTON"
+    },
+    {
+      "Id": 200702,
+      "CanBreak": true,
+      "Name": "身体左右撞击",
+      "Key": "RBUTTON"
+    },
+    {
+      "Key": "S+RBUTTON",
+      "Id": 13071,
+      "Name": "挑起砸地面---大范围",
+      "CanBreak": false,
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200703,
+      "CanBreak": true,
+      "Name": "迅速冲上去撞",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Key": "S+XBUTTON2",
+      "Id": 13012,
+      "Step": 1,
+      "Name": "向前跑一下--砸地面",
+      "CanBreak": false,
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Key": "S+XBUTTON2",
+      "Id": 13013,
+      "Name": "翻个跟头--砸地面",
+      "Step": 2,
+      "CanBreak": false,
+      "Buffers": [
+        1000095
+      ]
+    },
+    {
+      "Id": 200707,
+      "CanBreak": true,
+      "Name": "跳起来砸",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 200794,
+      "CanBreak": true,
+      "Name": "召唤石头人，并跳起来砸",
+      "Key": "S+XBUTTON1"
+    },
+    {
+      "Id": 200710,
+      "CanBreak": true,
+      "Name": "跳起来",
+      "Key": ""
+    },
+    {
+      "Id": 200731,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 200732,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 200733,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 200734,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 200771,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 200791,
+      "CanBreak": true,
+      "Name": "摆架势",
+      "Key": ""
+    },
+    {
+      "Id": 200792,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 200793,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

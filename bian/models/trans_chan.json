@@ -1,0 +1,18 @@
+{
+  "Id": 10511,
+  "Name": "金禅",
+  "Label": "SK_Chan",
+  "Type": "TRANS",
+  "Asset": "/Game/00Main/Design/Units/Player/Unit_Player_Chan.Unit_Player_Chan_C",
+  "DisableDepthOfField": true,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 0.01,
+  "EnterSkill": {
+    "Id": 10511,
+    "AnimPath": "AM_Wukong_trans_to_Chan"
+  },
+  "Skills": []
+}

@@ -1,0 +1,260 @@
+{
+  "TamerPath": "/Game/00Main/Design/Units/HFM/Unit_HFM_MaMian_01a.Unit_HFM_MaMian_01a_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 220.0,
+    "CapsuleRadius": 80.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_MaMian_01a/Mesh/SK_HFM_MaMian_01a.SK_HFM_MaMian_01a",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_MaMian_01a/ABP_HFM_MaMian_01a.ABP_HFM_MaMian_01a_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_MaMian_01a/Mesh/PA_HFM_MaMian_01a.PA_HFM_MaMian_01a",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_MaMian_02A/Hair/HAIR_head_baseshort.HAIR_head_baseshort_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.1,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147407691"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_MaMian_02A/Hair/HAIR_head_middle_gs.HAIR_head_middle_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.1,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.5,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147407690"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "spine_01",
+        "FirstRadius": 50.0,
+        "NextBoneName": "neck_01",
+        "NextRadius": 40.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_r",
+        "FirstRadius": 50.0,
+        "NextBoneName": "ball_r",
+        "NextRadius": 40.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_l",
+        "FirstRadius": 50.0,
+        "NextBoneName": "ball_l",
+        "NextRadius": 40.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100
+  },
+  "Name": "黑化马面",
+  "Label": "SK_HFM_MaMian_01a",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "HitCount": 0,
+      "Id": 200201,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200202,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200203,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200204,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200205,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200206,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200207,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200208,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200209,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200251,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200252,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200253,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    },
+    {
+      "HitCount": 0,
+      "Id": 200254,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Description": "空",
+      "AnimPath": null,
+      "Buffers": null,
+      "Bullets": null,
+      "Key": "",
+      "Step": 0,
+      "StepCount": 0,
+      "IsMimicry": false
+    }
+  ],
+  "DisableDepthOfField": false,
+  "XRate": -300.0,
+  "ZRate": 100.0
+}

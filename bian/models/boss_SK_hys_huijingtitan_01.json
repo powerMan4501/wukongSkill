@@ -1,0 +1,161 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/HYS/UNIT_hys_huijingtitan_01.UNIT_hys_huijingtitan_01_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 44.0,
+    "CapsuleRadius": 30.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_huijingtitan_01/Mesh/SK_hys_huijingtitan_01.SK_hys_huijingtitan_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_huijingtitan_01/ABP_huijingtitan_01.ABP_huijingtitan_01_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_huijingtitan_01/Mesh/PA_hys_huijingtitan_01.PA_hys_huijingtitan_01",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/HFM/HFM_MaGu_01A/HFM_MaGu_01A_Dao.HFM_MaGu_01A_Dao_C",
+        "SocketName": "weapon_r"
+      },
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/HYS/HYS_huijingrenou_03/HYS_huijingrenou_03_shield.HYS_huijingrenou_03_shield_C",
+        "SocketName": "weapon_l"
+      }
+    ],
+    "TFXConfigs": null,
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 102
+  },
+  "Name": "超大块头海罗刹",
+  "Label": "SK_hys_huijingtitan_01",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "Skills": [
+    {
+      "Id": 581101,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 581102,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 581103,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 581104,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 581105,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Q"
+    },
+    {
+      "Id": 581106,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "E"
+    },
+    {
+      "Id": 581107,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "R"
+    },
+    {
+      "Id": 581108,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "T"
+    },
+    {
+      "Id": 581109,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "Z"
+    },
+    {
+      "Id": 581110,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "X"
+    },
+    {
+      "Id": 581111,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "C"
+    },
+    {
+      "Id": 581112,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": "V"
+    },
+    {
+      "Id": 581113,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581114,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581115,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581121,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581131,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581132,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581133,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 581134,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Author": "神秘人物"
+}

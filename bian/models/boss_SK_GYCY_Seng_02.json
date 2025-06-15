@@ -1,0 +1,278 @@
+{
+  "IsTrans": false,
+  "TamerPath": "/Game/00Main/Design/Units/GYCY/Unit_GYCY_Seng_02.Unit_GYCY_Seng_02_C",
+  "BossConf": {
+    "CapsuleHalfHeight": 170.0,
+    "CapsuleRadius": 40.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Seng_02/Meshes/SK_GYCY_Seng_02.SK_GYCY_Seng_02",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Seng_02/ABP_GYCY_Seng_02.ABP_GYCY_Seng_02_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Seng_02/Meshes/PA_GYCY_Seng_02.PA_GYCY_Seng_02",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/GYCY_Seng_02_Weapon_l.GYCY_Seng_02_Weapon_l_C",
+        "SocketName": "weapon_l"
+      },
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/GYCY_Seng_02_Weapon_r.GYCY_Seng_02_Weapon_r_C",
+        "SocketName": "weapon_r"
+      }
+    ],
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_MangSeng_02/Hair/HAIR_beardlong_gs.HAIR_beardlong_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_MangSeng_02/Materials/M_gycy_seng_02_main_mask.M_gycy_seng_02_main_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_MangSeng_02/Hair/HAIR_beardlow.HAIR_beardlow_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_MangSeng_02/Materials/M_gycy_seng_02_main_mask.M_gycy_seng_02_main_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_MangSeng_02/Hair/HAIR_beardup_gs.HAIR_beardup_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_MangSeng_02/Materials/M_gycy_seng_02_main_mask.M_gycy_seng_02_main_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_MangSeng_02/Hair/HAIR_eyebrow.HAIR_eyebrow_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_MangSeng_02/Materials/M_gycy_seng_02_main_mask.M_gycy_seng_02_main_mask"
+      }
+    ],
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0
+  },
+  "Name": "不白徒弟",
+  "Label": "SK_GYCY_Seng_02",
+  "Type": "BOSS",
+  "CoolDownRate": 50,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.5,
+  "Level2Scale": 1.0,
+  "DisableDepthOfField": false,
+  "TransDone": {
+    "Buffers": [
+      1000062,
+      1000068
+    ]
+  },
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "Skills": [
+    {
+      "Id": 102034,
+      "CanBreak": false,
+      "Name": "平A，冰刺",
+      "Key": "LBUTTON",
+      "Step": 1,
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 102035,
+      "CanBreak": false,
+      "Name": "平A",
+      "Key": "LBUTTON",
+      "Step": 2,
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 102032,
+      "CanBreak": true,
+      "Name": "一阵打",
+      "Key": "C+LBUTTON",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 102004,
+      "CanBreak": true,
+      "Name": "打两下",
+      "Key": "A+LBUTTON",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 102007,
+      "CanBreak": true,
+      "Name": "突进，长连招",
+      "Key": "S+LBUTTON",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 102008,
+      "CanBreak": true,
+      "Name": "突进，长连招",
+      "Key": "S+RBUTTON",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 102003,
+      "CanBreak": true,
+      "Name": "原地旋转斩",
+      "Key": "",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 102031,
+      "CanBreak": true,
+      "Name": "摆架势，可当成格挡",
+      "Key": "RBUTTON",
+      "Buffers": [
+        1000104,
+        1000049,
+        412201
+      ]
+    },
+    {
+      "Id": 102001,
+      "CanBreak": true,
+      "Name": "前摇后突进打很久",
+      "Key": "S+XBUTTON2",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 102005,
+      "CanBreak": true,
+      "Name": "前摇+突进一阵打",
+      "Key": "C+XBUTTON2",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 102021,
+      "CanBreak": true,
+      "Name": "突进一阵打",
+      "Key": "XBUTTON2",
+      "Buffs": [
+        1000093
+      ]
+    },
+    {
+      "Id": 102002,
+      "CanBreak": true,
+      "Name": "打一下前进一下，持续好几下之后放震动",
+      "Key": "XBUTTON1",
+      "Buffs": [
+        1000099
+      ]
+    },
+    {
+      "Id": 102006,
+      "CanBreak": true,
+      "Name": "扔飞镖,中近距离",
+      "Key": "A+X",
+      "Buffs": [
+        1000103,
+        1000099,
+        1000093
+      ]
+    },
+    {
+      "Id": 102036,
+      "CanBreak": true,
+      "Name": "扔飞镖",
+      "Key": ""
+    },
+    {
+      "Id": 102015,
+      "CanBreak": true,
+      "Name": "翻滚",
+      "Key": "SPACE",
+      "Buffs": [
+        105111
+      ]
+    },
+    {
+      "Id": 102016,
+      "CanBreak": true,
+      "Name": "翻滚",
+      "Key": ""
+    },
+    {
+      "Id": 102044,
+      "CanBreak": true,
+      "Name": "打两下",
+      "Key": ""
+    },
+    {
+      "Id": 102051,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 102052,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 102053,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 102054,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 102091,
+      "CanBreak": true,
+      "Name": "未命名",
+      "Key": ""
+    }
+  ]
+}

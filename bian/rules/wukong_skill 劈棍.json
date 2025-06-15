@@ -1,0 +1,55 @@
+{
+  "Name": "悟空-立棍雷电技",
+  "Description": "立棍雷电技",
+  "Rules": [
+    {
+      "Name": "大圣蓄力4",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "Dasheng_xuli_attack_4"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "summon",
+          "SummonID": 60020015,
+          "SummonCount": 3
+        }
+      ]
+    },
+    {
+      "Name": "大圣蓄力5,大风车",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_dasheng_xuli_attack_5"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74010206,
+          "OffsetX": 800,
+          "OffsetY": 800,
+          "TimeDelay": 1850
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 44011401,
+          "OffsetX": 800,
+          "OffsetY": 800,
+          "TimeDelay": 2070
+        },
+        {
+          "Type": "buff",
+          "BuffID": 1000165
+        }
+      ]
+    }
+  ]
+}

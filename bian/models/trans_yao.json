@@ -1,0 +1,70 @@
+{
+  "Id": 10416,
+  "Name": "妖",
+  "Label": "SK_LYS_FSYS",
+  "Type": "TRANS",
+  "Asset": "/Game/00Main/Design/Units/Player/Unit_player_lys_yao.Unit_player_lys_yao_C",
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2,
+  "Level1Scale": 1,
+  "Level2Scale": 2.2,
+  "TransDone": {
+    "Buffers": [
+      1000062,
+      1000068,
+      92245,
+      16050,
+      16071
+    ]
+  },
+  "EnterSkill": {
+    "Id": 10416,
+    "AnimPath": "AM_wukong_trans_to_lys_yao"
+  },
+  "Skills": [
+    {
+      "Key": "XBUTTON1",
+      "Id": 16021,
+      "Step": 1,
+      "CanBreak": false,
+      "Name": "右侧扔小雪球",
+      "Buffs": [
+        16050,
+        16071
+      ]
+    },
+    {
+      "Key": "XBUTTON1",
+      "Id": 16022,
+      "Step": 2,
+      "CanBreak": false,
+      "Name": "扔小雪球",
+      "Buffs": [
+        16050,
+        16071
+      ]
+    },
+    {
+      "Key": "S+XBUTTON2",
+      "Id": 16041,
+      "CanBreak": false,
+      "Name": "扔大雪球，太慢",
+      "Buffs": [
+        16050,
+        16071
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "Id": 16032,
+      "Name": "旋转触手"
+    },
+    {
+      "Key": "Z",
+      "Id": 16073,
+      "Name": "旋风冰爆墩地--大范围",
+      "AnimPath": "AM_player_lys_yao_Fashu_02_V3"
+    }
+  ]
+}
