@@ -1,0 +1,27 @@
+﻿{
+  "ModConfigMenuVer": "1.0",
+  "ModConfigMenuMaxVer": null,
+  "Config": [
+    {
+      "Name": "EnableChineseConsoleLog",
+      "Type": "bool",
+      "DefaultValue": true
+    },
+    {
+      "Name": "ShutUp",
+      "Type": "bool",
+      "DefaultValue": false
+    },
+    {
+      "Name": "ShuuutUp",
+      "Type": "bool",
+      "DefaultValue": false
+    },
+    {
+      "Name": "ShuutUp",
+      "Type": "bool",
+      "DefaultValue": false
+    }
+
+  ]
+}

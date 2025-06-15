@@ -1,0 +1,72 @@
+
+È
+GridSize5000
+Í
+
+HugeRadius800
+Î
+	BigRadius600
+Ï
+MediumRadius400
+"Ì
+CanDefeatTTTBAdditive99
+Ó
+ObjectPoolMaxCount300
+-Ô(
+TransitionLocomotionMaxDistance800
+0+
+%GlobalBuffDispMaxTriggerCountPerFrame10
+)Ò$
+BuffDispMaxTriggerCountPerFrame1
+Ú
+G4RotateSpeed1
+9Û4
+*AlchemyNpcCommunicationAwardIntervalSecond1800
+0Ù+
+$YinYangDmgMultiplier_PlayerHitPlayer1
+4ı/
+%YinYangDmgMultiplier_MonsterHitPlayer1.25
+3ˆ.
+%YinYangDmgMultiplier_PlayerHitMonster2.5
+2˜-
+&YinYangDmgMultiplier_MonsterHitMonster1
+¯
+WukongResID10
+%˘ 
+EnableVigourUnitDispItem4091
+6˙1
+(PausedCameraShakeContinueRequireRestTime0.5
+˚
+PillarFormStateBuff275
+$¸
+PillarFormTerminatorBuff276
+7˝2
+-CanTriggerDeadAutoSwitch2PhysicMInQualityType5
+-˛(
+DeadAutoSwitch2PhysicThresholds0.6
+ˇ
+FoxTransResID39
+/Ä*
+"PlayerAutoLockInputDegreeThreshold30
+ Å
+DaShengHeadEquipID12001
+ Ç
+FoxTransQuestItemID2403
+1É,
+"PigsyStory_PlayerOverDistInterrupt1000
+-Ñ(
+PigsyStory_ListenNextStoryDist2000
+4Ö/
+%SummonNavProtectDistLimit_ReverseCalc1500
+Ü
+BPAnimal_MaxNum10
+$á
+BPAnimal_DestroyDist10000
+(à#
+YJBreakImmueStiffDuration3800
+2â-
+#BossRushIterationsLevelDesiredHPMax1446
+6ä1
+BossRushTimeOutSoundEVT_ui_bossrush_timeout
+4ã/
+BossRushDefeatedSoundEVT_ui_bossrush_fail
