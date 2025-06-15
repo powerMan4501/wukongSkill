@@ -45,7 +45,11 @@ namespace bian
 
         public int SpeedRightValue { get; set; }
         public int buffCondition { get; set; }
+        public int noBuffCondition { get; set; }
+
+
         public int talentCondition { get; set; }
+        public int noTalentCondition { get; set; }
 
 
         public RuleAction()
@@ -199,6 +203,21 @@ namespace bian
                     }
 
 
+                    if (action.noBuffCondition > 0)
+                    {
+                        if (BGUFunctionLibraryCS.BGUHasBuffByID(character, action.noBuffCondition))
+                        {
+                            return false;
+                        }
+                    }
+
+                    if (action.noTalentCondition > 0)
+                    {
+                        if (BGUFunctionLibraryCS.BGUHasTalentByID(character, action.noTalentCondition))
+                        {
+                            return false;
+                        }
+                    }
 
                     // 如果设置了天赋条件，就校验是否有对应的天赋
                     if (action.talentCondition > 0)
