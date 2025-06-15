@@ -50,6 +50,17 @@ namespace bian
 
         public int talentCondition { get; set; }
         public int noTalentCondition { get; set; }
+        public string desc { get; set; }
+
+
+        public int BornDirOffsetXLeftValue { get; set; }
+        public int BornDirOffsetXRightValue { get; set; }
+
+
+        public int BornDirOffsetYLeftValue { get; set; }
+        public int BornDirOffsetYRightValue { get; set; }
+        public int BornDirOffsetZLeftValue { get; set; }
+        public int BornDirOffsetZRightValue { get; set; }
 
 
         public RuleAction()
@@ -196,9 +207,8 @@ namespace bian
                         if (!BGUFunctionLibraryCS.BGUHasBuffByID(character, action.buffCondition))
                         {
 
-                            Console.WriteLine($"has no buff {action.buffCondition}");
-                            return false;
-
+                            Console.WriteLine($"has no buff {action.buffCondition} {action.desc}");
+                            continue;
                         }
                     }
 
@@ -207,9 +217,10 @@ namespace bian
                     {
                         if (BGUFunctionLibraryCS.BGUHasBuffByID(character, action.noBuffCondition))
 
-                            Console.WriteLine($"has buff {action.noBuffCondition}");
                         {
-                            return false;
+
+                            Console.WriteLine($"has buff {action.noBuffCondition}  {action.desc}");
+                            continue;
                         }
                     }
 
@@ -218,7 +229,7 @@ namespace bian
                         if (BGUFunctionLibraryCS.BGUHasTalentByID(character, action.noTalentCondition))
                         {
                             Console.WriteLine($"has talent {action.noTalentCondition}");
-                            return false;
+                            continue;
                         }
                     }
 
@@ -228,8 +239,7 @@ namespace bian
                         if (!BGUFunctionLibraryCS.BGUHasTalentByID(character, action.talentCondition))
                         {
                             Console.WriteLine($"has no talent {action.talentCondition}");
-                            return false;
-
+                            continue;
                         }
                     }
                     if (action.Type.ToLower() == "skill" && action.TimeDelay <= 0)

@@ -535,7 +535,33 @@ namespace bian
                     bornDirOffset.BornDirOffsetZ.LeftValue = 0f;
                     bornDirOffset.BornDirOffsetZ.RightValue = 200f;
                 }
+                if (action?.BornDirOffsetXLeftValue > 0)
+                {
+                    bornDirOffset.BornDirOffsetX.LeftValue = action.BornDirOffsetXLeftValue;
+                }
+                if (action?.BornDirOffsetXRightValue > 0)
+                {
+                    bornDirOffset.BornDirOffsetX.RightValue = action.BornDirOffsetXRightValue;
 
+                }
+
+                if (action?.BornDirOffsetYLeftValue > 0)
+                {
+                    bornDirOffset.BornDirOffsetY.LeftValue = action.BornDirOffsetYLeftValue;
+                }
+                if (action?.BornDirOffsetYRightValue > 0)
+                {
+                    bornDirOffset.BornDirOffsetY.RightValue = action.BornDirOffsetYRightValue;
+                }
+
+                if (action?.BornDirOffsetZLeftValue > 0)
+                {
+                    bornDirOffset.BornDirOffsetZ.LeftValue = action.BornDirOffsetZLeftValue;
+                }
+                if (action?.BornDirOffsetZRightValue > 0)
+                {
+                    bornDirOffset.BornDirOffsetZ.RightValue = action.BornDirOffsetZRightValue;
+                }
                 if (offset.X > 0 || offset.Y > 0 || offset.Z > 0)
                 {
 
