@@ -88,8 +88,8 @@ namespace bian
             {
                 if (BuffID != 1015)
                 {
-                    // Log.Debug($"bain:[PATCH]BuffAdd_Multicast-->BuffID:{BuffID}  Caster:{Caster.GetPathName()}  RootCaster:{RootCaster.GetPathName()} Duration:{Duration}");
                 }
+
             }
 
             if (Caster == null || !IsPlayer(Caster.PathName))
@@ -110,7 +110,6 @@ namespace bian
                             var ruleItem = rule.Rules[j];
                             if (ruleItem.IsMatchBuff(BuffID))
                             {
-                                // Log.Info($"bian: find matched rule {rule.path},start run rule!");
                                 ruleItem.DoRule(Duration);
                             }
                         }
@@ -191,7 +190,7 @@ namespace bian
                             var ruleItem = rule.Rules[j];
                             if (Montage != null && ruleItem.IsMatchMontage(Montage.PathName))
                             {
-                                // Log.Info($"bian: find matched rule {rule.path},start run rule!");
+                                // Log.Info($"bian: CastSkillWithAnimMontageMultiCast find matched rule {rule.path},start run rule!");
                                 ruleItem.DoRule(length, playRate);
                             }
                         }
@@ -206,7 +205,7 @@ namespace bian
         {
             if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]SmartCastSkill"))
             {
-                // Log.Debug($"bian:[PATCH]SmartCastSkill-->{ID}");
+                // Log.Info($"bian: SmartCastSkillTryMultiCast -->{ID}");
             }
         }
 

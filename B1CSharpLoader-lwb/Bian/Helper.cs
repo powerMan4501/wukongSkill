@@ -515,11 +515,11 @@ namespace bian
                     //对目标发射
 
                     targetBase.BaseType = ProjectileBaseType.CurTarget_ProjectileSpawner;
+                    targetBase.UseSocket = true;
+                    targetBase.SocketName = (FName)"CAMERA_LOCK";
 
                     spawnBase.BaseType = ProjectileBaseType.ProjectileSpawner;
 
-                    Log.Warn($"bian: targetBase: {targetBase.BaseType}");
-                    Log.Warn($"bian: spawnBase: {spawnBase.BaseType}");
                 }
 
                 if (isRandom)
@@ -576,6 +576,7 @@ namespace bian
                 {
                     none_target = false;
                 }
+
                 ProjectileSpawnNSInfo.InitSpawnInfo(spawnBase, offsetInfo, none_target, bGWDataAsset_ProjectileSpawnConfig.SpawnBase_NoneTarget, bGWDataAsset_ProjectileSpawnConfig.SpawnPosOffsetInfo_NoneTarget, character, aActor, aActor, null, in fEffectInstReq);
                 ProjectileSpawnNSInfo.AttachToSpawnBase = bGWDataAsset_ProjectileSpawnConfig.AttachToSpawnBase;
                 ProjectileSpawnNSInfo.AttachRule_Rot = bGWDataAsset_ProjectileSpawnConfig.AttachRule_Rot;
@@ -604,6 +605,8 @@ namespace bian
                 {
                     ProjectileSpawnNSInfo.ProjectileFlySpd.Spd.LeftValue = 10000;
                     ProjectileSpawnNSInfo.ProjectileFlySpd.Spd.RightValue = 10000;
+
+
                     if (action?.SpeedLeftValue > 0)
                     {
                         ProjectileSpawnNSInfo.ProjectileFlySpd.Spd.LeftValue = action.SpeedLeftValue;
