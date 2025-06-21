@@ -480,7 +480,11 @@ namespace bian
             {
                 aActor = target;
             }
-
+            bool attackTarget = action?.attackTarget != null && action.attackTarget;
+            if (attackTarget && target != null && !isShotBull)
+            {
+                aActor = target;
+            }
             FEffectInstReq fEffectInstReq = new FEffectInstReq(character);
             FEffectInstReq effectInstReq = fEffectInstReq;
             BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
@@ -565,10 +569,20 @@ namespace bian
                 if (offset.X > 0 || offset.Y > 0 || offset.Z > 0)
                 {
 
-                    var xyz = aActor.GetActorForwardVector();
-                    offsetInfo.PosOffset.X = offsetInfo.PosOffset.X + (offset.X * xyz.X);
-                    offsetInfo.PosOffset.Y = offsetInfo.PosOffset.Y + (offset.Y * xyz.Y);
-                    offsetInfo.PosOffset.Z = offsetInfo.PosOffset.Z + (offset.Z * xyz.Z);
+                    if (attackTarget && target != null)
+                    {
+                        offsetInfo.PosOffset.X = offsetInfo.PosOffset.X;
+                        offsetInfo.PosOffset.Y = offsetInfo.PosOffset.Y;
+                        offsetInfo.PosOffset.Z = offsetInfo.PosOffset.Z;
+                    }
+                    else
+                    {
+                        var xyz = aActor.GetActorForwardVector();
+                        offsetInfo.PosOffset.X = offsetInfo.PosOffset.X + (offset.X * xyz.X);
+                        offsetInfo.PosOffset.Y = offsetInfo.PosOffset.Y + (offset.Y * xyz.Y);
+                        offsetInfo.PosOffset.Z = offsetInfo.PosOffset.Z + (offset.Z * xyz.Z);
+                    }
+
 
                 }
                 var none_target = bGWDataAsset_ProjectileSpawnConfig.bEnableSpawnBase_NoneTarget;
@@ -576,7 +590,11 @@ namespace bian
                 {
                     none_target = false;
                 }
-
+                if (attackTarget && target != null && isShotBull)
+                {
+                    none_target = false;
+                }
+                Log.Info($"bian: attackTarget {attackTarget} {offsetInfo.PosOffset.X}");
                 ProjectileSpawnNSInfo.InitSpawnInfo(spawnBase, offsetInfo, none_target, bGWDataAsset_ProjectileSpawnConfig.SpawnBase_NoneTarget, bGWDataAsset_ProjectileSpawnConfig.SpawnPosOffsetInfo_NoneTarget, character, aActor, aActor, null, in fEffectInstReq);
                 ProjectileSpawnNSInfo.AttachToSpawnBase = bGWDataAsset_ProjectileSpawnConfig.AttachToSpawnBase;
                 ProjectileSpawnNSInfo.AttachRule_Rot = bGWDataAsset_ProjectileSpawnConfig.AttachRule_Rot;

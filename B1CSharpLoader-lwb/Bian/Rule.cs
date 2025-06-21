@@ -20,6 +20,8 @@ namespace bian
         public string Type { get; set; }
         public int BuffID { get; set; }
         public int SkillID { get; set; }
+
+        public int BuffTime { get; set; }
         public string Bullet { get; set; }
         public int ProjectTileID { get; set; }
 
@@ -38,6 +40,7 @@ namespace bian
 
 
         public bool ForTarget { get; set; }
+        public bool attackTarget { get; set; }
 
         public bool IsRandom { get; set; }
 
@@ -62,6 +65,11 @@ namespace bian
         public int BornDirOffsetZLeftValue { get; set; }
         public int BornDirOffsetZRightValue { get; set; }
 
+        public List<int>? buffsCondition { get; set; }
+        public List<int>? noBuffsCondition { get; set; }
+
+
+
 
         public RuleAction()
         {
@@ -74,6 +82,7 @@ namespace bian
             OffsetZ = 0;
             ProjectTileID = 0;
             ForTarget = false;
+            attackTarget = false;
             BulletCount = 1;
             IsRandom = false;
             TimeDelay = 0;
@@ -142,8 +151,13 @@ namespace bian
                 case "buff":
                     if (action.BuffID > 0)
                     {
+                        var buffTime = timeLength;
+                        if (action.BuffTime > 0)
+                        {
+                            buffTime = action.BuffTime;
+                        }
                         // Log.Info($"bian: start run rule action: add-buff {action.BuffID}");
-                        BGUFunctionLibraryCS.BGUAddBuff(character, character, action.BuffID, EBuffSourceType.GM, timeLength);
+                        BGUFunctionLibraryCS.BGUAddBuff(character, character, action.BuffID, EBuffSourceType.GM, buffTime);
                     }
                     break;
                 case "skill":
@@ -200,18 +214,28 @@ namespace bian
                     var action = AfterActions[i];
 
                     var character = Helper.GetBGUPlayerCharacterCS();
-
+                    bool skipAction = false;
                     // 如果设置了buff条件，就校验是否有对应的buff
                     if (action.buffCondition > 0)
                     {
                         if (!BGUFunctionLibraryCS.BGUHasBuffByID(character, action.buffCondition))
                         {
 
-                            Console.WriteLine($"has no buff {action.buffCondition} {action.desc}");
+                            // Console.WriteLine($"has no buff {action.buffCondition} {action.desc}");
                             continue;
                         }
                     }
-
+                    if (action.buffsCondition != null && action.buffsCondition.Count > 0)
+                    {
+                        foreach (var buffer in action.buffsCondition)
+                        {
+                            if (!BGUFunctionLibraryCS.BGUHasBuffByID(character, buffer))
+                            {
+                                skipAction = true;
+                                break; // 退出 foreach 循环
+                            }
+                        }
+                    }
 
                     if (action.noBuffCondition > 0)
                     {
@@ -219,16 +243,32 @@ namespace bian
 
                         {
 
-                            Console.WriteLine($"has buff {action.noBuffCondition}  {action.desc}");
+                            // Console.WriteLine($"has buff {action.noBuffCondition}  {action.desc}");
                             continue;
                         }
                     }
 
+                    if (action.noBuffsCondition != null && action.noBuffsCondition.Count > 0)
+                    {
+                        foreach (var buffer in action.noBuffsCondition)
+                        {
+                            if (BGUFunctionLibraryCS.BGUHasBuffByID(character, buffer))
+                            {
+                                skipAction = true;
+                                break; // 退出 foreach 循环
+                            }
+                        }
+                    }
+
+                    if (skipAction)
+                    {
+                        continue; // 跳过当前 for 循环的迭代
+                    }
                     if (action.noTalentCondition > 0)
                     {
                         if (BGUFunctionLibraryCS.BGUHasTalentByID(character, action.noTalentCondition))
                         {
-                            Console.WriteLine($"has talent {action.noTalentCondition}");
+                            // Console.WriteLine($"has talent {action.noTalentCondition}");
                             continue;
                         }
                     }
@@ -238,7 +278,7 @@ namespace bian
                     {
                         if (!BGUFunctionLibraryCS.BGUHasTalentByID(character, action.talentCondition))
                         {
-                            Console.WriteLine($"has no talent {action.talentCondition}");
+                            // Console.WriteLine($"has no talent {action.talentCondition}");
                             continue;
                         }
                     }
