@@ -3,6 +3,64 @@
   "Description": "立棍雷电技",
   "Rules": [
     {
+      "Name": "大圣蓄力2",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "Dasheng_xuli_attack_2"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 140,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 1350
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 50058603,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 1350,
+          "desc": "黄符"
+        }
+      ]
+    },
+    {
+      "Name": "大圣蓄力3",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "Dasheng_xuli_attack_3"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 140,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 1800
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 50058603,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 1800,
+          "desc": "黄符"
+        }
+      ]
+    },
+    {
       "Name": "大圣蓄力4",
       "Description": "",
       "Filters": [
@@ -15,7 +73,59 @@
         {
           "Type": "summon",
           "SummonID": 60020015,
-          "SummonCount": 3
+          "SummonCount": 2
+        },
+
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74010206,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 2250,
+          "desc": "地面炸出碎片"
+        },
+
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 2403471,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 2250,
+          "buffCondition": 1000866,
+          "desc": "冰buff，金箍棒四级冰"
+        },
+
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 88880006,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 2250,
+          "buffCondition": 1000866,
+          "desc": "冰buff，金箍棒冰版本"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 70015801,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 2250,
+          "noBuffCondition": 1000866,
+          "desc": "没冰buff，金箍棒火版本"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 2403472,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 2250,
+          "noBuffCondition": 1000866,
+          "desc": "没冰buff，四级火"
         }
       ]
     },
