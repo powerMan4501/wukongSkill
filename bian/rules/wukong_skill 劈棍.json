@@ -57,6 +57,15 @@
           "OffsetY": 500,
           "TimeDelay": 1800,
           "desc": "黄符"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74011107,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 1800,
+          "desc": "金沙"
         }
       ]
     },
