@@ -15,7 +15,7 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 1703001,
+          "ProjectTileID": 88880003,
           "ForTarget": true,
           "buffCondition": 1000866,
           "desc": "有冰buff发射冰剑气1",
@@ -45,7 +45,7 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 1703001,
+          "ProjectTileID": 88880003,
           "ForTarget": true,
           "buffCondition": 1000866,
           "desc": "有冰buff发射冰剑气",
@@ -75,7 +75,7 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 1703001,
+          "ProjectTileID": 88880003,
           "ForTarget": true,
           "buffCondition": 1000866,
           "desc": "有冰buff发射冰剑气",
@@ -105,7 +105,7 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 1703001,
+          "ProjectTileID": 88880003,
           "ForTarget": true,
           "buffCondition": 1000866,
           "desc": "有冰buff发射冰剑气",

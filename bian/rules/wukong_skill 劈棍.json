@@ -43,11 +43,21 @@
           "ProjectTileID": 44011401,
           "OffsetX": 800,
           "OffsetY": 800,
-          "TimeDelay": 2070
+          "TimeDelay": 2070,
+          "desc": "红孩儿砸地"
         },
         {
           "Type": "buff",
-          "BuffID": 1000165
+          "BuffID": 1000165,
+          "desc": "大风车分身"
+        },
+
+        {
+          "Type": "buff",
+          "BuffId": 1000802,
+          "BuffTime": 500,
+          "TimeDelay": 2000,
+          "desc": "造成伤害时缓"
         }
       ]
     }

@@ -16,7 +16,17 @@
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
           "ProjectTileID": 74010202,
-          "TimeDelay": 1100
+          "TimeDelay": 1100,
+          "noBuffCondition": 1000866,
+          "desc": "没冰buff就地火"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 152,
+          "TimeDelay": 1000,
+          "buffCondition": 1000866,
+          "desc": "有冰buff就地波"
         }
       ]
     },
@@ -43,11 +53,15 @@
       ],
       "AfterActions": [
         {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 80009901,
-          "ForTarget": true,
-          "desc": "杨戬飞剑"
+          "Type": "buff",
+          "BuffId": 1000020,
+          "BuffTime": 400
+        },
+        {
+          "Type": "buff",
+          "BuffId": 1000802,
+          "BuffTime": 500,
+          "desc": "造成伤害时缓"
         }
       ]
     },
@@ -82,11 +96,9 @@
       ],
       "AfterActions": [
         {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 80009901,
-          "ForTarget": true,
-          "desc": "杨戬飞剑"
+          "Type": "buff",
+          "BuffId": 1000020,
+          "BuffTime": 400
         }
       ]
     }

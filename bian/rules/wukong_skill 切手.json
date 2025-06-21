@@ -70,25 +70,45 @@
         {
           "Type": "montage",
           "Name": "Dasheng_ComboA_03_Z_2"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_wukong_comboc_z_02_ycw"
         }
       ],
       "AfterActions": [
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 30160101
+          "ProjectTileID": 30160101,
+          "desc": "小黄龙雷电"
         },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 40580501,
+          "SpeedLeftValue": 7000,
+          "SpeedRightValue": 7000,
+          "BornDirOffsetXLeftValue": 85,
+          "BornDirOffsetXRightValue": 85,
+          "TimeDelay": 1280,
+          "ForTarget": true
+        },
+
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
           "ProjectTileID": 74010202,
+          "desc": "地火",
           "TimeDelay": 1100
         },
+
         {
           "Type": "buff",
-          "desc": "时缓",
-          "BuffID": 1000801,
-          "TimeDelay": 1250
+          "BuffId": 1000802,
+          "BuffTime": 500,
+          "TimeDelay": 1100,
+          "desc": "造成伤害时缓"
         }
       ]
     },
@@ -106,13 +126,48 @@
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 80009901,
+          "SpeedLeftValue": 6000,
+          "SpeedRightValue": 6000,
           "ForTarget": true,
           "desc": "杨戬飞剑"
         }
       ]
     },
     {
-      "Name": "进尺 ",
+      "Name": "进尺专用子弹，buff",
+      "Filters": [
+        {
+          "Type": "buff",
+          "BuffID": 1000180
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 80009901,
+          "ForTarget": true,
+          "TimeDelay": 200,
+          "desc": "杨戬万剑"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 150,
+          "ForTarget": true,
+          "desc": "三山冠"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 80000008,
+          "ForTarget": true,
+          "desc": "杨戬飞剑"
+        }
+      ]
+    },
+    {
+      "Name": "进尺",
       "Description": "",
       "Filters": [
         {
@@ -129,7 +184,7 @@
           "ProjectTileID": 2403471,
           "TimeDelay": 950,
           "buffCondition": 1000866,
-          "desc": "有冰buff进尺触发冰暴"
+          "desc": "有冰buff，触发冰暴"
         },
         {
           "Type": "bullet",
@@ -139,7 +194,66 @@
           "ProjectTileID": 30123402,
           "TimeDelay": 950,
           "buffCondition": 1000866,
-          "desc": "有冰buff进尺触发冰暴"
+          "desc": "有冰buff，触发冰暴"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 1017761,
+          "OffsetX": 800,
+          "OffsetY": 800,
+          "TimeDelay": 950,
+          "buffCondition": 1000866,
+          "desc": "有冰buff 雅香客冰雾气"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 44011401,
+          "OffsetX": 800,
+          "OffsetY": 800,
+          "TimeDelay": 950,
+          "buffCondition": 1000867,
+          "desc": "有火buff 红孩儿砸地"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 1016232,
+          "OffsetX": 800,
+          "OffsetY": 800,
+          "TimeDelay": 950,
+          "buffCondition": 1000867,
+          "desc": "有火buff 炸炸炸"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 40580501,
+
+          "TimeDelay": 950,
+          "buffCondition": 1000867,
+          "ForTarget": true,
+          "SpeedLeftValue": 9000,
+          "SpeedRightValue": 9000,
+          "desc": "有火buff 火焰剑气"
+        },
+
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 80009999,
+          "TimeDelay": 900,
+          "noBuffsCondition": [1000867, 1000866],
+          "desc": "没冰火buff 飞剑"
+        },
+        {
+          "Type": "buff",
+          "BuffID": 1000181,
+          "BuffTime": 1000,
+          "TimeDelay": 900,
+          "noBuffsCondition": [1000867, 1000866],
+          "desc": "没冰火buff 飞剑"
         }
       ]
     },
@@ -182,8 +296,42 @@
           "desc": "有火buff 红孩儿砸地"
         },
         {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 2403471,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 900,
+          "buffCondition": 1000866,
+          "desc": "有冰buff 冰暴"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 1017761,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 900,
+          "buffCondition": 1000866,
+          "desc": "有冰buff 雅香客冰雾气"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 50058603,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 900,
+          "noBuffsCondition": [1000867, 1000866],
+          "desc": "没 冰火buff 黄符50058603"
+        },
+        {
           "Type": "buff",
           "BuffID": 289
+        },
+        {
+          "Type": "buff",
+          "BuffID": 1000168
         }
       ]
     },
@@ -226,10 +374,72 @@
           "desc": "有火buff 地面岩浆"
         },
         {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 2403471,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 1250,
+          "buffCondition": 1000866,
+          "desc": "有冰buff 冰暴"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74010101,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 1250,
+          "buffCondition": 1000866,
+          "desc": "有冰buff 冰碎片"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 152,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 1250,
+          "buffCondition": 1000866,
+          "desc": "有冰buff 冰地波"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 50058603,
+          "OffsetX": 600,
+          "OffsetY": 600,
+          "TimeDelay": 1250,
+          "noBuffsCondition": [1000867, 1000866],
+          "desc": "没 冰火buff 黄符50058603"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 50058601,
+          "OffsetX": 600,
+          "OffsetY": 600,
+          "TimeDelay": 1250,
+          "noBuffsCondition": [1000867, 1000866],
+          "desc": "没 冰火buff 50058601"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74011107,
+          "OffsetX": 600,
+          "OffsetY": 600,
+          "TimeDelay": 1250,
+          "noBuffsCondition": [1000867, 1000866],
+          "desc": "没 冰火buff 金沙"
+        },
+
+        {
           "Type": "buff",
-          "desc": "直接时缓",
-          "BuffID": 1000801,
-          "TimeDelay": 1250
+          "BuffId": 1000802,
+          "BuffTime": 500,
+          "TimeDelay": 1100,
+          "desc": "造成伤害时缓"
         }
       ]
     }

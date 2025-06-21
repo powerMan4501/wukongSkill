@@ -1,6 +1,6 @@
 {
   "Name": "悟空-立棍雷电技",
-  "Description": "立棍雷电技",
+  "desc": "1000865:雷，1000866冰， 1000867火， 1000868毒",
   "Rules": [
     {
       "Name": "后撤召唤子弹",
@@ -41,28 +41,55 @@
       ]
     },
     {
-      "Name": "棍花，飞轮",
-      "Description": "",
+      "Name": "棍花，buff",
       "Filters": [
         {
-          "Type": "montage",
-          "Name": "AM_Wukong_ComboC_q_loop"
-        },
-        {
-          "Type": "montage",
-          "Name": "AM_Wukong_ComboC_z_loop"
+          "Type": "buff",
+          "BuffID": 1000178
         }
       ],
       "AfterActions": [
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 1711001,
-          "OffsetX": 900,
-          "OffsetY": 900,
+          "ProjectTileID": 40580501,
+          "buffCondition": 1000867,
           "ForTarget": true,
           "TimeDelay": 150,
-          "desc": "夜叉王飞轮"
+          "desc": "有火buff，火焰剑气"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 88880003,
+          "buffCondition": 1000866,
+          "BornDirOffsetXLeftValue": 91,
+          "BornDirOffsetXRightValue": 91,
+          "ForTarget": true,
+          "TimeDelay": 150,
+          "desc": "有冰buff，冰剑气"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 88880004,
+          "buffCondition": 1000865,
+          "SpeedLeftValue": 6000,
+          "SpeedRightValue": 6000,
+          "BornDirOffsetXLeftValue": 91,
+          "BornDirOffsetXRightValue": 91,
+          "ForTarget": true,
+          "TimeDelay": 150,
+          "desc": "有雷buff，金色剑气"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 30131501,
+          "buffCondition": 1000868,
+          "ForTarget": true,
+          "TimeDelay": 150,
+          "desc": "有毒buff，红剑气"
         }
       ]
     },
@@ -80,14 +107,51 @@
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 11012601,
-          "OffsetX": 900,
-          "OffsetY": 900,
           "ForTarget": true,
-          "noBuffCondition": 1000866,
-          "desc": "没冰buff就发射红剑气",
+          "buffCondition": 1000867,
+          "desc": "火buff就发射火焰剑气",
           "BornDirOffsetXLeftValue": 45,
           "BornDirOffsetXRightValue": 45,
-          "TimeDelay": 430,
+          "TimeDelay": 420,
+          "SpeedLeftValue": 6000,
+          "SpeedRightValue": 6000
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 1703001,
+          "ForTarget": true,
+          "buffCondition": 1000866,
+          "desc": "冰buff就发射冰剑气",
+          "BornDirOffsetXLeftValue": 45,
+          "BornDirOffsetXRightValue": 45,
+          "TimeDelay": 420,
+          "SpeedLeftValue": 6000,
+          "SpeedRightValue": 6000
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 50051301,
+          "ForTarget": true,
+          "buffCondition": 1000865,
+          "desc": "雷buff就发射雷剑气",
+          "BornDirOffsetXLeftValue": 45,
+          "BornDirOffsetXRightValue": 45,
+          "TimeDelay": 420,
+          "SpeedLeftValue": 6000,
+          "SpeedRightValue": 6000
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 30131502,
+          "ForTarget": true,
+          "buffCondition": 1000868,
+          "desc": "毒buff就发射红剑气",
+          "BornDirOffsetXLeftValue": 135,
+          "BornDirOffsetXRightValue": 135,
+          "TimeDelay": 420,
           "SpeedLeftValue": 6000,
           "SpeedRightValue": 6000
         }
