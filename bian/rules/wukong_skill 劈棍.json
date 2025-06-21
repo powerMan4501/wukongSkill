@@ -8,7 +8,7 @@
       "Filters": [
         {
           "Type": "montage",
-          "Name": "Dasheng_xuli_attack_2"
+          "Name": "_xuli_attack_2"
         }
       ],
       "AfterActions": [
@@ -32,12 +32,56 @@
       ]
     },
     {
+      "Name": "残躯4蓄力",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_mgd_jsds_atk_07"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffId": 2028,
+          "BuffTime": 1000,
+          "TimeDelay": 500
+        },
+        {
+          "Type": "buff",
+          "BuffId": 2028,
+          "BuffTime": 1500,
+          "TimeDelay": 1501
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74010206,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 2710,
+          "desc": "地面炸出碎片"
+        },
+
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74011107,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 2710,
+          "desc": "金沙"
+        }
+      ]
+    },
+
+    {
       "Name": "大圣蓄力3",
       "Description": "",
       "Filters": [
         {
           "Type": "montage",
-          "Name": "Dasheng_xuli_attack_3"
+          "Name": "_xuli_attack_3"
         }
       ],
       "AfterActions": [
@@ -75,7 +119,7 @@
       "Filters": [
         {
           "Type": "montage",
-          "Name": "Dasheng_xuli_attack_4"
+          "Name": "_xuli_attack_4"
         }
       ],
       "AfterActions": [
@@ -88,7 +132,7 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 74010206,
+          "ProjectTileID": 74011106,
           "OffsetX": 500,
           "OffsetY": 500,
           "TimeDelay": 2250,
