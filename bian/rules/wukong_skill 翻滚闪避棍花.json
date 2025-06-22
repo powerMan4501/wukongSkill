@@ -73,14 +73,14 @@
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 88880004,
-          "buffCondition": 1000865,
+          "noBuffsCondition": [1000867, 1000866, 1000868],
           "SpeedLeftValue": 6000,
           "SpeedRightValue": 6000,
           "BornDirOffsetXLeftValue": 91,
           "BornDirOffsetXRightValue": 91,
           "ForTarget": true,
           "TimeDelay": 150,
-          "desc": "有雷buff，金色剑气"
+          "desc": "没有冰火毒buff，金色剑气"
         },
         {
           "Type": "bullet",
@@ -134,8 +134,8 @@
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 50051301,
           "ForTarget": true,
-          "buffCondition": 1000865,
-          "desc": "雷buff就发射雷剑气",
+          "noBuffsCondition": [1000867, 1000866, 1000868],
+          "desc": "没有冰火毒buff就发射雷剑气",
           "BornDirOffsetXLeftValue": 45,
           "BornDirOffsetXRightValue": 45,
           "TimeDelay": 420,

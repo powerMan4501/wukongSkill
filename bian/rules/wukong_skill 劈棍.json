@@ -43,14 +43,14 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffId": 2028,
-          "BuffTime": 1000,
-          "TimeDelay": 500
+          "BuffId": 5045,
+          "BuffTime": 3000,
+          "TimeDelay": 1000
         },
         {
           "Type": "buff",
           "BuffId": 2028,
-          "BuffTime": 1500,
+          "BuffTime": 3500,
           "TimeDelay": 1501
         },
         {
@@ -59,7 +59,7 @@
           "ProjectTileID": 74010206,
           "OffsetX": 500,
           "OffsetY": 500,
-          "TimeDelay": 2710,
+          "TimeDelay": 2910,
           "desc": "地面炸出碎片"
         },
 
@@ -69,7 +69,7 @@
           "ProjectTileID": 74011107,
           "OffsetX": 500,
           "OffsetY": 500,
-          "TimeDelay": 2710,
+          "TimeDelay": 2910,
           "desc": "金沙"
         }
       ]
@@ -135,7 +135,7 @@
           "ProjectTileID": 74011106,
           "OffsetX": 500,
           "OffsetY": 500,
-          "TimeDelay": 2250,
+          "TimeDelay": 2350,
           "desc": "地面炸出碎片"
         },
 
@@ -145,7 +145,7 @@
           "ProjectTileID": 2403471,
           "OffsetX": 500,
           "OffsetY": 500,
-          "TimeDelay": 2250,
+          "TimeDelay": 2350,
           "buffCondition": 1000866,
           "desc": "冰buff，金箍棒四级冰"
         },
@@ -156,7 +156,7 @@
           "ProjectTileID": 88880006,
           "OffsetX": 500,
           "OffsetY": 500,
-          "TimeDelay": 2250,
+          "TimeDelay": 2350,
           "buffCondition": 1000866,
           "desc": "冰buff，金箍棒冰版本"
         },
@@ -166,7 +166,7 @@
           "ProjectTileID": 70015801,
           "OffsetX": 500,
           "OffsetY": 500,
-          "TimeDelay": 2250,
+          "TimeDelay": 2350,
           "noBuffCondition": 1000866,
           "desc": "没冰buff，金箍棒火版本"
         },
@@ -176,7 +176,7 @@
           "ProjectTileID": 2403472,
           "OffsetX": 500,
           "OffsetY": 500,
-          "TimeDelay": 2250,
+          "TimeDelay": 2350,
           "noBuffCondition": 1000866,
           "desc": "没冰buff，四级火"
         }
@@ -213,14 +213,6 @@
           "Type": "buff",
           "BuffID": 1000165,
           "desc": "大风车分身"
-        },
-
-        {
-          "Type": "buff",
-          "BuffId": 1000802,
-          "BuffTime": 500,
-          "TimeDelay": 2000,
-          "desc": "造成伤害时缓"
         }
       ]
     }

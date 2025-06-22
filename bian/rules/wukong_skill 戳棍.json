@@ -27,6 +27,13 @@
           "TimeDelay": 1000,
           "buffCondition": 1000866,
           "desc": "有冰buff就地波"
+        },
+
+        {
+          "Type": "buff",
+          "BuffId": 5063,
+          "TimeDelay": 500,
+          "BuffTime": 800
         }
       ]
     },
