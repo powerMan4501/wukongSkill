@@ -30,49 +30,6 @@
         }
       ]
     },
-    {
-      "Name": "残躯4蓄力",
-      "Description": "",
-      "Filters": [
-        {
-          "Type": "montage",
-          "Name": "AM_mgd_jsds_atk_07"
-        }
-      ],
-      "AfterActions": [
-        {
-          "Type": "buff",
-          "BuffId": 5045,
-          "BuffTime": 3000,
-          "TimeDelay": 1000
-        },
-        {
-          "Type": "buff",
-          "BuffId": 2028,
-          "BuffTime": 3500,
-          "TimeDelay": 1501
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 74010206,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 2910,
-          "desc": "地面炸出碎片"
-        },
-
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 74011107,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 2910,
-          "desc": "金沙"
-        }
-      ]
-    },
 
     {
       "Name": "大圣蓄力3",
@@ -131,13 +88,23 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 74011106,
+          "ProjectTileID": 74010206,
           "OffsetX": 500,
           "OffsetY": 500,
           "TimeDelay": 2350,
-          "desc": "地面炸出碎片"
+          "noBuffCondition": 1000866,
+          "desc": "没冰地面炸出火碎片"
         },
-
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74011208,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 2350,
+          "buffCondition": 1000866,
+          "desc": "没冰地面炸出冰碎片"
+        },
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
@@ -181,6 +148,31 @@
         }
       ]
     },
+
+    {
+      "Name": "残躯 蓄力4",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_mgd_jsds_atk_07"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffID": 5070,
+          "TimeDelay": 500,
+          "BuffTime": 3000
+        },
+        {
+          "Type": "buff",
+          "BuffID": 2028,
+          "BuffTime": 3000
+        }
+      ]
+    },
+
     {
       "Name": "大圣蓄力5,大风车",
       "Description": "",

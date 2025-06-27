@@ -70,9 +70,7 @@
       "Name": "大圣切手技，小横扫",
       "Key": "C+RBUTTON",
       "CanBreak": true,
-      "Buffs": [
-        1000809
-      ]
+      "Buffs": [1000809]
     },
     {
       "Id": 50003,
@@ -127,19 +125,14 @@
       "CanBreak": true,
       "Name": "平A带激光，秒远程小怪",
       "Key": "A+X",
-      "Buffs": [
-        1000121,
-        1000253
-      ]
+      "Buffs": [1000121, 1000253]
     },
     {
       "Id": 10992,
       "CanBreak": true,
       "Name": "定风珠",
       "Key": "NUMPAD9",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 10869,
@@ -174,7 +167,7 @@
       "Key": ""
     },
     {
-      "Id": 1001204,
+      "Id": 1001228,
       "CanBreak": true,
       "Name": "Q4",
       "Key": "NUMPAD1"
@@ -234,11 +227,7 @@
     {
       "Id": 10519,
       "Name": "完美定身",
-      "Buffs": [
-        1000288,
-        1000804,
-        202
-      ],
+      "Buffs": [1000288, 1000804, 202],
       "Key": "NUMPAD8",
       "CanBreak": true
     },
@@ -272,10 +261,7 @@
       "Name": "子弹buff",
       "Description": "激光爆炸",
       "Key": "",
-      "Buffs": [
-        1000041,
-        202
-      ],
+      "Buffs": [1000041, 202],
       "CanBreak": true
     }
   ],

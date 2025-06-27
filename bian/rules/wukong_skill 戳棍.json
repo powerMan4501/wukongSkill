@@ -72,6 +72,38 @@
       ]
     },
     {
+      "Name": "残躯4蓄力",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_mgd_jsds_atk_07"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74010206,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 2910,
+          "desc": "地面炸出碎片"
+        },
+
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 74011107,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 2910,
+          "desc": "金沙"
+        }
+      ]
+    },
+
+    {
       "Name": "戳棍七星",
       "Description": "",
       "Filters": [
