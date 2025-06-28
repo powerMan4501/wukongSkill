@@ -17,21 +17,15 @@
           "Type": "montage",
           "Name": "AM_Dasheng_ComboA_04_Z_1"
         },
-        {
-          "Type": "montage",
-          "Name": "AM_mgd_jsds_atk_08_01"
-        },
-        {
-          "Type": "montage",
-          "Name": "AM_mgd_jsds_atk_01_01_01"
-        },
+
         {
           "Type": "montage",
           "Name": "AM_Wukong_JXSQ_Enter_B"
         },
+
         {
           "Type": "montage",
-          "Name": "AM_mgd_jsds_atk_02_01_01"
+          "Name": "AM_wukong_comboc_z_01_end"
         }
       ],
       "AfterActions": [
@@ -135,7 +129,7 @@
           "ProjectTileID": 74010202,
           "noBuffCondition": 1000866,
           "desc": "没有冰buff 地火",
-          "TimeDelay": 1100
+          "TimeDelay": 1200
         },
         {
           "Type": "buff",
@@ -161,6 +155,57 @@
           "SpeedRightValue": 6000,
           "ForTarget": true,
           "desc": "杨戬飞剑"
+        }
+      ]
+    },
+
+    {
+      "Name": "风云转落地，buff",
+      "Filters": [
+        {
+          "Type": "buff",
+          "BuffID": 1000182
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 8880007,
+          "desc": "地面磐锤"
+        }
+      ]
+    },
+
+    {
+      "Name": "搅阵，buff",
+      "Filters": [
+        {
+          "Type": "buff",
+          "BuffID": 1000184
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 1016901,
+          "buffCondition": 1000867,
+          "SpeedLeftValue": 7000,
+          "SpeedRightValue": 7000,
+          "ForTarget": true,
+          "desc": "有火buff 鼠弩手弓箭"
+        },
+
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 80009901,
+          "noBuffCondition": 1000867,
+          "SpeedLeftValue": 6000,
+          "SpeedRightValue": 6000,
+          "ForTarget": true,
+          "desc": "没火buff，杨戬飞剑"
         }
       ]
     },

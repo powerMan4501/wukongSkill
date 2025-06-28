@@ -729,9 +729,9 @@
       "AlawaysCanCast": true
     },
     {
-      "Key": "S+S",
+      "Key": "TAB",
       "Type": "ADD_BUFF",
-      "BuffId": 412401,
+      "BuffId": 1000171,
       "BuffTime": 500,
       "Name": "测试添加buff",
       "AlawaysCanCast": true
