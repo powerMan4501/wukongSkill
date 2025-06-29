@@ -1,0 +1,9 @@
+namespace GSE.GSNet;
+
+public enum ChannelConnectState
+{
+	CHANNEL_STATE_CONNECT,
+	CHANNEL_STATE_AUTH,
+	CHANNEL_STATE_RELAY,
+	CHANNEL_STATE_CLOSED
+}

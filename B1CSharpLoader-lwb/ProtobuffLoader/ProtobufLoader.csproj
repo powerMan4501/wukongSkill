@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>ProtobufLoader</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="BtlSvr.Main" />
+    <Reference Include="LitJson" />
+    <Reference Include="0Harmony" />
+    <Reference Include="CSharpModBase" />
+    <Reference Include="Google.Protobuf" />
+    <Reference Include="Protobuf.RunTime" />
+    <Reference Include="UnrealEngine" />
+    <Reference Include="UnrealEngine.Runtime" />
+    <Reference Include="System.Core" />
+    <Reference Include="GSE.ProtobufDB" />
+    <Reference Include="b1.Native" />
+  </ItemGroup>
+</Project>

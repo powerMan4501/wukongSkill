@@ -1,0 +1,1521 @@
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnrealEngine.AIModule;
+using UnrealEngine.Engine;
+using UnrealEngine.Runtime;
+
+namespace b1;
+
+[UClass(Flags = (ClassFlags)810549408uL, Config = "Engine")]
+[UMetaPath("/Script/b1.BGUFuncLibSelectTargets", "b1", UnrealModuleType.Game)]
+public class UBGUFuncLibSelectTargets : UBlueprintFunctionLibrary
+{
+	private static IntPtr classAddress;
+
+	private static bool BGUOverlapMultiByObjectType_IsValid;
+
+	private static IntPtr BGUOverlapMultiByObjectType_FunctionAddress;
+
+	private static int BGUOverlapMultiByObjectType_ParamsSize;
+
+	private static bool BGUOverlapMultiByObjectType_WorldContextObject_IsValid;
+
+	private static FFieldAddress BGUOverlapMultiByObjectType_WorldContextObject_PropertyAddress;
+
+	private static int BGUOverlapMultiByObjectType_WorldContextObject_Offset;
+
+	private static bool BGUOverlapMultiByObjectType_Origin_IsValid;
+
+	private static FFieldAddress BGUOverlapMultiByObjectType_Origin_PropertyAddress;
+
+	private static int BGUOverlapMultiByObjectType_Origin_Offset;
+
+	private static bool BGUOverlapMultiByObjectType_Rot_IsValid;
+
+	private static FFieldAddress BGUOverlapMultiByObjectType_Rot_PropertyAddress;
+
+	private static int BGUOverlapMultiByObjectType_Rot_Offset;
+
+	private static bool BGUOverlapMultiByObjectType_ObjectTypes_IsValid;
+
+	private static FFieldAddress BGUOverlapMultiByObjectType_ObjectTypes_PropertyAddress;
+
+	private static int BGUOverlapMultiByObjectType_ObjectTypes_Offset;
+
+	private static bool BGUOverlapMultiByObjectType_OverlapShapeInfo_IsValid;
+
+	private static FFieldAddress BGUOverlapMultiByObjectType_OverlapShapeInfo_PropertyAddress;
+
+	private static int BGUOverlapMultiByObjectType_OverlapShapeInfo_Offset;
+
+	private static bool BGUOverlapMultiByObjectType_IgnoreActors_IsValid;
+
+	private static FFieldAddress BGUOverlapMultiByObjectType_IgnoreActors_PropertyAddress;
+
+	private static int BGUOverlapMultiByObjectType_IgnoreActors_Offset;
+
+	private static bool BGUOverlapMultiByObjectType_OverlapResults_IsValid;
+
+	private static FFieldAddress BGUOverlapMultiByObjectType_OverlapResults_PropertyAddress;
+
+	private static int BGUOverlapMultiByObjectType_OverlapResults_Offset;
+
+	private static bool BGUOverlapMultiByObjectType_IsDrawDebugShape_IsValid;
+
+	private static FFieldAddress BGUOverlapMultiByObjectType_IsDrawDebugShape_PropertyAddress;
+
+	private static int BGUOverlapMultiByObjectType_IsDrawDebugShape_Offset;
+
+	private static bool BGUOverlapAnyTestByObjectType_IsValid;
+
+	private static IntPtr BGUOverlapAnyTestByObjectType_FunctionAddress;
+
+	private static int BGUOverlapAnyTestByObjectType_ParamsSize;
+
+	private static bool BGUOverlapAnyTestByObjectType_WorldContextObject_IsValid;
+
+	private static FFieldAddress BGUOverlapAnyTestByObjectType_WorldContextObject_PropertyAddress;
+
+	private static int BGUOverlapAnyTestByObjectType_WorldContextObject_Offset;
+
+	private static bool BGUOverlapAnyTestByObjectType_Pos_IsValid;
+
+	private static FFieldAddress BGUOverlapAnyTestByObjectType_Pos_PropertyAddress;
+
+	private static int BGUOverlapAnyTestByObjectType_Pos_Offset;
+
+	private static bool BGUOverlapAnyTestByObjectType_ObjectTypes_IsValid;
+
+	private static FFieldAddress BGUOverlapAnyTestByObjectType_ObjectTypes_PropertyAddress;
+
+	private static int BGUOverlapAnyTestByObjectType_ObjectTypes_Offset;
+
+	private static bool BGUOverlapAnyTestByObjectType_CollisionShape_IsValid;
+
+	private static FFieldAddress BGUOverlapAnyTestByObjectType_CollisionShape_PropertyAddress;
+
+	private static int BGUOverlapAnyTestByObjectType_CollisionShape_Offset;
+
+	private static bool BGUOverlapAnyTestByObjectType_ShapeExtent_IsValid;
+
+	private static FFieldAddress BGUOverlapAnyTestByObjectType_ShapeExtent_PropertyAddress;
+
+	private static int BGUOverlapAnyTestByObjectType_ShapeExtent_Offset;
+
+	private static bool BGUOverlapAnyTestByObjectType_ReturnValue_IsValid;
+
+	private static FFieldAddress BGUOverlapAnyTestByObjectType_ReturnValue_PropertyAddress;
+
+	private static int BGUOverlapAnyTestByObjectType_ReturnValue_Offset;
+
+	private static bool BGUMultiCompOverlapByObjectType_IsValid;
+
+	private static IntPtr BGUMultiCompOverlapByObjectType_FunctionAddress;
+
+	private static int BGUMultiCompOverlapByObjectType_ParamsSize;
+
+	private static bool BGUMultiCompOverlapByObjectType_WorldContextObject_IsValid;
+
+	private static FFieldAddress BGUMultiCompOverlapByObjectType_WorldContextObject_PropertyAddress;
+
+	private static int BGUMultiCompOverlapByObjectType_WorldContextObject_Offset;
+
+	private static bool BGUMultiCompOverlapByObjectType_OverlapShapeComponents_IsValid;
+
+	private static FFieldAddress BGUMultiCompOverlapByObjectType_OverlapShapeComponents_PropertyAddress;
+
+	private static int BGUMultiCompOverlapByObjectType_OverlapShapeComponents_Offset;
+
+	private static bool BGUMultiCompOverlapByObjectType_ObjectTypes_IsValid;
+
+	private static FFieldAddress BGUMultiCompOverlapByObjectType_ObjectTypes_PropertyAddress;
+
+	private static int BGUMultiCompOverlapByObjectType_ObjectTypes_Offset;
+
+	private static bool BGUMultiCompOverlapByObjectType_IgnoreActors_IsValid;
+
+	private static FFieldAddress BGUMultiCompOverlapByObjectType_IgnoreActors_PropertyAddress;
+
+	private static int BGUMultiCompOverlapByObjectType_IgnoreActors_Offset;
+
+	private static bool BGUMultiCompOverlapByObjectType_OverlapComps_IsValid;
+
+	private static FFieldAddress BGUMultiCompOverlapByObjectType_OverlapComps_PropertyAddress;
+
+	private static int BGUMultiCompOverlapByObjectType_OverlapComps_Offset;
+
+	private static bool BGUMultiCompOverlapByObjectType_OverlapOtherActors_IsValid;
+
+	private static FFieldAddress BGUMultiCompOverlapByObjectType_OverlapOtherActors_PropertyAddress;
+
+	private static int BGUMultiCompOverlapByObjectType_OverlapOtherActors_Offset;
+
+	private static bool BGUMultiCompOverlapByObjectType_OverlapOtherComps_IsValid;
+
+	private static FFieldAddress BGUMultiCompOverlapByObjectType_OverlapOtherComps_PropertyAddress;
+
+	private static int BGUMultiCompOverlapByObjectType_OverlapOtherComps_Offset;
+
+	private static bool BGUMultiCompOverlapByObjectType_ReturnValue_IsValid;
+
+	private static FFieldAddress BGUMultiCompOverlapByObjectType_ReturnValue_PropertyAddress;
+
+	private static int BGUMultiCompOverlapByObjectType_ReturnValue_Offset;
+
+	private static bool BGULineTraceSingleByCollisionChannel_IsValid;
+
+	private static IntPtr BGULineTraceSingleByCollisionChannel_FunctionAddress;
+
+	private static int BGULineTraceSingleByCollisionChannel_ParamsSize;
+
+	private static bool BGULineTraceSingleByCollisionChannel_WorldContextObject_IsValid;
+
+	private static FFieldAddress BGULineTraceSingleByCollisionChannel_WorldContextObject_PropertyAddress;
+
+	private static int BGULineTraceSingleByCollisionChannel_WorldContextObject_Offset;
+
+	private static bool BGULineTraceSingleByCollisionChannel_Start_IsValid;
+
+	private static FFieldAddress BGULineTraceSingleByCollisionChannel_Start_PropertyAddress;
+
+	private static int BGULineTraceSingleByCollisionChannel_Start_Offset;
+
+	private static bool BGULineTraceSingleByCollisionChannel_End_IsValid;
+
+	private static FFieldAddress BGULineTraceSingleByCollisionChannel_End_PropertyAddress;
+
+	private static int BGULineTraceSingleByCollisionChannel_End_Offset;
+
+	private static bool BGULineTraceSingleByCollisionChannel_CollisionChannel_IsValid;
+
+	private static FFieldAddress BGULineTraceSingleByCollisionChannel_CollisionChannel_PropertyAddress;
+
+	private static int BGULineTraceSingleByCollisionChannel_CollisionChannel_Offset;
+
+	private static bool BGULineTraceSingleByCollisionChannel_SweepResult_IsValid;
+
+	private static FFieldAddress BGULineTraceSingleByCollisionChannel_SweepResult_PropertyAddress;
+
+	private static int BGULineTraceSingleByCollisionChannel_SweepResult_Offset;
+
+	private static bool BGULineTraceSingleByCollisionChannel_IgnoreActors_IsValid;
+
+	private static FFieldAddress BGULineTraceSingleByCollisionChannel_IgnoreActors_PropertyAddress;
+
+	private static int BGULineTraceSingleByCollisionChannel_IgnoreActors_Offset;
+
+	private static bool BGULineTraceSingleByCollisionChannel_BlockChannelsForFilter_IsValid;
+
+	private static FFieldAddress BGULineTraceSingleByCollisionChannel_BlockChannelsForFilter_PropertyAddress;
+
+	private static int BGULineTraceSingleByCollisionChannel_BlockChannelsForFilter_Offset;
+
+	private static bool BGULineTraceSingleByCollisionChannel_OverlapChannelsForFilter_IsValid;
+
+	private static FFieldAddress BGULineTraceSingleByCollisionChannel_OverlapChannelsForFilter_PropertyAddress;
+
+	private static int BGULineTraceSingleByCollisionChannel_OverlapChannelsForFilter_Offset;
+
+	private static bool BGULineTraceSingleByCollisionChannel_IsDrawDebug_IsValid;
+
+	private static FFieldAddress BGULineTraceSingleByCollisionChannel_IsDrawDebug_PropertyAddress;
+
+	private static int BGULineTraceSingleByCollisionChannel_IsDrawDebug_Offset;
+
+	private static bool BGULineTraceSingleByCollisionChannel_ReturnValue_IsValid;
+
+	private static FFieldAddress BGULineTraceSingleByCollisionChannel_ReturnValue_PropertyAddress;
+
+	private static int BGULineTraceSingleByCollisionChannel_ReturnValue_Offset;
+
+	private static bool BGULineTraceMultiByCollisionChannel_IsValid;
+
+	private static IntPtr BGULineTraceMultiByCollisionChannel_FunctionAddress;
+
+	private static int BGULineTraceMultiByCollisionChannel_ParamsSize;
+
+	private static bool BGULineTraceMultiByCollisionChannel_WorldContextObject_IsValid;
+
+	private static FFieldAddress BGULineTraceMultiByCollisionChannel_WorldContextObject_PropertyAddress;
+
+	private static int BGULineTraceMultiByCollisionChannel_WorldContextObject_Offset;
+
+	private static bool BGULineTraceMultiByCollisionChannel_Start_IsValid;
+
+	private static FFieldAddress BGULineTraceMultiByCollisionChannel_Start_PropertyAddress;
+
+	private static int BGULineTraceMultiByCollisionChannel_Start_Offset;
+
+	private static bool BGULineTraceMultiByCollisionChannel_End_IsValid;
+
+	private static FFieldAddress BGULineTraceMultiByCollisionChannel_End_PropertyAddress;
+
+	private static int BGULineTraceMultiByCollisionChannel_End_Offset;
+
+	private static bool BGULineTraceMultiByCollisionChannel_CollisionChannel_IsValid;
+
+	private static FFieldAddress BGULineTraceMultiByCollisionChannel_CollisionChannel_PropertyAddress;
+
+	private static int BGULineTraceMultiByCollisionChannel_CollisionChannel_Offset;
+
+	private static bool BGULineTraceMultiByCollisionChannel_SweepResults_IsValid;
+
+	private static FFieldAddress BGULineTraceMultiByCollisionChannel_SweepResults_PropertyAddress;
+
+	private static int BGULineTraceMultiByCollisionChannel_SweepResults_Offset;
+
+	private static bool BGULineTraceMultiByCollisionChannel_IgnoreActors_IsValid;
+
+	private static FFieldAddress BGULineTraceMultiByCollisionChannel_IgnoreActors_PropertyAddress;
+
+	private static int BGULineTraceMultiByCollisionChannel_IgnoreActors_Offset;
+
+	private static bool BGULineTraceMultiByCollisionChannel_BlockChannelsForFilter_IsValid;
+
+	private static FFieldAddress BGULineTraceMultiByCollisionChannel_BlockChannelsForFilter_PropertyAddress;
+
+	private static int BGULineTraceMultiByCollisionChannel_BlockChannelsForFilter_Offset;
+
+	private static bool BGULineTraceMultiByCollisionChannel_OverlapChannelsForFilter_IsValid;
+
+	private static FFieldAddress BGULineTraceMultiByCollisionChannel_OverlapChannelsForFilter_PropertyAddress;
+
+	private static int BGULineTraceMultiByCollisionChannel_OverlapChannelsForFilter_Offset;
+
+	private static bool BGULineTraceMultiByCollisionChannel_IsDrawDebug_IsValid;
+
+	private static FFieldAddress BGULineTraceMultiByCollisionChannel_IsDrawDebug_PropertyAddress;
+
+	private static int BGULineTraceMultiByCollisionChannel_IsDrawDebug_Offset;
+
+	private static bool BGULineTraceMultiByCollisionChannel_ReturnValue_IsValid;
+
+	private static FFieldAddress BGULineTraceMultiByCollisionChannel_ReturnValue_PropertyAddress;
+
+	private static int BGULineTraceMultiByCollisionChannel_ReturnValue_Offset;
+
+	private static bool BGUIsSelectTargetInFilterBP_IsValid;
+
+	private static IntPtr BGUIsSelectTargetInFilterBP_FunctionAddress;
+
+	private static int BGUIsSelectTargetInFilterBP_ParamsSize;
+
+	private static bool BGUIsSelectTargetInFilterBP_Caster_IsValid;
+
+	private static FFieldAddress BGUIsSelectTargetInFilterBP_Caster_PropertyAddress;
+
+	private static int BGUIsSelectTargetInFilterBP_Caster_Offset;
+
+	private static bool BGUIsSelectTargetInFilterBP_Target_IsValid;
+
+	private static FFieldAddress BGUIsSelectTargetInFilterBP_Target_PropertyAddress;
+
+	private static int BGUIsSelectTargetInFilterBP_Target_Offset;
+
+	private static bool BGUIsSelectTargetInFilterBP_Filter_IsValid;
+
+	private static FFieldAddress BGUIsSelectTargetInFilterBP_Filter_PropertyAddress;
+
+	private static int BGUIsSelectTargetInFilterBP_Filter_Offset;
+
+	private static bool BGUIsSelectTargetInFilterBP_ReturnValue_IsValid;
+
+	private static FFieldAddress BGUIsSelectTargetInFilterBP_ReturnValue_PropertyAddress;
+
+	private static int BGUIsSelectTargetInFilterBP_ReturnValue_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_IsValid;
+
+	private static IntPtr BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_ParamsSize;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_WorldContextObject_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannelWithCaster_WorldContextObject_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_WorldContextObject_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_PreTransform_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannelWithCaster_PreTransform_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_PreTransform_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_CurTransform_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannelWithCaster_CurTransform_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_CurTransform_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_Rot_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannelWithCaster_Rot_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_Rot_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_CollisionChannel_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannelWithCaster_CollisionChannel_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_CollisionChannel_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckShapeInfo_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckShapeInfo_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckShapeInfo_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepResults_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepResults_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepResults_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_IgnoreActors_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannelWithCaster_IgnoreActors_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_IgnoreActors_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_BlockChannelsForFilter_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannelWithCaster_BlockChannelsForFilter_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_BlockChannelsForFilter_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_OverlapChannelsForFilter_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannelWithCaster_OverlapChannelsForFilter_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_OverlapChannelsForFilter_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_IsDrawDebugShape_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannelWithCaster_IsDrawDebugShape_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_IsDrawDebugShape_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_Caster_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannelWithCaster_Caster_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_Caster_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_GroupID_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannelWithCaster_GroupID_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_GroupID_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckType_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckType_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckType_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannel_IsValid;
+
+	private static IntPtr BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannel_ParamsSize;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannel_WorldContextObject_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannel_WorldContextObject_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannel_WorldContextObject_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannel_PreTransform_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannel_PreTransform_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannel_PreTransform_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannel_CurTransform_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannel_CurTransform_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannel_CurTransform_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannel_Rot_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannel_Rot_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannel_Rot_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannel_CollisionChannel_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannel_CollisionChannel_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannel_CollisionChannel_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannel_SweepCheckShapeInfo_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannel_SweepCheckShapeInfo_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannel_SweepCheckShapeInfo_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannel_SweepResults_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannel_SweepResults_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannel_SweepResults_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannel_IgnoreActors_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannel_IgnoreActors_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannel_IgnoreActors_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannel_BlockChannelsForFilter_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannel_BlockChannelsForFilter_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannel_BlockChannelsForFilter_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannel_OverlapChannelsForFilter_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannel_OverlapChannelsForFilter_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannel_OverlapChannelsForFilter_Offset;
+
+	private static bool BGUGetSweepCheckResultsByCollisionChannel_IsDrawDebugShape_IsValid;
+
+	private static FFieldAddress BGUGetSweepCheckResultsByCollisionChannel_IsDrawDebugShape_PropertyAddress;
+
+	private static int BGUGetSweepCheckResultsByCollisionChannel_IsDrawDebugShape_Offset;
+
+	private static bool BGUGetSightPerceivedActors_IsValid;
+
+	private static IntPtr BGUGetSightPerceivedActors_FunctionAddress;
+
+	private static int BGUGetSightPerceivedActors_ParamsSize;
+
+	private static bool BGUGetSightPerceivedActors_PerceptionComp_IsValid;
+
+	private static FFieldAddress BGUGetSightPerceivedActors_PerceptionComp_PropertyAddress;
+
+	private static int BGUGetSightPerceivedActors_PerceptionComp_Offset;
+
+	private static bool BGUGetSightPerceivedActors_ReturnValue_IsValid;
+
+	private static FFieldAddress BGUGetSightPerceivedActors_ReturnValue_PropertyAddress;
+
+	private static int BGUGetSightPerceivedActors_ReturnValue_Offset;
+
+	private static bool BGUGetPerceivedActors_IsValid;
+
+	private static IntPtr BGUGetPerceivedActors_FunctionAddress;
+
+	private static int BGUGetPerceivedActors_ParamsSize;
+
+	private static bool BGUGetPerceivedActors_PerceptionComp_IsValid;
+
+	private static FFieldAddress BGUGetPerceivedActors_PerceptionComp_PropertyAddress;
+
+	private static int BGUGetPerceivedActors_PerceptionComp_Offset;
+
+	private static bool BGUGetPerceivedActors_ReturnValue_IsValid;
+
+	private static FFieldAddress BGUGetPerceivedActors_ReturnValue_PropertyAddress;
+
+	private static int BGUGetPerceivedActors_ReturnValue_Offset;
+
+	private static bool BGUComputePenetration_IsValid;
+
+	private static IntPtr BGUComputePenetration_FunctionAddress;
+
+	private static int BGUComputePenetration_ParamsSize;
+
+	private static bool BGUComputePenetration_SelfComponent_IsValid;
+
+	private static FFieldAddress BGUComputePenetration_SelfComponent_PropertyAddress;
+
+	private static int BGUComputePenetration_SelfComponent_Offset;
+
+	private static bool BGUComputePenetration_Direction_IsValid;
+
+	private static FFieldAddress BGUComputePenetration_Direction_PropertyAddress;
+
+	private static int BGUComputePenetration_Direction_Offset;
+
+	private static bool BGUComputePenetration_Distance_IsValid;
+
+	private static FFieldAddress BGUComputePenetration_Distance_PropertyAddress;
+
+	private static int BGUComputePenetration_Distance_Offset;
+
+	private static bool BGUComputePenetration_OtherComponent_IsValid;
+
+	private static FFieldAddress BGUComputePenetration_OtherComponent_PropertyAddress;
+
+	private static int BGUComputePenetration_OtherComponent_Offset;
+
+	private static bool BGUComputePenetration_Pos_IsValid;
+
+	private static FFieldAddress BGUComputePenetration_Pos_PropertyAddress;
+
+	private static int BGUComputePenetration_Pos_Offset;
+
+	private static bool BGUComputePenetration_Rot_IsValid;
+
+	private static FFieldAddress BGUComputePenetration_Rot_PropertyAddress;
+
+	private static int BGUComputePenetration_Rot_Offset;
+
+	private static bool BGUComputePenetration_ReturnValue_IsValid;
+
+	private static FFieldAddress BGUComputePenetration_ReturnValue_PropertyAddress;
+
+	private static int BGUComputePenetration_ReturnValue_Offset;
+
+	private static bool BGUCompOverlapCompsByObjectType_IsValid;
+
+	private static IntPtr BGUCompOverlapCompsByObjectType_FunctionAddress;
+
+	private static int BGUCompOverlapCompsByObjectType_ParamsSize;
+
+	private static bool BGUCompOverlapCompsByObjectType_Component_IsValid;
+
+	private static FFieldAddress BGUCompOverlapCompsByObjectType_Component_PropertyAddress;
+
+	private static int BGUCompOverlapCompsByObjectType_Component_Offset;
+
+	private static bool BGUCompOverlapCompsByObjectType_ObjectTypes_IsValid;
+
+	private static FFieldAddress BGUCompOverlapCompsByObjectType_ObjectTypes_PropertyAddress;
+
+	private static int BGUCompOverlapCompsByObjectType_ObjectTypes_Offset;
+
+	private static bool BGUCompOverlapCompsByObjectType_ComponentClassFilter_IsValid;
+
+	private static FFieldAddress BGUCompOverlapCompsByObjectType_ComponentClassFilter_PropertyAddress;
+
+	private static int BGUCompOverlapCompsByObjectType_ComponentClassFilter_Offset;
+
+	private static bool BGUCompOverlapCompsByObjectType_ActorsToIgnore_IsValid;
+
+	private static FFieldAddress BGUCompOverlapCompsByObjectType_ActorsToIgnore_PropertyAddress;
+
+	private static int BGUCompOverlapCompsByObjectType_ActorsToIgnore_Offset;
+
+	private static bool BGUCompOverlapCompsByObjectType_OutComponents_IsValid;
+
+	private static FFieldAddress BGUCompOverlapCompsByObjectType_OutComponents_PropertyAddress;
+
+	private static int BGUCompOverlapCompsByObjectType_OutComponents_Offset;
+
+	private static bool BGUCompOverlapCompsByObjectType_ReturnValue_IsValid;
+
+	private static FFieldAddress BGUCompOverlapCompsByObjectType_ReturnValue_PropertyAddress;
+
+	private static int BGUCompOverlapCompsByObjectType_ReturnValue_Offset;
+
+	private static bool BGUCompOverlapCompsByChannel_IsValid;
+
+	private static IntPtr BGUCompOverlapCompsByChannel_FunctionAddress;
+
+	private static int BGUCompOverlapCompsByChannel_ParamsSize;
+
+	private static bool BGUCompOverlapCompsByChannel_Component_IsValid;
+
+	private static FFieldAddress BGUCompOverlapCompsByChannel_Component_PropertyAddress;
+
+	private static int BGUCompOverlapCompsByChannel_Component_Offset;
+
+	private static bool BGUCompOverlapCompsByChannel_TraceChannel_IsValid;
+
+	private static FFieldAddress BGUCompOverlapCompsByChannel_TraceChannel_PropertyAddress;
+
+	private static int BGUCompOverlapCompsByChannel_TraceChannel_Offset;
+
+	private static bool BGUCompOverlapCompsByChannel_ComponentClassFilter_IsValid;
+
+	private static FFieldAddress BGUCompOverlapCompsByChannel_ComponentClassFilter_PropertyAddress;
+
+	private static int BGUCompOverlapCompsByChannel_ComponentClassFilter_Offset;
+
+	private static bool BGUCompOverlapCompsByChannel_ActorsToIgnore_IsValid;
+
+	private static FFieldAddress BGUCompOverlapCompsByChannel_ActorsToIgnore_PropertyAddress;
+
+	private static int BGUCompOverlapCompsByChannel_ActorsToIgnore_Offset;
+
+	private static bool BGUCompOverlapCompsByChannel_OutComponents_IsValid;
+
+	private static FFieldAddress BGUCompOverlapCompsByChannel_OutComponents_PropertyAddress;
+
+	private static int BGUCompOverlapCompsByChannel_OutComponents_Offset;
+
+	private static bool BGUCompOverlapCompsByChannel_ReturnValue_IsValid;
+
+	private static FFieldAddress BGUCompOverlapCompsByChannel_ReturnValue_PropertyAddress;
+
+	private static int BGUCompOverlapCompsByChannel_ReturnValue_Offset;
+
+	private static bool BGUComponentSweepMulti_IsValid;
+
+	private static IntPtr BGUComponentSweepMulti_FunctionAddress;
+
+	private static int BGUComponentSweepMulti_ParamsSize;
+
+	private static bool BGUComponentSweepMulti_WorldContextObject_IsValid;
+
+	private static FFieldAddress BGUComponentSweepMulti_WorldContextObject_PropertyAddress;
+
+	private static int BGUComponentSweepMulti_WorldContextObject_Offset;
+
+	private static bool BGUComponentSweepMulti_TraceChannel_IsValid;
+
+	private static FFieldAddress BGUComponentSweepMulti_TraceChannel_PropertyAddress;
+
+	private static int BGUComponentSweepMulti_TraceChannel_Offset;
+
+	private static bool BGUComponentSweepMulti_PrimComp_IsValid;
+
+	private static FFieldAddress BGUComponentSweepMulti_PrimComp_PropertyAddress;
+
+	private static int BGUComponentSweepMulti_PrimComp_Offset;
+
+	private static bool BGUComponentSweepMulti_Start_IsValid;
+
+	private static FFieldAddress BGUComponentSweepMulti_Start_PropertyAddress;
+
+	private static int BGUComponentSweepMulti_Start_Offset;
+
+	private static bool BGUComponentSweepMulti_End_IsValid;
+
+	private static FFieldAddress BGUComponentSweepMulti_End_PropertyAddress;
+
+	private static int BGUComponentSweepMulti_End_Offset;
+
+	private static bool BGUComponentSweepMulti_Rot_IsValid;
+
+	private static FFieldAddress BGUComponentSweepMulti_Rot_PropertyAddress;
+
+	private static int BGUComponentSweepMulti_Rot_Offset;
+
+	private static bool BGUComponentSweepMulti_SweepResults_IsValid;
+
+	private static FFieldAddress BGUComponentSweepMulti_SweepResults_PropertyAddress;
+
+	private static int BGUComponentSweepMulti_SweepResults_Offset;
+
+	private static bool BGUComponentSweepMulti_IgnoreActors_IsValid;
+
+	private static FFieldAddress BGUComponentSweepMulti_IgnoreActors_PropertyAddress;
+
+	private static int BGUComponentSweepMulti_IgnoreActors_Offset;
+
+	private static bool BGUComponentSweepMulti_BlockChannelsForFilter_IsValid;
+
+	private static FFieldAddress BGUComponentSweepMulti_BlockChannelsForFilter_PropertyAddress;
+
+	private static int BGUComponentSweepMulti_BlockChannelsForFilter_Offset;
+
+	private static bool BGUComponentSweepMulti_OverlapChannelsForFilter_IsValid;
+
+	private static FFieldAddress BGUComponentSweepMulti_OverlapChannelsForFilter_PropertyAddress;
+
+	private static int BGUComponentSweepMulti_OverlapChannelsForFilter_Offset;
+
+	private static bool BGUComponentSweepMulti_ReturnValue_IsValid;
+
+	private static FFieldAddress BGUComponentSweepMulti_ReturnValue_PropertyAddress;
+
+	private static int BGUComponentSweepMulti_ReturnValue_Offset;
+
+	[UFunction(Flags = 79832065u)]
+	[UMetaPath("/Script/b1.BGUFuncLibSelectTargets:BGUOverlapMultiByObjectType")]
+	public unsafe static void BGUOverlapMultiByObjectType(UObject WorldContextObject, FVector Origin, FQuat Rot, List<EObjectTypeQuery> ObjectTypes, FGSSweepCheckShapeInfo OverlapShapeInfo, List<AActor> IgnoreActors, out List<FUStGSOverlapResult> OverlapResults, bool IsDrawDebugShape = false)
+	{
+		if (!BGUOverlapMultiByObjectType_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.BGUFuncLibSelectTargets:BGUOverlapMultiByObjectType");
+			OverlapResults = null;
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BGUOverlapMultiByObjectType_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BGUOverlapMultiByObjectType_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, BGUOverlapMultiByObjectType_WorldContextObject_Offset), 0, BGUOverlapMultiByObjectType_WorldContextObject_PropertyAddress.Address, WorldContextObject);
+		BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, BGUOverlapMultiByObjectType_Origin_Offset), 0, BGUOverlapMultiByObjectType_Origin_PropertyAddress.Address, Origin);
+		NativeReflection.InitializeValue_InContainer(BGUOverlapMultiByObjectType_Rot_PropertyAddress.Address, intPtr);
+		BlittableTypeMarshaler<FQuat>.ToNative(IntPtr.Add(intPtr, BGUOverlapMultiByObjectType_Rot_Offset), 0, BGUOverlapMultiByObjectType_Rot_PropertyAddress.Address, Rot);
+		new TArrayCopyMarshaler<EObjectTypeQuery>(1, BGUOverlapMultiByObjectType_ObjectTypes_PropertyAddress, CachedMarshalingDelegates<EObjectTypeQuery, EnumMarshaler<EObjectTypeQuery>>.FromNative, CachedMarshalingDelegates<EObjectTypeQuery, EnumMarshaler<EObjectTypeQuery>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUOverlapMultiByObjectType_ObjectTypes_Offset), ObjectTypes);
+		NativeReflection.InitializeValue_InContainer(BGUOverlapMultiByObjectType_OverlapShapeInfo_PropertyAddress.Address, intPtr);
+		FGSSweepCheckShapeInfo.ToNative(IntPtr.Add(intPtr, BGUOverlapMultiByObjectType_OverlapShapeInfo_Offset), 0, BGUOverlapMultiByObjectType_OverlapShapeInfo_PropertyAddress.Address, OverlapShapeInfo);
+		new TArrayCopyMarshaler<AActor>(1, BGUOverlapMultiByObjectType_IgnoreActors_PropertyAddress, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.FromNative, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUOverlapMultiByObjectType_IgnoreActors_Offset), IgnoreActors);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, BGUOverlapMultiByObjectType_IsDrawDebugShape_Offset), 0, BGUOverlapMultiByObjectType_IsDrawDebugShape_PropertyAddress.Address, IsDrawDebugShape);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BGUOverlapMultiByObjectType_FunctionAddress, intPtr, BGUOverlapMultiByObjectType_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(BGUOverlapMultiByObjectType_ObjectTypes_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGUOverlapMultiByObjectType_IgnoreActors_PropertyAddress.Address, intPtr);
+		OverlapResults = new TArrayCopyMarshaler<FUStGSOverlapResult>(1, BGUOverlapMultiByObjectType_OverlapResults_PropertyAddress, CachedMarshalingDelegates<FUStGSOverlapResult, FUStGSOverlapResult>.FromNative, CachedMarshalingDelegates<FUStGSOverlapResult, FUStGSOverlapResult>.ToNative).FromNative(IntPtr.Add(intPtr, BGUOverlapMultiByObjectType_OverlapResults_Offset));
+		NativeReflection.DestroyValue_InContainer(BGUOverlapMultiByObjectType_OverlapResults_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 79832065u)]
+	[UMetaPath("/Script/b1.BGUFuncLibSelectTargets:BGUOverlapAnyTestByObjectType")]
+	public unsafe static bool BGUOverlapAnyTestByObjectType(UWorld WorldContextObject, FVector Pos, List<EObjectTypeQuery> ObjectTypes, EGSSweepCheckShapeType CollisionShape, FVector ShapeExtent)
+	{
+		if (!BGUOverlapAnyTestByObjectType_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.BGUFuncLibSelectTargets:BGUOverlapAnyTestByObjectType");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BGUOverlapAnyTestByObjectType_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BGUOverlapAnyTestByObjectType_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UWorld>.ToNative(IntPtr.Add(intPtr, BGUOverlapAnyTestByObjectType_WorldContextObject_Offset), 0, BGUOverlapAnyTestByObjectType_WorldContextObject_PropertyAddress.Address, WorldContextObject);
+		BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, BGUOverlapAnyTestByObjectType_Pos_Offset), 0, BGUOverlapAnyTestByObjectType_Pos_PropertyAddress.Address, Pos);
+		new TArrayCopyMarshaler<EObjectTypeQuery>(1, BGUOverlapAnyTestByObjectType_ObjectTypes_PropertyAddress, CachedMarshalingDelegates<EObjectTypeQuery, EnumMarshaler<EObjectTypeQuery>>.FromNative, CachedMarshalingDelegates<EObjectTypeQuery, EnumMarshaler<EObjectTypeQuery>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUOverlapAnyTestByObjectType_ObjectTypes_Offset), ObjectTypes);
+		EnumMarshaler<EGSSweepCheckShapeType>.ToNative(IntPtr.Add(intPtr, BGUOverlapAnyTestByObjectType_CollisionShape_Offset), 0, BGUOverlapAnyTestByObjectType_CollisionShape_PropertyAddress.Address, CollisionShape);
+		BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, BGUOverlapAnyTestByObjectType_ShapeExtent_Offset), 0, BGUOverlapAnyTestByObjectType_ShapeExtent_PropertyAddress.Address, ShapeExtent);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BGUOverlapAnyTestByObjectType_FunctionAddress, intPtr, BGUOverlapAnyTestByObjectType_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(BGUOverlapAnyTestByObjectType_ObjectTypes_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, BGUOverlapAnyTestByObjectType_ReturnValue_Offset), 0, BGUOverlapAnyTestByObjectType_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/b1.BGUFuncLibSelectTargets:BGUMultiCompOverlapByObjectType")]
+	public unsafe static bool BGUMultiCompOverlapByObjectType(UObject WorldContextObject, List<UShapeComponent> OverlapShapeComponents, List<EObjectTypeQuery> ObjectTypes, List<AActor> IgnoreActors, out List<UShapeComponent> OverlapComps, out List<AActor> OverlapOtherActors, out List<UPrimitiveComponent> OverlapOtherComps)
+	{
+		if (!BGUMultiCompOverlapByObjectType_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.BGUFuncLibSelectTargets:BGUMultiCompOverlapByObjectType");
+			OverlapComps = null;
+			OverlapOtherActors = null;
+			OverlapOtherComps = null;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BGUMultiCompOverlapByObjectType_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BGUMultiCompOverlapByObjectType_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, BGUMultiCompOverlapByObjectType_WorldContextObject_Offset), 0, BGUMultiCompOverlapByObjectType_WorldContextObject_PropertyAddress.Address, WorldContextObject);
+		new TArrayCopyMarshaler<UShapeComponent>(1, BGUMultiCompOverlapByObjectType_OverlapShapeComponents_PropertyAddress, CachedMarshalingDelegates<UShapeComponent, UObjectMarshaler<UShapeComponent>>.FromNative, CachedMarshalingDelegates<UShapeComponent, UObjectMarshaler<UShapeComponent>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUMultiCompOverlapByObjectType_OverlapShapeComponents_Offset), OverlapShapeComponents);
+		new TArrayCopyMarshaler<EObjectTypeQuery>(1, BGUMultiCompOverlapByObjectType_ObjectTypes_PropertyAddress, CachedMarshalingDelegates<EObjectTypeQuery, EnumMarshaler<EObjectTypeQuery>>.FromNative, CachedMarshalingDelegates<EObjectTypeQuery, EnumMarshaler<EObjectTypeQuery>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUMultiCompOverlapByObjectType_ObjectTypes_Offset), ObjectTypes);
+		new TArrayCopyMarshaler<AActor>(1, BGUMultiCompOverlapByObjectType_IgnoreActors_PropertyAddress, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.FromNative, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUMultiCompOverlapByObjectType_IgnoreActors_Offset), IgnoreActors);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BGUMultiCompOverlapByObjectType_FunctionAddress, intPtr, BGUMultiCompOverlapByObjectType_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(BGUMultiCompOverlapByObjectType_OverlapShapeComponents_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGUMultiCompOverlapByObjectType_ObjectTypes_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGUMultiCompOverlapByObjectType_IgnoreActors_PropertyAddress.Address, intPtr);
+		OverlapComps = new TArrayCopyMarshaler<UShapeComponent>(1, BGUMultiCompOverlapByObjectType_OverlapComps_PropertyAddress, CachedMarshalingDelegates<UShapeComponent, UObjectMarshaler<UShapeComponent>>.FromNative, CachedMarshalingDelegates<UShapeComponent, UObjectMarshaler<UShapeComponent>>.ToNative).FromNative(IntPtr.Add(intPtr, BGUMultiCompOverlapByObjectType_OverlapComps_Offset));
+		NativeReflection.DestroyValue_InContainer(BGUMultiCompOverlapByObjectType_OverlapComps_PropertyAddress.Address, intPtr);
+		OverlapOtherActors = new TArrayCopyMarshaler<AActor>(1, BGUMultiCompOverlapByObjectType_OverlapOtherActors_PropertyAddress, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.FromNative, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.ToNative).FromNative(IntPtr.Add(intPtr, BGUMultiCompOverlapByObjectType_OverlapOtherActors_Offset));
+		NativeReflection.DestroyValue_InContainer(BGUMultiCompOverlapByObjectType_OverlapOtherActors_PropertyAddress.Address, intPtr);
+		OverlapOtherComps = new TArrayCopyMarshaler<UPrimitiveComponent>(1, BGUMultiCompOverlapByObjectType_OverlapOtherComps_PropertyAddress, CachedMarshalingDelegates<UPrimitiveComponent, UObjectMarshaler<UPrimitiveComponent>>.FromNative, CachedMarshalingDelegates<UPrimitiveComponent, UObjectMarshaler<UPrimitiveComponent>>.ToNative).FromNative(IntPtr.Add(intPtr, BGUMultiCompOverlapByObjectType_OverlapOtherComps_Offset));
+		NativeReflection.DestroyValue_InContainer(BGUMultiCompOverlapByObjectType_OverlapOtherComps_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, BGUMultiCompOverlapByObjectType_ReturnValue_Offset), 0, BGUMultiCompOverlapByObjectType_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 79832065u)]
+	[UMetaPath("/Script/b1.BGUFuncLibSelectTargets:BGULineTraceSingleByCollisionChannel")]
+	public unsafe static bool BGULineTraceSingleByCollisionChannel(UObject WorldContextObject, FVector Start, FVector End, ECollisionChannel CollisionChannel, out FUStGSHitResult SweepResult, List<AActor> IgnoreActors, List<ECollisionChannel> BlockChannelsForFilter, List<ECollisionChannel> OverlapChannelsForFilter, bool IsDrawDebug = false)
+	{
+		if (!BGULineTraceSingleByCollisionChannel_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.BGUFuncLibSelectTargets:BGULineTraceSingleByCollisionChannel");
+			SweepResult = default(FUStGSHitResult);
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BGULineTraceSingleByCollisionChannel_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BGULineTraceSingleByCollisionChannel_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, BGULineTraceSingleByCollisionChannel_WorldContextObject_Offset), 0, BGULineTraceSingleByCollisionChannel_WorldContextObject_PropertyAddress.Address, WorldContextObject);
+		BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, BGULineTraceSingleByCollisionChannel_Start_Offset), 0, BGULineTraceSingleByCollisionChannel_Start_PropertyAddress.Address, Start);
+		BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, BGULineTraceSingleByCollisionChannel_End_Offset), 0, BGULineTraceSingleByCollisionChannel_End_PropertyAddress.Address, End);
+		EnumMarshaler<ECollisionChannel>.ToNative(IntPtr.Add(intPtr, BGULineTraceSingleByCollisionChannel_CollisionChannel_Offset), 0, BGULineTraceSingleByCollisionChannel_CollisionChannel_PropertyAddress.Address, CollisionChannel);
+		NativeReflection.InitializeValue_InContainer(BGULineTraceSingleByCollisionChannel_SweepResult_PropertyAddress.Address, intPtr);
+		new TArrayCopyMarshaler<AActor>(1, BGULineTraceSingleByCollisionChannel_IgnoreActors_PropertyAddress, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.FromNative, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.ToNative).ToNative(IntPtr.Add(intPtr, BGULineTraceSingleByCollisionChannel_IgnoreActors_Offset), IgnoreActors);
+		new TArrayCopyMarshaler<ECollisionChannel>(1, BGULineTraceSingleByCollisionChannel_BlockChannelsForFilter_PropertyAddress, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.FromNative, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.ToNative).ToNative(IntPtr.Add(intPtr, BGULineTraceSingleByCollisionChannel_BlockChannelsForFilter_Offset), BlockChannelsForFilter);
+		new TArrayCopyMarshaler<ECollisionChannel>(1, BGULineTraceSingleByCollisionChannel_OverlapChannelsForFilter_PropertyAddress, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.FromNative, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.ToNative).ToNative(IntPtr.Add(intPtr, BGULineTraceSingleByCollisionChannel_OverlapChannelsForFilter_Offset), OverlapChannelsForFilter);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, BGULineTraceSingleByCollisionChannel_IsDrawDebug_Offset), 0, BGULineTraceSingleByCollisionChannel_IsDrawDebug_PropertyAddress.Address, IsDrawDebug);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BGULineTraceSingleByCollisionChannel_FunctionAddress, intPtr, BGULineTraceSingleByCollisionChannel_ParamsSize);
+		SweepResult = FUStGSHitResult.FromNative(IntPtr.Add(intPtr, BGULineTraceSingleByCollisionChannel_SweepResult_Offset), 0, BGULineTraceSingleByCollisionChannel_SweepResult_PropertyAddress.Address);
+		NativeReflection.DestroyValue_InContainer(BGULineTraceSingleByCollisionChannel_IgnoreActors_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGULineTraceSingleByCollisionChannel_BlockChannelsForFilter_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGULineTraceSingleByCollisionChannel_OverlapChannelsForFilter_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, BGULineTraceSingleByCollisionChannel_ReturnValue_Offset), 0, BGULineTraceSingleByCollisionChannel_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 79832065u)]
+	[UMetaPath("/Script/b1.BGUFuncLibSelectTargets:BGULineTraceMultiByCollisionChannel")]
+	public unsafe static bool BGULineTraceMultiByCollisionChannel(UObject WorldContextObject, FVector Start, FVector End, ECollisionChannel CollisionChannel, out List<FUStGSHitResult> SweepResults, List<AActor> IgnoreActors, List<ECollisionChannel> BlockChannelsForFilter, List<ECollisionChannel> OverlapChannelsForFilter, bool IsDrawDebug = false)
+	{
+		if (!BGULineTraceMultiByCollisionChannel_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.BGUFuncLibSelectTargets:BGULineTraceMultiByCollisionChannel");
+			SweepResults = null;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BGULineTraceMultiByCollisionChannel_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BGULineTraceMultiByCollisionChannel_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, BGULineTraceMultiByCollisionChannel_WorldContextObject_Offset), 0, BGULineTraceMultiByCollisionChannel_WorldContextObject_PropertyAddress.Address, WorldContextObject);
+		BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, BGULineTraceMultiByCollisionChannel_Start_Offset), 0, BGULineTraceMultiByCollisionChannel_Start_PropertyAddress.Address, Start);
+		BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, BGULineTraceMultiByCollisionChannel_End_Offset), 0, BGULineTraceMultiByCollisionChannel_End_PropertyAddress.Address, End);
+		EnumMarshaler<ECollisionChannel>.ToNative(IntPtr.Add(intPtr, BGULineTraceMultiByCollisionChannel_CollisionChannel_Offset), 0, BGULineTraceMultiByCollisionChannel_CollisionChannel_PropertyAddress.Address, CollisionChannel);
+		new TArrayCopyMarshaler<AActor>(1, BGULineTraceMultiByCollisionChannel_IgnoreActors_PropertyAddress, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.FromNative, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.ToNative).ToNative(IntPtr.Add(intPtr, BGULineTraceMultiByCollisionChannel_IgnoreActors_Offset), IgnoreActors);
+		new TArrayCopyMarshaler<ECollisionChannel>(1, BGULineTraceMultiByCollisionChannel_BlockChannelsForFilter_PropertyAddress, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.FromNative, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.ToNative).ToNative(IntPtr.Add(intPtr, BGULineTraceMultiByCollisionChannel_BlockChannelsForFilter_Offset), BlockChannelsForFilter);
+		new TArrayCopyMarshaler<ECollisionChannel>(1, BGULineTraceMultiByCollisionChannel_OverlapChannelsForFilter_PropertyAddress, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.FromNative, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.ToNative).ToNative(IntPtr.Add(intPtr, BGULineTraceMultiByCollisionChannel_OverlapChannelsForFilter_Offset), OverlapChannelsForFilter);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, BGULineTraceMultiByCollisionChannel_IsDrawDebug_Offset), 0, BGULineTraceMultiByCollisionChannel_IsDrawDebug_PropertyAddress.Address, IsDrawDebug);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BGULineTraceMultiByCollisionChannel_FunctionAddress, intPtr, BGULineTraceMultiByCollisionChannel_ParamsSize);
+		SweepResults = new TArrayCopyMarshaler<FUStGSHitResult>(1, BGULineTraceMultiByCollisionChannel_SweepResults_PropertyAddress, CachedMarshalingDelegates<FUStGSHitResult, FUStGSHitResult>.FromNative, CachedMarshalingDelegates<FUStGSHitResult, FUStGSHitResult>.ToNative).FromNative(IntPtr.Add(intPtr, BGULineTraceMultiByCollisionChannel_SweepResults_Offset));
+		NativeReflection.DestroyValue_InContainer(BGULineTraceMultiByCollisionChannel_SweepResults_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGULineTraceMultiByCollisionChannel_IgnoreActors_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGULineTraceMultiByCollisionChannel_BlockChannelsForFilter_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGULineTraceMultiByCollisionChannel_OverlapChannelsForFilter_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, BGULineTraceMultiByCollisionChannel_ReturnValue_Offset), 0, BGULineTraceMultiByCollisionChannel_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/b1.BGUFuncLibSelectTargets:BGUIsSelectTargetInFilterBP")]
+	public unsafe static bool BGUIsSelectTargetInFilterBP(AActor Caster, AActor Target, int Filter)
+	{
+		if (!BGUIsSelectTargetInFilterBP_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.BGUFuncLibSelectTargets:BGUIsSelectTargetInFilterBP");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BGUIsSelectTargetInFilterBP_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BGUIsSelectTargetInFilterBP_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<AActor>.ToNative(IntPtr.Add(intPtr, BGUIsSelectTargetInFilterBP_Caster_Offset), 0, BGUIsSelectTargetInFilterBP_Caster_PropertyAddress.Address, Caster);
+		UObjectMarshaler<AActor>.ToNative(IntPtr.Add(intPtr, BGUIsSelectTargetInFilterBP_Target_Offset), 0, BGUIsSelectTargetInFilterBP_Target_PropertyAddress.Address, Target);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, BGUIsSelectTargetInFilterBP_Filter_Offset), 0, BGUIsSelectTargetInFilterBP_Filter_PropertyAddress.Address, Filter);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BGUIsSelectTargetInFilterBP_FunctionAddress, intPtr, BGUIsSelectTargetInFilterBP_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, BGUIsSelectTargetInFilterBP_ReturnValue_Offset), 0, BGUIsSelectTargetInFilterBP_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 79832065u)]
+	[UMetaPath("/Script/b1.BGUFuncLibSelectTargets:BGUGetSweepCheckResultsByCollisionChannelWithCaster")]
+	public unsafe static void BGUGetSweepCheckResultsByCollisionChannelWithCaster(UObject WorldContextObject, FTransform PreTransform, FTransform CurTransform, FQuat Rot, ECollisionChannel CollisionChannel, FGSSweepCheckShapeInfo SweepCheckShapeInfo, out List<FUStGSHitResult> SweepResults, List<AActor> IgnoreActors, List<ECollisionChannel> BlockChannelsForFilter, List<ECollisionChannel> OverlapChannelsForFilter, bool IsDrawDebugShape, AActor Caster, int GroupID, ESweepCheckType SweepCheckType)
+	{
+		if (!BGUGetSweepCheckResultsByCollisionChannelWithCaster_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.BGUFuncLibSelectTargets:BGUGetSweepCheckResultsByCollisionChannelWithCaster");
+			SweepResults = null;
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BGUGetSweepCheckResultsByCollisionChannelWithCaster_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BGUGetSweepCheckResultsByCollisionChannelWithCaster_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_WorldContextObject_Offset), 0, BGUGetSweepCheckResultsByCollisionChannelWithCaster_WorldContextObject_PropertyAddress.Address, WorldContextObject);
+		NativeReflection.InitializeValue_InContainer(BGUGetSweepCheckResultsByCollisionChannelWithCaster_PreTransform_PropertyAddress.Address, intPtr);
+		BlittableTypeMarshaler<FTransform>.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_PreTransform_Offset), 0, BGUGetSweepCheckResultsByCollisionChannelWithCaster_PreTransform_PropertyAddress.Address, PreTransform);
+		NativeReflection.InitializeValue_InContainer(BGUGetSweepCheckResultsByCollisionChannelWithCaster_CurTransform_PropertyAddress.Address, intPtr);
+		BlittableTypeMarshaler<FTransform>.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_CurTransform_Offset), 0, BGUGetSweepCheckResultsByCollisionChannelWithCaster_CurTransform_PropertyAddress.Address, CurTransform);
+		NativeReflection.InitializeValue_InContainer(BGUGetSweepCheckResultsByCollisionChannelWithCaster_Rot_PropertyAddress.Address, intPtr);
+		BlittableTypeMarshaler<FQuat>.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_Rot_Offset), 0, BGUGetSweepCheckResultsByCollisionChannelWithCaster_Rot_PropertyAddress.Address, Rot);
+		EnumMarshaler<ECollisionChannel>.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_CollisionChannel_Offset), 0, BGUGetSweepCheckResultsByCollisionChannelWithCaster_CollisionChannel_PropertyAddress.Address, CollisionChannel);
+		NativeReflection.InitializeValue_InContainer(BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckShapeInfo_PropertyAddress.Address, intPtr);
+		FGSSweepCheckShapeInfo.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckShapeInfo_Offset), 0, BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckShapeInfo_PropertyAddress.Address, SweepCheckShapeInfo);
+		new TArrayCopyMarshaler<AActor>(1, BGUGetSweepCheckResultsByCollisionChannelWithCaster_IgnoreActors_PropertyAddress, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.FromNative, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_IgnoreActors_Offset), IgnoreActors);
+		new TArrayCopyMarshaler<ECollisionChannel>(1, BGUGetSweepCheckResultsByCollisionChannelWithCaster_BlockChannelsForFilter_PropertyAddress, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.FromNative, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_BlockChannelsForFilter_Offset), BlockChannelsForFilter);
+		new TArrayCopyMarshaler<ECollisionChannel>(1, BGUGetSweepCheckResultsByCollisionChannelWithCaster_OverlapChannelsForFilter_PropertyAddress, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.FromNative, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_OverlapChannelsForFilter_Offset), OverlapChannelsForFilter);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_IsDrawDebugShape_Offset), 0, BGUGetSweepCheckResultsByCollisionChannelWithCaster_IsDrawDebugShape_PropertyAddress.Address, IsDrawDebugShape);
+		UObjectMarshaler<AActor>.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_Caster_Offset), 0, BGUGetSweepCheckResultsByCollisionChannelWithCaster_Caster_PropertyAddress.Address, Caster);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_GroupID_Offset), 0, BGUGetSweepCheckResultsByCollisionChannelWithCaster_GroupID_PropertyAddress.Address, GroupID);
+		EnumMarshaler<ESweepCheckType>.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckType_Offset), 0, BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckType_PropertyAddress.Address, SweepCheckType);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_ParamsSize);
+		SweepResults = new TArrayCopyMarshaler<FUStGSHitResult>(1, BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepResults_PropertyAddress, CachedMarshalingDelegates<FUStGSHitResult, FUStGSHitResult>.FromNative, CachedMarshalingDelegates<FUStGSHitResult, FUStGSHitResult>.ToNative).FromNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepResults_Offset));
+		NativeReflection.DestroyValue_InContainer(BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepResults_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGUGetSweepCheckResultsByCollisionChannelWithCaster_IgnoreActors_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGUGetSweepCheckResultsByCollisionChannelWithCaster_BlockChannelsForFilter_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGUGetSweepCheckResultsByCollisionChannelWithCaster_OverlapChannelsForFilter_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 79832065u)]
+	[UMetaPath("/Script/b1.BGUFuncLibSelectTargets:BGUGetSweepCheckResultsByCollisionChannel")]
+	public unsafe static void BGUGetSweepCheckResultsByCollisionChannel(UObject WorldContextObject, FTransform PreTransform, FTransform CurTransform, FQuat Rot, ECollisionChannel CollisionChannel, FGSSweepCheckShapeInfo SweepCheckShapeInfo, out List<FUStGSHitResult> SweepResults, List<AActor> IgnoreActors, List<ECollisionChannel> BlockChannelsForFilter, List<ECollisionChannel> OverlapChannelsForFilter, bool IsDrawDebugShape = false)
+	{
+		if (!BGUGetSweepCheckResultsByCollisionChannel_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.BGUFuncLibSelectTargets:BGUGetSweepCheckResultsByCollisionChannel");
+			SweepResults = null;
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BGUGetSweepCheckResultsByCollisionChannel_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BGUGetSweepCheckResultsByCollisionChannel_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannel_WorldContextObject_Offset), 0, BGUGetSweepCheckResultsByCollisionChannel_WorldContextObject_PropertyAddress.Address, WorldContextObject);
+		NativeReflection.InitializeValue_InContainer(BGUGetSweepCheckResultsByCollisionChannel_PreTransform_PropertyAddress.Address, intPtr);
+		BlittableTypeMarshaler<FTransform>.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannel_PreTransform_Offset), 0, BGUGetSweepCheckResultsByCollisionChannel_PreTransform_PropertyAddress.Address, PreTransform);
+		NativeReflection.InitializeValue_InContainer(BGUGetSweepCheckResultsByCollisionChannel_CurTransform_PropertyAddress.Address, intPtr);
+		BlittableTypeMarshaler<FTransform>.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannel_CurTransform_Offset), 0, BGUGetSweepCheckResultsByCollisionChannel_CurTransform_PropertyAddress.Address, CurTransform);
+		NativeReflection.InitializeValue_InContainer(BGUGetSweepCheckResultsByCollisionChannel_Rot_PropertyAddress.Address, intPtr);
+		BlittableTypeMarshaler<FQuat>.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannel_Rot_Offset), 0, BGUGetSweepCheckResultsByCollisionChannel_Rot_PropertyAddress.Address, Rot);
+		EnumMarshaler<ECollisionChannel>.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannel_CollisionChannel_Offset), 0, BGUGetSweepCheckResultsByCollisionChannel_CollisionChannel_PropertyAddress.Address, CollisionChannel);
+		NativeReflection.InitializeValue_InContainer(BGUGetSweepCheckResultsByCollisionChannel_SweepCheckShapeInfo_PropertyAddress.Address, intPtr);
+		FGSSweepCheckShapeInfo.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannel_SweepCheckShapeInfo_Offset), 0, BGUGetSweepCheckResultsByCollisionChannel_SweepCheckShapeInfo_PropertyAddress.Address, SweepCheckShapeInfo);
+		new TArrayCopyMarshaler<AActor>(1, BGUGetSweepCheckResultsByCollisionChannel_IgnoreActors_PropertyAddress, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.FromNative, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannel_IgnoreActors_Offset), IgnoreActors);
+		new TArrayCopyMarshaler<ECollisionChannel>(1, BGUGetSweepCheckResultsByCollisionChannel_BlockChannelsForFilter_PropertyAddress, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.FromNative, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannel_BlockChannelsForFilter_Offset), BlockChannelsForFilter);
+		new TArrayCopyMarshaler<ECollisionChannel>(1, BGUGetSweepCheckResultsByCollisionChannel_OverlapChannelsForFilter_PropertyAddress, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.FromNative, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannel_OverlapChannelsForFilter_Offset), OverlapChannelsForFilter);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannel_IsDrawDebugShape_Offset), 0, BGUGetSweepCheckResultsByCollisionChannel_IsDrawDebugShape_PropertyAddress.Address, IsDrawDebugShape);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, intPtr, BGUGetSweepCheckResultsByCollisionChannel_ParamsSize);
+		SweepResults = new TArrayCopyMarshaler<FUStGSHitResult>(1, BGUGetSweepCheckResultsByCollisionChannel_SweepResults_PropertyAddress, CachedMarshalingDelegates<FUStGSHitResult, FUStGSHitResult>.FromNative, CachedMarshalingDelegates<FUStGSHitResult, FUStGSHitResult>.ToNative).FromNative(IntPtr.Add(intPtr, BGUGetSweepCheckResultsByCollisionChannel_SweepResults_Offset));
+		NativeReflection.DestroyValue_InContainer(BGUGetSweepCheckResultsByCollisionChannel_SweepResults_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGUGetSweepCheckResultsByCollisionChannel_IgnoreActors_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGUGetSweepCheckResultsByCollisionChannel_BlockChannelsForFilter_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGUGetSweepCheckResultsByCollisionChannel_OverlapChannelsForFilter_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/b1.BGUFuncLibSelectTargets:BGUGetSightPerceivedActors")]
+	public unsafe static List<AActor> BGUGetSightPerceivedActors(UAIPerceptionComponent PerceptionComp)
+	{
+		if (!BGUGetSightPerceivedActors_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.BGUFuncLibSelectTargets:BGUGetSightPerceivedActors");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BGUGetSightPerceivedActors_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BGUGetSightPerceivedActors_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAIPerceptionComponent>.ToNative(IntPtr.Add(intPtr, BGUGetSightPerceivedActors_PerceptionComp_Offset), 0, BGUGetSightPerceivedActors_PerceptionComp_PropertyAddress.Address, PerceptionComp);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BGUGetSightPerceivedActors_FunctionAddress, intPtr, BGUGetSightPerceivedActors_ParamsSize);
+		List<AActor> result = new TArrayCopyMarshaler<AActor>(1, BGUGetSightPerceivedActors_ReturnValue_PropertyAddress, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.FromNative, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.ToNative).FromNative(IntPtr.Add(intPtr, BGUGetSightPerceivedActors_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(BGUGetSightPerceivedActors_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/b1.BGUFuncLibSelectTargets:BGUGetPerceivedActors")]
+	public unsafe static List<AActor> BGUGetPerceivedActors(UAIPerceptionComponent PerceptionComp)
+	{
+		if (!BGUGetPerceivedActors_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.BGUFuncLibSelectTargets:BGUGetPerceivedActors");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BGUGetPerceivedActors_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BGUGetPerceivedActors_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAIPerceptionComponent>.ToNative(IntPtr.Add(intPtr, BGUGetPerceivedActors_PerceptionComp_Offset), 0, BGUGetPerceivedActors_PerceptionComp_PropertyAddress.Address, PerceptionComp);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BGUGetPerceivedActors_FunctionAddress, intPtr, BGUGetPerceivedActors_ParamsSize);
+		List<AActor> result = new TArrayCopyMarshaler<AActor>(1, BGUGetPerceivedActors_ReturnValue_PropertyAddress, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.FromNative, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.ToNative).FromNative(IntPtr.Add(intPtr, BGUGetPerceivedActors_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(BGUGetPerceivedActors_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 79832065u)]
+	[UMetaPath("/Script/b1.BGUFuncLibSelectTargets:BGUComputePenetration")]
+	public unsafe static bool BGUComputePenetration(UPrimitiveComponent SelfComponent, out FVector Direction, out float Distance, UPrimitiveComponent OtherComponent, FVector Pos, FQuat Rot)
+	{
+		if (!BGUComputePenetration_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.BGUFuncLibSelectTargets:BGUComputePenetration");
+			Direction = default(FVector);
+			Distance = 0f;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BGUComputePenetration_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BGUComputePenetration_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UPrimitiveComponent>.ToNative(IntPtr.Add(intPtr, BGUComputePenetration_SelfComponent_Offset), 0, BGUComputePenetration_SelfComponent_PropertyAddress.Address, SelfComponent);
+		UObjectMarshaler<UPrimitiveComponent>.ToNative(IntPtr.Add(intPtr, BGUComputePenetration_OtherComponent_Offset), 0, BGUComputePenetration_OtherComponent_PropertyAddress.Address, OtherComponent);
+		BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, BGUComputePenetration_Pos_Offset), 0, BGUComputePenetration_Pos_PropertyAddress.Address, Pos);
+		NativeReflection.InitializeValue_InContainer(BGUComputePenetration_Rot_PropertyAddress.Address, intPtr);
+		BlittableTypeMarshaler<FQuat>.ToNative(IntPtr.Add(intPtr, BGUComputePenetration_Rot_Offset), 0, BGUComputePenetration_Rot_PropertyAddress.Address, Rot);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BGUComputePenetration_FunctionAddress, intPtr, BGUComputePenetration_ParamsSize);
+		Direction = BlittableTypeMarshaler<FVector>.FromNative(IntPtr.Add(intPtr, BGUComputePenetration_Direction_Offset), 0, BGUComputePenetration_Direction_PropertyAddress.Address);
+		Distance = BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, BGUComputePenetration_Distance_Offset), 0, BGUComputePenetration_Distance_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, BGUComputePenetration_ReturnValue_Offset), 0, BGUComputePenetration_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/b1.BGUFuncLibSelectTargets:BGUCompOverlapCompsByObjectType")]
+	public unsafe static bool BGUCompOverlapCompsByObjectType(UPrimitiveComponent Component, List<EObjectTypeQuery> ObjectTypes, TSubclassOf<UObject> ComponentClassFilter, List<AActor> ActorsToIgnore, out List<UPrimitiveComponent> OutComponents)
+	{
+		if (!BGUCompOverlapCompsByObjectType_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.BGUFuncLibSelectTargets:BGUCompOverlapCompsByObjectType");
+			OutComponents = null;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BGUCompOverlapCompsByObjectType_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BGUCompOverlapCompsByObjectType_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UPrimitiveComponent>.ToNative(IntPtr.Add(intPtr, BGUCompOverlapCompsByObjectType_Component_Offset), 0, BGUCompOverlapCompsByObjectType_Component_PropertyAddress.Address, Component);
+		new TArrayCopyMarshaler<EObjectTypeQuery>(1, BGUCompOverlapCompsByObjectType_ObjectTypes_PropertyAddress, CachedMarshalingDelegates<EObjectTypeQuery, EnumMarshaler<EObjectTypeQuery>>.FromNative, CachedMarshalingDelegates<EObjectTypeQuery, EnumMarshaler<EObjectTypeQuery>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUCompOverlapCompsByObjectType_ObjectTypes_Offset), ObjectTypes);
+		TSubclassOfMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, BGUCompOverlapCompsByObjectType_ComponentClassFilter_Offset), 0, BGUCompOverlapCompsByObjectType_ComponentClassFilter_PropertyAddress.Address, ComponentClassFilter);
+		new TArrayCopyMarshaler<AActor>(1, BGUCompOverlapCompsByObjectType_ActorsToIgnore_PropertyAddress, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.FromNative, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUCompOverlapCompsByObjectType_ActorsToIgnore_Offset), ActorsToIgnore);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BGUCompOverlapCompsByObjectType_FunctionAddress, intPtr, BGUCompOverlapCompsByObjectType_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(BGUCompOverlapCompsByObjectType_ObjectTypes_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGUCompOverlapCompsByObjectType_ActorsToIgnore_PropertyAddress.Address, intPtr);
+		OutComponents = new TArrayCopyMarshaler<UPrimitiveComponent>(1, BGUCompOverlapCompsByObjectType_OutComponents_PropertyAddress, CachedMarshalingDelegates<UPrimitiveComponent, UObjectMarshaler<UPrimitiveComponent>>.FromNative, CachedMarshalingDelegates<UPrimitiveComponent, UObjectMarshaler<UPrimitiveComponent>>.ToNative).FromNative(IntPtr.Add(intPtr, BGUCompOverlapCompsByObjectType_OutComponents_Offset));
+		NativeReflection.DestroyValue_InContainer(BGUCompOverlapCompsByObjectType_OutComponents_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, BGUCompOverlapCompsByObjectType_ReturnValue_Offset), 0, BGUCompOverlapCompsByObjectType_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/b1.BGUFuncLibSelectTargets:BGUCompOverlapCompsByChannel")]
+	public unsafe static bool BGUCompOverlapCompsByChannel(UPrimitiveComponent Component, ECollisionChannel TraceChannel, TSubclassOf<UObject> ComponentClassFilter, List<AActor> ActorsToIgnore, out List<UPrimitiveComponent> OutComponents)
+	{
+		if (!BGUCompOverlapCompsByChannel_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.BGUFuncLibSelectTargets:BGUCompOverlapCompsByChannel");
+			OutComponents = null;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BGUCompOverlapCompsByChannel_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BGUCompOverlapCompsByChannel_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UPrimitiveComponent>.ToNative(IntPtr.Add(intPtr, BGUCompOverlapCompsByChannel_Component_Offset), 0, BGUCompOverlapCompsByChannel_Component_PropertyAddress.Address, Component);
+		EnumMarshaler<ECollisionChannel>.ToNative(IntPtr.Add(intPtr, BGUCompOverlapCompsByChannel_TraceChannel_Offset), 0, BGUCompOverlapCompsByChannel_TraceChannel_PropertyAddress.Address, TraceChannel);
+		TSubclassOfMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, BGUCompOverlapCompsByChannel_ComponentClassFilter_Offset), 0, BGUCompOverlapCompsByChannel_ComponentClassFilter_PropertyAddress.Address, ComponentClassFilter);
+		new TArrayCopyMarshaler<AActor>(1, BGUCompOverlapCompsByChannel_ActorsToIgnore_PropertyAddress, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.FromNative, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUCompOverlapCompsByChannel_ActorsToIgnore_Offset), ActorsToIgnore);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BGUCompOverlapCompsByChannel_FunctionAddress, intPtr, BGUCompOverlapCompsByChannel_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(BGUCompOverlapCompsByChannel_ActorsToIgnore_PropertyAddress.Address, intPtr);
+		OutComponents = new TArrayCopyMarshaler<UPrimitiveComponent>(1, BGUCompOverlapCompsByChannel_OutComponents_PropertyAddress, CachedMarshalingDelegates<UPrimitiveComponent, UObjectMarshaler<UPrimitiveComponent>>.FromNative, CachedMarshalingDelegates<UPrimitiveComponent, UObjectMarshaler<UPrimitiveComponent>>.ToNative).FromNative(IntPtr.Add(intPtr, BGUCompOverlapCompsByChannel_OutComponents_Offset));
+		NativeReflection.DestroyValue_InContainer(BGUCompOverlapCompsByChannel_OutComponents_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, BGUCompOverlapCompsByChannel_ReturnValue_Offset), 0, BGUCompOverlapCompsByChannel_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 79832065u)]
+	[UMetaPath("/Script/b1.BGUFuncLibSelectTargets:BGUComponentSweepMulti")]
+	public unsafe static bool BGUComponentSweepMulti(UObject WorldContextObject, ECollisionChannel TraceChannel, UPrimitiveComponent PrimComp, FVector Start, FVector End, FQuat Rot, out List<FUStGSHitResult> SweepResults, List<AActor> IgnoreActors, List<ECollisionChannel> BlockChannelsForFilter, List<ECollisionChannel> OverlapChannelsForFilter)
+	{
+		if (!BGUComponentSweepMulti_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.BGUFuncLibSelectTargets:BGUComponentSweepMulti");
+			SweepResults = null;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BGUComponentSweepMulti_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BGUComponentSweepMulti_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, BGUComponentSweepMulti_WorldContextObject_Offset), 0, BGUComponentSweepMulti_WorldContextObject_PropertyAddress.Address, WorldContextObject);
+		EnumMarshaler<ECollisionChannel>.ToNative(IntPtr.Add(intPtr, BGUComponentSweepMulti_TraceChannel_Offset), 0, BGUComponentSweepMulti_TraceChannel_PropertyAddress.Address, TraceChannel);
+		UObjectMarshaler<UPrimitiveComponent>.ToNative(IntPtr.Add(intPtr, BGUComponentSweepMulti_PrimComp_Offset), 0, BGUComponentSweepMulti_PrimComp_PropertyAddress.Address, PrimComp);
+		BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, BGUComponentSweepMulti_Start_Offset), 0, BGUComponentSweepMulti_Start_PropertyAddress.Address, Start);
+		BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, BGUComponentSweepMulti_End_Offset), 0, BGUComponentSweepMulti_End_PropertyAddress.Address, End);
+		NativeReflection.InitializeValue_InContainer(BGUComponentSweepMulti_Rot_PropertyAddress.Address, intPtr);
+		BlittableTypeMarshaler<FQuat>.ToNative(IntPtr.Add(intPtr, BGUComponentSweepMulti_Rot_Offset), 0, BGUComponentSweepMulti_Rot_PropertyAddress.Address, Rot);
+		new TArrayCopyMarshaler<AActor>(1, BGUComponentSweepMulti_IgnoreActors_PropertyAddress, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.FromNative, CachedMarshalingDelegates<AActor, UObjectMarshaler<AActor>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUComponentSweepMulti_IgnoreActors_Offset), IgnoreActors);
+		new TArrayCopyMarshaler<ECollisionChannel>(1, BGUComponentSweepMulti_BlockChannelsForFilter_PropertyAddress, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.FromNative, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUComponentSweepMulti_BlockChannelsForFilter_Offset), BlockChannelsForFilter);
+		new TArrayCopyMarshaler<ECollisionChannel>(1, BGUComponentSweepMulti_OverlapChannelsForFilter_PropertyAddress, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.FromNative, CachedMarshalingDelegates<ECollisionChannel, EnumMarshaler<ECollisionChannel>>.ToNative).ToNative(IntPtr.Add(intPtr, BGUComponentSweepMulti_OverlapChannelsForFilter_Offset), OverlapChannelsForFilter);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BGUComponentSweepMulti_FunctionAddress, intPtr, BGUComponentSweepMulti_ParamsSize);
+		SweepResults = new TArrayCopyMarshaler<FUStGSHitResult>(1, BGUComponentSweepMulti_SweepResults_PropertyAddress, CachedMarshalingDelegates<FUStGSHitResult, FUStGSHitResult>.FromNative, CachedMarshalingDelegates<FUStGSHitResult, FUStGSHitResult>.ToNative).FromNative(IntPtr.Add(intPtr, BGUComponentSweepMulti_SweepResults_Offset));
+		NativeReflection.DestroyValue_InContainer(BGUComponentSweepMulti_SweepResults_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGUComponentSweepMulti_IgnoreActors_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGUComponentSweepMulti_BlockChannelsForFilter_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(BGUComponentSweepMulti_OverlapChannelsForFilter_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, BGUComponentSweepMulti_ReturnValue_Offset), 0, BGUComponentSweepMulti_ReturnValue_PropertyAddress.Address);
+	}
+
+	static UBGUFuncLibSelectTargets()
+	{
+		if (UnrealTypes.CanLazyLoadNativeType(typeof(UBGUFuncLibSelectTargets)))
+		{
+			LoadNativeType();
+		}
+		UnrealTypes.OnCCtorCalled(typeof(UBGUFuncLibSelectTargets));
+	}
+
+	private static void LoadNativeType()
+	{
+		classAddress = NativeReflection.GetClass("/Script/b1.BGUFuncLibSelectTargets");
+		BGUOverlapMultiByObjectType_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BGUOverlapMultiByObjectType");
+		BGUOverlapMultiByObjectType_ParamsSize = NativeReflection.GetFunctionParamsSize(BGUOverlapMultiByObjectType_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BGUOverlapMultiByObjectType_WorldContextObject_PropertyAddress, BGUOverlapMultiByObjectType_FunctionAddress, "WorldContextObject");
+		BGUOverlapMultiByObjectType_WorldContextObject_Offset = NativeReflectionCached.GetPropertyOffset(BGUOverlapMultiByObjectType_FunctionAddress, "WorldContextObject");
+		BGUOverlapMultiByObjectType_WorldContextObject_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUOverlapMultiByObjectType_FunctionAddress, "WorldContextObject", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUOverlapMultiByObjectType_Origin_PropertyAddress, BGUOverlapMultiByObjectType_FunctionAddress, "Origin");
+		BGUOverlapMultiByObjectType_Origin_Offset = NativeReflectionCached.GetPropertyOffset(BGUOverlapMultiByObjectType_FunctionAddress, "Origin");
+		BGUOverlapMultiByObjectType_Origin_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUOverlapMultiByObjectType_FunctionAddress, "Origin", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUOverlapMultiByObjectType_Rot_PropertyAddress, BGUOverlapMultiByObjectType_FunctionAddress, "Rot");
+		BGUOverlapMultiByObjectType_Rot_Offset = NativeReflectionCached.GetPropertyOffset(BGUOverlapMultiByObjectType_FunctionAddress, "Rot");
+		BGUOverlapMultiByObjectType_Rot_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUOverlapMultiByObjectType_FunctionAddress, "Rot", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUOverlapMultiByObjectType_ObjectTypes_PropertyAddress, BGUOverlapMultiByObjectType_FunctionAddress, "ObjectTypes");
+		BGUOverlapMultiByObjectType_ObjectTypes_Offset = NativeReflectionCached.GetPropertyOffset(BGUOverlapMultiByObjectType_FunctionAddress, "ObjectTypes");
+		BGUOverlapMultiByObjectType_ObjectTypes_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUOverlapMultiByObjectType_FunctionAddress, "ObjectTypes", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUOverlapMultiByObjectType_OverlapShapeInfo_PropertyAddress, BGUOverlapMultiByObjectType_FunctionAddress, "OverlapShapeInfo");
+		BGUOverlapMultiByObjectType_OverlapShapeInfo_Offset = NativeReflectionCached.GetPropertyOffset(BGUOverlapMultiByObjectType_FunctionAddress, "OverlapShapeInfo");
+		BGUOverlapMultiByObjectType_OverlapShapeInfo_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUOverlapMultiByObjectType_FunctionAddress, "OverlapShapeInfo", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUOverlapMultiByObjectType_IgnoreActors_PropertyAddress, BGUOverlapMultiByObjectType_FunctionAddress, "IgnoreActors");
+		BGUOverlapMultiByObjectType_IgnoreActors_Offset = NativeReflectionCached.GetPropertyOffset(BGUOverlapMultiByObjectType_FunctionAddress, "IgnoreActors");
+		BGUOverlapMultiByObjectType_IgnoreActors_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUOverlapMultiByObjectType_FunctionAddress, "IgnoreActors", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUOverlapMultiByObjectType_OverlapResults_PropertyAddress, BGUOverlapMultiByObjectType_FunctionAddress, "OverlapResults");
+		BGUOverlapMultiByObjectType_OverlapResults_Offset = NativeReflectionCached.GetPropertyOffset(BGUOverlapMultiByObjectType_FunctionAddress, "OverlapResults");
+		BGUOverlapMultiByObjectType_OverlapResults_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUOverlapMultiByObjectType_FunctionAddress, "OverlapResults", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUOverlapMultiByObjectType_IsDrawDebugShape_PropertyAddress, BGUOverlapMultiByObjectType_FunctionAddress, "IsDrawDebugShape");
+		BGUOverlapMultiByObjectType_IsDrawDebugShape_Offset = NativeReflectionCached.GetPropertyOffset(BGUOverlapMultiByObjectType_FunctionAddress, "IsDrawDebugShape");
+		BGUOverlapMultiByObjectType_IsDrawDebugShape_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUOverlapMultiByObjectType_FunctionAddress, "IsDrawDebugShape", Classes.FBoolProperty);
+		BGUOverlapMultiByObjectType_IsValid = BGUOverlapMultiByObjectType_FunctionAddress != IntPtr.Zero && BGUOverlapMultiByObjectType_WorldContextObject_IsValid && BGUOverlapMultiByObjectType_Origin_IsValid && BGUOverlapMultiByObjectType_Rot_IsValid && BGUOverlapMultiByObjectType_ObjectTypes_IsValid && BGUOverlapMultiByObjectType_OverlapShapeInfo_IsValid && BGUOverlapMultiByObjectType_IgnoreActors_IsValid && BGUOverlapMultiByObjectType_OverlapResults_IsValid && BGUOverlapMultiByObjectType_IsDrawDebugShape_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.BGUFuncLibSelectTargets:BGUOverlapMultiByObjectType", BGUOverlapMultiByObjectType_IsValid);
+		BGUOverlapAnyTestByObjectType_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BGUOverlapAnyTestByObjectType");
+		BGUOverlapAnyTestByObjectType_ParamsSize = NativeReflection.GetFunctionParamsSize(BGUOverlapAnyTestByObjectType_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BGUOverlapAnyTestByObjectType_WorldContextObject_PropertyAddress, BGUOverlapAnyTestByObjectType_FunctionAddress, "WorldContextObject");
+		BGUOverlapAnyTestByObjectType_WorldContextObject_Offset = NativeReflectionCached.GetPropertyOffset(BGUOverlapAnyTestByObjectType_FunctionAddress, "WorldContextObject");
+		BGUOverlapAnyTestByObjectType_WorldContextObject_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUOverlapAnyTestByObjectType_FunctionAddress, "WorldContextObject", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUOverlapAnyTestByObjectType_Pos_PropertyAddress, BGUOverlapAnyTestByObjectType_FunctionAddress, "Pos");
+		BGUOverlapAnyTestByObjectType_Pos_Offset = NativeReflectionCached.GetPropertyOffset(BGUOverlapAnyTestByObjectType_FunctionAddress, "Pos");
+		BGUOverlapAnyTestByObjectType_Pos_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUOverlapAnyTestByObjectType_FunctionAddress, "Pos", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUOverlapAnyTestByObjectType_ObjectTypes_PropertyAddress, BGUOverlapAnyTestByObjectType_FunctionAddress, "ObjectTypes");
+		BGUOverlapAnyTestByObjectType_ObjectTypes_Offset = NativeReflectionCached.GetPropertyOffset(BGUOverlapAnyTestByObjectType_FunctionAddress, "ObjectTypes");
+		BGUOverlapAnyTestByObjectType_ObjectTypes_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUOverlapAnyTestByObjectType_FunctionAddress, "ObjectTypes", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUOverlapAnyTestByObjectType_CollisionShape_PropertyAddress, BGUOverlapAnyTestByObjectType_FunctionAddress, "CollisionShape");
+		BGUOverlapAnyTestByObjectType_CollisionShape_Offset = NativeReflectionCached.GetPropertyOffset(BGUOverlapAnyTestByObjectType_FunctionAddress, "CollisionShape");
+		BGUOverlapAnyTestByObjectType_CollisionShape_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUOverlapAnyTestByObjectType_FunctionAddress, "CollisionShape", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUOverlapAnyTestByObjectType_ShapeExtent_PropertyAddress, BGUOverlapAnyTestByObjectType_FunctionAddress, "ShapeExtent");
+		BGUOverlapAnyTestByObjectType_ShapeExtent_Offset = NativeReflectionCached.GetPropertyOffset(BGUOverlapAnyTestByObjectType_FunctionAddress, "ShapeExtent");
+		BGUOverlapAnyTestByObjectType_ShapeExtent_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUOverlapAnyTestByObjectType_FunctionAddress, "ShapeExtent", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUOverlapAnyTestByObjectType_ReturnValue_PropertyAddress, BGUOverlapAnyTestByObjectType_FunctionAddress, "ReturnValue");
+		BGUOverlapAnyTestByObjectType_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(BGUOverlapAnyTestByObjectType_FunctionAddress, "ReturnValue");
+		BGUOverlapAnyTestByObjectType_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUOverlapAnyTestByObjectType_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		BGUOverlapAnyTestByObjectType_IsValid = BGUOverlapAnyTestByObjectType_FunctionAddress != IntPtr.Zero && BGUOverlapAnyTestByObjectType_WorldContextObject_IsValid && BGUOverlapAnyTestByObjectType_Pos_IsValid && BGUOverlapAnyTestByObjectType_ObjectTypes_IsValid && BGUOverlapAnyTestByObjectType_CollisionShape_IsValid && BGUOverlapAnyTestByObjectType_ShapeExtent_IsValid && BGUOverlapAnyTestByObjectType_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.BGUFuncLibSelectTargets:BGUOverlapAnyTestByObjectType", BGUOverlapAnyTestByObjectType_IsValid);
+		BGUMultiCompOverlapByObjectType_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BGUMultiCompOverlapByObjectType");
+		BGUMultiCompOverlapByObjectType_ParamsSize = NativeReflection.GetFunctionParamsSize(BGUMultiCompOverlapByObjectType_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BGUMultiCompOverlapByObjectType_WorldContextObject_PropertyAddress, BGUMultiCompOverlapByObjectType_FunctionAddress, "WorldContextObject");
+		BGUMultiCompOverlapByObjectType_WorldContextObject_Offset = NativeReflectionCached.GetPropertyOffset(BGUMultiCompOverlapByObjectType_FunctionAddress, "WorldContextObject");
+		BGUMultiCompOverlapByObjectType_WorldContextObject_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUMultiCompOverlapByObjectType_FunctionAddress, "WorldContextObject", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUMultiCompOverlapByObjectType_OverlapShapeComponents_PropertyAddress, BGUMultiCompOverlapByObjectType_FunctionAddress, "OverlapShapeComponents");
+		BGUMultiCompOverlapByObjectType_OverlapShapeComponents_Offset = NativeReflectionCached.GetPropertyOffset(BGUMultiCompOverlapByObjectType_FunctionAddress, "OverlapShapeComponents");
+		BGUMultiCompOverlapByObjectType_OverlapShapeComponents_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUMultiCompOverlapByObjectType_FunctionAddress, "OverlapShapeComponents", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUMultiCompOverlapByObjectType_ObjectTypes_PropertyAddress, BGUMultiCompOverlapByObjectType_FunctionAddress, "ObjectTypes");
+		BGUMultiCompOverlapByObjectType_ObjectTypes_Offset = NativeReflectionCached.GetPropertyOffset(BGUMultiCompOverlapByObjectType_FunctionAddress, "ObjectTypes");
+		BGUMultiCompOverlapByObjectType_ObjectTypes_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUMultiCompOverlapByObjectType_FunctionAddress, "ObjectTypes", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUMultiCompOverlapByObjectType_IgnoreActors_PropertyAddress, BGUMultiCompOverlapByObjectType_FunctionAddress, "IgnoreActors");
+		BGUMultiCompOverlapByObjectType_IgnoreActors_Offset = NativeReflectionCached.GetPropertyOffset(BGUMultiCompOverlapByObjectType_FunctionAddress, "IgnoreActors");
+		BGUMultiCompOverlapByObjectType_IgnoreActors_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUMultiCompOverlapByObjectType_FunctionAddress, "IgnoreActors", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUMultiCompOverlapByObjectType_OverlapComps_PropertyAddress, BGUMultiCompOverlapByObjectType_FunctionAddress, "OverlapComps");
+		BGUMultiCompOverlapByObjectType_OverlapComps_Offset = NativeReflectionCached.GetPropertyOffset(BGUMultiCompOverlapByObjectType_FunctionAddress, "OverlapComps");
+		BGUMultiCompOverlapByObjectType_OverlapComps_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUMultiCompOverlapByObjectType_FunctionAddress, "OverlapComps", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUMultiCompOverlapByObjectType_OverlapOtherActors_PropertyAddress, BGUMultiCompOverlapByObjectType_FunctionAddress, "OverlapOtherActors");
+		BGUMultiCompOverlapByObjectType_OverlapOtherActors_Offset = NativeReflectionCached.GetPropertyOffset(BGUMultiCompOverlapByObjectType_FunctionAddress, "OverlapOtherActors");
+		BGUMultiCompOverlapByObjectType_OverlapOtherActors_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUMultiCompOverlapByObjectType_FunctionAddress, "OverlapOtherActors", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUMultiCompOverlapByObjectType_OverlapOtherComps_PropertyAddress, BGUMultiCompOverlapByObjectType_FunctionAddress, "OverlapOtherComps");
+		BGUMultiCompOverlapByObjectType_OverlapOtherComps_Offset = NativeReflectionCached.GetPropertyOffset(BGUMultiCompOverlapByObjectType_FunctionAddress, "OverlapOtherComps");
+		BGUMultiCompOverlapByObjectType_OverlapOtherComps_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUMultiCompOverlapByObjectType_FunctionAddress, "OverlapOtherComps", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUMultiCompOverlapByObjectType_ReturnValue_PropertyAddress, BGUMultiCompOverlapByObjectType_FunctionAddress, "ReturnValue");
+		BGUMultiCompOverlapByObjectType_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(BGUMultiCompOverlapByObjectType_FunctionAddress, "ReturnValue");
+		BGUMultiCompOverlapByObjectType_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUMultiCompOverlapByObjectType_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		BGUMultiCompOverlapByObjectType_IsValid = BGUMultiCompOverlapByObjectType_FunctionAddress != IntPtr.Zero && BGUMultiCompOverlapByObjectType_WorldContextObject_IsValid && BGUMultiCompOverlapByObjectType_OverlapShapeComponents_IsValid && BGUMultiCompOverlapByObjectType_ObjectTypes_IsValid && BGUMultiCompOverlapByObjectType_IgnoreActors_IsValid && BGUMultiCompOverlapByObjectType_OverlapComps_IsValid && BGUMultiCompOverlapByObjectType_OverlapOtherActors_IsValid && BGUMultiCompOverlapByObjectType_OverlapOtherComps_IsValid && BGUMultiCompOverlapByObjectType_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.BGUFuncLibSelectTargets:BGUMultiCompOverlapByObjectType", BGUMultiCompOverlapByObjectType_IsValid);
+		BGULineTraceSingleByCollisionChannel_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BGULineTraceSingleByCollisionChannel");
+		BGULineTraceSingleByCollisionChannel_ParamsSize = NativeReflection.GetFunctionParamsSize(BGULineTraceSingleByCollisionChannel_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceSingleByCollisionChannel_WorldContextObject_PropertyAddress, BGULineTraceSingleByCollisionChannel_FunctionAddress, "WorldContextObject");
+		BGULineTraceSingleByCollisionChannel_WorldContextObject_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceSingleByCollisionChannel_FunctionAddress, "WorldContextObject");
+		BGULineTraceSingleByCollisionChannel_WorldContextObject_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceSingleByCollisionChannel_FunctionAddress, "WorldContextObject", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceSingleByCollisionChannel_Start_PropertyAddress, BGULineTraceSingleByCollisionChannel_FunctionAddress, "Start");
+		BGULineTraceSingleByCollisionChannel_Start_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceSingleByCollisionChannel_FunctionAddress, "Start");
+		BGULineTraceSingleByCollisionChannel_Start_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceSingleByCollisionChannel_FunctionAddress, "Start", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceSingleByCollisionChannel_End_PropertyAddress, BGULineTraceSingleByCollisionChannel_FunctionAddress, "End");
+		BGULineTraceSingleByCollisionChannel_End_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceSingleByCollisionChannel_FunctionAddress, "End");
+		BGULineTraceSingleByCollisionChannel_End_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceSingleByCollisionChannel_FunctionAddress, "End", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceSingleByCollisionChannel_CollisionChannel_PropertyAddress, BGULineTraceSingleByCollisionChannel_FunctionAddress, "CollisionChannel");
+		BGULineTraceSingleByCollisionChannel_CollisionChannel_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceSingleByCollisionChannel_FunctionAddress, "CollisionChannel");
+		BGULineTraceSingleByCollisionChannel_CollisionChannel_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceSingleByCollisionChannel_FunctionAddress, "CollisionChannel", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceSingleByCollisionChannel_SweepResult_PropertyAddress, BGULineTraceSingleByCollisionChannel_FunctionAddress, "SweepResult");
+		BGULineTraceSingleByCollisionChannel_SweepResult_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceSingleByCollisionChannel_FunctionAddress, "SweepResult");
+		BGULineTraceSingleByCollisionChannel_SweepResult_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceSingleByCollisionChannel_FunctionAddress, "SweepResult", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceSingleByCollisionChannel_IgnoreActors_PropertyAddress, BGULineTraceSingleByCollisionChannel_FunctionAddress, "IgnoreActors");
+		BGULineTraceSingleByCollisionChannel_IgnoreActors_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceSingleByCollisionChannel_FunctionAddress, "IgnoreActors");
+		BGULineTraceSingleByCollisionChannel_IgnoreActors_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceSingleByCollisionChannel_FunctionAddress, "IgnoreActors", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceSingleByCollisionChannel_BlockChannelsForFilter_PropertyAddress, BGULineTraceSingleByCollisionChannel_FunctionAddress, "BlockChannelsForFilter");
+		BGULineTraceSingleByCollisionChannel_BlockChannelsForFilter_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceSingleByCollisionChannel_FunctionAddress, "BlockChannelsForFilter");
+		BGULineTraceSingleByCollisionChannel_BlockChannelsForFilter_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceSingleByCollisionChannel_FunctionAddress, "BlockChannelsForFilter", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceSingleByCollisionChannel_OverlapChannelsForFilter_PropertyAddress, BGULineTraceSingleByCollisionChannel_FunctionAddress, "OverlapChannelsForFilter");
+		BGULineTraceSingleByCollisionChannel_OverlapChannelsForFilter_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceSingleByCollisionChannel_FunctionAddress, "OverlapChannelsForFilter");
+		BGULineTraceSingleByCollisionChannel_OverlapChannelsForFilter_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceSingleByCollisionChannel_FunctionAddress, "OverlapChannelsForFilter", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceSingleByCollisionChannel_IsDrawDebug_PropertyAddress, BGULineTraceSingleByCollisionChannel_FunctionAddress, "IsDrawDebug");
+		BGULineTraceSingleByCollisionChannel_IsDrawDebug_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceSingleByCollisionChannel_FunctionAddress, "IsDrawDebug");
+		BGULineTraceSingleByCollisionChannel_IsDrawDebug_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceSingleByCollisionChannel_FunctionAddress, "IsDrawDebug", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceSingleByCollisionChannel_ReturnValue_PropertyAddress, BGULineTraceSingleByCollisionChannel_FunctionAddress, "ReturnValue");
+		BGULineTraceSingleByCollisionChannel_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceSingleByCollisionChannel_FunctionAddress, "ReturnValue");
+		BGULineTraceSingleByCollisionChannel_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceSingleByCollisionChannel_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		BGULineTraceSingleByCollisionChannel_IsValid = BGULineTraceSingleByCollisionChannel_FunctionAddress != IntPtr.Zero && BGULineTraceSingleByCollisionChannel_WorldContextObject_IsValid && BGULineTraceSingleByCollisionChannel_Start_IsValid && BGULineTraceSingleByCollisionChannel_End_IsValid && BGULineTraceSingleByCollisionChannel_CollisionChannel_IsValid && BGULineTraceSingleByCollisionChannel_SweepResult_IsValid && BGULineTraceSingleByCollisionChannel_IgnoreActors_IsValid && BGULineTraceSingleByCollisionChannel_BlockChannelsForFilter_IsValid && BGULineTraceSingleByCollisionChannel_OverlapChannelsForFilter_IsValid && BGULineTraceSingleByCollisionChannel_IsDrawDebug_IsValid && BGULineTraceSingleByCollisionChannel_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.BGUFuncLibSelectTargets:BGULineTraceSingleByCollisionChannel", BGULineTraceSingleByCollisionChannel_IsValid);
+		BGULineTraceMultiByCollisionChannel_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BGULineTraceMultiByCollisionChannel");
+		BGULineTraceMultiByCollisionChannel_ParamsSize = NativeReflection.GetFunctionParamsSize(BGULineTraceMultiByCollisionChannel_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceMultiByCollisionChannel_WorldContextObject_PropertyAddress, BGULineTraceMultiByCollisionChannel_FunctionAddress, "WorldContextObject");
+		BGULineTraceMultiByCollisionChannel_WorldContextObject_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceMultiByCollisionChannel_FunctionAddress, "WorldContextObject");
+		BGULineTraceMultiByCollisionChannel_WorldContextObject_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceMultiByCollisionChannel_FunctionAddress, "WorldContextObject", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceMultiByCollisionChannel_Start_PropertyAddress, BGULineTraceMultiByCollisionChannel_FunctionAddress, "Start");
+		BGULineTraceMultiByCollisionChannel_Start_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceMultiByCollisionChannel_FunctionAddress, "Start");
+		BGULineTraceMultiByCollisionChannel_Start_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceMultiByCollisionChannel_FunctionAddress, "Start", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceMultiByCollisionChannel_End_PropertyAddress, BGULineTraceMultiByCollisionChannel_FunctionAddress, "End");
+		BGULineTraceMultiByCollisionChannel_End_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceMultiByCollisionChannel_FunctionAddress, "End");
+		BGULineTraceMultiByCollisionChannel_End_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceMultiByCollisionChannel_FunctionAddress, "End", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceMultiByCollisionChannel_CollisionChannel_PropertyAddress, BGULineTraceMultiByCollisionChannel_FunctionAddress, "CollisionChannel");
+		BGULineTraceMultiByCollisionChannel_CollisionChannel_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceMultiByCollisionChannel_FunctionAddress, "CollisionChannel");
+		BGULineTraceMultiByCollisionChannel_CollisionChannel_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceMultiByCollisionChannel_FunctionAddress, "CollisionChannel", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceMultiByCollisionChannel_SweepResults_PropertyAddress, BGULineTraceMultiByCollisionChannel_FunctionAddress, "SweepResults");
+		BGULineTraceMultiByCollisionChannel_SweepResults_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceMultiByCollisionChannel_FunctionAddress, "SweepResults");
+		BGULineTraceMultiByCollisionChannel_SweepResults_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceMultiByCollisionChannel_FunctionAddress, "SweepResults", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceMultiByCollisionChannel_IgnoreActors_PropertyAddress, BGULineTraceMultiByCollisionChannel_FunctionAddress, "IgnoreActors");
+		BGULineTraceMultiByCollisionChannel_IgnoreActors_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceMultiByCollisionChannel_FunctionAddress, "IgnoreActors");
+		BGULineTraceMultiByCollisionChannel_IgnoreActors_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceMultiByCollisionChannel_FunctionAddress, "IgnoreActors", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceMultiByCollisionChannel_BlockChannelsForFilter_PropertyAddress, BGULineTraceMultiByCollisionChannel_FunctionAddress, "BlockChannelsForFilter");
+		BGULineTraceMultiByCollisionChannel_BlockChannelsForFilter_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceMultiByCollisionChannel_FunctionAddress, "BlockChannelsForFilter");
+		BGULineTraceMultiByCollisionChannel_BlockChannelsForFilter_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceMultiByCollisionChannel_FunctionAddress, "BlockChannelsForFilter", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceMultiByCollisionChannel_OverlapChannelsForFilter_PropertyAddress, BGULineTraceMultiByCollisionChannel_FunctionAddress, "OverlapChannelsForFilter");
+		BGULineTraceMultiByCollisionChannel_OverlapChannelsForFilter_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceMultiByCollisionChannel_FunctionAddress, "OverlapChannelsForFilter");
+		BGULineTraceMultiByCollisionChannel_OverlapChannelsForFilter_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceMultiByCollisionChannel_FunctionAddress, "OverlapChannelsForFilter", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceMultiByCollisionChannel_IsDrawDebug_PropertyAddress, BGULineTraceMultiByCollisionChannel_FunctionAddress, "IsDrawDebug");
+		BGULineTraceMultiByCollisionChannel_IsDrawDebug_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceMultiByCollisionChannel_FunctionAddress, "IsDrawDebug");
+		BGULineTraceMultiByCollisionChannel_IsDrawDebug_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceMultiByCollisionChannel_FunctionAddress, "IsDrawDebug", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGULineTraceMultiByCollisionChannel_ReturnValue_PropertyAddress, BGULineTraceMultiByCollisionChannel_FunctionAddress, "ReturnValue");
+		BGULineTraceMultiByCollisionChannel_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(BGULineTraceMultiByCollisionChannel_FunctionAddress, "ReturnValue");
+		BGULineTraceMultiByCollisionChannel_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(BGULineTraceMultiByCollisionChannel_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		BGULineTraceMultiByCollisionChannel_IsValid = BGULineTraceMultiByCollisionChannel_FunctionAddress != IntPtr.Zero && BGULineTraceMultiByCollisionChannel_WorldContextObject_IsValid && BGULineTraceMultiByCollisionChannel_Start_IsValid && BGULineTraceMultiByCollisionChannel_End_IsValid && BGULineTraceMultiByCollisionChannel_CollisionChannel_IsValid && BGULineTraceMultiByCollisionChannel_SweepResults_IsValid && BGULineTraceMultiByCollisionChannel_IgnoreActors_IsValid && BGULineTraceMultiByCollisionChannel_BlockChannelsForFilter_IsValid && BGULineTraceMultiByCollisionChannel_OverlapChannelsForFilter_IsValid && BGULineTraceMultiByCollisionChannel_IsDrawDebug_IsValid && BGULineTraceMultiByCollisionChannel_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.BGUFuncLibSelectTargets:BGULineTraceMultiByCollisionChannel", BGULineTraceMultiByCollisionChannel_IsValid);
+		BGUIsSelectTargetInFilterBP_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BGUIsSelectTargetInFilterBP");
+		BGUIsSelectTargetInFilterBP_ParamsSize = NativeReflection.GetFunctionParamsSize(BGUIsSelectTargetInFilterBP_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BGUIsSelectTargetInFilterBP_Caster_PropertyAddress, BGUIsSelectTargetInFilterBP_FunctionAddress, "Caster");
+		BGUIsSelectTargetInFilterBP_Caster_Offset = NativeReflectionCached.GetPropertyOffset(BGUIsSelectTargetInFilterBP_FunctionAddress, "Caster");
+		BGUIsSelectTargetInFilterBP_Caster_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUIsSelectTargetInFilterBP_FunctionAddress, "Caster", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUIsSelectTargetInFilterBP_Target_PropertyAddress, BGUIsSelectTargetInFilterBP_FunctionAddress, "Target");
+		BGUIsSelectTargetInFilterBP_Target_Offset = NativeReflectionCached.GetPropertyOffset(BGUIsSelectTargetInFilterBP_FunctionAddress, "Target");
+		BGUIsSelectTargetInFilterBP_Target_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUIsSelectTargetInFilterBP_FunctionAddress, "Target", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUIsSelectTargetInFilterBP_Filter_PropertyAddress, BGUIsSelectTargetInFilterBP_FunctionAddress, "Filter");
+		BGUIsSelectTargetInFilterBP_Filter_Offset = NativeReflectionCached.GetPropertyOffset(BGUIsSelectTargetInFilterBP_FunctionAddress, "Filter");
+		BGUIsSelectTargetInFilterBP_Filter_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUIsSelectTargetInFilterBP_FunctionAddress, "Filter", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUIsSelectTargetInFilterBP_ReturnValue_PropertyAddress, BGUIsSelectTargetInFilterBP_FunctionAddress, "ReturnValue");
+		BGUIsSelectTargetInFilterBP_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(BGUIsSelectTargetInFilterBP_FunctionAddress, "ReturnValue");
+		BGUIsSelectTargetInFilterBP_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUIsSelectTargetInFilterBP_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		BGUIsSelectTargetInFilterBP_IsValid = BGUIsSelectTargetInFilterBP_FunctionAddress != IntPtr.Zero && BGUIsSelectTargetInFilterBP_Caster_IsValid && BGUIsSelectTargetInFilterBP_Target_IsValid && BGUIsSelectTargetInFilterBP_Filter_IsValid && BGUIsSelectTargetInFilterBP_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.BGUFuncLibSelectTargets:BGUIsSelectTargetInFilterBP", BGUIsSelectTargetInFilterBP_IsValid);
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BGUGetSweepCheckResultsByCollisionChannelWithCaster");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_ParamsSize = NativeReflection.GetFunctionParamsSize(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannelWithCaster_WorldContextObject_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "WorldContextObject");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_WorldContextObject_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "WorldContextObject");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_WorldContextObject_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "WorldContextObject", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannelWithCaster_PreTransform_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "PreTransform");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_PreTransform_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "PreTransform");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_PreTransform_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "PreTransform", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannelWithCaster_CurTransform_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "CurTransform");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_CurTransform_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "CurTransform");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_CurTransform_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "CurTransform", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannelWithCaster_Rot_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "Rot");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_Rot_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "Rot");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_Rot_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "Rot", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannelWithCaster_CollisionChannel_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "CollisionChannel");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_CollisionChannel_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "CollisionChannel");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_CollisionChannel_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "CollisionChannel", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckShapeInfo_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "SweepCheckShapeInfo");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckShapeInfo_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "SweepCheckShapeInfo");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckShapeInfo_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "SweepCheckShapeInfo", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepResults_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "SweepResults");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepResults_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "SweepResults");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepResults_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "SweepResults", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannelWithCaster_IgnoreActors_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "IgnoreActors");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_IgnoreActors_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "IgnoreActors");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_IgnoreActors_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "IgnoreActors", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannelWithCaster_BlockChannelsForFilter_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "BlockChannelsForFilter");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_BlockChannelsForFilter_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "BlockChannelsForFilter");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_BlockChannelsForFilter_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "BlockChannelsForFilter", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannelWithCaster_OverlapChannelsForFilter_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "OverlapChannelsForFilter");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_OverlapChannelsForFilter_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "OverlapChannelsForFilter");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_OverlapChannelsForFilter_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "OverlapChannelsForFilter", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannelWithCaster_IsDrawDebugShape_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "IsDrawDebugShape");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_IsDrawDebugShape_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "IsDrawDebugShape");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_IsDrawDebugShape_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "IsDrawDebugShape", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannelWithCaster_Caster_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "Caster");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_Caster_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "Caster");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_Caster_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "Caster", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannelWithCaster_GroupID_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "GroupID");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_GroupID_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "GroupID");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_GroupID_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "GroupID", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckType_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "SweepCheckType");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckType_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "SweepCheckType");
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckType_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress, "SweepCheckType", Classes.FEnumProperty);
+		BGUGetSweepCheckResultsByCollisionChannelWithCaster_IsValid = BGUGetSweepCheckResultsByCollisionChannelWithCaster_FunctionAddress != IntPtr.Zero && BGUGetSweepCheckResultsByCollisionChannelWithCaster_WorldContextObject_IsValid && BGUGetSweepCheckResultsByCollisionChannelWithCaster_PreTransform_IsValid && BGUGetSweepCheckResultsByCollisionChannelWithCaster_CurTransform_IsValid && BGUGetSweepCheckResultsByCollisionChannelWithCaster_Rot_IsValid && BGUGetSweepCheckResultsByCollisionChannelWithCaster_CollisionChannel_IsValid && BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckShapeInfo_IsValid && BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepResults_IsValid && BGUGetSweepCheckResultsByCollisionChannelWithCaster_IgnoreActors_IsValid && BGUGetSweepCheckResultsByCollisionChannelWithCaster_BlockChannelsForFilter_IsValid && BGUGetSweepCheckResultsByCollisionChannelWithCaster_OverlapChannelsForFilter_IsValid && BGUGetSweepCheckResultsByCollisionChannelWithCaster_IsDrawDebugShape_IsValid && BGUGetSweepCheckResultsByCollisionChannelWithCaster_Caster_IsValid && BGUGetSweepCheckResultsByCollisionChannelWithCaster_GroupID_IsValid && BGUGetSweepCheckResultsByCollisionChannelWithCaster_SweepCheckType_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.BGUFuncLibSelectTargets:BGUGetSweepCheckResultsByCollisionChannelWithCaster", BGUGetSweepCheckResultsByCollisionChannelWithCaster_IsValid);
+		BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BGUGetSweepCheckResultsByCollisionChannel");
+		BGUGetSweepCheckResultsByCollisionChannel_ParamsSize = NativeReflection.GetFunctionParamsSize(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannel_WorldContextObject_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "WorldContextObject");
+		BGUGetSweepCheckResultsByCollisionChannel_WorldContextObject_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "WorldContextObject");
+		BGUGetSweepCheckResultsByCollisionChannel_WorldContextObject_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "WorldContextObject", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannel_PreTransform_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "PreTransform");
+		BGUGetSweepCheckResultsByCollisionChannel_PreTransform_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "PreTransform");
+		BGUGetSweepCheckResultsByCollisionChannel_PreTransform_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "PreTransform", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannel_CurTransform_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "CurTransform");
+		BGUGetSweepCheckResultsByCollisionChannel_CurTransform_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "CurTransform");
+		BGUGetSweepCheckResultsByCollisionChannel_CurTransform_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "CurTransform", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannel_Rot_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "Rot");
+		BGUGetSweepCheckResultsByCollisionChannel_Rot_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "Rot");
+		BGUGetSweepCheckResultsByCollisionChannel_Rot_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "Rot", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannel_CollisionChannel_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "CollisionChannel");
+		BGUGetSweepCheckResultsByCollisionChannel_CollisionChannel_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "CollisionChannel");
+		BGUGetSweepCheckResultsByCollisionChannel_CollisionChannel_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "CollisionChannel", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannel_SweepCheckShapeInfo_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "SweepCheckShapeInfo");
+		BGUGetSweepCheckResultsByCollisionChannel_SweepCheckShapeInfo_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "SweepCheckShapeInfo");
+		BGUGetSweepCheckResultsByCollisionChannel_SweepCheckShapeInfo_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "SweepCheckShapeInfo", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannel_SweepResults_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "SweepResults");
+		BGUGetSweepCheckResultsByCollisionChannel_SweepResults_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "SweepResults");
+		BGUGetSweepCheckResultsByCollisionChannel_SweepResults_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "SweepResults", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannel_IgnoreActors_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "IgnoreActors");
+		BGUGetSweepCheckResultsByCollisionChannel_IgnoreActors_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "IgnoreActors");
+		BGUGetSweepCheckResultsByCollisionChannel_IgnoreActors_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "IgnoreActors", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannel_BlockChannelsForFilter_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "BlockChannelsForFilter");
+		BGUGetSweepCheckResultsByCollisionChannel_BlockChannelsForFilter_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "BlockChannelsForFilter");
+		BGUGetSweepCheckResultsByCollisionChannel_BlockChannelsForFilter_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "BlockChannelsForFilter", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannel_OverlapChannelsForFilter_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "OverlapChannelsForFilter");
+		BGUGetSweepCheckResultsByCollisionChannel_OverlapChannelsForFilter_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "OverlapChannelsForFilter");
+		BGUGetSweepCheckResultsByCollisionChannel_OverlapChannelsForFilter_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "OverlapChannelsForFilter", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSweepCheckResultsByCollisionChannel_IsDrawDebugShape_PropertyAddress, BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "IsDrawDebugShape");
+		BGUGetSweepCheckResultsByCollisionChannel_IsDrawDebugShape_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "IsDrawDebugShape");
+		BGUGetSweepCheckResultsByCollisionChannel_IsDrawDebugShape_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress, "IsDrawDebugShape", Classes.FBoolProperty);
+		BGUGetSweepCheckResultsByCollisionChannel_IsValid = BGUGetSweepCheckResultsByCollisionChannel_FunctionAddress != IntPtr.Zero && BGUGetSweepCheckResultsByCollisionChannel_WorldContextObject_IsValid && BGUGetSweepCheckResultsByCollisionChannel_PreTransform_IsValid && BGUGetSweepCheckResultsByCollisionChannel_CurTransform_IsValid && BGUGetSweepCheckResultsByCollisionChannel_Rot_IsValid && BGUGetSweepCheckResultsByCollisionChannel_CollisionChannel_IsValid && BGUGetSweepCheckResultsByCollisionChannel_SweepCheckShapeInfo_IsValid && BGUGetSweepCheckResultsByCollisionChannel_SweepResults_IsValid && BGUGetSweepCheckResultsByCollisionChannel_IgnoreActors_IsValid && BGUGetSweepCheckResultsByCollisionChannel_BlockChannelsForFilter_IsValid && BGUGetSweepCheckResultsByCollisionChannel_OverlapChannelsForFilter_IsValid && BGUGetSweepCheckResultsByCollisionChannel_IsDrawDebugShape_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.BGUFuncLibSelectTargets:BGUGetSweepCheckResultsByCollisionChannel", BGUGetSweepCheckResultsByCollisionChannel_IsValid);
+		BGUGetSightPerceivedActors_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BGUGetSightPerceivedActors");
+		BGUGetSightPerceivedActors_ParamsSize = NativeReflection.GetFunctionParamsSize(BGUGetSightPerceivedActors_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSightPerceivedActors_PerceptionComp_PropertyAddress, BGUGetSightPerceivedActors_FunctionAddress, "PerceptionComp");
+		BGUGetSightPerceivedActors_PerceptionComp_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSightPerceivedActors_FunctionAddress, "PerceptionComp");
+		BGUGetSightPerceivedActors_PerceptionComp_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSightPerceivedActors_FunctionAddress, "PerceptionComp", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetSightPerceivedActors_ReturnValue_PropertyAddress, BGUGetSightPerceivedActors_FunctionAddress, "ReturnValue");
+		BGUGetSightPerceivedActors_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetSightPerceivedActors_FunctionAddress, "ReturnValue");
+		BGUGetSightPerceivedActors_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetSightPerceivedActors_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		BGUGetSightPerceivedActors_IsValid = BGUGetSightPerceivedActors_FunctionAddress != IntPtr.Zero && BGUGetSightPerceivedActors_PerceptionComp_IsValid && BGUGetSightPerceivedActors_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.BGUFuncLibSelectTargets:BGUGetSightPerceivedActors", BGUGetSightPerceivedActors_IsValid);
+		BGUGetPerceivedActors_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BGUGetPerceivedActors");
+		BGUGetPerceivedActors_ParamsSize = NativeReflection.GetFunctionParamsSize(BGUGetPerceivedActors_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetPerceivedActors_PerceptionComp_PropertyAddress, BGUGetPerceivedActors_FunctionAddress, "PerceptionComp");
+		BGUGetPerceivedActors_PerceptionComp_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetPerceivedActors_FunctionAddress, "PerceptionComp");
+		BGUGetPerceivedActors_PerceptionComp_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetPerceivedActors_FunctionAddress, "PerceptionComp", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUGetPerceivedActors_ReturnValue_PropertyAddress, BGUGetPerceivedActors_FunctionAddress, "ReturnValue");
+		BGUGetPerceivedActors_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(BGUGetPerceivedActors_FunctionAddress, "ReturnValue");
+		BGUGetPerceivedActors_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUGetPerceivedActors_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		BGUGetPerceivedActors_IsValid = BGUGetPerceivedActors_FunctionAddress != IntPtr.Zero && BGUGetPerceivedActors_PerceptionComp_IsValid && BGUGetPerceivedActors_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.BGUFuncLibSelectTargets:BGUGetPerceivedActors", BGUGetPerceivedActors_IsValid);
+		BGUComputePenetration_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BGUComputePenetration");
+		BGUComputePenetration_ParamsSize = NativeReflection.GetFunctionParamsSize(BGUComputePenetration_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BGUComputePenetration_SelfComponent_PropertyAddress, BGUComputePenetration_FunctionAddress, "SelfComponent");
+		BGUComputePenetration_SelfComponent_Offset = NativeReflectionCached.GetPropertyOffset(BGUComputePenetration_FunctionAddress, "SelfComponent");
+		BGUComputePenetration_SelfComponent_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComputePenetration_FunctionAddress, "SelfComponent", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComputePenetration_Direction_PropertyAddress, BGUComputePenetration_FunctionAddress, "Direction");
+		BGUComputePenetration_Direction_Offset = NativeReflectionCached.GetPropertyOffset(BGUComputePenetration_FunctionAddress, "Direction");
+		BGUComputePenetration_Direction_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComputePenetration_FunctionAddress, "Direction", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComputePenetration_Distance_PropertyAddress, BGUComputePenetration_FunctionAddress, "Distance");
+		BGUComputePenetration_Distance_Offset = NativeReflectionCached.GetPropertyOffset(BGUComputePenetration_FunctionAddress, "Distance");
+		BGUComputePenetration_Distance_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComputePenetration_FunctionAddress, "Distance", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComputePenetration_OtherComponent_PropertyAddress, BGUComputePenetration_FunctionAddress, "OtherComponent");
+		BGUComputePenetration_OtherComponent_Offset = NativeReflectionCached.GetPropertyOffset(BGUComputePenetration_FunctionAddress, "OtherComponent");
+		BGUComputePenetration_OtherComponent_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComputePenetration_FunctionAddress, "OtherComponent", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComputePenetration_Pos_PropertyAddress, BGUComputePenetration_FunctionAddress, "Pos");
+		BGUComputePenetration_Pos_Offset = NativeReflectionCached.GetPropertyOffset(BGUComputePenetration_FunctionAddress, "Pos");
+		BGUComputePenetration_Pos_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComputePenetration_FunctionAddress, "Pos", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComputePenetration_Rot_PropertyAddress, BGUComputePenetration_FunctionAddress, "Rot");
+		BGUComputePenetration_Rot_Offset = NativeReflectionCached.GetPropertyOffset(BGUComputePenetration_FunctionAddress, "Rot");
+		BGUComputePenetration_Rot_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComputePenetration_FunctionAddress, "Rot", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComputePenetration_ReturnValue_PropertyAddress, BGUComputePenetration_FunctionAddress, "ReturnValue");
+		BGUComputePenetration_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(BGUComputePenetration_FunctionAddress, "ReturnValue");
+		BGUComputePenetration_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComputePenetration_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		BGUComputePenetration_IsValid = BGUComputePenetration_FunctionAddress != IntPtr.Zero && BGUComputePenetration_SelfComponent_IsValid && BGUComputePenetration_Direction_IsValid && BGUComputePenetration_Distance_IsValid && BGUComputePenetration_OtherComponent_IsValid && BGUComputePenetration_Pos_IsValid && BGUComputePenetration_Rot_IsValid && BGUComputePenetration_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.BGUFuncLibSelectTargets:BGUComputePenetration", BGUComputePenetration_IsValid);
+		BGUCompOverlapCompsByObjectType_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BGUCompOverlapCompsByObjectType");
+		BGUCompOverlapCompsByObjectType_ParamsSize = NativeReflection.GetFunctionParamsSize(BGUCompOverlapCompsByObjectType_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BGUCompOverlapCompsByObjectType_Component_PropertyAddress, BGUCompOverlapCompsByObjectType_FunctionAddress, "Component");
+		BGUCompOverlapCompsByObjectType_Component_Offset = NativeReflectionCached.GetPropertyOffset(BGUCompOverlapCompsByObjectType_FunctionAddress, "Component");
+		BGUCompOverlapCompsByObjectType_Component_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUCompOverlapCompsByObjectType_FunctionAddress, "Component", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUCompOverlapCompsByObjectType_ObjectTypes_PropertyAddress, BGUCompOverlapCompsByObjectType_FunctionAddress, "ObjectTypes");
+		BGUCompOverlapCompsByObjectType_ObjectTypes_Offset = NativeReflectionCached.GetPropertyOffset(BGUCompOverlapCompsByObjectType_FunctionAddress, "ObjectTypes");
+		BGUCompOverlapCompsByObjectType_ObjectTypes_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUCompOverlapCompsByObjectType_FunctionAddress, "ObjectTypes", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUCompOverlapCompsByObjectType_ComponentClassFilter_PropertyAddress, BGUCompOverlapCompsByObjectType_FunctionAddress, "ComponentClassFilter");
+		BGUCompOverlapCompsByObjectType_ComponentClassFilter_Offset = NativeReflectionCached.GetPropertyOffset(BGUCompOverlapCompsByObjectType_FunctionAddress, "ComponentClassFilter");
+		BGUCompOverlapCompsByObjectType_ComponentClassFilter_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUCompOverlapCompsByObjectType_FunctionAddress, "ComponentClassFilter", Classes.FClassProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUCompOverlapCompsByObjectType_ActorsToIgnore_PropertyAddress, BGUCompOverlapCompsByObjectType_FunctionAddress, "ActorsToIgnore");
+		BGUCompOverlapCompsByObjectType_ActorsToIgnore_Offset = NativeReflectionCached.GetPropertyOffset(BGUCompOverlapCompsByObjectType_FunctionAddress, "ActorsToIgnore");
+		BGUCompOverlapCompsByObjectType_ActorsToIgnore_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUCompOverlapCompsByObjectType_FunctionAddress, "ActorsToIgnore", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUCompOverlapCompsByObjectType_OutComponents_PropertyAddress, BGUCompOverlapCompsByObjectType_FunctionAddress, "OutComponents");
+		BGUCompOverlapCompsByObjectType_OutComponents_Offset = NativeReflectionCached.GetPropertyOffset(BGUCompOverlapCompsByObjectType_FunctionAddress, "OutComponents");
+		BGUCompOverlapCompsByObjectType_OutComponents_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUCompOverlapCompsByObjectType_FunctionAddress, "OutComponents", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUCompOverlapCompsByObjectType_ReturnValue_PropertyAddress, BGUCompOverlapCompsByObjectType_FunctionAddress, "ReturnValue");
+		BGUCompOverlapCompsByObjectType_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(BGUCompOverlapCompsByObjectType_FunctionAddress, "ReturnValue");
+		BGUCompOverlapCompsByObjectType_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUCompOverlapCompsByObjectType_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		BGUCompOverlapCompsByObjectType_IsValid = BGUCompOverlapCompsByObjectType_FunctionAddress != IntPtr.Zero && BGUCompOverlapCompsByObjectType_Component_IsValid && BGUCompOverlapCompsByObjectType_ObjectTypes_IsValid && BGUCompOverlapCompsByObjectType_ComponentClassFilter_IsValid && BGUCompOverlapCompsByObjectType_ActorsToIgnore_IsValid && BGUCompOverlapCompsByObjectType_OutComponents_IsValid && BGUCompOverlapCompsByObjectType_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.BGUFuncLibSelectTargets:BGUCompOverlapCompsByObjectType", BGUCompOverlapCompsByObjectType_IsValid);
+		BGUCompOverlapCompsByChannel_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BGUCompOverlapCompsByChannel");
+		BGUCompOverlapCompsByChannel_ParamsSize = NativeReflection.GetFunctionParamsSize(BGUCompOverlapCompsByChannel_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BGUCompOverlapCompsByChannel_Component_PropertyAddress, BGUCompOverlapCompsByChannel_FunctionAddress, "Component");
+		BGUCompOverlapCompsByChannel_Component_Offset = NativeReflectionCached.GetPropertyOffset(BGUCompOverlapCompsByChannel_FunctionAddress, "Component");
+		BGUCompOverlapCompsByChannel_Component_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUCompOverlapCompsByChannel_FunctionAddress, "Component", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUCompOverlapCompsByChannel_TraceChannel_PropertyAddress, BGUCompOverlapCompsByChannel_FunctionAddress, "TraceChannel");
+		BGUCompOverlapCompsByChannel_TraceChannel_Offset = NativeReflectionCached.GetPropertyOffset(BGUCompOverlapCompsByChannel_FunctionAddress, "TraceChannel");
+		BGUCompOverlapCompsByChannel_TraceChannel_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUCompOverlapCompsByChannel_FunctionAddress, "TraceChannel", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUCompOverlapCompsByChannel_ComponentClassFilter_PropertyAddress, BGUCompOverlapCompsByChannel_FunctionAddress, "ComponentClassFilter");
+		BGUCompOverlapCompsByChannel_ComponentClassFilter_Offset = NativeReflectionCached.GetPropertyOffset(BGUCompOverlapCompsByChannel_FunctionAddress, "ComponentClassFilter");
+		BGUCompOverlapCompsByChannel_ComponentClassFilter_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUCompOverlapCompsByChannel_FunctionAddress, "ComponentClassFilter", Classes.FClassProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUCompOverlapCompsByChannel_ActorsToIgnore_PropertyAddress, BGUCompOverlapCompsByChannel_FunctionAddress, "ActorsToIgnore");
+		BGUCompOverlapCompsByChannel_ActorsToIgnore_Offset = NativeReflectionCached.GetPropertyOffset(BGUCompOverlapCompsByChannel_FunctionAddress, "ActorsToIgnore");
+		BGUCompOverlapCompsByChannel_ActorsToIgnore_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUCompOverlapCompsByChannel_FunctionAddress, "ActorsToIgnore", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUCompOverlapCompsByChannel_OutComponents_PropertyAddress, BGUCompOverlapCompsByChannel_FunctionAddress, "OutComponents");
+		BGUCompOverlapCompsByChannel_OutComponents_Offset = NativeReflectionCached.GetPropertyOffset(BGUCompOverlapCompsByChannel_FunctionAddress, "OutComponents");
+		BGUCompOverlapCompsByChannel_OutComponents_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUCompOverlapCompsByChannel_FunctionAddress, "OutComponents", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUCompOverlapCompsByChannel_ReturnValue_PropertyAddress, BGUCompOverlapCompsByChannel_FunctionAddress, "ReturnValue");
+		BGUCompOverlapCompsByChannel_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(BGUCompOverlapCompsByChannel_FunctionAddress, "ReturnValue");
+		BGUCompOverlapCompsByChannel_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUCompOverlapCompsByChannel_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		BGUCompOverlapCompsByChannel_IsValid = BGUCompOverlapCompsByChannel_FunctionAddress != IntPtr.Zero && BGUCompOverlapCompsByChannel_Component_IsValid && BGUCompOverlapCompsByChannel_TraceChannel_IsValid && BGUCompOverlapCompsByChannel_ComponentClassFilter_IsValid && BGUCompOverlapCompsByChannel_ActorsToIgnore_IsValid && BGUCompOverlapCompsByChannel_OutComponents_IsValid && BGUCompOverlapCompsByChannel_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.BGUFuncLibSelectTargets:BGUCompOverlapCompsByChannel", BGUCompOverlapCompsByChannel_IsValid);
+		BGUComponentSweepMulti_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BGUComponentSweepMulti");
+		BGUComponentSweepMulti_ParamsSize = NativeReflection.GetFunctionParamsSize(BGUComponentSweepMulti_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BGUComponentSweepMulti_WorldContextObject_PropertyAddress, BGUComponentSweepMulti_FunctionAddress, "WorldContextObject");
+		BGUComponentSweepMulti_WorldContextObject_Offset = NativeReflectionCached.GetPropertyOffset(BGUComponentSweepMulti_FunctionAddress, "WorldContextObject");
+		BGUComponentSweepMulti_WorldContextObject_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComponentSweepMulti_FunctionAddress, "WorldContextObject", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComponentSweepMulti_TraceChannel_PropertyAddress, BGUComponentSweepMulti_FunctionAddress, "TraceChannel");
+		BGUComponentSweepMulti_TraceChannel_Offset = NativeReflectionCached.GetPropertyOffset(BGUComponentSweepMulti_FunctionAddress, "TraceChannel");
+		BGUComponentSweepMulti_TraceChannel_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComponentSweepMulti_FunctionAddress, "TraceChannel", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComponentSweepMulti_PrimComp_PropertyAddress, BGUComponentSweepMulti_FunctionAddress, "PrimComp");
+		BGUComponentSweepMulti_PrimComp_Offset = NativeReflectionCached.GetPropertyOffset(BGUComponentSweepMulti_FunctionAddress, "PrimComp");
+		BGUComponentSweepMulti_PrimComp_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComponentSweepMulti_FunctionAddress, "PrimComp", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComponentSweepMulti_Start_PropertyAddress, BGUComponentSweepMulti_FunctionAddress, "Start");
+		BGUComponentSweepMulti_Start_Offset = NativeReflectionCached.GetPropertyOffset(BGUComponentSweepMulti_FunctionAddress, "Start");
+		BGUComponentSweepMulti_Start_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComponentSweepMulti_FunctionAddress, "Start", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComponentSweepMulti_End_PropertyAddress, BGUComponentSweepMulti_FunctionAddress, "End");
+		BGUComponentSweepMulti_End_Offset = NativeReflectionCached.GetPropertyOffset(BGUComponentSweepMulti_FunctionAddress, "End");
+		BGUComponentSweepMulti_End_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComponentSweepMulti_FunctionAddress, "End", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComponentSweepMulti_Rot_PropertyAddress, BGUComponentSweepMulti_FunctionAddress, "Rot");
+		BGUComponentSweepMulti_Rot_Offset = NativeReflectionCached.GetPropertyOffset(BGUComponentSweepMulti_FunctionAddress, "Rot");
+		BGUComponentSweepMulti_Rot_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComponentSweepMulti_FunctionAddress, "Rot", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComponentSweepMulti_SweepResults_PropertyAddress, BGUComponentSweepMulti_FunctionAddress, "SweepResults");
+		BGUComponentSweepMulti_SweepResults_Offset = NativeReflectionCached.GetPropertyOffset(BGUComponentSweepMulti_FunctionAddress, "SweepResults");
+		BGUComponentSweepMulti_SweepResults_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComponentSweepMulti_FunctionAddress, "SweepResults", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComponentSweepMulti_IgnoreActors_PropertyAddress, BGUComponentSweepMulti_FunctionAddress, "IgnoreActors");
+		BGUComponentSweepMulti_IgnoreActors_Offset = NativeReflectionCached.GetPropertyOffset(BGUComponentSweepMulti_FunctionAddress, "IgnoreActors");
+		BGUComponentSweepMulti_IgnoreActors_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComponentSweepMulti_FunctionAddress, "IgnoreActors", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComponentSweepMulti_BlockChannelsForFilter_PropertyAddress, BGUComponentSweepMulti_FunctionAddress, "BlockChannelsForFilter");
+		BGUComponentSweepMulti_BlockChannelsForFilter_Offset = NativeReflectionCached.GetPropertyOffset(BGUComponentSweepMulti_FunctionAddress, "BlockChannelsForFilter");
+		BGUComponentSweepMulti_BlockChannelsForFilter_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComponentSweepMulti_FunctionAddress, "BlockChannelsForFilter", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComponentSweepMulti_OverlapChannelsForFilter_PropertyAddress, BGUComponentSweepMulti_FunctionAddress, "OverlapChannelsForFilter");
+		BGUComponentSweepMulti_OverlapChannelsForFilter_Offset = NativeReflectionCached.GetPropertyOffset(BGUComponentSweepMulti_FunctionAddress, "OverlapChannelsForFilter");
+		BGUComponentSweepMulti_OverlapChannelsForFilter_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComponentSweepMulti_FunctionAddress, "OverlapChannelsForFilter", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BGUComponentSweepMulti_ReturnValue_PropertyAddress, BGUComponentSweepMulti_FunctionAddress, "ReturnValue");
+		BGUComponentSweepMulti_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(BGUComponentSweepMulti_FunctionAddress, "ReturnValue");
+		BGUComponentSweepMulti_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(BGUComponentSweepMulti_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		BGUComponentSweepMulti_IsValid = BGUComponentSweepMulti_FunctionAddress != IntPtr.Zero && BGUComponentSweepMulti_WorldContextObject_IsValid && BGUComponentSweepMulti_TraceChannel_IsValid && BGUComponentSweepMulti_PrimComp_IsValid && BGUComponentSweepMulti_Start_IsValid && BGUComponentSweepMulti_End_IsValid && BGUComponentSweepMulti_Rot_IsValid && BGUComponentSweepMulti_SweepResults_IsValid && BGUComponentSweepMulti_IgnoreActors_IsValid && BGUComponentSweepMulti_BlockChannelsForFilter_IsValid && BGUComponentSweepMulti_OverlapChannelsForFilter_IsValid && BGUComponentSweepMulti_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.BGUFuncLibSelectTargets:BGUComponentSweepMulti", BGUComponentSweepMulti_IsValid);
+	}
+}

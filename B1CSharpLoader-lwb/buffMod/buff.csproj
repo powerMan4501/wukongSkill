@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>buff</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="0Harmony" />
+    <Reference Include="CSharpModBase" />
+    <Reference Include="UnrealEngine" />
+    <Reference Include="BtlSvr.Main" />
+    <Reference Include="GSE.ProtobufDB" />
+    <Reference Include="UnrealEngine.Runtime" />
+    <Reference Include="Google.Protobuf" />
+    <Reference Include="System.Core" />
+    <Reference Include="b1.Native" />
+  </ItemGroup>
+</Project>

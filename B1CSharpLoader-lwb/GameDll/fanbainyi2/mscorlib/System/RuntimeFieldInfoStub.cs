@@ -1,0 +1,31 @@
+using System.Runtime.InteropServices;
+using System.Security;
+
+namespace System;
+
+[StructLayout(LayoutKind.Sequential)]
+internal class RuntimeFieldInfoStub : IRuntimeFieldInfo
+{
+	private object m_keepalive;
+
+	private object m_c;
+
+	private object m_d;
+
+	private int m_b;
+
+	private object m_e;
+
+	private object m_f;
+
+	private RuntimeFieldHandleInternal m_fieldHandle;
+
+	RuntimeFieldHandleInternal IRuntimeFieldInfo.Value => m_fieldHandle;
+
+	[SecuritySafeCritical]
+	public RuntimeFieldInfoStub(IntPtr methodHandleValue, object keepalive)
+	{
+		m_keepalive = keepalive;
+		m_fieldHandle = new RuntimeFieldHandleInternal(methodHandleValue);
+	}
+}

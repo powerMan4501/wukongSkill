@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>GSE.Core</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="UnrealEngine.Runtime">
+      <HintPath>..\..\GameDll\UnrealEngine.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\GameDll\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="b1.Native">
+      <HintPath>..\..\GameDll\b1.Native.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>..\..\GameDll\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="UnrealEngine">
+      <HintPath>..\..\GameDll\UnrealEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJson">
+      <HintPath>..\..\GameDll\LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="b1.NativePlugins">
+      <HintPath>..\..\GameDll\b1.NativePlugins.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+</Project>

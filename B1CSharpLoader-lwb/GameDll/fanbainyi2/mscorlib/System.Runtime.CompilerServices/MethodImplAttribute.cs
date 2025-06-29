@@ -1,0 +1,46 @@
+using System.Reflection;
+using System.Runtime.InteropServices;
+
+namespace System.Runtime.CompilerServices;
+
+[Serializable]
+[AttributeUsage(AttributeTargets.Constructor | AttributeTargets.Method, Inherited = false)]
+[ComVisible(true)]
+[__DynamicallyInvokable]
+public sealed class MethodImplAttribute : Attribute
+{
+	internal MethodImplOptions _val;
+
+	public MethodCodeType MethodCodeType;
+
+	[__DynamicallyInvokable]
+	public MethodImplOptions Value
+	{
+		[__DynamicallyInvokable]
+		get
+		{
+			return _val;
+		}
+	}
+
+	internal MethodImplAttribute(MethodImplAttributes methodImplAttributes)
+	{
+		MethodImplOptions methodImplOptions = MethodImplOptions.Unmanaged | MethodImplOptions.ForwardRef | MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall | MethodImplOptions.Synchronized | MethodImplOptions.NoInlining | MethodImplOptions.AggressiveInlining | MethodImplOptions.NoOptimization | MethodImplOptions.SecurityMitigations;
+		_val = (MethodImplOptions)((int)methodImplAttributes & (int)methodImplOptions);
+	}
+
+	[__DynamicallyInvokable]
+	public MethodImplAttribute(MethodImplOptions methodImplOptions)
+	{
+		_val = methodImplOptions;
+	}
+
+	public MethodImplAttribute(short value)
+	{
+		_val = (MethodImplOptions)value;
+	}
+
+	public MethodImplAttribute()
+	{
+	}
+}

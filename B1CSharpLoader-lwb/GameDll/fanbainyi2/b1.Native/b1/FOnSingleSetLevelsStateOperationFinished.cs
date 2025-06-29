@@ -1,0 +1,85 @@
+using System;
+using System.Runtime.CompilerServices;
+using UnrealEngine.Runtime;
+
+namespace b1;
+
+[UDelegate]
+[UMetaPath("/Script/b1.OnSingleSetLevelsStateOperationFinished__DelegateSignature")]
+public class FOnSingleSetLevelsStateOperationFinished : FMulticastDelegate<FOnSingleSetLevelsStateOperationFinished.Signature>
+{
+	public delegate void Signature(string TargetLevelsKeyword, string TargetLevelState, int OperationID);
+
+	private static bool OnSingleSetLevelsStateOperationFinished__DelegateSignature_IsValid;
+
+	private static IntPtr OnSingleSetLevelsStateOperationFinished__DelegateSignature_FunctionAddress;
+
+	private static int OnSingleSetLevelsStateOperationFinished__DelegateSignature_ParamsSize;
+
+	private static bool OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelsKeyword_IsValid;
+
+	private static FFieldAddress OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelsKeyword_PropertyAddress;
+
+	private static int OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelsKeyword_Offset;
+
+	private static bool OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelState_IsValid;
+
+	private static FFieldAddress OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelState_PropertyAddress;
+
+	private static int OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelState_Offset;
+
+	private static bool OnSingleSetLevelsStateOperationFinished__DelegateSignature_OperationID_IsValid;
+
+	private static FFieldAddress OnSingleSetLevelsStateOperationFinished__DelegateSignature_OperationID_PropertyAddress;
+
+	private static int OnSingleSetLevelsStateOperationFinished__DelegateSignature_OperationID_Offset;
+
+	public override Signature GetInvoker()
+	{
+		return Invoker;
+	}
+
+	static FOnSingleSetLevelsStateOperationFinished()
+	{
+		LoadNativeType();
+	}
+
+	private static void LoadNativeType()
+	{
+		OnSingleSetLevelsStateOperationFinished__DelegateSignature_FunctionAddress = NativeReflection.GetFunction("/Script/b1.OnSingleSetLevelsStateOperationFinished__DelegateSignature");
+		OnSingleSetLevelsStateOperationFinished__DelegateSignature_ParamsSize = NativeReflection.GetFunctionParamsSize(OnSingleSetLevelsStateOperationFinished__DelegateSignature_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelsKeyword_PropertyAddress, OnSingleSetLevelsStateOperationFinished__DelegateSignature_FunctionAddress, "TargetLevelsKeyword");
+		OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelsKeyword_Offset = NativeReflectionCached.GetPropertyOffset(OnSingleSetLevelsStateOperationFinished__DelegateSignature_FunctionAddress, "TargetLevelsKeyword");
+		OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelsKeyword_IsValid = NativeReflectionCached.ValidatePropertyClass(OnSingleSetLevelsStateOperationFinished__DelegateSignature_FunctionAddress, "TargetLevelsKeyword", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelState_PropertyAddress, OnSingleSetLevelsStateOperationFinished__DelegateSignature_FunctionAddress, "TargetLevelState");
+		OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelState_Offset = NativeReflectionCached.GetPropertyOffset(OnSingleSetLevelsStateOperationFinished__DelegateSignature_FunctionAddress, "TargetLevelState");
+		OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelState_IsValid = NativeReflectionCached.ValidatePropertyClass(OnSingleSetLevelsStateOperationFinished__DelegateSignature_FunctionAddress, "TargetLevelState", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref OnSingleSetLevelsStateOperationFinished__DelegateSignature_OperationID_PropertyAddress, OnSingleSetLevelsStateOperationFinished__DelegateSignature_FunctionAddress, "OperationID");
+		OnSingleSetLevelsStateOperationFinished__DelegateSignature_OperationID_Offset = NativeReflectionCached.GetPropertyOffset(OnSingleSetLevelsStateOperationFinished__DelegateSignature_FunctionAddress, "OperationID");
+		OnSingleSetLevelsStateOperationFinished__DelegateSignature_OperationID_IsValid = NativeReflectionCached.ValidatePropertyClass(OnSingleSetLevelsStateOperationFinished__DelegateSignature_FunctionAddress, "OperationID", Classes.FIntProperty);
+		OnSingleSetLevelsStateOperationFinished__DelegateSignature_IsValid = OnSingleSetLevelsStateOperationFinished__DelegateSignature_FunctionAddress != IntPtr.Zero && OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelsKeyword_IsValid && OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelState_IsValid && OnSingleSetLevelsStateOperationFinished__DelegateSignature_OperationID_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/b1.OnSingleSetLevelsStateOperationFinished__DelegateSignature", OnSingleSetLevelsStateOperationFinished__DelegateSignature_IsValid);
+	}
+
+	private unsafe void Invoker(string TargetLevelsKeyword, string TargetLevelState, int OperationID)
+	{
+		if (!OnSingleSetLevelsStateOperationFinished__DelegateSignature_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/b1.OnSingleSetLevelsStateOperationFinished__DelegateSignature");
+		}
+		else if (IsBound)
+		{
+			byte* ptr = stackalloc byte[(int)(uint)(OnSingleSetLevelsStateOperationFinished__DelegateSignature_ParamsSize + 16)];
+			int num = (int)((16L - (long)ptr) & 0xF);
+			byte* ptr2 = ptr + num;
+			Unsafe.InitBlockUnaligned(ptr2, 0, (uint)OnSingleSetLevelsStateOperationFinished__DelegateSignature_ParamsSize);
+			IntPtr intPtr = new IntPtr(ptr2);
+			FStringMarshaler.ToNative(IntPtr.Add(intPtr, OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelsKeyword_Offset), 0, OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelsKeyword_PropertyAddress.Address, TargetLevelsKeyword);
+			FStringMarshaler.ToNative(IntPtr.Add(intPtr, OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelState_Offset), 0, OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelState_PropertyAddress.Address, TargetLevelState);
+			BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, OnSingleSetLevelsStateOperationFinished__DelegateSignature_OperationID_Offset), 0, OnSingleSetLevelsStateOperationFinished__DelegateSignature_OperationID_PropertyAddress.Address, OperationID);
+			ProcessDelegate(intPtr);
+			NativeReflection.DestroyValue_InContainer(OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelsKeyword_PropertyAddress.Address, intPtr);
+			NativeReflection.DestroyValue_InContainer(OnSingleSetLevelsStateOperationFinished__DelegateSignature_TargetLevelState_PropertyAddress.Address, intPtr);
+		}
+	}
+}

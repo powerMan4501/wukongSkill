@@ -1,0 +1,3782 @@
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnrealEngine.Engine;
+using UnrealEngine.Runtime;
+
+namespace b1;
+
+[UClass(Flags = (ClassFlags)810549408uL, Config = "Engine")]
+[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary", "FuncLibEditor", UnrealModuleType.Game)]
+public class UGSEditorMaterialLibrary : UBlueprintFunctionLibrary
+{
+	private static IntPtr classAddress;
+
+	private static bool ToggleMaterialInstanceLayerState_IsValid;
+
+	private static IntPtr ToggleMaterialInstanceLayerState_FunctionAddress;
+
+	private static int ToggleMaterialInstanceLayerState_ParamsSize;
+
+	private static bool ToggleMaterialInstanceLayerState_MI_IsValid;
+
+	private static FFieldAddress ToggleMaterialInstanceLayerState_MI_PropertyAddress;
+
+	private static int ToggleMaterialInstanceLayerState_MI_Offset;
+
+	private static bool ToggleMaterialInstanceLayerState_LayerIndex_IsValid;
+
+	private static FFieldAddress ToggleMaterialInstanceLayerState_LayerIndex_PropertyAddress;
+
+	private static int ToggleMaterialInstanceLayerState_LayerIndex_Offset;
+
+	private static bool ToggleMaterialInstanceLayerState_ReturnValue_IsValid;
+
+	private static FFieldAddress ToggleMaterialInstanceLayerState_ReturnValue_PropertyAddress;
+
+	private static int ToggleMaterialInstanceLayerState_ReturnValue_Offset;
+
+	private static bool SetVectorParameterValueEditorOnly_IsValid;
+
+	private static IntPtr SetVectorParameterValueEditorOnly_FunctionAddress;
+
+	private static int SetVectorParameterValueEditorOnly_ParamsSize;
+
+	private static bool SetVectorParameterValueEditorOnly_MIC_IsValid;
+
+	private static FFieldAddress SetVectorParameterValueEditorOnly_MIC_PropertyAddress;
+
+	private static int SetVectorParameterValueEditorOnly_MIC_Offset;
+
+	private static bool SetVectorParameterValueEditorOnly_ParameterInfo_IsValid;
+
+	private static FFieldAddress SetVectorParameterValueEditorOnly_ParameterInfo_PropertyAddress;
+
+	private static int SetVectorParameterValueEditorOnly_ParameterInfo_Offset;
+
+	private static bool SetVectorParameterValueEditorOnly_Value_IsValid;
+
+	private static FFieldAddress SetVectorParameterValueEditorOnly_Value_PropertyAddress;
+
+	private static int SetVectorParameterValueEditorOnly_Value_Offset;
+
+	private static bool SetTextureParameterValueEditorOnly_IsValid;
+
+	private static IntPtr SetTextureParameterValueEditorOnly_FunctionAddress;
+
+	private static int SetTextureParameterValueEditorOnly_ParamsSize;
+
+	private static bool SetTextureParameterValueEditorOnly_MIC_IsValid;
+
+	private static FFieldAddress SetTextureParameterValueEditorOnly_MIC_PropertyAddress;
+
+	private static int SetTextureParameterValueEditorOnly_MIC_Offset;
+
+	private static bool SetTextureParameterValueEditorOnly_ParameterInfo_IsValid;
+
+	private static FFieldAddress SetTextureParameterValueEditorOnly_ParameterInfo_PropertyAddress;
+
+	private static int SetTextureParameterValueEditorOnly_ParameterInfo_Offset;
+
+	private static bool SetTextureParameterValueEditorOnly_Value_IsValid;
+
+	private static FFieldAddress SetTextureParameterValueEditorOnly_Value_PropertyAddress;
+
+	private static int SetTextureParameterValueEditorOnly_Value_Offset;
+
+	private static bool SetScalarParameterValueEditorOnly_IsValid;
+
+	private static IntPtr SetScalarParameterValueEditorOnly_FunctionAddress;
+
+	private static int SetScalarParameterValueEditorOnly_ParamsSize;
+
+	private static bool SetScalarParameterValueEditorOnly_MIC_IsValid;
+
+	private static FFieldAddress SetScalarParameterValueEditorOnly_MIC_PropertyAddress;
+
+	private static int SetScalarParameterValueEditorOnly_MIC_Offset;
+
+	private static bool SetScalarParameterValueEditorOnly_ParameterInfo_IsValid;
+
+	private static FFieldAddress SetScalarParameterValueEditorOnly_ParameterInfo_PropertyAddress;
+
+	private static int SetScalarParameterValueEditorOnly_ParameterInfo_Offset;
+
+	private static bool SetScalarParameterValueEditorOnly_Value_IsValid;
+
+	private static FFieldAddress SetScalarParameterValueEditorOnly_Value_PropertyAddress;
+
+	private static int SetScalarParameterValueEditorOnly_Value_Offset;
+
+	private static bool SetRuntimeVirtualTextureParameterValueEditorOnly_IsValid;
+
+	private static IntPtr SetRuntimeVirtualTextureParameterValueEditorOnly_FunctionAddress;
+
+	private static int SetRuntimeVirtualTextureParameterValueEditorOnly_ParamsSize;
+
+	private static bool SetRuntimeVirtualTextureParameterValueEditorOnly_MIC_IsValid;
+
+	private static FFieldAddress SetRuntimeVirtualTextureParameterValueEditorOnly_MIC_PropertyAddress;
+
+	private static int SetRuntimeVirtualTextureParameterValueEditorOnly_MIC_Offset;
+
+	private static bool SetRuntimeVirtualTextureParameterValueEditorOnly_ParameterInfo_IsValid;
+
+	private static FFieldAddress SetRuntimeVirtualTextureParameterValueEditorOnly_ParameterInfo_PropertyAddress;
+
+	private static int SetRuntimeVirtualTextureParameterValueEditorOnly_ParameterInfo_Offset;
+
+	private static bool SetRuntimeVirtualTextureParameterValueEditorOnly_Value_IsValid;
+
+	private static FFieldAddress SetRuntimeVirtualTextureParameterValueEditorOnly_Value_PropertyAddress;
+
+	private static int SetRuntimeVirtualTextureParameterValueEditorOnly_Value_Offset;
+
+	private static bool SetMFIInMICByLayer_IsValid;
+
+	private static IntPtr SetMFIInMICByLayer_FunctionAddress;
+
+	private static int SetMFIInMICByLayer_ParamsSize;
+
+	private static bool SetMFIInMICByLayer_MI_IsValid;
+
+	private static FFieldAddress SetMFIInMICByLayer_MI_PropertyAddress;
+
+	private static int SetMFIInMICByLayer_MI_Offset;
+
+	private static bool SetMFIInMICByLayer_layerIndex_IsValid;
+
+	private static FFieldAddress SetMFIInMICByLayer_layerIndex_PropertyAddress;
+
+	private static int SetMFIInMICByLayer_layerIndex_Offset;
+
+	private static bool SetMFIInMICByLayer_MFI_IsValid;
+
+	private static FFieldAddress SetMFIInMICByLayer_MFI_PropertyAddress;
+
+	private static int SetMFIInMICByLayer_MFI_Offset;
+
+	private static bool SetMFIInMICByLayer_isBlendFunc_IsValid;
+
+	private static FFieldAddress SetMFIInMICByLayer_isBlendFunc_PropertyAddress;
+
+	private static int SetMFIInMICByLayer_isBlendFunc_Offset;
+
+	private static bool SetMFIInMICByLayer_ReturnValue_IsValid;
+
+	private static FFieldAddress SetMFIInMICByLayer_ReturnValue_PropertyAddress;
+
+	private static int SetMFIInMICByLayer_ReturnValue_Offset;
+
+	private static bool SetMaterialInstanceVectorParameters_IsValid;
+
+	private static IntPtr SetMaterialInstanceVectorParameters_FunctionAddress;
+
+	private static int SetMaterialInstanceVectorParameters_ParamsSize;
+
+	private static bool SetMaterialInstanceVectorParameters_MI_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceVectorParameters_MI_PropertyAddress;
+
+	private static int SetMaterialInstanceVectorParameters_MI_Offset;
+
+	private static bool SetMaterialInstanceVectorParameters_VectorNames_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceVectorParameters_VectorNames_PropertyAddress;
+
+	private static int SetMaterialInstanceVectorParameters_VectorNames_Offset;
+
+	private static bool SetMaterialInstanceVectorParameters_VectorValues_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceVectorParameters_VectorValues_PropertyAddress;
+
+	private static int SetMaterialInstanceVectorParameters_VectorValues_Offset;
+
+	private static bool SetMaterialInstanceVectorParameters_layerIndex_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceVectorParameters_layerIndex_PropertyAddress;
+
+	private static int SetMaterialInstanceVectorParameters_layerIndex_Offset;
+
+	private static bool SetMaterialInstanceVectorParameters_ReturnValue_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceVectorParameters_ReturnValue_PropertyAddress;
+
+	private static int SetMaterialInstanceVectorParameters_ReturnValue_Offset;
+
+	private static bool SetMaterialInstanceTextureParameters_IsValid;
+
+	private static IntPtr SetMaterialInstanceTextureParameters_FunctionAddress;
+
+	private static int SetMaterialInstanceTextureParameters_ParamsSize;
+
+	private static bool SetMaterialInstanceTextureParameters_MI_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceTextureParameters_MI_PropertyAddress;
+
+	private static int SetMaterialInstanceTextureParameters_MI_Offset;
+
+	private static bool SetMaterialInstanceTextureParameters_TextureNames_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceTextureParameters_TextureNames_PropertyAddress;
+
+	private static int SetMaterialInstanceTextureParameters_TextureNames_Offset;
+
+	private static bool SetMaterialInstanceTextureParameters_TextureValues_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceTextureParameters_TextureValues_PropertyAddress;
+
+	private static int SetMaterialInstanceTextureParameters_TextureValues_Offset;
+
+	private static bool SetMaterialInstanceTextureParameters_layerIndex_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceTextureParameters_layerIndex_PropertyAddress;
+
+	private static int SetMaterialInstanceTextureParameters_layerIndex_Offset;
+
+	private static bool SetMaterialInstanceTextureParameters_ReturnValue_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceTextureParameters_ReturnValue_PropertyAddress;
+
+	private static int SetMaterialInstanceTextureParameters_ReturnValue_Offset;
+
+	private static bool SetMaterialInstanceStaticSwitchParameters_IsValid;
+
+	private static IntPtr SetMaterialInstanceStaticSwitchParameters_FunctionAddress;
+
+	private static int SetMaterialInstanceStaticSwitchParameters_ParamsSize;
+
+	private static bool SetMaterialInstanceStaticSwitchParameters_MI_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceStaticSwitchParameters_MI_PropertyAddress;
+
+	private static int SetMaterialInstanceStaticSwitchParameters_MI_Offset;
+
+	private static bool SetMaterialInstanceStaticSwitchParameters_StaticSwitchNames_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceStaticSwitchParameters_StaticSwitchNames_PropertyAddress;
+
+	private static int SetMaterialInstanceStaticSwitchParameters_StaticSwitchNames_Offset;
+
+	private static bool SetMaterialInstanceStaticSwitchParameters_StaticSwitchValues_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceStaticSwitchParameters_StaticSwitchValues_PropertyAddress;
+
+	private static int SetMaterialInstanceStaticSwitchParameters_StaticSwitchValues_Offset;
+
+	private static bool SetMaterialInstanceStaticSwitchParameters_layerIndex_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceStaticSwitchParameters_layerIndex_PropertyAddress;
+
+	private static int SetMaterialInstanceStaticSwitchParameters_layerIndex_Offset;
+
+	private static bool SetMaterialInstanceStaticSwitchParameters_ReturnValue_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceStaticSwitchParameters_ReturnValue_PropertyAddress;
+
+	private static int SetMaterialInstanceStaticSwitchParameters_ReturnValue_Offset;
+
+	private static bool SetMaterialInstanceStaticComponentMaskParameters_IsValid;
+
+	private static IntPtr SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress;
+
+	private static int SetMaterialInstanceStaticComponentMaskParameters_ParamsSize;
+
+	private static bool SetMaterialInstanceStaticComponentMaskParameters_MI_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceStaticComponentMaskParameters_MI_PropertyAddress;
+
+	private static int SetMaterialInstanceStaticComponentMaskParameters_MI_Offset;
+
+	private static bool SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskNames_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskNames_PropertyAddress;
+
+	private static int SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskNames_Offset;
+
+	private static bool SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskValues_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskValues_PropertyAddress;
+
+	private static int SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskValues_Offset;
+
+	private static bool SetMaterialInstanceStaticComponentMaskParameters_layerIndex_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceStaticComponentMaskParameters_layerIndex_PropertyAddress;
+
+	private static int SetMaterialInstanceStaticComponentMaskParameters_layerIndex_Offset;
+
+	private static bool SetMaterialInstanceStaticComponentMaskParameters_ReturnValue_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceStaticComponentMaskParameters_ReturnValue_PropertyAddress;
+
+	private static int SetMaterialInstanceStaticComponentMaskParameters_ReturnValue_Offset;
+
+	private static bool SetMaterialInstanceScalarParameters_IsValid;
+
+	private static IntPtr SetMaterialInstanceScalarParameters_FunctionAddress;
+
+	private static int SetMaterialInstanceScalarParameters_ParamsSize;
+
+	private static bool SetMaterialInstanceScalarParameters_MI_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceScalarParameters_MI_PropertyAddress;
+
+	private static int SetMaterialInstanceScalarParameters_MI_Offset;
+
+	private static bool SetMaterialInstanceScalarParameters_ScalarNames_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceScalarParameters_ScalarNames_PropertyAddress;
+
+	private static int SetMaterialInstanceScalarParameters_ScalarNames_Offset;
+
+	private static bool SetMaterialInstanceScalarParameters_ScalarValues_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceScalarParameters_ScalarValues_PropertyAddress;
+
+	private static int SetMaterialInstanceScalarParameters_ScalarValues_Offset;
+
+	private static bool SetMaterialInstanceScalarParameters_layerIndex_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceScalarParameters_layerIndex_PropertyAddress;
+
+	private static int SetMaterialInstanceScalarParameters_layerIndex_Offset;
+
+	private static bool SetMaterialInstanceScalarParameters_ReturnValue_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceScalarParameters_ReturnValue_PropertyAddress;
+
+	private static int SetMaterialInstanceScalarParameters_ReturnValue_Offset;
+
+	private static bool SetMaterialInstanceMaterialLayers_IsValid;
+
+	private static IntPtr SetMaterialInstanceMaterialLayers_FunctionAddress;
+
+	private static int SetMaterialInstanceMaterialLayers_ParamsSize;
+
+	private static bool SetMaterialInstanceMaterialLayers_MI_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceMaterialLayers_MI_PropertyAddress;
+
+	private static int SetMaterialInstanceMaterialLayers_MI_Offset;
+
+	private static bool SetMaterialInstanceMaterialLayers_layers_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceMaterialLayers_layers_PropertyAddress;
+
+	private static int SetMaterialInstanceMaterialLayers_layers_Offset;
+
+	private static bool SetMaterialInstanceMaterialLayers_blends_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceMaterialLayers_blends_PropertyAddress;
+
+	private static int SetMaterialInstanceMaterialLayers_blends_Offset;
+
+	private static bool SetMaterialInstanceMaterialLayers_ReturnValue_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceMaterialLayers_ReturnValue_PropertyAddress;
+
+	private static int SetMaterialInstanceMaterialLayers_ReturnValue_Offset;
+
+	private static bool SetMaterialInstanceLayerState_IsValid;
+
+	private static IntPtr SetMaterialInstanceLayerState_FunctionAddress;
+
+	private static int SetMaterialInstanceLayerState_ParamsSize;
+
+	private static bool SetMaterialInstanceLayerState_MI_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceLayerState_MI_PropertyAddress;
+
+	private static int SetMaterialInstanceLayerState_MI_Offset;
+
+	private static bool SetMaterialInstanceLayerState_LayerIndex_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceLayerState_LayerIndex_PropertyAddress;
+
+	private static int SetMaterialInstanceLayerState_LayerIndex_Offset;
+
+	private static bool SetMaterialInstanceLayerState_enable_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceLayerState_enable_PropertyAddress;
+
+	private static int SetMaterialInstanceLayerState_enable_Offset;
+
+	private static bool SetMaterialInstanceLayerState_ReturnValue_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceLayerState_ReturnValue_PropertyAddress;
+
+	private static int SetMaterialInstanceLayerState_ReturnValue_Offset;
+
+	private static bool SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_IsValid;
+
+	private static IntPtr SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress;
+
+	private static int SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_ParamsSize;
+
+	private static bool SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destMI_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destMI_PropertyAddress;
+
+	private static int SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destMI_Offset;
+
+	private static bool SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destLayerIndex_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destLayerIndex_PropertyAddress;
+
+	private static int SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destLayerIndex_Offset;
+
+	private static bool SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcMI_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcMI_PropertyAddress;
+
+	private static int SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcMI_Offset;
+
+	private static bool SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcLayerIndex_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcLayerIndex_PropertyAddress;
+
+	private static int SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcLayerIndex_Offset;
+
+	private static bool SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_ReturnValue_IsValid;
+
+	private static FFieldAddress SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_ReturnValue_PropertyAddress;
+
+	private static int SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_ReturnValue_Offset;
+
+	private static bool SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_IsValid;
+
+	private static IntPtr SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress;
+
+	private static int SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_ParamsSize;
+
+	private static bool SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Target_IsValid;
+
+	private static FFieldAddress SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Target_PropertyAddress;
+
+	private static int SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Target_Offset;
+
+	private static bool SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Parent_IsValid;
+
+	private static FFieldAddress SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Parent_PropertyAddress;
+
+	private static int SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Parent_Offset;
+
+	private static bool SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_MICSource_IsValid;
+
+	private static FFieldAddress SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_MICSource_PropertyAddress;
+
+	private static int SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_MICSource_Offset;
+
+	private static bool SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_ReturnValue_IsValid;
+
+	private static FFieldAddress SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_ReturnValue_PropertyAddress;
+
+	private static int SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_ReturnValue_Offset;
+
+	private static bool SetMaterialFunctionInstanceParent_IsValid;
+
+	private static IntPtr SetMaterialFunctionInstanceParent_FunctionAddress;
+
+	private static int SetMaterialFunctionInstanceParent_ParamsSize;
+
+	private static bool SetMaterialFunctionInstanceParent_Instance_IsValid;
+
+	private static FFieldAddress SetMaterialFunctionInstanceParent_Instance_PropertyAddress;
+
+	private static int SetMaterialFunctionInstanceParent_Instance_Offset;
+
+	private static bool SetMaterialFunctionInstanceParent_Parent_IsValid;
+
+	private static FFieldAddress SetMaterialFunctionInstanceParent_Parent_PropertyAddress;
+
+	private static int SetMaterialFunctionInstanceParent_Parent_Offset;
+
+	private static bool SetMaterialFunctionInstanceParent_ReturnValue_IsValid;
+
+	private static FFieldAddress SetMaterialFunctionInstanceParent_ReturnValue_PropertyAddress;
+
+	private static int SetMaterialFunctionInstanceParent_ReturnValue_Offset;
+
+	private static bool SetFontParameterValueEditorOnly_IsValid;
+
+	private static IntPtr SetFontParameterValueEditorOnly_FunctionAddress;
+
+	private static int SetFontParameterValueEditorOnly_ParamsSize;
+
+	private static bool SetFontParameterValueEditorOnly_MIC_IsValid;
+
+	private static FFieldAddress SetFontParameterValueEditorOnly_MIC_PropertyAddress;
+
+	private static int SetFontParameterValueEditorOnly_MIC_Offset;
+
+	private static bool SetFontParameterValueEditorOnly_ParameterInfo_IsValid;
+
+	private static FFieldAddress SetFontParameterValueEditorOnly_ParameterInfo_PropertyAddress;
+
+	private static int SetFontParameterValueEditorOnly_ParameterInfo_Offset;
+
+	private static bool SetFontParameterValueEditorOnly_FontValue_IsValid;
+
+	private static FFieldAddress SetFontParameterValueEditorOnly_FontValue_PropertyAddress;
+
+	private static int SetFontParameterValueEditorOnly_FontValue_Offset;
+
+	private static bool SetFontParameterValueEditorOnly_FontPage_IsValid;
+
+	private static FFieldAddress SetFontParameterValueEditorOnly_FontPage_PropertyAddress;
+
+	private static int SetFontParameterValueEditorOnly_FontPage_Offset;
+
+	private static bool ReplaceMaterialInstanceParentByIndexEqual_IsValid;
+
+	private static IntPtr ReplaceMaterialInstanceParentByIndexEqual_FunctionAddress;
+
+	private static int ReplaceMaterialInstanceParentByIndexEqual_ParamsSize;
+
+	private static bool ReplaceMaterialInstanceParentByIndexEqual_MI_IsValid;
+
+	private static FFieldAddress ReplaceMaterialInstanceParentByIndexEqual_MI_PropertyAddress;
+
+	private static int ReplaceMaterialInstanceParentByIndexEqual_MI_Offset;
+
+	private static bool ReplaceMaterialInstanceParentByIndexEqual_SearchParents_IsValid;
+
+	private static FFieldAddress ReplaceMaterialInstanceParentByIndexEqual_SearchParents_PropertyAddress;
+
+	private static int ReplaceMaterialInstanceParentByIndexEqual_SearchParents_Offset;
+
+	private static bool ReplaceMaterialInstanceParentByIndexEqual_ReplaceParents_IsValid;
+
+	private static FFieldAddress ReplaceMaterialInstanceParentByIndexEqual_ReplaceParents_PropertyAddress;
+
+	private static int ReplaceMaterialInstanceParentByIndexEqual_ReplaceParents_Offset;
+
+	private static bool RemoveMaterialInstanceLayer_IsValid;
+
+	private static IntPtr RemoveMaterialInstanceLayer_FunctionAddress;
+
+	private static int RemoveMaterialInstanceLayer_ParamsSize;
+
+	private static bool RemoveMaterialInstanceLayer_MI_IsValid;
+
+	private static FFieldAddress RemoveMaterialInstanceLayer_MI_PropertyAddress;
+
+	private static int RemoveMaterialInstanceLayer_MI_Offset;
+
+	private static bool RemoveMaterialInstanceLayer_LayerIndex_IsValid;
+
+	private static FFieldAddress RemoveMaterialInstanceLayer_LayerIndex_PropertyAddress;
+
+	private static int RemoveMaterialInstanceLayer_LayerIndex_Offset;
+
+	private static bool RemoveMaterialInstanceLayer_ReturnValue_IsValid;
+
+	private static FFieldAddress RemoveMaterialInstanceLayer_ReturnValue_PropertyAddress;
+
+	private static int RemoveMaterialInstanceLayer_ReturnValue_Offset;
+
+	private static bool RefreshMaterialInstanceStaticSwitch_IsValid;
+
+	private static IntPtr RefreshMaterialInstanceStaticSwitch_FunctionAddress;
+
+	private static int RefreshMaterialInstanceStaticSwitch_ParamsSize;
+
+	private static bool RefreshMaterialInstanceStaticSwitch_MI_IsValid;
+
+	private static FFieldAddress RefreshMaterialInstanceStaticSwitch_MI_PropertyAddress;
+
+	private static int RefreshMaterialInstanceStaticSwitch_MI_Offset;
+
+	private static bool RefreshMaterialInstance_IsValid;
+
+	private static IntPtr RefreshMaterialInstance_FunctionAddress;
+
+	private static int RefreshMaterialInstance_ParamsSize;
+
+	private static bool RefreshMaterialInstance_MI_IsValid;
+
+	private static FFieldAddress RefreshMaterialInstance_MI_PropertyAddress;
+
+	private static int RefreshMaterialInstance_MI_Offset;
+
+	private static bool RebuildMaterialInstances_IsValid;
+
+	private static IntPtr RebuildMaterialInstances_FunctionAddress;
+
+	private static int RebuildMaterialInstances_ParamsSize;
+
+	private static bool RebuildMaterialInstances_AssetPaths_IsValid;
+
+	private static FFieldAddress RebuildMaterialInstances_AssetPaths_PropertyAddress;
+
+	private static int RebuildMaterialInstances_AssetPaths_Offset;
+
+	private static bool RebuildMaterialInstances_ReturnValue_IsValid;
+
+	private static FFieldAddress RebuildMaterialInstances_ReturnValue_PropertyAddress;
+
+	private static int RebuildMaterialInstances_ReturnValue_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerVectorParameterValues_IsValid;
+
+	private static IntPtr OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerVectorParameterValues_ParamsSize;
+
+	private static bool OverrideMaterialInstanceMaterialLayerVectorParameterValues_MFI_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerVectorParameterValues_MFI_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerVectorParameterValues_MFI_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorNames_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorNames_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorNames_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorValues_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorValues_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorValues_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerVectorParameterValues_ReturnValue_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerVectorParameterValues_ReturnValue_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerVectorParameterValues_ReturnValue_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerTextureParameterValues_IsValid;
+
+	private static IntPtr OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerTextureParameterValues_ParamsSize;
+
+	private static bool OverrideMaterialInstanceMaterialLayerTextureParameterValues_MFI_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerTextureParameterValues_MFI_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerTextureParameterValues_MFI_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureNames_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureNames_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureNames_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureValues_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureValues_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureValues_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerTextureParameterValues_ReturnValue_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerTextureParameterValues_ReturnValue_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerTextureParameterValues_ReturnValue_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_IsValid;
+
+	private static IntPtr OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_ParamsSize;
+
+	private static bool OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_MFI_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_MFI_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_MFI_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchNames_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchNames_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchNames_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchValues_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchValues_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchValues_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_ReturnValue_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_ReturnValue_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_ReturnValue_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_IsValid;
+
+	private static IntPtr OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_ParamsSize;
+
+	private static bool OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_MFI_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_MFI_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_MFI_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskNames_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskNames_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskNames_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskValues_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskValues_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskValues_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_ReturnValue_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_ReturnValue_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_ReturnValue_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerScalarParameterValues_IsValid;
+
+	private static IntPtr OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerScalarParameterValues_ParamsSize;
+
+	private static bool OverrideMaterialInstanceMaterialLayerScalarParameterValues_MFI_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerScalarParameterValues_MFI_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerScalarParameterValues_MFI_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarNames_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarNames_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarNames_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarValues_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarValues_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarValues_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerScalarParameterValues_ReturnValue_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerScalarParameterValues_ReturnValue_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerScalarParameterValues_ReturnValue_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerAllParameterValues_IsValid;
+
+	private static IntPtr OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerAllParameterValues_ParamsSize;
+
+	private static bool OverrideMaterialInstanceMaterialLayerAllParameterValues_MFI_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerAllParameterValues_MFI_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerAllParameterValues_MFI_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerAllParameterValues_parent_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerAllParameterValues_parent_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerAllParameterValues_parent_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarNames_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarNames_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarNames_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarValues_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarValues_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarValues_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorNames_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorNames_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorNames_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorValues_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorValues_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorValues_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureNames_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureNames_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureNames_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureValues_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureValues_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureValues_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchNames_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchNames_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchNames_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchValues_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchValues_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchValues_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskNames_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskNames_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskNames_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskValues_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskValues_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskValues_Offset;
+
+	private static bool OverrideMaterialInstanceMaterialLayerAllParameterValues_ReturnValue_IsValid;
+
+	private static FFieldAddress OverrideMaterialInstanceMaterialLayerAllParameterValues_ReturnValue_PropertyAddress;
+
+	private static int OverrideMaterialInstanceMaterialLayerAllParameterValues_ReturnValue_Offset;
+
+	private static bool MaterialIsMask_IsValid;
+
+	private static IntPtr MaterialIsMask_FunctionAddress;
+
+	private static int MaterialIsMask_ParamsSize;
+
+	private static bool MaterialIsMask_MI_IsValid;
+
+	private static FFieldAddress MaterialIsMask_MI_PropertyAddress;
+
+	private static int MaterialIsMask_MI_Offset;
+
+	private static bool MaterialIsMask_ReturnValue_IsValid;
+
+	private static FFieldAddress MaterialIsMask_ReturnValue_PropertyAddress;
+
+	private static int MaterialIsMask_ReturnValue_Offset;
+
+	private static bool HasSpecialNameNodeInEditor_MaterialFunction_IsValid;
+
+	private static IntPtr HasSpecialNameNodeInEditor_MaterialFunction_FunctionAddress;
+
+	private static int HasSpecialNameNodeInEditor_MaterialFunction_ParamsSize;
+
+	private static bool HasSpecialNameNodeInEditor_MaterialFunction_InMaterialFunction_IsValid;
+
+	private static FFieldAddress HasSpecialNameNodeInEditor_MaterialFunction_InMaterialFunction_PropertyAddress;
+
+	private static int HasSpecialNameNodeInEditor_MaterialFunction_InMaterialFunction_Offset;
+
+	private static bool HasSpecialNameNodeInEditor_MaterialFunction_SpecialName_IsValid;
+
+	private static FFieldAddress HasSpecialNameNodeInEditor_MaterialFunction_SpecialName_PropertyAddress;
+
+	private static int HasSpecialNameNodeInEditor_MaterialFunction_SpecialName_Offset;
+
+	private static bool HasSpecialNameNodeInEditor_MaterialFunction_ReturnValue_IsValid;
+
+	private static FFieldAddress HasSpecialNameNodeInEditor_MaterialFunction_ReturnValue_PropertyAddress;
+
+	private static int HasSpecialNameNodeInEditor_MaterialFunction_ReturnValue_Offset;
+
+	private static bool HasSpecialNameNodeInEditor_IsValid;
+
+	private static IntPtr HasSpecialNameNodeInEditor_FunctionAddress;
+
+	private static int HasSpecialNameNodeInEditor_ParamsSize;
+
+	private static bool HasSpecialNameNodeInEditor_InMaterial_IsValid;
+
+	private static FFieldAddress HasSpecialNameNodeInEditor_InMaterial_PropertyAddress;
+
+	private static int HasSpecialNameNodeInEditor_InMaterial_Offset;
+
+	private static bool HasSpecialNameNodeInEditor_SpecialName_IsValid;
+
+	private static FFieldAddress HasSpecialNameNodeInEditor_SpecialName_PropertyAddress;
+
+	private static int HasSpecialNameNodeInEditor_SpecialName_Offset;
+
+	private static bool HasSpecialNameNodeInEditor_ReturnValue_IsValid;
+
+	private static FFieldAddress HasSpecialNameNodeInEditor_ReturnValue_PropertyAddress;
+
+	private static int HasSpecialNameNodeInEditor_ReturnValue_Offset;
+
+	private static bool HasEyeAdaptationInEmissive_IsValid;
+
+	private static IntPtr HasEyeAdaptationInEmissive_FunctionAddress;
+
+	private static int HasEyeAdaptationInEmissive_ParamsSize;
+
+	private static bool HasEyeAdaptationInEmissive_InMaterial_IsValid;
+
+	private static FFieldAddress HasEyeAdaptationInEmissive_InMaterial_PropertyAddress;
+
+	private static int HasEyeAdaptationInEmissive_InMaterial_Offset;
+
+	private static bool HasEyeAdaptationInEmissive_ReturnValue_IsValid;
+
+	private static FFieldAddress HasEyeAdaptationInEmissive_ReturnValue_PropertyAddress;
+
+	private static int HasEyeAdaptationInEmissive_ReturnValue_Offset;
+
+	private static bool GetShaderCompileCount_IsValid;
+
+	private static IntPtr GetShaderCompileCount_FunctionAddress;
+
+	private static int GetShaderCompileCount_ParamsSize;
+
+	private static bool GetShaderCompileCount_ReturnValue_IsValid;
+
+	private static FFieldAddress GetShaderCompileCount_ReturnValue_PropertyAddress;
+
+	private static int GetShaderCompileCount_ReturnValue_Offset;
+
+	private static bool GetOverrideMaterialInstanceStaticSwitch_IsValid;
+
+	private static IntPtr GetOverrideMaterialInstanceStaticSwitch_FunctionAddress;
+
+	private static int GetOverrideMaterialInstanceStaticSwitch_ParamsSize;
+
+	private static bool GetOverrideMaterialInstanceStaticSwitch_MI_IsValid;
+
+	private static FFieldAddress GetOverrideMaterialInstanceStaticSwitch_MI_PropertyAddress;
+
+	private static int GetOverrideMaterialInstanceStaticSwitch_MI_Offset;
+
+	private static bool GetOverrideMaterialInstanceStaticSwitch_ReturnValue_IsValid;
+
+	private static FFieldAddress GetOverrideMaterialInstanceStaticSwitch_ReturnValue_PropertyAddress;
+
+	private static int GetOverrideMaterialInstanceStaticSwitch_ReturnValue_Offset;
+
+	private static bool GetNoOverrideTextureSlots_IsValid;
+
+	private static IntPtr GetNoOverrideTextureSlots_FunctionAddress;
+
+	private static int GetNoOverrideTextureSlots_ParamsSize;
+
+	private static bool GetNoOverrideTextureSlots_child_IsValid;
+
+	private static FFieldAddress GetNoOverrideTextureSlots_child_PropertyAddress;
+
+	private static int GetNoOverrideTextureSlots_child_Offset;
+
+	private static bool GetNoOverrideTextureSlots_parent_IsValid;
+
+	private static FFieldAddress GetNoOverrideTextureSlots_parent_PropertyAddress;
+
+	private static int GetNoOverrideTextureSlots_parent_Offset;
+
+	private static bool GetNoOverrideTextureSlots_ReturnValue_IsValid;
+
+	private static FFieldAddress GetNoOverrideTextureSlots_ReturnValue_PropertyAddress;
+
+	private static int GetNoOverrideTextureSlots_ReturnValue_Offset;
+
+	private static bool GetMaterialInstanceVectorParameter_IsValid;
+
+	private static IntPtr GetMaterialInstanceVectorParameter_FunctionAddress;
+
+	private static int GetMaterialInstanceVectorParameter_ParamsSize;
+
+	private static bool GetMaterialInstanceVectorParameter_MI_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceVectorParameter_MI_PropertyAddress;
+
+	private static int GetMaterialInstanceVectorParameter_MI_Offset;
+
+	private static bool GetMaterialInstanceVectorParameter_VectorName_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceVectorParameter_VectorName_PropertyAddress;
+
+	private static int GetMaterialInstanceVectorParameter_VectorName_Offset;
+
+	private static bool GetMaterialInstanceVectorParameter_layerIndex_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceVectorParameter_layerIndex_PropertyAddress;
+
+	private static int GetMaterialInstanceVectorParameter_layerIndex_Offset;
+
+	private static bool GetMaterialInstanceVectorParameter_ReturnValue_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceVectorParameter_ReturnValue_PropertyAddress;
+
+	private static int GetMaterialInstanceVectorParameter_ReturnValue_Offset;
+
+	private static bool GetMaterialInstanceTextureParameter_IsValid;
+
+	private static IntPtr GetMaterialInstanceTextureParameter_FunctionAddress;
+
+	private static int GetMaterialInstanceTextureParameter_ParamsSize;
+
+	private static bool GetMaterialInstanceTextureParameter_MI_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceTextureParameter_MI_PropertyAddress;
+
+	private static int GetMaterialInstanceTextureParameter_MI_Offset;
+
+	private static bool GetMaterialInstanceTextureParameter_TextureSlotName_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceTextureParameter_TextureSlotName_PropertyAddress;
+
+	private static int GetMaterialInstanceTextureParameter_TextureSlotName_Offset;
+
+	private static bool GetMaterialInstanceTextureParameter_layerIndex_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceTextureParameter_layerIndex_PropertyAddress;
+
+	private static int GetMaterialInstanceTextureParameter_layerIndex_Offset;
+
+	private static bool GetMaterialInstanceTextureParameter_ReturnValue_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceTextureParameter_ReturnValue_PropertyAddress;
+
+	private static int GetMaterialInstanceTextureParameter_ReturnValue_Offset;
+
+	private static bool GetMaterialInstanceStaticSwitchParameter_IsValid;
+
+	private static IntPtr GetMaterialInstanceStaticSwitchParameter_FunctionAddress;
+
+	private static int GetMaterialInstanceStaticSwitchParameter_ParamsSize;
+
+	private static bool GetMaterialInstanceStaticSwitchParameter_MI_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceStaticSwitchParameter_MI_PropertyAddress;
+
+	private static int GetMaterialInstanceStaticSwitchParameter_MI_Offset;
+
+	private static bool GetMaterialInstanceStaticSwitchParameter_StaticSwitchName_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceStaticSwitchParameter_StaticSwitchName_PropertyAddress;
+
+	private static int GetMaterialInstanceStaticSwitchParameter_StaticSwitchName_Offset;
+
+	private static bool GetMaterialInstanceStaticSwitchParameter_layerIndex_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceStaticSwitchParameter_layerIndex_PropertyAddress;
+
+	private static int GetMaterialInstanceStaticSwitchParameter_layerIndex_Offset;
+
+	private static bool GetMaterialInstanceStaticSwitchParameter_ReturnValue_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceStaticSwitchParameter_ReturnValue_PropertyAddress;
+
+	private static int GetMaterialInstanceStaticSwitchParameter_ReturnValue_Offset;
+
+	private static bool GetMaterialInstanceScalarParameter_IsValid;
+
+	private static IntPtr GetMaterialInstanceScalarParameter_FunctionAddress;
+
+	private static int GetMaterialInstanceScalarParameter_ParamsSize;
+
+	private static bool GetMaterialInstanceScalarParameter_MI_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceScalarParameter_MI_PropertyAddress;
+
+	private static int GetMaterialInstanceScalarParameter_MI_Offset;
+
+	private static bool GetMaterialInstanceScalarParameter_ScalarName_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceScalarParameter_ScalarName_PropertyAddress;
+
+	private static int GetMaterialInstanceScalarParameter_ScalarName_Offset;
+
+	private static bool GetMaterialInstanceScalarParameter_layerIndex_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceScalarParameter_layerIndex_PropertyAddress;
+
+	private static int GetMaterialInstanceScalarParameter_layerIndex_Offset;
+
+	private static bool GetMaterialInstanceScalarParameter_ReturnValue_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceScalarParameter_ReturnValue_PropertyAddress;
+
+	private static int GetMaterialInstanceScalarParameter_ReturnValue_Offset;
+
+	private static bool GetMaterialInstanceLayerState_IsValid;
+
+	private static IntPtr GetMaterialInstanceLayerState_FunctionAddress;
+
+	private static int GetMaterialInstanceLayerState_ParamsSize;
+
+	private static bool GetMaterialInstanceLayerState_MI_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceLayerState_MI_PropertyAddress;
+
+	private static int GetMaterialInstanceLayerState_MI_Offset;
+
+	private static bool GetMaterialInstanceLayerState_LayerIndex_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceLayerState_LayerIndex_PropertyAddress;
+
+	private static int GetMaterialInstanceLayerState_LayerIndex_Offset;
+
+	private static bool GetMaterialInstanceLayerState_outState_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceLayerState_outState_PropertyAddress;
+
+	private static int GetMaterialInstanceLayerState_outState_Offset;
+
+	private static bool GetMaterialInstanceLayerState_ReturnValue_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceLayerState_ReturnValue_PropertyAddress;
+
+	private static int GetMaterialInstanceLayerState_ReturnValue_Offset;
+
+	private static bool GetMaterialInstanceLayerFunctionByIndex_IsValid;
+
+	private static IntPtr GetMaterialInstanceLayerFunctionByIndex_FunctionAddress;
+
+	private static int GetMaterialInstanceLayerFunctionByIndex_ParamsSize;
+
+	private static bool GetMaterialInstanceLayerFunctionByIndex_MI_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceLayerFunctionByIndex_MI_PropertyAddress;
+
+	private static int GetMaterialInstanceLayerFunctionByIndex_MI_Offset;
+
+	private static bool GetMaterialInstanceLayerFunctionByIndex_index_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceLayerFunctionByIndex_index_PropertyAddress;
+
+	private static int GetMaterialInstanceLayerFunctionByIndex_index_Offset;
+
+	private static bool GetMaterialInstanceLayerFunctionByIndex_isBlend_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceLayerFunctionByIndex_isBlend_PropertyAddress;
+
+	private static int GetMaterialInstanceLayerFunctionByIndex_isBlend_Offset;
+
+	private static bool GetMaterialInstanceLayerFunctionByIndex_ReturnValue_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceLayerFunctionByIndex_ReturnValue_PropertyAddress;
+
+	private static int GetMaterialInstanceLayerFunctionByIndex_ReturnValue_Offset;
+
+	private static bool GetMaterialInstanceLayerCount_IsValid;
+
+	private static IntPtr GetMaterialInstanceLayerCount_FunctionAddress;
+
+	private static int GetMaterialInstanceLayerCount_ParamsSize;
+
+	private static bool GetMaterialInstanceLayerCount_MI_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceLayerCount_MI_PropertyAddress;
+
+	private static int GetMaterialInstanceLayerCount_MI_Offset;
+
+	private static bool GetMaterialInstanceLayerCount_ReturnValue_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceLayerCount_ReturnValue_PropertyAddress;
+
+	private static int GetMaterialInstanceLayerCount_ReturnValue_Offset;
+
+	private static bool GetMaterialInstanceAllVectorParameters_IsValid;
+
+	private static IntPtr GetMaterialInstanceAllVectorParameters_FunctionAddress;
+
+	private static int GetMaterialInstanceAllVectorParameters_ParamsSize;
+
+	private static bool GetMaterialInstanceAllVectorParameters_MI_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllVectorParameters_MI_PropertyAddress;
+
+	private static int GetMaterialInstanceAllVectorParameters_MI_Offset;
+
+	private static bool GetMaterialInstanceAllVectorParameters_layerIndex_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllVectorParameters_layerIndex_PropertyAddress;
+
+	private static int GetMaterialInstanceAllVectorParameters_layerIndex_Offset;
+
+	private static bool GetMaterialInstanceAllVectorParameters_outParameterInfos_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllVectorParameters_outParameterInfos_PropertyAddress;
+
+	private static int GetMaterialInstanceAllVectorParameters_outParameterInfos_Offset;
+
+	private static bool GetMaterialInstanceAllVectorParameters_outParameterIds_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllVectorParameters_outParameterIds_PropertyAddress;
+
+	private static int GetMaterialInstanceAllVectorParameters_outParameterIds_Offset;
+
+	private static bool GetMaterialInstanceAllVectorParameters_outValues_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllVectorParameters_outValues_PropertyAddress;
+
+	private static int GetMaterialInstanceAllVectorParameters_outValues_Offset;
+
+	private static bool GetMaterialInstanceAllVectorParameters_bOverrideOnly_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllVectorParameters_bOverrideOnly_PropertyAddress;
+
+	private static int GetMaterialInstanceAllVectorParameters_bOverrideOnly_Offset;
+
+	private static bool GetMaterialInstanceAllTextureParameters_IsValid;
+
+	private static IntPtr GetMaterialInstanceAllTextureParameters_FunctionAddress;
+
+	private static int GetMaterialInstanceAllTextureParameters_ParamsSize;
+
+	private static bool GetMaterialInstanceAllTextureParameters_MI_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllTextureParameters_MI_PropertyAddress;
+
+	private static int GetMaterialInstanceAllTextureParameters_MI_Offset;
+
+	private static bool GetMaterialInstanceAllTextureParameters_layerIndex_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllTextureParameters_layerIndex_PropertyAddress;
+
+	private static int GetMaterialInstanceAllTextureParameters_layerIndex_Offset;
+
+	private static bool GetMaterialInstanceAllTextureParameters_outParameterInfos_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllTextureParameters_outParameterInfos_PropertyAddress;
+
+	private static int GetMaterialInstanceAllTextureParameters_outParameterInfos_Offset;
+
+	private static bool GetMaterialInstanceAllTextureParameters_outParameterIds_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllTextureParameters_outParameterIds_PropertyAddress;
+
+	private static int GetMaterialInstanceAllTextureParameters_outParameterIds_Offset;
+
+	private static bool GetMaterialInstanceAllTextureParameters_outValues_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllTextureParameters_outValues_PropertyAddress;
+
+	private static int GetMaterialInstanceAllTextureParameters_outValues_Offset;
+
+	private static bool GetMaterialInstanceAllTextureParameters_bOverrideOnly_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllTextureParameters_bOverrideOnly_PropertyAddress;
+
+	private static int GetMaterialInstanceAllTextureParameters_bOverrideOnly_Offset;
+
+	private static bool GetMaterialInstanceAllStaticSwitchParameters_IsValid;
+
+	private static IntPtr GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress;
+
+	private static int GetMaterialInstanceAllStaticSwitchParameters_ParamsSize;
+
+	private static bool GetMaterialInstanceAllStaticSwitchParameters_MI_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllStaticSwitchParameters_MI_PropertyAddress;
+
+	private static int GetMaterialInstanceAllStaticSwitchParameters_MI_Offset;
+
+	private static bool GetMaterialInstanceAllStaticSwitchParameters_layerIndex_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllStaticSwitchParameters_layerIndex_PropertyAddress;
+
+	private static int GetMaterialInstanceAllStaticSwitchParameters_layerIndex_Offset;
+
+	private static bool GetMaterialInstanceAllStaticSwitchParameters_outParameterInfos_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllStaticSwitchParameters_outParameterInfos_PropertyAddress;
+
+	private static int GetMaterialInstanceAllStaticSwitchParameters_outParameterInfos_Offset;
+
+	private static bool GetMaterialInstanceAllStaticSwitchParameters_outParameterIds_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllStaticSwitchParameters_outParameterIds_PropertyAddress;
+
+	private static int GetMaterialInstanceAllStaticSwitchParameters_outParameterIds_Offset;
+
+	private static bool GetMaterialInstanceAllStaticSwitchParameters_outValues_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllStaticSwitchParameters_outValues_PropertyAddress;
+
+	private static int GetMaterialInstanceAllStaticSwitchParameters_outValues_Offset;
+
+	private static bool GetMaterialInstanceAllStaticSwitchParameters_bOverrideOnly_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllStaticSwitchParameters_bOverrideOnly_PropertyAddress;
+
+	private static int GetMaterialInstanceAllStaticSwitchParameters_bOverrideOnly_Offset;
+
+	private static bool GetMaterialInstanceAllStaticComponentMaskParameters_IsValid;
+
+	private static IntPtr GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress;
+
+	private static int GetMaterialInstanceAllStaticComponentMaskParameters_ParamsSize;
+
+	private static bool GetMaterialInstanceAllStaticComponentMaskParameters_MI_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllStaticComponentMaskParameters_MI_PropertyAddress;
+
+	private static int GetMaterialInstanceAllStaticComponentMaskParameters_MI_Offset;
+
+	private static bool GetMaterialInstanceAllStaticComponentMaskParameters_layerIndex_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllStaticComponentMaskParameters_layerIndex_PropertyAddress;
+
+	private static int GetMaterialInstanceAllStaticComponentMaskParameters_layerIndex_Offset;
+
+	private static bool GetMaterialInstanceAllStaticComponentMaskParameters_outParameterInfos_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllStaticComponentMaskParameters_outParameterInfos_PropertyAddress;
+
+	private static int GetMaterialInstanceAllStaticComponentMaskParameters_outParameterInfos_Offset;
+
+	private static bool GetMaterialInstanceAllStaticComponentMaskParameters_outParameterIds_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllStaticComponentMaskParameters_outParameterIds_PropertyAddress;
+
+	private static int GetMaterialInstanceAllStaticComponentMaskParameters_outParameterIds_Offset;
+
+	private static bool GetMaterialInstanceAllStaticComponentMaskParameters_outValues_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllStaticComponentMaskParameters_outValues_PropertyAddress;
+
+	private static int GetMaterialInstanceAllStaticComponentMaskParameters_outValues_Offset;
+
+	private static bool GetMaterialInstanceAllStaticComponentMaskParameters_bOverrideOnly_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllStaticComponentMaskParameters_bOverrideOnly_PropertyAddress;
+
+	private static int GetMaterialInstanceAllStaticComponentMaskParameters_bOverrideOnly_Offset;
+
+	private static bool GetMaterialInstanceAllScalarParameters_IsValid;
+
+	private static IntPtr GetMaterialInstanceAllScalarParameters_FunctionAddress;
+
+	private static int GetMaterialInstanceAllScalarParameters_ParamsSize;
+
+	private static bool GetMaterialInstanceAllScalarParameters_MI_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllScalarParameters_MI_PropertyAddress;
+
+	private static int GetMaterialInstanceAllScalarParameters_MI_Offset;
+
+	private static bool GetMaterialInstanceAllScalarParameters_layerIndex_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllScalarParameters_layerIndex_PropertyAddress;
+
+	private static int GetMaterialInstanceAllScalarParameters_layerIndex_Offset;
+
+	private static bool GetMaterialInstanceAllScalarParameters_outParameterInfos_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllScalarParameters_outParameterInfos_PropertyAddress;
+
+	private static int GetMaterialInstanceAllScalarParameters_outParameterInfos_Offset;
+
+	private static bool GetMaterialInstanceAllScalarParameters_outParameterIds_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllScalarParameters_outParameterIds_PropertyAddress;
+
+	private static int GetMaterialInstanceAllScalarParameters_outParameterIds_Offset;
+
+	private static bool GetMaterialInstanceAllScalarParameters_outValues_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllScalarParameters_outValues_PropertyAddress;
+
+	private static int GetMaterialInstanceAllScalarParameters_outValues_Offset;
+
+	private static bool GetMaterialInstanceAllScalarParameters_bOverrideOnly_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllScalarParameters_bOverrideOnly_PropertyAddress;
+
+	private static int GetMaterialInstanceAllScalarParameters_bOverrideOnly_Offset;
+
+	private static bool GetMaterialInstanceAllRuntimeVirtualTextureParameters_IsValid;
+
+	private static IntPtr GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress;
+
+	private static int GetMaterialInstanceAllRuntimeVirtualTextureParameters_ParamsSize;
+
+	private static bool GetMaterialInstanceAllRuntimeVirtualTextureParameters_MI_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllRuntimeVirtualTextureParameters_MI_PropertyAddress;
+
+	private static int GetMaterialInstanceAllRuntimeVirtualTextureParameters_MI_Offset;
+
+	private static bool GetMaterialInstanceAllRuntimeVirtualTextureParameters_layerIndex_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllRuntimeVirtualTextureParameters_layerIndex_PropertyAddress;
+
+	private static int GetMaterialInstanceAllRuntimeVirtualTextureParameters_layerIndex_Offset;
+
+	private static bool GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterInfos_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterInfos_PropertyAddress;
+
+	private static int GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterInfos_Offset;
+
+	private static bool GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterIds_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterIds_PropertyAddress;
+
+	private static int GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterIds_Offset;
+
+	private static bool GetMaterialInstanceAllRuntimeVirtualTextureParameters_outValues_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllRuntimeVirtualTextureParameters_outValues_PropertyAddress;
+
+	private static int GetMaterialInstanceAllRuntimeVirtualTextureParameters_outValues_Offset;
+
+	private static bool GetMaterialInstanceAllRuntimeVirtualTextureParameters_bOverrideOnly_IsValid;
+
+	private static FFieldAddress GetMaterialInstanceAllRuntimeVirtualTextureParameters_bOverrideOnly_PropertyAddress;
+
+	private static int GetMaterialInstanceAllRuntimeVirtualTextureParameters_bOverrideOnly_Offset;
+
+	private static bool GetMaterialFunctionInstanceStaticSwitchParameterInfo_IsValid;
+
+	private static IntPtr GetMaterialFunctionInstanceStaticSwitchParameterInfo_FunctionAddress;
+
+	private static int GetMaterialFunctionInstanceStaticSwitchParameterInfo_ParamsSize;
+
+	private static bool GetMaterialFunctionInstanceStaticSwitchParameterInfo_MI_IsValid;
+
+	private static FFieldAddress GetMaterialFunctionInstanceStaticSwitchParameterInfo_MI_PropertyAddress;
+
+	private static int GetMaterialFunctionInstanceStaticSwitchParameterInfo_MI_Offset;
+
+	private static bool GetMaterialFunctionInstanceStaticSwitchParameterInfo_ReturnValue_IsValid;
+
+	private static FFieldAddress GetMaterialFunctionInstanceStaticSwitchParameterInfo_ReturnValue_PropertyAddress;
+
+	private static int GetMaterialFunctionInstanceStaticSwitchParameterInfo_ReturnValue_Offset;
+
+	private static bool GetAllReferecedTexturesInMaterialInheritTree_IsValid;
+
+	private static IntPtr GetAllReferecedTexturesInMaterialInheritTree_FunctionAddress;
+
+	private static int GetAllReferecedTexturesInMaterialInheritTree_ParamsSize;
+
+	private static bool GetAllReferecedTexturesInMaterialInheritTree_Material_IsValid;
+
+	private static FFieldAddress GetAllReferecedTexturesInMaterialInheritTree_Material_PropertyAddress;
+
+	private static int GetAllReferecedTexturesInMaterialInheritTree_Material_Offset;
+
+	private static bool GetAllReferecedTexturesInMaterialInheritTree_ReturnValue_IsValid;
+
+	private static FFieldAddress GetAllReferecedTexturesInMaterialInheritTree_ReturnValue_PropertyAddress;
+
+	private static int GetAllReferecedTexturesInMaterialInheritTree_ReturnValue_Offset;
+
+	private static bool GetAllChildMaterialInstances_IsValid;
+
+	private static IntPtr GetAllChildMaterialInstances_FunctionAddress;
+
+	private static int GetAllChildMaterialInstances_ParamsSize;
+
+	private static bool GetAllChildMaterialInstances_Material_IsValid;
+
+	private static FFieldAddress GetAllChildMaterialInstances_Material_PropertyAddress;
+
+	private static int GetAllChildMaterialInstances_Material_Offset;
+
+	private static bool GetAllChildMaterialInstances_ReturnValue_IsValid;
+
+	private static FFieldAddress GetAllChildMaterialInstances_ReturnValue_PropertyAddress;
+
+	private static int GetAllChildMaterialInstances_ReturnValue_Offset;
+
+	private static bool FuzzySetTexture_IsValid;
+
+	private static IntPtr FuzzySetTexture_FunctionAddress;
+
+	private static int FuzzySetTexture_ParamsSize;
+
+	private static bool FuzzySetTexture_MI_IsValid;
+
+	private static FFieldAddress FuzzySetTexture_MI_PropertyAddress;
+
+	private static int FuzzySetTexture_MI_Offset;
+
+	private static bool FuzzySetTexture_SlotName_IsValid;
+
+	private static FFieldAddress FuzzySetTexture_SlotName_PropertyAddress;
+
+	private static int FuzzySetTexture_SlotName_Offset;
+
+	private static bool FuzzySetTexture_DicPath_IsValid;
+
+	private static FFieldAddress FuzzySetTexture_DicPath_PropertyAddress;
+
+	private static int FuzzySetTexture_DicPath_Offset;
+
+	private static bool FuzzySetTexture_keywords_IsValid;
+
+	private static FFieldAddress FuzzySetTexture_keywords_PropertyAddress;
+
+	private static int FuzzySetTexture_keywords_Offset;
+
+	private static bool FuzzySetTexture_ReturnValue_IsValid;
+
+	private static FFieldAddress FuzzySetTexture_ReturnValue_PropertyAddress;
+
+	private static int FuzzySetTexture_ReturnValue_Offset;
+
+	private static bool FixInvalidOverrideTexture_IsValid;
+
+	private static IntPtr FixInvalidOverrideTexture_FunctionAddress;
+
+	private static int FixInvalidOverrideTexture_ParamsSize;
+
+	private static bool FixInvalidOverrideTexture_MI_IsValid;
+
+	private static FFieldAddress FixInvalidOverrideTexture_MI_PropertyAddress;
+
+	private static int FixInvalidOverrideTexture_MI_Offset;
+
+	private static bool CreateMaterialInstanceAsset_IsValid;
+
+	private static IntPtr CreateMaterialInstanceAsset_FunctionAddress;
+
+	private static int CreateMaterialInstanceAsset_ParamsSize;
+
+	private static bool CreateMaterialInstanceAsset_BaseMaterialPath_IsValid;
+
+	private static FFieldAddress CreateMaterialInstanceAsset_BaseMaterialPath_PropertyAddress;
+
+	private static int CreateMaterialInstanceAsset_BaseMaterialPath_Offset;
+
+	private static bool CreateMaterialInstanceAsset_TargetBasePath_IsValid;
+
+	private static FFieldAddress CreateMaterialInstanceAsset_TargetBasePath_PropertyAddress;
+
+	private static int CreateMaterialInstanceAsset_TargetBasePath_Offset;
+
+	private static bool CreateMaterialInstanceAsset_AssetName_IsValid;
+
+	private static FFieldAddress CreateMaterialInstanceAsset_AssetName_PropertyAddress;
+
+	private static int CreateMaterialInstanceAsset_AssetName_Offset;
+
+	private static bool CreateMaterialInstanceAsset_OutAsset_IsValid;
+
+	private static FFieldAddress CreateMaterialInstanceAsset_OutAsset_PropertyAddress;
+
+	private static int CreateMaterialInstanceAsset_OutAsset_Offset;
+
+	private static bool CopyParametersToMIC_IsValid;
+
+	private static IntPtr CopyParametersToMIC_FunctionAddress;
+
+	private static int CopyParametersToMIC_ParamsSize;
+
+	private static bool CopyParametersToMIC_MIC_IsValid;
+
+	private static FFieldAddress CopyParametersToMIC_MIC_PropertyAddress;
+
+	private static int CopyParametersToMIC_MIC_Offset;
+
+	private static bool CopyParametersToMIC_Source_IsValid;
+
+	private static FFieldAddress CopyParametersToMIC_Source_PropertyAddress;
+
+	private static int CopyParametersToMIC_Source_Offset;
+
+	private static bool CopyParametersToMIC_bIncludeStaticParams_IsValid;
+
+	private static FFieldAddress CopyParametersToMIC_bIncludeStaticParams_PropertyAddress;
+
+	private static int CopyParametersToMIC_bIncludeStaticParams_Offset;
+
+	private static bool CopyParametersToMIC_ReturnValue_IsValid;
+
+	private static FFieldAddress CopyParametersToMIC_ReturnValue_PropertyAddress;
+
+	private static int CopyParametersToMIC_ReturnValue_Offset;
+
+	private static bool AppendMaterialInstanceLayer_IsValid;
+
+	private static IntPtr AppendMaterialInstanceLayer_FunctionAddress;
+
+	private static int AppendMaterialInstanceLayer_ParamsSize;
+
+	private static bool AppendMaterialInstanceLayer_MI_IsValid;
+
+	private static FFieldAddress AppendMaterialInstanceLayer_MI_PropertyAddress;
+
+	private static int AppendMaterialInstanceLayer_MI_Offset;
+
+	private static bool AppendMaterialInstanceLayer_LayerMFI_IsValid;
+
+	private static FFieldAddress AppendMaterialInstanceLayer_LayerMFI_PropertyAddress;
+
+	private static int AppendMaterialInstanceLayer_LayerMFI_Offset;
+
+	private static bool AppendMaterialInstanceLayer_BlendMFI_IsValid;
+
+	private static FFieldAddress AppendMaterialInstanceLayer_BlendMFI_PropertyAddress;
+
+	private static int AppendMaterialInstanceLayer_BlendMFI_Offset;
+
+	private static bool AppendMaterialInstanceLayer_ReturnValue_IsValid;
+
+	private static FFieldAddress AppendMaterialInstanceLayer_ReturnValue_PropertyAddress;
+
+	private static int AppendMaterialInstanceLayer_ReturnValue_Offset;
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:ToggleMaterialInstanceLayerState")]
+	public unsafe static bool ToggleMaterialInstanceLayerState(UMaterialInstance MI, int LayerIndex)
+	{
+		if (!ToggleMaterialInstanceLayerState_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:ToggleMaterialInstanceLayerState");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(ToggleMaterialInstanceLayerState_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)ToggleMaterialInstanceLayerState_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, ToggleMaterialInstanceLayerState_MI_Offset), 0, ToggleMaterialInstanceLayerState_MI_PropertyAddress.Address, MI);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, ToggleMaterialInstanceLayerState_LayerIndex_Offset), 0, ToggleMaterialInstanceLayerState_LayerIndex_PropertyAddress.Address, LayerIndex);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, ToggleMaterialInstanceLayerState_FunctionAddress, intPtr, ToggleMaterialInstanceLayerState_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, ToggleMaterialInstanceLayerState_ReturnValue_Offset), 0, ToggleMaterialInstanceLayerState_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 79832065u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetVectorParameterValueEditorOnly")]
+	public unsafe static void SetVectorParameterValueEditorOnly(UMaterialInstanceConstant MIC, FMaterialParameterInfo ParameterInfo, FLinearColor Value)
+	{
+		if (!SetVectorParameterValueEditorOnly_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetVectorParameterValueEditorOnly");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetVectorParameterValueEditorOnly_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetVectorParameterValueEditorOnly_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstanceConstant>.ToNative(IntPtr.Add(intPtr, SetVectorParameterValueEditorOnly_MIC_Offset), 0, SetVectorParameterValueEditorOnly_MIC_PropertyAddress.Address, MIC);
+		NativeReflection.InitializeValue_InContainer(SetVectorParameterValueEditorOnly_ParameterInfo_PropertyAddress.Address, intPtr);
+		FMaterialParameterInfo.ToNative(IntPtr.Add(intPtr, SetVectorParameterValueEditorOnly_ParameterInfo_Offset), 0, SetVectorParameterValueEditorOnly_ParameterInfo_PropertyAddress.Address, ParameterInfo);
+		BlittableTypeMarshaler<FLinearColor>.ToNative(IntPtr.Add(intPtr, SetVectorParameterValueEditorOnly_Value_Offset), 0, SetVectorParameterValueEditorOnly_Value_PropertyAddress.Address, Value);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetVectorParameterValueEditorOnly_FunctionAddress, intPtr, SetVectorParameterValueEditorOnly_ParamsSize);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetTextureParameterValueEditorOnly")]
+	public unsafe static void SetTextureParameterValueEditorOnly(UMaterialInstanceConstant MIC, FMaterialParameterInfo ParameterInfo, UTexture Value)
+	{
+		if (!SetTextureParameterValueEditorOnly_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetTextureParameterValueEditorOnly");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetTextureParameterValueEditorOnly_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetTextureParameterValueEditorOnly_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstanceConstant>.ToNative(IntPtr.Add(intPtr, SetTextureParameterValueEditorOnly_MIC_Offset), 0, SetTextureParameterValueEditorOnly_MIC_PropertyAddress.Address, MIC);
+		NativeReflection.InitializeValue_InContainer(SetTextureParameterValueEditorOnly_ParameterInfo_PropertyAddress.Address, intPtr);
+		FMaterialParameterInfo.ToNative(IntPtr.Add(intPtr, SetTextureParameterValueEditorOnly_ParameterInfo_Offset), 0, SetTextureParameterValueEditorOnly_ParameterInfo_PropertyAddress.Address, ParameterInfo);
+		UObjectMarshaler<UTexture>.ToNative(IntPtr.Add(intPtr, SetTextureParameterValueEditorOnly_Value_Offset), 0, SetTextureParameterValueEditorOnly_Value_PropertyAddress.Address, Value);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetTextureParameterValueEditorOnly_FunctionAddress, intPtr, SetTextureParameterValueEditorOnly_ParamsSize);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetScalarParameterValueEditorOnly")]
+	public unsafe static void SetScalarParameterValueEditorOnly(UMaterialInstanceConstant MIC, FMaterialParameterInfo ParameterInfo, float Value)
+	{
+		if (!SetScalarParameterValueEditorOnly_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetScalarParameterValueEditorOnly");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetScalarParameterValueEditorOnly_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetScalarParameterValueEditorOnly_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstanceConstant>.ToNative(IntPtr.Add(intPtr, SetScalarParameterValueEditorOnly_MIC_Offset), 0, SetScalarParameterValueEditorOnly_MIC_PropertyAddress.Address, MIC);
+		NativeReflection.InitializeValue_InContainer(SetScalarParameterValueEditorOnly_ParameterInfo_PropertyAddress.Address, intPtr);
+		FMaterialParameterInfo.ToNative(IntPtr.Add(intPtr, SetScalarParameterValueEditorOnly_ParameterInfo_Offset), 0, SetScalarParameterValueEditorOnly_ParameterInfo_PropertyAddress.Address, ParameterInfo);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, SetScalarParameterValueEditorOnly_Value_Offset), 0, SetScalarParameterValueEditorOnly_Value_PropertyAddress.Address, Value);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetScalarParameterValueEditorOnly_FunctionAddress, intPtr, SetScalarParameterValueEditorOnly_ParamsSize);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetRuntimeVirtualTextureParameterValueEditorOnly")]
+	public unsafe static void SetRuntimeVirtualTextureParameterValueEditorOnly(UMaterialInstanceConstant MIC, FMaterialParameterInfo ParameterInfo, URuntimeVirtualTexture Value)
+	{
+		if (!SetRuntimeVirtualTextureParameterValueEditorOnly_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetRuntimeVirtualTextureParameterValueEditorOnly");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetRuntimeVirtualTextureParameterValueEditorOnly_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetRuntimeVirtualTextureParameterValueEditorOnly_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstanceConstant>.ToNative(IntPtr.Add(intPtr, SetRuntimeVirtualTextureParameterValueEditorOnly_MIC_Offset), 0, SetRuntimeVirtualTextureParameterValueEditorOnly_MIC_PropertyAddress.Address, MIC);
+		NativeReflection.InitializeValue_InContainer(SetRuntimeVirtualTextureParameterValueEditorOnly_ParameterInfo_PropertyAddress.Address, intPtr);
+		FMaterialParameterInfo.ToNative(IntPtr.Add(intPtr, SetRuntimeVirtualTextureParameterValueEditorOnly_ParameterInfo_Offset), 0, SetRuntimeVirtualTextureParameterValueEditorOnly_ParameterInfo_PropertyAddress.Address, ParameterInfo);
+		UObjectMarshaler<URuntimeVirtualTexture>.ToNative(IntPtr.Add(intPtr, SetRuntimeVirtualTextureParameterValueEditorOnly_Value_Offset), 0, SetRuntimeVirtualTextureParameterValueEditorOnly_Value_PropertyAddress.Address, Value);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetRuntimeVirtualTextureParameterValueEditorOnly_FunctionAddress, intPtr, SetRuntimeVirtualTextureParameterValueEditorOnly_ParamsSize);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMFIInMICByLayer")]
+	public unsafe static bool SetMFIInMICByLayer(UMaterialInstance MI, int layerIndex, UMaterialFunctionInterface MFI, bool isBlendFunc)
+	{
+		if (!SetMFIInMICByLayer_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMFIInMICByLayer");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetMFIInMICByLayer_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetMFIInMICByLayer_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, SetMFIInMICByLayer_MI_Offset), 0, SetMFIInMICByLayer_MI_PropertyAddress.Address, MI);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, SetMFIInMICByLayer_layerIndex_Offset), 0, SetMFIInMICByLayer_layerIndex_PropertyAddress.Address, layerIndex);
+		UObjectMarshaler<UMaterialFunctionInterface>.ToNative(IntPtr.Add(intPtr, SetMFIInMICByLayer_MFI_Offset), 0, SetMFIInMICByLayer_MFI_PropertyAddress.Address, MFI);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetMFIInMICByLayer_isBlendFunc_Offset), 0, SetMFIInMICByLayer_isBlendFunc_PropertyAddress.Address, isBlendFunc);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetMFIInMICByLayer_FunctionAddress, intPtr, SetMFIInMICByLayer_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetMFIInMICByLayer_ReturnValue_Offset), 0, SetMFIInMICByLayer_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceVectorParameters")]
+	public unsafe static bool SetMaterialInstanceVectorParameters(UMaterialInstance MI, List<string> VectorNames, List<FLinearColor> VectorValues, int layerIndex = -1)
+	{
+		if (!SetMaterialInstanceVectorParameters_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceVectorParameters");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetMaterialInstanceVectorParameters_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetMaterialInstanceVectorParameters_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceVectorParameters_MI_Offset), 0, SetMaterialInstanceVectorParameters_MI_PropertyAddress.Address, MI);
+		new TArrayCopyMarshaler<string>(1, SetMaterialInstanceVectorParameters_VectorNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, SetMaterialInstanceVectorParameters_VectorNames_Offset), VectorNames);
+		new TArrayCopyMarshaler<FLinearColor>(1, SetMaterialInstanceVectorParameters_VectorValues_PropertyAddress, CachedMarshalingDelegates<FLinearColor, BlittableTypeMarshaler<FLinearColor>>.FromNative, CachedMarshalingDelegates<FLinearColor, BlittableTypeMarshaler<FLinearColor>>.ToNative).ToNative(IntPtr.Add(intPtr, SetMaterialInstanceVectorParameters_VectorValues_Offset), VectorValues);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceVectorParameters_layerIndex_Offset), 0, SetMaterialInstanceVectorParameters_layerIndex_PropertyAddress.Address, layerIndex);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetMaterialInstanceVectorParameters_FunctionAddress, intPtr, SetMaterialInstanceVectorParameters_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetMaterialInstanceVectorParameters_VectorNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetMaterialInstanceVectorParameters_VectorValues_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetMaterialInstanceVectorParameters_ReturnValue_Offset), 0, SetMaterialInstanceVectorParameters_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceTextureParameters")]
+	public unsafe static bool SetMaterialInstanceTextureParameters(UMaterialInstance MI, List<string> TextureNames, List<UTexture> TextureValues, int layerIndex = -1)
+	{
+		if (!SetMaterialInstanceTextureParameters_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceTextureParameters");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetMaterialInstanceTextureParameters_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetMaterialInstanceTextureParameters_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceTextureParameters_MI_Offset), 0, SetMaterialInstanceTextureParameters_MI_PropertyAddress.Address, MI);
+		new TArrayCopyMarshaler<string>(1, SetMaterialInstanceTextureParameters_TextureNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, SetMaterialInstanceTextureParameters_TextureNames_Offset), TextureNames);
+		new TArrayCopyMarshaler<UTexture>(1, SetMaterialInstanceTextureParameters_TextureValues_PropertyAddress, CachedMarshalingDelegates<UTexture, UObjectMarshaler<UTexture>>.FromNative, CachedMarshalingDelegates<UTexture, UObjectMarshaler<UTexture>>.ToNative).ToNative(IntPtr.Add(intPtr, SetMaterialInstanceTextureParameters_TextureValues_Offset), TextureValues);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceTextureParameters_layerIndex_Offset), 0, SetMaterialInstanceTextureParameters_layerIndex_PropertyAddress.Address, layerIndex);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetMaterialInstanceTextureParameters_FunctionAddress, intPtr, SetMaterialInstanceTextureParameters_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetMaterialInstanceTextureParameters_TextureNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetMaterialInstanceTextureParameters_TextureValues_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetMaterialInstanceTextureParameters_ReturnValue_Offset), 0, SetMaterialInstanceTextureParameters_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceStaticSwitchParameters")]
+	public unsafe static bool SetMaterialInstanceStaticSwitchParameters(UMaterialInstance MI, List<string> StaticSwitchNames, List<bool> StaticSwitchValues, int layerIndex = -1)
+	{
+		if (!SetMaterialInstanceStaticSwitchParameters_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceStaticSwitchParameters");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetMaterialInstanceStaticSwitchParameters_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetMaterialInstanceStaticSwitchParameters_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceStaticSwitchParameters_MI_Offset), 0, SetMaterialInstanceStaticSwitchParameters_MI_PropertyAddress.Address, MI);
+		new TArrayCopyMarshaler<string>(1, SetMaterialInstanceStaticSwitchParameters_StaticSwitchNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, SetMaterialInstanceStaticSwitchParameters_StaticSwitchNames_Offset), StaticSwitchNames);
+		new TArrayCopyMarshaler<bool>(1, SetMaterialInstanceStaticSwitchParameters_StaticSwitchValues_PropertyAddress, CachedMarshalingDelegates<bool, BoolMarshaler>.FromNative, CachedMarshalingDelegates<bool, BoolMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, SetMaterialInstanceStaticSwitchParameters_StaticSwitchValues_Offset), StaticSwitchValues);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceStaticSwitchParameters_layerIndex_Offset), 0, SetMaterialInstanceStaticSwitchParameters_layerIndex_PropertyAddress.Address, layerIndex);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetMaterialInstanceStaticSwitchParameters_FunctionAddress, intPtr, SetMaterialInstanceStaticSwitchParameters_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetMaterialInstanceStaticSwitchParameters_StaticSwitchNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetMaterialInstanceStaticSwitchParameters_StaticSwitchValues_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetMaterialInstanceStaticSwitchParameters_ReturnValue_Offset), 0, SetMaterialInstanceStaticSwitchParameters_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceStaticComponentMaskParameters")]
+	public unsafe static bool SetMaterialInstanceStaticComponentMaskParameters(UMaterialInstance MI, List<string> StaticComponentMaskNames, List<bool> StaticComponentMaskValues, int layerIndex = -1)
+	{
+		if (!SetMaterialInstanceStaticComponentMaskParameters_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceStaticComponentMaskParameters");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetMaterialInstanceStaticComponentMaskParameters_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetMaterialInstanceStaticComponentMaskParameters_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceStaticComponentMaskParameters_MI_Offset), 0, SetMaterialInstanceStaticComponentMaskParameters_MI_PropertyAddress.Address, MI);
+		new TArrayCopyMarshaler<string>(1, SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskNames_Offset), StaticComponentMaskNames);
+		new TArrayCopyMarshaler<bool>(1, SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskValues_PropertyAddress, CachedMarshalingDelegates<bool, BoolMarshaler>.FromNative, CachedMarshalingDelegates<bool, BoolMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskValues_Offset), StaticComponentMaskValues);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceStaticComponentMaskParameters_layerIndex_Offset), 0, SetMaterialInstanceStaticComponentMaskParameters_layerIndex_PropertyAddress.Address, layerIndex);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, intPtr, SetMaterialInstanceStaticComponentMaskParameters_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskValues_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetMaterialInstanceStaticComponentMaskParameters_ReturnValue_Offset), 0, SetMaterialInstanceStaticComponentMaskParameters_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceScalarParameters")]
+	public unsafe static bool SetMaterialInstanceScalarParameters(UMaterialInstance MI, List<string> ScalarNames, List<float> ScalarValues, int layerIndex = -1)
+	{
+		if (!SetMaterialInstanceScalarParameters_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceScalarParameters");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetMaterialInstanceScalarParameters_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetMaterialInstanceScalarParameters_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceScalarParameters_MI_Offset), 0, SetMaterialInstanceScalarParameters_MI_PropertyAddress.Address, MI);
+		new TArrayCopyMarshaler<string>(1, SetMaterialInstanceScalarParameters_ScalarNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, SetMaterialInstanceScalarParameters_ScalarNames_Offset), ScalarNames);
+		new TArrayCopyMarshaler<float>(1, SetMaterialInstanceScalarParameters_ScalarValues_PropertyAddress, CachedMarshalingDelegates<float, BlittableTypeMarshaler<float>>.FromNative, CachedMarshalingDelegates<float, BlittableTypeMarshaler<float>>.ToNative).ToNative(IntPtr.Add(intPtr, SetMaterialInstanceScalarParameters_ScalarValues_Offset), ScalarValues);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceScalarParameters_layerIndex_Offset), 0, SetMaterialInstanceScalarParameters_layerIndex_PropertyAddress.Address, layerIndex);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetMaterialInstanceScalarParameters_FunctionAddress, intPtr, SetMaterialInstanceScalarParameters_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetMaterialInstanceScalarParameters_ScalarNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetMaterialInstanceScalarParameters_ScalarValues_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetMaterialInstanceScalarParameters_ReturnValue_Offset), 0, SetMaterialInstanceScalarParameters_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceMaterialLayers")]
+	public unsafe static bool SetMaterialInstanceMaterialLayers(UMaterialInstance MI, List<UObject> layers, List<UObject> blends)
+	{
+		if (!SetMaterialInstanceMaterialLayers_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceMaterialLayers");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetMaterialInstanceMaterialLayers_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetMaterialInstanceMaterialLayers_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceMaterialLayers_MI_Offset), 0, SetMaterialInstanceMaterialLayers_MI_PropertyAddress.Address, MI);
+		new TArrayCopyMarshaler<UObject>(1, SetMaterialInstanceMaterialLayers_layers_PropertyAddress, CachedMarshalingDelegates<UObject, UObjectMarshaler<UObject>>.FromNative, CachedMarshalingDelegates<UObject, UObjectMarshaler<UObject>>.ToNative).ToNative(IntPtr.Add(intPtr, SetMaterialInstanceMaterialLayers_layers_Offset), layers);
+		new TArrayCopyMarshaler<UObject>(1, SetMaterialInstanceMaterialLayers_blends_PropertyAddress, CachedMarshalingDelegates<UObject, UObjectMarshaler<UObject>>.FromNative, CachedMarshalingDelegates<UObject, UObjectMarshaler<UObject>>.ToNative).ToNative(IntPtr.Add(intPtr, SetMaterialInstanceMaterialLayers_blends_Offset), blends);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetMaterialInstanceMaterialLayers_FunctionAddress, intPtr, SetMaterialInstanceMaterialLayers_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetMaterialInstanceMaterialLayers_layers_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetMaterialInstanceMaterialLayers_blends_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetMaterialInstanceMaterialLayers_ReturnValue_Offset), 0, SetMaterialInstanceMaterialLayers_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceLayerState")]
+	public unsafe static bool SetMaterialInstanceLayerState(UMaterialInstance MI, int LayerIndex, bool enable)
+	{
+		if (!SetMaterialInstanceLayerState_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceLayerState");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetMaterialInstanceLayerState_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetMaterialInstanceLayerState_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceLayerState_MI_Offset), 0, SetMaterialInstanceLayerState_MI_PropertyAddress.Address, MI);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceLayerState_LayerIndex_Offset), 0, SetMaterialInstanceLayerState_LayerIndex_PropertyAddress.Address, LayerIndex);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceLayerState_enable_Offset), 0, SetMaterialInstanceLayerState_enable_PropertyAddress.Address, enable);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetMaterialInstanceLayerState_FunctionAddress, intPtr, SetMaterialInstanceLayerState_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetMaterialInstanceLayerState_ReturnValue_Offset), 0, SetMaterialInstanceLayerState_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceLayerParametersFromMaterialInstanceLayer")]
+	public unsafe static bool SetMaterialInstanceLayerParametersFromMaterialInstanceLayer(UMaterialInstance destMI, int destLayerIndex, UMaterialInstance srcMI, int srcLayerIndex)
+	{
+		if (!SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceLayerParametersFromMaterialInstanceLayer");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destMI_Offset), 0, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destMI_PropertyAddress.Address, destMI);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destLayerIndex_Offset), 0, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destLayerIndex_PropertyAddress.Address, destLayerIndex);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcMI_Offset), 0, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcMI_PropertyAddress.Address, srcMI);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcLayerIndex_Offset), 0, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcLayerIndex_PropertyAddress.Address, srcLayerIndex);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, intPtr, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_ReturnValue_Offset), 0, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant")]
+	public unsafe static bool SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant(UObject Target, UObject Parent, UObject MICSource)
+	{
+		if (!SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Target_Offset), 0, SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Target_PropertyAddress.Address, Target);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Parent_Offset), 0, SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Parent_PropertyAddress.Address, Parent);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_MICSource_Offset), 0, SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_MICSource_PropertyAddress.Address, MICSource);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress, intPtr, SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_ReturnValue_Offset), 0, SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 335684609u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialFunctionInstanceParent")]
+	public unsafe static bool SetMaterialFunctionInstanceParent(UObject Instance, UObject Parent)
+	{
+		if (!SetMaterialFunctionInstanceParent_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialFunctionInstanceParent");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetMaterialFunctionInstanceParent_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetMaterialFunctionInstanceParent_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, SetMaterialFunctionInstanceParent_Instance_Offset), 0, SetMaterialFunctionInstanceParent_Instance_PropertyAddress.Address, Instance);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, SetMaterialFunctionInstanceParent_Parent_Offset), 0, SetMaterialFunctionInstanceParent_Parent_PropertyAddress.Address, Parent);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetMaterialFunctionInstanceParent_FunctionAddress, intPtr, SetMaterialFunctionInstanceParent_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetMaterialFunctionInstanceParent_ReturnValue_Offset), 0, SetMaterialFunctionInstanceParent_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetFontParameterValueEditorOnly")]
+	public unsafe static void SetFontParameterValueEditorOnly(UMaterialInstanceConstant MIC, FMaterialParameterInfo ParameterInfo, UFont FontValue, int FontPage)
+	{
+		if (!SetFontParameterValueEditorOnly_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetFontParameterValueEditorOnly");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetFontParameterValueEditorOnly_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetFontParameterValueEditorOnly_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstanceConstant>.ToNative(IntPtr.Add(intPtr, SetFontParameterValueEditorOnly_MIC_Offset), 0, SetFontParameterValueEditorOnly_MIC_PropertyAddress.Address, MIC);
+		NativeReflection.InitializeValue_InContainer(SetFontParameterValueEditorOnly_ParameterInfo_PropertyAddress.Address, intPtr);
+		FMaterialParameterInfo.ToNative(IntPtr.Add(intPtr, SetFontParameterValueEditorOnly_ParameterInfo_Offset), 0, SetFontParameterValueEditorOnly_ParameterInfo_PropertyAddress.Address, ParameterInfo);
+		UObjectMarshaler<UFont>.ToNative(IntPtr.Add(intPtr, SetFontParameterValueEditorOnly_FontValue_Offset), 0, SetFontParameterValueEditorOnly_FontValue_PropertyAddress.Address, FontValue);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, SetFontParameterValueEditorOnly_FontPage_Offset), 0, SetFontParameterValueEditorOnly_FontPage_PropertyAddress.Address, FontPage);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetFontParameterValueEditorOnly_FunctionAddress, intPtr, SetFontParameterValueEditorOnly_ParamsSize);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:ReplaceMaterialInstanceParentByIndexEqual")]
+	public unsafe static void ReplaceMaterialInstanceParentByIndexEqual(UMaterialInstance MI, List<UMaterialInterface> SearchParents, List<UMaterialInterface> ReplaceParents)
+	{
+		if (!ReplaceMaterialInstanceParentByIndexEqual_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:ReplaceMaterialInstanceParentByIndexEqual");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(ReplaceMaterialInstanceParentByIndexEqual_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)ReplaceMaterialInstanceParentByIndexEqual_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, ReplaceMaterialInstanceParentByIndexEqual_MI_Offset), 0, ReplaceMaterialInstanceParentByIndexEqual_MI_PropertyAddress.Address, MI);
+		new TArrayCopyMarshaler<UMaterialInterface>(1, ReplaceMaterialInstanceParentByIndexEqual_SearchParents_PropertyAddress, CachedMarshalingDelegates<UMaterialInterface, UObjectMarshaler<UMaterialInterface>>.FromNative, CachedMarshalingDelegates<UMaterialInterface, UObjectMarshaler<UMaterialInterface>>.ToNative).ToNative(IntPtr.Add(intPtr, ReplaceMaterialInstanceParentByIndexEqual_SearchParents_Offset), SearchParents);
+		new TArrayCopyMarshaler<UMaterialInterface>(1, ReplaceMaterialInstanceParentByIndexEqual_ReplaceParents_PropertyAddress, CachedMarshalingDelegates<UMaterialInterface, UObjectMarshaler<UMaterialInterface>>.FromNative, CachedMarshalingDelegates<UMaterialInterface, UObjectMarshaler<UMaterialInterface>>.ToNative).ToNative(IntPtr.Add(intPtr, ReplaceMaterialInstanceParentByIndexEqual_ReplaceParents_Offset), ReplaceParents);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, ReplaceMaterialInstanceParentByIndexEqual_FunctionAddress, intPtr, ReplaceMaterialInstanceParentByIndexEqual_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(ReplaceMaterialInstanceParentByIndexEqual_SearchParents_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(ReplaceMaterialInstanceParentByIndexEqual_ReplaceParents_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:RemoveMaterialInstanceLayer")]
+	public unsafe static bool RemoveMaterialInstanceLayer(UMaterialInstance MI, int LayerIndex)
+	{
+		if (!RemoveMaterialInstanceLayer_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:RemoveMaterialInstanceLayer");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(RemoveMaterialInstanceLayer_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)RemoveMaterialInstanceLayer_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, RemoveMaterialInstanceLayer_MI_Offset), 0, RemoveMaterialInstanceLayer_MI_PropertyAddress.Address, MI);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, RemoveMaterialInstanceLayer_LayerIndex_Offset), 0, RemoveMaterialInstanceLayer_LayerIndex_PropertyAddress.Address, LayerIndex);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, RemoveMaterialInstanceLayer_FunctionAddress, intPtr, RemoveMaterialInstanceLayer_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, RemoveMaterialInstanceLayer_ReturnValue_Offset), 0, RemoveMaterialInstanceLayer_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:RefreshMaterialInstanceStaticSwitch")]
+	public unsafe static void RefreshMaterialInstanceStaticSwitch(UMaterialInstance MI)
+	{
+		if (!RefreshMaterialInstanceStaticSwitch_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:RefreshMaterialInstanceStaticSwitch");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(RefreshMaterialInstanceStaticSwitch_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)RefreshMaterialInstanceStaticSwitch_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, RefreshMaterialInstanceStaticSwitch_MI_Offset), 0, RefreshMaterialInstanceStaticSwitch_MI_PropertyAddress.Address, MI);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, RefreshMaterialInstanceStaticSwitch_FunctionAddress, intPtr, RefreshMaterialInstanceStaticSwitch_ParamsSize);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:RefreshMaterialInstance")]
+	public unsafe static void RefreshMaterialInstance(UMaterialInstance MI)
+	{
+		if (!RefreshMaterialInstance_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:RefreshMaterialInstance");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(RefreshMaterialInstance_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)RefreshMaterialInstance_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, RefreshMaterialInstance_MI_Offset), 0, RefreshMaterialInstance_MI_PropertyAddress.Address, MI);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, RefreshMaterialInstance_FunctionAddress, intPtr, RefreshMaterialInstance_ParamsSize);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:RebuildMaterialInstances")]
+	public unsafe static bool RebuildMaterialInstances(List<string> AssetPaths)
+	{
+		if (!RebuildMaterialInstances_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:RebuildMaterialInstances");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(RebuildMaterialInstances_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)RebuildMaterialInstances_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		new TArrayCopyMarshaler<string>(1, RebuildMaterialInstances_AssetPaths_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, RebuildMaterialInstances_AssetPaths_Offset), AssetPaths);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, RebuildMaterialInstances_FunctionAddress, intPtr, RebuildMaterialInstances_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(RebuildMaterialInstances_AssetPaths_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, RebuildMaterialInstances_ReturnValue_Offset), 0, RebuildMaterialInstances_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerVectorParameterValues")]
+	public unsafe static bool OverrideMaterialInstanceMaterialLayerVectorParameterValues(UObject MFI, List<string> VectorNames, List<FLinearColor> VectorValues)
+	{
+		if (!OverrideMaterialInstanceMaterialLayerVectorParameterValues_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerVectorParameterValues");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(OverrideMaterialInstanceMaterialLayerVectorParameterValues_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)OverrideMaterialInstanceMaterialLayerVectorParameterValues_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerVectorParameterValues_MFI_Offset), 0, OverrideMaterialInstanceMaterialLayerVectorParameterValues_MFI_PropertyAddress.Address, MFI);
+		new TArrayCopyMarshaler<string>(1, OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorNames_Offset), VectorNames);
+		new TArrayCopyMarshaler<FLinearColor>(1, OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorValues_PropertyAddress, CachedMarshalingDelegates<FLinearColor, BlittableTypeMarshaler<FLinearColor>>.FromNative, CachedMarshalingDelegates<FLinearColor, BlittableTypeMarshaler<FLinearColor>>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorValues_Offset), VectorValues);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress, intPtr, OverrideMaterialInstanceMaterialLayerVectorParameterValues_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorValues_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerVectorParameterValues_ReturnValue_Offset), 0, OverrideMaterialInstanceMaterialLayerVectorParameterValues_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerTextureParameterValues")]
+	public unsafe static bool OverrideMaterialInstanceMaterialLayerTextureParameterValues(UObject MFI, List<string> TextureNames, List<UTexture> TextureValues)
+	{
+		if (!OverrideMaterialInstanceMaterialLayerTextureParameterValues_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerTextureParameterValues");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(OverrideMaterialInstanceMaterialLayerTextureParameterValues_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)OverrideMaterialInstanceMaterialLayerTextureParameterValues_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerTextureParameterValues_MFI_Offset), 0, OverrideMaterialInstanceMaterialLayerTextureParameterValues_MFI_PropertyAddress.Address, MFI);
+		new TArrayCopyMarshaler<string>(1, OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureNames_Offset), TextureNames);
+		new TArrayCopyMarshaler<UTexture>(1, OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureValues_PropertyAddress, CachedMarshalingDelegates<UTexture, UObjectMarshaler<UTexture>>.FromNative, CachedMarshalingDelegates<UTexture, UObjectMarshaler<UTexture>>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureValues_Offset), TextureValues);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress, intPtr, OverrideMaterialInstanceMaterialLayerTextureParameterValues_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureValues_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerTextureParameterValues_ReturnValue_Offset), 0, OverrideMaterialInstanceMaterialLayerTextureParameterValues_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues")]
+	public unsafe static bool OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues(UObject MFI, List<string> StaticSwitchNames, List<bool> StaticSwitchValues)
+	{
+		if (!OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_MFI_Offset), 0, OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_MFI_PropertyAddress.Address, MFI);
+		new TArrayCopyMarshaler<string>(1, OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchNames_Offset), StaticSwitchNames);
+		new TArrayCopyMarshaler<bool>(1, OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchValues_PropertyAddress, CachedMarshalingDelegates<bool, BoolMarshaler>.FromNative, CachedMarshalingDelegates<bool, BoolMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchValues_Offset), StaticSwitchValues);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress, intPtr, OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchValues_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_ReturnValue_Offset), 0, OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues")]
+	public unsafe static bool OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues(UObject MFI, List<string> StaticComponentMaskNames, List<bool> StaticComponentMaskValues)
+	{
+		if (!OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_MFI_Offset), 0, OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_MFI_PropertyAddress.Address, MFI);
+		new TArrayCopyMarshaler<string>(1, OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskNames_Offset), StaticComponentMaskNames);
+		new TArrayCopyMarshaler<bool>(1, OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskValues_PropertyAddress, CachedMarshalingDelegates<bool, BoolMarshaler>.FromNative, CachedMarshalingDelegates<bool, BoolMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskValues_Offset), StaticComponentMaskValues);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress, intPtr, OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskValues_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_ReturnValue_Offset), 0, OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerScalarParameterValues")]
+	public unsafe static bool OverrideMaterialInstanceMaterialLayerScalarParameterValues(UObject MFI, List<string> ScalarNames, List<float> ScalarValues)
+	{
+		if (!OverrideMaterialInstanceMaterialLayerScalarParameterValues_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerScalarParameterValues");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(OverrideMaterialInstanceMaterialLayerScalarParameterValues_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)OverrideMaterialInstanceMaterialLayerScalarParameterValues_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerScalarParameterValues_MFI_Offset), 0, OverrideMaterialInstanceMaterialLayerScalarParameterValues_MFI_PropertyAddress.Address, MFI);
+		new TArrayCopyMarshaler<string>(1, OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarNames_Offset), ScalarNames);
+		new TArrayCopyMarshaler<float>(1, OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarValues_PropertyAddress, CachedMarshalingDelegates<float, BlittableTypeMarshaler<float>>.FromNative, CachedMarshalingDelegates<float, BlittableTypeMarshaler<float>>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarValues_Offset), ScalarValues);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress, intPtr, OverrideMaterialInstanceMaterialLayerScalarParameterValues_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarValues_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerScalarParameterValues_ReturnValue_Offset), 0, OverrideMaterialInstanceMaterialLayerScalarParameterValues_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerAllParameterValues")]
+	public unsafe static bool OverrideMaterialInstanceMaterialLayerAllParameterValues(UObject MFI, UObject parent, List<string> ScalarNames, List<float> ScalarValues, List<string> VectorNames, List<FLinearColor> VectorValues, List<string> TextureNames, List<UTexture> TextureValues, List<string> StaticSwitchNames, List<bool> StaticSwitchValues, List<string> StaticComponentMaskNames, List<bool> StaticComponentMaskValues)
+	{
+		if (!OverrideMaterialInstanceMaterialLayerAllParameterValues_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerAllParameterValues");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(OverrideMaterialInstanceMaterialLayerAllParameterValues_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)OverrideMaterialInstanceMaterialLayerAllParameterValues_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerAllParameterValues_MFI_Offset), 0, OverrideMaterialInstanceMaterialLayerAllParameterValues_MFI_PropertyAddress.Address, MFI);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerAllParameterValues_parent_Offset), 0, OverrideMaterialInstanceMaterialLayerAllParameterValues_parent_PropertyAddress.Address, parent);
+		new TArrayCopyMarshaler<string>(1, OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarNames_Offset), ScalarNames);
+		new TArrayCopyMarshaler<float>(1, OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarValues_PropertyAddress, CachedMarshalingDelegates<float, BlittableTypeMarshaler<float>>.FromNative, CachedMarshalingDelegates<float, BlittableTypeMarshaler<float>>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarValues_Offset), ScalarValues);
+		new TArrayCopyMarshaler<string>(1, OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorNames_Offset), VectorNames);
+		new TArrayCopyMarshaler<FLinearColor>(1, OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorValues_PropertyAddress, CachedMarshalingDelegates<FLinearColor, BlittableTypeMarshaler<FLinearColor>>.FromNative, CachedMarshalingDelegates<FLinearColor, BlittableTypeMarshaler<FLinearColor>>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorValues_Offset), VectorValues);
+		new TArrayCopyMarshaler<string>(1, OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureNames_Offset), TextureNames);
+		new TArrayCopyMarshaler<UTexture>(1, OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureValues_PropertyAddress, CachedMarshalingDelegates<UTexture, UObjectMarshaler<UTexture>>.FromNative, CachedMarshalingDelegates<UTexture, UObjectMarshaler<UTexture>>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureValues_Offset), TextureValues);
+		new TArrayCopyMarshaler<string>(1, OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchNames_Offset), StaticSwitchNames);
+		new TArrayCopyMarshaler<bool>(1, OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchValues_PropertyAddress, CachedMarshalingDelegates<bool, BoolMarshaler>.FromNative, CachedMarshalingDelegates<bool, BoolMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchValues_Offset), StaticSwitchValues);
+		new TArrayCopyMarshaler<string>(1, OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskNames_Offset), StaticComponentMaskNames);
+		new TArrayCopyMarshaler<bool>(1, OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskValues_PropertyAddress, CachedMarshalingDelegates<bool, BoolMarshaler>.FromNative, CachedMarshalingDelegates<bool, BoolMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskValues_Offset), StaticComponentMaskValues);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, intPtr, OverrideMaterialInstanceMaterialLayerAllParameterValues_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarValues_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorValues_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureValues_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchValues_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskValues_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, OverrideMaterialInstanceMaterialLayerAllParameterValues_ReturnValue_Offset), 0, OverrideMaterialInstanceMaterialLayerAllParameterValues_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:MaterialIsMask")]
+	public unsafe static bool MaterialIsMask(UMaterialInterface MI)
+	{
+		if (!MaterialIsMask_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:MaterialIsMask");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(MaterialIsMask_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)MaterialIsMask_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, MaterialIsMask_MI_Offset), 0, MaterialIsMask_MI_PropertyAddress.Address, MI);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, MaterialIsMask_FunctionAddress, intPtr, MaterialIsMask_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, MaterialIsMask_ReturnValue_Offset), 0, MaterialIsMask_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67380225u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:HasSpecialNameNodeInEditor_MaterialFunction")]
+	public unsafe static bool HasSpecialNameNodeInEditor_MaterialFunction(UMaterialFunctionInterface InMaterialFunction, string SpecialName)
+	{
+		if (!HasSpecialNameNodeInEditor_MaterialFunction_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:HasSpecialNameNodeInEditor_MaterialFunction");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(HasSpecialNameNodeInEditor_MaterialFunction_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)HasSpecialNameNodeInEditor_MaterialFunction_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialFunctionInterface>.ToNative(IntPtr.Add(intPtr, HasSpecialNameNodeInEditor_MaterialFunction_InMaterialFunction_Offset), 0, HasSpecialNameNodeInEditor_MaterialFunction_InMaterialFunction_PropertyAddress.Address, InMaterialFunction);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, HasSpecialNameNodeInEditor_MaterialFunction_SpecialName_Offset), 0, HasSpecialNameNodeInEditor_MaterialFunction_SpecialName_PropertyAddress.Address, SpecialName);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, HasSpecialNameNodeInEditor_MaterialFunction_FunctionAddress, intPtr, HasSpecialNameNodeInEditor_MaterialFunction_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(HasSpecialNameNodeInEditor_MaterialFunction_SpecialName_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, HasSpecialNameNodeInEditor_MaterialFunction_ReturnValue_Offset), 0, HasSpecialNameNodeInEditor_MaterialFunction_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67380225u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:HasSpecialNameNodeInEditor")]
+	public unsafe static bool HasSpecialNameNodeInEditor(UMaterial InMaterial, string SpecialName)
+	{
+		if (!HasSpecialNameNodeInEditor_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:HasSpecialNameNodeInEditor");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(HasSpecialNameNodeInEditor_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)HasSpecialNameNodeInEditor_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterial>.ToNative(IntPtr.Add(intPtr, HasSpecialNameNodeInEditor_InMaterial_Offset), 0, HasSpecialNameNodeInEditor_InMaterial_PropertyAddress.Address, InMaterial);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, HasSpecialNameNodeInEditor_SpecialName_Offset), 0, HasSpecialNameNodeInEditor_SpecialName_PropertyAddress.Address, SpecialName);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, HasSpecialNameNodeInEditor_FunctionAddress, intPtr, HasSpecialNameNodeInEditor_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(HasSpecialNameNodeInEditor_SpecialName_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, HasSpecialNameNodeInEditor_ReturnValue_Offset), 0, HasSpecialNameNodeInEditor_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67380225u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:HasEyeAdaptationInEmissive")]
+	public unsafe static bool HasEyeAdaptationInEmissive(UMaterial InMaterial)
+	{
+		if (!HasEyeAdaptationInEmissive_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:HasEyeAdaptationInEmissive");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(HasEyeAdaptationInEmissive_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)HasEyeAdaptationInEmissive_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterial>.ToNative(IntPtr.Add(intPtr, HasEyeAdaptationInEmissive_InMaterial_Offset), 0, HasEyeAdaptationInEmissive_InMaterial_PropertyAddress.Address, InMaterial);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, HasEyeAdaptationInEmissive_FunctionAddress, intPtr, HasEyeAdaptationInEmissive_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, HasEyeAdaptationInEmissive_ReturnValue_Offset), 0, HasEyeAdaptationInEmissive_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetShaderCompileCount")]
+	public unsafe static int GetShaderCompileCount()
+	{
+		if (!GetShaderCompileCount_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetShaderCompileCount");
+			return 0;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetShaderCompileCount_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetShaderCompileCount_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetShaderCompileCount_FunctionAddress, intPtr, GetShaderCompileCount_ParamsSize);
+		return BlittableTypeMarshaler<int>.FromNative(IntPtr.Add(intPtr, GetShaderCompileCount_ReturnValue_Offset), 0, GetShaderCompileCount_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetOverrideMaterialInstanceStaticSwitch")]
+	public unsafe static List<FMaterialParameterInfo> GetOverrideMaterialInstanceStaticSwitch(UMaterialInstance MI)
+	{
+		if (!GetOverrideMaterialInstanceStaticSwitch_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetOverrideMaterialInstanceStaticSwitch");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetOverrideMaterialInstanceStaticSwitch_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetOverrideMaterialInstanceStaticSwitch_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, GetOverrideMaterialInstanceStaticSwitch_MI_Offset), 0, GetOverrideMaterialInstanceStaticSwitch_MI_PropertyAddress.Address, MI);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetOverrideMaterialInstanceStaticSwitch_FunctionAddress, intPtr, GetOverrideMaterialInstanceStaticSwitch_ParamsSize);
+		List<FMaterialParameterInfo> result = new TArrayCopyMarshaler<FMaterialParameterInfo>(1, GetOverrideMaterialInstanceStaticSwitch_ReturnValue_PropertyAddress, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.FromNative, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.ToNative).FromNative(IntPtr.Add(intPtr, GetOverrideMaterialInstanceStaticSwitch_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetOverrideMaterialInstanceStaticSwitch_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetNoOverrideTextureSlots")]
+	public unsafe static List<string> GetNoOverrideTextureSlots(UMaterialInstance child, UMaterialInterface parent)
+	{
+		if (!GetNoOverrideTextureSlots_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetNoOverrideTextureSlots");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetNoOverrideTextureSlots_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetNoOverrideTextureSlots_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, GetNoOverrideTextureSlots_child_Offset), 0, GetNoOverrideTextureSlots_child_PropertyAddress.Address, child);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, GetNoOverrideTextureSlots_parent_Offset), 0, GetNoOverrideTextureSlots_parent_PropertyAddress.Address, parent);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetNoOverrideTextureSlots_FunctionAddress, intPtr, GetNoOverrideTextureSlots_ParamsSize);
+		List<string> result = new TArrayCopyMarshaler<string>(1, GetNoOverrideTextureSlots_ReturnValue_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).FromNative(IntPtr.Add(intPtr, GetNoOverrideTextureSlots_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetNoOverrideTextureSlots_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceVectorParameter")]
+	public unsafe static FLinearColor GetMaterialInstanceVectorParameter(UMaterialInterface MI, string VectorName, int layerIndex)
+	{
+		if (!GetMaterialInstanceVectorParameter_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceVectorParameter");
+			return default(FLinearColor);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetMaterialInstanceVectorParameter_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetMaterialInstanceVectorParameter_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceVectorParameter_MI_Offset), 0, GetMaterialInstanceVectorParameter_MI_PropertyAddress.Address, MI);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceVectorParameter_VectorName_Offset), 0, GetMaterialInstanceVectorParameter_VectorName_PropertyAddress.Address, VectorName);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceVectorParameter_layerIndex_Offset), 0, GetMaterialInstanceVectorParameter_layerIndex_PropertyAddress.Address, layerIndex);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetMaterialInstanceVectorParameter_FunctionAddress, intPtr, GetMaterialInstanceVectorParameter_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceVectorParameter_VectorName_PropertyAddress.Address, intPtr);
+		return BlittableTypeMarshaler<FLinearColor>.FromNative(IntPtr.Add(intPtr, GetMaterialInstanceVectorParameter_ReturnValue_Offset), 0, GetMaterialInstanceVectorParameter_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceTextureParameter")]
+	public unsafe static UTexture GetMaterialInstanceTextureParameter(UMaterialInterface MI, string TextureSlotName, int layerIndex)
+	{
+		if (!GetMaterialInstanceTextureParameter_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceTextureParameter");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetMaterialInstanceTextureParameter_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetMaterialInstanceTextureParameter_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceTextureParameter_MI_Offset), 0, GetMaterialInstanceTextureParameter_MI_PropertyAddress.Address, MI);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceTextureParameter_TextureSlotName_Offset), 0, GetMaterialInstanceTextureParameter_TextureSlotName_PropertyAddress.Address, TextureSlotName);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceTextureParameter_layerIndex_Offset), 0, GetMaterialInstanceTextureParameter_layerIndex_PropertyAddress.Address, layerIndex);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetMaterialInstanceTextureParameter_FunctionAddress, intPtr, GetMaterialInstanceTextureParameter_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceTextureParameter_TextureSlotName_PropertyAddress.Address, intPtr);
+		return UObjectMarshaler<UTexture>.FromNative(IntPtr.Add(intPtr, GetMaterialInstanceTextureParameter_ReturnValue_Offset), 0, GetMaterialInstanceTextureParameter_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceStaticSwitchParameter")]
+	public unsafe static bool GetMaterialInstanceStaticSwitchParameter(UMaterialInterface MI, string StaticSwitchName, int layerIndex)
+	{
+		if (!GetMaterialInstanceStaticSwitchParameter_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceStaticSwitchParameter");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetMaterialInstanceStaticSwitchParameter_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetMaterialInstanceStaticSwitchParameter_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceStaticSwitchParameter_MI_Offset), 0, GetMaterialInstanceStaticSwitchParameter_MI_PropertyAddress.Address, MI);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceStaticSwitchParameter_StaticSwitchName_Offset), 0, GetMaterialInstanceStaticSwitchParameter_StaticSwitchName_PropertyAddress.Address, StaticSwitchName);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceStaticSwitchParameter_layerIndex_Offset), 0, GetMaterialInstanceStaticSwitchParameter_layerIndex_PropertyAddress.Address, layerIndex);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetMaterialInstanceStaticSwitchParameter_FunctionAddress, intPtr, GetMaterialInstanceStaticSwitchParameter_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceStaticSwitchParameter_StaticSwitchName_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetMaterialInstanceStaticSwitchParameter_ReturnValue_Offset), 0, GetMaterialInstanceStaticSwitchParameter_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceScalarParameter")]
+	public unsafe static float GetMaterialInstanceScalarParameter(UMaterialInterface MI, string ScalarName, int layerIndex)
+	{
+		if (!GetMaterialInstanceScalarParameter_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceScalarParameter");
+			return 0f;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetMaterialInstanceScalarParameter_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetMaterialInstanceScalarParameter_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceScalarParameter_MI_Offset), 0, GetMaterialInstanceScalarParameter_MI_PropertyAddress.Address, MI);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceScalarParameter_ScalarName_Offset), 0, GetMaterialInstanceScalarParameter_ScalarName_PropertyAddress.Address, ScalarName);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceScalarParameter_layerIndex_Offset), 0, GetMaterialInstanceScalarParameter_layerIndex_PropertyAddress.Address, layerIndex);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetMaterialInstanceScalarParameter_FunctionAddress, intPtr, GetMaterialInstanceScalarParameter_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceScalarParameter_ScalarName_PropertyAddress.Address, intPtr);
+		return BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetMaterialInstanceScalarParameter_ReturnValue_Offset), 0, GetMaterialInstanceScalarParameter_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceLayerState")]
+	public unsafe static bool GetMaterialInstanceLayerState(UMaterialInstance MI, int LayerIndex, out bool outState)
+	{
+		if (!GetMaterialInstanceLayerState_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceLayerState");
+			outState = false;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetMaterialInstanceLayerState_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetMaterialInstanceLayerState_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceLayerState_MI_Offset), 0, GetMaterialInstanceLayerState_MI_PropertyAddress.Address, MI);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceLayerState_LayerIndex_Offset), 0, GetMaterialInstanceLayerState_LayerIndex_PropertyAddress.Address, LayerIndex);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetMaterialInstanceLayerState_FunctionAddress, intPtr, GetMaterialInstanceLayerState_ParamsSize);
+		outState = BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetMaterialInstanceLayerState_outState_Offset), 0, GetMaterialInstanceLayerState_outState_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetMaterialInstanceLayerState_ReturnValue_Offset), 0, GetMaterialInstanceLayerState_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceLayerFunctionByIndex")]
+	public unsafe static UMaterialFunctionInterface GetMaterialInstanceLayerFunctionByIndex(UMaterialInstance MI, int index, bool isBlend)
+	{
+		if (!GetMaterialInstanceLayerFunctionByIndex_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceLayerFunctionByIndex");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetMaterialInstanceLayerFunctionByIndex_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetMaterialInstanceLayerFunctionByIndex_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceLayerFunctionByIndex_MI_Offset), 0, GetMaterialInstanceLayerFunctionByIndex_MI_PropertyAddress.Address, MI);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceLayerFunctionByIndex_index_Offset), 0, GetMaterialInstanceLayerFunctionByIndex_index_PropertyAddress.Address, index);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceLayerFunctionByIndex_isBlend_Offset), 0, GetMaterialInstanceLayerFunctionByIndex_isBlend_PropertyAddress.Address, isBlend);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetMaterialInstanceLayerFunctionByIndex_FunctionAddress, intPtr, GetMaterialInstanceLayerFunctionByIndex_ParamsSize);
+		return UObjectMarshaler<UMaterialFunctionInterface>.FromNative(IntPtr.Add(intPtr, GetMaterialInstanceLayerFunctionByIndex_ReturnValue_Offset), 0, GetMaterialInstanceLayerFunctionByIndex_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceLayerCount")]
+	public unsafe static int GetMaterialInstanceLayerCount(UMaterialInstance MI)
+	{
+		if (!GetMaterialInstanceLayerCount_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceLayerCount");
+			return 0;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetMaterialInstanceLayerCount_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetMaterialInstanceLayerCount_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceLayerCount_MI_Offset), 0, GetMaterialInstanceLayerCount_MI_PropertyAddress.Address, MI);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetMaterialInstanceLayerCount_FunctionAddress, intPtr, GetMaterialInstanceLayerCount_ParamsSize);
+		return BlittableTypeMarshaler<int>.FromNative(IntPtr.Add(intPtr, GetMaterialInstanceLayerCount_ReturnValue_Offset), 0, GetMaterialInstanceLayerCount_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllVectorParameters")]
+	public unsafe static void GetMaterialInstanceAllVectorParameters(UMaterialInterface MI, int layerIndex, out List<FMaterialParameterInfo> outParameterInfos, out List<Guid> outParameterIds, out List<FLinearColor> outValues, bool bOverrideOnly = true)
+	{
+		if (!GetMaterialInstanceAllVectorParameters_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllVectorParameters");
+			outParameterInfos = null;
+			outParameterIds = null;
+			outValues = null;
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetMaterialInstanceAllVectorParameters_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetMaterialInstanceAllVectorParameters_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllVectorParameters_MI_Offset), 0, GetMaterialInstanceAllVectorParameters_MI_PropertyAddress.Address, MI);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllVectorParameters_layerIndex_Offset), 0, GetMaterialInstanceAllVectorParameters_layerIndex_PropertyAddress.Address, layerIndex);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllVectorParameters_bOverrideOnly_Offset), 0, GetMaterialInstanceAllVectorParameters_bOverrideOnly_PropertyAddress.Address, bOverrideOnly);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetMaterialInstanceAllVectorParameters_FunctionAddress, intPtr, GetMaterialInstanceAllVectorParameters_ParamsSize);
+		outParameterInfos = new TArrayCopyMarshaler<FMaterialParameterInfo>(1, GetMaterialInstanceAllVectorParameters_outParameterInfos_PropertyAddress, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.FromNative, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllVectorParameters_outParameterInfos_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllVectorParameters_outParameterInfos_PropertyAddress.Address, intPtr);
+		outParameterIds = new TArrayCopyMarshaler<Guid>(1, GetMaterialInstanceAllVectorParameters_outParameterIds_PropertyAddress, CachedMarshalingDelegates<Guid, BlittableTypeMarshaler<Guid>>.FromNative, CachedMarshalingDelegates<Guid, BlittableTypeMarshaler<Guid>>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllVectorParameters_outParameterIds_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllVectorParameters_outParameterIds_PropertyAddress.Address, intPtr);
+		outValues = new TArrayCopyMarshaler<FLinearColor>(1, GetMaterialInstanceAllVectorParameters_outValues_PropertyAddress, CachedMarshalingDelegates<FLinearColor, BlittableTypeMarshaler<FLinearColor>>.FromNative, CachedMarshalingDelegates<FLinearColor, BlittableTypeMarshaler<FLinearColor>>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllVectorParameters_outValues_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllVectorParameters_outValues_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllTextureParameters")]
+	public unsafe static void GetMaterialInstanceAllTextureParameters(UMaterialInterface MI, int layerIndex, out List<FMaterialParameterInfo> outParameterInfos, out List<Guid> outParameterIds, out List<UTexture> outValues, bool bOverrideOnly = true)
+	{
+		if (!GetMaterialInstanceAllTextureParameters_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllTextureParameters");
+			outParameterInfos = null;
+			outParameterIds = null;
+			outValues = null;
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetMaterialInstanceAllTextureParameters_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetMaterialInstanceAllTextureParameters_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllTextureParameters_MI_Offset), 0, GetMaterialInstanceAllTextureParameters_MI_PropertyAddress.Address, MI);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllTextureParameters_layerIndex_Offset), 0, GetMaterialInstanceAllTextureParameters_layerIndex_PropertyAddress.Address, layerIndex);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllTextureParameters_bOverrideOnly_Offset), 0, GetMaterialInstanceAllTextureParameters_bOverrideOnly_PropertyAddress.Address, bOverrideOnly);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetMaterialInstanceAllTextureParameters_FunctionAddress, intPtr, GetMaterialInstanceAllTextureParameters_ParamsSize);
+		outParameterInfos = new TArrayCopyMarshaler<FMaterialParameterInfo>(1, GetMaterialInstanceAllTextureParameters_outParameterInfos_PropertyAddress, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.FromNative, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllTextureParameters_outParameterInfos_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllTextureParameters_outParameterInfos_PropertyAddress.Address, intPtr);
+		outParameterIds = new TArrayCopyMarshaler<Guid>(1, GetMaterialInstanceAllTextureParameters_outParameterIds_PropertyAddress, CachedMarshalingDelegates<Guid, BlittableTypeMarshaler<Guid>>.FromNative, CachedMarshalingDelegates<Guid, BlittableTypeMarshaler<Guid>>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllTextureParameters_outParameterIds_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllTextureParameters_outParameterIds_PropertyAddress.Address, intPtr);
+		outValues = new TArrayCopyMarshaler<UTexture>(1, GetMaterialInstanceAllTextureParameters_outValues_PropertyAddress, CachedMarshalingDelegates<UTexture, UObjectMarshaler<UTexture>>.FromNative, CachedMarshalingDelegates<UTexture, UObjectMarshaler<UTexture>>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllTextureParameters_outValues_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllTextureParameters_outValues_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllStaticSwitchParameters")]
+	public unsafe static void GetMaterialInstanceAllStaticSwitchParameters(UMaterialInterface MI, int layerIndex, out List<FMaterialParameterInfo> outParameterInfos, out List<Guid> outParameterIds, out List<bool> outValues, bool bOverrideOnly = true)
+	{
+		if (!GetMaterialInstanceAllStaticSwitchParameters_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllStaticSwitchParameters");
+			outParameterInfos = null;
+			outParameterIds = null;
+			outValues = null;
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetMaterialInstanceAllStaticSwitchParameters_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetMaterialInstanceAllStaticSwitchParameters_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllStaticSwitchParameters_MI_Offset), 0, GetMaterialInstanceAllStaticSwitchParameters_MI_PropertyAddress.Address, MI);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllStaticSwitchParameters_layerIndex_Offset), 0, GetMaterialInstanceAllStaticSwitchParameters_layerIndex_PropertyAddress.Address, layerIndex);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllStaticSwitchParameters_bOverrideOnly_Offset), 0, GetMaterialInstanceAllStaticSwitchParameters_bOverrideOnly_PropertyAddress.Address, bOverrideOnly);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, intPtr, GetMaterialInstanceAllStaticSwitchParameters_ParamsSize);
+		outParameterInfos = new TArrayCopyMarshaler<FMaterialParameterInfo>(1, GetMaterialInstanceAllStaticSwitchParameters_outParameterInfos_PropertyAddress, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.FromNative, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllStaticSwitchParameters_outParameterInfos_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllStaticSwitchParameters_outParameterInfos_PropertyAddress.Address, intPtr);
+		outParameterIds = new TArrayCopyMarshaler<Guid>(1, GetMaterialInstanceAllStaticSwitchParameters_outParameterIds_PropertyAddress, CachedMarshalingDelegates<Guid, BlittableTypeMarshaler<Guid>>.FromNative, CachedMarshalingDelegates<Guid, BlittableTypeMarshaler<Guid>>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllStaticSwitchParameters_outParameterIds_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllStaticSwitchParameters_outParameterIds_PropertyAddress.Address, intPtr);
+		outValues = new TArrayCopyMarshaler<bool>(1, GetMaterialInstanceAllStaticSwitchParameters_outValues_PropertyAddress, CachedMarshalingDelegates<bool, BoolMarshaler>.FromNative, CachedMarshalingDelegates<bool, BoolMarshaler>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllStaticSwitchParameters_outValues_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllStaticSwitchParameters_outValues_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllStaticComponentMaskParameters")]
+	public unsafe static void GetMaterialInstanceAllStaticComponentMaskParameters(UMaterialInterface MI, int layerIndex, out List<FMaterialParameterInfo> outParameterInfos, out List<Guid> outParameterIds, out List<bool> outValues, bool bOverrideOnly = true)
+	{
+		if (!GetMaterialInstanceAllStaticComponentMaskParameters_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllStaticComponentMaskParameters");
+			outParameterInfos = null;
+			outParameterIds = null;
+			outValues = null;
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetMaterialInstanceAllStaticComponentMaskParameters_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetMaterialInstanceAllStaticComponentMaskParameters_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllStaticComponentMaskParameters_MI_Offset), 0, GetMaterialInstanceAllStaticComponentMaskParameters_MI_PropertyAddress.Address, MI);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllStaticComponentMaskParameters_layerIndex_Offset), 0, GetMaterialInstanceAllStaticComponentMaskParameters_layerIndex_PropertyAddress.Address, layerIndex);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllStaticComponentMaskParameters_bOverrideOnly_Offset), 0, GetMaterialInstanceAllStaticComponentMaskParameters_bOverrideOnly_PropertyAddress.Address, bOverrideOnly);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, intPtr, GetMaterialInstanceAllStaticComponentMaskParameters_ParamsSize);
+		outParameterInfos = new TArrayCopyMarshaler<FMaterialParameterInfo>(1, GetMaterialInstanceAllStaticComponentMaskParameters_outParameterInfos_PropertyAddress, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.FromNative, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllStaticComponentMaskParameters_outParameterInfos_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllStaticComponentMaskParameters_outParameterInfos_PropertyAddress.Address, intPtr);
+		outParameterIds = new TArrayCopyMarshaler<Guid>(1, GetMaterialInstanceAllStaticComponentMaskParameters_outParameterIds_PropertyAddress, CachedMarshalingDelegates<Guid, BlittableTypeMarshaler<Guid>>.FromNative, CachedMarshalingDelegates<Guid, BlittableTypeMarshaler<Guid>>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllStaticComponentMaskParameters_outParameterIds_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllStaticComponentMaskParameters_outParameterIds_PropertyAddress.Address, intPtr);
+		outValues = new TArrayCopyMarshaler<bool>(1, GetMaterialInstanceAllStaticComponentMaskParameters_outValues_PropertyAddress, CachedMarshalingDelegates<bool, BoolMarshaler>.FromNative, CachedMarshalingDelegates<bool, BoolMarshaler>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllStaticComponentMaskParameters_outValues_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllStaticComponentMaskParameters_outValues_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllScalarParameters")]
+	public unsafe static void GetMaterialInstanceAllScalarParameters(UMaterialInterface MI, int layerIndex, out List<FMaterialParameterInfo> outParameterInfos, out List<Guid> outParameterIds, out List<float> outValues, bool bOverrideOnly = true)
+	{
+		if (!GetMaterialInstanceAllScalarParameters_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllScalarParameters");
+			outParameterInfos = null;
+			outParameterIds = null;
+			outValues = null;
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetMaterialInstanceAllScalarParameters_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetMaterialInstanceAllScalarParameters_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllScalarParameters_MI_Offset), 0, GetMaterialInstanceAllScalarParameters_MI_PropertyAddress.Address, MI);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllScalarParameters_layerIndex_Offset), 0, GetMaterialInstanceAllScalarParameters_layerIndex_PropertyAddress.Address, layerIndex);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllScalarParameters_bOverrideOnly_Offset), 0, GetMaterialInstanceAllScalarParameters_bOverrideOnly_PropertyAddress.Address, bOverrideOnly);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetMaterialInstanceAllScalarParameters_FunctionAddress, intPtr, GetMaterialInstanceAllScalarParameters_ParamsSize);
+		outParameterInfos = new TArrayCopyMarshaler<FMaterialParameterInfo>(1, GetMaterialInstanceAllScalarParameters_outParameterInfos_PropertyAddress, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.FromNative, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllScalarParameters_outParameterInfos_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllScalarParameters_outParameterInfos_PropertyAddress.Address, intPtr);
+		outParameterIds = new TArrayCopyMarshaler<Guid>(1, GetMaterialInstanceAllScalarParameters_outParameterIds_PropertyAddress, CachedMarshalingDelegates<Guid, BlittableTypeMarshaler<Guid>>.FromNative, CachedMarshalingDelegates<Guid, BlittableTypeMarshaler<Guid>>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllScalarParameters_outParameterIds_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllScalarParameters_outParameterIds_PropertyAddress.Address, intPtr);
+		outValues = new TArrayCopyMarshaler<float>(1, GetMaterialInstanceAllScalarParameters_outValues_PropertyAddress, CachedMarshalingDelegates<float, BlittableTypeMarshaler<float>>.FromNative, CachedMarshalingDelegates<float, BlittableTypeMarshaler<float>>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllScalarParameters_outValues_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllScalarParameters_outValues_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllRuntimeVirtualTextureParameters")]
+	public unsafe static void GetMaterialInstanceAllRuntimeVirtualTextureParameters(UMaterialInterface MI, int layerIndex, out List<FMaterialParameterInfo> outParameterInfos, out List<Guid> outParameterIds, out List<URuntimeVirtualTexture> outValues, bool bOverrideOnly = true)
+	{
+		if (!GetMaterialInstanceAllRuntimeVirtualTextureParameters_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllRuntimeVirtualTextureParameters");
+			outParameterInfos = null;
+			outParameterIds = null;
+			outValues = null;
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetMaterialInstanceAllRuntimeVirtualTextureParameters_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetMaterialInstanceAllRuntimeVirtualTextureParameters_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllRuntimeVirtualTextureParameters_MI_Offset), 0, GetMaterialInstanceAllRuntimeVirtualTextureParameters_MI_PropertyAddress.Address, MI);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllRuntimeVirtualTextureParameters_layerIndex_Offset), 0, GetMaterialInstanceAllRuntimeVirtualTextureParameters_layerIndex_PropertyAddress.Address, layerIndex);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, GetMaterialInstanceAllRuntimeVirtualTextureParameters_bOverrideOnly_Offset), 0, GetMaterialInstanceAllRuntimeVirtualTextureParameters_bOverrideOnly_PropertyAddress.Address, bOverrideOnly);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, intPtr, GetMaterialInstanceAllRuntimeVirtualTextureParameters_ParamsSize);
+		outParameterInfos = new TArrayCopyMarshaler<FMaterialParameterInfo>(1, GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterInfos_PropertyAddress, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.FromNative, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterInfos_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterInfos_PropertyAddress.Address, intPtr);
+		outParameterIds = new TArrayCopyMarshaler<Guid>(1, GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterIds_PropertyAddress, CachedMarshalingDelegates<Guid, BlittableTypeMarshaler<Guid>>.FromNative, CachedMarshalingDelegates<Guid, BlittableTypeMarshaler<Guid>>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterIds_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterIds_PropertyAddress.Address, intPtr);
+		outValues = new TArrayCopyMarshaler<URuntimeVirtualTexture>(1, GetMaterialInstanceAllRuntimeVirtualTextureParameters_outValues_PropertyAddress, CachedMarshalingDelegates<URuntimeVirtualTexture, UObjectMarshaler<URuntimeVirtualTexture>>.FromNative, CachedMarshalingDelegates<URuntimeVirtualTexture, UObjectMarshaler<URuntimeVirtualTexture>>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialInstanceAllRuntimeVirtualTextureParameters_outValues_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialInstanceAllRuntimeVirtualTextureParameters_outValues_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialFunctionInstanceStaticSwitchParameterInfo")]
+	public unsafe static Dictionary<FMaterialParameterInfo, bool> GetMaterialFunctionInstanceStaticSwitchParameterInfo(UObject MI)
+	{
+		if (!GetMaterialFunctionInstanceStaticSwitchParameterInfo_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialFunctionInstanceStaticSwitchParameterInfo");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetMaterialFunctionInstanceStaticSwitchParameterInfo_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetMaterialFunctionInstanceStaticSwitchParameterInfo_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, GetMaterialFunctionInstanceStaticSwitchParameterInfo_MI_Offset), 0, GetMaterialFunctionInstanceStaticSwitchParameterInfo_MI_PropertyAddress.Address, MI);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetMaterialFunctionInstanceStaticSwitchParameterInfo_FunctionAddress, intPtr, GetMaterialFunctionInstanceStaticSwitchParameterInfo_ParamsSize);
+		Dictionary<FMaterialParameterInfo, bool> result = new TMapCopyMarshaler<FMaterialParameterInfo, bool>(1, GetMaterialFunctionInstanceStaticSwitchParameterInfo_ReturnValue_PropertyAddress, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.FromNative, CachedMarshalingDelegates<FMaterialParameterInfo, FMaterialParameterInfo>.ToNative, CachedMarshalingDelegates<bool, BoolMarshaler>.FromNative, CachedMarshalingDelegates<bool, BoolMarshaler>.ToNative).FromNative(IntPtr.Add(intPtr, GetMaterialFunctionInstanceStaticSwitchParameterInfo_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetMaterialFunctionInstanceStaticSwitchParameterInfo_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetAllReferecedTexturesInMaterialInheritTree")]
+	public unsafe static List<UTexture> GetAllReferecedTexturesInMaterialInheritTree(UMaterialInterface Material)
+	{
+		if (!GetAllReferecedTexturesInMaterialInheritTree_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetAllReferecedTexturesInMaterialInheritTree");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetAllReferecedTexturesInMaterialInheritTree_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetAllReferecedTexturesInMaterialInheritTree_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, GetAllReferecedTexturesInMaterialInheritTree_Material_Offset), 0, GetAllReferecedTexturesInMaterialInheritTree_Material_PropertyAddress.Address, Material);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetAllReferecedTexturesInMaterialInheritTree_FunctionAddress, intPtr, GetAllReferecedTexturesInMaterialInheritTree_ParamsSize);
+		List<UTexture> result = new TArrayCopyMarshaler<UTexture>(1, GetAllReferecedTexturesInMaterialInheritTree_ReturnValue_PropertyAddress, CachedMarshalingDelegates<UTexture, UObjectMarshaler<UTexture>>.FromNative, CachedMarshalingDelegates<UTexture, UObjectMarshaler<UTexture>>.ToNative).FromNative(IntPtr.Add(intPtr, GetAllReferecedTexturesInMaterialInheritTree_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetAllReferecedTexturesInMaterialInheritTree_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetAllChildMaterialInstances")]
+	public unsafe static List<UMaterialInterface> GetAllChildMaterialInstances(UMaterialInterface Material)
+	{
+		if (!GetAllChildMaterialInstances_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetAllChildMaterialInstances");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetAllChildMaterialInstances_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetAllChildMaterialInstances_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, GetAllChildMaterialInstances_Material_Offset), 0, GetAllChildMaterialInstances_Material_PropertyAddress.Address, Material);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetAllChildMaterialInstances_FunctionAddress, intPtr, GetAllChildMaterialInstances_ParamsSize);
+		List<UMaterialInterface> result = new TArrayCopyMarshaler<UMaterialInterface>(1, GetAllChildMaterialInstances_ReturnValue_PropertyAddress, CachedMarshalingDelegates<UMaterialInterface, UObjectMarshaler<UMaterialInterface>>.FromNative, CachedMarshalingDelegates<UMaterialInterface, UObjectMarshaler<UMaterialInterface>>.ToNative).FromNative(IntPtr.Add(intPtr, GetAllChildMaterialInstances_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetAllChildMaterialInstances_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:FuzzySetTexture")]
+	public unsafe static bool FuzzySetTexture(UMaterialInstance MI, string SlotName, string DicPath, List<string> keywords)
+	{
+		if (!FuzzySetTexture_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:FuzzySetTexture");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(FuzzySetTexture_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)FuzzySetTexture_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, FuzzySetTexture_MI_Offset), 0, FuzzySetTexture_MI_PropertyAddress.Address, MI);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, FuzzySetTexture_SlotName_Offset), 0, FuzzySetTexture_SlotName_PropertyAddress.Address, SlotName);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, FuzzySetTexture_DicPath_Offset), 0, FuzzySetTexture_DicPath_PropertyAddress.Address, DicPath);
+		new TArrayCopyMarshaler<string>(1, FuzzySetTexture_keywords_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, FuzzySetTexture_keywords_Offset), keywords);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, FuzzySetTexture_FunctionAddress, intPtr, FuzzySetTexture_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(FuzzySetTexture_SlotName_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(FuzzySetTexture_DicPath_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(FuzzySetTexture_keywords_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, FuzzySetTexture_ReturnValue_Offset), 0, FuzzySetTexture_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:FixInvalidOverrideTexture")]
+	public unsafe static void FixInvalidOverrideTexture(UMaterialInstance MI)
+	{
+		if (!FixInvalidOverrideTexture_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:FixInvalidOverrideTexture");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(FixInvalidOverrideTexture_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)FixInvalidOverrideTexture_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, FixInvalidOverrideTexture_MI_Offset), 0, FixInvalidOverrideTexture_MI_PropertyAddress.Address, MI);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, FixInvalidOverrideTexture_FunctionAddress, intPtr, FixInvalidOverrideTexture_ParamsSize);
+	}
+
+	[UFunction(Flags = 79832065u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:CreateMaterialInstanceAsset")]
+	public unsafe static void CreateMaterialInstanceAsset(string BaseMaterialPath, string TargetBasePath, string AssetName, out FAssetData OutAsset)
+	{
+		if (!CreateMaterialInstanceAsset_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:CreateMaterialInstanceAsset");
+			OutAsset = default(FAssetData);
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(CreateMaterialInstanceAsset_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)CreateMaterialInstanceAsset_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, CreateMaterialInstanceAsset_BaseMaterialPath_Offset), 0, CreateMaterialInstanceAsset_BaseMaterialPath_PropertyAddress.Address, BaseMaterialPath);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, CreateMaterialInstanceAsset_TargetBasePath_Offset), 0, CreateMaterialInstanceAsset_TargetBasePath_PropertyAddress.Address, TargetBasePath);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, CreateMaterialInstanceAsset_AssetName_Offset), 0, CreateMaterialInstanceAsset_AssetName_PropertyAddress.Address, AssetName);
+		NativeReflection.InitializeValue_InContainer(CreateMaterialInstanceAsset_OutAsset_PropertyAddress.Address, intPtr);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, CreateMaterialInstanceAsset_FunctionAddress, intPtr, CreateMaterialInstanceAsset_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(CreateMaterialInstanceAsset_BaseMaterialPath_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(CreateMaterialInstanceAsset_TargetBasePath_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(CreateMaterialInstanceAsset_AssetName_PropertyAddress.Address, intPtr);
+		OutAsset = FAssetData.FromNative(IntPtr.Add(intPtr, CreateMaterialInstanceAsset_OutAsset_Offset), 0, CreateMaterialInstanceAsset_OutAsset_PropertyAddress.Address);
+		NativeReflection.DestroyValue_InContainer(CreateMaterialInstanceAsset_OutAsset_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:CopyParametersToMIC")]
+	public unsafe static bool CopyParametersToMIC(UMaterialInstanceConstant MIC, UMaterialInterface Source, bool bIncludeStaticParams = true)
+	{
+		if (!CopyParametersToMIC_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:CopyParametersToMIC");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(CopyParametersToMIC_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)CopyParametersToMIC_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstanceConstant>.ToNative(IntPtr.Add(intPtr, CopyParametersToMIC_MIC_Offset), 0, CopyParametersToMIC_MIC_PropertyAddress.Address, MIC);
+		UObjectMarshaler<UMaterialInterface>.ToNative(IntPtr.Add(intPtr, CopyParametersToMIC_Source_Offset), 0, CopyParametersToMIC_Source_PropertyAddress.Address, Source);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, CopyParametersToMIC_bIncludeStaticParams_Offset), 0, CopyParametersToMIC_bIncludeStaticParams_PropertyAddress.Address, bIncludeStaticParams);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, CopyParametersToMIC_FunctionAddress, intPtr, CopyParametersToMIC_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, CopyParametersToMIC_ReturnValue_Offset), 0, CopyParametersToMIC_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/FuncLibEditor.GSEditorMaterialLibrary:AppendMaterialInstanceLayer")]
+	public unsafe static bool AppendMaterialInstanceLayer(UMaterialInstance MI, UMaterialFunctionInterface LayerMFI, UMaterialFunctionInterface BlendMFI)
+	{
+		if (!AppendMaterialInstanceLayer_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/FuncLibEditor.GSEditorMaterialLibrary:AppendMaterialInstanceLayer");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(AppendMaterialInstanceLayer_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)AppendMaterialInstanceLayer_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMaterialInstance>.ToNative(IntPtr.Add(intPtr, AppendMaterialInstanceLayer_MI_Offset), 0, AppendMaterialInstanceLayer_MI_PropertyAddress.Address, MI);
+		UObjectMarshaler<UMaterialFunctionInterface>.ToNative(IntPtr.Add(intPtr, AppendMaterialInstanceLayer_LayerMFI_Offset), 0, AppendMaterialInstanceLayer_LayerMFI_PropertyAddress.Address, LayerMFI);
+		UObjectMarshaler<UMaterialFunctionInterface>.ToNative(IntPtr.Add(intPtr, AppendMaterialInstanceLayer_BlendMFI_Offset), 0, AppendMaterialInstanceLayer_BlendMFI_PropertyAddress.Address, BlendMFI);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, AppendMaterialInstanceLayer_FunctionAddress, intPtr, AppendMaterialInstanceLayer_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, AppendMaterialInstanceLayer_ReturnValue_Offset), 0, AppendMaterialInstanceLayer_ReturnValue_PropertyAddress.Address);
+	}
+
+	static UGSEditorMaterialLibrary()
+	{
+		if (UnrealTypes.CanLazyLoadNativeType(typeof(UGSEditorMaterialLibrary)))
+		{
+			LoadNativeType();
+		}
+		UnrealTypes.OnCCtorCalled(typeof(UGSEditorMaterialLibrary));
+	}
+
+	private static void LoadNativeType()
+	{
+		classAddress = NativeReflection.GetClass("/Script/FuncLibEditor.GSEditorMaterialLibrary");
+		ToggleMaterialInstanceLayerState_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "ToggleMaterialInstanceLayerState");
+		ToggleMaterialInstanceLayerState_ParamsSize = NativeReflection.GetFunctionParamsSize(ToggleMaterialInstanceLayerState_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref ToggleMaterialInstanceLayerState_MI_PropertyAddress, ToggleMaterialInstanceLayerState_FunctionAddress, "MI");
+		ToggleMaterialInstanceLayerState_MI_Offset = NativeReflectionCached.GetPropertyOffset(ToggleMaterialInstanceLayerState_FunctionAddress, "MI");
+		ToggleMaterialInstanceLayerState_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(ToggleMaterialInstanceLayerState_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref ToggleMaterialInstanceLayerState_LayerIndex_PropertyAddress, ToggleMaterialInstanceLayerState_FunctionAddress, "LayerIndex");
+		ToggleMaterialInstanceLayerState_LayerIndex_Offset = NativeReflectionCached.GetPropertyOffset(ToggleMaterialInstanceLayerState_FunctionAddress, "LayerIndex");
+		ToggleMaterialInstanceLayerState_LayerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(ToggleMaterialInstanceLayerState_FunctionAddress, "LayerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref ToggleMaterialInstanceLayerState_ReturnValue_PropertyAddress, ToggleMaterialInstanceLayerState_FunctionAddress, "ReturnValue");
+		ToggleMaterialInstanceLayerState_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(ToggleMaterialInstanceLayerState_FunctionAddress, "ReturnValue");
+		ToggleMaterialInstanceLayerState_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(ToggleMaterialInstanceLayerState_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		ToggleMaterialInstanceLayerState_IsValid = ToggleMaterialInstanceLayerState_FunctionAddress != IntPtr.Zero && ToggleMaterialInstanceLayerState_MI_IsValid && ToggleMaterialInstanceLayerState_LayerIndex_IsValid && ToggleMaterialInstanceLayerState_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:ToggleMaterialInstanceLayerState", ToggleMaterialInstanceLayerState_IsValid);
+		SetVectorParameterValueEditorOnly_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetVectorParameterValueEditorOnly");
+		SetVectorParameterValueEditorOnly_ParamsSize = NativeReflection.GetFunctionParamsSize(SetVectorParameterValueEditorOnly_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetVectorParameterValueEditorOnly_MIC_PropertyAddress, SetVectorParameterValueEditorOnly_FunctionAddress, "MIC");
+		SetVectorParameterValueEditorOnly_MIC_Offset = NativeReflectionCached.GetPropertyOffset(SetVectorParameterValueEditorOnly_FunctionAddress, "MIC");
+		SetVectorParameterValueEditorOnly_MIC_IsValid = NativeReflectionCached.ValidatePropertyClass(SetVectorParameterValueEditorOnly_FunctionAddress, "MIC", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetVectorParameterValueEditorOnly_ParameterInfo_PropertyAddress, SetVectorParameterValueEditorOnly_FunctionAddress, "ParameterInfo");
+		SetVectorParameterValueEditorOnly_ParameterInfo_Offset = NativeReflectionCached.GetPropertyOffset(SetVectorParameterValueEditorOnly_FunctionAddress, "ParameterInfo");
+		SetVectorParameterValueEditorOnly_ParameterInfo_IsValid = NativeReflectionCached.ValidatePropertyClass(SetVectorParameterValueEditorOnly_FunctionAddress, "ParameterInfo", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetVectorParameterValueEditorOnly_Value_PropertyAddress, SetVectorParameterValueEditorOnly_FunctionAddress, "Value");
+		SetVectorParameterValueEditorOnly_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetVectorParameterValueEditorOnly_FunctionAddress, "Value");
+		SetVectorParameterValueEditorOnly_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetVectorParameterValueEditorOnly_FunctionAddress, "Value", Classes.FStructProperty);
+		SetVectorParameterValueEditorOnly_IsValid = SetVectorParameterValueEditorOnly_FunctionAddress != IntPtr.Zero && SetVectorParameterValueEditorOnly_MIC_IsValid && SetVectorParameterValueEditorOnly_ParameterInfo_IsValid && SetVectorParameterValueEditorOnly_Value_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetVectorParameterValueEditorOnly", SetVectorParameterValueEditorOnly_IsValid);
+		SetTextureParameterValueEditorOnly_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetTextureParameterValueEditorOnly");
+		SetTextureParameterValueEditorOnly_ParamsSize = NativeReflection.GetFunctionParamsSize(SetTextureParameterValueEditorOnly_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetTextureParameterValueEditorOnly_MIC_PropertyAddress, SetTextureParameterValueEditorOnly_FunctionAddress, "MIC");
+		SetTextureParameterValueEditorOnly_MIC_Offset = NativeReflectionCached.GetPropertyOffset(SetTextureParameterValueEditorOnly_FunctionAddress, "MIC");
+		SetTextureParameterValueEditorOnly_MIC_IsValid = NativeReflectionCached.ValidatePropertyClass(SetTextureParameterValueEditorOnly_FunctionAddress, "MIC", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetTextureParameterValueEditorOnly_ParameterInfo_PropertyAddress, SetTextureParameterValueEditorOnly_FunctionAddress, "ParameterInfo");
+		SetTextureParameterValueEditorOnly_ParameterInfo_Offset = NativeReflectionCached.GetPropertyOffset(SetTextureParameterValueEditorOnly_FunctionAddress, "ParameterInfo");
+		SetTextureParameterValueEditorOnly_ParameterInfo_IsValid = NativeReflectionCached.ValidatePropertyClass(SetTextureParameterValueEditorOnly_FunctionAddress, "ParameterInfo", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetTextureParameterValueEditorOnly_Value_PropertyAddress, SetTextureParameterValueEditorOnly_FunctionAddress, "Value");
+		SetTextureParameterValueEditorOnly_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetTextureParameterValueEditorOnly_FunctionAddress, "Value");
+		SetTextureParameterValueEditorOnly_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetTextureParameterValueEditorOnly_FunctionAddress, "Value", Classes.FObjectProperty);
+		SetTextureParameterValueEditorOnly_IsValid = SetTextureParameterValueEditorOnly_FunctionAddress != IntPtr.Zero && SetTextureParameterValueEditorOnly_MIC_IsValid && SetTextureParameterValueEditorOnly_ParameterInfo_IsValid && SetTextureParameterValueEditorOnly_Value_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetTextureParameterValueEditorOnly", SetTextureParameterValueEditorOnly_IsValid);
+		SetScalarParameterValueEditorOnly_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetScalarParameterValueEditorOnly");
+		SetScalarParameterValueEditorOnly_ParamsSize = NativeReflection.GetFunctionParamsSize(SetScalarParameterValueEditorOnly_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetScalarParameterValueEditorOnly_MIC_PropertyAddress, SetScalarParameterValueEditorOnly_FunctionAddress, "MIC");
+		SetScalarParameterValueEditorOnly_MIC_Offset = NativeReflectionCached.GetPropertyOffset(SetScalarParameterValueEditorOnly_FunctionAddress, "MIC");
+		SetScalarParameterValueEditorOnly_MIC_IsValid = NativeReflectionCached.ValidatePropertyClass(SetScalarParameterValueEditorOnly_FunctionAddress, "MIC", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetScalarParameterValueEditorOnly_ParameterInfo_PropertyAddress, SetScalarParameterValueEditorOnly_FunctionAddress, "ParameterInfo");
+		SetScalarParameterValueEditorOnly_ParameterInfo_Offset = NativeReflectionCached.GetPropertyOffset(SetScalarParameterValueEditorOnly_FunctionAddress, "ParameterInfo");
+		SetScalarParameterValueEditorOnly_ParameterInfo_IsValid = NativeReflectionCached.ValidatePropertyClass(SetScalarParameterValueEditorOnly_FunctionAddress, "ParameterInfo", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetScalarParameterValueEditorOnly_Value_PropertyAddress, SetScalarParameterValueEditorOnly_FunctionAddress, "Value");
+		SetScalarParameterValueEditorOnly_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetScalarParameterValueEditorOnly_FunctionAddress, "Value");
+		SetScalarParameterValueEditorOnly_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetScalarParameterValueEditorOnly_FunctionAddress, "Value", Classes.FFloatProperty);
+		SetScalarParameterValueEditorOnly_IsValid = SetScalarParameterValueEditorOnly_FunctionAddress != IntPtr.Zero && SetScalarParameterValueEditorOnly_MIC_IsValid && SetScalarParameterValueEditorOnly_ParameterInfo_IsValid && SetScalarParameterValueEditorOnly_Value_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetScalarParameterValueEditorOnly", SetScalarParameterValueEditorOnly_IsValid);
+		SetRuntimeVirtualTextureParameterValueEditorOnly_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetRuntimeVirtualTextureParameterValueEditorOnly");
+		SetRuntimeVirtualTextureParameterValueEditorOnly_ParamsSize = NativeReflection.GetFunctionParamsSize(SetRuntimeVirtualTextureParameterValueEditorOnly_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetRuntimeVirtualTextureParameterValueEditorOnly_MIC_PropertyAddress, SetRuntimeVirtualTextureParameterValueEditorOnly_FunctionAddress, "MIC");
+		SetRuntimeVirtualTextureParameterValueEditorOnly_MIC_Offset = NativeReflectionCached.GetPropertyOffset(SetRuntimeVirtualTextureParameterValueEditorOnly_FunctionAddress, "MIC");
+		SetRuntimeVirtualTextureParameterValueEditorOnly_MIC_IsValid = NativeReflectionCached.ValidatePropertyClass(SetRuntimeVirtualTextureParameterValueEditorOnly_FunctionAddress, "MIC", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetRuntimeVirtualTextureParameterValueEditorOnly_ParameterInfo_PropertyAddress, SetRuntimeVirtualTextureParameterValueEditorOnly_FunctionAddress, "ParameterInfo");
+		SetRuntimeVirtualTextureParameterValueEditorOnly_ParameterInfo_Offset = NativeReflectionCached.GetPropertyOffset(SetRuntimeVirtualTextureParameterValueEditorOnly_FunctionAddress, "ParameterInfo");
+		SetRuntimeVirtualTextureParameterValueEditorOnly_ParameterInfo_IsValid = NativeReflectionCached.ValidatePropertyClass(SetRuntimeVirtualTextureParameterValueEditorOnly_FunctionAddress, "ParameterInfo", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetRuntimeVirtualTextureParameterValueEditorOnly_Value_PropertyAddress, SetRuntimeVirtualTextureParameterValueEditorOnly_FunctionAddress, "Value");
+		SetRuntimeVirtualTextureParameterValueEditorOnly_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetRuntimeVirtualTextureParameterValueEditorOnly_FunctionAddress, "Value");
+		SetRuntimeVirtualTextureParameterValueEditorOnly_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetRuntimeVirtualTextureParameterValueEditorOnly_FunctionAddress, "Value", Classes.FObjectProperty);
+		SetRuntimeVirtualTextureParameterValueEditorOnly_IsValid = SetRuntimeVirtualTextureParameterValueEditorOnly_FunctionAddress != IntPtr.Zero && SetRuntimeVirtualTextureParameterValueEditorOnly_MIC_IsValid && SetRuntimeVirtualTextureParameterValueEditorOnly_ParameterInfo_IsValid && SetRuntimeVirtualTextureParameterValueEditorOnly_Value_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetRuntimeVirtualTextureParameterValueEditorOnly", SetRuntimeVirtualTextureParameterValueEditorOnly_IsValid);
+		SetMFIInMICByLayer_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetMFIInMICByLayer");
+		SetMFIInMICByLayer_ParamsSize = NativeReflection.GetFunctionParamsSize(SetMFIInMICByLayer_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetMFIInMICByLayer_MI_PropertyAddress, SetMFIInMICByLayer_FunctionAddress, "MI");
+		SetMFIInMICByLayer_MI_Offset = NativeReflectionCached.GetPropertyOffset(SetMFIInMICByLayer_FunctionAddress, "MI");
+		SetMFIInMICByLayer_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMFIInMICByLayer_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMFIInMICByLayer_layerIndex_PropertyAddress, SetMFIInMICByLayer_FunctionAddress, "layerIndex");
+		SetMFIInMICByLayer_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(SetMFIInMICByLayer_FunctionAddress, "layerIndex");
+		SetMFIInMICByLayer_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMFIInMICByLayer_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMFIInMICByLayer_MFI_PropertyAddress, SetMFIInMICByLayer_FunctionAddress, "MFI");
+		SetMFIInMICByLayer_MFI_Offset = NativeReflectionCached.GetPropertyOffset(SetMFIInMICByLayer_FunctionAddress, "MFI");
+		SetMFIInMICByLayer_MFI_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMFIInMICByLayer_FunctionAddress, "MFI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMFIInMICByLayer_isBlendFunc_PropertyAddress, SetMFIInMICByLayer_FunctionAddress, "isBlendFunc");
+		SetMFIInMICByLayer_isBlendFunc_Offset = NativeReflectionCached.GetPropertyOffset(SetMFIInMICByLayer_FunctionAddress, "isBlendFunc");
+		SetMFIInMICByLayer_isBlendFunc_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMFIInMICByLayer_FunctionAddress, "isBlendFunc", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMFIInMICByLayer_ReturnValue_PropertyAddress, SetMFIInMICByLayer_FunctionAddress, "ReturnValue");
+		SetMFIInMICByLayer_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetMFIInMICByLayer_FunctionAddress, "ReturnValue");
+		SetMFIInMICByLayer_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMFIInMICByLayer_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetMFIInMICByLayer_IsValid = SetMFIInMICByLayer_FunctionAddress != IntPtr.Zero && SetMFIInMICByLayer_MI_IsValid && SetMFIInMICByLayer_layerIndex_IsValid && SetMFIInMICByLayer_MFI_IsValid && SetMFIInMICByLayer_isBlendFunc_IsValid && SetMFIInMICByLayer_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMFIInMICByLayer", SetMFIInMICByLayer_IsValid);
+		SetMaterialInstanceVectorParameters_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetMaterialInstanceVectorParameters");
+		SetMaterialInstanceVectorParameters_ParamsSize = NativeReflection.GetFunctionParamsSize(SetMaterialInstanceVectorParameters_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceVectorParameters_MI_PropertyAddress, SetMaterialInstanceVectorParameters_FunctionAddress, "MI");
+		SetMaterialInstanceVectorParameters_MI_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceVectorParameters_FunctionAddress, "MI");
+		SetMaterialInstanceVectorParameters_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceVectorParameters_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceVectorParameters_VectorNames_PropertyAddress, SetMaterialInstanceVectorParameters_FunctionAddress, "VectorNames");
+		SetMaterialInstanceVectorParameters_VectorNames_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceVectorParameters_FunctionAddress, "VectorNames");
+		SetMaterialInstanceVectorParameters_VectorNames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceVectorParameters_FunctionAddress, "VectorNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceVectorParameters_VectorValues_PropertyAddress, SetMaterialInstanceVectorParameters_FunctionAddress, "VectorValues");
+		SetMaterialInstanceVectorParameters_VectorValues_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceVectorParameters_FunctionAddress, "VectorValues");
+		SetMaterialInstanceVectorParameters_VectorValues_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceVectorParameters_FunctionAddress, "VectorValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceVectorParameters_layerIndex_PropertyAddress, SetMaterialInstanceVectorParameters_FunctionAddress, "layerIndex");
+		SetMaterialInstanceVectorParameters_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceVectorParameters_FunctionAddress, "layerIndex");
+		SetMaterialInstanceVectorParameters_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceVectorParameters_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceVectorParameters_ReturnValue_PropertyAddress, SetMaterialInstanceVectorParameters_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceVectorParameters_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceVectorParameters_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceVectorParameters_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceVectorParameters_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetMaterialInstanceVectorParameters_IsValid = SetMaterialInstanceVectorParameters_FunctionAddress != IntPtr.Zero && SetMaterialInstanceVectorParameters_MI_IsValid && SetMaterialInstanceVectorParameters_VectorNames_IsValid && SetMaterialInstanceVectorParameters_VectorValues_IsValid && SetMaterialInstanceVectorParameters_layerIndex_IsValid && SetMaterialInstanceVectorParameters_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceVectorParameters", SetMaterialInstanceVectorParameters_IsValid);
+		SetMaterialInstanceTextureParameters_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetMaterialInstanceTextureParameters");
+		SetMaterialInstanceTextureParameters_ParamsSize = NativeReflection.GetFunctionParamsSize(SetMaterialInstanceTextureParameters_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceTextureParameters_MI_PropertyAddress, SetMaterialInstanceTextureParameters_FunctionAddress, "MI");
+		SetMaterialInstanceTextureParameters_MI_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceTextureParameters_FunctionAddress, "MI");
+		SetMaterialInstanceTextureParameters_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceTextureParameters_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceTextureParameters_TextureNames_PropertyAddress, SetMaterialInstanceTextureParameters_FunctionAddress, "TextureNames");
+		SetMaterialInstanceTextureParameters_TextureNames_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceTextureParameters_FunctionAddress, "TextureNames");
+		SetMaterialInstanceTextureParameters_TextureNames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceTextureParameters_FunctionAddress, "TextureNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceTextureParameters_TextureValues_PropertyAddress, SetMaterialInstanceTextureParameters_FunctionAddress, "TextureValues");
+		SetMaterialInstanceTextureParameters_TextureValues_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceTextureParameters_FunctionAddress, "TextureValues");
+		SetMaterialInstanceTextureParameters_TextureValues_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceTextureParameters_FunctionAddress, "TextureValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceTextureParameters_layerIndex_PropertyAddress, SetMaterialInstanceTextureParameters_FunctionAddress, "layerIndex");
+		SetMaterialInstanceTextureParameters_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceTextureParameters_FunctionAddress, "layerIndex");
+		SetMaterialInstanceTextureParameters_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceTextureParameters_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceTextureParameters_ReturnValue_PropertyAddress, SetMaterialInstanceTextureParameters_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceTextureParameters_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceTextureParameters_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceTextureParameters_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceTextureParameters_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetMaterialInstanceTextureParameters_IsValid = SetMaterialInstanceTextureParameters_FunctionAddress != IntPtr.Zero && SetMaterialInstanceTextureParameters_MI_IsValid && SetMaterialInstanceTextureParameters_TextureNames_IsValid && SetMaterialInstanceTextureParameters_TextureValues_IsValid && SetMaterialInstanceTextureParameters_layerIndex_IsValid && SetMaterialInstanceTextureParameters_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceTextureParameters", SetMaterialInstanceTextureParameters_IsValid);
+		SetMaterialInstanceStaticSwitchParameters_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetMaterialInstanceStaticSwitchParameters");
+		SetMaterialInstanceStaticSwitchParameters_ParamsSize = NativeReflection.GetFunctionParamsSize(SetMaterialInstanceStaticSwitchParameters_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceStaticSwitchParameters_MI_PropertyAddress, SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "MI");
+		SetMaterialInstanceStaticSwitchParameters_MI_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "MI");
+		SetMaterialInstanceStaticSwitchParameters_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceStaticSwitchParameters_StaticSwitchNames_PropertyAddress, SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "StaticSwitchNames");
+		SetMaterialInstanceStaticSwitchParameters_StaticSwitchNames_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "StaticSwitchNames");
+		SetMaterialInstanceStaticSwitchParameters_StaticSwitchNames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "StaticSwitchNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceStaticSwitchParameters_StaticSwitchValues_PropertyAddress, SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "StaticSwitchValues");
+		SetMaterialInstanceStaticSwitchParameters_StaticSwitchValues_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "StaticSwitchValues");
+		SetMaterialInstanceStaticSwitchParameters_StaticSwitchValues_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "StaticSwitchValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceStaticSwitchParameters_layerIndex_PropertyAddress, SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "layerIndex");
+		SetMaterialInstanceStaticSwitchParameters_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "layerIndex");
+		SetMaterialInstanceStaticSwitchParameters_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceStaticSwitchParameters_ReturnValue_PropertyAddress, SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceStaticSwitchParameters_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceStaticSwitchParameters_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceStaticSwitchParameters_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetMaterialInstanceStaticSwitchParameters_IsValid = SetMaterialInstanceStaticSwitchParameters_FunctionAddress != IntPtr.Zero && SetMaterialInstanceStaticSwitchParameters_MI_IsValid && SetMaterialInstanceStaticSwitchParameters_StaticSwitchNames_IsValid && SetMaterialInstanceStaticSwitchParameters_StaticSwitchValues_IsValid && SetMaterialInstanceStaticSwitchParameters_layerIndex_IsValid && SetMaterialInstanceStaticSwitchParameters_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceStaticSwitchParameters", SetMaterialInstanceStaticSwitchParameters_IsValid);
+		SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetMaterialInstanceStaticComponentMaskParameters");
+		SetMaterialInstanceStaticComponentMaskParameters_ParamsSize = NativeReflection.GetFunctionParamsSize(SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceStaticComponentMaskParameters_MI_PropertyAddress, SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "MI");
+		SetMaterialInstanceStaticComponentMaskParameters_MI_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "MI");
+		SetMaterialInstanceStaticComponentMaskParameters_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskNames_PropertyAddress, SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "StaticComponentMaskNames");
+		SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskNames_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "StaticComponentMaskNames");
+		SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskNames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "StaticComponentMaskNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskValues_PropertyAddress, SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "StaticComponentMaskValues");
+		SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskValues_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "StaticComponentMaskValues");
+		SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskValues_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "StaticComponentMaskValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceStaticComponentMaskParameters_layerIndex_PropertyAddress, SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "layerIndex");
+		SetMaterialInstanceStaticComponentMaskParameters_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "layerIndex");
+		SetMaterialInstanceStaticComponentMaskParameters_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceStaticComponentMaskParameters_ReturnValue_PropertyAddress, SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceStaticComponentMaskParameters_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceStaticComponentMaskParameters_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetMaterialInstanceStaticComponentMaskParameters_IsValid = SetMaterialInstanceStaticComponentMaskParameters_FunctionAddress != IntPtr.Zero && SetMaterialInstanceStaticComponentMaskParameters_MI_IsValid && SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskNames_IsValid && SetMaterialInstanceStaticComponentMaskParameters_StaticComponentMaskValues_IsValid && SetMaterialInstanceStaticComponentMaskParameters_layerIndex_IsValid && SetMaterialInstanceStaticComponentMaskParameters_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceStaticComponentMaskParameters", SetMaterialInstanceStaticComponentMaskParameters_IsValid);
+		SetMaterialInstanceScalarParameters_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetMaterialInstanceScalarParameters");
+		SetMaterialInstanceScalarParameters_ParamsSize = NativeReflection.GetFunctionParamsSize(SetMaterialInstanceScalarParameters_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceScalarParameters_MI_PropertyAddress, SetMaterialInstanceScalarParameters_FunctionAddress, "MI");
+		SetMaterialInstanceScalarParameters_MI_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceScalarParameters_FunctionAddress, "MI");
+		SetMaterialInstanceScalarParameters_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceScalarParameters_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceScalarParameters_ScalarNames_PropertyAddress, SetMaterialInstanceScalarParameters_FunctionAddress, "ScalarNames");
+		SetMaterialInstanceScalarParameters_ScalarNames_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceScalarParameters_FunctionAddress, "ScalarNames");
+		SetMaterialInstanceScalarParameters_ScalarNames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceScalarParameters_FunctionAddress, "ScalarNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceScalarParameters_ScalarValues_PropertyAddress, SetMaterialInstanceScalarParameters_FunctionAddress, "ScalarValues");
+		SetMaterialInstanceScalarParameters_ScalarValues_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceScalarParameters_FunctionAddress, "ScalarValues");
+		SetMaterialInstanceScalarParameters_ScalarValues_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceScalarParameters_FunctionAddress, "ScalarValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceScalarParameters_layerIndex_PropertyAddress, SetMaterialInstanceScalarParameters_FunctionAddress, "layerIndex");
+		SetMaterialInstanceScalarParameters_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceScalarParameters_FunctionAddress, "layerIndex");
+		SetMaterialInstanceScalarParameters_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceScalarParameters_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceScalarParameters_ReturnValue_PropertyAddress, SetMaterialInstanceScalarParameters_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceScalarParameters_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceScalarParameters_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceScalarParameters_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceScalarParameters_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetMaterialInstanceScalarParameters_IsValid = SetMaterialInstanceScalarParameters_FunctionAddress != IntPtr.Zero && SetMaterialInstanceScalarParameters_MI_IsValid && SetMaterialInstanceScalarParameters_ScalarNames_IsValid && SetMaterialInstanceScalarParameters_ScalarValues_IsValid && SetMaterialInstanceScalarParameters_layerIndex_IsValid && SetMaterialInstanceScalarParameters_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceScalarParameters", SetMaterialInstanceScalarParameters_IsValid);
+		SetMaterialInstanceMaterialLayers_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetMaterialInstanceMaterialLayers");
+		SetMaterialInstanceMaterialLayers_ParamsSize = NativeReflection.GetFunctionParamsSize(SetMaterialInstanceMaterialLayers_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceMaterialLayers_MI_PropertyAddress, SetMaterialInstanceMaterialLayers_FunctionAddress, "MI");
+		SetMaterialInstanceMaterialLayers_MI_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceMaterialLayers_FunctionAddress, "MI");
+		SetMaterialInstanceMaterialLayers_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceMaterialLayers_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceMaterialLayers_layers_PropertyAddress, SetMaterialInstanceMaterialLayers_FunctionAddress, "layers");
+		SetMaterialInstanceMaterialLayers_layers_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceMaterialLayers_FunctionAddress, "layers");
+		SetMaterialInstanceMaterialLayers_layers_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceMaterialLayers_FunctionAddress, "layers", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceMaterialLayers_blends_PropertyAddress, SetMaterialInstanceMaterialLayers_FunctionAddress, "blends");
+		SetMaterialInstanceMaterialLayers_blends_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceMaterialLayers_FunctionAddress, "blends");
+		SetMaterialInstanceMaterialLayers_blends_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceMaterialLayers_FunctionAddress, "blends", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceMaterialLayers_ReturnValue_PropertyAddress, SetMaterialInstanceMaterialLayers_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceMaterialLayers_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceMaterialLayers_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceMaterialLayers_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceMaterialLayers_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetMaterialInstanceMaterialLayers_IsValid = SetMaterialInstanceMaterialLayers_FunctionAddress != IntPtr.Zero && SetMaterialInstanceMaterialLayers_MI_IsValid && SetMaterialInstanceMaterialLayers_layers_IsValid && SetMaterialInstanceMaterialLayers_blends_IsValid && SetMaterialInstanceMaterialLayers_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceMaterialLayers", SetMaterialInstanceMaterialLayers_IsValid);
+		SetMaterialInstanceLayerState_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetMaterialInstanceLayerState");
+		SetMaterialInstanceLayerState_ParamsSize = NativeReflection.GetFunctionParamsSize(SetMaterialInstanceLayerState_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceLayerState_MI_PropertyAddress, SetMaterialInstanceLayerState_FunctionAddress, "MI");
+		SetMaterialInstanceLayerState_MI_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceLayerState_FunctionAddress, "MI");
+		SetMaterialInstanceLayerState_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceLayerState_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceLayerState_LayerIndex_PropertyAddress, SetMaterialInstanceLayerState_FunctionAddress, "LayerIndex");
+		SetMaterialInstanceLayerState_LayerIndex_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceLayerState_FunctionAddress, "LayerIndex");
+		SetMaterialInstanceLayerState_LayerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceLayerState_FunctionAddress, "LayerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceLayerState_enable_PropertyAddress, SetMaterialInstanceLayerState_FunctionAddress, "enable");
+		SetMaterialInstanceLayerState_enable_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceLayerState_FunctionAddress, "enable");
+		SetMaterialInstanceLayerState_enable_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceLayerState_FunctionAddress, "enable", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceLayerState_ReturnValue_PropertyAddress, SetMaterialInstanceLayerState_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceLayerState_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceLayerState_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceLayerState_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceLayerState_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetMaterialInstanceLayerState_IsValid = SetMaterialInstanceLayerState_FunctionAddress != IntPtr.Zero && SetMaterialInstanceLayerState_MI_IsValid && SetMaterialInstanceLayerState_LayerIndex_IsValid && SetMaterialInstanceLayerState_enable_IsValid && SetMaterialInstanceLayerState_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceLayerState", SetMaterialInstanceLayerState_IsValid);
+		SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetMaterialInstanceLayerParametersFromMaterialInstanceLayer");
+		SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_ParamsSize = NativeReflection.GetFunctionParamsSize(SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destMI_PropertyAddress, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "destMI");
+		SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destMI_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "destMI");
+		SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destMI_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "destMI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destLayerIndex_PropertyAddress, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "destLayerIndex");
+		SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destLayerIndex_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "destLayerIndex");
+		SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destLayerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "destLayerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcMI_PropertyAddress, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "srcMI");
+		SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcMI_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "srcMI");
+		SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcMI_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "srcMI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcLayerIndex_PropertyAddress, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "srcLayerIndex");
+		SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcLayerIndex_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "srcLayerIndex");
+		SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcLayerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "srcLayerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_ReturnValue_PropertyAddress, SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "ReturnValue");
+		SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_IsValid = SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_FunctionAddress != IntPtr.Zero && SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destMI_IsValid && SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_destLayerIndex_IsValid && SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcMI_IsValid && SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_srcLayerIndex_IsValid && SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialInstanceLayerParametersFromMaterialInstanceLayer", SetMaterialInstanceLayerParametersFromMaterialInstanceLayer_IsValid);
+		SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant");
+		SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_ParamsSize = NativeReflection.GetFunctionParamsSize(SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Target_PropertyAddress, SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress, "Target");
+		SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Target_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress, "Target");
+		SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Target_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress, "Target", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Parent_PropertyAddress, SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress, "Parent");
+		SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Parent_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress, "Parent");
+		SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Parent_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress, "Parent", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_MICSource_PropertyAddress, SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress, "MICSource");
+		SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_MICSource_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress, "MICSource");
+		SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_MICSource_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress, "MICSource", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_ReturnValue_PropertyAddress, SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress, "ReturnValue");
+		SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress, "ReturnValue");
+		SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_IsValid = SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_FunctionAddress != IntPtr.Zero && SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Target_IsValid && SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_Parent_IsValid && SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_MICSource_IsValid && SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant", SetMaterialFunctionMaterialLayerFromMaterialInstanceConstant_IsValid);
+		SetMaterialFunctionInstanceParent_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetMaterialFunctionInstanceParent");
+		SetMaterialFunctionInstanceParent_ParamsSize = NativeReflection.GetFunctionParamsSize(SetMaterialFunctionInstanceParent_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialFunctionInstanceParent_Instance_PropertyAddress, SetMaterialFunctionInstanceParent_FunctionAddress, "Instance");
+		SetMaterialFunctionInstanceParent_Instance_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialFunctionInstanceParent_FunctionAddress, "Instance");
+		SetMaterialFunctionInstanceParent_Instance_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialFunctionInstanceParent_FunctionAddress, "Instance", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialFunctionInstanceParent_Parent_PropertyAddress, SetMaterialFunctionInstanceParent_FunctionAddress, "Parent");
+		SetMaterialFunctionInstanceParent_Parent_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialFunctionInstanceParent_FunctionAddress, "Parent");
+		SetMaterialFunctionInstanceParent_Parent_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialFunctionInstanceParent_FunctionAddress, "Parent", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMaterialFunctionInstanceParent_ReturnValue_PropertyAddress, SetMaterialFunctionInstanceParent_FunctionAddress, "ReturnValue");
+		SetMaterialFunctionInstanceParent_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetMaterialFunctionInstanceParent_FunctionAddress, "ReturnValue");
+		SetMaterialFunctionInstanceParent_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMaterialFunctionInstanceParent_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetMaterialFunctionInstanceParent_IsValid = SetMaterialFunctionInstanceParent_FunctionAddress != IntPtr.Zero && SetMaterialFunctionInstanceParent_Instance_IsValid && SetMaterialFunctionInstanceParent_Parent_IsValid && SetMaterialFunctionInstanceParent_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetMaterialFunctionInstanceParent", SetMaterialFunctionInstanceParent_IsValid);
+		SetFontParameterValueEditorOnly_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetFontParameterValueEditorOnly");
+		SetFontParameterValueEditorOnly_ParamsSize = NativeReflection.GetFunctionParamsSize(SetFontParameterValueEditorOnly_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetFontParameterValueEditorOnly_MIC_PropertyAddress, SetFontParameterValueEditorOnly_FunctionAddress, "MIC");
+		SetFontParameterValueEditorOnly_MIC_Offset = NativeReflectionCached.GetPropertyOffset(SetFontParameterValueEditorOnly_FunctionAddress, "MIC");
+		SetFontParameterValueEditorOnly_MIC_IsValid = NativeReflectionCached.ValidatePropertyClass(SetFontParameterValueEditorOnly_FunctionAddress, "MIC", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetFontParameterValueEditorOnly_ParameterInfo_PropertyAddress, SetFontParameterValueEditorOnly_FunctionAddress, "ParameterInfo");
+		SetFontParameterValueEditorOnly_ParameterInfo_Offset = NativeReflectionCached.GetPropertyOffset(SetFontParameterValueEditorOnly_FunctionAddress, "ParameterInfo");
+		SetFontParameterValueEditorOnly_ParameterInfo_IsValid = NativeReflectionCached.ValidatePropertyClass(SetFontParameterValueEditorOnly_FunctionAddress, "ParameterInfo", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetFontParameterValueEditorOnly_FontValue_PropertyAddress, SetFontParameterValueEditorOnly_FunctionAddress, "FontValue");
+		SetFontParameterValueEditorOnly_FontValue_Offset = NativeReflectionCached.GetPropertyOffset(SetFontParameterValueEditorOnly_FunctionAddress, "FontValue");
+		SetFontParameterValueEditorOnly_FontValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetFontParameterValueEditorOnly_FunctionAddress, "FontValue", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetFontParameterValueEditorOnly_FontPage_PropertyAddress, SetFontParameterValueEditorOnly_FunctionAddress, "FontPage");
+		SetFontParameterValueEditorOnly_FontPage_Offset = NativeReflectionCached.GetPropertyOffset(SetFontParameterValueEditorOnly_FunctionAddress, "FontPage");
+		SetFontParameterValueEditorOnly_FontPage_IsValid = NativeReflectionCached.ValidatePropertyClass(SetFontParameterValueEditorOnly_FunctionAddress, "FontPage", Classes.FIntProperty);
+		SetFontParameterValueEditorOnly_IsValid = SetFontParameterValueEditorOnly_FunctionAddress != IntPtr.Zero && SetFontParameterValueEditorOnly_MIC_IsValid && SetFontParameterValueEditorOnly_ParameterInfo_IsValid && SetFontParameterValueEditorOnly_FontValue_IsValid && SetFontParameterValueEditorOnly_FontPage_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:SetFontParameterValueEditorOnly", SetFontParameterValueEditorOnly_IsValid);
+		ReplaceMaterialInstanceParentByIndexEqual_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "ReplaceMaterialInstanceParentByIndexEqual");
+		ReplaceMaterialInstanceParentByIndexEqual_ParamsSize = NativeReflection.GetFunctionParamsSize(ReplaceMaterialInstanceParentByIndexEqual_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref ReplaceMaterialInstanceParentByIndexEqual_MI_PropertyAddress, ReplaceMaterialInstanceParentByIndexEqual_FunctionAddress, "MI");
+		ReplaceMaterialInstanceParentByIndexEqual_MI_Offset = NativeReflectionCached.GetPropertyOffset(ReplaceMaterialInstanceParentByIndexEqual_FunctionAddress, "MI");
+		ReplaceMaterialInstanceParentByIndexEqual_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(ReplaceMaterialInstanceParentByIndexEqual_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref ReplaceMaterialInstanceParentByIndexEqual_SearchParents_PropertyAddress, ReplaceMaterialInstanceParentByIndexEqual_FunctionAddress, "SearchParents");
+		ReplaceMaterialInstanceParentByIndexEqual_SearchParents_Offset = NativeReflectionCached.GetPropertyOffset(ReplaceMaterialInstanceParentByIndexEqual_FunctionAddress, "SearchParents");
+		ReplaceMaterialInstanceParentByIndexEqual_SearchParents_IsValid = NativeReflectionCached.ValidatePropertyClass(ReplaceMaterialInstanceParentByIndexEqual_FunctionAddress, "SearchParents", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref ReplaceMaterialInstanceParentByIndexEqual_ReplaceParents_PropertyAddress, ReplaceMaterialInstanceParentByIndexEqual_FunctionAddress, "ReplaceParents");
+		ReplaceMaterialInstanceParentByIndexEqual_ReplaceParents_Offset = NativeReflectionCached.GetPropertyOffset(ReplaceMaterialInstanceParentByIndexEqual_FunctionAddress, "ReplaceParents");
+		ReplaceMaterialInstanceParentByIndexEqual_ReplaceParents_IsValid = NativeReflectionCached.ValidatePropertyClass(ReplaceMaterialInstanceParentByIndexEqual_FunctionAddress, "ReplaceParents", Classes.FArrayProperty);
+		ReplaceMaterialInstanceParentByIndexEqual_IsValid = ReplaceMaterialInstanceParentByIndexEqual_FunctionAddress != IntPtr.Zero && ReplaceMaterialInstanceParentByIndexEqual_MI_IsValid && ReplaceMaterialInstanceParentByIndexEqual_SearchParents_IsValid && ReplaceMaterialInstanceParentByIndexEqual_ReplaceParents_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:ReplaceMaterialInstanceParentByIndexEqual", ReplaceMaterialInstanceParentByIndexEqual_IsValid);
+		RemoveMaterialInstanceLayer_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "RemoveMaterialInstanceLayer");
+		RemoveMaterialInstanceLayer_ParamsSize = NativeReflection.GetFunctionParamsSize(RemoveMaterialInstanceLayer_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref RemoveMaterialInstanceLayer_MI_PropertyAddress, RemoveMaterialInstanceLayer_FunctionAddress, "MI");
+		RemoveMaterialInstanceLayer_MI_Offset = NativeReflectionCached.GetPropertyOffset(RemoveMaterialInstanceLayer_FunctionAddress, "MI");
+		RemoveMaterialInstanceLayer_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(RemoveMaterialInstanceLayer_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref RemoveMaterialInstanceLayer_LayerIndex_PropertyAddress, RemoveMaterialInstanceLayer_FunctionAddress, "LayerIndex");
+		RemoveMaterialInstanceLayer_LayerIndex_Offset = NativeReflectionCached.GetPropertyOffset(RemoveMaterialInstanceLayer_FunctionAddress, "LayerIndex");
+		RemoveMaterialInstanceLayer_LayerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(RemoveMaterialInstanceLayer_FunctionAddress, "LayerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref RemoveMaterialInstanceLayer_ReturnValue_PropertyAddress, RemoveMaterialInstanceLayer_FunctionAddress, "ReturnValue");
+		RemoveMaterialInstanceLayer_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(RemoveMaterialInstanceLayer_FunctionAddress, "ReturnValue");
+		RemoveMaterialInstanceLayer_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(RemoveMaterialInstanceLayer_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		RemoveMaterialInstanceLayer_IsValid = RemoveMaterialInstanceLayer_FunctionAddress != IntPtr.Zero && RemoveMaterialInstanceLayer_MI_IsValid && RemoveMaterialInstanceLayer_LayerIndex_IsValid && RemoveMaterialInstanceLayer_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:RemoveMaterialInstanceLayer", RemoveMaterialInstanceLayer_IsValid);
+		RefreshMaterialInstanceStaticSwitch_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "RefreshMaterialInstanceStaticSwitch");
+		RefreshMaterialInstanceStaticSwitch_ParamsSize = NativeReflection.GetFunctionParamsSize(RefreshMaterialInstanceStaticSwitch_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref RefreshMaterialInstanceStaticSwitch_MI_PropertyAddress, RefreshMaterialInstanceStaticSwitch_FunctionAddress, "MI");
+		RefreshMaterialInstanceStaticSwitch_MI_Offset = NativeReflectionCached.GetPropertyOffset(RefreshMaterialInstanceStaticSwitch_FunctionAddress, "MI");
+		RefreshMaterialInstanceStaticSwitch_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(RefreshMaterialInstanceStaticSwitch_FunctionAddress, "MI", Classes.FObjectProperty);
+		RefreshMaterialInstanceStaticSwitch_IsValid = RefreshMaterialInstanceStaticSwitch_FunctionAddress != IntPtr.Zero && RefreshMaterialInstanceStaticSwitch_MI_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:RefreshMaterialInstanceStaticSwitch", RefreshMaterialInstanceStaticSwitch_IsValid);
+		RefreshMaterialInstance_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "RefreshMaterialInstance");
+		RefreshMaterialInstance_ParamsSize = NativeReflection.GetFunctionParamsSize(RefreshMaterialInstance_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref RefreshMaterialInstance_MI_PropertyAddress, RefreshMaterialInstance_FunctionAddress, "MI");
+		RefreshMaterialInstance_MI_Offset = NativeReflectionCached.GetPropertyOffset(RefreshMaterialInstance_FunctionAddress, "MI");
+		RefreshMaterialInstance_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(RefreshMaterialInstance_FunctionAddress, "MI", Classes.FObjectProperty);
+		RefreshMaterialInstance_IsValid = RefreshMaterialInstance_FunctionAddress != IntPtr.Zero && RefreshMaterialInstance_MI_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:RefreshMaterialInstance", RefreshMaterialInstance_IsValid);
+		RebuildMaterialInstances_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "RebuildMaterialInstances");
+		RebuildMaterialInstances_ParamsSize = NativeReflection.GetFunctionParamsSize(RebuildMaterialInstances_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref RebuildMaterialInstances_AssetPaths_PropertyAddress, RebuildMaterialInstances_FunctionAddress, "AssetPaths");
+		RebuildMaterialInstances_AssetPaths_Offset = NativeReflectionCached.GetPropertyOffset(RebuildMaterialInstances_FunctionAddress, "AssetPaths");
+		RebuildMaterialInstances_AssetPaths_IsValid = NativeReflectionCached.ValidatePropertyClass(RebuildMaterialInstances_FunctionAddress, "AssetPaths", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref RebuildMaterialInstances_ReturnValue_PropertyAddress, RebuildMaterialInstances_FunctionAddress, "ReturnValue");
+		RebuildMaterialInstances_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(RebuildMaterialInstances_FunctionAddress, "ReturnValue");
+		RebuildMaterialInstances_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(RebuildMaterialInstances_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		RebuildMaterialInstances_IsValid = RebuildMaterialInstances_FunctionAddress != IntPtr.Zero && RebuildMaterialInstances_AssetPaths_IsValid && RebuildMaterialInstances_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:RebuildMaterialInstances", RebuildMaterialInstances_IsValid);
+		OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "OverrideMaterialInstanceMaterialLayerVectorParameterValues");
+		OverrideMaterialInstanceMaterialLayerVectorParameterValues_ParamsSize = NativeReflection.GetFunctionParamsSize(OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerVectorParameterValues_MFI_PropertyAddress, OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress, "MFI");
+		OverrideMaterialInstanceMaterialLayerVectorParameterValues_MFI_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress, "MFI");
+		OverrideMaterialInstanceMaterialLayerVectorParameterValues_MFI_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress, "MFI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorNames_PropertyAddress, OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress, "VectorNames");
+		OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorNames_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress, "VectorNames");
+		OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorNames_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress, "VectorNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorValues_PropertyAddress, OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress, "VectorValues");
+		OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorValues_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress, "VectorValues");
+		OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorValues_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress, "VectorValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerVectorParameterValues_ReturnValue_PropertyAddress, OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress, "ReturnValue");
+		OverrideMaterialInstanceMaterialLayerVectorParameterValues_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress, "ReturnValue");
+		OverrideMaterialInstanceMaterialLayerVectorParameterValues_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		OverrideMaterialInstanceMaterialLayerVectorParameterValues_IsValid = OverrideMaterialInstanceMaterialLayerVectorParameterValues_FunctionAddress != IntPtr.Zero && OverrideMaterialInstanceMaterialLayerVectorParameterValues_MFI_IsValid && OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorNames_IsValid && OverrideMaterialInstanceMaterialLayerVectorParameterValues_VectorValues_IsValid && OverrideMaterialInstanceMaterialLayerVectorParameterValues_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerVectorParameterValues", OverrideMaterialInstanceMaterialLayerVectorParameterValues_IsValid);
+		OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "OverrideMaterialInstanceMaterialLayerTextureParameterValues");
+		OverrideMaterialInstanceMaterialLayerTextureParameterValues_ParamsSize = NativeReflection.GetFunctionParamsSize(OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerTextureParameterValues_MFI_PropertyAddress, OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress, "MFI");
+		OverrideMaterialInstanceMaterialLayerTextureParameterValues_MFI_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress, "MFI");
+		OverrideMaterialInstanceMaterialLayerTextureParameterValues_MFI_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress, "MFI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureNames_PropertyAddress, OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress, "TextureNames");
+		OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureNames_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress, "TextureNames");
+		OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureNames_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress, "TextureNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureValues_PropertyAddress, OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress, "TextureValues");
+		OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureValues_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress, "TextureValues");
+		OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureValues_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress, "TextureValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerTextureParameterValues_ReturnValue_PropertyAddress, OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress, "ReturnValue");
+		OverrideMaterialInstanceMaterialLayerTextureParameterValues_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress, "ReturnValue");
+		OverrideMaterialInstanceMaterialLayerTextureParameterValues_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		OverrideMaterialInstanceMaterialLayerTextureParameterValues_IsValid = OverrideMaterialInstanceMaterialLayerTextureParameterValues_FunctionAddress != IntPtr.Zero && OverrideMaterialInstanceMaterialLayerTextureParameterValues_MFI_IsValid && OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureNames_IsValid && OverrideMaterialInstanceMaterialLayerTextureParameterValues_TextureValues_IsValid && OverrideMaterialInstanceMaterialLayerTextureParameterValues_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerTextureParameterValues", OverrideMaterialInstanceMaterialLayerTextureParameterValues_IsValid);
+		OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues");
+		OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_ParamsSize = NativeReflection.GetFunctionParamsSize(OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_MFI_PropertyAddress, OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress, "MFI");
+		OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_MFI_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress, "MFI");
+		OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_MFI_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress, "MFI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchNames_PropertyAddress, OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress, "StaticSwitchNames");
+		OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchNames_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress, "StaticSwitchNames");
+		OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchNames_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress, "StaticSwitchNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchValues_PropertyAddress, OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress, "StaticSwitchValues");
+		OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchValues_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress, "StaticSwitchValues");
+		OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchValues_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress, "StaticSwitchValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_ReturnValue_PropertyAddress, OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress, "ReturnValue");
+		OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress, "ReturnValue");
+		OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_IsValid = OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_FunctionAddress != IntPtr.Zero && OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_MFI_IsValid && OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchNames_IsValid && OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_StaticSwitchValues_IsValid && OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues", OverrideMaterialInstanceMaterialLayerStaticSwitchParameterValues_IsValid);
+		OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues");
+		OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_ParamsSize = NativeReflection.GetFunctionParamsSize(OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_MFI_PropertyAddress, OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress, "MFI");
+		OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_MFI_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress, "MFI");
+		OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_MFI_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress, "MFI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskNames_PropertyAddress, OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress, "StaticComponentMaskNames");
+		OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskNames_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress, "StaticComponentMaskNames");
+		OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskNames_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress, "StaticComponentMaskNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskValues_PropertyAddress, OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress, "StaticComponentMaskValues");
+		OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskValues_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress, "StaticComponentMaskValues");
+		OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskValues_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress, "StaticComponentMaskValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_ReturnValue_PropertyAddress, OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress, "ReturnValue");
+		OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress, "ReturnValue");
+		OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_IsValid = OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_FunctionAddress != IntPtr.Zero && OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_MFI_IsValid && OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskNames_IsValid && OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_StaticComponentMaskValues_IsValid && OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues", OverrideMaterialInstanceMaterialLayerStaticComponentMaskParameterValues_IsValid);
+		OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "OverrideMaterialInstanceMaterialLayerScalarParameterValues");
+		OverrideMaterialInstanceMaterialLayerScalarParameterValues_ParamsSize = NativeReflection.GetFunctionParamsSize(OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerScalarParameterValues_MFI_PropertyAddress, OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress, "MFI");
+		OverrideMaterialInstanceMaterialLayerScalarParameterValues_MFI_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress, "MFI");
+		OverrideMaterialInstanceMaterialLayerScalarParameterValues_MFI_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress, "MFI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarNames_PropertyAddress, OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress, "ScalarNames");
+		OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarNames_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress, "ScalarNames");
+		OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarNames_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress, "ScalarNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarValues_PropertyAddress, OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress, "ScalarValues");
+		OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarValues_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress, "ScalarValues");
+		OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarValues_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress, "ScalarValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerScalarParameterValues_ReturnValue_PropertyAddress, OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress, "ReturnValue");
+		OverrideMaterialInstanceMaterialLayerScalarParameterValues_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress, "ReturnValue");
+		OverrideMaterialInstanceMaterialLayerScalarParameterValues_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		OverrideMaterialInstanceMaterialLayerScalarParameterValues_IsValid = OverrideMaterialInstanceMaterialLayerScalarParameterValues_FunctionAddress != IntPtr.Zero && OverrideMaterialInstanceMaterialLayerScalarParameterValues_MFI_IsValid && OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarNames_IsValid && OverrideMaterialInstanceMaterialLayerScalarParameterValues_ScalarValues_IsValid && OverrideMaterialInstanceMaterialLayerScalarParameterValues_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerScalarParameterValues", OverrideMaterialInstanceMaterialLayerScalarParameterValues_IsValid);
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "OverrideMaterialInstanceMaterialLayerAllParameterValues");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_ParamsSize = NativeReflection.GetFunctionParamsSize(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerAllParameterValues_MFI_PropertyAddress, OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "MFI");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_MFI_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "MFI");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_MFI_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "MFI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerAllParameterValues_parent_PropertyAddress, OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "parent");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_parent_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "parent");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_parent_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "parent", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarNames_PropertyAddress, OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "ScalarNames");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarNames_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "ScalarNames");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarNames_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "ScalarNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarValues_PropertyAddress, OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "ScalarValues");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarValues_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "ScalarValues");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarValues_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "ScalarValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorNames_PropertyAddress, OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "VectorNames");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorNames_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "VectorNames");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorNames_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "VectorNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorValues_PropertyAddress, OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "VectorValues");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorValues_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "VectorValues");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorValues_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "VectorValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureNames_PropertyAddress, OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "TextureNames");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureNames_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "TextureNames");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureNames_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "TextureNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureValues_PropertyAddress, OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "TextureValues");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureValues_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "TextureValues");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureValues_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "TextureValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchNames_PropertyAddress, OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "StaticSwitchNames");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchNames_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "StaticSwitchNames");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchNames_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "StaticSwitchNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchValues_PropertyAddress, OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "StaticSwitchValues");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchValues_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "StaticSwitchValues");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchValues_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "StaticSwitchValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskNames_PropertyAddress, OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "StaticComponentMaskNames");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskNames_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "StaticComponentMaskNames");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskNames_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "StaticComponentMaskNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskValues_PropertyAddress, OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "StaticComponentMaskValues");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskValues_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "StaticComponentMaskValues");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskValues_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "StaticComponentMaskValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref OverrideMaterialInstanceMaterialLayerAllParameterValues_ReturnValue_PropertyAddress, OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "ReturnValue");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "ReturnValue");
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		OverrideMaterialInstanceMaterialLayerAllParameterValues_IsValid = OverrideMaterialInstanceMaterialLayerAllParameterValues_FunctionAddress != IntPtr.Zero && OverrideMaterialInstanceMaterialLayerAllParameterValues_MFI_IsValid && OverrideMaterialInstanceMaterialLayerAllParameterValues_parent_IsValid && OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarNames_IsValid && OverrideMaterialInstanceMaterialLayerAllParameterValues_ScalarValues_IsValid && OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorNames_IsValid && OverrideMaterialInstanceMaterialLayerAllParameterValues_VectorValues_IsValid && OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureNames_IsValid && OverrideMaterialInstanceMaterialLayerAllParameterValues_TextureValues_IsValid && OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchNames_IsValid && OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticSwitchValues_IsValid && OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskNames_IsValid && OverrideMaterialInstanceMaterialLayerAllParameterValues_StaticComponentMaskValues_IsValid && OverrideMaterialInstanceMaterialLayerAllParameterValues_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:OverrideMaterialInstanceMaterialLayerAllParameterValues", OverrideMaterialInstanceMaterialLayerAllParameterValues_IsValid);
+		MaterialIsMask_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "MaterialIsMask");
+		MaterialIsMask_ParamsSize = NativeReflection.GetFunctionParamsSize(MaterialIsMask_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref MaterialIsMask_MI_PropertyAddress, MaterialIsMask_FunctionAddress, "MI");
+		MaterialIsMask_MI_Offset = NativeReflectionCached.GetPropertyOffset(MaterialIsMask_FunctionAddress, "MI");
+		MaterialIsMask_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(MaterialIsMask_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref MaterialIsMask_ReturnValue_PropertyAddress, MaterialIsMask_FunctionAddress, "ReturnValue");
+		MaterialIsMask_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(MaterialIsMask_FunctionAddress, "ReturnValue");
+		MaterialIsMask_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(MaterialIsMask_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		MaterialIsMask_IsValid = MaterialIsMask_FunctionAddress != IntPtr.Zero && MaterialIsMask_MI_IsValid && MaterialIsMask_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:MaterialIsMask", MaterialIsMask_IsValid);
+		HasSpecialNameNodeInEditor_MaterialFunction_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "HasSpecialNameNodeInEditor_MaterialFunction");
+		HasSpecialNameNodeInEditor_MaterialFunction_ParamsSize = NativeReflection.GetFunctionParamsSize(HasSpecialNameNodeInEditor_MaterialFunction_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref HasSpecialNameNodeInEditor_MaterialFunction_InMaterialFunction_PropertyAddress, HasSpecialNameNodeInEditor_MaterialFunction_FunctionAddress, "InMaterialFunction");
+		HasSpecialNameNodeInEditor_MaterialFunction_InMaterialFunction_Offset = NativeReflectionCached.GetPropertyOffset(HasSpecialNameNodeInEditor_MaterialFunction_FunctionAddress, "InMaterialFunction");
+		HasSpecialNameNodeInEditor_MaterialFunction_InMaterialFunction_IsValid = NativeReflectionCached.ValidatePropertyClass(HasSpecialNameNodeInEditor_MaterialFunction_FunctionAddress, "InMaterialFunction", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref HasSpecialNameNodeInEditor_MaterialFunction_SpecialName_PropertyAddress, HasSpecialNameNodeInEditor_MaterialFunction_FunctionAddress, "SpecialName");
+		HasSpecialNameNodeInEditor_MaterialFunction_SpecialName_Offset = NativeReflectionCached.GetPropertyOffset(HasSpecialNameNodeInEditor_MaterialFunction_FunctionAddress, "SpecialName");
+		HasSpecialNameNodeInEditor_MaterialFunction_SpecialName_IsValid = NativeReflectionCached.ValidatePropertyClass(HasSpecialNameNodeInEditor_MaterialFunction_FunctionAddress, "SpecialName", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref HasSpecialNameNodeInEditor_MaterialFunction_ReturnValue_PropertyAddress, HasSpecialNameNodeInEditor_MaterialFunction_FunctionAddress, "ReturnValue");
+		HasSpecialNameNodeInEditor_MaterialFunction_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(HasSpecialNameNodeInEditor_MaterialFunction_FunctionAddress, "ReturnValue");
+		HasSpecialNameNodeInEditor_MaterialFunction_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(HasSpecialNameNodeInEditor_MaterialFunction_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		HasSpecialNameNodeInEditor_MaterialFunction_IsValid = HasSpecialNameNodeInEditor_MaterialFunction_FunctionAddress != IntPtr.Zero && HasSpecialNameNodeInEditor_MaterialFunction_InMaterialFunction_IsValid && HasSpecialNameNodeInEditor_MaterialFunction_SpecialName_IsValid && HasSpecialNameNodeInEditor_MaterialFunction_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:HasSpecialNameNodeInEditor_MaterialFunction", HasSpecialNameNodeInEditor_MaterialFunction_IsValid);
+		HasSpecialNameNodeInEditor_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "HasSpecialNameNodeInEditor");
+		HasSpecialNameNodeInEditor_ParamsSize = NativeReflection.GetFunctionParamsSize(HasSpecialNameNodeInEditor_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref HasSpecialNameNodeInEditor_InMaterial_PropertyAddress, HasSpecialNameNodeInEditor_FunctionAddress, "InMaterial");
+		HasSpecialNameNodeInEditor_InMaterial_Offset = NativeReflectionCached.GetPropertyOffset(HasSpecialNameNodeInEditor_FunctionAddress, "InMaterial");
+		HasSpecialNameNodeInEditor_InMaterial_IsValid = NativeReflectionCached.ValidatePropertyClass(HasSpecialNameNodeInEditor_FunctionAddress, "InMaterial", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref HasSpecialNameNodeInEditor_SpecialName_PropertyAddress, HasSpecialNameNodeInEditor_FunctionAddress, "SpecialName");
+		HasSpecialNameNodeInEditor_SpecialName_Offset = NativeReflectionCached.GetPropertyOffset(HasSpecialNameNodeInEditor_FunctionAddress, "SpecialName");
+		HasSpecialNameNodeInEditor_SpecialName_IsValid = NativeReflectionCached.ValidatePropertyClass(HasSpecialNameNodeInEditor_FunctionAddress, "SpecialName", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref HasSpecialNameNodeInEditor_ReturnValue_PropertyAddress, HasSpecialNameNodeInEditor_FunctionAddress, "ReturnValue");
+		HasSpecialNameNodeInEditor_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(HasSpecialNameNodeInEditor_FunctionAddress, "ReturnValue");
+		HasSpecialNameNodeInEditor_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(HasSpecialNameNodeInEditor_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		HasSpecialNameNodeInEditor_IsValid = HasSpecialNameNodeInEditor_FunctionAddress != IntPtr.Zero && HasSpecialNameNodeInEditor_InMaterial_IsValid && HasSpecialNameNodeInEditor_SpecialName_IsValid && HasSpecialNameNodeInEditor_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:HasSpecialNameNodeInEditor", HasSpecialNameNodeInEditor_IsValid);
+		HasEyeAdaptationInEmissive_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "HasEyeAdaptationInEmissive");
+		HasEyeAdaptationInEmissive_ParamsSize = NativeReflection.GetFunctionParamsSize(HasEyeAdaptationInEmissive_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref HasEyeAdaptationInEmissive_InMaterial_PropertyAddress, HasEyeAdaptationInEmissive_FunctionAddress, "InMaterial");
+		HasEyeAdaptationInEmissive_InMaterial_Offset = NativeReflectionCached.GetPropertyOffset(HasEyeAdaptationInEmissive_FunctionAddress, "InMaterial");
+		HasEyeAdaptationInEmissive_InMaterial_IsValid = NativeReflectionCached.ValidatePropertyClass(HasEyeAdaptationInEmissive_FunctionAddress, "InMaterial", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref HasEyeAdaptationInEmissive_ReturnValue_PropertyAddress, HasEyeAdaptationInEmissive_FunctionAddress, "ReturnValue");
+		HasEyeAdaptationInEmissive_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(HasEyeAdaptationInEmissive_FunctionAddress, "ReturnValue");
+		HasEyeAdaptationInEmissive_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(HasEyeAdaptationInEmissive_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		HasEyeAdaptationInEmissive_IsValid = HasEyeAdaptationInEmissive_FunctionAddress != IntPtr.Zero && HasEyeAdaptationInEmissive_InMaterial_IsValid && HasEyeAdaptationInEmissive_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:HasEyeAdaptationInEmissive", HasEyeAdaptationInEmissive_IsValid);
+		GetShaderCompileCount_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetShaderCompileCount");
+		GetShaderCompileCount_ParamsSize = NativeReflection.GetFunctionParamsSize(GetShaderCompileCount_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetShaderCompileCount_ReturnValue_PropertyAddress, GetShaderCompileCount_FunctionAddress, "ReturnValue");
+		GetShaderCompileCount_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetShaderCompileCount_FunctionAddress, "ReturnValue");
+		GetShaderCompileCount_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetShaderCompileCount_FunctionAddress, "ReturnValue", Classes.FIntProperty);
+		GetShaderCompileCount_IsValid = GetShaderCompileCount_FunctionAddress != IntPtr.Zero && GetShaderCompileCount_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetShaderCompileCount", GetShaderCompileCount_IsValid);
+		GetOverrideMaterialInstanceStaticSwitch_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetOverrideMaterialInstanceStaticSwitch");
+		GetOverrideMaterialInstanceStaticSwitch_ParamsSize = NativeReflection.GetFunctionParamsSize(GetOverrideMaterialInstanceStaticSwitch_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetOverrideMaterialInstanceStaticSwitch_MI_PropertyAddress, GetOverrideMaterialInstanceStaticSwitch_FunctionAddress, "MI");
+		GetOverrideMaterialInstanceStaticSwitch_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetOverrideMaterialInstanceStaticSwitch_FunctionAddress, "MI");
+		GetOverrideMaterialInstanceStaticSwitch_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetOverrideMaterialInstanceStaticSwitch_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetOverrideMaterialInstanceStaticSwitch_ReturnValue_PropertyAddress, GetOverrideMaterialInstanceStaticSwitch_FunctionAddress, "ReturnValue");
+		GetOverrideMaterialInstanceStaticSwitch_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetOverrideMaterialInstanceStaticSwitch_FunctionAddress, "ReturnValue");
+		GetOverrideMaterialInstanceStaticSwitch_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetOverrideMaterialInstanceStaticSwitch_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetOverrideMaterialInstanceStaticSwitch_IsValid = GetOverrideMaterialInstanceStaticSwitch_FunctionAddress != IntPtr.Zero && GetOverrideMaterialInstanceStaticSwitch_MI_IsValid && GetOverrideMaterialInstanceStaticSwitch_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetOverrideMaterialInstanceStaticSwitch", GetOverrideMaterialInstanceStaticSwitch_IsValid);
+		GetNoOverrideTextureSlots_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetNoOverrideTextureSlots");
+		GetNoOverrideTextureSlots_ParamsSize = NativeReflection.GetFunctionParamsSize(GetNoOverrideTextureSlots_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetNoOverrideTextureSlots_child_PropertyAddress, GetNoOverrideTextureSlots_FunctionAddress, "child");
+		GetNoOverrideTextureSlots_child_Offset = NativeReflectionCached.GetPropertyOffset(GetNoOverrideTextureSlots_FunctionAddress, "child");
+		GetNoOverrideTextureSlots_child_IsValid = NativeReflectionCached.ValidatePropertyClass(GetNoOverrideTextureSlots_FunctionAddress, "child", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetNoOverrideTextureSlots_parent_PropertyAddress, GetNoOverrideTextureSlots_FunctionAddress, "parent");
+		GetNoOverrideTextureSlots_parent_Offset = NativeReflectionCached.GetPropertyOffset(GetNoOverrideTextureSlots_FunctionAddress, "parent");
+		GetNoOverrideTextureSlots_parent_IsValid = NativeReflectionCached.ValidatePropertyClass(GetNoOverrideTextureSlots_FunctionAddress, "parent", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetNoOverrideTextureSlots_ReturnValue_PropertyAddress, GetNoOverrideTextureSlots_FunctionAddress, "ReturnValue");
+		GetNoOverrideTextureSlots_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetNoOverrideTextureSlots_FunctionAddress, "ReturnValue");
+		GetNoOverrideTextureSlots_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetNoOverrideTextureSlots_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetNoOverrideTextureSlots_IsValid = GetNoOverrideTextureSlots_FunctionAddress != IntPtr.Zero && GetNoOverrideTextureSlots_child_IsValid && GetNoOverrideTextureSlots_parent_IsValid && GetNoOverrideTextureSlots_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetNoOverrideTextureSlots", GetNoOverrideTextureSlots_IsValid);
+		GetMaterialInstanceVectorParameter_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetMaterialInstanceVectorParameter");
+		GetMaterialInstanceVectorParameter_ParamsSize = NativeReflection.GetFunctionParamsSize(GetMaterialInstanceVectorParameter_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceVectorParameter_MI_PropertyAddress, GetMaterialInstanceVectorParameter_FunctionAddress, "MI");
+		GetMaterialInstanceVectorParameter_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceVectorParameter_FunctionAddress, "MI");
+		GetMaterialInstanceVectorParameter_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceVectorParameter_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceVectorParameter_VectorName_PropertyAddress, GetMaterialInstanceVectorParameter_FunctionAddress, "VectorName");
+		GetMaterialInstanceVectorParameter_VectorName_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceVectorParameter_FunctionAddress, "VectorName");
+		GetMaterialInstanceVectorParameter_VectorName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceVectorParameter_FunctionAddress, "VectorName", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceVectorParameter_layerIndex_PropertyAddress, GetMaterialInstanceVectorParameter_FunctionAddress, "layerIndex");
+		GetMaterialInstanceVectorParameter_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceVectorParameter_FunctionAddress, "layerIndex");
+		GetMaterialInstanceVectorParameter_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceVectorParameter_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceVectorParameter_ReturnValue_PropertyAddress, GetMaterialInstanceVectorParameter_FunctionAddress, "ReturnValue");
+		GetMaterialInstanceVectorParameter_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceVectorParameter_FunctionAddress, "ReturnValue");
+		GetMaterialInstanceVectorParameter_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceVectorParameter_FunctionAddress, "ReturnValue", Classes.FStructProperty);
+		GetMaterialInstanceVectorParameter_IsValid = GetMaterialInstanceVectorParameter_FunctionAddress != IntPtr.Zero && GetMaterialInstanceVectorParameter_MI_IsValid && GetMaterialInstanceVectorParameter_VectorName_IsValid && GetMaterialInstanceVectorParameter_layerIndex_IsValid && GetMaterialInstanceVectorParameter_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceVectorParameter", GetMaterialInstanceVectorParameter_IsValid);
+		GetMaterialInstanceTextureParameter_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetMaterialInstanceTextureParameter");
+		GetMaterialInstanceTextureParameter_ParamsSize = NativeReflection.GetFunctionParamsSize(GetMaterialInstanceTextureParameter_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceTextureParameter_MI_PropertyAddress, GetMaterialInstanceTextureParameter_FunctionAddress, "MI");
+		GetMaterialInstanceTextureParameter_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceTextureParameter_FunctionAddress, "MI");
+		GetMaterialInstanceTextureParameter_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceTextureParameter_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceTextureParameter_TextureSlotName_PropertyAddress, GetMaterialInstanceTextureParameter_FunctionAddress, "TextureSlotName");
+		GetMaterialInstanceTextureParameter_TextureSlotName_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceTextureParameter_FunctionAddress, "TextureSlotName");
+		GetMaterialInstanceTextureParameter_TextureSlotName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceTextureParameter_FunctionAddress, "TextureSlotName", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceTextureParameter_layerIndex_PropertyAddress, GetMaterialInstanceTextureParameter_FunctionAddress, "layerIndex");
+		GetMaterialInstanceTextureParameter_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceTextureParameter_FunctionAddress, "layerIndex");
+		GetMaterialInstanceTextureParameter_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceTextureParameter_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceTextureParameter_ReturnValue_PropertyAddress, GetMaterialInstanceTextureParameter_FunctionAddress, "ReturnValue");
+		GetMaterialInstanceTextureParameter_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceTextureParameter_FunctionAddress, "ReturnValue");
+		GetMaterialInstanceTextureParameter_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceTextureParameter_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		GetMaterialInstanceTextureParameter_IsValid = GetMaterialInstanceTextureParameter_FunctionAddress != IntPtr.Zero && GetMaterialInstanceTextureParameter_MI_IsValid && GetMaterialInstanceTextureParameter_TextureSlotName_IsValid && GetMaterialInstanceTextureParameter_layerIndex_IsValid && GetMaterialInstanceTextureParameter_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceTextureParameter", GetMaterialInstanceTextureParameter_IsValid);
+		GetMaterialInstanceStaticSwitchParameter_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetMaterialInstanceStaticSwitchParameter");
+		GetMaterialInstanceStaticSwitchParameter_ParamsSize = NativeReflection.GetFunctionParamsSize(GetMaterialInstanceStaticSwitchParameter_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceStaticSwitchParameter_MI_PropertyAddress, GetMaterialInstanceStaticSwitchParameter_FunctionAddress, "MI");
+		GetMaterialInstanceStaticSwitchParameter_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceStaticSwitchParameter_FunctionAddress, "MI");
+		GetMaterialInstanceStaticSwitchParameter_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceStaticSwitchParameter_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceStaticSwitchParameter_StaticSwitchName_PropertyAddress, GetMaterialInstanceStaticSwitchParameter_FunctionAddress, "StaticSwitchName");
+		GetMaterialInstanceStaticSwitchParameter_StaticSwitchName_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceStaticSwitchParameter_FunctionAddress, "StaticSwitchName");
+		GetMaterialInstanceStaticSwitchParameter_StaticSwitchName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceStaticSwitchParameter_FunctionAddress, "StaticSwitchName", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceStaticSwitchParameter_layerIndex_PropertyAddress, GetMaterialInstanceStaticSwitchParameter_FunctionAddress, "layerIndex");
+		GetMaterialInstanceStaticSwitchParameter_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceStaticSwitchParameter_FunctionAddress, "layerIndex");
+		GetMaterialInstanceStaticSwitchParameter_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceStaticSwitchParameter_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceStaticSwitchParameter_ReturnValue_PropertyAddress, GetMaterialInstanceStaticSwitchParameter_FunctionAddress, "ReturnValue");
+		GetMaterialInstanceStaticSwitchParameter_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceStaticSwitchParameter_FunctionAddress, "ReturnValue");
+		GetMaterialInstanceStaticSwitchParameter_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceStaticSwitchParameter_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetMaterialInstanceStaticSwitchParameter_IsValid = GetMaterialInstanceStaticSwitchParameter_FunctionAddress != IntPtr.Zero && GetMaterialInstanceStaticSwitchParameter_MI_IsValid && GetMaterialInstanceStaticSwitchParameter_StaticSwitchName_IsValid && GetMaterialInstanceStaticSwitchParameter_layerIndex_IsValid && GetMaterialInstanceStaticSwitchParameter_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceStaticSwitchParameter", GetMaterialInstanceStaticSwitchParameter_IsValid);
+		GetMaterialInstanceScalarParameter_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetMaterialInstanceScalarParameter");
+		GetMaterialInstanceScalarParameter_ParamsSize = NativeReflection.GetFunctionParamsSize(GetMaterialInstanceScalarParameter_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceScalarParameter_MI_PropertyAddress, GetMaterialInstanceScalarParameter_FunctionAddress, "MI");
+		GetMaterialInstanceScalarParameter_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceScalarParameter_FunctionAddress, "MI");
+		GetMaterialInstanceScalarParameter_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceScalarParameter_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceScalarParameter_ScalarName_PropertyAddress, GetMaterialInstanceScalarParameter_FunctionAddress, "ScalarName");
+		GetMaterialInstanceScalarParameter_ScalarName_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceScalarParameter_FunctionAddress, "ScalarName");
+		GetMaterialInstanceScalarParameter_ScalarName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceScalarParameter_FunctionAddress, "ScalarName", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceScalarParameter_layerIndex_PropertyAddress, GetMaterialInstanceScalarParameter_FunctionAddress, "layerIndex");
+		GetMaterialInstanceScalarParameter_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceScalarParameter_FunctionAddress, "layerIndex");
+		GetMaterialInstanceScalarParameter_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceScalarParameter_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceScalarParameter_ReturnValue_PropertyAddress, GetMaterialInstanceScalarParameter_FunctionAddress, "ReturnValue");
+		GetMaterialInstanceScalarParameter_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceScalarParameter_FunctionAddress, "ReturnValue");
+		GetMaterialInstanceScalarParameter_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceScalarParameter_FunctionAddress, "ReturnValue", Classes.FFloatProperty);
+		GetMaterialInstanceScalarParameter_IsValid = GetMaterialInstanceScalarParameter_FunctionAddress != IntPtr.Zero && GetMaterialInstanceScalarParameter_MI_IsValid && GetMaterialInstanceScalarParameter_ScalarName_IsValid && GetMaterialInstanceScalarParameter_layerIndex_IsValid && GetMaterialInstanceScalarParameter_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceScalarParameter", GetMaterialInstanceScalarParameter_IsValid);
+		GetMaterialInstanceLayerState_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetMaterialInstanceLayerState");
+		GetMaterialInstanceLayerState_ParamsSize = NativeReflection.GetFunctionParamsSize(GetMaterialInstanceLayerState_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceLayerState_MI_PropertyAddress, GetMaterialInstanceLayerState_FunctionAddress, "MI");
+		GetMaterialInstanceLayerState_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceLayerState_FunctionAddress, "MI");
+		GetMaterialInstanceLayerState_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceLayerState_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceLayerState_LayerIndex_PropertyAddress, GetMaterialInstanceLayerState_FunctionAddress, "LayerIndex");
+		GetMaterialInstanceLayerState_LayerIndex_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceLayerState_FunctionAddress, "LayerIndex");
+		GetMaterialInstanceLayerState_LayerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceLayerState_FunctionAddress, "LayerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceLayerState_outState_PropertyAddress, GetMaterialInstanceLayerState_FunctionAddress, "outState");
+		GetMaterialInstanceLayerState_outState_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceLayerState_FunctionAddress, "outState");
+		GetMaterialInstanceLayerState_outState_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceLayerState_FunctionAddress, "outState", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceLayerState_ReturnValue_PropertyAddress, GetMaterialInstanceLayerState_FunctionAddress, "ReturnValue");
+		GetMaterialInstanceLayerState_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceLayerState_FunctionAddress, "ReturnValue");
+		GetMaterialInstanceLayerState_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceLayerState_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetMaterialInstanceLayerState_IsValid = GetMaterialInstanceLayerState_FunctionAddress != IntPtr.Zero && GetMaterialInstanceLayerState_MI_IsValid && GetMaterialInstanceLayerState_LayerIndex_IsValid && GetMaterialInstanceLayerState_outState_IsValid && GetMaterialInstanceLayerState_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceLayerState", GetMaterialInstanceLayerState_IsValid);
+		GetMaterialInstanceLayerFunctionByIndex_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetMaterialInstanceLayerFunctionByIndex");
+		GetMaterialInstanceLayerFunctionByIndex_ParamsSize = NativeReflection.GetFunctionParamsSize(GetMaterialInstanceLayerFunctionByIndex_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceLayerFunctionByIndex_MI_PropertyAddress, GetMaterialInstanceLayerFunctionByIndex_FunctionAddress, "MI");
+		GetMaterialInstanceLayerFunctionByIndex_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceLayerFunctionByIndex_FunctionAddress, "MI");
+		GetMaterialInstanceLayerFunctionByIndex_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceLayerFunctionByIndex_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceLayerFunctionByIndex_index_PropertyAddress, GetMaterialInstanceLayerFunctionByIndex_FunctionAddress, "index");
+		GetMaterialInstanceLayerFunctionByIndex_index_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceLayerFunctionByIndex_FunctionAddress, "index");
+		GetMaterialInstanceLayerFunctionByIndex_index_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceLayerFunctionByIndex_FunctionAddress, "index", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceLayerFunctionByIndex_isBlend_PropertyAddress, GetMaterialInstanceLayerFunctionByIndex_FunctionAddress, "isBlend");
+		GetMaterialInstanceLayerFunctionByIndex_isBlend_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceLayerFunctionByIndex_FunctionAddress, "isBlend");
+		GetMaterialInstanceLayerFunctionByIndex_isBlend_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceLayerFunctionByIndex_FunctionAddress, "isBlend", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceLayerFunctionByIndex_ReturnValue_PropertyAddress, GetMaterialInstanceLayerFunctionByIndex_FunctionAddress, "ReturnValue");
+		GetMaterialInstanceLayerFunctionByIndex_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceLayerFunctionByIndex_FunctionAddress, "ReturnValue");
+		GetMaterialInstanceLayerFunctionByIndex_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceLayerFunctionByIndex_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		GetMaterialInstanceLayerFunctionByIndex_IsValid = GetMaterialInstanceLayerFunctionByIndex_FunctionAddress != IntPtr.Zero && GetMaterialInstanceLayerFunctionByIndex_MI_IsValid && GetMaterialInstanceLayerFunctionByIndex_index_IsValid && GetMaterialInstanceLayerFunctionByIndex_isBlend_IsValid && GetMaterialInstanceLayerFunctionByIndex_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceLayerFunctionByIndex", GetMaterialInstanceLayerFunctionByIndex_IsValid);
+		GetMaterialInstanceLayerCount_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetMaterialInstanceLayerCount");
+		GetMaterialInstanceLayerCount_ParamsSize = NativeReflection.GetFunctionParamsSize(GetMaterialInstanceLayerCount_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceLayerCount_MI_PropertyAddress, GetMaterialInstanceLayerCount_FunctionAddress, "MI");
+		GetMaterialInstanceLayerCount_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceLayerCount_FunctionAddress, "MI");
+		GetMaterialInstanceLayerCount_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceLayerCount_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceLayerCount_ReturnValue_PropertyAddress, GetMaterialInstanceLayerCount_FunctionAddress, "ReturnValue");
+		GetMaterialInstanceLayerCount_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceLayerCount_FunctionAddress, "ReturnValue");
+		GetMaterialInstanceLayerCount_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceLayerCount_FunctionAddress, "ReturnValue", Classes.FIntProperty);
+		GetMaterialInstanceLayerCount_IsValid = GetMaterialInstanceLayerCount_FunctionAddress != IntPtr.Zero && GetMaterialInstanceLayerCount_MI_IsValid && GetMaterialInstanceLayerCount_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceLayerCount", GetMaterialInstanceLayerCount_IsValid);
+		GetMaterialInstanceAllVectorParameters_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetMaterialInstanceAllVectorParameters");
+		GetMaterialInstanceAllVectorParameters_ParamsSize = NativeReflection.GetFunctionParamsSize(GetMaterialInstanceAllVectorParameters_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllVectorParameters_MI_PropertyAddress, GetMaterialInstanceAllVectorParameters_FunctionAddress, "MI");
+		GetMaterialInstanceAllVectorParameters_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllVectorParameters_FunctionAddress, "MI");
+		GetMaterialInstanceAllVectorParameters_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllVectorParameters_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllVectorParameters_layerIndex_PropertyAddress, GetMaterialInstanceAllVectorParameters_FunctionAddress, "layerIndex");
+		GetMaterialInstanceAllVectorParameters_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllVectorParameters_FunctionAddress, "layerIndex");
+		GetMaterialInstanceAllVectorParameters_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllVectorParameters_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllVectorParameters_outParameterInfos_PropertyAddress, GetMaterialInstanceAllVectorParameters_FunctionAddress, "outParameterInfos");
+		GetMaterialInstanceAllVectorParameters_outParameterInfos_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllVectorParameters_FunctionAddress, "outParameterInfos");
+		GetMaterialInstanceAllVectorParameters_outParameterInfos_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllVectorParameters_FunctionAddress, "outParameterInfos", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllVectorParameters_outParameterIds_PropertyAddress, GetMaterialInstanceAllVectorParameters_FunctionAddress, "outParameterIds");
+		GetMaterialInstanceAllVectorParameters_outParameterIds_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllVectorParameters_FunctionAddress, "outParameterIds");
+		GetMaterialInstanceAllVectorParameters_outParameterIds_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllVectorParameters_FunctionAddress, "outParameterIds", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllVectorParameters_outValues_PropertyAddress, GetMaterialInstanceAllVectorParameters_FunctionAddress, "outValues");
+		GetMaterialInstanceAllVectorParameters_outValues_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllVectorParameters_FunctionAddress, "outValues");
+		GetMaterialInstanceAllVectorParameters_outValues_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllVectorParameters_FunctionAddress, "outValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllVectorParameters_bOverrideOnly_PropertyAddress, GetMaterialInstanceAllVectorParameters_FunctionAddress, "bOverrideOnly");
+		GetMaterialInstanceAllVectorParameters_bOverrideOnly_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllVectorParameters_FunctionAddress, "bOverrideOnly");
+		GetMaterialInstanceAllVectorParameters_bOverrideOnly_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllVectorParameters_FunctionAddress, "bOverrideOnly", Classes.FBoolProperty);
+		GetMaterialInstanceAllVectorParameters_IsValid = GetMaterialInstanceAllVectorParameters_FunctionAddress != IntPtr.Zero && GetMaterialInstanceAllVectorParameters_MI_IsValid && GetMaterialInstanceAllVectorParameters_layerIndex_IsValid && GetMaterialInstanceAllVectorParameters_outParameterInfos_IsValid && GetMaterialInstanceAllVectorParameters_outParameterIds_IsValid && GetMaterialInstanceAllVectorParameters_outValues_IsValid && GetMaterialInstanceAllVectorParameters_bOverrideOnly_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllVectorParameters", GetMaterialInstanceAllVectorParameters_IsValid);
+		GetMaterialInstanceAllTextureParameters_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetMaterialInstanceAllTextureParameters");
+		GetMaterialInstanceAllTextureParameters_ParamsSize = NativeReflection.GetFunctionParamsSize(GetMaterialInstanceAllTextureParameters_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllTextureParameters_MI_PropertyAddress, GetMaterialInstanceAllTextureParameters_FunctionAddress, "MI");
+		GetMaterialInstanceAllTextureParameters_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllTextureParameters_FunctionAddress, "MI");
+		GetMaterialInstanceAllTextureParameters_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllTextureParameters_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllTextureParameters_layerIndex_PropertyAddress, GetMaterialInstanceAllTextureParameters_FunctionAddress, "layerIndex");
+		GetMaterialInstanceAllTextureParameters_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllTextureParameters_FunctionAddress, "layerIndex");
+		GetMaterialInstanceAllTextureParameters_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllTextureParameters_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllTextureParameters_outParameterInfos_PropertyAddress, GetMaterialInstanceAllTextureParameters_FunctionAddress, "outParameterInfos");
+		GetMaterialInstanceAllTextureParameters_outParameterInfos_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllTextureParameters_FunctionAddress, "outParameterInfos");
+		GetMaterialInstanceAllTextureParameters_outParameterInfos_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllTextureParameters_FunctionAddress, "outParameterInfos", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllTextureParameters_outParameterIds_PropertyAddress, GetMaterialInstanceAllTextureParameters_FunctionAddress, "outParameterIds");
+		GetMaterialInstanceAllTextureParameters_outParameterIds_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllTextureParameters_FunctionAddress, "outParameterIds");
+		GetMaterialInstanceAllTextureParameters_outParameterIds_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllTextureParameters_FunctionAddress, "outParameterIds", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllTextureParameters_outValues_PropertyAddress, GetMaterialInstanceAllTextureParameters_FunctionAddress, "outValues");
+		GetMaterialInstanceAllTextureParameters_outValues_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllTextureParameters_FunctionAddress, "outValues");
+		GetMaterialInstanceAllTextureParameters_outValues_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllTextureParameters_FunctionAddress, "outValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllTextureParameters_bOverrideOnly_PropertyAddress, GetMaterialInstanceAllTextureParameters_FunctionAddress, "bOverrideOnly");
+		GetMaterialInstanceAllTextureParameters_bOverrideOnly_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllTextureParameters_FunctionAddress, "bOverrideOnly");
+		GetMaterialInstanceAllTextureParameters_bOverrideOnly_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllTextureParameters_FunctionAddress, "bOverrideOnly", Classes.FBoolProperty);
+		GetMaterialInstanceAllTextureParameters_IsValid = GetMaterialInstanceAllTextureParameters_FunctionAddress != IntPtr.Zero && GetMaterialInstanceAllTextureParameters_MI_IsValid && GetMaterialInstanceAllTextureParameters_layerIndex_IsValid && GetMaterialInstanceAllTextureParameters_outParameterInfos_IsValid && GetMaterialInstanceAllTextureParameters_outParameterIds_IsValid && GetMaterialInstanceAllTextureParameters_outValues_IsValid && GetMaterialInstanceAllTextureParameters_bOverrideOnly_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllTextureParameters", GetMaterialInstanceAllTextureParameters_IsValid);
+		GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetMaterialInstanceAllStaticSwitchParameters");
+		GetMaterialInstanceAllStaticSwitchParameters_ParamsSize = NativeReflection.GetFunctionParamsSize(GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllStaticSwitchParameters_MI_PropertyAddress, GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "MI");
+		GetMaterialInstanceAllStaticSwitchParameters_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "MI");
+		GetMaterialInstanceAllStaticSwitchParameters_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllStaticSwitchParameters_layerIndex_PropertyAddress, GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "layerIndex");
+		GetMaterialInstanceAllStaticSwitchParameters_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "layerIndex");
+		GetMaterialInstanceAllStaticSwitchParameters_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllStaticSwitchParameters_outParameterInfos_PropertyAddress, GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "outParameterInfos");
+		GetMaterialInstanceAllStaticSwitchParameters_outParameterInfos_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "outParameterInfos");
+		GetMaterialInstanceAllStaticSwitchParameters_outParameterInfos_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "outParameterInfos", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllStaticSwitchParameters_outParameterIds_PropertyAddress, GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "outParameterIds");
+		GetMaterialInstanceAllStaticSwitchParameters_outParameterIds_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "outParameterIds");
+		GetMaterialInstanceAllStaticSwitchParameters_outParameterIds_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "outParameterIds", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllStaticSwitchParameters_outValues_PropertyAddress, GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "outValues");
+		GetMaterialInstanceAllStaticSwitchParameters_outValues_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "outValues");
+		GetMaterialInstanceAllStaticSwitchParameters_outValues_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "outValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllStaticSwitchParameters_bOverrideOnly_PropertyAddress, GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "bOverrideOnly");
+		GetMaterialInstanceAllStaticSwitchParameters_bOverrideOnly_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "bOverrideOnly");
+		GetMaterialInstanceAllStaticSwitchParameters_bOverrideOnly_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress, "bOverrideOnly", Classes.FBoolProperty);
+		GetMaterialInstanceAllStaticSwitchParameters_IsValid = GetMaterialInstanceAllStaticSwitchParameters_FunctionAddress != IntPtr.Zero && GetMaterialInstanceAllStaticSwitchParameters_MI_IsValid && GetMaterialInstanceAllStaticSwitchParameters_layerIndex_IsValid && GetMaterialInstanceAllStaticSwitchParameters_outParameterInfos_IsValid && GetMaterialInstanceAllStaticSwitchParameters_outParameterIds_IsValid && GetMaterialInstanceAllStaticSwitchParameters_outValues_IsValid && GetMaterialInstanceAllStaticSwitchParameters_bOverrideOnly_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllStaticSwitchParameters", GetMaterialInstanceAllStaticSwitchParameters_IsValid);
+		GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetMaterialInstanceAllStaticComponentMaskParameters");
+		GetMaterialInstanceAllStaticComponentMaskParameters_ParamsSize = NativeReflection.GetFunctionParamsSize(GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllStaticComponentMaskParameters_MI_PropertyAddress, GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "MI");
+		GetMaterialInstanceAllStaticComponentMaskParameters_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "MI");
+		GetMaterialInstanceAllStaticComponentMaskParameters_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllStaticComponentMaskParameters_layerIndex_PropertyAddress, GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "layerIndex");
+		GetMaterialInstanceAllStaticComponentMaskParameters_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "layerIndex");
+		GetMaterialInstanceAllStaticComponentMaskParameters_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllStaticComponentMaskParameters_outParameterInfos_PropertyAddress, GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "outParameterInfos");
+		GetMaterialInstanceAllStaticComponentMaskParameters_outParameterInfos_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "outParameterInfos");
+		GetMaterialInstanceAllStaticComponentMaskParameters_outParameterInfos_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "outParameterInfos", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllStaticComponentMaskParameters_outParameterIds_PropertyAddress, GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "outParameterIds");
+		GetMaterialInstanceAllStaticComponentMaskParameters_outParameterIds_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "outParameterIds");
+		GetMaterialInstanceAllStaticComponentMaskParameters_outParameterIds_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "outParameterIds", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllStaticComponentMaskParameters_outValues_PropertyAddress, GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "outValues");
+		GetMaterialInstanceAllStaticComponentMaskParameters_outValues_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "outValues");
+		GetMaterialInstanceAllStaticComponentMaskParameters_outValues_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "outValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllStaticComponentMaskParameters_bOverrideOnly_PropertyAddress, GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "bOverrideOnly");
+		GetMaterialInstanceAllStaticComponentMaskParameters_bOverrideOnly_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "bOverrideOnly");
+		GetMaterialInstanceAllStaticComponentMaskParameters_bOverrideOnly_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress, "bOverrideOnly", Classes.FBoolProperty);
+		GetMaterialInstanceAllStaticComponentMaskParameters_IsValid = GetMaterialInstanceAllStaticComponentMaskParameters_FunctionAddress != IntPtr.Zero && GetMaterialInstanceAllStaticComponentMaskParameters_MI_IsValid && GetMaterialInstanceAllStaticComponentMaskParameters_layerIndex_IsValid && GetMaterialInstanceAllStaticComponentMaskParameters_outParameterInfos_IsValid && GetMaterialInstanceAllStaticComponentMaskParameters_outParameterIds_IsValid && GetMaterialInstanceAllStaticComponentMaskParameters_outValues_IsValid && GetMaterialInstanceAllStaticComponentMaskParameters_bOverrideOnly_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllStaticComponentMaskParameters", GetMaterialInstanceAllStaticComponentMaskParameters_IsValid);
+		GetMaterialInstanceAllScalarParameters_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetMaterialInstanceAllScalarParameters");
+		GetMaterialInstanceAllScalarParameters_ParamsSize = NativeReflection.GetFunctionParamsSize(GetMaterialInstanceAllScalarParameters_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllScalarParameters_MI_PropertyAddress, GetMaterialInstanceAllScalarParameters_FunctionAddress, "MI");
+		GetMaterialInstanceAllScalarParameters_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllScalarParameters_FunctionAddress, "MI");
+		GetMaterialInstanceAllScalarParameters_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllScalarParameters_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllScalarParameters_layerIndex_PropertyAddress, GetMaterialInstanceAllScalarParameters_FunctionAddress, "layerIndex");
+		GetMaterialInstanceAllScalarParameters_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllScalarParameters_FunctionAddress, "layerIndex");
+		GetMaterialInstanceAllScalarParameters_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllScalarParameters_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllScalarParameters_outParameterInfos_PropertyAddress, GetMaterialInstanceAllScalarParameters_FunctionAddress, "outParameterInfos");
+		GetMaterialInstanceAllScalarParameters_outParameterInfos_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllScalarParameters_FunctionAddress, "outParameterInfos");
+		GetMaterialInstanceAllScalarParameters_outParameterInfos_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllScalarParameters_FunctionAddress, "outParameterInfos", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllScalarParameters_outParameterIds_PropertyAddress, GetMaterialInstanceAllScalarParameters_FunctionAddress, "outParameterIds");
+		GetMaterialInstanceAllScalarParameters_outParameterIds_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllScalarParameters_FunctionAddress, "outParameterIds");
+		GetMaterialInstanceAllScalarParameters_outParameterIds_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllScalarParameters_FunctionAddress, "outParameterIds", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllScalarParameters_outValues_PropertyAddress, GetMaterialInstanceAllScalarParameters_FunctionAddress, "outValues");
+		GetMaterialInstanceAllScalarParameters_outValues_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllScalarParameters_FunctionAddress, "outValues");
+		GetMaterialInstanceAllScalarParameters_outValues_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllScalarParameters_FunctionAddress, "outValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllScalarParameters_bOverrideOnly_PropertyAddress, GetMaterialInstanceAllScalarParameters_FunctionAddress, "bOverrideOnly");
+		GetMaterialInstanceAllScalarParameters_bOverrideOnly_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllScalarParameters_FunctionAddress, "bOverrideOnly");
+		GetMaterialInstanceAllScalarParameters_bOverrideOnly_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllScalarParameters_FunctionAddress, "bOverrideOnly", Classes.FBoolProperty);
+		GetMaterialInstanceAllScalarParameters_IsValid = GetMaterialInstanceAllScalarParameters_FunctionAddress != IntPtr.Zero && GetMaterialInstanceAllScalarParameters_MI_IsValid && GetMaterialInstanceAllScalarParameters_layerIndex_IsValid && GetMaterialInstanceAllScalarParameters_outParameterInfos_IsValid && GetMaterialInstanceAllScalarParameters_outParameterIds_IsValid && GetMaterialInstanceAllScalarParameters_outValues_IsValid && GetMaterialInstanceAllScalarParameters_bOverrideOnly_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllScalarParameters", GetMaterialInstanceAllScalarParameters_IsValid);
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetMaterialInstanceAllRuntimeVirtualTextureParameters");
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_ParamsSize = NativeReflection.GetFunctionParamsSize(GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllRuntimeVirtualTextureParameters_MI_PropertyAddress, GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "MI");
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "MI");
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllRuntimeVirtualTextureParameters_layerIndex_PropertyAddress, GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "layerIndex");
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_layerIndex_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "layerIndex");
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_layerIndex_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "layerIndex", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterInfos_PropertyAddress, GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "outParameterInfos");
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterInfos_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "outParameterInfos");
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterInfos_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "outParameterInfos", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterIds_PropertyAddress, GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "outParameterIds");
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterIds_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "outParameterIds");
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterIds_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "outParameterIds", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllRuntimeVirtualTextureParameters_outValues_PropertyAddress, GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "outValues");
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_outValues_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "outValues");
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_outValues_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "outValues", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialInstanceAllRuntimeVirtualTextureParameters_bOverrideOnly_PropertyAddress, GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "bOverrideOnly");
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_bOverrideOnly_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "bOverrideOnly");
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_bOverrideOnly_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress, "bOverrideOnly", Classes.FBoolProperty);
+		GetMaterialInstanceAllRuntimeVirtualTextureParameters_IsValid = GetMaterialInstanceAllRuntimeVirtualTextureParameters_FunctionAddress != IntPtr.Zero && GetMaterialInstanceAllRuntimeVirtualTextureParameters_MI_IsValid && GetMaterialInstanceAllRuntimeVirtualTextureParameters_layerIndex_IsValid && GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterInfos_IsValid && GetMaterialInstanceAllRuntimeVirtualTextureParameters_outParameterIds_IsValid && GetMaterialInstanceAllRuntimeVirtualTextureParameters_outValues_IsValid && GetMaterialInstanceAllRuntimeVirtualTextureParameters_bOverrideOnly_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialInstanceAllRuntimeVirtualTextureParameters", GetMaterialInstanceAllRuntimeVirtualTextureParameters_IsValid);
+		GetMaterialFunctionInstanceStaticSwitchParameterInfo_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetMaterialFunctionInstanceStaticSwitchParameterInfo");
+		GetMaterialFunctionInstanceStaticSwitchParameterInfo_ParamsSize = NativeReflection.GetFunctionParamsSize(GetMaterialFunctionInstanceStaticSwitchParameterInfo_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialFunctionInstanceStaticSwitchParameterInfo_MI_PropertyAddress, GetMaterialFunctionInstanceStaticSwitchParameterInfo_FunctionAddress, "MI");
+		GetMaterialFunctionInstanceStaticSwitchParameterInfo_MI_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialFunctionInstanceStaticSwitchParameterInfo_FunctionAddress, "MI");
+		GetMaterialFunctionInstanceStaticSwitchParameterInfo_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialFunctionInstanceStaticSwitchParameterInfo_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetMaterialFunctionInstanceStaticSwitchParameterInfo_ReturnValue_PropertyAddress, GetMaterialFunctionInstanceStaticSwitchParameterInfo_FunctionAddress, "ReturnValue");
+		GetMaterialFunctionInstanceStaticSwitchParameterInfo_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetMaterialFunctionInstanceStaticSwitchParameterInfo_FunctionAddress, "ReturnValue");
+		GetMaterialFunctionInstanceStaticSwitchParameterInfo_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetMaterialFunctionInstanceStaticSwitchParameterInfo_FunctionAddress, "ReturnValue", Classes.FMapProperty);
+		GetMaterialFunctionInstanceStaticSwitchParameterInfo_IsValid = GetMaterialFunctionInstanceStaticSwitchParameterInfo_FunctionAddress != IntPtr.Zero && GetMaterialFunctionInstanceStaticSwitchParameterInfo_MI_IsValid && GetMaterialFunctionInstanceStaticSwitchParameterInfo_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetMaterialFunctionInstanceStaticSwitchParameterInfo", GetMaterialFunctionInstanceStaticSwitchParameterInfo_IsValid);
+		GetAllReferecedTexturesInMaterialInheritTree_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetAllReferecedTexturesInMaterialInheritTree");
+		GetAllReferecedTexturesInMaterialInheritTree_ParamsSize = NativeReflection.GetFunctionParamsSize(GetAllReferecedTexturesInMaterialInheritTree_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetAllReferecedTexturesInMaterialInheritTree_Material_PropertyAddress, GetAllReferecedTexturesInMaterialInheritTree_FunctionAddress, "Material");
+		GetAllReferecedTexturesInMaterialInheritTree_Material_Offset = NativeReflectionCached.GetPropertyOffset(GetAllReferecedTexturesInMaterialInheritTree_FunctionAddress, "Material");
+		GetAllReferecedTexturesInMaterialInheritTree_Material_IsValid = NativeReflectionCached.ValidatePropertyClass(GetAllReferecedTexturesInMaterialInheritTree_FunctionAddress, "Material", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetAllReferecedTexturesInMaterialInheritTree_ReturnValue_PropertyAddress, GetAllReferecedTexturesInMaterialInheritTree_FunctionAddress, "ReturnValue");
+		GetAllReferecedTexturesInMaterialInheritTree_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetAllReferecedTexturesInMaterialInheritTree_FunctionAddress, "ReturnValue");
+		GetAllReferecedTexturesInMaterialInheritTree_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetAllReferecedTexturesInMaterialInheritTree_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetAllReferecedTexturesInMaterialInheritTree_IsValid = GetAllReferecedTexturesInMaterialInheritTree_FunctionAddress != IntPtr.Zero && GetAllReferecedTexturesInMaterialInheritTree_Material_IsValid && GetAllReferecedTexturesInMaterialInheritTree_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetAllReferecedTexturesInMaterialInheritTree", GetAllReferecedTexturesInMaterialInheritTree_IsValid);
+		GetAllChildMaterialInstances_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetAllChildMaterialInstances");
+		GetAllChildMaterialInstances_ParamsSize = NativeReflection.GetFunctionParamsSize(GetAllChildMaterialInstances_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetAllChildMaterialInstances_Material_PropertyAddress, GetAllChildMaterialInstances_FunctionAddress, "Material");
+		GetAllChildMaterialInstances_Material_Offset = NativeReflectionCached.GetPropertyOffset(GetAllChildMaterialInstances_FunctionAddress, "Material");
+		GetAllChildMaterialInstances_Material_IsValid = NativeReflectionCached.ValidatePropertyClass(GetAllChildMaterialInstances_FunctionAddress, "Material", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetAllChildMaterialInstances_ReturnValue_PropertyAddress, GetAllChildMaterialInstances_FunctionAddress, "ReturnValue");
+		GetAllChildMaterialInstances_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetAllChildMaterialInstances_FunctionAddress, "ReturnValue");
+		GetAllChildMaterialInstances_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetAllChildMaterialInstances_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetAllChildMaterialInstances_IsValid = GetAllChildMaterialInstances_FunctionAddress != IntPtr.Zero && GetAllChildMaterialInstances_Material_IsValid && GetAllChildMaterialInstances_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:GetAllChildMaterialInstances", GetAllChildMaterialInstances_IsValid);
+		FuzzySetTexture_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "FuzzySetTexture");
+		FuzzySetTexture_ParamsSize = NativeReflection.GetFunctionParamsSize(FuzzySetTexture_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref FuzzySetTexture_MI_PropertyAddress, FuzzySetTexture_FunctionAddress, "MI");
+		FuzzySetTexture_MI_Offset = NativeReflectionCached.GetPropertyOffset(FuzzySetTexture_FunctionAddress, "MI");
+		FuzzySetTexture_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(FuzzySetTexture_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref FuzzySetTexture_SlotName_PropertyAddress, FuzzySetTexture_FunctionAddress, "SlotName");
+		FuzzySetTexture_SlotName_Offset = NativeReflectionCached.GetPropertyOffset(FuzzySetTexture_FunctionAddress, "SlotName");
+		FuzzySetTexture_SlotName_IsValid = NativeReflectionCached.ValidatePropertyClass(FuzzySetTexture_FunctionAddress, "SlotName", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref FuzzySetTexture_DicPath_PropertyAddress, FuzzySetTexture_FunctionAddress, "DicPath");
+		FuzzySetTexture_DicPath_Offset = NativeReflectionCached.GetPropertyOffset(FuzzySetTexture_FunctionAddress, "DicPath");
+		FuzzySetTexture_DicPath_IsValid = NativeReflectionCached.ValidatePropertyClass(FuzzySetTexture_FunctionAddress, "DicPath", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref FuzzySetTexture_keywords_PropertyAddress, FuzzySetTexture_FunctionAddress, "keywords");
+		FuzzySetTexture_keywords_Offset = NativeReflectionCached.GetPropertyOffset(FuzzySetTexture_FunctionAddress, "keywords");
+		FuzzySetTexture_keywords_IsValid = NativeReflectionCached.ValidatePropertyClass(FuzzySetTexture_FunctionAddress, "keywords", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref FuzzySetTexture_ReturnValue_PropertyAddress, FuzzySetTexture_FunctionAddress, "ReturnValue");
+		FuzzySetTexture_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(FuzzySetTexture_FunctionAddress, "ReturnValue");
+		FuzzySetTexture_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(FuzzySetTexture_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		FuzzySetTexture_IsValid = FuzzySetTexture_FunctionAddress != IntPtr.Zero && FuzzySetTexture_MI_IsValid && FuzzySetTexture_SlotName_IsValid && FuzzySetTexture_DicPath_IsValid && FuzzySetTexture_keywords_IsValid && FuzzySetTexture_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:FuzzySetTexture", FuzzySetTexture_IsValid);
+		FixInvalidOverrideTexture_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "FixInvalidOverrideTexture");
+		FixInvalidOverrideTexture_ParamsSize = NativeReflection.GetFunctionParamsSize(FixInvalidOverrideTexture_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref FixInvalidOverrideTexture_MI_PropertyAddress, FixInvalidOverrideTexture_FunctionAddress, "MI");
+		FixInvalidOverrideTexture_MI_Offset = NativeReflectionCached.GetPropertyOffset(FixInvalidOverrideTexture_FunctionAddress, "MI");
+		FixInvalidOverrideTexture_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(FixInvalidOverrideTexture_FunctionAddress, "MI", Classes.FObjectProperty);
+		FixInvalidOverrideTexture_IsValid = FixInvalidOverrideTexture_FunctionAddress != IntPtr.Zero && FixInvalidOverrideTexture_MI_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:FixInvalidOverrideTexture", FixInvalidOverrideTexture_IsValid);
+		CreateMaterialInstanceAsset_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "CreateMaterialInstanceAsset");
+		CreateMaterialInstanceAsset_ParamsSize = NativeReflection.GetFunctionParamsSize(CreateMaterialInstanceAsset_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref CreateMaterialInstanceAsset_BaseMaterialPath_PropertyAddress, CreateMaterialInstanceAsset_FunctionAddress, "BaseMaterialPath");
+		CreateMaterialInstanceAsset_BaseMaterialPath_Offset = NativeReflectionCached.GetPropertyOffset(CreateMaterialInstanceAsset_FunctionAddress, "BaseMaterialPath");
+		CreateMaterialInstanceAsset_BaseMaterialPath_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateMaterialInstanceAsset_FunctionAddress, "BaseMaterialPath", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateMaterialInstanceAsset_TargetBasePath_PropertyAddress, CreateMaterialInstanceAsset_FunctionAddress, "TargetBasePath");
+		CreateMaterialInstanceAsset_TargetBasePath_Offset = NativeReflectionCached.GetPropertyOffset(CreateMaterialInstanceAsset_FunctionAddress, "TargetBasePath");
+		CreateMaterialInstanceAsset_TargetBasePath_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateMaterialInstanceAsset_FunctionAddress, "TargetBasePath", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateMaterialInstanceAsset_AssetName_PropertyAddress, CreateMaterialInstanceAsset_FunctionAddress, "AssetName");
+		CreateMaterialInstanceAsset_AssetName_Offset = NativeReflectionCached.GetPropertyOffset(CreateMaterialInstanceAsset_FunctionAddress, "AssetName");
+		CreateMaterialInstanceAsset_AssetName_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateMaterialInstanceAsset_FunctionAddress, "AssetName", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateMaterialInstanceAsset_OutAsset_PropertyAddress, CreateMaterialInstanceAsset_FunctionAddress, "OutAsset");
+		CreateMaterialInstanceAsset_OutAsset_Offset = NativeReflectionCached.GetPropertyOffset(CreateMaterialInstanceAsset_FunctionAddress, "OutAsset");
+		CreateMaterialInstanceAsset_OutAsset_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateMaterialInstanceAsset_FunctionAddress, "OutAsset", Classes.FStructProperty);
+		CreateMaterialInstanceAsset_IsValid = CreateMaterialInstanceAsset_FunctionAddress != IntPtr.Zero && CreateMaterialInstanceAsset_BaseMaterialPath_IsValid && CreateMaterialInstanceAsset_TargetBasePath_IsValid && CreateMaterialInstanceAsset_AssetName_IsValid && CreateMaterialInstanceAsset_OutAsset_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:CreateMaterialInstanceAsset", CreateMaterialInstanceAsset_IsValid);
+		CopyParametersToMIC_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "CopyParametersToMIC");
+		CopyParametersToMIC_ParamsSize = NativeReflection.GetFunctionParamsSize(CopyParametersToMIC_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref CopyParametersToMIC_MIC_PropertyAddress, CopyParametersToMIC_FunctionAddress, "MIC");
+		CopyParametersToMIC_MIC_Offset = NativeReflectionCached.GetPropertyOffset(CopyParametersToMIC_FunctionAddress, "MIC");
+		CopyParametersToMIC_MIC_IsValid = NativeReflectionCached.ValidatePropertyClass(CopyParametersToMIC_FunctionAddress, "MIC", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CopyParametersToMIC_Source_PropertyAddress, CopyParametersToMIC_FunctionAddress, "Source");
+		CopyParametersToMIC_Source_Offset = NativeReflectionCached.GetPropertyOffset(CopyParametersToMIC_FunctionAddress, "Source");
+		CopyParametersToMIC_Source_IsValid = NativeReflectionCached.ValidatePropertyClass(CopyParametersToMIC_FunctionAddress, "Source", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CopyParametersToMIC_bIncludeStaticParams_PropertyAddress, CopyParametersToMIC_FunctionAddress, "bIncludeStaticParams");
+		CopyParametersToMIC_bIncludeStaticParams_Offset = NativeReflectionCached.GetPropertyOffset(CopyParametersToMIC_FunctionAddress, "bIncludeStaticParams");
+		CopyParametersToMIC_bIncludeStaticParams_IsValid = NativeReflectionCached.ValidatePropertyClass(CopyParametersToMIC_FunctionAddress, "bIncludeStaticParams", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref CopyParametersToMIC_ReturnValue_PropertyAddress, CopyParametersToMIC_FunctionAddress, "ReturnValue");
+		CopyParametersToMIC_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(CopyParametersToMIC_FunctionAddress, "ReturnValue");
+		CopyParametersToMIC_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(CopyParametersToMIC_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		CopyParametersToMIC_IsValid = CopyParametersToMIC_FunctionAddress != IntPtr.Zero && CopyParametersToMIC_MIC_IsValid && CopyParametersToMIC_Source_IsValid && CopyParametersToMIC_bIncludeStaticParams_IsValid && CopyParametersToMIC_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:CopyParametersToMIC", CopyParametersToMIC_IsValid);
+		AppendMaterialInstanceLayer_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "AppendMaterialInstanceLayer");
+		AppendMaterialInstanceLayer_ParamsSize = NativeReflection.GetFunctionParamsSize(AppendMaterialInstanceLayer_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref AppendMaterialInstanceLayer_MI_PropertyAddress, AppendMaterialInstanceLayer_FunctionAddress, "MI");
+		AppendMaterialInstanceLayer_MI_Offset = NativeReflectionCached.GetPropertyOffset(AppendMaterialInstanceLayer_FunctionAddress, "MI");
+		AppendMaterialInstanceLayer_MI_IsValid = NativeReflectionCached.ValidatePropertyClass(AppendMaterialInstanceLayer_FunctionAddress, "MI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref AppendMaterialInstanceLayer_LayerMFI_PropertyAddress, AppendMaterialInstanceLayer_FunctionAddress, "LayerMFI");
+		AppendMaterialInstanceLayer_LayerMFI_Offset = NativeReflectionCached.GetPropertyOffset(AppendMaterialInstanceLayer_FunctionAddress, "LayerMFI");
+		AppendMaterialInstanceLayer_LayerMFI_IsValid = NativeReflectionCached.ValidatePropertyClass(AppendMaterialInstanceLayer_FunctionAddress, "LayerMFI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref AppendMaterialInstanceLayer_BlendMFI_PropertyAddress, AppendMaterialInstanceLayer_FunctionAddress, "BlendMFI");
+		AppendMaterialInstanceLayer_BlendMFI_Offset = NativeReflectionCached.GetPropertyOffset(AppendMaterialInstanceLayer_FunctionAddress, "BlendMFI");
+		AppendMaterialInstanceLayer_BlendMFI_IsValid = NativeReflectionCached.ValidatePropertyClass(AppendMaterialInstanceLayer_FunctionAddress, "BlendMFI", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref AppendMaterialInstanceLayer_ReturnValue_PropertyAddress, AppendMaterialInstanceLayer_FunctionAddress, "ReturnValue");
+		AppendMaterialInstanceLayer_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(AppendMaterialInstanceLayer_FunctionAddress, "ReturnValue");
+		AppendMaterialInstanceLayer_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(AppendMaterialInstanceLayer_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		AppendMaterialInstanceLayer_IsValid = AppendMaterialInstanceLayer_FunctionAddress != IntPtr.Zero && AppendMaterialInstanceLayer_MI_IsValid && AppendMaterialInstanceLayer_LayerMFI_IsValid && AppendMaterialInstanceLayer_BlendMFI_IsValid && AppendMaterialInstanceLayer_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/FuncLibEditor.GSEditorMaterialLibrary:AppendMaterialInstanceLayer", AppendMaterialInstanceLayer_IsValid);
+	}
+}
