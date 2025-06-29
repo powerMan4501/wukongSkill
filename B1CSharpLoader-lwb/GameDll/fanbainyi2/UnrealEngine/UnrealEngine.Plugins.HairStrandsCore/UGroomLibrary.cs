@@ -1,0 +1,398 @@
+using System;
+using System.Runtime.CompilerServices;
+using UnrealEngine.Engine;
+using UnrealEngine.Plugins.GeometryCache;
+using UnrealEngine.Runtime;
+
+namespace UnrealEngine.Plugins.HairStrandsCore;
+
+[UClass(Flags = (ClassFlags)810549408uL, Config = "Engine")]
+[UMetaPath("/Script/HairStrandsCore.GroomBlueprintLibrary", "HairStrandsCore", UnrealModuleType.EnginePlugin)]
+public class UGroomLibrary : UBlueprintFunctionLibrary
+{
+	private static IntPtr classAddress;
+
+	private static bool CreateNewGroomBindingAssetWithPath_IsValid;
+
+	private static IntPtr CreateNewGroomBindingAssetWithPath_FunctionAddress;
+
+	private static int CreateNewGroomBindingAssetWithPath_ParamsSize;
+
+	private static bool CreateNewGroomBindingAssetWithPath_InDesiredPackagePath_IsValid;
+
+	private static FFieldAddress CreateNewGroomBindingAssetWithPath_InDesiredPackagePath_PropertyAddress;
+
+	private static int CreateNewGroomBindingAssetWithPath_InDesiredPackagePath_Offset;
+
+	private static bool CreateNewGroomBindingAssetWithPath_InGroomAsset_IsValid;
+
+	private static FFieldAddress CreateNewGroomBindingAssetWithPath_InGroomAsset_PropertyAddress;
+
+	private static int CreateNewGroomBindingAssetWithPath_InGroomAsset_Offset;
+
+	private static bool CreateNewGroomBindingAssetWithPath_InSkeletalMesh_IsValid;
+
+	private static FFieldAddress CreateNewGroomBindingAssetWithPath_InSkeletalMesh_PropertyAddress;
+
+	private static int CreateNewGroomBindingAssetWithPath_InSkeletalMesh_Offset;
+
+	private static bool CreateNewGroomBindingAssetWithPath_InNumInterpolationPoints_IsValid;
+
+	private static FFieldAddress CreateNewGroomBindingAssetWithPath_InNumInterpolationPoints_PropertyAddress;
+
+	private static int CreateNewGroomBindingAssetWithPath_InNumInterpolationPoints_Offset;
+
+	private static bool CreateNewGroomBindingAssetWithPath_InSourceSkeletalMeshForTransfer_IsValid;
+
+	private static FFieldAddress CreateNewGroomBindingAssetWithPath_InSourceSkeletalMeshForTransfer_PropertyAddress;
+
+	private static int CreateNewGroomBindingAssetWithPath_InSourceSkeletalMeshForTransfer_Offset;
+
+	private static bool CreateNewGroomBindingAssetWithPath_InMatchingSection_IsValid;
+
+	private static FFieldAddress CreateNewGroomBindingAssetWithPath_InMatchingSection_PropertyAddress;
+
+	private static int CreateNewGroomBindingAssetWithPath_InMatchingSection_Offset;
+
+	private static bool CreateNewGroomBindingAssetWithPath_ReturnValue_IsValid;
+
+	private static FFieldAddress CreateNewGroomBindingAssetWithPath_ReturnValue_PropertyAddress;
+
+	private static int CreateNewGroomBindingAssetWithPath_ReturnValue_Offset;
+
+	private static bool CreateNewGroomBindingAsset_IsValid;
+
+	private static IntPtr CreateNewGroomBindingAsset_FunctionAddress;
+
+	private static int CreateNewGroomBindingAsset_ParamsSize;
+
+	private static bool CreateNewGroomBindingAsset_InGroomAsset_IsValid;
+
+	private static FFieldAddress CreateNewGroomBindingAsset_InGroomAsset_PropertyAddress;
+
+	private static int CreateNewGroomBindingAsset_InGroomAsset_Offset;
+
+	private static bool CreateNewGroomBindingAsset_InSkeletalMesh_IsValid;
+
+	private static FFieldAddress CreateNewGroomBindingAsset_InSkeletalMesh_PropertyAddress;
+
+	private static int CreateNewGroomBindingAsset_InSkeletalMesh_Offset;
+
+	private static bool CreateNewGroomBindingAsset_InNumInterpolationPoints_IsValid;
+
+	private static FFieldAddress CreateNewGroomBindingAsset_InNumInterpolationPoints_PropertyAddress;
+
+	private static int CreateNewGroomBindingAsset_InNumInterpolationPoints_Offset;
+
+	private static bool CreateNewGroomBindingAsset_InSourceSkeletalMeshForTransfer_IsValid;
+
+	private static FFieldAddress CreateNewGroomBindingAsset_InSourceSkeletalMeshForTransfer_PropertyAddress;
+
+	private static int CreateNewGroomBindingAsset_InSourceSkeletalMeshForTransfer_Offset;
+
+	private static bool CreateNewGroomBindingAsset_InMatchingSection_IsValid;
+
+	private static FFieldAddress CreateNewGroomBindingAsset_InMatchingSection_PropertyAddress;
+
+	private static int CreateNewGroomBindingAsset_InMatchingSection_Offset;
+
+	private static bool CreateNewGroomBindingAsset_ReturnValue_IsValid;
+
+	private static FFieldAddress CreateNewGroomBindingAsset_ReturnValue_PropertyAddress;
+
+	private static int CreateNewGroomBindingAsset_ReturnValue_Offset;
+
+	private static bool CreateNewGeometryCacheGroomBindingAssetWithPath_IsValid;
+
+	private static IntPtr CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAssetWithPath_ParamsSize;
+
+	private static bool CreateNewGeometryCacheGroomBindingAssetWithPath_DesiredPackagePath_IsValid;
+
+	private static FFieldAddress CreateNewGeometryCacheGroomBindingAssetWithPath_DesiredPackagePath_PropertyAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAssetWithPath_DesiredPackagePath_Offset;
+
+	private static bool CreateNewGeometryCacheGroomBindingAssetWithPath_GroomAsset_IsValid;
+
+	private static FFieldAddress CreateNewGeometryCacheGroomBindingAssetWithPath_GroomAsset_PropertyAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAssetWithPath_GroomAsset_Offset;
+
+	private static bool CreateNewGeometryCacheGroomBindingAssetWithPath_GeometryCache_IsValid;
+
+	private static FFieldAddress CreateNewGeometryCacheGroomBindingAssetWithPath_GeometryCache_PropertyAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAssetWithPath_GeometryCache_Offset;
+
+	private static bool CreateNewGeometryCacheGroomBindingAssetWithPath_NumInterpolationPoints_IsValid;
+
+	private static FFieldAddress CreateNewGeometryCacheGroomBindingAssetWithPath_NumInterpolationPoints_PropertyAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAssetWithPath_NumInterpolationPoints_Offset;
+
+	private static bool CreateNewGeometryCacheGroomBindingAssetWithPath_SourceGeometryCacheForTransfer_IsValid;
+
+	private static FFieldAddress CreateNewGeometryCacheGroomBindingAssetWithPath_SourceGeometryCacheForTransfer_PropertyAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAssetWithPath_SourceGeometryCacheForTransfer_Offset;
+
+	private static bool CreateNewGeometryCacheGroomBindingAssetWithPath_MatchingSection_IsValid;
+
+	private static FFieldAddress CreateNewGeometryCacheGroomBindingAssetWithPath_MatchingSection_PropertyAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAssetWithPath_MatchingSection_Offset;
+
+	private static bool CreateNewGeometryCacheGroomBindingAssetWithPath_ReturnValue_IsValid;
+
+	private static FFieldAddress CreateNewGeometryCacheGroomBindingAssetWithPath_ReturnValue_PropertyAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAssetWithPath_ReturnValue_Offset;
+
+	private static bool CreateNewGeometryCacheGroomBindingAsset_IsValid;
+
+	private static IntPtr CreateNewGeometryCacheGroomBindingAsset_FunctionAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAsset_ParamsSize;
+
+	private static bool CreateNewGeometryCacheGroomBindingAsset_GroomAsset_IsValid;
+
+	private static FFieldAddress CreateNewGeometryCacheGroomBindingAsset_GroomAsset_PropertyAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAsset_GroomAsset_Offset;
+
+	private static bool CreateNewGeometryCacheGroomBindingAsset_GeometryCache_IsValid;
+
+	private static FFieldAddress CreateNewGeometryCacheGroomBindingAsset_GeometryCache_PropertyAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAsset_GeometryCache_Offset;
+
+	private static bool CreateNewGeometryCacheGroomBindingAsset_NumInterpolationPoints_IsValid;
+
+	private static FFieldAddress CreateNewGeometryCacheGroomBindingAsset_NumInterpolationPoints_PropertyAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAsset_NumInterpolationPoints_Offset;
+
+	private static bool CreateNewGeometryCacheGroomBindingAsset_SourceGeometryCacheForTransfer_IsValid;
+
+	private static FFieldAddress CreateNewGeometryCacheGroomBindingAsset_SourceGeometryCacheForTransfer_PropertyAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAsset_SourceGeometryCacheForTransfer_Offset;
+
+	private static bool CreateNewGeometryCacheGroomBindingAsset_MatchingSection_IsValid;
+
+	private static FFieldAddress CreateNewGeometryCacheGroomBindingAsset_MatchingSection_PropertyAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAsset_MatchingSection_Offset;
+
+	private static bool CreateNewGeometryCacheGroomBindingAsset_ReturnValue_IsValid;
+
+	private static FFieldAddress CreateNewGeometryCacheGroomBindingAsset_ReturnValue_PropertyAddress;
+
+	private static int CreateNewGeometryCacheGroomBindingAsset_ReturnValue_Offset;
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/HairStrandsCore.GroomBlueprintLibrary:CreateNewGroomBindingAssetWithPath")]
+	public unsafe static UGroomBindingAsset CreateNewGroomBindingAssetWithPath(string InDesiredPackagePath, UGroomAsset InGroomAsset, USkeletalMesh InSkeletalMesh, int InNumInterpolationPoints, USkeletalMesh InSourceSkeletalMeshForTransfer, int InMatchingSection)
+	{
+		if (!CreateNewGroomBindingAssetWithPath_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/HairStrandsCore.GroomBlueprintLibrary:CreateNewGroomBindingAssetWithPath");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(CreateNewGroomBindingAssetWithPath_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)CreateNewGroomBindingAssetWithPath_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, CreateNewGroomBindingAssetWithPath_InDesiredPackagePath_Offset), 0, CreateNewGroomBindingAssetWithPath_InDesiredPackagePath_PropertyAddress.Address, InDesiredPackagePath);
+		UObjectMarshaler<UGroomAsset>.ToNative(IntPtr.Add(intPtr, CreateNewGroomBindingAssetWithPath_InGroomAsset_Offset), 0, CreateNewGroomBindingAssetWithPath_InGroomAsset_PropertyAddress.Address, InGroomAsset);
+		UObjectMarshaler<USkeletalMesh>.ToNative(IntPtr.Add(intPtr, CreateNewGroomBindingAssetWithPath_InSkeletalMesh_Offset), 0, CreateNewGroomBindingAssetWithPath_InSkeletalMesh_PropertyAddress.Address, InSkeletalMesh);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, CreateNewGroomBindingAssetWithPath_InNumInterpolationPoints_Offset), 0, CreateNewGroomBindingAssetWithPath_InNumInterpolationPoints_PropertyAddress.Address, InNumInterpolationPoints);
+		UObjectMarshaler<USkeletalMesh>.ToNative(IntPtr.Add(intPtr, CreateNewGroomBindingAssetWithPath_InSourceSkeletalMeshForTransfer_Offset), 0, CreateNewGroomBindingAssetWithPath_InSourceSkeletalMeshForTransfer_PropertyAddress.Address, InSourceSkeletalMeshForTransfer);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, CreateNewGroomBindingAssetWithPath_InMatchingSection_Offset), 0, CreateNewGroomBindingAssetWithPath_InMatchingSection_PropertyAddress.Address, InMatchingSection);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, CreateNewGroomBindingAssetWithPath_FunctionAddress, intPtr, CreateNewGroomBindingAssetWithPath_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(CreateNewGroomBindingAssetWithPath_InDesiredPackagePath_PropertyAddress.Address, intPtr);
+		return UObjectMarshaler<UGroomBindingAsset>.FromNative(IntPtr.Add(intPtr, CreateNewGroomBindingAssetWithPath_ReturnValue_Offset), 0, CreateNewGroomBindingAssetWithPath_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/HairStrandsCore.GroomBlueprintLibrary:CreateNewGroomBindingAsset")]
+	public unsafe static UGroomBindingAsset CreateNewGroomBindingAsset(UGroomAsset InGroomAsset, USkeletalMesh InSkeletalMesh, int InNumInterpolationPoints, USkeletalMesh InSourceSkeletalMeshForTransfer, int InMatchingSection)
+	{
+		if (!CreateNewGroomBindingAsset_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/HairStrandsCore.GroomBlueprintLibrary:CreateNewGroomBindingAsset");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(CreateNewGroomBindingAsset_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)CreateNewGroomBindingAsset_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UGroomAsset>.ToNative(IntPtr.Add(intPtr, CreateNewGroomBindingAsset_InGroomAsset_Offset), 0, CreateNewGroomBindingAsset_InGroomAsset_PropertyAddress.Address, InGroomAsset);
+		UObjectMarshaler<USkeletalMesh>.ToNative(IntPtr.Add(intPtr, CreateNewGroomBindingAsset_InSkeletalMesh_Offset), 0, CreateNewGroomBindingAsset_InSkeletalMesh_PropertyAddress.Address, InSkeletalMesh);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, CreateNewGroomBindingAsset_InNumInterpolationPoints_Offset), 0, CreateNewGroomBindingAsset_InNumInterpolationPoints_PropertyAddress.Address, InNumInterpolationPoints);
+		UObjectMarshaler<USkeletalMesh>.ToNative(IntPtr.Add(intPtr, CreateNewGroomBindingAsset_InSourceSkeletalMeshForTransfer_Offset), 0, CreateNewGroomBindingAsset_InSourceSkeletalMeshForTransfer_PropertyAddress.Address, InSourceSkeletalMeshForTransfer);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, CreateNewGroomBindingAsset_InMatchingSection_Offset), 0, CreateNewGroomBindingAsset_InMatchingSection_PropertyAddress.Address, InMatchingSection);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, CreateNewGroomBindingAsset_FunctionAddress, intPtr, CreateNewGroomBindingAsset_ParamsSize);
+		return UObjectMarshaler<UGroomBindingAsset>.FromNative(IntPtr.Add(intPtr, CreateNewGroomBindingAsset_ReturnValue_Offset), 0, CreateNewGroomBindingAsset_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/HairStrandsCore.GroomBlueprintLibrary:CreateNewGeometryCacheGroomBindingAssetWithPath")]
+	public unsafe static UGroomBindingAsset CreateNewGeometryCacheGroomBindingAssetWithPath(string DesiredPackagePath, UGroomAsset GroomAsset, UGeometryCache GeometryCache, int NumInterpolationPoints, UGeometryCache SourceGeometryCacheForTransfer, int MatchingSection)
+	{
+		if (!CreateNewGeometryCacheGroomBindingAssetWithPath_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/HairStrandsCore.GroomBlueprintLibrary:CreateNewGeometryCacheGroomBindingAssetWithPath");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(CreateNewGeometryCacheGroomBindingAssetWithPath_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)CreateNewGeometryCacheGroomBindingAssetWithPath_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, CreateNewGeometryCacheGroomBindingAssetWithPath_DesiredPackagePath_Offset), 0, CreateNewGeometryCacheGroomBindingAssetWithPath_DesiredPackagePath_PropertyAddress.Address, DesiredPackagePath);
+		UObjectMarshaler<UGroomAsset>.ToNative(IntPtr.Add(intPtr, CreateNewGeometryCacheGroomBindingAssetWithPath_GroomAsset_Offset), 0, CreateNewGeometryCacheGroomBindingAssetWithPath_GroomAsset_PropertyAddress.Address, GroomAsset);
+		UObjectMarshaler<UGeometryCache>.ToNative(IntPtr.Add(intPtr, CreateNewGeometryCacheGroomBindingAssetWithPath_GeometryCache_Offset), 0, CreateNewGeometryCacheGroomBindingAssetWithPath_GeometryCache_PropertyAddress.Address, GeometryCache);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, CreateNewGeometryCacheGroomBindingAssetWithPath_NumInterpolationPoints_Offset), 0, CreateNewGeometryCacheGroomBindingAssetWithPath_NumInterpolationPoints_PropertyAddress.Address, NumInterpolationPoints);
+		UObjectMarshaler<UGeometryCache>.ToNative(IntPtr.Add(intPtr, CreateNewGeometryCacheGroomBindingAssetWithPath_SourceGeometryCacheForTransfer_Offset), 0, CreateNewGeometryCacheGroomBindingAssetWithPath_SourceGeometryCacheForTransfer_PropertyAddress.Address, SourceGeometryCacheForTransfer);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, CreateNewGeometryCacheGroomBindingAssetWithPath_MatchingSection_Offset), 0, CreateNewGeometryCacheGroomBindingAssetWithPath_MatchingSection_PropertyAddress.Address, MatchingSection);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, intPtr, CreateNewGeometryCacheGroomBindingAssetWithPath_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(CreateNewGeometryCacheGroomBindingAssetWithPath_DesiredPackagePath_PropertyAddress.Address, intPtr);
+		return UObjectMarshaler<UGroomBindingAsset>.FromNative(IntPtr.Add(intPtr, CreateNewGeometryCacheGroomBindingAssetWithPath_ReturnValue_Offset), 0, CreateNewGeometryCacheGroomBindingAssetWithPath_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/HairStrandsCore.GroomBlueprintLibrary:CreateNewGeometryCacheGroomBindingAsset")]
+	public unsafe static UGroomBindingAsset CreateNewGeometryCacheGroomBindingAsset(UGroomAsset GroomAsset, UGeometryCache GeometryCache, int NumInterpolationPoints, UGeometryCache SourceGeometryCacheForTransfer, int MatchingSection)
+	{
+		if (!CreateNewGeometryCacheGroomBindingAsset_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/HairStrandsCore.GroomBlueprintLibrary:CreateNewGeometryCacheGroomBindingAsset");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(CreateNewGeometryCacheGroomBindingAsset_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)CreateNewGeometryCacheGroomBindingAsset_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UGroomAsset>.ToNative(IntPtr.Add(intPtr, CreateNewGeometryCacheGroomBindingAsset_GroomAsset_Offset), 0, CreateNewGeometryCacheGroomBindingAsset_GroomAsset_PropertyAddress.Address, GroomAsset);
+		UObjectMarshaler<UGeometryCache>.ToNative(IntPtr.Add(intPtr, CreateNewGeometryCacheGroomBindingAsset_GeometryCache_Offset), 0, CreateNewGeometryCacheGroomBindingAsset_GeometryCache_PropertyAddress.Address, GeometryCache);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, CreateNewGeometryCacheGroomBindingAsset_NumInterpolationPoints_Offset), 0, CreateNewGeometryCacheGroomBindingAsset_NumInterpolationPoints_PropertyAddress.Address, NumInterpolationPoints);
+		UObjectMarshaler<UGeometryCache>.ToNative(IntPtr.Add(intPtr, CreateNewGeometryCacheGroomBindingAsset_SourceGeometryCacheForTransfer_Offset), 0, CreateNewGeometryCacheGroomBindingAsset_SourceGeometryCacheForTransfer_PropertyAddress.Address, SourceGeometryCacheForTransfer);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, CreateNewGeometryCacheGroomBindingAsset_MatchingSection_Offset), 0, CreateNewGeometryCacheGroomBindingAsset_MatchingSection_PropertyAddress.Address, MatchingSection);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, intPtr, CreateNewGeometryCacheGroomBindingAsset_ParamsSize);
+		return UObjectMarshaler<UGroomBindingAsset>.FromNative(IntPtr.Add(intPtr, CreateNewGeometryCacheGroomBindingAsset_ReturnValue_Offset), 0, CreateNewGeometryCacheGroomBindingAsset_ReturnValue_PropertyAddress.Address);
+	}
+
+	static UGroomLibrary()
+	{
+		if (UnrealTypes.CanLazyLoadNativeType(typeof(UGroomLibrary)))
+		{
+			LoadNativeType();
+		}
+		UnrealTypes.OnCCtorCalled(typeof(UGroomLibrary));
+	}
+
+	private static void LoadNativeType()
+	{
+		classAddress = NativeReflection.GetClass("/Script/HairStrandsCore.GroomBlueprintLibrary");
+		CreateNewGroomBindingAssetWithPath_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "CreateNewGroomBindingAssetWithPath");
+		CreateNewGroomBindingAssetWithPath_ParamsSize = NativeReflection.GetFunctionParamsSize(CreateNewGroomBindingAssetWithPath_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGroomBindingAssetWithPath_InDesiredPackagePath_PropertyAddress, CreateNewGroomBindingAssetWithPath_FunctionAddress, "InDesiredPackagePath");
+		CreateNewGroomBindingAssetWithPath_InDesiredPackagePath_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGroomBindingAssetWithPath_FunctionAddress, "InDesiredPackagePath");
+		CreateNewGroomBindingAssetWithPath_InDesiredPackagePath_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGroomBindingAssetWithPath_FunctionAddress, "InDesiredPackagePath", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGroomBindingAssetWithPath_InGroomAsset_PropertyAddress, CreateNewGroomBindingAssetWithPath_FunctionAddress, "InGroomAsset");
+		CreateNewGroomBindingAssetWithPath_InGroomAsset_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGroomBindingAssetWithPath_FunctionAddress, "InGroomAsset");
+		CreateNewGroomBindingAssetWithPath_InGroomAsset_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGroomBindingAssetWithPath_FunctionAddress, "InGroomAsset", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGroomBindingAssetWithPath_InSkeletalMesh_PropertyAddress, CreateNewGroomBindingAssetWithPath_FunctionAddress, "InSkeletalMesh");
+		CreateNewGroomBindingAssetWithPath_InSkeletalMesh_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGroomBindingAssetWithPath_FunctionAddress, "InSkeletalMesh");
+		CreateNewGroomBindingAssetWithPath_InSkeletalMesh_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGroomBindingAssetWithPath_FunctionAddress, "InSkeletalMesh", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGroomBindingAssetWithPath_InNumInterpolationPoints_PropertyAddress, CreateNewGroomBindingAssetWithPath_FunctionAddress, "InNumInterpolationPoints");
+		CreateNewGroomBindingAssetWithPath_InNumInterpolationPoints_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGroomBindingAssetWithPath_FunctionAddress, "InNumInterpolationPoints");
+		CreateNewGroomBindingAssetWithPath_InNumInterpolationPoints_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGroomBindingAssetWithPath_FunctionAddress, "InNumInterpolationPoints", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGroomBindingAssetWithPath_InSourceSkeletalMeshForTransfer_PropertyAddress, CreateNewGroomBindingAssetWithPath_FunctionAddress, "InSourceSkeletalMeshForTransfer");
+		CreateNewGroomBindingAssetWithPath_InSourceSkeletalMeshForTransfer_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGroomBindingAssetWithPath_FunctionAddress, "InSourceSkeletalMeshForTransfer");
+		CreateNewGroomBindingAssetWithPath_InSourceSkeletalMeshForTransfer_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGroomBindingAssetWithPath_FunctionAddress, "InSourceSkeletalMeshForTransfer", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGroomBindingAssetWithPath_InMatchingSection_PropertyAddress, CreateNewGroomBindingAssetWithPath_FunctionAddress, "InMatchingSection");
+		CreateNewGroomBindingAssetWithPath_InMatchingSection_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGroomBindingAssetWithPath_FunctionAddress, "InMatchingSection");
+		CreateNewGroomBindingAssetWithPath_InMatchingSection_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGroomBindingAssetWithPath_FunctionAddress, "InMatchingSection", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGroomBindingAssetWithPath_ReturnValue_PropertyAddress, CreateNewGroomBindingAssetWithPath_FunctionAddress, "ReturnValue");
+		CreateNewGroomBindingAssetWithPath_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGroomBindingAssetWithPath_FunctionAddress, "ReturnValue");
+		CreateNewGroomBindingAssetWithPath_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGroomBindingAssetWithPath_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		CreateNewGroomBindingAssetWithPath_IsValid = CreateNewGroomBindingAssetWithPath_FunctionAddress != IntPtr.Zero && CreateNewGroomBindingAssetWithPath_InDesiredPackagePath_IsValid && CreateNewGroomBindingAssetWithPath_InGroomAsset_IsValid && CreateNewGroomBindingAssetWithPath_InSkeletalMesh_IsValid && CreateNewGroomBindingAssetWithPath_InNumInterpolationPoints_IsValid && CreateNewGroomBindingAssetWithPath_InSourceSkeletalMeshForTransfer_IsValid && CreateNewGroomBindingAssetWithPath_InMatchingSection_IsValid && CreateNewGroomBindingAssetWithPath_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/HairStrandsCore.GroomBlueprintLibrary:CreateNewGroomBindingAssetWithPath", CreateNewGroomBindingAssetWithPath_IsValid);
+		CreateNewGroomBindingAsset_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "CreateNewGroomBindingAsset");
+		CreateNewGroomBindingAsset_ParamsSize = NativeReflection.GetFunctionParamsSize(CreateNewGroomBindingAsset_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGroomBindingAsset_InGroomAsset_PropertyAddress, CreateNewGroomBindingAsset_FunctionAddress, "InGroomAsset");
+		CreateNewGroomBindingAsset_InGroomAsset_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGroomBindingAsset_FunctionAddress, "InGroomAsset");
+		CreateNewGroomBindingAsset_InGroomAsset_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGroomBindingAsset_FunctionAddress, "InGroomAsset", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGroomBindingAsset_InSkeletalMesh_PropertyAddress, CreateNewGroomBindingAsset_FunctionAddress, "InSkeletalMesh");
+		CreateNewGroomBindingAsset_InSkeletalMesh_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGroomBindingAsset_FunctionAddress, "InSkeletalMesh");
+		CreateNewGroomBindingAsset_InSkeletalMesh_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGroomBindingAsset_FunctionAddress, "InSkeletalMesh", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGroomBindingAsset_InNumInterpolationPoints_PropertyAddress, CreateNewGroomBindingAsset_FunctionAddress, "InNumInterpolationPoints");
+		CreateNewGroomBindingAsset_InNumInterpolationPoints_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGroomBindingAsset_FunctionAddress, "InNumInterpolationPoints");
+		CreateNewGroomBindingAsset_InNumInterpolationPoints_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGroomBindingAsset_FunctionAddress, "InNumInterpolationPoints", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGroomBindingAsset_InSourceSkeletalMeshForTransfer_PropertyAddress, CreateNewGroomBindingAsset_FunctionAddress, "InSourceSkeletalMeshForTransfer");
+		CreateNewGroomBindingAsset_InSourceSkeletalMeshForTransfer_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGroomBindingAsset_FunctionAddress, "InSourceSkeletalMeshForTransfer");
+		CreateNewGroomBindingAsset_InSourceSkeletalMeshForTransfer_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGroomBindingAsset_FunctionAddress, "InSourceSkeletalMeshForTransfer", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGroomBindingAsset_InMatchingSection_PropertyAddress, CreateNewGroomBindingAsset_FunctionAddress, "InMatchingSection");
+		CreateNewGroomBindingAsset_InMatchingSection_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGroomBindingAsset_FunctionAddress, "InMatchingSection");
+		CreateNewGroomBindingAsset_InMatchingSection_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGroomBindingAsset_FunctionAddress, "InMatchingSection", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGroomBindingAsset_ReturnValue_PropertyAddress, CreateNewGroomBindingAsset_FunctionAddress, "ReturnValue");
+		CreateNewGroomBindingAsset_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGroomBindingAsset_FunctionAddress, "ReturnValue");
+		CreateNewGroomBindingAsset_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGroomBindingAsset_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		CreateNewGroomBindingAsset_IsValid = CreateNewGroomBindingAsset_FunctionAddress != IntPtr.Zero && CreateNewGroomBindingAsset_InGroomAsset_IsValid && CreateNewGroomBindingAsset_InSkeletalMesh_IsValid && CreateNewGroomBindingAsset_InNumInterpolationPoints_IsValid && CreateNewGroomBindingAsset_InSourceSkeletalMeshForTransfer_IsValid && CreateNewGroomBindingAsset_InMatchingSection_IsValid && CreateNewGroomBindingAsset_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/HairStrandsCore.GroomBlueprintLibrary:CreateNewGroomBindingAsset", CreateNewGroomBindingAsset_IsValid);
+		CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "CreateNewGeometryCacheGroomBindingAssetWithPath");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_ParamsSize = NativeReflection.GetFunctionParamsSize(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGeometryCacheGroomBindingAssetWithPath_DesiredPackagePath_PropertyAddress, CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "DesiredPackagePath");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_DesiredPackagePath_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "DesiredPackagePath");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_DesiredPackagePath_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "DesiredPackagePath", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGeometryCacheGroomBindingAssetWithPath_GroomAsset_PropertyAddress, CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "GroomAsset");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_GroomAsset_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "GroomAsset");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_GroomAsset_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "GroomAsset", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGeometryCacheGroomBindingAssetWithPath_GeometryCache_PropertyAddress, CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "GeometryCache");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_GeometryCache_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "GeometryCache");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_GeometryCache_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "GeometryCache", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGeometryCacheGroomBindingAssetWithPath_NumInterpolationPoints_PropertyAddress, CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "NumInterpolationPoints");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_NumInterpolationPoints_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "NumInterpolationPoints");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_NumInterpolationPoints_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "NumInterpolationPoints", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGeometryCacheGroomBindingAssetWithPath_SourceGeometryCacheForTransfer_PropertyAddress, CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "SourceGeometryCacheForTransfer");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_SourceGeometryCacheForTransfer_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "SourceGeometryCacheForTransfer");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_SourceGeometryCacheForTransfer_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "SourceGeometryCacheForTransfer", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGeometryCacheGroomBindingAssetWithPath_MatchingSection_PropertyAddress, CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "MatchingSection");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_MatchingSection_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "MatchingSection");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_MatchingSection_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "MatchingSection", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGeometryCacheGroomBindingAssetWithPath_ReturnValue_PropertyAddress, CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "ReturnValue");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "ReturnValue");
+		CreateNewGeometryCacheGroomBindingAssetWithPath_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		CreateNewGeometryCacheGroomBindingAssetWithPath_IsValid = CreateNewGeometryCacheGroomBindingAssetWithPath_FunctionAddress != IntPtr.Zero && CreateNewGeometryCacheGroomBindingAssetWithPath_DesiredPackagePath_IsValid && CreateNewGeometryCacheGroomBindingAssetWithPath_GroomAsset_IsValid && CreateNewGeometryCacheGroomBindingAssetWithPath_GeometryCache_IsValid && CreateNewGeometryCacheGroomBindingAssetWithPath_NumInterpolationPoints_IsValid && CreateNewGeometryCacheGroomBindingAssetWithPath_SourceGeometryCacheForTransfer_IsValid && CreateNewGeometryCacheGroomBindingAssetWithPath_MatchingSection_IsValid && CreateNewGeometryCacheGroomBindingAssetWithPath_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/HairStrandsCore.GroomBlueprintLibrary:CreateNewGeometryCacheGroomBindingAssetWithPath", CreateNewGeometryCacheGroomBindingAssetWithPath_IsValid);
+		CreateNewGeometryCacheGroomBindingAsset_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "CreateNewGeometryCacheGroomBindingAsset");
+		CreateNewGeometryCacheGroomBindingAsset_ParamsSize = NativeReflection.GetFunctionParamsSize(CreateNewGeometryCacheGroomBindingAsset_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGeometryCacheGroomBindingAsset_GroomAsset_PropertyAddress, CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "GroomAsset");
+		CreateNewGeometryCacheGroomBindingAsset_GroomAsset_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "GroomAsset");
+		CreateNewGeometryCacheGroomBindingAsset_GroomAsset_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "GroomAsset", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGeometryCacheGroomBindingAsset_GeometryCache_PropertyAddress, CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "GeometryCache");
+		CreateNewGeometryCacheGroomBindingAsset_GeometryCache_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "GeometryCache");
+		CreateNewGeometryCacheGroomBindingAsset_GeometryCache_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "GeometryCache", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGeometryCacheGroomBindingAsset_NumInterpolationPoints_PropertyAddress, CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "NumInterpolationPoints");
+		CreateNewGeometryCacheGroomBindingAsset_NumInterpolationPoints_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "NumInterpolationPoints");
+		CreateNewGeometryCacheGroomBindingAsset_NumInterpolationPoints_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "NumInterpolationPoints", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGeometryCacheGroomBindingAsset_SourceGeometryCacheForTransfer_PropertyAddress, CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "SourceGeometryCacheForTransfer");
+		CreateNewGeometryCacheGroomBindingAsset_SourceGeometryCacheForTransfer_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "SourceGeometryCacheForTransfer");
+		CreateNewGeometryCacheGroomBindingAsset_SourceGeometryCacheForTransfer_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "SourceGeometryCacheForTransfer", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGeometryCacheGroomBindingAsset_MatchingSection_PropertyAddress, CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "MatchingSection");
+		CreateNewGeometryCacheGroomBindingAsset_MatchingSection_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "MatchingSection");
+		CreateNewGeometryCacheGroomBindingAsset_MatchingSection_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "MatchingSection", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref CreateNewGeometryCacheGroomBindingAsset_ReturnValue_PropertyAddress, CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "ReturnValue");
+		CreateNewGeometryCacheGroomBindingAsset_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "ReturnValue");
+		CreateNewGeometryCacheGroomBindingAsset_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(CreateNewGeometryCacheGroomBindingAsset_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		CreateNewGeometryCacheGroomBindingAsset_IsValid = CreateNewGeometryCacheGroomBindingAsset_FunctionAddress != IntPtr.Zero && CreateNewGeometryCacheGroomBindingAsset_GroomAsset_IsValid && CreateNewGeometryCacheGroomBindingAsset_GeometryCache_IsValid && CreateNewGeometryCacheGroomBindingAsset_NumInterpolationPoints_IsValid && CreateNewGeometryCacheGroomBindingAsset_SourceGeometryCacheForTransfer_IsValid && CreateNewGeometryCacheGroomBindingAsset_MatchingSection_IsValid && CreateNewGeometryCacheGroomBindingAsset_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/HairStrandsCore.GroomBlueprintLibrary:CreateNewGeometryCacheGroomBindingAsset", CreateNewGeometryCacheGroomBindingAsset_IsValid);
+	}
+}

@@ -1,0 +1,95 @@
+using System;
+using System.Runtime.CompilerServices;
+using UnrealEngine.Runtime;
+
+namespace UnrealEngine.Plugins.MovieRenderPipelineCore;
+
+[UDelegate]
+[UMetaPath("/Script/MovieRenderPipelineCore.OnMoviePipelineExecutorErrored__DelegateSignature")]
+public class FOnMoviePipelineExecutorErrored : FMulticastDelegate<FOnMoviePipelineExecutorErrored.Signature>
+{
+	public delegate void Signature(UMoviePipelineExecutorBase PipelineExecutor, UMoviePipeline PipelineWithError, bool bIsFatal, FText ErrorText);
+
+	private static bool OnMoviePipelineExecutorErrored__DelegateSignature_IsValid;
+
+	private static IntPtr OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress;
+
+	private static int OnMoviePipelineExecutorErrored__DelegateSignature_ParamsSize;
+
+	private static bool OnMoviePipelineExecutorErrored__DelegateSignature_PipelineExecutor_IsValid;
+
+	private static FFieldAddress OnMoviePipelineExecutorErrored__DelegateSignature_PipelineExecutor_PropertyAddress;
+
+	private static int OnMoviePipelineExecutorErrored__DelegateSignature_PipelineExecutor_Offset;
+
+	private static bool OnMoviePipelineExecutorErrored__DelegateSignature_PipelineWithError_IsValid;
+
+	private static FFieldAddress OnMoviePipelineExecutorErrored__DelegateSignature_PipelineWithError_PropertyAddress;
+
+	private static int OnMoviePipelineExecutorErrored__DelegateSignature_PipelineWithError_Offset;
+
+	private static bool OnMoviePipelineExecutorErrored__DelegateSignature_bIsFatal_IsValid;
+
+	private static FFieldAddress OnMoviePipelineExecutorErrored__DelegateSignature_bIsFatal_PropertyAddress;
+
+	private static int OnMoviePipelineExecutorErrored__DelegateSignature_bIsFatal_Offset;
+
+	private static bool OnMoviePipelineExecutorErrored__DelegateSignature_ErrorText_IsValid;
+
+	private static FFieldAddress OnMoviePipelineExecutorErrored__DelegateSignature_ErrorText_PropertyAddress;
+
+	private static int OnMoviePipelineExecutorErrored__DelegateSignature_ErrorText_Offset;
+
+	public override Signature GetInvoker()
+	{
+		return Invoker;
+	}
+
+	static FOnMoviePipelineExecutorErrored()
+	{
+		LoadNativeType();
+	}
+
+	private static void LoadNativeType()
+	{
+		OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress = NativeReflection.GetFunction("/Script/MovieRenderPipelineCore.OnMoviePipelineExecutorErrored__DelegateSignature");
+		OnMoviePipelineExecutorErrored__DelegateSignature_ParamsSize = NativeReflection.GetFunctionParamsSize(OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref OnMoviePipelineExecutorErrored__DelegateSignature_PipelineExecutor_PropertyAddress, OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress, "PipelineExecutor");
+		OnMoviePipelineExecutorErrored__DelegateSignature_PipelineExecutor_Offset = NativeReflectionCached.GetPropertyOffset(OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress, "PipelineExecutor");
+		OnMoviePipelineExecutorErrored__DelegateSignature_PipelineExecutor_IsValid = NativeReflectionCached.ValidatePropertyClass(OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress, "PipelineExecutor", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref OnMoviePipelineExecutorErrored__DelegateSignature_PipelineWithError_PropertyAddress, OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress, "PipelineWithError");
+		OnMoviePipelineExecutorErrored__DelegateSignature_PipelineWithError_Offset = NativeReflectionCached.GetPropertyOffset(OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress, "PipelineWithError");
+		OnMoviePipelineExecutorErrored__DelegateSignature_PipelineWithError_IsValid = NativeReflectionCached.ValidatePropertyClass(OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress, "PipelineWithError", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref OnMoviePipelineExecutorErrored__DelegateSignature_bIsFatal_PropertyAddress, OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress, "bIsFatal");
+		OnMoviePipelineExecutorErrored__DelegateSignature_bIsFatal_Offset = NativeReflectionCached.GetPropertyOffset(OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress, "bIsFatal");
+		OnMoviePipelineExecutorErrored__DelegateSignature_bIsFatal_IsValid = NativeReflectionCached.ValidatePropertyClass(OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress, "bIsFatal", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref OnMoviePipelineExecutorErrored__DelegateSignature_ErrorText_PropertyAddress, OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress, "ErrorText");
+		OnMoviePipelineExecutorErrored__DelegateSignature_ErrorText_Offset = NativeReflectionCached.GetPropertyOffset(OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress, "ErrorText");
+		OnMoviePipelineExecutorErrored__DelegateSignature_ErrorText_IsValid = NativeReflectionCached.ValidatePropertyClass(OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress, "ErrorText", Classes.FTextProperty);
+		OnMoviePipelineExecutorErrored__DelegateSignature_IsValid = OnMoviePipelineExecutorErrored__DelegateSignature_FunctionAddress != IntPtr.Zero && OnMoviePipelineExecutorErrored__DelegateSignature_PipelineExecutor_IsValid && OnMoviePipelineExecutorErrored__DelegateSignature_PipelineWithError_IsValid && OnMoviePipelineExecutorErrored__DelegateSignature_bIsFatal_IsValid && OnMoviePipelineExecutorErrored__DelegateSignature_ErrorText_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/MovieRenderPipelineCore.OnMoviePipelineExecutorErrored__DelegateSignature", OnMoviePipelineExecutorErrored__DelegateSignature_IsValid);
+	}
+
+	private unsafe void Invoker(UMoviePipelineExecutorBase PipelineExecutor, UMoviePipeline PipelineWithError, bool bIsFatal, FText ErrorText)
+	{
+		if (!OnMoviePipelineExecutorErrored__DelegateSignature_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/MovieRenderPipelineCore.OnMoviePipelineExecutorErrored__DelegateSignature");
+		}
+		else if (IsBound)
+		{
+			byte* ptr = stackalloc byte[(int)(uint)(OnMoviePipelineExecutorErrored__DelegateSignature_ParamsSize + 16)];
+			int num = (int)((16L - (long)ptr) & 0xF);
+			byte* ptr2 = ptr + num;
+			Unsafe.InitBlockUnaligned(ptr2, 0, (uint)OnMoviePipelineExecutorErrored__DelegateSignature_ParamsSize);
+			IntPtr intPtr = new IntPtr(ptr2);
+			UObjectMarshaler<UMoviePipelineExecutorBase>.ToNative(IntPtr.Add(intPtr, OnMoviePipelineExecutorErrored__DelegateSignature_PipelineExecutor_Offset), 0, OnMoviePipelineExecutorErrored__DelegateSignature_PipelineExecutor_PropertyAddress.Address, PipelineExecutor);
+			UObjectMarshaler<UMoviePipeline>.ToNative(IntPtr.Add(intPtr, OnMoviePipelineExecutorErrored__DelegateSignature_PipelineWithError_Offset), 0, OnMoviePipelineExecutorErrored__DelegateSignature_PipelineWithError_PropertyAddress.Address, PipelineWithError);
+			BoolMarshaler.ToNative(IntPtr.Add(intPtr, OnMoviePipelineExecutorErrored__DelegateSignature_bIsFatal_Offset), 0, OnMoviePipelineExecutorErrored__DelegateSignature_bIsFatal_PropertyAddress.Address, bIsFatal);
+			NativeReflection.InitializeValue_InContainer(OnMoviePipelineExecutorErrored__DelegateSignature_ErrorText_PropertyAddress.Address, intPtr);
+			FTextMarshaler.ToNative(IntPtr.Add(intPtr, OnMoviePipelineExecutorErrored__DelegateSignature_ErrorText_Offset), 0, OnMoviePipelineExecutorErrored__DelegateSignature_ErrorText_PropertyAddress.Address, ErrorText);
+			ProcessDelegate(intPtr);
+			NativeReflection.DestroyValue_InContainer(OnMoviePipelineExecutorErrored__DelegateSignature_ErrorText_PropertyAddress.Address, intPtr);
+		}
+	}
+}

@@ -1,0 +1,13 @@
+using UnrealEngine.Runtime;
+using UnrealEngine.ToolMenus;
+
+namespace UnrealEngine.Blutility;
+
+[Abstract]
+[UClass(Flags = (ClassFlags)810549409uL, Config = "Engine")]
+[BlueprintType]
+[Blueprintable]
+[UMetaPath("/Script/Blutility.EditorUtilityToolMenuEntry", "Blutility", UnrealModuleType.Engine)]
+public class UEditorUtilityToolMenuEntry : UToolMenuEntryScript
+{
+}

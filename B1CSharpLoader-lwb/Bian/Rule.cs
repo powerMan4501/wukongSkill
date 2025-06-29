@@ -145,7 +145,6 @@ namespace bian
         {
             var character = Helper.GetBGUPlayerCharacterCS();
 
-
             switch (action.Type.ToLower())
             {
                 case "buff":
@@ -163,7 +162,7 @@ namespace bian
                 case "skill":
                     if (action.SkillID > 0)
                     {
-                        // Log.Info($"bian: start run rule action: cast-skill {action.SkillID}");
+                        Log.Info($"bian: start run rule action: cast-skill {action.SkillID}");
                         //BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(action.SkillID, null, EMontageBindReason.Default, false);
                         //var csi = new FCastSkillInfo(action.SkillID, ECastSkillSourceType.Notify);
                         //csi.NeedCheckSkillCanCast = false;
@@ -212,7 +211,7 @@ namespace bian
 
 
                     var action = AfterActions[i];
-
+                    Log.Info($"bian: start run rule action: action.Type {action.Type} {action.desc}");
                     var character = Helper.GetBGUPlayerCharacterCS();
                     bool skipAction = false;
                     // 如果设置了buff条件，就校验是否有对应的buff

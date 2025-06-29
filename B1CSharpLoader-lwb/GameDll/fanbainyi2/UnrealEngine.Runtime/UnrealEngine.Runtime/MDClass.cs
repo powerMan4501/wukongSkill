@@ -1,0 +1,38 @@
+namespace UnrealEngine.Runtime;
+
+public enum MDClass
+{
+	Unknown,
+	BlueprintSpawnableComponent,
+	ChildCanTick,
+	ChildCannotTick,
+	IgnoreCategoryKeywordsInSubclasses,
+	DeprecatedNode,
+	DeprecationMessage,
+	DisplayName,
+	ScriptName,
+	IsBlueprintBase,
+	KismetHideOverrides,
+	ProhibitedInterfaces,
+	RestrictedToClasses,
+	ShowWorldContextPin,
+	DontUseGenericSpawnObject,
+	ExposedAsyncProxy,
+	BlueprintThreadSafe,
+	UsesHierarchy,
+	ClassGroupNames,
+	BlueprintType,
+	NotBlueprintType,
+	Blueprintable,
+	NotBlueprintable,
+	ShowCategories,
+	HideCategories,
+	HideFunctions,
+	AutoExpandCategories,
+	AutoCollapseCategories,
+	IsConversionRoot,
+	Experimental,
+	EarlyAccessPreview,
+	ShowFunctions,
+	DontAutoCollapseCategories
+}

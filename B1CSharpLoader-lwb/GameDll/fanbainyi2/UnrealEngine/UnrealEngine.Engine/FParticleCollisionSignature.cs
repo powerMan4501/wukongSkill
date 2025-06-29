@@ -1,0 +1,144 @@
+using System;
+using System.Runtime.CompilerServices;
+using UnrealEngine.PhysicsCore;
+using UnrealEngine.Runtime;
+
+namespace UnrealEngine.Engine;
+
+[UDelegate]
+[UMetaPath("/Script/Engine.ParticleCollisionSignature__DelegateSignature")]
+public class FParticleCollisionSignature : FMulticastDelegate<FParticleCollisionSignature.Signature>
+{
+	public delegate void Signature(FName EventName, float EmitterTime, int ParticleTime, FVector Location, FVector Velocity, FVector Direction, FVector Normal, FName BoneName, UPhysicalMaterial PhysMat);
+
+	private static bool ParticleCollisionSignature__DelegateSignature_IsValid;
+
+	private static IntPtr ParticleCollisionSignature__DelegateSignature_FunctionAddress;
+
+	private static int ParticleCollisionSignature__DelegateSignature_ParamsSize;
+
+	private static bool ParticleCollisionSignature__DelegateSignature_EventName_IsValid;
+
+	private static FFieldAddress ParticleCollisionSignature__DelegateSignature_EventName_PropertyAddress;
+
+	private static int ParticleCollisionSignature__DelegateSignature_EventName_Offset;
+
+	private static bool ParticleCollisionSignature__DelegateSignature_EmitterTime_IsValid;
+
+	private static FFieldAddress ParticleCollisionSignature__DelegateSignature_EmitterTime_PropertyAddress;
+
+	private static int ParticleCollisionSignature__DelegateSignature_EmitterTime_Offset;
+
+	private static bool ParticleCollisionSignature__DelegateSignature_ParticleTime_IsValid;
+
+	private static FFieldAddress ParticleCollisionSignature__DelegateSignature_ParticleTime_PropertyAddress;
+
+	private static int ParticleCollisionSignature__DelegateSignature_ParticleTime_Offset;
+
+	private static bool ParticleCollisionSignature__DelegateSignature_Location_IsValid;
+
+	private static FFieldAddress ParticleCollisionSignature__DelegateSignature_Location_PropertyAddress;
+
+	private static int ParticleCollisionSignature__DelegateSignature_Location_Offset;
+
+	private static bool ParticleCollisionSignature__DelegateSignature_Velocity_IsValid;
+
+	private static FFieldAddress ParticleCollisionSignature__DelegateSignature_Velocity_PropertyAddress;
+
+	private static int ParticleCollisionSignature__DelegateSignature_Velocity_Offset;
+
+	private static bool ParticleCollisionSignature__DelegateSignature_Direction_IsValid;
+
+	private static FFieldAddress ParticleCollisionSignature__DelegateSignature_Direction_PropertyAddress;
+
+	private static int ParticleCollisionSignature__DelegateSignature_Direction_Offset;
+
+	private static bool ParticleCollisionSignature__DelegateSignature_Normal_IsValid;
+
+	private static FFieldAddress ParticleCollisionSignature__DelegateSignature_Normal_PropertyAddress;
+
+	private static int ParticleCollisionSignature__DelegateSignature_Normal_Offset;
+
+	private static bool ParticleCollisionSignature__DelegateSignature_BoneName_IsValid;
+
+	private static FFieldAddress ParticleCollisionSignature__DelegateSignature_BoneName_PropertyAddress;
+
+	private static int ParticleCollisionSignature__DelegateSignature_BoneName_Offset;
+
+	private static bool ParticleCollisionSignature__DelegateSignature_PhysMat_IsValid;
+
+	private static FFieldAddress ParticleCollisionSignature__DelegateSignature_PhysMat_PropertyAddress;
+
+	private static int ParticleCollisionSignature__DelegateSignature_PhysMat_Offset;
+
+	public override Signature GetInvoker()
+	{
+		return Invoker;
+	}
+
+	static FParticleCollisionSignature()
+	{
+		LoadNativeType();
+	}
+
+	private static void LoadNativeType()
+	{
+		ParticleCollisionSignature__DelegateSignature_FunctionAddress = NativeReflection.GetFunction("/Script/Engine.ParticleCollisionSignature__DelegateSignature");
+		ParticleCollisionSignature__DelegateSignature_ParamsSize = NativeReflection.GetFunctionParamsSize(ParticleCollisionSignature__DelegateSignature_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref ParticleCollisionSignature__DelegateSignature_EventName_PropertyAddress, ParticleCollisionSignature__DelegateSignature_FunctionAddress, "EventName");
+		ParticleCollisionSignature__DelegateSignature_EventName_Offset = NativeReflectionCached.GetPropertyOffset(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "EventName");
+		ParticleCollisionSignature__DelegateSignature_EventName_IsValid = NativeReflectionCached.ValidatePropertyClass(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "EventName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref ParticleCollisionSignature__DelegateSignature_EmitterTime_PropertyAddress, ParticleCollisionSignature__DelegateSignature_FunctionAddress, "EmitterTime");
+		ParticleCollisionSignature__DelegateSignature_EmitterTime_Offset = NativeReflectionCached.GetPropertyOffset(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "EmitterTime");
+		ParticleCollisionSignature__DelegateSignature_EmitterTime_IsValid = NativeReflectionCached.ValidatePropertyClass(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "EmitterTime", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref ParticleCollisionSignature__DelegateSignature_ParticleTime_PropertyAddress, ParticleCollisionSignature__DelegateSignature_FunctionAddress, "ParticleTime");
+		ParticleCollisionSignature__DelegateSignature_ParticleTime_Offset = NativeReflectionCached.GetPropertyOffset(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "ParticleTime");
+		ParticleCollisionSignature__DelegateSignature_ParticleTime_IsValid = NativeReflectionCached.ValidatePropertyClass(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "ParticleTime", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref ParticleCollisionSignature__DelegateSignature_Location_PropertyAddress, ParticleCollisionSignature__DelegateSignature_FunctionAddress, "Location");
+		ParticleCollisionSignature__DelegateSignature_Location_Offset = NativeReflectionCached.GetPropertyOffset(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "Location");
+		ParticleCollisionSignature__DelegateSignature_Location_IsValid = NativeReflectionCached.ValidatePropertyClass(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "Location", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref ParticleCollisionSignature__DelegateSignature_Velocity_PropertyAddress, ParticleCollisionSignature__DelegateSignature_FunctionAddress, "Velocity");
+		ParticleCollisionSignature__DelegateSignature_Velocity_Offset = NativeReflectionCached.GetPropertyOffset(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "Velocity");
+		ParticleCollisionSignature__DelegateSignature_Velocity_IsValid = NativeReflectionCached.ValidatePropertyClass(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "Velocity", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref ParticleCollisionSignature__DelegateSignature_Direction_PropertyAddress, ParticleCollisionSignature__DelegateSignature_FunctionAddress, "Direction");
+		ParticleCollisionSignature__DelegateSignature_Direction_Offset = NativeReflectionCached.GetPropertyOffset(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "Direction");
+		ParticleCollisionSignature__DelegateSignature_Direction_IsValid = NativeReflectionCached.ValidatePropertyClass(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "Direction", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref ParticleCollisionSignature__DelegateSignature_Normal_PropertyAddress, ParticleCollisionSignature__DelegateSignature_FunctionAddress, "Normal");
+		ParticleCollisionSignature__DelegateSignature_Normal_Offset = NativeReflectionCached.GetPropertyOffset(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "Normal");
+		ParticleCollisionSignature__DelegateSignature_Normal_IsValid = NativeReflectionCached.ValidatePropertyClass(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "Normal", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref ParticleCollisionSignature__DelegateSignature_BoneName_PropertyAddress, ParticleCollisionSignature__DelegateSignature_FunctionAddress, "BoneName");
+		ParticleCollisionSignature__DelegateSignature_BoneName_Offset = NativeReflectionCached.GetPropertyOffset(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "BoneName");
+		ParticleCollisionSignature__DelegateSignature_BoneName_IsValid = NativeReflectionCached.ValidatePropertyClass(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "BoneName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref ParticleCollisionSignature__DelegateSignature_PhysMat_PropertyAddress, ParticleCollisionSignature__DelegateSignature_FunctionAddress, "PhysMat");
+		ParticleCollisionSignature__DelegateSignature_PhysMat_Offset = NativeReflectionCached.GetPropertyOffset(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "PhysMat");
+		ParticleCollisionSignature__DelegateSignature_PhysMat_IsValid = NativeReflectionCached.ValidatePropertyClass(ParticleCollisionSignature__DelegateSignature_FunctionAddress, "PhysMat", Classes.FObjectProperty);
+		ParticleCollisionSignature__DelegateSignature_IsValid = ParticleCollisionSignature__DelegateSignature_FunctionAddress != IntPtr.Zero && ParticleCollisionSignature__DelegateSignature_EventName_IsValid && ParticleCollisionSignature__DelegateSignature_EmitterTime_IsValid && ParticleCollisionSignature__DelegateSignature_ParticleTime_IsValid && ParticleCollisionSignature__DelegateSignature_Location_IsValid && ParticleCollisionSignature__DelegateSignature_Velocity_IsValid && ParticleCollisionSignature__DelegateSignature_Direction_IsValid && ParticleCollisionSignature__DelegateSignature_Normal_IsValid && ParticleCollisionSignature__DelegateSignature_BoneName_IsValid && ParticleCollisionSignature__DelegateSignature_PhysMat_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.ParticleCollisionSignature__DelegateSignature", ParticleCollisionSignature__DelegateSignature_IsValid);
+	}
+
+	private unsafe void Invoker(FName EventName, float EmitterTime, int ParticleTime, FVector Location, FVector Velocity, FVector Direction, FVector Normal, FName BoneName, UPhysicalMaterial PhysMat)
+	{
+		if (!ParticleCollisionSignature__DelegateSignature_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.ParticleCollisionSignature__DelegateSignature");
+		}
+		else if (IsBound)
+		{
+			byte* ptr = stackalloc byte[(int)(uint)(ParticleCollisionSignature__DelegateSignature_ParamsSize + 16)];
+			int num = (int)((16L - (long)ptr) & 0xF);
+			byte* ptr2 = ptr + num;
+			Unsafe.InitBlockUnaligned(ptr2, 0, (uint)ParticleCollisionSignature__DelegateSignature_ParamsSize);
+			IntPtr intPtr = new IntPtr(ptr2);
+			BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, ParticleCollisionSignature__DelegateSignature_EventName_Offset), 0, ParticleCollisionSignature__DelegateSignature_EventName_PropertyAddress.Address, EventName);
+			BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, ParticleCollisionSignature__DelegateSignature_EmitterTime_Offset), 0, ParticleCollisionSignature__DelegateSignature_EmitterTime_PropertyAddress.Address, EmitterTime);
+			BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, ParticleCollisionSignature__DelegateSignature_ParticleTime_Offset), 0, ParticleCollisionSignature__DelegateSignature_ParticleTime_PropertyAddress.Address, ParticleTime);
+			BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, ParticleCollisionSignature__DelegateSignature_Location_Offset), 0, ParticleCollisionSignature__DelegateSignature_Location_PropertyAddress.Address, Location);
+			BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, ParticleCollisionSignature__DelegateSignature_Velocity_Offset), 0, ParticleCollisionSignature__DelegateSignature_Velocity_PropertyAddress.Address, Velocity);
+			BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, ParticleCollisionSignature__DelegateSignature_Direction_Offset), 0, ParticleCollisionSignature__DelegateSignature_Direction_PropertyAddress.Address, Direction);
+			BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, ParticleCollisionSignature__DelegateSignature_Normal_Offset), 0, ParticleCollisionSignature__DelegateSignature_Normal_PropertyAddress.Address, Normal);
+			BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, ParticleCollisionSignature__DelegateSignature_BoneName_Offset), 0, ParticleCollisionSignature__DelegateSignature_BoneName_PropertyAddress.Address, BoneName);
+			UObjectMarshaler<UPhysicalMaterial>.ToNative(IntPtr.Add(intPtr, ParticleCollisionSignature__DelegateSignature_PhysMat_Offset), 0, ParticleCollisionSignature__DelegateSignature_PhysMat_PropertyAddress.Address, PhysMat);
+			ProcessDelegate(intPtr);
+		}
+	}
+}

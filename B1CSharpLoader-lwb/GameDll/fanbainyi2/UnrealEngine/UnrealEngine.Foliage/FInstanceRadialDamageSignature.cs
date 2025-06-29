@@ -1,0 +1,127 @@
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnrealEngine.Engine;
+using UnrealEngine.Runtime;
+
+namespace UnrealEngine.Foliage;
+
+[UDelegate]
+[UMetaPath("/Script/Foliage.InstanceRadialDamageSignature__DelegateSignature")]
+public class FInstanceRadialDamageSignature : FMulticastDelegate<FInstanceRadialDamageSignature.Signature>
+{
+	public delegate void Signature(List<int> Instances, List<float> Damages, AController InstigatedBy, FVector Origin, float MaxRadius, UDamageType DamageType, AActor DamageCauser);
+
+	private static bool InstanceRadialDamageSignature__DelegateSignature_IsValid;
+
+	private static IntPtr InstanceRadialDamageSignature__DelegateSignature_FunctionAddress;
+
+	private static int InstanceRadialDamageSignature__DelegateSignature_ParamsSize;
+
+	private static bool InstanceRadialDamageSignature__DelegateSignature_Instances_IsValid;
+
+	private static FFieldAddress InstanceRadialDamageSignature__DelegateSignature_Instances_PropertyAddress;
+
+	private static int InstanceRadialDamageSignature__DelegateSignature_Instances_Offset;
+
+	private static bool InstanceRadialDamageSignature__DelegateSignature_Damages_IsValid;
+
+	private static FFieldAddress InstanceRadialDamageSignature__DelegateSignature_Damages_PropertyAddress;
+
+	private static int InstanceRadialDamageSignature__DelegateSignature_Damages_Offset;
+
+	private static bool InstanceRadialDamageSignature__DelegateSignature_InstigatedBy_IsValid;
+
+	private static FFieldAddress InstanceRadialDamageSignature__DelegateSignature_InstigatedBy_PropertyAddress;
+
+	private static int InstanceRadialDamageSignature__DelegateSignature_InstigatedBy_Offset;
+
+	private static bool InstanceRadialDamageSignature__DelegateSignature_Origin_IsValid;
+
+	private static FFieldAddress InstanceRadialDamageSignature__DelegateSignature_Origin_PropertyAddress;
+
+	private static int InstanceRadialDamageSignature__DelegateSignature_Origin_Offset;
+
+	private static bool InstanceRadialDamageSignature__DelegateSignature_MaxRadius_IsValid;
+
+	private static FFieldAddress InstanceRadialDamageSignature__DelegateSignature_MaxRadius_PropertyAddress;
+
+	private static int InstanceRadialDamageSignature__DelegateSignature_MaxRadius_Offset;
+
+	private static bool InstanceRadialDamageSignature__DelegateSignature_DamageType_IsValid;
+
+	private static FFieldAddress InstanceRadialDamageSignature__DelegateSignature_DamageType_PropertyAddress;
+
+	private static int InstanceRadialDamageSignature__DelegateSignature_DamageType_Offset;
+
+	private static bool InstanceRadialDamageSignature__DelegateSignature_DamageCauser_IsValid;
+
+	private static FFieldAddress InstanceRadialDamageSignature__DelegateSignature_DamageCauser_PropertyAddress;
+
+	private static int InstanceRadialDamageSignature__DelegateSignature_DamageCauser_Offset;
+
+	public override Signature GetInvoker()
+	{
+		return Invoker;
+	}
+
+	static FInstanceRadialDamageSignature()
+	{
+		LoadNativeType();
+	}
+
+	private static void LoadNativeType()
+	{
+		InstanceRadialDamageSignature__DelegateSignature_FunctionAddress = NativeReflection.GetFunction("/Script/Foliage.InstanceRadialDamageSignature__DelegateSignature");
+		InstanceRadialDamageSignature__DelegateSignature_ParamsSize = NativeReflection.GetFunctionParamsSize(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref InstanceRadialDamageSignature__DelegateSignature_Instances_PropertyAddress, InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "Instances");
+		InstanceRadialDamageSignature__DelegateSignature_Instances_Offset = NativeReflectionCached.GetPropertyOffset(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "Instances");
+		InstanceRadialDamageSignature__DelegateSignature_Instances_IsValid = NativeReflectionCached.ValidatePropertyClass(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "Instances", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref InstanceRadialDamageSignature__DelegateSignature_Damages_PropertyAddress, InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "Damages");
+		InstanceRadialDamageSignature__DelegateSignature_Damages_Offset = NativeReflectionCached.GetPropertyOffset(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "Damages");
+		InstanceRadialDamageSignature__DelegateSignature_Damages_IsValid = NativeReflectionCached.ValidatePropertyClass(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "Damages", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref InstanceRadialDamageSignature__DelegateSignature_InstigatedBy_PropertyAddress, InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "InstigatedBy");
+		InstanceRadialDamageSignature__DelegateSignature_InstigatedBy_Offset = NativeReflectionCached.GetPropertyOffset(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "InstigatedBy");
+		InstanceRadialDamageSignature__DelegateSignature_InstigatedBy_IsValid = NativeReflectionCached.ValidatePropertyClass(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "InstigatedBy", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref InstanceRadialDamageSignature__DelegateSignature_Origin_PropertyAddress, InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "Origin");
+		InstanceRadialDamageSignature__DelegateSignature_Origin_Offset = NativeReflectionCached.GetPropertyOffset(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "Origin");
+		InstanceRadialDamageSignature__DelegateSignature_Origin_IsValid = NativeReflectionCached.ValidatePropertyClass(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "Origin", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref InstanceRadialDamageSignature__DelegateSignature_MaxRadius_PropertyAddress, InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "MaxRadius");
+		InstanceRadialDamageSignature__DelegateSignature_MaxRadius_Offset = NativeReflectionCached.GetPropertyOffset(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "MaxRadius");
+		InstanceRadialDamageSignature__DelegateSignature_MaxRadius_IsValid = NativeReflectionCached.ValidatePropertyClass(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "MaxRadius", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref InstanceRadialDamageSignature__DelegateSignature_DamageType_PropertyAddress, InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "DamageType");
+		InstanceRadialDamageSignature__DelegateSignature_DamageType_Offset = NativeReflectionCached.GetPropertyOffset(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "DamageType");
+		InstanceRadialDamageSignature__DelegateSignature_DamageType_IsValid = NativeReflectionCached.ValidatePropertyClass(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "DamageType", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref InstanceRadialDamageSignature__DelegateSignature_DamageCauser_PropertyAddress, InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "DamageCauser");
+		InstanceRadialDamageSignature__DelegateSignature_DamageCauser_Offset = NativeReflectionCached.GetPropertyOffset(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "DamageCauser");
+		InstanceRadialDamageSignature__DelegateSignature_DamageCauser_IsValid = NativeReflectionCached.ValidatePropertyClass(InstanceRadialDamageSignature__DelegateSignature_FunctionAddress, "DamageCauser", Classes.FObjectProperty);
+		InstanceRadialDamageSignature__DelegateSignature_IsValid = InstanceRadialDamageSignature__DelegateSignature_FunctionAddress != IntPtr.Zero && InstanceRadialDamageSignature__DelegateSignature_Instances_IsValid && InstanceRadialDamageSignature__DelegateSignature_Damages_IsValid && InstanceRadialDamageSignature__DelegateSignature_InstigatedBy_IsValid && InstanceRadialDamageSignature__DelegateSignature_Origin_IsValid && InstanceRadialDamageSignature__DelegateSignature_MaxRadius_IsValid && InstanceRadialDamageSignature__DelegateSignature_DamageType_IsValid && InstanceRadialDamageSignature__DelegateSignature_DamageCauser_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Foliage.InstanceRadialDamageSignature__DelegateSignature", InstanceRadialDamageSignature__DelegateSignature_IsValid);
+	}
+
+	private unsafe void Invoker(List<int> Instances, List<float> Damages, AController InstigatedBy, FVector Origin, float MaxRadius, UDamageType DamageType, AActor DamageCauser)
+	{
+		if (!InstanceRadialDamageSignature__DelegateSignature_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Foliage.InstanceRadialDamageSignature__DelegateSignature");
+		}
+		else if (IsBound)
+		{
+			byte* ptr = stackalloc byte[(int)(uint)(InstanceRadialDamageSignature__DelegateSignature_ParamsSize + 16)];
+			int num = (int)((16L - (long)ptr) & 0xF);
+			byte* ptr2 = ptr + num;
+			Unsafe.InitBlockUnaligned(ptr2, 0, (uint)InstanceRadialDamageSignature__DelegateSignature_ParamsSize);
+			IntPtr intPtr = new IntPtr(ptr2);
+			new TArrayCopyMarshaler<int>(1, InstanceRadialDamageSignature__DelegateSignature_Instances_PropertyAddress, CachedMarshalingDelegates<int, BlittableTypeMarshaler<int>>.FromNative, CachedMarshalingDelegates<int, BlittableTypeMarshaler<int>>.ToNative).ToNative(IntPtr.Add(intPtr, InstanceRadialDamageSignature__DelegateSignature_Instances_Offset), Instances);
+			new TArrayCopyMarshaler<float>(1, InstanceRadialDamageSignature__DelegateSignature_Damages_PropertyAddress, CachedMarshalingDelegates<float, BlittableTypeMarshaler<float>>.FromNative, CachedMarshalingDelegates<float, BlittableTypeMarshaler<float>>.ToNative).ToNative(IntPtr.Add(intPtr, InstanceRadialDamageSignature__DelegateSignature_Damages_Offset), Damages);
+			UObjectMarshaler<AController>.ToNative(IntPtr.Add(intPtr, InstanceRadialDamageSignature__DelegateSignature_InstigatedBy_Offset), 0, InstanceRadialDamageSignature__DelegateSignature_InstigatedBy_PropertyAddress.Address, InstigatedBy);
+			BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, InstanceRadialDamageSignature__DelegateSignature_Origin_Offset), 0, InstanceRadialDamageSignature__DelegateSignature_Origin_PropertyAddress.Address, Origin);
+			BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, InstanceRadialDamageSignature__DelegateSignature_MaxRadius_Offset), 0, InstanceRadialDamageSignature__DelegateSignature_MaxRadius_PropertyAddress.Address, MaxRadius);
+			UObjectMarshaler<UDamageType>.ToNative(IntPtr.Add(intPtr, InstanceRadialDamageSignature__DelegateSignature_DamageType_Offset), 0, InstanceRadialDamageSignature__DelegateSignature_DamageType_PropertyAddress.Address, DamageType);
+			UObjectMarshaler<AActor>.ToNative(IntPtr.Add(intPtr, InstanceRadialDamageSignature__DelegateSignature_DamageCauser_Offset), 0, InstanceRadialDamageSignature__DelegateSignature_DamageCauser_PropertyAddress.Address, DamageCauser);
+			ProcessDelegate(intPtr);
+			NativeReflection.DestroyValue_InContainer(InstanceRadialDamageSignature__DelegateSignature_Instances_PropertyAddress.Address, intPtr);
+			NativeReflection.DestroyValue_InContainer(InstanceRadialDamageSignature__DelegateSignature_Damages_PropertyAddress.Address, intPtr);
+		}
+	}
+}

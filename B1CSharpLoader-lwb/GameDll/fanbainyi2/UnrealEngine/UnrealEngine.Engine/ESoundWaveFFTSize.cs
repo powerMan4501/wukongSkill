@@ -1,0 +1,15 @@
+using UnrealEngine.Runtime;
+
+namespace UnrealEngine.Engine;
+
+[UEnum]
+[BlueprintType]
+[UMetaPath("/Script/Engine.ESoundWaveFFTSize", "Engine", UnrealModuleType.Engine)]
+public enum ESoundWaveFFTSize : byte
+{
+	VerySmall_64,
+	Small_256,
+	Medium_512,
+	Large_1024,
+	VeryLarge_2048
+}

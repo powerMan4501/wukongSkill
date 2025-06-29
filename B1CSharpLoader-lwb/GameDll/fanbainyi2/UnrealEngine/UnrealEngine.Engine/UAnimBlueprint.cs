@@ -1,0 +1,10 @@
+using UnrealEngine.Runtime;
+
+namespace UnrealEngine.Engine;
+
+[UClass(Flags = (ClassFlags)818938020uL, Config = "Engine")]
+[BlueprintType]
+[UMetaPath("/Script/Engine.AnimBlueprint", "Engine", UnrealModuleType.Engine)]
+public class UAnimBlueprint : UBlueprint, IInterface_PreviewMeshProvider, IInterface
+{
+}

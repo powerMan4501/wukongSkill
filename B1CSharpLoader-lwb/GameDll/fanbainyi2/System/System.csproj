@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>System</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="System.Diagnostics.EventLog.bmp" />
+    <None Remove="System.Diagnostics.PerformanceCounter.bmp" />
+    <None Remove="System.Diagnostics.Process.bmp" />
+    <None Remove="System.IO.FileSystemWatcher.bmp" />
+    <None Remove="System.Timers.Timer.bmp" />
+    <None Remove="System.ComponentModel.BackgroundWorker.bmp" />
+    <None Remove="System.IO.Ports.SerialPort.bmp" />
+    <EmbeddedResource Include="System.Diagnostics.EventLog.bmp" LogicalName="System.Diagnostics.EventLog.bmp" />
+    <EmbeddedResource Include="System.Diagnostics.PerformanceCounter.bmp" LogicalName="System.Diagnostics.PerformanceCounter.bmp" />
+    <EmbeddedResource Include="System.Diagnostics.Process.bmp" LogicalName="System.Diagnostics.Process.bmp" />
+    <EmbeddedResource Include="System.IO.FileSystemWatcher.bmp" LogicalName="System.IO.FileSystemWatcher.bmp" />
+    <EmbeddedResource Include="System.Timers.Timer.bmp" LogicalName="System.Timers.Timer.bmp" />
+    <EmbeddedResource Include="System.ComponentModel.BackgroundWorker.bmp" LogicalName="System.ComponentModel.BackgroundWorker.bmp" />
+    <EmbeddedResource Include="System.IO.Ports.SerialPort.bmp" LogicalName="System.IO.Ports.SerialPort.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+</Project>

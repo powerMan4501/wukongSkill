@@ -1,0 +1,3838 @@
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnrealEngine.Runtime;
+
+namespace UnrealEngine.Engine;
+
+[UClass(Flags = (ClassFlags)818938024uL, Config = "Engine")]
+[BlueprintType]
+[Blueprintable]
+[UMetaPath("/Script/Engine.AnimInstance", "Engine", UnrealModuleType.Engine)]
+public class UAnimInstance : UObject
+{
+	private static bool SkipBlueprintUpdateAnimation_IsValid;
+
+	private static int SkipBlueprintUpdateAnimation_Offset;
+
+	private static bool OnMontageBlendingOut_IsValid;
+
+	private static int OnMontageBlendingOut_Offset;
+
+	private FOnMontageBlendingOutStartedMCDelegate OnMontageBlendingOut_DelegateCached;
+
+	private static bool OnMontageStarted_IsValid;
+
+	private static int OnMontageStarted_Offset;
+
+	private FOnMontageStartedMCDelegate OnMontageStarted_DelegateCached;
+
+	private static bool OnMontageEnded_IsValid;
+
+	private static int OnMontageEnded_Offset;
+
+	private FOnMontageEndedMCDelegate OnMontageEnded_DelegateCached;
+
+	private static bool OnAllMontageInstancesEnded_IsValid;
+
+	private static int OnAllMontageInstancesEnded_Offset;
+
+	private FOnAllMontageInstancesEndedMCDelegate OnAllMontageInstancesEnded_DelegateCached;
+
+	private static bool WasAnimNotifyStateActiveInAnyState_IsValid;
+
+	private static IntPtr WasAnimNotifyStateActiveInAnyState_FunctionAddress;
+
+	private static int WasAnimNotifyStateActiveInAnyState_ParamsSize;
+
+	private static bool WasAnimNotifyStateActiveInAnyState_AnimNotifyStateType_IsValid;
+
+	private static FFieldAddress WasAnimNotifyStateActiveInAnyState_AnimNotifyStateType_PropertyAddress;
+
+	private static int WasAnimNotifyStateActiveInAnyState_AnimNotifyStateType_Offset;
+
+	private static bool WasAnimNotifyStateActiveInAnyState_ReturnValue_IsValid;
+
+	private static FFieldAddress WasAnimNotifyStateActiveInAnyState_ReturnValue_PropertyAddress;
+
+	private static int WasAnimNotifyStateActiveInAnyState_ReturnValue_Offset;
+
+	private static bool UnlinkAnimClassLayers_IsValid;
+
+	private static IntPtr UnlinkAnimClassLayers_FunctionAddress;
+
+	private static int UnlinkAnimClassLayers_ParamsSize;
+
+	private static bool UnlinkAnimClassLayers_InClass_IsValid;
+
+	private static FFieldAddress UnlinkAnimClassLayers_InClass_PropertyAddress;
+
+	private static int UnlinkAnimClassLayers_InClass_Offset;
+
+	private static bool TryGetPawnOwner_IsValid;
+
+	private static IntPtr TryGetPawnOwner_FunctionAddress;
+
+	private static int TryGetPawnOwner_ParamsSize;
+
+	private static bool TryGetPawnOwner_ReturnValue_IsValid;
+
+	private static FFieldAddress TryGetPawnOwner_ReturnValue_PropertyAddress;
+
+	private static int TryGetPawnOwner_ReturnValue_Offset;
+
+	private static bool StopSlotAnimation_IsValid;
+
+	private static IntPtr StopSlotAnimation_FunctionAddress;
+
+	private static int StopSlotAnimation_ParamsSize;
+
+	private static bool StopSlotAnimation_InBlendOutTime_IsValid;
+
+	private static FFieldAddress StopSlotAnimation_InBlendOutTime_PropertyAddress;
+
+	private static int StopSlotAnimation_InBlendOutTime_Offset;
+
+	private static bool StopSlotAnimation_SlotNodeName_IsValid;
+
+	private static FFieldAddress StopSlotAnimation_SlotNodeName_PropertyAddress;
+
+	private static int StopSlotAnimation_SlotNodeName_Offset;
+
+	private static bool SnapshotPose_IsValid;
+
+	private static IntPtr SnapshotPose_FunctionAddress;
+
+	private static int SnapshotPose_ParamsSize;
+
+	private static bool SnapshotPose_Snapshot_IsValid;
+
+	private static FFieldAddress SnapshotPose_Snapshot_PropertyAddress;
+
+	private static int SnapshotPose_Snapshot_Offset;
+
+	private static bool SetUseMainInstanceMontageEvaluationData_IsValid;
+
+	private static IntPtr SetUseMainInstanceMontageEvaluationData_FunctionAddress;
+
+	private static int SetUseMainInstanceMontageEvaluationData_ParamsSize;
+
+	private static bool SetUseMainInstanceMontageEvaluationData_bSet_IsValid;
+
+	private static FFieldAddress SetUseMainInstanceMontageEvaluationData_bSet_PropertyAddress;
+
+	private static int SetUseMainInstanceMontageEvaluationData_bSet_Offset;
+
+	private static bool SetRootMotionMode_IsValid;
+
+	private static IntPtr SetRootMotionMode_FunctionAddress;
+
+	private static int SetRootMotionMode_ParamsSize;
+
+	private static bool SetRootMotionMode_Value_IsValid;
+
+	private static FFieldAddress SetRootMotionMode_Value_PropertyAddress;
+
+	private static int SetRootMotionMode_Value_Offset;
+
+	private static bool SetReceiveNotifiesFromLinkedInstances_IsValid;
+
+	private static IntPtr SetReceiveNotifiesFromLinkedInstances_FunctionAddress;
+
+	private static int SetReceiveNotifiesFromLinkedInstances_ParamsSize;
+
+	private static bool SetReceiveNotifiesFromLinkedInstances_bSet_IsValid;
+
+	private static FFieldAddress SetReceiveNotifiesFromLinkedInstances_bSet_PropertyAddress;
+
+	private static int SetReceiveNotifiesFromLinkedInstances_bSet_Offset;
+
+	private static bool SetPropagateNotifiesToLinkedInstances_IsValid;
+
+	private static IntPtr SetPropagateNotifiesToLinkedInstances_FunctionAddress;
+
+	private static int SetPropagateNotifiesToLinkedInstances_ParamsSize;
+
+	private static bool SetPropagateNotifiesToLinkedInstances_bSet_IsValid;
+
+	private static FFieldAddress SetPropagateNotifiesToLinkedInstances_bSet_PropertyAddress;
+
+	private static int SetPropagateNotifiesToLinkedInstances_bSet_Offset;
+
+	private static bool SetMorphTarget_IsValid;
+
+	private static IntPtr SetMorphTarget_FunctionAddress;
+
+	private static int SetMorphTarget_ParamsSize;
+
+	private static bool SetMorphTarget_MorphTargetName_IsValid;
+
+	private static FFieldAddress SetMorphTarget_MorphTargetName_PropertyAddress;
+
+	private static int SetMorphTarget_MorphTargetName_Offset;
+
+	private static bool SetMorphTarget_Value_IsValid;
+
+	private static FFieldAddress SetMorphTarget_Value_PropertyAddress;
+
+	private static int SetMorphTarget_Value_Offset;
+
+	private static bool SavePoseSnapshot_IsValid;
+
+	private static IntPtr SavePoseSnapshot_FunctionAddress;
+
+	private static int SavePoseSnapshot_ParamsSize;
+
+	private static bool SavePoseSnapshot_SnapshotName_IsValid;
+
+	private static FFieldAddress SavePoseSnapshot_SnapshotName_PropertyAddress;
+
+	private static int SavePoseSnapshot_SnapshotName_Offset;
+
+	private static bool ResetDynamics_IsValid;
+
+	private static IntPtr ResetDynamics_FunctionAddress;
+
+	private static int ResetDynamics_ParamsSize;
+
+	private static bool ResetDynamics_InTeleportType_IsValid;
+
+	private static FFieldAddress ResetDynamics_InTeleportType_PropertyAddress;
+
+	private static int ResetDynamics_InTeleportType_Offset;
+
+	private static bool RequestSlotGroupInertialization_IsValid;
+
+	private static IntPtr RequestSlotGroupInertialization_FunctionAddress;
+
+	private static int RequestSlotGroupInertialization_ParamsSize;
+
+	private static bool RequestSlotGroupInertialization_InSlotGroupName_IsValid;
+
+	private static FFieldAddress RequestSlotGroupInertialization_InSlotGroupName_PropertyAddress;
+
+	private static int RequestSlotGroupInertialization_InSlotGroupName_Offset;
+
+	private static bool RequestSlotGroupInertialization_Duration_IsValid;
+
+	private static FFieldAddress RequestSlotGroupInertialization_Duration_PropertyAddress;
+
+	private static int RequestSlotGroupInertialization_Duration_Offset;
+
+	private static bool RemovePoseSnapshot_IsValid;
+
+	private static IntPtr RemovePoseSnapshot_FunctionAddress;
+
+	private static int RemovePoseSnapshot_ParamsSize;
+
+	private static bool RemovePoseSnapshot_SnapshotName_IsValid;
+
+	private static FFieldAddress RemovePoseSnapshot_SnapshotName_PropertyAddress;
+
+	private static int RemovePoseSnapshot_SnapshotName_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendSettings_IsValid;
+
+	private static IntPtr PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendSettings_ParamsSize;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendSettings_Asset_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendSettings_Asset_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendSettings_Asset_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendSettings_SlotNodeName_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendSettings_SlotNodeName_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendSettings_SlotNodeName_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendInSettings_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendInSettings_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendInSettings_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutSettings_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutSettings_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutSettings_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InPlayRate_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InPlayRate_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InPlayRate_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendSettings_LoopCount_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendSettings_LoopCount_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendSettings_LoopCount_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutTriggerTime_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutTriggerTime_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutTriggerTime_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InTimeToStartMontageAt_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InTimeToStartMontageAt_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InTimeToStartMontageAt_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendSettings_ReturnValue_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendSettings_ReturnValue_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendSettings_ReturnValue_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendArgs_IsValid;
+
+	private static IntPtr PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendArgs_ParamsSize;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendArgs_Asset_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendArgs_Asset_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendArgs_Asset_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendArgs_SlotNodeName_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendArgs_SlotNodeName_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendArgs_SlotNodeName_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendIn_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendIn_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendIn_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOut_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOut_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOut_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InPlayRate_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InPlayRate_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InPlayRate_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendArgs_LoopCount_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendArgs_LoopCount_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendArgs_LoopCount_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOutTriggerTime_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOutTriggerTime_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOutTriggerTime_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InTimeToStartMontageAt_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InTimeToStartMontageAt_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InTimeToStartMontageAt_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_WithBlendArgs_ReturnValue_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_WithBlendArgs_ReturnValue_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_WithBlendArgs_ReturnValue_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_IsValid;
+
+	private static IntPtr PlaySlotAnimationAsDynamicMontage_FunctionAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_ParamsSize;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_Asset_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_Asset_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_Asset_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_SlotNodeName_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_SlotNodeName_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_SlotNodeName_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_BlendInTime_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_BlendInTime_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_BlendInTime_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_BlendOutTime_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_BlendOutTime_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_BlendOutTime_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_InPlayRate_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_InPlayRate_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_InPlayRate_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_LoopCount_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_LoopCount_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_LoopCount_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_BlendOutTriggerTime_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_BlendOutTriggerTime_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_BlendOutTriggerTime_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_InTimeToStartMontageAt_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_InTimeToStartMontageAt_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_InTimeToStartMontageAt_Offset;
+
+	private static bool PlaySlotAnimationAsDynamicMontage_ReturnValue_IsValid;
+
+	private static FFieldAddress PlaySlotAnimationAsDynamicMontage_ReturnValue_PropertyAddress;
+
+	private static int PlaySlotAnimationAsDynamicMontage_ReturnValue_Offset;
+
+	private static bool MontageSync_StopFollowing_IsValid;
+
+	private static IntPtr MontageSync_StopFollowing_FunctionAddress;
+
+	private static int MontageSync_StopFollowing_ParamsSize;
+
+	private static bool MontageSync_StopFollowing_MontageFollower_IsValid;
+
+	private static FFieldAddress MontageSync_StopFollowing_MontageFollower_PropertyAddress;
+
+	private static int MontageSync_StopFollowing_MontageFollower_Offset;
+
+	private static bool MontageSync_Follow_IsValid;
+
+	private static IntPtr MontageSync_Follow_FunctionAddress;
+
+	private static int MontageSync_Follow_ParamsSize;
+
+	private static bool MontageSync_Follow_MontageFollower_IsValid;
+
+	private static FFieldAddress MontageSync_Follow_MontageFollower_PropertyAddress;
+
+	private static int MontageSync_Follow_MontageFollower_Offset;
+
+	private static bool MontageSync_Follow_OtherAnimInstance_IsValid;
+
+	private static FFieldAddress MontageSync_Follow_OtherAnimInstance_PropertyAddress;
+
+	private static int MontageSync_Follow_OtherAnimInstance_Offset;
+
+	private static bool MontageSync_Follow_MontageLeader_IsValid;
+
+	private static FFieldAddress MontageSync_Follow_MontageLeader_PropertyAddress;
+
+	private static int MontageSync_Follow_MontageLeader_Offset;
+
+	private static bool Montage_StopWithBlendSettings_IsValid;
+
+	private static IntPtr Montage_StopWithBlendSettings_FunctionAddress;
+
+	private static int Montage_StopWithBlendSettings_ParamsSize;
+
+	private static bool Montage_StopWithBlendSettings_BlendOutSettings_IsValid;
+
+	private static FFieldAddress Montage_StopWithBlendSettings_BlendOutSettings_PropertyAddress;
+
+	private static int Montage_StopWithBlendSettings_BlendOutSettings_Offset;
+
+	private static bool Montage_StopWithBlendSettings_Montage_IsValid;
+
+	private static FFieldAddress Montage_StopWithBlendSettings_Montage_PropertyAddress;
+
+	private static int Montage_StopWithBlendSettings_Montage_Offset;
+
+	private static bool Montage_StopWithBlendOut_IsValid;
+
+	private static IntPtr Montage_StopWithBlendOut_FunctionAddress;
+
+	private static int Montage_StopWithBlendOut_ParamsSize;
+
+	private static bool Montage_StopWithBlendOut_BlendOut_IsValid;
+
+	private static FFieldAddress Montage_StopWithBlendOut_BlendOut_PropertyAddress;
+
+	private static int Montage_StopWithBlendOut_BlendOut_Offset;
+
+	private static bool Montage_StopWithBlendOut_Montage_IsValid;
+
+	private static FFieldAddress Montage_StopWithBlendOut_Montage_PropertyAddress;
+
+	private static int Montage_StopWithBlendOut_Montage_Offset;
+
+	private static bool Montage_StopGroupByName_IsValid;
+
+	private static IntPtr Montage_StopGroupByName_FunctionAddress;
+
+	private static int Montage_StopGroupByName_ParamsSize;
+
+	private static bool Montage_StopGroupByName_InBlendOutTime_IsValid;
+
+	private static FFieldAddress Montage_StopGroupByName_InBlendOutTime_PropertyAddress;
+
+	private static int Montage_StopGroupByName_InBlendOutTime_Offset;
+
+	private static bool Montage_StopGroupByName_GroupName_IsValid;
+
+	private static FFieldAddress Montage_StopGroupByName_GroupName_PropertyAddress;
+
+	private static int Montage_StopGroupByName_GroupName_Offset;
+
+	private static bool Montage_Stop_IsValid;
+
+	private static IntPtr Montage_Stop_FunctionAddress;
+
+	private static int Montage_Stop_ParamsSize;
+
+	private static bool Montage_Stop_InBlendOutTime_IsValid;
+
+	private static FFieldAddress Montage_Stop_InBlendOutTime_PropertyAddress;
+
+	private static int Montage_Stop_InBlendOutTime_Offset;
+
+	private static bool Montage_Stop_Montage_IsValid;
+
+	private static FFieldAddress Montage_Stop_Montage_PropertyAddress;
+
+	private static int Montage_Stop_Montage_Offset;
+
+	private static bool Montage_SetPosition_IsValid;
+
+	private static IntPtr Montage_SetPosition_FunctionAddress;
+
+	private static int Montage_SetPosition_ParamsSize;
+
+	private static bool Montage_SetPosition_Montage_IsValid;
+
+	private static FFieldAddress Montage_SetPosition_Montage_PropertyAddress;
+
+	private static int Montage_SetPosition_Montage_Offset;
+
+	private static bool Montage_SetPosition_NewPosition_IsValid;
+
+	private static FFieldAddress Montage_SetPosition_NewPosition_PropertyAddress;
+
+	private static int Montage_SetPosition_NewPosition_Offset;
+
+	private static bool Montage_SetPlayRate_IsValid;
+
+	private static IntPtr Montage_SetPlayRate_FunctionAddress;
+
+	private static int Montage_SetPlayRate_ParamsSize;
+
+	private static bool Montage_SetPlayRate_Montage_IsValid;
+
+	private static FFieldAddress Montage_SetPlayRate_Montage_PropertyAddress;
+
+	private static int Montage_SetPlayRate_Montage_Offset;
+
+	private static bool Montage_SetPlayRate_NewPlayRate_IsValid;
+
+	private static FFieldAddress Montage_SetPlayRate_NewPlayRate_PropertyAddress;
+
+	private static int Montage_SetPlayRate_NewPlayRate_Offset;
+
+	private static bool Montage_SetNextSection_IsValid;
+
+	private static IntPtr Montage_SetNextSection_FunctionAddress;
+
+	private static int Montage_SetNextSection_ParamsSize;
+
+	private static bool Montage_SetNextSection_SectionNameToChange_IsValid;
+
+	private static FFieldAddress Montage_SetNextSection_SectionNameToChange_PropertyAddress;
+
+	private static int Montage_SetNextSection_SectionNameToChange_Offset;
+
+	private static bool Montage_SetNextSection_NextSection_IsValid;
+
+	private static FFieldAddress Montage_SetNextSection_NextSection_PropertyAddress;
+
+	private static int Montage_SetNextSection_NextSection_Offset;
+
+	private static bool Montage_SetNextSection_Montage_IsValid;
+
+	private static FFieldAddress Montage_SetNextSection_Montage_PropertyAddress;
+
+	private static int Montage_SetNextSection_Montage_Offset;
+
+	private static bool Montage_Resume_IsValid;
+
+	private static IntPtr Montage_Resume_FunctionAddress;
+
+	private static int Montage_Resume_ParamsSize;
+
+	private static bool Montage_Resume_Montage_IsValid;
+
+	private static FFieldAddress Montage_Resume_Montage_PropertyAddress;
+
+	private static int Montage_Resume_Montage_Offset;
+
+	private static bool Montage_PlayWithBlendSettings_IsValid;
+
+	private static IntPtr Montage_PlayWithBlendSettings_FunctionAddress;
+
+	private static int Montage_PlayWithBlendSettings_ParamsSize;
+
+	private static bool Montage_PlayWithBlendSettings_MontageToPlay_IsValid;
+
+	private static FFieldAddress Montage_PlayWithBlendSettings_MontageToPlay_PropertyAddress;
+
+	private static int Montage_PlayWithBlendSettings_MontageToPlay_Offset;
+
+	private static bool Montage_PlayWithBlendSettings_BlendInSettings_IsValid;
+
+	private static FFieldAddress Montage_PlayWithBlendSettings_BlendInSettings_PropertyAddress;
+
+	private static int Montage_PlayWithBlendSettings_BlendInSettings_Offset;
+
+	private static bool Montage_PlayWithBlendSettings_InPlayRate_IsValid;
+
+	private static FFieldAddress Montage_PlayWithBlendSettings_InPlayRate_PropertyAddress;
+
+	private static int Montage_PlayWithBlendSettings_InPlayRate_Offset;
+
+	private static bool Montage_PlayWithBlendSettings_ReturnValueType_IsValid;
+
+	private static FFieldAddress Montage_PlayWithBlendSettings_ReturnValueType_PropertyAddress;
+
+	private static int Montage_PlayWithBlendSettings_ReturnValueType_Offset;
+
+	private static bool Montage_PlayWithBlendSettings_InTimeToStartMontageAt_IsValid;
+
+	private static FFieldAddress Montage_PlayWithBlendSettings_InTimeToStartMontageAt_PropertyAddress;
+
+	private static int Montage_PlayWithBlendSettings_InTimeToStartMontageAt_Offset;
+
+	private static bool Montage_PlayWithBlendSettings_bStopAllMontages_IsValid;
+
+	private static FFieldAddress Montage_PlayWithBlendSettings_bStopAllMontages_PropertyAddress;
+
+	private static int Montage_PlayWithBlendSettings_bStopAllMontages_Offset;
+
+	private static bool Montage_PlayWithBlendSettings_ReturnValue_IsValid;
+
+	private static FFieldAddress Montage_PlayWithBlendSettings_ReturnValue_PropertyAddress;
+
+	private static int Montage_PlayWithBlendSettings_ReturnValue_Offset;
+
+	private static bool Montage_PlayWithBlendIn_IsValid;
+
+	private static IntPtr Montage_PlayWithBlendIn_FunctionAddress;
+
+	private static int Montage_PlayWithBlendIn_ParamsSize;
+
+	private static bool Montage_PlayWithBlendIn_MontageToPlay_IsValid;
+
+	private static FFieldAddress Montage_PlayWithBlendIn_MontageToPlay_PropertyAddress;
+
+	private static int Montage_PlayWithBlendIn_MontageToPlay_Offset;
+
+	private static bool Montage_PlayWithBlendIn_BlendIn_IsValid;
+
+	private static FFieldAddress Montage_PlayWithBlendIn_BlendIn_PropertyAddress;
+
+	private static int Montage_PlayWithBlendIn_BlendIn_Offset;
+
+	private static bool Montage_PlayWithBlendIn_InPlayRate_IsValid;
+
+	private static FFieldAddress Montage_PlayWithBlendIn_InPlayRate_PropertyAddress;
+
+	private static int Montage_PlayWithBlendIn_InPlayRate_Offset;
+
+	private static bool Montage_PlayWithBlendIn_ReturnValueType_IsValid;
+
+	private static FFieldAddress Montage_PlayWithBlendIn_ReturnValueType_PropertyAddress;
+
+	private static int Montage_PlayWithBlendIn_ReturnValueType_Offset;
+
+	private static bool Montage_PlayWithBlendIn_InTimeToStartMontageAt_IsValid;
+
+	private static FFieldAddress Montage_PlayWithBlendIn_InTimeToStartMontageAt_PropertyAddress;
+
+	private static int Montage_PlayWithBlendIn_InTimeToStartMontageAt_Offset;
+
+	private static bool Montage_PlayWithBlendIn_bStopAllMontages_IsValid;
+
+	private static FFieldAddress Montage_PlayWithBlendIn_bStopAllMontages_PropertyAddress;
+
+	private static int Montage_PlayWithBlendIn_bStopAllMontages_Offset;
+
+	private static bool Montage_PlayWithBlendIn_ReturnValue_IsValid;
+
+	private static FFieldAddress Montage_PlayWithBlendIn_ReturnValue_PropertyAddress;
+
+	private static int Montage_PlayWithBlendIn_ReturnValue_Offset;
+
+	private static bool Montage_Play_IsValid;
+
+	private static IntPtr Montage_Play_FunctionAddress;
+
+	private static int Montage_Play_ParamsSize;
+
+	private static bool Montage_Play_MontageToPlay_IsValid;
+
+	private static FFieldAddress Montage_Play_MontageToPlay_PropertyAddress;
+
+	private static int Montage_Play_MontageToPlay_Offset;
+
+	private static bool Montage_Play_InPlayRate_IsValid;
+
+	private static FFieldAddress Montage_Play_InPlayRate_PropertyAddress;
+
+	private static int Montage_Play_InPlayRate_Offset;
+
+	private static bool Montage_Play_ReturnValueType_IsValid;
+
+	private static FFieldAddress Montage_Play_ReturnValueType_PropertyAddress;
+
+	private static int Montage_Play_ReturnValueType_Offset;
+
+	private static bool Montage_Play_InTimeToStartMontageAt_IsValid;
+
+	private static FFieldAddress Montage_Play_InTimeToStartMontageAt_PropertyAddress;
+
+	private static int Montage_Play_InTimeToStartMontageAt_Offset;
+
+	private static bool Montage_Play_bStopAllMontages_IsValid;
+
+	private static FFieldAddress Montage_Play_bStopAllMontages_PropertyAddress;
+
+	private static int Montage_Play_bStopAllMontages_Offset;
+
+	private static bool Montage_Play_ReturnValue_IsValid;
+
+	private static FFieldAddress Montage_Play_ReturnValue_PropertyAddress;
+
+	private static int Montage_Play_ReturnValue_Offset;
+
+	private static bool Montage_Pause_IsValid;
+
+	private static IntPtr Montage_Pause_FunctionAddress;
+
+	private static int Montage_Pause_ParamsSize;
+
+	private static bool Montage_Pause_Montage_IsValid;
+
+	private static FFieldAddress Montage_Pause_Montage_PropertyAddress;
+
+	private static int Montage_Pause_Montage_Offset;
+
+	private static bool Montage_JumpToSectionsEnd_IsValid;
+
+	private static IntPtr Montage_JumpToSectionsEnd_FunctionAddress;
+
+	private static int Montage_JumpToSectionsEnd_ParamsSize;
+
+	private static bool Montage_JumpToSectionsEnd_SectionName_IsValid;
+
+	private static FFieldAddress Montage_JumpToSectionsEnd_SectionName_PropertyAddress;
+
+	private static int Montage_JumpToSectionsEnd_SectionName_Offset;
+
+	private static bool Montage_JumpToSectionsEnd_Montage_IsValid;
+
+	private static FFieldAddress Montage_JumpToSectionsEnd_Montage_PropertyAddress;
+
+	private static int Montage_JumpToSectionsEnd_Montage_Offset;
+
+	private static bool Montage_JumpToSection_IsValid;
+
+	private static IntPtr Montage_JumpToSection_FunctionAddress;
+
+	private static int Montage_JumpToSection_ParamsSize;
+
+	private static bool Montage_JumpToSection_SectionName_IsValid;
+
+	private static FFieldAddress Montage_JumpToSection_SectionName_PropertyAddress;
+
+	private static int Montage_JumpToSection_SectionName_Offset;
+
+	private static bool Montage_JumpToSection_Montage_IsValid;
+
+	private static FFieldAddress Montage_JumpToSection_Montage_PropertyAddress;
+
+	private static int Montage_JumpToSection_Montage_Offset;
+
+	private static bool Montage_IsPlaying_IsValid;
+
+	private static IntPtr Montage_IsPlaying_FunctionAddress;
+
+	private static int Montage_IsPlaying_ParamsSize;
+
+	private static bool Montage_IsPlaying_Montage_IsValid;
+
+	private static FFieldAddress Montage_IsPlaying_Montage_PropertyAddress;
+
+	private static int Montage_IsPlaying_Montage_Offset;
+
+	private static bool Montage_IsPlaying_ReturnValue_IsValid;
+
+	private static FFieldAddress Montage_IsPlaying_ReturnValue_PropertyAddress;
+
+	private static int Montage_IsPlaying_ReturnValue_Offset;
+
+	private static bool Montage_IsActive_IsValid;
+
+	private static IntPtr Montage_IsActive_FunctionAddress;
+
+	private static int Montage_IsActive_ParamsSize;
+
+	private static bool Montage_IsActive_Montage_IsValid;
+
+	private static FFieldAddress Montage_IsActive_Montage_PropertyAddress;
+
+	private static int Montage_IsActive_Montage_Offset;
+
+	private static bool Montage_IsActive_ReturnValue_IsValid;
+
+	private static FFieldAddress Montage_IsActive_ReturnValue_PropertyAddress;
+
+	private static int Montage_IsActive_ReturnValue_Offset;
+
+	private static bool Montage_GetPosition_IsValid;
+
+	private static IntPtr Montage_GetPosition_FunctionAddress;
+
+	private static int Montage_GetPosition_ParamsSize;
+
+	private static bool Montage_GetPosition_Montage_IsValid;
+
+	private static FFieldAddress Montage_GetPosition_Montage_PropertyAddress;
+
+	private static int Montage_GetPosition_Montage_Offset;
+
+	private static bool Montage_GetPosition_ReturnValue_IsValid;
+
+	private static FFieldAddress Montage_GetPosition_ReturnValue_PropertyAddress;
+
+	private static int Montage_GetPosition_ReturnValue_Offset;
+
+	private static bool Montage_GetPlayRate_IsValid;
+
+	private static IntPtr Montage_GetPlayRate_FunctionAddress;
+
+	private static int Montage_GetPlayRate_ParamsSize;
+
+	private static bool Montage_GetPlayRate_Montage_IsValid;
+
+	private static FFieldAddress Montage_GetPlayRate_Montage_PropertyAddress;
+
+	private static int Montage_GetPlayRate_Montage_Offset;
+
+	private static bool Montage_GetPlayRate_ReturnValue_IsValid;
+
+	private static FFieldAddress Montage_GetPlayRate_ReturnValue_PropertyAddress;
+
+	private static int Montage_GetPlayRate_ReturnValue_Offset;
+
+	private static bool Montage_GetIsStopped_IsValid;
+
+	private static IntPtr Montage_GetIsStopped_FunctionAddress;
+
+	private static int Montage_GetIsStopped_ParamsSize;
+
+	private static bool Montage_GetIsStopped_Montage_IsValid;
+
+	private static FFieldAddress Montage_GetIsStopped_Montage_PropertyAddress;
+
+	private static int Montage_GetIsStopped_Montage_Offset;
+
+	private static bool Montage_GetIsStopped_ReturnValue_IsValid;
+
+	private static FFieldAddress Montage_GetIsStopped_ReturnValue_PropertyAddress;
+
+	private static int Montage_GetIsStopped_ReturnValue_Offset;
+
+	private static bool Montage_GetCurrentSection_IsValid;
+
+	private static IntPtr Montage_GetCurrentSection_FunctionAddress;
+
+	private static int Montage_GetCurrentSection_ParamsSize;
+
+	private static bool Montage_GetCurrentSection_Montage_IsValid;
+
+	private static FFieldAddress Montage_GetCurrentSection_Montage_PropertyAddress;
+
+	private static int Montage_GetCurrentSection_Montage_Offset;
+
+	private static bool Montage_GetCurrentSection_ReturnValue_IsValid;
+
+	private static FFieldAddress Montage_GetCurrentSection_ReturnValue_PropertyAddress;
+
+	private static int Montage_GetCurrentSection_ReturnValue_Offset;
+
+	private static bool Montage_GetBlendTime_IsValid;
+
+	private static IntPtr Montage_GetBlendTime_FunctionAddress;
+
+	private static int Montage_GetBlendTime_ParamsSize;
+
+	private static bool Montage_GetBlendTime_Montage_IsValid;
+
+	private static FFieldAddress Montage_GetBlendTime_Montage_PropertyAddress;
+
+	private static int Montage_GetBlendTime_Montage_Offset;
+
+	private static bool Montage_GetBlendTime_ReturnValue_IsValid;
+
+	private static FFieldAddress Montage_GetBlendTime_ReturnValue_PropertyAddress;
+
+	private static int Montage_GetBlendTime_ReturnValue_Offset;
+
+	private static bool LinkAnimGraphByTag_IsValid;
+
+	private static IntPtr LinkAnimGraphByTag_FunctionAddress;
+
+	private static int LinkAnimGraphByTag_ParamsSize;
+
+	private static bool LinkAnimGraphByTag_InTag_IsValid;
+
+	private static FFieldAddress LinkAnimGraphByTag_InTag_PropertyAddress;
+
+	private static int LinkAnimGraphByTag_InTag_Offset;
+
+	private static bool LinkAnimGraphByTag_InClass_IsValid;
+
+	private static FFieldAddress LinkAnimGraphByTag_InClass_PropertyAddress;
+
+	private static int LinkAnimGraphByTag_InClass_Offset;
+
+	private static bool LinkAnimClassLayers_IsValid;
+
+	private static IntPtr LinkAnimClassLayers_FunctionAddress;
+
+	private static int LinkAnimClassLayers_ParamsSize;
+
+	private static bool LinkAnimClassLayers_InClass_IsValid;
+
+	private static FFieldAddress LinkAnimClassLayers_InClass_PropertyAddress;
+
+	private static int LinkAnimClassLayers_InClass_Offset;
+
+	private static bool IsUsingMainInstanceMontageEvaluationData_IsValid;
+
+	private static IntPtr IsUsingMainInstanceMontageEvaluationData_FunctionAddress;
+
+	private static int IsUsingMainInstanceMontageEvaluationData_ParamsSize;
+
+	private static bool IsUsingMainInstanceMontageEvaluationData_ReturnValue_IsValid;
+
+	private static FFieldAddress IsUsingMainInstanceMontageEvaluationData_ReturnValue_PropertyAddress;
+
+	private static int IsUsingMainInstanceMontageEvaluationData_ReturnValue_Offset;
+
+	private static bool IsSyncGroupBetweenMarkers_IsValid;
+
+	private static IntPtr IsSyncGroupBetweenMarkers_FunctionAddress;
+
+	private static int IsSyncGroupBetweenMarkers_ParamsSize;
+
+	private static bool IsSyncGroupBetweenMarkers_InSyncGroupName_IsValid;
+
+	private static FFieldAddress IsSyncGroupBetweenMarkers_InSyncGroupName_PropertyAddress;
+
+	private static int IsSyncGroupBetweenMarkers_InSyncGroupName_Offset;
+
+	private static bool IsSyncGroupBetweenMarkers_PreviousMarker_IsValid;
+
+	private static FFieldAddress IsSyncGroupBetweenMarkers_PreviousMarker_PropertyAddress;
+
+	private static int IsSyncGroupBetweenMarkers_PreviousMarker_Offset;
+
+	private static bool IsSyncGroupBetweenMarkers_NextMarker_IsValid;
+
+	private static FFieldAddress IsSyncGroupBetweenMarkers_NextMarker_PropertyAddress;
+
+	private static int IsSyncGroupBetweenMarkers_NextMarker_Offset;
+
+	private static bool IsSyncGroupBetweenMarkers_bRespectMarkerOrder_IsValid;
+
+	private static FFieldAddress IsSyncGroupBetweenMarkers_bRespectMarkerOrder_PropertyAddress;
+
+	private static int IsSyncGroupBetweenMarkers_bRespectMarkerOrder_Offset;
+
+	private static bool IsSyncGroupBetweenMarkers_ReturnValue_IsValid;
+
+	private static FFieldAddress IsSyncGroupBetweenMarkers_ReturnValue_PropertyAddress;
+
+	private static int IsSyncGroupBetweenMarkers_ReturnValue_Offset;
+
+	private static bool IsPlayingSlotAnimation_IsValid;
+
+	private static IntPtr IsPlayingSlotAnimation_FunctionAddress;
+
+	private static int IsPlayingSlotAnimation_ParamsSize;
+
+	private static bool IsPlayingSlotAnimation_Asset_IsValid;
+
+	private static FFieldAddress IsPlayingSlotAnimation_Asset_PropertyAddress;
+
+	private static int IsPlayingSlotAnimation_Asset_Offset;
+
+	private static bool IsPlayingSlotAnimation_SlotNodeName_IsValid;
+
+	private static FFieldAddress IsPlayingSlotAnimation_SlotNodeName_PropertyAddress;
+
+	private static int IsPlayingSlotAnimation_SlotNodeName_Offset;
+
+	private static bool IsPlayingSlotAnimation_ReturnValue_IsValid;
+
+	private static FFieldAddress IsPlayingSlotAnimation_ReturnValue_PropertyAddress;
+
+	private static int IsPlayingSlotAnimation_ReturnValue_Offset;
+
+	private static bool IsAnyMontagePlaying_IsValid;
+
+	private static IntPtr IsAnyMontagePlaying_FunctionAddress;
+
+	private static int IsAnyMontagePlaying_ParamsSize;
+
+	private static bool IsAnyMontagePlaying_ReturnValue_IsValid;
+
+	private static FFieldAddress IsAnyMontagePlaying_ReturnValue_PropertyAddress;
+
+	private static int IsAnyMontagePlaying_ReturnValue_Offset;
+
+	private static bool HasMarkerBeenHitThisFrame_IsValid;
+
+	private static IntPtr HasMarkerBeenHitThisFrame_FunctionAddress;
+
+	private static int HasMarkerBeenHitThisFrame_ParamsSize;
+
+	private static bool HasMarkerBeenHitThisFrame_SyncGroup_IsValid;
+
+	private static FFieldAddress HasMarkerBeenHitThisFrame_SyncGroup_PropertyAddress;
+
+	private static int HasMarkerBeenHitThisFrame_SyncGroup_Offset;
+
+	private static bool HasMarkerBeenHitThisFrame_MarkerName_IsValid;
+
+	private static FFieldAddress HasMarkerBeenHitThisFrame_MarkerName_PropertyAddress;
+
+	private static int HasMarkerBeenHitThisFrame_MarkerName_Offset;
+
+	private static bool HasMarkerBeenHitThisFrame_ReturnValue_IsValid;
+
+	private static FFieldAddress HasMarkerBeenHitThisFrame_ReturnValue_PropertyAddress;
+
+	private static int HasMarkerBeenHitThisFrame_ReturnValue_Offset;
+
+	private static bool GetTimeToClosestMarker_IsValid;
+
+	private static IntPtr GetTimeToClosestMarker_FunctionAddress;
+
+	private static int GetTimeToClosestMarker_ParamsSize;
+
+	private static bool GetTimeToClosestMarker_SyncGroup_IsValid;
+
+	private static FFieldAddress GetTimeToClosestMarker_SyncGroup_PropertyAddress;
+
+	private static int GetTimeToClosestMarker_SyncGroup_Offset;
+
+	private static bool GetTimeToClosestMarker_MarkerName_IsValid;
+
+	private static FFieldAddress GetTimeToClosestMarker_MarkerName_PropertyAddress;
+
+	private static int GetTimeToClosestMarker_MarkerName_Offset;
+
+	private static bool GetTimeToClosestMarker_OutMarkerTime_IsValid;
+
+	private static FFieldAddress GetTimeToClosestMarker_OutMarkerTime_PropertyAddress;
+
+	private static int GetTimeToClosestMarker_OutMarkerTime_Offset;
+
+	private static bool GetTimeToClosestMarker_ReturnValue_IsValid;
+
+	private static FFieldAddress GetTimeToClosestMarker_ReturnValue_PropertyAddress;
+
+	private static int GetTimeToClosestMarker_ReturnValue_Offset;
+
+	private static bool GetSyncGroupPosition_IsValid;
+
+	private static IntPtr GetSyncGroupPosition_FunctionAddress;
+
+	private static int GetSyncGroupPosition_ParamsSize;
+
+	private static bool GetSyncGroupPosition_InSyncGroupName_IsValid;
+
+	private static FFieldAddress GetSyncGroupPosition_InSyncGroupName_PropertyAddress;
+
+	private static int GetSyncGroupPosition_InSyncGroupName_Offset;
+
+	private static bool GetSyncGroupPosition_ReturnValue_IsValid;
+
+	private static FFieldAddress GetSyncGroupPosition_ReturnValue_PropertyAddress;
+
+	private static int GetSyncGroupPosition_ReturnValue_Offset;
+
+	private static bool GetReceiveNotifiesFromLinkedInstances_IsValid;
+
+	private static IntPtr GetReceiveNotifiesFromLinkedInstances_FunctionAddress;
+
+	private static int GetReceiveNotifiesFromLinkedInstances_ParamsSize;
+
+	private static bool GetReceiveNotifiesFromLinkedInstances_ReturnValue_IsValid;
+
+	private static FFieldAddress GetReceiveNotifiesFromLinkedInstances_ReturnValue_PropertyAddress;
+
+	private static int GetReceiveNotifiesFromLinkedInstances_ReturnValue_Offset;
+
+	private static bool GetPropagateNotifiesToLinkedInstances_IsValid;
+
+	private static IntPtr GetPropagateNotifiesToLinkedInstances_FunctionAddress;
+
+	private static int GetPropagateNotifiesToLinkedInstances_ParamsSize;
+
+	private static bool GetPropagateNotifiesToLinkedInstances_ReturnValue_IsValid;
+
+	private static FFieldAddress GetPropagateNotifiesToLinkedInstances_ReturnValue_PropertyAddress;
+
+	private static int GetPropagateNotifiesToLinkedInstances_ReturnValue_Offset;
+
+	private static bool GetOwningComponent_IsValid;
+
+	private static IntPtr GetOwningComponent_FunctionAddress;
+
+	private static int GetOwningComponent_ParamsSize;
+
+	private static bool GetOwningComponent_ReturnValue_IsValid;
+
+	private static FFieldAddress GetOwningComponent_ReturnValue_PropertyAddress;
+
+	private static int GetOwningComponent_ReturnValue_Offset;
+
+	private static bool GetOwningActor_IsValid;
+
+	private static IntPtr GetOwningActor_FunctionAddress;
+
+	private static int GetOwningActor_ParamsSize;
+
+	private static bool GetOwningActor_ReturnValue_IsValid;
+
+	private static FFieldAddress GetOwningActor_ReturnValue_PropertyAddress;
+
+	private static int GetOwningActor_ReturnValue_Offset;
+
+	private static bool GetLinkedAnimLayerInstancesByGroup_IsValid;
+
+	private static IntPtr GetLinkedAnimLayerInstancesByGroup_FunctionAddress;
+
+	private static int GetLinkedAnimLayerInstancesByGroup_ParamsSize;
+
+	private static bool GetLinkedAnimLayerInstancesByGroup_InGroup_IsValid;
+
+	private static FFieldAddress GetLinkedAnimLayerInstancesByGroup_InGroup_PropertyAddress;
+
+	private static int GetLinkedAnimLayerInstancesByGroup_InGroup_Offset;
+
+	private static bool GetLinkedAnimLayerInstancesByGroup_OutLinkedInstances_IsValid;
+
+	private static FFieldAddress GetLinkedAnimLayerInstancesByGroup_OutLinkedInstances_PropertyAddress;
+
+	private static int GetLinkedAnimLayerInstancesByGroup_OutLinkedInstances_Offset;
+
+	private static bool GetLinkedAnimLayerInstanceByGroupAndClass_IsValid;
+
+	private static IntPtr GetLinkedAnimLayerInstanceByGroupAndClass_FunctionAddress;
+
+	private static int GetLinkedAnimLayerInstanceByGroupAndClass_ParamsSize;
+
+	private static bool GetLinkedAnimLayerInstanceByGroupAndClass_InGroup_IsValid;
+
+	private static FFieldAddress GetLinkedAnimLayerInstanceByGroupAndClass_InGroup_PropertyAddress;
+
+	private static int GetLinkedAnimLayerInstanceByGroupAndClass_InGroup_Offset;
+
+	private static bool GetLinkedAnimLayerInstanceByGroupAndClass_InClass_IsValid;
+
+	private static FFieldAddress GetLinkedAnimLayerInstanceByGroupAndClass_InClass_PropertyAddress;
+
+	private static int GetLinkedAnimLayerInstanceByGroupAndClass_InClass_Offset;
+
+	private static bool GetLinkedAnimLayerInstanceByGroupAndClass_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLinkedAnimLayerInstanceByGroupAndClass_ReturnValue_PropertyAddress;
+
+	private static int GetLinkedAnimLayerInstanceByGroupAndClass_ReturnValue_Offset;
+
+	private static bool GetLinkedAnimLayerInstanceByGroup_IsValid;
+
+	private static IntPtr GetLinkedAnimLayerInstanceByGroup_FunctionAddress;
+
+	private static int GetLinkedAnimLayerInstanceByGroup_ParamsSize;
+
+	private static bool GetLinkedAnimLayerInstanceByGroup_InGroup_IsValid;
+
+	private static FFieldAddress GetLinkedAnimLayerInstanceByGroup_InGroup_PropertyAddress;
+
+	private static int GetLinkedAnimLayerInstanceByGroup_InGroup_Offset;
+
+	private static bool GetLinkedAnimLayerInstanceByGroup_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLinkedAnimLayerInstanceByGroup_ReturnValue_PropertyAddress;
+
+	private static int GetLinkedAnimLayerInstanceByGroup_ReturnValue_Offset;
+
+	private static bool GetLinkedAnimLayerInstanceByClass_IsValid;
+
+	private static IntPtr GetLinkedAnimLayerInstanceByClass_FunctionAddress;
+
+	private static int GetLinkedAnimLayerInstanceByClass_ParamsSize;
+
+	private static bool GetLinkedAnimLayerInstanceByClass_InClass_IsValid;
+
+	private static FFieldAddress GetLinkedAnimLayerInstanceByClass_InClass_PropertyAddress;
+
+	private static int GetLinkedAnimLayerInstanceByClass_InClass_Offset;
+
+	private static bool GetLinkedAnimLayerInstanceByClass_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLinkedAnimLayerInstanceByClass_ReturnValue_PropertyAddress;
+
+	private static int GetLinkedAnimLayerInstanceByClass_ReturnValue_Offset;
+
+	private static bool GetLinkedAnimGraphInstanceByTag_IsValid;
+
+	private static IntPtr GetLinkedAnimGraphInstanceByTag_FunctionAddress;
+
+	private static int GetLinkedAnimGraphInstanceByTag_ParamsSize;
+
+	private static bool GetLinkedAnimGraphInstanceByTag_InTag_IsValid;
+
+	private static FFieldAddress GetLinkedAnimGraphInstanceByTag_InTag_PropertyAddress;
+
+	private static int GetLinkedAnimGraphInstanceByTag_InTag_Offset;
+
+	private static bool GetLinkedAnimGraphInstanceByTag_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLinkedAnimGraphInstanceByTag_ReturnValue_PropertyAddress;
+
+	private static int GetLinkedAnimGraphInstanceByTag_ReturnValue_Offset;
+
+	private static bool GetDeltaSeconds_IsValid;
+
+	private static IntPtr GetDeltaSeconds_FunctionAddress;
+
+	private static int GetDeltaSeconds_ParamsSize;
+
+	private static bool GetDeltaSeconds_ReturnValue_IsValid;
+
+	private static FFieldAddress GetDeltaSeconds_ReturnValue_PropertyAddress;
+
+	private static int GetDeltaSeconds_ReturnValue_Offset;
+
+	private static bool GetCurveValue_IsValid;
+
+	private static IntPtr GetCurveValue_FunctionAddress;
+
+	private static int GetCurveValue_ParamsSize;
+
+	private static bool GetCurveValue_CurveName_IsValid;
+
+	private static FFieldAddress GetCurveValue_CurveName_PropertyAddress;
+
+	private static int GetCurveValue_CurveName_Offset;
+
+	private static bool GetCurveValue_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCurveValue_ReturnValue_PropertyAddress;
+
+	private static int GetCurveValue_ReturnValue_Offset;
+
+	private static bool GetCurrentActiveMontage_IsValid;
+
+	private static IntPtr GetCurrentActiveMontage_FunctionAddress;
+
+	private static int GetCurrentActiveMontage_ParamsSize;
+
+	private static bool GetCurrentActiveMontage_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCurrentActiveMontage_ReturnValue_PropertyAddress;
+
+	private static int GetCurrentActiveMontage_ReturnValue_Offset;
+
+	private static bool GetAllCurveNames_IsValid;
+
+	private static IntPtr GetAllCurveNames_FunctionAddress;
+
+	private static int GetAllCurveNames_ParamsSize;
+
+	private static bool GetAllCurveNames_OutNames_IsValid;
+
+	private static FFieldAddress GetAllCurveNames_OutNames_PropertyAddress;
+
+	private static int GetAllCurveNames_OutNames_Offset;
+
+	private static bool GetActiveCurveNames_IsValid;
+
+	private static IntPtr GetActiveCurveNames_FunctionAddress;
+
+	private static int GetActiveCurveNames_ParamsSize;
+
+	private static bool GetActiveCurveNames_CurveType_IsValid;
+
+	private static FFieldAddress GetActiveCurveNames_CurveType_PropertyAddress;
+
+	private static int GetActiveCurveNames_CurveType_Offset;
+
+	private static bool GetActiveCurveNames_OutNames_IsValid;
+
+	private static FFieldAddress GetActiveCurveNames_OutNames_PropertyAddress;
+
+	private static int GetActiveCurveNames_OutNames_Offset;
+
+	private static bool ClearMorphTargets_IsValid;
+
+	private static IntPtr ClearMorphTargets_FunctionAddress;
+
+	private static int ClearMorphTargets_ParamsSize;
+
+	private static bool CalculateDirection_IsValid;
+
+	private static IntPtr CalculateDirection_FunctionAddress;
+
+	private static int CalculateDirection_ParamsSize;
+
+	private static bool CalculateDirection_Velocity_IsValid;
+
+	private static FFieldAddress CalculateDirection_Velocity_PropertyAddress;
+
+	private static int CalculateDirection_Velocity_Offset;
+
+	private static bool CalculateDirection_BaseRotation_IsValid;
+
+	private static FFieldAddress CalculateDirection_BaseRotation_PropertyAddress;
+
+	private static int CalculateDirection_BaseRotation_Offset;
+
+	private static bool CalculateDirection_ReturnValue_IsValid;
+
+	private static FFieldAddress CalculateDirection_ReturnValue_PropertyAddress;
+
+	private static int CalculateDirection_ReturnValue_Offset;
+
+	private static bool BlueprintUpdateAnimation_IsValid;
+
+	private IntPtr BlueprintUpdateAnimation_InstanceFunctionAddress;
+
+	private static IntPtr BlueprintUpdateAnimation_FunctionAddress;
+
+	private static int BlueprintUpdateAnimation_ParamsSize;
+
+	private static bool BlueprintUpdateAnimation_DeltaTimeX_IsValid;
+
+	private static FFieldAddress BlueprintUpdateAnimation_DeltaTimeX_PropertyAddress;
+
+	private static int BlueprintUpdateAnimation_DeltaTimeX_Offset;
+
+	private static bool BlueprintThreadSafeUpdateAnimation_IsValid;
+
+	private IntPtr BlueprintThreadSafeUpdateAnimation_InstanceFunctionAddress;
+
+	private static IntPtr BlueprintThreadSafeUpdateAnimation_FunctionAddress;
+
+	private static int BlueprintThreadSafeUpdateAnimation_ParamsSize;
+
+	private static bool BlueprintThreadSafeUpdateAnimation_DeltaTime_IsValid;
+
+	private static FFieldAddress BlueprintThreadSafeUpdateAnimation_DeltaTime_PropertyAddress;
+
+	private static int BlueprintThreadSafeUpdateAnimation_DeltaTime_Offset;
+
+	private static bool BlueprintPostEvaluateAnimation_IsValid;
+
+	private IntPtr BlueprintPostEvaluateAnimation_InstanceFunctionAddress;
+
+	private static IntPtr BlueprintPostEvaluateAnimation_FunctionAddress;
+
+	private static int BlueprintPostEvaluateAnimation_ParamsSize;
+
+	private static bool BlueprintLinkedAnimationLayersInitialized_IsValid;
+
+	private IntPtr BlueprintLinkedAnimationLayersInitialized_InstanceFunctionAddress;
+
+	private static IntPtr BlueprintLinkedAnimationLayersInitialized_FunctionAddress;
+
+	private static int BlueprintLinkedAnimationLayersInitialized_ParamsSize;
+
+	private static bool BlueprintInitializeAnimation_IsValid;
+
+	private IntPtr BlueprintInitializeAnimation_InstanceFunctionAddress;
+
+	private static IntPtr BlueprintInitializeAnimation_FunctionAddress;
+
+	private static int BlueprintInitializeAnimation_ParamsSize;
+
+	private static bool BlueprintBeginPlay_IsValid;
+
+	private IntPtr BlueprintBeginPlay_InstanceFunctionAddress;
+
+	private static IntPtr BlueprintBeginPlay_FunctionAddress;
+
+	private static int BlueprintBeginPlay_ParamsSize;
+
+	[UProperty(Flags = (PropFlags)6755469234274821uL)]
+	[UMetaPath("/Script/Engine.AnimInstance:bSkipBlueprintUpdateAnimation")]
+	public byte SkipBlueprintUpdateAnimation
+	{
+		get
+		{
+			CheckDestroyed();
+			if (!SkipBlueprintUpdateAnimation_IsValid)
+			{
+				NativeReflection.LogInvalidPropertyAccessed("/Script/Engine.AnimInstance:bSkipBlueprintUpdateAnimation");
+				return 0;
+			}
+			return BlittableTypeMarshaler<byte>.FromNative(IntPtr.Add(base.Address, SkipBlueprintUpdateAnimation_Offset));
+		}
+		set
+		{
+			CheckDestroyed();
+			if (!SkipBlueprintUpdateAnimation_IsValid)
+			{
+				NativeReflection.LogInvalidPropertyAccessed("/Script/Engine.AnimInstance:bSkipBlueprintUpdateAnimation");
+			}
+			else
+			{
+				BlittableTypeMarshaler<byte>.ToNative(IntPtr.Add(base.Address, SkipBlueprintUpdateAnimation_Offset), value);
+			}
+		}
+	}
+
+	[UProperty(Flags = (PropFlags)4503599896330752uL)]
+	[UMetaPath("/Script/Engine.AnimInstance:OnMontageBlendingOut")]
+	public FOnMontageBlendingOutStartedMCDelegate OnMontageBlendingOut
+	{
+		get
+		{
+			CheckDestroyed();
+			if (!OnMontageBlendingOut_IsValid)
+			{
+				NativeReflection.LogInvalidPropertyAccessed("/Script/Engine.AnimInstance:OnMontageBlendingOut");
+				return new FOnMontageBlendingOutStartedMCDelegate();
+			}
+			if (OnMontageBlendingOut_DelegateCached == null)
+			{
+				OnMontageBlendingOut_DelegateCached = new FOnMontageBlendingOutStartedMCDelegate();
+				OnMontageBlendingOut_DelegateCached.SetAddress(IntPtr.Add(base.Address, OnMontageBlendingOut_Offset));
+			}
+			return OnMontageBlendingOut_DelegateCached;
+		}
+	}
+
+	[UProperty(Flags = (PropFlags)4503599896330752uL)]
+	[UMetaPath("/Script/Engine.AnimInstance:OnMontageStarted")]
+	public FOnMontageStartedMCDelegate OnMontageStarted
+	{
+		get
+		{
+			CheckDestroyed();
+			if (!OnMontageStarted_IsValid)
+			{
+				NativeReflection.LogInvalidPropertyAccessed("/Script/Engine.AnimInstance:OnMontageStarted");
+				return new FOnMontageStartedMCDelegate();
+			}
+			if (OnMontageStarted_DelegateCached == null)
+			{
+				OnMontageStarted_DelegateCached = new FOnMontageStartedMCDelegate();
+				OnMontageStarted_DelegateCached.SetAddress(IntPtr.Add(base.Address, OnMontageStarted_Offset));
+			}
+			return OnMontageStarted_DelegateCached;
+		}
+	}
+
+	[UProperty(Flags = (PropFlags)4503599896330752uL)]
+	[UMetaPath("/Script/Engine.AnimInstance:OnMontageEnded")]
+	public FOnMontageEndedMCDelegate OnMontageEnded
+	{
+		get
+		{
+			CheckDestroyed();
+			if (!OnMontageEnded_IsValid)
+			{
+				NativeReflection.LogInvalidPropertyAccessed("/Script/Engine.AnimInstance:OnMontageEnded");
+				return new FOnMontageEndedMCDelegate();
+			}
+			if (OnMontageEnded_DelegateCached == null)
+			{
+				OnMontageEnded_DelegateCached = new FOnMontageEndedMCDelegate();
+				OnMontageEnded_DelegateCached.SetAddress(IntPtr.Add(base.Address, OnMontageEnded_Offset));
+			}
+			return OnMontageEnded_DelegateCached;
+		}
+	}
+
+	[UProperty(Flags = (PropFlags)4503599896330752uL)]
+	[UMetaPath("/Script/Engine.AnimInstance:OnAllMontageInstancesEnded")]
+	public FOnAllMontageInstancesEndedMCDelegate OnAllMontageInstancesEnded
+	{
+		get
+		{
+			CheckDestroyed();
+			if (!OnAllMontageInstancesEnded_IsValid)
+			{
+				NativeReflection.LogInvalidPropertyAccessed("/Script/Engine.AnimInstance:OnAllMontageInstancesEnded");
+				return new FOnAllMontageInstancesEndedMCDelegate();
+			}
+			if (OnAllMontageInstancesEnded_DelegateCached == null)
+			{
+				OnAllMontageInstancesEnded_DelegateCached = new FOnAllMontageInstancesEndedMCDelegate();
+				OnAllMontageInstancesEnded_DelegateCached.SetAddress(IntPtr.Add(base.Address, OnAllMontageInstancesEnded_Offset));
+			}
+			return OnAllMontageInstancesEnded_DelegateCached;
+		}
+	}
+
+	[UFunction(Flags = 335676417u)]
+	[UMetaPath("/Script/Engine.AnimInstance:WasAnimNotifyStateActiveInAnyState")]
+	public unsafe bool WasAnimNotifyStateActiveInAnyState(TSubclassOf<UAnimNotifyState> AnimNotifyStateType)
+	{
+		CheckDestroyed();
+		if (!WasAnimNotifyStateActiveInAnyState_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:WasAnimNotifyStateActiveInAnyState");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(WasAnimNotifyStateActiveInAnyState_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)WasAnimNotifyStateActiveInAnyState_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		TSubclassOfMarshaler<UAnimNotifyState>.ToNative(IntPtr.Add(intPtr, WasAnimNotifyStateActiveInAnyState_AnimNotifyStateType_Offset), 0, WasAnimNotifyStateActiveInAnyState_AnimNotifyStateType_PropertyAddress.Address, AnimNotifyStateType);
+		NativeReflection.InvokeFunctionOptimized(base.Address, WasAnimNotifyStateActiveInAnyState_FunctionAddress, intPtr, WasAnimNotifyStateActiveInAnyState_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, WasAnimNotifyStateActiveInAnyState_ReturnValue_Offset), 0, WasAnimNotifyStateActiveInAnyState_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:UnlinkAnimClassLayers")]
+	public unsafe void UnlinkAnimClassLayers(TSubclassOf<UAnimInstance> InClass)
+	{
+		CheckDestroyed();
+		if (!UnlinkAnimClassLayers_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:UnlinkAnimClassLayers");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(UnlinkAnimClassLayers_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)UnlinkAnimClassLayers_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		TSubclassOfMarshaler<UAnimInstance>.ToNative(IntPtr.Add(intPtr, UnlinkAnimClassLayers_InClass_Offset), 0, UnlinkAnimClassLayers_InClass_PropertyAddress.Address, InClass);
+		NativeReflection.InvokeFunctionOptimized(base.Address, UnlinkAnimClassLayers_FunctionAddress, intPtr, UnlinkAnimClassLayers_ParamsSize);
+	}
+
+	[UFunction(Flags = 1409418240u)]
+	[UMetaPath("/Script/Engine.AnimInstance:TryGetPawnOwner")]
+	public unsafe APawn TryGetPawnOwner()
+	{
+		CheckDestroyed();
+		if (!TryGetPawnOwner_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:TryGetPawnOwner");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(TryGetPawnOwner_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)TryGetPawnOwner_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, TryGetPawnOwner_FunctionAddress, intPtr, TryGetPawnOwner_ParamsSize);
+		return UObjectMarshaler<APawn>.FromNative(IntPtr.Add(intPtr, TryGetPawnOwner_ReturnValue_Offset), 0, TryGetPawnOwner_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:StopSlotAnimation")]
+	public unsafe void StopSlotAnimation(float InBlendOutTime, FName SlotNodeName)
+	{
+		CheckDestroyed();
+		if (!StopSlotAnimation_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:StopSlotAnimation");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(StopSlotAnimation_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)StopSlotAnimation_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, StopSlotAnimation_InBlendOutTime_Offset), 0, StopSlotAnimation_InBlendOutTime_PropertyAddress.Address, InBlendOutTime);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, StopSlotAnimation_SlotNodeName_Offset), 0, StopSlotAnimation_SlotNodeName_PropertyAddress.Address, SlotNodeName);
+		NativeReflection.InvokeFunctionOptimized(base.Address, StopSlotAnimation_FunctionAddress, intPtr, StopSlotAnimation_ParamsSize);
+	}
+
+	[UFunction(Flags = 71435264u)]
+	[UMetaPath("/Script/Engine.AnimInstance:SnapshotPose")]
+	public unsafe void SnapshotPose(ref FPoseSnapshot Snapshot)
+	{
+		CheckDestroyed();
+		if (!SnapshotPose_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:SnapshotPose");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SnapshotPose_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SnapshotPose_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InitializeValue_InContainer(SnapshotPose_Snapshot_PropertyAddress.Address, intPtr);
+		FPoseSnapshot.ToNative(IntPtr.Add(intPtr, SnapshotPose_Snapshot_Offset), 0, SnapshotPose_Snapshot_PropertyAddress.Address, Snapshot);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SnapshotPose_FunctionAddress, intPtr, SnapshotPose_ParamsSize);
+		Snapshot = FPoseSnapshot.FromNative(IntPtr.Add(intPtr, SnapshotPose_Snapshot_Offset), 0, SnapshotPose_Snapshot_PropertyAddress.Address);
+		NativeReflection.DestroyValue_InContainer(SnapshotPose_Snapshot_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:SetUseMainInstanceMontageEvaluationData")]
+	public unsafe void SetUseMainInstanceMontageEvaluationData(bool bSet)
+	{
+		CheckDestroyed();
+		if (!SetUseMainInstanceMontageEvaluationData_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:SetUseMainInstanceMontageEvaluationData");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetUseMainInstanceMontageEvaluationData_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetUseMainInstanceMontageEvaluationData_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetUseMainInstanceMontageEvaluationData_bSet_Offset), 0, SetUseMainInstanceMontageEvaluationData_bSet_PropertyAddress.Address, bSet);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetUseMainInstanceMontageEvaluationData_FunctionAddress, intPtr, SetUseMainInstanceMontageEvaluationData_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:SetRootMotionMode")]
+	public unsafe void SetRootMotionMode(ERootMotionMode Value)
+	{
+		CheckDestroyed();
+		if (!SetRootMotionMode_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:SetRootMotionMode");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetRootMotionMode_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetRootMotionMode_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		EnumMarshaler<ERootMotionMode>.ToNative(IntPtr.Add(intPtr, SetRootMotionMode_Value_Offset), 0, SetRootMotionMode_Value_PropertyAddress.Address, Value);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetRootMotionMode_FunctionAddress, intPtr, SetRootMotionMode_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:SetReceiveNotifiesFromLinkedInstances")]
+	public unsafe void SetReceiveNotifiesFromLinkedInstances(bool bSet)
+	{
+		CheckDestroyed();
+		if (!SetReceiveNotifiesFromLinkedInstances_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:SetReceiveNotifiesFromLinkedInstances");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetReceiveNotifiesFromLinkedInstances_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetReceiveNotifiesFromLinkedInstances_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetReceiveNotifiesFromLinkedInstances_bSet_Offset), 0, SetReceiveNotifiesFromLinkedInstances_bSet_PropertyAddress.Address, bSet);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetReceiveNotifiesFromLinkedInstances_FunctionAddress, intPtr, SetReceiveNotifiesFromLinkedInstances_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:SetPropagateNotifiesToLinkedInstances")]
+	public unsafe void SetPropagateNotifiesToLinkedInstances(bool bSet)
+	{
+		CheckDestroyed();
+		if (!SetPropagateNotifiesToLinkedInstances_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:SetPropagateNotifiesToLinkedInstances");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetPropagateNotifiesToLinkedInstances_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetPropagateNotifiesToLinkedInstances_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetPropagateNotifiesToLinkedInstances_bSet_Offset), 0, SetPropagateNotifiesToLinkedInstances_bSet_PropertyAddress.Address, bSet);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetPropagateNotifiesToLinkedInstances_FunctionAddress, intPtr, SetPropagateNotifiesToLinkedInstances_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:SetMorphTarget")]
+	public unsafe void SetMorphTarget(FName MorphTargetName, float Value)
+	{
+		CheckDestroyed();
+		if (!SetMorphTarget_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:SetMorphTarget");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetMorphTarget_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetMorphTarget_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetMorphTarget_MorphTargetName_Offset), 0, SetMorphTarget_MorphTargetName_PropertyAddress.Address, MorphTargetName);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, SetMorphTarget_Value_Offset), 0, SetMorphTarget_Value_PropertyAddress.Address, Value);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetMorphTarget_FunctionAddress, intPtr, SetMorphTarget_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240960u)]
+	[UMetaPath("/Script/Engine.AnimInstance:SavePoseSnapshot")]
+	public unsafe void SavePoseSnapshot(FName SnapshotName)
+	{
+		CheckDestroyed();
+		if (!SavePoseSnapshot_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:SavePoseSnapshot");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SavePoseSnapshot_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SavePoseSnapshot_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SavePoseSnapshot_SnapshotName_Offset), 0, SavePoseSnapshot_SnapshotName_PropertyAddress.Address, SnapshotName);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SavePoseSnapshot_FunctionAddress, intPtr, SavePoseSnapshot_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:ResetDynamics")]
+	public unsafe void ResetDynamics(ETeleportType InTeleportType)
+	{
+		CheckDestroyed();
+		if (!ResetDynamics_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:ResetDynamics");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(ResetDynamics_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)ResetDynamics_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		EnumMarshaler<ETeleportType>.ToNative(IntPtr.Add(intPtr, ResetDynamics_InTeleportType_Offset), 0, ResetDynamics_InTeleportType_PropertyAddress.Address, InTeleportType);
+		NativeReflection.InvokeFunctionOptimized(base.Address, ResetDynamics_FunctionAddress, intPtr, ResetDynamics_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:RequestSlotGroupInertialization")]
+	public unsafe void RequestSlotGroupInertialization(FName InSlotGroupName, float Duration)
+	{
+		CheckDestroyed();
+		if (!RequestSlotGroupInertialization_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:RequestSlotGroupInertialization");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(RequestSlotGroupInertialization_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)RequestSlotGroupInertialization_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, RequestSlotGroupInertialization_InSlotGroupName_Offset), 0, RequestSlotGroupInertialization_InSlotGroupName_PropertyAddress.Address, InSlotGroupName);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, RequestSlotGroupInertialization_Duration_Offset), 0, RequestSlotGroupInertialization_Duration_PropertyAddress.Address, Duration);
+		NativeReflection.InvokeFunctionOptimized(base.Address, RequestSlotGroupInertialization_FunctionAddress, intPtr, RequestSlotGroupInertialization_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:RemovePoseSnapshot")]
+	public unsafe void RemovePoseSnapshot(FName SnapshotName)
+	{
+		CheckDestroyed();
+		if (!RemovePoseSnapshot_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:RemovePoseSnapshot");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(RemovePoseSnapshot_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)RemovePoseSnapshot_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, RemovePoseSnapshot_SnapshotName_Offset), 0, RemovePoseSnapshot_SnapshotName_PropertyAddress.Address, SnapshotName);
+		NativeReflection.InvokeFunctionOptimized(base.Address, RemovePoseSnapshot_FunctionAddress, intPtr, RemovePoseSnapshot_ParamsSize);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/Engine.AnimInstance:PlaySlotAnimationAsDynamicMontage_WithBlendSettings")]
+	public unsafe UAnimMontage PlaySlotAnimationAsDynamicMontage_WithBlendSettings(UAnimSequenceBase Asset, FName SlotNodeName, FMontageBlendSettings BlendInSettings, FMontageBlendSettings BlendOutSettings, float InPlayRate = 1f, int LoopCount = 1, float BlendOutTriggerTime = -1f, float InTimeToStartMontageAt = 0f)
+	{
+		CheckDestroyed();
+		if (!PlaySlotAnimationAsDynamicMontage_WithBlendSettings_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:PlaySlotAnimationAsDynamicMontage_WithBlendSettings");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)PlaySlotAnimationAsDynamicMontage_WithBlendSettings_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimSequenceBase>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_Asset_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_Asset_PropertyAddress.Address, Asset);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_SlotNodeName_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_SlotNodeName_PropertyAddress.Address, SlotNodeName);
+		NativeReflection.InitializeValue_InContainer(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendInSettings_PropertyAddress.Address, intPtr);
+		FMontageBlendSettings.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendInSettings_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendInSettings_PropertyAddress.Address, BlendInSettings);
+		NativeReflection.InitializeValue_InContainer(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutSettings_PropertyAddress.Address, intPtr);
+		FMontageBlendSettings.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutSettings_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutSettings_PropertyAddress.Address, BlendOutSettings);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InPlayRate_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InPlayRate_PropertyAddress.Address, InPlayRate);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_LoopCount_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_LoopCount_PropertyAddress.Address, LoopCount);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutTriggerTime_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutTriggerTime_PropertyAddress.Address, BlendOutTriggerTime);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InTimeToStartMontageAt_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InTimeToStartMontageAt_PropertyAddress.Address, InTimeToStartMontageAt);
+		NativeReflection.InvokeFunctionOptimized(base.Address, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_ParamsSize);
+		return UObjectMarshaler<UAnimMontage>.FromNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_ReturnValue_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/Engine.AnimInstance:PlaySlotAnimationAsDynamicMontage_WithBlendArgs")]
+	public unsafe UAnimMontage PlaySlotAnimationAsDynamicMontage_WithBlendArgs(UAnimSequenceBase Asset, FName SlotNodeName, FAlphaBlendArgs BlendIn, FAlphaBlendArgs BlendOut, float InPlayRate = 1f, int LoopCount = 1, float BlendOutTriggerTime = -1f, float InTimeToStartMontageAt = 0f)
+	{
+		CheckDestroyed();
+		if (!PlaySlotAnimationAsDynamicMontage_WithBlendArgs_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:PlaySlotAnimationAsDynamicMontage_WithBlendArgs");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)PlaySlotAnimationAsDynamicMontage_WithBlendArgs_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimSequenceBase>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_Asset_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_Asset_PropertyAddress.Address, Asset);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_SlotNodeName_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_SlotNodeName_PropertyAddress.Address, SlotNodeName);
+		NativeReflection.InitializeValue_InContainer(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendIn_PropertyAddress.Address, intPtr);
+		FAlphaBlendArgs.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendIn_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendIn_PropertyAddress.Address, BlendIn);
+		NativeReflection.InitializeValue_InContainer(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOut_PropertyAddress.Address, intPtr);
+		FAlphaBlendArgs.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOut_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOut_PropertyAddress.Address, BlendOut);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InPlayRate_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InPlayRate_PropertyAddress.Address, InPlayRate);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_LoopCount_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_LoopCount_PropertyAddress.Address, LoopCount);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOutTriggerTime_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOutTriggerTime_PropertyAddress.Address, BlendOutTriggerTime);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InTimeToStartMontageAt_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InTimeToStartMontageAt_PropertyAddress.Address, InTimeToStartMontageAt);
+		NativeReflection.InvokeFunctionOptimized(base.Address, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_ParamsSize);
+		return UObjectMarshaler<UAnimMontage>.FromNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_ReturnValue_Offset), 0, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:PlaySlotAnimationAsDynamicMontage")]
+	public unsafe UAnimMontage PlaySlotAnimationAsDynamicMontage(UAnimSequenceBase Asset, FName SlotNodeName, float BlendInTime = 0.25f, float BlendOutTime = 0.25f, float InPlayRate = 1f, int LoopCount = 1, float BlendOutTriggerTime = -1f, float InTimeToStartMontageAt = 0f)
+	{
+		CheckDestroyed();
+		if (!PlaySlotAnimationAsDynamicMontage_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:PlaySlotAnimationAsDynamicMontage");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(PlaySlotAnimationAsDynamicMontage_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)PlaySlotAnimationAsDynamicMontage_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimSequenceBase>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_Asset_Offset), 0, PlaySlotAnimationAsDynamicMontage_Asset_PropertyAddress.Address, Asset);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_SlotNodeName_Offset), 0, PlaySlotAnimationAsDynamicMontage_SlotNodeName_PropertyAddress.Address, SlotNodeName);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_BlendInTime_Offset), 0, PlaySlotAnimationAsDynamicMontage_BlendInTime_PropertyAddress.Address, BlendInTime);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_BlendOutTime_Offset), 0, PlaySlotAnimationAsDynamicMontage_BlendOutTime_PropertyAddress.Address, BlendOutTime);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_InPlayRate_Offset), 0, PlaySlotAnimationAsDynamicMontage_InPlayRate_PropertyAddress.Address, InPlayRate);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_LoopCount_Offset), 0, PlaySlotAnimationAsDynamicMontage_LoopCount_PropertyAddress.Address, LoopCount);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_BlendOutTriggerTime_Offset), 0, PlaySlotAnimationAsDynamicMontage_BlendOutTriggerTime_PropertyAddress.Address, BlendOutTriggerTime);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_InTimeToStartMontageAt_Offset), 0, PlaySlotAnimationAsDynamicMontage_InTimeToStartMontageAt_PropertyAddress.Address, InTimeToStartMontageAt);
+		NativeReflection.InvokeFunctionOptimized(base.Address, PlaySlotAnimationAsDynamicMontage_FunctionAddress, intPtr, PlaySlotAnimationAsDynamicMontage_ParamsSize);
+		return UObjectMarshaler<UAnimMontage>.FromNative(IntPtr.Add(intPtr, PlaySlotAnimationAsDynamicMontage_ReturnValue_Offset), 0, PlaySlotAnimationAsDynamicMontage_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:MontageSync_StopFollowing")]
+	public unsafe void MontageSync_StopFollowing(UAnimMontage MontageFollower)
+	{
+		CheckDestroyed();
+		if (!MontageSync_StopFollowing_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:MontageSync_StopFollowing");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(MontageSync_StopFollowing_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)MontageSync_StopFollowing_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, MontageSync_StopFollowing_MontageFollower_Offset), 0, MontageSync_StopFollowing_MontageFollower_PropertyAddress.Address, MontageFollower);
+		NativeReflection.InvokeFunctionOptimized(base.Address, MontageSync_StopFollowing_FunctionAddress, intPtr, MontageSync_StopFollowing_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:MontageSync_Follow")]
+	public unsafe void MontageSync_Follow(UAnimMontage MontageFollower, UAnimInstance OtherAnimInstance, UAnimMontage MontageLeader)
+	{
+		CheckDestroyed();
+		if (!MontageSync_Follow_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:MontageSync_Follow");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(MontageSync_Follow_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)MontageSync_Follow_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, MontageSync_Follow_MontageFollower_Offset), 0, MontageSync_Follow_MontageFollower_PropertyAddress.Address, MontageFollower);
+		UObjectMarshaler<UAnimInstance>.ToNative(IntPtr.Add(intPtr, MontageSync_Follow_OtherAnimInstance_Offset), 0, MontageSync_Follow_OtherAnimInstance_PropertyAddress.Address, OtherAnimInstance);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, MontageSync_Follow_MontageLeader_Offset), 0, MontageSync_Follow_MontageLeader_PropertyAddress.Address, MontageLeader);
+		NativeReflection.InvokeFunctionOptimized(base.Address, MontageSync_Follow_FunctionAddress, intPtr, MontageSync_Follow_ParamsSize);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_StopWithBlendSettings")]
+	public unsafe void Montage_StopWithBlendSettings(FMontageBlendSettings BlendOutSettings, UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_StopWithBlendSettings_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_StopWithBlendSettings");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_StopWithBlendSettings_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_StopWithBlendSettings_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InitializeValue_InContainer(Montage_StopWithBlendSettings_BlendOutSettings_PropertyAddress.Address, intPtr);
+		FMontageBlendSettings.ToNative(IntPtr.Add(intPtr, Montage_StopWithBlendSettings_BlendOutSettings_Offset), 0, Montage_StopWithBlendSettings_BlendOutSettings_PropertyAddress.Address, BlendOutSettings);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_StopWithBlendSettings_Montage_Offset), 0, Montage_StopWithBlendSettings_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_StopWithBlendSettings_FunctionAddress, intPtr, Montage_StopWithBlendSettings_ParamsSize);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_StopWithBlendOut")]
+	public unsafe void Montage_StopWithBlendOut(FAlphaBlendArgs BlendOut, UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_StopWithBlendOut_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_StopWithBlendOut");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_StopWithBlendOut_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_StopWithBlendOut_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InitializeValue_InContainer(Montage_StopWithBlendOut_BlendOut_PropertyAddress.Address, intPtr);
+		FAlphaBlendArgs.ToNative(IntPtr.Add(intPtr, Montage_StopWithBlendOut_BlendOut_Offset), 0, Montage_StopWithBlendOut_BlendOut_PropertyAddress.Address, BlendOut);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_StopWithBlendOut_Montage_Offset), 0, Montage_StopWithBlendOut_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_StopWithBlendOut_FunctionAddress, intPtr, Montage_StopWithBlendOut_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_StopGroupByName")]
+	public unsafe void Montage_StopGroupByName(float InBlendOutTime, FName GroupName)
+	{
+		CheckDestroyed();
+		if (!Montage_StopGroupByName_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_StopGroupByName");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_StopGroupByName_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_StopGroupByName_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, Montage_StopGroupByName_InBlendOutTime_Offset), 0, Montage_StopGroupByName_InBlendOutTime_PropertyAddress.Address, InBlendOutTime);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, Montage_StopGroupByName_GroupName_Offset), 0, Montage_StopGroupByName_GroupName_PropertyAddress.Address, GroupName);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_StopGroupByName_FunctionAddress, intPtr, Montage_StopGroupByName_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_Stop")]
+	public unsafe void Montage_Stop(float InBlendOutTime, UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_Stop_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_Stop");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_Stop_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_Stop_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, Montage_Stop_InBlendOutTime_Offset), 0, Montage_Stop_InBlendOutTime_PropertyAddress.Address, InBlendOutTime);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_Stop_Montage_Offset), 0, Montage_Stop_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_Stop_FunctionAddress, intPtr, Montage_Stop_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_SetPosition")]
+	public unsafe void Montage_SetPosition(UAnimMontage Montage, float NewPosition)
+	{
+		CheckDestroyed();
+		if (!Montage_SetPosition_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_SetPosition");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_SetPosition_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_SetPosition_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_SetPosition_Montage_Offset), 0, Montage_SetPosition_Montage_PropertyAddress.Address, Montage);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, Montage_SetPosition_NewPosition_Offset), 0, Montage_SetPosition_NewPosition_PropertyAddress.Address, NewPosition);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_SetPosition_FunctionAddress, intPtr, Montage_SetPosition_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_SetPlayRate")]
+	public unsafe void Montage_SetPlayRate(UAnimMontage Montage, float NewPlayRate = 1f)
+	{
+		CheckDestroyed();
+		if (!Montage_SetPlayRate_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_SetPlayRate");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_SetPlayRate_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_SetPlayRate_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_SetPlayRate_Montage_Offset), 0, Montage_SetPlayRate_Montage_PropertyAddress.Address, Montage);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, Montage_SetPlayRate_NewPlayRate_Offset), 0, Montage_SetPlayRate_NewPlayRate_PropertyAddress.Address, NewPlayRate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_SetPlayRate_FunctionAddress, intPtr, Montage_SetPlayRate_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_SetNextSection")]
+	public unsafe void Montage_SetNextSection(FName SectionNameToChange, FName NextSection, UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_SetNextSection_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_SetNextSection");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_SetNextSection_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_SetNextSection_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, Montage_SetNextSection_SectionNameToChange_Offset), 0, Montage_SetNextSection_SectionNameToChange_PropertyAddress.Address, SectionNameToChange);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, Montage_SetNextSection_NextSection_Offset), 0, Montage_SetNextSection_NextSection_PropertyAddress.Address, NextSection);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_SetNextSection_Montage_Offset), 0, Montage_SetNextSection_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_SetNextSection_FunctionAddress, intPtr, Montage_SetNextSection_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_Resume")]
+	public unsafe void Montage_Resume(UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_Resume_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_Resume");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_Resume_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_Resume_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_Resume_Montage_Offset), 0, Montage_Resume_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_Resume_FunctionAddress, intPtr, Montage_Resume_ParamsSize);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_PlayWithBlendSettings")]
+	public unsafe float Montage_PlayWithBlendSettings(UAnimMontage MontageToPlay, FMontageBlendSettings BlendInSettings, float InPlayRate = 1f, EMontagePlayReturnType ReturnValueType = EMontagePlayReturnType.MontageLength, float InTimeToStartMontageAt = 0f, bool bStopAllMontages = true)
+	{
+		CheckDestroyed();
+		if (!Montage_PlayWithBlendSettings_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_PlayWithBlendSettings");
+			return 0f;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_PlayWithBlendSettings_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_PlayWithBlendSettings_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_PlayWithBlendSettings_MontageToPlay_Offset), 0, Montage_PlayWithBlendSettings_MontageToPlay_PropertyAddress.Address, MontageToPlay);
+		NativeReflection.InitializeValue_InContainer(Montage_PlayWithBlendSettings_BlendInSettings_PropertyAddress.Address, intPtr);
+		FMontageBlendSettings.ToNative(IntPtr.Add(intPtr, Montage_PlayWithBlendSettings_BlendInSettings_Offset), 0, Montage_PlayWithBlendSettings_BlendInSettings_PropertyAddress.Address, BlendInSettings);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, Montage_PlayWithBlendSettings_InPlayRate_Offset), 0, Montage_PlayWithBlendSettings_InPlayRate_PropertyAddress.Address, InPlayRate);
+		EnumMarshaler<EMontagePlayReturnType>.ToNative(IntPtr.Add(intPtr, Montage_PlayWithBlendSettings_ReturnValueType_Offset), 0, Montage_PlayWithBlendSettings_ReturnValueType_PropertyAddress.Address, ReturnValueType);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, Montage_PlayWithBlendSettings_InTimeToStartMontageAt_Offset), 0, Montage_PlayWithBlendSettings_InTimeToStartMontageAt_PropertyAddress.Address, InTimeToStartMontageAt);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, Montage_PlayWithBlendSettings_bStopAllMontages_Offset), 0, Montage_PlayWithBlendSettings_bStopAllMontages_PropertyAddress.Address, bStopAllMontages);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_PlayWithBlendSettings_FunctionAddress, intPtr, Montage_PlayWithBlendSettings_ParamsSize);
+		return BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, Montage_PlayWithBlendSettings_ReturnValue_Offset), 0, Montage_PlayWithBlendSettings_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_PlayWithBlendIn")]
+	public unsafe float Montage_PlayWithBlendIn(UAnimMontage MontageToPlay, FAlphaBlendArgs BlendIn, float InPlayRate = 1f, EMontagePlayReturnType ReturnValueType = EMontagePlayReturnType.MontageLength, float InTimeToStartMontageAt = 0f, bool bStopAllMontages = true)
+	{
+		CheckDestroyed();
+		if (!Montage_PlayWithBlendIn_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_PlayWithBlendIn");
+			return 0f;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_PlayWithBlendIn_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_PlayWithBlendIn_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_PlayWithBlendIn_MontageToPlay_Offset), 0, Montage_PlayWithBlendIn_MontageToPlay_PropertyAddress.Address, MontageToPlay);
+		NativeReflection.InitializeValue_InContainer(Montage_PlayWithBlendIn_BlendIn_PropertyAddress.Address, intPtr);
+		FAlphaBlendArgs.ToNative(IntPtr.Add(intPtr, Montage_PlayWithBlendIn_BlendIn_Offset), 0, Montage_PlayWithBlendIn_BlendIn_PropertyAddress.Address, BlendIn);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, Montage_PlayWithBlendIn_InPlayRate_Offset), 0, Montage_PlayWithBlendIn_InPlayRate_PropertyAddress.Address, InPlayRate);
+		EnumMarshaler<EMontagePlayReturnType>.ToNative(IntPtr.Add(intPtr, Montage_PlayWithBlendIn_ReturnValueType_Offset), 0, Montage_PlayWithBlendIn_ReturnValueType_PropertyAddress.Address, ReturnValueType);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, Montage_PlayWithBlendIn_InTimeToStartMontageAt_Offset), 0, Montage_PlayWithBlendIn_InTimeToStartMontageAt_PropertyAddress.Address, InTimeToStartMontageAt);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, Montage_PlayWithBlendIn_bStopAllMontages_Offset), 0, Montage_PlayWithBlendIn_bStopAllMontages_PropertyAddress.Address, bStopAllMontages);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_PlayWithBlendIn_FunctionAddress, intPtr, Montage_PlayWithBlendIn_ParamsSize);
+		return BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, Montage_PlayWithBlendIn_ReturnValue_Offset), 0, Montage_PlayWithBlendIn_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_Play")]
+	public unsafe float Montage_Play(UAnimMontage MontageToPlay, float InPlayRate = 1f, EMontagePlayReturnType ReturnValueType = EMontagePlayReturnType.MontageLength, float InTimeToStartMontageAt = 0f, bool bStopAllMontages = true)
+	{
+		CheckDestroyed();
+		if (!Montage_Play_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_Play");
+			return 0f;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_Play_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_Play_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_Play_MontageToPlay_Offset), 0, Montage_Play_MontageToPlay_PropertyAddress.Address, MontageToPlay);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, Montage_Play_InPlayRate_Offset), 0, Montage_Play_InPlayRate_PropertyAddress.Address, InPlayRate);
+		EnumMarshaler<EMontagePlayReturnType>.ToNative(IntPtr.Add(intPtr, Montage_Play_ReturnValueType_Offset), 0, Montage_Play_ReturnValueType_PropertyAddress.Address, ReturnValueType);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, Montage_Play_InTimeToStartMontageAt_Offset), 0, Montage_Play_InTimeToStartMontageAt_PropertyAddress.Address, InTimeToStartMontageAt);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, Montage_Play_bStopAllMontages_Offset), 0, Montage_Play_bStopAllMontages_PropertyAddress.Address, bStopAllMontages);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_Play_FunctionAddress, intPtr, Montage_Play_ParamsSize);
+		return BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, Montage_Play_ReturnValue_Offset), 0, Montage_Play_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_Pause")]
+	public unsafe void Montage_Pause(UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_Pause_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_Pause");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_Pause_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_Pause_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_Pause_Montage_Offset), 0, Montage_Pause_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_Pause_FunctionAddress, intPtr, Montage_Pause_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_JumpToSectionsEnd")]
+	public unsafe void Montage_JumpToSectionsEnd(FName SectionName, UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_JumpToSectionsEnd_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_JumpToSectionsEnd");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_JumpToSectionsEnd_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_JumpToSectionsEnd_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, Montage_JumpToSectionsEnd_SectionName_Offset), 0, Montage_JumpToSectionsEnd_SectionName_PropertyAddress.Address, SectionName);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_JumpToSectionsEnd_Montage_Offset), 0, Montage_JumpToSectionsEnd_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_JumpToSectionsEnd_FunctionAddress, intPtr, Montage_JumpToSectionsEnd_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_JumpToSection")]
+	public unsafe void Montage_JumpToSection(FName SectionName, UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_JumpToSection_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_JumpToSection");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_JumpToSection_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_JumpToSection_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, Montage_JumpToSection_SectionName_Offset), 0, Montage_JumpToSection_SectionName_PropertyAddress.Address, SectionName);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_JumpToSection_Montage_Offset), 0, Montage_JumpToSection_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_JumpToSection_FunctionAddress, intPtr, Montage_JumpToSection_ParamsSize);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_IsPlaying")]
+	public unsafe bool Montage_IsPlaying(UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_IsPlaying_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_IsPlaying");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_IsPlaying_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_IsPlaying_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_IsPlaying_Montage_Offset), 0, Montage_IsPlaying_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_IsPlaying_FunctionAddress, intPtr, Montage_IsPlaying_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, Montage_IsPlaying_ReturnValue_Offset), 0, Montage_IsPlaying_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_IsActive")]
+	public unsafe bool Montage_IsActive(UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_IsActive_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_IsActive");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_IsActive_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_IsActive_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_IsActive_Montage_Offset), 0, Montage_IsActive_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_IsActive_FunctionAddress, intPtr, Montage_IsActive_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, Montage_IsActive_ReturnValue_Offset), 0, Montage_IsActive_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_GetPosition")]
+	public unsafe float Montage_GetPosition(UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_GetPosition_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_GetPosition");
+			return 0f;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_GetPosition_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_GetPosition_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_GetPosition_Montage_Offset), 0, Montage_GetPosition_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_GetPosition_FunctionAddress, intPtr, Montage_GetPosition_ParamsSize);
+		return BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, Montage_GetPosition_ReturnValue_Offset), 0, Montage_GetPosition_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_GetPlayRate")]
+	public unsafe float Montage_GetPlayRate(UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_GetPlayRate_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_GetPlayRate");
+			return 0f;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_GetPlayRate_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_GetPlayRate_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_GetPlayRate_Montage_Offset), 0, Montage_GetPlayRate_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_GetPlayRate_FunctionAddress, intPtr, Montage_GetPlayRate_ParamsSize);
+		return BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, Montage_GetPlayRate_ReturnValue_Offset), 0, Montage_GetPlayRate_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_GetIsStopped")]
+	public unsafe bool Montage_GetIsStopped(UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_GetIsStopped_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_GetIsStopped");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_GetIsStopped_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_GetIsStopped_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_GetIsStopped_Montage_Offset), 0, Montage_GetIsStopped_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_GetIsStopped_FunctionAddress, intPtr, Montage_GetIsStopped_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, Montage_GetIsStopped_ReturnValue_Offset), 0, Montage_GetIsStopped_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_GetCurrentSection")]
+	public unsafe FName Montage_GetCurrentSection(UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_GetCurrentSection_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_GetCurrentSection");
+			return default(FName);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_GetCurrentSection_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_GetCurrentSection_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_GetCurrentSection_Montage_Offset), 0, Montage_GetCurrentSection_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_GetCurrentSection_FunctionAddress, intPtr, Montage_GetCurrentSection_ParamsSize);
+		return BlittableTypeMarshaler<FName>.FromNative(IntPtr.Add(intPtr, Montage_GetCurrentSection_ReturnValue_Offset), 0, Montage_GetCurrentSection_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:Montage_GetBlendTime")]
+	public unsafe float Montage_GetBlendTime(UAnimMontage Montage)
+	{
+		CheckDestroyed();
+		if (!Montage_GetBlendTime_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:Montage_GetBlendTime");
+			return 0f;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(Montage_GetBlendTime_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)Montage_GetBlendTime_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimMontage>.ToNative(IntPtr.Add(intPtr, Montage_GetBlendTime_Montage_Offset), 0, Montage_GetBlendTime_Montage_PropertyAddress.Address, Montage);
+		NativeReflection.InvokeFunctionOptimized(base.Address, Montage_GetBlendTime_FunctionAddress, intPtr, Montage_GetBlendTime_ParamsSize);
+		return BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, Montage_GetBlendTime_ReturnValue_Offset), 0, Montage_GetBlendTime_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:LinkAnimGraphByTag")]
+	public unsafe void LinkAnimGraphByTag(FName InTag, TSubclassOf<UAnimInstance> InClass)
+	{
+		CheckDestroyed();
+		if (!LinkAnimGraphByTag_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:LinkAnimGraphByTag");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(LinkAnimGraphByTag_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)LinkAnimGraphByTag_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, LinkAnimGraphByTag_InTag_Offset), 0, LinkAnimGraphByTag_InTag_PropertyAddress.Address, InTag);
+		TSubclassOfMarshaler<UAnimInstance>.ToNative(IntPtr.Add(intPtr, LinkAnimGraphByTag_InClass_Offset), 0, LinkAnimGraphByTag_InClass_PropertyAddress.Address, InClass);
+		NativeReflection.InvokeFunctionOptimized(base.Address, LinkAnimGraphByTag_FunctionAddress, intPtr, LinkAnimGraphByTag_ParamsSize);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:LinkAnimClassLayers")]
+	public unsafe void LinkAnimClassLayers(TSubclassOf<UAnimInstance> InClass)
+	{
+		CheckDestroyed();
+		if (!LinkAnimClassLayers_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:LinkAnimClassLayers");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(LinkAnimClassLayers_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)LinkAnimClassLayers_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		TSubclassOfMarshaler<UAnimInstance>.ToNative(IntPtr.Add(intPtr, LinkAnimClassLayers_InClass_Offset), 0, LinkAnimClassLayers_InClass_PropertyAddress.Address, InClass);
+		NativeReflection.InvokeFunctionOptimized(base.Address, LinkAnimClassLayers_FunctionAddress, intPtr, LinkAnimClassLayers_ParamsSize);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:IsUsingMainInstanceMontageEvaluationData")]
+	public unsafe bool IsUsingMainInstanceMontageEvaluationData()
+	{
+		CheckDestroyed();
+		if (!IsUsingMainInstanceMontageEvaluationData_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:IsUsingMainInstanceMontageEvaluationData");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(IsUsingMainInstanceMontageEvaluationData_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)IsUsingMainInstanceMontageEvaluationData_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, IsUsingMainInstanceMontageEvaluationData_FunctionAddress, intPtr, IsUsingMainInstanceMontageEvaluationData_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, IsUsingMainInstanceMontageEvaluationData_ReturnValue_Offset), 0, IsUsingMainInstanceMontageEvaluationData_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:IsSyncGroupBetweenMarkers")]
+	public unsafe bool IsSyncGroupBetweenMarkers(FName InSyncGroupName, FName PreviousMarker, FName NextMarker, bool bRespectMarkerOrder = true)
+	{
+		CheckDestroyed();
+		if (!IsSyncGroupBetweenMarkers_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:IsSyncGroupBetweenMarkers");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(IsSyncGroupBetweenMarkers_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)IsSyncGroupBetweenMarkers_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, IsSyncGroupBetweenMarkers_InSyncGroupName_Offset), 0, IsSyncGroupBetweenMarkers_InSyncGroupName_PropertyAddress.Address, InSyncGroupName);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, IsSyncGroupBetweenMarkers_PreviousMarker_Offset), 0, IsSyncGroupBetweenMarkers_PreviousMarker_PropertyAddress.Address, PreviousMarker);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, IsSyncGroupBetweenMarkers_NextMarker_Offset), 0, IsSyncGroupBetweenMarkers_NextMarker_PropertyAddress.Address, NextMarker);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, IsSyncGroupBetweenMarkers_bRespectMarkerOrder_Offset), 0, IsSyncGroupBetweenMarkers_bRespectMarkerOrder_PropertyAddress.Address, bRespectMarkerOrder);
+		NativeReflection.InvokeFunctionOptimized(base.Address, IsSyncGroupBetweenMarkers_FunctionAddress, intPtr, IsSyncGroupBetweenMarkers_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, IsSyncGroupBetweenMarkers_ReturnValue_Offset), 0, IsSyncGroupBetweenMarkers_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:IsPlayingSlotAnimation")]
+	public unsafe bool IsPlayingSlotAnimation(UAnimSequenceBase Asset, FName SlotNodeName)
+	{
+		CheckDestroyed();
+		if (!IsPlayingSlotAnimation_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:IsPlayingSlotAnimation");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(IsPlayingSlotAnimation_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)IsPlayingSlotAnimation_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UAnimSequenceBase>.ToNative(IntPtr.Add(intPtr, IsPlayingSlotAnimation_Asset_Offset), 0, IsPlayingSlotAnimation_Asset_PropertyAddress.Address, Asset);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, IsPlayingSlotAnimation_SlotNodeName_Offset), 0, IsPlayingSlotAnimation_SlotNodeName_PropertyAddress.Address, SlotNodeName);
+		NativeReflection.InvokeFunctionOptimized(base.Address, IsPlayingSlotAnimation_FunctionAddress, intPtr, IsPlayingSlotAnimation_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, IsPlayingSlotAnimation_ReturnValue_Offset), 0, IsPlayingSlotAnimation_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:IsAnyMontagePlaying")]
+	public unsafe bool IsAnyMontagePlaying()
+	{
+		CheckDestroyed();
+		if (!IsAnyMontagePlaying_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:IsAnyMontagePlaying");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(IsAnyMontagePlaying_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)IsAnyMontagePlaying_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, IsAnyMontagePlaying_FunctionAddress, intPtr, IsAnyMontagePlaying_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, IsAnyMontagePlaying_ReturnValue_Offset), 0, IsAnyMontagePlaying_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:HasMarkerBeenHitThisFrame")]
+	public unsafe bool HasMarkerBeenHitThisFrame(FName SyncGroup, FName MarkerName)
+	{
+		CheckDestroyed();
+		if (!HasMarkerBeenHitThisFrame_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:HasMarkerBeenHitThisFrame");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(HasMarkerBeenHitThisFrame_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)HasMarkerBeenHitThisFrame_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, HasMarkerBeenHitThisFrame_SyncGroup_Offset), 0, HasMarkerBeenHitThisFrame_SyncGroup_PropertyAddress.Address, SyncGroup);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, HasMarkerBeenHitThisFrame_MarkerName_Offset), 0, HasMarkerBeenHitThisFrame_MarkerName_PropertyAddress.Address, MarkerName);
+		NativeReflection.InvokeFunctionOptimized(base.Address, HasMarkerBeenHitThisFrame_FunctionAddress, intPtr, HasMarkerBeenHitThisFrame_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, HasMarkerBeenHitThisFrame_ReturnValue_Offset), 0, HasMarkerBeenHitThisFrame_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetTimeToClosestMarker")]
+	public unsafe bool GetTimeToClosestMarker(FName SyncGroup, FName MarkerName, out float OutMarkerTime)
+	{
+		CheckDestroyed();
+		if (!GetTimeToClosestMarker_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetTimeToClosestMarker");
+			OutMarkerTime = 0f;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetTimeToClosestMarker_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetTimeToClosestMarker_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetTimeToClosestMarker_SyncGroup_Offset), 0, GetTimeToClosestMarker_SyncGroup_PropertyAddress.Address, SyncGroup);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetTimeToClosestMarker_MarkerName_Offset), 0, GetTimeToClosestMarker_MarkerName_PropertyAddress.Address, MarkerName);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetTimeToClosestMarker_FunctionAddress, intPtr, GetTimeToClosestMarker_ParamsSize);
+		OutMarkerTime = BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetTimeToClosestMarker_OutMarkerTime_Offset), 0, GetTimeToClosestMarker_OutMarkerTime_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetTimeToClosestMarker_ReturnValue_Offset), 0, GetTimeToClosestMarker_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetSyncGroupPosition")]
+	public unsafe FMarkerSyncAnimPosition GetSyncGroupPosition(FName InSyncGroupName)
+	{
+		CheckDestroyed();
+		if (!GetSyncGroupPosition_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetSyncGroupPosition");
+			return default(FMarkerSyncAnimPosition);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetSyncGroupPosition_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetSyncGroupPosition_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetSyncGroupPosition_InSyncGroupName_Offset), 0, GetSyncGroupPosition_InSyncGroupName_PropertyAddress.Address, InSyncGroupName);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetSyncGroupPosition_FunctionAddress, intPtr, GetSyncGroupPosition_ParamsSize);
+		return FMarkerSyncAnimPosition.FromNative(IntPtr.Add(intPtr, GetSyncGroupPosition_ReturnValue_Offset), 0, GetSyncGroupPosition_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetReceiveNotifiesFromLinkedInstances")]
+	public unsafe bool GetReceiveNotifiesFromLinkedInstances()
+	{
+		CheckDestroyed();
+		if (!GetReceiveNotifiesFromLinkedInstances_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetReceiveNotifiesFromLinkedInstances");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetReceiveNotifiesFromLinkedInstances_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetReceiveNotifiesFromLinkedInstances_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetReceiveNotifiesFromLinkedInstances_FunctionAddress, intPtr, GetReceiveNotifiesFromLinkedInstances_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetReceiveNotifiesFromLinkedInstances_ReturnValue_Offset), 0, GetReceiveNotifiesFromLinkedInstances_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetPropagateNotifiesToLinkedInstances")]
+	public unsafe bool GetPropagateNotifiesToLinkedInstances()
+	{
+		CheckDestroyed();
+		if (!GetPropagateNotifiesToLinkedInstances_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetPropagateNotifiesToLinkedInstances");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetPropagateNotifiesToLinkedInstances_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetPropagateNotifiesToLinkedInstances_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetPropagateNotifiesToLinkedInstances_FunctionAddress, intPtr, GetPropagateNotifiesToLinkedInstances_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetPropagateNotifiesToLinkedInstances_ReturnValue_Offset), 0, GetPropagateNotifiesToLinkedInstances_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetOwningComponent")]
+	public unsafe USkeletalMeshComponent GetOwningComponent()
+	{
+		CheckDestroyed();
+		if (!GetOwningComponent_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetOwningComponent");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetOwningComponent_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetOwningComponent_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetOwningComponent_FunctionAddress, intPtr, GetOwningComponent_ParamsSize);
+		return UObjectMarshaler<USkeletalMeshComponent>.FromNative(IntPtr.Add(intPtr, GetOwningComponent_ReturnValue_Offset), 0, GetOwningComponent_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetOwningActor")]
+	public unsafe AActor GetOwningActor()
+	{
+		CheckDestroyed();
+		if (!GetOwningActor_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetOwningActor");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetOwningActor_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetOwningActor_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetOwningActor_FunctionAddress, intPtr, GetOwningActor_ParamsSize);
+		return UObjectMarshaler<AActor>.FromNative(IntPtr.Add(intPtr, GetOwningActor_ReturnValue_Offset), 0, GetOwningActor_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetLinkedAnimLayerInstancesByGroup")]
+	public unsafe void GetLinkedAnimLayerInstancesByGroup(FName InGroup, out List<UAnimInstance> OutLinkedInstances)
+	{
+		CheckDestroyed();
+		if (!GetLinkedAnimLayerInstancesByGroup_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetLinkedAnimLayerInstancesByGroup");
+			OutLinkedInstances = null;
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLinkedAnimLayerInstancesByGroup_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLinkedAnimLayerInstancesByGroup_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLinkedAnimLayerInstancesByGroup_InGroup_Offset), 0, GetLinkedAnimLayerInstancesByGroup_InGroup_PropertyAddress.Address, InGroup);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetLinkedAnimLayerInstancesByGroup_FunctionAddress, intPtr, GetLinkedAnimLayerInstancesByGroup_ParamsSize);
+		OutLinkedInstances = new TArrayCopyMarshaler<UAnimInstance>(1, GetLinkedAnimLayerInstancesByGroup_OutLinkedInstances_PropertyAddress, CachedMarshalingDelegates<UAnimInstance, UObjectMarshaler<UAnimInstance>>.FromNative, CachedMarshalingDelegates<UAnimInstance, UObjectMarshaler<UAnimInstance>>.ToNative).FromNative(IntPtr.Add(intPtr, GetLinkedAnimLayerInstancesByGroup_OutLinkedInstances_Offset));
+		NativeReflection.DestroyValue_InContainer(GetLinkedAnimLayerInstancesByGroup_OutLinkedInstances_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetLinkedAnimLayerInstanceByGroupAndClass")]
+	public unsafe UAnimInstance GetLinkedAnimLayerInstanceByGroupAndClass(FName InGroup, TSubclassOf<UAnimInstance> InClass)
+	{
+		CheckDestroyed();
+		if (!GetLinkedAnimLayerInstanceByGroupAndClass_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetLinkedAnimLayerInstanceByGroupAndClass");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLinkedAnimLayerInstanceByGroupAndClass_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLinkedAnimLayerInstanceByGroupAndClass_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLinkedAnimLayerInstanceByGroupAndClass_InGroup_Offset), 0, GetLinkedAnimLayerInstanceByGroupAndClass_InGroup_PropertyAddress.Address, InGroup);
+		TSubclassOfMarshaler<UAnimInstance>.ToNative(IntPtr.Add(intPtr, GetLinkedAnimLayerInstanceByGroupAndClass_InClass_Offset), 0, GetLinkedAnimLayerInstanceByGroupAndClass_InClass_PropertyAddress.Address, InClass);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetLinkedAnimLayerInstanceByGroupAndClass_FunctionAddress, intPtr, GetLinkedAnimLayerInstanceByGroupAndClass_ParamsSize);
+		return UObjectMarshaler<UAnimInstance>.FromNative(IntPtr.Add(intPtr, GetLinkedAnimLayerInstanceByGroupAndClass_ReturnValue_Offset), 0, GetLinkedAnimLayerInstanceByGroupAndClass_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetLinkedAnimLayerInstanceByGroup")]
+	public unsafe UAnimInstance GetLinkedAnimLayerInstanceByGroup(FName InGroup)
+	{
+		CheckDestroyed();
+		if (!GetLinkedAnimLayerInstanceByGroup_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetLinkedAnimLayerInstanceByGroup");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLinkedAnimLayerInstanceByGroup_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLinkedAnimLayerInstanceByGroup_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLinkedAnimLayerInstanceByGroup_InGroup_Offset), 0, GetLinkedAnimLayerInstanceByGroup_InGroup_PropertyAddress.Address, InGroup);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetLinkedAnimLayerInstanceByGroup_FunctionAddress, intPtr, GetLinkedAnimLayerInstanceByGroup_ParamsSize);
+		return UObjectMarshaler<UAnimInstance>.FromNative(IntPtr.Add(intPtr, GetLinkedAnimLayerInstanceByGroup_ReturnValue_Offset), 0, GetLinkedAnimLayerInstanceByGroup_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetLinkedAnimLayerInstanceByClass")]
+	public unsafe UAnimInstance GetLinkedAnimLayerInstanceByClass(TSubclassOf<UAnimInstance> InClass)
+	{
+		CheckDestroyed();
+		if (!GetLinkedAnimLayerInstanceByClass_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetLinkedAnimLayerInstanceByClass");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLinkedAnimLayerInstanceByClass_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLinkedAnimLayerInstanceByClass_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		TSubclassOfMarshaler<UAnimInstance>.ToNative(IntPtr.Add(intPtr, GetLinkedAnimLayerInstanceByClass_InClass_Offset), 0, GetLinkedAnimLayerInstanceByClass_InClass_PropertyAddress.Address, InClass);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetLinkedAnimLayerInstanceByClass_FunctionAddress, intPtr, GetLinkedAnimLayerInstanceByClass_ParamsSize);
+		return UObjectMarshaler<UAnimInstance>.FromNative(IntPtr.Add(intPtr, GetLinkedAnimLayerInstanceByClass_ReturnValue_Offset), 0, GetLinkedAnimLayerInstanceByClass_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetLinkedAnimGraphInstanceByTag")]
+	public unsafe UAnimInstance GetLinkedAnimGraphInstanceByTag(FName InTag)
+	{
+		CheckDestroyed();
+		if (!GetLinkedAnimGraphInstanceByTag_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetLinkedAnimGraphInstanceByTag");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLinkedAnimGraphInstanceByTag_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLinkedAnimGraphInstanceByTag_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLinkedAnimGraphInstanceByTag_InTag_Offset), 0, GetLinkedAnimGraphInstanceByTag_InTag_PropertyAddress.Address, InTag);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetLinkedAnimGraphInstanceByTag_FunctionAddress, intPtr, GetLinkedAnimGraphInstanceByTag_ParamsSize);
+		return UObjectMarshaler<UAnimInstance>.FromNative(IntPtr.Add(intPtr, GetLinkedAnimGraphInstanceByTag_ReturnValue_Offset), 0, GetLinkedAnimGraphInstanceByTag_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetDeltaSeconds")]
+	public unsafe float GetDeltaSeconds()
+	{
+		CheckDestroyed();
+		if (!GetDeltaSeconds_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetDeltaSeconds");
+			return 0f;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetDeltaSeconds_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetDeltaSeconds_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetDeltaSeconds_FunctionAddress, intPtr, GetDeltaSeconds_ParamsSize);
+		return BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetDeltaSeconds_ReturnValue_Offset), 0, GetDeltaSeconds_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetCurveValue")]
+	public unsafe float GetCurveValue(FName CurveName)
+	{
+		CheckDestroyed();
+		if (!GetCurveValue_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetCurveValue");
+			return 0f;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCurveValue_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCurveValue_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetCurveValue_CurveName_Offset), 0, GetCurveValue_CurveName_PropertyAddress.Address, CurveName);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCurveValue_FunctionAddress, intPtr, GetCurveValue_ParamsSize);
+		return BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetCurveValue_ReturnValue_Offset), 0, GetCurveValue_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1409418241u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetCurrentActiveMontage")]
+	public unsafe UAnimMontage GetCurrentActiveMontage()
+	{
+		CheckDestroyed();
+		if (!GetCurrentActiveMontage_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetCurrentActiveMontage");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCurrentActiveMontage_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCurrentActiveMontage_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCurrentActiveMontage_FunctionAddress, intPtr, GetCurrentActiveMontage_ParamsSize);
+		return UObjectMarshaler<UAnimMontage>.FromNative(IntPtr.Add(intPtr, GetCurrentActiveMontage_ReturnValue_Offset), 0, GetCurrentActiveMontage_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetAllCurveNames")]
+	public unsafe void GetAllCurveNames(out List<FName> OutNames)
+	{
+		CheckDestroyed();
+		if (!GetAllCurveNames_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetAllCurveNames");
+			OutNames = null;
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetAllCurveNames_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetAllCurveNames_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetAllCurveNames_FunctionAddress, intPtr, GetAllCurveNames_ParamsSize);
+		OutNames = new TArrayCopyMarshaler<FName>(1, GetAllCurveNames_OutNames_PropertyAddress, CachedMarshalingDelegates<FName, BlittableTypeMarshaler<FName>>.FromNative, CachedMarshalingDelegates<FName, BlittableTypeMarshaler<FName>>.ToNative).FromNative(IntPtr.Add(intPtr, GetAllCurveNames_OutNames_Offset));
+		NativeReflection.DestroyValue_InContainer(GetAllCurveNames_OutNames_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/Engine.AnimInstance:GetActiveCurveNames")]
+	public unsafe void GetActiveCurveNames(EAnimCurveType CurveType, out List<FName> OutNames)
+	{
+		CheckDestroyed();
+		if (!GetActiveCurveNames_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:GetActiveCurveNames");
+			OutNames = null;
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetActiveCurveNames_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetActiveCurveNames_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		EnumMarshaler<EAnimCurveType>.ToNative(IntPtr.Add(intPtr, GetActiveCurveNames_CurveType_Offset), 0, GetActiveCurveNames_CurveType_PropertyAddress.Address, CurveType);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetActiveCurveNames_FunctionAddress, intPtr, GetActiveCurveNames_ParamsSize);
+		OutNames = new TArrayCopyMarshaler<FName>(1, GetActiveCurveNames_OutNames_PropertyAddress, CachedMarshalingDelegates<FName, BlittableTypeMarshaler<FName>>.FromNative, CachedMarshalingDelegates<FName, BlittableTypeMarshaler<FName>>.ToNative).FromNative(IntPtr.Add(intPtr, GetActiveCurveNames_OutNames_Offset));
+		NativeReflection.DestroyValue_InContainer(GetActiveCurveNames_OutNames_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/Engine.AnimInstance:ClearMorphTargets")]
+	public unsafe void ClearMorphTargets()
+	{
+		CheckDestroyed();
+		if (!ClearMorphTargets_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:ClearMorphTargets");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(ClearMorphTargets_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)ClearMorphTargets_ParamsSize);
+		NativeReflection.InvokeFunctionOptimized(args: new IntPtr(ptr2), unrealClass: base.Address, function: ClearMorphTargets_FunctionAddress, argsSize: ClearMorphTargets_ParamsSize);
+	}
+
+	[UFunction(Flags = 1422001153u)]
+	[UMetaPath("/Script/Engine.AnimInstance:CalculateDirection")]
+	public unsafe float CalculateDirection(FVector Velocity, FRotator BaseRotation)
+	{
+		CheckDestroyed();
+		if (!CalculateDirection_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:CalculateDirection");
+			return 0f;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(CalculateDirection_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)CalculateDirection_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, CalculateDirection_Velocity_Offset), 0, CalculateDirection_Velocity_PropertyAddress.Address, Velocity);
+		BlittableTypeMarshaler<FRotator>.ToNative(IntPtr.Add(intPtr, CalculateDirection_BaseRotation_Offset), 0, CalculateDirection_BaseRotation_PropertyAddress.Address, BaseRotation);
+		NativeReflection.InvokeFunctionOptimized(base.Address, CalculateDirection_FunctionAddress, intPtr, CalculateDirection_ParamsSize);
+		return BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, CalculateDirection_ReturnValue_Offset), 0, CalculateDirection_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 134350848u)]
+	[UMetaPath("/Script/Engine.AnimInstance:BlueprintUpdateAnimation")]
+	public unsafe void BlueprintUpdateAnimation(float DeltaTimeX)
+	{
+		CheckDestroyed();
+		if (!BlueprintUpdateAnimation_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:BlueprintUpdateAnimation");
+			return;
+		}
+		if (BlueprintUpdateAnimation_InstanceFunctionAddress == IntPtr.Zero)
+		{
+			BlueprintUpdateAnimation_InstanceFunctionAddress = NativeReflection.GetFunctionFromInstance(base.Address, "BlueprintUpdateAnimation");
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BlueprintUpdateAnimation_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BlueprintUpdateAnimation_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, BlueprintUpdateAnimation_DeltaTimeX_Offset), 0, BlueprintUpdateAnimation_DeltaTimeX_PropertyAddress.Address, DeltaTimeX);
+		NativeReflection.InvokeFunctionOptimized(base.Address, BlueprintUpdateAnimation_InstanceFunctionAddress, intPtr, BlueprintUpdateAnimation_ParamsSize);
+	}
+
+	protected unsafe virtual void BlueprintUpdateAnimation_Implementation(float DeltaTimeX)
+	{
+		CheckDestroyed();
+		if (!BlueprintUpdateAnimation_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:BlueprintUpdateAnimation");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BlueprintUpdateAnimation_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BlueprintUpdateAnimation_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, BlueprintUpdateAnimation_DeltaTimeX_Offset), 0, BlueprintUpdateAnimation_DeltaTimeX_PropertyAddress.Address, DeltaTimeX);
+		NativeReflection.InvokeFunctionOptimized(base.Address, BlueprintUpdateAnimation_FunctionAddress, intPtr, BlueprintUpdateAnimation_ParamsSize);
+	}
+
+	[UFunction(Flags = 134350848u)]
+	[UMetaPath("/Script/Engine.AnimInstance:BlueprintThreadSafeUpdateAnimation")]
+	public unsafe void BlueprintThreadSafeUpdateAnimation(float DeltaTime)
+	{
+		CheckDestroyed();
+		if (!BlueprintThreadSafeUpdateAnimation_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:BlueprintThreadSafeUpdateAnimation");
+			return;
+		}
+		if (BlueprintThreadSafeUpdateAnimation_InstanceFunctionAddress == IntPtr.Zero)
+		{
+			BlueprintThreadSafeUpdateAnimation_InstanceFunctionAddress = NativeReflection.GetFunctionFromInstance(base.Address, "BlueprintThreadSafeUpdateAnimation");
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BlueprintThreadSafeUpdateAnimation_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BlueprintThreadSafeUpdateAnimation_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, BlueprintThreadSafeUpdateAnimation_DeltaTime_Offset), 0, BlueprintThreadSafeUpdateAnimation_DeltaTime_PropertyAddress.Address, DeltaTime);
+		NativeReflection.InvokeFunctionOptimized(base.Address, BlueprintThreadSafeUpdateAnimation_InstanceFunctionAddress, intPtr, BlueprintThreadSafeUpdateAnimation_ParamsSize);
+	}
+
+	protected unsafe virtual void BlueprintThreadSafeUpdateAnimation_Implementation(float DeltaTime)
+	{
+		CheckDestroyed();
+		if (!BlueprintThreadSafeUpdateAnimation_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:BlueprintThreadSafeUpdateAnimation");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BlueprintThreadSafeUpdateAnimation_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BlueprintThreadSafeUpdateAnimation_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, BlueprintThreadSafeUpdateAnimation_DeltaTime_Offset), 0, BlueprintThreadSafeUpdateAnimation_DeltaTime_PropertyAddress.Address, DeltaTime);
+		NativeReflection.InvokeFunctionOptimized(base.Address, BlueprintThreadSafeUpdateAnimation_FunctionAddress, intPtr, BlueprintThreadSafeUpdateAnimation_ParamsSize);
+	}
+
+	[UFunction(Flags = 134350848u)]
+	[UMetaPath("/Script/Engine.AnimInstance:BlueprintPostEvaluateAnimation")]
+	public unsafe void BlueprintPostEvaluateAnimation()
+	{
+		CheckDestroyed();
+		if (!BlueprintPostEvaluateAnimation_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:BlueprintPostEvaluateAnimation");
+			return;
+		}
+		if (BlueprintPostEvaluateAnimation_InstanceFunctionAddress == IntPtr.Zero)
+		{
+			BlueprintPostEvaluateAnimation_InstanceFunctionAddress = NativeReflection.GetFunctionFromInstance(base.Address, "BlueprintPostEvaluateAnimation");
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BlueprintPostEvaluateAnimation_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BlueprintPostEvaluateAnimation_ParamsSize);
+		NativeReflection.InvokeFunctionOptimized(args: new IntPtr(ptr2), unrealClass: base.Address, function: BlueprintPostEvaluateAnimation_InstanceFunctionAddress, argsSize: BlueprintPostEvaluateAnimation_ParamsSize);
+	}
+
+	protected unsafe virtual void BlueprintPostEvaluateAnimation_Implementation()
+	{
+		CheckDestroyed();
+		if (!BlueprintPostEvaluateAnimation_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:BlueprintPostEvaluateAnimation");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BlueprintPostEvaluateAnimation_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BlueprintPostEvaluateAnimation_ParamsSize);
+		NativeReflection.InvokeFunctionOptimized(args: new IntPtr(ptr2), unrealClass: base.Address, function: BlueprintPostEvaluateAnimation_FunctionAddress, argsSize: BlueprintPostEvaluateAnimation_ParamsSize);
+	}
+
+	[UFunction(Flags = 134350848u)]
+	[UMetaPath("/Script/Engine.AnimInstance:BlueprintLinkedAnimationLayersInitialized")]
+	public unsafe void BlueprintLinkedAnimationLayersInitialized()
+	{
+		CheckDestroyed();
+		if (!BlueprintLinkedAnimationLayersInitialized_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:BlueprintLinkedAnimationLayersInitialized");
+			return;
+		}
+		if (BlueprintLinkedAnimationLayersInitialized_InstanceFunctionAddress == IntPtr.Zero)
+		{
+			BlueprintLinkedAnimationLayersInitialized_InstanceFunctionAddress = NativeReflection.GetFunctionFromInstance(base.Address, "BlueprintLinkedAnimationLayersInitialized");
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BlueprintLinkedAnimationLayersInitialized_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BlueprintLinkedAnimationLayersInitialized_ParamsSize);
+		NativeReflection.InvokeFunctionOptimized(args: new IntPtr(ptr2), unrealClass: base.Address, function: BlueprintLinkedAnimationLayersInitialized_InstanceFunctionAddress, argsSize: BlueprintLinkedAnimationLayersInitialized_ParamsSize);
+	}
+
+	protected unsafe virtual void BlueprintLinkedAnimationLayersInitialized_Implementation()
+	{
+		CheckDestroyed();
+		if (!BlueprintLinkedAnimationLayersInitialized_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:BlueprintLinkedAnimationLayersInitialized");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BlueprintLinkedAnimationLayersInitialized_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BlueprintLinkedAnimationLayersInitialized_ParamsSize);
+		NativeReflection.InvokeFunctionOptimized(args: new IntPtr(ptr2), unrealClass: base.Address, function: BlueprintLinkedAnimationLayersInitialized_FunctionAddress, argsSize: BlueprintLinkedAnimationLayersInitialized_ParamsSize);
+	}
+
+	[UFunction(Flags = 134350848u)]
+	[UMetaPath("/Script/Engine.AnimInstance:BlueprintInitializeAnimation")]
+	public unsafe void BlueprintInitializeAnimation()
+	{
+		CheckDestroyed();
+		if (!BlueprintInitializeAnimation_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:BlueprintInitializeAnimation");
+			return;
+		}
+		if (BlueprintInitializeAnimation_InstanceFunctionAddress == IntPtr.Zero)
+		{
+			BlueprintInitializeAnimation_InstanceFunctionAddress = NativeReflection.GetFunctionFromInstance(base.Address, "BlueprintInitializeAnimation");
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BlueprintInitializeAnimation_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BlueprintInitializeAnimation_ParamsSize);
+		NativeReflection.InvokeFunctionOptimized(args: new IntPtr(ptr2), unrealClass: base.Address, function: BlueprintInitializeAnimation_InstanceFunctionAddress, argsSize: BlueprintInitializeAnimation_ParamsSize);
+	}
+
+	protected unsafe virtual void BlueprintInitializeAnimation_Implementation()
+	{
+		CheckDestroyed();
+		if (!BlueprintInitializeAnimation_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:BlueprintInitializeAnimation");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BlueprintInitializeAnimation_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BlueprintInitializeAnimation_ParamsSize);
+		NativeReflection.InvokeFunctionOptimized(args: new IntPtr(ptr2), unrealClass: base.Address, function: BlueprintInitializeAnimation_FunctionAddress, argsSize: BlueprintInitializeAnimation_ParamsSize);
+	}
+
+	[UFunction(Flags = 134350848u)]
+	[UMetaPath("/Script/Engine.AnimInstance:BlueprintBeginPlay")]
+	public unsafe void BlueprintBeginPlay()
+	{
+		CheckDestroyed();
+		if (!BlueprintBeginPlay_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:BlueprintBeginPlay");
+			return;
+		}
+		if (BlueprintBeginPlay_InstanceFunctionAddress == IntPtr.Zero)
+		{
+			BlueprintBeginPlay_InstanceFunctionAddress = NativeReflection.GetFunctionFromInstance(base.Address, "BlueprintBeginPlay");
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BlueprintBeginPlay_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BlueprintBeginPlay_ParamsSize);
+		NativeReflection.InvokeFunctionOptimized(args: new IntPtr(ptr2), unrealClass: base.Address, function: BlueprintBeginPlay_InstanceFunctionAddress, argsSize: BlueprintBeginPlay_ParamsSize);
+	}
+
+	protected unsafe virtual void BlueprintBeginPlay_Implementation()
+	{
+		CheckDestroyed();
+		if (!BlueprintBeginPlay_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.AnimInstance:BlueprintBeginPlay");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BlueprintBeginPlay_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BlueprintBeginPlay_ParamsSize);
+		NativeReflection.InvokeFunctionOptimized(args: new IntPtr(ptr2), unrealClass: base.Address, function: BlueprintBeginPlay_FunctionAddress, argsSize: BlueprintBeginPlay_ParamsSize);
+	}
+
+	static UAnimInstance()
+	{
+		if (UnrealTypes.CanLazyLoadNativeType(typeof(UAnimInstance)))
+		{
+			LoadNativeType();
+		}
+		UnrealTypes.OnCCtorCalled(typeof(UAnimInstance));
+	}
+
+	private static void LoadNativeType()
+	{
+		IntPtr intPtr = NativeReflection.GetClass("/Script/Engine.AnimInstance");
+		SkipBlueprintUpdateAnimation_Offset = NativeReflectionCached.GetPropertyOffset(intPtr, "bSkipBlueprintUpdateAnimation");
+		SkipBlueprintUpdateAnimation_IsValid = NativeReflectionCached.ValidatePropertyClass(intPtr, "bSkipBlueprintUpdateAnimation", Classes.FByteProperty);
+		OnMontageBlendingOut_Offset = NativeReflectionCached.GetPropertyOffset(intPtr, "OnMontageBlendingOut");
+		OnMontageBlendingOut_IsValid = NativeReflectionCached.ValidatePropertyClass(intPtr, "OnMontageBlendingOut", Classes.FMulticastDelegateProperty);
+		OnMontageStarted_Offset = NativeReflectionCached.GetPropertyOffset(intPtr, "OnMontageStarted");
+		OnMontageStarted_IsValid = NativeReflectionCached.ValidatePropertyClass(intPtr, "OnMontageStarted", Classes.FMulticastDelegateProperty);
+		OnMontageEnded_Offset = NativeReflectionCached.GetPropertyOffset(intPtr, "OnMontageEnded");
+		OnMontageEnded_IsValid = NativeReflectionCached.ValidatePropertyClass(intPtr, "OnMontageEnded", Classes.FMulticastDelegateProperty);
+		OnAllMontageInstancesEnded_Offset = NativeReflectionCached.GetPropertyOffset(intPtr, "OnAllMontageInstancesEnded");
+		OnAllMontageInstancesEnded_IsValid = NativeReflectionCached.ValidatePropertyClass(intPtr, "OnAllMontageInstancesEnded", Classes.FMulticastDelegateProperty);
+		WasAnimNotifyStateActiveInAnyState_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "WasAnimNotifyStateActiveInAnyState");
+		WasAnimNotifyStateActiveInAnyState_ParamsSize = NativeReflection.GetFunctionParamsSize(WasAnimNotifyStateActiveInAnyState_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref WasAnimNotifyStateActiveInAnyState_AnimNotifyStateType_PropertyAddress, WasAnimNotifyStateActiveInAnyState_FunctionAddress, "AnimNotifyStateType");
+		WasAnimNotifyStateActiveInAnyState_AnimNotifyStateType_Offset = NativeReflectionCached.GetPropertyOffset(WasAnimNotifyStateActiveInAnyState_FunctionAddress, "AnimNotifyStateType");
+		WasAnimNotifyStateActiveInAnyState_AnimNotifyStateType_IsValid = NativeReflectionCached.ValidatePropertyClass(WasAnimNotifyStateActiveInAnyState_FunctionAddress, "AnimNotifyStateType", Classes.FClassProperty);
+		NativeReflectionCached.GetPropertyRef(ref WasAnimNotifyStateActiveInAnyState_ReturnValue_PropertyAddress, WasAnimNotifyStateActiveInAnyState_FunctionAddress, "ReturnValue");
+		WasAnimNotifyStateActiveInAnyState_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(WasAnimNotifyStateActiveInAnyState_FunctionAddress, "ReturnValue");
+		WasAnimNotifyStateActiveInAnyState_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(WasAnimNotifyStateActiveInAnyState_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		WasAnimNotifyStateActiveInAnyState_IsValid = WasAnimNotifyStateActiveInAnyState_FunctionAddress != IntPtr.Zero && WasAnimNotifyStateActiveInAnyState_AnimNotifyStateType_IsValid && WasAnimNotifyStateActiveInAnyState_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:WasAnimNotifyStateActiveInAnyState", WasAnimNotifyStateActiveInAnyState_IsValid);
+		UnlinkAnimClassLayers_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "UnlinkAnimClassLayers");
+		UnlinkAnimClassLayers_ParamsSize = NativeReflection.GetFunctionParamsSize(UnlinkAnimClassLayers_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref UnlinkAnimClassLayers_InClass_PropertyAddress, UnlinkAnimClassLayers_FunctionAddress, "InClass");
+		UnlinkAnimClassLayers_InClass_Offset = NativeReflectionCached.GetPropertyOffset(UnlinkAnimClassLayers_FunctionAddress, "InClass");
+		UnlinkAnimClassLayers_InClass_IsValid = NativeReflectionCached.ValidatePropertyClass(UnlinkAnimClassLayers_FunctionAddress, "InClass", Classes.FClassProperty);
+		UnlinkAnimClassLayers_IsValid = UnlinkAnimClassLayers_FunctionAddress != IntPtr.Zero && UnlinkAnimClassLayers_InClass_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:UnlinkAnimClassLayers", UnlinkAnimClassLayers_IsValid);
+		TryGetPawnOwner_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "TryGetPawnOwner");
+		TryGetPawnOwner_ParamsSize = NativeReflection.GetFunctionParamsSize(TryGetPawnOwner_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref TryGetPawnOwner_ReturnValue_PropertyAddress, TryGetPawnOwner_FunctionAddress, "ReturnValue");
+		TryGetPawnOwner_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(TryGetPawnOwner_FunctionAddress, "ReturnValue");
+		TryGetPawnOwner_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(TryGetPawnOwner_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		TryGetPawnOwner_IsValid = TryGetPawnOwner_FunctionAddress != IntPtr.Zero && TryGetPawnOwner_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:TryGetPawnOwner", TryGetPawnOwner_IsValid);
+		StopSlotAnimation_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "StopSlotAnimation");
+		StopSlotAnimation_ParamsSize = NativeReflection.GetFunctionParamsSize(StopSlotAnimation_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref StopSlotAnimation_InBlendOutTime_PropertyAddress, StopSlotAnimation_FunctionAddress, "InBlendOutTime");
+		StopSlotAnimation_InBlendOutTime_Offset = NativeReflectionCached.GetPropertyOffset(StopSlotAnimation_FunctionAddress, "InBlendOutTime");
+		StopSlotAnimation_InBlendOutTime_IsValid = NativeReflectionCached.ValidatePropertyClass(StopSlotAnimation_FunctionAddress, "InBlendOutTime", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref StopSlotAnimation_SlotNodeName_PropertyAddress, StopSlotAnimation_FunctionAddress, "SlotNodeName");
+		StopSlotAnimation_SlotNodeName_Offset = NativeReflectionCached.GetPropertyOffset(StopSlotAnimation_FunctionAddress, "SlotNodeName");
+		StopSlotAnimation_SlotNodeName_IsValid = NativeReflectionCached.ValidatePropertyClass(StopSlotAnimation_FunctionAddress, "SlotNodeName", Classes.FNameProperty);
+		StopSlotAnimation_IsValid = StopSlotAnimation_FunctionAddress != IntPtr.Zero && StopSlotAnimation_InBlendOutTime_IsValid && StopSlotAnimation_SlotNodeName_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:StopSlotAnimation", StopSlotAnimation_IsValid);
+		SnapshotPose_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "SnapshotPose");
+		SnapshotPose_ParamsSize = NativeReflection.GetFunctionParamsSize(SnapshotPose_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SnapshotPose_Snapshot_PropertyAddress, SnapshotPose_FunctionAddress, "Snapshot");
+		SnapshotPose_Snapshot_Offset = NativeReflectionCached.GetPropertyOffset(SnapshotPose_FunctionAddress, "Snapshot");
+		SnapshotPose_Snapshot_IsValid = NativeReflectionCached.ValidatePropertyClass(SnapshotPose_FunctionAddress, "Snapshot", Classes.FStructProperty);
+		SnapshotPose_IsValid = SnapshotPose_FunctionAddress != IntPtr.Zero && SnapshotPose_Snapshot_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:SnapshotPose", SnapshotPose_IsValid);
+		SetUseMainInstanceMontageEvaluationData_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "SetUseMainInstanceMontageEvaluationData");
+		SetUseMainInstanceMontageEvaluationData_ParamsSize = NativeReflection.GetFunctionParamsSize(SetUseMainInstanceMontageEvaluationData_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetUseMainInstanceMontageEvaluationData_bSet_PropertyAddress, SetUseMainInstanceMontageEvaluationData_FunctionAddress, "bSet");
+		SetUseMainInstanceMontageEvaluationData_bSet_Offset = NativeReflectionCached.GetPropertyOffset(SetUseMainInstanceMontageEvaluationData_FunctionAddress, "bSet");
+		SetUseMainInstanceMontageEvaluationData_bSet_IsValid = NativeReflectionCached.ValidatePropertyClass(SetUseMainInstanceMontageEvaluationData_FunctionAddress, "bSet", Classes.FBoolProperty);
+		SetUseMainInstanceMontageEvaluationData_IsValid = SetUseMainInstanceMontageEvaluationData_FunctionAddress != IntPtr.Zero && SetUseMainInstanceMontageEvaluationData_bSet_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:SetUseMainInstanceMontageEvaluationData", SetUseMainInstanceMontageEvaluationData_IsValid);
+		SetRootMotionMode_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "SetRootMotionMode");
+		SetRootMotionMode_ParamsSize = NativeReflection.GetFunctionParamsSize(SetRootMotionMode_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetRootMotionMode_Value_PropertyAddress, SetRootMotionMode_FunctionAddress, "Value");
+		SetRootMotionMode_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetRootMotionMode_FunctionAddress, "Value");
+		SetRootMotionMode_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetRootMotionMode_FunctionAddress, "Value", Classes.FByteProperty);
+		SetRootMotionMode_IsValid = SetRootMotionMode_FunctionAddress != IntPtr.Zero && SetRootMotionMode_Value_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:SetRootMotionMode", SetRootMotionMode_IsValid);
+		SetReceiveNotifiesFromLinkedInstances_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "SetReceiveNotifiesFromLinkedInstances");
+		SetReceiveNotifiesFromLinkedInstances_ParamsSize = NativeReflection.GetFunctionParamsSize(SetReceiveNotifiesFromLinkedInstances_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetReceiveNotifiesFromLinkedInstances_bSet_PropertyAddress, SetReceiveNotifiesFromLinkedInstances_FunctionAddress, "bSet");
+		SetReceiveNotifiesFromLinkedInstances_bSet_Offset = NativeReflectionCached.GetPropertyOffset(SetReceiveNotifiesFromLinkedInstances_FunctionAddress, "bSet");
+		SetReceiveNotifiesFromLinkedInstances_bSet_IsValid = NativeReflectionCached.ValidatePropertyClass(SetReceiveNotifiesFromLinkedInstances_FunctionAddress, "bSet", Classes.FBoolProperty);
+		SetReceiveNotifiesFromLinkedInstances_IsValid = SetReceiveNotifiesFromLinkedInstances_FunctionAddress != IntPtr.Zero && SetReceiveNotifiesFromLinkedInstances_bSet_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:SetReceiveNotifiesFromLinkedInstances", SetReceiveNotifiesFromLinkedInstances_IsValid);
+		SetPropagateNotifiesToLinkedInstances_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "SetPropagateNotifiesToLinkedInstances");
+		SetPropagateNotifiesToLinkedInstances_ParamsSize = NativeReflection.GetFunctionParamsSize(SetPropagateNotifiesToLinkedInstances_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetPropagateNotifiesToLinkedInstances_bSet_PropertyAddress, SetPropagateNotifiesToLinkedInstances_FunctionAddress, "bSet");
+		SetPropagateNotifiesToLinkedInstances_bSet_Offset = NativeReflectionCached.GetPropertyOffset(SetPropagateNotifiesToLinkedInstances_FunctionAddress, "bSet");
+		SetPropagateNotifiesToLinkedInstances_bSet_IsValid = NativeReflectionCached.ValidatePropertyClass(SetPropagateNotifiesToLinkedInstances_FunctionAddress, "bSet", Classes.FBoolProperty);
+		SetPropagateNotifiesToLinkedInstances_IsValid = SetPropagateNotifiesToLinkedInstances_FunctionAddress != IntPtr.Zero && SetPropagateNotifiesToLinkedInstances_bSet_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:SetPropagateNotifiesToLinkedInstances", SetPropagateNotifiesToLinkedInstances_IsValid);
+		SetMorphTarget_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "SetMorphTarget");
+		SetMorphTarget_ParamsSize = NativeReflection.GetFunctionParamsSize(SetMorphTarget_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetMorphTarget_MorphTargetName_PropertyAddress, SetMorphTarget_FunctionAddress, "MorphTargetName");
+		SetMorphTarget_MorphTargetName_Offset = NativeReflectionCached.GetPropertyOffset(SetMorphTarget_FunctionAddress, "MorphTargetName");
+		SetMorphTarget_MorphTargetName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMorphTarget_FunctionAddress, "MorphTargetName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetMorphTarget_Value_PropertyAddress, SetMorphTarget_FunctionAddress, "Value");
+		SetMorphTarget_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetMorphTarget_FunctionAddress, "Value");
+		SetMorphTarget_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetMorphTarget_FunctionAddress, "Value", Classes.FFloatProperty);
+		SetMorphTarget_IsValid = SetMorphTarget_FunctionAddress != IntPtr.Zero && SetMorphTarget_MorphTargetName_IsValid && SetMorphTarget_Value_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:SetMorphTarget", SetMorphTarget_IsValid);
+		SavePoseSnapshot_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "SavePoseSnapshot");
+		SavePoseSnapshot_ParamsSize = NativeReflection.GetFunctionParamsSize(SavePoseSnapshot_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SavePoseSnapshot_SnapshotName_PropertyAddress, SavePoseSnapshot_FunctionAddress, "SnapshotName");
+		SavePoseSnapshot_SnapshotName_Offset = NativeReflectionCached.GetPropertyOffset(SavePoseSnapshot_FunctionAddress, "SnapshotName");
+		SavePoseSnapshot_SnapshotName_IsValid = NativeReflectionCached.ValidatePropertyClass(SavePoseSnapshot_FunctionAddress, "SnapshotName", Classes.FNameProperty);
+		SavePoseSnapshot_IsValid = SavePoseSnapshot_FunctionAddress != IntPtr.Zero && SavePoseSnapshot_SnapshotName_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:SavePoseSnapshot", SavePoseSnapshot_IsValid);
+		ResetDynamics_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "ResetDynamics");
+		ResetDynamics_ParamsSize = NativeReflection.GetFunctionParamsSize(ResetDynamics_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref ResetDynamics_InTeleportType_PropertyAddress, ResetDynamics_FunctionAddress, "InTeleportType");
+		ResetDynamics_InTeleportType_Offset = NativeReflectionCached.GetPropertyOffset(ResetDynamics_FunctionAddress, "InTeleportType");
+		ResetDynamics_InTeleportType_IsValid = NativeReflectionCached.ValidatePropertyClass(ResetDynamics_FunctionAddress, "InTeleportType", Classes.FEnumProperty);
+		ResetDynamics_IsValid = ResetDynamics_FunctionAddress != IntPtr.Zero && ResetDynamics_InTeleportType_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:ResetDynamics", ResetDynamics_IsValid);
+		RequestSlotGroupInertialization_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "RequestSlotGroupInertialization");
+		RequestSlotGroupInertialization_ParamsSize = NativeReflection.GetFunctionParamsSize(RequestSlotGroupInertialization_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref RequestSlotGroupInertialization_InSlotGroupName_PropertyAddress, RequestSlotGroupInertialization_FunctionAddress, "InSlotGroupName");
+		RequestSlotGroupInertialization_InSlotGroupName_Offset = NativeReflectionCached.GetPropertyOffset(RequestSlotGroupInertialization_FunctionAddress, "InSlotGroupName");
+		RequestSlotGroupInertialization_InSlotGroupName_IsValid = NativeReflectionCached.ValidatePropertyClass(RequestSlotGroupInertialization_FunctionAddress, "InSlotGroupName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref RequestSlotGroupInertialization_Duration_PropertyAddress, RequestSlotGroupInertialization_FunctionAddress, "Duration");
+		RequestSlotGroupInertialization_Duration_Offset = NativeReflectionCached.GetPropertyOffset(RequestSlotGroupInertialization_FunctionAddress, "Duration");
+		RequestSlotGroupInertialization_Duration_IsValid = NativeReflectionCached.ValidatePropertyClass(RequestSlotGroupInertialization_FunctionAddress, "Duration", Classes.FFloatProperty);
+		RequestSlotGroupInertialization_IsValid = RequestSlotGroupInertialization_FunctionAddress != IntPtr.Zero && RequestSlotGroupInertialization_InSlotGroupName_IsValid && RequestSlotGroupInertialization_Duration_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:RequestSlotGroupInertialization", RequestSlotGroupInertialization_IsValid);
+		RemovePoseSnapshot_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "RemovePoseSnapshot");
+		RemovePoseSnapshot_ParamsSize = NativeReflection.GetFunctionParamsSize(RemovePoseSnapshot_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref RemovePoseSnapshot_SnapshotName_PropertyAddress, RemovePoseSnapshot_FunctionAddress, "SnapshotName");
+		RemovePoseSnapshot_SnapshotName_Offset = NativeReflectionCached.GetPropertyOffset(RemovePoseSnapshot_FunctionAddress, "SnapshotName");
+		RemovePoseSnapshot_SnapshotName_IsValid = NativeReflectionCached.ValidatePropertyClass(RemovePoseSnapshot_FunctionAddress, "SnapshotName", Classes.FNameProperty);
+		RemovePoseSnapshot_IsValid = RemovePoseSnapshot_FunctionAddress != IntPtr.Zero && RemovePoseSnapshot_SnapshotName_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:RemovePoseSnapshot", RemovePoseSnapshot_IsValid);
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "PlaySlotAnimationAsDynamicMontage_WithBlendSettings");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_ParamsSize = NativeReflection.GetFunctionParamsSize(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendSettings_Asset_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "Asset");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_Asset_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "Asset");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_Asset_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "Asset", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendSettings_SlotNodeName_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "SlotNodeName");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_SlotNodeName_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "SlotNodeName");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_SlotNodeName_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "SlotNodeName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendInSettings_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "BlendInSettings");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendInSettings_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "BlendInSettings");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendInSettings_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "BlendInSettings", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutSettings_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "BlendOutSettings");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutSettings_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "BlendOutSettings");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutSettings_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "BlendOutSettings", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InPlayRate_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "InPlayRate");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InPlayRate_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "InPlayRate");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InPlayRate_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "InPlayRate", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendSettings_LoopCount_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "LoopCount");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_LoopCount_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "LoopCount");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_LoopCount_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "LoopCount", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutTriggerTime_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "BlendOutTriggerTime");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutTriggerTime_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "BlendOutTriggerTime");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutTriggerTime_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "BlendOutTriggerTime", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InTimeToStartMontageAt_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "InTimeToStartMontageAt");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InTimeToStartMontageAt_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "InTimeToStartMontageAt");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InTimeToStartMontageAt_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "InTimeToStartMontageAt", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendSettings_ReturnValue_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "ReturnValue");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "ReturnValue");
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		PlaySlotAnimationAsDynamicMontage_WithBlendSettings_IsValid = PlaySlotAnimationAsDynamicMontage_WithBlendSettings_FunctionAddress != IntPtr.Zero && PlaySlotAnimationAsDynamicMontage_WithBlendSettings_Asset_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendSettings_SlotNodeName_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendInSettings_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutSettings_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InPlayRate_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendSettings_LoopCount_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendSettings_BlendOutTriggerTime_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendSettings_InTimeToStartMontageAt_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendSettings_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:PlaySlotAnimationAsDynamicMontage_WithBlendSettings", PlaySlotAnimationAsDynamicMontage_WithBlendSettings_IsValid);
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "PlaySlotAnimationAsDynamicMontage_WithBlendArgs");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_ParamsSize = NativeReflection.GetFunctionParamsSize(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendArgs_Asset_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "Asset");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_Asset_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "Asset");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_Asset_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "Asset", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendArgs_SlotNodeName_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "SlotNodeName");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_SlotNodeName_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "SlotNodeName");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_SlotNodeName_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "SlotNodeName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendIn_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "BlendIn");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendIn_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "BlendIn");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendIn_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "BlendIn", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOut_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "BlendOut");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOut_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "BlendOut");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOut_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "BlendOut", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InPlayRate_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "InPlayRate");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InPlayRate_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "InPlayRate");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InPlayRate_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "InPlayRate", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendArgs_LoopCount_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "LoopCount");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_LoopCount_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "LoopCount");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_LoopCount_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "LoopCount", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOutTriggerTime_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "BlendOutTriggerTime");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOutTriggerTime_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "BlendOutTriggerTime");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOutTriggerTime_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "BlendOutTriggerTime", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InTimeToStartMontageAt_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "InTimeToStartMontageAt");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InTimeToStartMontageAt_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "InTimeToStartMontageAt");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InTimeToStartMontageAt_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "InTimeToStartMontageAt", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_WithBlendArgs_ReturnValue_PropertyAddress, PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "ReturnValue");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "ReturnValue");
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		PlaySlotAnimationAsDynamicMontage_WithBlendArgs_IsValid = PlaySlotAnimationAsDynamicMontage_WithBlendArgs_FunctionAddress != IntPtr.Zero && PlaySlotAnimationAsDynamicMontage_WithBlendArgs_Asset_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendArgs_SlotNodeName_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendIn_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOut_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InPlayRate_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendArgs_LoopCount_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendArgs_BlendOutTriggerTime_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendArgs_InTimeToStartMontageAt_IsValid && PlaySlotAnimationAsDynamicMontage_WithBlendArgs_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:PlaySlotAnimationAsDynamicMontage_WithBlendArgs", PlaySlotAnimationAsDynamicMontage_WithBlendArgs_IsValid);
+		PlaySlotAnimationAsDynamicMontage_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "PlaySlotAnimationAsDynamicMontage");
+		PlaySlotAnimationAsDynamicMontage_ParamsSize = NativeReflection.GetFunctionParamsSize(PlaySlotAnimationAsDynamicMontage_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_Asset_PropertyAddress, PlaySlotAnimationAsDynamicMontage_FunctionAddress, "Asset");
+		PlaySlotAnimationAsDynamicMontage_Asset_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "Asset");
+		PlaySlotAnimationAsDynamicMontage_Asset_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "Asset", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_SlotNodeName_PropertyAddress, PlaySlotAnimationAsDynamicMontage_FunctionAddress, "SlotNodeName");
+		PlaySlotAnimationAsDynamicMontage_SlotNodeName_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "SlotNodeName");
+		PlaySlotAnimationAsDynamicMontage_SlotNodeName_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "SlotNodeName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_BlendInTime_PropertyAddress, PlaySlotAnimationAsDynamicMontage_FunctionAddress, "BlendInTime");
+		PlaySlotAnimationAsDynamicMontage_BlendInTime_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "BlendInTime");
+		PlaySlotAnimationAsDynamicMontage_BlendInTime_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "BlendInTime", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_BlendOutTime_PropertyAddress, PlaySlotAnimationAsDynamicMontage_FunctionAddress, "BlendOutTime");
+		PlaySlotAnimationAsDynamicMontage_BlendOutTime_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "BlendOutTime");
+		PlaySlotAnimationAsDynamicMontage_BlendOutTime_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "BlendOutTime", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_InPlayRate_PropertyAddress, PlaySlotAnimationAsDynamicMontage_FunctionAddress, "InPlayRate");
+		PlaySlotAnimationAsDynamicMontage_InPlayRate_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "InPlayRate");
+		PlaySlotAnimationAsDynamicMontage_InPlayRate_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "InPlayRate", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_LoopCount_PropertyAddress, PlaySlotAnimationAsDynamicMontage_FunctionAddress, "LoopCount");
+		PlaySlotAnimationAsDynamicMontage_LoopCount_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "LoopCount");
+		PlaySlotAnimationAsDynamicMontage_LoopCount_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "LoopCount", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_BlendOutTriggerTime_PropertyAddress, PlaySlotAnimationAsDynamicMontage_FunctionAddress, "BlendOutTriggerTime");
+		PlaySlotAnimationAsDynamicMontage_BlendOutTriggerTime_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "BlendOutTriggerTime");
+		PlaySlotAnimationAsDynamicMontage_BlendOutTriggerTime_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "BlendOutTriggerTime", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_InTimeToStartMontageAt_PropertyAddress, PlaySlotAnimationAsDynamicMontage_FunctionAddress, "InTimeToStartMontageAt");
+		PlaySlotAnimationAsDynamicMontage_InTimeToStartMontageAt_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "InTimeToStartMontageAt");
+		PlaySlotAnimationAsDynamicMontage_InTimeToStartMontageAt_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "InTimeToStartMontageAt", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref PlaySlotAnimationAsDynamicMontage_ReturnValue_PropertyAddress, PlaySlotAnimationAsDynamicMontage_FunctionAddress, "ReturnValue");
+		PlaySlotAnimationAsDynamicMontage_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "ReturnValue");
+		PlaySlotAnimationAsDynamicMontage_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(PlaySlotAnimationAsDynamicMontage_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		PlaySlotAnimationAsDynamicMontage_IsValid = PlaySlotAnimationAsDynamicMontage_FunctionAddress != IntPtr.Zero && PlaySlotAnimationAsDynamicMontage_Asset_IsValid && PlaySlotAnimationAsDynamicMontage_SlotNodeName_IsValid && PlaySlotAnimationAsDynamicMontage_BlendInTime_IsValid && PlaySlotAnimationAsDynamicMontage_BlendOutTime_IsValid && PlaySlotAnimationAsDynamicMontage_InPlayRate_IsValid && PlaySlotAnimationAsDynamicMontage_LoopCount_IsValid && PlaySlotAnimationAsDynamicMontage_BlendOutTriggerTime_IsValid && PlaySlotAnimationAsDynamicMontage_InTimeToStartMontageAt_IsValid && PlaySlotAnimationAsDynamicMontage_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:PlaySlotAnimationAsDynamicMontage", PlaySlotAnimationAsDynamicMontage_IsValid);
+		MontageSync_StopFollowing_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "MontageSync_StopFollowing");
+		MontageSync_StopFollowing_ParamsSize = NativeReflection.GetFunctionParamsSize(MontageSync_StopFollowing_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref MontageSync_StopFollowing_MontageFollower_PropertyAddress, MontageSync_StopFollowing_FunctionAddress, "MontageFollower");
+		MontageSync_StopFollowing_MontageFollower_Offset = NativeReflectionCached.GetPropertyOffset(MontageSync_StopFollowing_FunctionAddress, "MontageFollower");
+		MontageSync_StopFollowing_MontageFollower_IsValid = NativeReflectionCached.ValidatePropertyClass(MontageSync_StopFollowing_FunctionAddress, "MontageFollower", Classes.FObjectProperty);
+		MontageSync_StopFollowing_IsValid = MontageSync_StopFollowing_FunctionAddress != IntPtr.Zero && MontageSync_StopFollowing_MontageFollower_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:MontageSync_StopFollowing", MontageSync_StopFollowing_IsValid);
+		MontageSync_Follow_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "MontageSync_Follow");
+		MontageSync_Follow_ParamsSize = NativeReflection.GetFunctionParamsSize(MontageSync_Follow_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref MontageSync_Follow_MontageFollower_PropertyAddress, MontageSync_Follow_FunctionAddress, "MontageFollower");
+		MontageSync_Follow_MontageFollower_Offset = NativeReflectionCached.GetPropertyOffset(MontageSync_Follow_FunctionAddress, "MontageFollower");
+		MontageSync_Follow_MontageFollower_IsValid = NativeReflectionCached.ValidatePropertyClass(MontageSync_Follow_FunctionAddress, "MontageFollower", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref MontageSync_Follow_OtherAnimInstance_PropertyAddress, MontageSync_Follow_FunctionAddress, "OtherAnimInstance");
+		MontageSync_Follow_OtherAnimInstance_Offset = NativeReflectionCached.GetPropertyOffset(MontageSync_Follow_FunctionAddress, "OtherAnimInstance");
+		MontageSync_Follow_OtherAnimInstance_IsValid = NativeReflectionCached.ValidatePropertyClass(MontageSync_Follow_FunctionAddress, "OtherAnimInstance", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref MontageSync_Follow_MontageLeader_PropertyAddress, MontageSync_Follow_FunctionAddress, "MontageLeader");
+		MontageSync_Follow_MontageLeader_Offset = NativeReflectionCached.GetPropertyOffset(MontageSync_Follow_FunctionAddress, "MontageLeader");
+		MontageSync_Follow_MontageLeader_IsValid = NativeReflectionCached.ValidatePropertyClass(MontageSync_Follow_FunctionAddress, "MontageLeader", Classes.FObjectProperty);
+		MontageSync_Follow_IsValid = MontageSync_Follow_FunctionAddress != IntPtr.Zero && MontageSync_Follow_MontageFollower_IsValid && MontageSync_Follow_OtherAnimInstance_IsValid && MontageSync_Follow_MontageLeader_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:MontageSync_Follow", MontageSync_Follow_IsValid);
+		Montage_StopWithBlendSettings_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_StopWithBlendSettings");
+		Montage_StopWithBlendSettings_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_StopWithBlendSettings_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_StopWithBlendSettings_BlendOutSettings_PropertyAddress, Montage_StopWithBlendSettings_FunctionAddress, "BlendOutSettings");
+		Montage_StopWithBlendSettings_BlendOutSettings_Offset = NativeReflectionCached.GetPropertyOffset(Montage_StopWithBlendSettings_FunctionAddress, "BlendOutSettings");
+		Montage_StopWithBlendSettings_BlendOutSettings_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_StopWithBlendSettings_FunctionAddress, "BlendOutSettings", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_StopWithBlendSettings_Montage_PropertyAddress, Montage_StopWithBlendSettings_FunctionAddress, "Montage");
+		Montage_StopWithBlendSettings_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_StopWithBlendSettings_FunctionAddress, "Montage");
+		Montage_StopWithBlendSettings_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_StopWithBlendSettings_FunctionAddress, "Montage", Classes.FObjectProperty);
+		Montage_StopWithBlendSettings_IsValid = Montage_StopWithBlendSettings_FunctionAddress != IntPtr.Zero && Montage_StopWithBlendSettings_BlendOutSettings_IsValid && Montage_StopWithBlendSettings_Montage_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_StopWithBlendSettings", Montage_StopWithBlendSettings_IsValid);
+		Montage_StopWithBlendOut_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_StopWithBlendOut");
+		Montage_StopWithBlendOut_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_StopWithBlendOut_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_StopWithBlendOut_BlendOut_PropertyAddress, Montage_StopWithBlendOut_FunctionAddress, "BlendOut");
+		Montage_StopWithBlendOut_BlendOut_Offset = NativeReflectionCached.GetPropertyOffset(Montage_StopWithBlendOut_FunctionAddress, "BlendOut");
+		Montage_StopWithBlendOut_BlendOut_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_StopWithBlendOut_FunctionAddress, "BlendOut", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_StopWithBlendOut_Montage_PropertyAddress, Montage_StopWithBlendOut_FunctionAddress, "Montage");
+		Montage_StopWithBlendOut_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_StopWithBlendOut_FunctionAddress, "Montage");
+		Montage_StopWithBlendOut_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_StopWithBlendOut_FunctionAddress, "Montage", Classes.FObjectProperty);
+		Montage_StopWithBlendOut_IsValid = Montage_StopWithBlendOut_FunctionAddress != IntPtr.Zero && Montage_StopWithBlendOut_BlendOut_IsValid && Montage_StopWithBlendOut_Montage_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_StopWithBlendOut", Montage_StopWithBlendOut_IsValid);
+		Montage_StopGroupByName_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_StopGroupByName");
+		Montage_StopGroupByName_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_StopGroupByName_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_StopGroupByName_InBlendOutTime_PropertyAddress, Montage_StopGroupByName_FunctionAddress, "InBlendOutTime");
+		Montage_StopGroupByName_InBlendOutTime_Offset = NativeReflectionCached.GetPropertyOffset(Montage_StopGroupByName_FunctionAddress, "InBlendOutTime");
+		Montage_StopGroupByName_InBlendOutTime_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_StopGroupByName_FunctionAddress, "InBlendOutTime", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_StopGroupByName_GroupName_PropertyAddress, Montage_StopGroupByName_FunctionAddress, "GroupName");
+		Montage_StopGroupByName_GroupName_Offset = NativeReflectionCached.GetPropertyOffset(Montage_StopGroupByName_FunctionAddress, "GroupName");
+		Montage_StopGroupByName_GroupName_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_StopGroupByName_FunctionAddress, "GroupName", Classes.FNameProperty);
+		Montage_StopGroupByName_IsValid = Montage_StopGroupByName_FunctionAddress != IntPtr.Zero && Montage_StopGroupByName_InBlendOutTime_IsValid && Montage_StopGroupByName_GroupName_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_StopGroupByName", Montage_StopGroupByName_IsValid);
+		Montage_Stop_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_Stop");
+		Montage_Stop_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_Stop_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_Stop_InBlendOutTime_PropertyAddress, Montage_Stop_FunctionAddress, "InBlendOutTime");
+		Montage_Stop_InBlendOutTime_Offset = NativeReflectionCached.GetPropertyOffset(Montage_Stop_FunctionAddress, "InBlendOutTime");
+		Montage_Stop_InBlendOutTime_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_Stop_FunctionAddress, "InBlendOutTime", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_Stop_Montage_PropertyAddress, Montage_Stop_FunctionAddress, "Montage");
+		Montage_Stop_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_Stop_FunctionAddress, "Montage");
+		Montage_Stop_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_Stop_FunctionAddress, "Montage", Classes.FObjectProperty);
+		Montage_Stop_IsValid = Montage_Stop_FunctionAddress != IntPtr.Zero && Montage_Stop_InBlendOutTime_IsValid && Montage_Stop_Montage_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_Stop", Montage_Stop_IsValid);
+		Montage_SetPosition_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_SetPosition");
+		Montage_SetPosition_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_SetPosition_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_SetPosition_Montage_PropertyAddress, Montage_SetPosition_FunctionAddress, "Montage");
+		Montage_SetPosition_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_SetPosition_FunctionAddress, "Montage");
+		Montage_SetPosition_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_SetPosition_FunctionAddress, "Montage", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_SetPosition_NewPosition_PropertyAddress, Montage_SetPosition_FunctionAddress, "NewPosition");
+		Montage_SetPosition_NewPosition_Offset = NativeReflectionCached.GetPropertyOffset(Montage_SetPosition_FunctionAddress, "NewPosition");
+		Montage_SetPosition_NewPosition_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_SetPosition_FunctionAddress, "NewPosition", Classes.FFloatProperty);
+		Montage_SetPosition_IsValid = Montage_SetPosition_FunctionAddress != IntPtr.Zero && Montage_SetPosition_Montage_IsValid && Montage_SetPosition_NewPosition_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_SetPosition", Montage_SetPosition_IsValid);
+		Montage_SetPlayRate_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_SetPlayRate");
+		Montage_SetPlayRate_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_SetPlayRate_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_SetPlayRate_Montage_PropertyAddress, Montage_SetPlayRate_FunctionAddress, "Montage");
+		Montage_SetPlayRate_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_SetPlayRate_FunctionAddress, "Montage");
+		Montage_SetPlayRate_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_SetPlayRate_FunctionAddress, "Montage", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_SetPlayRate_NewPlayRate_PropertyAddress, Montage_SetPlayRate_FunctionAddress, "NewPlayRate");
+		Montage_SetPlayRate_NewPlayRate_Offset = NativeReflectionCached.GetPropertyOffset(Montage_SetPlayRate_FunctionAddress, "NewPlayRate");
+		Montage_SetPlayRate_NewPlayRate_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_SetPlayRate_FunctionAddress, "NewPlayRate", Classes.FFloatProperty);
+		Montage_SetPlayRate_IsValid = Montage_SetPlayRate_FunctionAddress != IntPtr.Zero && Montage_SetPlayRate_Montage_IsValid && Montage_SetPlayRate_NewPlayRate_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_SetPlayRate", Montage_SetPlayRate_IsValid);
+		Montage_SetNextSection_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_SetNextSection");
+		Montage_SetNextSection_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_SetNextSection_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_SetNextSection_SectionNameToChange_PropertyAddress, Montage_SetNextSection_FunctionAddress, "SectionNameToChange");
+		Montage_SetNextSection_SectionNameToChange_Offset = NativeReflectionCached.GetPropertyOffset(Montage_SetNextSection_FunctionAddress, "SectionNameToChange");
+		Montage_SetNextSection_SectionNameToChange_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_SetNextSection_FunctionAddress, "SectionNameToChange", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_SetNextSection_NextSection_PropertyAddress, Montage_SetNextSection_FunctionAddress, "NextSection");
+		Montage_SetNextSection_NextSection_Offset = NativeReflectionCached.GetPropertyOffset(Montage_SetNextSection_FunctionAddress, "NextSection");
+		Montage_SetNextSection_NextSection_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_SetNextSection_FunctionAddress, "NextSection", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_SetNextSection_Montage_PropertyAddress, Montage_SetNextSection_FunctionAddress, "Montage");
+		Montage_SetNextSection_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_SetNextSection_FunctionAddress, "Montage");
+		Montage_SetNextSection_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_SetNextSection_FunctionAddress, "Montage", Classes.FObjectProperty);
+		Montage_SetNextSection_IsValid = Montage_SetNextSection_FunctionAddress != IntPtr.Zero && Montage_SetNextSection_SectionNameToChange_IsValid && Montage_SetNextSection_NextSection_IsValid && Montage_SetNextSection_Montage_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_SetNextSection", Montage_SetNextSection_IsValid);
+		Montage_Resume_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_Resume");
+		Montage_Resume_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_Resume_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_Resume_Montage_PropertyAddress, Montage_Resume_FunctionAddress, "Montage");
+		Montage_Resume_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_Resume_FunctionAddress, "Montage");
+		Montage_Resume_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_Resume_FunctionAddress, "Montage", Classes.FObjectProperty);
+		Montage_Resume_IsValid = Montage_Resume_FunctionAddress != IntPtr.Zero && Montage_Resume_Montage_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_Resume", Montage_Resume_IsValid);
+		Montage_PlayWithBlendSettings_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_PlayWithBlendSettings");
+		Montage_PlayWithBlendSettings_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_PlayWithBlendSettings_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_PlayWithBlendSettings_MontageToPlay_PropertyAddress, Montage_PlayWithBlendSettings_FunctionAddress, "MontageToPlay");
+		Montage_PlayWithBlendSettings_MontageToPlay_Offset = NativeReflectionCached.GetPropertyOffset(Montage_PlayWithBlendSettings_FunctionAddress, "MontageToPlay");
+		Montage_PlayWithBlendSettings_MontageToPlay_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_PlayWithBlendSettings_FunctionAddress, "MontageToPlay", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_PlayWithBlendSettings_BlendInSettings_PropertyAddress, Montage_PlayWithBlendSettings_FunctionAddress, "BlendInSettings");
+		Montage_PlayWithBlendSettings_BlendInSettings_Offset = NativeReflectionCached.GetPropertyOffset(Montage_PlayWithBlendSettings_FunctionAddress, "BlendInSettings");
+		Montage_PlayWithBlendSettings_BlendInSettings_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_PlayWithBlendSettings_FunctionAddress, "BlendInSettings", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_PlayWithBlendSettings_InPlayRate_PropertyAddress, Montage_PlayWithBlendSettings_FunctionAddress, "InPlayRate");
+		Montage_PlayWithBlendSettings_InPlayRate_Offset = NativeReflectionCached.GetPropertyOffset(Montage_PlayWithBlendSettings_FunctionAddress, "InPlayRate");
+		Montage_PlayWithBlendSettings_InPlayRate_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_PlayWithBlendSettings_FunctionAddress, "InPlayRate", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_PlayWithBlendSettings_ReturnValueType_PropertyAddress, Montage_PlayWithBlendSettings_FunctionAddress, "ReturnValueType");
+		Montage_PlayWithBlendSettings_ReturnValueType_Offset = NativeReflectionCached.GetPropertyOffset(Montage_PlayWithBlendSettings_FunctionAddress, "ReturnValueType");
+		Montage_PlayWithBlendSettings_ReturnValueType_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_PlayWithBlendSettings_FunctionAddress, "ReturnValueType", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_PlayWithBlendSettings_InTimeToStartMontageAt_PropertyAddress, Montage_PlayWithBlendSettings_FunctionAddress, "InTimeToStartMontageAt");
+		Montage_PlayWithBlendSettings_InTimeToStartMontageAt_Offset = NativeReflectionCached.GetPropertyOffset(Montage_PlayWithBlendSettings_FunctionAddress, "InTimeToStartMontageAt");
+		Montage_PlayWithBlendSettings_InTimeToStartMontageAt_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_PlayWithBlendSettings_FunctionAddress, "InTimeToStartMontageAt", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_PlayWithBlendSettings_bStopAllMontages_PropertyAddress, Montage_PlayWithBlendSettings_FunctionAddress, "bStopAllMontages");
+		Montage_PlayWithBlendSettings_bStopAllMontages_Offset = NativeReflectionCached.GetPropertyOffset(Montage_PlayWithBlendSettings_FunctionAddress, "bStopAllMontages");
+		Montage_PlayWithBlendSettings_bStopAllMontages_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_PlayWithBlendSettings_FunctionAddress, "bStopAllMontages", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_PlayWithBlendSettings_ReturnValue_PropertyAddress, Montage_PlayWithBlendSettings_FunctionAddress, "ReturnValue");
+		Montage_PlayWithBlendSettings_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(Montage_PlayWithBlendSettings_FunctionAddress, "ReturnValue");
+		Montage_PlayWithBlendSettings_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_PlayWithBlendSettings_FunctionAddress, "ReturnValue", Classes.FFloatProperty);
+		Montage_PlayWithBlendSettings_IsValid = Montage_PlayWithBlendSettings_FunctionAddress != IntPtr.Zero && Montage_PlayWithBlendSettings_MontageToPlay_IsValid && Montage_PlayWithBlendSettings_BlendInSettings_IsValid && Montage_PlayWithBlendSettings_InPlayRate_IsValid && Montage_PlayWithBlendSettings_ReturnValueType_IsValid && Montage_PlayWithBlendSettings_InTimeToStartMontageAt_IsValid && Montage_PlayWithBlendSettings_bStopAllMontages_IsValid && Montage_PlayWithBlendSettings_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_PlayWithBlendSettings", Montage_PlayWithBlendSettings_IsValid);
+		Montage_PlayWithBlendIn_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_PlayWithBlendIn");
+		Montage_PlayWithBlendIn_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_PlayWithBlendIn_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_PlayWithBlendIn_MontageToPlay_PropertyAddress, Montage_PlayWithBlendIn_FunctionAddress, "MontageToPlay");
+		Montage_PlayWithBlendIn_MontageToPlay_Offset = NativeReflectionCached.GetPropertyOffset(Montage_PlayWithBlendIn_FunctionAddress, "MontageToPlay");
+		Montage_PlayWithBlendIn_MontageToPlay_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_PlayWithBlendIn_FunctionAddress, "MontageToPlay", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_PlayWithBlendIn_BlendIn_PropertyAddress, Montage_PlayWithBlendIn_FunctionAddress, "BlendIn");
+		Montage_PlayWithBlendIn_BlendIn_Offset = NativeReflectionCached.GetPropertyOffset(Montage_PlayWithBlendIn_FunctionAddress, "BlendIn");
+		Montage_PlayWithBlendIn_BlendIn_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_PlayWithBlendIn_FunctionAddress, "BlendIn", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_PlayWithBlendIn_InPlayRate_PropertyAddress, Montage_PlayWithBlendIn_FunctionAddress, "InPlayRate");
+		Montage_PlayWithBlendIn_InPlayRate_Offset = NativeReflectionCached.GetPropertyOffset(Montage_PlayWithBlendIn_FunctionAddress, "InPlayRate");
+		Montage_PlayWithBlendIn_InPlayRate_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_PlayWithBlendIn_FunctionAddress, "InPlayRate", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_PlayWithBlendIn_ReturnValueType_PropertyAddress, Montage_PlayWithBlendIn_FunctionAddress, "ReturnValueType");
+		Montage_PlayWithBlendIn_ReturnValueType_Offset = NativeReflectionCached.GetPropertyOffset(Montage_PlayWithBlendIn_FunctionAddress, "ReturnValueType");
+		Montage_PlayWithBlendIn_ReturnValueType_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_PlayWithBlendIn_FunctionAddress, "ReturnValueType", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_PlayWithBlendIn_InTimeToStartMontageAt_PropertyAddress, Montage_PlayWithBlendIn_FunctionAddress, "InTimeToStartMontageAt");
+		Montage_PlayWithBlendIn_InTimeToStartMontageAt_Offset = NativeReflectionCached.GetPropertyOffset(Montage_PlayWithBlendIn_FunctionAddress, "InTimeToStartMontageAt");
+		Montage_PlayWithBlendIn_InTimeToStartMontageAt_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_PlayWithBlendIn_FunctionAddress, "InTimeToStartMontageAt", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_PlayWithBlendIn_bStopAllMontages_PropertyAddress, Montage_PlayWithBlendIn_FunctionAddress, "bStopAllMontages");
+		Montage_PlayWithBlendIn_bStopAllMontages_Offset = NativeReflectionCached.GetPropertyOffset(Montage_PlayWithBlendIn_FunctionAddress, "bStopAllMontages");
+		Montage_PlayWithBlendIn_bStopAllMontages_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_PlayWithBlendIn_FunctionAddress, "bStopAllMontages", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_PlayWithBlendIn_ReturnValue_PropertyAddress, Montage_PlayWithBlendIn_FunctionAddress, "ReturnValue");
+		Montage_PlayWithBlendIn_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(Montage_PlayWithBlendIn_FunctionAddress, "ReturnValue");
+		Montage_PlayWithBlendIn_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_PlayWithBlendIn_FunctionAddress, "ReturnValue", Classes.FFloatProperty);
+		Montage_PlayWithBlendIn_IsValid = Montage_PlayWithBlendIn_FunctionAddress != IntPtr.Zero && Montage_PlayWithBlendIn_MontageToPlay_IsValid && Montage_PlayWithBlendIn_BlendIn_IsValid && Montage_PlayWithBlendIn_InPlayRate_IsValid && Montage_PlayWithBlendIn_ReturnValueType_IsValid && Montage_PlayWithBlendIn_InTimeToStartMontageAt_IsValid && Montage_PlayWithBlendIn_bStopAllMontages_IsValid && Montage_PlayWithBlendIn_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_PlayWithBlendIn", Montage_PlayWithBlendIn_IsValid);
+		Montage_Play_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_Play");
+		Montage_Play_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_Play_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_Play_MontageToPlay_PropertyAddress, Montage_Play_FunctionAddress, "MontageToPlay");
+		Montage_Play_MontageToPlay_Offset = NativeReflectionCached.GetPropertyOffset(Montage_Play_FunctionAddress, "MontageToPlay");
+		Montage_Play_MontageToPlay_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_Play_FunctionAddress, "MontageToPlay", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_Play_InPlayRate_PropertyAddress, Montage_Play_FunctionAddress, "InPlayRate");
+		Montage_Play_InPlayRate_Offset = NativeReflectionCached.GetPropertyOffset(Montage_Play_FunctionAddress, "InPlayRate");
+		Montage_Play_InPlayRate_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_Play_FunctionAddress, "InPlayRate", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_Play_ReturnValueType_PropertyAddress, Montage_Play_FunctionAddress, "ReturnValueType");
+		Montage_Play_ReturnValueType_Offset = NativeReflectionCached.GetPropertyOffset(Montage_Play_FunctionAddress, "ReturnValueType");
+		Montage_Play_ReturnValueType_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_Play_FunctionAddress, "ReturnValueType", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_Play_InTimeToStartMontageAt_PropertyAddress, Montage_Play_FunctionAddress, "InTimeToStartMontageAt");
+		Montage_Play_InTimeToStartMontageAt_Offset = NativeReflectionCached.GetPropertyOffset(Montage_Play_FunctionAddress, "InTimeToStartMontageAt");
+		Montage_Play_InTimeToStartMontageAt_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_Play_FunctionAddress, "InTimeToStartMontageAt", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_Play_bStopAllMontages_PropertyAddress, Montage_Play_FunctionAddress, "bStopAllMontages");
+		Montage_Play_bStopAllMontages_Offset = NativeReflectionCached.GetPropertyOffset(Montage_Play_FunctionAddress, "bStopAllMontages");
+		Montage_Play_bStopAllMontages_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_Play_FunctionAddress, "bStopAllMontages", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_Play_ReturnValue_PropertyAddress, Montage_Play_FunctionAddress, "ReturnValue");
+		Montage_Play_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(Montage_Play_FunctionAddress, "ReturnValue");
+		Montage_Play_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_Play_FunctionAddress, "ReturnValue", Classes.FFloatProperty);
+		Montage_Play_IsValid = Montage_Play_FunctionAddress != IntPtr.Zero && Montage_Play_MontageToPlay_IsValid && Montage_Play_InPlayRate_IsValid && Montage_Play_ReturnValueType_IsValid && Montage_Play_InTimeToStartMontageAt_IsValid && Montage_Play_bStopAllMontages_IsValid && Montage_Play_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_Play", Montage_Play_IsValid);
+		Montage_Pause_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_Pause");
+		Montage_Pause_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_Pause_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_Pause_Montage_PropertyAddress, Montage_Pause_FunctionAddress, "Montage");
+		Montage_Pause_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_Pause_FunctionAddress, "Montage");
+		Montage_Pause_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_Pause_FunctionAddress, "Montage", Classes.FObjectProperty);
+		Montage_Pause_IsValid = Montage_Pause_FunctionAddress != IntPtr.Zero && Montage_Pause_Montage_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_Pause", Montage_Pause_IsValid);
+		Montage_JumpToSectionsEnd_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_JumpToSectionsEnd");
+		Montage_JumpToSectionsEnd_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_JumpToSectionsEnd_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_JumpToSectionsEnd_SectionName_PropertyAddress, Montage_JumpToSectionsEnd_FunctionAddress, "SectionName");
+		Montage_JumpToSectionsEnd_SectionName_Offset = NativeReflectionCached.GetPropertyOffset(Montage_JumpToSectionsEnd_FunctionAddress, "SectionName");
+		Montage_JumpToSectionsEnd_SectionName_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_JumpToSectionsEnd_FunctionAddress, "SectionName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_JumpToSectionsEnd_Montage_PropertyAddress, Montage_JumpToSectionsEnd_FunctionAddress, "Montage");
+		Montage_JumpToSectionsEnd_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_JumpToSectionsEnd_FunctionAddress, "Montage");
+		Montage_JumpToSectionsEnd_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_JumpToSectionsEnd_FunctionAddress, "Montage", Classes.FObjectProperty);
+		Montage_JumpToSectionsEnd_IsValid = Montage_JumpToSectionsEnd_FunctionAddress != IntPtr.Zero && Montage_JumpToSectionsEnd_SectionName_IsValid && Montage_JumpToSectionsEnd_Montage_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_JumpToSectionsEnd", Montage_JumpToSectionsEnd_IsValid);
+		Montage_JumpToSection_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_JumpToSection");
+		Montage_JumpToSection_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_JumpToSection_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_JumpToSection_SectionName_PropertyAddress, Montage_JumpToSection_FunctionAddress, "SectionName");
+		Montage_JumpToSection_SectionName_Offset = NativeReflectionCached.GetPropertyOffset(Montage_JumpToSection_FunctionAddress, "SectionName");
+		Montage_JumpToSection_SectionName_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_JumpToSection_FunctionAddress, "SectionName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_JumpToSection_Montage_PropertyAddress, Montage_JumpToSection_FunctionAddress, "Montage");
+		Montage_JumpToSection_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_JumpToSection_FunctionAddress, "Montage");
+		Montage_JumpToSection_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_JumpToSection_FunctionAddress, "Montage", Classes.FObjectProperty);
+		Montage_JumpToSection_IsValid = Montage_JumpToSection_FunctionAddress != IntPtr.Zero && Montage_JumpToSection_SectionName_IsValid && Montage_JumpToSection_Montage_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_JumpToSection", Montage_JumpToSection_IsValid);
+		Montage_IsPlaying_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_IsPlaying");
+		Montage_IsPlaying_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_IsPlaying_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_IsPlaying_Montage_PropertyAddress, Montage_IsPlaying_FunctionAddress, "Montage");
+		Montage_IsPlaying_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_IsPlaying_FunctionAddress, "Montage");
+		Montage_IsPlaying_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_IsPlaying_FunctionAddress, "Montage", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_IsPlaying_ReturnValue_PropertyAddress, Montage_IsPlaying_FunctionAddress, "ReturnValue");
+		Montage_IsPlaying_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(Montage_IsPlaying_FunctionAddress, "ReturnValue");
+		Montage_IsPlaying_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_IsPlaying_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		Montage_IsPlaying_IsValid = Montage_IsPlaying_FunctionAddress != IntPtr.Zero && Montage_IsPlaying_Montage_IsValid && Montage_IsPlaying_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_IsPlaying", Montage_IsPlaying_IsValid);
+		Montage_IsActive_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_IsActive");
+		Montage_IsActive_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_IsActive_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_IsActive_Montage_PropertyAddress, Montage_IsActive_FunctionAddress, "Montage");
+		Montage_IsActive_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_IsActive_FunctionAddress, "Montage");
+		Montage_IsActive_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_IsActive_FunctionAddress, "Montage", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_IsActive_ReturnValue_PropertyAddress, Montage_IsActive_FunctionAddress, "ReturnValue");
+		Montage_IsActive_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(Montage_IsActive_FunctionAddress, "ReturnValue");
+		Montage_IsActive_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_IsActive_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		Montage_IsActive_IsValid = Montage_IsActive_FunctionAddress != IntPtr.Zero && Montage_IsActive_Montage_IsValid && Montage_IsActive_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_IsActive", Montage_IsActive_IsValid);
+		Montage_GetPosition_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_GetPosition");
+		Montage_GetPosition_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_GetPosition_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_GetPosition_Montage_PropertyAddress, Montage_GetPosition_FunctionAddress, "Montage");
+		Montage_GetPosition_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_GetPosition_FunctionAddress, "Montage");
+		Montage_GetPosition_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_GetPosition_FunctionAddress, "Montage", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_GetPosition_ReturnValue_PropertyAddress, Montage_GetPosition_FunctionAddress, "ReturnValue");
+		Montage_GetPosition_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(Montage_GetPosition_FunctionAddress, "ReturnValue");
+		Montage_GetPosition_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_GetPosition_FunctionAddress, "ReturnValue", Classes.FFloatProperty);
+		Montage_GetPosition_IsValid = Montage_GetPosition_FunctionAddress != IntPtr.Zero && Montage_GetPosition_Montage_IsValid && Montage_GetPosition_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_GetPosition", Montage_GetPosition_IsValid);
+		Montage_GetPlayRate_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_GetPlayRate");
+		Montage_GetPlayRate_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_GetPlayRate_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_GetPlayRate_Montage_PropertyAddress, Montage_GetPlayRate_FunctionAddress, "Montage");
+		Montage_GetPlayRate_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_GetPlayRate_FunctionAddress, "Montage");
+		Montage_GetPlayRate_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_GetPlayRate_FunctionAddress, "Montage", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_GetPlayRate_ReturnValue_PropertyAddress, Montage_GetPlayRate_FunctionAddress, "ReturnValue");
+		Montage_GetPlayRate_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(Montage_GetPlayRate_FunctionAddress, "ReturnValue");
+		Montage_GetPlayRate_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_GetPlayRate_FunctionAddress, "ReturnValue", Classes.FFloatProperty);
+		Montage_GetPlayRate_IsValid = Montage_GetPlayRate_FunctionAddress != IntPtr.Zero && Montage_GetPlayRate_Montage_IsValid && Montage_GetPlayRate_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_GetPlayRate", Montage_GetPlayRate_IsValid);
+		Montage_GetIsStopped_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_GetIsStopped");
+		Montage_GetIsStopped_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_GetIsStopped_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_GetIsStopped_Montage_PropertyAddress, Montage_GetIsStopped_FunctionAddress, "Montage");
+		Montage_GetIsStopped_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_GetIsStopped_FunctionAddress, "Montage");
+		Montage_GetIsStopped_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_GetIsStopped_FunctionAddress, "Montage", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_GetIsStopped_ReturnValue_PropertyAddress, Montage_GetIsStopped_FunctionAddress, "ReturnValue");
+		Montage_GetIsStopped_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(Montage_GetIsStopped_FunctionAddress, "ReturnValue");
+		Montage_GetIsStopped_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_GetIsStopped_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		Montage_GetIsStopped_IsValid = Montage_GetIsStopped_FunctionAddress != IntPtr.Zero && Montage_GetIsStopped_Montage_IsValid && Montage_GetIsStopped_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_GetIsStopped", Montage_GetIsStopped_IsValid);
+		Montage_GetCurrentSection_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_GetCurrentSection");
+		Montage_GetCurrentSection_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_GetCurrentSection_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_GetCurrentSection_Montage_PropertyAddress, Montage_GetCurrentSection_FunctionAddress, "Montage");
+		Montage_GetCurrentSection_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_GetCurrentSection_FunctionAddress, "Montage");
+		Montage_GetCurrentSection_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_GetCurrentSection_FunctionAddress, "Montage", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_GetCurrentSection_ReturnValue_PropertyAddress, Montage_GetCurrentSection_FunctionAddress, "ReturnValue");
+		Montage_GetCurrentSection_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(Montage_GetCurrentSection_FunctionAddress, "ReturnValue");
+		Montage_GetCurrentSection_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_GetCurrentSection_FunctionAddress, "ReturnValue", Classes.FNameProperty);
+		Montage_GetCurrentSection_IsValid = Montage_GetCurrentSection_FunctionAddress != IntPtr.Zero && Montage_GetCurrentSection_Montage_IsValid && Montage_GetCurrentSection_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_GetCurrentSection", Montage_GetCurrentSection_IsValid);
+		Montage_GetBlendTime_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "Montage_GetBlendTime");
+		Montage_GetBlendTime_ParamsSize = NativeReflection.GetFunctionParamsSize(Montage_GetBlendTime_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref Montage_GetBlendTime_Montage_PropertyAddress, Montage_GetBlendTime_FunctionAddress, "Montage");
+		Montage_GetBlendTime_Montage_Offset = NativeReflectionCached.GetPropertyOffset(Montage_GetBlendTime_FunctionAddress, "Montage");
+		Montage_GetBlendTime_Montage_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_GetBlendTime_FunctionAddress, "Montage", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref Montage_GetBlendTime_ReturnValue_PropertyAddress, Montage_GetBlendTime_FunctionAddress, "ReturnValue");
+		Montage_GetBlendTime_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(Montage_GetBlendTime_FunctionAddress, "ReturnValue");
+		Montage_GetBlendTime_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(Montage_GetBlendTime_FunctionAddress, "ReturnValue", Classes.FFloatProperty);
+		Montage_GetBlendTime_IsValid = Montage_GetBlendTime_FunctionAddress != IntPtr.Zero && Montage_GetBlendTime_Montage_IsValid && Montage_GetBlendTime_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:Montage_GetBlendTime", Montage_GetBlendTime_IsValid);
+		LinkAnimGraphByTag_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "LinkAnimGraphByTag");
+		LinkAnimGraphByTag_ParamsSize = NativeReflection.GetFunctionParamsSize(LinkAnimGraphByTag_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref LinkAnimGraphByTag_InTag_PropertyAddress, LinkAnimGraphByTag_FunctionAddress, "InTag");
+		LinkAnimGraphByTag_InTag_Offset = NativeReflectionCached.GetPropertyOffset(LinkAnimGraphByTag_FunctionAddress, "InTag");
+		LinkAnimGraphByTag_InTag_IsValid = NativeReflectionCached.ValidatePropertyClass(LinkAnimGraphByTag_FunctionAddress, "InTag", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref LinkAnimGraphByTag_InClass_PropertyAddress, LinkAnimGraphByTag_FunctionAddress, "InClass");
+		LinkAnimGraphByTag_InClass_Offset = NativeReflectionCached.GetPropertyOffset(LinkAnimGraphByTag_FunctionAddress, "InClass");
+		LinkAnimGraphByTag_InClass_IsValid = NativeReflectionCached.ValidatePropertyClass(LinkAnimGraphByTag_FunctionAddress, "InClass", Classes.FClassProperty);
+		LinkAnimGraphByTag_IsValid = LinkAnimGraphByTag_FunctionAddress != IntPtr.Zero && LinkAnimGraphByTag_InTag_IsValid && LinkAnimGraphByTag_InClass_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:LinkAnimGraphByTag", LinkAnimGraphByTag_IsValid);
+		LinkAnimClassLayers_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "LinkAnimClassLayers");
+		LinkAnimClassLayers_ParamsSize = NativeReflection.GetFunctionParamsSize(LinkAnimClassLayers_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref LinkAnimClassLayers_InClass_PropertyAddress, LinkAnimClassLayers_FunctionAddress, "InClass");
+		LinkAnimClassLayers_InClass_Offset = NativeReflectionCached.GetPropertyOffset(LinkAnimClassLayers_FunctionAddress, "InClass");
+		LinkAnimClassLayers_InClass_IsValid = NativeReflectionCached.ValidatePropertyClass(LinkAnimClassLayers_FunctionAddress, "InClass", Classes.FClassProperty);
+		LinkAnimClassLayers_IsValid = LinkAnimClassLayers_FunctionAddress != IntPtr.Zero && LinkAnimClassLayers_InClass_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:LinkAnimClassLayers", LinkAnimClassLayers_IsValid);
+		IsUsingMainInstanceMontageEvaluationData_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "IsUsingMainInstanceMontageEvaluationData");
+		IsUsingMainInstanceMontageEvaluationData_ParamsSize = NativeReflection.GetFunctionParamsSize(IsUsingMainInstanceMontageEvaluationData_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref IsUsingMainInstanceMontageEvaluationData_ReturnValue_PropertyAddress, IsUsingMainInstanceMontageEvaluationData_FunctionAddress, "ReturnValue");
+		IsUsingMainInstanceMontageEvaluationData_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(IsUsingMainInstanceMontageEvaluationData_FunctionAddress, "ReturnValue");
+		IsUsingMainInstanceMontageEvaluationData_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(IsUsingMainInstanceMontageEvaluationData_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		IsUsingMainInstanceMontageEvaluationData_IsValid = IsUsingMainInstanceMontageEvaluationData_FunctionAddress != IntPtr.Zero && IsUsingMainInstanceMontageEvaluationData_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:IsUsingMainInstanceMontageEvaluationData", IsUsingMainInstanceMontageEvaluationData_IsValid);
+		IsSyncGroupBetweenMarkers_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "IsSyncGroupBetweenMarkers");
+		IsSyncGroupBetweenMarkers_ParamsSize = NativeReflection.GetFunctionParamsSize(IsSyncGroupBetweenMarkers_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref IsSyncGroupBetweenMarkers_InSyncGroupName_PropertyAddress, IsSyncGroupBetweenMarkers_FunctionAddress, "InSyncGroupName");
+		IsSyncGroupBetweenMarkers_InSyncGroupName_Offset = NativeReflectionCached.GetPropertyOffset(IsSyncGroupBetweenMarkers_FunctionAddress, "InSyncGroupName");
+		IsSyncGroupBetweenMarkers_InSyncGroupName_IsValid = NativeReflectionCached.ValidatePropertyClass(IsSyncGroupBetweenMarkers_FunctionAddress, "InSyncGroupName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref IsSyncGroupBetweenMarkers_PreviousMarker_PropertyAddress, IsSyncGroupBetweenMarkers_FunctionAddress, "PreviousMarker");
+		IsSyncGroupBetweenMarkers_PreviousMarker_Offset = NativeReflectionCached.GetPropertyOffset(IsSyncGroupBetweenMarkers_FunctionAddress, "PreviousMarker");
+		IsSyncGroupBetweenMarkers_PreviousMarker_IsValid = NativeReflectionCached.ValidatePropertyClass(IsSyncGroupBetweenMarkers_FunctionAddress, "PreviousMarker", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref IsSyncGroupBetweenMarkers_NextMarker_PropertyAddress, IsSyncGroupBetweenMarkers_FunctionAddress, "NextMarker");
+		IsSyncGroupBetweenMarkers_NextMarker_Offset = NativeReflectionCached.GetPropertyOffset(IsSyncGroupBetweenMarkers_FunctionAddress, "NextMarker");
+		IsSyncGroupBetweenMarkers_NextMarker_IsValid = NativeReflectionCached.ValidatePropertyClass(IsSyncGroupBetweenMarkers_FunctionAddress, "NextMarker", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref IsSyncGroupBetweenMarkers_bRespectMarkerOrder_PropertyAddress, IsSyncGroupBetweenMarkers_FunctionAddress, "bRespectMarkerOrder");
+		IsSyncGroupBetweenMarkers_bRespectMarkerOrder_Offset = NativeReflectionCached.GetPropertyOffset(IsSyncGroupBetweenMarkers_FunctionAddress, "bRespectMarkerOrder");
+		IsSyncGroupBetweenMarkers_bRespectMarkerOrder_IsValid = NativeReflectionCached.ValidatePropertyClass(IsSyncGroupBetweenMarkers_FunctionAddress, "bRespectMarkerOrder", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref IsSyncGroupBetweenMarkers_ReturnValue_PropertyAddress, IsSyncGroupBetweenMarkers_FunctionAddress, "ReturnValue");
+		IsSyncGroupBetweenMarkers_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(IsSyncGroupBetweenMarkers_FunctionAddress, "ReturnValue");
+		IsSyncGroupBetweenMarkers_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(IsSyncGroupBetweenMarkers_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		IsSyncGroupBetweenMarkers_IsValid = IsSyncGroupBetweenMarkers_FunctionAddress != IntPtr.Zero && IsSyncGroupBetweenMarkers_InSyncGroupName_IsValid && IsSyncGroupBetweenMarkers_PreviousMarker_IsValid && IsSyncGroupBetweenMarkers_NextMarker_IsValid && IsSyncGroupBetweenMarkers_bRespectMarkerOrder_IsValid && IsSyncGroupBetweenMarkers_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:IsSyncGroupBetweenMarkers", IsSyncGroupBetweenMarkers_IsValid);
+		IsPlayingSlotAnimation_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "IsPlayingSlotAnimation");
+		IsPlayingSlotAnimation_ParamsSize = NativeReflection.GetFunctionParamsSize(IsPlayingSlotAnimation_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref IsPlayingSlotAnimation_Asset_PropertyAddress, IsPlayingSlotAnimation_FunctionAddress, "Asset");
+		IsPlayingSlotAnimation_Asset_Offset = NativeReflectionCached.GetPropertyOffset(IsPlayingSlotAnimation_FunctionAddress, "Asset");
+		IsPlayingSlotAnimation_Asset_IsValid = NativeReflectionCached.ValidatePropertyClass(IsPlayingSlotAnimation_FunctionAddress, "Asset", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref IsPlayingSlotAnimation_SlotNodeName_PropertyAddress, IsPlayingSlotAnimation_FunctionAddress, "SlotNodeName");
+		IsPlayingSlotAnimation_SlotNodeName_Offset = NativeReflectionCached.GetPropertyOffset(IsPlayingSlotAnimation_FunctionAddress, "SlotNodeName");
+		IsPlayingSlotAnimation_SlotNodeName_IsValid = NativeReflectionCached.ValidatePropertyClass(IsPlayingSlotAnimation_FunctionAddress, "SlotNodeName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref IsPlayingSlotAnimation_ReturnValue_PropertyAddress, IsPlayingSlotAnimation_FunctionAddress, "ReturnValue");
+		IsPlayingSlotAnimation_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(IsPlayingSlotAnimation_FunctionAddress, "ReturnValue");
+		IsPlayingSlotAnimation_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(IsPlayingSlotAnimation_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		IsPlayingSlotAnimation_IsValid = IsPlayingSlotAnimation_FunctionAddress != IntPtr.Zero && IsPlayingSlotAnimation_Asset_IsValid && IsPlayingSlotAnimation_SlotNodeName_IsValid && IsPlayingSlotAnimation_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:IsPlayingSlotAnimation", IsPlayingSlotAnimation_IsValid);
+		IsAnyMontagePlaying_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "IsAnyMontagePlaying");
+		IsAnyMontagePlaying_ParamsSize = NativeReflection.GetFunctionParamsSize(IsAnyMontagePlaying_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref IsAnyMontagePlaying_ReturnValue_PropertyAddress, IsAnyMontagePlaying_FunctionAddress, "ReturnValue");
+		IsAnyMontagePlaying_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(IsAnyMontagePlaying_FunctionAddress, "ReturnValue");
+		IsAnyMontagePlaying_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(IsAnyMontagePlaying_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		IsAnyMontagePlaying_IsValid = IsAnyMontagePlaying_FunctionAddress != IntPtr.Zero && IsAnyMontagePlaying_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:IsAnyMontagePlaying", IsAnyMontagePlaying_IsValid);
+		HasMarkerBeenHitThisFrame_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "HasMarkerBeenHitThisFrame");
+		HasMarkerBeenHitThisFrame_ParamsSize = NativeReflection.GetFunctionParamsSize(HasMarkerBeenHitThisFrame_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref HasMarkerBeenHitThisFrame_SyncGroup_PropertyAddress, HasMarkerBeenHitThisFrame_FunctionAddress, "SyncGroup");
+		HasMarkerBeenHitThisFrame_SyncGroup_Offset = NativeReflectionCached.GetPropertyOffset(HasMarkerBeenHitThisFrame_FunctionAddress, "SyncGroup");
+		HasMarkerBeenHitThisFrame_SyncGroup_IsValid = NativeReflectionCached.ValidatePropertyClass(HasMarkerBeenHitThisFrame_FunctionAddress, "SyncGroup", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref HasMarkerBeenHitThisFrame_MarkerName_PropertyAddress, HasMarkerBeenHitThisFrame_FunctionAddress, "MarkerName");
+		HasMarkerBeenHitThisFrame_MarkerName_Offset = NativeReflectionCached.GetPropertyOffset(HasMarkerBeenHitThisFrame_FunctionAddress, "MarkerName");
+		HasMarkerBeenHitThisFrame_MarkerName_IsValid = NativeReflectionCached.ValidatePropertyClass(HasMarkerBeenHitThisFrame_FunctionAddress, "MarkerName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref HasMarkerBeenHitThisFrame_ReturnValue_PropertyAddress, HasMarkerBeenHitThisFrame_FunctionAddress, "ReturnValue");
+		HasMarkerBeenHitThisFrame_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(HasMarkerBeenHitThisFrame_FunctionAddress, "ReturnValue");
+		HasMarkerBeenHitThisFrame_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(HasMarkerBeenHitThisFrame_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		HasMarkerBeenHitThisFrame_IsValid = HasMarkerBeenHitThisFrame_FunctionAddress != IntPtr.Zero && HasMarkerBeenHitThisFrame_SyncGroup_IsValid && HasMarkerBeenHitThisFrame_MarkerName_IsValid && HasMarkerBeenHitThisFrame_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:HasMarkerBeenHitThisFrame", HasMarkerBeenHitThisFrame_IsValid);
+		GetTimeToClosestMarker_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetTimeToClosestMarker");
+		GetTimeToClosestMarker_ParamsSize = NativeReflection.GetFunctionParamsSize(GetTimeToClosestMarker_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetTimeToClosestMarker_SyncGroup_PropertyAddress, GetTimeToClosestMarker_FunctionAddress, "SyncGroup");
+		GetTimeToClosestMarker_SyncGroup_Offset = NativeReflectionCached.GetPropertyOffset(GetTimeToClosestMarker_FunctionAddress, "SyncGroup");
+		GetTimeToClosestMarker_SyncGroup_IsValid = NativeReflectionCached.ValidatePropertyClass(GetTimeToClosestMarker_FunctionAddress, "SyncGroup", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetTimeToClosestMarker_MarkerName_PropertyAddress, GetTimeToClosestMarker_FunctionAddress, "MarkerName");
+		GetTimeToClosestMarker_MarkerName_Offset = NativeReflectionCached.GetPropertyOffset(GetTimeToClosestMarker_FunctionAddress, "MarkerName");
+		GetTimeToClosestMarker_MarkerName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetTimeToClosestMarker_FunctionAddress, "MarkerName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetTimeToClosestMarker_OutMarkerTime_PropertyAddress, GetTimeToClosestMarker_FunctionAddress, "OutMarkerTime");
+		GetTimeToClosestMarker_OutMarkerTime_Offset = NativeReflectionCached.GetPropertyOffset(GetTimeToClosestMarker_FunctionAddress, "OutMarkerTime");
+		GetTimeToClosestMarker_OutMarkerTime_IsValid = NativeReflectionCached.ValidatePropertyClass(GetTimeToClosestMarker_FunctionAddress, "OutMarkerTime", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetTimeToClosestMarker_ReturnValue_PropertyAddress, GetTimeToClosestMarker_FunctionAddress, "ReturnValue");
+		GetTimeToClosestMarker_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetTimeToClosestMarker_FunctionAddress, "ReturnValue");
+		GetTimeToClosestMarker_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetTimeToClosestMarker_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetTimeToClosestMarker_IsValid = GetTimeToClosestMarker_FunctionAddress != IntPtr.Zero && GetTimeToClosestMarker_SyncGroup_IsValid && GetTimeToClosestMarker_MarkerName_IsValid && GetTimeToClosestMarker_OutMarkerTime_IsValid && GetTimeToClosestMarker_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetTimeToClosestMarker", GetTimeToClosestMarker_IsValid);
+		GetSyncGroupPosition_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetSyncGroupPosition");
+		GetSyncGroupPosition_ParamsSize = NativeReflection.GetFunctionParamsSize(GetSyncGroupPosition_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetSyncGroupPosition_InSyncGroupName_PropertyAddress, GetSyncGroupPosition_FunctionAddress, "InSyncGroupName");
+		GetSyncGroupPosition_InSyncGroupName_Offset = NativeReflectionCached.GetPropertyOffset(GetSyncGroupPosition_FunctionAddress, "InSyncGroupName");
+		GetSyncGroupPosition_InSyncGroupName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetSyncGroupPosition_FunctionAddress, "InSyncGroupName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetSyncGroupPosition_ReturnValue_PropertyAddress, GetSyncGroupPosition_FunctionAddress, "ReturnValue");
+		GetSyncGroupPosition_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetSyncGroupPosition_FunctionAddress, "ReturnValue");
+		GetSyncGroupPosition_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetSyncGroupPosition_FunctionAddress, "ReturnValue", Classes.FStructProperty);
+		GetSyncGroupPosition_IsValid = GetSyncGroupPosition_FunctionAddress != IntPtr.Zero && GetSyncGroupPosition_InSyncGroupName_IsValid && GetSyncGroupPosition_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetSyncGroupPosition", GetSyncGroupPosition_IsValid);
+		GetReceiveNotifiesFromLinkedInstances_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetReceiveNotifiesFromLinkedInstances");
+		GetReceiveNotifiesFromLinkedInstances_ParamsSize = NativeReflection.GetFunctionParamsSize(GetReceiveNotifiesFromLinkedInstances_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetReceiveNotifiesFromLinkedInstances_ReturnValue_PropertyAddress, GetReceiveNotifiesFromLinkedInstances_FunctionAddress, "ReturnValue");
+		GetReceiveNotifiesFromLinkedInstances_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetReceiveNotifiesFromLinkedInstances_FunctionAddress, "ReturnValue");
+		GetReceiveNotifiesFromLinkedInstances_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetReceiveNotifiesFromLinkedInstances_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetReceiveNotifiesFromLinkedInstances_IsValid = GetReceiveNotifiesFromLinkedInstances_FunctionAddress != IntPtr.Zero && GetReceiveNotifiesFromLinkedInstances_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetReceiveNotifiesFromLinkedInstances", GetReceiveNotifiesFromLinkedInstances_IsValid);
+		GetPropagateNotifiesToLinkedInstances_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetPropagateNotifiesToLinkedInstances");
+		GetPropagateNotifiesToLinkedInstances_ParamsSize = NativeReflection.GetFunctionParamsSize(GetPropagateNotifiesToLinkedInstances_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetPropagateNotifiesToLinkedInstances_ReturnValue_PropertyAddress, GetPropagateNotifiesToLinkedInstances_FunctionAddress, "ReturnValue");
+		GetPropagateNotifiesToLinkedInstances_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetPropagateNotifiesToLinkedInstances_FunctionAddress, "ReturnValue");
+		GetPropagateNotifiesToLinkedInstances_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetPropagateNotifiesToLinkedInstances_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetPropagateNotifiesToLinkedInstances_IsValid = GetPropagateNotifiesToLinkedInstances_FunctionAddress != IntPtr.Zero && GetPropagateNotifiesToLinkedInstances_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetPropagateNotifiesToLinkedInstances", GetPropagateNotifiesToLinkedInstances_IsValid);
+		GetOwningComponent_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetOwningComponent");
+		GetOwningComponent_ParamsSize = NativeReflection.GetFunctionParamsSize(GetOwningComponent_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetOwningComponent_ReturnValue_PropertyAddress, GetOwningComponent_FunctionAddress, "ReturnValue");
+		GetOwningComponent_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetOwningComponent_FunctionAddress, "ReturnValue");
+		GetOwningComponent_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetOwningComponent_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		GetOwningComponent_IsValid = GetOwningComponent_FunctionAddress != IntPtr.Zero && GetOwningComponent_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetOwningComponent", GetOwningComponent_IsValid);
+		GetOwningActor_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetOwningActor");
+		GetOwningActor_ParamsSize = NativeReflection.GetFunctionParamsSize(GetOwningActor_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetOwningActor_ReturnValue_PropertyAddress, GetOwningActor_FunctionAddress, "ReturnValue");
+		GetOwningActor_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetOwningActor_FunctionAddress, "ReturnValue");
+		GetOwningActor_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetOwningActor_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		GetOwningActor_IsValid = GetOwningActor_FunctionAddress != IntPtr.Zero && GetOwningActor_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetOwningActor", GetOwningActor_IsValid);
+		GetLinkedAnimLayerInstancesByGroup_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetLinkedAnimLayerInstancesByGroup");
+		GetLinkedAnimLayerInstancesByGroup_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLinkedAnimLayerInstancesByGroup_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLinkedAnimLayerInstancesByGroup_InGroup_PropertyAddress, GetLinkedAnimLayerInstancesByGroup_FunctionAddress, "InGroup");
+		GetLinkedAnimLayerInstancesByGroup_InGroup_Offset = NativeReflectionCached.GetPropertyOffset(GetLinkedAnimLayerInstancesByGroup_FunctionAddress, "InGroup");
+		GetLinkedAnimLayerInstancesByGroup_InGroup_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLinkedAnimLayerInstancesByGroup_FunctionAddress, "InGroup", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLinkedAnimLayerInstancesByGroup_OutLinkedInstances_PropertyAddress, GetLinkedAnimLayerInstancesByGroup_FunctionAddress, "OutLinkedInstances");
+		GetLinkedAnimLayerInstancesByGroup_OutLinkedInstances_Offset = NativeReflectionCached.GetPropertyOffset(GetLinkedAnimLayerInstancesByGroup_FunctionAddress, "OutLinkedInstances");
+		GetLinkedAnimLayerInstancesByGroup_OutLinkedInstances_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLinkedAnimLayerInstancesByGroup_FunctionAddress, "OutLinkedInstances", Classes.FArrayProperty);
+		GetLinkedAnimLayerInstancesByGroup_IsValid = GetLinkedAnimLayerInstancesByGroup_FunctionAddress != IntPtr.Zero && GetLinkedAnimLayerInstancesByGroup_InGroup_IsValid && GetLinkedAnimLayerInstancesByGroup_OutLinkedInstances_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetLinkedAnimLayerInstancesByGroup", GetLinkedAnimLayerInstancesByGroup_IsValid);
+		GetLinkedAnimLayerInstanceByGroupAndClass_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetLinkedAnimLayerInstanceByGroupAndClass");
+		GetLinkedAnimLayerInstanceByGroupAndClass_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLinkedAnimLayerInstanceByGroupAndClass_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLinkedAnimLayerInstanceByGroupAndClass_InGroup_PropertyAddress, GetLinkedAnimLayerInstanceByGroupAndClass_FunctionAddress, "InGroup");
+		GetLinkedAnimLayerInstanceByGroupAndClass_InGroup_Offset = NativeReflectionCached.GetPropertyOffset(GetLinkedAnimLayerInstanceByGroupAndClass_FunctionAddress, "InGroup");
+		GetLinkedAnimLayerInstanceByGroupAndClass_InGroup_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLinkedAnimLayerInstanceByGroupAndClass_FunctionAddress, "InGroup", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLinkedAnimLayerInstanceByGroupAndClass_InClass_PropertyAddress, GetLinkedAnimLayerInstanceByGroupAndClass_FunctionAddress, "InClass");
+		GetLinkedAnimLayerInstanceByGroupAndClass_InClass_Offset = NativeReflectionCached.GetPropertyOffset(GetLinkedAnimLayerInstanceByGroupAndClass_FunctionAddress, "InClass");
+		GetLinkedAnimLayerInstanceByGroupAndClass_InClass_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLinkedAnimLayerInstanceByGroupAndClass_FunctionAddress, "InClass", Classes.FClassProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLinkedAnimLayerInstanceByGroupAndClass_ReturnValue_PropertyAddress, GetLinkedAnimLayerInstanceByGroupAndClass_FunctionAddress, "ReturnValue");
+		GetLinkedAnimLayerInstanceByGroupAndClass_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLinkedAnimLayerInstanceByGroupAndClass_FunctionAddress, "ReturnValue");
+		GetLinkedAnimLayerInstanceByGroupAndClass_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLinkedAnimLayerInstanceByGroupAndClass_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		GetLinkedAnimLayerInstanceByGroupAndClass_IsValid = GetLinkedAnimLayerInstanceByGroupAndClass_FunctionAddress != IntPtr.Zero && GetLinkedAnimLayerInstanceByGroupAndClass_InGroup_IsValid && GetLinkedAnimLayerInstanceByGroupAndClass_InClass_IsValid && GetLinkedAnimLayerInstanceByGroupAndClass_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetLinkedAnimLayerInstanceByGroupAndClass", GetLinkedAnimLayerInstanceByGroupAndClass_IsValid);
+		GetLinkedAnimLayerInstanceByGroup_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetLinkedAnimLayerInstanceByGroup");
+		GetLinkedAnimLayerInstanceByGroup_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLinkedAnimLayerInstanceByGroup_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLinkedAnimLayerInstanceByGroup_InGroup_PropertyAddress, GetLinkedAnimLayerInstanceByGroup_FunctionAddress, "InGroup");
+		GetLinkedAnimLayerInstanceByGroup_InGroup_Offset = NativeReflectionCached.GetPropertyOffset(GetLinkedAnimLayerInstanceByGroup_FunctionAddress, "InGroup");
+		GetLinkedAnimLayerInstanceByGroup_InGroup_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLinkedAnimLayerInstanceByGroup_FunctionAddress, "InGroup", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLinkedAnimLayerInstanceByGroup_ReturnValue_PropertyAddress, GetLinkedAnimLayerInstanceByGroup_FunctionAddress, "ReturnValue");
+		GetLinkedAnimLayerInstanceByGroup_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLinkedAnimLayerInstanceByGroup_FunctionAddress, "ReturnValue");
+		GetLinkedAnimLayerInstanceByGroup_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLinkedAnimLayerInstanceByGroup_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		GetLinkedAnimLayerInstanceByGroup_IsValid = GetLinkedAnimLayerInstanceByGroup_FunctionAddress != IntPtr.Zero && GetLinkedAnimLayerInstanceByGroup_InGroup_IsValid && GetLinkedAnimLayerInstanceByGroup_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetLinkedAnimLayerInstanceByGroup", GetLinkedAnimLayerInstanceByGroup_IsValid);
+		GetLinkedAnimLayerInstanceByClass_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetLinkedAnimLayerInstanceByClass");
+		GetLinkedAnimLayerInstanceByClass_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLinkedAnimLayerInstanceByClass_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLinkedAnimLayerInstanceByClass_InClass_PropertyAddress, GetLinkedAnimLayerInstanceByClass_FunctionAddress, "InClass");
+		GetLinkedAnimLayerInstanceByClass_InClass_Offset = NativeReflectionCached.GetPropertyOffset(GetLinkedAnimLayerInstanceByClass_FunctionAddress, "InClass");
+		GetLinkedAnimLayerInstanceByClass_InClass_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLinkedAnimLayerInstanceByClass_FunctionAddress, "InClass", Classes.FClassProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLinkedAnimLayerInstanceByClass_ReturnValue_PropertyAddress, GetLinkedAnimLayerInstanceByClass_FunctionAddress, "ReturnValue");
+		GetLinkedAnimLayerInstanceByClass_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLinkedAnimLayerInstanceByClass_FunctionAddress, "ReturnValue");
+		GetLinkedAnimLayerInstanceByClass_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLinkedAnimLayerInstanceByClass_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		GetLinkedAnimLayerInstanceByClass_IsValid = GetLinkedAnimLayerInstanceByClass_FunctionAddress != IntPtr.Zero && GetLinkedAnimLayerInstanceByClass_InClass_IsValid && GetLinkedAnimLayerInstanceByClass_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetLinkedAnimLayerInstanceByClass", GetLinkedAnimLayerInstanceByClass_IsValid);
+		GetLinkedAnimGraphInstanceByTag_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetLinkedAnimGraphInstanceByTag");
+		GetLinkedAnimGraphInstanceByTag_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLinkedAnimGraphInstanceByTag_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLinkedAnimGraphInstanceByTag_InTag_PropertyAddress, GetLinkedAnimGraphInstanceByTag_FunctionAddress, "InTag");
+		GetLinkedAnimGraphInstanceByTag_InTag_Offset = NativeReflectionCached.GetPropertyOffset(GetLinkedAnimGraphInstanceByTag_FunctionAddress, "InTag");
+		GetLinkedAnimGraphInstanceByTag_InTag_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLinkedAnimGraphInstanceByTag_FunctionAddress, "InTag", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLinkedAnimGraphInstanceByTag_ReturnValue_PropertyAddress, GetLinkedAnimGraphInstanceByTag_FunctionAddress, "ReturnValue");
+		GetLinkedAnimGraphInstanceByTag_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLinkedAnimGraphInstanceByTag_FunctionAddress, "ReturnValue");
+		GetLinkedAnimGraphInstanceByTag_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLinkedAnimGraphInstanceByTag_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		GetLinkedAnimGraphInstanceByTag_IsValid = GetLinkedAnimGraphInstanceByTag_FunctionAddress != IntPtr.Zero && GetLinkedAnimGraphInstanceByTag_InTag_IsValid && GetLinkedAnimGraphInstanceByTag_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetLinkedAnimGraphInstanceByTag", GetLinkedAnimGraphInstanceByTag_IsValid);
+		GetDeltaSeconds_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetDeltaSeconds");
+		GetDeltaSeconds_ParamsSize = NativeReflection.GetFunctionParamsSize(GetDeltaSeconds_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetDeltaSeconds_ReturnValue_PropertyAddress, GetDeltaSeconds_FunctionAddress, "ReturnValue");
+		GetDeltaSeconds_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetDeltaSeconds_FunctionAddress, "ReturnValue");
+		GetDeltaSeconds_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetDeltaSeconds_FunctionAddress, "ReturnValue", Classes.FFloatProperty);
+		GetDeltaSeconds_IsValid = GetDeltaSeconds_FunctionAddress != IntPtr.Zero && GetDeltaSeconds_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetDeltaSeconds", GetDeltaSeconds_IsValid);
+		GetCurveValue_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetCurveValue");
+		GetCurveValue_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCurveValue_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCurveValue_CurveName_PropertyAddress, GetCurveValue_FunctionAddress, "CurveName");
+		GetCurveValue_CurveName_Offset = NativeReflectionCached.GetPropertyOffset(GetCurveValue_FunctionAddress, "CurveName");
+		GetCurveValue_CurveName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCurveValue_FunctionAddress, "CurveName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCurveValue_ReturnValue_PropertyAddress, GetCurveValue_FunctionAddress, "ReturnValue");
+		GetCurveValue_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCurveValue_FunctionAddress, "ReturnValue");
+		GetCurveValue_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCurveValue_FunctionAddress, "ReturnValue", Classes.FFloatProperty);
+		GetCurveValue_IsValid = GetCurveValue_FunctionAddress != IntPtr.Zero && GetCurveValue_CurveName_IsValid && GetCurveValue_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetCurveValue", GetCurveValue_IsValid);
+		GetCurrentActiveMontage_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetCurrentActiveMontage");
+		GetCurrentActiveMontage_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCurrentActiveMontage_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCurrentActiveMontage_ReturnValue_PropertyAddress, GetCurrentActiveMontage_FunctionAddress, "ReturnValue");
+		GetCurrentActiveMontage_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCurrentActiveMontage_FunctionAddress, "ReturnValue");
+		GetCurrentActiveMontage_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCurrentActiveMontage_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		GetCurrentActiveMontage_IsValid = GetCurrentActiveMontage_FunctionAddress != IntPtr.Zero && GetCurrentActiveMontage_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetCurrentActiveMontage", GetCurrentActiveMontage_IsValid);
+		GetAllCurveNames_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetAllCurveNames");
+		GetAllCurveNames_ParamsSize = NativeReflection.GetFunctionParamsSize(GetAllCurveNames_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetAllCurveNames_OutNames_PropertyAddress, GetAllCurveNames_FunctionAddress, "OutNames");
+		GetAllCurveNames_OutNames_Offset = NativeReflectionCached.GetPropertyOffset(GetAllCurveNames_FunctionAddress, "OutNames");
+		GetAllCurveNames_OutNames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetAllCurveNames_FunctionAddress, "OutNames", Classes.FArrayProperty);
+		GetAllCurveNames_IsValid = GetAllCurveNames_FunctionAddress != IntPtr.Zero && GetAllCurveNames_OutNames_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetAllCurveNames", GetAllCurveNames_IsValid);
+		GetActiveCurveNames_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "GetActiveCurveNames");
+		GetActiveCurveNames_ParamsSize = NativeReflection.GetFunctionParamsSize(GetActiveCurveNames_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetActiveCurveNames_CurveType_PropertyAddress, GetActiveCurveNames_FunctionAddress, "CurveType");
+		GetActiveCurveNames_CurveType_Offset = NativeReflectionCached.GetPropertyOffset(GetActiveCurveNames_FunctionAddress, "CurveType");
+		GetActiveCurveNames_CurveType_IsValid = NativeReflectionCached.ValidatePropertyClass(GetActiveCurveNames_FunctionAddress, "CurveType", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetActiveCurveNames_OutNames_PropertyAddress, GetActiveCurveNames_FunctionAddress, "OutNames");
+		GetActiveCurveNames_OutNames_Offset = NativeReflectionCached.GetPropertyOffset(GetActiveCurveNames_FunctionAddress, "OutNames");
+		GetActiveCurveNames_OutNames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetActiveCurveNames_FunctionAddress, "OutNames", Classes.FArrayProperty);
+		GetActiveCurveNames_IsValid = GetActiveCurveNames_FunctionAddress != IntPtr.Zero && GetActiveCurveNames_CurveType_IsValid && GetActiveCurveNames_OutNames_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:GetActiveCurveNames", GetActiveCurveNames_IsValid);
+		ClearMorphTargets_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "ClearMorphTargets");
+		ClearMorphTargets_ParamsSize = NativeReflection.GetFunctionParamsSize(ClearMorphTargets_FunctionAddress);
+		ClearMorphTargets_IsValid = ClearMorphTargets_FunctionAddress != IntPtr.Zero;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:ClearMorphTargets", ClearMorphTargets_IsValid);
+		CalculateDirection_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "CalculateDirection");
+		CalculateDirection_ParamsSize = NativeReflection.GetFunctionParamsSize(CalculateDirection_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref CalculateDirection_Velocity_PropertyAddress, CalculateDirection_FunctionAddress, "Velocity");
+		CalculateDirection_Velocity_Offset = NativeReflectionCached.GetPropertyOffset(CalculateDirection_FunctionAddress, "Velocity");
+		CalculateDirection_Velocity_IsValid = NativeReflectionCached.ValidatePropertyClass(CalculateDirection_FunctionAddress, "Velocity", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref CalculateDirection_BaseRotation_PropertyAddress, CalculateDirection_FunctionAddress, "BaseRotation");
+		CalculateDirection_BaseRotation_Offset = NativeReflectionCached.GetPropertyOffset(CalculateDirection_FunctionAddress, "BaseRotation");
+		CalculateDirection_BaseRotation_IsValid = NativeReflectionCached.ValidatePropertyClass(CalculateDirection_FunctionAddress, "BaseRotation", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref CalculateDirection_ReturnValue_PropertyAddress, CalculateDirection_FunctionAddress, "ReturnValue");
+		CalculateDirection_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(CalculateDirection_FunctionAddress, "ReturnValue");
+		CalculateDirection_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(CalculateDirection_FunctionAddress, "ReturnValue", Classes.FFloatProperty);
+		CalculateDirection_IsValid = CalculateDirection_FunctionAddress != IntPtr.Zero && CalculateDirection_Velocity_IsValid && CalculateDirection_BaseRotation_IsValid && CalculateDirection_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:CalculateDirection", CalculateDirection_IsValid);
+		BlueprintUpdateAnimation_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "BlueprintUpdateAnimation");
+		BlueprintUpdateAnimation_ParamsSize = NativeReflection.GetFunctionParamsSize(BlueprintUpdateAnimation_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BlueprintUpdateAnimation_DeltaTimeX_PropertyAddress, BlueprintUpdateAnimation_FunctionAddress, "DeltaTimeX");
+		BlueprintUpdateAnimation_DeltaTimeX_Offset = NativeReflectionCached.GetPropertyOffset(BlueprintUpdateAnimation_FunctionAddress, "DeltaTimeX");
+		BlueprintUpdateAnimation_DeltaTimeX_IsValid = NativeReflectionCached.ValidatePropertyClass(BlueprintUpdateAnimation_FunctionAddress, "DeltaTimeX", Classes.FFloatProperty);
+		BlueprintUpdateAnimation_IsValid = BlueprintUpdateAnimation_FunctionAddress != IntPtr.Zero && BlueprintUpdateAnimation_DeltaTimeX_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:BlueprintUpdateAnimation", BlueprintUpdateAnimation_IsValid);
+		BlueprintThreadSafeUpdateAnimation_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "BlueprintThreadSafeUpdateAnimation");
+		BlueprintThreadSafeUpdateAnimation_ParamsSize = NativeReflection.GetFunctionParamsSize(BlueprintThreadSafeUpdateAnimation_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BlueprintThreadSafeUpdateAnimation_DeltaTime_PropertyAddress, BlueprintThreadSafeUpdateAnimation_FunctionAddress, "DeltaTime");
+		BlueprintThreadSafeUpdateAnimation_DeltaTime_Offset = NativeReflectionCached.GetPropertyOffset(BlueprintThreadSafeUpdateAnimation_FunctionAddress, "DeltaTime");
+		BlueprintThreadSafeUpdateAnimation_DeltaTime_IsValid = NativeReflectionCached.ValidatePropertyClass(BlueprintThreadSafeUpdateAnimation_FunctionAddress, "DeltaTime", Classes.FFloatProperty);
+		BlueprintThreadSafeUpdateAnimation_IsValid = BlueprintThreadSafeUpdateAnimation_FunctionAddress != IntPtr.Zero && BlueprintThreadSafeUpdateAnimation_DeltaTime_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:BlueprintThreadSafeUpdateAnimation", BlueprintThreadSafeUpdateAnimation_IsValid);
+		BlueprintPostEvaluateAnimation_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "BlueprintPostEvaluateAnimation");
+		BlueprintPostEvaluateAnimation_ParamsSize = NativeReflection.GetFunctionParamsSize(BlueprintPostEvaluateAnimation_FunctionAddress);
+		BlueprintPostEvaluateAnimation_IsValid = BlueprintPostEvaluateAnimation_FunctionAddress != IntPtr.Zero;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:BlueprintPostEvaluateAnimation", BlueprintPostEvaluateAnimation_IsValid);
+		BlueprintLinkedAnimationLayersInitialized_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "BlueprintLinkedAnimationLayersInitialized");
+		BlueprintLinkedAnimationLayersInitialized_ParamsSize = NativeReflection.GetFunctionParamsSize(BlueprintLinkedAnimationLayersInitialized_FunctionAddress);
+		BlueprintLinkedAnimationLayersInitialized_IsValid = BlueprintLinkedAnimationLayersInitialized_FunctionAddress != IntPtr.Zero;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:BlueprintLinkedAnimationLayersInitialized", BlueprintLinkedAnimationLayersInitialized_IsValid);
+		BlueprintInitializeAnimation_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "BlueprintInitializeAnimation");
+		BlueprintInitializeAnimation_ParamsSize = NativeReflection.GetFunctionParamsSize(BlueprintInitializeAnimation_FunctionAddress);
+		BlueprintInitializeAnimation_IsValid = BlueprintInitializeAnimation_FunctionAddress != IntPtr.Zero;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:BlueprintInitializeAnimation", BlueprintInitializeAnimation_IsValid);
+		BlueprintBeginPlay_FunctionAddress = NativeReflectionCached.GetFunction(intPtr, "BlueprintBeginPlay");
+		BlueprintBeginPlay_ParamsSize = NativeReflection.GetFunctionParamsSize(BlueprintBeginPlay_FunctionAddress);
+		BlueprintBeginPlay_IsValid = BlueprintBeginPlay_FunctionAddress != IntPtr.Zero;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.AnimInstance:BlueprintBeginPlay", BlueprintBeginPlay_IsValid);
+	}
+}

@@ -1,0 +1,4301 @@
+using System;
+using System.Runtime.CompilerServices;
+using UnrealEngine.InterchangeCore;
+using UnrealEngine.Runtime;
+
+namespace UnrealEngine.Plugins.InterchangeNodes;
+
+[UClass(Flags = (ClassFlags)810549408uL, Config = "Engine")]
+[BlueprintType]
+[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode", "InterchangeNodes", UnrealModuleType.EnginePlugin)]
+public class UInterchangeTextureFactoryNode : UInterchangeBaseNode
+{
+	private static bool SetCustomVirtualTextureStreaming_IsValid;
+
+	private static IntPtr SetCustomVirtualTextureStreaming_FunctionAddress;
+
+	private static int SetCustomVirtualTextureStreaming_ParamsSize;
+
+	private static bool SetCustomVirtualTextureStreaming_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomVirtualTextureStreaming_AttributeValue_PropertyAddress;
+
+	private static int SetCustomVirtualTextureStreaming_AttributeValue_Offset;
+
+	private static bool SetCustomVirtualTextureStreaming_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomVirtualTextureStreaming_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomVirtualTextureStreaming_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomVirtualTextureStreaming_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomVirtualTextureStreaming_ReturnValue_PropertyAddress;
+
+	private static int SetCustomVirtualTextureStreaming_ReturnValue_Offset;
+
+	private static bool SetCustomTranslatedTextureNodeUid_IsValid;
+
+	private static IntPtr SetCustomTranslatedTextureNodeUid_FunctionAddress;
+
+	private static int SetCustomTranslatedTextureNodeUid_ParamsSize;
+
+	private static bool SetCustomTranslatedTextureNodeUid_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomTranslatedTextureNodeUid_AttributeValue_PropertyAddress;
+
+	private static int SetCustomTranslatedTextureNodeUid_AttributeValue_Offset;
+
+	private static bool SetCustomTranslatedTextureNodeUid_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomTranslatedTextureNodeUid_ReturnValue_PropertyAddress;
+
+	private static int SetCustomTranslatedTextureNodeUid_ReturnValue_Offset;
+
+	private static bool SetCustomSRGB_IsValid;
+
+	private static IntPtr SetCustomSRGB_FunctionAddress;
+
+	private static int SetCustomSRGB_ParamsSize;
+
+	private static bool SetCustomSRGB_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomSRGB_AttributeValue_PropertyAddress;
+
+	private static int SetCustomSRGB_AttributeValue_Offset;
+
+	private static bool SetCustomSRGB_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomSRGB_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomSRGB_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomSRGB_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomSRGB_ReturnValue_PropertyAddress;
+
+	private static int SetCustomSRGB_ReturnValue_Offset;
+
+	private static bool SetCustomPowerOfTwoMode_IsValid;
+
+	private static IntPtr SetCustomPowerOfTwoMode_FunctionAddress;
+
+	private static int SetCustomPowerOfTwoMode_ParamsSize;
+
+	private static bool SetCustomPowerOfTwoMode_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomPowerOfTwoMode_AttributeValue_PropertyAddress;
+
+	private static int SetCustomPowerOfTwoMode_AttributeValue_Offset;
+
+	private static bool SetCustomPowerOfTwoMode_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomPowerOfTwoMode_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomPowerOfTwoMode_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomPowerOfTwoMode_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomPowerOfTwoMode_ReturnValue_PropertyAddress;
+
+	private static int SetCustomPowerOfTwoMode_ReturnValue_Offset;
+
+	private static bool SetCustomPaddingColor_IsValid;
+
+	private static IntPtr SetCustomPaddingColor_FunctionAddress;
+
+	private static int SetCustomPaddingColor_ParamsSize;
+
+	private static bool SetCustomPaddingColor_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomPaddingColor_AttributeValue_PropertyAddress;
+
+	private static int SetCustomPaddingColor_AttributeValue_Offset;
+
+	private static bool SetCustomPaddingColor_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomPaddingColor_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomPaddingColor_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomPaddingColor_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomPaddingColor_ReturnValue_PropertyAddress;
+
+	private static int SetCustomPaddingColor_ReturnValue_Offset;
+
+	private static bool SetCustomMipLoadOptions_IsValid;
+
+	private static IntPtr SetCustomMipLoadOptions_FunctionAddress;
+
+	private static int SetCustomMipLoadOptions_ParamsSize;
+
+	private static bool SetCustomMipLoadOptions_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomMipLoadOptions_AttributeValue_PropertyAddress;
+
+	private static int SetCustomMipLoadOptions_AttributeValue_Offset;
+
+	private static bool SetCustomMipLoadOptions_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomMipLoadOptions_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomMipLoadOptions_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomMipLoadOptions_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomMipLoadOptions_ReturnValue_PropertyAddress;
+
+	private static int SetCustomMipLoadOptions_ReturnValue_Offset;
+
+	private static bool SetCustomMipGenSettings_IsValid;
+
+	private static IntPtr SetCustomMipGenSettings_FunctionAddress;
+
+	private static int SetCustomMipGenSettings_ParamsSize;
+
+	private static bool SetCustomMipGenSettings_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomMipGenSettings_AttributeValue_PropertyAddress;
+
+	private static int SetCustomMipGenSettings_AttributeValue_Offset;
+
+	private static bool SetCustomMipGenSettings_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomMipGenSettings_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomMipGenSettings_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomMipGenSettings_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomMipGenSettings_ReturnValue_PropertyAddress;
+
+	private static int SetCustomMipGenSettings_ReturnValue_Offset;
+
+	private static bool SetCustomMaxTextureSize_IsValid;
+
+	private static IntPtr SetCustomMaxTextureSize_FunctionAddress;
+
+	private static int SetCustomMaxTextureSize_ParamsSize;
+
+	private static bool SetCustomMaxTextureSize_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomMaxTextureSize_AttributeValue_PropertyAddress;
+
+	private static int SetCustomMaxTextureSize_AttributeValue_Offset;
+
+	private static bool SetCustomMaxTextureSize_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomMaxTextureSize_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomMaxTextureSize_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomMaxTextureSize_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomMaxTextureSize_ReturnValue_PropertyAddress;
+
+	private static int SetCustomMaxTextureSize_ReturnValue_Offset;
+
+	private static bool SetCustomLossyCompressionAmount_IsValid;
+
+	private static IntPtr SetCustomLossyCompressionAmount_FunctionAddress;
+
+	private static int SetCustomLossyCompressionAmount_ParamsSize;
+
+	private static bool SetCustomLossyCompressionAmount_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomLossyCompressionAmount_AttributeValue_PropertyAddress;
+
+	private static int SetCustomLossyCompressionAmount_AttributeValue_Offset;
+
+	private static bool SetCustomLossyCompressionAmount_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomLossyCompressionAmount_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomLossyCompressionAmount_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomLossyCompressionAmount_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomLossyCompressionAmount_ReturnValue_PropertyAddress;
+
+	private static int SetCustomLossyCompressionAmount_ReturnValue_Offset;
+
+	private static bool SetCustomLODGroup_IsValid;
+
+	private static IntPtr SetCustomLODGroup_FunctionAddress;
+
+	private static int SetCustomLODGroup_ParamsSize;
+
+	private static bool SetCustomLODGroup_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomLODGroup_AttributeValue_PropertyAddress;
+
+	private static int SetCustomLODGroup_AttributeValue_Offset;
+
+	private static bool SetCustomLODGroup_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomLODGroup_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomLODGroup_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomLODGroup_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomLODGroup_ReturnValue_PropertyAddress;
+
+	private static int SetCustomLODGroup_ReturnValue_Offset;
+
+	private static bool SetCustomLODBias_IsValid;
+
+	private static IntPtr SetCustomLODBias_FunctionAddress;
+
+	private static int SetCustomLODBias_ParamsSize;
+
+	private static bool SetCustomLODBias_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomLODBias_AttributeValue_PropertyAddress;
+
+	private static int SetCustomLODBias_AttributeValue_Offset;
+
+	private static bool SetCustomLODBias_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomLODBias_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomLODBias_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomLODBias_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomLODBias_ReturnValue_PropertyAddress;
+
+	private static int SetCustomLODBias_ReturnValue_Offset;
+
+	private static bool SetCustomFilter_IsValid;
+
+	private static IntPtr SetCustomFilter_FunctionAddress;
+
+	private static int SetCustomFilter_ParamsSize;
+
+	private static bool SetCustomFilter_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomFilter_AttributeValue_PropertyAddress;
+
+	private static int SetCustomFilter_AttributeValue_Offset;
+
+	private static bool SetCustomFilter_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomFilter_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomFilter_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomFilter_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomFilter_ReturnValue_PropertyAddress;
+
+	private static int SetCustomFilter_ReturnValue_Offset;
+
+	private static bool SetCustomDownscaleOptions_IsValid;
+
+	private static IntPtr SetCustomDownscaleOptions_FunctionAddress;
+
+	private static int SetCustomDownscaleOptions_ParamsSize;
+
+	private static bool SetCustomDownscaleOptions_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomDownscaleOptions_AttributeValue_PropertyAddress;
+
+	private static int SetCustomDownscaleOptions_AttributeValue_Offset;
+
+	private static bool SetCustomDownscaleOptions_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomDownscaleOptions_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomDownscaleOptions_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomDownscaleOptions_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomDownscaleOptions_ReturnValue_PropertyAddress;
+
+	private static int SetCustomDownscaleOptions_ReturnValue_Offset;
+
+	private static bool SetCustomDownscale_IsValid;
+
+	private static IntPtr SetCustomDownscale_FunctionAddress;
+
+	private static int SetCustomDownscale_ParamsSize;
+
+	private static bool SetCustomDownscale_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomDownscale_AttributeValue_PropertyAddress;
+
+	private static int SetCustomDownscale_AttributeValue_Offset;
+
+	private static bool SetCustomDownscale_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomDownscale_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomDownscale_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomDownscale_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomDownscale_ReturnValue_PropertyAddress;
+
+	private static int SetCustomDownscale_ReturnValue_Offset;
+
+	private static bool SetCustomDeferCompression_IsValid;
+
+	private static IntPtr SetCustomDeferCompression_FunctionAddress;
+
+	private static int SetCustomDeferCompression_ParamsSize;
+
+	private static bool SetCustomDeferCompression_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomDeferCompression_AttributeValue_PropertyAddress;
+
+	private static int SetCustomDeferCompression_AttributeValue_Offset;
+
+	private static bool SetCustomDeferCompression_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomDeferCompression_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomDeferCompression_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomDeferCompression_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomDeferCompression_ReturnValue_PropertyAddress;
+
+	private static int SetCustomDeferCompression_ReturnValue_Offset;
+
+	private static bool SetCustomCompressionSettings_IsValid;
+
+	private static IntPtr SetCustomCompressionSettings_FunctionAddress;
+
+	private static int SetCustomCompressionSettings_ParamsSize;
+
+	private static bool SetCustomCompressionSettings_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomCompressionSettings_AttributeValue_PropertyAddress;
+
+	private static int SetCustomCompressionSettings_AttributeValue_Offset;
+
+	private static bool SetCustomCompressionSettings_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomCompressionSettings_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomCompressionSettings_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomCompressionSettings_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomCompressionSettings_ReturnValue_PropertyAddress;
+
+	private static int SetCustomCompressionSettings_ReturnValue_Offset;
+
+	private static bool SetCustomCompressionQuality_IsValid;
+
+	private static IntPtr SetCustomCompressionQuality_FunctionAddress;
+
+	private static int SetCustomCompressionQuality_ParamsSize;
+
+	private static bool SetCustomCompressionQuality_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomCompressionQuality_AttributeValue_PropertyAddress;
+
+	private static int SetCustomCompressionQuality_AttributeValue_Offset;
+
+	private static bool SetCustomCompressionQuality_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomCompressionQuality_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomCompressionQuality_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomCompressionQuality_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomCompressionQuality_ReturnValue_PropertyAddress;
+
+	private static int SetCustomCompressionQuality_ReturnValue_Offset;
+
+	private static bool SetCustomCompressionNoAlpha_IsValid;
+
+	private static IntPtr SetCustomCompressionNoAlpha_FunctionAddress;
+
+	private static int SetCustomCompressionNoAlpha_ParamsSize;
+
+	private static bool SetCustomCompressionNoAlpha_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomCompressionNoAlpha_AttributeValue_PropertyAddress;
+
+	private static int SetCustomCompressionNoAlpha_AttributeValue_Offset;
+
+	private static bool SetCustomCompressionNoAlpha_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomCompressionNoAlpha_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomCompressionNoAlpha_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomCompressionNoAlpha_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomCompressionNoAlpha_ReturnValue_PropertyAddress;
+
+	private static int SetCustomCompressionNoAlpha_ReturnValue_Offset;
+
+	private static bool SetCustomCompositeTextureMode_IsValid;
+
+	private static IntPtr SetCustomCompositeTextureMode_FunctionAddress;
+
+	private static int SetCustomCompositeTextureMode_ParamsSize;
+
+	private static bool SetCustomCompositeTextureMode_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomCompositeTextureMode_AttributeValue_PropertyAddress;
+
+	private static int SetCustomCompositeTextureMode_AttributeValue_Offset;
+
+	private static bool SetCustomCompositeTextureMode_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomCompositeTextureMode_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomCompositeTextureMode_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomCompositeTextureMode_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomCompositeTextureMode_ReturnValue_PropertyAddress;
+
+	private static int SetCustomCompositeTextureMode_ReturnValue_Offset;
+
+	private static bool SetCustomCompositePower_IsValid;
+
+	private static IntPtr SetCustomCompositePower_FunctionAddress;
+
+	private static int SetCustomCompositePower_ParamsSize;
+
+	private static bool SetCustomCompositePower_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomCompositePower_AttributeValue_PropertyAddress;
+
+	private static int SetCustomCompositePower_AttributeValue_Offset;
+
+	private static bool SetCustomCompositePower_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomCompositePower_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomCompositePower_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomCompositePower_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomCompositePower_ReturnValue_PropertyAddress;
+
+	private static int SetCustomCompositePower_ReturnValue_Offset;
+
+	private static bool SetCustomChromaKeyThreshold_IsValid;
+
+	private static IntPtr SetCustomChromaKeyThreshold_FunctionAddress;
+
+	private static int SetCustomChromaKeyThreshold_ParamsSize;
+
+	private static bool SetCustomChromaKeyThreshold_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomChromaKeyThreshold_AttributeValue_PropertyAddress;
+
+	private static int SetCustomChromaKeyThreshold_AttributeValue_Offset;
+
+	private static bool SetCustomChromaKeyThreshold_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomChromaKeyThreshold_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomChromaKeyThreshold_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomChromaKeyThreshold_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomChromaKeyThreshold_ReturnValue_PropertyAddress;
+
+	private static int SetCustomChromaKeyThreshold_ReturnValue_Offset;
+
+	private static bool SetCustomChromaKeyColor_IsValid;
+
+	private static IntPtr SetCustomChromaKeyColor_FunctionAddress;
+
+	private static int SetCustomChromaKeyColor_ParamsSize;
+
+	private static bool SetCustomChromaKeyColor_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomChromaKeyColor_AttributeValue_PropertyAddress;
+
+	private static int SetCustomChromaKeyColor_AttributeValue_Offset;
+
+	private static bool SetCustomChromaKeyColor_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomChromaKeyColor_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomChromaKeyColor_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomChromaKeyColor_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomChromaKeyColor_ReturnValue_PropertyAddress;
+
+	private static int SetCustomChromaKeyColor_ReturnValue_Offset;
+
+	private static bool SetCustombUseLegacyGamma_IsValid;
+
+	private static IntPtr SetCustombUseLegacyGamma_FunctionAddress;
+
+	private static int SetCustombUseLegacyGamma_ParamsSize;
+
+	private static bool SetCustombUseLegacyGamma_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustombUseLegacyGamma_AttributeValue_PropertyAddress;
+
+	private static int SetCustombUseLegacyGamma_AttributeValue_Offset;
+
+	private static bool SetCustombUseLegacyGamma_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustombUseLegacyGamma_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustombUseLegacyGamma_bAddApplyDelegate_Offset;
+
+	private static bool SetCustombUseLegacyGamma_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustombUseLegacyGamma_ReturnValue_PropertyAddress;
+
+	private static int SetCustombUseLegacyGamma_ReturnValue_Offset;
+
+	private static bool SetCustombPreserveBorder_IsValid;
+
+	private static IntPtr SetCustombPreserveBorder_FunctionAddress;
+
+	private static int SetCustombPreserveBorder_ParamsSize;
+
+	private static bool SetCustombPreserveBorder_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustombPreserveBorder_AttributeValue_PropertyAddress;
+
+	private static int SetCustombPreserveBorder_AttributeValue_Offset;
+
+	private static bool SetCustombPreserveBorder_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustombPreserveBorder_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustombPreserveBorder_bAddApplyDelegate_Offset;
+
+	private static bool SetCustombPreserveBorder_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustombPreserveBorder_ReturnValue_PropertyAddress;
+
+	private static int SetCustombPreserveBorder_ReturnValue_Offset;
+
+	private static bool SetCustombFlipGreenChannel_IsValid;
+
+	private static IntPtr SetCustombFlipGreenChannel_FunctionAddress;
+
+	private static int SetCustombFlipGreenChannel_ParamsSize;
+
+	private static bool SetCustombFlipGreenChannel_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustombFlipGreenChannel_AttributeValue_PropertyAddress;
+
+	private static int SetCustombFlipGreenChannel_AttributeValue_Offset;
+
+	private static bool SetCustombFlipGreenChannel_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustombFlipGreenChannel_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustombFlipGreenChannel_bAddApplyDelegate_Offset;
+
+	private static bool SetCustombFlipGreenChannel_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustombFlipGreenChannel_ReturnValue_PropertyAddress;
+
+	private static int SetCustombFlipGreenChannel_ReturnValue_Offset;
+
+	private static bool SetCustombDoScaleMipsForAlphaCoverage_IsValid;
+
+	private static IntPtr SetCustombDoScaleMipsForAlphaCoverage_FunctionAddress;
+
+	private static int SetCustombDoScaleMipsForAlphaCoverage_ParamsSize;
+
+	private static bool SetCustombDoScaleMipsForAlphaCoverage_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustombDoScaleMipsForAlphaCoverage_AttributeValue_PropertyAddress;
+
+	private static int SetCustombDoScaleMipsForAlphaCoverage_AttributeValue_Offset;
+
+	private static bool SetCustombDoScaleMipsForAlphaCoverage_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustombDoScaleMipsForAlphaCoverage_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustombDoScaleMipsForAlphaCoverage_bAddApplyDelegate_Offset;
+
+	private static bool SetCustombDoScaleMipsForAlphaCoverage_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustombDoScaleMipsForAlphaCoverage_ReturnValue_PropertyAddress;
+
+	private static int SetCustombDoScaleMipsForAlphaCoverage_ReturnValue_Offset;
+
+	private static bool SetCustombDitherMipMapAlpha_IsValid;
+
+	private static IntPtr SetCustombDitherMipMapAlpha_FunctionAddress;
+
+	private static int SetCustombDitherMipMapAlpha_ParamsSize;
+
+	private static bool SetCustombDitherMipMapAlpha_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustombDitherMipMapAlpha_AttributeValue_PropertyAddress;
+
+	private static int SetCustombDitherMipMapAlpha_AttributeValue_Offset;
+
+	private static bool SetCustombDitherMipMapAlpha_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustombDitherMipMapAlpha_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustombDitherMipMapAlpha_bAddApplyDelegate_Offset;
+
+	private static bool SetCustombDitherMipMapAlpha_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustombDitherMipMapAlpha_ReturnValue_PropertyAddress;
+
+	private static int SetCustombDitherMipMapAlpha_ReturnValue_Offset;
+
+	private static bool SetCustombChromaKeyTexture_IsValid;
+
+	private static IntPtr SetCustombChromaKeyTexture_FunctionAddress;
+
+	private static int SetCustombChromaKeyTexture_ParamsSize;
+
+	private static bool SetCustombChromaKeyTexture_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustombChromaKeyTexture_AttributeValue_PropertyAddress;
+
+	private static int SetCustombChromaKeyTexture_AttributeValue_Offset;
+
+	private static bool SetCustombChromaKeyTexture_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustombChromaKeyTexture_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustombChromaKeyTexture_bAddApplyDelegate_Offset;
+
+	private static bool SetCustombChromaKeyTexture_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustombChromaKeyTexture_ReturnValue_PropertyAddress;
+
+	private static int SetCustombChromaKeyTexture_ReturnValue_Offset;
+
+	private static bool SetCustomAlphaCoverageThresholds_IsValid;
+
+	private static IntPtr SetCustomAlphaCoverageThresholds_FunctionAddress;
+
+	private static int SetCustomAlphaCoverageThresholds_ParamsSize;
+
+	private static bool SetCustomAlphaCoverageThresholds_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomAlphaCoverageThresholds_AttributeValue_PropertyAddress;
+
+	private static int SetCustomAlphaCoverageThresholds_AttributeValue_Offset;
+
+	private static bool SetCustomAlphaCoverageThresholds_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomAlphaCoverageThresholds_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomAlphaCoverageThresholds_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomAlphaCoverageThresholds_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomAlphaCoverageThresholds_ReturnValue_PropertyAddress;
+
+	private static int SetCustomAlphaCoverageThresholds_ReturnValue_Offset;
+
+	private static bool SetCustomAdjustVibrance_IsValid;
+
+	private static IntPtr SetCustomAdjustVibrance_FunctionAddress;
+
+	private static int SetCustomAdjustVibrance_ParamsSize;
+
+	private static bool SetCustomAdjustVibrance_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustVibrance_AttributeValue_PropertyAddress;
+
+	private static int SetCustomAdjustVibrance_AttributeValue_Offset;
+
+	private static bool SetCustomAdjustVibrance_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomAdjustVibrance_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomAdjustVibrance_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomAdjustVibrance_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustVibrance_ReturnValue_PropertyAddress;
+
+	private static int SetCustomAdjustVibrance_ReturnValue_Offset;
+
+	private static bool SetCustomAdjustSaturation_IsValid;
+
+	private static IntPtr SetCustomAdjustSaturation_FunctionAddress;
+
+	private static int SetCustomAdjustSaturation_ParamsSize;
+
+	private static bool SetCustomAdjustSaturation_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustSaturation_AttributeValue_PropertyAddress;
+
+	private static int SetCustomAdjustSaturation_AttributeValue_Offset;
+
+	private static bool SetCustomAdjustSaturation_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomAdjustSaturation_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomAdjustSaturation_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomAdjustSaturation_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustSaturation_ReturnValue_PropertyAddress;
+
+	private static int SetCustomAdjustSaturation_ReturnValue_Offset;
+
+	private static bool SetCustomAdjustRGBCurve_IsValid;
+
+	private static IntPtr SetCustomAdjustRGBCurve_FunctionAddress;
+
+	private static int SetCustomAdjustRGBCurve_ParamsSize;
+
+	private static bool SetCustomAdjustRGBCurve_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustRGBCurve_AttributeValue_PropertyAddress;
+
+	private static int SetCustomAdjustRGBCurve_AttributeValue_Offset;
+
+	private static bool SetCustomAdjustRGBCurve_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomAdjustRGBCurve_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomAdjustRGBCurve_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomAdjustRGBCurve_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustRGBCurve_ReturnValue_PropertyAddress;
+
+	private static int SetCustomAdjustRGBCurve_ReturnValue_Offset;
+
+	private static bool SetCustomAdjustMinAlpha_IsValid;
+
+	private static IntPtr SetCustomAdjustMinAlpha_FunctionAddress;
+
+	private static int SetCustomAdjustMinAlpha_ParamsSize;
+
+	private static bool SetCustomAdjustMinAlpha_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustMinAlpha_AttributeValue_PropertyAddress;
+
+	private static int SetCustomAdjustMinAlpha_AttributeValue_Offset;
+
+	private static bool SetCustomAdjustMinAlpha_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomAdjustMinAlpha_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomAdjustMinAlpha_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomAdjustMinAlpha_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustMinAlpha_ReturnValue_PropertyAddress;
+
+	private static int SetCustomAdjustMinAlpha_ReturnValue_Offset;
+
+	private static bool SetCustomAdjustMaxAlpha_IsValid;
+
+	private static IntPtr SetCustomAdjustMaxAlpha_FunctionAddress;
+
+	private static int SetCustomAdjustMaxAlpha_ParamsSize;
+
+	private static bool SetCustomAdjustMaxAlpha_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustMaxAlpha_AttributeValue_PropertyAddress;
+
+	private static int SetCustomAdjustMaxAlpha_AttributeValue_Offset;
+
+	private static bool SetCustomAdjustMaxAlpha_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomAdjustMaxAlpha_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomAdjustMaxAlpha_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomAdjustMaxAlpha_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustMaxAlpha_ReturnValue_PropertyAddress;
+
+	private static int SetCustomAdjustMaxAlpha_ReturnValue_Offset;
+
+	private static bool SetCustomAdjustHue_IsValid;
+
+	private static IntPtr SetCustomAdjustHue_FunctionAddress;
+
+	private static int SetCustomAdjustHue_ParamsSize;
+
+	private static bool SetCustomAdjustHue_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustHue_AttributeValue_PropertyAddress;
+
+	private static int SetCustomAdjustHue_AttributeValue_Offset;
+
+	private static bool SetCustomAdjustHue_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomAdjustHue_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomAdjustHue_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomAdjustHue_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustHue_ReturnValue_PropertyAddress;
+
+	private static int SetCustomAdjustHue_ReturnValue_Offset;
+
+	private static bool SetCustomAdjustBrightnessCurve_IsValid;
+
+	private static IntPtr SetCustomAdjustBrightnessCurve_FunctionAddress;
+
+	private static int SetCustomAdjustBrightnessCurve_ParamsSize;
+
+	private static bool SetCustomAdjustBrightnessCurve_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustBrightnessCurve_AttributeValue_PropertyAddress;
+
+	private static int SetCustomAdjustBrightnessCurve_AttributeValue_Offset;
+
+	private static bool SetCustomAdjustBrightnessCurve_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomAdjustBrightnessCurve_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomAdjustBrightnessCurve_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomAdjustBrightnessCurve_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustBrightnessCurve_ReturnValue_PropertyAddress;
+
+	private static int SetCustomAdjustBrightnessCurve_ReturnValue_Offset;
+
+	private static bool SetCustomAdjustBrightness_IsValid;
+
+	private static IntPtr SetCustomAdjustBrightness_FunctionAddress;
+
+	private static int SetCustomAdjustBrightness_ParamsSize;
+
+	private static bool SetCustomAdjustBrightness_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustBrightness_AttributeValue_PropertyAddress;
+
+	private static int SetCustomAdjustBrightness_AttributeValue_Offset;
+
+	private static bool SetCustomAdjustBrightness_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomAdjustBrightness_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomAdjustBrightness_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomAdjustBrightness_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomAdjustBrightness_ReturnValue_PropertyAddress;
+
+	private static int SetCustomAdjustBrightness_ReturnValue_Offset;
+
+	private static bool SetCustomAddressY_IsValid;
+
+	private static IntPtr SetCustomAddressY_FunctionAddress;
+
+	private static int SetCustomAddressY_ParamsSize;
+
+	private static bool SetCustomAddressY_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomAddressY_AttributeValue_PropertyAddress;
+
+	private static int SetCustomAddressY_AttributeValue_Offset;
+
+	private static bool SetCustomAddressY_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomAddressY_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomAddressY_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomAddressY_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomAddressY_ReturnValue_PropertyAddress;
+
+	private static int SetCustomAddressY_ReturnValue_Offset;
+
+	private static bool SetCustomAddressX_IsValid;
+
+	private static IntPtr SetCustomAddressX_FunctionAddress;
+
+	private static int SetCustomAddressX_ParamsSize;
+
+	private static bool SetCustomAddressX_AttributeValue_IsValid;
+
+	private static FFieldAddress SetCustomAddressX_AttributeValue_PropertyAddress;
+
+	private static int SetCustomAddressX_AttributeValue_Offset;
+
+	private static bool SetCustomAddressX_bAddApplyDelegate_IsValid;
+
+	private static FFieldAddress SetCustomAddressX_bAddApplyDelegate_PropertyAddress;
+
+	private static int SetCustomAddressX_bAddApplyDelegate_Offset;
+
+	private static bool SetCustomAddressX_ReturnValue_IsValid;
+
+	private static FFieldAddress SetCustomAddressX_ReturnValue_PropertyAddress;
+
+	private static int SetCustomAddressX_ReturnValue_Offset;
+
+	private static bool InitializeTextureNode_IsValid;
+
+	private static IntPtr InitializeTextureNode_FunctionAddress;
+
+	private static int InitializeTextureNode_ParamsSize;
+
+	private static bool InitializeTextureNode_UniqueID_IsValid;
+
+	private static FFieldAddress InitializeTextureNode_UniqueID_PropertyAddress;
+
+	private static int InitializeTextureNode_UniqueID_Offset;
+
+	private static bool InitializeTextureNode_DisplayLabel_IsValid;
+
+	private static FFieldAddress InitializeTextureNode_DisplayLabel_PropertyAddress;
+
+	private static int InitializeTextureNode_DisplayLabel_Offset;
+
+	private static bool InitializeTextureNode_InAssetClass_IsValid;
+
+	private static FFieldAddress InitializeTextureNode_InAssetClass_PropertyAddress;
+
+	private static int InitializeTextureNode_InAssetClass_Offset;
+
+	private static bool InitializeTextureNode_InAssetName_IsValid;
+
+	private static FFieldAddress InitializeTextureNode_InAssetName_PropertyAddress;
+
+	private static int InitializeTextureNode_InAssetName_Offset;
+
+	private static bool GetObjectClass_IsValid;
+
+	private static IntPtr GetObjectClass_FunctionAddress;
+
+	private static int GetObjectClass_ParamsSize;
+
+	private static bool GetObjectClass_ReturnValue_IsValid;
+
+	private static FFieldAddress GetObjectClass_ReturnValue_PropertyAddress;
+
+	private static int GetObjectClass_ReturnValue_Offset;
+
+	private static bool GetCustomVirtualTextureStreaming_IsValid;
+
+	private static IntPtr GetCustomVirtualTextureStreaming_FunctionAddress;
+
+	private static int GetCustomVirtualTextureStreaming_ParamsSize;
+
+	private static bool GetCustomVirtualTextureStreaming_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomVirtualTextureStreaming_AttributeValue_PropertyAddress;
+
+	private static int GetCustomVirtualTextureStreaming_AttributeValue_Offset;
+
+	private static bool GetCustomVirtualTextureStreaming_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomVirtualTextureStreaming_ReturnValue_PropertyAddress;
+
+	private static int GetCustomVirtualTextureStreaming_ReturnValue_Offset;
+
+	private static bool GetCustomTranslatedTextureNodeUid_IsValid;
+
+	private static IntPtr GetCustomTranslatedTextureNodeUid_FunctionAddress;
+
+	private static int GetCustomTranslatedTextureNodeUid_ParamsSize;
+
+	private static bool GetCustomTranslatedTextureNodeUid_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomTranslatedTextureNodeUid_AttributeValue_PropertyAddress;
+
+	private static int GetCustomTranslatedTextureNodeUid_AttributeValue_Offset;
+
+	private static bool GetCustomTranslatedTextureNodeUid_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomTranslatedTextureNodeUid_ReturnValue_PropertyAddress;
+
+	private static int GetCustomTranslatedTextureNodeUid_ReturnValue_Offset;
+
+	private static bool GetCustomSRGB_IsValid;
+
+	private static IntPtr GetCustomSRGB_FunctionAddress;
+
+	private static int GetCustomSRGB_ParamsSize;
+
+	private static bool GetCustomSRGB_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomSRGB_AttributeValue_PropertyAddress;
+
+	private static int GetCustomSRGB_AttributeValue_Offset;
+
+	private static bool GetCustomSRGB_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomSRGB_ReturnValue_PropertyAddress;
+
+	private static int GetCustomSRGB_ReturnValue_Offset;
+
+	private static bool GetCustomPowerOfTwoMode_IsValid;
+
+	private static IntPtr GetCustomPowerOfTwoMode_FunctionAddress;
+
+	private static int GetCustomPowerOfTwoMode_ParamsSize;
+
+	private static bool GetCustomPowerOfTwoMode_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomPowerOfTwoMode_AttributeValue_PropertyAddress;
+
+	private static int GetCustomPowerOfTwoMode_AttributeValue_Offset;
+
+	private static bool GetCustomPowerOfTwoMode_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomPowerOfTwoMode_ReturnValue_PropertyAddress;
+
+	private static int GetCustomPowerOfTwoMode_ReturnValue_Offset;
+
+	private static bool GetCustomPaddingColor_IsValid;
+
+	private static IntPtr GetCustomPaddingColor_FunctionAddress;
+
+	private static int GetCustomPaddingColor_ParamsSize;
+
+	private static bool GetCustomPaddingColor_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomPaddingColor_AttributeValue_PropertyAddress;
+
+	private static int GetCustomPaddingColor_AttributeValue_Offset;
+
+	private static bool GetCustomPaddingColor_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomPaddingColor_ReturnValue_PropertyAddress;
+
+	private static int GetCustomPaddingColor_ReturnValue_Offset;
+
+	private static bool GetCustomMipLoadOptions_IsValid;
+
+	private static IntPtr GetCustomMipLoadOptions_FunctionAddress;
+
+	private static int GetCustomMipLoadOptions_ParamsSize;
+
+	private static bool GetCustomMipLoadOptions_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomMipLoadOptions_AttributeValue_PropertyAddress;
+
+	private static int GetCustomMipLoadOptions_AttributeValue_Offset;
+
+	private static bool GetCustomMipLoadOptions_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomMipLoadOptions_ReturnValue_PropertyAddress;
+
+	private static int GetCustomMipLoadOptions_ReturnValue_Offset;
+
+	private static bool GetCustomMipGenSettings_IsValid;
+
+	private static IntPtr GetCustomMipGenSettings_FunctionAddress;
+
+	private static int GetCustomMipGenSettings_ParamsSize;
+
+	private static bool GetCustomMipGenSettings_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomMipGenSettings_AttributeValue_PropertyAddress;
+
+	private static int GetCustomMipGenSettings_AttributeValue_Offset;
+
+	private static bool GetCustomMipGenSettings_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomMipGenSettings_ReturnValue_PropertyAddress;
+
+	private static int GetCustomMipGenSettings_ReturnValue_Offset;
+
+	private static bool GetCustomMaxTextureSize_IsValid;
+
+	private static IntPtr GetCustomMaxTextureSize_FunctionAddress;
+
+	private static int GetCustomMaxTextureSize_ParamsSize;
+
+	private static bool GetCustomMaxTextureSize_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomMaxTextureSize_AttributeValue_PropertyAddress;
+
+	private static int GetCustomMaxTextureSize_AttributeValue_Offset;
+
+	private static bool GetCustomMaxTextureSize_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomMaxTextureSize_ReturnValue_PropertyAddress;
+
+	private static int GetCustomMaxTextureSize_ReturnValue_Offset;
+
+	private static bool GetCustomLossyCompressionAmount_IsValid;
+
+	private static IntPtr GetCustomLossyCompressionAmount_FunctionAddress;
+
+	private static int GetCustomLossyCompressionAmount_ParamsSize;
+
+	private static bool GetCustomLossyCompressionAmount_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomLossyCompressionAmount_AttributeValue_PropertyAddress;
+
+	private static int GetCustomLossyCompressionAmount_AttributeValue_Offset;
+
+	private static bool GetCustomLossyCompressionAmount_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomLossyCompressionAmount_ReturnValue_PropertyAddress;
+
+	private static int GetCustomLossyCompressionAmount_ReturnValue_Offset;
+
+	private static bool GetCustomLODGroup_IsValid;
+
+	private static IntPtr GetCustomLODGroup_FunctionAddress;
+
+	private static int GetCustomLODGroup_ParamsSize;
+
+	private static bool GetCustomLODGroup_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomLODGroup_AttributeValue_PropertyAddress;
+
+	private static int GetCustomLODGroup_AttributeValue_Offset;
+
+	private static bool GetCustomLODGroup_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomLODGroup_ReturnValue_PropertyAddress;
+
+	private static int GetCustomLODGroup_ReturnValue_Offset;
+
+	private static bool GetCustomLODBias_IsValid;
+
+	private static IntPtr GetCustomLODBias_FunctionAddress;
+
+	private static int GetCustomLODBias_ParamsSize;
+
+	private static bool GetCustomLODBias_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomLODBias_AttributeValue_PropertyAddress;
+
+	private static int GetCustomLODBias_AttributeValue_Offset;
+
+	private static bool GetCustomLODBias_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomLODBias_ReturnValue_PropertyAddress;
+
+	private static int GetCustomLODBias_ReturnValue_Offset;
+
+	private static bool GetCustomFilter_IsValid;
+
+	private static IntPtr GetCustomFilter_FunctionAddress;
+
+	private static int GetCustomFilter_ParamsSize;
+
+	private static bool GetCustomFilter_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomFilter_AttributeValue_PropertyAddress;
+
+	private static int GetCustomFilter_AttributeValue_Offset;
+
+	private static bool GetCustomFilter_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomFilter_ReturnValue_PropertyAddress;
+
+	private static int GetCustomFilter_ReturnValue_Offset;
+
+	private static bool GetCustomDownscaleOptions_IsValid;
+
+	private static IntPtr GetCustomDownscaleOptions_FunctionAddress;
+
+	private static int GetCustomDownscaleOptions_ParamsSize;
+
+	private static bool GetCustomDownscaleOptions_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomDownscaleOptions_AttributeValue_PropertyAddress;
+
+	private static int GetCustomDownscaleOptions_AttributeValue_Offset;
+
+	private static bool GetCustomDownscaleOptions_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomDownscaleOptions_ReturnValue_PropertyAddress;
+
+	private static int GetCustomDownscaleOptions_ReturnValue_Offset;
+
+	private static bool GetCustomDownscale_IsValid;
+
+	private static IntPtr GetCustomDownscale_FunctionAddress;
+
+	private static int GetCustomDownscale_ParamsSize;
+
+	private static bool GetCustomDownscale_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomDownscale_AttributeValue_PropertyAddress;
+
+	private static int GetCustomDownscale_AttributeValue_Offset;
+
+	private static bool GetCustomDownscale_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomDownscale_ReturnValue_PropertyAddress;
+
+	private static int GetCustomDownscale_ReturnValue_Offset;
+
+	private static bool GetCustomDeferCompression_IsValid;
+
+	private static IntPtr GetCustomDeferCompression_FunctionAddress;
+
+	private static int GetCustomDeferCompression_ParamsSize;
+
+	private static bool GetCustomDeferCompression_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomDeferCompression_AttributeValue_PropertyAddress;
+
+	private static int GetCustomDeferCompression_AttributeValue_Offset;
+
+	private static bool GetCustomDeferCompression_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomDeferCompression_ReturnValue_PropertyAddress;
+
+	private static int GetCustomDeferCompression_ReturnValue_Offset;
+
+	private static bool GetCustomCompressionSettings_IsValid;
+
+	private static IntPtr GetCustomCompressionSettings_FunctionAddress;
+
+	private static int GetCustomCompressionSettings_ParamsSize;
+
+	private static bool GetCustomCompressionSettings_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomCompressionSettings_AttributeValue_PropertyAddress;
+
+	private static int GetCustomCompressionSettings_AttributeValue_Offset;
+
+	private static bool GetCustomCompressionSettings_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomCompressionSettings_ReturnValue_PropertyAddress;
+
+	private static int GetCustomCompressionSettings_ReturnValue_Offset;
+
+	private static bool GetCustomCompressionQuality_IsValid;
+
+	private static IntPtr GetCustomCompressionQuality_FunctionAddress;
+
+	private static int GetCustomCompressionQuality_ParamsSize;
+
+	private static bool GetCustomCompressionQuality_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomCompressionQuality_AttributeValue_PropertyAddress;
+
+	private static int GetCustomCompressionQuality_AttributeValue_Offset;
+
+	private static bool GetCustomCompressionQuality_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomCompressionQuality_ReturnValue_PropertyAddress;
+
+	private static int GetCustomCompressionQuality_ReturnValue_Offset;
+
+	private static bool GetCustomCompressionNoAlpha_IsValid;
+
+	private static IntPtr GetCustomCompressionNoAlpha_FunctionAddress;
+
+	private static int GetCustomCompressionNoAlpha_ParamsSize;
+
+	private static bool GetCustomCompressionNoAlpha_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomCompressionNoAlpha_AttributeValue_PropertyAddress;
+
+	private static int GetCustomCompressionNoAlpha_AttributeValue_Offset;
+
+	private static bool GetCustomCompressionNoAlpha_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomCompressionNoAlpha_ReturnValue_PropertyAddress;
+
+	private static int GetCustomCompressionNoAlpha_ReturnValue_Offset;
+
+	private static bool GetCustomCompositeTextureMode_IsValid;
+
+	private static IntPtr GetCustomCompositeTextureMode_FunctionAddress;
+
+	private static int GetCustomCompositeTextureMode_ParamsSize;
+
+	private static bool GetCustomCompositeTextureMode_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomCompositeTextureMode_AttributeValue_PropertyAddress;
+
+	private static int GetCustomCompositeTextureMode_AttributeValue_Offset;
+
+	private static bool GetCustomCompositeTextureMode_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomCompositeTextureMode_ReturnValue_PropertyAddress;
+
+	private static int GetCustomCompositeTextureMode_ReturnValue_Offset;
+
+	private static bool GetCustomCompositePower_IsValid;
+
+	private static IntPtr GetCustomCompositePower_FunctionAddress;
+
+	private static int GetCustomCompositePower_ParamsSize;
+
+	private static bool GetCustomCompositePower_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomCompositePower_AttributeValue_PropertyAddress;
+
+	private static int GetCustomCompositePower_AttributeValue_Offset;
+
+	private static bool GetCustomCompositePower_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomCompositePower_ReturnValue_PropertyAddress;
+
+	private static int GetCustomCompositePower_ReturnValue_Offset;
+
+	private static bool GetCustomChromaKeyThreshold_IsValid;
+
+	private static IntPtr GetCustomChromaKeyThreshold_FunctionAddress;
+
+	private static int GetCustomChromaKeyThreshold_ParamsSize;
+
+	private static bool GetCustomChromaKeyThreshold_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomChromaKeyThreshold_AttributeValue_PropertyAddress;
+
+	private static int GetCustomChromaKeyThreshold_AttributeValue_Offset;
+
+	private static bool GetCustomChromaKeyThreshold_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomChromaKeyThreshold_ReturnValue_PropertyAddress;
+
+	private static int GetCustomChromaKeyThreshold_ReturnValue_Offset;
+
+	private static bool GetCustomChromaKeyColor_IsValid;
+
+	private static IntPtr GetCustomChromaKeyColor_FunctionAddress;
+
+	private static int GetCustomChromaKeyColor_ParamsSize;
+
+	private static bool GetCustomChromaKeyColor_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomChromaKeyColor_AttributeValue_PropertyAddress;
+
+	private static int GetCustomChromaKeyColor_AttributeValue_Offset;
+
+	private static bool GetCustomChromaKeyColor_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomChromaKeyColor_ReturnValue_PropertyAddress;
+
+	private static int GetCustomChromaKeyColor_ReturnValue_Offset;
+
+	private static bool GetCustombUseLegacyGamma_IsValid;
+
+	private static IntPtr GetCustombUseLegacyGamma_FunctionAddress;
+
+	private static int GetCustombUseLegacyGamma_ParamsSize;
+
+	private static bool GetCustombUseLegacyGamma_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustombUseLegacyGamma_AttributeValue_PropertyAddress;
+
+	private static int GetCustombUseLegacyGamma_AttributeValue_Offset;
+
+	private static bool GetCustombUseLegacyGamma_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustombUseLegacyGamma_ReturnValue_PropertyAddress;
+
+	private static int GetCustombUseLegacyGamma_ReturnValue_Offset;
+
+	private static bool GetCustombPreserveBorder_IsValid;
+
+	private static IntPtr GetCustombPreserveBorder_FunctionAddress;
+
+	private static int GetCustombPreserveBorder_ParamsSize;
+
+	private static bool GetCustombPreserveBorder_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustombPreserveBorder_AttributeValue_PropertyAddress;
+
+	private static int GetCustombPreserveBorder_AttributeValue_Offset;
+
+	private static bool GetCustombPreserveBorder_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustombPreserveBorder_ReturnValue_PropertyAddress;
+
+	private static int GetCustombPreserveBorder_ReturnValue_Offset;
+
+	private static bool GetCustombFlipGreenChannel_IsValid;
+
+	private static IntPtr GetCustombFlipGreenChannel_FunctionAddress;
+
+	private static int GetCustombFlipGreenChannel_ParamsSize;
+
+	private static bool GetCustombFlipGreenChannel_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustombFlipGreenChannel_AttributeValue_PropertyAddress;
+
+	private static int GetCustombFlipGreenChannel_AttributeValue_Offset;
+
+	private static bool GetCustombFlipGreenChannel_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustombFlipGreenChannel_ReturnValue_PropertyAddress;
+
+	private static int GetCustombFlipGreenChannel_ReturnValue_Offset;
+
+	private static bool GetCustombDoScaleMipsForAlphaCoverage_IsValid;
+
+	private static IntPtr GetCustombDoScaleMipsForAlphaCoverage_FunctionAddress;
+
+	private static int GetCustombDoScaleMipsForAlphaCoverage_ParamsSize;
+
+	private static bool GetCustombDoScaleMipsForAlphaCoverage_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustombDoScaleMipsForAlphaCoverage_AttributeValue_PropertyAddress;
+
+	private static int GetCustombDoScaleMipsForAlphaCoverage_AttributeValue_Offset;
+
+	private static bool GetCustombDoScaleMipsForAlphaCoverage_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustombDoScaleMipsForAlphaCoverage_ReturnValue_PropertyAddress;
+
+	private static int GetCustombDoScaleMipsForAlphaCoverage_ReturnValue_Offset;
+
+	private static bool GetCustombDitherMipMapAlpha_IsValid;
+
+	private static IntPtr GetCustombDitherMipMapAlpha_FunctionAddress;
+
+	private static int GetCustombDitherMipMapAlpha_ParamsSize;
+
+	private static bool GetCustombDitherMipMapAlpha_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustombDitherMipMapAlpha_AttributeValue_PropertyAddress;
+
+	private static int GetCustombDitherMipMapAlpha_AttributeValue_Offset;
+
+	private static bool GetCustombDitherMipMapAlpha_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustombDitherMipMapAlpha_ReturnValue_PropertyAddress;
+
+	private static int GetCustombDitherMipMapAlpha_ReturnValue_Offset;
+
+	private static bool GetCustombChromaKeyTexture_IsValid;
+
+	private static IntPtr GetCustombChromaKeyTexture_FunctionAddress;
+
+	private static int GetCustombChromaKeyTexture_ParamsSize;
+
+	private static bool GetCustombChromaKeyTexture_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustombChromaKeyTexture_AttributeValue_PropertyAddress;
+
+	private static int GetCustombChromaKeyTexture_AttributeValue_Offset;
+
+	private static bool GetCustombChromaKeyTexture_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustombChromaKeyTexture_ReturnValue_PropertyAddress;
+
+	private static int GetCustombChromaKeyTexture_ReturnValue_Offset;
+
+	private static bool GetCustomAlphaCoverageThresholds_IsValid;
+
+	private static IntPtr GetCustomAlphaCoverageThresholds_FunctionAddress;
+
+	private static int GetCustomAlphaCoverageThresholds_ParamsSize;
+
+	private static bool GetCustomAlphaCoverageThresholds_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomAlphaCoverageThresholds_AttributeValue_PropertyAddress;
+
+	private static int GetCustomAlphaCoverageThresholds_AttributeValue_Offset;
+
+	private static bool GetCustomAlphaCoverageThresholds_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomAlphaCoverageThresholds_ReturnValue_PropertyAddress;
+
+	private static int GetCustomAlphaCoverageThresholds_ReturnValue_Offset;
+
+	private static bool GetCustomAdjustVibrance_IsValid;
+
+	private static IntPtr GetCustomAdjustVibrance_FunctionAddress;
+
+	private static int GetCustomAdjustVibrance_ParamsSize;
+
+	private static bool GetCustomAdjustVibrance_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustVibrance_AttributeValue_PropertyAddress;
+
+	private static int GetCustomAdjustVibrance_AttributeValue_Offset;
+
+	private static bool GetCustomAdjustVibrance_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustVibrance_ReturnValue_PropertyAddress;
+
+	private static int GetCustomAdjustVibrance_ReturnValue_Offset;
+
+	private static bool GetCustomAdjustSaturation_IsValid;
+
+	private static IntPtr GetCustomAdjustSaturation_FunctionAddress;
+
+	private static int GetCustomAdjustSaturation_ParamsSize;
+
+	private static bool GetCustomAdjustSaturation_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustSaturation_AttributeValue_PropertyAddress;
+
+	private static int GetCustomAdjustSaturation_AttributeValue_Offset;
+
+	private static bool GetCustomAdjustSaturation_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustSaturation_ReturnValue_PropertyAddress;
+
+	private static int GetCustomAdjustSaturation_ReturnValue_Offset;
+
+	private static bool GetCustomAdjustRGBCurve_IsValid;
+
+	private static IntPtr GetCustomAdjustRGBCurve_FunctionAddress;
+
+	private static int GetCustomAdjustRGBCurve_ParamsSize;
+
+	private static bool GetCustomAdjustRGBCurve_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustRGBCurve_AttributeValue_PropertyAddress;
+
+	private static int GetCustomAdjustRGBCurve_AttributeValue_Offset;
+
+	private static bool GetCustomAdjustRGBCurve_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustRGBCurve_ReturnValue_PropertyAddress;
+
+	private static int GetCustomAdjustRGBCurve_ReturnValue_Offset;
+
+	private static bool GetCustomAdjustMinAlpha_IsValid;
+
+	private static IntPtr GetCustomAdjustMinAlpha_FunctionAddress;
+
+	private static int GetCustomAdjustMinAlpha_ParamsSize;
+
+	private static bool GetCustomAdjustMinAlpha_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustMinAlpha_AttributeValue_PropertyAddress;
+
+	private static int GetCustomAdjustMinAlpha_AttributeValue_Offset;
+
+	private static bool GetCustomAdjustMinAlpha_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustMinAlpha_ReturnValue_PropertyAddress;
+
+	private static int GetCustomAdjustMinAlpha_ReturnValue_Offset;
+
+	private static bool GetCustomAdjustMaxAlpha_IsValid;
+
+	private static IntPtr GetCustomAdjustMaxAlpha_FunctionAddress;
+
+	private static int GetCustomAdjustMaxAlpha_ParamsSize;
+
+	private static bool GetCustomAdjustMaxAlpha_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustMaxAlpha_AttributeValue_PropertyAddress;
+
+	private static int GetCustomAdjustMaxAlpha_AttributeValue_Offset;
+
+	private static bool GetCustomAdjustMaxAlpha_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustMaxAlpha_ReturnValue_PropertyAddress;
+
+	private static int GetCustomAdjustMaxAlpha_ReturnValue_Offset;
+
+	private static bool GetCustomAdjustHue_IsValid;
+
+	private static IntPtr GetCustomAdjustHue_FunctionAddress;
+
+	private static int GetCustomAdjustHue_ParamsSize;
+
+	private static bool GetCustomAdjustHue_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustHue_AttributeValue_PropertyAddress;
+
+	private static int GetCustomAdjustHue_AttributeValue_Offset;
+
+	private static bool GetCustomAdjustHue_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustHue_ReturnValue_PropertyAddress;
+
+	private static int GetCustomAdjustHue_ReturnValue_Offset;
+
+	private static bool GetCustomAdjustBrightnessCurve_IsValid;
+
+	private static IntPtr GetCustomAdjustBrightnessCurve_FunctionAddress;
+
+	private static int GetCustomAdjustBrightnessCurve_ParamsSize;
+
+	private static bool GetCustomAdjustBrightnessCurve_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustBrightnessCurve_AttributeValue_PropertyAddress;
+
+	private static int GetCustomAdjustBrightnessCurve_AttributeValue_Offset;
+
+	private static bool GetCustomAdjustBrightnessCurve_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustBrightnessCurve_ReturnValue_PropertyAddress;
+
+	private static int GetCustomAdjustBrightnessCurve_ReturnValue_Offset;
+
+	private static bool GetCustomAdjustBrightness_IsValid;
+
+	private static IntPtr GetCustomAdjustBrightness_FunctionAddress;
+
+	private static int GetCustomAdjustBrightness_ParamsSize;
+
+	private static bool GetCustomAdjustBrightness_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustBrightness_AttributeValue_PropertyAddress;
+
+	private static int GetCustomAdjustBrightness_AttributeValue_Offset;
+
+	private static bool GetCustomAdjustBrightness_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomAdjustBrightness_ReturnValue_PropertyAddress;
+
+	private static int GetCustomAdjustBrightness_ReturnValue_Offset;
+
+	private static bool GetCustomAddressY_IsValid;
+
+	private static IntPtr GetCustomAddressY_FunctionAddress;
+
+	private static int GetCustomAddressY_ParamsSize;
+
+	private static bool GetCustomAddressY_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomAddressY_AttributeValue_PropertyAddress;
+
+	private static int GetCustomAddressY_AttributeValue_Offset;
+
+	private static bool GetCustomAddressY_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomAddressY_ReturnValue_PropertyAddress;
+
+	private static int GetCustomAddressY_ReturnValue_Offset;
+
+	private static bool GetCustomAddressX_IsValid;
+
+	private static IntPtr GetCustomAddressX_FunctionAddress;
+
+	private static int GetCustomAddressX_ParamsSize;
+
+	private static bool GetCustomAddressX_AttributeValue_IsValid;
+
+	private static FFieldAddress GetCustomAddressX_AttributeValue_PropertyAddress;
+
+	private static int GetCustomAddressX_AttributeValue_Offset;
+
+	private static bool GetCustomAddressX_ReturnValue_IsValid;
+
+	private static FFieldAddress GetCustomAddressX_ReturnValue_PropertyAddress;
+
+	private static int GetCustomAddressX_ReturnValue_Offset;
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomVirtualTextureStreaming")]
+	public unsafe bool SetCustomVirtualTextureStreaming(bool AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomVirtualTextureStreaming_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomVirtualTextureStreaming");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomVirtualTextureStreaming_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomVirtualTextureStreaming_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomVirtualTextureStreaming_AttributeValue_Offset), 0, SetCustomVirtualTextureStreaming_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomVirtualTextureStreaming_bAddApplyDelegate_Offset), 0, SetCustomVirtualTextureStreaming_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomVirtualTextureStreaming_FunctionAddress, intPtr, SetCustomVirtualTextureStreaming_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomVirtualTextureStreaming_ReturnValue_Offset), 0, SetCustomVirtualTextureStreaming_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomTranslatedTextureNodeUid")]
+	public unsafe bool SetCustomTranslatedTextureNodeUid(string AttributeValue)
+	{
+		CheckDestroyed();
+		if (!SetCustomTranslatedTextureNodeUid_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomTranslatedTextureNodeUid");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomTranslatedTextureNodeUid_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomTranslatedTextureNodeUid_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomTranslatedTextureNodeUid_AttributeValue_Offset), 0, SetCustomTranslatedTextureNodeUid_AttributeValue_PropertyAddress.Address, AttributeValue);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomTranslatedTextureNodeUid_FunctionAddress, intPtr, SetCustomTranslatedTextureNodeUid_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetCustomTranslatedTextureNodeUid_AttributeValue_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomTranslatedTextureNodeUid_ReturnValue_Offset), 0, SetCustomTranslatedTextureNodeUid_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomSRGB")]
+	public unsafe bool SetCustomSRGB(bool AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomSRGB_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomSRGB");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomSRGB_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomSRGB_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomSRGB_AttributeValue_Offset), 0, SetCustomSRGB_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomSRGB_bAddApplyDelegate_Offset), 0, SetCustomSRGB_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomSRGB_FunctionAddress, intPtr, SetCustomSRGB_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomSRGB_ReturnValue_Offset), 0, SetCustomSRGB_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomPowerOfTwoMode")]
+	public unsafe bool SetCustomPowerOfTwoMode(byte AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomPowerOfTwoMode_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomPowerOfTwoMode");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomPowerOfTwoMode_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomPowerOfTwoMode_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<byte>.ToNative(IntPtr.Add(intPtr, SetCustomPowerOfTwoMode_AttributeValue_Offset), 0, SetCustomPowerOfTwoMode_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomPowerOfTwoMode_bAddApplyDelegate_Offset), 0, SetCustomPowerOfTwoMode_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomPowerOfTwoMode_FunctionAddress, intPtr, SetCustomPowerOfTwoMode_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomPowerOfTwoMode_ReturnValue_Offset), 0, SetCustomPowerOfTwoMode_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 79823873u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomPaddingColor")]
+	public unsafe bool SetCustomPaddingColor(FColor AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomPaddingColor_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomPaddingColor");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomPaddingColor_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomPaddingColor_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FColor>.ToNative(IntPtr.Add(intPtr, SetCustomPaddingColor_AttributeValue_Offset), 0, SetCustomPaddingColor_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomPaddingColor_bAddApplyDelegate_Offset), 0, SetCustomPaddingColor_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomPaddingColor_FunctionAddress, intPtr, SetCustomPaddingColor_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomPaddingColor_ReturnValue_Offset), 0, SetCustomPaddingColor_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomMipLoadOptions")]
+	public unsafe bool SetCustomMipLoadOptions(byte AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomMipLoadOptions_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomMipLoadOptions");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomMipLoadOptions_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomMipLoadOptions_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<byte>.ToNative(IntPtr.Add(intPtr, SetCustomMipLoadOptions_AttributeValue_Offset), 0, SetCustomMipLoadOptions_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomMipLoadOptions_bAddApplyDelegate_Offset), 0, SetCustomMipLoadOptions_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomMipLoadOptions_FunctionAddress, intPtr, SetCustomMipLoadOptions_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomMipLoadOptions_ReturnValue_Offset), 0, SetCustomMipLoadOptions_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomMipGenSettings")]
+	public unsafe bool SetCustomMipGenSettings(byte AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomMipGenSettings_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomMipGenSettings");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomMipGenSettings_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomMipGenSettings_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<byte>.ToNative(IntPtr.Add(intPtr, SetCustomMipGenSettings_AttributeValue_Offset), 0, SetCustomMipGenSettings_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomMipGenSettings_bAddApplyDelegate_Offset), 0, SetCustomMipGenSettings_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomMipGenSettings_FunctionAddress, intPtr, SetCustomMipGenSettings_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomMipGenSettings_ReturnValue_Offset), 0, SetCustomMipGenSettings_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomMaxTextureSize")]
+	public unsafe bool SetCustomMaxTextureSize(int AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomMaxTextureSize_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomMaxTextureSize");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomMaxTextureSize_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomMaxTextureSize_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, SetCustomMaxTextureSize_AttributeValue_Offset), 0, SetCustomMaxTextureSize_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomMaxTextureSize_bAddApplyDelegate_Offset), 0, SetCustomMaxTextureSize_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomMaxTextureSize_FunctionAddress, intPtr, SetCustomMaxTextureSize_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomMaxTextureSize_ReturnValue_Offset), 0, SetCustomMaxTextureSize_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomLossyCompressionAmount")]
+	public unsafe bool SetCustomLossyCompressionAmount(byte AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomLossyCompressionAmount_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomLossyCompressionAmount");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomLossyCompressionAmount_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomLossyCompressionAmount_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<byte>.ToNative(IntPtr.Add(intPtr, SetCustomLossyCompressionAmount_AttributeValue_Offset), 0, SetCustomLossyCompressionAmount_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomLossyCompressionAmount_bAddApplyDelegate_Offset), 0, SetCustomLossyCompressionAmount_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomLossyCompressionAmount_FunctionAddress, intPtr, SetCustomLossyCompressionAmount_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomLossyCompressionAmount_ReturnValue_Offset), 0, SetCustomLossyCompressionAmount_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomLODGroup")]
+	public unsafe bool SetCustomLODGroup(byte AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomLODGroup_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomLODGroup");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomLODGroup_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomLODGroup_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<byte>.ToNative(IntPtr.Add(intPtr, SetCustomLODGroup_AttributeValue_Offset), 0, SetCustomLODGroup_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomLODGroup_bAddApplyDelegate_Offset), 0, SetCustomLODGroup_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomLODGroup_FunctionAddress, intPtr, SetCustomLODGroup_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomLODGroup_ReturnValue_Offset), 0, SetCustomLODGroup_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomLODBias")]
+	public unsafe bool SetCustomLODBias(int AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomLODBias_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomLODBias");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomLODBias_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomLODBias_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, SetCustomLODBias_AttributeValue_Offset), 0, SetCustomLODBias_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomLODBias_bAddApplyDelegate_Offset), 0, SetCustomLODBias_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomLODBias_FunctionAddress, intPtr, SetCustomLODBias_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomLODBias_ReturnValue_Offset), 0, SetCustomLODBias_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomFilter")]
+	public unsafe bool SetCustomFilter(byte AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomFilter_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomFilter");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomFilter_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomFilter_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<byte>.ToNative(IntPtr.Add(intPtr, SetCustomFilter_AttributeValue_Offset), 0, SetCustomFilter_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomFilter_bAddApplyDelegate_Offset), 0, SetCustomFilter_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomFilter_FunctionAddress, intPtr, SetCustomFilter_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomFilter_ReturnValue_Offset), 0, SetCustomFilter_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomDownscaleOptions")]
+	public unsafe bool SetCustomDownscaleOptions(byte AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomDownscaleOptions_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomDownscaleOptions");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomDownscaleOptions_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomDownscaleOptions_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<byte>.ToNative(IntPtr.Add(intPtr, SetCustomDownscaleOptions_AttributeValue_Offset), 0, SetCustomDownscaleOptions_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomDownscaleOptions_bAddApplyDelegate_Offset), 0, SetCustomDownscaleOptions_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomDownscaleOptions_FunctionAddress, intPtr, SetCustomDownscaleOptions_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomDownscaleOptions_ReturnValue_Offset), 0, SetCustomDownscaleOptions_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomDownscale")]
+	public unsafe bool SetCustomDownscale(float AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomDownscale_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomDownscale");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomDownscale_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomDownscale_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, SetCustomDownscale_AttributeValue_Offset), 0, SetCustomDownscale_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomDownscale_bAddApplyDelegate_Offset), 0, SetCustomDownscale_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomDownscale_FunctionAddress, intPtr, SetCustomDownscale_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomDownscale_ReturnValue_Offset), 0, SetCustomDownscale_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomDeferCompression")]
+	public unsafe bool SetCustomDeferCompression(bool AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomDeferCompression_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomDeferCompression");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomDeferCompression_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomDeferCompression_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomDeferCompression_AttributeValue_Offset), 0, SetCustomDeferCompression_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomDeferCompression_bAddApplyDelegate_Offset), 0, SetCustomDeferCompression_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomDeferCompression_FunctionAddress, intPtr, SetCustomDeferCompression_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomDeferCompression_ReturnValue_Offset), 0, SetCustomDeferCompression_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompressionSettings")]
+	public unsafe bool SetCustomCompressionSettings(byte AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomCompressionSettings_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompressionSettings");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomCompressionSettings_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomCompressionSettings_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<byte>.ToNative(IntPtr.Add(intPtr, SetCustomCompressionSettings_AttributeValue_Offset), 0, SetCustomCompressionSettings_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomCompressionSettings_bAddApplyDelegate_Offset), 0, SetCustomCompressionSettings_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomCompressionSettings_FunctionAddress, intPtr, SetCustomCompressionSettings_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomCompressionSettings_ReturnValue_Offset), 0, SetCustomCompressionSettings_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompressionQuality")]
+	public unsafe bool SetCustomCompressionQuality(byte AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomCompressionQuality_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompressionQuality");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomCompressionQuality_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomCompressionQuality_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<byte>.ToNative(IntPtr.Add(intPtr, SetCustomCompressionQuality_AttributeValue_Offset), 0, SetCustomCompressionQuality_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomCompressionQuality_bAddApplyDelegate_Offset), 0, SetCustomCompressionQuality_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomCompressionQuality_FunctionAddress, intPtr, SetCustomCompressionQuality_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomCompressionQuality_ReturnValue_Offset), 0, SetCustomCompressionQuality_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompressionNoAlpha")]
+	public unsafe bool SetCustomCompressionNoAlpha(bool AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomCompressionNoAlpha_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompressionNoAlpha");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomCompressionNoAlpha_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomCompressionNoAlpha_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomCompressionNoAlpha_AttributeValue_Offset), 0, SetCustomCompressionNoAlpha_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomCompressionNoAlpha_bAddApplyDelegate_Offset), 0, SetCustomCompressionNoAlpha_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomCompressionNoAlpha_FunctionAddress, intPtr, SetCustomCompressionNoAlpha_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomCompressionNoAlpha_ReturnValue_Offset), 0, SetCustomCompressionNoAlpha_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompositeTextureMode")]
+	public unsafe bool SetCustomCompositeTextureMode(byte AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomCompositeTextureMode_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompositeTextureMode");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomCompositeTextureMode_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomCompositeTextureMode_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<byte>.ToNative(IntPtr.Add(intPtr, SetCustomCompositeTextureMode_AttributeValue_Offset), 0, SetCustomCompositeTextureMode_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomCompositeTextureMode_bAddApplyDelegate_Offset), 0, SetCustomCompositeTextureMode_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomCompositeTextureMode_FunctionAddress, intPtr, SetCustomCompositeTextureMode_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomCompositeTextureMode_ReturnValue_Offset), 0, SetCustomCompositeTextureMode_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompositePower")]
+	public unsafe bool SetCustomCompositePower(float AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomCompositePower_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompositePower");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomCompositePower_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomCompositePower_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, SetCustomCompositePower_AttributeValue_Offset), 0, SetCustomCompositePower_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomCompositePower_bAddApplyDelegate_Offset), 0, SetCustomCompositePower_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomCompositePower_FunctionAddress, intPtr, SetCustomCompositePower_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomCompositePower_ReturnValue_Offset), 0, SetCustomCompositePower_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomChromaKeyThreshold")]
+	public unsafe bool SetCustomChromaKeyThreshold(float AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomChromaKeyThreshold_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomChromaKeyThreshold");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomChromaKeyThreshold_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomChromaKeyThreshold_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, SetCustomChromaKeyThreshold_AttributeValue_Offset), 0, SetCustomChromaKeyThreshold_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomChromaKeyThreshold_bAddApplyDelegate_Offset), 0, SetCustomChromaKeyThreshold_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomChromaKeyThreshold_FunctionAddress, intPtr, SetCustomChromaKeyThreshold_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomChromaKeyThreshold_ReturnValue_Offset), 0, SetCustomChromaKeyThreshold_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 79823873u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomChromaKeyColor")]
+	public unsafe bool SetCustomChromaKeyColor(FColor AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomChromaKeyColor_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomChromaKeyColor");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomChromaKeyColor_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomChromaKeyColor_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FColor>.ToNative(IntPtr.Add(intPtr, SetCustomChromaKeyColor_AttributeValue_Offset), 0, SetCustomChromaKeyColor_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomChromaKeyColor_bAddApplyDelegate_Offset), 0, SetCustomChromaKeyColor_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomChromaKeyColor_FunctionAddress, intPtr, SetCustomChromaKeyColor_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomChromaKeyColor_ReturnValue_Offset), 0, SetCustomChromaKeyColor_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombUseLegacyGamma")]
+	public unsafe bool SetCustombUseLegacyGamma(bool AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustombUseLegacyGamma_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombUseLegacyGamma");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustombUseLegacyGamma_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustombUseLegacyGamma_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustombUseLegacyGamma_AttributeValue_Offset), 0, SetCustombUseLegacyGamma_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustombUseLegacyGamma_bAddApplyDelegate_Offset), 0, SetCustombUseLegacyGamma_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustombUseLegacyGamma_FunctionAddress, intPtr, SetCustombUseLegacyGamma_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustombUseLegacyGamma_ReturnValue_Offset), 0, SetCustombUseLegacyGamma_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombPreserveBorder")]
+	public unsafe bool SetCustombPreserveBorder(bool AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustombPreserveBorder_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombPreserveBorder");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustombPreserveBorder_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustombPreserveBorder_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustombPreserveBorder_AttributeValue_Offset), 0, SetCustombPreserveBorder_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustombPreserveBorder_bAddApplyDelegate_Offset), 0, SetCustombPreserveBorder_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustombPreserveBorder_FunctionAddress, intPtr, SetCustombPreserveBorder_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustombPreserveBorder_ReturnValue_Offset), 0, SetCustombPreserveBorder_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombFlipGreenChannel")]
+	public unsafe bool SetCustombFlipGreenChannel(bool AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustombFlipGreenChannel_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombFlipGreenChannel");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustombFlipGreenChannel_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustombFlipGreenChannel_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustombFlipGreenChannel_AttributeValue_Offset), 0, SetCustombFlipGreenChannel_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustombFlipGreenChannel_bAddApplyDelegate_Offset), 0, SetCustombFlipGreenChannel_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustombFlipGreenChannel_FunctionAddress, intPtr, SetCustombFlipGreenChannel_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustombFlipGreenChannel_ReturnValue_Offset), 0, SetCustombFlipGreenChannel_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombDoScaleMipsForAlphaCoverage")]
+	public unsafe bool SetCustombDoScaleMipsForAlphaCoverage(bool AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustombDoScaleMipsForAlphaCoverage_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombDoScaleMipsForAlphaCoverage");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustombDoScaleMipsForAlphaCoverage_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustombDoScaleMipsForAlphaCoverage_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustombDoScaleMipsForAlphaCoverage_AttributeValue_Offset), 0, SetCustombDoScaleMipsForAlphaCoverage_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustombDoScaleMipsForAlphaCoverage_bAddApplyDelegate_Offset), 0, SetCustombDoScaleMipsForAlphaCoverage_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, intPtr, SetCustombDoScaleMipsForAlphaCoverage_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustombDoScaleMipsForAlphaCoverage_ReturnValue_Offset), 0, SetCustombDoScaleMipsForAlphaCoverage_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombDitherMipMapAlpha")]
+	public unsafe bool SetCustombDitherMipMapAlpha(bool AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustombDitherMipMapAlpha_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombDitherMipMapAlpha");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustombDitherMipMapAlpha_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustombDitherMipMapAlpha_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustombDitherMipMapAlpha_AttributeValue_Offset), 0, SetCustombDitherMipMapAlpha_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustombDitherMipMapAlpha_bAddApplyDelegate_Offset), 0, SetCustombDitherMipMapAlpha_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustombDitherMipMapAlpha_FunctionAddress, intPtr, SetCustombDitherMipMapAlpha_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustombDitherMipMapAlpha_ReturnValue_Offset), 0, SetCustombDitherMipMapAlpha_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombChromaKeyTexture")]
+	public unsafe bool SetCustombChromaKeyTexture(bool AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustombChromaKeyTexture_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombChromaKeyTexture");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustombChromaKeyTexture_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustombChromaKeyTexture_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustombChromaKeyTexture_AttributeValue_Offset), 0, SetCustombChromaKeyTexture_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustombChromaKeyTexture_bAddApplyDelegate_Offset), 0, SetCustombChromaKeyTexture_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustombChromaKeyTexture_FunctionAddress, intPtr, SetCustombChromaKeyTexture_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustombChromaKeyTexture_ReturnValue_Offset), 0, SetCustombChromaKeyTexture_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 79823873u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAlphaCoverageThresholds")]
+	public unsafe bool SetCustomAlphaCoverageThresholds(FVector4 AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomAlphaCoverageThresholds_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAlphaCoverageThresholds");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomAlphaCoverageThresholds_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomAlphaCoverageThresholds_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<FVector4>.ToNative(IntPtr.Add(intPtr, SetCustomAlphaCoverageThresholds_AttributeValue_Offset), 0, SetCustomAlphaCoverageThresholds_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomAlphaCoverageThresholds_bAddApplyDelegate_Offset), 0, SetCustomAlphaCoverageThresholds_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomAlphaCoverageThresholds_FunctionAddress, intPtr, SetCustomAlphaCoverageThresholds_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomAlphaCoverageThresholds_ReturnValue_Offset), 0, SetCustomAlphaCoverageThresholds_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustVibrance")]
+	public unsafe bool SetCustomAdjustVibrance(float AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomAdjustVibrance_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustVibrance");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomAdjustVibrance_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomAdjustVibrance_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, SetCustomAdjustVibrance_AttributeValue_Offset), 0, SetCustomAdjustVibrance_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomAdjustVibrance_bAddApplyDelegate_Offset), 0, SetCustomAdjustVibrance_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomAdjustVibrance_FunctionAddress, intPtr, SetCustomAdjustVibrance_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomAdjustVibrance_ReturnValue_Offset), 0, SetCustomAdjustVibrance_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustSaturation")]
+	public unsafe bool SetCustomAdjustSaturation(float AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomAdjustSaturation_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustSaturation");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomAdjustSaturation_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomAdjustSaturation_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, SetCustomAdjustSaturation_AttributeValue_Offset), 0, SetCustomAdjustSaturation_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomAdjustSaturation_bAddApplyDelegate_Offset), 0, SetCustomAdjustSaturation_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomAdjustSaturation_FunctionAddress, intPtr, SetCustomAdjustSaturation_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomAdjustSaturation_ReturnValue_Offset), 0, SetCustomAdjustSaturation_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustRGBCurve")]
+	public unsafe bool SetCustomAdjustRGBCurve(float AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomAdjustRGBCurve_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustRGBCurve");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomAdjustRGBCurve_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomAdjustRGBCurve_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, SetCustomAdjustRGBCurve_AttributeValue_Offset), 0, SetCustomAdjustRGBCurve_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomAdjustRGBCurve_bAddApplyDelegate_Offset), 0, SetCustomAdjustRGBCurve_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomAdjustRGBCurve_FunctionAddress, intPtr, SetCustomAdjustRGBCurve_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomAdjustRGBCurve_ReturnValue_Offset), 0, SetCustomAdjustRGBCurve_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustMinAlpha")]
+	public unsafe bool SetCustomAdjustMinAlpha(float AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomAdjustMinAlpha_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustMinAlpha");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomAdjustMinAlpha_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomAdjustMinAlpha_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, SetCustomAdjustMinAlpha_AttributeValue_Offset), 0, SetCustomAdjustMinAlpha_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomAdjustMinAlpha_bAddApplyDelegate_Offset), 0, SetCustomAdjustMinAlpha_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomAdjustMinAlpha_FunctionAddress, intPtr, SetCustomAdjustMinAlpha_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomAdjustMinAlpha_ReturnValue_Offset), 0, SetCustomAdjustMinAlpha_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustMaxAlpha")]
+	public unsafe bool SetCustomAdjustMaxAlpha(float AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomAdjustMaxAlpha_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustMaxAlpha");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomAdjustMaxAlpha_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomAdjustMaxAlpha_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, SetCustomAdjustMaxAlpha_AttributeValue_Offset), 0, SetCustomAdjustMaxAlpha_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomAdjustMaxAlpha_bAddApplyDelegate_Offset), 0, SetCustomAdjustMaxAlpha_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomAdjustMaxAlpha_FunctionAddress, intPtr, SetCustomAdjustMaxAlpha_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomAdjustMaxAlpha_ReturnValue_Offset), 0, SetCustomAdjustMaxAlpha_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustHue")]
+	public unsafe bool SetCustomAdjustHue(float AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomAdjustHue_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustHue");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomAdjustHue_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomAdjustHue_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, SetCustomAdjustHue_AttributeValue_Offset), 0, SetCustomAdjustHue_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomAdjustHue_bAddApplyDelegate_Offset), 0, SetCustomAdjustHue_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomAdjustHue_FunctionAddress, intPtr, SetCustomAdjustHue_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomAdjustHue_ReturnValue_Offset), 0, SetCustomAdjustHue_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustBrightnessCurve")]
+	public unsafe bool SetCustomAdjustBrightnessCurve(float AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomAdjustBrightnessCurve_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustBrightnessCurve");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomAdjustBrightnessCurve_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomAdjustBrightnessCurve_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, SetCustomAdjustBrightnessCurve_AttributeValue_Offset), 0, SetCustomAdjustBrightnessCurve_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomAdjustBrightnessCurve_bAddApplyDelegate_Offset), 0, SetCustomAdjustBrightnessCurve_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomAdjustBrightnessCurve_FunctionAddress, intPtr, SetCustomAdjustBrightnessCurve_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomAdjustBrightnessCurve_ReturnValue_Offset), 0, SetCustomAdjustBrightnessCurve_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustBrightness")]
+	public unsafe bool SetCustomAdjustBrightness(float AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomAdjustBrightness_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustBrightness");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomAdjustBrightness_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomAdjustBrightness_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, SetCustomAdjustBrightness_AttributeValue_Offset), 0, SetCustomAdjustBrightness_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomAdjustBrightness_bAddApplyDelegate_Offset), 0, SetCustomAdjustBrightness_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomAdjustBrightness_FunctionAddress, intPtr, SetCustomAdjustBrightness_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomAdjustBrightness_ReturnValue_Offset), 0, SetCustomAdjustBrightness_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67240960u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAddressY")]
+	public unsafe bool SetCustomAddressY(byte AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomAddressY_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAddressY");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomAddressY_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomAddressY_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<byte>.ToNative(IntPtr.Add(intPtr, SetCustomAddressY_AttributeValue_Offset), 0, SetCustomAddressY_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomAddressY_bAddApplyDelegate_Offset), 0, SetCustomAddressY_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomAddressY_FunctionAddress, intPtr, SetCustomAddressY_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomAddressY_ReturnValue_Offset), 0, SetCustomAddressY_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67240960u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAddressX")]
+	public unsafe bool SetCustomAddressX(byte AttributeValue, bool bAddApplyDelegate = true)
+	{
+		CheckDestroyed();
+		if (!SetCustomAddressX_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAddressX");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetCustomAddressX_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetCustomAddressX_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		BlittableTypeMarshaler<byte>.ToNative(IntPtr.Add(intPtr, SetCustomAddressX_AttributeValue_Offset), 0, SetCustomAddressX_AttributeValue_PropertyAddress.Address, AttributeValue);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetCustomAddressX_bAddApplyDelegate_Offset), 0, SetCustomAddressX_bAddApplyDelegate_PropertyAddress.Address, bAddApplyDelegate);
+		NativeReflection.InvokeFunctionOptimized(base.Address, SetCustomAddressX_FunctionAddress, intPtr, SetCustomAddressX_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetCustomAddressX_ReturnValue_Offset), 0, SetCustomAddressX_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67240961u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:InitializeTextureNode")]
+	public unsafe void InitializeTextureNode(string UniqueID, string DisplayLabel, string InAssetClass, string InAssetName)
+	{
+		CheckDestroyed();
+		if (!InitializeTextureNode_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:InitializeTextureNode");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(InitializeTextureNode_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)InitializeTextureNode_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, InitializeTextureNode_UniqueID_Offset), 0, InitializeTextureNode_UniqueID_PropertyAddress.Address, UniqueID);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, InitializeTextureNode_DisplayLabel_Offset), 0, InitializeTextureNode_DisplayLabel_PropertyAddress.Address, DisplayLabel);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, InitializeTextureNode_InAssetClass_Offset), 0, InitializeTextureNode_InAssetClass_PropertyAddress.Address, InAssetClass);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, InitializeTextureNode_InAssetName_Offset), 0, InitializeTextureNode_InAssetName_PropertyAddress.Address, InAssetName);
+		NativeReflection.InvokeFunctionOptimized(base.Address, InitializeTextureNode_FunctionAddress, intPtr, InitializeTextureNode_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(InitializeTextureNode_UniqueID_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(InitializeTextureNode_DisplayLabel_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(InitializeTextureNode_InAssetClass_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(InitializeTextureNode_InAssetName_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 1409418240u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetObjectClass")]
+	public unsafe TSubclassOf<UObject> GetObjectClass()
+	{
+		CheckDestroyed();
+		if (!GetObjectClass_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetObjectClass");
+			return default(TSubclassOf<UObject>);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetObjectClass_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetObjectClass_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetObjectClass_FunctionAddress, intPtr, GetObjectClass_ParamsSize);
+		return TSubclassOfMarshaler<UObject>.FromNative(IntPtr.Add(intPtr, GetObjectClass_ReturnValue_Offset), 0, GetObjectClass_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomVirtualTextureStreaming")]
+	public unsafe bool GetCustomVirtualTextureStreaming(out bool AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomVirtualTextureStreaming_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomVirtualTextureStreaming");
+			AttributeValue = false;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomVirtualTextureStreaming_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomVirtualTextureStreaming_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomVirtualTextureStreaming_FunctionAddress, intPtr, GetCustomVirtualTextureStreaming_ParamsSize);
+		AttributeValue = BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomVirtualTextureStreaming_AttributeValue_Offset), 0, GetCustomVirtualTextureStreaming_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomVirtualTextureStreaming_ReturnValue_Offset), 0, GetCustomVirtualTextureStreaming_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomTranslatedTextureNodeUid")]
+	public unsafe bool GetCustomTranslatedTextureNodeUid(out string AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomTranslatedTextureNodeUid_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomTranslatedTextureNodeUid");
+			AttributeValue = FStringMarshaler.DefaultString;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomTranslatedTextureNodeUid_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomTranslatedTextureNodeUid_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomTranslatedTextureNodeUid_FunctionAddress, intPtr, GetCustomTranslatedTextureNodeUid_ParamsSize);
+		AttributeValue = FStringMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomTranslatedTextureNodeUid_AttributeValue_Offset), 0, GetCustomTranslatedTextureNodeUid_AttributeValue_PropertyAddress.Address);
+		NativeReflection.DestroyValue_InContainer(GetCustomTranslatedTextureNodeUid_AttributeValue_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomTranslatedTextureNodeUid_ReturnValue_Offset), 0, GetCustomTranslatedTextureNodeUid_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomSRGB")]
+	public unsafe bool GetCustomSRGB(out bool AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomSRGB_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomSRGB");
+			AttributeValue = false;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomSRGB_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomSRGB_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomSRGB_FunctionAddress, intPtr, GetCustomSRGB_ParamsSize);
+		AttributeValue = BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomSRGB_AttributeValue_Offset), 0, GetCustomSRGB_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomSRGB_ReturnValue_Offset), 0, GetCustomSRGB_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomPowerOfTwoMode")]
+	public unsafe bool GetCustomPowerOfTwoMode(out byte AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomPowerOfTwoMode_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomPowerOfTwoMode");
+			AttributeValue = 0;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomPowerOfTwoMode_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomPowerOfTwoMode_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomPowerOfTwoMode_FunctionAddress, intPtr, GetCustomPowerOfTwoMode_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<byte>.FromNative(IntPtr.Add(intPtr, GetCustomPowerOfTwoMode_AttributeValue_Offset), 0, GetCustomPowerOfTwoMode_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomPowerOfTwoMode_ReturnValue_Offset), 0, GetCustomPowerOfTwoMode_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1422001153u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomPaddingColor")]
+	public unsafe bool GetCustomPaddingColor(out FColor AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomPaddingColor_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomPaddingColor");
+			AttributeValue = default(FColor);
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomPaddingColor_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomPaddingColor_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomPaddingColor_FunctionAddress, intPtr, GetCustomPaddingColor_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<FColor>.FromNative(IntPtr.Add(intPtr, GetCustomPaddingColor_AttributeValue_Offset), 0, GetCustomPaddingColor_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomPaddingColor_ReturnValue_Offset), 0, GetCustomPaddingColor_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomMipLoadOptions")]
+	public unsafe bool GetCustomMipLoadOptions(out byte AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomMipLoadOptions_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomMipLoadOptions");
+			AttributeValue = 0;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomMipLoadOptions_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomMipLoadOptions_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomMipLoadOptions_FunctionAddress, intPtr, GetCustomMipLoadOptions_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<byte>.FromNative(IntPtr.Add(intPtr, GetCustomMipLoadOptions_AttributeValue_Offset), 0, GetCustomMipLoadOptions_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomMipLoadOptions_ReturnValue_Offset), 0, GetCustomMipLoadOptions_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomMipGenSettings")]
+	public unsafe bool GetCustomMipGenSettings(out byte AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomMipGenSettings_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomMipGenSettings");
+			AttributeValue = 0;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomMipGenSettings_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomMipGenSettings_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomMipGenSettings_FunctionAddress, intPtr, GetCustomMipGenSettings_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<byte>.FromNative(IntPtr.Add(intPtr, GetCustomMipGenSettings_AttributeValue_Offset), 0, GetCustomMipGenSettings_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomMipGenSettings_ReturnValue_Offset), 0, GetCustomMipGenSettings_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomMaxTextureSize")]
+	public unsafe bool GetCustomMaxTextureSize(out int AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomMaxTextureSize_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomMaxTextureSize");
+			AttributeValue = 0;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomMaxTextureSize_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomMaxTextureSize_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomMaxTextureSize_FunctionAddress, intPtr, GetCustomMaxTextureSize_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<int>.FromNative(IntPtr.Add(intPtr, GetCustomMaxTextureSize_AttributeValue_Offset), 0, GetCustomMaxTextureSize_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomMaxTextureSize_ReturnValue_Offset), 0, GetCustomMaxTextureSize_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomLossyCompressionAmount")]
+	public unsafe bool GetCustomLossyCompressionAmount(out byte AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomLossyCompressionAmount_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomLossyCompressionAmount");
+			AttributeValue = 0;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomLossyCompressionAmount_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomLossyCompressionAmount_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomLossyCompressionAmount_FunctionAddress, intPtr, GetCustomLossyCompressionAmount_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<byte>.FromNative(IntPtr.Add(intPtr, GetCustomLossyCompressionAmount_AttributeValue_Offset), 0, GetCustomLossyCompressionAmount_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomLossyCompressionAmount_ReturnValue_Offset), 0, GetCustomLossyCompressionAmount_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomLODGroup")]
+	public unsafe bool GetCustomLODGroup(out byte AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomLODGroup_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomLODGroup");
+			AttributeValue = 0;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomLODGroup_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomLODGroup_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomLODGroup_FunctionAddress, intPtr, GetCustomLODGroup_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<byte>.FromNative(IntPtr.Add(intPtr, GetCustomLODGroup_AttributeValue_Offset), 0, GetCustomLODGroup_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomLODGroup_ReturnValue_Offset), 0, GetCustomLODGroup_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomLODBias")]
+	public unsafe bool GetCustomLODBias(out int AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomLODBias_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomLODBias");
+			AttributeValue = 0;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomLODBias_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomLODBias_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomLODBias_FunctionAddress, intPtr, GetCustomLODBias_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<int>.FromNative(IntPtr.Add(intPtr, GetCustomLODBias_AttributeValue_Offset), 0, GetCustomLODBias_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomLODBias_ReturnValue_Offset), 0, GetCustomLODBias_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomFilter")]
+	public unsafe bool GetCustomFilter(out byte AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomFilter_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomFilter");
+			AttributeValue = 0;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomFilter_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomFilter_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomFilter_FunctionAddress, intPtr, GetCustomFilter_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<byte>.FromNative(IntPtr.Add(intPtr, GetCustomFilter_AttributeValue_Offset), 0, GetCustomFilter_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomFilter_ReturnValue_Offset), 0, GetCustomFilter_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomDownscaleOptions")]
+	public unsafe bool GetCustomDownscaleOptions(out byte AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomDownscaleOptions_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomDownscaleOptions");
+			AttributeValue = 0;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomDownscaleOptions_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomDownscaleOptions_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomDownscaleOptions_FunctionAddress, intPtr, GetCustomDownscaleOptions_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<byte>.FromNative(IntPtr.Add(intPtr, GetCustomDownscaleOptions_AttributeValue_Offset), 0, GetCustomDownscaleOptions_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomDownscaleOptions_ReturnValue_Offset), 0, GetCustomDownscaleOptions_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomDownscale")]
+	public unsafe bool GetCustomDownscale(out float AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomDownscale_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomDownscale");
+			AttributeValue = 0f;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomDownscale_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomDownscale_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomDownscale_FunctionAddress, intPtr, GetCustomDownscale_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetCustomDownscale_AttributeValue_Offset), 0, GetCustomDownscale_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomDownscale_ReturnValue_Offset), 0, GetCustomDownscale_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomDeferCompression")]
+	public unsafe bool GetCustomDeferCompression(out bool AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomDeferCompression_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomDeferCompression");
+			AttributeValue = false;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomDeferCompression_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomDeferCompression_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomDeferCompression_FunctionAddress, intPtr, GetCustomDeferCompression_ParamsSize);
+		AttributeValue = BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomDeferCompression_AttributeValue_Offset), 0, GetCustomDeferCompression_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomDeferCompression_ReturnValue_Offset), 0, GetCustomDeferCompression_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompressionSettings")]
+	public unsafe bool GetCustomCompressionSettings(out byte AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomCompressionSettings_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompressionSettings");
+			AttributeValue = 0;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomCompressionSettings_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomCompressionSettings_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomCompressionSettings_FunctionAddress, intPtr, GetCustomCompressionSettings_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<byte>.FromNative(IntPtr.Add(intPtr, GetCustomCompressionSettings_AttributeValue_Offset), 0, GetCustomCompressionSettings_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomCompressionSettings_ReturnValue_Offset), 0, GetCustomCompressionSettings_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompressionQuality")]
+	public unsafe bool GetCustomCompressionQuality(out byte AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomCompressionQuality_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompressionQuality");
+			AttributeValue = 0;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomCompressionQuality_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomCompressionQuality_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomCompressionQuality_FunctionAddress, intPtr, GetCustomCompressionQuality_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<byte>.FromNative(IntPtr.Add(intPtr, GetCustomCompressionQuality_AttributeValue_Offset), 0, GetCustomCompressionQuality_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomCompressionQuality_ReturnValue_Offset), 0, GetCustomCompressionQuality_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompressionNoAlpha")]
+	public unsafe bool GetCustomCompressionNoAlpha(out bool AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomCompressionNoAlpha_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompressionNoAlpha");
+			AttributeValue = false;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomCompressionNoAlpha_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomCompressionNoAlpha_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomCompressionNoAlpha_FunctionAddress, intPtr, GetCustomCompressionNoAlpha_ParamsSize);
+		AttributeValue = BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomCompressionNoAlpha_AttributeValue_Offset), 0, GetCustomCompressionNoAlpha_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomCompressionNoAlpha_ReturnValue_Offset), 0, GetCustomCompressionNoAlpha_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompositeTextureMode")]
+	public unsafe bool GetCustomCompositeTextureMode(out byte AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomCompositeTextureMode_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompositeTextureMode");
+			AttributeValue = 0;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomCompositeTextureMode_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomCompositeTextureMode_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomCompositeTextureMode_FunctionAddress, intPtr, GetCustomCompositeTextureMode_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<byte>.FromNative(IntPtr.Add(intPtr, GetCustomCompositeTextureMode_AttributeValue_Offset), 0, GetCustomCompositeTextureMode_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomCompositeTextureMode_ReturnValue_Offset), 0, GetCustomCompositeTextureMode_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompositePower")]
+	public unsafe bool GetCustomCompositePower(out float AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomCompositePower_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompositePower");
+			AttributeValue = 0f;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomCompositePower_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomCompositePower_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomCompositePower_FunctionAddress, intPtr, GetCustomCompositePower_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetCustomCompositePower_AttributeValue_Offset), 0, GetCustomCompositePower_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomCompositePower_ReturnValue_Offset), 0, GetCustomCompositePower_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomChromaKeyThreshold")]
+	public unsafe bool GetCustomChromaKeyThreshold(out float AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomChromaKeyThreshold_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomChromaKeyThreshold");
+			AttributeValue = 0f;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomChromaKeyThreshold_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomChromaKeyThreshold_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomChromaKeyThreshold_FunctionAddress, intPtr, GetCustomChromaKeyThreshold_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetCustomChromaKeyThreshold_AttributeValue_Offset), 0, GetCustomChromaKeyThreshold_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomChromaKeyThreshold_ReturnValue_Offset), 0, GetCustomChromaKeyThreshold_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1422001153u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomChromaKeyColor")]
+	public unsafe bool GetCustomChromaKeyColor(out FColor AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomChromaKeyColor_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomChromaKeyColor");
+			AttributeValue = default(FColor);
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomChromaKeyColor_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomChromaKeyColor_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomChromaKeyColor_FunctionAddress, intPtr, GetCustomChromaKeyColor_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<FColor>.FromNative(IntPtr.Add(intPtr, GetCustomChromaKeyColor_AttributeValue_Offset), 0, GetCustomChromaKeyColor_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomChromaKeyColor_ReturnValue_Offset), 0, GetCustomChromaKeyColor_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombUseLegacyGamma")]
+	public unsafe bool GetCustombUseLegacyGamma(out bool AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustombUseLegacyGamma_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombUseLegacyGamma");
+			AttributeValue = false;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustombUseLegacyGamma_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustombUseLegacyGamma_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustombUseLegacyGamma_FunctionAddress, intPtr, GetCustombUseLegacyGamma_ParamsSize);
+		AttributeValue = BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustombUseLegacyGamma_AttributeValue_Offset), 0, GetCustombUseLegacyGamma_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustombUseLegacyGamma_ReturnValue_Offset), 0, GetCustombUseLegacyGamma_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombPreserveBorder")]
+	public unsafe bool GetCustombPreserveBorder(out bool AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustombPreserveBorder_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombPreserveBorder");
+			AttributeValue = false;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustombPreserveBorder_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustombPreserveBorder_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustombPreserveBorder_FunctionAddress, intPtr, GetCustombPreserveBorder_ParamsSize);
+		AttributeValue = BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustombPreserveBorder_AttributeValue_Offset), 0, GetCustombPreserveBorder_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustombPreserveBorder_ReturnValue_Offset), 0, GetCustombPreserveBorder_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombFlipGreenChannel")]
+	public unsafe bool GetCustombFlipGreenChannel(out bool AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustombFlipGreenChannel_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombFlipGreenChannel");
+			AttributeValue = false;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustombFlipGreenChannel_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustombFlipGreenChannel_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustombFlipGreenChannel_FunctionAddress, intPtr, GetCustombFlipGreenChannel_ParamsSize);
+		AttributeValue = BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustombFlipGreenChannel_AttributeValue_Offset), 0, GetCustombFlipGreenChannel_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustombFlipGreenChannel_ReturnValue_Offset), 0, GetCustombFlipGreenChannel_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombDoScaleMipsForAlphaCoverage")]
+	public unsafe bool GetCustombDoScaleMipsForAlphaCoverage(out bool AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustombDoScaleMipsForAlphaCoverage_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombDoScaleMipsForAlphaCoverage");
+			AttributeValue = false;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustombDoScaleMipsForAlphaCoverage_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustombDoScaleMipsForAlphaCoverage_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, intPtr, GetCustombDoScaleMipsForAlphaCoverage_ParamsSize);
+		AttributeValue = BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustombDoScaleMipsForAlphaCoverage_AttributeValue_Offset), 0, GetCustombDoScaleMipsForAlphaCoverage_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustombDoScaleMipsForAlphaCoverage_ReturnValue_Offset), 0, GetCustombDoScaleMipsForAlphaCoverage_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombDitherMipMapAlpha")]
+	public unsafe bool GetCustombDitherMipMapAlpha(out bool AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustombDitherMipMapAlpha_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombDitherMipMapAlpha");
+			AttributeValue = false;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustombDitherMipMapAlpha_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustombDitherMipMapAlpha_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustombDitherMipMapAlpha_FunctionAddress, intPtr, GetCustombDitherMipMapAlpha_ParamsSize);
+		AttributeValue = BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustombDitherMipMapAlpha_AttributeValue_Offset), 0, GetCustombDitherMipMapAlpha_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustombDitherMipMapAlpha_ReturnValue_Offset), 0, GetCustombDitherMipMapAlpha_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombChromaKeyTexture")]
+	public unsafe bool GetCustombChromaKeyTexture(out bool AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustombChromaKeyTexture_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombChromaKeyTexture");
+			AttributeValue = false;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustombChromaKeyTexture_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustombChromaKeyTexture_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustombChromaKeyTexture_FunctionAddress, intPtr, GetCustombChromaKeyTexture_ParamsSize);
+		AttributeValue = BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustombChromaKeyTexture_AttributeValue_Offset), 0, GetCustombChromaKeyTexture_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustombChromaKeyTexture_ReturnValue_Offset), 0, GetCustombChromaKeyTexture_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1422001153u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAlphaCoverageThresholds")]
+	public unsafe bool GetCustomAlphaCoverageThresholds(out FVector4 AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomAlphaCoverageThresholds_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAlphaCoverageThresholds");
+			AttributeValue = default(FVector4);
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomAlphaCoverageThresholds_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomAlphaCoverageThresholds_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomAlphaCoverageThresholds_FunctionAddress, intPtr, GetCustomAlphaCoverageThresholds_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<FVector4>.FromNative(IntPtr.Add(intPtr, GetCustomAlphaCoverageThresholds_AttributeValue_Offset), 0, GetCustomAlphaCoverageThresholds_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomAlphaCoverageThresholds_ReturnValue_Offset), 0, GetCustomAlphaCoverageThresholds_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustVibrance")]
+	public unsafe bool GetCustomAdjustVibrance(out float AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomAdjustVibrance_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustVibrance");
+			AttributeValue = 0f;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomAdjustVibrance_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomAdjustVibrance_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomAdjustVibrance_FunctionAddress, intPtr, GetCustomAdjustVibrance_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetCustomAdjustVibrance_AttributeValue_Offset), 0, GetCustomAdjustVibrance_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomAdjustVibrance_ReturnValue_Offset), 0, GetCustomAdjustVibrance_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustSaturation")]
+	public unsafe bool GetCustomAdjustSaturation(out float AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomAdjustSaturation_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustSaturation");
+			AttributeValue = 0f;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomAdjustSaturation_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomAdjustSaturation_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomAdjustSaturation_FunctionAddress, intPtr, GetCustomAdjustSaturation_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetCustomAdjustSaturation_AttributeValue_Offset), 0, GetCustomAdjustSaturation_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomAdjustSaturation_ReturnValue_Offset), 0, GetCustomAdjustSaturation_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustRGBCurve")]
+	public unsafe bool GetCustomAdjustRGBCurve(out float AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomAdjustRGBCurve_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustRGBCurve");
+			AttributeValue = 0f;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomAdjustRGBCurve_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomAdjustRGBCurve_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomAdjustRGBCurve_FunctionAddress, intPtr, GetCustomAdjustRGBCurve_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetCustomAdjustRGBCurve_AttributeValue_Offset), 0, GetCustomAdjustRGBCurve_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomAdjustRGBCurve_ReturnValue_Offset), 0, GetCustomAdjustRGBCurve_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustMinAlpha")]
+	public unsafe bool GetCustomAdjustMinAlpha(out float AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomAdjustMinAlpha_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustMinAlpha");
+			AttributeValue = 0f;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomAdjustMinAlpha_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomAdjustMinAlpha_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomAdjustMinAlpha_FunctionAddress, intPtr, GetCustomAdjustMinAlpha_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetCustomAdjustMinAlpha_AttributeValue_Offset), 0, GetCustomAdjustMinAlpha_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomAdjustMinAlpha_ReturnValue_Offset), 0, GetCustomAdjustMinAlpha_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustMaxAlpha")]
+	public unsafe bool GetCustomAdjustMaxAlpha(out float AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomAdjustMaxAlpha_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustMaxAlpha");
+			AttributeValue = 0f;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomAdjustMaxAlpha_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomAdjustMaxAlpha_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomAdjustMaxAlpha_FunctionAddress, intPtr, GetCustomAdjustMaxAlpha_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetCustomAdjustMaxAlpha_AttributeValue_Offset), 0, GetCustomAdjustMaxAlpha_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomAdjustMaxAlpha_ReturnValue_Offset), 0, GetCustomAdjustMaxAlpha_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustHue")]
+	public unsafe bool GetCustomAdjustHue(out float AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomAdjustHue_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustHue");
+			AttributeValue = 0f;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomAdjustHue_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomAdjustHue_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomAdjustHue_FunctionAddress, intPtr, GetCustomAdjustHue_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetCustomAdjustHue_AttributeValue_Offset), 0, GetCustomAdjustHue_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomAdjustHue_ReturnValue_Offset), 0, GetCustomAdjustHue_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustBrightnessCurve")]
+	public unsafe bool GetCustomAdjustBrightnessCurve(out float AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomAdjustBrightnessCurve_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustBrightnessCurve");
+			AttributeValue = 0f;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomAdjustBrightnessCurve_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomAdjustBrightnessCurve_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomAdjustBrightnessCurve_FunctionAddress, intPtr, GetCustomAdjustBrightnessCurve_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetCustomAdjustBrightnessCurve_AttributeValue_Offset), 0, GetCustomAdjustBrightnessCurve_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomAdjustBrightnessCurve_ReturnValue_Offset), 0, GetCustomAdjustBrightnessCurve_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612545u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustBrightness")]
+	public unsafe bool GetCustomAdjustBrightness(out float AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomAdjustBrightness_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustBrightness");
+			AttributeValue = 0f;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomAdjustBrightness_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomAdjustBrightness_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomAdjustBrightness_FunctionAddress, intPtr, GetCustomAdjustBrightness_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetCustomAdjustBrightness_AttributeValue_Offset), 0, GetCustomAdjustBrightness_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomAdjustBrightness_ReturnValue_Offset), 0, GetCustomAdjustBrightness_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612544u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAddressY")]
+	public unsafe bool GetCustomAddressY(out byte AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomAddressY_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAddressY");
+			AttributeValue = 0;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomAddressY_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomAddressY_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomAddressY_FunctionAddress, intPtr, GetCustomAddressY_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<byte>.FromNative(IntPtr.Add(intPtr, GetCustomAddressY_AttributeValue_Offset), 0, GetCustomAddressY_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomAddressY_ReturnValue_Offset), 0, GetCustomAddressY_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 1413612544u)]
+	[UMetaPath("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAddressX")]
+	public unsafe bool GetCustomAddressX(out byte AttributeValue)
+	{
+		CheckDestroyed();
+		if (!GetCustomAddressX_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAddressX");
+			AttributeValue = 0;
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetCustomAddressX_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetCustomAddressX_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeFunctionOptimized(base.Address, GetCustomAddressX_FunctionAddress, intPtr, GetCustomAddressX_ParamsSize);
+		AttributeValue = BlittableTypeMarshaler<byte>.FromNative(IntPtr.Add(intPtr, GetCustomAddressX_AttributeValue_Offset), 0, GetCustomAddressX_AttributeValue_PropertyAddress.Address);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetCustomAddressX_ReturnValue_Offset), 0, GetCustomAddressX_ReturnValue_PropertyAddress.Address);
+	}
+
+	static UInterchangeTextureFactoryNode()
+	{
+		if (UnrealTypes.CanLazyLoadNativeType(typeof(UInterchangeTextureFactoryNode)))
+		{
+			LoadNativeType();
+		}
+		UnrealTypes.OnCCtorCalled(typeof(UInterchangeTextureFactoryNode));
+	}
+
+	private static void LoadNativeType()
+	{
+		IntPtr unrealClass = NativeReflection.GetClass("/Script/InterchangeNodes.InterchangeTextureFactoryNode");
+		SetCustomVirtualTextureStreaming_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomVirtualTextureStreaming");
+		SetCustomVirtualTextureStreaming_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomVirtualTextureStreaming_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomVirtualTextureStreaming_AttributeValue_PropertyAddress, SetCustomVirtualTextureStreaming_FunctionAddress, "AttributeValue");
+		SetCustomVirtualTextureStreaming_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomVirtualTextureStreaming_FunctionAddress, "AttributeValue");
+		SetCustomVirtualTextureStreaming_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomVirtualTextureStreaming_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomVirtualTextureStreaming_bAddApplyDelegate_PropertyAddress, SetCustomVirtualTextureStreaming_FunctionAddress, "bAddApplyDelegate");
+		SetCustomVirtualTextureStreaming_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomVirtualTextureStreaming_FunctionAddress, "bAddApplyDelegate");
+		SetCustomVirtualTextureStreaming_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomVirtualTextureStreaming_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomVirtualTextureStreaming_ReturnValue_PropertyAddress, SetCustomVirtualTextureStreaming_FunctionAddress, "ReturnValue");
+		SetCustomVirtualTextureStreaming_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomVirtualTextureStreaming_FunctionAddress, "ReturnValue");
+		SetCustomVirtualTextureStreaming_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomVirtualTextureStreaming_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomVirtualTextureStreaming_IsValid = SetCustomVirtualTextureStreaming_FunctionAddress != IntPtr.Zero && SetCustomVirtualTextureStreaming_AttributeValue_IsValid && SetCustomVirtualTextureStreaming_bAddApplyDelegate_IsValid && SetCustomVirtualTextureStreaming_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomVirtualTextureStreaming", SetCustomVirtualTextureStreaming_IsValid);
+		SetCustomTranslatedTextureNodeUid_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomTranslatedTextureNodeUid");
+		SetCustomTranslatedTextureNodeUid_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomTranslatedTextureNodeUid_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomTranslatedTextureNodeUid_AttributeValue_PropertyAddress, SetCustomTranslatedTextureNodeUid_FunctionAddress, "AttributeValue");
+		SetCustomTranslatedTextureNodeUid_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomTranslatedTextureNodeUid_FunctionAddress, "AttributeValue");
+		SetCustomTranslatedTextureNodeUid_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomTranslatedTextureNodeUid_FunctionAddress, "AttributeValue", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomTranslatedTextureNodeUid_ReturnValue_PropertyAddress, SetCustomTranslatedTextureNodeUid_FunctionAddress, "ReturnValue");
+		SetCustomTranslatedTextureNodeUid_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomTranslatedTextureNodeUid_FunctionAddress, "ReturnValue");
+		SetCustomTranslatedTextureNodeUid_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomTranslatedTextureNodeUid_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomTranslatedTextureNodeUid_IsValid = SetCustomTranslatedTextureNodeUid_FunctionAddress != IntPtr.Zero && SetCustomTranslatedTextureNodeUid_AttributeValue_IsValid && SetCustomTranslatedTextureNodeUid_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomTranslatedTextureNodeUid", SetCustomTranslatedTextureNodeUid_IsValid);
+		SetCustomSRGB_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomSRGB");
+		SetCustomSRGB_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomSRGB_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomSRGB_AttributeValue_PropertyAddress, SetCustomSRGB_FunctionAddress, "AttributeValue");
+		SetCustomSRGB_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomSRGB_FunctionAddress, "AttributeValue");
+		SetCustomSRGB_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomSRGB_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomSRGB_bAddApplyDelegate_PropertyAddress, SetCustomSRGB_FunctionAddress, "bAddApplyDelegate");
+		SetCustomSRGB_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomSRGB_FunctionAddress, "bAddApplyDelegate");
+		SetCustomSRGB_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomSRGB_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomSRGB_ReturnValue_PropertyAddress, SetCustomSRGB_FunctionAddress, "ReturnValue");
+		SetCustomSRGB_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomSRGB_FunctionAddress, "ReturnValue");
+		SetCustomSRGB_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomSRGB_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomSRGB_IsValid = SetCustomSRGB_FunctionAddress != IntPtr.Zero && SetCustomSRGB_AttributeValue_IsValid && SetCustomSRGB_bAddApplyDelegate_IsValid && SetCustomSRGB_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomSRGB", SetCustomSRGB_IsValid);
+		SetCustomPowerOfTwoMode_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomPowerOfTwoMode");
+		SetCustomPowerOfTwoMode_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomPowerOfTwoMode_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomPowerOfTwoMode_AttributeValue_PropertyAddress, SetCustomPowerOfTwoMode_FunctionAddress, "AttributeValue");
+		SetCustomPowerOfTwoMode_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomPowerOfTwoMode_FunctionAddress, "AttributeValue");
+		SetCustomPowerOfTwoMode_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomPowerOfTwoMode_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomPowerOfTwoMode_bAddApplyDelegate_PropertyAddress, SetCustomPowerOfTwoMode_FunctionAddress, "bAddApplyDelegate");
+		SetCustomPowerOfTwoMode_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomPowerOfTwoMode_FunctionAddress, "bAddApplyDelegate");
+		SetCustomPowerOfTwoMode_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomPowerOfTwoMode_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomPowerOfTwoMode_ReturnValue_PropertyAddress, SetCustomPowerOfTwoMode_FunctionAddress, "ReturnValue");
+		SetCustomPowerOfTwoMode_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomPowerOfTwoMode_FunctionAddress, "ReturnValue");
+		SetCustomPowerOfTwoMode_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomPowerOfTwoMode_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomPowerOfTwoMode_IsValid = SetCustomPowerOfTwoMode_FunctionAddress != IntPtr.Zero && SetCustomPowerOfTwoMode_AttributeValue_IsValid && SetCustomPowerOfTwoMode_bAddApplyDelegate_IsValid && SetCustomPowerOfTwoMode_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomPowerOfTwoMode", SetCustomPowerOfTwoMode_IsValid);
+		SetCustomPaddingColor_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomPaddingColor");
+		SetCustomPaddingColor_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomPaddingColor_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomPaddingColor_AttributeValue_PropertyAddress, SetCustomPaddingColor_FunctionAddress, "AttributeValue");
+		SetCustomPaddingColor_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomPaddingColor_FunctionAddress, "AttributeValue");
+		SetCustomPaddingColor_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomPaddingColor_FunctionAddress, "AttributeValue", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomPaddingColor_bAddApplyDelegate_PropertyAddress, SetCustomPaddingColor_FunctionAddress, "bAddApplyDelegate");
+		SetCustomPaddingColor_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomPaddingColor_FunctionAddress, "bAddApplyDelegate");
+		SetCustomPaddingColor_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomPaddingColor_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomPaddingColor_ReturnValue_PropertyAddress, SetCustomPaddingColor_FunctionAddress, "ReturnValue");
+		SetCustomPaddingColor_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomPaddingColor_FunctionAddress, "ReturnValue");
+		SetCustomPaddingColor_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomPaddingColor_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomPaddingColor_IsValid = SetCustomPaddingColor_FunctionAddress != IntPtr.Zero && SetCustomPaddingColor_AttributeValue_IsValid && SetCustomPaddingColor_bAddApplyDelegate_IsValid && SetCustomPaddingColor_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomPaddingColor", SetCustomPaddingColor_IsValid);
+		SetCustomMipLoadOptions_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomMipLoadOptions");
+		SetCustomMipLoadOptions_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomMipLoadOptions_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomMipLoadOptions_AttributeValue_PropertyAddress, SetCustomMipLoadOptions_FunctionAddress, "AttributeValue");
+		SetCustomMipLoadOptions_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomMipLoadOptions_FunctionAddress, "AttributeValue");
+		SetCustomMipLoadOptions_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomMipLoadOptions_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomMipLoadOptions_bAddApplyDelegate_PropertyAddress, SetCustomMipLoadOptions_FunctionAddress, "bAddApplyDelegate");
+		SetCustomMipLoadOptions_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomMipLoadOptions_FunctionAddress, "bAddApplyDelegate");
+		SetCustomMipLoadOptions_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomMipLoadOptions_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomMipLoadOptions_ReturnValue_PropertyAddress, SetCustomMipLoadOptions_FunctionAddress, "ReturnValue");
+		SetCustomMipLoadOptions_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomMipLoadOptions_FunctionAddress, "ReturnValue");
+		SetCustomMipLoadOptions_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomMipLoadOptions_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomMipLoadOptions_IsValid = SetCustomMipLoadOptions_FunctionAddress != IntPtr.Zero && SetCustomMipLoadOptions_AttributeValue_IsValid && SetCustomMipLoadOptions_bAddApplyDelegate_IsValid && SetCustomMipLoadOptions_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomMipLoadOptions", SetCustomMipLoadOptions_IsValid);
+		SetCustomMipGenSettings_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomMipGenSettings");
+		SetCustomMipGenSettings_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomMipGenSettings_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomMipGenSettings_AttributeValue_PropertyAddress, SetCustomMipGenSettings_FunctionAddress, "AttributeValue");
+		SetCustomMipGenSettings_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomMipGenSettings_FunctionAddress, "AttributeValue");
+		SetCustomMipGenSettings_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomMipGenSettings_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomMipGenSettings_bAddApplyDelegate_PropertyAddress, SetCustomMipGenSettings_FunctionAddress, "bAddApplyDelegate");
+		SetCustomMipGenSettings_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomMipGenSettings_FunctionAddress, "bAddApplyDelegate");
+		SetCustomMipGenSettings_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomMipGenSettings_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomMipGenSettings_ReturnValue_PropertyAddress, SetCustomMipGenSettings_FunctionAddress, "ReturnValue");
+		SetCustomMipGenSettings_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomMipGenSettings_FunctionAddress, "ReturnValue");
+		SetCustomMipGenSettings_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomMipGenSettings_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomMipGenSettings_IsValid = SetCustomMipGenSettings_FunctionAddress != IntPtr.Zero && SetCustomMipGenSettings_AttributeValue_IsValid && SetCustomMipGenSettings_bAddApplyDelegate_IsValid && SetCustomMipGenSettings_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomMipGenSettings", SetCustomMipGenSettings_IsValid);
+		SetCustomMaxTextureSize_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomMaxTextureSize");
+		SetCustomMaxTextureSize_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomMaxTextureSize_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomMaxTextureSize_AttributeValue_PropertyAddress, SetCustomMaxTextureSize_FunctionAddress, "AttributeValue");
+		SetCustomMaxTextureSize_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomMaxTextureSize_FunctionAddress, "AttributeValue");
+		SetCustomMaxTextureSize_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomMaxTextureSize_FunctionAddress, "AttributeValue", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomMaxTextureSize_bAddApplyDelegate_PropertyAddress, SetCustomMaxTextureSize_FunctionAddress, "bAddApplyDelegate");
+		SetCustomMaxTextureSize_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomMaxTextureSize_FunctionAddress, "bAddApplyDelegate");
+		SetCustomMaxTextureSize_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomMaxTextureSize_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomMaxTextureSize_ReturnValue_PropertyAddress, SetCustomMaxTextureSize_FunctionAddress, "ReturnValue");
+		SetCustomMaxTextureSize_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomMaxTextureSize_FunctionAddress, "ReturnValue");
+		SetCustomMaxTextureSize_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomMaxTextureSize_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomMaxTextureSize_IsValid = SetCustomMaxTextureSize_FunctionAddress != IntPtr.Zero && SetCustomMaxTextureSize_AttributeValue_IsValid && SetCustomMaxTextureSize_bAddApplyDelegate_IsValid && SetCustomMaxTextureSize_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomMaxTextureSize", SetCustomMaxTextureSize_IsValid);
+		SetCustomLossyCompressionAmount_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomLossyCompressionAmount");
+		SetCustomLossyCompressionAmount_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomLossyCompressionAmount_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomLossyCompressionAmount_AttributeValue_PropertyAddress, SetCustomLossyCompressionAmount_FunctionAddress, "AttributeValue");
+		SetCustomLossyCompressionAmount_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomLossyCompressionAmount_FunctionAddress, "AttributeValue");
+		SetCustomLossyCompressionAmount_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomLossyCompressionAmount_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomLossyCompressionAmount_bAddApplyDelegate_PropertyAddress, SetCustomLossyCompressionAmount_FunctionAddress, "bAddApplyDelegate");
+		SetCustomLossyCompressionAmount_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomLossyCompressionAmount_FunctionAddress, "bAddApplyDelegate");
+		SetCustomLossyCompressionAmount_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomLossyCompressionAmount_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomLossyCompressionAmount_ReturnValue_PropertyAddress, SetCustomLossyCompressionAmount_FunctionAddress, "ReturnValue");
+		SetCustomLossyCompressionAmount_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomLossyCompressionAmount_FunctionAddress, "ReturnValue");
+		SetCustomLossyCompressionAmount_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomLossyCompressionAmount_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomLossyCompressionAmount_IsValid = SetCustomLossyCompressionAmount_FunctionAddress != IntPtr.Zero && SetCustomLossyCompressionAmount_AttributeValue_IsValid && SetCustomLossyCompressionAmount_bAddApplyDelegate_IsValid && SetCustomLossyCompressionAmount_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomLossyCompressionAmount", SetCustomLossyCompressionAmount_IsValid);
+		SetCustomLODGroup_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomLODGroup");
+		SetCustomLODGroup_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomLODGroup_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomLODGroup_AttributeValue_PropertyAddress, SetCustomLODGroup_FunctionAddress, "AttributeValue");
+		SetCustomLODGroup_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomLODGroup_FunctionAddress, "AttributeValue");
+		SetCustomLODGroup_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomLODGroup_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomLODGroup_bAddApplyDelegate_PropertyAddress, SetCustomLODGroup_FunctionAddress, "bAddApplyDelegate");
+		SetCustomLODGroup_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomLODGroup_FunctionAddress, "bAddApplyDelegate");
+		SetCustomLODGroup_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomLODGroup_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomLODGroup_ReturnValue_PropertyAddress, SetCustomLODGroup_FunctionAddress, "ReturnValue");
+		SetCustomLODGroup_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomLODGroup_FunctionAddress, "ReturnValue");
+		SetCustomLODGroup_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomLODGroup_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomLODGroup_IsValid = SetCustomLODGroup_FunctionAddress != IntPtr.Zero && SetCustomLODGroup_AttributeValue_IsValid && SetCustomLODGroup_bAddApplyDelegate_IsValid && SetCustomLODGroup_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomLODGroup", SetCustomLODGroup_IsValid);
+		SetCustomLODBias_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomLODBias");
+		SetCustomLODBias_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomLODBias_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomLODBias_AttributeValue_PropertyAddress, SetCustomLODBias_FunctionAddress, "AttributeValue");
+		SetCustomLODBias_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomLODBias_FunctionAddress, "AttributeValue");
+		SetCustomLODBias_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomLODBias_FunctionAddress, "AttributeValue", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomLODBias_bAddApplyDelegate_PropertyAddress, SetCustomLODBias_FunctionAddress, "bAddApplyDelegate");
+		SetCustomLODBias_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomLODBias_FunctionAddress, "bAddApplyDelegate");
+		SetCustomLODBias_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomLODBias_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomLODBias_ReturnValue_PropertyAddress, SetCustomLODBias_FunctionAddress, "ReturnValue");
+		SetCustomLODBias_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomLODBias_FunctionAddress, "ReturnValue");
+		SetCustomLODBias_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomLODBias_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomLODBias_IsValid = SetCustomLODBias_FunctionAddress != IntPtr.Zero && SetCustomLODBias_AttributeValue_IsValid && SetCustomLODBias_bAddApplyDelegate_IsValid && SetCustomLODBias_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomLODBias", SetCustomLODBias_IsValid);
+		SetCustomFilter_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomFilter");
+		SetCustomFilter_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomFilter_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomFilter_AttributeValue_PropertyAddress, SetCustomFilter_FunctionAddress, "AttributeValue");
+		SetCustomFilter_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomFilter_FunctionAddress, "AttributeValue");
+		SetCustomFilter_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomFilter_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomFilter_bAddApplyDelegate_PropertyAddress, SetCustomFilter_FunctionAddress, "bAddApplyDelegate");
+		SetCustomFilter_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomFilter_FunctionAddress, "bAddApplyDelegate");
+		SetCustomFilter_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomFilter_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomFilter_ReturnValue_PropertyAddress, SetCustomFilter_FunctionAddress, "ReturnValue");
+		SetCustomFilter_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomFilter_FunctionAddress, "ReturnValue");
+		SetCustomFilter_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomFilter_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomFilter_IsValid = SetCustomFilter_FunctionAddress != IntPtr.Zero && SetCustomFilter_AttributeValue_IsValid && SetCustomFilter_bAddApplyDelegate_IsValid && SetCustomFilter_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomFilter", SetCustomFilter_IsValid);
+		SetCustomDownscaleOptions_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomDownscaleOptions");
+		SetCustomDownscaleOptions_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomDownscaleOptions_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomDownscaleOptions_AttributeValue_PropertyAddress, SetCustomDownscaleOptions_FunctionAddress, "AttributeValue");
+		SetCustomDownscaleOptions_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomDownscaleOptions_FunctionAddress, "AttributeValue");
+		SetCustomDownscaleOptions_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomDownscaleOptions_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomDownscaleOptions_bAddApplyDelegate_PropertyAddress, SetCustomDownscaleOptions_FunctionAddress, "bAddApplyDelegate");
+		SetCustomDownscaleOptions_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomDownscaleOptions_FunctionAddress, "bAddApplyDelegate");
+		SetCustomDownscaleOptions_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomDownscaleOptions_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomDownscaleOptions_ReturnValue_PropertyAddress, SetCustomDownscaleOptions_FunctionAddress, "ReturnValue");
+		SetCustomDownscaleOptions_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomDownscaleOptions_FunctionAddress, "ReturnValue");
+		SetCustomDownscaleOptions_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomDownscaleOptions_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomDownscaleOptions_IsValid = SetCustomDownscaleOptions_FunctionAddress != IntPtr.Zero && SetCustomDownscaleOptions_AttributeValue_IsValid && SetCustomDownscaleOptions_bAddApplyDelegate_IsValid && SetCustomDownscaleOptions_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomDownscaleOptions", SetCustomDownscaleOptions_IsValid);
+		SetCustomDownscale_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomDownscale");
+		SetCustomDownscale_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomDownscale_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomDownscale_AttributeValue_PropertyAddress, SetCustomDownscale_FunctionAddress, "AttributeValue");
+		SetCustomDownscale_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomDownscale_FunctionAddress, "AttributeValue");
+		SetCustomDownscale_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomDownscale_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomDownscale_bAddApplyDelegate_PropertyAddress, SetCustomDownscale_FunctionAddress, "bAddApplyDelegate");
+		SetCustomDownscale_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomDownscale_FunctionAddress, "bAddApplyDelegate");
+		SetCustomDownscale_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomDownscale_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomDownscale_ReturnValue_PropertyAddress, SetCustomDownscale_FunctionAddress, "ReturnValue");
+		SetCustomDownscale_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomDownscale_FunctionAddress, "ReturnValue");
+		SetCustomDownscale_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomDownscale_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomDownscale_IsValid = SetCustomDownscale_FunctionAddress != IntPtr.Zero && SetCustomDownscale_AttributeValue_IsValid && SetCustomDownscale_bAddApplyDelegate_IsValid && SetCustomDownscale_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomDownscale", SetCustomDownscale_IsValid);
+		SetCustomDeferCompression_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomDeferCompression");
+		SetCustomDeferCompression_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomDeferCompression_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomDeferCompression_AttributeValue_PropertyAddress, SetCustomDeferCompression_FunctionAddress, "AttributeValue");
+		SetCustomDeferCompression_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomDeferCompression_FunctionAddress, "AttributeValue");
+		SetCustomDeferCompression_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomDeferCompression_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomDeferCompression_bAddApplyDelegate_PropertyAddress, SetCustomDeferCompression_FunctionAddress, "bAddApplyDelegate");
+		SetCustomDeferCompression_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomDeferCompression_FunctionAddress, "bAddApplyDelegate");
+		SetCustomDeferCompression_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomDeferCompression_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomDeferCompression_ReturnValue_PropertyAddress, SetCustomDeferCompression_FunctionAddress, "ReturnValue");
+		SetCustomDeferCompression_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomDeferCompression_FunctionAddress, "ReturnValue");
+		SetCustomDeferCompression_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomDeferCompression_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomDeferCompression_IsValid = SetCustomDeferCompression_FunctionAddress != IntPtr.Zero && SetCustomDeferCompression_AttributeValue_IsValid && SetCustomDeferCompression_bAddApplyDelegate_IsValid && SetCustomDeferCompression_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomDeferCompression", SetCustomDeferCompression_IsValid);
+		SetCustomCompressionSettings_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomCompressionSettings");
+		SetCustomCompressionSettings_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomCompressionSettings_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompressionSettings_AttributeValue_PropertyAddress, SetCustomCompressionSettings_FunctionAddress, "AttributeValue");
+		SetCustomCompressionSettings_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompressionSettings_FunctionAddress, "AttributeValue");
+		SetCustomCompressionSettings_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompressionSettings_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompressionSettings_bAddApplyDelegate_PropertyAddress, SetCustomCompressionSettings_FunctionAddress, "bAddApplyDelegate");
+		SetCustomCompressionSettings_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompressionSettings_FunctionAddress, "bAddApplyDelegate");
+		SetCustomCompressionSettings_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompressionSettings_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompressionSettings_ReturnValue_PropertyAddress, SetCustomCompressionSettings_FunctionAddress, "ReturnValue");
+		SetCustomCompressionSettings_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompressionSettings_FunctionAddress, "ReturnValue");
+		SetCustomCompressionSettings_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompressionSettings_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomCompressionSettings_IsValid = SetCustomCompressionSettings_FunctionAddress != IntPtr.Zero && SetCustomCompressionSettings_AttributeValue_IsValid && SetCustomCompressionSettings_bAddApplyDelegate_IsValid && SetCustomCompressionSettings_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompressionSettings", SetCustomCompressionSettings_IsValid);
+		SetCustomCompressionQuality_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomCompressionQuality");
+		SetCustomCompressionQuality_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomCompressionQuality_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompressionQuality_AttributeValue_PropertyAddress, SetCustomCompressionQuality_FunctionAddress, "AttributeValue");
+		SetCustomCompressionQuality_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompressionQuality_FunctionAddress, "AttributeValue");
+		SetCustomCompressionQuality_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompressionQuality_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompressionQuality_bAddApplyDelegate_PropertyAddress, SetCustomCompressionQuality_FunctionAddress, "bAddApplyDelegate");
+		SetCustomCompressionQuality_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompressionQuality_FunctionAddress, "bAddApplyDelegate");
+		SetCustomCompressionQuality_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompressionQuality_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompressionQuality_ReturnValue_PropertyAddress, SetCustomCompressionQuality_FunctionAddress, "ReturnValue");
+		SetCustomCompressionQuality_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompressionQuality_FunctionAddress, "ReturnValue");
+		SetCustomCompressionQuality_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompressionQuality_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomCompressionQuality_IsValid = SetCustomCompressionQuality_FunctionAddress != IntPtr.Zero && SetCustomCompressionQuality_AttributeValue_IsValid && SetCustomCompressionQuality_bAddApplyDelegate_IsValid && SetCustomCompressionQuality_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompressionQuality", SetCustomCompressionQuality_IsValid);
+		SetCustomCompressionNoAlpha_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomCompressionNoAlpha");
+		SetCustomCompressionNoAlpha_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomCompressionNoAlpha_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompressionNoAlpha_AttributeValue_PropertyAddress, SetCustomCompressionNoAlpha_FunctionAddress, "AttributeValue");
+		SetCustomCompressionNoAlpha_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompressionNoAlpha_FunctionAddress, "AttributeValue");
+		SetCustomCompressionNoAlpha_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompressionNoAlpha_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompressionNoAlpha_bAddApplyDelegate_PropertyAddress, SetCustomCompressionNoAlpha_FunctionAddress, "bAddApplyDelegate");
+		SetCustomCompressionNoAlpha_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompressionNoAlpha_FunctionAddress, "bAddApplyDelegate");
+		SetCustomCompressionNoAlpha_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompressionNoAlpha_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompressionNoAlpha_ReturnValue_PropertyAddress, SetCustomCompressionNoAlpha_FunctionAddress, "ReturnValue");
+		SetCustomCompressionNoAlpha_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompressionNoAlpha_FunctionAddress, "ReturnValue");
+		SetCustomCompressionNoAlpha_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompressionNoAlpha_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomCompressionNoAlpha_IsValid = SetCustomCompressionNoAlpha_FunctionAddress != IntPtr.Zero && SetCustomCompressionNoAlpha_AttributeValue_IsValid && SetCustomCompressionNoAlpha_bAddApplyDelegate_IsValid && SetCustomCompressionNoAlpha_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompressionNoAlpha", SetCustomCompressionNoAlpha_IsValid);
+		SetCustomCompositeTextureMode_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomCompositeTextureMode");
+		SetCustomCompositeTextureMode_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomCompositeTextureMode_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompositeTextureMode_AttributeValue_PropertyAddress, SetCustomCompositeTextureMode_FunctionAddress, "AttributeValue");
+		SetCustomCompositeTextureMode_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompositeTextureMode_FunctionAddress, "AttributeValue");
+		SetCustomCompositeTextureMode_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompositeTextureMode_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompositeTextureMode_bAddApplyDelegate_PropertyAddress, SetCustomCompositeTextureMode_FunctionAddress, "bAddApplyDelegate");
+		SetCustomCompositeTextureMode_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompositeTextureMode_FunctionAddress, "bAddApplyDelegate");
+		SetCustomCompositeTextureMode_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompositeTextureMode_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompositeTextureMode_ReturnValue_PropertyAddress, SetCustomCompositeTextureMode_FunctionAddress, "ReturnValue");
+		SetCustomCompositeTextureMode_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompositeTextureMode_FunctionAddress, "ReturnValue");
+		SetCustomCompositeTextureMode_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompositeTextureMode_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomCompositeTextureMode_IsValid = SetCustomCompositeTextureMode_FunctionAddress != IntPtr.Zero && SetCustomCompositeTextureMode_AttributeValue_IsValid && SetCustomCompositeTextureMode_bAddApplyDelegate_IsValid && SetCustomCompositeTextureMode_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompositeTextureMode", SetCustomCompositeTextureMode_IsValid);
+		SetCustomCompositePower_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomCompositePower");
+		SetCustomCompositePower_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomCompositePower_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompositePower_AttributeValue_PropertyAddress, SetCustomCompositePower_FunctionAddress, "AttributeValue");
+		SetCustomCompositePower_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompositePower_FunctionAddress, "AttributeValue");
+		SetCustomCompositePower_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompositePower_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompositePower_bAddApplyDelegate_PropertyAddress, SetCustomCompositePower_FunctionAddress, "bAddApplyDelegate");
+		SetCustomCompositePower_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompositePower_FunctionAddress, "bAddApplyDelegate");
+		SetCustomCompositePower_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompositePower_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomCompositePower_ReturnValue_PropertyAddress, SetCustomCompositePower_FunctionAddress, "ReturnValue");
+		SetCustomCompositePower_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomCompositePower_FunctionAddress, "ReturnValue");
+		SetCustomCompositePower_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomCompositePower_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomCompositePower_IsValid = SetCustomCompositePower_FunctionAddress != IntPtr.Zero && SetCustomCompositePower_AttributeValue_IsValid && SetCustomCompositePower_bAddApplyDelegate_IsValid && SetCustomCompositePower_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomCompositePower", SetCustomCompositePower_IsValid);
+		SetCustomChromaKeyThreshold_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomChromaKeyThreshold");
+		SetCustomChromaKeyThreshold_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomChromaKeyThreshold_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomChromaKeyThreshold_AttributeValue_PropertyAddress, SetCustomChromaKeyThreshold_FunctionAddress, "AttributeValue");
+		SetCustomChromaKeyThreshold_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomChromaKeyThreshold_FunctionAddress, "AttributeValue");
+		SetCustomChromaKeyThreshold_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomChromaKeyThreshold_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomChromaKeyThreshold_bAddApplyDelegate_PropertyAddress, SetCustomChromaKeyThreshold_FunctionAddress, "bAddApplyDelegate");
+		SetCustomChromaKeyThreshold_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomChromaKeyThreshold_FunctionAddress, "bAddApplyDelegate");
+		SetCustomChromaKeyThreshold_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomChromaKeyThreshold_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomChromaKeyThreshold_ReturnValue_PropertyAddress, SetCustomChromaKeyThreshold_FunctionAddress, "ReturnValue");
+		SetCustomChromaKeyThreshold_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomChromaKeyThreshold_FunctionAddress, "ReturnValue");
+		SetCustomChromaKeyThreshold_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomChromaKeyThreshold_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomChromaKeyThreshold_IsValid = SetCustomChromaKeyThreshold_FunctionAddress != IntPtr.Zero && SetCustomChromaKeyThreshold_AttributeValue_IsValid && SetCustomChromaKeyThreshold_bAddApplyDelegate_IsValid && SetCustomChromaKeyThreshold_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomChromaKeyThreshold", SetCustomChromaKeyThreshold_IsValid);
+		SetCustomChromaKeyColor_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomChromaKeyColor");
+		SetCustomChromaKeyColor_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomChromaKeyColor_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomChromaKeyColor_AttributeValue_PropertyAddress, SetCustomChromaKeyColor_FunctionAddress, "AttributeValue");
+		SetCustomChromaKeyColor_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomChromaKeyColor_FunctionAddress, "AttributeValue");
+		SetCustomChromaKeyColor_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomChromaKeyColor_FunctionAddress, "AttributeValue", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomChromaKeyColor_bAddApplyDelegate_PropertyAddress, SetCustomChromaKeyColor_FunctionAddress, "bAddApplyDelegate");
+		SetCustomChromaKeyColor_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomChromaKeyColor_FunctionAddress, "bAddApplyDelegate");
+		SetCustomChromaKeyColor_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomChromaKeyColor_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomChromaKeyColor_ReturnValue_PropertyAddress, SetCustomChromaKeyColor_FunctionAddress, "ReturnValue");
+		SetCustomChromaKeyColor_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomChromaKeyColor_FunctionAddress, "ReturnValue");
+		SetCustomChromaKeyColor_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomChromaKeyColor_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomChromaKeyColor_IsValid = SetCustomChromaKeyColor_FunctionAddress != IntPtr.Zero && SetCustomChromaKeyColor_AttributeValue_IsValid && SetCustomChromaKeyColor_bAddApplyDelegate_IsValid && SetCustomChromaKeyColor_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomChromaKeyColor", SetCustomChromaKeyColor_IsValid);
+		SetCustombUseLegacyGamma_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustombUseLegacyGamma");
+		SetCustombUseLegacyGamma_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustombUseLegacyGamma_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombUseLegacyGamma_AttributeValue_PropertyAddress, SetCustombUseLegacyGamma_FunctionAddress, "AttributeValue");
+		SetCustombUseLegacyGamma_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombUseLegacyGamma_FunctionAddress, "AttributeValue");
+		SetCustombUseLegacyGamma_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombUseLegacyGamma_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombUseLegacyGamma_bAddApplyDelegate_PropertyAddress, SetCustombUseLegacyGamma_FunctionAddress, "bAddApplyDelegate");
+		SetCustombUseLegacyGamma_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombUseLegacyGamma_FunctionAddress, "bAddApplyDelegate");
+		SetCustombUseLegacyGamma_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombUseLegacyGamma_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombUseLegacyGamma_ReturnValue_PropertyAddress, SetCustombUseLegacyGamma_FunctionAddress, "ReturnValue");
+		SetCustombUseLegacyGamma_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombUseLegacyGamma_FunctionAddress, "ReturnValue");
+		SetCustombUseLegacyGamma_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombUseLegacyGamma_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustombUseLegacyGamma_IsValid = SetCustombUseLegacyGamma_FunctionAddress != IntPtr.Zero && SetCustombUseLegacyGamma_AttributeValue_IsValid && SetCustombUseLegacyGamma_bAddApplyDelegate_IsValid && SetCustombUseLegacyGamma_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombUseLegacyGamma", SetCustombUseLegacyGamma_IsValid);
+		SetCustombPreserveBorder_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustombPreserveBorder");
+		SetCustombPreserveBorder_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustombPreserveBorder_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombPreserveBorder_AttributeValue_PropertyAddress, SetCustombPreserveBorder_FunctionAddress, "AttributeValue");
+		SetCustombPreserveBorder_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombPreserveBorder_FunctionAddress, "AttributeValue");
+		SetCustombPreserveBorder_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombPreserveBorder_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombPreserveBorder_bAddApplyDelegate_PropertyAddress, SetCustombPreserveBorder_FunctionAddress, "bAddApplyDelegate");
+		SetCustombPreserveBorder_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombPreserveBorder_FunctionAddress, "bAddApplyDelegate");
+		SetCustombPreserveBorder_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombPreserveBorder_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombPreserveBorder_ReturnValue_PropertyAddress, SetCustombPreserveBorder_FunctionAddress, "ReturnValue");
+		SetCustombPreserveBorder_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombPreserveBorder_FunctionAddress, "ReturnValue");
+		SetCustombPreserveBorder_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombPreserveBorder_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustombPreserveBorder_IsValid = SetCustombPreserveBorder_FunctionAddress != IntPtr.Zero && SetCustombPreserveBorder_AttributeValue_IsValid && SetCustombPreserveBorder_bAddApplyDelegate_IsValid && SetCustombPreserveBorder_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombPreserveBorder", SetCustombPreserveBorder_IsValid);
+		SetCustombFlipGreenChannel_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustombFlipGreenChannel");
+		SetCustombFlipGreenChannel_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustombFlipGreenChannel_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombFlipGreenChannel_AttributeValue_PropertyAddress, SetCustombFlipGreenChannel_FunctionAddress, "AttributeValue");
+		SetCustombFlipGreenChannel_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombFlipGreenChannel_FunctionAddress, "AttributeValue");
+		SetCustombFlipGreenChannel_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombFlipGreenChannel_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombFlipGreenChannel_bAddApplyDelegate_PropertyAddress, SetCustombFlipGreenChannel_FunctionAddress, "bAddApplyDelegate");
+		SetCustombFlipGreenChannel_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombFlipGreenChannel_FunctionAddress, "bAddApplyDelegate");
+		SetCustombFlipGreenChannel_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombFlipGreenChannel_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombFlipGreenChannel_ReturnValue_PropertyAddress, SetCustombFlipGreenChannel_FunctionAddress, "ReturnValue");
+		SetCustombFlipGreenChannel_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombFlipGreenChannel_FunctionAddress, "ReturnValue");
+		SetCustombFlipGreenChannel_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombFlipGreenChannel_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustombFlipGreenChannel_IsValid = SetCustombFlipGreenChannel_FunctionAddress != IntPtr.Zero && SetCustombFlipGreenChannel_AttributeValue_IsValid && SetCustombFlipGreenChannel_bAddApplyDelegate_IsValid && SetCustombFlipGreenChannel_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombFlipGreenChannel", SetCustombFlipGreenChannel_IsValid);
+		SetCustombDoScaleMipsForAlphaCoverage_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustombDoScaleMipsForAlphaCoverage");
+		SetCustombDoScaleMipsForAlphaCoverage_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustombDoScaleMipsForAlphaCoverage_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombDoScaleMipsForAlphaCoverage_AttributeValue_PropertyAddress, SetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "AttributeValue");
+		SetCustombDoScaleMipsForAlphaCoverage_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "AttributeValue");
+		SetCustombDoScaleMipsForAlphaCoverage_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombDoScaleMipsForAlphaCoverage_bAddApplyDelegate_PropertyAddress, SetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "bAddApplyDelegate");
+		SetCustombDoScaleMipsForAlphaCoverage_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "bAddApplyDelegate");
+		SetCustombDoScaleMipsForAlphaCoverage_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombDoScaleMipsForAlphaCoverage_ReturnValue_PropertyAddress, SetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "ReturnValue");
+		SetCustombDoScaleMipsForAlphaCoverage_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "ReturnValue");
+		SetCustombDoScaleMipsForAlphaCoverage_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustombDoScaleMipsForAlphaCoverage_IsValid = SetCustombDoScaleMipsForAlphaCoverage_FunctionAddress != IntPtr.Zero && SetCustombDoScaleMipsForAlphaCoverage_AttributeValue_IsValid && SetCustombDoScaleMipsForAlphaCoverage_bAddApplyDelegate_IsValid && SetCustombDoScaleMipsForAlphaCoverage_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombDoScaleMipsForAlphaCoverage", SetCustombDoScaleMipsForAlphaCoverage_IsValid);
+		SetCustombDitherMipMapAlpha_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustombDitherMipMapAlpha");
+		SetCustombDitherMipMapAlpha_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustombDitherMipMapAlpha_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombDitherMipMapAlpha_AttributeValue_PropertyAddress, SetCustombDitherMipMapAlpha_FunctionAddress, "AttributeValue");
+		SetCustombDitherMipMapAlpha_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombDitherMipMapAlpha_FunctionAddress, "AttributeValue");
+		SetCustombDitherMipMapAlpha_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombDitherMipMapAlpha_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombDitherMipMapAlpha_bAddApplyDelegate_PropertyAddress, SetCustombDitherMipMapAlpha_FunctionAddress, "bAddApplyDelegate");
+		SetCustombDitherMipMapAlpha_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombDitherMipMapAlpha_FunctionAddress, "bAddApplyDelegate");
+		SetCustombDitherMipMapAlpha_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombDitherMipMapAlpha_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombDitherMipMapAlpha_ReturnValue_PropertyAddress, SetCustombDitherMipMapAlpha_FunctionAddress, "ReturnValue");
+		SetCustombDitherMipMapAlpha_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombDitherMipMapAlpha_FunctionAddress, "ReturnValue");
+		SetCustombDitherMipMapAlpha_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombDitherMipMapAlpha_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustombDitherMipMapAlpha_IsValid = SetCustombDitherMipMapAlpha_FunctionAddress != IntPtr.Zero && SetCustombDitherMipMapAlpha_AttributeValue_IsValid && SetCustombDitherMipMapAlpha_bAddApplyDelegate_IsValid && SetCustombDitherMipMapAlpha_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombDitherMipMapAlpha", SetCustombDitherMipMapAlpha_IsValid);
+		SetCustombChromaKeyTexture_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustombChromaKeyTexture");
+		SetCustombChromaKeyTexture_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustombChromaKeyTexture_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombChromaKeyTexture_AttributeValue_PropertyAddress, SetCustombChromaKeyTexture_FunctionAddress, "AttributeValue");
+		SetCustombChromaKeyTexture_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombChromaKeyTexture_FunctionAddress, "AttributeValue");
+		SetCustombChromaKeyTexture_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombChromaKeyTexture_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombChromaKeyTexture_bAddApplyDelegate_PropertyAddress, SetCustombChromaKeyTexture_FunctionAddress, "bAddApplyDelegate");
+		SetCustombChromaKeyTexture_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombChromaKeyTexture_FunctionAddress, "bAddApplyDelegate");
+		SetCustombChromaKeyTexture_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombChromaKeyTexture_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustombChromaKeyTexture_ReturnValue_PropertyAddress, SetCustombChromaKeyTexture_FunctionAddress, "ReturnValue");
+		SetCustombChromaKeyTexture_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustombChromaKeyTexture_FunctionAddress, "ReturnValue");
+		SetCustombChromaKeyTexture_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustombChromaKeyTexture_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustombChromaKeyTexture_IsValid = SetCustombChromaKeyTexture_FunctionAddress != IntPtr.Zero && SetCustombChromaKeyTexture_AttributeValue_IsValid && SetCustombChromaKeyTexture_bAddApplyDelegate_IsValid && SetCustombChromaKeyTexture_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustombChromaKeyTexture", SetCustombChromaKeyTexture_IsValid);
+		SetCustomAlphaCoverageThresholds_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomAlphaCoverageThresholds");
+		SetCustomAlphaCoverageThresholds_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomAlphaCoverageThresholds_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAlphaCoverageThresholds_AttributeValue_PropertyAddress, SetCustomAlphaCoverageThresholds_FunctionAddress, "AttributeValue");
+		SetCustomAlphaCoverageThresholds_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAlphaCoverageThresholds_FunctionAddress, "AttributeValue");
+		SetCustomAlphaCoverageThresholds_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAlphaCoverageThresholds_FunctionAddress, "AttributeValue", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAlphaCoverageThresholds_bAddApplyDelegate_PropertyAddress, SetCustomAlphaCoverageThresholds_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAlphaCoverageThresholds_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAlphaCoverageThresholds_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAlphaCoverageThresholds_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAlphaCoverageThresholds_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAlphaCoverageThresholds_ReturnValue_PropertyAddress, SetCustomAlphaCoverageThresholds_FunctionAddress, "ReturnValue");
+		SetCustomAlphaCoverageThresholds_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAlphaCoverageThresholds_FunctionAddress, "ReturnValue");
+		SetCustomAlphaCoverageThresholds_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAlphaCoverageThresholds_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomAlphaCoverageThresholds_IsValid = SetCustomAlphaCoverageThresholds_FunctionAddress != IntPtr.Zero && SetCustomAlphaCoverageThresholds_AttributeValue_IsValid && SetCustomAlphaCoverageThresholds_bAddApplyDelegate_IsValid && SetCustomAlphaCoverageThresholds_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAlphaCoverageThresholds", SetCustomAlphaCoverageThresholds_IsValid);
+		SetCustomAdjustVibrance_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomAdjustVibrance");
+		SetCustomAdjustVibrance_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomAdjustVibrance_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustVibrance_AttributeValue_PropertyAddress, SetCustomAdjustVibrance_FunctionAddress, "AttributeValue");
+		SetCustomAdjustVibrance_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustVibrance_FunctionAddress, "AttributeValue");
+		SetCustomAdjustVibrance_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustVibrance_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustVibrance_bAddApplyDelegate_PropertyAddress, SetCustomAdjustVibrance_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustVibrance_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustVibrance_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustVibrance_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustVibrance_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustVibrance_ReturnValue_PropertyAddress, SetCustomAdjustVibrance_FunctionAddress, "ReturnValue");
+		SetCustomAdjustVibrance_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustVibrance_FunctionAddress, "ReturnValue");
+		SetCustomAdjustVibrance_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustVibrance_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomAdjustVibrance_IsValid = SetCustomAdjustVibrance_FunctionAddress != IntPtr.Zero && SetCustomAdjustVibrance_AttributeValue_IsValid && SetCustomAdjustVibrance_bAddApplyDelegate_IsValid && SetCustomAdjustVibrance_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustVibrance", SetCustomAdjustVibrance_IsValid);
+		SetCustomAdjustSaturation_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomAdjustSaturation");
+		SetCustomAdjustSaturation_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomAdjustSaturation_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustSaturation_AttributeValue_PropertyAddress, SetCustomAdjustSaturation_FunctionAddress, "AttributeValue");
+		SetCustomAdjustSaturation_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustSaturation_FunctionAddress, "AttributeValue");
+		SetCustomAdjustSaturation_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustSaturation_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustSaturation_bAddApplyDelegate_PropertyAddress, SetCustomAdjustSaturation_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustSaturation_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustSaturation_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustSaturation_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustSaturation_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustSaturation_ReturnValue_PropertyAddress, SetCustomAdjustSaturation_FunctionAddress, "ReturnValue");
+		SetCustomAdjustSaturation_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustSaturation_FunctionAddress, "ReturnValue");
+		SetCustomAdjustSaturation_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustSaturation_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomAdjustSaturation_IsValid = SetCustomAdjustSaturation_FunctionAddress != IntPtr.Zero && SetCustomAdjustSaturation_AttributeValue_IsValid && SetCustomAdjustSaturation_bAddApplyDelegate_IsValid && SetCustomAdjustSaturation_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustSaturation", SetCustomAdjustSaturation_IsValid);
+		SetCustomAdjustRGBCurve_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomAdjustRGBCurve");
+		SetCustomAdjustRGBCurve_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomAdjustRGBCurve_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustRGBCurve_AttributeValue_PropertyAddress, SetCustomAdjustRGBCurve_FunctionAddress, "AttributeValue");
+		SetCustomAdjustRGBCurve_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustRGBCurve_FunctionAddress, "AttributeValue");
+		SetCustomAdjustRGBCurve_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustRGBCurve_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustRGBCurve_bAddApplyDelegate_PropertyAddress, SetCustomAdjustRGBCurve_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustRGBCurve_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustRGBCurve_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustRGBCurve_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustRGBCurve_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustRGBCurve_ReturnValue_PropertyAddress, SetCustomAdjustRGBCurve_FunctionAddress, "ReturnValue");
+		SetCustomAdjustRGBCurve_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustRGBCurve_FunctionAddress, "ReturnValue");
+		SetCustomAdjustRGBCurve_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustRGBCurve_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomAdjustRGBCurve_IsValid = SetCustomAdjustRGBCurve_FunctionAddress != IntPtr.Zero && SetCustomAdjustRGBCurve_AttributeValue_IsValid && SetCustomAdjustRGBCurve_bAddApplyDelegate_IsValid && SetCustomAdjustRGBCurve_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustRGBCurve", SetCustomAdjustRGBCurve_IsValid);
+		SetCustomAdjustMinAlpha_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomAdjustMinAlpha");
+		SetCustomAdjustMinAlpha_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomAdjustMinAlpha_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustMinAlpha_AttributeValue_PropertyAddress, SetCustomAdjustMinAlpha_FunctionAddress, "AttributeValue");
+		SetCustomAdjustMinAlpha_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustMinAlpha_FunctionAddress, "AttributeValue");
+		SetCustomAdjustMinAlpha_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustMinAlpha_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustMinAlpha_bAddApplyDelegate_PropertyAddress, SetCustomAdjustMinAlpha_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustMinAlpha_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustMinAlpha_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustMinAlpha_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustMinAlpha_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustMinAlpha_ReturnValue_PropertyAddress, SetCustomAdjustMinAlpha_FunctionAddress, "ReturnValue");
+		SetCustomAdjustMinAlpha_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustMinAlpha_FunctionAddress, "ReturnValue");
+		SetCustomAdjustMinAlpha_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustMinAlpha_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomAdjustMinAlpha_IsValid = SetCustomAdjustMinAlpha_FunctionAddress != IntPtr.Zero && SetCustomAdjustMinAlpha_AttributeValue_IsValid && SetCustomAdjustMinAlpha_bAddApplyDelegate_IsValid && SetCustomAdjustMinAlpha_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustMinAlpha", SetCustomAdjustMinAlpha_IsValid);
+		SetCustomAdjustMaxAlpha_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomAdjustMaxAlpha");
+		SetCustomAdjustMaxAlpha_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomAdjustMaxAlpha_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustMaxAlpha_AttributeValue_PropertyAddress, SetCustomAdjustMaxAlpha_FunctionAddress, "AttributeValue");
+		SetCustomAdjustMaxAlpha_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustMaxAlpha_FunctionAddress, "AttributeValue");
+		SetCustomAdjustMaxAlpha_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustMaxAlpha_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustMaxAlpha_bAddApplyDelegate_PropertyAddress, SetCustomAdjustMaxAlpha_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustMaxAlpha_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustMaxAlpha_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustMaxAlpha_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustMaxAlpha_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustMaxAlpha_ReturnValue_PropertyAddress, SetCustomAdjustMaxAlpha_FunctionAddress, "ReturnValue");
+		SetCustomAdjustMaxAlpha_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustMaxAlpha_FunctionAddress, "ReturnValue");
+		SetCustomAdjustMaxAlpha_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustMaxAlpha_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomAdjustMaxAlpha_IsValid = SetCustomAdjustMaxAlpha_FunctionAddress != IntPtr.Zero && SetCustomAdjustMaxAlpha_AttributeValue_IsValid && SetCustomAdjustMaxAlpha_bAddApplyDelegate_IsValid && SetCustomAdjustMaxAlpha_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustMaxAlpha", SetCustomAdjustMaxAlpha_IsValid);
+		SetCustomAdjustHue_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomAdjustHue");
+		SetCustomAdjustHue_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomAdjustHue_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustHue_AttributeValue_PropertyAddress, SetCustomAdjustHue_FunctionAddress, "AttributeValue");
+		SetCustomAdjustHue_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustHue_FunctionAddress, "AttributeValue");
+		SetCustomAdjustHue_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustHue_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustHue_bAddApplyDelegate_PropertyAddress, SetCustomAdjustHue_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustHue_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustHue_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustHue_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustHue_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustHue_ReturnValue_PropertyAddress, SetCustomAdjustHue_FunctionAddress, "ReturnValue");
+		SetCustomAdjustHue_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustHue_FunctionAddress, "ReturnValue");
+		SetCustomAdjustHue_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustHue_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomAdjustHue_IsValid = SetCustomAdjustHue_FunctionAddress != IntPtr.Zero && SetCustomAdjustHue_AttributeValue_IsValid && SetCustomAdjustHue_bAddApplyDelegate_IsValid && SetCustomAdjustHue_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustHue", SetCustomAdjustHue_IsValid);
+		SetCustomAdjustBrightnessCurve_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomAdjustBrightnessCurve");
+		SetCustomAdjustBrightnessCurve_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomAdjustBrightnessCurve_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustBrightnessCurve_AttributeValue_PropertyAddress, SetCustomAdjustBrightnessCurve_FunctionAddress, "AttributeValue");
+		SetCustomAdjustBrightnessCurve_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustBrightnessCurve_FunctionAddress, "AttributeValue");
+		SetCustomAdjustBrightnessCurve_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustBrightnessCurve_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustBrightnessCurve_bAddApplyDelegate_PropertyAddress, SetCustomAdjustBrightnessCurve_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustBrightnessCurve_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustBrightnessCurve_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustBrightnessCurve_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustBrightnessCurve_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustBrightnessCurve_ReturnValue_PropertyAddress, SetCustomAdjustBrightnessCurve_FunctionAddress, "ReturnValue");
+		SetCustomAdjustBrightnessCurve_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustBrightnessCurve_FunctionAddress, "ReturnValue");
+		SetCustomAdjustBrightnessCurve_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustBrightnessCurve_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomAdjustBrightnessCurve_IsValid = SetCustomAdjustBrightnessCurve_FunctionAddress != IntPtr.Zero && SetCustomAdjustBrightnessCurve_AttributeValue_IsValid && SetCustomAdjustBrightnessCurve_bAddApplyDelegate_IsValid && SetCustomAdjustBrightnessCurve_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustBrightnessCurve", SetCustomAdjustBrightnessCurve_IsValid);
+		SetCustomAdjustBrightness_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomAdjustBrightness");
+		SetCustomAdjustBrightness_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomAdjustBrightness_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustBrightness_AttributeValue_PropertyAddress, SetCustomAdjustBrightness_FunctionAddress, "AttributeValue");
+		SetCustomAdjustBrightness_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustBrightness_FunctionAddress, "AttributeValue");
+		SetCustomAdjustBrightness_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustBrightness_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustBrightness_bAddApplyDelegate_PropertyAddress, SetCustomAdjustBrightness_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustBrightness_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustBrightness_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAdjustBrightness_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustBrightness_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAdjustBrightness_ReturnValue_PropertyAddress, SetCustomAdjustBrightness_FunctionAddress, "ReturnValue");
+		SetCustomAdjustBrightness_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAdjustBrightness_FunctionAddress, "ReturnValue");
+		SetCustomAdjustBrightness_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAdjustBrightness_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomAdjustBrightness_IsValid = SetCustomAdjustBrightness_FunctionAddress != IntPtr.Zero && SetCustomAdjustBrightness_AttributeValue_IsValid && SetCustomAdjustBrightness_bAddApplyDelegate_IsValid && SetCustomAdjustBrightness_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAdjustBrightness", SetCustomAdjustBrightness_IsValid);
+		SetCustomAddressY_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomAddressY");
+		SetCustomAddressY_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomAddressY_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAddressY_AttributeValue_PropertyAddress, SetCustomAddressY_FunctionAddress, "AttributeValue");
+		SetCustomAddressY_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAddressY_FunctionAddress, "AttributeValue");
+		SetCustomAddressY_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAddressY_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAddressY_bAddApplyDelegate_PropertyAddress, SetCustomAddressY_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAddressY_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAddressY_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAddressY_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAddressY_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAddressY_ReturnValue_PropertyAddress, SetCustomAddressY_FunctionAddress, "ReturnValue");
+		SetCustomAddressY_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAddressY_FunctionAddress, "ReturnValue");
+		SetCustomAddressY_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAddressY_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomAddressY_IsValid = SetCustomAddressY_FunctionAddress != IntPtr.Zero && SetCustomAddressY_AttributeValue_IsValid && SetCustomAddressY_bAddApplyDelegate_IsValid && SetCustomAddressY_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAddressY", SetCustomAddressY_IsValid);
+		SetCustomAddressX_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "SetCustomAddressX");
+		SetCustomAddressX_ParamsSize = NativeReflection.GetFunctionParamsSize(SetCustomAddressX_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAddressX_AttributeValue_PropertyAddress, SetCustomAddressX_FunctionAddress, "AttributeValue");
+		SetCustomAddressX_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAddressX_FunctionAddress, "AttributeValue");
+		SetCustomAddressX_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAddressX_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAddressX_bAddApplyDelegate_PropertyAddress, SetCustomAddressX_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAddressX_bAddApplyDelegate_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAddressX_FunctionAddress, "bAddApplyDelegate");
+		SetCustomAddressX_bAddApplyDelegate_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAddressX_FunctionAddress, "bAddApplyDelegate", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetCustomAddressX_ReturnValue_PropertyAddress, SetCustomAddressX_FunctionAddress, "ReturnValue");
+		SetCustomAddressX_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetCustomAddressX_FunctionAddress, "ReturnValue");
+		SetCustomAddressX_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetCustomAddressX_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetCustomAddressX_IsValid = SetCustomAddressX_FunctionAddress != IntPtr.Zero && SetCustomAddressX_AttributeValue_IsValid && SetCustomAddressX_bAddApplyDelegate_IsValid && SetCustomAddressX_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:SetCustomAddressX", SetCustomAddressX_IsValid);
+		InitializeTextureNode_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "InitializeTextureNode");
+		InitializeTextureNode_ParamsSize = NativeReflection.GetFunctionParamsSize(InitializeTextureNode_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref InitializeTextureNode_UniqueID_PropertyAddress, InitializeTextureNode_FunctionAddress, "UniqueID");
+		InitializeTextureNode_UniqueID_Offset = NativeReflectionCached.GetPropertyOffset(InitializeTextureNode_FunctionAddress, "UniqueID");
+		InitializeTextureNode_UniqueID_IsValid = NativeReflectionCached.ValidatePropertyClass(InitializeTextureNode_FunctionAddress, "UniqueID", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref InitializeTextureNode_DisplayLabel_PropertyAddress, InitializeTextureNode_FunctionAddress, "DisplayLabel");
+		InitializeTextureNode_DisplayLabel_Offset = NativeReflectionCached.GetPropertyOffset(InitializeTextureNode_FunctionAddress, "DisplayLabel");
+		InitializeTextureNode_DisplayLabel_IsValid = NativeReflectionCached.ValidatePropertyClass(InitializeTextureNode_FunctionAddress, "DisplayLabel", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref InitializeTextureNode_InAssetClass_PropertyAddress, InitializeTextureNode_FunctionAddress, "InAssetClass");
+		InitializeTextureNode_InAssetClass_Offset = NativeReflectionCached.GetPropertyOffset(InitializeTextureNode_FunctionAddress, "InAssetClass");
+		InitializeTextureNode_InAssetClass_IsValid = NativeReflectionCached.ValidatePropertyClass(InitializeTextureNode_FunctionAddress, "InAssetClass", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref InitializeTextureNode_InAssetName_PropertyAddress, InitializeTextureNode_FunctionAddress, "InAssetName");
+		InitializeTextureNode_InAssetName_Offset = NativeReflectionCached.GetPropertyOffset(InitializeTextureNode_FunctionAddress, "InAssetName");
+		InitializeTextureNode_InAssetName_IsValid = NativeReflectionCached.ValidatePropertyClass(InitializeTextureNode_FunctionAddress, "InAssetName", Classes.FStrProperty);
+		InitializeTextureNode_IsValid = InitializeTextureNode_FunctionAddress != IntPtr.Zero && InitializeTextureNode_UniqueID_IsValid && InitializeTextureNode_DisplayLabel_IsValid && InitializeTextureNode_InAssetClass_IsValid && InitializeTextureNode_InAssetName_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:InitializeTextureNode", InitializeTextureNode_IsValid);
+		GetObjectClass_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetObjectClass");
+		GetObjectClass_ParamsSize = NativeReflection.GetFunctionParamsSize(GetObjectClass_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetObjectClass_ReturnValue_PropertyAddress, GetObjectClass_FunctionAddress, "ReturnValue");
+		GetObjectClass_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetObjectClass_FunctionAddress, "ReturnValue");
+		GetObjectClass_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetObjectClass_FunctionAddress, "ReturnValue", Classes.FClassProperty);
+		GetObjectClass_IsValid = GetObjectClass_FunctionAddress != IntPtr.Zero && GetObjectClass_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetObjectClass", GetObjectClass_IsValid);
+		GetCustomVirtualTextureStreaming_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomVirtualTextureStreaming");
+		GetCustomVirtualTextureStreaming_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomVirtualTextureStreaming_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomVirtualTextureStreaming_AttributeValue_PropertyAddress, GetCustomVirtualTextureStreaming_FunctionAddress, "AttributeValue");
+		GetCustomVirtualTextureStreaming_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomVirtualTextureStreaming_FunctionAddress, "AttributeValue");
+		GetCustomVirtualTextureStreaming_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomVirtualTextureStreaming_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomVirtualTextureStreaming_ReturnValue_PropertyAddress, GetCustomVirtualTextureStreaming_FunctionAddress, "ReturnValue");
+		GetCustomVirtualTextureStreaming_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomVirtualTextureStreaming_FunctionAddress, "ReturnValue");
+		GetCustomVirtualTextureStreaming_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomVirtualTextureStreaming_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomVirtualTextureStreaming_IsValid = GetCustomVirtualTextureStreaming_FunctionAddress != IntPtr.Zero && GetCustomVirtualTextureStreaming_AttributeValue_IsValid && GetCustomVirtualTextureStreaming_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomVirtualTextureStreaming", GetCustomVirtualTextureStreaming_IsValid);
+		GetCustomTranslatedTextureNodeUid_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomTranslatedTextureNodeUid");
+		GetCustomTranslatedTextureNodeUid_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomTranslatedTextureNodeUid_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomTranslatedTextureNodeUid_AttributeValue_PropertyAddress, GetCustomTranslatedTextureNodeUid_FunctionAddress, "AttributeValue");
+		GetCustomTranslatedTextureNodeUid_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomTranslatedTextureNodeUid_FunctionAddress, "AttributeValue");
+		GetCustomTranslatedTextureNodeUid_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomTranslatedTextureNodeUid_FunctionAddress, "AttributeValue", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomTranslatedTextureNodeUid_ReturnValue_PropertyAddress, GetCustomTranslatedTextureNodeUid_FunctionAddress, "ReturnValue");
+		GetCustomTranslatedTextureNodeUid_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomTranslatedTextureNodeUid_FunctionAddress, "ReturnValue");
+		GetCustomTranslatedTextureNodeUid_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomTranslatedTextureNodeUid_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomTranslatedTextureNodeUid_IsValid = GetCustomTranslatedTextureNodeUid_FunctionAddress != IntPtr.Zero && GetCustomTranslatedTextureNodeUid_AttributeValue_IsValid && GetCustomTranslatedTextureNodeUid_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomTranslatedTextureNodeUid", GetCustomTranslatedTextureNodeUid_IsValid);
+		GetCustomSRGB_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomSRGB");
+		GetCustomSRGB_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomSRGB_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomSRGB_AttributeValue_PropertyAddress, GetCustomSRGB_FunctionAddress, "AttributeValue");
+		GetCustomSRGB_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomSRGB_FunctionAddress, "AttributeValue");
+		GetCustomSRGB_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomSRGB_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomSRGB_ReturnValue_PropertyAddress, GetCustomSRGB_FunctionAddress, "ReturnValue");
+		GetCustomSRGB_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomSRGB_FunctionAddress, "ReturnValue");
+		GetCustomSRGB_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomSRGB_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomSRGB_IsValid = GetCustomSRGB_FunctionAddress != IntPtr.Zero && GetCustomSRGB_AttributeValue_IsValid && GetCustomSRGB_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomSRGB", GetCustomSRGB_IsValid);
+		GetCustomPowerOfTwoMode_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomPowerOfTwoMode");
+		GetCustomPowerOfTwoMode_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomPowerOfTwoMode_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomPowerOfTwoMode_AttributeValue_PropertyAddress, GetCustomPowerOfTwoMode_FunctionAddress, "AttributeValue");
+		GetCustomPowerOfTwoMode_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomPowerOfTwoMode_FunctionAddress, "AttributeValue");
+		GetCustomPowerOfTwoMode_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomPowerOfTwoMode_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomPowerOfTwoMode_ReturnValue_PropertyAddress, GetCustomPowerOfTwoMode_FunctionAddress, "ReturnValue");
+		GetCustomPowerOfTwoMode_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomPowerOfTwoMode_FunctionAddress, "ReturnValue");
+		GetCustomPowerOfTwoMode_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomPowerOfTwoMode_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomPowerOfTwoMode_IsValid = GetCustomPowerOfTwoMode_FunctionAddress != IntPtr.Zero && GetCustomPowerOfTwoMode_AttributeValue_IsValid && GetCustomPowerOfTwoMode_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomPowerOfTwoMode", GetCustomPowerOfTwoMode_IsValid);
+		GetCustomPaddingColor_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomPaddingColor");
+		GetCustomPaddingColor_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomPaddingColor_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomPaddingColor_AttributeValue_PropertyAddress, GetCustomPaddingColor_FunctionAddress, "AttributeValue");
+		GetCustomPaddingColor_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomPaddingColor_FunctionAddress, "AttributeValue");
+		GetCustomPaddingColor_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomPaddingColor_FunctionAddress, "AttributeValue", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomPaddingColor_ReturnValue_PropertyAddress, GetCustomPaddingColor_FunctionAddress, "ReturnValue");
+		GetCustomPaddingColor_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomPaddingColor_FunctionAddress, "ReturnValue");
+		GetCustomPaddingColor_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomPaddingColor_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomPaddingColor_IsValid = GetCustomPaddingColor_FunctionAddress != IntPtr.Zero && GetCustomPaddingColor_AttributeValue_IsValid && GetCustomPaddingColor_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomPaddingColor", GetCustomPaddingColor_IsValid);
+		GetCustomMipLoadOptions_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomMipLoadOptions");
+		GetCustomMipLoadOptions_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomMipLoadOptions_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomMipLoadOptions_AttributeValue_PropertyAddress, GetCustomMipLoadOptions_FunctionAddress, "AttributeValue");
+		GetCustomMipLoadOptions_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomMipLoadOptions_FunctionAddress, "AttributeValue");
+		GetCustomMipLoadOptions_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomMipLoadOptions_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomMipLoadOptions_ReturnValue_PropertyAddress, GetCustomMipLoadOptions_FunctionAddress, "ReturnValue");
+		GetCustomMipLoadOptions_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomMipLoadOptions_FunctionAddress, "ReturnValue");
+		GetCustomMipLoadOptions_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomMipLoadOptions_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomMipLoadOptions_IsValid = GetCustomMipLoadOptions_FunctionAddress != IntPtr.Zero && GetCustomMipLoadOptions_AttributeValue_IsValid && GetCustomMipLoadOptions_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomMipLoadOptions", GetCustomMipLoadOptions_IsValid);
+		GetCustomMipGenSettings_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomMipGenSettings");
+		GetCustomMipGenSettings_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomMipGenSettings_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomMipGenSettings_AttributeValue_PropertyAddress, GetCustomMipGenSettings_FunctionAddress, "AttributeValue");
+		GetCustomMipGenSettings_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomMipGenSettings_FunctionAddress, "AttributeValue");
+		GetCustomMipGenSettings_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomMipGenSettings_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomMipGenSettings_ReturnValue_PropertyAddress, GetCustomMipGenSettings_FunctionAddress, "ReturnValue");
+		GetCustomMipGenSettings_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomMipGenSettings_FunctionAddress, "ReturnValue");
+		GetCustomMipGenSettings_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomMipGenSettings_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomMipGenSettings_IsValid = GetCustomMipGenSettings_FunctionAddress != IntPtr.Zero && GetCustomMipGenSettings_AttributeValue_IsValid && GetCustomMipGenSettings_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomMipGenSettings", GetCustomMipGenSettings_IsValid);
+		GetCustomMaxTextureSize_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomMaxTextureSize");
+		GetCustomMaxTextureSize_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomMaxTextureSize_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomMaxTextureSize_AttributeValue_PropertyAddress, GetCustomMaxTextureSize_FunctionAddress, "AttributeValue");
+		GetCustomMaxTextureSize_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomMaxTextureSize_FunctionAddress, "AttributeValue");
+		GetCustomMaxTextureSize_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomMaxTextureSize_FunctionAddress, "AttributeValue", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomMaxTextureSize_ReturnValue_PropertyAddress, GetCustomMaxTextureSize_FunctionAddress, "ReturnValue");
+		GetCustomMaxTextureSize_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomMaxTextureSize_FunctionAddress, "ReturnValue");
+		GetCustomMaxTextureSize_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomMaxTextureSize_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomMaxTextureSize_IsValid = GetCustomMaxTextureSize_FunctionAddress != IntPtr.Zero && GetCustomMaxTextureSize_AttributeValue_IsValid && GetCustomMaxTextureSize_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomMaxTextureSize", GetCustomMaxTextureSize_IsValid);
+		GetCustomLossyCompressionAmount_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomLossyCompressionAmount");
+		GetCustomLossyCompressionAmount_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomLossyCompressionAmount_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomLossyCompressionAmount_AttributeValue_PropertyAddress, GetCustomLossyCompressionAmount_FunctionAddress, "AttributeValue");
+		GetCustomLossyCompressionAmount_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomLossyCompressionAmount_FunctionAddress, "AttributeValue");
+		GetCustomLossyCompressionAmount_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomLossyCompressionAmount_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomLossyCompressionAmount_ReturnValue_PropertyAddress, GetCustomLossyCompressionAmount_FunctionAddress, "ReturnValue");
+		GetCustomLossyCompressionAmount_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomLossyCompressionAmount_FunctionAddress, "ReturnValue");
+		GetCustomLossyCompressionAmount_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomLossyCompressionAmount_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomLossyCompressionAmount_IsValid = GetCustomLossyCompressionAmount_FunctionAddress != IntPtr.Zero && GetCustomLossyCompressionAmount_AttributeValue_IsValid && GetCustomLossyCompressionAmount_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomLossyCompressionAmount", GetCustomLossyCompressionAmount_IsValid);
+		GetCustomLODGroup_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomLODGroup");
+		GetCustomLODGroup_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomLODGroup_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomLODGroup_AttributeValue_PropertyAddress, GetCustomLODGroup_FunctionAddress, "AttributeValue");
+		GetCustomLODGroup_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomLODGroup_FunctionAddress, "AttributeValue");
+		GetCustomLODGroup_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomLODGroup_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomLODGroup_ReturnValue_PropertyAddress, GetCustomLODGroup_FunctionAddress, "ReturnValue");
+		GetCustomLODGroup_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomLODGroup_FunctionAddress, "ReturnValue");
+		GetCustomLODGroup_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomLODGroup_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomLODGroup_IsValid = GetCustomLODGroup_FunctionAddress != IntPtr.Zero && GetCustomLODGroup_AttributeValue_IsValid && GetCustomLODGroup_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomLODGroup", GetCustomLODGroup_IsValid);
+		GetCustomLODBias_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomLODBias");
+		GetCustomLODBias_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomLODBias_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomLODBias_AttributeValue_PropertyAddress, GetCustomLODBias_FunctionAddress, "AttributeValue");
+		GetCustomLODBias_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomLODBias_FunctionAddress, "AttributeValue");
+		GetCustomLODBias_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomLODBias_FunctionAddress, "AttributeValue", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomLODBias_ReturnValue_PropertyAddress, GetCustomLODBias_FunctionAddress, "ReturnValue");
+		GetCustomLODBias_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomLODBias_FunctionAddress, "ReturnValue");
+		GetCustomLODBias_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomLODBias_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomLODBias_IsValid = GetCustomLODBias_FunctionAddress != IntPtr.Zero && GetCustomLODBias_AttributeValue_IsValid && GetCustomLODBias_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomLODBias", GetCustomLODBias_IsValid);
+		GetCustomFilter_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomFilter");
+		GetCustomFilter_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomFilter_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomFilter_AttributeValue_PropertyAddress, GetCustomFilter_FunctionAddress, "AttributeValue");
+		GetCustomFilter_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomFilter_FunctionAddress, "AttributeValue");
+		GetCustomFilter_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomFilter_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomFilter_ReturnValue_PropertyAddress, GetCustomFilter_FunctionAddress, "ReturnValue");
+		GetCustomFilter_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomFilter_FunctionAddress, "ReturnValue");
+		GetCustomFilter_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomFilter_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomFilter_IsValid = GetCustomFilter_FunctionAddress != IntPtr.Zero && GetCustomFilter_AttributeValue_IsValid && GetCustomFilter_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomFilter", GetCustomFilter_IsValid);
+		GetCustomDownscaleOptions_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomDownscaleOptions");
+		GetCustomDownscaleOptions_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomDownscaleOptions_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomDownscaleOptions_AttributeValue_PropertyAddress, GetCustomDownscaleOptions_FunctionAddress, "AttributeValue");
+		GetCustomDownscaleOptions_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomDownscaleOptions_FunctionAddress, "AttributeValue");
+		GetCustomDownscaleOptions_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomDownscaleOptions_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomDownscaleOptions_ReturnValue_PropertyAddress, GetCustomDownscaleOptions_FunctionAddress, "ReturnValue");
+		GetCustomDownscaleOptions_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomDownscaleOptions_FunctionAddress, "ReturnValue");
+		GetCustomDownscaleOptions_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomDownscaleOptions_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomDownscaleOptions_IsValid = GetCustomDownscaleOptions_FunctionAddress != IntPtr.Zero && GetCustomDownscaleOptions_AttributeValue_IsValid && GetCustomDownscaleOptions_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomDownscaleOptions", GetCustomDownscaleOptions_IsValid);
+		GetCustomDownscale_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomDownscale");
+		GetCustomDownscale_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomDownscale_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomDownscale_AttributeValue_PropertyAddress, GetCustomDownscale_FunctionAddress, "AttributeValue");
+		GetCustomDownscale_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomDownscale_FunctionAddress, "AttributeValue");
+		GetCustomDownscale_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomDownscale_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomDownscale_ReturnValue_PropertyAddress, GetCustomDownscale_FunctionAddress, "ReturnValue");
+		GetCustomDownscale_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomDownscale_FunctionAddress, "ReturnValue");
+		GetCustomDownscale_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomDownscale_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomDownscale_IsValid = GetCustomDownscale_FunctionAddress != IntPtr.Zero && GetCustomDownscale_AttributeValue_IsValid && GetCustomDownscale_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomDownscale", GetCustomDownscale_IsValid);
+		GetCustomDeferCompression_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomDeferCompression");
+		GetCustomDeferCompression_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomDeferCompression_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomDeferCompression_AttributeValue_PropertyAddress, GetCustomDeferCompression_FunctionAddress, "AttributeValue");
+		GetCustomDeferCompression_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomDeferCompression_FunctionAddress, "AttributeValue");
+		GetCustomDeferCompression_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomDeferCompression_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomDeferCompression_ReturnValue_PropertyAddress, GetCustomDeferCompression_FunctionAddress, "ReturnValue");
+		GetCustomDeferCompression_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomDeferCompression_FunctionAddress, "ReturnValue");
+		GetCustomDeferCompression_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomDeferCompression_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomDeferCompression_IsValid = GetCustomDeferCompression_FunctionAddress != IntPtr.Zero && GetCustomDeferCompression_AttributeValue_IsValid && GetCustomDeferCompression_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomDeferCompression", GetCustomDeferCompression_IsValid);
+		GetCustomCompressionSettings_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomCompressionSettings");
+		GetCustomCompressionSettings_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomCompressionSettings_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomCompressionSettings_AttributeValue_PropertyAddress, GetCustomCompressionSettings_FunctionAddress, "AttributeValue");
+		GetCustomCompressionSettings_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomCompressionSettings_FunctionAddress, "AttributeValue");
+		GetCustomCompressionSettings_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomCompressionSettings_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomCompressionSettings_ReturnValue_PropertyAddress, GetCustomCompressionSettings_FunctionAddress, "ReturnValue");
+		GetCustomCompressionSettings_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomCompressionSettings_FunctionAddress, "ReturnValue");
+		GetCustomCompressionSettings_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomCompressionSettings_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomCompressionSettings_IsValid = GetCustomCompressionSettings_FunctionAddress != IntPtr.Zero && GetCustomCompressionSettings_AttributeValue_IsValid && GetCustomCompressionSettings_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompressionSettings", GetCustomCompressionSettings_IsValid);
+		GetCustomCompressionQuality_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomCompressionQuality");
+		GetCustomCompressionQuality_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomCompressionQuality_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomCompressionQuality_AttributeValue_PropertyAddress, GetCustomCompressionQuality_FunctionAddress, "AttributeValue");
+		GetCustomCompressionQuality_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomCompressionQuality_FunctionAddress, "AttributeValue");
+		GetCustomCompressionQuality_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomCompressionQuality_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomCompressionQuality_ReturnValue_PropertyAddress, GetCustomCompressionQuality_FunctionAddress, "ReturnValue");
+		GetCustomCompressionQuality_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomCompressionQuality_FunctionAddress, "ReturnValue");
+		GetCustomCompressionQuality_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomCompressionQuality_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomCompressionQuality_IsValid = GetCustomCompressionQuality_FunctionAddress != IntPtr.Zero && GetCustomCompressionQuality_AttributeValue_IsValid && GetCustomCompressionQuality_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompressionQuality", GetCustomCompressionQuality_IsValid);
+		GetCustomCompressionNoAlpha_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomCompressionNoAlpha");
+		GetCustomCompressionNoAlpha_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomCompressionNoAlpha_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomCompressionNoAlpha_AttributeValue_PropertyAddress, GetCustomCompressionNoAlpha_FunctionAddress, "AttributeValue");
+		GetCustomCompressionNoAlpha_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomCompressionNoAlpha_FunctionAddress, "AttributeValue");
+		GetCustomCompressionNoAlpha_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomCompressionNoAlpha_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomCompressionNoAlpha_ReturnValue_PropertyAddress, GetCustomCompressionNoAlpha_FunctionAddress, "ReturnValue");
+		GetCustomCompressionNoAlpha_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomCompressionNoAlpha_FunctionAddress, "ReturnValue");
+		GetCustomCompressionNoAlpha_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomCompressionNoAlpha_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomCompressionNoAlpha_IsValid = GetCustomCompressionNoAlpha_FunctionAddress != IntPtr.Zero && GetCustomCompressionNoAlpha_AttributeValue_IsValid && GetCustomCompressionNoAlpha_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompressionNoAlpha", GetCustomCompressionNoAlpha_IsValid);
+		GetCustomCompositeTextureMode_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomCompositeTextureMode");
+		GetCustomCompositeTextureMode_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomCompositeTextureMode_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomCompositeTextureMode_AttributeValue_PropertyAddress, GetCustomCompositeTextureMode_FunctionAddress, "AttributeValue");
+		GetCustomCompositeTextureMode_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomCompositeTextureMode_FunctionAddress, "AttributeValue");
+		GetCustomCompositeTextureMode_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomCompositeTextureMode_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomCompositeTextureMode_ReturnValue_PropertyAddress, GetCustomCompositeTextureMode_FunctionAddress, "ReturnValue");
+		GetCustomCompositeTextureMode_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomCompositeTextureMode_FunctionAddress, "ReturnValue");
+		GetCustomCompositeTextureMode_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomCompositeTextureMode_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomCompositeTextureMode_IsValid = GetCustomCompositeTextureMode_FunctionAddress != IntPtr.Zero && GetCustomCompositeTextureMode_AttributeValue_IsValid && GetCustomCompositeTextureMode_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompositeTextureMode", GetCustomCompositeTextureMode_IsValid);
+		GetCustomCompositePower_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomCompositePower");
+		GetCustomCompositePower_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomCompositePower_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomCompositePower_AttributeValue_PropertyAddress, GetCustomCompositePower_FunctionAddress, "AttributeValue");
+		GetCustomCompositePower_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomCompositePower_FunctionAddress, "AttributeValue");
+		GetCustomCompositePower_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomCompositePower_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomCompositePower_ReturnValue_PropertyAddress, GetCustomCompositePower_FunctionAddress, "ReturnValue");
+		GetCustomCompositePower_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomCompositePower_FunctionAddress, "ReturnValue");
+		GetCustomCompositePower_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomCompositePower_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomCompositePower_IsValid = GetCustomCompositePower_FunctionAddress != IntPtr.Zero && GetCustomCompositePower_AttributeValue_IsValid && GetCustomCompositePower_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomCompositePower", GetCustomCompositePower_IsValid);
+		GetCustomChromaKeyThreshold_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomChromaKeyThreshold");
+		GetCustomChromaKeyThreshold_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomChromaKeyThreshold_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomChromaKeyThreshold_AttributeValue_PropertyAddress, GetCustomChromaKeyThreshold_FunctionAddress, "AttributeValue");
+		GetCustomChromaKeyThreshold_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomChromaKeyThreshold_FunctionAddress, "AttributeValue");
+		GetCustomChromaKeyThreshold_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomChromaKeyThreshold_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomChromaKeyThreshold_ReturnValue_PropertyAddress, GetCustomChromaKeyThreshold_FunctionAddress, "ReturnValue");
+		GetCustomChromaKeyThreshold_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomChromaKeyThreshold_FunctionAddress, "ReturnValue");
+		GetCustomChromaKeyThreshold_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomChromaKeyThreshold_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomChromaKeyThreshold_IsValid = GetCustomChromaKeyThreshold_FunctionAddress != IntPtr.Zero && GetCustomChromaKeyThreshold_AttributeValue_IsValid && GetCustomChromaKeyThreshold_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomChromaKeyThreshold", GetCustomChromaKeyThreshold_IsValid);
+		GetCustomChromaKeyColor_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomChromaKeyColor");
+		GetCustomChromaKeyColor_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomChromaKeyColor_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomChromaKeyColor_AttributeValue_PropertyAddress, GetCustomChromaKeyColor_FunctionAddress, "AttributeValue");
+		GetCustomChromaKeyColor_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomChromaKeyColor_FunctionAddress, "AttributeValue");
+		GetCustomChromaKeyColor_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomChromaKeyColor_FunctionAddress, "AttributeValue", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomChromaKeyColor_ReturnValue_PropertyAddress, GetCustomChromaKeyColor_FunctionAddress, "ReturnValue");
+		GetCustomChromaKeyColor_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomChromaKeyColor_FunctionAddress, "ReturnValue");
+		GetCustomChromaKeyColor_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomChromaKeyColor_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomChromaKeyColor_IsValid = GetCustomChromaKeyColor_FunctionAddress != IntPtr.Zero && GetCustomChromaKeyColor_AttributeValue_IsValid && GetCustomChromaKeyColor_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomChromaKeyColor", GetCustomChromaKeyColor_IsValid);
+		GetCustombUseLegacyGamma_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustombUseLegacyGamma");
+		GetCustombUseLegacyGamma_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustombUseLegacyGamma_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustombUseLegacyGamma_AttributeValue_PropertyAddress, GetCustombUseLegacyGamma_FunctionAddress, "AttributeValue");
+		GetCustombUseLegacyGamma_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustombUseLegacyGamma_FunctionAddress, "AttributeValue");
+		GetCustombUseLegacyGamma_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustombUseLegacyGamma_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustombUseLegacyGamma_ReturnValue_PropertyAddress, GetCustombUseLegacyGamma_FunctionAddress, "ReturnValue");
+		GetCustombUseLegacyGamma_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustombUseLegacyGamma_FunctionAddress, "ReturnValue");
+		GetCustombUseLegacyGamma_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustombUseLegacyGamma_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustombUseLegacyGamma_IsValid = GetCustombUseLegacyGamma_FunctionAddress != IntPtr.Zero && GetCustombUseLegacyGamma_AttributeValue_IsValid && GetCustombUseLegacyGamma_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombUseLegacyGamma", GetCustombUseLegacyGamma_IsValid);
+		GetCustombPreserveBorder_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustombPreserveBorder");
+		GetCustombPreserveBorder_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustombPreserveBorder_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustombPreserveBorder_AttributeValue_PropertyAddress, GetCustombPreserveBorder_FunctionAddress, "AttributeValue");
+		GetCustombPreserveBorder_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustombPreserveBorder_FunctionAddress, "AttributeValue");
+		GetCustombPreserveBorder_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustombPreserveBorder_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustombPreserveBorder_ReturnValue_PropertyAddress, GetCustombPreserveBorder_FunctionAddress, "ReturnValue");
+		GetCustombPreserveBorder_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustombPreserveBorder_FunctionAddress, "ReturnValue");
+		GetCustombPreserveBorder_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustombPreserveBorder_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustombPreserveBorder_IsValid = GetCustombPreserveBorder_FunctionAddress != IntPtr.Zero && GetCustombPreserveBorder_AttributeValue_IsValid && GetCustombPreserveBorder_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombPreserveBorder", GetCustombPreserveBorder_IsValid);
+		GetCustombFlipGreenChannel_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustombFlipGreenChannel");
+		GetCustombFlipGreenChannel_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustombFlipGreenChannel_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustombFlipGreenChannel_AttributeValue_PropertyAddress, GetCustombFlipGreenChannel_FunctionAddress, "AttributeValue");
+		GetCustombFlipGreenChannel_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustombFlipGreenChannel_FunctionAddress, "AttributeValue");
+		GetCustombFlipGreenChannel_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustombFlipGreenChannel_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustombFlipGreenChannel_ReturnValue_PropertyAddress, GetCustombFlipGreenChannel_FunctionAddress, "ReturnValue");
+		GetCustombFlipGreenChannel_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustombFlipGreenChannel_FunctionAddress, "ReturnValue");
+		GetCustombFlipGreenChannel_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustombFlipGreenChannel_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustombFlipGreenChannel_IsValid = GetCustombFlipGreenChannel_FunctionAddress != IntPtr.Zero && GetCustombFlipGreenChannel_AttributeValue_IsValid && GetCustombFlipGreenChannel_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombFlipGreenChannel", GetCustombFlipGreenChannel_IsValid);
+		GetCustombDoScaleMipsForAlphaCoverage_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustombDoScaleMipsForAlphaCoverage");
+		GetCustombDoScaleMipsForAlphaCoverage_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustombDoScaleMipsForAlphaCoverage_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustombDoScaleMipsForAlphaCoverage_AttributeValue_PropertyAddress, GetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "AttributeValue");
+		GetCustombDoScaleMipsForAlphaCoverage_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "AttributeValue");
+		GetCustombDoScaleMipsForAlphaCoverage_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustombDoScaleMipsForAlphaCoverage_ReturnValue_PropertyAddress, GetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "ReturnValue");
+		GetCustombDoScaleMipsForAlphaCoverage_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "ReturnValue");
+		GetCustombDoScaleMipsForAlphaCoverage_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustombDoScaleMipsForAlphaCoverage_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustombDoScaleMipsForAlphaCoverage_IsValid = GetCustombDoScaleMipsForAlphaCoverage_FunctionAddress != IntPtr.Zero && GetCustombDoScaleMipsForAlphaCoverage_AttributeValue_IsValid && GetCustombDoScaleMipsForAlphaCoverage_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombDoScaleMipsForAlphaCoverage", GetCustombDoScaleMipsForAlphaCoverage_IsValid);
+		GetCustombDitherMipMapAlpha_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustombDitherMipMapAlpha");
+		GetCustombDitherMipMapAlpha_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustombDitherMipMapAlpha_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustombDitherMipMapAlpha_AttributeValue_PropertyAddress, GetCustombDitherMipMapAlpha_FunctionAddress, "AttributeValue");
+		GetCustombDitherMipMapAlpha_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustombDitherMipMapAlpha_FunctionAddress, "AttributeValue");
+		GetCustombDitherMipMapAlpha_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustombDitherMipMapAlpha_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustombDitherMipMapAlpha_ReturnValue_PropertyAddress, GetCustombDitherMipMapAlpha_FunctionAddress, "ReturnValue");
+		GetCustombDitherMipMapAlpha_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustombDitherMipMapAlpha_FunctionAddress, "ReturnValue");
+		GetCustombDitherMipMapAlpha_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustombDitherMipMapAlpha_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustombDitherMipMapAlpha_IsValid = GetCustombDitherMipMapAlpha_FunctionAddress != IntPtr.Zero && GetCustombDitherMipMapAlpha_AttributeValue_IsValid && GetCustombDitherMipMapAlpha_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombDitherMipMapAlpha", GetCustombDitherMipMapAlpha_IsValid);
+		GetCustombChromaKeyTexture_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustombChromaKeyTexture");
+		GetCustombChromaKeyTexture_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustombChromaKeyTexture_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustombChromaKeyTexture_AttributeValue_PropertyAddress, GetCustombChromaKeyTexture_FunctionAddress, "AttributeValue");
+		GetCustombChromaKeyTexture_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustombChromaKeyTexture_FunctionAddress, "AttributeValue");
+		GetCustombChromaKeyTexture_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustombChromaKeyTexture_FunctionAddress, "AttributeValue", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustombChromaKeyTexture_ReturnValue_PropertyAddress, GetCustombChromaKeyTexture_FunctionAddress, "ReturnValue");
+		GetCustombChromaKeyTexture_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustombChromaKeyTexture_FunctionAddress, "ReturnValue");
+		GetCustombChromaKeyTexture_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustombChromaKeyTexture_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustombChromaKeyTexture_IsValid = GetCustombChromaKeyTexture_FunctionAddress != IntPtr.Zero && GetCustombChromaKeyTexture_AttributeValue_IsValid && GetCustombChromaKeyTexture_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustombChromaKeyTexture", GetCustombChromaKeyTexture_IsValid);
+		GetCustomAlphaCoverageThresholds_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomAlphaCoverageThresholds");
+		GetCustomAlphaCoverageThresholds_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomAlphaCoverageThresholds_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAlphaCoverageThresholds_AttributeValue_PropertyAddress, GetCustomAlphaCoverageThresholds_FunctionAddress, "AttributeValue");
+		GetCustomAlphaCoverageThresholds_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAlphaCoverageThresholds_FunctionAddress, "AttributeValue");
+		GetCustomAlphaCoverageThresholds_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAlphaCoverageThresholds_FunctionAddress, "AttributeValue", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAlphaCoverageThresholds_ReturnValue_PropertyAddress, GetCustomAlphaCoverageThresholds_FunctionAddress, "ReturnValue");
+		GetCustomAlphaCoverageThresholds_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAlphaCoverageThresholds_FunctionAddress, "ReturnValue");
+		GetCustomAlphaCoverageThresholds_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAlphaCoverageThresholds_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomAlphaCoverageThresholds_IsValid = GetCustomAlphaCoverageThresholds_FunctionAddress != IntPtr.Zero && GetCustomAlphaCoverageThresholds_AttributeValue_IsValid && GetCustomAlphaCoverageThresholds_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAlphaCoverageThresholds", GetCustomAlphaCoverageThresholds_IsValid);
+		GetCustomAdjustVibrance_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomAdjustVibrance");
+		GetCustomAdjustVibrance_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomAdjustVibrance_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustVibrance_AttributeValue_PropertyAddress, GetCustomAdjustVibrance_FunctionAddress, "AttributeValue");
+		GetCustomAdjustVibrance_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustVibrance_FunctionAddress, "AttributeValue");
+		GetCustomAdjustVibrance_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustVibrance_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustVibrance_ReturnValue_PropertyAddress, GetCustomAdjustVibrance_FunctionAddress, "ReturnValue");
+		GetCustomAdjustVibrance_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustVibrance_FunctionAddress, "ReturnValue");
+		GetCustomAdjustVibrance_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustVibrance_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomAdjustVibrance_IsValid = GetCustomAdjustVibrance_FunctionAddress != IntPtr.Zero && GetCustomAdjustVibrance_AttributeValue_IsValid && GetCustomAdjustVibrance_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustVibrance", GetCustomAdjustVibrance_IsValid);
+		GetCustomAdjustSaturation_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomAdjustSaturation");
+		GetCustomAdjustSaturation_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomAdjustSaturation_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustSaturation_AttributeValue_PropertyAddress, GetCustomAdjustSaturation_FunctionAddress, "AttributeValue");
+		GetCustomAdjustSaturation_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustSaturation_FunctionAddress, "AttributeValue");
+		GetCustomAdjustSaturation_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustSaturation_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustSaturation_ReturnValue_PropertyAddress, GetCustomAdjustSaturation_FunctionAddress, "ReturnValue");
+		GetCustomAdjustSaturation_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustSaturation_FunctionAddress, "ReturnValue");
+		GetCustomAdjustSaturation_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustSaturation_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomAdjustSaturation_IsValid = GetCustomAdjustSaturation_FunctionAddress != IntPtr.Zero && GetCustomAdjustSaturation_AttributeValue_IsValid && GetCustomAdjustSaturation_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustSaturation", GetCustomAdjustSaturation_IsValid);
+		GetCustomAdjustRGBCurve_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomAdjustRGBCurve");
+		GetCustomAdjustRGBCurve_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomAdjustRGBCurve_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustRGBCurve_AttributeValue_PropertyAddress, GetCustomAdjustRGBCurve_FunctionAddress, "AttributeValue");
+		GetCustomAdjustRGBCurve_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustRGBCurve_FunctionAddress, "AttributeValue");
+		GetCustomAdjustRGBCurve_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustRGBCurve_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustRGBCurve_ReturnValue_PropertyAddress, GetCustomAdjustRGBCurve_FunctionAddress, "ReturnValue");
+		GetCustomAdjustRGBCurve_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustRGBCurve_FunctionAddress, "ReturnValue");
+		GetCustomAdjustRGBCurve_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustRGBCurve_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomAdjustRGBCurve_IsValid = GetCustomAdjustRGBCurve_FunctionAddress != IntPtr.Zero && GetCustomAdjustRGBCurve_AttributeValue_IsValid && GetCustomAdjustRGBCurve_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustRGBCurve", GetCustomAdjustRGBCurve_IsValid);
+		GetCustomAdjustMinAlpha_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomAdjustMinAlpha");
+		GetCustomAdjustMinAlpha_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomAdjustMinAlpha_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustMinAlpha_AttributeValue_PropertyAddress, GetCustomAdjustMinAlpha_FunctionAddress, "AttributeValue");
+		GetCustomAdjustMinAlpha_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustMinAlpha_FunctionAddress, "AttributeValue");
+		GetCustomAdjustMinAlpha_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustMinAlpha_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustMinAlpha_ReturnValue_PropertyAddress, GetCustomAdjustMinAlpha_FunctionAddress, "ReturnValue");
+		GetCustomAdjustMinAlpha_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustMinAlpha_FunctionAddress, "ReturnValue");
+		GetCustomAdjustMinAlpha_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustMinAlpha_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomAdjustMinAlpha_IsValid = GetCustomAdjustMinAlpha_FunctionAddress != IntPtr.Zero && GetCustomAdjustMinAlpha_AttributeValue_IsValid && GetCustomAdjustMinAlpha_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustMinAlpha", GetCustomAdjustMinAlpha_IsValid);
+		GetCustomAdjustMaxAlpha_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomAdjustMaxAlpha");
+		GetCustomAdjustMaxAlpha_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomAdjustMaxAlpha_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustMaxAlpha_AttributeValue_PropertyAddress, GetCustomAdjustMaxAlpha_FunctionAddress, "AttributeValue");
+		GetCustomAdjustMaxAlpha_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustMaxAlpha_FunctionAddress, "AttributeValue");
+		GetCustomAdjustMaxAlpha_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustMaxAlpha_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustMaxAlpha_ReturnValue_PropertyAddress, GetCustomAdjustMaxAlpha_FunctionAddress, "ReturnValue");
+		GetCustomAdjustMaxAlpha_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustMaxAlpha_FunctionAddress, "ReturnValue");
+		GetCustomAdjustMaxAlpha_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustMaxAlpha_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomAdjustMaxAlpha_IsValid = GetCustomAdjustMaxAlpha_FunctionAddress != IntPtr.Zero && GetCustomAdjustMaxAlpha_AttributeValue_IsValid && GetCustomAdjustMaxAlpha_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustMaxAlpha", GetCustomAdjustMaxAlpha_IsValid);
+		GetCustomAdjustHue_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomAdjustHue");
+		GetCustomAdjustHue_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomAdjustHue_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustHue_AttributeValue_PropertyAddress, GetCustomAdjustHue_FunctionAddress, "AttributeValue");
+		GetCustomAdjustHue_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustHue_FunctionAddress, "AttributeValue");
+		GetCustomAdjustHue_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustHue_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustHue_ReturnValue_PropertyAddress, GetCustomAdjustHue_FunctionAddress, "ReturnValue");
+		GetCustomAdjustHue_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustHue_FunctionAddress, "ReturnValue");
+		GetCustomAdjustHue_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustHue_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomAdjustHue_IsValid = GetCustomAdjustHue_FunctionAddress != IntPtr.Zero && GetCustomAdjustHue_AttributeValue_IsValid && GetCustomAdjustHue_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustHue", GetCustomAdjustHue_IsValid);
+		GetCustomAdjustBrightnessCurve_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomAdjustBrightnessCurve");
+		GetCustomAdjustBrightnessCurve_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomAdjustBrightnessCurve_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustBrightnessCurve_AttributeValue_PropertyAddress, GetCustomAdjustBrightnessCurve_FunctionAddress, "AttributeValue");
+		GetCustomAdjustBrightnessCurve_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustBrightnessCurve_FunctionAddress, "AttributeValue");
+		GetCustomAdjustBrightnessCurve_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustBrightnessCurve_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustBrightnessCurve_ReturnValue_PropertyAddress, GetCustomAdjustBrightnessCurve_FunctionAddress, "ReturnValue");
+		GetCustomAdjustBrightnessCurve_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustBrightnessCurve_FunctionAddress, "ReturnValue");
+		GetCustomAdjustBrightnessCurve_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustBrightnessCurve_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomAdjustBrightnessCurve_IsValid = GetCustomAdjustBrightnessCurve_FunctionAddress != IntPtr.Zero && GetCustomAdjustBrightnessCurve_AttributeValue_IsValid && GetCustomAdjustBrightnessCurve_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustBrightnessCurve", GetCustomAdjustBrightnessCurve_IsValid);
+		GetCustomAdjustBrightness_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomAdjustBrightness");
+		GetCustomAdjustBrightness_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomAdjustBrightness_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustBrightness_AttributeValue_PropertyAddress, GetCustomAdjustBrightness_FunctionAddress, "AttributeValue");
+		GetCustomAdjustBrightness_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustBrightness_FunctionAddress, "AttributeValue");
+		GetCustomAdjustBrightness_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustBrightness_FunctionAddress, "AttributeValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAdjustBrightness_ReturnValue_PropertyAddress, GetCustomAdjustBrightness_FunctionAddress, "ReturnValue");
+		GetCustomAdjustBrightness_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAdjustBrightness_FunctionAddress, "ReturnValue");
+		GetCustomAdjustBrightness_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAdjustBrightness_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomAdjustBrightness_IsValid = GetCustomAdjustBrightness_FunctionAddress != IntPtr.Zero && GetCustomAdjustBrightness_AttributeValue_IsValid && GetCustomAdjustBrightness_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAdjustBrightness", GetCustomAdjustBrightness_IsValid);
+		GetCustomAddressY_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomAddressY");
+		GetCustomAddressY_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomAddressY_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAddressY_AttributeValue_PropertyAddress, GetCustomAddressY_FunctionAddress, "AttributeValue");
+		GetCustomAddressY_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAddressY_FunctionAddress, "AttributeValue");
+		GetCustomAddressY_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAddressY_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAddressY_ReturnValue_PropertyAddress, GetCustomAddressY_FunctionAddress, "ReturnValue");
+		GetCustomAddressY_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAddressY_FunctionAddress, "ReturnValue");
+		GetCustomAddressY_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAddressY_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomAddressY_IsValid = GetCustomAddressY_FunctionAddress != IntPtr.Zero && GetCustomAddressY_AttributeValue_IsValid && GetCustomAddressY_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAddressY", GetCustomAddressY_IsValid);
+		GetCustomAddressX_FunctionAddress = NativeReflectionCached.GetFunction(unrealClass, "GetCustomAddressX");
+		GetCustomAddressX_ParamsSize = NativeReflection.GetFunctionParamsSize(GetCustomAddressX_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAddressX_AttributeValue_PropertyAddress, GetCustomAddressX_FunctionAddress, "AttributeValue");
+		GetCustomAddressX_AttributeValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAddressX_FunctionAddress, "AttributeValue");
+		GetCustomAddressX_AttributeValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAddressX_FunctionAddress, "AttributeValue", Classes.FByteProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetCustomAddressX_ReturnValue_PropertyAddress, GetCustomAddressX_FunctionAddress, "ReturnValue");
+		GetCustomAddressX_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetCustomAddressX_FunctionAddress, "ReturnValue");
+		GetCustomAddressX_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetCustomAddressX_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetCustomAddressX_IsValid = GetCustomAddressX_FunctionAddress != IntPtr.Zero && GetCustomAddressX_AttributeValue_IsValid && GetCustomAddressX_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/InterchangeNodes.InterchangeTextureFactoryNode:GetCustomAddressX", GetCustomAddressX_IsValid);
+	}
+}

@@ -1,0 +1,143 @@
+using System;
+using System.Runtime.CompilerServices;
+using UnrealEngine.Runtime;
+
+namespace UnrealEngine.Engine;
+
+[UDelegate]
+[UMetaPath("/Script/Engine.TakePointDamageSignature__DelegateSignature")]
+public class FTakePointDamageSignature : FMulticastDelegate<FTakePointDamageSignature.Signature>
+{
+	public delegate void Signature(AActor DamagedActor, float Damage, AController InstigatedBy, FVector HitLocation, UPrimitiveComponent FHitComponent, FName BoneName, FVector ShotFromDirection, UDamageType DamageType, AActor DamageCauser);
+
+	private static bool TakePointDamageSignature__DelegateSignature_IsValid;
+
+	private static IntPtr TakePointDamageSignature__DelegateSignature_FunctionAddress;
+
+	private static int TakePointDamageSignature__DelegateSignature_ParamsSize;
+
+	private static bool TakePointDamageSignature__DelegateSignature_DamagedActor_IsValid;
+
+	private static FFieldAddress TakePointDamageSignature__DelegateSignature_DamagedActor_PropertyAddress;
+
+	private static int TakePointDamageSignature__DelegateSignature_DamagedActor_Offset;
+
+	private static bool TakePointDamageSignature__DelegateSignature_Damage_IsValid;
+
+	private static FFieldAddress TakePointDamageSignature__DelegateSignature_Damage_PropertyAddress;
+
+	private static int TakePointDamageSignature__DelegateSignature_Damage_Offset;
+
+	private static bool TakePointDamageSignature__DelegateSignature_InstigatedBy_IsValid;
+
+	private static FFieldAddress TakePointDamageSignature__DelegateSignature_InstigatedBy_PropertyAddress;
+
+	private static int TakePointDamageSignature__DelegateSignature_InstigatedBy_Offset;
+
+	private static bool TakePointDamageSignature__DelegateSignature_HitLocation_IsValid;
+
+	private static FFieldAddress TakePointDamageSignature__DelegateSignature_HitLocation_PropertyAddress;
+
+	private static int TakePointDamageSignature__DelegateSignature_HitLocation_Offset;
+
+	private static bool TakePointDamageSignature__DelegateSignature_FHitComponent_IsValid;
+
+	private static FFieldAddress TakePointDamageSignature__DelegateSignature_FHitComponent_PropertyAddress;
+
+	private static int TakePointDamageSignature__DelegateSignature_FHitComponent_Offset;
+
+	private static bool TakePointDamageSignature__DelegateSignature_BoneName_IsValid;
+
+	private static FFieldAddress TakePointDamageSignature__DelegateSignature_BoneName_PropertyAddress;
+
+	private static int TakePointDamageSignature__DelegateSignature_BoneName_Offset;
+
+	private static bool TakePointDamageSignature__DelegateSignature_ShotFromDirection_IsValid;
+
+	private static FFieldAddress TakePointDamageSignature__DelegateSignature_ShotFromDirection_PropertyAddress;
+
+	private static int TakePointDamageSignature__DelegateSignature_ShotFromDirection_Offset;
+
+	private static bool TakePointDamageSignature__DelegateSignature_DamageType_IsValid;
+
+	private static FFieldAddress TakePointDamageSignature__DelegateSignature_DamageType_PropertyAddress;
+
+	private static int TakePointDamageSignature__DelegateSignature_DamageType_Offset;
+
+	private static bool TakePointDamageSignature__DelegateSignature_DamageCauser_IsValid;
+
+	private static FFieldAddress TakePointDamageSignature__DelegateSignature_DamageCauser_PropertyAddress;
+
+	private static int TakePointDamageSignature__DelegateSignature_DamageCauser_Offset;
+
+	public override Signature GetInvoker()
+	{
+		return Invoker;
+	}
+
+	static FTakePointDamageSignature()
+	{
+		LoadNativeType();
+	}
+
+	private static void LoadNativeType()
+	{
+		TakePointDamageSignature__DelegateSignature_FunctionAddress = NativeReflection.GetFunction("/Script/Engine.TakePointDamageSignature__DelegateSignature");
+		TakePointDamageSignature__DelegateSignature_ParamsSize = NativeReflection.GetFunctionParamsSize(TakePointDamageSignature__DelegateSignature_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref TakePointDamageSignature__DelegateSignature_DamagedActor_PropertyAddress, TakePointDamageSignature__DelegateSignature_FunctionAddress, "DamagedActor");
+		TakePointDamageSignature__DelegateSignature_DamagedActor_Offset = NativeReflectionCached.GetPropertyOffset(TakePointDamageSignature__DelegateSignature_FunctionAddress, "DamagedActor");
+		TakePointDamageSignature__DelegateSignature_DamagedActor_IsValid = NativeReflectionCached.ValidatePropertyClass(TakePointDamageSignature__DelegateSignature_FunctionAddress, "DamagedActor", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref TakePointDamageSignature__DelegateSignature_Damage_PropertyAddress, TakePointDamageSignature__DelegateSignature_FunctionAddress, "Damage");
+		TakePointDamageSignature__DelegateSignature_Damage_Offset = NativeReflectionCached.GetPropertyOffset(TakePointDamageSignature__DelegateSignature_FunctionAddress, "Damage");
+		TakePointDamageSignature__DelegateSignature_Damage_IsValid = NativeReflectionCached.ValidatePropertyClass(TakePointDamageSignature__DelegateSignature_FunctionAddress, "Damage", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref TakePointDamageSignature__DelegateSignature_InstigatedBy_PropertyAddress, TakePointDamageSignature__DelegateSignature_FunctionAddress, "InstigatedBy");
+		TakePointDamageSignature__DelegateSignature_InstigatedBy_Offset = NativeReflectionCached.GetPropertyOffset(TakePointDamageSignature__DelegateSignature_FunctionAddress, "InstigatedBy");
+		TakePointDamageSignature__DelegateSignature_InstigatedBy_IsValid = NativeReflectionCached.ValidatePropertyClass(TakePointDamageSignature__DelegateSignature_FunctionAddress, "InstigatedBy", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref TakePointDamageSignature__DelegateSignature_HitLocation_PropertyAddress, TakePointDamageSignature__DelegateSignature_FunctionAddress, "HitLocation");
+		TakePointDamageSignature__DelegateSignature_HitLocation_Offset = NativeReflectionCached.GetPropertyOffset(TakePointDamageSignature__DelegateSignature_FunctionAddress, "HitLocation");
+		TakePointDamageSignature__DelegateSignature_HitLocation_IsValid = NativeReflectionCached.ValidatePropertyClass(TakePointDamageSignature__DelegateSignature_FunctionAddress, "HitLocation", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref TakePointDamageSignature__DelegateSignature_FHitComponent_PropertyAddress, TakePointDamageSignature__DelegateSignature_FunctionAddress, "FHitComponent");
+		TakePointDamageSignature__DelegateSignature_FHitComponent_Offset = NativeReflectionCached.GetPropertyOffset(TakePointDamageSignature__DelegateSignature_FunctionAddress, "FHitComponent");
+		TakePointDamageSignature__DelegateSignature_FHitComponent_IsValid = NativeReflectionCached.ValidatePropertyClass(TakePointDamageSignature__DelegateSignature_FunctionAddress, "FHitComponent", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref TakePointDamageSignature__DelegateSignature_BoneName_PropertyAddress, TakePointDamageSignature__DelegateSignature_FunctionAddress, "BoneName");
+		TakePointDamageSignature__DelegateSignature_BoneName_Offset = NativeReflectionCached.GetPropertyOffset(TakePointDamageSignature__DelegateSignature_FunctionAddress, "BoneName");
+		TakePointDamageSignature__DelegateSignature_BoneName_IsValid = NativeReflectionCached.ValidatePropertyClass(TakePointDamageSignature__DelegateSignature_FunctionAddress, "BoneName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref TakePointDamageSignature__DelegateSignature_ShotFromDirection_PropertyAddress, TakePointDamageSignature__DelegateSignature_FunctionAddress, "ShotFromDirection");
+		TakePointDamageSignature__DelegateSignature_ShotFromDirection_Offset = NativeReflectionCached.GetPropertyOffset(TakePointDamageSignature__DelegateSignature_FunctionAddress, "ShotFromDirection");
+		TakePointDamageSignature__DelegateSignature_ShotFromDirection_IsValid = NativeReflectionCached.ValidatePropertyClass(TakePointDamageSignature__DelegateSignature_FunctionAddress, "ShotFromDirection", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref TakePointDamageSignature__DelegateSignature_DamageType_PropertyAddress, TakePointDamageSignature__DelegateSignature_FunctionAddress, "DamageType");
+		TakePointDamageSignature__DelegateSignature_DamageType_Offset = NativeReflectionCached.GetPropertyOffset(TakePointDamageSignature__DelegateSignature_FunctionAddress, "DamageType");
+		TakePointDamageSignature__DelegateSignature_DamageType_IsValid = NativeReflectionCached.ValidatePropertyClass(TakePointDamageSignature__DelegateSignature_FunctionAddress, "DamageType", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref TakePointDamageSignature__DelegateSignature_DamageCauser_PropertyAddress, TakePointDamageSignature__DelegateSignature_FunctionAddress, "DamageCauser");
+		TakePointDamageSignature__DelegateSignature_DamageCauser_Offset = NativeReflectionCached.GetPropertyOffset(TakePointDamageSignature__DelegateSignature_FunctionAddress, "DamageCauser");
+		TakePointDamageSignature__DelegateSignature_DamageCauser_IsValid = NativeReflectionCached.ValidatePropertyClass(TakePointDamageSignature__DelegateSignature_FunctionAddress, "DamageCauser", Classes.FObjectProperty);
+		TakePointDamageSignature__DelegateSignature_IsValid = TakePointDamageSignature__DelegateSignature_FunctionAddress != IntPtr.Zero && TakePointDamageSignature__DelegateSignature_DamagedActor_IsValid && TakePointDamageSignature__DelegateSignature_Damage_IsValid && TakePointDamageSignature__DelegateSignature_InstigatedBy_IsValid && TakePointDamageSignature__DelegateSignature_HitLocation_IsValid && TakePointDamageSignature__DelegateSignature_FHitComponent_IsValid && TakePointDamageSignature__DelegateSignature_BoneName_IsValid && TakePointDamageSignature__DelegateSignature_ShotFromDirection_IsValid && TakePointDamageSignature__DelegateSignature_DamageType_IsValid && TakePointDamageSignature__DelegateSignature_DamageCauser_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/Engine.TakePointDamageSignature__DelegateSignature", TakePointDamageSignature__DelegateSignature_IsValid);
+	}
+
+	private unsafe void Invoker(AActor DamagedActor, float Damage, AController InstigatedBy, FVector HitLocation, UPrimitiveComponent FHitComponent, FName BoneName, FVector ShotFromDirection, UDamageType DamageType, AActor DamageCauser)
+	{
+		if (!TakePointDamageSignature__DelegateSignature_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/Engine.TakePointDamageSignature__DelegateSignature");
+		}
+		else if (IsBound)
+		{
+			byte* ptr = stackalloc byte[(int)(uint)(TakePointDamageSignature__DelegateSignature_ParamsSize + 16)];
+			int num = (int)((16L - (long)ptr) & 0xF);
+			byte* ptr2 = ptr + num;
+			Unsafe.InitBlockUnaligned(ptr2, 0, (uint)TakePointDamageSignature__DelegateSignature_ParamsSize);
+			IntPtr intPtr = new IntPtr(ptr2);
+			UObjectMarshaler<AActor>.ToNative(IntPtr.Add(intPtr, TakePointDamageSignature__DelegateSignature_DamagedActor_Offset), 0, TakePointDamageSignature__DelegateSignature_DamagedActor_PropertyAddress.Address, DamagedActor);
+			BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, TakePointDamageSignature__DelegateSignature_Damage_Offset), 0, TakePointDamageSignature__DelegateSignature_Damage_PropertyAddress.Address, Damage);
+			UObjectMarshaler<AController>.ToNative(IntPtr.Add(intPtr, TakePointDamageSignature__DelegateSignature_InstigatedBy_Offset), 0, TakePointDamageSignature__DelegateSignature_InstigatedBy_PropertyAddress.Address, InstigatedBy);
+			BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, TakePointDamageSignature__DelegateSignature_HitLocation_Offset), 0, TakePointDamageSignature__DelegateSignature_HitLocation_PropertyAddress.Address, HitLocation);
+			UObjectMarshaler<UPrimitiveComponent>.ToNative(IntPtr.Add(intPtr, TakePointDamageSignature__DelegateSignature_FHitComponent_Offset), 0, TakePointDamageSignature__DelegateSignature_FHitComponent_PropertyAddress.Address, FHitComponent);
+			BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, TakePointDamageSignature__DelegateSignature_BoneName_Offset), 0, TakePointDamageSignature__DelegateSignature_BoneName_PropertyAddress.Address, BoneName);
+			BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, TakePointDamageSignature__DelegateSignature_ShotFromDirection_Offset), 0, TakePointDamageSignature__DelegateSignature_ShotFromDirection_PropertyAddress.Address, ShotFromDirection);
+			UObjectMarshaler<UDamageType>.ToNative(IntPtr.Add(intPtr, TakePointDamageSignature__DelegateSignature_DamageType_Offset), 0, TakePointDamageSignature__DelegateSignature_DamageType_PropertyAddress.Address, DamageType);
+			UObjectMarshaler<AActor>.ToNative(IntPtr.Add(intPtr, TakePointDamageSignature__DelegateSignature_DamageCauser_Offset), 0, TakePointDamageSignature__DelegateSignature_DamageCauser_PropertyAddress.Address, DamageCauser);
+			ProcessDelegate(intPtr);
+		}
+	}
+}

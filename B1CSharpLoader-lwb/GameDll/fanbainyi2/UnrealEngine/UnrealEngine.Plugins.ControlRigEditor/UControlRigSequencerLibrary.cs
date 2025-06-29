@@ -1,0 +1,5737 @@
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnrealEngine.AnimationCore;
+using UnrealEngine.Engine;
+using UnrealEngine.LevelSequence;
+using UnrealEngine.MovieScene;
+using UnrealEngine.MovieSceneTools;
+using UnrealEngine.Plugins.ControlRig;
+using UnrealEngine.Plugins.SequencerScripting;
+using UnrealEngine.Runtime;
+using UnrealEngine.UnrealEd;
+
+namespace UnrealEngine.Plugins.ControlRigEditor;
+
+[UClass(Flags = (ClassFlags)810549408uL, Config = "Engine")]
+[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary", "ControlRigEditor", UnrealModuleType.EnginePlugin)]
+public class UControlRigSequencerLibrary : UBlueprintFunctionLibrary
+{
+	private static IntPtr classAddress;
+
+	private static bool TweenControlRig_IsValid;
+
+	private static IntPtr TweenControlRig_FunctionAddress;
+
+	private static int TweenControlRig_ParamsSize;
+
+	private static bool TweenControlRig_LevelSequence_IsValid;
+
+	private static FFieldAddress TweenControlRig_LevelSequence_PropertyAddress;
+
+	private static int TweenControlRig_LevelSequence_Offset;
+
+	private static bool TweenControlRig_ControlRig_IsValid;
+
+	private static FFieldAddress TweenControlRig_ControlRig_PropertyAddress;
+
+	private static int TweenControlRig_ControlRig_Offset;
+
+	private static bool TweenControlRig_TweenValue_IsValid;
+
+	private static FFieldAddress TweenControlRig_TweenValue_PropertyAddress;
+
+	private static int TweenControlRig_TweenValue_Offset;
+
+	private static bool TweenControlRig_ReturnValue_IsValid;
+
+	private static FFieldAddress TweenControlRig_ReturnValue_PropertyAddress;
+
+	private static int TweenControlRig_ReturnValue_Offset;
+
+	private static bool SnapControlRig_IsValid;
+
+	private static IntPtr SnapControlRig_FunctionAddress;
+
+	private static int SnapControlRig_ParamsSize;
+
+	private static bool SnapControlRig_LevelSequence_IsValid;
+
+	private static FFieldAddress SnapControlRig_LevelSequence_PropertyAddress;
+
+	private static int SnapControlRig_LevelSequence_Offset;
+
+	private static bool SnapControlRig_StartFrame_IsValid;
+
+	private static FFieldAddress SnapControlRig_StartFrame_PropertyAddress;
+
+	private static int SnapControlRig_StartFrame_Offset;
+
+	private static bool SnapControlRig_EndFrame_IsValid;
+
+	private static FFieldAddress SnapControlRig_EndFrame_PropertyAddress;
+
+	private static int SnapControlRig_EndFrame_Offset;
+
+	private static bool SnapControlRig_ChildrenToSnap_IsValid;
+
+	private static FFieldAddress SnapControlRig_ChildrenToSnap_PropertyAddress;
+
+	private static int SnapControlRig_ChildrenToSnap_Offset;
+
+	private static bool SnapControlRig_ParentToSnap_IsValid;
+
+	private static FFieldAddress SnapControlRig_ParentToSnap_PropertyAddress;
+
+	private static int SnapControlRig_ParentToSnap_Offset;
+
+	private static bool SnapControlRig_SnapSettings_IsValid;
+
+	private static FFieldAddress SnapControlRig_SnapSettings_PropertyAddress;
+
+	private static int SnapControlRig_SnapSettings_Offset;
+
+	private static bool SnapControlRig_TimeUnit_IsValid;
+
+	private static FFieldAddress SnapControlRig_TimeUnit_PropertyAddress;
+
+	private static int SnapControlRig_TimeUnit_Offset;
+
+	private static bool SnapControlRig_ReturnValue_IsValid;
+
+	private static FFieldAddress SnapControlRig_ReturnValue_PropertyAddress;
+
+	private static int SnapControlRig_ReturnValue_Offset;
+
+	private static bool SetLocalControlRigVector2Ds_IsValid;
+
+	private static IntPtr SetLocalControlRigVector2Ds_FunctionAddress;
+
+	private static int SetLocalControlRigVector2Ds_ParamsSize;
+
+	private static bool SetLocalControlRigVector2Ds_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigVector2Ds_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigVector2Ds_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigVector2Ds_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigVector2Ds_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigVector2Ds_ControlRig_Offset;
+
+	private static bool SetLocalControlRigVector2Ds_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigVector2Ds_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigVector2Ds_ControlName_Offset;
+
+	private static bool SetLocalControlRigVector2Ds_Frames_IsValid;
+
+	private static FFieldAddress SetLocalControlRigVector2Ds_Frames_PropertyAddress;
+
+	private static int SetLocalControlRigVector2Ds_Frames_Offset;
+
+	private static bool SetLocalControlRigVector2Ds_Values_IsValid;
+
+	private static FFieldAddress SetLocalControlRigVector2Ds_Values_PropertyAddress;
+
+	private static int SetLocalControlRigVector2Ds_Values_Offset;
+
+	private static bool SetLocalControlRigVector2Ds_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigVector2Ds_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigVector2Ds_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigVector2D_IsValid;
+
+	private static IntPtr SetLocalControlRigVector2D_FunctionAddress;
+
+	private static int SetLocalControlRigVector2D_ParamsSize;
+
+	private static bool SetLocalControlRigVector2D_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigVector2D_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigVector2D_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigVector2D_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigVector2D_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigVector2D_ControlRig_Offset;
+
+	private static bool SetLocalControlRigVector2D_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigVector2D_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigVector2D_ControlName_Offset;
+
+	private static bool SetLocalControlRigVector2D_Frame_IsValid;
+
+	private static FFieldAddress SetLocalControlRigVector2D_Frame_PropertyAddress;
+
+	private static int SetLocalControlRigVector2D_Frame_Offset;
+
+	private static bool SetLocalControlRigVector2D_Value_IsValid;
+
+	private static FFieldAddress SetLocalControlRigVector2D_Value_PropertyAddress;
+
+	private static int SetLocalControlRigVector2D_Value_Offset;
+
+	private static bool SetLocalControlRigVector2D_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigVector2D_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigVector2D_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigVector2D_bSetKey_IsValid;
+
+	private static FFieldAddress SetLocalControlRigVector2D_bSetKey_PropertyAddress;
+
+	private static int SetLocalControlRigVector2D_bSetKey_Offset;
+
+	private static bool SetLocalControlRigTransforms_IsValid;
+
+	private static IntPtr SetLocalControlRigTransforms_FunctionAddress;
+
+	private static int SetLocalControlRigTransforms_ParamsSize;
+
+	private static bool SetLocalControlRigTransforms_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransforms_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigTransforms_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigTransforms_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransforms_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigTransforms_ControlRig_Offset;
+
+	private static bool SetLocalControlRigTransforms_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransforms_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigTransforms_ControlName_Offset;
+
+	private static bool SetLocalControlRigTransforms_Frames_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransforms_Frames_PropertyAddress;
+
+	private static int SetLocalControlRigTransforms_Frames_Offset;
+
+	private static bool SetLocalControlRigTransforms_Values_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransforms_Values_PropertyAddress;
+
+	private static int SetLocalControlRigTransforms_Values_Offset;
+
+	private static bool SetLocalControlRigTransforms_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransforms_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigTransforms_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigTransformNoScales_IsValid;
+
+	private static IntPtr SetLocalControlRigTransformNoScales_FunctionAddress;
+
+	private static int SetLocalControlRigTransformNoScales_ParamsSize;
+
+	private static bool SetLocalControlRigTransformNoScales_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransformNoScales_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigTransformNoScales_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigTransformNoScales_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransformNoScales_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigTransformNoScales_ControlRig_Offset;
+
+	private static bool SetLocalControlRigTransformNoScales_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransformNoScales_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigTransformNoScales_ControlName_Offset;
+
+	private static bool SetLocalControlRigTransformNoScales_Frames_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransformNoScales_Frames_PropertyAddress;
+
+	private static int SetLocalControlRigTransformNoScales_Frames_Offset;
+
+	private static bool SetLocalControlRigTransformNoScales_Values_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransformNoScales_Values_PropertyAddress;
+
+	private static int SetLocalControlRigTransformNoScales_Values_Offset;
+
+	private static bool SetLocalControlRigTransformNoScales_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransformNoScales_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigTransformNoScales_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigTransformNoScale_IsValid;
+
+	private static IntPtr SetLocalControlRigTransformNoScale_FunctionAddress;
+
+	private static int SetLocalControlRigTransformNoScale_ParamsSize;
+
+	private static bool SetLocalControlRigTransformNoScale_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransformNoScale_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigTransformNoScale_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigTransformNoScale_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransformNoScale_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigTransformNoScale_ControlRig_Offset;
+
+	private static bool SetLocalControlRigTransformNoScale_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransformNoScale_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigTransformNoScale_ControlName_Offset;
+
+	private static bool SetLocalControlRigTransformNoScale_Frame_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransformNoScale_Frame_PropertyAddress;
+
+	private static int SetLocalControlRigTransformNoScale_Frame_Offset;
+
+	private static bool SetLocalControlRigTransformNoScale_Value_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransformNoScale_Value_PropertyAddress;
+
+	private static int SetLocalControlRigTransformNoScale_Value_Offset;
+
+	private static bool SetLocalControlRigTransformNoScale_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransformNoScale_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigTransformNoScale_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigTransformNoScale_bSetKey_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransformNoScale_bSetKey_PropertyAddress;
+
+	private static int SetLocalControlRigTransformNoScale_bSetKey_Offset;
+
+	private static bool SetLocalControlRigTransform_IsValid;
+
+	private static IntPtr SetLocalControlRigTransform_FunctionAddress;
+
+	private static int SetLocalControlRigTransform_ParamsSize;
+
+	private static bool SetLocalControlRigTransform_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransform_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigTransform_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigTransform_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransform_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigTransform_ControlRig_Offset;
+
+	private static bool SetLocalControlRigTransform_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransform_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigTransform_ControlName_Offset;
+
+	private static bool SetLocalControlRigTransform_Frame_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransform_Frame_PropertyAddress;
+
+	private static int SetLocalControlRigTransform_Frame_Offset;
+
+	private static bool SetLocalControlRigTransform_Value_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransform_Value_PropertyAddress;
+
+	private static int SetLocalControlRigTransform_Value_Offset;
+
+	private static bool SetLocalControlRigTransform_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransform_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigTransform_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigTransform_bSetKey_IsValid;
+
+	private static FFieldAddress SetLocalControlRigTransform_bSetKey_PropertyAddress;
+
+	private static int SetLocalControlRigTransform_bSetKey_Offset;
+
+	private static bool SetLocalControlRigScales_IsValid;
+
+	private static IntPtr SetLocalControlRigScales_FunctionAddress;
+
+	private static int SetLocalControlRigScales_ParamsSize;
+
+	private static bool SetLocalControlRigScales_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigScales_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigScales_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigScales_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigScales_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigScales_ControlRig_Offset;
+
+	private static bool SetLocalControlRigScales_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigScales_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigScales_ControlName_Offset;
+
+	private static bool SetLocalControlRigScales_Frames_IsValid;
+
+	private static FFieldAddress SetLocalControlRigScales_Frames_PropertyAddress;
+
+	private static int SetLocalControlRigScales_Frames_Offset;
+
+	private static bool SetLocalControlRigScales_Values_IsValid;
+
+	private static FFieldAddress SetLocalControlRigScales_Values_PropertyAddress;
+
+	private static int SetLocalControlRigScales_Values_Offset;
+
+	private static bool SetLocalControlRigScales_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigScales_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigScales_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigScale_IsValid;
+
+	private static IntPtr SetLocalControlRigScale_FunctionAddress;
+
+	private static int SetLocalControlRigScale_ParamsSize;
+
+	private static bool SetLocalControlRigScale_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigScale_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigScale_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigScale_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigScale_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigScale_ControlRig_Offset;
+
+	private static bool SetLocalControlRigScale_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigScale_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigScale_ControlName_Offset;
+
+	private static bool SetLocalControlRigScale_Frame_IsValid;
+
+	private static FFieldAddress SetLocalControlRigScale_Frame_PropertyAddress;
+
+	private static int SetLocalControlRigScale_Frame_Offset;
+
+	private static bool SetLocalControlRigScale_Value_IsValid;
+
+	private static FFieldAddress SetLocalControlRigScale_Value_PropertyAddress;
+
+	private static int SetLocalControlRigScale_Value_Offset;
+
+	private static bool SetLocalControlRigScale_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigScale_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigScale_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigScale_bSetKey_IsValid;
+
+	private static FFieldAddress SetLocalControlRigScale_bSetKey_PropertyAddress;
+
+	private static int SetLocalControlRigScale_bSetKey_Offset;
+
+	private static bool SetLocalControlRigRotators_IsValid;
+
+	private static IntPtr SetLocalControlRigRotators_FunctionAddress;
+
+	private static int SetLocalControlRigRotators_ParamsSize;
+
+	private static bool SetLocalControlRigRotators_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigRotators_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigRotators_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigRotators_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigRotators_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigRotators_ControlRig_Offset;
+
+	private static bool SetLocalControlRigRotators_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigRotators_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigRotators_ControlName_Offset;
+
+	private static bool SetLocalControlRigRotators_Frames_IsValid;
+
+	private static FFieldAddress SetLocalControlRigRotators_Frames_PropertyAddress;
+
+	private static int SetLocalControlRigRotators_Frames_Offset;
+
+	private static bool SetLocalControlRigRotators_Values_IsValid;
+
+	private static FFieldAddress SetLocalControlRigRotators_Values_PropertyAddress;
+
+	private static int SetLocalControlRigRotators_Values_Offset;
+
+	private static bool SetLocalControlRigRotators_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigRotators_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigRotators_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigRotator_IsValid;
+
+	private static IntPtr SetLocalControlRigRotator_FunctionAddress;
+
+	private static int SetLocalControlRigRotator_ParamsSize;
+
+	private static bool SetLocalControlRigRotator_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigRotator_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigRotator_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigRotator_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigRotator_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigRotator_ControlRig_Offset;
+
+	private static bool SetLocalControlRigRotator_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigRotator_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigRotator_ControlName_Offset;
+
+	private static bool SetLocalControlRigRotator_Frame_IsValid;
+
+	private static FFieldAddress SetLocalControlRigRotator_Frame_PropertyAddress;
+
+	private static int SetLocalControlRigRotator_Frame_Offset;
+
+	private static bool SetLocalControlRigRotator_Value_IsValid;
+
+	private static FFieldAddress SetLocalControlRigRotator_Value_PropertyAddress;
+
+	private static int SetLocalControlRigRotator_Value_Offset;
+
+	private static bool SetLocalControlRigRotator_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigRotator_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigRotator_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigRotator_bSetKey_IsValid;
+
+	private static FFieldAddress SetLocalControlRigRotator_bSetKey_PropertyAddress;
+
+	private static int SetLocalControlRigRotator_bSetKey_Offset;
+
+	private static bool SetLocalControlRigPositions_IsValid;
+
+	private static IntPtr SetLocalControlRigPositions_FunctionAddress;
+
+	private static int SetLocalControlRigPositions_ParamsSize;
+
+	private static bool SetLocalControlRigPositions_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigPositions_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigPositions_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigPositions_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigPositions_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigPositions_ControlRig_Offset;
+
+	private static bool SetLocalControlRigPositions_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigPositions_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigPositions_ControlName_Offset;
+
+	private static bool SetLocalControlRigPositions_Frames_IsValid;
+
+	private static FFieldAddress SetLocalControlRigPositions_Frames_PropertyAddress;
+
+	private static int SetLocalControlRigPositions_Frames_Offset;
+
+	private static bool SetLocalControlRigPositions_Values_IsValid;
+
+	private static FFieldAddress SetLocalControlRigPositions_Values_PropertyAddress;
+
+	private static int SetLocalControlRigPositions_Values_Offset;
+
+	private static bool SetLocalControlRigPositions_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigPositions_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigPositions_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigPosition_IsValid;
+
+	private static IntPtr SetLocalControlRigPosition_FunctionAddress;
+
+	private static int SetLocalControlRigPosition_ParamsSize;
+
+	private static bool SetLocalControlRigPosition_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigPosition_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigPosition_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigPosition_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigPosition_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigPosition_ControlRig_Offset;
+
+	private static bool SetLocalControlRigPosition_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigPosition_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigPosition_ControlName_Offset;
+
+	private static bool SetLocalControlRigPosition_Frame_IsValid;
+
+	private static FFieldAddress SetLocalControlRigPosition_Frame_PropertyAddress;
+
+	private static int SetLocalControlRigPosition_Frame_Offset;
+
+	private static bool SetLocalControlRigPosition_Value_IsValid;
+
+	private static FFieldAddress SetLocalControlRigPosition_Value_PropertyAddress;
+
+	private static int SetLocalControlRigPosition_Value_Offset;
+
+	private static bool SetLocalControlRigPosition_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigPosition_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigPosition_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigPosition_bSetKey_IsValid;
+
+	private static FFieldAddress SetLocalControlRigPosition_bSetKey_PropertyAddress;
+
+	private static int SetLocalControlRigPosition_bSetKey_Offset;
+
+	private static bool SetLocalControlRigInts_IsValid;
+
+	private static IntPtr SetLocalControlRigInts_FunctionAddress;
+
+	private static int SetLocalControlRigInts_ParamsSize;
+
+	private static bool SetLocalControlRigInts_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigInts_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigInts_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigInts_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigInts_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigInts_ControlRig_Offset;
+
+	private static bool SetLocalControlRigInts_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigInts_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigInts_ControlName_Offset;
+
+	private static bool SetLocalControlRigInts_Frames_IsValid;
+
+	private static FFieldAddress SetLocalControlRigInts_Frames_PropertyAddress;
+
+	private static int SetLocalControlRigInts_Frames_Offset;
+
+	private static bool SetLocalControlRigInts_Values_IsValid;
+
+	private static FFieldAddress SetLocalControlRigInts_Values_PropertyAddress;
+
+	private static int SetLocalControlRigInts_Values_Offset;
+
+	private static bool SetLocalControlRigInts_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigInts_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigInts_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigInt_IsValid;
+
+	private static IntPtr SetLocalControlRigInt_FunctionAddress;
+
+	private static int SetLocalControlRigInt_ParamsSize;
+
+	private static bool SetLocalControlRigInt_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigInt_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigInt_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigInt_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigInt_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigInt_ControlRig_Offset;
+
+	private static bool SetLocalControlRigInt_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigInt_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigInt_ControlName_Offset;
+
+	private static bool SetLocalControlRigInt_Frame_IsValid;
+
+	private static FFieldAddress SetLocalControlRigInt_Frame_PropertyAddress;
+
+	private static int SetLocalControlRigInt_Frame_Offset;
+
+	private static bool SetLocalControlRigInt_Value_IsValid;
+
+	private static FFieldAddress SetLocalControlRigInt_Value_PropertyAddress;
+
+	private static int SetLocalControlRigInt_Value_Offset;
+
+	private static bool SetLocalControlRigInt_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigInt_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigInt_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigInt_bSetKey_IsValid;
+
+	private static FFieldAddress SetLocalControlRigInt_bSetKey_PropertyAddress;
+
+	private static int SetLocalControlRigInt_bSetKey_Offset;
+
+	private static bool SetLocalControlRigFloats_IsValid;
+
+	private static IntPtr SetLocalControlRigFloats_FunctionAddress;
+
+	private static int SetLocalControlRigFloats_ParamsSize;
+
+	private static bool SetLocalControlRigFloats_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigFloats_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigFloats_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigFloats_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigFloats_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigFloats_ControlRig_Offset;
+
+	private static bool SetLocalControlRigFloats_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigFloats_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigFloats_ControlName_Offset;
+
+	private static bool SetLocalControlRigFloats_Frames_IsValid;
+
+	private static FFieldAddress SetLocalControlRigFloats_Frames_PropertyAddress;
+
+	private static int SetLocalControlRigFloats_Frames_Offset;
+
+	private static bool SetLocalControlRigFloats_Values_IsValid;
+
+	private static FFieldAddress SetLocalControlRigFloats_Values_PropertyAddress;
+
+	private static int SetLocalControlRigFloats_Values_Offset;
+
+	private static bool SetLocalControlRigFloats_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigFloats_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigFloats_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigFloat_IsValid;
+
+	private static IntPtr SetLocalControlRigFloat_FunctionAddress;
+
+	private static int SetLocalControlRigFloat_ParamsSize;
+
+	private static bool SetLocalControlRigFloat_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigFloat_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigFloat_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigFloat_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigFloat_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigFloat_ControlRig_Offset;
+
+	private static bool SetLocalControlRigFloat_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigFloat_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigFloat_ControlName_Offset;
+
+	private static bool SetLocalControlRigFloat_Frame_IsValid;
+
+	private static FFieldAddress SetLocalControlRigFloat_Frame_PropertyAddress;
+
+	private static int SetLocalControlRigFloat_Frame_Offset;
+
+	private static bool SetLocalControlRigFloat_Value_IsValid;
+
+	private static FFieldAddress SetLocalControlRigFloat_Value_PropertyAddress;
+
+	private static int SetLocalControlRigFloat_Value_Offset;
+
+	private static bool SetLocalControlRigFloat_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigFloat_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigFloat_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigFloat_bSetKey_IsValid;
+
+	private static FFieldAddress SetLocalControlRigFloat_bSetKey_PropertyAddress;
+
+	private static int SetLocalControlRigFloat_bSetKey_Offset;
+
+	private static bool SetLocalControlRigEulerTransforms_IsValid;
+
+	private static IntPtr SetLocalControlRigEulerTransforms_FunctionAddress;
+
+	private static int SetLocalControlRigEulerTransforms_ParamsSize;
+
+	private static bool SetLocalControlRigEulerTransforms_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigEulerTransforms_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigEulerTransforms_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigEulerTransforms_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigEulerTransforms_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigEulerTransforms_ControlRig_Offset;
+
+	private static bool SetLocalControlRigEulerTransforms_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigEulerTransforms_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigEulerTransforms_ControlName_Offset;
+
+	private static bool SetLocalControlRigEulerTransforms_Frames_IsValid;
+
+	private static FFieldAddress SetLocalControlRigEulerTransforms_Frames_PropertyAddress;
+
+	private static int SetLocalControlRigEulerTransforms_Frames_Offset;
+
+	private static bool SetLocalControlRigEulerTransforms_Values_IsValid;
+
+	private static FFieldAddress SetLocalControlRigEulerTransforms_Values_PropertyAddress;
+
+	private static int SetLocalControlRigEulerTransforms_Values_Offset;
+
+	private static bool SetLocalControlRigEulerTransforms_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigEulerTransforms_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigEulerTransforms_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigEulerTransform_IsValid;
+
+	private static IntPtr SetLocalControlRigEulerTransform_FunctionAddress;
+
+	private static int SetLocalControlRigEulerTransform_ParamsSize;
+
+	private static bool SetLocalControlRigEulerTransform_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigEulerTransform_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigEulerTransform_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigEulerTransform_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigEulerTransform_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigEulerTransform_ControlRig_Offset;
+
+	private static bool SetLocalControlRigEulerTransform_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigEulerTransform_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigEulerTransform_ControlName_Offset;
+
+	private static bool SetLocalControlRigEulerTransform_Frame_IsValid;
+
+	private static FFieldAddress SetLocalControlRigEulerTransform_Frame_PropertyAddress;
+
+	private static int SetLocalControlRigEulerTransform_Frame_Offset;
+
+	private static bool SetLocalControlRigEulerTransform_Value_IsValid;
+
+	private static FFieldAddress SetLocalControlRigEulerTransform_Value_PropertyAddress;
+
+	private static int SetLocalControlRigEulerTransform_Value_Offset;
+
+	private static bool SetLocalControlRigEulerTransform_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigEulerTransform_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigEulerTransform_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigEulerTransform_bSetKey_IsValid;
+
+	private static FFieldAddress SetLocalControlRigEulerTransform_bSetKey_PropertyAddress;
+
+	private static int SetLocalControlRigEulerTransform_bSetKey_Offset;
+
+	private static bool SetLocalControlRigBools_IsValid;
+
+	private static IntPtr SetLocalControlRigBools_FunctionAddress;
+
+	private static int SetLocalControlRigBools_ParamsSize;
+
+	private static bool SetLocalControlRigBools_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigBools_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigBools_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigBools_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigBools_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigBools_ControlRig_Offset;
+
+	private static bool SetLocalControlRigBools_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigBools_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigBools_ControlName_Offset;
+
+	private static bool SetLocalControlRigBools_Frames_IsValid;
+
+	private static FFieldAddress SetLocalControlRigBools_Frames_PropertyAddress;
+
+	private static int SetLocalControlRigBools_Frames_Offset;
+
+	private static bool SetLocalControlRigBools_Values_IsValid;
+
+	private static FFieldAddress SetLocalControlRigBools_Values_PropertyAddress;
+
+	private static int SetLocalControlRigBools_Values_Offset;
+
+	private static bool SetLocalControlRigBools_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigBools_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigBools_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigBool_IsValid;
+
+	private static IntPtr SetLocalControlRigBool_FunctionAddress;
+
+	private static int SetLocalControlRigBool_ParamsSize;
+
+	private static bool SetLocalControlRigBool_LevelSequence_IsValid;
+
+	private static FFieldAddress SetLocalControlRigBool_LevelSequence_PropertyAddress;
+
+	private static int SetLocalControlRigBool_LevelSequence_Offset;
+
+	private static bool SetLocalControlRigBool_ControlRig_IsValid;
+
+	private static FFieldAddress SetLocalControlRigBool_ControlRig_PropertyAddress;
+
+	private static int SetLocalControlRigBool_ControlRig_Offset;
+
+	private static bool SetLocalControlRigBool_ControlName_IsValid;
+
+	private static FFieldAddress SetLocalControlRigBool_ControlName_PropertyAddress;
+
+	private static int SetLocalControlRigBool_ControlName_Offset;
+
+	private static bool SetLocalControlRigBool_Frame_IsValid;
+
+	private static FFieldAddress SetLocalControlRigBool_Frame_PropertyAddress;
+
+	private static int SetLocalControlRigBool_Frame_Offset;
+
+	private static bool SetLocalControlRigBool_Value_IsValid;
+
+	private static FFieldAddress SetLocalControlRigBool_Value_PropertyAddress;
+
+	private static int SetLocalControlRigBool_Value_Offset;
+
+	private static bool SetLocalControlRigBool_TimeUnit_IsValid;
+
+	private static FFieldAddress SetLocalControlRigBool_TimeUnit_PropertyAddress;
+
+	private static int SetLocalControlRigBool_TimeUnit_Offset;
+
+	private static bool SetLocalControlRigBool_bSetKey_IsValid;
+
+	private static FFieldAddress SetLocalControlRigBool_bSetKey_PropertyAddress;
+
+	private static int SetLocalControlRigBool_bSetKey_Offset;
+
+	private static bool SetControlRigWorldTransforms_IsValid;
+
+	private static IntPtr SetControlRigWorldTransforms_FunctionAddress;
+
+	private static int SetControlRigWorldTransforms_ParamsSize;
+
+	private static bool SetControlRigWorldTransforms_LevelSequence_IsValid;
+
+	private static FFieldAddress SetControlRigWorldTransforms_LevelSequence_PropertyAddress;
+
+	private static int SetControlRigWorldTransforms_LevelSequence_Offset;
+
+	private static bool SetControlRigWorldTransforms_ControlRig_IsValid;
+
+	private static FFieldAddress SetControlRigWorldTransforms_ControlRig_PropertyAddress;
+
+	private static int SetControlRigWorldTransforms_ControlRig_Offset;
+
+	private static bool SetControlRigWorldTransforms_ControlName_IsValid;
+
+	private static FFieldAddress SetControlRigWorldTransforms_ControlName_PropertyAddress;
+
+	private static int SetControlRigWorldTransforms_ControlName_Offset;
+
+	private static bool SetControlRigWorldTransforms_Frames_IsValid;
+
+	private static FFieldAddress SetControlRigWorldTransforms_Frames_PropertyAddress;
+
+	private static int SetControlRigWorldTransforms_Frames_Offset;
+
+	private static bool SetControlRigWorldTransforms_WorldTransforms_IsValid;
+
+	private static FFieldAddress SetControlRigWorldTransforms_WorldTransforms_PropertyAddress;
+
+	private static int SetControlRigWorldTransforms_WorldTransforms_Offset;
+
+	private static bool SetControlRigWorldTransforms_TimeUnit_IsValid;
+
+	private static FFieldAddress SetControlRigWorldTransforms_TimeUnit_PropertyAddress;
+
+	private static int SetControlRigWorldTransforms_TimeUnit_Offset;
+
+	private static bool SetControlRigWorldTransform_IsValid;
+
+	private static IntPtr SetControlRigWorldTransform_FunctionAddress;
+
+	private static int SetControlRigWorldTransform_ParamsSize;
+
+	private static bool SetControlRigWorldTransform_LevelSequence_IsValid;
+
+	private static FFieldAddress SetControlRigWorldTransform_LevelSequence_PropertyAddress;
+
+	private static int SetControlRigWorldTransform_LevelSequence_Offset;
+
+	private static bool SetControlRigWorldTransform_ControlRig_IsValid;
+
+	private static FFieldAddress SetControlRigWorldTransform_ControlRig_PropertyAddress;
+
+	private static int SetControlRigWorldTransform_ControlRig_Offset;
+
+	private static bool SetControlRigWorldTransform_ControlName_IsValid;
+
+	private static FFieldAddress SetControlRigWorldTransform_ControlName_PropertyAddress;
+
+	private static int SetControlRigWorldTransform_ControlName_Offset;
+
+	private static bool SetControlRigWorldTransform_Frame_IsValid;
+
+	private static FFieldAddress SetControlRigWorldTransform_Frame_PropertyAddress;
+
+	private static int SetControlRigWorldTransform_Frame_Offset;
+
+	private static bool SetControlRigWorldTransform_WorldTransform_IsValid;
+
+	private static FFieldAddress SetControlRigWorldTransform_WorldTransform_PropertyAddress;
+
+	private static int SetControlRigWorldTransform_WorldTransform_Offset;
+
+	private static bool SetControlRigWorldTransform_TimeUnit_IsValid;
+
+	private static FFieldAddress SetControlRigWorldTransform_TimeUnit_PropertyAddress;
+
+	private static int SetControlRigWorldTransform_TimeUnit_Offset;
+
+	private static bool SetControlRigWorldTransform_bSetKey_IsValid;
+
+	private static FFieldAddress SetControlRigWorldTransform_bSetKey_PropertyAddress;
+
+	private static int SetControlRigWorldTransform_bSetKey_Offset;
+
+	private static bool SetControlRigSpace_IsValid;
+
+	private static IntPtr SetControlRigSpace_FunctionAddress;
+
+	private static int SetControlRigSpace_ParamsSize;
+
+	private static bool SetControlRigSpace_InSequence_IsValid;
+
+	private static FFieldAddress SetControlRigSpace_InSequence_PropertyAddress;
+
+	private static int SetControlRigSpace_InSequence_Offset;
+
+	private static bool SetControlRigSpace_InControlRig_IsValid;
+
+	private static FFieldAddress SetControlRigSpace_InControlRig_PropertyAddress;
+
+	private static int SetControlRigSpace_InControlRig_Offset;
+
+	private static bool SetControlRigSpace_InControlName_IsValid;
+
+	private static FFieldAddress SetControlRigSpace_InControlName_PropertyAddress;
+
+	private static int SetControlRigSpace_InControlName_Offset;
+
+	private static bool SetControlRigSpace_InSpaceKey_IsValid;
+
+	private static FFieldAddress SetControlRigSpace_InSpaceKey_PropertyAddress;
+
+	private static int SetControlRigSpace_InSpaceKey_Offset;
+
+	private static bool SetControlRigSpace_InTime_IsValid;
+
+	private static FFieldAddress SetControlRigSpace_InTime_PropertyAddress;
+
+	private static int SetControlRigSpace_InTime_Offset;
+
+	private static bool SetControlRigSpace_TimeUnit_IsValid;
+
+	private static FFieldAddress SetControlRigSpace_TimeUnit_PropertyAddress;
+
+	private static int SetControlRigSpace_TimeUnit_Offset;
+
+	private static bool SetControlRigSpace_ReturnValue_IsValid;
+
+	private static FFieldAddress SetControlRigSpace_ReturnValue_PropertyAddress;
+
+	private static int SetControlRigSpace_ReturnValue_Offset;
+
+	private static bool RenameControlRigControlChannels_IsValid;
+
+	private static IntPtr RenameControlRigControlChannels_FunctionAddress;
+
+	private static int RenameControlRigControlChannels_ParamsSize;
+
+	private static bool RenameControlRigControlChannels_InSequence_IsValid;
+
+	private static FFieldAddress RenameControlRigControlChannels_InSequence_PropertyAddress;
+
+	private static int RenameControlRigControlChannels_InSequence_Offset;
+
+	private static bool RenameControlRigControlChannels_InControlRig_IsValid;
+
+	private static FFieldAddress RenameControlRigControlChannels_InControlRig_PropertyAddress;
+
+	private static int RenameControlRigControlChannels_InControlRig_Offset;
+
+	private static bool RenameControlRigControlChannels_InOldControlNames_IsValid;
+
+	private static FFieldAddress RenameControlRigControlChannels_InOldControlNames_PropertyAddress;
+
+	private static int RenameControlRigControlChannels_InOldControlNames_Offset;
+
+	private static bool RenameControlRigControlChannels_InNewControlNames_IsValid;
+
+	private static FFieldAddress RenameControlRigControlChannels_InNewControlNames_PropertyAddress;
+
+	private static int RenameControlRigControlChannels_InNewControlNames_Offset;
+
+	private static bool RenameControlRigControlChannels_ReturnValue_IsValid;
+
+	private static FFieldAddress RenameControlRigControlChannels_ReturnValue_PropertyAddress;
+
+	private static int RenameControlRigControlChannels_ReturnValue_Offset;
+
+	private static bool MoveControlRigSpace_IsValid;
+
+	private static IntPtr MoveControlRigSpace_FunctionAddress;
+
+	private static int MoveControlRigSpace_ParamsSize;
+
+	private static bool MoveControlRigSpace_InSequence_IsValid;
+
+	private static FFieldAddress MoveControlRigSpace_InSequence_PropertyAddress;
+
+	private static int MoveControlRigSpace_InSequence_Offset;
+
+	private static bool MoveControlRigSpace_InControlRig_IsValid;
+
+	private static FFieldAddress MoveControlRigSpace_InControlRig_PropertyAddress;
+
+	private static int MoveControlRigSpace_InControlRig_Offset;
+
+	private static bool MoveControlRigSpace_InControlName_IsValid;
+
+	private static FFieldAddress MoveControlRigSpace_InControlName_PropertyAddress;
+
+	private static int MoveControlRigSpace_InControlName_Offset;
+
+	private static bool MoveControlRigSpace_InTime_IsValid;
+
+	private static FFieldAddress MoveControlRigSpace_InTime_PropertyAddress;
+
+	private static int MoveControlRigSpace_InTime_Offset;
+
+	private static bool MoveControlRigSpace_InNewTime_IsValid;
+
+	private static FFieldAddress MoveControlRigSpace_InNewTime_PropertyAddress;
+
+	private static int MoveControlRigSpace_InNewTime_Offset;
+
+	private static bool MoveControlRigSpace_TimeUnit_IsValid;
+
+	private static FFieldAddress MoveControlRigSpace_TimeUnit_PropertyAddress;
+
+	private static int MoveControlRigSpace_TimeUnit_Offset;
+
+	private static bool MoveControlRigSpace_ReturnValue_IsValid;
+
+	private static FFieldAddress MoveControlRigSpace_ReturnValue_PropertyAddress;
+
+	private static int MoveControlRigSpace_ReturnValue_Offset;
+
+	private static bool LoadAnimSequenceIntoControlRigSection_IsValid;
+
+	private static IntPtr LoadAnimSequenceIntoControlRigSection_FunctionAddress;
+
+	private static int LoadAnimSequenceIntoControlRigSection_ParamsSize;
+
+	private static bool LoadAnimSequenceIntoControlRigSection_MovieSceneSection_IsValid;
+
+	private static FFieldAddress LoadAnimSequenceIntoControlRigSection_MovieSceneSection_PropertyAddress;
+
+	private static int LoadAnimSequenceIntoControlRigSection_MovieSceneSection_Offset;
+
+	private static bool LoadAnimSequenceIntoControlRigSection_AnimSequence_IsValid;
+
+	private static FFieldAddress LoadAnimSequenceIntoControlRigSection_AnimSequence_PropertyAddress;
+
+	private static int LoadAnimSequenceIntoControlRigSection_AnimSequence_Offset;
+
+	private static bool LoadAnimSequenceIntoControlRigSection_SkelMeshComp_IsValid;
+
+	private static FFieldAddress LoadAnimSequenceIntoControlRigSection_SkelMeshComp_PropertyAddress;
+
+	private static int LoadAnimSequenceIntoControlRigSection_SkelMeshComp_Offset;
+
+	private static bool LoadAnimSequenceIntoControlRigSection_InStartFrame_IsValid;
+
+	private static FFieldAddress LoadAnimSequenceIntoControlRigSection_InStartFrame_PropertyAddress;
+
+	private static int LoadAnimSequenceIntoControlRigSection_InStartFrame_Offset;
+
+	private static bool LoadAnimSequenceIntoControlRigSection_TimeUnit_IsValid;
+
+	private static FFieldAddress LoadAnimSequenceIntoControlRigSection_TimeUnit_PropertyAddress;
+
+	private static int LoadAnimSequenceIntoControlRigSection_TimeUnit_Offset;
+
+	private static bool LoadAnimSequenceIntoControlRigSection_bKeyReduce_IsValid;
+
+	private static FFieldAddress LoadAnimSequenceIntoControlRigSection_bKeyReduce_PropertyAddress;
+
+	private static int LoadAnimSequenceIntoControlRigSection_bKeyReduce_Offset;
+
+	private static bool LoadAnimSequenceIntoControlRigSection_Tolerance_IsValid;
+
+	private static FFieldAddress LoadAnimSequenceIntoControlRigSection_Tolerance_PropertyAddress;
+
+	private static int LoadAnimSequenceIntoControlRigSection_Tolerance_Offset;
+
+	private static bool LoadAnimSequenceIntoControlRigSection_ReturnValue_IsValid;
+
+	private static FFieldAddress LoadAnimSequenceIntoControlRigSection_ReturnValue_PropertyAddress;
+
+	private static int LoadAnimSequenceIntoControlRigSection_ReturnValue_Offset;
+
+	private static bool ImportFBXToControlRigTrack_IsValid;
+
+	private static IntPtr ImportFBXToControlRigTrack_FunctionAddress;
+
+	private static int ImportFBXToControlRigTrack_ParamsSize;
+
+	private static bool ImportFBXToControlRigTrack_World_IsValid;
+
+	private static FFieldAddress ImportFBXToControlRigTrack_World_PropertyAddress;
+
+	private static int ImportFBXToControlRigTrack_World_Offset;
+
+	private static bool ImportFBXToControlRigTrack_InSequence_IsValid;
+
+	private static FFieldAddress ImportFBXToControlRigTrack_InSequence_PropertyAddress;
+
+	private static int ImportFBXToControlRigTrack_InSequence_Offset;
+
+	private static bool ImportFBXToControlRigTrack_InTrack_IsValid;
+
+	private static FFieldAddress ImportFBXToControlRigTrack_InTrack_PropertyAddress;
+
+	private static int ImportFBXToControlRigTrack_InTrack_Offset;
+
+	private static bool ImportFBXToControlRigTrack_InSection_IsValid;
+
+	private static FFieldAddress ImportFBXToControlRigTrack_InSection_PropertyAddress;
+
+	private static int ImportFBXToControlRigTrack_InSection_Offset;
+
+	private static bool ImportFBXToControlRigTrack_SelectedControlRigNames_IsValid;
+
+	private static FFieldAddress ImportFBXToControlRigTrack_SelectedControlRigNames_PropertyAddress;
+
+	private static int ImportFBXToControlRigTrack_SelectedControlRigNames_Offset;
+
+	private static bool ImportFBXToControlRigTrack_ImportFBXControlRigSettings_IsValid;
+
+	private static FFieldAddress ImportFBXToControlRigTrack_ImportFBXControlRigSettings_PropertyAddress;
+
+	private static int ImportFBXToControlRigTrack_ImportFBXControlRigSettings_Offset;
+
+	private static bool ImportFBXToControlRigTrack_ImportFilename_IsValid;
+
+	private static FFieldAddress ImportFBXToControlRigTrack_ImportFilename_PropertyAddress;
+
+	private static int ImportFBXToControlRigTrack_ImportFilename_Offset;
+
+	private static bool ImportFBXToControlRigTrack_ReturnValue_IsValid;
+
+	private static FFieldAddress ImportFBXToControlRigTrack_ReturnValue_PropertyAddress;
+
+	private static int ImportFBXToControlRigTrack_ReturnValue_Offset;
+
+	private static bool GetWorldSpaceReferenceKey_IsValid;
+
+	private static IntPtr GetWorldSpaceReferenceKey_FunctionAddress;
+
+	private static int GetWorldSpaceReferenceKey_ParamsSize;
+
+	private static bool GetWorldSpaceReferenceKey_ReturnValue_IsValid;
+
+	private static FFieldAddress GetWorldSpaceReferenceKey_ReturnValue_PropertyAddress;
+
+	private static int GetWorldSpaceReferenceKey_ReturnValue_Offset;
+
+	private static bool GetVisibleControlRigs_IsValid;
+
+	private static IntPtr GetVisibleControlRigs_FunctionAddress;
+
+	private static int GetVisibleControlRigs_ParamsSize;
+
+	private static bool GetVisibleControlRigs_ReturnValue_IsValid;
+
+	private static FFieldAddress GetVisibleControlRigs_ReturnValue_PropertyAddress;
+
+	private static int GetVisibleControlRigs_ReturnValue_Offset;
+
+	private static bool GetSkeletalMeshComponentWorldTransforms_IsValid;
+
+	private static IntPtr GetSkeletalMeshComponentWorldTransforms_FunctionAddress;
+
+	private static int GetSkeletalMeshComponentWorldTransforms_ParamsSize;
+
+	private static bool GetSkeletalMeshComponentWorldTransforms_LevelSequence_IsValid;
+
+	private static FFieldAddress GetSkeletalMeshComponentWorldTransforms_LevelSequence_PropertyAddress;
+
+	private static int GetSkeletalMeshComponentWorldTransforms_LevelSequence_Offset;
+
+	private static bool GetSkeletalMeshComponentWorldTransforms_SkeletalMeshComponent_IsValid;
+
+	private static FFieldAddress GetSkeletalMeshComponentWorldTransforms_SkeletalMeshComponent_PropertyAddress;
+
+	private static int GetSkeletalMeshComponentWorldTransforms_SkeletalMeshComponent_Offset;
+
+	private static bool GetSkeletalMeshComponentWorldTransforms_Frames_IsValid;
+
+	private static FFieldAddress GetSkeletalMeshComponentWorldTransforms_Frames_PropertyAddress;
+
+	private static int GetSkeletalMeshComponentWorldTransforms_Frames_Offset;
+
+	private static bool GetSkeletalMeshComponentWorldTransforms_TimeUnit_IsValid;
+
+	private static FFieldAddress GetSkeletalMeshComponentWorldTransforms_TimeUnit_PropertyAddress;
+
+	private static int GetSkeletalMeshComponentWorldTransforms_TimeUnit_Offset;
+
+	private static bool GetSkeletalMeshComponentWorldTransforms_ReferenceName_IsValid;
+
+	private static FFieldAddress GetSkeletalMeshComponentWorldTransforms_ReferenceName_PropertyAddress;
+
+	private static int GetSkeletalMeshComponentWorldTransforms_ReferenceName_Offset;
+
+	private static bool GetSkeletalMeshComponentWorldTransforms_ReturnValue_IsValid;
+
+	private static FFieldAddress GetSkeletalMeshComponentWorldTransforms_ReturnValue_PropertyAddress;
+
+	private static int GetSkeletalMeshComponentWorldTransforms_ReturnValue_Offset;
+
+	private static bool GetSkeletalMeshComponentWorldTransform_IsValid;
+
+	private static IntPtr GetSkeletalMeshComponentWorldTransform_FunctionAddress;
+
+	private static int GetSkeletalMeshComponentWorldTransform_ParamsSize;
+
+	private static bool GetSkeletalMeshComponentWorldTransform_LevelSequence_IsValid;
+
+	private static FFieldAddress GetSkeletalMeshComponentWorldTransform_LevelSequence_PropertyAddress;
+
+	private static int GetSkeletalMeshComponentWorldTransform_LevelSequence_Offset;
+
+	private static bool GetSkeletalMeshComponentWorldTransform_SkeletalMeshComponent_IsValid;
+
+	private static FFieldAddress GetSkeletalMeshComponentWorldTransform_SkeletalMeshComponent_PropertyAddress;
+
+	private static int GetSkeletalMeshComponentWorldTransform_SkeletalMeshComponent_Offset;
+
+	private static bool GetSkeletalMeshComponentWorldTransform_Frame_IsValid;
+
+	private static FFieldAddress GetSkeletalMeshComponentWorldTransform_Frame_PropertyAddress;
+
+	private static int GetSkeletalMeshComponentWorldTransform_Frame_Offset;
+
+	private static bool GetSkeletalMeshComponentWorldTransform_TimeUnit_IsValid;
+
+	private static FFieldAddress GetSkeletalMeshComponentWorldTransform_TimeUnit_PropertyAddress;
+
+	private static int GetSkeletalMeshComponentWorldTransform_TimeUnit_Offset;
+
+	private static bool GetSkeletalMeshComponentWorldTransform_ReferenceName_IsValid;
+
+	private static FFieldAddress GetSkeletalMeshComponentWorldTransform_ReferenceName_PropertyAddress;
+
+	private static int GetSkeletalMeshComponentWorldTransform_ReferenceName_Offset;
+
+	private static bool GetSkeletalMeshComponentWorldTransform_ReturnValue_IsValid;
+
+	private static FFieldAddress GetSkeletalMeshComponentWorldTransform_ReturnValue_PropertyAddress;
+
+	private static int GetSkeletalMeshComponentWorldTransform_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigVector2Ds_IsValid;
+
+	private static IntPtr GetLocalControlRigVector2Ds_FunctionAddress;
+
+	private static int GetLocalControlRigVector2Ds_ParamsSize;
+
+	private static bool GetLocalControlRigVector2Ds_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigVector2Ds_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigVector2Ds_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigVector2Ds_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigVector2Ds_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigVector2Ds_ControlRig_Offset;
+
+	private static bool GetLocalControlRigVector2Ds_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigVector2Ds_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigVector2Ds_ControlName_Offset;
+
+	private static bool GetLocalControlRigVector2Ds_Frames_IsValid;
+
+	private static FFieldAddress GetLocalControlRigVector2Ds_Frames_PropertyAddress;
+
+	private static int GetLocalControlRigVector2Ds_Frames_Offset;
+
+	private static bool GetLocalControlRigVector2Ds_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigVector2Ds_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigVector2Ds_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigVector2Ds_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigVector2Ds_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigVector2Ds_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigVector2D_IsValid;
+
+	private static IntPtr GetLocalControlRigVector2D_FunctionAddress;
+
+	private static int GetLocalControlRigVector2D_ParamsSize;
+
+	private static bool GetLocalControlRigVector2D_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigVector2D_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigVector2D_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigVector2D_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigVector2D_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigVector2D_ControlRig_Offset;
+
+	private static bool GetLocalControlRigVector2D_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigVector2D_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigVector2D_ControlName_Offset;
+
+	private static bool GetLocalControlRigVector2D_Frame_IsValid;
+
+	private static FFieldAddress GetLocalControlRigVector2D_Frame_PropertyAddress;
+
+	private static int GetLocalControlRigVector2D_Frame_Offset;
+
+	private static bool GetLocalControlRigVector2D_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigVector2D_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigVector2D_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigVector2D_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigVector2D_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigVector2D_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigTransforms_IsValid;
+
+	private static IntPtr GetLocalControlRigTransforms_FunctionAddress;
+
+	private static int GetLocalControlRigTransforms_ParamsSize;
+
+	private static bool GetLocalControlRigTransforms_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransforms_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigTransforms_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigTransforms_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransforms_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigTransforms_ControlRig_Offset;
+
+	private static bool GetLocalControlRigTransforms_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransforms_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigTransforms_ControlName_Offset;
+
+	private static bool GetLocalControlRigTransforms_Frames_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransforms_Frames_PropertyAddress;
+
+	private static int GetLocalControlRigTransforms_Frames_Offset;
+
+	private static bool GetLocalControlRigTransforms_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransforms_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigTransforms_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigTransforms_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransforms_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigTransforms_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigTransformNoScales_IsValid;
+
+	private static IntPtr GetLocalControlRigTransformNoScales_FunctionAddress;
+
+	private static int GetLocalControlRigTransformNoScales_ParamsSize;
+
+	private static bool GetLocalControlRigTransformNoScales_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransformNoScales_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigTransformNoScales_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigTransformNoScales_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransformNoScales_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigTransformNoScales_ControlRig_Offset;
+
+	private static bool GetLocalControlRigTransformNoScales_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransformNoScales_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigTransformNoScales_ControlName_Offset;
+
+	private static bool GetLocalControlRigTransformNoScales_Frames_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransformNoScales_Frames_PropertyAddress;
+
+	private static int GetLocalControlRigTransformNoScales_Frames_Offset;
+
+	private static bool GetLocalControlRigTransformNoScales_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransformNoScales_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigTransformNoScales_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigTransformNoScales_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransformNoScales_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigTransformNoScales_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigTransformNoScale_IsValid;
+
+	private static IntPtr GetLocalControlRigTransformNoScale_FunctionAddress;
+
+	private static int GetLocalControlRigTransformNoScale_ParamsSize;
+
+	private static bool GetLocalControlRigTransformNoScale_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransformNoScale_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigTransformNoScale_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigTransformNoScale_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransformNoScale_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigTransformNoScale_ControlRig_Offset;
+
+	private static bool GetLocalControlRigTransformNoScale_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransformNoScale_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigTransformNoScale_ControlName_Offset;
+
+	private static bool GetLocalControlRigTransformNoScale_Frame_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransformNoScale_Frame_PropertyAddress;
+
+	private static int GetLocalControlRigTransformNoScale_Frame_Offset;
+
+	private static bool GetLocalControlRigTransformNoScale_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransformNoScale_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigTransformNoScale_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigTransformNoScale_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransformNoScale_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigTransformNoScale_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigTransform_IsValid;
+
+	private static IntPtr GetLocalControlRigTransform_FunctionAddress;
+
+	private static int GetLocalControlRigTransform_ParamsSize;
+
+	private static bool GetLocalControlRigTransform_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransform_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigTransform_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigTransform_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransform_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigTransform_ControlRig_Offset;
+
+	private static bool GetLocalControlRigTransform_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransform_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigTransform_ControlName_Offset;
+
+	private static bool GetLocalControlRigTransform_Frame_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransform_Frame_PropertyAddress;
+
+	private static int GetLocalControlRigTransform_Frame_Offset;
+
+	private static bool GetLocalControlRigTransform_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransform_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigTransform_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigTransform_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigTransform_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigTransform_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigScales_IsValid;
+
+	private static IntPtr GetLocalControlRigScales_FunctionAddress;
+
+	private static int GetLocalControlRigScales_ParamsSize;
+
+	private static bool GetLocalControlRigScales_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigScales_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigScales_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigScales_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigScales_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigScales_ControlRig_Offset;
+
+	private static bool GetLocalControlRigScales_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigScales_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigScales_ControlName_Offset;
+
+	private static bool GetLocalControlRigScales_Frames_IsValid;
+
+	private static FFieldAddress GetLocalControlRigScales_Frames_PropertyAddress;
+
+	private static int GetLocalControlRigScales_Frames_Offset;
+
+	private static bool GetLocalControlRigScales_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigScales_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigScales_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigScales_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigScales_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigScales_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigScale_IsValid;
+
+	private static IntPtr GetLocalControlRigScale_FunctionAddress;
+
+	private static int GetLocalControlRigScale_ParamsSize;
+
+	private static bool GetLocalControlRigScale_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigScale_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigScale_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigScale_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigScale_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigScale_ControlRig_Offset;
+
+	private static bool GetLocalControlRigScale_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigScale_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigScale_ControlName_Offset;
+
+	private static bool GetLocalControlRigScale_Frame_IsValid;
+
+	private static FFieldAddress GetLocalControlRigScale_Frame_PropertyAddress;
+
+	private static int GetLocalControlRigScale_Frame_Offset;
+
+	private static bool GetLocalControlRigScale_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigScale_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigScale_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigScale_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigScale_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigScale_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigRotators_IsValid;
+
+	private static IntPtr GetLocalControlRigRotators_FunctionAddress;
+
+	private static int GetLocalControlRigRotators_ParamsSize;
+
+	private static bool GetLocalControlRigRotators_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigRotators_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigRotators_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigRotators_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigRotators_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigRotators_ControlRig_Offset;
+
+	private static bool GetLocalControlRigRotators_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigRotators_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigRotators_ControlName_Offset;
+
+	private static bool GetLocalControlRigRotators_Frames_IsValid;
+
+	private static FFieldAddress GetLocalControlRigRotators_Frames_PropertyAddress;
+
+	private static int GetLocalControlRigRotators_Frames_Offset;
+
+	private static bool GetLocalControlRigRotators_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigRotators_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigRotators_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigRotators_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigRotators_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigRotators_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigRotator_IsValid;
+
+	private static IntPtr GetLocalControlRigRotator_FunctionAddress;
+
+	private static int GetLocalControlRigRotator_ParamsSize;
+
+	private static bool GetLocalControlRigRotator_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigRotator_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigRotator_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigRotator_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigRotator_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigRotator_ControlRig_Offset;
+
+	private static bool GetLocalControlRigRotator_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigRotator_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigRotator_ControlName_Offset;
+
+	private static bool GetLocalControlRigRotator_Frame_IsValid;
+
+	private static FFieldAddress GetLocalControlRigRotator_Frame_PropertyAddress;
+
+	private static int GetLocalControlRigRotator_Frame_Offset;
+
+	private static bool GetLocalControlRigRotator_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigRotator_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigRotator_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigRotator_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigRotator_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigRotator_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigPositions_IsValid;
+
+	private static IntPtr GetLocalControlRigPositions_FunctionAddress;
+
+	private static int GetLocalControlRigPositions_ParamsSize;
+
+	private static bool GetLocalControlRigPositions_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigPositions_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigPositions_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigPositions_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigPositions_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigPositions_ControlRig_Offset;
+
+	private static bool GetLocalControlRigPositions_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigPositions_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigPositions_ControlName_Offset;
+
+	private static bool GetLocalControlRigPositions_Frames_IsValid;
+
+	private static FFieldAddress GetLocalControlRigPositions_Frames_PropertyAddress;
+
+	private static int GetLocalControlRigPositions_Frames_Offset;
+
+	private static bool GetLocalControlRigPositions_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigPositions_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigPositions_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigPositions_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigPositions_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigPositions_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigPosition_IsValid;
+
+	private static IntPtr GetLocalControlRigPosition_FunctionAddress;
+
+	private static int GetLocalControlRigPosition_ParamsSize;
+
+	private static bool GetLocalControlRigPosition_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigPosition_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigPosition_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigPosition_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigPosition_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigPosition_ControlRig_Offset;
+
+	private static bool GetLocalControlRigPosition_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigPosition_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigPosition_ControlName_Offset;
+
+	private static bool GetLocalControlRigPosition_Frame_IsValid;
+
+	private static FFieldAddress GetLocalControlRigPosition_Frame_PropertyAddress;
+
+	private static int GetLocalControlRigPosition_Frame_Offset;
+
+	private static bool GetLocalControlRigPosition_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigPosition_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigPosition_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigPosition_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigPosition_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigPosition_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigInts_IsValid;
+
+	private static IntPtr GetLocalControlRigInts_FunctionAddress;
+
+	private static int GetLocalControlRigInts_ParamsSize;
+
+	private static bool GetLocalControlRigInts_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigInts_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigInts_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigInts_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigInts_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigInts_ControlRig_Offset;
+
+	private static bool GetLocalControlRigInts_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigInts_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigInts_ControlName_Offset;
+
+	private static bool GetLocalControlRigInts_Frames_IsValid;
+
+	private static FFieldAddress GetLocalControlRigInts_Frames_PropertyAddress;
+
+	private static int GetLocalControlRigInts_Frames_Offset;
+
+	private static bool GetLocalControlRigInts_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigInts_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigInts_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigInts_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigInts_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigInts_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigInt_IsValid;
+
+	private static IntPtr GetLocalControlRigInt_FunctionAddress;
+
+	private static int GetLocalControlRigInt_ParamsSize;
+
+	private static bool GetLocalControlRigInt_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigInt_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigInt_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigInt_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigInt_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigInt_ControlRig_Offset;
+
+	private static bool GetLocalControlRigInt_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigInt_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigInt_ControlName_Offset;
+
+	private static bool GetLocalControlRigInt_Frame_IsValid;
+
+	private static FFieldAddress GetLocalControlRigInt_Frame_PropertyAddress;
+
+	private static int GetLocalControlRigInt_Frame_Offset;
+
+	private static bool GetLocalControlRigInt_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigInt_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigInt_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigInt_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigInt_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigInt_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigFloats_IsValid;
+
+	private static IntPtr GetLocalControlRigFloats_FunctionAddress;
+
+	private static int GetLocalControlRigFloats_ParamsSize;
+
+	private static bool GetLocalControlRigFloats_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigFloats_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigFloats_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigFloats_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigFloats_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigFloats_ControlRig_Offset;
+
+	private static bool GetLocalControlRigFloats_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigFloats_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigFloats_ControlName_Offset;
+
+	private static bool GetLocalControlRigFloats_Frames_IsValid;
+
+	private static FFieldAddress GetLocalControlRigFloats_Frames_PropertyAddress;
+
+	private static int GetLocalControlRigFloats_Frames_Offset;
+
+	private static bool GetLocalControlRigFloats_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigFloats_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigFloats_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigFloats_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigFloats_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigFloats_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigFloat_IsValid;
+
+	private static IntPtr GetLocalControlRigFloat_FunctionAddress;
+
+	private static int GetLocalControlRigFloat_ParamsSize;
+
+	private static bool GetLocalControlRigFloat_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigFloat_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigFloat_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigFloat_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigFloat_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigFloat_ControlRig_Offset;
+
+	private static bool GetLocalControlRigFloat_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigFloat_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigFloat_ControlName_Offset;
+
+	private static bool GetLocalControlRigFloat_Frame_IsValid;
+
+	private static FFieldAddress GetLocalControlRigFloat_Frame_PropertyAddress;
+
+	private static int GetLocalControlRigFloat_Frame_Offset;
+
+	private static bool GetLocalControlRigFloat_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigFloat_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigFloat_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigFloat_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigFloat_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigFloat_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigEulerTransforms_IsValid;
+
+	private static IntPtr GetLocalControlRigEulerTransforms_FunctionAddress;
+
+	private static int GetLocalControlRigEulerTransforms_ParamsSize;
+
+	private static bool GetLocalControlRigEulerTransforms_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigEulerTransforms_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigEulerTransforms_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigEulerTransforms_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigEulerTransforms_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigEulerTransforms_ControlRig_Offset;
+
+	private static bool GetLocalControlRigEulerTransforms_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigEulerTransforms_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigEulerTransforms_ControlName_Offset;
+
+	private static bool GetLocalControlRigEulerTransforms_Frames_IsValid;
+
+	private static FFieldAddress GetLocalControlRigEulerTransforms_Frames_PropertyAddress;
+
+	private static int GetLocalControlRigEulerTransforms_Frames_Offset;
+
+	private static bool GetLocalControlRigEulerTransforms_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigEulerTransforms_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigEulerTransforms_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigEulerTransforms_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigEulerTransforms_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigEulerTransforms_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigEulerTransform_IsValid;
+
+	private static IntPtr GetLocalControlRigEulerTransform_FunctionAddress;
+
+	private static int GetLocalControlRigEulerTransform_ParamsSize;
+
+	private static bool GetLocalControlRigEulerTransform_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigEulerTransform_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigEulerTransform_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigEulerTransform_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigEulerTransform_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigEulerTransform_ControlRig_Offset;
+
+	private static bool GetLocalControlRigEulerTransform_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigEulerTransform_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigEulerTransform_ControlName_Offset;
+
+	private static bool GetLocalControlRigEulerTransform_Frame_IsValid;
+
+	private static FFieldAddress GetLocalControlRigEulerTransform_Frame_PropertyAddress;
+
+	private static int GetLocalControlRigEulerTransform_Frame_Offset;
+
+	private static bool GetLocalControlRigEulerTransform_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigEulerTransform_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigEulerTransform_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigEulerTransform_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigEulerTransform_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigEulerTransform_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigBools_IsValid;
+
+	private static IntPtr GetLocalControlRigBools_FunctionAddress;
+
+	private static int GetLocalControlRigBools_ParamsSize;
+
+	private static bool GetLocalControlRigBools_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigBools_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigBools_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigBools_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigBools_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigBools_ControlRig_Offset;
+
+	private static bool GetLocalControlRigBools_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigBools_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigBools_ControlName_Offset;
+
+	private static bool GetLocalControlRigBools_Frames_IsValid;
+
+	private static FFieldAddress GetLocalControlRigBools_Frames_PropertyAddress;
+
+	private static int GetLocalControlRigBools_Frames_Offset;
+
+	private static bool GetLocalControlRigBools_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigBools_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigBools_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigBools_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigBools_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigBools_ReturnValue_Offset;
+
+	private static bool GetLocalControlRigBool_IsValid;
+
+	private static IntPtr GetLocalControlRigBool_FunctionAddress;
+
+	private static int GetLocalControlRigBool_ParamsSize;
+
+	private static bool GetLocalControlRigBool_LevelSequence_IsValid;
+
+	private static FFieldAddress GetLocalControlRigBool_LevelSequence_PropertyAddress;
+
+	private static int GetLocalControlRigBool_LevelSequence_Offset;
+
+	private static bool GetLocalControlRigBool_ControlRig_IsValid;
+
+	private static FFieldAddress GetLocalControlRigBool_ControlRig_PropertyAddress;
+
+	private static int GetLocalControlRigBool_ControlRig_Offset;
+
+	private static bool GetLocalControlRigBool_ControlName_IsValid;
+
+	private static FFieldAddress GetLocalControlRigBool_ControlName_PropertyAddress;
+
+	private static int GetLocalControlRigBool_ControlName_Offset;
+
+	private static bool GetLocalControlRigBool_Frame_IsValid;
+
+	private static FFieldAddress GetLocalControlRigBool_Frame_PropertyAddress;
+
+	private static int GetLocalControlRigBool_Frame_Offset;
+
+	private static bool GetLocalControlRigBool_TimeUnit_IsValid;
+
+	private static FFieldAddress GetLocalControlRigBool_TimeUnit_PropertyAddress;
+
+	private static int GetLocalControlRigBool_TimeUnit_Offset;
+
+	private static bool GetLocalControlRigBool_ReturnValue_IsValid;
+
+	private static FFieldAddress GetLocalControlRigBool_ReturnValue_PropertyAddress;
+
+	private static int GetLocalControlRigBool_ReturnValue_Offset;
+
+	private static bool GetDefaultParentKey_IsValid;
+
+	private static IntPtr GetDefaultParentKey_FunctionAddress;
+
+	private static int GetDefaultParentKey_ParamsSize;
+
+	private static bool GetDefaultParentKey_ReturnValue_IsValid;
+
+	private static FFieldAddress GetDefaultParentKey_ReturnValue_PropertyAddress;
+
+	private static int GetDefaultParentKey_ReturnValue_Offset;
+
+	private static bool GetControlRigWorldTransforms_IsValid;
+
+	private static IntPtr GetControlRigWorldTransforms_FunctionAddress;
+
+	private static int GetControlRigWorldTransforms_ParamsSize;
+
+	private static bool GetControlRigWorldTransforms_LevelSequence_IsValid;
+
+	private static FFieldAddress GetControlRigWorldTransforms_LevelSequence_PropertyAddress;
+
+	private static int GetControlRigWorldTransforms_LevelSequence_Offset;
+
+	private static bool GetControlRigWorldTransforms_ControlRig_IsValid;
+
+	private static FFieldAddress GetControlRigWorldTransforms_ControlRig_PropertyAddress;
+
+	private static int GetControlRigWorldTransforms_ControlRig_Offset;
+
+	private static bool GetControlRigWorldTransforms_ControlName_IsValid;
+
+	private static FFieldAddress GetControlRigWorldTransforms_ControlName_PropertyAddress;
+
+	private static int GetControlRigWorldTransforms_ControlName_Offset;
+
+	private static bool GetControlRigWorldTransforms_Frames_IsValid;
+
+	private static FFieldAddress GetControlRigWorldTransforms_Frames_PropertyAddress;
+
+	private static int GetControlRigWorldTransforms_Frames_Offset;
+
+	private static bool GetControlRigWorldTransforms_TimeUnit_IsValid;
+
+	private static FFieldAddress GetControlRigWorldTransforms_TimeUnit_PropertyAddress;
+
+	private static int GetControlRigWorldTransforms_TimeUnit_Offset;
+
+	private static bool GetControlRigWorldTransforms_ReturnValue_IsValid;
+
+	private static FFieldAddress GetControlRigWorldTransforms_ReturnValue_PropertyAddress;
+
+	private static int GetControlRigWorldTransforms_ReturnValue_Offset;
+
+	private static bool GetControlRigWorldTransform_IsValid;
+
+	private static IntPtr GetControlRigWorldTransform_FunctionAddress;
+
+	private static int GetControlRigWorldTransform_ParamsSize;
+
+	private static bool GetControlRigWorldTransform_LevelSequence_IsValid;
+
+	private static FFieldAddress GetControlRigWorldTransform_LevelSequence_PropertyAddress;
+
+	private static int GetControlRigWorldTransform_LevelSequence_Offset;
+
+	private static bool GetControlRigWorldTransform_ControlRig_IsValid;
+
+	private static FFieldAddress GetControlRigWorldTransform_ControlRig_PropertyAddress;
+
+	private static int GetControlRigWorldTransform_ControlRig_Offset;
+
+	private static bool GetControlRigWorldTransform_ControlName_IsValid;
+
+	private static FFieldAddress GetControlRigWorldTransform_ControlName_PropertyAddress;
+
+	private static int GetControlRigWorldTransform_ControlName_Offset;
+
+	private static bool GetControlRigWorldTransform_Frame_IsValid;
+
+	private static FFieldAddress GetControlRigWorldTransform_Frame_PropertyAddress;
+
+	private static int GetControlRigWorldTransform_Frame_Offset;
+
+	private static bool GetControlRigWorldTransform_TimeUnit_IsValid;
+
+	private static FFieldAddress GetControlRigWorldTransform_TimeUnit_PropertyAddress;
+
+	private static int GetControlRigWorldTransform_TimeUnit_Offset;
+
+	private static bool GetControlRigWorldTransform_ReturnValue_IsValid;
+
+	private static FFieldAddress GetControlRigWorldTransform_ReturnValue_PropertyAddress;
+
+	private static int GetControlRigWorldTransform_ReturnValue_Offset;
+
+	private static bool GetControlRigs_IsValid;
+
+	private static IntPtr GetControlRigs_FunctionAddress;
+
+	private static int GetControlRigs_ParamsSize;
+
+	private static bool GetControlRigs_LevelSequence_IsValid;
+
+	private static FFieldAddress GetControlRigs_LevelSequence_PropertyAddress;
+
+	private static int GetControlRigs_LevelSequence_Offset;
+
+	private static bool GetControlRigs_ReturnValue_IsValid;
+
+	private static FFieldAddress GetControlRigs_ReturnValue_PropertyAddress;
+
+	private static int GetControlRigs_ReturnValue_Offset;
+
+	private static bool GetActorWorldTransforms_IsValid;
+
+	private static IntPtr GetActorWorldTransforms_FunctionAddress;
+
+	private static int GetActorWorldTransforms_ParamsSize;
+
+	private static bool GetActorWorldTransforms_LevelSequence_IsValid;
+
+	private static FFieldAddress GetActorWorldTransforms_LevelSequence_PropertyAddress;
+
+	private static int GetActorWorldTransforms_LevelSequence_Offset;
+
+	private static bool GetActorWorldTransforms_Actor_IsValid;
+
+	private static FFieldAddress GetActorWorldTransforms_Actor_PropertyAddress;
+
+	private static int GetActorWorldTransforms_Actor_Offset;
+
+	private static bool GetActorWorldTransforms_Frames_IsValid;
+
+	private static FFieldAddress GetActorWorldTransforms_Frames_PropertyAddress;
+
+	private static int GetActorWorldTransforms_Frames_Offset;
+
+	private static bool GetActorWorldTransforms_TimeUnit_IsValid;
+
+	private static FFieldAddress GetActorWorldTransforms_TimeUnit_PropertyAddress;
+
+	private static int GetActorWorldTransforms_TimeUnit_Offset;
+
+	private static bool GetActorWorldTransforms_ReturnValue_IsValid;
+
+	private static FFieldAddress GetActorWorldTransforms_ReturnValue_PropertyAddress;
+
+	private static int GetActorWorldTransforms_ReturnValue_Offset;
+
+	private static bool GetActorWorldTransform_IsValid;
+
+	private static IntPtr GetActorWorldTransform_FunctionAddress;
+
+	private static int GetActorWorldTransform_ParamsSize;
+
+	private static bool GetActorWorldTransform_LevelSequence_IsValid;
+
+	private static FFieldAddress GetActorWorldTransform_LevelSequence_PropertyAddress;
+
+	private static int GetActorWorldTransform_LevelSequence_Offset;
+
+	private static bool GetActorWorldTransform_Actor_IsValid;
+
+	private static FFieldAddress GetActorWorldTransform_Actor_PropertyAddress;
+
+	private static int GetActorWorldTransform_Actor_Offset;
+
+	private static bool GetActorWorldTransform_Frame_IsValid;
+
+	private static FFieldAddress GetActorWorldTransform_Frame_PropertyAddress;
+
+	private static int GetActorWorldTransform_Frame_Offset;
+
+	private static bool GetActorWorldTransform_TimeUnit_IsValid;
+
+	private static FFieldAddress GetActorWorldTransform_TimeUnit_PropertyAddress;
+
+	private static int GetActorWorldTransform_TimeUnit_Offset;
+
+	private static bool GetActorWorldTransform_ReturnValue_IsValid;
+
+	private static FFieldAddress GetActorWorldTransform_ReturnValue_PropertyAddress;
+
+	private static int GetActorWorldTransform_ReturnValue_Offset;
+
+	private static bool FindOrCreateControlRigTrack_IsValid;
+
+	private static IntPtr FindOrCreateControlRigTrack_FunctionAddress;
+
+	private static int FindOrCreateControlRigTrack_ParamsSize;
+
+	private static bool FindOrCreateControlRigTrack_World_IsValid;
+
+	private static FFieldAddress FindOrCreateControlRigTrack_World_PropertyAddress;
+
+	private static int FindOrCreateControlRigTrack_World_Offset;
+
+	private static bool FindOrCreateControlRigTrack_LevelSequence_IsValid;
+
+	private static FFieldAddress FindOrCreateControlRigTrack_LevelSequence_PropertyAddress;
+
+	private static int FindOrCreateControlRigTrack_LevelSequence_Offset;
+
+	private static bool FindOrCreateControlRigTrack_ControlRigClass_IsValid;
+
+	private static FFieldAddress FindOrCreateControlRigTrack_ControlRigClass_PropertyAddress;
+
+	private static int FindOrCreateControlRigTrack_ControlRigClass_Offset;
+
+	private static bool FindOrCreateControlRigTrack_InBinding_IsValid;
+
+	private static FFieldAddress FindOrCreateControlRigTrack_InBinding_PropertyAddress;
+
+	private static int FindOrCreateControlRigTrack_InBinding_Offset;
+
+	private static bool FindOrCreateControlRigTrack_ReturnValue_IsValid;
+
+	private static FFieldAddress FindOrCreateControlRigTrack_ReturnValue_PropertyAddress;
+
+	private static int FindOrCreateControlRigTrack_ReturnValue_Offset;
+
+	private static bool FindOrCreateControlRigComponentTrack_IsValid;
+
+	private static IntPtr FindOrCreateControlRigComponentTrack_FunctionAddress;
+
+	private static int FindOrCreateControlRigComponentTrack_ParamsSize;
+
+	private static bool FindOrCreateControlRigComponentTrack_World_IsValid;
+
+	private static FFieldAddress FindOrCreateControlRigComponentTrack_World_PropertyAddress;
+
+	private static int FindOrCreateControlRigComponentTrack_World_Offset;
+
+	private static bool FindOrCreateControlRigComponentTrack_LevelSequence_IsValid;
+
+	private static FFieldAddress FindOrCreateControlRigComponentTrack_LevelSequence_PropertyAddress;
+
+	private static int FindOrCreateControlRigComponentTrack_LevelSequence_Offset;
+
+	private static bool FindOrCreateControlRigComponentTrack_InBinding_IsValid;
+
+	private static FFieldAddress FindOrCreateControlRigComponentTrack_InBinding_PropertyAddress;
+
+	private static int FindOrCreateControlRigComponentTrack_InBinding_Offset;
+
+	private static bool FindOrCreateControlRigComponentTrack_ReturnValue_IsValid;
+
+	private static FFieldAddress FindOrCreateControlRigComponentTrack_ReturnValue_PropertyAddress;
+
+	private static int FindOrCreateControlRigComponentTrack_ReturnValue_Offset;
+
+	private static bool DeleteControlRigSpace_IsValid;
+
+	private static IntPtr DeleteControlRigSpace_FunctionAddress;
+
+	private static int DeleteControlRigSpace_ParamsSize;
+
+	private static bool DeleteControlRigSpace_InSequence_IsValid;
+
+	private static FFieldAddress DeleteControlRigSpace_InSequence_PropertyAddress;
+
+	private static int DeleteControlRigSpace_InSequence_Offset;
+
+	private static bool DeleteControlRigSpace_InControlRig_IsValid;
+
+	private static FFieldAddress DeleteControlRigSpace_InControlRig_PropertyAddress;
+
+	private static int DeleteControlRigSpace_InControlRig_Offset;
+
+	private static bool DeleteControlRigSpace_InControlName_IsValid;
+
+	private static FFieldAddress DeleteControlRigSpace_InControlName_PropertyAddress;
+
+	private static int DeleteControlRigSpace_InControlName_Offset;
+
+	private static bool DeleteControlRigSpace_InTime_IsValid;
+
+	private static FFieldAddress DeleteControlRigSpace_InTime_PropertyAddress;
+
+	private static int DeleteControlRigSpace_InTime_Offset;
+
+	private static bool DeleteControlRigSpace_TimeUnit_IsValid;
+
+	private static FFieldAddress DeleteControlRigSpace_TimeUnit_PropertyAddress;
+
+	private static int DeleteControlRigSpace_TimeUnit_Offset;
+
+	private static bool DeleteControlRigSpace_ReturnValue_IsValid;
+
+	private static FFieldAddress DeleteControlRigSpace_ReturnValue_PropertyAddress;
+
+	private static int DeleteControlRigSpace_ReturnValue_Offset;
+
+	private static bool CollapseControlRigAnimLayers_IsValid;
+
+	private static IntPtr CollapseControlRigAnimLayers_FunctionAddress;
+
+	private static int CollapseControlRigAnimLayers_ParamsSize;
+
+	private static bool CollapseControlRigAnimLayers_InSequence_IsValid;
+
+	private static FFieldAddress CollapseControlRigAnimLayers_InSequence_PropertyAddress;
+
+	private static int CollapseControlRigAnimLayers_InSequence_Offset;
+
+	private static bool CollapseControlRigAnimLayers_InTrack_IsValid;
+
+	private static FFieldAddress CollapseControlRigAnimLayers_InTrack_PropertyAddress;
+
+	private static int CollapseControlRigAnimLayers_InTrack_Offset;
+
+	private static bool CollapseControlRigAnimLayers_bKeyReduce_IsValid;
+
+	private static FFieldAddress CollapseControlRigAnimLayers_bKeyReduce_PropertyAddress;
+
+	private static int CollapseControlRigAnimLayers_bKeyReduce_Offset;
+
+	private static bool CollapseControlRigAnimLayers_Tolerance_IsValid;
+
+	private static FFieldAddress CollapseControlRigAnimLayers_Tolerance_PropertyAddress;
+
+	private static int CollapseControlRigAnimLayers_Tolerance_Offset;
+
+	private static bool CollapseControlRigAnimLayers_ReturnValue_IsValid;
+
+	private static FFieldAddress CollapseControlRigAnimLayers_ReturnValue_PropertyAddress;
+
+	private static int CollapseControlRigAnimLayers_ReturnValue_Offset;
+
+	private static bool BakeToControlRig_IsValid;
+
+	private static IntPtr BakeToControlRig_FunctionAddress;
+
+	private static int BakeToControlRig_ParamsSize;
+
+	private static bool BakeToControlRig_World_IsValid;
+
+	private static FFieldAddress BakeToControlRig_World_PropertyAddress;
+
+	private static int BakeToControlRig_World_Offset;
+
+	private static bool BakeToControlRig_LevelSequence_IsValid;
+
+	private static FFieldAddress BakeToControlRig_LevelSequence_PropertyAddress;
+
+	private static int BakeToControlRig_LevelSequence_Offset;
+
+	private static bool BakeToControlRig_ControlRigClass_IsValid;
+
+	private static FFieldAddress BakeToControlRig_ControlRigClass_PropertyAddress;
+
+	private static int BakeToControlRig_ControlRigClass_Offset;
+
+	private static bool BakeToControlRig_ExportOptions_IsValid;
+
+	private static FFieldAddress BakeToControlRig_ExportOptions_PropertyAddress;
+
+	private static int BakeToControlRig_ExportOptions_Offset;
+
+	private static bool BakeToControlRig_bReduceKeys_IsValid;
+
+	private static FFieldAddress BakeToControlRig_bReduceKeys_PropertyAddress;
+
+	private static int BakeToControlRig_bReduceKeys_Offset;
+
+	private static bool BakeToControlRig_Tolerance_IsValid;
+
+	private static FFieldAddress BakeToControlRig_Tolerance_PropertyAddress;
+
+	private static int BakeToControlRig_Tolerance_Offset;
+
+	private static bool BakeToControlRig_Binding_IsValid;
+
+	private static FFieldAddress BakeToControlRig_Binding_PropertyAddress;
+
+	private static int BakeToControlRig_Binding_Offset;
+
+	private static bool BakeToControlRig_ReturnValue_IsValid;
+
+	private static FFieldAddress BakeToControlRig_ReturnValue_PropertyAddress;
+
+	private static int BakeToControlRig_ReturnValue_Offset;
+
+	private static bool BakeControlRigSpace_IsValid;
+
+	private static IntPtr BakeControlRigSpace_FunctionAddress;
+
+	private static int BakeControlRigSpace_ParamsSize;
+
+	private static bool BakeControlRigSpace_InSequence_IsValid;
+
+	private static FFieldAddress BakeControlRigSpace_InSequence_PropertyAddress;
+
+	private static int BakeControlRigSpace_InSequence_Offset;
+
+	private static bool BakeControlRigSpace_InControlRig_IsValid;
+
+	private static FFieldAddress BakeControlRigSpace_InControlRig_PropertyAddress;
+
+	private static int BakeControlRigSpace_InControlRig_Offset;
+
+	private static bool BakeControlRigSpace_InControlNames_IsValid;
+
+	private static FFieldAddress BakeControlRigSpace_InControlNames_PropertyAddress;
+
+	private static int BakeControlRigSpace_InControlNames_Offset;
+
+	private static bool BakeControlRigSpace_InSettings_IsValid;
+
+	private static FFieldAddress BakeControlRigSpace_InSettings_PropertyAddress;
+
+	private static int BakeControlRigSpace_InSettings_Offset;
+
+	private static bool BakeControlRigSpace_TimeUnit_IsValid;
+
+	private static FFieldAddress BakeControlRigSpace_TimeUnit_PropertyAddress;
+
+	private static int BakeControlRigSpace_TimeUnit_Offset;
+
+	private static bool BakeControlRigSpace_ReturnValue_IsValid;
+
+	private static FFieldAddress BakeControlRigSpace_ReturnValue_PropertyAddress;
+
+	private static int BakeControlRigSpace_ReturnValue_Offset;
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:TweenControlRig")]
+	public unsafe static bool TweenControlRig(ULevelSequence LevelSequence, UControlRig ControlRig, float TweenValue)
+	{
+		if (!TweenControlRig_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:TweenControlRig");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(TweenControlRig_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)TweenControlRig_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, TweenControlRig_LevelSequence_Offset), 0, TweenControlRig_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, TweenControlRig_ControlRig_Offset), 0, TweenControlRig_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, TweenControlRig_TweenValue_Offset), 0, TweenControlRig_TweenValue_PropertyAddress.Address, TweenValue);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, TweenControlRig_FunctionAddress, intPtr, TweenControlRig_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, TweenControlRig_ReturnValue_Offset), 0, TweenControlRig_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 79832065u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SnapControlRig")]
+	public unsafe static bool SnapControlRig(ULevelSequence LevelSequence, FFrameNumber StartFrame, FFrameNumber EndFrame, FControlRigSnapperSelection ChildrenToSnap, FControlRigSnapperSelection ParentToSnap, UControlRigSnapSettings SnapSettings, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!SnapControlRig_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SnapControlRig");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SnapControlRig_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SnapControlRig_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SnapControlRig_LevelSequence_Offset), 0, SnapControlRig_LevelSequence_PropertyAddress.Address, LevelSequence);
+		NativeReflection.InitializeValue_InContainer(SnapControlRig_StartFrame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, SnapControlRig_StartFrame_Offset), 0, SnapControlRig_StartFrame_PropertyAddress.Address, StartFrame);
+		NativeReflection.InitializeValue_InContainer(SnapControlRig_EndFrame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, SnapControlRig_EndFrame_Offset), 0, SnapControlRig_EndFrame_PropertyAddress.Address, EndFrame);
+		NativeReflection.InitializeValue_InContainer(SnapControlRig_ChildrenToSnap_PropertyAddress.Address, intPtr);
+		FControlRigSnapperSelection.ToNative(IntPtr.Add(intPtr, SnapControlRig_ChildrenToSnap_Offset), 0, SnapControlRig_ChildrenToSnap_PropertyAddress.Address, ChildrenToSnap);
+		NativeReflection.InitializeValue_InContainer(SnapControlRig_ParentToSnap_PropertyAddress.Address, intPtr);
+		FControlRigSnapperSelection.ToNative(IntPtr.Add(intPtr, SnapControlRig_ParentToSnap_Offset), 0, SnapControlRig_ParentToSnap_PropertyAddress.Address, ParentToSnap);
+		UObjectMarshaler<UControlRigSnapSettings>.ToNative(IntPtr.Add(intPtr, SnapControlRig_SnapSettings_Offset), 0, SnapControlRig_SnapSettings_PropertyAddress.Address, SnapSettings);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SnapControlRig_TimeUnit_Offset), 0, SnapControlRig_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SnapControlRig_FunctionAddress, intPtr, SnapControlRig_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SnapControlRig_ChildrenToSnap_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SnapControlRig_ParentToSnap_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SnapControlRig_ReturnValue_Offset), 0, SnapControlRig_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigVector2Ds")]
+	public unsafe static void SetLocalControlRigVector2Ds(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, List<FVector2D> Values, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!SetLocalControlRigVector2Ds_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigVector2Ds");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigVector2Ds_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigVector2Ds_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigVector2Ds_LevelSequence_Offset), 0, SetLocalControlRigVector2Ds_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigVector2Ds_ControlRig_Offset), 0, SetLocalControlRigVector2Ds_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigVector2Ds_ControlName_Offset), 0, SetLocalControlRigVector2Ds_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, SetLocalControlRigVector2Ds_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigVector2Ds_Frames_Offset), Frames);
+		new TArrayCopyMarshaler<FVector2D>(1, SetLocalControlRigVector2Ds_Values_PropertyAddress, CachedMarshalingDelegates<FVector2D, BlittableTypeMarshaler<FVector2D>>.FromNative, CachedMarshalingDelegates<FVector2D, BlittableTypeMarshaler<FVector2D>>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigVector2Ds_Values_Offset), Values);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigVector2Ds_TimeUnit_Offset), 0, SetLocalControlRigVector2Ds_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigVector2Ds_FunctionAddress, intPtr, SetLocalControlRigVector2Ds_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigVector2Ds_Frames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigVector2Ds_Values_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigVector2D")]
+	public unsafe static void SetLocalControlRigVector2D(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, FVector2D Value, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate, bool bSetKey = true)
+	{
+		if (!SetLocalControlRigVector2D_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigVector2D");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigVector2D_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigVector2D_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigVector2D_LevelSequence_Offset), 0, SetLocalControlRigVector2D_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigVector2D_ControlRig_Offset), 0, SetLocalControlRigVector2D_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigVector2D_ControlName_Offset), 0, SetLocalControlRigVector2D_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(SetLocalControlRigVector2D_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, SetLocalControlRigVector2D_Frame_Offset), 0, SetLocalControlRigVector2D_Frame_PropertyAddress.Address, Frame);
+		BlittableTypeMarshaler<FVector2D>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigVector2D_Value_Offset), 0, SetLocalControlRigVector2D_Value_PropertyAddress.Address, Value);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigVector2D_TimeUnit_Offset), 0, SetLocalControlRigVector2D_TimeUnit_PropertyAddress.Address, TimeUnit);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetLocalControlRigVector2D_bSetKey_Offset), 0, SetLocalControlRigVector2D_bSetKey_PropertyAddress.Address, bSetKey);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigVector2D_FunctionAddress, intPtr, SetLocalControlRigVector2D_ParamsSize);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigTransforms")]
+	public unsafe static void SetLocalControlRigTransforms(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, List<FTransform> Values, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!SetLocalControlRigTransforms_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigTransforms");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigTransforms_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigTransforms_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransforms_LevelSequence_Offset), 0, SetLocalControlRigTransforms_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransforms_ControlRig_Offset), 0, SetLocalControlRigTransforms_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransforms_ControlName_Offset), 0, SetLocalControlRigTransforms_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, SetLocalControlRigTransforms_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransforms_Frames_Offset), Frames);
+		new TArrayCopyMarshaler<FTransform>(1, SetLocalControlRigTransforms_Values_PropertyAddress, CachedMarshalingDelegates<FTransform, BlittableTypeMarshaler<FTransform>>.FromNative, CachedMarshalingDelegates<FTransform, BlittableTypeMarshaler<FTransform>>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransforms_Values_Offset), Values);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransforms_TimeUnit_Offset), 0, SetLocalControlRigTransforms_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigTransforms_FunctionAddress, intPtr, SetLocalControlRigTransforms_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigTransforms_Frames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigTransforms_Values_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigTransformNoScales")]
+	public unsafe static void SetLocalControlRigTransformNoScales(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, List<FTransformNoScale> Values, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!SetLocalControlRigTransformNoScales_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigTransformNoScales");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigTransformNoScales_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigTransformNoScales_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransformNoScales_LevelSequence_Offset), 0, SetLocalControlRigTransformNoScales_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransformNoScales_ControlRig_Offset), 0, SetLocalControlRigTransformNoScales_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransformNoScales_ControlName_Offset), 0, SetLocalControlRigTransformNoScales_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, SetLocalControlRigTransformNoScales_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransformNoScales_Frames_Offset), Frames);
+		new TArrayCopyMarshaler<FTransformNoScale>(1, SetLocalControlRigTransformNoScales_Values_PropertyAddress, CachedMarshalingDelegates<FTransformNoScale, FTransformNoScale>.FromNative, CachedMarshalingDelegates<FTransformNoScale, FTransformNoScale>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransformNoScales_Values_Offset), Values);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransformNoScales_TimeUnit_Offset), 0, SetLocalControlRigTransformNoScales_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigTransformNoScales_FunctionAddress, intPtr, SetLocalControlRigTransformNoScales_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigTransformNoScales_Frames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigTransformNoScales_Values_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigTransformNoScale")]
+	public unsafe static void SetLocalControlRigTransformNoScale(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, FTransformNoScale Value, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate, bool bSetKey = true)
+	{
+		if (!SetLocalControlRigTransformNoScale_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigTransformNoScale");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigTransformNoScale_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigTransformNoScale_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransformNoScale_LevelSequence_Offset), 0, SetLocalControlRigTransformNoScale_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransformNoScale_ControlRig_Offset), 0, SetLocalControlRigTransformNoScale_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransformNoScale_ControlName_Offset), 0, SetLocalControlRigTransformNoScale_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(SetLocalControlRigTransformNoScale_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransformNoScale_Frame_Offset), 0, SetLocalControlRigTransformNoScale_Frame_PropertyAddress.Address, Frame);
+		NativeReflection.InitializeValue_InContainer(SetLocalControlRigTransformNoScale_Value_PropertyAddress.Address, intPtr);
+		FTransformNoScale.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransformNoScale_Value_Offset), 0, SetLocalControlRigTransformNoScale_Value_PropertyAddress.Address, Value);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransformNoScale_TimeUnit_Offset), 0, SetLocalControlRigTransformNoScale_TimeUnit_PropertyAddress.Address, TimeUnit);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransformNoScale_bSetKey_Offset), 0, SetLocalControlRigTransformNoScale_bSetKey_PropertyAddress.Address, bSetKey);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigTransformNoScale_FunctionAddress, intPtr, SetLocalControlRigTransformNoScale_ParamsSize);
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigTransform")]
+	public unsafe static void SetLocalControlRigTransform(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, FTransform Value, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate, bool bSetKey = true)
+	{
+		if (!SetLocalControlRigTransform_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigTransform");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigTransform_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigTransform_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransform_LevelSequence_Offset), 0, SetLocalControlRigTransform_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransform_ControlRig_Offset), 0, SetLocalControlRigTransform_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransform_ControlName_Offset), 0, SetLocalControlRigTransform_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(SetLocalControlRigTransform_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransform_Frame_Offset), 0, SetLocalControlRigTransform_Frame_PropertyAddress.Address, Frame);
+		NativeReflection.InitializeValue_InContainer(SetLocalControlRigTransform_Value_PropertyAddress.Address, intPtr);
+		BlittableTypeMarshaler<FTransform>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransform_Value_Offset), 0, SetLocalControlRigTransform_Value_PropertyAddress.Address, Value);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransform_TimeUnit_Offset), 0, SetLocalControlRigTransform_TimeUnit_PropertyAddress.Address, TimeUnit);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetLocalControlRigTransform_bSetKey_Offset), 0, SetLocalControlRigTransform_bSetKey_PropertyAddress.Address, bSetKey);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigTransform_FunctionAddress, intPtr, SetLocalControlRigTransform_ParamsSize);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigScales")]
+	public unsafe static void SetLocalControlRigScales(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, List<FVector> Values, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!SetLocalControlRigScales_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigScales");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigScales_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigScales_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigScales_LevelSequence_Offset), 0, SetLocalControlRigScales_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigScales_ControlRig_Offset), 0, SetLocalControlRigScales_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigScales_ControlName_Offset), 0, SetLocalControlRigScales_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, SetLocalControlRigScales_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigScales_Frames_Offset), Frames);
+		new TArrayCopyMarshaler<FVector>(1, SetLocalControlRigScales_Values_PropertyAddress, CachedMarshalingDelegates<FVector, BlittableTypeMarshaler<FVector>>.FromNative, CachedMarshalingDelegates<FVector, BlittableTypeMarshaler<FVector>>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigScales_Values_Offset), Values);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigScales_TimeUnit_Offset), 0, SetLocalControlRigScales_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigScales_FunctionAddress, intPtr, SetLocalControlRigScales_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigScales_Frames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigScales_Values_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigScale")]
+	public unsafe static void SetLocalControlRigScale(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, FVector Value, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate, bool bSetKey = true)
+	{
+		if (!SetLocalControlRigScale_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigScale");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigScale_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigScale_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigScale_LevelSequence_Offset), 0, SetLocalControlRigScale_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigScale_ControlRig_Offset), 0, SetLocalControlRigScale_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigScale_ControlName_Offset), 0, SetLocalControlRigScale_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(SetLocalControlRigScale_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, SetLocalControlRigScale_Frame_Offset), 0, SetLocalControlRigScale_Frame_PropertyAddress.Address, Frame);
+		BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigScale_Value_Offset), 0, SetLocalControlRigScale_Value_PropertyAddress.Address, Value);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigScale_TimeUnit_Offset), 0, SetLocalControlRigScale_TimeUnit_PropertyAddress.Address, TimeUnit);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetLocalControlRigScale_bSetKey_Offset), 0, SetLocalControlRigScale_bSetKey_PropertyAddress.Address, bSetKey);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigScale_FunctionAddress, intPtr, SetLocalControlRigScale_ParamsSize);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigRotators")]
+	public unsafe static void SetLocalControlRigRotators(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, List<FRotator> Values, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!SetLocalControlRigRotators_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigRotators");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigRotators_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigRotators_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigRotators_LevelSequence_Offset), 0, SetLocalControlRigRotators_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigRotators_ControlRig_Offset), 0, SetLocalControlRigRotators_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigRotators_ControlName_Offset), 0, SetLocalControlRigRotators_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, SetLocalControlRigRotators_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigRotators_Frames_Offset), Frames);
+		new TArrayCopyMarshaler<FRotator>(1, SetLocalControlRigRotators_Values_PropertyAddress, CachedMarshalingDelegates<FRotator, BlittableTypeMarshaler<FRotator>>.FromNative, CachedMarshalingDelegates<FRotator, BlittableTypeMarshaler<FRotator>>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigRotators_Values_Offset), Values);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigRotators_TimeUnit_Offset), 0, SetLocalControlRigRotators_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigRotators_FunctionAddress, intPtr, SetLocalControlRigRotators_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigRotators_Frames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigRotators_Values_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigRotator")]
+	public unsafe static void SetLocalControlRigRotator(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, FRotator Value, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate, bool bSetKey = true)
+	{
+		if (!SetLocalControlRigRotator_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigRotator");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigRotator_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigRotator_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigRotator_LevelSequence_Offset), 0, SetLocalControlRigRotator_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigRotator_ControlRig_Offset), 0, SetLocalControlRigRotator_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigRotator_ControlName_Offset), 0, SetLocalControlRigRotator_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(SetLocalControlRigRotator_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, SetLocalControlRigRotator_Frame_Offset), 0, SetLocalControlRigRotator_Frame_PropertyAddress.Address, Frame);
+		BlittableTypeMarshaler<FRotator>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigRotator_Value_Offset), 0, SetLocalControlRigRotator_Value_PropertyAddress.Address, Value);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigRotator_TimeUnit_Offset), 0, SetLocalControlRigRotator_TimeUnit_PropertyAddress.Address, TimeUnit);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetLocalControlRigRotator_bSetKey_Offset), 0, SetLocalControlRigRotator_bSetKey_PropertyAddress.Address, bSetKey);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigRotator_FunctionAddress, intPtr, SetLocalControlRigRotator_ParamsSize);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigPositions")]
+	public unsafe static void SetLocalControlRigPositions(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, List<FVector> Values, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!SetLocalControlRigPositions_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigPositions");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigPositions_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigPositions_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigPositions_LevelSequence_Offset), 0, SetLocalControlRigPositions_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigPositions_ControlRig_Offset), 0, SetLocalControlRigPositions_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigPositions_ControlName_Offset), 0, SetLocalControlRigPositions_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, SetLocalControlRigPositions_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigPositions_Frames_Offset), Frames);
+		new TArrayCopyMarshaler<FVector>(1, SetLocalControlRigPositions_Values_PropertyAddress, CachedMarshalingDelegates<FVector, BlittableTypeMarshaler<FVector>>.FromNative, CachedMarshalingDelegates<FVector, BlittableTypeMarshaler<FVector>>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigPositions_Values_Offset), Values);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigPositions_TimeUnit_Offset), 0, SetLocalControlRigPositions_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigPositions_FunctionAddress, intPtr, SetLocalControlRigPositions_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigPositions_Frames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigPositions_Values_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigPosition")]
+	public unsafe static void SetLocalControlRigPosition(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, FVector Value, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate, bool bSetKey = true)
+	{
+		if (!SetLocalControlRigPosition_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigPosition");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigPosition_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigPosition_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigPosition_LevelSequence_Offset), 0, SetLocalControlRigPosition_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigPosition_ControlRig_Offset), 0, SetLocalControlRigPosition_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigPosition_ControlName_Offset), 0, SetLocalControlRigPosition_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(SetLocalControlRigPosition_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, SetLocalControlRigPosition_Frame_Offset), 0, SetLocalControlRigPosition_Frame_PropertyAddress.Address, Frame);
+		BlittableTypeMarshaler<FVector>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigPosition_Value_Offset), 0, SetLocalControlRigPosition_Value_PropertyAddress.Address, Value);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigPosition_TimeUnit_Offset), 0, SetLocalControlRigPosition_TimeUnit_PropertyAddress.Address, TimeUnit);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetLocalControlRigPosition_bSetKey_Offset), 0, SetLocalControlRigPosition_bSetKey_PropertyAddress.Address, bSetKey);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigPosition_FunctionAddress, intPtr, SetLocalControlRigPosition_ParamsSize);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigInts")]
+	public unsafe static void SetLocalControlRigInts(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, List<int> Values, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!SetLocalControlRigInts_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigInts");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigInts_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigInts_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigInts_LevelSequence_Offset), 0, SetLocalControlRigInts_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigInts_ControlRig_Offset), 0, SetLocalControlRigInts_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigInts_ControlName_Offset), 0, SetLocalControlRigInts_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, SetLocalControlRigInts_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigInts_Frames_Offset), Frames);
+		new TArrayCopyMarshaler<int>(1, SetLocalControlRigInts_Values_PropertyAddress, CachedMarshalingDelegates<int, BlittableTypeMarshaler<int>>.FromNative, CachedMarshalingDelegates<int, BlittableTypeMarshaler<int>>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigInts_Values_Offset), Values);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigInts_TimeUnit_Offset), 0, SetLocalControlRigInts_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigInts_FunctionAddress, intPtr, SetLocalControlRigInts_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigInts_Frames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigInts_Values_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigInt")]
+	public unsafe static void SetLocalControlRigInt(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, int Value, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate, bool bSetKey = true)
+	{
+		if (!SetLocalControlRigInt_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigInt");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigInt_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigInt_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigInt_LevelSequence_Offset), 0, SetLocalControlRigInt_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigInt_ControlRig_Offset), 0, SetLocalControlRigInt_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigInt_ControlName_Offset), 0, SetLocalControlRigInt_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(SetLocalControlRigInt_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, SetLocalControlRigInt_Frame_Offset), 0, SetLocalControlRigInt_Frame_PropertyAddress.Address, Frame);
+		BlittableTypeMarshaler<int>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigInt_Value_Offset), 0, SetLocalControlRigInt_Value_PropertyAddress.Address, Value);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigInt_TimeUnit_Offset), 0, SetLocalControlRigInt_TimeUnit_PropertyAddress.Address, TimeUnit);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetLocalControlRigInt_bSetKey_Offset), 0, SetLocalControlRigInt_bSetKey_PropertyAddress.Address, bSetKey);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigInt_FunctionAddress, intPtr, SetLocalControlRigInt_ParamsSize);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigFloats")]
+	public unsafe static void SetLocalControlRigFloats(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, List<float> Values, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!SetLocalControlRigFloats_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigFloats");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigFloats_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigFloats_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigFloats_LevelSequence_Offset), 0, SetLocalControlRigFloats_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigFloats_ControlRig_Offset), 0, SetLocalControlRigFloats_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigFloats_ControlName_Offset), 0, SetLocalControlRigFloats_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, SetLocalControlRigFloats_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigFloats_Frames_Offset), Frames);
+		new TArrayCopyMarshaler<float>(1, SetLocalControlRigFloats_Values_PropertyAddress, CachedMarshalingDelegates<float, BlittableTypeMarshaler<float>>.FromNative, CachedMarshalingDelegates<float, BlittableTypeMarshaler<float>>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigFloats_Values_Offset), Values);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigFloats_TimeUnit_Offset), 0, SetLocalControlRigFloats_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigFloats_FunctionAddress, intPtr, SetLocalControlRigFloats_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigFloats_Frames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigFloats_Values_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigFloat")]
+	public unsafe static void SetLocalControlRigFloat(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, float Value, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate, bool bSetKey = true)
+	{
+		if (!SetLocalControlRigFloat_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigFloat");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigFloat_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigFloat_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigFloat_LevelSequence_Offset), 0, SetLocalControlRigFloat_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigFloat_ControlRig_Offset), 0, SetLocalControlRigFloat_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigFloat_ControlName_Offset), 0, SetLocalControlRigFloat_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(SetLocalControlRigFloat_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, SetLocalControlRigFloat_Frame_Offset), 0, SetLocalControlRigFloat_Frame_PropertyAddress.Address, Frame);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigFloat_Value_Offset), 0, SetLocalControlRigFloat_Value_PropertyAddress.Address, Value);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigFloat_TimeUnit_Offset), 0, SetLocalControlRigFloat_TimeUnit_PropertyAddress.Address, TimeUnit);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetLocalControlRigFloat_bSetKey_Offset), 0, SetLocalControlRigFloat_bSetKey_PropertyAddress.Address, bSetKey);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigFloat_FunctionAddress, intPtr, SetLocalControlRigFloat_ParamsSize);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigEulerTransforms")]
+	public unsafe static void SetLocalControlRigEulerTransforms(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, List<FEulerTransform> Values, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!SetLocalControlRigEulerTransforms_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigEulerTransforms");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigEulerTransforms_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigEulerTransforms_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigEulerTransforms_LevelSequence_Offset), 0, SetLocalControlRigEulerTransforms_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigEulerTransforms_ControlRig_Offset), 0, SetLocalControlRigEulerTransforms_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigEulerTransforms_ControlName_Offset), 0, SetLocalControlRigEulerTransforms_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, SetLocalControlRigEulerTransforms_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigEulerTransforms_Frames_Offset), Frames);
+		new TArrayCopyMarshaler<FEulerTransform>(1, SetLocalControlRigEulerTransforms_Values_PropertyAddress, CachedMarshalingDelegates<FEulerTransform, FEulerTransform>.FromNative, CachedMarshalingDelegates<FEulerTransform, FEulerTransform>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigEulerTransforms_Values_Offset), Values);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigEulerTransforms_TimeUnit_Offset), 0, SetLocalControlRigEulerTransforms_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigEulerTransforms_FunctionAddress, intPtr, SetLocalControlRigEulerTransforms_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigEulerTransforms_Frames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigEulerTransforms_Values_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigEulerTransform")]
+	public unsafe static void SetLocalControlRigEulerTransform(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, FEulerTransform Value, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate, bool bSetKey = true)
+	{
+		if (!SetLocalControlRigEulerTransform_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigEulerTransform");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigEulerTransform_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigEulerTransform_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigEulerTransform_LevelSequence_Offset), 0, SetLocalControlRigEulerTransform_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigEulerTransform_ControlRig_Offset), 0, SetLocalControlRigEulerTransform_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigEulerTransform_ControlName_Offset), 0, SetLocalControlRigEulerTransform_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(SetLocalControlRigEulerTransform_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, SetLocalControlRigEulerTransform_Frame_Offset), 0, SetLocalControlRigEulerTransform_Frame_PropertyAddress.Address, Frame);
+		NativeReflection.InitializeValue_InContainer(SetLocalControlRigEulerTransform_Value_PropertyAddress.Address, intPtr);
+		FEulerTransform.ToNative(IntPtr.Add(intPtr, SetLocalControlRigEulerTransform_Value_Offset), 0, SetLocalControlRigEulerTransform_Value_PropertyAddress.Address, Value);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigEulerTransform_TimeUnit_Offset), 0, SetLocalControlRigEulerTransform_TimeUnit_PropertyAddress.Address, TimeUnit);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetLocalControlRigEulerTransform_bSetKey_Offset), 0, SetLocalControlRigEulerTransform_bSetKey_PropertyAddress.Address, bSetKey);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigEulerTransform_FunctionAddress, intPtr, SetLocalControlRigEulerTransform_ParamsSize);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigBools")]
+	public unsafe static void SetLocalControlRigBools(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, List<bool> Values, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!SetLocalControlRigBools_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigBools");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigBools_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigBools_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigBools_LevelSequence_Offset), 0, SetLocalControlRigBools_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigBools_ControlRig_Offset), 0, SetLocalControlRigBools_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigBools_ControlName_Offset), 0, SetLocalControlRigBools_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, SetLocalControlRigBools_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigBools_Frames_Offset), Frames);
+		new TArrayCopyMarshaler<bool>(1, SetLocalControlRigBools_Values_PropertyAddress, CachedMarshalingDelegates<bool, BoolMarshaler>.FromNative, CachedMarshalingDelegates<bool, BoolMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, SetLocalControlRigBools_Values_Offset), Values);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigBools_TimeUnit_Offset), 0, SetLocalControlRigBools_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigBools_FunctionAddress, intPtr, SetLocalControlRigBools_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigBools_Frames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetLocalControlRigBools_Values_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigBool")]
+	public unsafe static void SetLocalControlRigBool(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, bool Value, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate, bool bSetKey = true)
+	{
+		if (!SetLocalControlRigBool_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigBool");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetLocalControlRigBool_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetLocalControlRigBool_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigBool_LevelSequence_Offset), 0, SetLocalControlRigBool_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigBool_ControlRig_Offset), 0, SetLocalControlRigBool_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigBool_ControlName_Offset), 0, SetLocalControlRigBool_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(SetLocalControlRigBool_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, SetLocalControlRigBool_Frame_Offset), 0, SetLocalControlRigBool_Frame_PropertyAddress.Address, Frame);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetLocalControlRigBool_Value_Offset), 0, SetLocalControlRigBool_Value_PropertyAddress.Address, Value);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetLocalControlRigBool_TimeUnit_Offset), 0, SetLocalControlRigBool_TimeUnit_PropertyAddress.Address, TimeUnit);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetLocalControlRigBool_bSetKey_Offset), 0, SetLocalControlRigBool_bSetKey_PropertyAddress.Address, bSetKey);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetLocalControlRigBool_FunctionAddress, intPtr, SetLocalControlRigBool_ParamsSize);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetControlRigWorldTransforms")]
+	public unsafe static void SetControlRigWorldTransforms(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, List<FTransform> WorldTransforms, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!SetControlRigWorldTransforms_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetControlRigWorldTransforms");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetControlRigWorldTransforms_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetControlRigWorldTransforms_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetControlRigWorldTransforms_LevelSequence_Offset), 0, SetControlRigWorldTransforms_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetControlRigWorldTransforms_ControlRig_Offset), 0, SetControlRigWorldTransforms_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetControlRigWorldTransforms_ControlName_Offset), 0, SetControlRigWorldTransforms_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, SetControlRigWorldTransforms_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, SetControlRigWorldTransforms_Frames_Offset), Frames);
+		new TArrayCopyMarshaler<FTransform>(1, SetControlRigWorldTransforms_WorldTransforms_PropertyAddress, CachedMarshalingDelegates<FTransform, BlittableTypeMarshaler<FTransform>>.FromNative, CachedMarshalingDelegates<FTransform, BlittableTypeMarshaler<FTransform>>.ToNative).ToNative(IntPtr.Add(intPtr, SetControlRigWorldTransforms_WorldTransforms_Offset), WorldTransforms);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetControlRigWorldTransforms_TimeUnit_Offset), 0, SetControlRigWorldTransforms_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetControlRigWorldTransforms_FunctionAddress, intPtr, SetControlRigWorldTransforms_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(SetControlRigWorldTransforms_Frames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(SetControlRigWorldTransforms_WorldTransforms_PropertyAddress.Address, intPtr);
+	}
+
+	[UFunction(Flags = 79832065u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetControlRigWorldTransform")]
+	public unsafe static void SetControlRigWorldTransform(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, FTransform WorldTransform, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate, bool bSetKey = true)
+	{
+		if (!SetControlRigWorldTransform_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetControlRigWorldTransform");
+			return;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetControlRigWorldTransform_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetControlRigWorldTransform_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetControlRigWorldTransform_LevelSequence_Offset), 0, SetControlRigWorldTransform_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetControlRigWorldTransform_ControlRig_Offset), 0, SetControlRigWorldTransform_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetControlRigWorldTransform_ControlName_Offset), 0, SetControlRigWorldTransform_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(SetControlRigWorldTransform_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, SetControlRigWorldTransform_Frame_Offset), 0, SetControlRigWorldTransform_Frame_PropertyAddress.Address, Frame);
+		NativeReflection.InitializeValue_InContainer(SetControlRigWorldTransform_WorldTransform_PropertyAddress.Address, intPtr);
+		BlittableTypeMarshaler<FTransform>.ToNative(IntPtr.Add(intPtr, SetControlRigWorldTransform_WorldTransform_Offset), 0, SetControlRigWorldTransform_WorldTransform_PropertyAddress.Address, WorldTransform);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetControlRigWorldTransform_TimeUnit_Offset), 0, SetControlRigWorldTransform_TimeUnit_PropertyAddress.Address, TimeUnit);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, SetControlRigWorldTransform_bSetKey_Offset), 0, SetControlRigWorldTransform_bSetKey_PropertyAddress.Address, bSetKey);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetControlRigWorldTransform_FunctionAddress, intPtr, SetControlRigWorldTransform_ParamsSize);
+	}
+
+	[UFunction(Flags = 79832065u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetControlRigSpace")]
+	public unsafe static bool SetControlRigSpace(ULevelSequence InSequence, UControlRig InControlRig, FName InControlName, FRigElementKey InSpaceKey, FFrameNumber InTime, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!SetControlRigSpace_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetControlRigSpace");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(SetControlRigSpace_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)SetControlRigSpace_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, SetControlRigSpace_InSequence_Offset), 0, SetControlRigSpace_InSequence_PropertyAddress.Address, InSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, SetControlRigSpace_InControlRig_Offset), 0, SetControlRigSpace_InControlRig_PropertyAddress.Address, InControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, SetControlRigSpace_InControlName_Offset), 0, SetControlRigSpace_InControlName_PropertyAddress.Address, InControlName);
+		NativeReflection.InitializeValue_InContainer(SetControlRigSpace_InSpaceKey_PropertyAddress.Address, intPtr);
+		FRigElementKey.ToNative(IntPtr.Add(intPtr, SetControlRigSpace_InSpaceKey_Offset), 0, SetControlRigSpace_InSpaceKey_PropertyAddress.Address, InSpaceKey);
+		NativeReflection.InitializeValue_InContainer(SetControlRigSpace_InTime_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, SetControlRigSpace_InTime_Offset), 0, SetControlRigSpace_InTime_PropertyAddress.Address, InTime);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, SetControlRigSpace_TimeUnit_Offset), 0, SetControlRigSpace_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, SetControlRigSpace_FunctionAddress, intPtr, SetControlRigSpace_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, SetControlRigSpace_ReturnValue_Offset), 0, SetControlRigSpace_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71435265u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:RenameControlRigControlChannels")]
+	public unsafe bool RenameControlRigControlChannels(ULevelSequence InSequence, UControlRig InControlRig, List<FName> InOldControlNames, List<FName> InNewControlNames)
+	{
+		CheckDestroyed();
+		if (!RenameControlRigControlChannels_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:RenameControlRigControlChannels");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(RenameControlRigControlChannels_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)RenameControlRigControlChannels_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, RenameControlRigControlChannels_InSequence_Offset), 0, RenameControlRigControlChannels_InSequence_PropertyAddress.Address, InSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, RenameControlRigControlChannels_InControlRig_Offset), 0, RenameControlRigControlChannels_InControlRig_PropertyAddress.Address, InControlRig);
+		new TArrayCopyMarshaler<FName>(1, RenameControlRigControlChannels_InOldControlNames_PropertyAddress, CachedMarshalingDelegates<FName, BlittableTypeMarshaler<FName>>.FromNative, CachedMarshalingDelegates<FName, BlittableTypeMarshaler<FName>>.ToNative).ToNative(IntPtr.Add(intPtr, RenameControlRigControlChannels_InOldControlNames_Offset), InOldControlNames);
+		new TArrayCopyMarshaler<FName>(1, RenameControlRigControlChannels_InNewControlNames_PropertyAddress, CachedMarshalingDelegates<FName, BlittableTypeMarshaler<FName>>.FromNative, CachedMarshalingDelegates<FName, BlittableTypeMarshaler<FName>>.ToNative).ToNative(IntPtr.Add(intPtr, RenameControlRigControlChannels_InNewControlNames_Offset), InNewControlNames);
+		NativeReflection.InvokeFunctionOptimized(base.Address, RenameControlRigControlChannels_FunctionAddress, intPtr, RenameControlRigControlChannels_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(RenameControlRigControlChannels_InOldControlNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(RenameControlRigControlChannels_InNewControlNames_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, RenameControlRigControlChannels_ReturnValue_Offset), 0, RenameControlRigControlChannels_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:MoveControlRigSpace")]
+	public unsafe static bool MoveControlRigSpace(ULevelSequence InSequence, UControlRig InControlRig, FName InControlName, FFrameNumber InTime, FFrameNumber InNewTime, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!MoveControlRigSpace_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:MoveControlRigSpace");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(MoveControlRigSpace_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)MoveControlRigSpace_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, MoveControlRigSpace_InSequence_Offset), 0, MoveControlRigSpace_InSequence_PropertyAddress.Address, InSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, MoveControlRigSpace_InControlRig_Offset), 0, MoveControlRigSpace_InControlRig_PropertyAddress.Address, InControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, MoveControlRigSpace_InControlName_Offset), 0, MoveControlRigSpace_InControlName_PropertyAddress.Address, InControlName);
+		NativeReflection.InitializeValue_InContainer(MoveControlRigSpace_InTime_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, MoveControlRigSpace_InTime_Offset), 0, MoveControlRigSpace_InTime_PropertyAddress.Address, InTime);
+		NativeReflection.InitializeValue_InContainer(MoveControlRigSpace_InNewTime_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, MoveControlRigSpace_InNewTime_Offset), 0, MoveControlRigSpace_InNewTime_PropertyAddress.Address, InNewTime);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, MoveControlRigSpace_TimeUnit_Offset), 0, MoveControlRigSpace_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, MoveControlRigSpace_FunctionAddress, intPtr, MoveControlRigSpace_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, MoveControlRigSpace_ReturnValue_Offset), 0, MoveControlRigSpace_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:LoadAnimSequenceIntoControlRigSection")]
+	public unsafe static bool LoadAnimSequenceIntoControlRigSection(UMovieSceneSection MovieSceneSection, UAnimSequence AnimSequence, USkeletalMeshComponent SkelMeshComp, FFrameNumber InStartFrame, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate, bool bKeyReduce = false, float Tolerance = 0.001f)
+	{
+		if (!LoadAnimSequenceIntoControlRigSection_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:LoadAnimSequenceIntoControlRigSection");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(LoadAnimSequenceIntoControlRigSection_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)LoadAnimSequenceIntoControlRigSection_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UMovieSceneSection>.ToNative(IntPtr.Add(intPtr, LoadAnimSequenceIntoControlRigSection_MovieSceneSection_Offset), 0, LoadAnimSequenceIntoControlRigSection_MovieSceneSection_PropertyAddress.Address, MovieSceneSection);
+		UObjectMarshaler<UAnimSequence>.ToNative(IntPtr.Add(intPtr, LoadAnimSequenceIntoControlRigSection_AnimSequence_Offset), 0, LoadAnimSequenceIntoControlRigSection_AnimSequence_PropertyAddress.Address, AnimSequence);
+		UObjectMarshaler<USkeletalMeshComponent>.ToNative(IntPtr.Add(intPtr, LoadAnimSequenceIntoControlRigSection_SkelMeshComp_Offset), 0, LoadAnimSequenceIntoControlRigSection_SkelMeshComp_PropertyAddress.Address, SkelMeshComp);
+		NativeReflection.InitializeValue_InContainer(LoadAnimSequenceIntoControlRigSection_InStartFrame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, LoadAnimSequenceIntoControlRigSection_InStartFrame_Offset), 0, LoadAnimSequenceIntoControlRigSection_InStartFrame_PropertyAddress.Address, InStartFrame);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, LoadAnimSequenceIntoControlRigSection_TimeUnit_Offset), 0, LoadAnimSequenceIntoControlRigSection_TimeUnit_PropertyAddress.Address, TimeUnit);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, LoadAnimSequenceIntoControlRigSection_bKeyReduce_Offset), 0, LoadAnimSequenceIntoControlRigSection_bKeyReduce_PropertyAddress.Address, bKeyReduce);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, LoadAnimSequenceIntoControlRigSection_Tolerance_Offset), 0, LoadAnimSequenceIntoControlRigSection_Tolerance_PropertyAddress.Address, Tolerance);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, LoadAnimSequenceIntoControlRigSection_FunctionAddress, intPtr, LoadAnimSequenceIntoControlRigSection_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, LoadAnimSequenceIntoControlRigSection_ReturnValue_Offset), 0, LoadAnimSequenceIntoControlRigSection_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:ImportFBXToControlRigTrack")]
+	public unsafe static bool ImportFBXToControlRigTrack(UWorld World, ULevelSequence InSequence, UMovieSceneControlRigParameterTrack InTrack, UMovieSceneControlRigParameterSection InSection, List<string> SelectedControlRigNames, UMovieSceneUserImportFBXControlRigSettings ImportFBXControlRigSettings, string ImportFilename)
+	{
+		if (!ImportFBXToControlRigTrack_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:ImportFBXToControlRigTrack");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(ImportFBXToControlRigTrack_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)ImportFBXToControlRigTrack_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UWorld>.ToNative(IntPtr.Add(intPtr, ImportFBXToControlRigTrack_World_Offset), 0, ImportFBXToControlRigTrack_World_PropertyAddress.Address, World);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, ImportFBXToControlRigTrack_InSequence_Offset), 0, ImportFBXToControlRigTrack_InSequence_PropertyAddress.Address, InSequence);
+		UObjectMarshaler<UMovieSceneControlRigParameterTrack>.ToNative(IntPtr.Add(intPtr, ImportFBXToControlRigTrack_InTrack_Offset), 0, ImportFBXToControlRigTrack_InTrack_PropertyAddress.Address, InTrack);
+		UObjectMarshaler<UMovieSceneControlRigParameterSection>.ToNative(IntPtr.Add(intPtr, ImportFBXToControlRigTrack_InSection_Offset), 0, ImportFBXToControlRigTrack_InSection_PropertyAddress.Address, InSection);
+		new TArrayCopyMarshaler<string>(1, ImportFBXToControlRigTrack_SelectedControlRigNames_PropertyAddress, CachedMarshalingDelegates<string, FStringMarshaler>.FromNative, CachedMarshalingDelegates<string, FStringMarshaler>.ToNative).ToNative(IntPtr.Add(intPtr, ImportFBXToControlRigTrack_SelectedControlRigNames_Offset), SelectedControlRigNames);
+		UObjectMarshaler<UMovieSceneUserImportFBXControlRigSettings>.ToNative(IntPtr.Add(intPtr, ImportFBXToControlRigTrack_ImportFBXControlRigSettings_Offset), 0, ImportFBXToControlRigTrack_ImportFBXControlRigSettings_PropertyAddress.Address, ImportFBXControlRigSettings);
+		FStringMarshaler.ToNative(IntPtr.Add(intPtr, ImportFBXToControlRigTrack_ImportFilename_Offset), 0, ImportFBXToControlRigTrack_ImportFilename_PropertyAddress.Address, ImportFilename);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, ImportFBXToControlRigTrack_FunctionAddress, intPtr, ImportFBXToControlRigTrack_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(ImportFBXToControlRigTrack_SelectedControlRigNames_PropertyAddress.Address, intPtr);
+		NativeReflection.DestroyValue_InContainer(ImportFBXToControlRigTrack_ImportFilename_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, ImportFBXToControlRigTrack_ReturnValue_Offset), 0, ImportFBXToControlRigTrack_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetWorldSpaceReferenceKey")]
+	public unsafe static FRigElementKey GetWorldSpaceReferenceKey()
+	{
+		if (!GetWorldSpaceReferenceKey_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetWorldSpaceReferenceKey");
+			return default(FRigElementKey);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetWorldSpaceReferenceKey_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetWorldSpaceReferenceKey_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetWorldSpaceReferenceKey_FunctionAddress, intPtr, GetWorldSpaceReferenceKey_ParamsSize);
+		return FRigElementKey.FromNative(IntPtr.Add(intPtr, GetWorldSpaceReferenceKey_ReturnValue_Offset), 0, GetWorldSpaceReferenceKey_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetVisibleControlRigs")]
+	public unsafe static List<UControlRig> GetVisibleControlRigs()
+	{
+		if (!GetVisibleControlRigs_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetVisibleControlRigs");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetVisibleControlRigs_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetVisibleControlRigs_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetVisibleControlRigs_FunctionAddress, intPtr, GetVisibleControlRigs_ParamsSize);
+		List<UControlRig> result = new TArrayCopyMarshaler<UControlRig>(1, GetVisibleControlRigs_ReturnValue_PropertyAddress, CachedMarshalingDelegates<UControlRig, UObjectMarshaler<UControlRig>>.FromNative, CachedMarshalingDelegates<UControlRig, UObjectMarshaler<UControlRig>>.ToNative).FromNative(IntPtr.Add(intPtr, GetVisibleControlRigs_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetVisibleControlRigs_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetSkeletalMeshComponentWorldTransforms")]
+	public unsafe static List<FTransform> GetSkeletalMeshComponentWorldTransforms(ULevelSequence LevelSequence, USkeletalMeshComponent SkeletalMeshComponent, List<FFrameNumber> Frames, ESequenceTimeUnit TimeUnit, FName ReferenceName)
+	{
+		if (!GetSkeletalMeshComponentWorldTransforms_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetSkeletalMeshComponentWorldTransforms");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetSkeletalMeshComponentWorldTransforms_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetSkeletalMeshComponentWorldTransforms_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetSkeletalMeshComponentWorldTransforms_LevelSequence_Offset), 0, GetSkeletalMeshComponentWorldTransforms_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<USkeletalMeshComponent>.ToNative(IntPtr.Add(intPtr, GetSkeletalMeshComponentWorldTransforms_SkeletalMeshComponent_Offset), 0, GetSkeletalMeshComponentWorldTransforms_SkeletalMeshComponent_PropertyAddress.Address, SkeletalMeshComponent);
+		new TArrayCopyMarshaler<FFrameNumber>(1, GetSkeletalMeshComponentWorldTransforms_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, GetSkeletalMeshComponentWorldTransforms_Frames_Offset), Frames);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetSkeletalMeshComponentWorldTransforms_TimeUnit_Offset), 0, GetSkeletalMeshComponentWorldTransforms_TimeUnit_PropertyAddress.Address, TimeUnit);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetSkeletalMeshComponentWorldTransforms_ReferenceName_Offset), 0, GetSkeletalMeshComponentWorldTransforms_ReferenceName_PropertyAddress.Address, ReferenceName);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetSkeletalMeshComponentWorldTransforms_FunctionAddress, intPtr, GetSkeletalMeshComponentWorldTransforms_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetSkeletalMeshComponentWorldTransforms_Frames_PropertyAddress.Address, intPtr);
+		List<FTransform> result = new TArrayCopyMarshaler<FTransform>(1, GetSkeletalMeshComponentWorldTransforms_ReturnValue_PropertyAddress, CachedMarshalingDelegates<FTransform, BlittableTypeMarshaler<FTransform>>.FromNative, CachedMarshalingDelegates<FTransform, BlittableTypeMarshaler<FTransform>>.ToNative).FromNative(IntPtr.Add(intPtr, GetSkeletalMeshComponentWorldTransforms_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetSkeletalMeshComponentWorldTransforms_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetSkeletalMeshComponentWorldTransform")]
+	public unsafe static FTransform GetSkeletalMeshComponentWorldTransform(ULevelSequence LevelSequence, USkeletalMeshComponent SkeletalMeshComponent, FFrameNumber Frame, ESequenceTimeUnit TimeUnit, FName ReferenceName)
+	{
+		if (!GetSkeletalMeshComponentWorldTransform_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetSkeletalMeshComponentWorldTransform");
+			return default(FTransform);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetSkeletalMeshComponentWorldTransform_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetSkeletalMeshComponentWorldTransform_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetSkeletalMeshComponentWorldTransform_LevelSequence_Offset), 0, GetSkeletalMeshComponentWorldTransform_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<USkeletalMeshComponent>.ToNative(IntPtr.Add(intPtr, GetSkeletalMeshComponentWorldTransform_SkeletalMeshComponent_Offset), 0, GetSkeletalMeshComponentWorldTransform_SkeletalMeshComponent_PropertyAddress.Address, SkeletalMeshComponent);
+		NativeReflection.InitializeValue_InContainer(GetSkeletalMeshComponentWorldTransform_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, GetSkeletalMeshComponentWorldTransform_Frame_Offset), 0, GetSkeletalMeshComponentWorldTransform_Frame_PropertyAddress.Address, Frame);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetSkeletalMeshComponentWorldTransform_TimeUnit_Offset), 0, GetSkeletalMeshComponentWorldTransform_TimeUnit_PropertyAddress.Address, TimeUnit);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetSkeletalMeshComponentWorldTransform_ReferenceName_Offset), 0, GetSkeletalMeshComponentWorldTransform_ReferenceName_PropertyAddress.Address, ReferenceName);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetSkeletalMeshComponentWorldTransform_FunctionAddress, intPtr, GetSkeletalMeshComponentWorldTransform_ParamsSize);
+		return BlittableTypeMarshaler<FTransform>.FromNative(IntPtr.Add(intPtr, GetSkeletalMeshComponentWorldTransform_ReturnValue_Offset), 0, GetSkeletalMeshComponentWorldTransform_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigVector2Ds")]
+	public unsafe static List<FVector2D> GetLocalControlRigVector2Ds(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigVector2Ds_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigVector2Ds");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigVector2Ds_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigVector2Ds_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigVector2Ds_LevelSequence_Offset), 0, GetLocalControlRigVector2Ds_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigVector2Ds_ControlRig_Offset), 0, GetLocalControlRigVector2Ds_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigVector2Ds_ControlName_Offset), 0, GetLocalControlRigVector2Ds_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, GetLocalControlRigVector2Ds_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, GetLocalControlRigVector2Ds_Frames_Offset), Frames);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigVector2Ds_TimeUnit_Offset), 0, GetLocalControlRigVector2Ds_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigVector2Ds_FunctionAddress, intPtr, GetLocalControlRigVector2Ds_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigVector2Ds_Frames_PropertyAddress.Address, intPtr);
+		List<FVector2D> result = new TArrayCopyMarshaler<FVector2D>(1, GetLocalControlRigVector2Ds_ReturnValue_PropertyAddress, CachedMarshalingDelegates<FVector2D, BlittableTypeMarshaler<FVector2D>>.FromNative, CachedMarshalingDelegates<FVector2D, BlittableTypeMarshaler<FVector2D>>.ToNative).FromNative(IntPtr.Add(intPtr, GetLocalControlRigVector2Ds_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigVector2Ds_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigVector2D")]
+	public unsafe static FVector2D GetLocalControlRigVector2D(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigVector2D_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigVector2D");
+			return default(FVector2D);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigVector2D_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigVector2D_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigVector2D_LevelSequence_Offset), 0, GetLocalControlRigVector2D_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigVector2D_ControlRig_Offset), 0, GetLocalControlRigVector2D_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigVector2D_ControlName_Offset), 0, GetLocalControlRigVector2D_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(GetLocalControlRigVector2D_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, GetLocalControlRigVector2D_Frame_Offset), 0, GetLocalControlRigVector2D_Frame_PropertyAddress.Address, Frame);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigVector2D_TimeUnit_Offset), 0, GetLocalControlRigVector2D_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigVector2D_FunctionAddress, intPtr, GetLocalControlRigVector2D_ParamsSize);
+		return BlittableTypeMarshaler<FVector2D>.FromNative(IntPtr.Add(intPtr, GetLocalControlRigVector2D_ReturnValue_Offset), 0, GetLocalControlRigVector2D_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigTransforms")]
+	public unsafe static List<FTransform> GetLocalControlRigTransforms(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigTransforms_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigTransforms");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigTransforms_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigTransforms_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransforms_LevelSequence_Offset), 0, GetLocalControlRigTransforms_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransforms_ControlRig_Offset), 0, GetLocalControlRigTransforms_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransforms_ControlName_Offset), 0, GetLocalControlRigTransforms_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, GetLocalControlRigTransforms_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransforms_Frames_Offset), Frames);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransforms_TimeUnit_Offset), 0, GetLocalControlRigTransforms_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigTransforms_FunctionAddress, intPtr, GetLocalControlRigTransforms_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigTransforms_Frames_PropertyAddress.Address, intPtr);
+		List<FTransform> result = new TArrayCopyMarshaler<FTransform>(1, GetLocalControlRigTransforms_ReturnValue_PropertyAddress, CachedMarshalingDelegates<FTransform, BlittableTypeMarshaler<FTransform>>.FromNative, CachedMarshalingDelegates<FTransform, BlittableTypeMarshaler<FTransform>>.ToNative).FromNative(IntPtr.Add(intPtr, GetLocalControlRigTransforms_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigTransforms_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigTransformNoScales")]
+	public unsafe static List<FTransformNoScale> GetLocalControlRigTransformNoScales(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigTransformNoScales_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigTransformNoScales");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigTransformNoScales_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigTransformNoScales_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransformNoScales_LevelSequence_Offset), 0, GetLocalControlRigTransformNoScales_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransformNoScales_ControlRig_Offset), 0, GetLocalControlRigTransformNoScales_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransformNoScales_ControlName_Offset), 0, GetLocalControlRigTransformNoScales_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, GetLocalControlRigTransformNoScales_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransformNoScales_Frames_Offset), Frames);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransformNoScales_TimeUnit_Offset), 0, GetLocalControlRigTransformNoScales_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigTransformNoScales_FunctionAddress, intPtr, GetLocalControlRigTransformNoScales_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigTransformNoScales_Frames_PropertyAddress.Address, intPtr);
+		List<FTransformNoScale> result = new TArrayCopyMarshaler<FTransformNoScale>(1, GetLocalControlRigTransformNoScales_ReturnValue_PropertyAddress, CachedMarshalingDelegates<FTransformNoScale, FTransformNoScale>.FromNative, CachedMarshalingDelegates<FTransformNoScale, FTransformNoScale>.ToNative).FromNative(IntPtr.Add(intPtr, GetLocalControlRigTransformNoScales_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigTransformNoScales_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigTransformNoScale")]
+	public unsafe static FTransformNoScale GetLocalControlRigTransformNoScale(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigTransformNoScale_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigTransformNoScale");
+			return default(FTransformNoScale);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigTransformNoScale_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigTransformNoScale_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransformNoScale_LevelSequence_Offset), 0, GetLocalControlRigTransformNoScale_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransformNoScale_ControlRig_Offset), 0, GetLocalControlRigTransformNoScale_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransformNoScale_ControlName_Offset), 0, GetLocalControlRigTransformNoScale_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(GetLocalControlRigTransformNoScale_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransformNoScale_Frame_Offset), 0, GetLocalControlRigTransformNoScale_Frame_PropertyAddress.Address, Frame);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransformNoScale_TimeUnit_Offset), 0, GetLocalControlRigTransformNoScale_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigTransformNoScale_FunctionAddress, intPtr, GetLocalControlRigTransformNoScale_ParamsSize);
+		return FTransformNoScale.FromNative(IntPtr.Add(intPtr, GetLocalControlRigTransformNoScale_ReturnValue_Offset), 0, GetLocalControlRigTransformNoScale_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigTransform")]
+	public unsafe static FTransform GetLocalControlRigTransform(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigTransform_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigTransform");
+			return default(FTransform);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigTransform_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigTransform_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransform_LevelSequence_Offset), 0, GetLocalControlRigTransform_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransform_ControlRig_Offset), 0, GetLocalControlRigTransform_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransform_ControlName_Offset), 0, GetLocalControlRigTransform_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(GetLocalControlRigTransform_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransform_Frame_Offset), 0, GetLocalControlRigTransform_Frame_PropertyAddress.Address, Frame);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigTransform_TimeUnit_Offset), 0, GetLocalControlRigTransform_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigTransform_FunctionAddress, intPtr, GetLocalControlRigTransform_ParamsSize);
+		return BlittableTypeMarshaler<FTransform>.FromNative(IntPtr.Add(intPtr, GetLocalControlRigTransform_ReturnValue_Offset), 0, GetLocalControlRigTransform_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigScales")]
+	public unsafe static List<FVector> GetLocalControlRigScales(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigScales_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigScales");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigScales_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigScales_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigScales_LevelSequence_Offset), 0, GetLocalControlRigScales_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigScales_ControlRig_Offset), 0, GetLocalControlRigScales_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigScales_ControlName_Offset), 0, GetLocalControlRigScales_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, GetLocalControlRigScales_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, GetLocalControlRigScales_Frames_Offset), Frames);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigScales_TimeUnit_Offset), 0, GetLocalControlRigScales_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigScales_FunctionAddress, intPtr, GetLocalControlRigScales_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigScales_Frames_PropertyAddress.Address, intPtr);
+		List<FVector> result = new TArrayCopyMarshaler<FVector>(1, GetLocalControlRigScales_ReturnValue_PropertyAddress, CachedMarshalingDelegates<FVector, BlittableTypeMarshaler<FVector>>.FromNative, CachedMarshalingDelegates<FVector, BlittableTypeMarshaler<FVector>>.ToNative).FromNative(IntPtr.Add(intPtr, GetLocalControlRigScales_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigScales_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigScale")]
+	public unsafe static FVector GetLocalControlRigScale(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigScale_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigScale");
+			return default(FVector);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigScale_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigScale_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigScale_LevelSequence_Offset), 0, GetLocalControlRigScale_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigScale_ControlRig_Offset), 0, GetLocalControlRigScale_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigScale_ControlName_Offset), 0, GetLocalControlRigScale_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(GetLocalControlRigScale_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, GetLocalControlRigScale_Frame_Offset), 0, GetLocalControlRigScale_Frame_PropertyAddress.Address, Frame);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigScale_TimeUnit_Offset), 0, GetLocalControlRigScale_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigScale_FunctionAddress, intPtr, GetLocalControlRigScale_ParamsSize);
+		return BlittableTypeMarshaler<FVector>.FromNative(IntPtr.Add(intPtr, GetLocalControlRigScale_ReturnValue_Offset), 0, GetLocalControlRigScale_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigRotators")]
+	public unsafe static List<FRotator> GetLocalControlRigRotators(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigRotators_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigRotators");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigRotators_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigRotators_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigRotators_LevelSequence_Offset), 0, GetLocalControlRigRotators_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigRotators_ControlRig_Offset), 0, GetLocalControlRigRotators_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigRotators_ControlName_Offset), 0, GetLocalControlRigRotators_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, GetLocalControlRigRotators_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, GetLocalControlRigRotators_Frames_Offset), Frames);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigRotators_TimeUnit_Offset), 0, GetLocalControlRigRotators_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigRotators_FunctionAddress, intPtr, GetLocalControlRigRotators_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigRotators_Frames_PropertyAddress.Address, intPtr);
+		List<FRotator> result = new TArrayCopyMarshaler<FRotator>(1, GetLocalControlRigRotators_ReturnValue_PropertyAddress, CachedMarshalingDelegates<FRotator, BlittableTypeMarshaler<FRotator>>.FromNative, CachedMarshalingDelegates<FRotator, BlittableTypeMarshaler<FRotator>>.ToNative).FromNative(IntPtr.Add(intPtr, GetLocalControlRigRotators_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigRotators_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigRotator")]
+	public unsafe static FRotator GetLocalControlRigRotator(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigRotator_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigRotator");
+			return default(FRotator);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigRotator_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigRotator_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigRotator_LevelSequence_Offset), 0, GetLocalControlRigRotator_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigRotator_ControlRig_Offset), 0, GetLocalControlRigRotator_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigRotator_ControlName_Offset), 0, GetLocalControlRigRotator_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(GetLocalControlRigRotator_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, GetLocalControlRigRotator_Frame_Offset), 0, GetLocalControlRigRotator_Frame_PropertyAddress.Address, Frame);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigRotator_TimeUnit_Offset), 0, GetLocalControlRigRotator_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigRotator_FunctionAddress, intPtr, GetLocalControlRigRotator_ParamsSize);
+		return BlittableTypeMarshaler<FRotator>.FromNative(IntPtr.Add(intPtr, GetLocalControlRigRotator_ReturnValue_Offset), 0, GetLocalControlRigRotator_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigPositions")]
+	public unsafe static List<FVector> GetLocalControlRigPositions(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigPositions_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigPositions");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigPositions_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigPositions_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigPositions_LevelSequence_Offset), 0, GetLocalControlRigPositions_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigPositions_ControlRig_Offset), 0, GetLocalControlRigPositions_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigPositions_ControlName_Offset), 0, GetLocalControlRigPositions_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, GetLocalControlRigPositions_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, GetLocalControlRigPositions_Frames_Offset), Frames);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigPositions_TimeUnit_Offset), 0, GetLocalControlRigPositions_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigPositions_FunctionAddress, intPtr, GetLocalControlRigPositions_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigPositions_Frames_PropertyAddress.Address, intPtr);
+		List<FVector> result = new TArrayCopyMarshaler<FVector>(1, GetLocalControlRigPositions_ReturnValue_PropertyAddress, CachedMarshalingDelegates<FVector, BlittableTypeMarshaler<FVector>>.FromNative, CachedMarshalingDelegates<FVector, BlittableTypeMarshaler<FVector>>.ToNative).FromNative(IntPtr.Add(intPtr, GetLocalControlRigPositions_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigPositions_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigPosition")]
+	public unsafe static FVector GetLocalControlRigPosition(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigPosition_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigPosition");
+			return default(FVector);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigPosition_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigPosition_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigPosition_LevelSequence_Offset), 0, GetLocalControlRigPosition_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigPosition_ControlRig_Offset), 0, GetLocalControlRigPosition_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigPosition_ControlName_Offset), 0, GetLocalControlRigPosition_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(GetLocalControlRigPosition_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, GetLocalControlRigPosition_Frame_Offset), 0, GetLocalControlRigPosition_Frame_PropertyAddress.Address, Frame);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigPosition_TimeUnit_Offset), 0, GetLocalControlRigPosition_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigPosition_FunctionAddress, intPtr, GetLocalControlRigPosition_ParamsSize);
+		return BlittableTypeMarshaler<FVector>.FromNative(IntPtr.Add(intPtr, GetLocalControlRigPosition_ReturnValue_Offset), 0, GetLocalControlRigPosition_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigInts")]
+	public unsafe static List<int> GetLocalControlRigInts(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigInts_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigInts");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigInts_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigInts_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigInts_LevelSequence_Offset), 0, GetLocalControlRigInts_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigInts_ControlRig_Offset), 0, GetLocalControlRigInts_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigInts_ControlName_Offset), 0, GetLocalControlRigInts_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, GetLocalControlRigInts_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, GetLocalControlRigInts_Frames_Offset), Frames);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigInts_TimeUnit_Offset), 0, GetLocalControlRigInts_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigInts_FunctionAddress, intPtr, GetLocalControlRigInts_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigInts_Frames_PropertyAddress.Address, intPtr);
+		List<int> result = new TArrayCopyMarshaler<int>(1, GetLocalControlRigInts_ReturnValue_PropertyAddress, CachedMarshalingDelegates<int, BlittableTypeMarshaler<int>>.FromNative, CachedMarshalingDelegates<int, BlittableTypeMarshaler<int>>.ToNative).FromNative(IntPtr.Add(intPtr, GetLocalControlRigInts_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigInts_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigInt")]
+	public unsafe static int GetLocalControlRigInt(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigInt_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigInt");
+			return 0;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigInt_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigInt_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigInt_LevelSequence_Offset), 0, GetLocalControlRigInt_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigInt_ControlRig_Offset), 0, GetLocalControlRigInt_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigInt_ControlName_Offset), 0, GetLocalControlRigInt_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(GetLocalControlRigInt_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, GetLocalControlRigInt_Frame_Offset), 0, GetLocalControlRigInt_Frame_PropertyAddress.Address, Frame);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigInt_TimeUnit_Offset), 0, GetLocalControlRigInt_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigInt_FunctionAddress, intPtr, GetLocalControlRigInt_ParamsSize);
+		return BlittableTypeMarshaler<int>.FromNative(IntPtr.Add(intPtr, GetLocalControlRigInt_ReturnValue_Offset), 0, GetLocalControlRigInt_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigFloats")]
+	public unsafe static List<float> GetLocalControlRigFloats(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigFloats_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigFloats");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigFloats_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigFloats_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigFloats_LevelSequence_Offset), 0, GetLocalControlRigFloats_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigFloats_ControlRig_Offset), 0, GetLocalControlRigFloats_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigFloats_ControlName_Offset), 0, GetLocalControlRigFloats_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, GetLocalControlRigFloats_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, GetLocalControlRigFloats_Frames_Offset), Frames);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigFloats_TimeUnit_Offset), 0, GetLocalControlRigFloats_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigFloats_FunctionAddress, intPtr, GetLocalControlRigFloats_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigFloats_Frames_PropertyAddress.Address, intPtr);
+		List<float> result = new TArrayCopyMarshaler<float>(1, GetLocalControlRigFloats_ReturnValue_PropertyAddress, CachedMarshalingDelegates<float, BlittableTypeMarshaler<float>>.FromNative, CachedMarshalingDelegates<float, BlittableTypeMarshaler<float>>.ToNative).FromNative(IntPtr.Add(intPtr, GetLocalControlRigFloats_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigFloats_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigFloat")]
+	public unsafe static float GetLocalControlRigFloat(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigFloat_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigFloat");
+			return 0f;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigFloat_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigFloat_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigFloat_LevelSequence_Offset), 0, GetLocalControlRigFloat_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigFloat_ControlRig_Offset), 0, GetLocalControlRigFloat_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigFloat_ControlName_Offset), 0, GetLocalControlRigFloat_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(GetLocalControlRigFloat_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, GetLocalControlRigFloat_Frame_Offset), 0, GetLocalControlRigFloat_Frame_PropertyAddress.Address, Frame);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigFloat_TimeUnit_Offset), 0, GetLocalControlRigFloat_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigFloat_FunctionAddress, intPtr, GetLocalControlRigFloat_ParamsSize);
+		return BlittableTypeMarshaler<float>.FromNative(IntPtr.Add(intPtr, GetLocalControlRigFloat_ReturnValue_Offset), 0, GetLocalControlRigFloat_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigEulerTransforms")]
+	public unsafe static List<FEulerTransform> GetLocalControlRigEulerTransforms(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigEulerTransforms_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigEulerTransforms");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigEulerTransforms_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigEulerTransforms_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigEulerTransforms_LevelSequence_Offset), 0, GetLocalControlRigEulerTransforms_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigEulerTransforms_ControlRig_Offset), 0, GetLocalControlRigEulerTransforms_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigEulerTransforms_ControlName_Offset), 0, GetLocalControlRigEulerTransforms_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, GetLocalControlRigEulerTransforms_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, GetLocalControlRigEulerTransforms_Frames_Offset), Frames);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigEulerTransforms_TimeUnit_Offset), 0, GetLocalControlRigEulerTransforms_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigEulerTransforms_FunctionAddress, intPtr, GetLocalControlRigEulerTransforms_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigEulerTransforms_Frames_PropertyAddress.Address, intPtr);
+		List<FEulerTransform> result = new TArrayCopyMarshaler<FEulerTransform>(1, GetLocalControlRigEulerTransforms_ReturnValue_PropertyAddress, CachedMarshalingDelegates<FEulerTransform, FEulerTransform>.FromNative, CachedMarshalingDelegates<FEulerTransform, FEulerTransform>.ToNative).FromNative(IntPtr.Add(intPtr, GetLocalControlRigEulerTransforms_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigEulerTransforms_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigEulerTransform")]
+	public unsafe static FEulerTransform GetLocalControlRigEulerTransform(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigEulerTransform_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigEulerTransform");
+			return default(FEulerTransform);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigEulerTransform_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigEulerTransform_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigEulerTransform_LevelSequence_Offset), 0, GetLocalControlRigEulerTransform_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigEulerTransform_ControlRig_Offset), 0, GetLocalControlRigEulerTransform_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigEulerTransform_ControlName_Offset), 0, GetLocalControlRigEulerTransform_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(GetLocalControlRigEulerTransform_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, GetLocalControlRigEulerTransform_Frame_Offset), 0, GetLocalControlRigEulerTransform_Frame_PropertyAddress.Address, Frame);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigEulerTransform_TimeUnit_Offset), 0, GetLocalControlRigEulerTransform_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigEulerTransform_FunctionAddress, intPtr, GetLocalControlRigEulerTransform_ParamsSize);
+		return FEulerTransform.FromNative(IntPtr.Add(intPtr, GetLocalControlRigEulerTransform_ReturnValue_Offset), 0, GetLocalControlRigEulerTransform_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigBools")]
+	public unsafe static List<bool> GetLocalControlRigBools(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigBools_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigBools");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigBools_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigBools_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigBools_LevelSequence_Offset), 0, GetLocalControlRigBools_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigBools_ControlRig_Offset), 0, GetLocalControlRigBools_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigBools_ControlName_Offset), 0, GetLocalControlRigBools_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, GetLocalControlRigBools_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, GetLocalControlRigBools_Frames_Offset), Frames);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigBools_TimeUnit_Offset), 0, GetLocalControlRigBools_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigBools_FunctionAddress, intPtr, GetLocalControlRigBools_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigBools_Frames_PropertyAddress.Address, intPtr);
+		List<bool> result = new TArrayCopyMarshaler<bool>(1, GetLocalControlRigBools_ReturnValue_PropertyAddress, CachedMarshalingDelegates<bool, BoolMarshaler>.FromNative, CachedMarshalingDelegates<bool, BoolMarshaler>.ToNative).FromNative(IntPtr.Add(intPtr, GetLocalControlRigBools_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetLocalControlRigBools_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigBool")]
+	public unsafe static bool GetLocalControlRigBool(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetLocalControlRigBool_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigBool");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetLocalControlRigBool_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetLocalControlRigBool_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigBool_LevelSequence_Offset), 0, GetLocalControlRigBool_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigBool_ControlRig_Offset), 0, GetLocalControlRigBool_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigBool_ControlName_Offset), 0, GetLocalControlRigBool_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(GetLocalControlRigBool_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, GetLocalControlRigBool_Frame_Offset), 0, GetLocalControlRigBool_Frame_PropertyAddress.Address, Frame);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetLocalControlRigBool_TimeUnit_Offset), 0, GetLocalControlRigBool_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetLocalControlRigBool_FunctionAddress, intPtr, GetLocalControlRigBool_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, GetLocalControlRigBool_ReturnValue_Offset), 0, GetLocalControlRigBool_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetDefaultParentKey")]
+	public unsafe static FRigElementKey GetDefaultParentKey()
+	{
+		if (!GetDefaultParentKey_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetDefaultParentKey");
+			return default(FRigElementKey);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetDefaultParentKey_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetDefaultParentKey_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetDefaultParentKey_FunctionAddress, intPtr, GetDefaultParentKey_ParamsSize);
+		return FRigElementKey.FromNative(IntPtr.Add(intPtr, GetDefaultParentKey_ReturnValue_Offset), 0, GetDefaultParentKey_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetControlRigWorldTransforms")]
+	public unsafe static List<FTransform> GetControlRigWorldTransforms(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, List<FFrameNumber> Frames, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetControlRigWorldTransforms_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetControlRigWorldTransforms");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetControlRigWorldTransforms_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetControlRigWorldTransforms_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetControlRigWorldTransforms_LevelSequence_Offset), 0, GetControlRigWorldTransforms_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetControlRigWorldTransforms_ControlRig_Offset), 0, GetControlRigWorldTransforms_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetControlRigWorldTransforms_ControlName_Offset), 0, GetControlRigWorldTransforms_ControlName_PropertyAddress.Address, ControlName);
+		new TArrayCopyMarshaler<FFrameNumber>(1, GetControlRigWorldTransforms_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, GetControlRigWorldTransforms_Frames_Offset), Frames);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetControlRigWorldTransforms_TimeUnit_Offset), 0, GetControlRigWorldTransforms_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetControlRigWorldTransforms_FunctionAddress, intPtr, GetControlRigWorldTransforms_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetControlRigWorldTransforms_Frames_PropertyAddress.Address, intPtr);
+		List<FTransform> result = new TArrayCopyMarshaler<FTransform>(1, GetControlRigWorldTransforms_ReturnValue_PropertyAddress, CachedMarshalingDelegates<FTransform, BlittableTypeMarshaler<FTransform>>.FromNative, CachedMarshalingDelegates<FTransform, BlittableTypeMarshaler<FTransform>>.ToNative).FromNative(IntPtr.Add(intPtr, GetControlRigWorldTransforms_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetControlRigWorldTransforms_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetControlRigWorldTransform")]
+	public unsafe static FTransform GetControlRigWorldTransform(ULevelSequence LevelSequence, UControlRig ControlRig, FName ControlName, FFrameNumber Frame, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetControlRigWorldTransform_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetControlRigWorldTransform");
+			return default(FTransform);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetControlRigWorldTransform_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetControlRigWorldTransform_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetControlRigWorldTransform_LevelSequence_Offset), 0, GetControlRigWorldTransform_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, GetControlRigWorldTransform_ControlRig_Offset), 0, GetControlRigWorldTransform_ControlRig_PropertyAddress.Address, ControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, GetControlRigWorldTransform_ControlName_Offset), 0, GetControlRigWorldTransform_ControlName_PropertyAddress.Address, ControlName);
+		NativeReflection.InitializeValue_InContainer(GetControlRigWorldTransform_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, GetControlRigWorldTransform_Frame_Offset), 0, GetControlRigWorldTransform_Frame_PropertyAddress.Address, Frame);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetControlRigWorldTransform_TimeUnit_Offset), 0, GetControlRigWorldTransform_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetControlRigWorldTransform_FunctionAddress, intPtr, GetControlRigWorldTransform_ParamsSize);
+		return BlittableTypeMarshaler<FTransform>.FromNative(IntPtr.Add(intPtr, GetControlRigWorldTransform_ReturnValue_Offset), 0, GetControlRigWorldTransform_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetControlRigs")]
+	public unsafe static List<FControlRigSequencerBindingProxy> GetControlRigs(ULevelSequence LevelSequence)
+	{
+		if (!GetControlRigs_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetControlRigs");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetControlRigs_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetControlRigs_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetControlRigs_LevelSequence_Offset), 0, GetControlRigs_LevelSequence_PropertyAddress.Address, LevelSequence);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetControlRigs_FunctionAddress, intPtr, GetControlRigs_ParamsSize);
+		List<FControlRigSequencerBindingProxy> result = new TArrayCopyMarshaler<FControlRigSequencerBindingProxy>(1, GetControlRigs_ReturnValue_PropertyAddress, CachedMarshalingDelegates<FControlRigSequencerBindingProxy, FControlRigSequencerBindingProxy>.FromNative, CachedMarshalingDelegates<FControlRigSequencerBindingProxy, FControlRigSequencerBindingProxy>.ToNative).FromNative(IntPtr.Add(intPtr, GetControlRigs_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetControlRigs_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetActorWorldTransforms")]
+	public unsafe static List<FTransform> GetActorWorldTransforms(ULevelSequence LevelSequence, AActor Actor, List<FFrameNumber> Frames, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetActorWorldTransforms_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetActorWorldTransforms");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetActorWorldTransforms_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetActorWorldTransforms_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetActorWorldTransforms_LevelSequence_Offset), 0, GetActorWorldTransforms_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<AActor>.ToNative(IntPtr.Add(intPtr, GetActorWorldTransforms_Actor_Offset), 0, GetActorWorldTransforms_Actor_PropertyAddress.Address, Actor);
+		new TArrayCopyMarshaler<FFrameNumber>(1, GetActorWorldTransforms_Frames_PropertyAddress, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.FromNative, CachedMarshalingDelegates<FFrameNumber, FFrameNumber>.ToNative).ToNative(IntPtr.Add(intPtr, GetActorWorldTransforms_Frames_Offset), Frames);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetActorWorldTransforms_TimeUnit_Offset), 0, GetActorWorldTransforms_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetActorWorldTransforms_FunctionAddress, intPtr, GetActorWorldTransforms_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(GetActorWorldTransforms_Frames_PropertyAddress.Address, intPtr);
+		List<FTransform> result = new TArrayCopyMarshaler<FTransform>(1, GetActorWorldTransforms_ReturnValue_PropertyAddress, CachedMarshalingDelegates<FTransform, BlittableTypeMarshaler<FTransform>>.FromNative, CachedMarshalingDelegates<FTransform, BlittableTypeMarshaler<FTransform>>.ToNative).FromNative(IntPtr.Add(intPtr, GetActorWorldTransforms_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(GetActorWorldTransforms_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetActorWorldTransform")]
+	public unsafe static FTransform GetActorWorldTransform(ULevelSequence LevelSequence, AActor Actor, FFrameNumber Frame, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!GetActorWorldTransform_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetActorWorldTransform");
+			return default(FTransform);
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(GetActorWorldTransform_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)GetActorWorldTransform_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, GetActorWorldTransform_LevelSequence_Offset), 0, GetActorWorldTransform_LevelSequence_PropertyAddress.Address, LevelSequence);
+		UObjectMarshaler<AActor>.ToNative(IntPtr.Add(intPtr, GetActorWorldTransform_Actor_Offset), 0, GetActorWorldTransform_Actor_PropertyAddress.Address, Actor);
+		NativeReflection.InitializeValue_InContainer(GetActorWorldTransform_Frame_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, GetActorWorldTransform_Frame_Offset), 0, GetActorWorldTransform_Frame_PropertyAddress.Address, Frame);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, GetActorWorldTransform_TimeUnit_Offset), 0, GetActorWorldTransform_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, GetActorWorldTransform_FunctionAddress, intPtr, GetActorWorldTransform_ParamsSize);
+		return BlittableTypeMarshaler<FTransform>.FromNative(IntPtr.Add(intPtr, GetActorWorldTransform_ReturnValue_Offset), 0, GetActorWorldTransform_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:FindOrCreateControlRigTrack")]
+	public unsafe static UMovieSceneTrack FindOrCreateControlRigTrack(UWorld World, ULevelSequence LevelSequence, TSubclassOf<UObject> ControlRigClass, FSequencerBindingProxy InBinding)
+	{
+		if (!FindOrCreateControlRigTrack_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:FindOrCreateControlRigTrack");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(FindOrCreateControlRigTrack_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)FindOrCreateControlRigTrack_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UWorld>.ToNative(IntPtr.Add(intPtr, FindOrCreateControlRigTrack_World_Offset), 0, FindOrCreateControlRigTrack_World_PropertyAddress.Address, World);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, FindOrCreateControlRigTrack_LevelSequence_Offset), 0, FindOrCreateControlRigTrack_LevelSequence_PropertyAddress.Address, LevelSequence);
+		TSubclassOfMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, FindOrCreateControlRigTrack_ControlRigClass_Offset), 0, FindOrCreateControlRigTrack_ControlRigClass_PropertyAddress.Address, ControlRigClass);
+		NativeReflection.InitializeValue_InContainer(FindOrCreateControlRigTrack_InBinding_PropertyAddress.Address, intPtr);
+		FSequencerBindingProxy.ToNative(IntPtr.Add(intPtr, FindOrCreateControlRigTrack_InBinding_Offset), 0, FindOrCreateControlRigTrack_InBinding_PropertyAddress.Address, InBinding);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, FindOrCreateControlRigTrack_FunctionAddress, intPtr, FindOrCreateControlRigTrack_ParamsSize);
+		return UObjectMarshaler<UMovieSceneTrack>.FromNative(IntPtr.Add(intPtr, FindOrCreateControlRigTrack_ReturnValue_Offset), 0, FindOrCreateControlRigTrack_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:FindOrCreateControlRigComponentTrack")]
+	public unsafe static List<UMovieSceneTrack> FindOrCreateControlRigComponentTrack(UWorld World, ULevelSequence LevelSequence, FSequencerBindingProxy InBinding)
+	{
+		if (!FindOrCreateControlRigComponentTrack_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:FindOrCreateControlRigComponentTrack");
+			return null;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(FindOrCreateControlRigComponentTrack_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)FindOrCreateControlRigComponentTrack_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UWorld>.ToNative(IntPtr.Add(intPtr, FindOrCreateControlRigComponentTrack_World_Offset), 0, FindOrCreateControlRigComponentTrack_World_PropertyAddress.Address, World);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, FindOrCreateControlRigComponentTrack_LevelSequence_Offset), 0, FindOrCreateControlRigComponentTrack_LevelSequence_PropertyAddress.Address, LevelSequence);
+		NativeReflection.InitializeValue_InContainer(FindOrCreateControlRigComponentTrack_InBinding_PropertyAddress.Address, intPtr);
+		FSequencerBindingProxy.ToNative(IntPtr.Add(intPtr, FindOrCreateControlRigComponentTrack_InBinding_Offset), 0, FindOrCreateControlRigComponentTrack_InBinding_PropertyAddress.Address, InBinding);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, FindOrCreateControlRigComponentTrack_FunctionAddress, intPtr, FindOrCreateControlRigComponentTrack_ParamsSize);
+		List<UMovieSceneTrack> result = new TArrayCopyMarshaler<UMovieSceneTrack>(1, FindOrCreateControlRigComponentTrack_ReturnValue_PropertyAddress, CachedMarshalingDelegates<UMovieSceneTrack, UObjectMarshaler<UMovieSceneTrack>>.FromNative, CachedMarshalingDelegates<UMovieSceneTrack, UObjectMarshaler<UMovieSceneTrack>>.ToNative).FromNative(IntPtr.Add(intPtr, FindOrCreateControlRigComponentTrack_ReturnValue_Offset));
+		NativeReflection.DestroyValue_InContainer(FindOrCreateControlRigComponentTrack_ReturnValue_PropertyAddress.Address, intPtr);
+		return result;
+	}
+
+	[UFunction(Flags = 75637761u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:DeleteControlRigSpace")]
+	public unsafe static bool DeleteControlRigSpace(ULevelSequence InSequence, UControlRig InControlRig, FName InControlName, FFrameNumber InTime, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!DeleteControlRigSpace_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:DeleteControlRigSpace");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(DeleteControlRigSpace_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)DeleteControlRigSpace_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, DeleteControlRigSpace_InSequence_Offset), 0, DeleteControlRigSpace_InSequence_PropertyAddress.Address, InSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, DeleteControlRigSpace_InControlRig_Offset), 0, DeleteControlRigSpace_InControlRig_PropertyAddress.Address, InControlRig);
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(intPtr, DeleteControlRigSpace_InControlName_Offset), 0, DeleteControlRigSpace_InControlName_PropertyAddress.Address, InControlName);
+		NativeReflection.InitializeValue_InContainer(DeleteControlRigSpace_InTime_PropertyAddress.Address, intPtr);
+		FFrameNumber.ToNative(IntPtr.Add(intPtr, DeleteControlRigSpace_InTime_Offset), 0, DeleteControlRigSpace_InTime_PropertyAddress.Address, InTime);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, DeleteControlRigSpace_TimeUnit_Offset), 0, DeleteControlRigSpace_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, DeleteControlRigSpace_FunctionAddress, intPtr, DeleteControlRigSpace_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, DeleteControlRigSpace_ReturnValue_Offset), 0, DeleteControlRigSpace_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 67249153u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:CollapseControlRigAnimLayers")]
+	public unsafe static bool CollapseControlRigAnimLayers(ULevelSequence InSequence, UMovieSceneControlRigParameterTrack InTrack, bool bKeyReduce = false, float Tolerance = 0.001f)
+	{
+		if (!CollapseControlRigAnimLayers_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:CollapseControlRigAnimLayers");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(CollapseControlRigAnimLayers_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)CollapseControlRigAnimLayers_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, CollapseControlRigAnimLayers_InSequence_Offset), 0, CollapseControlRigAnimLayers_InSequence_PropertyAddress.Address, InSequence);
+		UObjectMarshaler<UMovieSceneControlRigParameterTrack>.ToNative(IntPtr.Add(intPtr, CollapseControlRigAnimLayers_InTrack_Offset), 0, CollapseControlRigAnimLayers_InTrack_PropertyAddress.Address, InTrack);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, CollapseControlRigAnimLayers_bKeyReduce_Offset), 0, CollapseControlRigAnimLayers_bKeyReduce_PropertyAddress.Address, bKeyReduce);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, CollapseControlRigAnimLayers_Tolerance_Offset), 0, CollapseControlRigAnimLayers_Tolerance_PropertyAddress.Address, Tolerance);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, CollapseControlRigAnimLayers_FunctionAddress, intPtr, CollapseControlRigAnimLayers_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, CollapseControlRigAnimLayers_ReturnValue_Offset), 0, CollapseControlRigAnimLayers_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:BakeToControlRig")]
+	public unsafe static bool BakeToControlRig(UWorld World, ULevelSequence LevelSequence, TSubclassOf<UObject> ControlRigClass, UAnimSeqExportOption ExportOptions, bool bReduceKeys, float Tolerance, FSequencerBindingProxy Binding)
+	{
+		if (!BakeToControlRig_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:BakeToControlRig");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BakeToControlRig_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BakeToControlRig_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<UWorld>.ToNative(IntPtr.Add(intPtr, BakeToControlRig_World_Offset), 0, BakeToControlRig_World_PropertyAddress.Address, World);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, BakeToControlRig_LevelSequence_Offset), 0, BakeToControlRig_LevelSequence_PropertyAddress.Address, LevelSequence);
+		TSubclassOfMarshaler<UObject>.ToNative(IntPtr.Add(intPtr, BakeToControlRig_ControlRigClass_Offset), 0, BakeToControlRig_ControlRigClass_PropertyAddress.Address, ControlRigClass);
+		UObjectMarshaler<UAnimSeqExportOption>.ToNative(IntPtr.Add(intPtr, BakeToControlRig_ExportOptions_Offset), 0, BakeToControlRig_ExportOptions_PropertyAddress.Address, ExportOptions);
+		BoolMarshaler.ToNative(IntPtr.Add(intPtr, BakeToControlRig_bReduceKeys_Offset), 0, BakeToControlRig_bReduceKeys_PropertyAddress.Address, bReduceKeys);
+		BlittableTypeMarshaler<float>.ToNative(IntPtr.Add(intPtr, BakeToControlRig_Tolerance_Offset), 0, BakeToControlRig_Tolerance_PropertyAddress.Address, Tolerance);
+		NativeReflection.InitializeValue_InContainer(BakeToControlRig_Binding_PropertyAddress.Address, intPtr);
+		FSequencerBindingProxy.ToNative(IntPtr.Add(intPtr, BakeToControlRig_Binding_Offset), 0, BakeToControlRig_Binding_PropertyAddress.Address, Binding);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BakeToControlRig_FunctionAddress, intPtr, BakeToControlRig_ParamsSize);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, BakeToControlRig_ReturnValue_Offset), 0, BakeToControlRig_ReturnValue_PropertyAddress.Address);
+	}
+
+	[UFunction(Flags = 71443457u)]
+	[UMetaPath("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:BakeControlRigSpace")]
+	public unsafe static bool BakeControlRigSpace(ULevelSequence InSequence, UControlRig InControlRig, List<FName> InControlNames, FRigSpacePickerBakeSettings InSettings, ESequenceTimeUnit TimeUnit = ESequenceTimeUnit.DisplayRate)
+	{
+		if (!BakeControlRigSpace_IsValid)
+		{
+			NativeReflection.LogInvalidFunctionAccessed("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:BakeControlRigSpace");
+			return false;
+		}
+		byte* ptr = stackalloc byte[(int)(uint)(BakeControlRigSpace_ParamsSize + 16)];
+		int num = (int)((16L - (long)ptr) & 0xF);
+		byte* ptr2 = ptr + num;
+		Unsafe.InitBlockUnaligned(ptr2, 0, (uint)BakeControlRigSpace_ParamsSize);
+		IntPtr intPtr = new IntPtr(ptr2);
+		UObjectMarshaler<ULevelSequence>.ToNative(IntPtr.Add(intPtr, BakeControlRigSpace_InSequence_Offset), 0, BakeControlRigSpace_InSequence_PropertyAddress.Address, InSequence);
+		UObjectMarshaler<UControlRig>.ToNative(IntPtr.Add(intPtr, BakeControlRigSpace_InControlRig_Offset), 0, BakeControlRigSpace_InControlRig_PropertyAddress.Address, InControlRig);
+		new TArrayCopyMarshaler<FName>(1, BakeControlRigSpace_InControlNames_PropertyAddress, CachedMarshalingDelegates<FName, BlittableTypeMarshaler<FName>>.FromNative, CachedMarshalingDelegates<FName, BlittableTypeMarshaler<FName>>.ToNative).ToNative(IntPtr.Add(intPtr, BakeControlRigSpace_InControlNames_Offset), InControlNames);
+		NativeReflection.InitializeValue_InContainer(BakeControlRigSpace_InSettings_PropertyAddress.Address, intPtr);
+		FRigSpacePickerBakeSettings.ToNative(IntPtr.Add(intPtr, BakeControlRigSpace_InSettings_Offset), 0, BakeControlRigSpace_InSettings_PropertyAddress.Address, InSettings);
+		EnumMarshaler<ESequenceTimeUnit>.ToNative(IntPtr.Add(intPtr, BakeControlRigSpace_TimeUnit_Offset), 0, BakeControlRigSpace_TimeUnit_PropertyAddress.Address, TimeUnit);
+		NativeReflection.InvokeStaticFunctionOptimized(classAddress, BakeControlRigSpace_FunctionAddress, intPtr, BakeControlRigSpace_ParamsSize);
+		NativeReflection.DestroyValue_InContainer(BakeControlRigSpace_InControlNames_PropertyAddress.Address, intPtr);
+		return BoolMarshaler.FromNative(IntPtr.Add(intPtr, BakeControlRigSpace_ReturnValue_Offset), 0, BakeControlRigSpace_ReturnValue_PropertyAddress.Address);
+	}
+
+	static UControlRigSequencerLibrary()
+	{
+		if (UnrealTypes.CanLazyLoadNativeType(typeof(UControlRigSequencerLibrary)))
+		{
+			LoadNativeType();
+		}
+		UnrealTypes.OnCCtorCalled(typeof(UControlRigSequencerLibrary));
+	}
+
+	private static void LoadNativeType()
+	{
+		classAddress = NativeReflection.GetClass("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary");
+		TweenControlRig_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "TweenControlRig");
+		TweenControlRig_ParamsSize = NativeReflection.GetFunctionParamsSize(TweenControlRig_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref TweenControlRig_LevelSequence_PropertyAddress, TweenControlRig_FunctionAddress, "LevelSequence");
+		TweenControlRig_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(TweenControlRig_FunctionAddress, "LevelSequence");
+		TweenControlRig_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(TweenControlRig_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref TweenControlRig_ControlRig_PropertyAddress, TweenControlRig_FunctionAddress, "ControlRig");
+		TweenControlRig_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(TweenControlRig_FunctionAddress, "ControlRig");
+		TweenControlRig_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(TweenControlRig_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref TweenControlRig_TweenValue_PropertyAddress, TweenControlRig_FunctionAddress, "TweenValue");
+		TweenControlRig_TweenValue_Offset = NativeReflectionCached.GetPropertyOffset(TweenControlRig_FunctionAddress, "TweenValue");
+		TweenControlRig_TweenValue_IsValid = NativeReflectionCached.ValidatePropertyClass(TweenControlRig_FunctionAddress, "TweenValue", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref TweenControlRig_ReturnValue_PropertyAddress, TweenControlRig_FunctionAddress, "ReturnValue");
+		TweenControlRig_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(TweenControlRig_FunctionAddress, "ReturnValue");
+		TweenControlRig_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(TweenControlRig_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		TweenControlRig_IsValid = TweenControlRig_FunctionAddress != IntPtr.Zero && TweenControlRig_LevelSequence_IsValid && TweenControlRig_ControlRig_IsValid && TweenControlRig_TweenValue_IsValid && TweenControlRig_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:TweenControlRig", TweenControlRig_IsValid);
+		SnapControlRig_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SnapControlRig");
+		SnapControlRig_ParamsSize = NativeReflection.GetFunctionParamsSize(SnapControlRig_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SnapControlRig_LevelSequence_PropertyAddress, SnapControlRig_FunctionAddress, "LevelSequence");
+		SnapControlRig_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SnapControlRig_FunctionAddress, "LevelSequence");
+		SnapControlRig_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SnapControlRig_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SnapControlRig_StartFrame_PropertyAddress, SnapControlRig_FunctionAddress, "StartFrame");
+		SnapControlRig_StartFrame_Offset = NativeReflectionCached.GetPropertyOffset(SnapControlRig_FunctionAddress, "StartFrame");
+		SnapControlRig_StartFrame_IsValid = NativeReflectionCached.ValidatePropertyClass(SnapControlRig_FunctionAddress, "StartFrame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SnapControlRig_EndFrame_PropertyAddress, SnapControlRig_FunctionAddress, "EndFrame");
+		SnapControlRig_EndFrame_Offset = NativeReflectionCached.GetPropertyOffset(SnapControlRig_FunctionAddress, "EndFrame");
+		SnapControlRig_EndFrame_IsValid = NativeReflectionCached.ValidatePropertyClass(SnapControlRig_FunctionAddress, "EndFrame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SnapControlRig_ChildrenToSnap_PropertyAddress, SnapControlRig_FunctionAddress, "ChildrenToSnap");
+		SnapControlRig_ChildrenToSnap_Offset = NativeReflectionCached.GetPropertyOffset(SnapControlRig_FunctionAddress, "ChildrenToSnap");
+		SnapControlRig_ChildrenToSnap_IsValid = NativeReflectionCached.ValidatePropertyClass(SnapControlRig_FunctionAddress, "ChildrenToSnap", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SnapControlRig_ParentToSnap_PropertyAddress, SnapControlRig_FunctionAddress, "ParentToSnap");
+		SnapControlRig_ParentToSnap_Offset = NativeReflectionCached.GetPropertyOffset(SnapControlRig_FunctionAddress, "ParentToSnap");
+		SnapControlRig_ParentToSnap_IsValid = NativeReflectionCached.ValidatePropertyClass(SnapControlRig_FunctionAddress, "ParentToSnap", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SnapControlRig_SnapSettings_PropertyAddress, SnapControlRig_FunctionAddress, "SnapSettings");
+		SnapControlRig_SnapSettings_Offset = NativeReflectionCached.GetPropertyOffset(SnapControlRig_FunctionAddress, "SnapSettings");
+		SnapControlRig_SnapSettings_IsValid = NativeReflectionCached.ValidatePropertyClass(SnapControlRig_FunctionAddress, "SnapSettings", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SnapControlRig_TimeUnit_PropertyAddress, SnapControlRig_FunctionAddress, "TimeUnit");
+		SnapControlRig_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SnapControlRig_FunctionAddress, "TimeUnit");
+		SnapControlRig_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SnapControlRig_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref SnapControlRig_ReturnValue_PropertyAddress, SnapControlRig_FunctionAddress, "ReturnValue");
+		SnapControlRig_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SnapControlRig_FunctionAddress, "ReturnValue");
+		SnapControlRig_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SnapControlRig_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SnapControlRig_IsValid = SnapControlRig_FunctionAddress != IntPtr.Zero && SnapControlRig_LevelSequence_IsValid && SnapControlRig_StartFrame_IsValid && SnapControlRig_EndFrame_IsValid && SnapControlRig_ChildrenToSnap_IsValid && SnapControlRig_ParentToSnap_IsValid && SnapControlRig_SnapSettings_IsValid && SnapControlRig_TimeUnit_IsValid && SnapControlRig_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SnapControlRig", SnapControlRig_IsValid);
+		SetLocalControlRigVector2Ds_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigVector2Ds");
+		SetLocalControlRigVector2Ds_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigVector2Ds_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigVector2Ds_LevelSequence_PropertyAddress, SetLocalControlRigVector2Ds_FunctionAddress, "LevelSequence");
+		SetLocalControlRigVector2Ds_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigVector2Ds_FunctionAddress, "LevelSequence");
+		SetLocalControlRigVector2Ds_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigVector2Ds_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigVector2Ds_ControlRig_PropertyAddress, SetLocalControlRigVector2Ds_FunctionAddress, "ControlRig");
+		SetLocalControlRigVector2Ds_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigVector2Ds_FunctionAddress, "ControlRig");
+		SetLocalControlRigVector2Ds_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigVector2Ds_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigVector2Ds_ControlName_PropertyAddress, SetLocalControlRigVector2Ds_FunctionAddress, "ControlName");
+		SetLocalControlRigVector2Ds_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigVector2Ds_FunctionAddress, "ControlName");
+		SetLocalControlRigVector2Ds_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigVector2Ds_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigVector2Ds_Frames_PropertyAddress, SetLocalControlRigVector2Ds_FunctionAddress, "Frames");
+		SetLocalControlRigVector2Ds_Frames_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigVector2Ds_FunctionAddress, "Frames");
+		SetLocalControlRigVector2Ds_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigVector2Ds_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigVector2Ds_Values_PropertyAddress, SetLocalControlRigVector2Ds_FunctionAddress, "Values");
+		SetLocalControlRigVector2Ds_Values_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigVector2Ds_FunctionAddress, "Values");
+		SetLocalControlRigVector2Ds_Values_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigVector2Ds_FunctionAddress, "Values", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigVector2Ds_TimeUnit_PropertyAddress, SetLocalControlRigVector2Ds_FunctionAddress, "TimeUnit");
+		SetLocalControlRigVector2Ds_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigVector2Ds_FunctionAddress, "TimeUnit");
+		SetLocalControlRigVector2Ds_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigVector2Ds_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		SetLocalControlRigVector2Ds_IsValid = SetLocalControlRigVector2Ds_FunctionAddress != IntPtr.Zero && SetLocalControlRigVector2Ds_LevelSequence_IsValid && SetLocalControlRigVector2Ds_ControlRig_IsValid && SetLocalControlRigVector2Ds_ControlName_IsValid && SetLocalControlRigVector2Ds_Frames_IsValid && SetLocalControlRigVector2Ds_Values_IsValid && SetLocalControlRigVector2Ds_TimeUnit_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigVector2Ds", SetLocalControlRigVector2Ds_IsValid);
+		SetLocalControlRigVector2D_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigVector2D");
+		SetLocalControlRigVector2D_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigVector2D_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigVector2D_LevelSequence_PropertyAddress, SetLocalControlRigVector2D_FunctionAddress, "LevelSequence");
+		SetLocalControlRigVector2D_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigVector2D_FunctionAddress, "LevelSequence");
+		SetLocalControlRigVector2D_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigVector2D_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigVector2D_ControlRig_PropertyAddress, SetLocalControlRigVector2D_FunctionAddress, "ControlRig");
+		SetLocalControlRigVector2D_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigVector2D_FunctionAddress, "ControlRig");
+		SetLocalControlRigVector2D_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigVector2D_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigVector2D_ControlName_PropertyAddress, SetLocalControlRigVector2D_FunctionAddress, "ControlName");
+		SetLocalControlRigVector2D_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigVector2D_FunctionAddress, "ControlName");
+		SetLocalControlRigVector2D_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigVector2D_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigVector2D_Frame_PropertyAddress, SetLocalControlRigVector2D_FunctionAddress, "Frame");
+		SetLocalControlRigVector2D_Frame_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigVector2D_FunctionAddress, "Frame");
+		SetLocalControlRigVector2D_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigVector2D_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigVector2D_Value_PropertyAddress, SetLocalControlRigVector2D_FunctionAddress, "Value");
+		SetLocalControlRigVector2D_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigVector2D_FunctionAddress, "Value");
+		SetLocalControlRigVector2D_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigVector2D_FunctionAddress, "Value", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigVector2D_TimeUnit_PropertyAddress, SetLocalControlRigVector2D_FunctionAddress, "TimeUnit");
+		SetLocalControlRigVector2D_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigVector2D_FunctionAddress, "TimeUnit");
+		SetLocalControlRigVector2D_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigVector2D_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigVector2D_bSetKey_PropertyAddress, SetLocalControlRigVector2D_FunctionAddress, "bSetKey");
+		SetLocalControlRigVector2D_bSetKey_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigVector2D_FunctionAddress, "bSetKey");
+		SetLocalControlRigVector2D_bSetKey_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigVector2D_FunctionAddress, "bSetKey", Classes.FBoolProperty);
+		SetLocalControlRigVector2D_IsValid = SetLocalControlRigVector2D_FunctionAddress != IntPtr.Zero && SetLocalControlRigVector2D_LevelSequence_IsValid && SetLocalControlRigVector2D_ControlRig_IsValid && SetLocalControlRigVector2D_ControlName_IsValid && SetLocalControlRigVector2D_Frame_IsValid && SetLocalControlRigVector2D_Value_IsValid && SetLocalControlRigVector2D_TimeUnit_IsValid && SetLocalControlRigVector2D_bSetKey_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigVector2D", SetLocalControlRigVector2D_IsValid);
+		SetLocalControlRigTransforms_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigTransforms");
+		SetLocalControlRigTransforms_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigTransforms_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransforms_LevelSequence_PropertyAddress, SetLocalControlRigTransforms_FunctionAddress, "LevelSequence");
+		SetLocalControlRigTransforms_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransforms_FunctionAddress, "LevelSequence");
+		SetLocalControlRigTransforms_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransforms_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransforms_ControlRig_PropertyAddress, SetLocalControlRigTransforms_FunctionAddress, "ControlRig");
+		SetLocalControlRigTransforms_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransforms_FunctionAddress, "ControlRig");
+		SetLocalControlRigTransforms_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransforms_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransforms_ControlName_PropertyAddress, SetLocalControlRigTransforms_FunctionAddress, "ControlName");
+		SetLocalControlRigTransforms_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransforms_FunctionAddress, "ControlName");
+		SetLocalControlRigTransforms_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransforms_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransforms_Frames_PropertyAddress, SetLocalControlRigTransforms_FunctionAddress, "Frames");
+		SetLocalControlRigTransforms_Frames_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransforms_FunctionAddress, "Frames");
+		SetLocalControlRigTransforms_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransforms_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransforms_Values_PropertyAddress, SetLocalControlRigTransforms_FunctionAddress, "Values");
+		SetLocalControlRigTransforms_Values_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransforms_FunctionAddress, "Values");
+		SetLocalControlRigTransforms_Values_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransforms_FunctionAddress, "Values", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransforms_TimeUnit_PropertyAddress, SetLocalControlRigTransforms_FunctionAddress, "TimeUnit");
+		SetLocalControlRigTransforms_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransforms_FunctionAddress, "TimeUnit");
+		SetLocalControlRigTransforms_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransforms_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		SetLocalControlRigTransforms_IsValid = SetLocalControlRigTransforms_FunctionAddress != IntPtr.Zero && SetLocalControlRigTransforms_LevelSequence_IsValid && SetLocalControlRigTransforms_ControlRig_IsValid && SetLocalControlRigTransforms_ControlName_IsValid && SetLocalControlRigTransforms_Frames_IsValid && SetLocalControlRigTransforms_Values_IsValid && SetLocalControlRigTransforms_TimeUnit_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigTransforms", SetLocalControlRigTransforms_IsValid);
+		SetLocalControlRigTransformNoScales_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigTransformNoScales");
+		SetLocalControlRigTransformNoScales_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigTransformNoScales_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransformNoScales_LevelSequence_PropertyAddress, SetLocalControlRigTransformNoScales_FunctionAddress, "LevelSequence");
+		SetLocalControlRigTransformNoScales_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransformNoScales_FunctionAddress, "LevelSequence");
+		SetLocalControlRigTransformNoScales_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransformNoScales_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransformNoScales_ControlRig_PropertyAddress, SetLocalControlRigTransformNoScales_FunctionAddress, "ControlRig");
+		SetLocalControlRigTransformNoScales_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransformNoScales_FunctionAddress, "ControlRig");
+		SetLocalControlRigTransformNoScales_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransformNoScales_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransformNoScales_ControlName_PropertyAddress, SetLocalControlRigTransformNoScales_FunctionAddress, "ControlName");
+		SetLocalControlRigTransformNoScales_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransformNoScales_FunctionAddress, "ControlName");
+		SetLocalControlRigTransformNoScales_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransformNoScales_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransformNoScales_Frames_PropertyAddress, SetLocalControlRigTransformNoScales_FunctionAddress, "Frames");
+		SetLocalControlRigTransformNoScales_Frames_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransformNoScales_FunctionAddress, "Frames");
+		SetLocalControlRigTransformNoScales_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransformNoScales_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransformNoScales_Values_PropertyAddress, SetLocalControlRigTransformNoScales_FunctionAddress, "Values");
+		SetLocalControlRigTransformNoScales_Values_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransformNoScales_FunctionAddress, "Values");
+		SetLocalControlRigTransformNoScales_Values_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransformNoScales_FunctionAddress, "Values", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransformNoScales_TimeUnit_PropertyAddress, SetLocalControlRigTransformNoScales_FunctionAddress, "TimeUnit");
+		SetLocalControlRigTransformNoScales_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransformNoScales_FunctionAddress, "TimeUnit");
+		SetLocalControlRigTransformNoScales_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransformNoScales_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		SetLocalControlRigTransformNoScales_IsValid = SetLocalControlRigTransformNoScales_FunctionAddress != IntPtr.Zero && SetLocalControlRigTransformNoScales_LevelSequence_IsValid && SetLocalControlRigTransformNoScales_ControlRig_IsValid && SetLocalControlRigTransformNoScales_ControlName_IsValid && SetLocalControlRigTransformNoScales_Frames_IsValid && SetLocalControlRigTransformNoScales_Values_IsValid && SetLocalControlRigTransformNoScales_TimeUnit_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigTransformNoScales", SetLocalControlRigTransformNoScales_IsValid);
+		SetLocalControlRigTransformNoScale_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigTransformNoScale");
+		SetLocalControlRigTransformNoScale_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigTransformNoScale_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransformNoScale_LevelSequence_PropertyAddress, SetLocalControlRigTransformNoScale_FunctionAddress, "LevelSequence");
+		SetLocalControlRigTransformNoScale_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransformNoScale_FunctionAddress, "LevelSequence");
+		SetLocalControlRigTransformNoScale_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransformNoScale_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransformNoScale_ControlRig_PropertyAddress, SetLocalControlRigTransformNoScale_FunctionAddress, "ControlRig");
+		SetLocalControlRigTransformNoScale_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransformNoScale_FunctionAddress, "ControlRig");
+		SetLocalControlRigTransformNoScale_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransformNoScale_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransformNoScale_ControlName_PropertyAddress, SetLocalControlRigTransformNoScale_FunctionAddress, "ControlName");
+		SetLocalControlRigTransformNoScale_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransformNoScale_FunctionAddress, "ControlName");
+		SetLocalControlRigTransformNoScale_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransformNoScale_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransformNoScale_Frame_PropertyAddress, SetLocalControlRigTransformNoScale_FunctionAddress, "Frame");
+		SetLocalControlRigTransformNoScale_Frame_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransformNoScale_FunctionAddress, "Frame");
+		SetLocalControlRigTransformNoScale_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransformNoScale_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransformNoScale_Value_PropertyAddress, SetLocalControlRigTransformNoScale_FunctionAddress, "Value");
+		SetLocalControlRigTransformNoScale_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransformNoScale_FunctionAddress, "Value");
+		SetLocalControlRigTransformNoScale_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransformNoScale_FunctionAddress, "Value", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransformNoScale_TimeUnit_PropertyAddress, SetLocalControlRigTransformNoScale_FunctionAddress, "TimeUnit");
+		SetLocalControlRigTransformNoScale_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransformNoScale_FunctionAddress, "TimeUnit");
+		SetLocalControlRigTransformNoScale_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransformNoScale_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransformNoScale_bSetKey_PropertyAddress, SetLocalControlRigTransformNoScale_FunctionAddress, "bSetKey");
+		SetLocalControlRigTransformNoScale_bSetKey_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransformNoScale_FunctionAddress, "bSetKey");
+		SetLocalControlRigTransformNoScale_bSetKey_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransformNoScale_FunctionAddress, "bSetKey", Classes.FBoolProperty);
+		SetLocalControlRigTransformNoScale_IsValid = SetLocalControlRigTransformNoScale_FunctionAddress != IntPtr.Zero && SetLocalControlRigTransformNoScale_LevelSequence_IsValid && SetLocalControlRigTransformNoScale_ControlRig_IsValid && SetLocalControlRigTransformNoScale_ControlName_IsValid && SetLocalControlRigTransformNoScale_Frame_IsValid && SetLocalControlRigTransformNoScale_Value_IsValid && SetLocalControlRigTransformNoScale_TimeUnit_IsValid && SetLocalControlRigTransformNoScale_bSetKey_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigTransformNoScale", SetLocalControlRigTransformNoScale_IsValid);
+		SetLocalControlRigTransform_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigTransform");
+		SetLocalControlRigTransform_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigTransform_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransform_LevelSequence_PropertyAddress, SetLocalControlRigTransform_FunctionAddress, "LevelSequence");
+		SetLocalControlRigTransform_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransform_FunctionAddress, "LevelSequence");
+		SetLocalControlRigTransform_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransform_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransform_ControlRig_PropertyAddress, SetLocalControlRigTransform_FunctionAddress, "ControlRig");
+		SetLocalControlRigTransform_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransform_FunctionAddress, "ControlRig");
+		SetLocalControlRigTransform_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransform_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransform_ControlName_PropertyAddress, SetLocalControlRigTransform_FunctionAddress, "ControlName");
+		SetLocalControlRigTransform_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransform_FunctionAddress, "ControlName");
+		SetLocalControlRigTransform_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransform_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransform_Frame_PropertyAddress, SetLocalControlRigTransform_FunctionAddress, "Frame");
+		SetLocalControlRigTransform_Frame_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransform_FunctionAddress, "Frame");
+		SetLocalControlRigTransform_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransform_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransform_Value_PropertyAddress, SetLocalControlRigTransform_FunctionAddress, "Value");
+		SetLocalControlRigTransform_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransform_FunctionAddress, "Value");
+		SetLocalControlRigTransform_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransform_FunctionAddress, "Value", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransform_TimeUnit_PropertyAddress, SetLocalControlRigTransform_FunctionAddress, "TimeUnit");
+		SetLocalControlRigTransform_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransform_FunctionAddress, "TimeUnit");
+		SetLocalControlRigTransform_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransform_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigTransform_bSetKey_PropertyAddress, SetLocalControlRigTransform_FunctionAddress, "bSetKey");
+		SetLocalControlRigTransform_bSetKey_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigTransform_FunctionAddress, "bSetKey");
+		SetLocalControlRigTransform_bSetKey_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigTransform_FunctionAddress, "bSetKey", Classes.FBoolProperty);
+		SetLocalControlRigTransform_IsValid = SetLocalControlRigTransform_FunctionAddress != IntPtr.Zero && SetLocalControlRigTransform_LevelSequence_IsValid && SetLocalControlRigTransform_ControlRig_IsValid && SetLocalControlRigTransform_ControlName_IsValid && SetLocalControlRigTransform_Frame_IsValid && SetLocalControlRigTransform_Value_IsValid && SetLocalControlRigTransform_TimeUnit_IsValid && SetLocalControlRigTransform_bSetKey_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigTransform", SetLocalControlRigTransform_IsValid);
+		SetLocalControlRigScales_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigScales");
+		SetLocalControlRigScales_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigScales_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigScales_LevelSequence_PropertyAddress, SetLocalControlRigScales_FunctionAddress, "LevelSequence");
+		SetLocalControlRigScales_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigScales_FunctionAddress, "LevelSequence");
+		SetLocalControlRigScales_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigScales_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigScales_ControlRig_PropertyAddress, SetLocalControlRigScales_FunctionAddress, "ControlRig");
+		SetLocalControlRigScales_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigScales_FunctionAddress, "ControlRig");
+		SetLocalControlRigScales_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigScales_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigScales_ControlName_PropertyAddress, SetLocalControlRigScales_FunctionAddress, "ControlName");
+		SetLocalControlRigScales_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigScales_FunctionAddress, "ControlName");
+		SetLocalControlRigScales_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigScales_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigScales_Frames_PropertyAddress, SetLocalControlRigScales_FunctionAddress, "Frames");
+		SetLocalControlRigScales_Frames_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigScales_FunctionAddress, "Frames");
+		SetLocalControlRigScales_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigScales_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigScales_Values_PropertyAddress, SetLocalControlRigScales_FunctionAddress, "Values");
+		SetLocalControlRigScales_Values_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigScales_FunctionAddress, "Values");
+		SetLocalControlRigScales_Values_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigScales_FunctionAddress, "Values", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigScales_TimeUnit_PropertyAddress, SetLocalControlRigScales_FunctionAddress, "TimeUnit");
+		SetLocalControlRigScales_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigScales_FunctionAddress, "TimeUnit");
+		SetLocalControlRigScales_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigScales_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		SetLocalControlRigScales_IsValid = SetLocalControlRigScales_FunctionAddress != IntPtr.Zero && SetLocalControlRigScales_LevelSequence_IsValid && SetLocalControlRigScales_ControlRig_IsValid && SetLocalControlRigScales_ControlName_IsValid && SetLocalControlRigScales_Frames_IsValid && SetLocalControlRigScales_Values_IsValid && SetLocalControlRigScales_TimeUnit_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigScales", SetLocalControlRigScales_IsValid);
+		SetLocalControlRigScale_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigScale");
+		SetLocalControlRigScale_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigScale_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigScale_LevelSequence_PropertyAddress, SetLocalControlRigScale_FunctionAddress, "LevelSequence");
+		SetLocalControlRigScale_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigScale_FunctionAddress, "LevelSequence");
+		SetLocalControlRigScale_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigScale_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigScale_ControlRig_PropertyAddress, SetLocalControlRigScale_FunctionAddress, "ControlRig");
+		SetLocalControlRigScale_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigScale_FunctionAddress, "ControlRig");
+		SetLocalControlRigScale_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigScale_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigScale_ControlName_PropertyAddress, SetLocalControlRigScale_FunctionAddress, "ControlName");
+		SetLocalControlRigScale_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigScale_FunctionAddress, "ControlName");
+		SetLocalControlRigScale_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigScale_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigScale_Frame_PropertyAddress, SetLocalControlRigScale_FunctionAddress, "Frame");
+		SetLocalControlRigScale_Frame_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigScale_FunctionAddress, "Frame");
+		SetLocalControlRigScale_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigScale_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigScale_Value_PropertyAddress, SetLocalControlRigScale_FunctionAddress, "Value");
+		SetLocalControlRigScale_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigScale_FunctionAddress, "Value");
+		SetLocalControlRigScale_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigScale_FunctionAddress, "Value", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigScale_TimeUnit_PropertyAddress, SetLocalControlRigScale_FunctionAddress, "TimeUnit");
+		SetLocalControlRigScale_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigScale_FunctionAddress, "TimeUnit");
+		SetLocalControlRigScale_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigScale_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigScale_bSetKey_PropertyAddress, SetLocalControlRigScale_FunctionAddress, "bSetKey");
+		SetLocalControlRigScale_bSetKey_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigScale_FunctionAddress, "bSetKey");
+		SetLocalControlRigScale_bSetKey_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigScale_FunctionAddress, "bSetKey", Classes.FBoolProperty);
+		SetLocalControlRigScale_IsValid = SetLocalControlRigScale_FunctionAddress != IntPtr.Zero && SetLocalControlRigScale_LevelSequence_IsValid && SetLocalControlRigScale_ControlRig_IsValid && SetLocalControlRigScale_ControlName_IsValid && SetLocalControlRigScale_Frame_IsValid && SetLocalControlRigScale_Value_IsValid && SetLocalControlRigScale_TimeUnit_IsValid && SetLocalControlRigScale_bSetKey_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigScale", SetLocalControlRigScale_IsValid);
+		SetLocalControlRigRotators_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigRotators");
+		SetLocalControlRigRotators_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigRotators_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigRotators_LevelSequence_PropertyAddress, SetLocalControlRigRotators_FunctionAddress, "LevelSequence");
+		SetLocalControlRigRotators_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigRotators_FunctionAddress, "LevelSequence");
+		SetLocalControlRigRotators_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigRotators_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigRotators_ControlRig_PropertyAddress, SetLocalControlRigRotators_FunctionAddress, "ControlRig");
+		SetLocalControlRigRotators_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigRotators_FunctionAddress, "ControlRig");
+		SetLocalControlRigRotators_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigRotators_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigRotators_ControlName_PropertyAddress, SetLocalControlRigRotators_FunctionAddress, "ControlName");
+		SetLocalControlRigRotators_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigRotators_FunctionAddress, "ControlName");
+		SetLocalControlRigRotators_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigRotators_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigRotators_Frames_PropertyAddress, SetLocalControlRigRotators_FunctionAddress, "Frames");
+		SetLocalControlRigRotators_Frames_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigRotators_FunctionAddress, "Frames");
+		SetLocalControlRigRotators_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigRotators_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigRotators_Values_PropertyAddress, SetLocalControlRigRotators_FunctionAddress, "Values");
+		SetLocalControlRigRotators_Values_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigRotators_FunctionAddress, "Values");
+		SetLocalControlRigRotators_Values_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigRotators_FunctionAddress, "Values", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigRotators_TimeUnit_PropertyAddress, SetLocalControlRigRotators_FunctionAddress, "TimeUnit");
+		SetLocalControlRigRotators_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigRotators_FunctionAddress, "TimeUnit");
+		SetLocalControlRigRotators_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigRotators_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		SetLocalControlRigRotators_IsValid = SetLocalControlRigRotators_FunctionAddress != IntPtr.Zero && SetLocalControlRigRotators_LevelSequence_IsValid && SetLocalControlRigRotators_ControlRig_IsValid && SetLocalControlRigRotators_ControlName_IsValid && SetLocalControlRigRotators_Frames_IsValid && SetLocalControlRigRotators_Values_IsValid && SetLocalControlRigRotators_TimeUnit_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigRotators", SetLocalControlRigRotators_IsValid);
+		SetLocalControlRigRotator_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigRotator");
+		SetLocalControlRigRotator_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigRotator_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigRotator_LevelSequence_PropertyAddress, SetLocalControlRigRotator_FunctionAddress, "LevelSequence");
+		SetLocalControlRigRotator_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigRotator_FunctionAddress, "LevelSequence");
+		SetLocalControlRigRotator_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigRotator_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigRotator_ControlRig_PropertyAddress, SetLocalControlRigRotator_FunctionAddress, "ControlRig");
+		SetLocalControlRigRotator_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigRotator_FunctionAddress, "ControlRig");
+		SetLocalControlRigRotator_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigRotator_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigRotator_ControlName_PropertyAddress, SetLocalControlRigRotator_FunctionAddress, "ControlName");
+		SetLocalControlRigRotator_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigRotator_FunctionAddress, "ControlName");
+		SetLocalControlRigRotator_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigRotator_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigRotator_Frame_PropertyAddress, SetLocalControlRigRotator_FunctionAddress, "Frame");
+		SetLocalControlRigRotator_Frame_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigRotator_FunctionAddress, "Frame");
+		SetLocalControlRigRotator_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigRotator_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigRotator_Value_PropertyAddress, SetLocalControlRigRotator_FunctionAddress, "Value");
+		SetLocalControlRigRotator_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigRotator_FunctionAddress, "Value");
+		SetLocalControlRigRotator_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigRotator_FunctionAddress, "Value", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigRotator_TimeUnit_PropertyAddress, SetLocalControlRigRotator_FunctionAddress, "TimeUnit");
+		SetLocalControlRigRotator_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigRotator_FunctionAddress, "TimeUnit");
+		SetLocalControlRigRotator_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigRotator_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigRotator_bSetKey_PropertyAddress, SetLocalControlRigRotator_FunctionAddress, "bSetKey");
+		SetLocalControlRigRotator_bSetKey_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigRotator_FunctionAddress, "bSetKey");
+		SetLocalControlRigRotator_bSetKey_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigRotator_FunctionAddress, "bSetKey", Classes.FBoolProperty);
+		SetLocalControlRigRotator_IsValid = SetLocalControlRigRotator_FunctionAddress != IntPtr.Zero && SetLocalControlRigRotator_LevelSequence_IsValid && SetLocalControlRigRotator_ControlRig_IsValid && SetLocalControlRigRotator_ControlName_IsValid && SetLocalControlRigRotator_Frame_IsValid && SetLocalControlRigRotator_Value_IsValid && SetLocalControlRigRotator_TimeUnit_IsValid && SetLocalControlRigRotator_bSetKey_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigRotator", SetLocalControlRigRotator_IsValid);
+		SetLocalControlRigPositions_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigPositions");
+		SetLocalControlRigPositions_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigPositions_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigPositions_LevelSequence_PropertyAddress, SetLocalControlRigPositions_FunctionAddress, "LevelSequence");
+		SetLocalControlRigPositions_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigPositions_FunctionAddress, "LevelSequence");
+		SetLocalControlRigPositions_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigPositions_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigPositions_ControlRig_PropertyAddress, SetLocalControlRigPositions_FunctionAddress, "ControlRig");
+		SetLocalControlRigPositions_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigPositions_FunctionAddress, "ControlRig");
+		SetLocalControlRigPositions_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigPositions_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigPositions_ControlName_PropertyAddress, SetLocalControlRigPositions_FunctionAddress, "ControlName");
+		SetLocalControlRigPositions_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigPositions_FunctionAddress, "ControlName");
+		SetLocalControlRigPositions_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigPositions_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigPositions_Frames_PropertyAddress, SetLocalControlRigPositions_FunctionAddress, "Frames");
+		SetLocalControlRigPositions_Frames_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigPositions_FunctionAddress, "Frames");
+		SetLocalControlRigPositions_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigPositions_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigPositions_Values_PropertyAddress, SetLocalControlRigPositions_FunctionAddress, "Values");
+		SetLocalControlRigPositions_Values_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigPositions_FunctionAddress, "Values");
+		SetLocalControlRigPositions_Values_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigPositions_FunctionAddress, "Values", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigPositions_TimeUnit_PropertyAddress, SetLocalControlRigPositions_FunctionAddress, "TimeUnit");
+		SetLocalControlRigPositions_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigPositions_FunctionAddress, "TimeUnit");
+		SetLocalControlRigPositions_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigPositions_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		SetLocalControlRigPositions_IsValid = SetLocalControlRigPositions_FunctionAddress != IntPtr.Zero && SetLocalControlRigPositions_LevelSequence_IsValid && SetLocalControlRigPositions_ControlRig_IsValid && SetLocalControlRigPositions_ControlName_IsValid && SetLocalControlRigPositions_Frames_IsValid && SetLocalControlRigPositions_Values_IsValid && SetLocalControlRigPositions_TimeUnit_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigPositions", SetLocalControlRigPositions_IsValid);
+		SetLocalControlRigPosition_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigPosition");
+		SetLocalControlRigPosition_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigPosition_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigPosition_LevelSequence_PropertyAddress, SetLocalControlRigPosition_FunctionAddress, "LevelSequence");
+		SetLocalControlRigPosition_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigPosition_FunctionAddress, "LevelSequence");
+		SetLocalControlRigPosition_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigPosition_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigPosition_ControlRig_PropertyAddress, SetLocalControlRigPosition_FunctionAddress, "ControlRig");
+		SetLocalControlRigPosition_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigPosition_FunctionAddress, "ControlRig");
+		SetLocalControlRigPosition_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigPosition_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigPosition_ControlName_PropertyAddress, SetLocalControlRigPosition_FunctionAddress, "ControlName");
+		SetLocalControlRigPosition_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigPosition_FunctionAddress, "ControlName");
+		SetLocalControlRigPosition_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigPosition_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigPosition_Frame_PropertyAddress, SetLocalControlRigPosition_FunctionAddress, "Frame");
+		SetLocalControlRigPosition_Frame_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigPosition_FunctionAddress, "Frame");
+		SetLocalControlRigPosition_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigPosition_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigPosition_Value_PropertyAddress, SetLocalControlRigPosition_FunctionAddress, "Value");
+		SetLocalControlRigPosition_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigPosition_FunctionAddress, "Value");
+		SetLocalControlRigPosition_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigPosition_FunctionAddress, "Value", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigPosition_TimeUnit_PropertyAddress, SetLocalControlRigPosition_FunctionAddress, "TimeUnit");
+		SetLocalControlRigPosition_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigPosition_FunctionAddress, "TimeUnit");
+		SetLocalControlRigPosition_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigPosition_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigPosition_bSetKey_PropertyAddress, SetLocalControlRigPosition_FunctionAddress, "bSetKey");
+		SetLocalControlRigPosition_bSetKey_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigPosition_FunctionAddress, "bSetKey");
+		SetLocalControlRigPosition_bSetKey_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigPosition_FunctionAddress, "bSetKey", Classes.FBoolProperty);
+		SetLocalControlRigPosition_IsValid = SetLocalControlRigPosition_FunctionAddress != IntPtr.Zero && SetLocalControlRigPosition_LevelSequence_IsValid && SetLocalControlRigPosition_ControlRig_IsValid && SetLocalControlRigPosition_ControlName_IsValid && SetLocalControlRigPosition_Frame_IsValid && SetLocalControlRigPosition_Value_IsValid && SetLocalControlRigPosition_TimeUnit_IsValid && SetLocalControlRigPosition_bSetKey_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigPosition", SetLocalControlRigPosition_IsValid);
+		SetLocalControlRigInts_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigInts");
+		SetLocalControlRigInts_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigInts_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigInts_LevelSequence_PropertyAddress, SetLocalControlRigInts_FunctionAddress, "LevelSequence");
+		SetLocalControlRigInts_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigInts_FunctionAddress, "LevelSequence");
+		SetLocalControlRigInts_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigInts_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigInts_ControlRig_PropertyAddress, SetLocalControlRigInts_FunctionAddress, "ControlRig");
+		SetLocalControlRigInts_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigInts_FunctionAddress, "ControlRig");
+		SetLocalControlRigInts_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigInts_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigInts_ControlName_PropertyAddress, SetLocalControlRigInts_FunctionAddress, "ControlName");
+		SetLocalControlRigInts_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigInts_FunctionAddress, "ControlName");
+		SetLocalControlRigInts_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigInts_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigInts_Frames_PropertyAddress, SetLocalControlRigInts_FunctionAddress, "Frames");
+		SetLocalControlRigInts_Frames_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigInts_FunctionAddress, "Frames");
+		SetLocalControlRigInts_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigInts_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigInts_Values_PropertyAddress, SetLocalControlRigInts_FunctionAddress, "Values");
+		SetLocalControlRigInts_Values_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigInts_FunctionAddress, "Values");
+		SetLocalControlRigInts_Values_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigInts_FunctionAddress, "Values", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigInts_TimeUnit_PropertyAddress, SetLocalControlRigInts_FunctionAddress, "TimeUnit");
+		SetLocalControlRigInts_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigInts_FunctionAddress, "TimeUnit");
+		SetLocalControlRigInts_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigInts_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		SetLocalControlRigInts_IsValid = SetLocalControlRigInts_FunctionAddress != IntPtr.Zero && SetLocalControlRigInts_LevelSequence_IsValid && SetLocalControlRigInts_ControlRig_IsValid && SetLocalControlRigInts_ControlName_IsValid && SetLocalControlRigInts_Frames_IsValid && SetLocalControlRigInts_Values_IsValid && SetLocalControlRigInts_TimeUnit_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigInts", SetLocalControlRigInts_IsValid);
+		SetLocalControlRigInt_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigInt");
+		SetLocalControlRigInt_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigInt_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigInt_LevelSequence_PropertyAddress, SetLocalControlRigInt_FunctionAddress, "LevelSequence");
+		SetLocalControlRigInt_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigInt_FunctionAddress, "LevelSequence");
+		SetLocalControlRigInt_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigInt_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigInt_ControlRig_PropertyAddress, SetLocalControlRigInt_FunctionAddress, "ControlRig");
+		SetLocalControlRigInt_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigInt_FunctionAddress, "ControlRig");
+		SetLocalControlRigInt_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigInt_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigInt_ControlName_PropertyAddress, SetLocalControlRigInt_FunctionAddress, "ControlName");
+		SetLocalControlRigInt_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigInt_FunctionAddress, "ControlName");
+		SetLocalControlRigInt_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigInt_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigInt_Frame_PropertyAddress, SetLocalControlRigInt_FunctionAddress, "Frame");
+		SetLocalControlRigInt_Frame_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigInt_FunctionAddress, "Frame");
+		SetLocalControlRigInt_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigInt_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigInt_Value_PropertyAddress, SetLocalControlRigInt_FunctionAddress, "Value");
+		SetLocalControlRigInt_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigInt_FunctionAddress, "Value");
+		SetLocalControlRigInt_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigInt_FunctionAddress, "Value", Classes.FIntProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigInt_TimeUnit_PropertyAddress, SetLocalControlRigInt_FunctionAddress, "TimeUnit");
+		SetLocalControlRigInt_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigInt_FunctionAddress, "TimeUnit");
+		SetLocalControlRigInt_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigInt_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigInt_bSetKey_PropertyAddress, SetLocalControlRigInt_FunctionAddress, "bSetKey");
+		SetLocalControlRigInt_bSetKey_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigInt_FunctionAddress, "bSetKey");
+		SetLocalControlRigInt_bSetKey_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigInt_FunctionAddress, "bSetKey", Classes.FBoolProperty);
+		SetLocalControlRigInt_IsValid = SetLocalControlRigInt_FunctionAddress != IntPtr.Zero && SetLocalControlRigInt_LevelSequence_IsValid && SetLocalControlRigInt_ControlRig_IsValid && SetLocalControlRigInt_ControlName_IsValid && SetLocalControlRigInt_Frame_IsValid && SetLocalControlRigInt_Value_IsValid && SetLocalControlRigInt_TimeUnit_IsValid && SetLocalControlRigInt_bSetKey_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigInt", SetLocalControlRigInt_IsValid);
+		SetLocalControlRigFloats_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigFloats");
+		SetLocalControlRigFloats_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigFloats_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigFloats_LevelSequence_PropertyAddress, SetLocalControlRigFloats_FunctionAddress, "LevelSequence");
+		SetLocalControlRigFloats_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigFloats_FunctionAddress, "LevelSequence");
+		SetLocalControlRigFloats_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigFloats_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigFloats_ControlRig_PropertyAddress, SetLocalControlRigFloats_FunctionAddress, "ControlRig");
+		SetLocalControlRigFloats_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigFloats_FunctionAddress, "ControlRig");
+		SetLocalControlRigFloats_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigFloats_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigFloats_ControlName_PropertyAddress, SetLocalControlRigFloats_FunctionAddress, "ControlName");
+		SetLocalControlRigFloats_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigFloats_FunctionAddress, "ControlName");
+		SetLocalControlRigFloats_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigFloats_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigFloats_Frames_PropertyAddress, SetLocalControlRigFloats_FunctionAddress, "Frames");
+		SetLocalControlRigFloats_Frames_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigFloats_FunctionAddress, "Frames");
+		SetLocalControlRigFloats_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigFloats_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigFloats_Values_PropertyAddress, SetLocalControlRigFloats_FunctionAddress, "Values");
+		SetLocalControlRigFloats_Values_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigFloats_FunctionAddress, "Values");
+		SetLocalControlRigFloats_Values_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigFloats_FunctionAddress, "Values", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigFloats_TimeUnit_PropertyAddress, SetLocalControlRigFloats_FunctionAddress, "TimeUnit");
+		SetLocalControlRigFloats_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigFloats_FunctionAddress, "TimeUnit");
+		SetLocalControlRigFloats_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigFloats_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		SetLocalControlRigFloats_IsValid = SetLocalControlRigFloats_FunctionAddress != IntPtr.Zero && SetLocalControlRigFloats_LevelSequence_IsValid && SetLocalControlRigFloats_ControlRig_IsValid && SetLocalControlRigFloats_ControlName_IsValid && SetLocalControlRigFloats_Frames_IsValid && SetLocalControlRigFloats_Values_IsValid && SetLocalControlRigFloats_TimeUnit_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigFloats", SetLocalControlRigFloats_IsValid);
+		SetLocalControlRigFloat_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigFloat");
+		SetLocalControlRigFloat_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigFloat_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigFloat_LevelSequence_PropertyAddress, SetLocalControlRigFloat_FunctionAddress, "LevelSequence");
+		SetLocalControlRigFloat_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigFloat_FunctionAddress, "LevelSequence");
+		SetLocalControlRigFloat_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigFloat_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigFloat_ControlRig_PropertyAddress, SetLocalControlRigFloat_FunctionAddress, "ControlRig");
+		SetLocalControlRigFloat_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigFloat_FunctionAddress, "ControlRig");
+		SetLocalControlRigFloat_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigFloat_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigFloat_ControlName_PropertyAddress, SetLocalControlRigFloat_FunctionAddress, "ControlName");
+		SetLocalControlRigFloat_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigFloat_FunctionAddress, "ControlName");
+		SetLocalControlRigFloat_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigFloat_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigFloat_Frame_PropertyAddress, SetLocalControlRigFloat_FunctionAddress, "Frame");
+		SetLocalControlRigFloat_Frame_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigFloat_FunctionAddress, "Frame");
+		SetLocalControlRigFloat_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigFloat_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigFloat_Value_PropertyAddress, SetLocalControlRigFloat_FunctionAddress, "Value");
+		SetLocalControlRigFloat_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigFloat_FunctionAddress, "Value");
+		SetLocalControlRigFloat_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigFloat_FunctionAddress, "Value", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigFloat_TimeUnit_PropertyAddress, SetLocalControlRigFloat_FunctionAddress, "TimeUnit");
+		SetLocalControlRigFloat_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigFloat_FunctionAddress, "TimeUnit");
+		SetLocalControlRigFloat_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigFloat_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigFloat_bSetKey_PropertyAddress, SetLocalControlRigFloat_FunctionAddress, "bSetKey");
+		SetLocalControlRigFloat_bSetKey_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigFloat_FunctionAddress, "bSetKey");
+		SetLocalControlRigFloat_bSetKey_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigFloat_FunctionAddress, "bSetKey", Classes.FBoolProperty);
+		SetLocalControlRigFloat_IsValid = SetLocalControlRigFloat_FunctionAddress != IntPtr.Zero && SetLocalControlRigFloat_LevelSequence_IsValid && SetLocalControlRigFloat_ControlRig_IsValid && SetLocalControlRigFloat_ControlName_IsValid && SetLocalControlRigFloat_Frame_IsValid && SetLocalControlRigFloat_Value_IsValid && SetLocalControlRigFloat_TimeUnit_IsValid && SetLocalControlRigFloat_bSetKey_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigFloat", SetLocalControlRigFloat_IsValid);
+		SetLocalControlRigEulerTransforms_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigEulerTransforms");
+		SetLocalControlRigEulerTransforms_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigEulerTransforms_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigEulerTransforms_LevelSequence_PropertyAddress, SetLocalControlRigEulerTransforms_FunctionAddress, "LevelSequence");
+		SetLocalControlRigEulerTransforms_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigEulerTransforms_FunctionAddress, "LevelSequence");
+		SetLocalControlRigEulerTransforms_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigEulerTransforms_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigEulerTransforms_ControlRig_PropertyAddress, SetLocalControlRigEulerTransforms_FunctionAddress, "ControlRig");
+		SetLocalControlRigEulerTransforms_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigEulerTransforms_FunctionAddress, "ControlRig");
+		SetLocalControlRigEulerTransforms_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigEulerTransforms_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigEulerTransforms_ControlName_PropertyAddress, SetLocalControlRigEulerTransforms_FunctionAddress, "ControlName");
+		SetLocalControlRigEulerTransforms_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigEulerTransforms_FunctionAddress, "ControlName");
+		SetLocalControlRigEulerTransforms_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigEulerTransforms_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigEulerTransforms_Frames_PropertyAddress, SetLocalControlRigEulerTransforms_FunctionAddress, "Frames");
+		SetLocalControlRigEulerTransforms_Frames_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigEulerTransforms_FunctionAddress, "Frames");
+		SetLocalControlRigEulerTransforms_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigEulerTransforms_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigEulerTransforms_Values_PropertyAddress, SetLocalControlRigEulerTransforms_FunctionAddress, "Values");
+		SetLocalControlRigEulerTransforms_Values_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigEulerTransforms_FunctionAddress, "Values");
+		SetLocalControlRigEulerTransforms_Values_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigEulerTransforms_FunctionAddress, "Values", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigEulerTransforms_TimeUnit_PropertyAddress, SetLocalControlRigEulerTransforms_FunctionAddress, "TimeUnit");
+		SetLocalControlRigEulerTransforms_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigEulerTransforms_FunctionAddress, "TimeUnit");
+		SetLocalControlRigEulerTransforms_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigEulerTransforms_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		SetLocalControlRigEulerTransforms_IsValid = SetLocalControlRigEulerTransforms_FunctionAddress != IntPtr.Zero && SetLocalControlRigEulerTransforms_LevelSequence_IsValid && SetLocalControlRigEulerTransforms_ControlRig_IsValid && SetLocalControlRigEulerTransforms_ControlName_IsValid && SetLocalControlRigEulerTransforms_Frames_IsValid && SetLocalControlRigEulerTransforms_Values_IsValid && SetLocalControlRigEulerTransforms_TimeUnit_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigEulerTransforms", SetLocalControlRigEulerTransforms_IsValid);
+		SetLocalControlRigEulerTransform_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigEulerTransform");
+		SetLocalControlRigEulerTransform_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigEulerTransform_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigEulerTransform_LevelSequence_PropertyAddress, SetLocalControlRigEulerTransform_FunctionAddress, "LevelSequence");
+		SetLocalControlRigEulerTransform_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigEulerTransform_FunctionAddress, "LevelSequence");
+		SetLocalControlRigEulerTransform_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigEulerTransform_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigEulerTransform_ControlRig_PropertyAddress, SetLocalControlRigEulerTransform_FunctionAddress, "ControlRig");
+		SetLocalControlRigEulerTransform_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigEulerTransform_FunctionAddress, "ControlRig");
+		SetLocalControlRigEulerTransform_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigEulerTransform_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigEulerTransform_ControlName_PropertyAddress, SetLocalControlRigEulerTransform_FunctionAddress, "ControlName");
+		SetLocalControlRigEulerTransform_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigEulerTransform_FunctionAddress, "ControlName");
+		SetLocalControlRigEulerTransform_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigEulerTransform_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigEulerTransform_Frame_PropertyAddress, SetLocalControlRigEulerTransform_FunctionAddress, "Frame");
+		SetLocalControlRigEulerTransform_Frame_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigEulerTransform_FunctionAddress, "Frame");
+		SetLocalControlRigEulerTransform_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigEulerTransform_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigEulerTransform_Value_PropertyAddress, SetLocalControlRigEulerTransform_FunctionAddress, "Value");
+		SetLocalControlRigEulerTransform_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigEulerTransform_FunctionAddress, "Value");
+		SetLocalControlRigEulerTransform_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigEulerTransform_FunctionAddress, "Value", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigEulerTransform_TimeUnit_PropertyAddress, SetLocalControlRigEulerTransform_FunctionAddress, "TimeUnit");
+		SetLocalControlRigEulerTransform_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigEulerTransform_FunctionAddress, "TimeUnit");
+		SetLocalControlRigEulerTransform_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigEulerTransform_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigEulerTransform_bSetKey_PropertyAddress, SetLocalControlRigEulerTransform_FunctionAddress, "bSetKey");
+		SetLocalControlRigEulerTransform_bSetKey_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigEulerTransform_FunctionAddress, "bSetKey");
+		SetLocalControlRigEulerTransform_bSetKey_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigEulerTransform_FunctionAddress, "bSetKey", Classes.FBoolProperty);
+		SetLocalControlRigEulerTransform_IsValid = SetLocalControlRigEulerTransform_FunctionAddress != IntPtr.Zero && SetLocalControlRigEulerTransform_LevelSequence_IsValid && SetLocalControlRigEulerTransform_ControlRig_IsValid && SetLocalControlRigEulerTransform_ControlName_IsValid && SetLocalControlRigEulerTransform_Frame_IsValid && SetLocalControlRigEulerTransform_Value_IsValid && SetLocalControlRigEulerTransform_TimeUnit_IsValid && SetLocalControlRigEulerTransform_bSetKey_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigEulerTransform", SetLocalControlRigEulerTransform_IsValid);
+		SetLocalControlRigBools_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigBools");
+		SetLocalControlRigBools_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigBools_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigBools_LevelSequence_PropertyAddress, SetLocalControlRigBools_FunctionAddress, "LevelSequence");
+		SetLocalControlRigBools_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigBools_FunctionAddress, "LevelSequence");
+		SetLocalControlRigBools_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigBools_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigBools_ControlRig_PropertyAddress, SetLocalControlRigBools_FunctionAddress, "ControlRig");
+		SetLocalControlRigBools_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigBools_FunctionAddress, "ControlRig");
+		SetLocalControlRigBools_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigBools_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigBools_ControlName_PropertyAddress, SetLocalControlRigBools_FunctionAddress, "ControlName");
+		SetLocalControlRigBools_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigBools_FunctionAddress, "ControlName");
+		SetLocalControlRigBools_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigBools_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigBools_Frames_PropertyAddress, SetLocalControlRigBools_FunctionAddress, "Frames");
+		SetLocalControlRigBools_Frames_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigBools_FunctionAddress, "Frames");
+		SetLocalControlRigBools_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigBools_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigBools_Values_PropertyAddress, SetLocalControlRigBools_FunctionAddress, "Values");
+		SetLocalControlRigBools_Values_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigBools_FunctionAddress, "Values");
+		SetLocalControlRigBools_Values_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigBools_FunctionAddress, "Values", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigBools_TimeUnit_PropertyAddress, SetLocalControlRigBools_FunctionAddress, "TimeUnit");
+		SetLocalControlRigBools_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigBools_FunctionAddress, "TimeUnit");
+		SetLocalControlRigBools_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigBools_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		SetLocalControlRigBools_IsValid = SetLocalControlRigBools_FunctionAddress != IntPtr.Zero && SetLocalControlRigBools_LevelSequence_IsValid && SetLocalControlRigBools_ControlRig_IsValid && SetLocalControlRigBools_ControlName_IsValid && SetLocalControlRigBools_Frames_IsValid && SetLocalControlRigBools_Values_IsValid && SetLocalControlRigBools_TimeUnit_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigBools", SetLocalControlRigBools_IsValid);
+		SetLocalControlRigBool_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetLocalControlRigBool");
+		SetLocalControlRigBool_ParamsSize = NativeReflection.GetFunctionParamsSize(SetLocalControlRigBool_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigBool_LevelSequence_PropertyAddress, SetLocalControlRigBool_FunctionAddress, "LevelSequence");
+		SetLocalControlRigBool_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigBool_FunctionAddress, "LevelSequence");
+		SetLocalControlRigBool_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigBool_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigBool_ControlRig_PropertyAddress, SetLocalControlRigBool_FunctionAddress, "ControlRig");
+		SetLocalControlRigBool_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigBool_FunctionAddress, "ControlRig");
+		SetLocalControlRigBool_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigBool_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigBool_ControlName_PropertyAddress, SetLocalControlRigBool_FunctionAddress, "ControlName");
+		SetLocalControlRigBool_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigBool_FunctionAddress, "ControlName");
+		SetLocalControlRigBool_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigBool_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigBool_Frame_PropertyAddress, SetLocalControlRigBool_FunctionAddress, "Frame");
+		SetLocalControlRigBool_Frame_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigBool_FunctionAddress, "Frame");
+		SetLocalControlRigBool_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigBool_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigBool_Value_PropertyAddress, SetLocalControlRigBool_FunctionAddress, "Value");
+		SetLocalControlRigBool_Value_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigBool_FunctionAddress, "Value");
+		SetLocalControlRigBool_Value_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigBool_FunctionAddress, "Value", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigBool_TimeUnit_PropertyAddress, SetLocalControlRigBool_FunctionAddress, "TimeUnit");
+		SetLocalControlRigBool_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigBool_FunctionAddress, "TimeUnit");
+		SetLocalControlRigBool_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigBool_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetLocalControlRigBool_bSetKey_PropertyAddress, SetLocalControlRigBool_FunctionAddress, "bSetKey");
+		SetLocalControlRigBool_bSetKey_Offset = NativeReflectionCached.GetPropertyOffset(SetLocalControlRigBool_FunctionAddress, "bSetKey");
+		SetLocalControlRigBool_bSetKey_IsValid = NativeReflectionCached.ValidatePropertyClass(SetLocalControlRigBool_FunctionAddress, "bSetKey", Classes.FBoolProperty);
+		SetLocalControlRigBool_IsValid = SetLocalControlRigBool_FunctionAddress != IntPtr.Zero && SetLocalControlRigBool_LevelSequence_IsValid && SetLocalControlRigBool_ControlRig_IsValid && SetLocalControlRigBool_ControlName_IsValid && SetLocalControlRigBool_Frame_IsValid && SetLocalControlRigBool_Value_IsValid && SetLocalControlRigBool_TimeUnit_IsValid && SetLocalControlRigBool_bSetKey_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetLocalControlRigBool", SetLocalControlRigBool_IsValid);
+		SetControlRigWorldTransforms_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetControlRigWorldTransforms");
+		SetControlRigWorldTransforms_ParamsSize = NativeReflection.GetFunctionParamsSize(SetControlRigWorldTransforms_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigWorldTransforms_LevelSequence_PropertyAddress, SetControlRigWorldTransforms_FunctionAddress, "LevelSequence");
+		SetControlRigWorldTransforms_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigWorldTransforms_FunctionAddress, "LevelSequence");
+		SetControlRigWorldTransforms_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigWorldTransforms_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigWorldTransforms_ControlRig_PropertyAddress, SetControlRigWorldTransforms_FunctionAddress, "ControlRig");
+		SetControlRigWorldTransforms_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigWorldTransforms_FunctionAddress, "ControlRig");
+		SetControlRigWorldTransforms_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigWorldTransforms_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigWorldTransforms_ControlName_PropertyAddress, SetControlRigWorldTransforms_FunctionAddress, "ControlName");
+		SetControlRigWorldTransforms_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigWorldTransforms_FunctionAddress, "ControlName");
+		SetControlRigWorldTransforms_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigWorldTransforms_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigWorldTransforms_Frames_PropertyAddress, SetControlRigWorldTransforms_FunctionAddress, "Frames");
+		SetControlRigWorldTransforms_Frames_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigWorldTransforms_FunctionAddress, "Frames");
+		SetControlRigWorldTransforms_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigWorldTransforms_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigWorldTransforms_WorldTransforms_PropertyAddress, SetControlRigWorldTransforms_FunctionAddress, "WorldTransforms");
+		SetControlRigWorldTransforms_WorldTransforms_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigWorldTransforms_FunctionAddress, "WorldTransforms");
+		SetControlRigWorldTransforms_WorldTransforms_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigWorldTransforms_FunctionAddress, "WorldTransforms", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigWorldTransforms_TimeUnit_PropertyAddress, SetControlRigWorldTransforms_FunctionAddress, "TimeUnit");
+		SetControlRigWorldTransforms_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigWorldTransforms_FunctionAddress, "TimeUnit");
+		SetControlRigWorldTransforms_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigWorldTransforms_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		SetControlRigWorldTransforms_IsValid = SetControlRigWorldTransforms_FunctionAddress != IntPtr.Zero && SetControlRigWorldTransforms_LevelSequence_IsValid && SetControlRigWorldTransforms_ControlRig_IsValid && SetControlRigWorldTransforms_ControlName_IsValid && SetControlRigWorldTransforms_Frames_IsValid && SetControlRigWorldTransforms_WorldTransforms_IsValid && SetControlRigWorldTransforms_TimeUnit_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetControlRigWorldTransforms", SetControlRigWorldTransforms_IsValid);
+		SetControlRigWorldTransform_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetControlRigWorldTransform");
+		SetControlRigWorldTransform_ParamsSize = NativeReflection.GetFunctionParamsSize(SetControlRigWorldTransform_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigWorldTransform_LevelSequence_PropertyAddress, SetControlRigWorldTransform_FunctionAddress, "LevelSequence");
+		SetControlRigWorldTransform_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigWorldTransform_FunctionAddress, "LevelSequence");
+		SetControlRigWorldTransform_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigWorldTransform_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigWorldTransform_ControlRig_PropertyAddress, SetControlRigWorldTransform_FunctionAddress, "ControlRig");
+		SetControlRigWorldTransform_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigWorldTransform_FunctionAddress, "ControlRig");
+		SetControlRigWorldTransform_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigWorldTransform_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigWorldTransform_ControlName_PropertyAddress, SetControlRigWorldTransform_FunctionAddress, "ControlName");
+		SetControlRigWorldTransform_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigWorldTransform_FunctionAddress, "ControlName");
+		SetControlRigWorldTransform_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigWorldTransform_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigWorldTransform_Frame_PropertyAddress, SetControlRigWorldTransform_FunctionAddress, "Frame");
+		SetControlRigWorldTransform_Frame_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigWorldTransform_FunctionAddress, "Frame");
+		SetControlRigWorldTransform_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigWorldTransform_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigWorldTransform_WorldTransform_PropertyAddress, SetControlRigWorldTransform_FunctionAddress, "WorldTransform");
+		SetControlRigWorldTransform_WorldTransform_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigWorldTransform_FunctionAddress, "WorldTransform");
+		SetControlRigWorldTransform_WorldTransform_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigWorldTransform_FunctionAddress, "WorldTransform", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigWorldTransform_TimeUnit_PropertyAddress, SetControlRigWorldTransform_FunctionAddress, "TimeUnit");
+		SetControlRigWorldTransform_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigWorldTransform_FunctionAddress, "TimeUnit");
+		SetControlRigWorldTransform_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigWorldTransform_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigWorldTransform_bSetKey_PropertyAddress, SetControlRigWorldTransform_FunctionAddress, "bSetKey");
+		SetControlRigWorldTransform_bSetKey_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigWorldTransform_FunctionAddress, "bSetKey");
+		SetControlRigWorldTransform_bSetKey_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigWorldTransform_FunctionAddress, "bSetKey", Classes.FBoolProperty);
+		SetControlRigWorldTransform_IsValid = SetControlRigWorldTransform_FunctionAddress != IntPtr.Zero && SetControlRigWorldTransform_LevelSequence_IsValid && SetControlRigWorldTransform_ControlRig_IsValid && SetControlRigWorldTransform_ControlName_IsValid && SetControlRigWorldTransform_Frame_IsValid && SetControlRigWorldTransform_WorldTransform_IsValid && SetControlRigWorldTransform_TimeUnit_IsValid && SetControlRigWorldTransform_bSetKey_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetControlRigWorldTransform", SetControlRigWorldTransform_IsValid);
+		SetControlRigSpace_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "SetControlRigSpace");
+		SetControlRigSpace_ParamsSize = NativeReflection.GetFunctionParamsSize(SetControlRigSpace_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigSpace_InSequence_PropertyAddress, SetControlRigSpace_FunctionAddress, "InSequence");
+		SetControlRigSpace_InSequence_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigSpace_FunctionAddress, "InSequence");
+		SetControlRigSpace_InSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigSpace_FunctionAddress, "InSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigSpace_InControlRig_PropertyAddress, SetControlRigSpace_FunctionAddress, "InControlRig");
+		SetControlRigSpace_InControlRig_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigSpace_FunctionAddress, "InControlRig");
+		SetControlRigSpace_InControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigSpace_FunctionAddress, "InControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigSpace_InControlName_PropertyAddress, SetControlRigSpace_FunctionAddress, "InControlName");
+		SetControlRigSpace_InControlName_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigSpace_FunctionAddress, "InControlName");
+		SetControlRigSpace_InControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigSpace_FunctionAddress, "InControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigSpace_InSpaceKey_PropertyAddress, SetControlRigSpace_FunctionAddress, "InSpaceKey");
+		SetControlRigSpace_InSpaceKey_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigSpace_FunctionAddress, "InSpaceKey");
+		SetControlRigSpace_InSpaceKey_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigSpace_FunctionAddress, "InSpaceKey", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigSpace_InTime_PropertyAddress, SetControlRigSpace_FunctionAddress, "InTime");
+		SetControlRigSpace_InTime_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigSpace_FunctionAddress, "InTime");
+		SetControlRigSpace_InTime_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigSpace_FunctionAddress, "InTime", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigSpace_TimeUnit_PropertyAddress, SetControlRigSpace_FunctionAddress, "TimeUnit");
+		SetControlRigSpace_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigSpace_FunctionAddress, "TimeUnit");
+		SetControlRigSpace_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigSpace_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref SetControlRigSpace_ReturnValue_PropertyAddress, SetControlRigSpace_FunctionAddress, "ReturnValue");
+		SetControlRigSpace_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(SetControlRigSpace_FunctionAddress, "ReturnValue");
+		SetControlRigSpace_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(SetControlRigSpace_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		SetControlRigSpace_IsValid = SetControlRigSpace_FunctionAddress != IntPtr.Zero && SetControlRigSpace_InSequence_IsValid && SetControlRigSpace_InControlRig_IsValid && SetControlRigSpace_InControlName_IsValid && SetControlRigSpace_InSpaceKey_IsValid && SetControlRigSpace_InTime_IsValid && SetControlRigSpace_TimeUnit_IsValid && SetControlRigSpace_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:SetControlRigSpace", SetControlRigSpace_IsValid);
+		RenameControlRigControlChannels_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "RenameControlRigControlChannels");
+		RenameControlRigControlChannels_ParamsSize = NativeReflection.GetFunctionParamsSize(RenameControlRigControlChannels_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref RenameControlRigControlChannels_InSequence_PropertyAddress, RenameControlRigControlChannels_FunctionAddress, "InSequence");
+		RenameControlRigControlChannels_InSequence_Offset = NativeReflectionCached.GetPropertyOffset(RenameControlRigControlChannels_FunctionAddress, "InSequence");
+		RenameControlRigControlChannels_InSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(RenameControlRigControlChannels_FunctionAddress, "InSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref RenameControlRigControlChannels_InControlRig_PropertyAddress, RenameControlRigControlChannels_FunctionAddress, "InControlRig");
+		RenameControlRigControlChannels_InControlRig_Offset = NativeReflectionCached.GetPropertyOffset(RenameControlRigControlChannels_FunctionAddress, "InControlRig");
+		RenameControlRigControlChannels_InControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(RenameControlRigControlChannels_FunctionAddress, "InControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref RenameControlRigControlChannels_InOldControlNames_PropertyAddress, RenameControlRigControlChannels_FunctionAddress, "InOldControlNames");
+		RenameControlRigControlChannels_InOldControlNames_Offset = NativeReflectionCached.GetPropertyOffset(RenameControlRigControlChannels_FunctionAddress, "InOldControlNames");
+		RenameControlRigControlChannels_InOldControlNames_IsValid = NativeReflectionCached.ValidatePropertyClass(RenameControlRigControlChannels_FunctionAddress, "InOldControlNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref RenameControlRigControlChannels_InNewControlNames_PropertyAddress, RenameControlRigControlChannels_FunctionAddress, "InNewControlNames");
+		RenameControlRigControlChannels_InNewControlNames_Offset = NativeReflectionCached.GetPropertyOffset(RenameControlRigControlChannels_FunctionAddress, "InNewControlNames");
+		RenameControlRigControlChannels_InNewControlNames_IsValid = NativeReflectionCached.ValidatePropertyClass(RenameControlRigControlChannels_FunctionAddress, "InNewControlNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref RenameControlRigControlChannels_ReturnValue_PropertyAddress, RenameControlRigControlChannels_FunctionAddress, "ReturnValue");
+		RenameControlRigControlChannels_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(RenameControlRigControlChannels_FunctionAddress, "ReturnValue");
+		RenameControlRigControlChannels_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(RenameControlRigControlChannels_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		RenameControlRigControlChannels_IsValid = RenameControlRigControlChannels_FunctionAddress != IntPtr.Zero && RenameControlRigControlChannels_InSequence_IsValid && RenameControlRigControlChannels_InControlRig_IsValid && RenameControlRigControlChannels_InOldControlNames_IsValid && RenameControlRigControlChannels_InNewControlNames_IsValid && RenameControlRigControlChannels_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:RenameControlRigControlChannels", RenameControlRigControlChannels_IsValid);
+		MoveControlRigSpace_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "MoveControlRigSpace");
+		MoveControlRigSpace_ParamsSize = NativeReflection.GetFunctionParamsSize(MoveControlRigSpace_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref MoveControlRigSpace_InSequence_PropertyAddress, MoveControlRigSpace_FunctionAddress, "InSequence");
+		MoveControlRigSpace_InSequence_Offset = NativeReflectionCached.GetPropertyOffset(MoveControlRigSpace_FunctionAddress, "InSequence");
+		MoveControlRigSpace_InSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(MoveControlRigSpace_FunctionAddress, "InSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref MoveControlRigSpace_InControlRig_PropertyAddress, MoveControlRigSpace_FunctionAddress, "InControlRig");
+		MoveControlRigSpace_InControlRig_Offset = NativeReflectionCached.GetPropertyOffset(MoveControlRigSpace_FunctionAddress, "InControlRig");
+		MoveControlRigSpace_InControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(MoveControlRigSpace_FunctionAddress, "InControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref MoveControlRigSpace_InControlName_PropertyAddress, MoveControlRigSpace_FunctionAddress, "InControlName");
+		MoveControlRigSpace_InControlName_Offset = NativeReflectionCached.GetPropertyOffset(MoveControlRigSpace_FunctionAddress, "InControlName");
+		MoveControlRigSpace_InControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(MoveControlRigSpace_FunctionAddress, "InControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref MoveControlRigSpace_InTime_PropertyAddress, MoveControlRigSpace_FunctionAddress, "InTime");
+		MoveControlRigSpace_InTime_Offset = NativeReflectionCached.GetPropertyOffset(MoveControlRigSpace_FunctionAddress, "InTime");
+		MoveControlRigSpace_InTime_IsValid = NativeReflectionCached.ValidatePropertyClass(MoveControlRigSpace_FunctionAddress, "InTime", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref MoveControlRigSpace_InNewTime_PropertyAddress, MoveControlRigSpace_FunctionAddress, "InNewTime");
+		MoveControlRigSpace_InNewTime_Offset = NativeReflectionCached.GetPropertyOffset(MoveControlRigSpace_FunctionAddress, "InNewTime");
+		MoveControlRigSpace_InNewTime_IsValid = NativeReflectionCached.ValidatePropertyClass(MoveControlRigSpace_FunctionAddress, "InNewTime", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref MoveControlRigSpace_TimeUnit_PropertyAddress, MoveControlRigSpace_FunctionAddress, "TimeUnit");
+		MoveControlRigSpace_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(MoveControlRigSpace_FunctionAddress, "TimeUnit");
+		MoveControlRigSpace_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(MoveControlRigSpace_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref MoveControlRigSpace_ReturnValue_PropertyAddress, MoveControlRigSpace_FunctionAddress, "ReturnValue");
+		MoveControlRigSpace_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(MoveControlRigSpace_FunctionAddress, "ReturnValue");
+		MoveControlRigSpace_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(MoveControlRigSpace_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		MoveControlRigSpace_IsValid = MoveControlRigSpace_FunctionAddress != IntPtr.Zero && MoveControlRigSpace_InSequence_IsValid && MoveControlRigSpace_InControlRig_IsValid && MoveControlRigSpace_InControlName_IsValid && MoveControlRigSpace_InTime_IsValid && MoveControlRigSpace_InNewTime_IsValid && MoveControlRigSpace_TimeUnit_IsValid && MoveControlRigSpace_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:MoveControlRigSpace", MoveControlRigSpace_IsValid);
+		LoadAnimSequenceIntoControlRigSection_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "LoadAnimSequenceIntoControlRigSection");
+		LoadAnimSequenceIntoControlRigSection_ParamsSize = NativeReflection.GetFunctionParamsSize(LoadAnimSequenceIntoControlRigSection_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref LoadAnimSequenceIntoControlRigSection_MovieSceneSection_PropertyAddress, LoadAnimSequenceIntoControlRigSection_FunctionAddress, "MovieSceneSection");
+		LoadAnimSequenceIntoControlRigSection_MovieSceneSection_Offset = NativeReflectionCached.GetPropertyOffset(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "MovieSceneSection");
+		LoadAnimSequenceIntoControlRigSection_MovieSceneSection_IsValid = NativeReflectionCached.ValidatePropertyClass(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "MovieSceneSection", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref LoadAnimSequenceIntoControlRigSection_AnimSequence_PropertyAddress, LoadAnimSequenceIntoControlRigSection_FunctionAddress, "AnimSequence");
+		LoadAnimSequenceIntoControlRigSection_AnimSequence_Offset = NativeReflectionCached.GetPropertyOffset(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "AnimSequence");
+		LoadAnimSequenceIntoControlRigSection_AnimSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "AnimSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref LoadAnimSequenceIntoControlRigSection_SkelMeshComp_PropertyAddress, LoadAnimSequenceIntoControlRigSection_FunctionAddress, "SkelMeshComp");
+		LoadAnimSequenceIntoControlRigSection_SkelMeshComp_Offset = NativeReflectionCached.GetPropertyOffset(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "SkelMeshComp");
+		LoadAnimSequenceIntoControlRigSection_SkelMeshComp_IsValid = NativeReflectionCached.ValidatePropertyClass(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "SkelMeshComp", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref LoadAnimSequenceIntoControlRigSection_InStartFrame_PropertyAddress, LoadAnimSequenceIntoControlRigSection_FunctionAddress, "InStartFrame");
+		LoadAnimSequenceIntoControlRigSection_InStartFrame_Offset = NativeReflectionCached.GetPropertyOffset(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "InStartFrame");
+		LoadAnimSequenceIntoControlRigSection_InStartFrame_IsValid = NativeReflectionCached.ValidatePropertyClass(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "InStartFrame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref LoadAnimSequenceIntoControlRigSection_TimeUnit_PropertyAddress, LoadAnimSequenceIntoControlRigSection_FunctionAddress, "TimeUnit");
+		LoadAnimSequenceIntoControlRigSection_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "TimeUnit");
+		LoadAnimSequenceIntoControlRigSection_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref LoadAnimSequenceIntoControlRigSection_bKeyReduce_PropertyAddress, LoadAnimSequenceIntoControlRigSection_FunctionAddress, "bKeyReduce");
+		LoadAnimSequenceIntoControlRigSection_bKeyReduce_Offset = NativeReflectionCached.GetPropertyOffset(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "bKeyReduce");
+		LoadAnimSequenceIntoControlRigSection_bKeyReduce_IsValid = NativeReflectionCached.ValidatePropertyClass(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "bKeyReduce", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref LoadAnimSequenceIntoControlRigSection_Tolerance_PropertyAddress, LoadAnimSequenceIntoControlRigSection_FunctionAddress, "Tolerance");
+		LoadAnimSequenceIntoControlRigSection_Tolerance_Offset = NativeReflectionCached.GetPropertyOffset(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "Tolerance");
+		LoadAnimSequenceIntoControlRigSection_Tolerance_IsValid = NativeReflectionCached.ValidatePropertyClass(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "Tolerance", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref LoadAnimSequenceIntoControlRigSection_ReturnValue_PropertyAddress, LoadAnimSequenceIntoControlRigSection_FunctionAddress, "ReturnValue");
+		LoadAnimSequenceIntoControlRigSection_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "ReturnValue");
+		LoadAnimSequenceIntoControlRigSection_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(LoadAnimSequenceIntoControlRigSection_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		LoadAnimSequenceIntoControlRigSection_IsValid = LoadAnimSequenceIntoControlRigSection_FunctionAddress != IntPtr.Zero && LoadAnimSequenceIntoControlRigSection_MovieSceneSection_IsValid && LoadAnimSequenceIntoControlRigSection_AnimSequence_IsValid && LoadAnimSequenceIntoControlRigSection_SkelMeshComp_IsValid && LoadAnimSequenceIntoControlRigSection_InStartFrame_IsValid && LoadAnimSequenceIntoControlRigSection_TimeUnit_IsValid && LoadAnimSequenceIntoControlRigSection_bKeyReduce_IsValid && LoadAnimSequenceIntoControlRigSection_Tolerance_IsValid && LoadAnimSequenceIntoControlRigSection_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:LoadAnimSequenceIntoControlRigSection", LoadAnimSequenceIntoControlRigSection_IsValid);
+		ImportFBXToControlRigTrack_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "ImportFBXToControlRigTrack");
+		ImportFBXToControlRigTrack_ParamsSize = NativeReflection.GetFunctionParamsSize(ImportFBXToControlRigTrack_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref ImportFBXToControlRigTrack_World_PropertyAddress, ImportFBXToControlRigTrack_FunctionAddress, "World");
+		ImportFBXToControlRigTrack_World_Offset = NativeReflectionCached.GetPropertyOffset(ImportFBXToControlRigTrack_FunctionAddress, "World");
+		ImportFBXToControlRigTrack_World_IsValid = NativeReflectionCached.ValidatePropertyClass(ImportFBXToControlRigTrack_FunctionAddress, "World", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref ImportFBXToControlRigTrack_InSequence_PropertyAddress, ImportFBXToControlRigTrack_FunctionAddress, "InSequence");
+		ImportFBXToControlRigTrack_InSequence_Offset = NativeReflectionCached.GetPropertyOffset(ImportFBXToControlRigTrack_FunctionAddress, "InSequence");
+		ImportFBXToControlRigTrack_InSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(ImportFBXToControlRigTrack_FunctionAddress, "InSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref ImportFBXToControlRigTrack_InTrack_PropertyAddress, ImportFBXToControlRigTrack_FunctionAddress, "InTrack");
+		ImportFBXToControlRigTrack_InTrack_Offset = NativeReflectionCached.GetPropertyOffset(ImportFBXToControlRigTrack_FunctionAddress, "InTrack");
+		ImportFBXToControlRigTrack_InTrack_IsValid = NativeReflectionCached.ValidatePropertyClass(ImportFBXToControlRigTrack_FunctionAddress, "InTrack", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref ImportFBXToControlRigTrack_InSection_PropertyAddress, ImportFBXToControlRigTrack_FunctionAddress, "InSection");
+		ImportFBXToControlRigTrack_InSection_Offset = NativeReflectionCached.GetPropertyOffset(ImportFBXToControlRigTrack_FunctionAddress, "InSection");
+		ImportFBXToControlRigTrack_InSection_IsValid = NativeReflectionCached.ValidatePropertyClass(ImportFBXToControlRigTrack_FunctionAddress, "InSection", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref ImportFBXToControlRigTrack_SelectedControlRigNames_PropertyAddress, ImportFBXToControlRigTrack_FunctionAddress, "SelectedControlRigNames");
+		ImportFBXToControlRigTrack_SelectedControlRigNames_Offset = NativeReflectionCached.GetPropertyOffset(ImportFBXToControlRigTrack_FunctionAddress, "SelectedControlRigNames");
+		ImportFBXToControlRigTrack_SelectedControlRigNames_IsValid = NativeReflectionCached.ValidatePropertyClass(ImportFBXToControlRigTrack_FunctionAddress, "SelectedControlRigNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref ImportFBXToControlRigTrack_ImportFBXControlRigSettings_PropertyAddress, ImportFBXToControlRigTrack_FunctionAddress, "ImportFBXControlRigSettings");
+		ImportFBXToControlRigTrack_ImportFBXControlRigSettings_Offset = NativeReflectionCached.GetPropertyOffset(ImportFBXToControlRigTrack_FunctionAddress, "ImportFBXControlRigSettings");
+		ImportFBXToControlRigTrack_ImportFBXControlRigSettings_IsValid = NativeReflectionCached.ValidatePropertyClass(ImportFBXToControlRigTrack_FunctionAddress, "ImportFBXControlRigSettings", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref ImportFBXToControlRigTrack_ImportFilename_PropertyAddress, ImportFBXToControlRigTrack_FunctionAddress, "ImportFilename");
+		ImportFBXToControlRigTrack_ImportFilename_Offset = NativeReflectionCached.GetPropertyOffset(ImportFBXToControlRigTrack_FunctionAddress, "ImportFilename");
+		ImportFBXToControlRigTrack_ImportFilename_IsValid = NativeReflectionCached.ValidatePropertyClass(ImportFBXToControlRigTrack_FunctionAddress, "ImportFilename", Classes.FStrProperty);
+		NativeReflectionCached.GetPropertyRef(ref ImportFBXToControlRigTrack_ReturnValue_PropertyAddress, ImportFBXToControlRigTrack_FunctionAddress, "ReturnValue");
+		ImportFBXToControlRigTrack_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(ImportFBXToControlRigTrack_FunctionAddress, "ReturnValue");
+		ImportFBXToControlRigTrack_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(ImportFBXToControlRigTrack_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		ImportFBXToControlRigTrack_IsValid = ImportFBXToControlRigTrack_FunctionAddress != IntPtr.Zero && ImportFBXToControlRigTrack_World_IsValid && ImportFBXToControlRigTrack_InSequence_IsValid && ImportFBXToControlRigTrack_InTrack_IsValid && ImportFBXToControlRigTrack_InSection_IsValid && ImportFBXToControlRigTrack_SelectedControlRigNames_IsValid && ImportFBXToControlRigTrack_ImportFBXControlRigSettings_IsValid && ImportFBXToControlRigTrack_ImportFilename_IsValid && ImportFBXToControlRigTrack_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:ImportFBXToControlRigTrack", ImportFBXToControlRigTrack_IsValid);
+		GetWorldSpaceReferenceKey_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetWorldSpaceReferenceKey");
+		GetWorldSpaceReferenceKey_ParamsSize = NativeReflection.GetFunctionParamsSize(GetWorldSpaceReferenceKey_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetWorldSpaceReferenceKey_ReturnValue_PropertyAddress, GetWorldSpaceReferenceKey_FunctionAddress, "ReturnValue");
+		GetWorldSpaceReferenceKey_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetWorldSpaceReferenceKey_FunctionAddress, "ReturnValue");
+		GetWorldSpaceReferenceKey_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetWorldSpaceReferenceKey_FunctionAddress, "ReturnValue", Classes.FStructProperty);
+		GetWorldSpaceReferenceKey_IsValid = GetWorldSpaceReferenceKey_FunctionAddress != IntPtr.Zero && GetWorldSpaceReferenceKey_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetWorldSpaceReferenceKey", GetWorldSpaceReferenceKey_IsValid);
+		GetVisibleControlRigs_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetVisibleControlRigs");
+		GetVisibleControlRigs_ParamsSize = NativeReflection.GetFunctionParamsSize(GetVisibleControlRigs_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetVisibleControlRigs_ReturnValue_PropertyAddress, GetVisibleControlRigs_FunctionAddress, "ReturnValue");
+		GetVisibleControlRigs_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetVisibleControlRigs_FunctionAddress, "ReturnValue");
+		GetVisibleControlRigs_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetVisibleControlRigs_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetVisibleControlRigs_IsValid = GetVisibleControlRigs_FunctionAddress != IntPtr.Zero && GetVisibleControlRigs_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetVisibleControlRigs", GetVisibleControlRigs_IsValid);
+		GetSkeletalMeshComponentWorldTransforms_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetSkeletalMeshComponentWorldTransforms");
+		GetSkeletalMeshComponentWorldTransforms_ParamsSize = NativeReflection.GetFunctionParamsSize(GetSkeletalMeshComponentWorldTransforms_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetSkeletalMeshComponentWorldTransforms_LevelSequence_PropertyAddress, GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "LevelSequence");
+		GetSkeletalMeshComponentWorldTransforms_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "LevelSequence");
+		GetSkeletalMeshComponentWorldTransforms_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetSkeletalMeshComponentWorldTransforms_SkeletalMeshComponent_PropertyAddress, GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "SkeletalMeshComponent");
+		GetSkeletalMeshComponentWorldTransforms_SkeletalMeshComponent_Offset = NativeReflectionCached.GetPropertyOffset(GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "SkeletalMeshComponent");
+		GetSkeletalMeshComponentWorldTransforms_SkeletalMeshComponent_IsValid = NativeReflectionCached.ValidatePropertyClass(GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "SkeletalMeshComponent", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetSkeletalMeshComponentWorldTransforms_Frames_PropertyAddress, GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "Frames");
+		GetSkeletalMeshComponentWorldTransforms_Frames_Offset = NativeReflectionCached.GetPropertyOffset(GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "Frames");
+		GetSkeletalMeshComponentWorldTransforms_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetSkeletalMeshComponentWorldTransforms_TimeUnit_PropertyAddress, GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "TimeUnit");
+		GetSkeletalMeshComponentWorldTransforms_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "TimeUnit");
+		GetSkeletalMeshComponentWorldTransforms_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetSkeletalMeshComponentWorldTransforms_ReferenceName_PropertyAddress, GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "ReferenceName");
+		GetSkeletalMeshComponentWorldTransforms_ReferenceName_Offset = NativeReflectionCached.GetPropertyOffset(GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "ReferenceName");
+		GetSkeletalMeshComponentWorldTransforms_ReferenceName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "ReferenceName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetSkeletalMeshComponentWorldTransforms_ReturnValue_PropertyAddress, GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "ReturnValue");
+		GetSkeletalMeshComponentWorldTransforms_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "ReturnValue");
+		GetSkeletalMeshComponentWorldTransforms_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetSkeletalMeshComponentWorldTransforms_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetSkeletalMeshComponentWorldTransforms_IsValid = GetSkeletalMeshComponentWorldTransforms_FunctionAddress != IntPtr.Zero && GetSkeletalMeshComponentWorldTransforms_LevelSequence_IsValid && GetSkeletalMeshComponentWorldTransforms_SkeletalMeshComponent_IsValid && GetSkeletalMeshComponentWorldTransforms_Frames_IsValid && GetSkeletalMeshComponentWorldTransforms_TimeUnit_IsValid && GetSkeletalMeshComponentWorldTransforms_ReferenceName_IsValid && GetSkeletalMeshComponentWorldTransforms_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetSkeletalMeshComponentWorldTransforms", GetSkeletalMeshComponentWorldTransforms_IsValid);
+		GetSkeletalMeshComponentWorldTransform_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetSkeletalMeshComponentWorldTransform");
+		GetSkeletalMeshComponentWorldTransform_ParamsSize = NativeReflection.GetFunctionParamsSize(GetSkeletalMeshComponentWorldTransform_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetSkeletalMeshComponentWorldTransform_LevelSequence_PropertyAddress, GetSkeletalMeshComponentWorldTransform_FunctionAddress, "LevelSequence");
+		GetSkeletalMeshComponentWorldTransform_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetSkeletalMeshComponentWorldTransform_FunctionAddress, "LevelSequence");
+		GetSkeletalMeshComponentWorldTransform_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetSkeletalMeshComponentWorldTransform_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetSkeletalMeshComponentWorldTransform_SkeletalMeshComponent_PropertyAddress, GetSkeletalMeshComponentWorldTransform_FunctionAddress, "SkeletalMeshComponent");
+		GetSkeletalMeshComponentWorldTransform_SkeletalMeshComponent_Offset = NativeReflectionCached.GetPropertyOffset(GetSkeletalMeshComponentWorldTransform_FunctionAddress, "SkeletalMeshComponent");
+		GetSkeletalMeshComponentWorldTransform_SkeletalMeshComponent_IsValid = NativeReflectionCached.ValidatePropertyClass(GetSkeletalMeshComponentWorldTransform_FunctionAddress, "SkeletalMeshComponent", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetSkeletalMeshComponentWorldTransform_Frame_PropertyAddress, GetSkeletalMeshComponentWorldTransform_FunctionAddress, "Frame");
+		GetSkeletalMeshComponentWorldTransform_Frame_Offset = NativeReflectionCached.GetPropertyOffset(GetSkeletalMeshComponentWorldTransform_FunctionAddress, "Frame");
+		GetSkeletalMeshComponentWorldTransform_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(GetSkeletalMeshComponentWorldTransform_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetSkeletalMeshComponentWorldTransform_TimeUnit_PropertyAddress, GetSkeletalMeshComponentWorldTransform_FunctionAddress, "TimeUnit");
+		GetSkeletalMeshComponentWorldTransform_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetSkeletalMeshComponentWorldTransform_FunctionAddress, "TimeUnit");
+		GetSkeletalMeshComponentWorldTransform_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetSkeletalMeshComponentWorldTransform_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetSkeletalMeshComponentWorldTransform_ReferenceName_PropertyAddress, GetSkeletalMeshComponentWorldTransform_FunctionAddress, "ReferenceName");
+		GetSkeletalMeshComponentWorldTransform_ReferenceName_Offset = NativeReflectionCached.GetPropertyOffset(GetSkeletalMeshComponentWorldTransform_FunctionAddress, "ReferenceName");
+		GetSkeletalMeshComponentWorldTransform_ReferenceName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetSkeletalMeshComponentWorldTransform_FunctionAddress, "ReferenceName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetSkeletalMeshComponentWorldTransform_ReturnValue_PropertyAddress, GetSkeletalMeshComponentWorldTransform_FunctionAddress, "ReturnValue");
+		GetSkeletalMeshComponentWorldTransform_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetSkeletalMeshComponentWorldTransform_FunctionAddress, "ReturnValue");
+		GetSkeletalMeshComponentWorldTransform_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetSkeletalMeshComponentWorldTransform_FunctionAddress, "ReturnValue", Classes.FStructProperty);
+		GetSkeletalMeshComponentWorldTransform_IsValid = GetSkeletalMeshComponentWorldTransform_FunctionAddress != IntPtr.Zero && GetSkeletalMeshComponentWorldTransform_LevelSequence_IsValid && GetSkeletalMeshComponentWorldTransform_SkeletalMeshComponent_IsValid && GetSkeletalMeshComponentWorldTransform_Frame_IsValid && GetSkeletalMeshComponentWorldTransform_TimeUnit_IsValid && GetSkeletalMeshComponentWorldTransform_ReferenceName_IsValid && GetSkeletalMeshComponentWorldTransform_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetSkeletalMeshComponentWorldTransform", GetSkeletalMeshComponentWorldTransform_IsValid);
+		GetLocalControlRigVector2Ds_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigVector2Ds");
+		GetLocalControlRigVector2Ds_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigVector2Ds_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigVector2Ds_LevelSequence_PropertyAddress, GetLocalControlRigVector2Ds_FunctionAddress, "LevelSequence");
+		GetLocalControlRigVector2Ds_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigVector2Ds_FunctionAddress, "LevelSequence");
+		GetLocalControlRigVector2Ds_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigVector2Ds_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigVector2Ds_ControlRig_PropertyAddress, GetLocalControlRigVector2Ds_FunctionAddress, "ControlRig");
+		GetLocalControlRigVector2Ds_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigVector2Ds_FunctionAddress, "ControlRig");
+		GetLocalControlRigVector2Ds_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigVector2Ds_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigVector2Ds_ControlName_PropertyAddress, GetLocalControlRigVector2Ds_FunctionAddress, "ControlName");
+		GetLocalControlRigVector2Ds_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigVector2Ds_FunctionAddress, "ControlName");
+		GetLocalControlRigVector2Ds_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigVector2Ds_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigVector2Ds_Frames_PropertyAddress, GetLocalControlRigVector2Ds_FunctionAddress, "Frames");
+		GetLocalControlRigVector2Ds_Frames_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigVector2Ds_FunctionAddress, "Frames");
+		GetLocalControlRigVector2Ds_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigVector2Ds_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigVector2Ds_TimeUnit_PropertyAddress, GetLocalControlRigVector2Ds_FunctionAddress, "TimeUnit");
+		GetLocalControlRigVector2Ds_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigVector2Ds_FunctionAddress, "TimeUnit");
+		GetLocalControlRigVector2Ds_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigVector2Ds_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigVector2Ds_ReturnValue_PropertyAddress, GetLocalControlRigVector2Ds_FunctionAddress, "ReturnValue");
+		GetLocalControlRigVector2Ds_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigVector2Ds_FunctionAddress, "ReturnValue");
+		GetLocalControlRigVector2Ds_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigVector2Ds_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetLocalControlRigVector2Ds_IsValid = GetLocalControlRigVector2Ds_FunctionAddress != IntPtr.Zero && GetLocalControlRigVector2Ds_LevelSequence_IsValid && GetLocalControlRigVector2Ds_ControlRig_IsValid && GetLocalControlRigVector2Ds_ControlName_IsValid && GetLocalControlRigVector2Ds_Frames_IsValid && GetLocalControlRigVector2Ds_TimeUnit_IsValid && GetLocalControlRigVector2Ds_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigVector2Ds", GetLocalControlRigVector2Ds_IsValid);
+		GetLocalControlRigVector2D_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigVector2D");
+		GetLocalControlRigVector2D_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigVector2D_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigVector2D_LevelSequence_PropertyAddress, GetLocalControlRigVector2D_FunctionAddress, "LevelSequence");
+		GetLocalControlRigVector2D_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigVector2D_FunctionAddress, "LevelSequence");
+		GetLocalControlRigVector2D_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigVector2D_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigVector2D_ControlRig_PropertyAddress, GetLocalControlRigVector2D_FunctionAddress, "ControlRig");
+		GetLocalControlRigVector2D_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigVector2D_FunctionAddress, "ControlRig");
+		GetLocalControlRigVector2D_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigVector2D_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigVector2D_ControlName_PropertyAddress, GetLocalControlRigVector2D_FunctionAddress, "ControlName");
+		GetLocalControlRigVector2D_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigVector2D_FunctionAddress, "ControlName");
+		GetLocalControlRigVector2D_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigVector2D_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigVector2D_Frame_PropertyAddress, GetLocalControlRigVector2D_FunctionAddress, "Frame");
+		GetLocalControlRigVector2D_Frame_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigVector2D_FunctionAddress, "Frame");
+		GetLocalControlRigVector2D_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigVector2D_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigVector2D_TimeUnit_PropertyAddress, GetLocalControlRigVector2D_FunctionAddress, "TimeUnit");
+		GetLocalControlRigVector2D_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigVector2D_FunctionAddress, "TimeUnit");
+		GetLocalControlRigVector2D_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigVector2D_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigVector2D_ReturnValue_PropertyAddress, GetLocalControlRigVector2D_FunctionAddress, "ReturnValue");
+		GetLocalControlRigVector2D_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigVector2D_FunctionAddress, "ReturnValue");
+		GetLocalControlRigVector2D_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigVector2D_FunctionAddress, "ReturnValue", Classes.FStructProperty);
+		GetLocalControlRigVector2D_IsValid = GetLocalControlRigVector2D_FunctionAddress != IntPtr.Zero && GetLocalControlRigVector2D_LevelSequence_IsValid && GetLocalControlRigVector2D_ControlRig_IsValid && GetLocalControlRigVector2D_ControlName_IsValid && GetLocalControlRigVector2D_Frame_IsValid && GetLocalControlRigVector2D_TimeUnit_IsValid && GetLocalControlRigVector2D_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigVector2D", GetLocalControlRigVector2D_IsValid);
+		GetLocalControlRigTransforms_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigTransforms");
+		GetLocalControlRigTransforms_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigTransforms_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransforms_LevelSequence_PropertyAddress, GetLocalControlRigTransforms_FunctionAddress, "LevelSequence");
+		GetLocalControlRigTransforms_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransforms_FunctionAddress, "LevelSequence");
+		GetLocalControlRigTransforms_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransforms_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransforms_ControlRig_PropertyAddress, GetLocalControlRigTransforms_FunctionAddress, "ControlRig");
+		GetLocalControlRigTransforms_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransforms_FunctionAddress, "ControlRig");
+		GetLocalControlRigTransforms_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransforms_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransforms_ControlName_PropertyAddress, GetLocalControlRigTransforms_FunctionAddress, "ControlName");
+		GetLocalControlRigTransforms_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransforms_FunctionAddress, "ControlName");
+		GetLocalControlRigTransforms_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransforms_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransforms_Frames_PropertyAddress, GetLocalControlRigTransforms_FunctionAddress, "Frames");
+		GetLocalControlRigTransforms_Frames_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransforms_FunctionAddress, "Frames");
+		GetLocalControlRigTransforms_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransforms_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransforms_TimeUnit_PropertyAddress, GetLocalControlRigTransforms_FunctionAddress, "TimeUnit");
+		GetLocalControlRigTransforms_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransforms_FunctionAddress, "TimeUnit");
+		GetLocalControlRigTransforms_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransforms_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransforms_ReturnValue_PropertyAddress, GetLocalControlRigTransforms_FunctionAddress, "ReturnValue");
+		GetLocalControlRigTransforms_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransforms_FunctionAddress, "ReturnValue");
+		GetLocalControlRigTransforms_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransforms_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetLocalControlRigTransforms_IsValid = GetLocalControlRigTransforms_FunctionAddress != IntPtr.Zero && GetLocalControlRigTransforms_LevelSequence_IsValid && GetLocalControlRigTransforms_ControlRig_IsValid && GetLocalControlRigTransforms_ControlName_IsValid && GetLocalControlRigTransforms_Frames_IsValid && GetLocalControlRigTransforms_TimeUnit_IsValid && GetLocalControlRigTransforms_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigTransforms", GetLocalControlRigTransforms_IsValid);
+		GetLocalControlRigTransformNoScales_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigTransformNoScales");
+		GetLocalControlRigTransformNoScales_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigTransformNoScales_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransformNoScales_LevelSequence_PropertyAddress, GetLocalControlRigTransformNoScales_FunctionAddress, "LevelSequence");
+		GetLocalControlRigTransformNoScales_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransformNoScales_FunctionAddress, "LevelSequence");
+		GetLocalControlRigTransformNoScales_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransformNoScales_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransformNoScales_ControlRig_PropertyAddress, GetLocalControlRigTransformNoScales_FunctionAddress, "ControlRig");
+		GetLocalControlRigTransformNoScales_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransformNoScales_FunctionAddress, "ControlRig");
+		GetLocalControlRigTransformNoScales_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransformNoScales_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransformNoScales_ControlName_PropertyAddress, GetLocalControlRigTransformNoScales_FunctionAddress, "ControlName");
+		GetLocalControlRigTransformNoScales_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransformNoScales_FunctionAddress, "ControlName");
+		GetLocalControlRigTransformNoScales_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransformNoScales_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransformNoScales_Frames_PropertyAddress, GetLocalControlRigTransformNoScales_FunctionAddress, "Frames");
+		GetLocalControlRigTransformNoScales_Frames_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransformNoScales_FunctionAddress, "Frames");
+		GetLocalControlRigTransformNoScales_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransformNoScales_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransformNoScales_TimeUnit_PropertyAddress, GetLocalControlRigTransformNoScales_FunctionAddress, "TimeUnit");
+		GetLocalControlRigTransformNoScales_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransformNoScales_FunctionAddress, "TimeUnit");
+		GetLocalControlRigTransformNoScales_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransformNoScales_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransformNoScales_ReturnValue_PropertyAddress, GetLocalControlRigTransformNoScales_FunctionAddress, "ReturnValue");
+		GetLocalControlRigTransformNoScales_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransformNoScales_FunctionAddress, "ReturnValue");
+		GetLocalControlRigTransformNoScales_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransformNoScales_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetLocalControlRigTransformNoScales_IsValid = GetLocalControlRigTransformNoScales_FunctionAddress != IntPtr.Zero && GetLocalControlRigTransformNoScales_LevelSequence_IsValid && GetLocalControlRigTransformNoScales_ControlRig_IsValid && GetLocalControlRigTransformNoScales_ControlName_IsValid && GetLocalControlRigTransformNoScales_Frames_IsValid && GetLocalControlRigTransformNoScales_TimeUnit_IsValid && GetLocalControlRigTransformNoScales_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigTransformNoScales", GetLocalControlRigTransformNoScales_IsValid);
+		GetLocalControlRigTransformNoScale_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigTransformNoScale");
+		GetLocalControlRigTransformNoScale_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigTransformNoScale_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransformNoScale_LevelSequence_PropertyAddress, GetLocalControlRigTransformNoScale_FunctionAddress, "LevelSequence");
+		GetLocalControlRigTransformNoScale_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransformNoScale_FunctionAddress, "LevelSequence");
+		GetLocalControlRigTransformNoScale_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransformNoScale_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransformNoScale_ControlRig_PropertyAddress, GetLocalControlRigTransformNoScale_FunctionAddress, "ControlRig");
+		GetLocalControlRigTransformNoScale_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransformNoScale_FunctionAddress, "ControlRig");
+		GetLocalControlRigTransformNoScale_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransformNoScale_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransformNoScale_ControlName_PropertyAddress, GetLocalControlRigTransformNoScale_FunctionAddress, "ControlName");
+		GetLocalControlRigTransformNoScale_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransformNoScale_FunctionAddress, "ControlName");
+		GetLocalControlRigTransformNoScale_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransformNoScale_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransformNoScale_Frame_PropertyAddress, GetLocalControlRigTransformNoScale_FunctionAddress, "Frame");
+		GetLocalControlRigTransformNoScale_Frame_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransformNoScale_FunctionAddress, "Frame");
+		GetLocalControlRigTransformNoScale_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransformNoScale_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransformNoScale_TimeUnit_PropertyAddress, GetLocalControlRigTransformNoScale_FunctionAddress, "TimeUnit");
+		GetLocalControlRigTransformNoScale_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransformNoScale_FunctionAddress, "TimeUnit");
+		GetLocalControlRigTransformNoScale_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransformNoScale_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransformNoScale_ReturnValue_PropertyAddress, GetLocalControlRigTransformNoScale_FunctionAddress, "ReturnValue");
+		GetLocalControlRigTransformNoScale_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransformNoScale_FunctionAddress, "ReturnValue");
+		GetLocalControlRigTransformNoScale_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransformNoScale_FunctionAddress, "ReturnValue", Classes.FStructProperty);
+		GetLocalControlRigTransformNoScale_IsValid = GetLocalControlRigTransformNoScale_FunctionAddress != IntPtr.Zero && GetLocalControlRigTransformNoScale_LevelSequence_IsValid && GetLocalControlRigTransformNoScale_ControlRig_IsValid && GetLocalControlRigTransformNoScale_ControlName_IsValid && GetLocalControlRigTransformNoScale_Frame_IsValid && GetLocalControlRigTransformNoScale_TimeUnit_IsValid && GetLocalControlRigTransformNoScale_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigTransformNoScale", GetLocalControlRigTransformNoScale_IsValid);
+		GetLocalControlRigTransform_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigTransform");
+		GetLocalControlRigTransform_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigTransform_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransform_LevelSequence_PropertyAddress, GetLocalControlRigTransform_FunctionAddress, "LevelSequence");
+		GetLocalControlRigTransform_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransform_FunctionAddress, "LevelSequence");
+		GetLocalControlRigTransform_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransform_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransform_ControlRig_PropertyAddress, GetLocalControlRigTransform_FunctionAddress, "ControlRig");
+		GetLocalControlRigTransform_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransform_FunctionAddress, "ControlRig");
+		GetLocalControlRigTransform_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransform_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransform_ControlName_PropertyAddress, GetLocalControlRigTransform_FunctionAddress, "ControlName");
+		GetLocalControlRigTransform_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransform_FunctionAddress, "ControlName");
+		GetLocalControlRigTransform_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransform_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransform_Frame_PropertyAddress, GetLocalControlRigTransform_FunctionAddress, "Frame");
+		GetLocalControlRigTransform_Frame_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransform_FunctionAddress, "Frame");
+		GetLocalControlRigTransform_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransform_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransform_TimeUnit_PropertyAddress, GetLocalControlRigTransform_FunctionAddress, "TimeUnit");
+		GetLocalControlRigTransform_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransform_FunctionAddress, "TimeUnit");
+		GetLocalControlRigTransform_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransform_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigTransform_ReturnValue_PropertyAddress, GetLocalControlRigTransform_FunctionAddress, "ReturnValue");
+		GetLocalControlRigTransform_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigTransform_FunctionAddress, "ReturnValue");
+		GetLocalControlRigTransform_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigTransform_FunctionAddress, "ReturnValue", Classes.FStructProperty);
+		GetLocalControlRigTransform_IsValid = GetLocalControlRigTransform_FunctionAddress != IntPtr.Zero && GetLocalControlRigTransform_LevelSequence_IsValid && GetLocalControlRigTransform_ControlRig_IsValid && GetLocalControlRigTransform_ControlName_IsValid && GetLocalControlRigTransform_Frame_IsValid && GetLocalControlRigTransform_TimeUnit_IsValid && GetLocalControlRigTransform_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigTransform", GetLocalControlRigTransform_IsValid);
+		GetLocalControlRigScales_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigScales");
+		GetLocalControlRigScales_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigScales_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigScales_LevelSequence_PropertyAddress, GetLocalControlRigScales_FunctionAddress, "LevelSequence");
+		GetLocalControlRigScales_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigScales_FunctionAddress, "LevelSequence");
+		GetLocalControlRigScales_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigScales_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigScales_ControlRig_PropertyAddress, GetLocalControlRigScales_FunctionAddress, "ControlRig");
+		GetLocalControlRigScales_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigScales_FunctionAddress, "ControlRig");
+		GetLocalControlRigScales_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigScales_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigScales_ControlName_PropertyAddress, GetLocalControlRigScales_FunctionAddress, "ControlName");
+		GetLocalControlRigScales_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigScales_FunctionAddress, "ControlName");
+		GetLocalControlRigScales_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigScales_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigScales_Frames_PropertyAddress, GetLocalControlRigScales_FunctionAddress, "Frames");
+		GetLocalControlRigScales_Frames_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigScales_FunctionAddress, "Frames");
+		GetLocalControlRigScales_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigScales_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigScales_TimeUnit_PropertyAddress, GetLocalControlRigScales_FunctionAddress, "TimeUnit");
+		GetLocalControlRigScales_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigScales_FunctionAddress, "TimeUnit");
+		GetLocalControlRigScales_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigScales_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigScales_ReturnValue_PropertyAddress, GetLocalControlRigScales_FunctionAddress, "ReturnValue");
+		GetLocalControlRigScales_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigScales_FunctionAddress, "ReturnValue");
+		GetLocalControlRigScales_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigScales_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetLocalControlRigScales_IsValid = GetLocalControlRigScales_FunctionAddress != IntPtr.Zero && GetLocalControlRigScales_LevelSequence_IsValid && GetLocalControlRigScales_ControlRig_IsValid && GetLocalControlRigScales_ControlName_IsValid && GetLocalControlRigScales_Frames_IsValid && GetLocalControlRigScales_TimeUnit_IsValid && GetLocalControlRigScales_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigScales", GetLocalControlRigScales_IsValid);
+		GetLocalControlRigScale_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigScale");
+		GetLocalControlRigScale_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigScale_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigScale_LevelSequence_PropertyAddress, GetLocalControlRigScale_FunctionAddress, "LevelSequence");
+		GetLocalControlRigScale_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigScale_FunctionAddress, "LevelSequence");
+		GetLocalControlRigScale_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigScale_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigScale_ControlRig_PropertyAddress, GetLocalControlRigScale_FunctionAddress, "ControlRig");
+		GetLocalControlRigScale_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigScale_FunctionAddress, "ControlRig");
+		GetLocalControlRigScale_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigScale_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigScale_ControlName_PropertyAddress, GetLocalControlRigScale_FunctionAddress, "ControlName");
+		GetLocalControlRigScale_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigScale_FunctionAddress, "ControlName");
+		GetLocalControlRigScale_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigScale_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigScale_Frame_PropertyAddress, GetLocalControlRigScale_FunctionAddress, "Frame");
+		GetLocalControlRigScale_Frame_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigScale_FunctionAddress, "Frame");
+		GetLocalControlRigScale_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigScale_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigScale_TimeUnit_PropertyAddress, GetLocalControlRigScale_FunctionAddress, "TimeUnit");
+		GetLocalControlRigScale_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigScale_FunctionAddress, "TimeUnit");
+		GetLocalControlRigScale_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigScale_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigScale_ReturnValue_PropertyAddress, GetLocalControlRigScale_FunctionAddress, "ReturnValue");
+		GetLocalControlRigScale_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigScale_FunctionAddress, "ReturnValue");
+		GetLocalControlRigScale_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigScale_FunctionAddress, "ReturnValue", Classes.FStructProperty);
+		GetLocalControlRigScale_IsValid = GetLocalControlRigScale_FunctionAddress != IntPtr.Zero && GetLocalControlRigScale_LevelSequence_IsValid && GetLocalControlRigScale_ControlRig_IsValid && GetLocalControlRigScale_ControlName_IsValid && GetLocalControlRigScale_Frame_IsValid && GetLocalControlRigScale_TimeUnit_IsValid && GetLocalControlRigScale_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigScale", GetLocalControlRigScale_IsValid);
+		GetLocalControlRigRotators_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigRotators");
+		GetLocalControlRigRotators_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigRotators_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigRotators_LevelSequence_PropertyAddress, GetLocalControlRigRotators_FunctionAddress, "LevelSequence");
+		GetLocalControlRigRotators_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigRotators_FunctionAddress, "LevelSequence");
+		GetLocalControlRigRotators_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigRotators_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigRotators_ControlRig_PropertyAddress, GetLocalControlRigRotators_FunctionAddress, "ControlRig");
+		GetLocalControlRigRotators_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigRotators_FunctionAddress, "ControlRig");
+		GetLocalControlRigRotators_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigRotators_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigRotators_ControlName_PropertyAddress, GetLocalControlRigRotators_FunctionAddress, "ControlName");
+		GetLocalControlRigRotators_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigRotators_FunctionAddress, "ControlName");
+		GetLocalControlRigRotators_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigRotators_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigRotators_Frames_PropertyAddress, GetLocalControlRigRotators_FunctionAddress, "Frames");
+		GetLocalControlRigRotators_Frames_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigRotators_FunctionAddress, "Frames");
+		GetLocalControlRigRotators_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigRotators_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigRotators_TimeUnit_PropertyAddress, GetLocalControlRigRotators_FunctionAddress, "TimeUnit");
+		GetLocalControlRigRotators_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigRotators_FunctionAddress, "TimeUnit");
+		GetLocalControlRigRotators_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigRotators_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigRotators_ReturnValue_PropertyAddress, GetLocalControlRigRotators_FunctionAddress, "ReturnValue");
+		GetLocalControlRigRotators_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigRotators_FunctionAddress, "ReturnValue");
+		GetLocalControlRigRotators_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigRotators_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetLocalControlRigRotators_IsValid = GetLocalControlRigRotators_FunctionAddress != IntPtr.Zero && GetLocalControlRigRotators_LevelSequence_IsValid && GetLocalControlRigRotators_ControlRig_IsValid && GetLocalControlRigRotators_ControlName_IsValid && GetLocalControlRigRotators_Frames_IsValid && GetLocalControlRigRotators_TimeUnit_IsValid && GetLocalControlRigRotators_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigRotators", GetLocalControlRigRotators_IsValid);
+		GetLocalControlRigRotator_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigRotator");
+		GetLocalControlRigRotator_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigRotator_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigRotator_LevelSequence_PropertyAddress, GetLocalControlRigRotator_FunctionAddress, "LevelSequence");
+		GetLocalControlRigRotator_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigRotator_FunctionAddress, "LevelSequence");
+		GetLocalControlRigRotator_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigRotator_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigRotator_ControlRig_PropertyAddress, GetLocalControlRigRotator_FunctionAddress, "ControlRig");
+		GetLocalControlRigRotator_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigRotator_FunctionAddress, "ControlRig");
+		GetLocalControlRigRotator_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigRotator_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigRotator_ControlName_PropertyAddress, GetLocalControlRigRotator_FunctionAddress, "ControlName");
+		GetLocalControlRigRotator_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigRotator_FunctionAddress, "ControlName");
+		GetLocalControlRigRotator_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigRotator_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigRotator_Frame_PropertyAddress, GetLocalControlRigRotator_FunctionAddress, "Frame");
+		GetLocalControlRigRotator_Frame_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigRotator_FunctionAddress, "Frame");
+		GetLocalControlRigRotator_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigRotator_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigRotator_TimeUnit_PropertyAddress, GetLocalControlRigRotator_FunctionAddress, "TimeUnit");
+		GetLocalControlRigRotator_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigRotator_FunctionAddress, "TimeUnit");
+		GetLocalControlRigRotator_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigRotator_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigRotator_ReturnValue_PropertyAddress, GetLocalControlRigRotator_FunctionAddress, "ReturnValue");
+		GetLocalControlRigRotator_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigRotator_FunctionAddress, "ReturnValue");
+		GetLocalControlRigRotator_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigRotator_FunctionAddress, "ReturnValue", Classes.FStructProperty);
+		GetLocalControlRigRotator_IsValid = GetLocalControlRigRotator_FunctionAddress != IntPtr.Zero && GetLocalControlRigRotator_LevelSequence_IsValid && GetLocalControlRigRotator_ControlRig_IsValid && GetLocalControlRigRotator_ControlName_IsValid && GetLocalControlRigRotator_Frame_IsValid && GetLocalControlRigRotator_TimeUnit_IsValid && GetLocalControlRigRotator_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigRotator", GetLocalControlRigRotator_IsValid);
+		GetLocalControlRigPositions_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigPositions");
+		GetLocalControlRigPositions_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigPositions_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigPositions_LevelSequence_PropertyAddress, GetLocalControlRigPositions_FunctionAddress, "LevelSequence");
+		GetLocalControlRigPositions_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigPositions_FunctionAddress, "LevelSequence");
+		GetLocalControlRigPositions_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigPositions_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigPositions_ControlRig_PropertyAddress, GetLocalControlRigPositions_FunctionAddress, "ControlRig");
+		GetLocalControlRigPositions_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigPositions_FunctionAddress, "ControlRig");
+		GetLocalControlRigPositions_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigPositions_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigPositions_ControlName_PropertyAddress, GetLocalControlRigPositions_FunctionAddress, "ControlName");
+		GetLocalControlRigPositions_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigPositions_FunctionAddress, "ControlName");
+		GetLocalControlRigPositions_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigPositions_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigPositions_Frames_PropertyAddress, GetLocalControlRigPositions_FunctionAddress, "Frames");
+		GetLocalControlRigPositions_Frames_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigPositions_FunctionAddress, "Frames");
+		GetLocalControlRigPositions_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigPositions_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigPositions_TimeUnit_PropertyAddress, GetLocalControlRigPositions_FunctionAddress, "TimeUnit");
+		GetLocalControlRigPositions_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigPositions_FunctionAddress, "TimeUnit");
+		GetLocalControlRigPositions_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigPositions_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigPositions_ReturnValue_PropertyAddress, GetLocalControlRigPositions_FunctionAddress, "ReturnValue");
+		GetLocalControlRigPositions_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigPositions_FunctionAddress, "ReturnValue");
+		GetLocalControlRigPositions_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigPositions_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetLocalControlRigPositions_IsValid = GetLocalControlRigPositions_FunctionAddress != IntPtr.Zero && GetLocalControlRigPositions_LevelSequence_IsValid && GetLocalControlRigPositions_ControlRig_IsValid && GetLocalControlRigPositions_ControlName_IsValid && GetLocalControlRigPositions_Frames_IsValid && GetLocalControlRigPositions_TimeUnit_IsValid && GetLocalControlRigPositions_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigPositions", GetLocalControlRigPositions_IsValid);
+		GetLocalControlRigPosition_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigPosition");
+		GetLocalControlRigPosition_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigPosition_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigPosition_LevelSequence_PropertyAddress, GetLocalControlRigPosition_FunctionAddress, "LevelSequence");
+		GetLocalControlRigPosition_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigPosition_FunctionAddress, "LevelSequence");
+		GetLocalControlRigPosition_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigPosition_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigPosition_ControlRig_PropertyAddress, GetLocalControlRigPosition_FunctionAddress, "ControlRig");
+		GetLocalControlRigPosition_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigPosition_FunctionAddress, "ControlRig");
+		GetLocalControlRigPosition_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigPosition_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigPosition_ControlName_PropertyAddress, GetLocalControlRigPosition_FunctionAddress, "ControlName");
+		GetLocalControlRigPosition_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigPosition_FunctionAddress, "ControlName");
+		GetLocalControlRigPosition_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigPosition_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigPosition_Frame_PropertyAddress, GetLocalControlRigPosition_FunctionAddress, "Frame");
+		GetLocalControlRigPosition_Frame_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigPosition_FunctionAddress, "Frame");
+		GetLocalControlRigPosition_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigPosition_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigPosition_TimeUnit_PropertyAddress, GetLocalControlRigPosition_FunctionAddress, "TimeUnit");
+		GetLocalControlRigPosition_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigPosition_FunctionAddress, "TimeUnit");
+		GetLocalControlRigPosition_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigPosition_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigPosition_ReturnValue_PropertyAddress, GetLocalControlRigPosition_FunctionAddress, "ReturnValue");
+		GetLocalControlRigPosition_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigPosition_FunctionAddress, "ReturnValue");
+		GetLocalControlRigPosition_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigPosition_FunctionAddress, "ReturnValue", Classes.FStructProperty);
+		GetLocalControlRigPosition_IsValid = GetLocalControlRigPosition_FunctionAddress != IntPtr.Zero && GetLocalControlRigPosition_LevelSequence_IsValid && GetLocalControlRigPosition_ControlRig_IsValid && GetLocalControlRigPosition_ControlName_IsValid && GetLocalControlRigPosition_Frame_IsValid && GetLocalControlRigPosition_TimeUnit_IsValid && GetLocalControlRigPosition_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigPosition", GetLocalControlRigPosition_IsValid);
+		GetLocalControlRigInts_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigInts");
+		GetLocalControlRigInts_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigInts_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigInts_LevelSequence_PropertyAddress, GetLocalControlRigInts_FunctionAddress, "LevelSequence");
+		GetLocalControlRigInts_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigInts_FunctionAddress, "LevelSequence");
+		GetLocalControlRigInts_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigInts_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigInts_ControlRig_PropertyAddress, GetLocalControlRigInts_FunctionAddress, "ControlRig");
+		GetLocalControlRigInts_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigInts_FunctionAddress, "ControlRig");
+		GetLocalControlRigInts_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigInts_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigInts_ControlName_PropertyAddress, GetLocalControlRigInts_FunctionAddress, "ControlName");
+		GetLocalControlRigInts_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigInts_FunctionAddress, "ControlName");
+		GetLocalControlRigInts_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigInts_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigInts_Frames_PropertyAddress, GetLocalControlRigInts_FunctionAddress, "Frames");
+		GetLocalControlRigInts_Frames_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigInts_FunctionAddress, "Frames");
+		GetLocalControlRigInts_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigInts_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigInts_TimeUnit_PropertyAddress, GetLocalControlRigInts_FunctionAddress, "TimeUnit");
+		GetLocalControlRigInts_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigInts_FunctionAddress, "TimeUnit");
+		GetLocalControlRigInts_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigInts_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigInts_ReturnValue_PropertyAddress, GetLocalControlRigInts_FunctionAddress, "ReturnValue");
+		GetLocalControlRigInts_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigInts_FunctionAddress, "ReturnValue");
+		GetLocalControlRigInts_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigInts_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetLocalControlRigInts_IsValid = GetLocalControlRigInts_FunctionAddress != IntPtr.Zero && GetLocalControlRigInts_LevelSequence_IsValid && GetLocalControlRigInts_ControlRig_IsValid && GetLocalControlRigInts_ControlName_IsValid && GetLocalControlRigInts_Frames_IsValid && GetLocalControlRigInts_TimeUnit_IsValid && GetLocalControlRigInts_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigInts", GetLocalControlRigInts_IsValid);
+		GetLocalControlRigInt_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigInt");
+		GetLocalControlRigInt_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigInt_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigInt_LevelSequence_PropertyAddress, GetLocalControlRigInt_FunctionAddress, "LevelSequence");
+		GetLocalControlRigInt_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigInt_FunctionAddress, "LevelSequence");
+		GetLocalControlRigInt_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigInt_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigInt_ControlRig_PropertyAddress, GetLocalControlRigInt_FunctionAddress, "ControlRig");
+		GetLocalControlRigInt_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigInt_FunctionAddress, "ControlRig");
+		GetLocalControlRigInt_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigInt_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigInt_ControlName_PropertyAddress, GetLocalControlRigInt_FunctionAddress, "ControlName");
+		GetLocalControlRigInt_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigInt_FunctionAddress, "ControlName");
+		GetLocalControlRigInt_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigInt_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigInt_Frame_PropertyAddress, GetLocalControlRigInt_FunctionAddress, "Frame");
+		GetLocalControlRigInt_Frame_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigInt_FunctionAddress, "Frame");
+		GetLocalControlRigInt_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigInt_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigInt_TimeUnit_PropertyAddress, GetLocalControlRigInt_FunctionAddress, "TimeUnit");
+		GetLocalControlRigInt_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigInt_FunctionAddress, "TimeUnit");
+		GetLocalControlRigInt_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigInt_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigInt_ReturnValue_PropertyAddress, GetLocalControlRigInt_FunctionAddress, "ReturnValue");
+		GetLocalControlRigInt_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigInt_FunctionAddress, "ReturnValue");
+		GetLocalControlRigInt_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigInt_FunctionAddress, "ReturnValue", Classes.FIntProperty);
+		GetLocalControlRigInt_IsValid = GetLocalControlRigInt_FunctionAddress != IntPtr.Zero && GetLocalControlRigInt_LevelSequence_IsValid && GetLocalControlRigInt_ControlRig_IsValid && GetLocalControlRigInt_ControlName_IsValid && GetLocalControlRigInt_Frame_IsValid && GetLocalControlRigInt_TimeUnit_IsValid && GetLocalControlRigInt_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigInt", GetLocalControlRigInt_IsValid);
+		GetLocalControlRigFloats_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigFloats");
+		GetLocalControlRigFloats_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigFloats_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigFloats_LevelSequence_PropertyAddress, GetLocalControlRigFloats_FunctionAddress, "LevelSequence");
+		GetLocalControlRigFloats_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigFloats_FunctionAddress, "LevelSequence");
+		GetLocalControlRigFloats_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigFloats_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigFloats_ControlRig_PropertyAddress, GetLocalControlRigFloats_FunctionAddress, "ControlRig");
+		GetLocalControlRigFloats_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigFloats_FunctionAddress, "ControlRig");
+		GetLocalControlRigFloats_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigFloats_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigFloats_ControlName_PropertyAddress, GetLocalControlRigFloats_FunctionAddress, "ControlName");
+		GetLocalControlRigFloats_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigFloats_FunctionAddress, "ControlName");
+		GetLocalControlRigFloats_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigFloats_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigFloats_Frames_PropertyAddress, GetLocalControlRigFloats_FunctionAddress, "Frames");
+		GetLocalControlRigFloats_Frames_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigFloats_FunctionAddress, "Frames");
+		GetLocalControlRigFloats_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigFloats_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigFloats_TimeUnit_PropertyAddress, GetLocalControlRigFloats_FunctionAddress, "TimeUnit");
+		GetLocalControlRigFloats_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigFloats_FunctionAddress, "TimeUnit");
+		GetLocalControlRigFloats_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigFloats_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigFloats_ReturnValue_PropertyAddress, GetLocalControlRigFloats_FunctionAddress, "ReturnValue");
+		GetLocalControlRigFloats_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigFloats_FunctionAddress, "ReturnValue");
+		GetLocalControlRigFloats_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigFloats_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetLocalControlRigFloats_IsValid = GetLocalControlRigFloats_FunctionAddress != IntPtr.Zero && GetLocalControlRigFloats_LevelSequence_IsValid && GetLocalControlRigFloats_ControlRig_IsValid && GetLocalControlRigFloats_ControlName_IsValid && GetLocalControlRigFloats_Frames_IsValid && GetLocalControlRigFloats_TimeUnit_IsValid && GetLocalControlRigFloats_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigFloats", GetLocalControlRigFloats_IsValid);
+		GetLocalControlRigFloat_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigFloat");
+		GetLocalControlRigFloat_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigFloat_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigFloat_LevelSequence_PropertyAddress, GetLocalControlRigFloat_FunctionAddress, "LevelSequence");
+		GetLocalControlRigFloat_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigFloat_FunctionAddress, "LevelSequence");
+		GetLocalControlRigFloat_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigFloat_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigFloat_ControlRig_PropertyAddress, GetLocalControlRigFloat_FunctionAddress, "ControlRig");
+		GetLocalControlRigFloat_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigFloat_FunctionAddress, "ControlRig");
+		GetLocalControlRigFloat_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigFloat_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigFloat_ControlName_PropertyAddress, GetLocalControlRigFloat_FunctionAddress, "ControlName");
+		GetLocalControlRigFloat_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigFloat_FunctionAddress, "ControlName");
+		GetLocalControlRigFloat_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigFloat_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigFloat_Frame_PropertyAddress, GetLocalControlRigFloat_FunctionAddress, "Frame");
+		GetLocalControlRigFloat_Frame_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigFloat_FunctionAddress, "Frame");
+		GetLocalControlRigFloat_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigFloat_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigFloat_TimeUnit_PropertyAddress, GetLocalControlRigFloat_FunctionAddress, "TimeUnit");
+		GetLocalControlRigFloat_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigFloat_FunctionAddress, "TimeUnit");
+		GetLocalControlRigFloat_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigFloat_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigFloat_ReturnValue_PropertyAddress, GetLocalControlRigFloat_FunctionAddress, "ReturnValue");
+		GetLocalControlRigFloat_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigFloat_FunctionAddress, "ReturnValue");
+		GetLocalControlRigFloat_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigFloat_FunctionAddress, "ReturnValue", Classes.FFloatProperty);
+		GetLocalControlRigFloat_IsValid = GetLocalControlRigFloat_FunctionAddress != IntPtr.Zero && GetLocalControlRigFloat_LevelSequence_IsValid && GetLocalControlRigFloat_ControlRig_IsValid && GetLocalControlRigFloat_ControlName_IsValid && GetLocalControlRigFloat_Frame_IsValid && GetLocalControlRigFloat_TimeUnit_IsValid && GetLocalControlRigFloat_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigFloat", GetLocalControlRigFloat_IsValid);
+		GetLocalControlRigEulerTransforms_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigEulerTransforms");
+		GetLocalControlRigEulerTransforms_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigEulerTransforms_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigEulerTransforms_LevelSequence_PropertyAddress, GetLocalControlRigEulerTransforms_FunctionAddress, "LevelSequence");
+		GetLocalControlRigEulerTransforms_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigEulerTransforms_FunctionAddress, "LevelSequence");
+		GetLocalControlRigEulerTransforms_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigEulerTransforms_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigEulerTransforms_ControlRig_PropertyAddress, GetLocalControlRigEulerTransforms_FunctionAddress, "ControlRig");
+		GetLocalControlRigEulerTransforms_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigEulerTransforms_FunctionAddress, "ControlRig");
+		GetLocalControlRigEulerTransforms_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigEulerTransforms_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigEulerTransforms_ControlName_PropertyAddress, GetLocalControlRigEulerTransforms_FunctionAddress, "ControlName");
+		GetLocalControlRigEulerTransforms_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigEulerTransforms_FunctionAddress, "ControlName");
+		GetLocalControlRigEulerTransforms_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigEulerTransforms_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigEulerTransforms_Frames_PropertyAddress, GetLocalControlRigEulerTransforms_FunctionAddress, "Frames");
+		GetLocalControlRigEulerTransforms_Frames_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigEulerTransforms_FunctionAddress, "Frames");
+		GetLocalControlRigEulerTransforms_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigEulerTransforms_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigEulerTransforms_TimeUnit_PropertyAddress, GetLocalControlRigEulerTransforms_FunctionAddress, "TimeUnit");
+		GetLocalControlRigEulerTransforms_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigEulerTransforms_FunctionAddress, "TimeUnit");
+		GetLocalControlRigEulerTransforms_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigEulerTransforms_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigEulerTransforms_ReturnValue_PropertyAddress, GetLocalControlRigEulerTransforms_FunctionAddress, "ReturnValue");
+		GetLocalControlRigEulerTransforms_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigEulerTransforms_FunctionAddress, "ReturnValue");
+		GetLocalControlRigEulerTransforms_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigEulerTransforms_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetLocalControlRigEulerTransforms_IsValid = GetLocalControlRigEulerTransforms_FunctionAddress != IntPtr.Zero && GetLocalControlRigEulerTransforms_LevelSequence_IsValid && GetLocalControlRigEulerTransforms_ControlRig_IsValid && GetLocalControlRigEulerTransforms_ControlName_IsValid && GetLocalControlRigEulerTransforms_Frames_IsValid && GetLocalControlRigEulerTransforms_TimeUnit_IsValid && GetLocalControlRigEulerTransforms_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigEulerTransforms", GetLocalControlRigEulerTransforms_IsValid);
+		GetLocalControlRigEulerTransform_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigEulerTransform");
+		GetLocalControlRigEulerTransform_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigEulerTransform_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigEulerTransform_LevelSequence_PropertyAddress, GetLocalControlRigEulerTransform_FunctionAddress, "LevelSequence");
+		GetLocalControlRigEulerTransform_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigEulerTransform_FunctionAddress, "LevelSequence");
+		GetLocalControlRigEulerTransform_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigEulerTransform_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigEulerTransform_ControlRig_PropertyAddress, GetLocalControlRigEulerTransform_FunctionAddress, "ControlRig");
+		GetLocalControlRigEulerTransform_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigEulerTransform_FunctionAddress, "ControlRig");
+		GetLocalControlRigEulerTransform_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigEulerTransform_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigEulerTransform_ControlName_PropertyAddress, GetLocalControlRigEulerTransform_FunctionAddress, "ControlName");
+		GetLocalControlRigEulerTransform_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigEulerTransform_FunctionAddress, "ControlName");
+		GetLocalControlRigEulerTransform_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigEulerTransform_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigEulerTransform_Frame_PropertyAddress, GetLocalControlRigEulerTransform_FunctionAddress, "Frame");
+		GetLocalControlRigEulerTransform_Frame_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigEulerTransform_FunctionAddress, "Frame");
+		GetLocalControlRigEulerTransform_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigEulerTransform_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigEulerTransform_TimeUnit_PropertyAddress, GetLocalControlRigEulerTransform_FunctionAddress, "TimeUnit");
+		GetLocalControlRigEulerTransform_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigEulerTransform_FunctionAddress, "TimeUnit");
+		GetLocalControlRigEulerTransform_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigEulerTransform_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigEulerTransform_ReturnValue_PropertyAddress, GetLocalControlRigEulerTransform_FunctionAddress, "ReturnValue");
+		GetLocalControlRigEulerTransform_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigEulerTransform_FunctionAddress, "ReturnValue");
+		GetLocalControlRigEulerTransform_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigEulerTransform_FunctionAddress, "ReturnValue", Classes.FStructProperty);
+		GetLocalControlRigEulerTransform_IsValid = GetLocalControlRigEulerTransform_FunctionAddress != IntPtr.Zero && GetLocalControlRigEulerTransform_LevelSequence_IsValid && GetLocalControlRigEulerTransform_ControlRig_IsValid && GetLocalControlRigEulerTransform_ControlName_IsValid && GetLocalControlRigEulerTransform_Frame_IsValid && GetLocalControlRigEulerTransform_TimeUnit_IsValid && GetLocalControlRigEulerTransform_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigEulerTransform", GetLocalControlRigEulerTransform_IsValid);
+		GetLocalControlRigBools_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigBools");
+		GetLocalControlRigBools_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigBools_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigBools_LevelSequence_PropertyAddress, GetLocalControlRigBools_FunctionAddress, "LevelSequence");
+		GetLocalControlRigBools_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigBools_FunctionAddress, "LevelSequence");
+		GetLocalControlRigBools_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigBools_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigBools_ControlRig_PropertyAddress, GetLocalControlRigBools_FunctionAddress, "ControlRig");
+		GetLocalControlRigBools_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigBools_FunctionAddress, "ControlRig");
+		GetLocalControlRigBools_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigBools_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigBools_ControlName_PropertyAddress, GetLocalControlRigBools_FunctionAddress, "ControlName");
+		GetLocalControlRigBools_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigBools_FunctionAddress, "ControlName");
+		GetLocalControlRigBools_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigBools_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigBools_Frames_PropertyAddress, GetLocalControlRigBools_FunctionAddress, "Frames");
+		GetLocalControlRigBools_Frames_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigBools_FunctionAddress, "Frames");
+		GetLocalControlRigBools_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigBools_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigBools_TimeUnit_PropertyAddress, GetLocalControlRigBools_FunctionAddress, "TimeUnit");
+		GetLocalControlRigBools_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigBools_FunctionAddress, "TimeUnit");
+		GetLocalControlRigBools_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigBools_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigBools_ReturnValue_PropertyAddress, GetLocalControlRigBools_FunctionAddress, "ReturnValue");
+		GetLocalControlRigBools_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigBools_FunctionAddress, "ReturnValue");
+		GetLocalControlRigBools_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigBools_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetLocalControlRigBools_IsValid = GetLocalControlRigBools_FunctionAddress != IntPtr.Zero && GetLocalControlRigBools_LevelSequence_IsValid && GetLocalControlRigBools_ControlRig_IsValid && GetLocalControlRigBools_ControlName_IsValid && GetLocalControlRigBools_Frames_IsValid && GetLocalControlRigBools_TimeUnit_IsValid && GetLocalControlRigBools_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigBools", GetLocalControlRigBools_IsValid);
+		GetLocalControlRigBool_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetLocalControlRigBool");
+		GetLocalControlRigBool_ParamsSize = NativeReflection.GetFunctionParamsSize(GetLocalControlRigBool_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigBool_LevelSequence_PropertyAddress, GetLocalControlRigBool_FunctionAddress, "LevelSequence");
+		GetLocalControlRigBool_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigBool_FunctionAddress, "LevelSequence");
+		GetLocalControlRigBool_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigBool_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigBool_ControlRig_PropertyAddress, GetLocalControlRigBool_FunctionAddress, "ControlRig");
+		GetLocalControlRigBool_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigBool_FunctionAddress, "ControlRig");
+		GetLocalControlRigBool_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigBool_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigBool_ControlName_PropertyAddress, GetLocalControlRigBool_FunctionAddress, "ControlName");
+		GetLocalControlRigBool_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigBool_FunctionAddress, "ControlName");
+		GetLocalControlRigBool_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigBool_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigBool_Frame_PropertyAddress, GetLocalControlRigBool_FunctionAddress, "Frame");
+		GetLocalControlRigBool_Frame_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigBool_FunctionAddress, "Frame");
+		GetLocalControlRigBool_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigBool_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigBool_TimeUnit_PropertyAddress, GetLocalControlRigBool_FunctionAddress, "TimeUnit");
+		GetLocalControlRigBool_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigBool_FunctionAddress, "TimeUnit");
+		GetLocalControlRigBool_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigBool_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetLocalControlRigBool_ReturnValue_PropertyAddress, GetLocalControlRigBool_FunctionAddress, "ReturnValue");
+		GetLocalControlRigBool_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetLocalControlRigBool_FunctionAddress, "ReturnValue");
+		GetLocalControlRigBool_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetLocalControlRigBool_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		GetLocalControlRigBool_IsValid = GetLocalControlRigBool_FunctionAddress != IntPtr.Zero && GetLocalControlRigBool_LevelSequence_IsValid && GetLocalControlRigBool_ControlRig_IsValid && GetLocalControlRigBool_ControlName_IsValid && GetLocalControlRigBool_Frame_IsValid && GetLocalControlRigBool_TimeUnit_IsValid && GetLocalControlRigBool_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetLocalControlRigBool", GetLocalControlRigBool_IsValid);
+		GetDefaultParentKey_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetDefaultParentKey");
+		GetDefaultParentKey_ParamsSize = NativeReflection.GetFunctionParamsSize(GetDefaultParentKey_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetDefaultParentKey_ReturnValue_PropertyAddress, GetDefaultParentKey_FunctionAddress, "ReturnValue");
+		GetDefaultParentKey_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetDefaultParentKey_FunctionAddress, "ReturnValue");
+		GetDefaultParentKey_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetDefaultParentKey_FunctionAddress, "ReturnValue", Classes.FStructProperty);
+		GetDefaultParentKey_IsValid = GetDefaultParentKey_FunctionAddress != IntPtr.Zero && GetDefaultParentKey_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetDefaultParentKey", GetDefaultParentKey_IsValid);
+		GetControlRigWorldTransforms_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetControlRigWorldTransforms");
+		GetControlRigWorldTransforms_ParamsSize = NativeReflection.GetFunctionParamsSize(GetControlRigWorldTransforms_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetControlRigWorldTransforms_LevelSequence_PropertyAddress, GetControlRigWorldTransforms_FunctionAddress, "LevelSequence");
+		GetControlRigWorldTransforms_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetControlRigWorldTransforms_FunctionAddress, "LevelSequence");
+		GetControlRigWorldTransforms_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetControlRigWorldTransforms_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetControlRigWorldTransforms_ControlRig_PropertyAddress, GetControlRigWorldTransforms_FunctionAddress, "ControlRig");
+		GetControlRigWorldTransforms_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetControlRigWorldTransforms_FunctionAddress, "ControlRig");
+		GetControlRigWorldTransforms_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetControlRigWorldTransforms_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetControlRigWorldTransforms_ControlName_PropertyAddress, GetControlRigWorldTransforms_FunctionAddress, "ControlName");
+		GetControlRigWorldTransforms_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetControlRigWorldTransforms_FunctionAddress, "ControlName");
+		GetControlRigWorldTransforms_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetControlRigWorldTransforms_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetControlRigWorldTransforms_Frames_PropertyAddress, GetControlRigWorldTransforms_FunctionAddress, "Frames");
+		GetControlRigWorldTransforms_Frames_Offset = NativeReflectionCached.GetPropertyOffset(GetControlRigWorldTransforms_FunctionAddress, "Frames");
+		GetControlRigWorldTransforms_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetControlRigWorldTransforms_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetControlRigWorldTransforms_TimeUnit_PropertyAddress, GetControlRigWorldTransforms_FunctionAddress, "TimeUnit");
+		GetControlRigWorldTransforms_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetControlRigWorldTransforms_FunctionAddress, "TimeUnit");
+		GetControlRigWorldTransforms_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetControlRigWorldTransforms_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetControlRigWorldTransforms_ReturnValue_PropertyAddress, GetControlRigWorldTransforms_FunctionAddress, "ReturnValue");
+		GetControlRigWorldTransforms_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetControlRigWorldTransforms_FunctionAddress, "ReturnValue");
+		GetControlRigWorldTransforms_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetControlRigWorldTransforms_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetControlRigWorldTransforms_IsValid = GetControlRigWorldTransforms_FunctionAddress != IntPtr.Zero && GetControlRigWorldTransforms_LevelSequence_IsValid && GetControlRigWorldTransforms_ControlRig_IsValid && GetControlRigWorldTransforms_ControlName_IsValid && GetControlRigWorldTransforms_Frames_IsValid && GetControlRigWorldTransforms_TimeUnit_IsValid && GetControlRigWorldTransforms_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetControlRigWorldTransforms", GetControlRigWorldTransforms_IsValid);
+		GetControlRigWorldTransform_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetControlRigWorldTransform");
+		GetControlRigWorldTransform_ParamsSize = NativeReflection.GetFunctionParamsSize(GetControlRigWorldTransform_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetControlRigWorldTransform_LevelSequence_PropertyAddress, GetControlRigWorldTransform_FunctionAddress, "LevelSequence");
+		GetControlRigWorldTransform_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetControlRigWorldTransform_FunctionAddress, "LevelSequence");
+		GetControlRigWorldTransform_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetControlRigWorldTransform_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetControlRigWorldTransform_ControlRig_PropertyAddress, GetControlRigWorldTransform_FunctionAddress, "ControlRig");
+		GetControlRigWorldTransform_ControlRig_Offset = NativeReflectionCached.GetPropertyOffset(GetControlRigWorldTransform_FunctionAddress, "ControlRig");
+		GetControlRigWorldTransform_ControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(GetControlRigWorldTransform_FunctionAddress, "ControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetControlRigWorldTransform_ControlName_PropertyAddress, GetControlRigWorldTransform_FunctionAddress, "ControlName");
+		GetControlRigWorldTransform_ControlName_Offset = NativeReflectionCached.GetPropertyOffset(GetControlRigWorldTransform_FunctionAddress, "ControlName");
+		GetControlRigWorldTransform_ControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(GetControlRigWorldTransform_FunctionAddress, "ControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetControlRigWorldTransform_Frame_PropertyAddress, GetControlRigWorldTransform_FunctionAddress, "Frame");
+		GetControlRigWorldTransform_Frame_Offset = NativeReflectionCached.GetPropertyOffset(GetControlRigWorldTransform_FunctionAddress, "Frame");
+		GetControlRigWorldTransform_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(GetControlRigWorldTransform_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetControlRigWorldTransform_TimeUnit_PropertyAddress, GetControlRigWorldTransform_FunctionAddress, "TimeUnit");
+		GetControlRigWorldTransform_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetControlRigWorldTransform_FunctionAddress, "TimeUnit");
+		GetControlRigWorldTransform_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetControlRigWorldTransform_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetControlRigWorldTransform_ReturnValue_PropertyAddress, GetControlRigWorldTransform_FunctionAddress, "ReturnValue");
+		GetControlRigWorldTransform_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetControlRigWorldTransform_FunctionAddress, "ReturnValue");
+		GetControlRigWorldTransform_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetControlRigWorldTransform_FunctionAddress, "ReturnValue", Classes.FStructProperty);
+		GetControlRigWorldTransform_IsValid = GetControlRigWorldTransform_FunctionAddress != IntPtr.Zero && GetControlRigWorldTransform_LevelSequence_IsValid && GetControlRigWorldTransform_ControlRig_IsValid && GetControlRigWorldTransform_ControlName_IsValid && GetControlRigWorldTransform_Frame_IsValid && GetControlRigWorldTransform_TimeUnit_IsValid && GetControlRigWorldTransform_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetControlRigWorldTransform", GetControlRigWorldTransform_IsValid);
+		GetControlRigs_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetControlRigs");
+		GetControlRigs_ParamsSize = NativeReflection.GetFunctionParamsSize(GetControlRigs_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetControlRigs_LevelSequence_PropertyAddress, GetControlRigs_FunctionAddress, "LevelSequence");
+		GetControlRigs_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetControlRigs_FunctionAddress, "LevelSequence");
+		GetControlRigs_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetControlRigs_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetControlRigs_ReturnValue_PropertyAddress, GetControlRigs_FunctionAddress, "ReturnValue");
+		GetControlRigs_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetControlRigs_FunctionAddress, "ReturnValue");
+		GetControlRigs_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetControlRigs_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetControlRigs_IsValid = GetControlRigs_FunctionAddress != IntPtr.Zero && GetControlRigs_LevelSequence_IsValid && GetControlRigs_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetControlRigs", GetControlRigs_IsValid);
+		GetActorWorldTransforms_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetActorWorldTransforms");
+		GetActorWorldTransforms_ParamsSize = NativeReflection.GetFunctionParamsSize(GetActorWorldTransforms_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetActorWorldTransforms_LevelSequence_PropertyAddress, GetActorWorldTransforms_FunctionAddress, "LevelSequence");
+		GetActorWorldTransforms_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetActorWorldTransforms_FunctionAddress, "LevelSequence");
+		GetActorWorldTransforms_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetActorWorldTransforms_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetActorWorldTransforms_Actor_PropertyAddress, GetActorWorldTransforms_FunctionAddress, "Actor");
+		GetActorWorldTransforms_Actor_Offset = NativeReflectionCached.GetPropertyOffset(GetActorWorldTransforms_FunctionAddress, "Actor");
+		GetActorWorldTransforms_Actor_IsValid = NativeReflectionCached.ValidatePropertyClass(GetActorWorldTransforms_FunctionAddress, "Actor", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetActorWorldTransforms_Frames_PropertyAddress, GetActorWorldTransforms_FunctionAddress, "Frames");
+		GetActorWorldTransforms_Frames_Offset = NativeReflectionCached.GetPropertyOffset(GetActorWorldTransforms_FunctionAddress, "Frames");
+		GetActorWorldTransforms_Frames_IsValid = NativeReflectionCached.ValidatePropertyClass(GetActorWorldTransforms_FunctionAddress, "Frames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetActorWorldTransforms_TimeUnit_PropertyAddress, GetActorWorldTransforms_FunctionAddress, "TimeUnit");
+		GetActorWorldTransforms_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetActorWorldTransforms_FunctionAddress, "TimeUnit");
+		GetActorWorldTransforms_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetActorWorldTransforms_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetActorWorldTransforms_ReturnValue_PropertyAddress, GetActorWorldTransforms_FunctionAddress, "ReturnValue");
+		GetActorWorldTransforms_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetActorWorldTransforms_FunctionAddress, "ReturnValue");
+		GetActorWorldTransforms_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetActorWorldTransforms_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		GetActorWorldTransforms_IsValid = GetActorWorldTransforms_FunctionAddress != IntPtr.Zero && GetActorWorldTransforms_LevelSequence_IsValid && GetActorWorldTransforms_Actor_IsValid && GetActorWorldTransforms_Frames_IsValid && GetActorWorldTransforms_TimeUnit_IsValid && GetActorWorldTransforms_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetActorWorldTransforms", GetActorWorldTransforms_IsValid);
+		GetActorWorldTransform_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "GetActorWorldTransform");
+		GetActorWorldTransform_ParamsSize = NativeReflection.GetFunctionParamsSize(GetActorWorldTransform_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref GetActorWorldTransform_LevelSequence_PropertyAddress, GetActorWorldTransform_FunctionAddress, "LevelSequence");
+		GetActorWorldTransform_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(GetActorWorldTransform_FunctionAddress, "LevelSequence");
+		GetActorWorldTransform_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(GetActorWorldTransform_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetActorWorldTransform_Actor_PropertyAddress, GetActorWorldTransform_FunctionAddress, "Actor");
+		GetActorWorldTransform_Actor_Offset = NativeReflectionCached.GetPropertyOffset(GetActorWorldTransform_FunctionAddress, "Actor");
+		GetActorWorldTransform_Actor_IsValid = NativeReflectionCached.ValidatePropertyClass(GetActorWorldTransform_FunctionAddress, "Actor", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetActorWorldTransform_Frame_PropertyAddress, GetActorWorldTransform_FunctionAddress, "Frame");
+		GetActorWorldTransform_Frame_Offset = NativeReflectionCached.GetPropertyOffset(GetActorWorldTransform_FunctionAddress, "Frame");
+		GetActorWorldTransform_Frame_IsValid = NativeReflectionCached.ValidatePropertyClass(GetActorWorldTransform_FunctionAddress, "Frame", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetActorWorldTransform_TimeUnit_PropertyAddress, GetActorWorldTransform_FunctionAddress, "TimeUnit");
+		GetActorWorldTransform_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(GetActorWorldTransform_FunctionAddress, "TimeUnit");
+		GetActorWorldTransform_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(GetActorWorldTransform_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref GetActorWorldTransform_ReturnValue_PropertyAddress, GetActorWorldTransform_FunctionAddress, "ReturnValue");
+		GetActorWorldTransform_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(GetActorWorldTransform_FunctionAddress, "ReturnValue");
+		GetActorWorldTransform_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(GetActorWorldTransform_FunctionAddress, "ReturnValue", Classes.FStructProperty);
+		GetActorWorldTransform_IsValid = GetActorWorldTransform_FunctionAddress != IntPtr.Zero && GetActorWorldTransform_LevelSequence_IsValid && GetActorWorldTransform_Actor_IsValid && GetActorWorldTransform_Frame_IsValid && GetActorWorldTransform_TimeUnit_IsValid && GetActorWorldTransform_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:GetActorWorldTransform", GetActorWorldTransform_IsValid);
+		FindOrCreateControlRigTrack_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "FindOrCreateControlRigTrack");
+		FindOrCreateControlRigTrack_ParamsSize = NativeReflection.GetFunctionParamsSize(FindOrCreateControlRigTrack_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref FindOrCreateControlRigTrack_World_PropertyAddress, FindOrCreateControlRigTrack_FunctionAddress, "World");
+		FindOrCreateControlRigTrack_World_Offset = NativeReflectionCached.GetPropertyOffset(FindOrCreateControlRigTrack_FunctionAddress, "World");
+		FindOrCreateControlRigTrack_World_IsValid = NativeReflectionCached.ValidatePropertyClass(FindOrCreateControlRigTrack_FunctionAddress, "World", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref FindOrCreateControlRigTrack_LevelSequence_PropertyAddress, FindOrCreateControlRigTrack_FunctionAddress, "LevelSequence");
+		FindOrCreateControlRigTrack_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(FindOrCreateControlRigTrack_FunctionAddress, "LevelSequence");
+		FindOrCreateControlRigTrack_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(FindOrCreateControlRigTrack_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref FindOrCreateControlRigTrack_ControlRigClass_PropertyAddress, FindOrCreateControlRigTrack_FunctionAddress, "ControlRigClass");
+		FindOrCreateControlRigTrack_ControlRigClass_Offset = NativeReflectionCached.GetPropertyOffset(FindOrCreateControlRigTrack_FunctionAddress, "ControlRigClass");
+		FindOrCreateControlRigTrack_ControlRigClass_IsValid = NativeReflectionCached.ValidatePropertyClass(FindOrCreateControlRigTrack_FunctionAddress, "ControlRigClass", Classes.FClassProperty);
+		NativeReflectionCached.GetPropertyRef(ref FindOrCreateControlRigTrack_InBinding_PropertyAddress, FindOrCreateControlRigTrack_FunctionAddress, "InBinding");
+		FindOrCreateControlRigTrack_InBinding_Offset = NativeReflectionCached.GetPropertyOffset(FindOrCreateControlRigTrack_FunctionAddress, "InBinding");
+		FindOrCreateControlRigTrack_InBinding_IsValid = NativeReflectionCached.ValidatePropertyClass(FindOrCreateControlRigTrack_FunctionAddress, "InBinding", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref FindOrCreateControlRigTrack_ReturnValue_PropertyAddress, FindOrCreateControlRigTrack_FunctionAddress, "ReturnValue");
+		FindOrCreateControlRigTrack_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(FindOrCreateControlRigTrack_FunctionAddress, "ReturnValue");
+		FindOrCreateControlRigTrack_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(FindOrCreateControlRigTrack_FunctionAddress, "ReturnValue", Classes.FObjectProperty);
+		FindOrCreateControlRigTrack_IsValid = FindOrCreateControlRigTrack_FunctionAddress != IntPtr.Zero && FindOrCreateControlRigTrack_World_IsValid && FindOrCreateControlRigTrack_LevelSequence_IsValid && FindOrCreateControlRigTrack_ControlRigClass_IsValid && FindOrCreateControlRigTrack_InBinding_IsValid && FindOrCreateControlRigTrack_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:FindOrCreateControlRigTrack", FindOrCreateControlRigTrack_IsValid);
+		FindOrCreateControlRigComponentTrack_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "FindOrCreateControlRigComponentTrack");
+		FindOrCreateControlRigComponentTrack_ParamsSize = NativeReflection.GetFunctionParamsSize(FindOrCreateControlRigComponentTrack_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref FindOrCreateControlRigComponentTrack_World_PropertyAddress, FindOrCreateControlRigComponentTrack_FunctionAddress, "World");
+		FindOrCreateControlRigComponentTrack_World_Offset = NativeReflectionCached.GetPropertyOffset(FindOrCreateControlRigComponentTrack_FunctionAddress, "World");
+		FindOrCreateControlRigComponentTrack_World_IsValid = NativeReflectionCached.ValidatePropertyClass(FindOrCreateControlRigComponentTrack_FunctionAddress, "World", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref FindOrCreateControlRigComponentTrack_LevelSequence_PropertyAddress, FindOrCreateControlRigComponentTrack_FunctionAddress, "LevelSequence");
+		FindOrCreateControlRigComponentTrack_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(FindOrCreateControlRigComponentTrack_FunctionAddress, "LevelSequence");
+		FindOrCreateControlRigComponentTrack_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(FindOrCreateControlRigComponentTrack_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref FindOrCreateControlRigComponentTrack_InBinding_PropertyAddress, FindOrCreateControlRigComponentTrack_FunctionAddress, "InBinding");
+		FindOrCreateControlRigComponentTrack_InBinding_Offset = NativeReflectionCached.GetPropertyOffset(FindOrCreateControlRigComponentTrack_FunctionAddress, "InBinding");
+		FindOrCreateControlRigComponentTrack_InBinding_IsValid = NativeReflectionCached.ValidatePropertyClass(FindOrCreateControlRigComponentTrack_FunctionAddress, "InBinding", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref FindOrCreateControlRigComponentTrack_ReturnValue_PropertyAddress, FindOrCreateControlRigComponentTrack_FunctionAddress, "ReturnValue");
+		FindOrCreateControlRigComponentTrack_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(FindOrCreateControlRigComponentTrack_FunctionAddress, "ReturnValue");
+		FindOrCreateControlRigComponentTrack_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(FindOrCreateControlRigComponentTrack_FunctionAddress, "ReturnValue", Classes.FArrayProperty);
+		FindOrCreateControlRigComponentTrack_IsValid = FindOrCreateControlRigComponentTrack_FunctionAddress != IntPtr.Zero && FindOrCreateControlRigComponentTrack_World_IsValid && FindOrCreateControlRigComponentTrack_LevelSequence_IsValid && FindOrCreateControlRigComponentTrack_InBinding_IsValid && FindOrCreateControlRigComponentTrack_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:FindOrCreateControlRigComponentTrack", FindOrCreateControlRigComponentTrack_IsValid);
+		DeleteControlRigSpace_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "DeleteControlRigSpace");
+		DeleteControlRigSpace_ParamsSize = NativeReflection.GetFunctionParamsSize(DeleteControlRigSpace_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref DeleteControlRigSpace_InSequence_PropertyAddress, DeleteControlRigSpace_FunctionAddress, "InSequence");
+		DeleteControlRigSpace_InSequence_Offset = NativeReflectionCached.GetPropertyOffset(DeleteControlRigSpace_FunctionAddress, "InSequence");
+		DeleteControlRigSpace_InSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(DeleteControlRigSpace_FunctionAddress, "InSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref DeleteControlRigSpace_InControlRig_PropertyAddress, DeleteControlRigSpace_FunctionAddress, "InControlRig");
+		DeleteControlRigSpace_InControlRig_Offset = NativeReflectionCached.GetPropertyOffset(DeleteControlRigSpace_FunctionAddress, "InControlRig");
+		DeleteControlRigSpace_InControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(DeleteControlRigSpace_FunctionAddress, "InControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref DeleteControlRigSpace_InControlName_PropertyAddress, DeleteControlRigSpace_FunctionAddress, "InControlName");
+		DeleteControlRigSpace_InControlName_Offset = NativeReflectionCached.GetPropertyOffset(DeleteControlRigSpace_FunctionAddress, "InControlName");
+		DeleteControlRigSpace_InControlName_IsValid = NativeReflectionCached.ValidatePropertyClass(DeleteControlRigSpace_FunctionAddress, "InControlName", Classes.FNameProperty);
+		NativeReflectionCached.GetPropertyRef(ref DeleteControlRigSpace_InTime_PropertyAddress, DeleteControlRigSpace_FunctionAddress, "InTime");
+		DeleteControlRigSpace_InTime_Offset = NativeReflectionCached.GetPropertyOffset(DeleteControlRigSpace_FunctionAddress, "InTime");
+		DeleteControlRigSpace_InTime_IsValid = NativeReflectionCached.ValidatePropertyClass(DeleteControlRigSpace_FunctionAddress, "InTime", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref DeleteControlRigSpace_TimeUnit_PropertyAddress, DeleteControlRigSpace_FunctionAddress, "TimeUnit");
+		DeleteControlRigSpace_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(DeleteControlRigSpace_FunctionAddress, "TimeUnit");
+		DeleteControlRigSpace_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(DeleteControlRigSpace_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref DeleteControlRigSpace_ReturnValue_PropertyAddress, DeleteControlRigSpace_FunctionAddress, "ReturnValue");
+		DeleteControlRigSpace_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(DeleteControlRigSpace_FunctionAddress, "ReturnValue");
+		DeleteControlRigSpace_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(DeleteControlRigSpace_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		DeleteControlRigSpace_IsValid = DeleteControlRigSpace_FunctionAddress != IntPtr.Zero && DeleteControlRigSpace_InSequence_IsValid && DeleteControlRigSpace_InControlRig_IsValid && DeleteControlRigSpace_InControlName_IsValid && DeleteControlRigSpace_InTime_IsValid && DeleteControlRigSpace_TimeUnit_IsValid && DeleteControlRigSpace_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:DeleteControlRigSpace", DeleteControlRigSpace_IsValid);
+		CollapseControlRigAnimLayers_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "CollapseControlRigAnimLayers");
+		CollapseControlRigAnimLayers_ParamsSize = NativeReflection.GetFunctionParamsSize(CollapseControlRigAnimLayers_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref CollapseControlRigAnimLayers_InSequence_PropertyAddress, CollapseControlRigAnimLayers_FunctionAddress, "InSequence");
+		CollapseControlRigAnimLayers_InSequence_Offset = NativeReflectionCached.GetPropertyOffset(CollapseControlRigAnimLayers_FunctionAddress, "InSequence");
+		CollapseControlRigAnimLayers_InSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(CollapseControlRigAnimLayers_FunctionAddress, "InSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CollapseControlRigAnimLayers_InTrack_PropertyAddress, CollapseControlRigAnimLayers_FunctionAddress, "InTrack");
+		CollapseControlRigAnimLayers_InTrack_Offset = NativeReflectionCached.GetPropertyOffset(CollapseControlRigAnimLayers_FunctionAddress, "InTrack");
+		CollapseControlRigAnimLayers_InTrack_IsValid = NativeReflectionCached.ValidatePropertyClass(CollapseControlRigAnimLayers_FunctionAddress, "InTrack", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref CollapseControlRigAnimLayers_bKeyReduce_PropertyAddress, CollapseControlRigAnimLayers_FunctionAddress, "bKeyReduce");
+		CollapseControlRigAnimLayers_bKeyReduce_Offset = NativeReflectionCached.GetPropertyOffset(CollapseControlRigAnimLayers_FunctionAddress, "bKeyReduce");
+		CollapseControlRigAnimLayers_bKeyReduce_IsValid = NativeReflectionCached.ValidatePropertyClass(CollapseControlRigAnimLayers_FunctionAddress, "bKeyReduce", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref CollapseControlRigAnimLayers_Tolerance_PropertyAddress, CollapseControlRigAnimLayers_FunctionAddress, "Tolerance");
+		CollapseControlRigAnimLayers_Tolerance_Offset = NativeReflectionCached.GetPropertyOffset(CollapseControlRigAnimLayers_FunctionAddress, "Tolerance");
+		CollapseControlRigAnimLayers_Tolerance_IsValid = NativeReflectionCached.ValidatePropertyClass(CollapseControlRigAnimLayers_FunctionAddress, "Tolerance", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref CollapseControlRigAnimLayers_ReturnValue_PropertyAddress, CollapseControlRigAnimLayers_FunctionAddress, "ReturnValue");
+		CollapseControlRigAnimLayers_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(CollapseControlRigAnimLayers_FunctionAddress, "ReturnValue");
+		CollapseControlRigAnimLayers_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(CollapseControlRigAnimLayers_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		CollapseControlRigAnimLayers_IsValid = CollapseControlRigAnimLayers_FunctionAddress != IntPtr.Zero && CollapseControlRigAnimLayers_InSequence_IsValid && CollapseControlRigAnimLayers_InTrack_IsValid && CollapseControlRigAnimLayers_bKeyReduce_IsValid && CollapseControlRigAnimLayers_Tolerance_IsValid && CollapseControlRigAnimLayers_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:CollapseControlRigAnimLayers", CollapseControlRigAnimLayers_IsValid);
+		BakeToControlRig_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BakeToControlRig");
+		BakeToControlRig_ParamsSize = NativeReflection.GetFunctionParamsSize(BakeToControlRig_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BakeToControlRig_World_PropertyAddress, BakeToControlRig_FunctionAddress, "World");
+		BakeToControlRig_World_Offset = NativeReflectionCached.GetPropertyOffset(BakeToControlRig_FunctionAddress, "World");
+		BakeToControlRig_World_IsValid = NativeReflectionCached.ValidatePropertyClass(BakeToControlRig_FunctionAddress, "World", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BakeToControlRig_LevelSequence_PropertyAddress, BakeToControlRig_FunctionAddress, "LevelSequence");
+		BakeToControlRig_LevelSequence_Offset = NativeReflectionCached.GetPropertyOffset(BakeToControlRig_FunctionAddress, "LevelSequence");
+		BakeToControlRig_LevelSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(BakeToControlRig_FunctionAddress, "LevelSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BakeToControlRig_ControlRigClass_PropertyAddress, BakeToControlRig_FunctionAddress, "ControlRigClass");
+		BakeToControlRig_ControlRigClass_Offset = NativeReflectionCached.GetPropertyOffset(BakeToControlRig_FunctionAddress, "ControlRigClass");
+		BakeToControlRig_ControlRigClass_IsValid = NativeReflectionCached.ValidatePropertyClass(BakeToControlRig_FunctionAddress, "ControlRigClass", Classes.FClassProperty);
+		NativeReflectionCached.GetPropertyRef(ref BakeToControlRig_ExportOptions_PropertyAddress, BakeToControlRig_FunctionAddress, "ExportOptions");
+		BakeToControlRig_ExportOptions_Offset = NativeReflectionCached.GetPropertyOffset(BakeToControlRig_FunctionAddress, "ExportOptions");
+		BakeToControlRig_ExportOptions_IsValid = NativeReflectionCached.ValidatePropertyClass(BakeToControlRig_FunctionAddress, "ExportOptions", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BakeToControlRig_bReduceKeys_PropertyAddress, BakeToControlRig_FunctionAddress, "bReduceKeys");
+		BakeToControlRig_bReduceKeys_Offset = NativeReflectionCached.GetPropertyOffset(BakeToControlRig_FunctionAddress, "bReduceKeys");
+		BakeToControlRig_bReduceKeys_IsValid = NativeReflectionCached.ValidatePropertyClass(BakeToControlRig_FunctionAddress, "bReduceKeys", Classes.FBoolProperty);
+		NativeReflectionCached.GetPropertyRef(ref BakeToControlRig_Tolerance_PropertyAddress, BakeToControlRig_FunctionAddress, "Tolerance");
+		BakeToControlRig_Tolerance_Offset = NativeReflectionCached.GetPropertyOffset(BakeToControlRig_FunctionAddress, "Tolerance");
+		BakeToControlRig_Tolerance_IsValid = NativeReflectionCached.ValidatePropertyClass(BakeToControlRig_FunctionAddress, "Tolerance", Classes.FFloatProperty);
+		NativeReflectionCached.GetPropertyRef(ref BakeToControlRig_Binding_PropertyAddress, BakeToControlRig_FunctionAddress, "Binding");
+		BakeToControlRig_Binding_Offset = NativeReflectionCached.GetPropertyOffset(BakeToControlRig_FunctionAddress, "Binding");
+		BakeToControlRig_Binding_IsValid = NativeReflectionCached.ValidatePropertyClass(BakeToControlRig_FunctionAddress, "Binding", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BakeToControlRig_ReturnValue_PropertyAddress, BakeToControlRig_FunctionAddress, "ReturnValue");
+		BakeToControlRig_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(BakeToControlRig_FunctionAddress, "ReturnValue");
+		BakeToControlRig_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(BakeToControlRig_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		BakeToControlRig_IsValid = BakeToControlRig_FunctionAddress != IntPtr.Zero && BakeToControlRig_World_IsValid && BakeToControlRig_LevelSequence_IsValid && BakeToControlRig_ControlRigClass_IsValid && BakeToControlRig_ExportOptions_IsValid && BakeToControlRig_bReduceKeys_IsValid && BakeToControlRig_Tolerance_IsValid && BakeToControlRig_Binding_IsValid && BakeToControlRig_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:BakeToControlRig", BakeToControlRig_IsValid);
+		BakeControlRigSpace_FunctionAddress = NativeReflectionCached.GetFunction(classAddress, "BakeControlRigSpace");
+		BakeControlRigSpace_ParamsSize = NativeReflection.GetFunctionParamsSize(BakeControlRigSpace_FunctionAddress);
+		NativeReflectionCached.GetPropertyRef(ref BakeControlRigSpace_InSequence_PropertyAddress, BakeControlRigSpace_FunctionAddress, "InSequence");
+		BakeControlRigSpace_InSequence_Offset = NativeReflectionCached.GetPropertyOffset(BakeControlRigSpace_FunctionAddress, "InSequence");
+		BakeControlRigSpace_InSequence_IsValid = NativeReflectionCached.ValidatePropertyClass(BakeControlRigSpace_FunctionAddress, "InSequence", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BakeControlRigSpace_InControlRig_PropertyAddress, BakeControlRigSpace_FunctionAddress, "InControlRig");
+		BakeControlRigSpace_InControlRig_Offset = NativeReflectionCached.GetPropertyOffset(BakeControlRigSpace_FunctionAddress, "InControlRig");
+		BakeControlRigSpace_InControlRig_IsValid = NativeReflectionCached.ValidatePropertyClass(BakeControlRigSpace_FunctionAddress, "InControlRig", Classes.FObjectProperty);
+		NativeReflectionCached.GetPropertyRef(ref BakeControlRigSpace_InControlNames_PropertyAddress, BakeControlRigSpace_FunctionAddress, "InControlNames");
+		BakeControlRigSpace_InControlNames_Offset = NativeReflectionCached.GetPropertyOffset(BakeControlRigSpace_FunctionAddress, "InControlNames");
+		BakeControlRigSpace_InControlNames_IsValid = NativeReflectionCached.ValidatePropertyClass(BakeControlRigSpace_FunctionAddress, "InControlNames", Classes.FArrayProperty);
+		NativeReflectionCached.GetPropertyRef(ref BakeControlRigSpace_InSettings_PropertyAddress, BakeControlRigSpace_FunctionAddress, "InSettings");
+		BakeControlRigSpace_InSettings_Offset = NativeReflectionCached.GetPropertyOffset(BakeControlRigSpace_FunctionAddress, "InSettings");
+		BakeControlRigSpace_InSettings_IsValid = NativeReflectionCached.ValidatePropertyClass(BakeControlRigSpace_FunctionAddress, "InSettings", Classes.FStructProperty);
+		NativeReflectionCached.GetPropertyRef(ref BakeControlRigSpace_TimeUnit_PropertyAddress, BakeControlRigSpace_FunctionAddress, "TimeUnit");
+		BakeControlRigSpace_TimeUnit_Offset = NativeReflectionCached.GetPropertyOffset(BakeControlRigSpace_FunctionAddress, "TimeUnit");
+		BakeControlRigSpace_TimeUnit_IsValid = NativeReflectionCached.ValidatePropertyClass(BakeControlRigSpace_FunctionAddress, "TimeUnit", Classes.FEnumProperty);
+		NativeReflectionCached.GetPropertyRef(ref BakeControlRigSpace_ReturnValue_PropertyAddress, BakeControlRigSpace_FunctionAddress, "ReturnValue");
+		BakeControlRigSpace_ReturnValue_Offset = NativeReflectionCached.GetPropertyOffset(BakeControlRigSpace_FunctionAddress, "ReturnValue");
+		BakeControlRigSpace_ReturnValue_IsValid = NativeReflectionCached.ValidatePropertyClass(BakeControlRigSpace_FunctionAddress, "ReturnValue", Classes.FBoolProperty);
+		BakeControlRigSpace_IsValid = BakeControlRigSpace_FunctionAddress != IntPtr.Zero && BakeControlRigSpace_InSequence_IsValid && BakeControlRigSpace_InControlRig_IsValid && BakeControlRigSpace_InControlNames_IsValid && BakeControlRigSpace_InSettings_IsValid && BakeControlRigSpace_TimeUnit_IsValid && BakeControlRigSpace_ReturnValue_IsValid;
+		NativeReflection.LogFunctionIsValid("/Script/ControlRigEditor.ControlRigSequencerEditorLibrary:BakeControlRigSpace", BakeControlRigSpace_IsValid);
+	}
+}
