@@ -27,7 +27,7 @@
       "CanBreak": false,
       "Name": "AM_mgd_jsds_atk_jdy_05突进飞到敌人跟前连续重击",
       "Description": "",
-      "Key": "S+LBUTTON"
+      "Key": ""
     },
     {
       "Id": 1001207,
@@ -52,6 +52,12 @@
       "Name": "突进上去砸",
       "Key": "S+XBUTTON2",
       "CanBreak": false
+    },
+    {
+      "Id": 1001228,
+      "CanBreak": true,
+      "Name": "顺时针横扫一下",
+      "Key": ""
     },
     {
       "Id": 50007,
@@ -121,11 +127,9 @@
       "Key": "XBUTTON2"
     },
     {
-      "Id": 10712,
+      "Id": 1001241,
       "CanBreak": true,
-      "Name": "平A带激光，秒远程小怪",
-      "Key": "A+X",
-      "Buffs": [1000121, 1000253]
+      "Key": "A+X"
     },
     {
       "Id": 10992,
@@ -146,19 +150,7 @@
       "Key": "",
       "CanBreak": false
     },
-    {
-      "Id": 1001203,
-      "Name": "测试技能",
-      "Key": "NUMPAD0",
-      "CanBreak": false
-    },
-    {
-      "Id": 1001202,
-      "CanBreak": true,
-      "Name": "大圣Q5",
-      "Description": "",
-      "Key": "NUMPAD4"
-    },
+
     {
       "Id": 50015,
       "CanBreak": true,
@@ -166,12 +158,7 @@
       "Description": "",
       "Key": ""
     },
-    {
-      "Id": 1001228,
-      "CanBreak": true,
-      "Name": "Q4",
-      "Key": "NUMPAD1"
-    },
+
     {
       "Id": 50012,
       "CanBreak": true,
@@ -193,35 +180,55 @@
       "Step": 4,
       "Key": ""
     },
+
     {
-      "Id": 50015,
+      "Id": 1001221,
+      "Name": "残躯江海翻",
+      "Key": "NUMPAD0",
+      "CanBreak": false
+    },
+    {
+      "Id": 1001222,
       "CanBreak": true,
-      "Name": "大圣Q1",
-      "Step": 5,
+      "Name": "前冲转身两圈横扫",
       "Key": "NUMPAD1"
     },
     {
-      "Id": 10707,
+      "Id": 1001223,
       "CanBreak": true,
-      "Name": "斩棍",
+      "Name": "横扫一下捅一下",
       "Key": "NUMPAD2"
     },
     {
-      "Id": 10509,
+      "Id": 1001224,
       "CanBreak": true,
-      "Name": "铜头",
+      "Name": "空中横扫很多次",
       "Key": "NUMPAD3"
     },
     {
-      "Id": 50024,
-      "Name": "大风车",
+      "Id": 1001225,
+      "CanBreak": true,
+      "Name": "调砸然后前后拍击翻滚回来扮猴子",
+      "Description": "",
+      "Key": "NUMPAD4"
+    },
+
+    {
+      "Id": 1001226,
+      "Name": "类似枪的Q5",
       "CanBreak": false,
-      "Key": "NUMPAD6"
+      "Key": "NUMPAD5"
     },
     {
-      "Id": 10724,
-      "Name": "江海翻",
-      "Key": "NUMPAD5",
+      "Id": 1001227,
+      "Name": "冲刺平A",
+      "Key": "NUMPAD6",
+      "CanBreak": true
+    },
+    {
+      "Id": 1001243,
+      "Name": "DASHENG_ATK4",
+      "Key": "NUMPAD7",
       "CanBreak": true
     },
     {
@@ -231,12 +238,7 @@
       "Key": "NUMPAD8",
       "CanBreak": true
     },
-    {
-      "Id": 10520,
-      "Name": "安身术",
-      "Key": "NUMPAD7",
-      "CanBreak": true
-    },
+
     {
       "Id": 10096,
       "Name": "JSXQ",

@@ -2,6 +2,7 @@
   "IsTrans": false,
   "Name": "夜叉王",
   "Label": "SK_HYS_HongHaiEr_02A",
+
   "BossConf": {
     "CapsuleHalfHeight": 240.0,
     "CapsuleRadius": 60.0,
@@ -49,10 +50,7 @@
   "XRate": -500.0,
   "ZRate": 300.0,
   "TransDone": {
-    "Buffers": [
-      2072,
-      602
-    ]
+    "Buffers": [2072, 602]
   },
   "Skills": [
     {
@@ -87,9 +85,7 @@
       "Name": "小前摇+3连横扫——可用  AM_HYS_HongHaiEr_02A_Atk_08_FenShen",
       "Key": "C+LBUTTON",
       "Step": 1,
-      "Buffs": [
-        1000100
-      ]
+      "Buffs": [1000100]
     },
     {
       "Id": 440508,
@@ -97,28 +93,21 @@
       "Name": "3连中距离横扫  AM_HYS_HongHaiEr_02A_Atk_08",
       "Key": "C+LBUTTON",
       "Step": 2,
-      "Buffs": [
-        1000100
-      ]
+      "Buffs": [1000100]
     },
     {
       "Id": 440537,
       "CanBreak": false,
       "Name": "瞬发地刺然后跳起平a——可用  AM_HYS_HongHaiEr_02A_Atk_09_C",
       "Key": "S+XBUTTON1",
-      "Buffs": [
-        1000100,
-        505
-      ]
+      "Buffs": [1000100, 505]
     },
     {
       "Id": 440536,
       "CanBreak": false,
       "Name": "前摇+低位大横扫一下——可用 AM_HYS_HongHaiEr_02A_Atk_16_C",
       "Key": "A+XBUTTON1",
-      "Buffs": [
-        1000100
-      ]
+      "Buffs": [1000100]
     },
     {
       "Id": 440525,
@@ -126,9 +115,7 @@
       "Name": "扔飞镖  AM_HYS_HongHaiEr_02A_Atk_15",
       "Step": 1,
       "Key": "A+X",
-      "Buffs": [
-        1000116
-      ]
+      "Buffs": [1000116]
     },
     {
       "Id": 440527,
@@ -136,9 +123,7 @@
       "Name": "扔飞镖 AM_HYS_HongHaiEr_02A_Atk_15_forchenggun",
       "Step": 2,
       "Key": "A+X",
-      "Buffs": [
-        1000116
-      ]
+      "Buffs": [1000116]
     },
     {
       "Id": 440512,
@@ -179,9 +164,7 @@
       "CanBreak": false,
       "Name": "超霸气跳起来落下瞬发地刺  AM_HYS_HongHaiEr_02A_Atk_10",
       "Key": "XBUTTON1",
-      "Buffs": [
-        505
-      ]
+      "Buffs": [505]
     },
     {
       "Id": 440511,
@@ -202,9 +185,7 @@
       "Name": "左格挡",
       "Step": 1,
       "Key": "RBUTTON",
-      "Buffs": [
-        412201
-      ]
+      "Buffs": [412201]
     },
     {
       "Id": 440565,
@@ -212,9 +193,7 @@
       "Name": "右格挡",
       "Step": 2,
       "Key": "RBUTTON",
-      "Buffs": [
-        412201
-      ]
+      "Buffs": [412201]
     },
     {
       "Id": 440555,
@@ -239,18 +218,14 @@
       "CanBreak": false,
       "Name": "左格挡小后退",
       "Key": "",
-      "Buffs": [
-        1000049
-      ]
+      "Buffs": [1000049]
     },
     {
       "Id": 440580,
       "CanBreak": false,
       "Name": "右格挡小后退",
       "Key": "",
-      "Buffs": [
-        1000049
-      ]
+      "Buffs": [1000049]
     },
     {
       "Id": 440532,
@@ -258,9 +233,7 @@
       "Name": "前摇+大横扫+垂直砍下地刺  AM_HYS_HongHaiEr_02A_Atk_06_C",
       "Key": "Z",
       "Step": 2,
-      "Buffs": [
-        1000100
-      ]
+      "Buffs": [1000100]
     },
     {
       "Id": 440596,
@@ -268,19 +241,14 @@
       "Name": "开局横扫+垂直砍 AM_HYS_HongHaiEr_02A_Atk_06_dalei",
       "Key": "Z",
       "Step": 1,
-      "Buffs": [
-        1000100,
-        505
-      ]
+      "Buffs": [1000100, 505]
     },
     {
       "Id": 440508,
       "CanBreak": false,
       "Name": "3连中距离横扫  AM_HYS_HongHaiEr_02A_Atk_08",
       "Key": "S+Z",
-      "Buffs": [
-        1000100
-      ]
+      "Buffs": [1000100]
     },
     {
       "Id": 440537,
@@ -348,9 +316,7 @@
       "Name": "投技",
       "Key": "",
       "Step": 3,
-      "Buffs": [
-        1000100
-      ]
+      "Buffs": [1000100]
     },
     {
       "Id": 440513,

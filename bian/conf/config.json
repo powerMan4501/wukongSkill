@@ -43,17 +43,18 @@
       "Label": "SK_HFM_Hu_Stone_01"
     },
     {
-      "Key": "F2",
+      "Key": "S+F2",
       "Type": "BOSS",
       "Label": "SK_mgd_jsds",
       "Name": "变身为【大圣残躯】"
     },
     {
-      "Key": "S+F2",
+      "Key": "F2",
       "Type": "BOSS",
       "Label": "SK_HYS_HongHaiEr_02A",
       "Name": "变身为【夜叉王】"
     },
+
     {
       "Key": "C+F2",
       "Type": "BOSS",
@@ -731,9 +732,9 @@
     {
       "Key": "TAB",
       "Type": "ADD_BUFF",
-      "BuffId": 1000171,
+      "BuffId": 1000191,
       "BuffTime": 500,
-      "Name": "测试添加buff",
+      "Name": "召唤敌人",
       "AlawaysCanCast": true
     }
   ]
