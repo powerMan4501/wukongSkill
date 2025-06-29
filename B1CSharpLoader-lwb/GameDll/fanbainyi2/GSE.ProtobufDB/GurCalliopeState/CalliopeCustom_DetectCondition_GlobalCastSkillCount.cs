@@ -1,0 +1,252 @@
+using System;
+using Google.Protobuf;
+
+namespace GurCalliopeState;
+
+public sealed class CalliopeCustom_DetectCondition_GlobalCastSkillCount : IMessage<CalliopeCustom_DetectCondition_GlobalCastSkillCount>, IMessage, IEquatable<CalliopeCustom_DetectCondition_GlobalCastSkillCount>, IDeepCloneable<CalliopeCustom_DetectCondition_GlobalCastSkillCount>
+{
+	private static readonly MessageParser<CalliopeCustom_DetectCondition_GlobalCastSkillCount> _parser = new MessageParser<CalliopeCustom_DetectCondition_GlobalCastSkillCount>(() => new CalliopeCustom_DetectCondition_GlobalCastSkillCount());
+
+	private UnknownFieldSet _unknownFields;
+
+	private int _hasBits0;
+
+	private int skillId_;
+
+	private int compareOperation_;
+
+	private int compareValueInt_;
+
+	public static MessageParser<CalliopeCustom_DetectCondition_GlobalCastSkillCount> Parser => _parser;
+
+	public int SkillId
+	{
+		get
+		{
+			if ((_hasBits0 & 1) != 0)
+			{
+				return skillId_;
+			}
+			return 0;
+		}
+		set
+		{
+			_hasBits0 |= 1;
+			skillId_ = value;
+		}
+	}
+
+	public bool HasSkillId => (_hasBits0 & 1) != 0;
+
+	public int CompareOperation
+	{
+		get
+		{
+			if ((_hasBits0 & 2) != 0)
+			{
+				return compareOperation_;
+			}
+			return 0;
+		}
+		set
+		{
+			_hasBits0 |= 2;
+			compareOperation_ = value;
+		}
+	}
+
+	public bool HasCompareOperation => (_hasBits0 & 2) != 0;
+
+	public int CompareValueInt
+	{
+		get
+		{
+			if ((_hasBits0 & 4) != 0)
+			{
+				return compareValueInt_;
+			}
+			return 0;
+		}
+		set
+		{
+			_hasBits0 |= 4;
+			compareValueInt_ = value;
+		}
+	}
+
+	public bool HasCompareValueInt => (_hasBits0 & 4) != 0;
+
+	public CalliopeCustom_DetectCondition_GlobalCastSkillCount()
+	{
+	}
+
+	public CalliopeCustom_DetectCondition_GlobalCastSkillCount(CalliopeCustom_DetectCondition_GlobalCastSkillCount other)
+		: this()
+	{
+		_hasBits0 = other._hasBits0;
+		skillId_ = other.skillId_;
+		compareOperation_ = other.compareOperation_;
+		compareValueInt_ = other.compareValueInt_;
+		_unknownFields = UnknownFieldSet.Clone(other._unknownFields);
+	}
+
+	public CalliopeCustom_DetectCondition_GlobalCastSkillCount Clone()
+	{
+		return new CalliopeCustom_DetectCondition_GlobalCastSkillCount(this);
+	}
+
+	public void ClearSkillId()
+	{
+		_hasBits0 &= -2;
+	}
+
+	public void ClearCompareOperation()
+	{
+		_hasBits0 &= -3;
+	}
+
+	public void ClearCompareValueInt()
+	{
+		_hasBits0 &= -5;
+	}
+
+	public override bool Equals(object other)
+	{
+		return Equals(other as CalliopeCustom_DetectCondition_GlobalCastSkillCount);
+	}
+
+	public bool Equals(CalliopeCustom_DetectCondition_GlobalCastSkillCount other)
+	{
+		if (other == null)
+		{
+			return false;
+		}
+		if (other == this)
+		{
+			return true;
+		}
+		if (SkillId != other.SkillId)
+		{
+			return false;
+		}
+		if (CompareOperation != other.CompareOperation)
+		{
+			return false;
+		}
+		if (CompareValueInt != other.CompareValueInt)
+		{
+			return false;
+		}
+		return object.Equals(_unknownFields, other._unknownFields);
+	}
+
+	public override int GetHashCode()
+	{
+		int num = 1;
+		if (HasSkillId)
+		{
+			num ^= SkillId.GetHashCode();
+		}
+		if (HasCompareOperation)
+		{
+			num ^= CompareOperation.GetHashCode();
+		}
+		if (HasCompareValueInt)
+		{
+			num ^= CompareValueInt.GetHashCode();
+		}
+		if (_unknownFields != null)
+		{
+			num ^= _unknownFields.GetHashCode();
+		}
+		return num;
+	}
+
+	public void WriteTo(CodedOutputStream output)
+	{
+		if (HasSkillId)
+		{
+			output.WriteRawTag(8);
+			output.WriteInt32(SkillId);
+		}
+		if (HasCompareOperation)
+		{
+			output.WriteRawTag(16);
+			output.WriteInt32(CompareOperation);
+		}
+		if (HasCompareValueInt)
+		{
+			output.WriteRawTag(24);
+			output.WriteInt32(CompareValueInt);
+		}
+		if (_unknownFields != null)
+		{
+			_unknownFields.WriteTo(output);
+		}
+	}
+
+	public int CalculateSize()
+	{
+		int num = 0;
+		if (HasSkillId)
+		{
+			num += 1 + CodedOutputStream.ComputeInt32Size(SkillId);
+		}
+		if (HasCompareOperation)
+		{
+			num += 1 + CodedOutputStream.ComputeInt32Size(CompareOperation);
+		}
+		if (HasCompareValueInt)
+		{
+			num += 1 + CodedOutputStream.ComputeInt32Size(CompareValueInt);
+		}
+		if (_unknownFields != null)
+		{
+			num += _unknownFields.CalculateSize();
+		}
+		return num;
+	}
+
+	public void MergeFrom(CalliopeCustom_DetectCondition_GlobalCastSkillCount other)
+	{
+		if (other != null)
+		{
+			if (other.HasSkillId)
+			{
+				SkillId = other.SkillId;
+			}
+			if (other.HasCompareOperation)
+			{
+				CompareOperation = other.CompareOperation;
+			}
+			if (other.HasCompareValueInt)
+			{
+				CompareValueInt = other.CompareValueInt;
+			}
+			_unknownFields = UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+		}
+	}
+
+	public void MergeFrom(CodedInputStream input)
+	{
+		uint num;
+		while ((num = input.ReadTag()) != 0)
+		{
+			switch (num)
+			{
+			default:
+				_unknownFields = UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+				break;
+			case 8u:
+				SkillId = input.ReadInt32();
+				break;
+			case 16u:
+				CompareOperation = input.ReadInt32();
+				break;
+			case 24u:
+				CompareValueInt = input.ReadInt32();
+				break;
+			}
+		}
+	}
+}

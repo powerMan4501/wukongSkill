@@ -1,0 +1,191 @@
+using System;
+using Google.Protobuf;
+
+namespace ArchiveB1;
+
+public sealed class CardStoryStatusTupleWrapper : IMessage<CardStoryStatusTupleWrapper>, IMessage, IEquatable<CardStoryStatusTupleWrapper>, IDeepCloneable<CardStoryStatusTupleWrapper>
+{
+	private static readonly MessageParser<CardStoryStatusTupleWrapper> _parser = new MessageParser<CardStoryStatusTupleWrapper>(() => new CardStoryStatusTupleWrapper());
+
+	private UnknownFieldSet _unknownFields;
+
+	private CardStoryStatus item1_;
+
+	private CardStoryStatus item2_;
+
+	public static MessageParser<CardStoryStatusTupleWrapper> Parser => _parser;
+
+	public CardStoryStatus Item1
+	{
+		get
+		{
+			return item1_;
+		}
+		set
+		{
+			item1_ = value;
+		}
+	}
+
+	public CardStoryStatus Item2
+	{
+		get
+		{
+			return item2_;
+		}
+		set
+		{
+			item2_ = value;
+		}
+	}
+
+	public CardStoryStatusTupleWrapper()
+	{
+	}
+
+	public CardStoryStatusTupleWrapper(CardStoryStatusTupleWrapper other)
+		: this()
+	{
+		item1_ = ((other.item1_ != null) ? other.item1_.Clone() : null);
+		item2_ = ((other.item2_ != null) ? other.item2_.Clone() : null);
+		_unknownFields = UnknownFieldSet.Clone(other._unknownFields);
+	}
+
+	public CardStoryStatusTupleWrapper Clone()
+	{
+		return new CardStoryStatusTupleWrapper(this);
+	}
+
+	public override bool Equals(object other)
+	{
+		return Equals(other as CardStoryStatusTupleWrapper);
+	}
+
+	public bool Equals(CardStoryStatusTupleWrapper other)
+	{
+		if (other == null)
+		{
+			return false;
+		}
+		if (other == this)
+		{
+			return true;
+		}
+		if (!object.Equals(Item1, other.Item1))
+		{
+			return false;
+		}
+		if (!object.Equals(Item2, other.Item2))
+		{
+			return false;
+		}
+		return object.Equals(_unknownFields, other._unknownFields);
+	}
+
+	public override int GetHashCode()
+	{
+		int num = 1;
+		if (item1_ != null)
+		{
+			num ^= Item1.GetHashCode();
+		}
+		if (item2_ != null)
+		{
+			num ^= Item2.GetHashCode();
+		}
+		if (_unknownFields != null)
+		{
+			num ^= _unknownFields.GetHashCode();
+		}
+		return num;
+	}
+
+	public void WriteTo(CodedOutputStream output)
+	{
+		if (item1_ != null)
+		{
+			output.WriteRawTag(10);
+			output.WriteMessage(Item1);
+		}
+		if (item2_ != null)
+		{
+			output.WriteRawTag(18);
+			output.WriteMessage(Item2);
+		}
+		if (_unknownFields != null)
+		{
+			_unknownFields.WriteTo(output);
+		}
+	}
+
+	public int CalculateSize()
+	{
+		int num = 0;
+		if (item1_ != null)
+		{
+			num += 1 + CodedOutputStream.ComputeMessageSize(Item1);
+		}
+		if (item2_ != null)
+		{
+			num += 1 + CodedOutputStream.ComputeMessageSize(Item2);
+		}
+		if (_unknownFields != null)
+		{
+			num += _unknownFields.CalculateSize();
+		}
+		return num;
+	}
+
+	public void MergeFrom(CardStoryStatusTupleWrapper other)
+	{
+		if (other == null)
+		{
+			return;
+		}
+		if (other.item1_ != null)
+		{
+			if (item1_ == null)
+			{
+				Item1 = new CardStoryStatus();
+			}
+			Item1.MergeFrom(other.Item1);
+		}
+		if (other.item2_ != null)
+		{
+			if (item2_ == null)
+			{
+				Item2 = new CardStoryStatus();
+			}
+			Item2.MergeFrom(other.Item2);
+		}
+		_unknownFields = UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+	}
+
+	public void MergeFrom(CodedInputStream input)
+	{
+		uint num;
+		while ((num = input.ReadTag()) != 0)
+		{
+			switch (num)
+			{
+			default:
+				_unknownFields = UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+				break;
+			case 10u:
+				if (item1_ == null)
+				{
+					Item1 = new CardStoryStatus();
+				}
+				input.ReadMessage(Item1);
+				break;
+			case 18u:
+				if (item2_ == null)
+				{
+					Item2 = new CardStoryStatus();
+				}
+				input.ReadMessage(Item2);
+				break;
+			}
+		}
+	}
+}

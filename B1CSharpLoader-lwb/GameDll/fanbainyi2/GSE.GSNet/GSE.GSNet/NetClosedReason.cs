@@ -1,0 +1,11 @@
+namespace GSE.GSNet;
+
+public enum NetClosedReason
+{
+	NET_CLOSE_NONE = -1,
+	NET_CLOSE_PEER,
+	NET_CLOSE_UNZIP,
+	NET_CLOSE_SEND,
+	NET_CLOSE_FRAME_MALFORMD,
+	NET_CLOSE_RECEIVE
+}

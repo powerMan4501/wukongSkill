@@ -1,0 +1,6 @@
+namespace b1;
+
+internal interface IBUC_HatchData
+{
+	FHatchConfigInfo GetHatchConfig();
+}
