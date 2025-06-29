@@ -1,0 +1,114 @@
+using System;
+using Google.Protobuf;
+using Google.Protobuf.Collections;
+
+namespace BtlB1;
+
+public sealed class TBFUStBossRoomConfigDesc : IMessage<TBFUStBossRoomConfigDesc>, IMessage, IEquatable<TBFUStBossRoomConfigDesc>, IDeepCloneable<TBFUStBossRoomConfigDesc>
+{
+	private static readonly MessageParser<TBFUStBossRoomConfigDesc> _parser = new MessageParser<TBFUStBossRoomConfigDesc>(() => new TBFUStBossRoomConfigDesc());
+
+	private UnknownFieldSet _unknownFields;
+
+	private static readonly FieldCodec<FUStBossRoomConfigDesc> _repeated_list_codec = FieldCodec.ForMessage(10u, FUStBossRoomConfigDesc.Parser);
+
+	private readonly RepeatedField<FUStBossRoomConfigDesc> list_ = new RepeatedField<FUStBossRoomConfigDesc>();
+
+	public static MessageParser<TBFUStBossRoomConfigDesc> Parser => _parser;
+
+	public RepeatedField<FUStBossRoomConfigDesc> List => list_;
+
+	public TBFUStBossRoomConfigDesc()
+	{
+	}
+
+	public TBFUStBossRoomConfigDesc(TBFUStBossRoomConfigDesc other)
+		: this()
+	{
+		list_ = other.list_.Clone();
+		_unknownFields = UnknownFieldSet.Clone(other._unknownFields);
+	}
+
+	public TBFUStBossRoomConfigDesc Clone()
+	{
+		return new TBFUStBossRoomConfigDesc(this);
+	}
+
+	public override bool Equals(object other)
+	{
+		return Equals(other as TBFUStBossRoomConfigDesc);
+	}
+
+	public bool Equals(TBFUStBossRoomConfigDesc other)
+	{
+		if (other == null)
+		{
+			return false;
+		}
+		if (other == this)
+		{
+			return true;
+		}
+		if (!list_.Equals(other.list_))
+		{
+			return false;
+		}
+		return object.Equals(_unknownFields, other._unknownFields);
+	}
+
+	public override int GetHashCode()
+	{
+		int num = 1;
+		num ^= list_.GetHashCode();
+		if (_unknownFields != null)
+		{
+			num ^= _unknownFields.GetHashCode();
+		}
+		return num;
+	}
+
+	public void WriteTo(CodedOutputStream output)
+	{
+		list_.WriteTo(output, _repeated_list_codec);
+		if (_unknownFields != null)
+		{
+			_unknownFields.WriteTo(output);
+		}
+	}
+
+	public int CalculateSize()
+	{
+		int num = 0;
+		num += list_.CalculateSize(_repeated_list_codec);
+		if (_unknownFields != null)
+		{
+			num += _unknownFields.CalculateSize();
+		}
+		return num;
+	}
+
+	public void MergeFrom(TBFUStBossRoomConfigDesc other)
+	{
+		if (other != null)
+		{
+			list_.Add(other.list_);
+			_unknownFields = UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+		}
+	}
+
+	public void MergeFrom(CodedInputStream input)
+	{
+		uint num;
+		while ((num = input.ReadTag()) != 0)
+		{
+			if (num != 10)
+			{
+				_unknownFields = UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+			}
+			else
+			{
+				list_.AddEntriesFrom(input, _repeated_list_codec);
+			}
+		}
+	}
+}

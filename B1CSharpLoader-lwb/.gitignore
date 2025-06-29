@@ -2,7 +2,8 @@
 bin/
 obj/
 publish/
-
+GameDll/
+ilspy/
 # Nuget packages directory
 packages/
 

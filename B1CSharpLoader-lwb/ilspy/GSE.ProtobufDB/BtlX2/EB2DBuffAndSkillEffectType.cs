@@ -1,0 +1,35 @@
+namespace BtlX2;
+
+public enum EB2DBuffAndSkillEffectType
+{
+	None,
+	SkillDamage,
+	AddAttr,
+	RecoverAttr,
+	TriggerBuff,
+	RemoveBuff,
+	ClearBuff,
+	SetSimpleState,
+	RemoveSimpleState,
+	Sicide,
+	GenMagicField,
+	SummonUnit,
+	FreshMultiTargets,
+	KnockUp,
+	SkillMove,
+	SpecialState,
+	Morph,
+	BeatBack,
+	TowToTargetpos,
+	Dispel,
+	Purify,
+	SetAitarget,
+	BecomeExtremeHeatred,
+	UnitResurrected,
+	SetStaticBlock,
+	ClearSelfHatredList,
+	ForceTagetHatredHighest,
+	SetWarningArea,
+	SkillBreak,
+	Max
+}

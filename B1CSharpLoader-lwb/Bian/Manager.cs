@@ -206,7 +206,7 @@ namespace bian
         {
             if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]SmartCastSkill"))
             {
-                Log.Info($"bian: 真实的id SmartCastSkillTryMultiCast -->{ID}");
+                // Log.Info($"bian: 真实的id SmartCastSkillTryMultiCast -->{ID}");
             }
             var character = Helper.GetBGUPlayerCharacterCS();
             var bufferId = 20101;
@@ -233,7 +233,6 @@ namespace bian
             }
             if (ID == 10705 || ID == 10706 || ID == 50001 || ID == 50003 || ID == 50005 || ID == 10721)
             {
-                Log.Info($"bian: 给 -->{ID} 增加buff {289}");
                 BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);
             }
             if (bufferId > 0)
