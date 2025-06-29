@@ -1,0 +1,95 @@
+namespace b1.AutoQA;
+
+internal class CrossLevel_AutoTest_820HZ : b1.AutoQA.CrossLevel_AutoTest_Template
+{
+	public override string TestLabel => "820HZ";
+
+	protected override void RegisterTestState()
+	{
+		StateStack.Push(new AutoTestNodeLib.TestState_Wait(base.WorldContext, 10));
+		StateStack.Push(new TestState_820EnterSelect(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_ConsoleCommand(base.WorldContext, "b.sys TestPassTime -900"));
+		StateStack.Push(new TestState_820EnterMap(base.WorldContext, 1));
+		StateStack.Push(new AutoTestNodeLib.TestState_WatchSequence(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_Invincible(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_AttackOnTheMove(base.WorldContext, "RebirthPoint_PSD_Default_C_5", "土地庙"));
+		StateStack.Push(new AutoTestNodeLib.TestState_ActivateRebirthPoint(base.WorldContext, "RebirthPoint_PSD_Default_C_5", AutoTestNodeLib.QARebirthPointChoice.Leave));
+		StateStack.Push(new AutoTestNodeLib.TestState_ConsoleCommand(base.WorldContext, "b.teleportToPosition 145961 -69372 3100"));
+		StateStack.Push(new AutoTestNodeLib.TestState_AutoBattle(base.WorldContext, "TAMER_psd_youyan_02_C_1", "PSD_Monster_YouYan", AutoTestNodeLib.AutoBattleExitCondition.KillTarget));
+		StateStack.Push(new AutoTestNodeLib.TestState_Wait(base.WorldContext, 20));
+		StateStack.Push(new AutoTestNodeLib.TestState_PressBtn(base.WorldContext, "确定"));
+		StateStack.Push(new AutoTestNodeLib.TestState_Wait(base.WorldContext, 10));
+		StateStack.Push(new TestState_820EnterSelect(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_ConsoleCommand(base.WorldContext, "b.sys TestPassTime -900"));
+		StateStack.Push(new TestState_820EnterMap(base.WorldContext, 2));
+		StateStack.Push(new AutoTestNodeLib.TestState_WatchSequence(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_Invincible(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_ActivateRebirthPoint(base.WorldContext, "RebirthPoint_LYS_Default_C_1", AutoTestNodeLib.QARebirthPointChoice.Leave));
+		StateStack.Push(new AutoTestNodeLib.TestState_AttackOnTheMove(base.WorldContext, "TAMER_lys_xuehou_nm_C_1", "LYS_Monster_NorthMountain", "nm雪猴", 1000, AutoTestNodeLib.AutoMoveExitCondition.SequenceBegin));
+		StateStack.Push(new AutoTestNodeLib.TestState_WatchSequence(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_ConsoleCommand(base.WorldContext, "b.SetAtk 100"));
+		string[] extraArgs = new string[1] { "0.5" };
+		StateStack.Push(new AutoTestNodeLib.TestState_AutoBattle(base.WorldContext, "TAMER_lys_xuehou_nm_C_1", "LYS_Monster_NorthMountain", AutoTestNodeLib.AutoBattleExitCondition.HealthPercent, extraArgs));
+		StateStack.Push(new AutoTestNodeLib.TestState_Wait(base.WorldContext, 60));
+		StateStack.Push(new AutoTestNodeLib.TestState_ConsoleCommand(base.WorldContext, "b.SetAtk 50"));
+		StateStack.Push(new AutoTestNodeLib.TestState_ActivateRebirthPoint(base.WorldContext, "RebirthPoint_LYS_Default_C_3", AutoTestNodeLib.QARebirthPointChoice.Leave));
+		StateStack.Push(new AutoTestNodeLib.TestState_ConsoleCommand(base.WorldContext, "b.teleportToPosition 392696 -551053 -13058"));
+		StateStack.Push(new AutoTestNodeLib.TestState_AttackOnTheMove(base.WorldContext, "TAMER_lys_xuehou_C_0", "LYS_Monster_NorthMountain", "RZD雪猴", 1000, AutoTestNodeLib.AutoMoveExitCondition.SequenceBegin));
+		StateStack.Push(new AutoTestNodeLib.TestState_WatchSequence(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_AutoBattle(base.WorldContext, "TAMER_lys_xuehou_C_0", "LYS_Monster_NorthMountain", AutoTestNodeLib.AutoBattleExitCondition.KillTarget));
+		StateStack.Push(new AutoTestNodeLib.TestState_Wait(base.WorldContext, 20));
+		StateStack.Push(new AutoTestNodeLib.TestState_PressBtn(base.WorldContext, "确定"));
+		StateStack.Push(new AutoTestNodeLib.TestState_Wait(base.WorldContext, 10));
+		StateStack.Push(new TestState_820EnterSelect(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_ConsoleCommand(base.WorldContext, "b.sys TestPassTime -900"));
+		StateStack.Push(new TestState_820EnterMap(base.WorldContext, 3));
+		StateStack.Push(new AutoTestNodeLib.TestState_WatchSequence(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_Invincible(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_ActivateRebirthPoint(base.WorldContext, "RebirthPoint_HFM_Default_C_12", AutoTestNodeLib.QARebirthPointChoice.Leave));
+		StateStack.Push(new AutoTestNodeLib.TestState_ConsoleCommand(base.WorldContext, "b.teleportToPosition -59629 27840 -74"));
+		StateStack.Push(new AutoTestNodeLib.TestState_AttackOnTheMove(base.WorldContext, "TAMER_hfm_hu_stone_01_C_0", "HFM02_Temple_Monster", "虎先锋", 1000, AutoTestNodeLib.AutoMoveExitCondition.SequenceBegin));
+		StateStack.Push(new AutoTestNodeLib.TestState_WatchSequence(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_AutoBattle(base.WorldContext, "TAMER_hfm_hu_stone_01_C_0", "HFM02_Temple_Monster", AutoTestNodeLib.AutoBattleExitCondition.KillTarget));
+		StateStack.Push(new AutoTestNodeLib.TestState_Wait(base.WorldContext, 20));
+		StateStack.Push(new AutoTestNodeLib.TestState_PressBtn(base.WorldContext, "确定"));
+		StateStack.Push(new AutoTestNodeLib.TestState_Wait(base.WorldContext, 10));
+		StateStack.Push(new TestState_820EnterSelect(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_ConsoleCommand(base.WorldContext, "b.sys TestPassTime -1500"));
+		StateStack.Push(new TestState_820EnterMap(base.WorldContext, 4));
+		StateStack.Push(new AutoTestNodeLib.TestState_WatchSequence(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_Invincible(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_ActivateRebirthPoint(base.WorldContext, "RebirthPoint_PSD_Default_C_6", AutoTestNodeLib.QARebirthPointChoice.Leave));
+		StateStack.Push(new AutoTestNodeLib.TestState_Invincible(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_ActivateRebirthPoint(base.WorldContext, "RebirthPoint_PSD_Default_C_0", AutoTestNodeLib.QARebirthPointChoice.Leave));
+		StateStack.Push(new AutoTestNodeLib.TestState_Invincible(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_AttackOnTheMove(base.WorldContext, "TAMER_psd_xiezijing_og_npc_C_1", "ZYS01_Monster_XieZi", "蝎子精"));
+		StateStack.Push(new TestState_DestroyDroppableDestructionActor(base.WorldContext, "BP_zys_jiugang_droppable_xiezijing_C_0", "ZYS01_Item_XieZi"));
+		StateStack.Push(new AutoTestNodeLib.TestState_WatchSequence(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_AutoBattle(base.WorldContext, "TAMER_psd_xiezijing_og_C_0", "ZYS01_Monster_XieZi", AutoTestNodeLib.AutoBattleExitCondition.KillTarget));
+		StateStack.Push(new AutoTestNodeLib.TestState_ActivateRebirthPoint(base.WorldContext, "RebirthPoint_PSD_Default_C_8", AutoTestNodeLib.QARebirthPointChoice.Leave));
+		StateStack.Push(new AutoTestNodeLib.TestState_Invincible(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_AttackOnTheMove(base.WorldContext, "TAMER_psd_duchongsishi_C_7", "ZYS01_Monster_village", "道士大哥"));
+		StateStack.Push(new AutoTestNodeLib.TestState_Interact(base.WorldContext, "TAMER_psd_duchongsishi_C_7", IgnoreInteractCheck: true));
+		StateStack.Push(new AutoTestNodeLib.TestState_WatchSequence(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_AttackOnTheMove(base.WorldContext, "Tamer_PSD_daoshi_03_zys_C_3", "ZYS01_Monster_village", "路边道士A"));
+		StateStack.Push(new AutoTestNodeLib.TestState_AttackOnTheMove(base.WorldContext, "Tamer_PSD_daoshi_03_zys_C_0", "ZYS01_Monster_village", "路边道士B"));
+		StateStack.Push(new AutoTestNodeLib.TestState_AttackOnTheMove(base.WorldContext, "Tamer_PSD_daoshi_03_zys_C_8", "ZYS01_Monster_village", "路边道士C"));
+		StateStack.Push(new AutoTestNodeLib.TestState_AttackOnTheMove(base.WorldContext, "TAMER_psd_duchongsishi_C_7", "ZYS01_Monster_village", "道士大哥"));
+		StateStack.Push(new AutoTestNodeLib.TestState_B1GM(base.WorldContext, "additem 4017"));
+		StateStack.Push(new AutoTestNodeLib.TestState_Interact(base.WorldContext, "TAMER_psd_duchongsishi_C_7"));
+		StateStack.Push(new AutoTestNodeLib.TestState_WatchSequence(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_AutoBattle(base.WorldContext, "TAMER_psd_daoshi_04_C_5", "ZYS01_Monster_village", AutoTestNodeLib.AutoBattleExitCondition.KillTarget));
+		StateStack.Push(new AutoTestNodeLib.TestState_WatchSequence(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_AutoBattle(base.WorldContext, "TAMER_psd_duchongsishi_02_C_3", "ZYS01_Monster_village", AutoTestNodeLib.AutoBattleExitCondition.KillTarget));
+		StateStack.Push(new AutoTestNodeLib.TestState_WatchSequence(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_GetNewItem(base.WorldContext, 0));
+		StateStack.Push(new AutoTestNodeLib.TestState_ActivateRebirthPoint(base.WorldContext, "RebirthPoint_PSD_Default_C_10", AutoTestNodeLib.QARebirthPointChoice.Leave));
+		StateStack.Push(new AutoTestNodeLib.TestState_Invincible(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_AttackOnTheMove(base.WorldContext, "TAMER_bhl_gushoufsq_01_C_0", "ZYS01_Monster_MRXG", "昴日星官", 1000, AutoTestNodeLib.AutoMoveExitCondition.SequenceBegin));
+		StateStack.Push(new AutoTestNodeLib.TestState_WatchSequence(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_AutoBattle(base.WorldContext, "TAMER_bhl_gushoufsq_01_C_0", "ZYS01_Monster_MRXG", AutoTestNodeLib.AutoBattleExitCondition.KillTarget));
+		StateStack.Push(new AutoTestNodeLib.TestState_WatchSequence(base.WorldContext));
+		StateStack.Push(new AutoTestNodeLib.TestState_Wait(base.WorldContext, 20));
+		StateStack.Push(new AutoTestNodeLib.TestState_PressBtn(base.WorldContext, "确定"));
+	}
+}

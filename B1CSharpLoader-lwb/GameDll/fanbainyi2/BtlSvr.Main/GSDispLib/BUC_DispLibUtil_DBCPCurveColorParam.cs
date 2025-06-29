@@ -1,0 +1,117 @@
+using System;
+using UnrealEngine.Runtime;
+
+namespace GSDispLib;
+
+[BlueprintType]
+[UStruct]
+[USharpPath("/Script/b1-Managed.BUC_DispLibUtil_DBCPCurveColorParam")]
+public struct BUC_DispLibUtil_DBCPCurveColorParam
+{
+	[DisplayName("参数名")]
+	[BlueprintReadWrite]
+	[EditAnywhere]
+	[UProperty]
+	[USharpPath("/Script/b1-Managed.BUC_DispLibUtil_DBCPCurveColorParam:ParamName")]
+	public FName ParamName;
+
+	[EditAnywhere]
+	[BlueprintReadWrite]
+	[DisplayName("程序化曲线")]
+	[UProperty]
+	[USharpPath("/Script/b1-Managed.BUC_DispLibUtil_DBCPCurveColorParam:PCurve")]
+	public BUC_DispLibUtil_DBCPCurveColor PCurve;
+
+	private static int BUC_DispLibUtil_DBCPCurveColorParam_StructSize;
+
+	private static int BUC_DispLibUtil_DBCPCurveColorParam_IsValid;
+
+	private static bool ParamName_IsValid;
+
+	private static int ParamName_Offset;
+
+	private static bool PCurve_IsValid;
+
+	private static int PCurve_Offset;
+
+	public bool IsValid()
+	{
+		if (ParamName != default(FName))
+		{
+			return PCurve.IsValid();
+		}
+		return false;
+	}
+
+	public BUC_DispLibUtil_DBCPCurveColorParam Copy()
+	{
+		return this;
+	}
+
+	public static BUC_DispLibUtil_DBCPCurveColorParam FromNative(IntPtr nativeBuffer)
+	{
+		return new BUC_DispLibUtil_DBCPCurveColorParam(nativeBuffer);
+	}
+
+	public static void ToNative(IntPtr nativeBuffer, BUC_DispLibUtil_DBCPCurveColorParam value)
+	{
+		value.ToNative(nativeBuffer);
+	}
+
+	public static BUC_DispLibUtil_DBCPCurveColorParam FromNative(IntPtr nativeBuffer, int arrayIndex, IntPtr prop)
+	{
+		return new BUC_DispLibUtil_DBCPCurveColorParam(IntPtr.Add(nativeBuffer, arrayIndex * BUC_DispLibUtil_DBCPCurveColorParam_StructSize));
+	}
+
+	public static void ToNative(IntPtr nativeBuffer, int arrayIndex, IntPtr prop, BUC_DispLibUtil_DBCPCurveColorParam value)
+	{
+		value.ToNative(IntPtr.Add(nativeBuffer, arrayIndex * BUC_DispLibUtil_DBCPCurveColorParam_StructSize));
+	}
+
+	public void ToNative(IntPtr nativeStruct)
+	{
+		if (BUC_DispLibUtil_DBCPCurveColorParam_IsValid == 0)
+		{
+			NativeReflection.LogInvalidStructAccessed("/Script/b1-Managed.BUC_DispLibUtil_DBCPCurveColorParam");
+			return;
+		}
+		BlittableTypeMarshaler<FName>.ToNative(IntPtr.Add(nativeStruct, ParamName_Offset), ParamName);
+		BUC_DispLibUtil_DBCPCurveColor.ToNative(IntPtr.Add(nativeStruct, PCurve_Offset), PCurve);
+	}
+
+	public BUC_DispLibUtil_DBCPCurveColorParam(IntPtr nativeStruct)
+	{
+		if (BUC_DispLibUtil_DBCPCurveColorParam_IsValid == 0)
+		{
+			NativeReflection.LogInvalidStructAccessed("/Script/b1-Managed.BUC_DispLibUtil_DBCPCurveColorParam");
+			ParamName = default(FName);
+			PCurve = default(BUC_DispLibUtil_DBCPCurveColor);
+		}
+		else
+		{
+			ParamName = BlittableTypeMarshaler<FName>.FromNative(IntPtr.Add(nativeStruct, ParamName_Offset));
+			PCurve = BUC_DispLibUtil_DBCPCurveColor.FromNative(IntPtr.Add(nativeStruct, PCurve_Offset));
+		}
+	}
+
+	private static void LoadNativeType()
+	{
+		IntPtr intPtr = NativeReflection.GetStruct("/Script/b1-Managed.BUC_DispLibUtil_DBCPCurveColorParam");
+		BUC_DispLibUtil_DBCPCurveColorParam_StructSize = NativeReflection.GetStructSize(intPtr);
+		ParamName_Offset = NativeReflection.GetPropertyOffset(intPtr, "ParamName");
+		ParamName_IsValid = NativeReflection.ValidatePropertyClass(intPtr, "ParamName", Classes.FNameProperty);
+		PCurve_Offset = NativeReflection.GetPropertyOffset(intPtr, "PCurve");
+		PCurve_IsValid = NativeReflection.ValidatePropertyClass(intPtr, "PCurve", Classes.FStructProperty);
+		BUC_DispLibUtil_DBCPCurveColorParam_IsValid = ((intPtr != IntPtr.Zero && ParamName_IsValid && PCurve_IsValid) ? 1 : 0);
+		NativeReflection.LogStructIsValid("/Script/b1-Managed.BUC_DispLibUtil_DBCPCurveColorParam", (byte)BUC_DispLibUtil_DBCPCurveColorParam_IsValid != 0);
+	}
+
+	static BUC_DispLibUtil_DBCPCurveColorParam()
+	{
+		if (UnrealTypes.CanLazyLoadManagedType(typeof(BUC_DispLibUtil_DBCPCurveColorParam)))
+		{
+			LoadNativeType();
+		}
+		UnrealTypes.OnCCtorCalled(typeof(BUC_DispLibUtil_DBCPCurveColorParam));
+	}
+}

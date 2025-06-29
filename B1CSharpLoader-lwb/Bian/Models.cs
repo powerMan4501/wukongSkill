@@ -660,8 +660,7 @@ namespace bian
 
         public void OnPlayMontageCallback(EMontageBindReason Reason, UAnimMontage Montage, EMontageCallbackState State)
         {
-            // Log.Debug(Montage.PathName);
-            // Log.Debug($"{State}");
+            Log.Info($"播放动画回调:  {Montage.GetPathName()} 状态 {State}");
 
             switch (State)
             {

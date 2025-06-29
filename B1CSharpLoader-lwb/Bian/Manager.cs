@@ -207,8 +207,35 @@ namespace bian
             {
                 // Log.Info($"bian: SmartCastSkillTryMultiCast -->{ID}");
             }
-        }
+            var character = Helper.GetBGUPlayerCharacterCS();
+            var bufferId = 20101;
+            if (ID == 10801)
+            {
+                // 平A1
+                bufferId = 20101;
+            }
+            if (ID == 10802)
+            {
+                // 平A2
+                bufferId = 20102;
+            }
+            if (ID == 10803)
+            {
+                // 平A3
+                bufferId = 20103;
+            }
+            if (ID == 10804)
+            {
+                // 平A4
+                bufferId = 20104;
+            }
+            if (bufferId > 0)
+            {
+                BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 3000);
 
+            }
+
+        }
         /*[HarmonyPatch(typeof(UInputPreProcEvent), "OnAnyKeyTriggerEvent")]
         [HarmonyPrefix]
         private static void OnAnyKeyTriggerEvent(FKey Key)
