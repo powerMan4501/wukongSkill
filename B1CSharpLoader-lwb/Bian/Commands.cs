@@ -77,7 +77,7 @@ namespace bian
                 var targetTeamID = target.GetTeamIDInCS();
                 target.SetTeamIDInCS(teamID);
                 character.SetTeamIDInCS(targetTeamID);
-                // Log.Debug($"bian: change team id-->{targetTeamID}");
+                Log.Info($"bian: change team id-->{targetTeamID}");
             }
         }
 
@@ -95,7 +95,7 @@ namespace bian
             else
             {
                 BUS_EventCollectionCS.Get(character).Evt_ResetTeamID.Invoke();
-                // Log.Debug($"bian: reset team id to default");
+                Log.Info($"bian: reset team id to default");
             }
         }
 

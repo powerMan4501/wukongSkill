@@ -763,7 +763,13 @@ namespace bian
                     if (keyItem.BuffId != null)
                     {
                         BGUFunctionLibraryCS.BGUAddBuff(character, character, keyItem.BuffId ?? 103, EBuffSourceType.GM, keyItem.BuffTime ?? 1000);
-
+                    }
+                    if (keyItem?.Buffers?.Count > 0)
+                    {
+                        foreach (var buffId in keyItem.Buffers)
+                        {
+                            BGUFunctionLibraryCS.BGUAddBuff(character, character, buffId, EBuffSourceType.GM, keyItem.BuffTime ?? 1000);
+                        }
                     }
                     break;
                 default:
