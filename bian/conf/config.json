@@ -732,9 +732,9 @@
     {
       "Key": "TAB",
       "Type": "ADD_BUFF",
-      "BuffId": 1000191,
+      "Buffers": [1000192],
       "BuffTime": 500,
-      "Name": "召唤敌人",
+      "Name": "召唤己方幽魂",
       "AlawaysCanCast": true
     }
   ]
