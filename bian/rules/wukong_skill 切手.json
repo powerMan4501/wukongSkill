@@ -313,8 +313,8 @@
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 88880003,
           "buffCondition": 1000866,
-          "BornDirOffsetXLeftValue": 45,
-          "BornDirOffsetXRightValue": 45,
+          "BornDirOffsetXLeftValue": 180,
+          "BornDirOffsetXRightValue": 180,
           "ForTarget": true,
           "TimeDelay": 950,
           "desc": "有冰buff，冰剑气"

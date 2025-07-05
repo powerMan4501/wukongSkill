@@ -127,8 +127,9 @@
       "Key": "XBUTTON2"
     },
     {
-      "Id": 1001241,
+      "Id": 1001247,
       "CanBreak": true,
+      "Name": "射箭",
       "Key": "A+X"
     },
     {
@@ -138,8 +139,8 @@
       "Key": "NUMPAD9"
     },
     {
-      "Id": 10869,
-      "Name": "飞棍，天命人版扔棍子",
+      "Id": 50201,
+      "Name": "扔棍子",
       "Key": "A+C",
       "CanBreak": false
     },

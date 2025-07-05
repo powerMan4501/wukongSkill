@@ -67,6 +67,47 @@
           "desc": "平A2 20102  夜叉王顺时针索敌横扫"
         }
       ]
+    },
+
+    {
+      "Name": "杨戬大招无敌",
+      "Description": "把二连横扫变成四联横扫",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_mgd_yangjian_01_ShangTian"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_mgd_yangjian_01_skill01_A"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_mgd_yangjian_01_skill02"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffID": 105111
+        }
+      ]
+    },
+    {
+      "Name": "杨戬大招无敌",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_mgd_yangjian_01_skill02"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffID": 1000110
+        }
+      ]
     }
   ]
 }

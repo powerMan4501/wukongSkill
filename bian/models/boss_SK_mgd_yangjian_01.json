@@ -612,16 +612,14 @@
     {
       "Id": 800083,
       "CanBreak": false,
-      "Name": "激光分身之后，万剑归宗大招，但视角很乱",
-      "Key": "X",
-      "Buffs": [1000110]
+      "Name": "激光分身之后，万剑归宗大招，但视角很乱 AM_mgd_yangjian_01_skill01_A",
+      "Key": "X"
     },
     {
       "Id": 800084,
       "CanBreak": false,
       "Name": "万剑归宗大招",
-      "Key": "C",
-      "Buffs": [1000110]
+      "Key": "C"
     },
     {
       "Id": 800087,
