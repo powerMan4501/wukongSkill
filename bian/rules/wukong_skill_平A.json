@@ -37,9 +37,20 @@
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 1713001,
           "ForTarget": true,
-          "noBuffsCondition": [1000866, 1000867],
-          "desc": "没冰火buff就发射红剑气",
+          "buffCondition": 1000868,
+          "desc": "有毒buff，就发射红剑气",
           "TimeDelay": 200
+        },
+
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "BulletNumInOneWave": 9,
+          "ProjectTileID": 1026203,
+          "ForTarget": true,
+          "noBuffsCondition": [1000866, 1000867, 1000868],
+          "desc": "没冰火毒buff就发射红剑气",
+          "TimeDelay": 100
         }
       ]
     },
@@ -102,9 +113,19 @@
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 1713001,
           "ForTarget": true,
-          "noBuffsCondition": [1000866, 1000867],
-          "desc": "没冰火buff就发射红剑气",
+          "buffCondition": 1000868,
+          "desc": "有毒buff就发射红剑气",
           "TimeDelay": 200
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "BulletNumInOneWave": 9,
+          "ProjectTileID": 1026203,
+          "ForTarget": true,
+          "noBuffsCondition": [1000866, 1000867, 1000868],
+          "desc": "没有冰火毒毒buff就发射红剑气",
+          "TimeDelay": 100
         }
       ]
     },
@@ -163,8 +184,8 @@
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 1713001,
           "ForTarget": true,
-          "noBuffsCondition": [1000866, 1000867],
-          "desc": "没冰火buff就发射红剑气",
+          "buffCondition": 1000868,
+          "desc": "毒，就发射红剑气",
           "TimeDelay": 200
         },
         {
@@ -172,9 +193,30 @@
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 1713001,
           "ForTarget": true,
-          "noBuffsCondition": [1000866, 1000867],
-          "desc": "没冰火buff就发射红剑气",
+          "buffCondition": 1000868,
+          "desc": "毒，就发射红剑气",
           "TimeDelay": 400
+        },
+
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "BulletNumInOneWave": 9,
+          "ProjectTileID": 1026203,
+          "ForTarget": true,
+          "noBuffsCondition": [1000866, 1000867, 1000868],
+          "desc": "没冰火毒buff就发射红剑气",
+          "TimeDelay": 190
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "BulletNumInOneWave": 9,
+          "ProjectTileID": 1026203,
+          "ForTarget": true,
+          "noBuffsCondition": [1000866, 1000867, 1000868],
+          "desc": "没冰火毒buff就发射红剑气",
+          "TimeDelay": 350
         }
       ]
     },
@@ -213,9 +255,20 @@
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 1713001,
           "ForTarget": true,
-          "noBuffsCondition": [1000866, 1000867],
-          "desc": "没冰火buff就发射红剑气",
+          "buffCondition": 1000868,
+          "desc": "毒buff就发射红剑气",
           "TimeDelay": 200
+        },
+
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "BulletNumInOneWave": 9,
+          "ProjectTileID": 1026203,
+          "ForTarget": true,
+          "noBuffsCondition": [1000866, 1000867, 1000868],
+          "desc": "没冰火毒buff，就发射红剑气",
+          "TimeDelay": 100
         }
       ]
     },

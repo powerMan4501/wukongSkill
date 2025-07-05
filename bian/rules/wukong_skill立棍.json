@@ -140,6 +140,25 @@
           "desc": "有火buff,红孩儿砸地"
         }
       ]
+    },
+
+    {
+      "Name": "蓄力过程 ",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_Xuli_C_loop_"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+          "ProjectTileID": 50051029,
+          "OffsetZ": 500
+        }
+      ]
     }
   ]
 }

@@ -49,33 +49,39 @@
   "Level2Scale": 2.2,
   "XRate": -500.0,
   "ZRate": 300.0,
+  "CoolDownRate": 60,
   "TransDone": {
-    "Buffers": [2072, 602]
+    "Buffers": [2072, 602],
+    "doneSkill": {
+      "Id": 440534,
+      "CanBreak": false,
+      "Name": "无前摇斜上横扫一下 AM_HYS_HongHaiEr_02A_Atk_08_C"
+    }
   },
   "Skills": [
     {
       "Id": 440538,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "几乎无前摇低位横扫一下-可用 AM_HYS_HongHaiEr_02A_Atk_08_C2",
       "Key": "LBUTTON",
       "Step": 1
     },
     {
       "Id": 440534,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "无前摇斜上横扫一下 AM_HYS_HongHaiEr_02A_Atk_08_C",
       "Key": "LBUTTON",
       "Step": 2
     },
     {
       "Id": 440505,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "砍了很多下，最后扔出双刀 AM_HYS_HongHaiEr_02A_Atk_05",
       "Key": "S+LBUTTON"
     },
     {
       "Id": 440504,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "平A好几下，最后扫腿  AM_HYS_HongHaiEr_02A_Atk_04",
       "Key": "A+LBUTTON"
     },
@@ -127,28 +133,28 @@
     },
     {
       "Id": 440512,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "突进，慢速砍一下，踢一脚 AM_HYS_HongHaiEr_02A_Atk_12",
       "Key": "C+XBUTTON2",
       "Step": 1
     },
     {
       "Id": 440535,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "突进飞过去索敌砍+踢+砍 AM_HYS_HongHaiEr_02A_Atk_12_C",
       "Key": "C+XBUTTON2",
       "Step": 2
     },
     {
       "Id": 440516,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "很长的平a连招+跳起瞬发地刺  AM_HYS_HongHaiEr_02A_Atk_10_02_01",
       "Key": "S+XBUTTON2",
       "Step": 1
     },
     {
       "Id": 440517,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "较短的平A连招+跳起瞬发地刺  AM_HYS_HongHaiEr_02A_Atk_10_02_02",
       "Key": "S+XBUTTON2",
       "Step": 2
@@ -168,13 +174,13 @@
     },
     {
       "Id": 440511,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "突进，踢一脚  AM_HYS_HongHaiEr_02A_Atk_11",
       "Key": "XBUTTON2"
     },
     {
       "Id": 440573,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "隐身突进，踢一脚,概率卡墙",
       "Key": "",
       "Step": 2
@@ -258,7 +264,7 @@
     },
     {
       "Id": 440510,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "前摇+砍两下，满地地刺 AM_HYS_HongHaiEr_02A_Atk_10_01",
       "Key": "A+C"
     },
@@ -276,7 +282,7 @@
     },
     {
       "Id": 440539,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "前进一小步扫腿，还行可当平A",
       "Key": ""
     },
@@ -300,13 +306,13 @@
     },
     {
       "Id": 440501,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "平A好几下",
       "Key": ""
     },
     {
       "Id": 440502,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "摆架势",
       "Key": ""
     },
@@ -320,127 +326,127 @@
     },
     {
       "Id": 440513,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "前摇—+很长的平a连招",
       "Key": ""
     },
     {
       "Id": 440522,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "飞来飞去打人",
       "Key": ""
     },
     {
       "Id": 440524,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "飞来飞去，打一下，但打不中",
       "Key": ""
     },
     {
       "Id": 440531,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "飞来飞去打人",
       "Key": ""
     },
     {
       "Id": 440541,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "侧身前翻突进",
       "Key": ""
     },
     {
       "Id": 440545,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "突进上去砍一刀，容易打空",
       "Key": ""
     },
     {
       "Id": 440551,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "摆架势",
       "Key": ""
     },
     {
       "Id": 440553,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "摆架势",
       "Key": ""
     },
     {
       "Id": 440554,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "摆架势",
       "Key": ""
     },
     {
       "Id": 440560,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "平A两下",
       "Key": ""
     },
     {
       "Id": 440563,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "无索敌冲上去砍一下，踢一脚",
       "Key": ""
     },
     {
       "Id": 440564,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "侧身前翻突进",
       "Key": ""
     },
     {
       "Id": 440567,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "废招，打不中人",
       "Key": ""
     },
     {
       "Id": 440570,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "摆架势",
       "Key": ""
     },
     {
       "Id": 440571,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "飞到天上，有bug",
       "Key": ""
     },
     {
       "Id": 440581,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "飞到空中，有bug",
       "Key": ""
     },
     {
       "Id": 440584,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "接 440581 ，落地地刺,会卡墙",
       "Key": ""
     },
     {
       "Id": 440583,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "摆架势",
       "Key": ""
     },
     {
       "Id": 440591,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "未命名",
       "Key": ""
     },
     {
       "Id": 440593,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "未命名",
       "Key": ""
     },
     {
       "Id": 440599,
-      "CanBreak": true,
+      "CanBreak": false,
       "Name": "未命名",
       "Key": ""
     }

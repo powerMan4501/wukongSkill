@@ -296,10 +296,16 @@
       "Name": "变身为【金甲犀】"
     },
     {
-      "Key": "F11",
+      "Key": "",
       "Type": "BOSS",
       "Label": "SK_HYS_Niumo",
       "Name": "变身为【牛哥】"
+    },
+    {
+      "Key": "F11",
+      "Type": "BOSS",
+      "Label": "SK_mgd_yangjian_01",
+      "Name": "变身为【杨戬】"
     },
     {
       "Key": "S+F11",
@@ -373,12 +379,7 @@
       "Label": "SK_HFM_XunShanGui_01a",
       "Name": "变身为【巡山鬼】"
     },
-    {
-      "Key": "",
-      "Type": "BOSS",
-      "Label": "SK_mgd_yangjian_01",
-      "Name": "变身为【杨戬】"
-    },
+
     {
       "Key": "S+F12",
       "Type": "BOSS",

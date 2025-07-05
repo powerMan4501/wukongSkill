@@ -132,11 +132,10 @@
       "Key": "A+X"
     },
     {
-      "Id": 10992,
+      "Id": 1001245,
       "CanBreak": true,
-      "Name": "定风珠",
-      "Key": "NUMPAD9",
-      "Buffs": [1000095]
+      "Name": " ",
+      "Key": "NUMPAD9"
     },
     {
       "Id": 10869,

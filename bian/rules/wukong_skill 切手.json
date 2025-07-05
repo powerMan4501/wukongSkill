@@ -53,10 +53,13 @@
           "Type": "buff",
           "BuffID": 289
         },
+
         {
-          "Type": "skill",
-          "SkillID": 1001234,
-          "TimeDelay": 600
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 8880007,
+          "ForTarget": true,
+          "TimeDelay": 650
         }
       ]
     },
@@ -158,7 +161,8 @@
         },
         {
           "Type": "buff",
-          "BuffID": 289
+          "BuffID": 289,
+          "TimeDelay": 600
         }
       ]
     },
@@ -230,22 +234,35 @@
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 80009901,
           "ForTarget": true,
-          "TimeDelay": 200,
-          "desc": "杨戬万剑"
+          "TimeDelay": 150,
+          "BulletNumInOneWave": 6,
+          "desc": "杨戬万剑，小型剑，密密麻麻（原本无伤害，目前给了10点）"
         },
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 80009999,
+          "ProjectTileID": 80009913,
           "ForTarget": true,
-          "desc": "三山冠"
+          "TimeDelay": 200,
+          "BulletNumInOneWave": 7,
+          "desc": "杨戬万剑，打中带白色雾"
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 80009910,
+          "ForTarget": true,
+          "TimeDelay": 100,
+          "BulletNumInOneWave": 9,
+          "desc": "杨戬飞剑，带拖尾"
         },
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 80000008,
           "ForTarget": true,
-          "desc": "杨戬飞剑"
+          "BulletNumInOneWave": 8,
+          "desc": "杨戬飞剑，带白色拖尾"
         }
       ]
     },
