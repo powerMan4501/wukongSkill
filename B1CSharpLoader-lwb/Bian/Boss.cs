@@ -3,7 +3,8 @@
 namespace bian
 {
 
-    public class WeaponConfig {
+    public class WeaponConfig
+    {
         public string Weapon { get; set; }
         public string SocketName { get; set; }
     }
@@ -24,19 +25,22 @@ namespace bian
         }
     }
 
-    public class MockedInteractBone {
+    public class MockedInteractBone
+    {
         public int WeaponIndex { get; set; }
         public string FirstBoneName { get; set; }
         public float FirstRadius { get; set; }
         public string NextBoneName { get; set; }
         public float NextRadius { get; set; }
 
-        public override string ToString() {
+        public override string ToString()
+        {
             return $"InteractBone[{FirstBoneName}|{FirstRadius}|{NextBoneName}|{NextRadius}]";
         }
     }
 
-    public class MockFTressFXShadeSettings {
+    public class MockFTressFXShadeSettings
+    {
         public float FiberRadius { get; set; }
         public float FiberSpacing { get; set; }
         public float HairThickness { get; set; }
@@ -69,6 +73,7 @@ namespace bian
         public int Override_AbnormalDispID_Attacker { set; get; }
 
         public int Override_AbnormalDispID_Victim { set; get; }
+        public Skill? doneSkill { set; get; }
 
     }
 }

@@ -34,6 +34,7 @@ namespace bian
     public class AfterTransDone
     {
         public List<int>? Buffers { get; set; }
+        public Skill? doneSkill { get; set; }
     }
 
     public class DebugItem

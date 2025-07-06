@@ -65,11 +65,22 @@ namespace bian
         public int BornDirOffsetZLeftValue { get; set; }
         public int BornDirOffsetZRightValue { get; set; }
 
+        public int BulletNumInOneWave { get; set; }
+
         public List<int>? buffsCondition { get; set; }
         public List<int>? noBuffsCondition { get; set; }
 
+        public string? TargetProjectilePosOffsetType { get; set; }
+        public string? TargetRangeOffsetInfo { get; set; }
+        public int? TargetMatrixDensity { get; set; }
+        public int? TargetCircleRadius { get; set; }
+        public int? NoiseX { get; set; }
+        public int? NoiseY { get; set; }
+        public int? NoiseZ { get; set; }
 
-
+        public int? VigorSkillID { get; set; }
+        public int? BossSkillID { get; set; }
+        public string? Label { get; set; }
 
         public RuleAction()
         {
@@ -110,6 +121,7 @@ namespace bian
     }
     public class Rule
     {
+        private ModelManager manager;
         public string Name { get; set; }
         public string Description { get; set; }
         public List<Filter> Filters { get; set; }
@@ -162,13 +174,39 @@ namespace bian
                 case "skill":
                     if (action.SkillID > 0)
                     {
-                        Log.Info($"bian: start run rule action: cast-skill {action.SkillID}");
                         //BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(action.SkillID, null, EMontageBindReason.Default, false);
                         //var csi = new FCastSkillInfo(action.SkillID, ECastSkillSourceType.Notify);
                         //csi.NeedCheckSkillCanCast = false;
                         //BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(csi);
                         BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(action.SkillID, null, EMontageBindReason.NormalSkill, false);
                     }
+                    break;
+
+                case "trans":
+                    break;
+
+                case "boss":
+                    break;
+
+                case "magic":
+                    Console.WriteLine($"bian: 延迟650毫秒执行精魄技能 {action?.SkillID} ");
+
+                    if (action?.SkillID > 0)
+                    {
+                        BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10100, ECastSkillSourceType.GM));
+                        Task.Run(async delegate
+                        {
+                            await Task.Delay(650);
+                            Console.WriteLine($"bian: 开始执行精魄技能 {action.SkillID} ");
+                            Utils.TryRunOnGameThread((Action)delegate
+                            {
+                                Helper.CastVigorSkillByID(character, action.SkillID, true);
+                            });
+
+                        });
+                    }
+
+
                     break;
                 case "bullet":
                     if (action.Bullet != null)
@@ -285,7 +323,14 @@ namespace bian
                     {
                         action.TimeDelay = 1;
                     }
+                    if (action.TimeDelay <= 0)
+                    {
+                        if (action.Type.ToUpper() == "TRANS" || action.Type.ToUpper() == "BOSS" || action.Type.ToUpper() == "MAGIC")
+                        {
+                            action.TimeDelay = 1;
+                        }
 
+                    }
                     var timeDelay = action.TimeDelay;
                     if (action.TimeDelay > 1)
                     {

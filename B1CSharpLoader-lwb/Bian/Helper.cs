@@ -190,6 +190,8 @@ namespace bian
             MethodInfo methodInfo = magicChangeComp.GetType().GetMethod("DoCastMagicallyChangeSkill", BindingFlags.NonPublic | BindingFlags.Instance);
 
             var soulSkillDesc = GameDBRuntime.GetSoulSkillDesc(VigorSkillID);
+
+            Console.WriteLine($"bian: CastVigorSkillByID 执行精魄技能 {VigorSkillID} {soulSkillDesc}");
             if (soulSkillDesc == null)
             {
                 return;
@@ -215,12 +217,14 @@ namespace bian
         {
             // 获取变身技能描述
             var soulSkillDesc = GameDBRuntime.GetSoulSkillDesc(VigorSkillID);
+
+            Console.WriteLine($"bian:reset status {VigorSkillID} {soulSkillDesc}");
             if (soulSkillDesc == null)
             {
                 return;
             }
 
-            // Log.Debug("bian:CastVigorSkill");
+
             var magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(character);
             var BGS = GetBUS_GSEventCollection();
 
@@ -232,7 +236,6 @@ namespace bian
                 BUC_MagicallyChangeData data = fieldData.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
 
                 // 初始化状态
-                Console.WriteLine("bian:reset status");
                 //data.bIsPendingCast = true;
                 //data.bIsPendingReset = false;
                 data.CurVigorSkillID = 0;
@@ -594,7 +597,31 @@ namespace bian
                 {
                     none_target = false;
                 }
-                Log.Info($"bian: attackTarget {attackTarget} {offsetInfo.PosOffset.X}");
+                if (action?.TargetProjectilePosOffsetType != null)
+                {
+                    ProjectileSpawnNSInfo.TargetPosOffsetInfo.PosOffsetType = (b1.ProjectilePosOffsetType)Enum.Parse(typeof(b1.ProjectilePosOffsetType), action.TargetProjectilePosOffsetType);
+                }
+
+                // if (action?.TargetRangeOffsetInfo != null)
+                // {
+                //     ProjectileSpawnNSInfo.TargetPosOffsetInfo.RangeOffsetInfo = JsonConvert.DeserializeObject<b1.FRangePointSetRule>(action.TargetRangeOffsetInfo);
+                // }
+
+                if (action?.TargetMatrixDensity != null)
+                {
+                    ProjectileSpawnNSInfo.TargetPosOffsetInfo.RangeOffsetInfo.MatrixDensity = (int)action.TargetMatrixDensity;
+                    ProjectileSpawnNSInfo.TargetPosOffsetInfo.PosOffsetType = (b1.ProjectilePosOffsetType)Enum.Parse(typeof(b1.ProjectilePosOffsetType), "RangeOffset");
+
+                }
+                if (action?.NoiseX > 0 || action?.NoiseY > 0 || action?.NoiseZ > 0)
+                {
+                    ProjectileSpawnNSInfo.TargetPosOffsetInfo.RangeOffsetInfo.Noise = new FVector(action?.NoiseX ?? 0, action?.NoiseY ?? 0, action?.NoiseZ ?? 0);
+                }
+                if (action?.TargetCircleRadius != null)
+                {
+                    ProjectileSpawnNSInfo.TargetPosOffsetInfo.RangeOffsetInfo.CircleRadius = (int)action.TargetCircleRadius;
+                    ProjectileSpawnNSInfo.TargetPosOffsetInfo.PosOffsetType = (b1.ProjectilePosOffsetType)Enum.Parse(typeof(b1.ProjectilePosOffsetType), "RangeOffset");
+                }
                 ProjectileSpawnNSInfo.InitSpawnInfo(spawnBase, offsetInfo, none_target, bGWDataAsset_ProjectileSpawnConfig.SpawnBase_NoneTarget, bGWDataAsset_ProjectileSpawnConfig.SpawnPosOffsetInfo_NoneTarget, character, aActor, aActor, null, in fEffectInstReq);
                 ProjectileSpawnNSInfo.AttachToSpawnBase = bGWDataAsset_ProjectileSpawnConfig.AttachToSpawnBase;
                 ProjectileSpawnNSInfo.AttachRule_Rot = bGWDataAsset_ProjectileSpawnConfig.AttachRule_Rot;
@@ -633,6 +660,10 @@ namespace bian
                     {
                         ProjectileSpawnNSInfo.ProjectileFlySpd.Spd.RightValue = action.SpeedRightValue;
                     }
+                }
+                if (action?.BulletNumInOneWave > 0)
+                {
+                    ProjectileSpawnNSInfo.SpawnNumPerWave = action.BulletNumInOneWave;
                 }
                 ProjectileSpawnNSInfo.MontageID = -1;
                 ProjectileSpawnNSInfo.ANSTotalTime = 0;

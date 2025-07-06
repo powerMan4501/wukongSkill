@@ -510,6 +510,7 @@ namespace bian
             BPS_GSEventCollection.Get(character.PlayerState).Evt_TriggerPlayerTransBegin -= new Del_PlayerTransBegin(OnEventTransBegin);
         }
 
+        // 应用缓冲区
         public void ApplyBuffers()
         {
             if (Config != null && Config.TransDone != null)
@@ -543,7 +544,24 @@ namespace bian
                     }
                 }
             }
+            if (CurrentModel?.TransDone?.doneSkill != null)
+            {
 
+                if (CurrentModel.TransDone.doneSkill.Id > 0)
+                {
+                    Log.Info($"bian: BossConf 变身后执行技能 --> {CurrentModel.TransDone.doneSkill.Id}");
+                    Task.Run(async delegate
+                               {
+                                   await Task.Delay(660);
+                                   Utils.TryRunOnGameThread((Action)delegate
+                                   {
+                                       var character = Helper.GetBGUPlayerCharacterCS();
+                                       BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(CurrentModel.TransDone.doneSkill.Id, null, EMontageBindReason.Default, false);
+                                   });
+                               });
+
+                }
+            }
             if (CurrentModel != null)
             {
                 if (CurrentModel.Level1Scale > 0 && CurrentModel.Level1Scale != 1)
@@ -573,7 +591,7 @@ namespace bian
             BGUFunctionLibraryCS.BGUAddBuff(character, character, 20300, EBuffSourceType.GM, 1000);
             BGUFunctionLibraryCS.BGUAddBuff(character, character, 20400, EBuffSourceType.GM, -1);
 
-            // Log.Debug("bian: do trans end SKMESH:" + character.Mesh.SkeletalMesh.GetFullName());
+            Log.Info("bian: 变身结束 do trans end SKMESH:" + character.Mesh.SkeletalMesh.GetFullName());
 
             var model = (BaseModel)GetCurrentModel(character);
             if (model != null)
@@ -634,6 +652,8 @@ namespace bian
                             BGUFunctionLibraryCS.BGUAddBuff(character, character, buffer, EBuffSourceType.GM, SkillMontage.GetPlayLength() * 1000 / playTimeRate);
                         }
                     }
+
+                    Log.Info($"bian:CastSkill 执行技能 --> {skill.Id}");
                     BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(skill.Id, null, Source, false);
                 }
             }
@@ -1478,6 +1498,8 @@ namespace bian
                 }
                 config.Weapons.SetValues(weapons);
             }
+
+
             // Log.Debug($"bian: load weapons count: {config.Weapons.Count} -------------------");
         }
 

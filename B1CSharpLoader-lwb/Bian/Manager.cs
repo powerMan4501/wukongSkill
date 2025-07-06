@@ -231,14 +231,13 @@ namespace bian
                 // 平A4
                 bufferId = 20104;
             }
-            if (ID == 10705 || ID == 10706 || ID == 50001 || ID == 50003 || ID == 50005 || ID == 10721)
+            if (ID == 10705 || ID == 10706 || ID == 50001 || ID == 50003 || ID == 50005 || ID == 10721 || ID == 10720)
             {
                 BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);
             }
             if (bufferId > 0)
             {
-                BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 3000);
-
+                BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 4000);
             }
 
         }
