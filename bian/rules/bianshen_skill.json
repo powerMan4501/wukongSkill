@@ -515,6 +515,7 @@
     },
     {
       "Name": "小骊龙",
+      "speedRate": 2,
       "Description": "锤子碰一下然后释放电圈，增加大电圈",
       "Filters": [
         {
@@ -538,6 +539,7 @@
     },
     {
       "Name": "小骊龙",
+      "speedRate": 2,
       "Description": "跳起来砸地，增加大电圈",
       "Filters": [
         {
@@ -561,100 +563,31 @@
     },
     {
       "Name": "小骊龙",
-      "Description": "连续锤地面，增加大电圈",
+      "speedRate": 2,
+      "Description": "音游，连续锤地面，增加大电圈",
       "Filters": [
         {
           "Type": "montage",
-          "Name": "作废——AM_lys_chuilong_01a_attack_05_01"
+          "Name": "AM_lys_chuilong_01a_attack_13_01"
         }
       ],
       "AfterActions": [
         {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50051029,
-          "TimeDelay": 2100
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50051029,
-          "TimeDelay": 2900
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50051029,
-          "TimeDelay": 3500
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50051029,
-          "TimeDelay": 4500
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50051029,
-          "TimeDelay": 5500
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50051029,
-          "TimeDelay": 6500
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50051029,
-          "TimeDelay": 7500
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50051029,
-          "TimeDelay": 8500
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50051029,
-          "TimeDelay": 9500
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50051029,
-          "TimeDelay": 10500
+          "Type": "buff",
+          "BuffID": 1000082,
+          "TimeDelay": 2000
         }
       ]
     },
+
     {
       "Name": "小骊龙",
+      "speedRate": 2,
       "Description": "连续互锤三下，给目标上雷 ,暂时作废",
       "Filters": [
         {
           "Type": "montage",
-          "Name": "作废——AM_lys_chuilong_01a_attack_09"
-        }
-      ],
-      "AfterActions": [
-        {
-          "Type": "buff",
-          "BuffID": 1000082,
-          "TimeDelay": 2500
-        },
-        {
-          "Type": "buff",
-          "BuffID": 1000082,
-          "TimeDelay": 4500
-        },
-        {
-          "Type": "buff",
-          "BuffID": 1000082,
-          "TimeDelay": 6500
+          "Name": "AM_lys_chuilong_01a_attack_09"
         }
       ]
     },
@@ -1028,6 +961,8 @@
     {
       "Name": "小骊龙卷风沙",
       "Description": "振动波",
+
+      "speedRate": 2,
       "Filters": [
         {
           "Type": "montage",

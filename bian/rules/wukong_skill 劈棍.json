@@ -81,8 +81,9 @@
       "AfterActions": [
         {
           "Type": "summon",
-          "SummonID": 60020015,
-          "SummonCount": 2
+          "SummonID": 700236,
+          "SummonCount": 5,
+          "TimeDelay": 550
         },
 
         {

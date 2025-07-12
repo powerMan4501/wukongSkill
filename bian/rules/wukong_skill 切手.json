@@ -34,7 +34,73 @@
         }
       ]
     },
+    {
+      "Name": "召唤横向金箍棒",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_02_Z_1"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 88880008,
+          "ForTarget": true,
+          "BornDirOffsetYLeftValue": -45,
+          "BornDirOffsetYRightValue": -45,
 
+          "BornDirOffsetXLeftValue": 90,
+          "BornDirOffsetXRightValue": 90,
+          "TimeDelay": 250
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 88880008,
+          "ForTarget": true,
+          "BornDirOffsetXLeftValue": 270,
+          "BornDirOffsetXRightValue": 270,
+          "TimeDelay": 250
+        }
+      ]
+    },
+
+    {
+      "Name": "残躯横扫一下捅一下，召唤横向金箍棒",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_mgd_jsds_atk_01"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 88880008,
+          "ForTarget": true,
+          "BornDirOffsetYLeftValue": -45,
+          "BornDirOffsetYRightValue": -45,
+
+          "BornDirOffsetXLeftValue": 90,
+          "BornDirOffsetXRightValue": 90,
+          "TimeDelay": 490
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 88880008,
+          "ForTarget": true,
+          "BornDirOffsetXLeftValue": 270,
+          "BornDirOffsetXRightValue": 270,
+          "TimeDelay": 490
+        }
+      ]
+    },
     {
       "Name": "风云转改成，空中小风车",
       "Description": "",
@@ -57,7 +123,7 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 8880007,
+          "ProjectTileID": 88880007,
           "ForTarget": true,
           "TimeDelay": 650
         }
@@ -84,6 +150,7 @@
     {
       "Name": "江海翻 全屏地火",
       "Description": "",
+      "speedRate": 1.5,
       "Filters": [
         {
           "Type": "montage",
@@ -235,7 +302,13 @@
           "ProjectTileID": 80009901,
           "ForTarget": true,
           "TimeDelay": 150,
-          "BulletNumInOneWave": 6,
+          "BulletNumInOneWave": 4,
+          "TargetProjectilePosOffsetType": "RangeOffset",
+          "TargetMatrixDensity": 120,
+          "TargetCircleRadius": 900,
+          "NoiseX": 100,
+          "NoiseY": 100,
+          "NoiseZ": 100,
           "desc": "杨戬万剑，小型剑，密密麻麻（原本无伤害，目前给了10点）"
         },
         {
@@ -244,7 +317,13 @@
           "ProjectTileID": 80009913,
           "ForTarget": true,
           "TimeDelay": 200,
-          "BulletNumInOneWave": 7,
+          "BulletNumInOneWave": 3,
+          "TargetProjectilePosOffsetType": "RangeOffset",
+          "TargetMatrixDensity": 100,
+          "TargetCircleRadius": 900,
+          "NoiseX": 200,
+          "NoiseY": 100,
+          "NoiseZ": 100,
           "desc": "杨戬万剑，打中带白色雾"
         },
         {
@@ -253,7 +332,13 @@
           "ProjectTileID": 80009910,
           "ForTarget": true,
           "TimeDelay": 100,
-          "BulletNumInOneWave": 9,
+          "BulletNumInOneWave": 2,
+          "TargetProjectilePosOffsetType": "RangeOffset",
+          "TargetMatrixDensity": 500,
+          "TargetCircleRadius": 1500,
+          "NoiseX": 200,
+          "NoiseY": 100,
+          "NoiseZ": 100,
           "desc": "杨戬飞剑，带拖尾"
         },
         {
@@ -261,7 +346,13 @@
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 80000008,
           "ForTarget": true,
-          "BulletNumInOneWave": 8,
+          "BulletNumInOneWave": 2,
+          "TargetProjectilePosOffsetType": "RangeOffset",
+          "TargetMatrixDensity": 15,
+          "TargetCircleRadius": 600,
+          "NoiseX": 200,
+          "NoiseY": 100,
+          "NoiseZ": 100,
           "desc": "杨戬飞剑，带白色拖尾"
         }
       ]
@@ -415,7 +506,7 @@
           "OffsetY": 500,
           "TimeDelay": 920,
           "buffCondition": 1000867,
-          "desc": "有火buff 10707红孩儿砸地"
+          "desc": "有火buff 10705红孩儿砸地"
         },
         {
           "Type": "bullet",
@@ -425,7 +516,7 @@
           "OffsetY": 500,
           "TimeDelay": 920,
           "buffCondition": 1000866,
-          "desc": "有冰buff 冰暴"
+          "desc": "有冰buff 10705冰暴"
         },
         {
           "Type": "bullet",
@@ -435,7 +526,7 @@
           "OffsetY": 500,
           "TimeDelay": 920,
           "buffCondition": 1000866,
-          "desc": "有冰buff 雅香客冰雾气"
+          "desc": "有冰buff 10705雅香客冰雾气"
         },
         {
           "Type": "bullet",
@@ -445,15 +536,11 @@
           "OffsetY": 500,
           "TimeDelay": 920,
           "noBuffsCondition": [1000867, 1000866],
-          "desc": "没 冰火buff 黄符50058603"
+          "desc": "没 冰火buff 10705黄符50058603"
         },
         {
           "Type": "buff",
           "BuffID": 289
-        },
-        {
-          "Type": "buff",
-          "BuffID": 1000168
         }
       ]
     },

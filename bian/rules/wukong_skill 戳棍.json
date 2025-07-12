@@ -15,7 +15,7 @@
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
           "ProjectTileID": 74010202,
-          "TimeDelay": 1250,
+          "TimeDelay": 1200,
           "noBuffCondition": 1000866,
           "desc": "没冰buff就地火"
         },
@@ -23,7 +23,7 @@
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
           "ProjectTileID": 152,
-          "TimeDelay": 1250,
+          "TimeDelay": 1200,
           "buffCondition": 1000866,
           "desc": "有冰buff就地波"
         },
@@ -71,6 +71,7 @@
         }
       ]
     },
+
     {
       "Name": "残躯4蓄力",
       "Description": "",
@@ -104,7 +105,7 @@
     },
 
     {
-      "Name": "戳棍七星",
+      "Name": "戳棍 激光",
       "Description": "",
       "Filters": [
         {

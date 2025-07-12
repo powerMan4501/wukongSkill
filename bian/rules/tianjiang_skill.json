@@ -758,6 +758,7 @@
     {
       "Name": "杨戬格挡",
       "Description": "",
+      "speedRate": 1.2,
       "Filters": [
         {
           "Type": "montage",

@@ -8,7 +8,7 @@
       "Filters": [
         {
           "Type": "montage",
-          "Name": "AM_Dasheng_ComboA_01"
+          "Name": "AM_Dasheng_ComboA_01.AM_Dasheng_ComboA_01"
         }
       ],
       "AfterActions": [
@@ -18,7 +18,7 @@
           "ProjectTileID": 88880003,
           "ForTarget": true,
           "buffCondition": 1000866,
-          "desc": "有冰buff发射冰剑气1",
+          "desc": "有冰buff,大圣平A1,发射冰剑气",
           "TimeDelay": 200
         },
         {
@@ -29,7 +29,7 @@
           "buffCondition": 1000867,
           "BornDirOffsetXLeftValue": 91,
           "BornDirOffsetXRightValue": 91,
-          "desc": "有火buff发射火剑气",
+          "desc": "有火buff,大圣平A1,发射火剑气",
           "TimeDelay": 200
         },
         {
@@ -38,7 +38,7 @@
           "ProjectTileID": 1713001,
           "ForTarget": true,
           "buffCondition": 1000868,
-          "desc": "有毒buff，就发射红剑气",
+          "desc": "有毒buff,大圣平A1,就发射红剑气",
           "TimeDelay": 200
         },
 
@@ -46,10 +46,16 @@
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "BulletNumInOneWave": 9,
-          "ProjectTileID": 1026203,
+          "ProjectTileID": 18890701,
+          "TargetProjectilePosOffsetType": "RangeOffset",
+          "TargetMatrixDensity": 50,
+          "TargetCircleRadius": 500,
+          "NoiseX": 200,
+          "NoiseY": 100,
+          "NoiseZ": 100,
           "ForTarget": true,
           "noBuffsCondition": [1000866, 1000867, 1000868],
-          "desc": "没冰火毒buff就发射红剑气",
+          "desc": "没冰火毒buff,大圣平A1,剑雨",
           "TimeDelay": 100
         }
       ]
@@ -60,7 +66,7 @@
       "Filters": [
         {
           "Type": "montage",
-          "Name": "AM_Dasheng_ComboA_02"
+          "Name": "AM_Dasheng_ComboA_02.AM_Dasheng_ComboA_02"
         }
       ],
       "AfterActions": [
@@ -70,7 +76,7 @@
           "ProjectTileID": 88880003,
           "ForTarget": true,
           "buffCondition": 1000866,
-          "desc": "有冰buff发射冰剑气",
+          "desc": "有冰buff,大圣平A2,发射冰剑气",
           "TimeDelay": 200
         },
 
@@ -82,7 +88,7 @@
           "buffCondition": 1000866,
           "BornDirOffsetXLeftValue": 120,
           "BornDirOffsetXRightValue": 120,
-          "desc": "有冰buff发射冰剑气",
+          "desc": "有冰buff,大圣平A2,发射冰剑气",
           "TimeDelay": 670
         },
 
@@ -94,7 +100,7 @@
           "buffCondition": 1000867,
           "BornDirOffsetXLeftValue": 91,
           "BornDirOffsetXRightValue": 91,
-          "desc": "有火buff发射火剑气",
+          "desc": "有火buff,大圣平A2,发射火剑气",
           "TimeDelay": 200
         },
         {
@@ -105,7 +111,7 @@
           "buffCondition": 1000867,
           "BornDirOffsetXLeftValue": 30,
           "BornDirOffsetXRightValue": 30,
-          "desc": "有火buff发射火剑气",
+          "desc": "有火buff,大圣平A2,发射火剑气",
           "TimeDelay": 670
         },
         {
@@ -114,17 +120,23 @@
           "ProjectTileID": 1713001,
           "ForTarget": true,
           "buffCondition": 1000868,
-          "desc": "有毒buff就发射红剑气",
+          "desc": "有毒buff,大圣平A2,就发射红剑气",
           "TimeDelay": 200
         },
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "BulletNumInOneWave": 9,
-          "ProjectTileID": 1026203,
+          "ProjectTileID": 18890701,
+          "TargetProjectilePosOffsetType": "RangeOffset",
+          "TargetMatrixDensity": 50,
+          "TargetCircleRadius": 500,
+          "NoiseX": 200,
+          "NoiseY": 100,
+          "NoiseZ": 100,
           "ForTarget": true,
           "noBuffsCondition": [1000866, 1000867, 1000868],
-          "desc": "没有冰火毒毒buff就发射红剑气",
+          "desc": "没冰火毒buff,大圣平A2,剑雨",
           "TimeDelay": 100
         }
       ]
@@ -135,7 +147,7 @@
       "Filters": [
         {
           "Type": "montage",
-          "Name": "AM_Dasheng_ComboA_03"
+          "Name": "AM_Dasheng_ComboA_03.AM_Dasheng_ComboA_03"
         }
       ],
       "AfterActions": [
@@ -202,20 +214,32 @@
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "BulletNumInOneWave": 9,
-          "ProjectTileID": 1026203,
+          "ProjectTileID": 18890701,
+          "TargetProjectilePosOffsetType": "RangeOffset",
+          "TargetMatrixDensity": 50,
+          "TargetCircleRadius": 500,
+          "NoiseX": 200,
+          "NoiseY": 100,
+          "NoiseZ": 100,
           "ForTarget": true,
           "noBuffsCondition": [1000866, 1000867, 1000868],
-          "desc": "没冰火毒buff就发射红剑气",
+          "desc": "没冰火毒buff，剑雨",
           "TimeDelay": 190
         },
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "BulletNumInOneWave": 9,
-          "ProjectTileID": 1026203,
+          "ProjectTileID": 18890701,
+          "TargetProjectilePosOffsetType": "RangeOffset",
+          "TargetMatrixDensity": 50,
+          "TargetCircleRadius": 500,
+          "NoiseX": 200,
+          "NoiseY": 100,
+          "NoiseZ": 100,
           "ForTarget": true,
           "noBuffsCondition": [1000866, 1000867, 1000868],
-          "desc": "没冰火毒buff就发射红剑气",
+          "desc": "没冰火毒buff，剑雨",
           "TimeDelay": 350
         }
       ]
@@ -226,7 +250,7 @@
       "Filters": [
         {
           "Type": "montage",
-          "Name": "AM_Dasheng_ComboA_04"
+          "Name": "AM_Dasheng_ComboA_04.AM_Dasheng_ComboA_04"
         }
       ],
       "AfterActions": [
@@ -256,7 +280,7 @@
           "ProjectTileID": 1713001,
           "ForTarget": true,
           "buffCondition": 1000868,
-          "desc": "毒buff就发射红剑气",
+          "desc": "有毒buff就发射红剑气",
           "TimeDelay": 200
         },
 
@@ -264,10 +288,16 @@
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "BulletNumInOneWave": 9,
-          "ProjectTileID": 1026203,
+          "ProjectTileID": 18890701,
+          "TargetProjectilePosOffsetType": "RangeOffset",
+          "TargetMatrixDensity": 50,
+          "TargetCircleRadius": 500,
+          "NoiseX": 200,
+          "NoiseY": 100,
+          "NoiseZ": 100,
           "ForTarget": true,
           "noBuffsCondition": [1000866, 1000867, 1000868],
-          "desc": "没冰火毒buff，就发射红剑气",
+          "desc": "没冰火毒buff，剑雨",
           "TimeDelay": 100
         }
       ]
@@ -278,7 +308,7 @@
       "Filters": [
         {
           "Type": "montage",
-          "Name": "AM_Dasheng_ComboA_05"
+          "Name": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05"
         }
       ],
       "AfterActions": [

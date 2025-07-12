@@ -64,6 +64,7 @@
   "DisableDepthOfField": false,
   "XRate": -600.0,
   "ZRate": 400.0,
+  "skillSpeedRate": 1.6,
   "Skills": [
     {
       "Id": 302510,
@@ -76,9 +77,7 @@
       "CanBreak": true,
       "Name": "左右各慢速挥舞一次锤子，放一个小电球 AM_lys_chuilong_01a_attack_03",
       "Key": "S+LBUTTON",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 302511,
@@ -100,9 +99,7 @@
       "Name": "挥舞两次锤子 AM_lys_chuilong_01a_attack_12",
       "Key": "A+LBUTTON",
       "Step": 1,
-      "Buffs": [
-        1000104
-      ]
+      "Buffs": [1000104]
     },
     {
       "Id": 302509,
@@ -121,27 +118,21 @@
       "CanBreak": true,
       "Name": "右反手锤一下 AM_lys_chuilong_01a_attack_06",
       "Key": "",
-      "Buffs": [
-        1000104
-      ]
+      "Buffs": [1000104]
     },
     {
       "Id": 302513,
       "CanBreak": true,
       "Name": "挥舞两次锤子 AM_lys_chuilong_01a_attack_03_C",
       "Key": "S+RBUTTON",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 302508,
       "CanBreak": true,
       "Name": "锤子互击释放小范围雷电 AM_lys_chuilong_01a_attack_08",
       "Key": "",
-      "Buffs": [
-        1000104
-      ]
+      "Buffs": [1000104]
     },
     {
       "Id": 302504,
@@ -149,9 +140,7 @@
       "Name": "跳起+捶地+红色爆炸+闪电 AM_lys_chuilong_01a_attack_04",
       "Key": "XBUTTON2",
       "Step": 1,
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 302514,
@@ -159,36 +148,28 @@
       "Name": "跳起+捶地+红色爆炸+闪电 AM_lys_chuilong_01a_attack_04_C",
       "Key": "XBUTTON2",
       "Step": 2,
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 302501,
       "CanBreak": true,
       "Name": "卷风沙  AM_lys_chuilong_01a_attack_01_01",
       "Key": "S+XBUTTON2",
-      "Buffs": [
-        1000104
-      ]
+      "Buffs": [1000104]
     },
     {
       "Id": 302556,
       "CanBreak": true,
       "Name": "连续锤很多下 AM_lys_chuilong_01a_attack_05_03",
       "Key": "XBUTTON1",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 302502,
       "CanBreak": true,
       "Name": "砸三次锤子  AM_lys_chuilong_01a_attack_02",
       "Key": "S+XBUTTON1",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 302521,
@@ -202,9 +183,7 @@
       "Name": "转身打一下 AM_lys_chuilong_01a_turn_l_02",
       "Key": "SPACE",
       "Step": 1,
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 302554,
@@ -212,9 +191,7 @@
       "Name": "转身打一下 AM_lys_chuilong_01a_turn_r_02",
       "Key": "SPACE",
       "Step": 2,
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 302599,
@@ -251,27 +228,21 @@
       "CanBreak": true,
       "Name": "右反手锤一下 AM_lys_chuilong_01a_attack_06",
       "Key": "X",
-      "Buffs": [
-        1000104
-      ]
+      "Buffs": [1000104]
     },
     {
       "Id": 302507,
       "CanBreak": true,
       "Name": "反手锤一下  AM_lys_chuilong_01a_attack_07",
       "Key": "A+V",
-      "Buffs": [
-        1000104
-      ]
+      "Buffs": [1000104]
     },
     {
       "Id": 302581,
       "CanBreak": true,
       "Name": "卷风沙，被攻击触发巴山虎  AM_lys_chuilong_01a_attack_01_01",
       "Key": "C",
-      "Buffs": [
-        1000104
-      ]
+      "Buffs": [1000104]
     },
     {
       "Id": 302555,

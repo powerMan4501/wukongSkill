@@ -133,9 +133,9 @@
       "Key": "A+X"
     },
     {
-      "Id": 1001245,
+      "Id": 10909,
       "CanBreak": true,
-      "Name": " ",
+      "Name": "缩地",
       "Key": "NUMPAD9"
     },
     {
@@ -191,28 +191,43 @@
       "Id": 1001222,
       "CanBreak": true,
       "Name": "前冲转身两圈横扫",
+      "Key": ""
+    },
+    {
+      "Id": 8522,
+      "type": "magic",
+      "CanBreak": false,
+      "Name": "无量蝠，冰",
+      "needBack": true,
       "Key": "NUMPAD1"
     },
     {
-      "Id": 1001223,
-      "CanBreak": true,
-      "Name": "横扫一下捅一下",
+      "Id": 8526,
+      "type": "magic",
+      "CanBreak": false,
+      "Name": "不能",
+      "needBack": true,
       "Key": "NUMPAD2"
     },
+
     {
-      "Id": 1001224,
+      "Id": 8530,
+      "type": "magic",
       "CanBreak": true,
-      "Name": "空中横扫很多次",
+      "needBack": true,
+      "Name": "蝎子，毒",
+      "Description": "",
       "Key": "NUMPAD3"
     },
     {
-      "Id": 1001225,
-      "CanBreak": true,
-      "Name": "调砸然后前后拍击翻滚回来扮猴子",
+      "Id": 8527,
+      "type": "magic",
+      "CanBreak": false,
+      "Name": "虫总兵",
+      "needBack": true,
       "Description": "",
       "Key": "NUMPAD4"
     },
-
     {
       "Id": 1001226,
       "Name": "类似枪的Q5",

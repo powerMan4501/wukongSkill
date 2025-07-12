@@ -2,7 +2,6 @@
   "IsTrans": false,
   "Name": "夜叉王",
   "Label": "SK_HYS_HongHaiEr_02A",
-
   "BossConf": {
     "CapsuleHalfHeight": 240.0,
     "CapsuleRadius": 60.0,
@@ -60,16 +59,23 @@
   },
   "Skills": [
     {
-      "Id": 440538,
+      "Id": 440534,
       "CanBreak": false,
-      "Name": "几乎无前摇低位横扫一下-可用 AM_HYS_HongHaiEr_02A_Atk_08_C2",
+      "Name": "无前摇斜上横扫一下 AM_HYS_HongHaiEr_02A_Atk_08_C",
       "Key": "LBUTTON",
       "Step": 1
     },
     {
-      "Id": 440534,
+      "Id": 440536,
       "CanBreak": false,
-      "Name": "无前摇斜上横扫一下 AM_HYS_HongHaiEr_02A_Atk_08_C",
+      "Name": "前摇+低位大横扫一下——可用 AM_HYS_HongHaiEr_02A_Atk_16_C",
+      "Key": "",
+      "Step": 2
+    },
+    {
+      "Id": 440538,
+      "CanBreak": false,
+      "Name": "几乎无前摇低位横扫一下-可用 AM_HYS_HongHaiEr_02A_Atk_08_C2",
       "Key": "LBUTTON",
       "Step": 2
     },
@@ -237,7 +243,7 @@
       "Id": 440532,
       "CanBreak": false,
       "Name": "前摇+大横扫+垂直砍下地刺  AM_HYS_HongHaiEr_02A_Atk_06_C",
-      "Key": "Z",
+      "Key": "",
       "Step": 2,
       "Buffs": [1000100]
     },
@@ -246,7 +252,6 @@
       "CanBreak": false,
       "Name": "开局横扫+垂直砍 AM_HYS_HongHaiEr_02A_Atk_06_dalei",
       "Key": "Z",
-      "Step": 1,
       "Buffs": [1000100, 505]
     },
     {

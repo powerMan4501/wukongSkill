@@ -1,0 +1,62 @@
+{
+  "AM_HYS_HongHaiEr_02A_Atk_08_C": {
+    "IsTrans": false,
+    "Name": "夜叉王",
+    "Label": "SK_HYS_HongHaiEr_02A",
+    "BossConf": {
+      "CapsuleHalfHeight": 240.0,
+      "CapsuleRadius": 60.0,
+      "SKMesh": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_HongHaiEr_02A/Mesh/SK_HYS_HongHaiEr_02A.SK_HYS_HongHaiEr_02A",
+      "ABPClass": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_HongHaiEr_02A/ABP_HYS_HongHaiEr_02A.ABP_HYS_HongHaiEr_02A_C",
+      "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_HongHaiEr_02A/Mesh/PA_HYS_HongHaiEr_02A.PA_HYS_HongHaiEr_02A",
+      "Weapons": null,
+      "TFXConfigs": [
+        {
+          "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_HongHaiEr_02A/Hair/Hair_per20_back_strands.Hair_per20_back_strands_TFX",
+          "EnableSimulation": true,
+          "LodScreenSize": 2.5,
+          "ShadeSettings": {
+            "FiberRadius": 0.01,
+            "FiberSpacing": 0.1,
+            "HairThickness": 0.2,
+            "RootTangentBlending": 0.0,
+            "ShadowThickness": 0.05
+          },
+          "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_HongHaiEr_02A/Materials/M_hys_honghaier_02a_hair_hair.M_hys_honghaier_02a_hair_hair"
+        },
+        {
+          "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_HongHaiEr_02A/Hair/Hair_per20_front.Hair_per20_front_TFX",
+          "EnableSimulation": true,
+          "LodScreenSize": 2.5,
+          "ShadeSettings": {
+            "FiberRadius": 0.01,
+            "FiberSpacing": 0.1,
+            "HairThickness": 0.2,
+            "RootTangentBlending": 0.0,
+            "ShadowThickness": 0.05
+          },
+          "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_HongHaiEr_02A/Materials/M_hys_honghaier_02a_hair_hair.M_hys_honghaier_02a_hair_hair"
+        }
+      ],
+      "InteractBones": null,
+      "Override_AbnormalDispID_Attacker": 0,
+      "Override_AbnormalDispID_Victim": 100
+    },
+    "Type": "BOSS",
+    "XRateBig": 0.3,
+    "ZRateBig": 0.1,
+    "Level1Scale": 1,
+    "Level2Scale": 2.2,
+    "XRate": -500.0,
+    "ZRate": 300.0,
+    "CoolDownRate": 60,
+    "TransDone": {
+      "Buffers": [2072, 602],
+      "doneSkill": {
+        "Id": 440534,
+        "CanBreak": false,
+        "Name": "无前摇斜上横扫一下 AM_HYS_HongHaiEr_02A_Atk_08_C"
+      }
+    }
+  }
+}

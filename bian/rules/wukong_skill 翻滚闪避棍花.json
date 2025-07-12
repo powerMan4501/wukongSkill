@@ -41,11 +41,16 @@
       ]
     },
     {
-      "Name": "棍花，buff",
+      "Name": "棍花，剑气",
+      "isLoop": true,
       "Filters": [
         {
-          "Type": "buff",
-          "BuffID": 1000178
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboC_q_loop"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboC_z_loop"
         }
       ],
       "AfterActions": [
@@ -55,7 +60,6 @@
           "ProjectTileID": 40580501,
           "buffCondition": 1000867,
           "ForTarget": true,
-          "TimeDelay": 150,
           "desc": "有火buff，火焰剑气"
         },
         {
@@ -66,7 +70,6 @@
           "BornDirOffsetXLeftValue": 91,
           "BornDirOffsetXRightValue": 91,
           "ForTarget": true,
-          "TimeDelay": 150,
           "desc": "有冰buff，冰剑气"
         },
         {
@@ -79,7 +82,6 @@
           "BornDirOffsetXLeftValue": 91,
           "BornDirOffsetXRightValue": 91,
           "ForTarget": true,
-          "TimeDelay": 150,
           "desc": "没有冰火毒buff，金色剑气"
         },
         {
@@ -88,7 +90,6 @@
           "ProjectTileID": 30131501,
           "buffCondition": 1000868,
           "ForTarget": true,
-          "TimeDelay": 150,
           "desc": "有毒buff，红剑气"
         }
       ]

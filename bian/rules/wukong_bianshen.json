@@ -34,7 +34,7 @@
           "Type": "skill",
           "SkillID": 440536,
           "buffCondition": 20104,
-          "desc": "平A4 20104  夜叉王顺时针索敌横扫"
+          "desc": "平A4 20104 AM_HYS_HongHaiEr_02A_Atk_16_C 夜叉王顺时针索敌横扫"
         },
         {
           "Type": "skill",
@@ -57,13 +57,13 @@
         {
           "Type": "skill",
           "SkillID": 440534,
-          "TimeDelay": 6000,
+          "TimeDelay": 4900,
           "desc": "平A 20101  夜叉王索敌横扫"
         },
         {
           "Type": "skill",
           "SkillID": 440536,
-          "TimeDelay": 7700,
+          "TimeDelay": 5700,
           "desc": "平A2 20102  夜叉王顺时针索敌横扫"
         }
       ]
@@ -71,7 +71,9 @@
 
     {
       "Name": "杨戬大招无敌",
-      "Description": "把二连横扫变成四联横扫",
+      "Description": "",
+      "speedRate": 2,
+
       "Filters": [
         {
           "Type": "montage",
@@ -89,23 +91,25 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffID": 105111
+          "BuffID": 218
         }
       ]
     },
+
     {
-      "Name": "杨戬大招无敌",
+      "Name": "杨戬,右键格挡",
       "Description": "",
+      "speedRate": 2,
       "Filters": [
         {
           "Type": "montage",
-          "Name": "AM_mgd_yangjian_01_skill02"
+          "Name": "AM_mgd_yangjian_01_gedang05_hit"
         }
       ],
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffID": 1000110
+          "BuffID": 218
         }
       ]
     }
