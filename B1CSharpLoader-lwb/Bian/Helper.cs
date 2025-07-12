@@ -107,7 +107,7 @@ namespace bian
             if (magicChangeComp != null)
             {
                 FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
-                BUC_MagicallyChangeData data = fieldData.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
+                BUC_MagicallyChangeData data = fieldData?.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
                 data.DurMagicallyChange = true;
                 data.bIsPendingCast = false;
                 data.bIsPendingReset = true;
@@ -191,7 +191,6 @@ namespace bian
 
             var soulSkillDesc = GameDBRuntime.GetSoulSkillDesc(VigorSkillID);
 
-            Console.WriteLine($"bian: CastVigorSkillByID 执行精魄技能 {VigorSkillID} {soulSkillDesc}");
             if (soulSkillDesc == null)
             {
                 return;
@@ -202,7 +201,12 @@ namespace bian
             BUC_MagicallyChangeData data = fieldData.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
 
             data.DurMagicallyChange = CanReset;  // 不变回去，需要手动变回
-
+                                                 // 添加buffer  
+            var BGS = GetBUS_GSEventCollection();
+            if (soulSkillDesc.BuffId > 0)
+            {
+                BGS.Evt_BuffAdd.Invoke(soulSkillDesc.BuffId, character, character, -1f, EBuffSourceType.MagicallyChange);
+            }
             methodInfo.Invoke(magicChangeComp, new object[] { config as UBGWDataAsset, soulSkillDesc.SkillId, soulSkillDesc.SkillIdReEnter });
 
             // BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
@@ -213,7 +217,7 @@ namespace bian
             // 单独设置角色的速率 移动动画会有问题
             // bUS_GSEventCollection.Evt_SetGMCustomTimeDilation.Invoke(2f);
         }
-        public static void CastVigorSkill(BGUPlayerCharacterCS character, int VigorSkillID)
+        public static void CastVigorSkill(BGUPlayerCharacterCS character, int VigorSkillID, bool reset = false)
         {
             // 获取变身技能描述
             var soulSkillDesc = GameDBRuntime.GetSoulSkillDesc(VigorSkillID);
@@ -239,7 +243,7 @@ namespace bian
                 //data.bIsPendingCast = true;
                 //data.bIsPendingReset = false;
                 data.CurVigorSkillID = 0;
-                data.DurMagicallyChange = false;  // 不变回去，需要手动变回
+                data.DurMagicallyChange = reset;  // 不变回去，需要手动变回
                 //data.VigorSkillReEnterWaitTime = soulSkillDesc.ReEnterWaitTime;
                 //data.CastReason = ECastReason_MagicallyChange.VigorSkill;
 

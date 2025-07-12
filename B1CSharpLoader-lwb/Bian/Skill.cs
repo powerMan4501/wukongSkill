@@ -11,9 +11,9 @@ namespace bian
 
         public int HitCount = 0;
 
-        public float PlayTimeRate {  get; set; }
+        public float PlayTimeRate { get; set; }
         public int Id { get; set; }
-        public bool CanBreak {get; set;}
+        public bool CanBreak { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
         public string? AnimPath { get; set; }
@@ -30,10 +30,13 @@ namespace bian
 
         public bool IsMimicry { get; set; }
 
+        public string? type { get; set; }
+
         private string FName;
 
 
-        public int[] GetAllBuffers() {
+        public int[] GetAllBuffers()
+        {
             return (Buffers ?? new int[0]).Concat(Buffs ?? new int[0]).ToArray();
         }
         public string KeyText()
@@ -45,7 +48,8 @@ namespace bian
             return Key.Replace("S+", "shift+").Replace("A+", "alt+").Replace("C+", "ctrl+");
         }
 
-        public Skill(){
+        public Skill()
+        {
             IsMimicry = false;
             HitCount = 0;
             CanBreak = true;
@@ -57,7 +61,8 @@ namespace bian
             PlayTimeRate = 1;
         }
 
-        public void SetFName(string fName) { 
+        public void SetFName(string fName)
+        {
             FName = fName;
         }
 
@@ -122,7 +127,8 @@ namespace bian
 
         public AActor ModularActor;
 
-        public string ToString(string format) { 
+        public string ToString(string format)
+        {
             return $"""
 ===
 

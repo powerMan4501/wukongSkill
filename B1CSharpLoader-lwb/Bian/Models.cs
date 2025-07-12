@@ -617,47 +617,67 @@ namespace bian
         public bool CastSkill(BGUPlayerCharacterCS character, Skill skill, EMontageBindReason Source, bool Force, int Rate = 0, int[] Buffers = null, float playTimeRate = 1)
         {
 
-            FUStSkillSDesc skillSDesc = BGW_GameDB.GetSkillSDesc(skill.Id, character);
-            if (skillSDesc != null)
+            if (skill?.type?.ToLower() == "magic")
             {
-                if (!Force)
+                BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10100, ECastSkillSourceType.GM));
+                Task.Run(async delegate
                 {
-                    if (!skill.CanBreak && Helper.DateTimeToTimestamp() <= CoolDownTime)
+                    await Task.Delay(650);
+                    Utils.TryRunOnGameThread((Action)delegate
                     {
-                        return false;
+                        Helper.CastVigorSkillByID(character, skill.Id, true);
+                    });
+
+                });
+                return true;
+            }
+            else
+            {
+                FUStSkillSDesc skillSDesc = BGW_GameDB.GetSkillSDesc(skill.Id, character);
+                if (skillSDesc != null)
+                {
+                    if (!Force)
+                    {
+                        if (!skill.CanBreak && Helper.DateTimeToTimestamp() <= CoolDownTime)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            var SkillMontage = BGW_PreloadAssetMgr.Get(character).TryGetCachedResourceObj<UAnimMontage>(skillSDesc.TemplatePath, ELoadResourceType.SyncLoadAndCache);
+                            // Log.Debug($"play lengh: {SkillMontage.GetPlayLength()} name: {SkillMontage.GetPathName()}");
+                            if (Buffers != null)
+                            {
+                                foreach (var buffer in Buffers)
+                                {
+                                    BGUFunctionLibraryCS.BGUAddBuff(character, character, buffer, EBuffSourceType.GM, SkillMontage.GetPlayLength() * 1000 / playTimeRate);
+                                }
+                            }
+
+                            CoolDownTime = Helper.DateTimeToTimestamp() + SkillMontage.GetPlayLength() * 1000 * Rate / 100 / playTimeRate;
+                            BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(skill.Id, null, Source, false);
+                        }
                     }
                     else
                     {
-                        var SkillMontage = BGW_PreloadAssetMgr.Get(character).TryGetCachedResourceObj<UAnimMontage>(skillSDesc.TemplatePath, ELoadResourceType.SyncLoadAndCache);
-                        // Log.Debug($"play lengh: {SkillMontage.GetPlayLength()} name: {SkillMontage.GetPathName()}");
                         if (Buffers != null)
                         {
+                            var SkillMontage = BGW_PreloadAssetMgr.Get(character).TryGetCachedResourceObj<UAnimMontage>(skillSDesc.TemplatePath, ELoadResourceType.SyncLoadAndCache);
                             foreach (var buffer in Buffers)
                             {
                                 BGUFunctionLibraryCS.BGUAddBuff(character, character, buffer, EBuffSourceType.GM, SkillMontage.GetPlayLength() * 1000 / playTimeRate);
                             }
                         }
 
-                        CoolDownTime = Helper.DateTimeToTimestamp() + SkillMontage.GetPlayLength() * 1000 * Rate / 100 / playTimeRate;
+
+                        Log.Info($"bian:CastSkill 执行技能 --> {skill.Id}");
                         BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(skill.Id, null, Source, false);
                     }
                 }
-                else
-                {
-                    if (Buffers != null)
-                    {
-                        var SkillMontage = BGW_PreloadAssetMgr.Get(character).TryGetCachedResourceObj<UAnimMontage>(skillSDesc.TemplatePath, ELoadResourceType.SyncLoadAndCache);
-                        foreach (var buffer in Buffers)
-                        {
-                            BGUFunctionLibraryCS.BGUAddBuff(character, character, buffer, EBuffSourceType.GM, SkillMontage.GetPlayLength() * 1000 / playTimeRate);
-                        }
-                    }
-
-                    Log.Info($"bian:CastSkill 执行技能 --> {skill.Id}");
-                    BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(skill.Id, null, Source, false);
-                }
+                return true;
             }
-            return true;
+
+
         }
 
         public ITransable? FindModelByLabel(string? Label, string Type)
@@ -775,7 +795,12 @@ namespace bian
                     MethodInfo methodInfo = typeof(Commands).GetMethod(keyItem.Label, BindingFlags.Public | BindingFlags.Instance);
                     if (methodInfo != null)
                     {
+                        Log.Info($" COMMAND {methodInfo.Name}  found");
                         methodInfo.Invoke(new Commands(), new object[] { this, }.Concat(keyItem.Params ?? new object[] { }).ToArray());
+                    }
+                    else
+                    {
+                        Log.Error($" COMMAND {keyItem.Label} not found");
                     }
                     break;
                 case "ADD_BUFF":
@@ -1191,11 +1216,13 @@ namespace bian
 
         public float XRate { get; set; }
         public float ZRate { get; set; }
+        public float skillSpeedRate { get; set; }
 
         public string Author { get; set; }
 
 
         public bool IsTrans = false;
+
 
 
         public BaseModel()
@@ -1331,7 +1358,7 @@ namespace bian
                             var character = Helper.GetBGUPlayerCharacterCS();
                             if (!EnterSkill.IsMimicry)
                             {
-                                Helper.CastVigorSkill(character, EnterSkill.Id);
+                                Helper.CastVigorSkill(character, EnterSkill.Id, true);
                             }
                             else
                             {

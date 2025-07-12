@@ -127,7 +127,12 @@ namespace bian
         public List<Filter> Filters { get; set; }
         public List<RuleAction> AfterActions { get; set; }
 
-
+        public float? startTimeRate { get; set; }
+        public float? endTimeRate { get; set; }
+        public float? speedRate { get; set; }
+        public float? startTime { get; set; }
+        public float? endTime { get; set; }
+        public bool? isLoop { get; set; }
         public Rule()
         {
             Name = "新规则";
@@ -183,13 +188,33 @@ namespace bian
                     break;
 
                 case "trans":
+
+                    if (action?.SkillID > 0)
+                    {
+
+                        BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10100, ECastSkillSourceType.GM));
+                        Task.Run(async delegate
+                        {
+                            await Task.Delay(650);
+                            Utils.TryRunOnGameThread((Action)delegate
+                            {
+                                Helper.CastMimicrySkill(character, action.SkillID);
+                            });
+
+                        });
+
+                    }
+
                     break;
 
                 case "boss":
+
+
+
                     break;
 
                 case "magic":
-                    Console.WriteLine($"bian: 延迟650毫秒执行精魄技能 {action?.SkillID} ");
+
 
                     if (action?.SkillID > 0)
                     {
@@ -197,7 +222,6 @@ namespace bian
                         Task.Run(async delegate
                         {
                             await Task.Delay(650);
-                            Console.WriteLine($"bian: 开始执行精魄技能 {action.SkillID} ");
                             Utils.TryRunOnGameThread((Action)delegate
                             {
                                 Helper.CastVigorSkillByID(character, action.SkillID, true);
@@ -239,8 +263,11 @@ namespace bian
             }
         }
 
-        public bool DoRule(float timeLength = 1000, float playRate = 1)
+        public bool DoRule(float timeLength_, float playRate_, string MontagePathName, Rule ruleItem)
         {
+
+            var timeLength = timeLength_ > 0 ? timeLength_ : 1000;
+            var playRate = playRate_ > 0 ? playRate_ : 1;
             if (AfterActions != null)
             {
 
@@ -249,7 +276,6 @@ namespace bian
 
 
                     var action = AfterActions[i];
-                    Log.Info($"bian: start run rule action: action.Type {action.Type} {action.desc}");
                     var character = Helper.GetBGUPlayerCharacterCS();
                     bool skipAction = false;
                     // 如果设置了buff条件，就校验是否有对应的buff
@@ -338,13 +364,33 @@ namespace bian
                     }
                     if (action.TimeDelay > 0)
                     {
+                        Log.Info($"bian:{action.desc} {action.TimeDelay} {timeDelay} {playRate}");
                         Task.Run(async () =>
                         {
-                            await Task.Delay(timeDelay);
-                            Utils.TryRunOnGameThread((Action)delegate
+                            try
                             {
-                                DoAction(action, timeLength / playRate);
-                            });
+                                Log.Info($"bian: Task.Delay {timeDelay} {timeLength}");
+                                await Task.Delay(timeDelay);
+                                Log.Info($"bian:{MontagePathName}播放到 timeLength  --> {timeLength}, 执行{ruleItem.Name}");
+                                Utils.TryRunOnGameThread((Action)delegate
+                                {
+                                    if (ruleItem != null && MontagePathName != null && ruleItem.IsMatchMontage(MontagePathName))
+                                    {
+                                        if (timeLength >= action.TimeDelay)
+                                        {
+                                            DoAction(action, timeLength / playRate);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        DoAction(action, timeLength / playRate);
+                                    }
+                                });
+                            }
+                            catch (Exception e)
+                            {
+                                Log.Error($"执行 action.TimeDelay 报错 {e?.Message}");
+                            }
                         });
                     }
                     else
