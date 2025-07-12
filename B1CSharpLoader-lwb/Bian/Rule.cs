@@ -81,6 +81,14 @@ namespace bian
         public int? VigorSkillID { get; set; }
         public int? BossSkillID { get; set; }
         public string? Label { get; set; }
+        public string? FollowCamera { get; set; }
+        public double? XRate { get; set; }
+        public double? YRate { get; set; }
+        public double? ZRate { get; set; }
+        public int? returnTime { get; set; }
+        public float? backTime { get; set; }
+
+
 
         public RuleAction()
         {
@@ -213,6 +221,25 @@ namespace bian
 
                     break;
 
+
+                case "followcamera":
+                    if (action?.XRate != 0 || action?.YRate != 0 || action?.ZRate != 0)
+                    {
+                        var originRelativeLocation = character.FollowCamera.RelativeLocation;
+                        character = Helper.GetBGUPlayerCharacterCS();
+                        character.FollowCamera.RelativeLocation = new FVector((double)(action?.XRate ?? 0.0), (double)(action?.YRate ?? 0.0), action?.ZRate ?? 0.0);
+                        var returnTime = action?.returnTime > 0 ? action.returnTime : 1000;
+                        Task.Run(async delegate
+                        {
+                            await Task.Delay((int)returnTime);
+                            Utils.TryRunOnGameThread((Action)delegate
+                            {
+                                character.FollowCamera.RelativeLocation = new FVector(0.0, 0.0, 0.0);
+                            });
+
+                        });
+                    }
+                    break;
                 case "magic":
 
 
@@ -224,9 +251,12 @@ namespace bian
                             await Task.Delay(650);
                             Utils.TryRunOnGameThread((Action)delegate
                             {
-                                Helper.CastVigorSkillByID(character, action.SkillID, true);
+                                Helper.CastVigorSkillByID(character, action.SkillID, action?.backTime ?? 1700);
                             });
+                            await Task.Delay((int)(action?.backTime ?? 1700));
 
+                            BUS_MagicallyChangeComp magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
+                            Helper.ResetVigorSkill(magicChangeComp, action.SkillID);
                         });
                     }
 
@@ -369,9 +399,7 @@ namespace bian
                         {
                             try
                             {
-                                Log.Info($"bian: Task.Delay {timeDelay} {timeLength}");
                                 await Task.Delay(timeDelay);
-                                Log.Info($"bian:{MontagePathName}播放到 timeLength  --> {timeLength}, 执行{ruleItem.Name}");
                                 Utils.TryRunOnGameThread((Action)delegate
                                 {
                                     if (ruleItem != null && MontagePathName != null && ruleItem.IsMatchMontage(MontagePathName))

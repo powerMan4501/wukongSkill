@@ -131,7 +131,7 @@ namespace bian
             }
             return false;
         }
-        public static string currentMontage;
+        public static string? currentMontage;
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_CastSkillWithAnimMontageMultiCast_Implementation")]
         [HarmonyPrefix]
         private static void CastSkillWithAnimMontageMultiCast(BUS_GSEventCollection __instance, ref UAnimMontage Montage, ref float PlayTimeRate, float MontagePosOffset, FName StartSectionName)
@@ -163,7 +163,6 @@ namespace bian
                 PlayTimeRate_ = (float)currentModel.skillSpeedRate; //动画播放速率
             }
             currentMontage = Montage.PathName;
-            handleLoopExecution(null, length, playRate, Montage.PathName, Montage.SequenceLength);
             if (mgr.Rules != null && mgr.Rules.Count > 0)
             {
 
@@ -186,7 +185,7 @@ namespace bian
                                 if ((ruleItem?.isLoop) == true)
                                 {
                                     // 循环执行 DoRule
-                                    handleLoopExecution(ruleItem, length, playRate, Montage.PathName, Montage.SequenceLength);
+                                    ruleItem.DoRule(length, playRate, Montage.PathName, ruleItem);
                                 }
                                 else
                                 {

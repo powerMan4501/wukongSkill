@@ -183,7 +183,7 @@ namespace bian
             }
         }
 
-        public static void CastVigorSkillByID(BGUPlayerCharacterCS character, int VigorSkillID, bool CanReset = false)
+        public static void CastVigorSkillByID(BGUPlayerCharacterCS character, int VigorSkillID, float backTime = 1000)
         {
             var magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(character);
 
@@ -200,8 +200,8 @@ namespace bian
             FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
             BUC_MagicallyChangeData data = fieldData.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
 
-            data.DurMagicallyChange = CanReset;  // 不变回去，需要手动变回
-                                                 // 添加buffer  
+            data.DurMagicallyChange = false;  // 不变回去，需要手动变回
+                                              // 添加buffer  
             var BGS = GetBUS_GSEventCollection();
             if (soulSkillDesc.BuffId > 0)
             {

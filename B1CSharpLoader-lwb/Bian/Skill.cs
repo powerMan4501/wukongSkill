@@ -32,7 +32,11 @@ namespace bian
 
         public string? type { get; set; }
 
+        public float? backTime { get; set; }
+
+
         private string FName;
+
 
 
         public int[] GetAllBuffers()

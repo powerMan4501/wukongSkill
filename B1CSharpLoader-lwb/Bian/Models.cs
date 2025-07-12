@@ -617,17 +617,29 @@ namespace bian
         public bool CastSkill(BGUPlayerCharacterCS character, Skill skill, EMontageBindReason Source, bool Force, int Rate = 0, int[] Buffers = null, float playTimeRate = 1)
         {
 
-            if (skill?.type?.ToLower() == "magic")
+            if (skill?.type?.ToLower() == "magic" & skill?.Id != null)
             {
                 BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10100, ECastSkillSourceType.GM));
                 Task.Run(async delegate
                 {
-                    await Task.Delay(650);
-                    Utils.TryRunOnGameThread((Action)delegate
-                    {
-                        Helper.CastVigorSkillByID(character, skill.Id, true);
-                    });
 
+                    try
+                    {
+                        await Task.Delay(650);
+                        var backTime = (int)(skill?.backTime ?? 1700);
+                        Utils.TryRunOnGameThread((Action)delegate
+                        {
+                            Helper.CastVigorSkillByID(character, skill.Id, backTime);
+                        });
+                        await Task.Delay(backTime);
+                        BUS_MagicallyChangeComp magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
+                        Helper.ResetVigorSkill(magicChangeComp, skill.Id);
+                    }
+                    catch (System.Exception e)
+                    {
+
+                        Log.Error($"bian: cast skill error {e}");
+                    }
                 });
                 return true;
             }
