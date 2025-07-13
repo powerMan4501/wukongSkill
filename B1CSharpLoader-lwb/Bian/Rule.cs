@@ -450,12 +450,14 @@ namespace bian
                                         else
                                         {
                                             // 处理时缓导致的动画变慢，还没播放到定义的时间点的情况
-                                            if (timeDelay - currentPosition * 1000 > 0)
+                                            if (timeDelay - currentPosition * 1000 > diff)
                                             {
                                                 await Task.Delay((int)(timeDelay - currentPosition * 1000));
                                                 DoAction(action, timeLength / playRate);
+                                                return;
                                             }
-
+                                            DoAction(action, timeLength / playRate);
+                                            return;
                                         }
                                     }
                                     else
