@@ -443,14 +443,14 @@ namespace bian
                                         }
                                         // 加个误差值
                                         var diff = 150;
-                                        if (currentPosition == 0 || currentPosition * 1000 >= timeDelay - diff)
+                                        if (currentPosition > 0 && currentPosition * 1000 >= timeDelay - diff)
                                         {
                                             DoAction(action, timeLength / playRate);
                                         }
                                         else
                                         {
                                             // 处理时缓导致的动画变慢，还没播放到定义的时间点的情况
-                                            if (timeDelay - currentPosition * 1000 > diff)
+                                            if (currentPosition > 0 && timeDelay - currentPosition * 1000 > diff)
                                             {
                                                 await Task.Delay((int)(timeDelay - currentPosition * 1000));
                                                 DoAction(action, timeLength / playRate);
