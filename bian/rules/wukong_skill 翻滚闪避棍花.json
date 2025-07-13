@@ -45,12 +45,8 @@
       "isLoop": true,
       "Filters": [
         {
-          "Type": "montage",
-          "Name": "AM_Wukong_ComboC_q_loop"
-        },
-        {
-          "Type": "montage",
-          "Name": "AM_Wukong_ComboC_z_loop"
+          "type": "buff",
+          "BuffID": 1000178
         }
       ],
       "AfterActions": [
@@ -155,6 +151,26 @@
           "TimeDelay": 420,
           "SpeedLeftValue": 6000,
           "SpeedRightValue": 6000
+        }
+      ]
+    },
+
+    {
+      "Name": "喝药",
+      "Description": "",
+      "speedRate": 3,
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_heyao"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffId": 103,
+          "BuffTime": 200,
+          "desc": "喝药，回血"
         }
       ]
     }

@@ -165,7 +165,12 @@ VigorSkillConfig.Config = {
             Name = "菇男_转团",
             Path = "/Game/00MainHZ/Characters/Transform/VigorSkill/S1/MC_70_zhusun_01.MC_70_zhusun_01",
             SkillID = 11342,
-            RecoverID = 10199
+            RecoverID = 10199,
+            desc='8542，有buff20983-10141，20985-10141，20984-',
+            desc1="AnimMontage'/Game/00Main/Animation/Player/Transform/VigorSkill/Montage/Lv6/AM_70_zhusun_01_atk_02_BING.AM_70_zhusun_01_atk_02_BING'"
+            desc2="AnimMontage'/Game/00Main/Animation/Player/Transform/VigorSkill/Montage/Lv6/AM_70_zhusun_01_atk_02_DU.AM_70_zhusun_01_atk_02_DU'"
+            desc3="AnimMontage'/Game/00Main/Animation/Player/Transform/VigorSkill/Montage/Lv6/AM_70_zhusun_01_atk_02_HUO.AM_70_zhusun_01_atk_02_HUO'"
+            desc4="AnimMontage'/Game/00Main/Animation/Player/Transform/VigorSkill/Montage/Lv6/AM_70_zhusun_01_atk_02_LEI.AM_70_zhusun_01_atk_02_LEI'"
         },
     ['401'] = {
             Name = "狼刺客_追魂",

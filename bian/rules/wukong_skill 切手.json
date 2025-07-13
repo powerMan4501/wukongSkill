@@ -30,7 +30,8 @@
         },
         {
           "Type": "buff",
-          "BuffID": 289
+          "BuffID": 289,
+          "BuffTime": 4000
         }
       ]
     },
@@ -117,7 +118,8 @@
         },
         {
           "Type": "buff",
-          "BuffID": 289
+          "BuffID": 289,
+          "BuffTime": 4000
         },
 
         {
@@ -540,7 +542,8 @@
         },
         {
           "Type": "buff",
-          "BuffID": 289
+          "BuffID": 289,
+          "BuffTime": 2500
         }
       ]
     },

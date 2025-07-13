@@ -182,10 +182,13 @@
     },
 
     {
-      "Id": 1001221,
-      "Name": "残躯江海翻",
+      "Id": 8596,
+      "Name": "火蛙",
+      "speedRate": 1.5,
       "Key": "NUMPAD0",
-      "CanBreak": false
+      "type": "magic",
+      "CanBreak": false,
+      "backTime": 3300
     },
     {
       "Id": 1001222,
@@ -199,14 +202,16 @@
       "CanBreak": false,
       "Name": "无量蝠，冰",
       "needBack": true,
+      "backTime": 1800,
       "Key": "NUMPAD1"
     },
     {
-      "Id": 8526,
+      "Id": 8542,
       "type": "magic",
       "CanBreak": false,
-      "Name": "不能",
+      "Name": "蘑菇，转",
       "needBack": true,
+      "backTime": 6350,
       "Key": "NUMPAD2"
     },
 
@@ -216,6 +221,7 @@
       "CanBreak": true,
       "needBack": true,
       "Name": "蝎子，毒",
+      "backTime": 1700,
       "Description": "",
       "Key": "NUMPAD3"
     },
@@ -225,6 +231,7 @@
       "CanBreak": false,
       "Name": "虫总兵",
       "needBack": true,
+      "backTime": 1100,
       "Description": "",
       "Key": "NUMPAD4"
     },

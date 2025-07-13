@@ -724,18 +724,12 @@
     },
     {
       "Key": "S+W",
-      "Type": "ADD_BUFF",
-      "BuffId": 1000168,
-      "BuffTime": 500,
-      "Name": "测试添加buff",
-      "AlawaysCanCast": true
-    },
-    {
-      "Key": "TAB",
-      "Type": "ADD_BUFF",
-      "Buffers": [1000192],
-      "BuffTime": 500,
-      "Name": "召唤己方幽魂",
+      "Type": "Teleport",
+      "positionX": 2,
+      "positionY": 2,
+      "positionZ": 1,
+      "ForTarget": true,
+      "Name": "往前500",
       "AlawaysCanCast": true
     }
   ]
