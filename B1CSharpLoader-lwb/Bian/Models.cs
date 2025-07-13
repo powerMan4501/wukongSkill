@@ -850,30 +850,14 @@ namespace bian
 
                     // 计算目标位置
                     var targetPosition = currentPosition + forwardVector * 900;
-
-
-                    // var nowPosXYZ = character_.GetActorLocation();
-
-
-                    // var rotation = character_.GetActorRotation();
-                    // var PosOffset = new FVector(nowPosXYZ.X * keyItem.positionX ?? 1, nowPosXYZ.Y * keyItem.positionY ?? 1, nowPosXYZ.Z * keyItem.positionZ ?? 0);
-                    // Log.Info($"Teleport {PosOffset.X} {PosOffset.Y} {PosOffset.Z}");
-                    // Log.Info($"nowPosXYZ {nowPosXYZ.X} {nowPosXYZ.Y} {nowPosXYZ.Z}");
-
-
                     if (keyItem.ForTarget == true)
                     {
                         var target = BGUFunctionLibraryCS.BGUGetTarget(character_) as BGUCharacterCS;
                         if (target != null)
                         {
                             BGUFunctionLibraryCS.BGUAddBuff(character_, character_, 1000168, EBuffSourceType.GM, keyItem.BuffTime ?? 1000);
-                            // var xyz = target.GetActorForwardVector();
-                            // PosOffset.X = xyz.X + 200;
-                            // PosOffset.Y = xyz.Y + 200;
-                            // PosOffset.Z = xyz.Z + 200;
                             return;
                         }
-
                     }
                     // 传送主角
                     character_.Teleport(targetPosition, character_.GetActorRotation());

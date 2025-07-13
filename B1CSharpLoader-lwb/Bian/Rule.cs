@@ -402,7 +402,6 @@ namespace bian
                     {
                         timeDelay = (int)(action.TimeDelay / playRate);
                     }
-                    // Log.Info($"bian: 传入的 {MontagePathName?.Substring(MontagePathName.Length - 20)} 动画总长是 {timeLength} 毫秒");
 
                     if (action.TimeDelay > 0)
                     {
@@ -411,37 +410,52 @@ namespace bian
                             try
                             {
                                 await Task.Delay(timeDelay);
-
                                 Utils.TryRunOnGameThread((Action)async delegate
                                 {
                                     var currMontage = Manager.GetCurrentMontage();
                                     var character = Helper.GetBGUPlayerCharacterCS();
                                     // 获取动画实例
+                                    if (character == null)
+                                    {
+                                        return;
+                                    }
+                                    if (character?.Mesh == null)
+                                    {
+                                        return;
+                                    }
                                     var animInstance = character.Mesh.GetAnimInstance();
+                                    if (animInstance == null)
+                                    {
+                                        return;
+                                    }
                                     float currentPosition = 0;
-                                    float currentPlateRate = 0;
-                                    if (animInstance != null && montage != null)
+                                    if (montage != null)
                                     {
                                         // 获取动画当前播放时间
                                         currentPosition = animInstance.Montage_GetPosition(montage);
-                                        currentPlateRate = animInstance.Montage_GetPlayRate(montage);
                                     }
                                     if (ruleItem != null && montage != null)
                                     {
-
-                                        if (!ruleItem.IsMatchMontage(Manager.GetCurrentMontage()))
+                                        if (!ruleItem.IsMatchMontage(currMontage))
                                         {
                                             return;
                                         }
-                                        if (currentPosition * 1000 >= action.TimeDelay)
+                                        Log.Info($"执行 DoAction currentPosition：{currentPosition * 1000}  timeDelay：{timeDelay} {currMontage}");
+                                        // 加个误差值
+                                        var diff = 100;
+                                        if (currentPosition * 1000 >= timeDelay - diff)
                                         {
                                             DoAction(action, timeLength / playRate);
                                         }
                                         else
                                         {
                                             // 处理时缓导致的动画变慢，还没播放到定义的时间点的情况
-                                            await Task.Delay((int)(timeDelay - currentPosition * 1000));
-                                            DoAction(action, timeLength / playRate);
+                                            if (timeDelay - currentPosition * 1000 > 0)
+                                            {
+                                                await Task.Delay((int)(timeDelay - currentPosition * 1000));
+                                                DoAction(action, timeLength / playRate);
+                                            }
+
                                         }
                                     }
                                     else

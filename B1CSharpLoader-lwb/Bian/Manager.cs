@@ -150,11 +150,8 @@ namespace bian
             if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]CastSkillWithAnimMontageMultiCast"))
             {
                 // 获取动画实例
-
-                Log.Info($"bian: 执行动画 -->{Montage.PathName?.Substring(Montage.PathName.Length - 19)} SequenceLength：{Montage.SequenceLength} GetSkeleton:{Montage.GetSkeleton()}");
-
-
-
+                var PathName = Montage.PathName;
+                // Log.Info($"bian: 执行动画 -->{Montage.PathName?.Substring(Montage.PathName.Length - 19)} ");
             }
 
             if (!IsPlayer(__instance.GetOwner().PathName))
