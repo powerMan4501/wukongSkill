@@ -17,6 +17,11 @@ namespace bian
         public object[] Params { get; set; }
         public int? BuffId { get; set; }
         public int? BuffTime { get; set; }
+
+        public int? positionX { get; set; }
+        public int? positionY { get; set; }
+        public int? positionZ { get; set; }
+        public bool? ForTarget { get; set; }
         public List<int>? Buffers { get; set; }
 
         // BuffId

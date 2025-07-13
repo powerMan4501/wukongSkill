@@ -632,8 +632,17 @@ namespace bian
                             Helper.CastVigorSkillByID(character, skill.Id, backTime);
                         });
                         await Task.Delay(backTime);
-                        BUS_MagicallyChangeComp magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
-                        Helper.ResetVigorSkill(magicChangeComp, skill.Id);
+
+                        Utils.TryRunOnGameThread((Action)delegate
+                        {
+                            var character = Helper.GetBGUPlayerCharacterCS();
+                            BUS_MagicallyChangeComp magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
+                            Helper.ResetVigorSkill(magicChangeComp, skill.Id);
+                            character = Helper.GetBGUPlayerCharacterCS();
+                            BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10199, ECastSkillSourceType.GM));
+                            character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(0, 0, 0);
+                        });
+
                     }
                     catch (System.Exception e)
                     {
@@ -828,6 +837,47 @@ namespace bian
                             BGUFunctionLibraryCS.BGUAddBuff(character, character, buffId, EBuffSourceType.GM, keyItem.BuffTime ?? 1000);
                         }
                     }
+                    break;
+
+                case "Teleport":
+
+                    var character_ = Helper.GetBGUPlayerCharacterCS();
+
+                    // 获取当前位置
+                    var currentPosition = character_.GetActorLocation();
+                    // 获取朝向向量
+                    var forwardVector = character_.GetActorForwardVector();
+
+                    // 计算目标位置
+                    var targetPosition = currentPosition + forwardVector * 900;
+
+
+                    // var nowPosXYZ = character_.GetActorLocation();
+
+
+                    // var rotation = character_.GetActorRotation();
+                    // var PosOffset = new FVector(nowPosXYZ.X * keyItem.positionX ?? 1, nowPosXYZ.Y * keyItem.positionY ?? 1, nowPosXYZ.Z * keyItem.positionZ ?? 0);
+                    // Log.Info($"Teleport {PosOffset.X} {PosOffset.Y} {PosOffset.Z}");
+                    // Log.Info($"nowPosXYZ {nowPosXYZ.X} {nowPosXYZ.Y} {nowPosXYZ.Z}");
+
+
+                    if (keyItem.ForTarget == true)
+                    {
+                        var target = BGUFunctionLibraryCS.BGUGetTarget(character_) as BGUCharacterCS;
+                        if (target != null)
+                        {
+                            BGUFunctionLibraryCS.BGUAddBuff(character_, character_, 1000168, EBuffSourceType.GM, keyItem.BuffTime ?? 1000);
+                            // var xyz = target.GetActorForwardVector();
+                            // PosOffset.X = xyz.X + 200;
+                            // PosOffset.Y = xyz.Y + 200;
+                            // PosOffset.Z = xyz.Z + 200;
+                            return;
+                        }
+
+                    }
+                    // 传送主角
+                    character_.Teleport(targetPosition, character_.GetActorRotation());
+
                     break;
                 default:
                     // Log.Error("unsupport key type");

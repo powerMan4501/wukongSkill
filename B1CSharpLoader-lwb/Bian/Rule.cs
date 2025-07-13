@@ -4,7 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnrealEngine.Runtime;
-
+using UnrealEngine.Engine;
+using System.Reflection;
 namespace bian
 {
 
@@ -249,14 +250,22 @@ namespace bian
                         Task.Run(async delegate
                         {
                             await Task.Delay(650);
+                            var backTime = (int)(action?.backTime ?? 1900);
                             Utils.TryRunOnGameThread((Action)delegate
                             {
-                                Helper.CastVigorSkillByID(character, action.SkillID, action?.backTime ?? 1700);
+                                Helper.CastVigorSkillByID(character, action.SkillID, backTime);
                             });
-                            await Task.Delay((int)(action?.backTime ?? 1700));
+                            await Task.Delay(backTime);
 
-                            BUS_MagicallyChangeComp magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
-                            Helper.ResetVigorSkill(magicChangeComp, action.SkillID);
+                            Utils.TryRunOnGameThread((Action)delegate
+                       {
+                           var character = Helper.GetBGUPlayerCharacterCS();
+                           BUS_MagicallyChangeComp magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
+                           Helper.ResetVigorSkill(magicChangeComp, action.SkillID);
+                           character = Helper.GetBGUPlayerCharacterCS();
+                           BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10199, ECastSkillSourceType.GM));
+                           character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(0, 0, 0);
+                       });
                         });
                     }
 
@@ -293,7 +302,7 @@ namespace bian
             }
         }
 
-        public bool DoRule(float timeLength_, float playRate_, string MontagePathName, Rule ruleItem)
+        public bool DoRule(float timeLength_, float playRate_, UAnimMontage montage = null, Rule ruleItem = null)
         {
 
             var timeLength = timeLength_ > 0 ? timeLength_ : 1000;
@@ -388,24 +397,50 @@ namespace bian
 
                     }
                     var timeDelay = action.TimeDelay;
+                    var MontagePathName = montage?.PathName;
                     if (action.TimeDelay > 1)
                     {
                         timeDelay = (int)(action.TimeDelay / playRate);
                     }
+                    // Log.Info($"bian: 传入的 {MontagePathName?.Substring(MontagePathName.Length - 20)} 动画总长是 {timeLength} 毫秒");
+
                     if (action.TimeDelay > 0)
                     {
-                        Log.Info($"bian:{action.desc} {action.TimeDelay} {timeDelay} {playRate}");
                         Task.Run(async () =>
                         {
                             try
                             {
                                 await Task.Delay(timeDelay);
-                                Utils.TryRunOnGameThread((Action)delegate
+
+                                Utils.TryRunOnGameThread((Action)async delegate
                                 {
-                                    if (ruleItem != null && MontagePathName != null && ruleItem.IsMatchMontage(MontagePathName))
+                                    var currMontage = Manager.GetCurrentMontage();
+                                    var character = Helper.GetBGUPlayerCharacterCS();
+                                    // 获取动画实例
+                                    var animInstance = character.Mesh.GetAnimInstance();
+                                    float currentPosition = 0;
+                                    float currentPlateRate = 0;
+                                    if (animInstance != null && montage != null)
                                     {
-                                        if (timeLength >= action.TimeDelay)
+                                        // 获取动画当前播放时间
+                                        currentPosition = animInstance.Montage_GetPosition(montage);
+                                        currentPlateRate = animInstance.Montage_GetPlayRate(montage);
+                                    }
+                                    if (ruleItem != null && montage != null)
+                                    {
+
+                                        if (!ruleItem.IsMatchMontage(Manager.GetCurrentMontage()))
                                         {
+                                            return;
+                                        }
+                                        if (currentPosition * 1000 >= action.TimeDelay)
+                                        {
+                                            DoAction(action, timeLength / playRate);
+                                        }
+                                        else
+                                        {
+                                            // 处理时缓导致的动画变慢，还没播放到定义的时间点的情况
+                                            await Task.Delay((int)(timeDelay - currentPosition * 1000));
                                             DoAction(action, timeLength / playRate);
                                         }
                                     }
@@ -413,6 +448,7 @@ namespace bian
                                     {
                                         DoAction(action, timeLength / playRate);
                                     }
+
                                 });
                             }
                             catch (Exception e)

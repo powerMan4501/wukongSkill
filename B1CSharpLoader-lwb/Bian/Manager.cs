@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System;
 
+
 namespace bian
 {
     [HarmonyPatch]
@@ -19,6 +20,8 @@ namespace bian
         private static ModelManager manager;
         private static Harmony harmony;
         private static Ui UI;
+
+        public static string? currentMontage;
 
         public static ModelManager GetModelManager()
         {
@@ -60,7 +63,14 @@ namespace bian
             }
         }
 
-
+        public static string GetCurrentMontage()
+        {
+            if (currentMontage == null)
+            {
+                return "";
+            }
+            return currentMontage;
+        }
         [HarmonyPatch(typeof(GSDel_RequestSpawnAProjectile), "Invoke")]
         [HarmonyPrefix]
         private static void GSDel_RequestSpawnAProjectileInvoke(ref FGSProjectileSpawnInfo ProjectileSpawnInfo)
@@ -131,7 +141,7 @@ namespace bian
             }
             return false;
         }
-        public static string? currentMontage;
+
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_CastSkillWithAnimMontageMultiCast_Implementation")]
         [HarmonyPrefix]
         private static void CastSkillWithAnimMontageMultiCast(BUS_GSEventCollection __instance, ref UAnimMontage Montage, ref float PlayTimeRate, float MontagePosOffset, FName StartSectionName)
@@ -139,7 +149,12 @@ namespace bian
 
             if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]CastSkillWithAnimMontageMultiCast"))
             {
-                Log.Info($"bian: 执行动画 -->{Montage.PathName} {Montage.SequenceLength}");
+                // 获取动画实例
+
+                Log.Info($"bian: 执行动画 -->{Montage.PathName?.Substring(Montage.PathName.Length - 19)} SequenceLength：{Montage.SequenceLength} GetSkeleton:{Montage.GetSkeleton()}");
+
+
+
             }
 
             if (!IsPlayer(__instance.GetOwner().PathName))
@@ -147,6 +162,7 @@ namespace bian
                 return;
             }
 
+            currentMontage = Montage.PathName;
             var mgr = Manager.GetModelManager();
             var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;
             var length = Montage.GetPlayLength() * 1000;
@@ -162,7 +178,7 @@ namespace bian
             {
                 PlayTimeRate_ = (float)currentModel.skillSpeedRate; //动画播放速率
             }
-            currentMontage = Montage.PathName;
+
             if (mgr.Rules != null && mgr.Rules.Count > 0)
             {
 
@@ -176,22 +192,11 @@ namespace bian
                             var ruleItem = rule.Rules[j];
                             if (Montage != null && ruleItem.IsMatchMontage(Montage.PathName))
                             {
-
-
                                 if (ruleItem?.speedRate > 0)
                                 {
                                     PlayTimeRate_ = (float)ruleItem.speedRate; //动画播放速率
                                 }
-                                if ((ruleItem?.isLoop) == true)
-                                {
-                                    // 循环执行 DoRule
-                                    ruleItem.DoRule(length, playRate, Montage.PathName, ruleItem);
-                                }
-                                else
-                                {
-                                    ruleItem.DoRule(length, playRate, Montage.PathName, ruleItem);
-
-                                }
+                                ruleItem.DoRule(length, playRate, Montage, ruleItem);
                             }
                         }
                     }
@@ -201,49 +206,6 @@ namespace bian
             PlayTimeRate = PlayTimeRate_;
         }
 
-        private static void handleLoopExecution(Rule ruleItem, float length, float playRate, string montagePath, float SequenceLength)
-        {
-
-            // 使用 Task 在后台循环执行
-            var loopTask = currentMontage != montagePath ? null : Task.Run(async () =>
-                  {
-                      // 获取循环间隔时间（可以根据动画长度调整）
-                      int intervalMs = (int)(length / SequenceLength);
-
-                      Log.Info($"bian: 开始循环执行技能 -->{montagePath}, 间隔:{intervalMs}ms");
-                      if (currentMontage != montagePath || ruleItem == null)
-                      {
-                          return;
-                      }
-                      try
-                      {
-                          // 首次执行
-                          Utils.TryRunOnGameThread(() =>
-                          {
-                              var method = ruleItem.GetType().GetMethod("DoRule");
-                              method?.Invoke(ruleItem, new object[] { length, playRate, montagePath, ruleItem });
-                          });
-
-                          // 循环执行
-                          while (currentMontage == montagePath)
-                          {
-                              await Task.Delay(intervalMs);
-
-                              Utils.TryRunOnGameThread(() =>
-                              {
-                                  ruleItem.DoRule(length, playRate, montagePath, ruleItem);
-                              });
-                          }
-                      }
-                      catch (Exception e)
-                      {
-
-                          Log.Error($"bian: 循环执行技能出错 -->{montagePath}, {e}");
-                      }
-
-
-                  });
-        }
 
 
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_SmartCastSkillTryMultiCast_Implementation")]
