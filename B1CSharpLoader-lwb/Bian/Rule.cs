@@ -434,16 +434,16 @@ namespace bian
                                         // 获取动画当前播放时间
                                         currentPosition = animInstance.Montage_GetPosition(montage);
                                     }
+
                                     if (ruleItem != null && montage != null)
                                     {
                                         if (!ruleItem.IsMatchMontage(currMontage))
                                         {
                                             return;
                                         }
-                                        Log.Info($"执行 DoAction currentPosition：{currentPosition * 1000}  timeDelay：{timeDelay} {currMontage}");
                                         // 加个误差值
-                                        var diff = 100;
-                                        if (currentPosition * 1000 >= timeDelay - diff)
+                                        var diff = 150;
+                                        if (currentPosition == 0 || currentPosition * 1000 >= timeDelay - diff)
                                         {
                                             DoAction(action, timeLength / playRate);
                                         }
