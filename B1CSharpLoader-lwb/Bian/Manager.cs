@@ -159,6 +159,8 @@ namespace bian
                 return;
             }
 
+
+
             currentMontage = Montage.PathName;
             var mgr = Manager.GetModelManager();
             var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;

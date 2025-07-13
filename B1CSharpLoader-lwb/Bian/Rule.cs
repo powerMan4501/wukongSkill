@@ -415,15 +415,21 @@ namespace bian
                                     var currMontage = Manager.GetCurrentMontage();
                                     var character = Helper.GetBGUPlayerCharacterCS();
                                     // 获取动画实例
-                                    if (character == null)
+                                    if (character == null || currMontage == null || character.Mesh == null)
                                     {
                                         return;
                                     }
-                                    if (character?.Mesh == null)
+
+                                    UAnimInstance? animInstance = null;
+                                    try
                                     {
-                                        return;
+                                        animInstance = character.Mesh.GetAnimInstance();
                                     }
-                                    var animInstance = character.Mesh.GetAnimInstance();
+                                    catch (System.Exception e)
+                                    {
+                                        Console.WriteLine($"获取动画实例出错${e.Message} {e.StackTrace}");
+
+                                    }
                                     if (animInstance == null)
                                     {
                                         return;
@@ -442,7 +448,8 @@ namespace bian
                                             return;
                                         }
                                         // 加个误差值
-                                        var diff = 150;
+                                        var diff = 250;
+                                        Console.WriteLine($"执行action：{currentPosition * 1000}--{timeDelay}---{currMontage}");
                                         if (currentPosition > 0 && currentPosition * 1000 >= timeDelay - diff)
                                         {
                                             DoAction(action, timeLength / playRate);
@@ -457,7 +464,6 @@ namespace bian
                                                 return;
                                             }
                                             DoAction(action, timeLength / playRate);
-                                            return;
                                         }
                                     }
                                     else
