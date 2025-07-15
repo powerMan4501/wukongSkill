@@ -725,11 +725,15 @@
     {
       "Key": "S+W",
       "Type": "Teleport",
-      "positionX": 2,
-      "positionY": 2,
-      "positionZ": 1,
       "ForTarget": true,
       "Name": "往前500",
+      "AlawaysCanCast": true
+    },
+    {
+      "Key": "S+S",
+      "Type": "ADD_BUFF",
+      "Buffers": [1000190, 1000192],
+      "Name": "敌人巨猿，己方幽魂",
       "AlawaysCanCast": true
     }
   ]

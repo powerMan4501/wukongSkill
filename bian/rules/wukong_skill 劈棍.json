@@ -82,15 +82,15 @@
         {
           "Type": "summon",
           "SummonID": 700236,
-          "SummonCount": 5,
-          "TimeDelay": 450
+          "SummonCount": 4,
+          "TimeDelay": 590
         },
         {
           "Type": "followcamera",
-          "XRate": -1700,
+          "XRate": -1000,
           "YRate": 0,
-          "ZRate": 10,
-          "returnTime": 2400
+          "ZRate": -100,
+          "returnTime": 3200
         },
 
         {

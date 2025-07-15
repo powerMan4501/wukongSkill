@@ -192,7 +192,7 @@
           "BornDirOffsetXLeftValue": 175,
           "BornDirOffsetXRightValue": 175,
           "ForTarget": true,
-          "TimeDelay": 1280,
+          "TimeDelay": 1150,
           "desc": "有冰buff，冰剑气"
         },
         {
@@ -203,7 +203,7 @@
           "BornDirOffsetXLeftValue": 175,
           "BornDirOffsetXRightValue": 175,
           "ForTarget": true,
-          "TimeDelay": 1290,
+          "TimeDelay": 1150,
           "desc": "有冰buff，冰剑气"
         },
         {
@@ -214,7 +214,7 @@
           "SpeedRightValue": 7000,
           "BornDirOffsetXLeftValue": 85,
           "BornDirOffsetXRightValue": 85,
-          "TimeDelay": 1280,
+          "TimeDelay": 1150,
           "ForTarget": true,
           "noBuffCondition": 1000866,
           "desc": "没有冰buff 发射火焰剑气"
@@ -226,7 +226,7 @@
           "ProjectTileID": 74010202,
           "noBuffCondition": 1000866,
           "desc": "没有冰buff 地火",
-          "TimeDelay": 1200
+          "TimeDelay": 1050
         },
         {
           "Type": "buff",
@@ -304,13 +304,6 @@
           "ProjectTileID": 80009901,
           "ForTarget": true,
           "TimeDelay": 150,
-          "BulletNumInOneWave": 4,
-          "TargetProjectilePosOffsetType": "RangeOffset",
-          "TargetMatrixDensity": 120,
-          "TargetCircleRadius": 900,
-          "NoiseX": 100,
-          "NoiseY": 100,
-          "NoiseZ": 100,
           "desc": "杨戬万剑，小型剑，密密麻麻（原本无伤害，目前给了10点）"
         },
         {
@@ -319,13 +312,6 @@
           "ProjectTileID": 80009913,
           "ForTarget": true,
           "TimeDelay": 200,
-          "BulletNumInOneWave": 3,
-          "TargetProjectilePosOffsetType": "RangeOffset",
-          "TargetMatrixDensity": 100,
-          "TargetCircleRadius": 900,
-          "NoiseX": 200,
-          "NoiseY": 100,
-          "NoiseZ": 100,
           "desc": "杨戬万剑，打中带白色雾"
         },
         {
@@ -334,13 +320,6 @@
           "ProjectTileID": 80009910,
           "ForTarget": true,
           "TimeDelay": 100,
-          "BulletNumInOneWave": 2,
-          "TargetProjectilePosOffsetType": "RangeOffset",
-          "TargetMatrixDensity": 500,
-          "TargetCircleRadius": 1500,
-          "NoiseX": 200,
-          "NoiseY": 100,
-          "NoiseZ": 100,
           "desc": "杨戬飞剑，带拖尾"
         },
         {
@@ -348,13 +327,6 @@
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 80000008,
           "ForTarget": true,
-          "BulletNumInOneWave": 2,
-          "TargetProjectilePosOffsetType": "RangeOffset",
-          "TargetMatrixDensity": 15,
-          "TargetCircleRadius": 600,
-          "NoiseX": 200,
-          "NoiseY": 100,
-          "NoiseZ": 100,
           "desc": "杨戬飞剑，带白色拖尾"
         }
       ]
@@ -375,7 +347,7 @@
           "OffsetX": 900,
           "OffsetY": 900,
           "ProjectTileID": 2403471,
-          "TimeDelay": 950,
+          "TimeDelay": 920,
           "buffCondition": 1000866,
           "desc": "有冰buff，触发冰暴"
         },
@@ -385,9 +357,8 @@
           "OffsetX": 900,
           "OffsetY": 900,
           "ProjectTileID": 30139802,
-          "TimeDelay": 950,
+          "TimeDelay": 920,
           "buffCondition": 1000866,
-
           "desc": "有冰buff，地面半圈冰刺"
         },
         {
@@ -398,7 +369,7 @@
           "BornDirOffsetXLeftValue": 91,
           "BornDirOffsetXRightValue": 91,
           "ForTarget": true,
-          "TimeDelay": 950,
+          "TimeDelay": 920,
           "desc": "有冰buff，冰剑气"
         },
         {
@@ -409,7 +380,7 @@
           "BornDirOffsetXLeftValue": 180,
           "BornDirOffsetXRightValue": 180,
           "ForTarget": true,
-          "TimeDelay": 950,
+          "TimeDelay": 920,
           "desc": "有冰buff，冰剑气"
         },
         {
@@ -418,7 +389,7 @@
           "ProjectTileID": 30139802,
           "OffsetX": 1400,
           "OffsetY": 1400,
-          "TimeDelay": 950,
+          "TimeDelay": 920,
           "buffCondition": 1000866,
           "desc": "有冰buff 地面一圈冰刺"
         },
@@ -428,7 +399,7 @@
           "ProjectTileID": 44011401,
           "OffsetX": 900,
           "OffsetY": 900,
-          "TimeDelay": 950,
+          "TimeDelay": 920,
           "buffCondition": 1000867,
           "desc": "有火buff 红孩儿砸地"
         },
@@ -438,7 +409,7 @@
           "ProjectTileID": 1016232,
           "OffsetX": 900,
           "OffsetY": 900,
-          "TimeDelay": 950,
+          "TimeDelay": 920,
           "buffCondition": 1000867,
           "desc": "有火buff 炸炸炸"
         },
@@ -446,11 +417,9 @@
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 40580501,
-          "TimeDelay": 950,
+          "TimeDelay": 920,
           "buffCondition": 1000867,
           "ForTarget": true,
-          "SpeedLeftValue": 9000,
-          "SpeedRightValue": 9000,
           "desc": "有火buff 火焰剑气"
         },
 
@@ -586,6 +555,17 @@
           "buffCondition": 1000867,
           "desc": "有火buff 地面岩浆"
         },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 2403372,
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 1250,
+          "buffCondition": 1000867,
+          "desc": "有火buff 地火"
+        },
+
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
