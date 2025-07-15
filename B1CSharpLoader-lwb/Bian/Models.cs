@@ -850,6 +850,10 @@ namespace bian
 
                     // 计算目标位置
                     var targetPosition = currentPosition + forwardVector * 900;
+
+
+
+
                     if (keyItem.ForTarget == true)
                     {
                         var target = BGUFunctionLibraryCS.BGUGetTarget(character_) as BGUCharacterCS;
@@ -858,9 +862,12 @@ namespace bian
                             BGUFunctionLibraryCS.BGUAddBuff(character_, character_, 1000168, EBuffSourceType.GM, keyItem.BuffTime ?? 1000);
                             return;
                         }
+
+
+                        Helper.SpawnProjectile(character_, "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'", 88880001, true, 1, false, new FVector(0, 0, 0), null);
                     }
                     // 传送主角
-                    character_.Teleport(targetPosition, character_.GetActorRotation());
+                    // character_.Teleport(targetPosition, character_.GetActorRotation());
 
                     break;
                 default:

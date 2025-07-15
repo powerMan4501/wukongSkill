@@ -75,21 +75,21 @@ namespace bian
         [HarmonyPrefix]
         private static void GSDel_RequestSpawnAProjectileInvoke(ref FGSProjectileSpawnInfo ProjectileSpawnInfo)
         {
-            // if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]RequestSpawnAProjectile"))
-            // {
-            //     Log.Debug(
-            //     $"bain:[PATCH]GSDel_RequestSpawnAProjectile --> \n=======ProjectileID:{ProjectileSpawnInfo.ProjectileID} " +
-            //     $"\n=======BornDir:{ProjectileSpawnInfo.BornDir} " +
-            //     $"\n=======AttachRule_Rot:{ProjectileSpawnInfo.AttachRule_Rot}  " +
-            //     $"\n=======AttachToSpawnBase_SocketName:{ProjectileSpawnInfo.AttachToSpawnBase_SocketName}  " +
-            //     $"\n=======SpawnPosition:{ProjectileSpawnInfo.SpawnPosition}  " +
-            //     $"\n=======SpawnPosition:{ProjectileSpawnInfo.SpawnPosition}  " +
-            //     $"\n=======TargetPos:{ProjectileSpawnInfo.TargetPos}  " +
-            //     $"\n=======AttachToSpawnBase_SpawnBaseActor:{ProjectileSpawnInfo.AttachToSpawnBase_SpawnBaseActor}  " +
-            //     $"\n=======ProjectileType:{ProjectileSpawnInfo.ProjectileType} " +
-            //     $"\n=======SkillID:{ProjectileSpawnInfo.SkillID}" +
-            //     $"\n=======SkillID:{ProjectileSpawnInfo.SkillID}");
-            // }
+            if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]RequestSpawnAProjectile"))
+            {
+                Log.Info(
+                $"bain:[PATCH]GSDel_RequestSpawnAProjectile --> \n=======ProjectileID:{ProjectileSpawnInfo.ProjectileID} " +
+                $"\n=======BornDir:{ProjectileSpawnInfo.BornDir} " +
+                $"\n=======AttachRule_Rot:{ProjectileSpawnInfo.AttachRule_Rot}  " +
+                $"\n=======AttachToSpawnBase_SocketName:{ProjectileSpawnInfo.AttachToSpawnBase_SocketName}  " +
+                $"\n=======SpawnPosition:{ProjectileSpawnInfo.SpawnPosition}  " +
+                $"\n=======SpawnPosition:{ProjectileSpawnInfo.SpawnPosition}  " +
+                $"\n=======TargetPos:{ProjectileSpawnInfo.TargetPos}  " +
+                $"\n=======AttachToSpawnBase_SpawnBaseActor:{ProjectileSpawnInfo.AttachToSpawnBase_SpawnBaseActor}  " +
+                $"\n=======ProjectileType:{ProjectileSpawnInfo.ProjectileType} " +
+                $"\n=======SkillID:{ProjectileSpawnInfo.SkillID}" +
+                $"\n=======SkillID:{ProjectileSpawnInfo.SkillID}");
+            }
 
         }
 

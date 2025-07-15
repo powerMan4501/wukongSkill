@@ -448,7 +448,7 @@ namespace bian
                                             return;
                                         }
                                         // 加个误差值
-                                        var diff = 250;
+                                        var diff = 390;
                                         Console.WriteLine($"执行action：{currentPosition * 1000}--{timeDelay}---{currMontage}");
                                         if (currentPosition > 0 && currentPosition * 1000 >= timeDelay - diff)
                                         {
