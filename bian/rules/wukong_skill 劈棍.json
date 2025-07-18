@@ -14,19 +14,11 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 140,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 1350
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50058603,
+          "ProjectTileIDs": [140, 50058603],
           "OffsetX": 500,
           "OffsetY": 500,
           "TimeDelay": 1350,
-          "desc": "黄符"
+          "desc": "业火，黄符"
         }
       ]
     },
@@ -44,28 +36,11 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 140,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 1800
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50058603,
+          "ProjectTileIDs": [140, 50058603, 74011107],
           "OffsetX": 500,
           "OffsetY": 500,
           "TimeDelay": 1800,
-          "desc": "黄符"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 74011107,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 1800,
-          "desc": "金沙"
+          "desc": "业火黄符金沙"
         }
       ]
     },
@@ -87,72 +62,32 @@
         },
         {
           "Type": "followcamera",
-          "XRate": -1000,
+          "XRate": -1200,
           "YRate": 0,
-          "ZRate": -100,
+          "ZRate": -10,
           "returnTime": 3200
         },
 
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 74010206,
+          "ProjectTileIDs": [74010206, 70015801, 2403472],
           "OffsetX": 500,
           "OffsetY": 500,
           "TimeDelay": 2350,
           "noBuffCondition": 1000866,
-          "desc": "没冰地面炸出火碎片"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 74011208,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 2350,
-          "buffCondition": 1000866,
-          "desc": "没冰地面炸出冰碎片"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 2403471,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 2350,
-          "buffCondition": 1000866,
-          "desc": "冰buff，四级冰"
+          "desc": "没冰地面炸出火碎片,金箍棒火版本,四级火"
         },
 
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 88880006,
+          "ProjectTileIDs": [2403471, 74011208, 88880006],
           "OffsetX": 500,
           "OffsetY": 500,
           "TimeDelay": 2350,
           "buffCondition": 1000866,
-          "desc": "冰buff，金箍棒冰版本"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 70015801,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 2350,
-          "noBuffCondition": 1000866,
-          "desc": "没冰buff，金箍棒火版本"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 2403472,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 2350,
-          "noBuffCondition": 1000866,
-          "desc": "没冰buff，四级火"
+          "desc": "冰buff，四级冰,冰碎片，金箍棒冰版本"
         }
       ]
     },
@@ -209,58 +144,6 @@
           "noBuffCondition": 1000866,
           "desc": "没冰buff，红孩儿砸地"
         },
-
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 44010401,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 2770,
-          "noBuffCondition": 1000866,
-          "desc": "没冰buff，炸炸炸"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 2403472,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 2770,
-          "noBuffCondition": 1000866,
-          "desc": "没冰buff，四级火"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 2403471,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 2770,
-          "buffCondition": 1000866,
-          "desc": "有冰buff，四级冰"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 74011208,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 2770,
-          "buffCondition": 1000866,
-          "desc": "有冰buff，冰碎片"
-        },
-
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 152,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 2770,
-          "buffCondition": 1000866,
-          "desc": "有冰buff，地波"
-        },
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
@@ -271,6 +154,28 @@
           "buffCondition": 1000866,
           "desc": "有冰buff，冰暴"
         },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileIDs": [44010401, 2403472],
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 2770,
+          "noBuffCondition": 1000866,
+          "desc": "没冰buff，炸炸炸,四级火"
+        },
+
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileIDs": [2403471, 74011208, 152],
+          "OffsetX": 500,
+          "OffsetY": 500,
+          "TimeDelay": 2770,
+          "buffCondition": 1000866,
+          "desc": "有冰buff，四级冰,冰碎片,地波"
+        },
+
         {
           "Type": "buff",
           "BuffID": 1000165,
