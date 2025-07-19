@@ -1,6 +1,7 @@
 ﻿
 using b1;
 using b1.BGW;
+using b1.Plugins.Calliope;
 using b1.Plugins.TressFX;
 using BtlB1;
 using BtlShare;
@@ -20,6 +21,7 @@ namespace bian
     public static class Helper
     {
         private static UWorld? world;
+        public static FCalliopeGuid? summonGuid;
 
         public static UWorld? GetWorld()
         {
@@ -443,6 +445,10 @@ namespace bian
             // Log.Debug($"bian: TriggerSkillEffect---->{EffectID}");
             GetBUS_GSEventCollection().Evt_TriggerSkillEffect.Invoke(EffectID, effectInstReq, aActor2);
         }
+        public static FCalliopeGuid getGUid()
+        {
+            return (FCalliopeGuid)summonGuid;
+        }
 
         public static void SummonReq(Int64 SummonID, Int64 SummonCount, int SummonAliveTime = 12)
         {
@@ -455,7 +461,8 @@ namespace bian
 
             FSummonReq fSummonReq = default(FSummonReq);
             fSummonReq.SummonType = ESummonType.Normal;
-            fSummonReq.SummonGuid = GameplayTagExtension.ConvertToCalliopeGuid(Guid.NewGuid());
+            summonGuid = GameplayTagExtension.ConvertToCalliopeGuid(Guid.NewGuid());
+            fSummonReq.SummonGuid = (FCalliopeGuid)summonGuid;
             fSummonReq.SummonID = (Int32)SummonID;
             fSummonReq.SpawnConfigWrap = FSummonSpawnConfigWrap.WrapSpawnConfig_BySummonCommDesc((Int32)SummonID, character);
             fSummonReq.SpawnConfigWrap.SummonAliveTime = SummonAliveTime;
@@ -698,6 +705,66 @@ namespace bian
             });
         }
 
+
+        // 分身触发技能
+        public static void FenshenGSTryCastSkill(int skillID)
+        {
+            UObject @this = Helper.GetWorld();
+            IBGC_TamerData gameStateReadonlyData = BGU_DataUtil.GetGameStateReadonlyData<IBGC_TamerData, BGC_TamerData>(@this);
+            if (gameStateReadonlyData == null)
+            {
+                return;
+            }
+            gameStateReadonlyData.GetSpawnedMonsterList(out var OutMonsterList);
+            AActor play = Helper.GetBGUPlayerCharacterCS();
+            FVector actorLocation = play.GetActorLocation();
+            actorLocation.Z += 20;
+            actorLocation.X += 100;
+            actorLocation.Y += 100;
+            FRotator fRotator2 = play.GetActorRotation();
+
+            foreach (string item in OutMonsterList)
+            {
+                // BGUFunctionLibraryCS.BGUSetUnitSimpleState(BGU_DataUtil.GetActorByGuid(@this, item), EBGUSimpleState.ImmueDamage, IsRemove: false);
+                AActor actorByGuid = BGU_DataUtil.GetActorByGuid(@this, item);
+                var fs_name = actorByGuid?.GetFullName().ToLower();
+
+                if (skillID > 0 && fs_name?.IndexOf("unit_monkeysummon") > -1)
+                {
+
+                    FUStSkillSDesc skillSDesc = BGW_GameDB.GetSkillSDesc(skillID, play);
+                    Console.WriteLine($"FenshenGSTryCastSkill fenshen  fs_name: {fs_name} {fs_name?.IndexOf("unit_monkeysummon")} {skillSDesc.TemplatePath}");
+
+
+                    var target = BGUFunctionLibraryCS.BGUGetTarget(play) as BGUCharacterCS;
+                    if (target != null)
+                    {
+                        BGUFunctionLibraryCS.BGUAddBuff(actorByGuid, actorByGuid, 1000168, EBuffSourceType.GM, 200);
+                    }
+                    else
+                    {
+                        actorByGuid.Teleport(actorLocation, fRotator2);
+                    }
+                    if (skillSDesc.TemplatePath != null)
+                    {
+                        try
+                        {
+                            BUS_EventCollectionCS.Get(actorByGuid).Evt_RequestSmartCastSkill.Invoke(skillID, null, EMontageBindReason.Default, false);
+                            Console.WriteLine($"Skill {skillID} cast request sent successfully.");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Error casting skill {skillID} : {ex.Message}");
+                        }
+
+                    }
+                }
+
+
+            }
+        }
+
+
         public static bool IsWukong(BGUCharacterCS character)
         {
             return character.Mesh.SkeletalMesh.GetFullName().ToLower().IndexOf("SK_Wukong_Simple".ToLower()) > -1;
@@ -723,8 +790,8 @@ namespace bian
                 try
                 {
 
-                    BGUFuncLibNonRuntime.LoadProtobufData<FUStUnitCommDesc>();
-                    BGUFuncLibNonRuntime.LoadProtobufData<FUStUnitBattleInfoExtendDesc>();
+                    // BGUFuncLibNonRuntime.LoadProtobufData<FUStUnitCommDesc>();
+                    // BGUFuncLibNonRuntime.LoadProtobufData<FUStUnitBattleInfoExtendDesc>();
                     ACharacter aCharacter = tM.GetMonster() as ACharacter;
                     //GetAllMertials(aCharacter);
 

@@ -38,6 +38,9 @@ namespace bian
         private bool HasInit = false;
         private BaseModel CurrentModel;
         private Ui UI;
+
+        public FVector originLocation;
+        public FVector originLocation2;
         public List<RuleGroup> Rules;
         public ITransable Wukong;
         private static Dictionary<String, int> SkillMapping = new();
@@ -551,14 +554,14 @@ namespace bian
                 {
                     Log.Info($"bian: BossConf 变身后执行技能 --> {CurrentModel.TransDone.doneSkill.Id}");
                     Task.Run(async delegate
-                               {
-                                   await Task.Delay(660);
-                                   Utils.TryRunOnGameThread((Action)delegate
-                                   {
-                                       var character = Helper.GetBGUPlayerCharacterCS();
-                                       BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(CurrentModel.TransDone.doneSkill.Id, null, EMontageBindReason.Default, false);
-                                   });
-                               });
+                    {
+                        await Task.Delay(660);
+                        Utils.TryRunOnGameThread((Action)delegate
+                        {
+                            var character = Helper.GetBGUPlayerCharacterCS();
+                            BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(CurrentModel.TransDone.doneSkill.Id, null, EMontageBindReason.Default, false);
+                        });
+                    });
 
                 }
             }
@@ -859,15 +862,30 @@ namespace bian
                         var target = BGUFunctionLibraryCS.BGUGetTarget(character_) as BGUCharacterCS;
                         if (target != null)
                         {
+
+                            originLocation = character_.GetActorLocation();
                             BGUFunctionLibraryCS.BGUAddBuff(character_, character_, 1000168, EBuffSourceType.GM, keyItem.BuffTime ?? 1000);
                             return;
                         }
-
-
-                        Helper.SpawnProjectile(character_, "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'", 88880001, true, 1, false, new FVector(0, 0, 0), null);
+                        // Helper.SpawnProjectile(character_, "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'", 88880001, true, 1, false, new FVector(0, 0, 0), null);
                     }
-                    // 传送主角
-                    // character_.Teleport(targetPosition, character_.GetActorRotation());
+                    else
+                    {
+                        // 传送主角
+                        if (originLocation != null && !character_.GetActorLocation().Equals(originLocation))
+                        {
+                            originLocation2 = character_.GetActorLocation();
+                            character_.Teleport(originLocation, character_.GetActorRotation());
+                            return;
+                        }
+
+                        if (originLocation2 != null && !character_.GetActorLocation().Equals(originLocation2))
+                        {
+                            character_.Teleport(originLocation2, character_.GetActorRotation());
+                            return;
+                        }
+                    }
+
 
                     break;
                 default:

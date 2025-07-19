@@ -77,18 +77,10 @@ namespace bian
         {
             if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]RequestSpawnAProjectile"))
             {
-                Log.Info(
-                $"bain:[PATCH]GSDel_RequestSpawnAProjectile --> \n=======ProjectileID:{ProjectileSpawnInfo.ProjectileID} " +
-                $"\n=======BornDir:{ProjectileSpawnInfo.BornDir} " +
-                $"\n=======AttachRule_Rot:{ProjectileSpawnInfo.AttachRule_Rot}  " +
-                $"\n=======AttachToSpawnBase_SocketName:{ProjectileSpawnInfo.AttachToSpawnBase_SocketName}  " +
-                $"\n=======SpawnPosition:{ProjectileSpawnInfo.SpawnPosition}  " +
-                $"\n=======SpawnPosition:{ProjectileSpawnInfo.SpawnPosition}  " +
-                $"\n=======TargetPos:{ProjectileSpawnInfo.TargetPos}  " +
-                $"\n=======AttachToSpawnBase_SpawnBaseActor:{ProjectileSpawnInfo.AttachToSpawnBase_SpawnBaseActor}  " +
-                $"\n=======ProjectileType:{ProjectileSpawnInfo.ProjectileType} " +
-                $"\n=======SkillID:{ProjectileSpawnInfo.SkillID}" +
-                $"\n=======SkillID:{ProjectileSpawnInfo.SkillID}");
+                if (ProjectileSpawnInfo.ProjectileID == 1085601)
+                {
+                    Log.Info($"RequestSpawnAProjectile 飞棍 SkillID:{ProjectileSpawnInfo.SkillID} SpawnPosition:{ProjectileSpawnInfo.SpawnPosition}");
+                }
             }
 
         }
@@ -149,16 +141,13 @@ namespace bian
 
             if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]CastSkillWithAnimMontageMultiCast"))
             {
-                // 获取动画实例
-                var PathName = Montage.PathName;
-                // Log.Info($"bian: 执行动画 -->{Montage.PathName?.Substring(Montage.PathName.Length - 19)} ");
+
             }
 
             if (!IsPlayer(__instance.GetOwner().PathName))
             {
                 return;
             }
-
 
 
             currentMontage = Montage.PathName;
@@ -218,29 +207,35 @@ namespace bian
             var character = Helper.GetBGUPlayerCharacterCS();
             var bufferId = 20101;
 
+
             if (ID == 10801)
             {
                 // 平A1
                 bufferId = 20101;
+                Helper.FenshenGSTryCastSkill(1001161);
             }
             if (ID == 10802)
             {
                 // 平A2
                 bufferId = 20102;
+                Helper.FenshenGSTryCastSkill(1001162);
             }
             if (ID == 10803)
             {
                 // 平A3
                 bufferId = 20103;
+                Helper.FenshenGSTryCastSkill(1001163);
             }
             if (ID == 10804)
             {
                 // 平A4
                 bufferId = 20104;
+                Helper.FenshenGSTryCastSkill(1001164);
             }
             if (ID == 10705 || ID == 10706 || ID == 50001 || ID == 50003 || ID == 50005 || ID == 10721 || ID == 10720)
             {
                 BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);
+                Helper.FenshenGSTryCastSkill(1001190);
             }
             if (bufferId > 0)
             {

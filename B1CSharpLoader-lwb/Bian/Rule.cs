@@ -68,8 +68,11 @@ namespace bian
 
         public int BulletNumInOneWave { get; set; }
 
+        public List<int>? Buffs { get; set; }
+        public List<int>? ProjectTileIDs { get; set; }
         public List<int>? buffsCondition { get; set; }
         public List<int>? noBuffsCondition { get; set; }
+
 
         public string? TargetProjectilePosOffsetType { get; set; }
         public string? TargetRangeOffsetInfo { get; set; }
@@ -174,15 +177,18 @@ namespace bian
             switch (action.Type.ToLower())
             {
                 case "buff":
-                    if (action.BuffID > 0)
+                    var buffs = action?.Buffs?.Count > 0 ? action?.Buffs : action.BuffID > 0 ? [action.BuffID] : null;
+                    if (buffs?.Count > 0)
                     {
                         var buffTime = timeLength;
                         if (action.BuffTime > 0)
                         {
                             buffTime = action.BuffTime;
                         }
-                        // Log.Info($"bian: start run rule action: add-buff {action.BuffID}");
-                        BGUFunctionLibraryCS.BGUAddBuff(character, character, action.BuffID, EBuffSourceType.GM, buffTime);
+                        foreach (var buff in buffs)
+                        {
+                            BGUFunctionLibraryCS.BGUAddBuff(character, character, buff, EBuffSourceType.GM, buffTime);
+                        }
                     }
                     break;
                 case "skill":
@@ -246,17 +252,18 @@ namespace bian
 
                     if (action?.SkillID > 0)
                     {
-                        BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10100, ECastSkillSourceType.GM));
+                        // BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10100, ECastSkillSourceType.GM));
                         Task.Run(async delegate
                         {
-                            await Task.Delay(650);
+                            var character = Helper.GetBGUPlayerCharacterCS();
+                            // await Task.Delay(650);
                             var backTime = (int)(action?.backTime ?? 1900);
                             Utils.TryRunOnGameThread((Action)delegate
                             {
+                                character.FollowCamera.RelativeLocation = new FVector((double)(action?.XRate ?? -1300.0), (double)(action?.YRate ?? 0.0), action?.ZRate ?? 10.0);
                                 Helper.CastVigorSkillByID(character, action.SkillID, backTime);
                             });
                             await Task.Delay(backTime);
-
                             Utils.TryRunOnGameThread((Action)delegate
                        {
                            var character = Helper.GetBGUPlayerCharacterCS();
@@ -274,8 +281,17 @@ namespace bian
                 case "bullet":
                     if (action.Bullet != null)
                     {
+                        List<int> projectTileIds = action.ProjectTileIDs?.Count > 0 ? action.ProjectTileIDs : [action.ProjectTileID];
                         // Log.Info($"bian: start run rule action: spawn-bullet {action.Bullet}");
-                        Helper.SpawnProjectile(character, action.Bullet, action.ProjectTileID, action.ForTarget, action.BulletCount, action.IsRandom, new FVector(action.OffsetX, action.OffsetY, action.OffsetZ), action);
+                        if (projectTileIds?.Count > 0)
+                        {
+                            foreach (var projectTileId in projectTileIds)
+                            {
+                                Helper.SpawnProjectile(character, action.Bullet, projectTileId, action.ForTarget, action.BulletCount, action.IsRandom, new FVector(action.OffsetX, action.OffsetY, action.OffsetZ), action);
+
+                            }
+
+                        }
                     }
                     break;
                 case "summon":
@@ -449,7 +465,7 @@ namespace bian
                                         }
                                         // 加个误差值
                                         var diff = 390;
-                                        Console.WriteLine($"执行action：{currentPosition * 1000}--{timeDelay}---{currMontage}");
+                                        Console.WriteLine($"执行action currentPosition：{currentPosition * 1000} timeDelay-diff:{timeDelay - diff}--timeDelay：{timeDelay} ");
                                         if (currentPosition > 0 && currentPosition * 1000 >= timeDelay - diff)
                                         {
                                             DoAction(action, timeLength / playRate);
