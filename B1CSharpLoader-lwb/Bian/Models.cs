@@ -622,16 +622,17 @@ namespace bian
 
             if (skill?.type?.ToLower() == "magic" & skill?.Id != null)
             {
-                BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10100, ECastSkillSourceType.GM));
+                // BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10100, ECastSkillSourceType.GM));
                 Task.Run(async delegate
                 {
 
                     try
                     {
-                        await Task.Delay(650);
+                        // await Task.Delay(650);
                         var backTime = (int)(skill?.backTime ?? 1700);
                         Utils.TryRunOnGameThread((Action)delegate
                         {
+                            character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(-1000, 0, 0);
                             Helper.CastVigorSkillByID(character, skill.Id, backTime);
                         });
                         await Task.Delay(backTime);
@@ -841,7 +842,10 @@ namespace bian
                         }
                     }
                     break;
-
+                case "strong_monster":
+                    // 加强怪
+                    Helper.StrongMonster();
+                    break;
                 case "Teleport":
 
                     var character_ = Helper.GetBGUPlayerCharacterCS();
@@ -854,7 +858,7 @@ namespace bian
                     // 计算目标位置
                     var targetPosition = currentPosition + forwardVector * 900;
 
-
+                    Helper.FenshenTeleport();
 
 
                     if (keyItem.ForTarget == true)

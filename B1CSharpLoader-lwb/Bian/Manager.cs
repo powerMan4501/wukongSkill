@@ -150,6 +150,7 @@ namespace bian
             }
 
 
+
             currentMontage = Montage.PathName;
             var mgr = Manager.GetModelManager();
             var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;
@@ -180,6 +181,10 @@ namespace bian
                             var ruleItem = rule.Rules[j];
                             if (Montage != null && ruleItem.IsMatchMontage(Montage.PathName))
                             {
+                                if (ruleItem?.skillID_fs > 0)
+                                {
+                                    Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, true);
+                                }
                                 if (ruleItem?.speedRate > 0)
                                 {
                                     PlayTimeRate_ = (float)ruleItem.speedRate; //动画播放速率
@@ -212,34 +217,34 @@ namespace bian
             {
                 // 平A1
                 bufferId = 20101;
-                Helper.FenshenGSTryCastSkill(1001161);
             }
             if (ID == 10802)
             {
                 // 平A2
                 bufferId = 20102;
-                Helper.FenshenGSTryCastSkill(1001162);
             }
             if (ID == 10803)
             {
                 // 平A3
                 bufferId = 20103;
-                Helper.FenshenGSTryCastSkill(1001163);
             }
             if (ID == 10804)
             {
                 // 平A4
                 bufferId = 20104;
-                Helper.FenshenGSTryCastSkill(1001164);
             }
-            if (ID == 10705 || ID == 10706 || ID == 50001 || ID == 50003 || ID == 50005 || ID == 10721 || ID == 10720)
+            if (ID == 10805)
+            {
+                Helper.FenshenGSTryCastSkill(ID);
+            }
+            if (new int[] { 10705, 10706, 10720, 10721, 50003, 50005, 50007, 50001 }.Contains(ID))
             {
                 BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);
-                Helper.FenshenGSTryCastSkill(1001190);
             }
+
             if (bufferId > 0)
             {
-                BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 4000);
+                BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 3000);
             }
 
         }

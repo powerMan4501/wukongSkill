@@ -728,6 +728,13 @@
       "Name": "测试添加buff",
       "AlawaysCanCast": true
     },
+
+    {
+      "Key": "S+A",
+      "Type": "strong_monster",
+      "Name": "把怪加强，精魄怪的buff",
+      "AlawaysCanCast": true
+    },
     {
       "Key": "S+S",
       "Type": "ADD_BUFF",

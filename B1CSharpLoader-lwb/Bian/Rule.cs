@@ -145,6 +145,7 @@ namespace bian
         public float? startTime { get; set; }
         public float? endTime { get; set; }
         public bool? isLoop { get; set; }
+        public int? skillID_fs { get; set; }
         public Rule()
         {
             Name = "新规则";

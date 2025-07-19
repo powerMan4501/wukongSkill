@@ -704,10 +704,7 @@ namespace bian
                 action();
             });
         }
-
-
-        // 分身触发技能
-        public static void FenshenGSTryCastSkill(int skillID)
+        public static void StrongMonster()
         {
             UObject @this = Helper.GetWorld();
             IBGC_TamerData gameStateReadonlyData = BGU_DataUtil.GetGameStateReadonlyData<IBGC_TamerData, BGC_TamerData>(@this);
@@ -718,23 +715,49 @@ namespace bian
             gameStateReadonlyData.GetSpawnedMonsterList(out var OutMonsterList);
             AActor play = Helper.GetBGUPlayerCharacterCS();
             FVector actorLocation = play.GetActorLocation();
-            actorLocation.Z += 20;
             actorLocation.X += 100;
             actorLocation.Y += 100;
             FRotator fRotator2 = play.GetActorRotation();
 
             foreach (string item in OutMonsterList)
             {
-                // BGUFunctionLibraryCS.BGUSetUnitSimpleState(BGU_DataUtil.GetActorByGuid(@this, item), EBGUSimpleState.ImmueDamage, IsRemove: false);
+                AActor actorByGuid = BGU_DataUtil.GetActorByGuid(@this, item);
+                var fs_name = actorByGuid?.GetFullName().ToLower();
+                if ((fs_name?.IndexOf("wukong") > -1))
+                {
+                    Log.Info($"StrongMonster ${fs_name}");
+                }
+                else
+                {
+                    BGUFunctionLibraryCS.BGUAddBuff(actorByGuid, actorByGuid, 888801, EBuffSourceType.GM, -1);
+                }
+
+            }
+
+        }
+
+        public static void FenshenTeleport()
+        {
+            UObject @this = Helper.GetWorld();
+            IBGC_TamerData gameStateReadonlyData = BGU_DataUtil.GetGameStateReadonlyData<IBGC_TamerData, BGC_TamerData>(@this);
+            if (gameStateReadonlyData == null)
+            {
+                return;
+            }
+            gameStateReadonlyData.GetSpawnedMonsterList(out var OutMonsterList);
+            AActor play = Helper.GetBGUPlayerCharacterCS();
+            FVector actorLocation = play.GetActorLocation();
+            actorLocation.X += 100;
+            actorLocation.Y += 100;
+            FRotator fRotator2 = play.GetActorRotation();
+
+            foreach (string item in OutMonsterList)
+            {
                 AActor actorByGuid = BGU_DataUtil.GetActorByGuid(@this, item);
                 var fs_name = actorByGuid?.GetFullName().ToLower();
 
-                if (skillID > 0 && fs_name?.IndexOf("unit_monkeysummon") > -1)
+                if (fs_name?.IndexOf("unit_monkeysummon") > -1)
                 {
-
-                    FUStSkillSDesc skillSDesc = BGW_GameDB.GetSkillSDesc(skillID, play);
-                    Console.WriteLine($"FenshenGSTryCastSkill fenshen  fs_name: {fs_name} {fs_name?.IndexOf("unit_monkeysummon")} {skillSDesc.TemplatePath}");
-
 
                     var target = BGUFunctionLibraryCS.BGUGetTarget(play) as BGUCharacterCS;
                     if (target != null)
@@ -743,14 +766,58 @@ namespace bian
                     }
                     else
                     {
-                        actorByGuid.Teleport(actorLocation, fRotator2);
+                        actorByGuid?.Teleport(actorLocation, fRotator2);
                     }
-                    if (skillSDesc.TemplatePath != null)
+                }
+            }
+        }
+        // 分身触发技能
+        public static void FenshenGSTryCastSkill(int skillID, bool? needPort = false)
+        {
+            UObject @this = Helper.GetWorld();
+            IBGC_TamerData gameStateReadonlyData = BGU_DataUtil.GetGameStateReadonlyData<IBGC_TamerData, BGC_TamerData>(@this);
+            if (gameStateReadonlyData == null)
+            {
+                return;
+            }
+            gameStateReadonlyData.GetSpawnedMonsterList(out var OutMonsterList);
+            AActor play = Helper.GetBGUPlayerCharacterCS();
+            FVector actorLocation = play.GetActorLocation();
+            actorLocation.X -= 200;
+            actorLocation.Y -= 200;
+            FRotator fRotator2 = play.GetActorRotation();
+
+            foreach (string item in OutMonsterList)
+            {
+                AActor actorByGuid = BGU_DataUtil.GetActorByGuid(@this, item);
+                var fs_name = actorByGuid?.GetFullName().ToLower();
+
+                if (skillID > 0 && fs_name?.IndexOf("unit_monkeysummon") > -1)
+                {
+
+                    FUStSkillSDesc skillSDesc = BGW_GameDB.GetSkillSDesc(skillID, play);
+                    var target = BGUFunctionLibraryCS.BGUGetTarget(play) as BGUCharacterCS;
+                    if (needPort == true)
+                    {
+                        if (target != null)
+                        {
+                            BGUFunctionLibraryCS.BGUAddBuff(actorByGuid, actorByGuid, 1000168, EBuffSourceType.GM, 200);
+                        }
+                        else
+                        {
+                            actorByGuid?.Teleport(actorLocation, fRotator2);
+                        }
+                    }
+
+                    if (skillSDesc?.TemplatePath != null)
                     {
                         try
                         {
-                            BUS_EventCollectionCS.Get(actorByGuid).Evt_RequestSmartCastSkill.Invoke(skillID, null, EMontageBindReason.Default, false);
-                            Console.WriteLine($"Skill {skillID} cast request sent successfully.");
+                            //播放动画
+                            FCastSkillInfo castSkillInfo = new FCastSkillInfo(skillID, ECastSkillSourceType.GM);
+
+                            // 触发技能事件
+                            BUS_EventCollectionCS.Get(actorByGuid).Evt_UnitCastSkillTry.Invoke(castSkillInfo);
                         }
                         catch (Exception ex)
                         {
