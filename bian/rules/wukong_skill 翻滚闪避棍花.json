@@ -23,6 +23,7 @@
     {
       "Name": "翻滚，加凤穿花",
       "Description": "",
+      "skillID_fs": 10801,
       "Filters": [
         {
           "Type": "montage",
@@ -159,6 +160,7 @@
       "Name": "喝药",
       "Description": "",
       "speedRate": 3,
+      "skillID_fs": 50023,
       "Filters": [
         {
           "Type": "montage",

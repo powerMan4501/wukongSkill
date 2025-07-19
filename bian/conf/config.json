@@ -730,6 +730,12 @@
       "AlawaysCanCast": true
     },
     {
+      "Key": "S+A",
+      "Type": "strong_monster",
+      "Name": "把怪加强，五倍血",
+      "AlawaysCanCast": true
+    },
+    {
       "Key": "S+S",
       "Type": "ADD_BUFF",
       "Buffers": [1000190, 1000192],

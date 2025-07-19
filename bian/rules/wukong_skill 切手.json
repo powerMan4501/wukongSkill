@@ -4,6 +4,7 @@
   "Rules": [
     {
       "Name": "大圣招，287识破 289连招buff",
+
       "Filters": [
         {
           "Type": "montage",
@@ -408,6 +409,7 @@
     {
       "Name": "10705",
       "Description": "",
+      "skillID_fs": 10705,
       "Filters": [
         {
           "Type": "montage",
@@ -428,23 +430,14 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 2403471,
+          "ProjectTileIDs": [2403471, 1017761],
           "OffsetX": 500,
           "OffsetY": 500,
           "TimeDelay": 920,
           "buffCondition": 1000866,
-          "desc": "有冰buff 10705冰暴"
+          "desc": "有冰buff 10705冰暴,雅香客冰雾气"
         },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 1017761,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 920,
-          "buffCondition": 1000866,
-          "desc": "有冰buff 10705雅香客冰雾气"
-        },
+
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
@@ -466,6 +459,7 @@
     {
       "Name": "10707",
       "Description": "",
+      "skillID_fs": 10707,
       "Filters": [
         {
           "Type": "montage",
