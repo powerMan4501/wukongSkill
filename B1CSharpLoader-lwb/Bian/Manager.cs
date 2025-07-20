@@ -183,8 +183,9 @@ namespace bian
                             {
                                 if (ruleItem?.skillID_fs > 0)
                                 {
-                                    Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, true);
+                                    Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, false);
                                 }
+
                                 if (ruleItem?.speedRate > 0)
                                 {
                                     PlayTimeRate_ = (float)ruleItem.speedRate; //动画播放速率
@@ -194,6 +195,10 @@ namespace bian
                         }
                     }
                 }
+            }
+            else
+            {
+                Helper.FenshenGSTryCastSkill(0, false);
             }
 
             PlayTimeRate = PlayTimeRate_;
