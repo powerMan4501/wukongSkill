@@ -4,6 +4,7 @@
     {
       "Name": "蓄力戳棍全屏地火",
       "Description": "",
+      "skillID_fs": 1001143,
       "Filters": [
         {
           "Type": "montage",
@@ -39,6 +40,7 @@
     {
       "Name": "戳棍巴山虎",
       "Description": "",
+      "skillID_fs": 1001143,
       "Filters": [
         {
           "Type": "montage",
@@ -93,6 +95,7 @@
     {
       "Name": "残躯4蓄力",
       "Description": "",
+      "skillID_fs": 1001143,
       "Filters": [
         {
           "Type": "montage",
@@ -125,6 +128,7 @@
     {
       "Name": "戳棍 激光",
       "Description": "",
+      "skillID_fs": 1001142,
       "Filters": [
         {
           "Type": "montage",

@@ -5,6 +5,7 @@
     {
       "Name": "4蓄力立棍 全屏地火",
       "Description": "",
+      "skillID_fs": 1001199,
       "Filters": [
         {
           "Type": "montage",
@@ -15,75 +16,23 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 152,
+          "ProjectTileIDs": [152, 50051029, 2403471],
           "TimeDelay": 600,
           "noBuffCondition": 1000867,
           "OffsetX": 600,
           "OffsetY": 600,
-          "desc": "没火buff就地波"
+          "desc": "没火buff,地波, 电圈,冰暴"
         },
 
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50051029,
-          "TimeDelay": 600,
-          "noBuffCondition": 1000867,
-          "OffsetX": 600,
-          "OffsetY": 600,
-          "desc": "没火buff就电圈"
-        },
-
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 2403471,
-          "TimeDelay": 600,
-          "noBuffCondition": 1000867,
-          "OffsetX": 600,
-          "OffsetY": 600,
-          "desc": "没火buff就冰暴"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 2403472,
+          "ProjectTileIDs": [2403472, 44011401, 1016232, 88880002],
           "TimeDelay": 600,
           "buffCondition": 1000867,
           "OffsetX": 600,
           "OffsetY": 600,
-          "desc": "有火buff就地火 74010202"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 44011401,
-          "TimeDelay": 600,
-          "buffCondition": 1000867,
-          "OffsetX": 600,
-          "OffsetY": 600,
-          "desc": "有火buff,红孩儿砸地"
-        },
-
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 1016232,
-          "TimeDelay": 600,
-          "buffCondition": 1000867,
-          "OffsetX": 600,
-          "OffsetY": 600,
-          "desc": "有火buff,炸炸炸"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 88880002,
-          "TimeDelay": 600,
-          "buffCondition": 1000867,
-          "OffsetX": 600,
-          "OffsetY": 600,
-          "desc": "有火buff,业火"
+          "desc": "有火buff就地火,红孩儿砸地,炸炸炸,业火"
         }
       ]
     },
@@ -91,6 +40,7 @@
     {
       "Name": "3蓄力立棍 ",
       "Description": "",
+      "skillID_fs": 1001153,
       "Filters": [
         {
           "Type": "montage",
@@ -101,43 +51,23 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50051029,
+          "ProjectTileIDs": [50051029, 2403471],
           "TimeDelay": 600,
           "noBuffCondition": 1000867,
           "OffsetX": 600,
           "OffsetY": 600,
-          "desc": "没火buff就电圈"
+          "desc": "没火buff就电圈/冰暴"
         },
 
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 2403471,
-          "TimeDelay": 600,
-          "noBuffCondition": 1000867,
-          "OffsetX": 600,
-          "OffsetY": 600,
-          "desc": "没火buff就冰暴"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 2403372,
+          "ProjectTileIDs": [2403372, 44011401],
           "TimeDelay": 600,
           "buffCondition": 1000867,
           "OffsetX": 600,
           "OffsetY": 600,
-          "desc": "有火buff就地火"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 44011401,
-          "TimeDelay": 600,
-          "buffCondition": 1000867,
-          "OffsetX": 600,
-          "OffsetY": 600,
-          "desc": "有火buff,红孩儿砸地"
+          "desc": "有火buff就地火,红孩儿砸地"
         }
       ]
     },

@@ -5,6 +5,7 @@
     {
       "Name": "后撤召唤子弹",
       "Description": "",
+      "skillID_fs": 1001190,
       "Filters": [
         {
           "Type": "montage",
@@ -23,7 +24,7 @@
     {
       "Name": "翻滚，加凤穿花",
       "Description": "",
-      "skillID_fs": 10801,
+      "skillID_fs": 1001160,
       "Filters": [
         {
           "Type": "montage",
@@ -160,7 +161,7 @@
       "Name": "喝药",
       "Description": "",
       "speedRate": 3,
-      "skillID_fs": 50023,
+      "skillID_fs": 1001198,
       "Filters": [
         {
           "Type": "montage",

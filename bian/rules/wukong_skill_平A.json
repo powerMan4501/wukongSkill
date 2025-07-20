@@ -5,6 +5,7 @@
     {
       "Name": "大圣平A1",
       "Description": "",
+      "skillID_fs": 1001101,
       "Filters": [
         {
           "Type": "montage",
@@ -63,6 +64,7 @@
     {
       "Name": "大圣平A2",
       "Description": "",
+      "skillID_fs": 1001102,
       "Filters": [
         {
           "Type": "montage",
@@ -144,6 +146,7 @@
     {
       "Name": "大圣平A3",
       "Description": "",
+      "skillID_fs": 1001103,
       "Filters": [
         {
           "Type": "montage",
@@ -247,6 +250,7 @@
     {
       "Name": "大圣平A4",
       "Description": "",
+      "skillID_fs": 1001104,
       "Filters": [
         {
           "Type": "montage",
@@ -305,6 +309,7 @@
     {
       "Name": "大圣平A5",
       "Description": "",
+      "skillID_fs": 1001105,
       "Filters": [
         {
           "Type": "montage",

@@ -4,7 +4,7 @@
     {
       "Name": "大圣蓄力2",
       "Description": "",
-      "skillID_fs": 50023,
+      "skillID_fs": 1001133,
       "Filters": [
         {
           "Type": "montage",
@@ -27,7 +27,7 @@
     {
       "Name": "大圣蓄力3",
       "Description": "",
-      "skillID_fs": 50023,
+      "skillID_fs": 1001133,
       "Filters": [
         {
           "Type": "montage",
@@ -84,6 +84,7 @@
     {
       "Name": "残躯 蓄力4",
       "Description": "",
+      "skillID_fs": 10834,
       "Filters": [
         {
           "Type": "montage",

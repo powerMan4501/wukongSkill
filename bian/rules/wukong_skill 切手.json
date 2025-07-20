@@ -149,6 +149,7 @@
     {
       "Name": "江海翻 全屏地火",
       "Description": "",
+      "skillID_fs": 1001116,
       "speedRate": 1.5,
       "Filters": [
         {
@@ -409,7 +410,7 @@
     {
       "Name": "10705",
       "Description": "",
-      "skillID_fs": 10705,
+      "skillID_fs": 1001111,
       "Filters": [
         {
           "Type": "montage",
@@ -459,7 +460,7 @@
     {
       "Name": "10707",
       "Description": "",
-      "skillID_fs": 10707,
+      "skillID_fs": 1001112,
       "Filters": [
         {
           "Type": "montage",
@@ -519,6 +520,7 @@
     },
     {
       "Name": "10720 风云转",
+      "skillID_fs": 1001115,
       "Description": "风云转，普通地刺 冰地刺",
       "Filters": [
         {
