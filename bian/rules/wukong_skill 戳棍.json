@@ -106,21 +106,11 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 74010206,
+          "ProjectTileIDs": [74010206, 74011107],
           "OffsetX": 500,
           "OffsetY": 500,
           "TimeDelay": 2910,
-          "desc": "地面炸出碎片"
-        },
-
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 74011107,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 2910,
-          "desc": "金沙"
+          "desc": "地面炸出碎片,金沙"
         }
       ]
     },
@@ -164,7 +154,7 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 80009901,
+          "ProjectTileIDs": [80009901, 80009913],
           "ForTarget": true,
           "TimeDelay": 150,
           "BulletNumInOneWave": 4,
@@ -175,21 +165,6 @@
           "NoiseY": 100,
           "NoiseZ": 100,
           "desc": "杨戬万剑，小型剑，密密麻麻（原本无伤害，目前给了10点）"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 80009913,
-          "ForTarget": true,
-          "TimeDelay": 200,
-          "BulletNumInOneWave": 3,
-          "TargetProjectilePosOffsetType": "RangeOffset",
-          "TargetMatrixDensity": 100,
-          "TargetCircleRadius": 900,
-          "NoiseX": 200,
-          "NoiseY": 100,
-          "NoiseZ": 100,
-          "desc": "杨戬万剑，打中带白色雾"
         }
       ]
     }

@@ -48,24 +48,25 @@
       "AfterActions": [
         {
           "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 88880008,
-          "ForTarget": true,
-          "BornDirOffsetYLeftValue": -45,
-          "BornDirOffsetYRightValue": -45,
-
-          "BornDirOffsetXLeftValue": 90,
-          "BornDirOffsetXRightValue": 90,
-          "TimeDelay": 250
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 88880008,
-          "ForTarget": true,
-          "BornDirOffsetXLeftValue": 270,
-          "BornDirOffsetXRightValue": 270,
-          "TimeDelay": 250
+          "TimeDelay": 250,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 88880008,
+              "ForTarget": true,
+              "BornDirOffsetYLeftValue": -45,
+              "BornDirOffsetYRightValue": -45,
+              "BornDirOffsetXLeftValue": 90,
+              "BornDirOffsetXRightValue": 90
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 88880008,
+              "ForTarget": true,
+              "BornDirOffsetXLeftValue": 270,
+              "BornDirOffsetXRightValue": 270
+            }
+          ]
         }
       ]
     },
@@ -82,24 +83,25 @@
       "AfterActions": [
         {
           "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 88880008,
-          "ForTarget": true,
-          "BornDirOffsetYLeftValue": -45,
-          "BornDirOffsetYRightValue": -45,
-
-          "BornDirOffsetXLeftValue": 90,
-          "BornDirOffsetXRightValue": 90,
-          "TimeDelay": 490
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 88880008,
-          "ForTarget": true,
-          "BornDirOffsetXLeftValue": 270,
-          "BornDirOffsetXRightValue": 270,
-          "TimeDelay": 490
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 88880008,
+              "ForTarget": true,
+              "BornDirOffsetYLeftValue": -45,
+              "BornDirOffsetYRightValue": -45,
+              "BornDirOffsetXLeftValue": 90,
+              "BornDirOffsetXRightValue": 90,
+              "TimeDelay": 490
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 88880008,
+              "ForTarget": true,
+              "BornDirOffsetXLeftValue": 270,
+              "BornDirOffsetXRightValue": 270
+            }
+          ]
         }
       ]
     },
@@ -149,7 +151,7 @@
     {
       "Name": "江海翻 全屏地火",
       "Description": "",
-      "skillID_fs": 1001116,
+      "skillID_fs": 50006,
       "speedRate": 1.5,
       "Filters": [
         {
@@ -175,57 +177,53 @@
 
         {
           "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 1017761,
-          "TimeDelay": 1100,
-          "buffCondition": 1000866,
-          "desc": "有冰buff 雅香客冰雾气"
+          "TimeDelay": 1150,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileID": 1017761,
+              "buffCondition": 1000866,
+              "desc": "有冰buff 雅香客冰雾气"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 88880003,
+              "buffCondition": 1000866,
+              "BornDirOffsetXLeftValue": 175,
+              "BornDirOffsetXRightValue": 175,
+              "ForTarget": true,
+              "desc": "有冰buff，冰剑气"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 88880003,
+              "buffCondition": 1000866,
+              "BornDirOffsetXLeftValue": 175,
+              "BornDirOffsetXRightValue": 175,
+              "ForTarget": true,
+              "desc": "有冰buff，冰剑气"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 40580501,
+              "SpeedLeftValue": 7000,
+              "SpeedRightValue": 7000,
+              "BornDirOffsetXLeftValue": 85,
+              "BornDirOffsetXRightValue": 85,
+              "ForTarget": true,
+              "noBuffCondition": 1000866,
+              "desc": "没有冰buff 发射火焰剑气"
+            },
+
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileID": 74010202,
+              "noBuffCondition": 1000866,
+              "desc": "没有冰buff 地火"
+            }
+          ]
         },
 
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 88880003,
-          "buffCondition": 1000866,
-          "BornDirOffsetXLeftValue": 175,
-          "BornDirOffsetXRightValue": 175,
-          "ForTarget": true,
-          "TimeDelay": 1150,
-          "desc": "有冰buff，冰剑气"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 88880003,
-          "buffCondition": 1000866,
-          "BornDirOffsetXLeftValue": 175,
-          "BornDirOffsetXRightValue": 175,
-          "ForTarget": true,
-          "TimeDelay": 1150,
-          "desc": "有冰buff，冰剑气"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 40580501,
-          "SpeedLeftValue": 7000,
-          "SpeedRightValue": 7000,
-          "BornDirOffsetXLeftValue": 85,
-          "BornDirOffsetXRightValue": 85,
-          "TimeDelay": 1150,
-          "ForTarget": true,
-          "noBuffCondition": 1000866,
-          "desc": "没有冰buff 发射火焰剑气"
-        },
-
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 74010202,
-          "noBuffCondition": 1000866,
-          "desc": "没有冰buff 地火",
-          "TimeDelay": 1050
-        },
         {
           "Type": "buff",
           "BuffID": 289,
@@ -235,6 +233,7 @@
     },
     {
       "Name": "退寸",
+      "skillID_fs": 1001113,
       "Description": "",
       "Filters": [
         {
@@ -289,6 +288,7 @@
     },
     {
       "Name": "进尺专用子弹，buff",
+
       "Filters": [
         {
           "Type": "buff",
@@ -309,6 +309,7 @@
     {
       "Name": "进尺",
       "Description": "",
+      "skillID_fs": 1001114,
       "Filters": [
         {
           "Type": "montage",
@@ -318,67 +319,59 @@
       "AfterActions": [
         {
           "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "OffsetX": 900,
-          "OffsetY": 900,
-          "ProjectTileIDs": [2403471, 30139802, 30139802],
           "TimeDelay": 920,
-          "buffCondition": 1000866,
-          "desc": "有冰buff，触发冰暴"
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "OffsetX": 900,
+              "OffsetY": 900,
+              "ProjectTileIDs": [2403471, 30139802, 30139802],
+              "buffCondition": 1000866,
+              "desc": "有冰buff，触发冰暴"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 88880003,
+              "buffCondition": 1000866,
+              "BornDirOffsetXLeftValue": 91,
+              "BornDirOffsetXRightValue": 91,
+              "ForTarget": true,
+              "desc": "有冰buff，冰剑气"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 88880003,
+              "buffCondition": 1000866,
+              "BornDirOffsetXLeftValue": 180,
+              "BornDirOffsetXRightValue": 180,
+              "ForTarget": true,
+              "desc": "有冰buff，冰剑气"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [44011401, 1016232],
+              "OffsetX": 900,
+              "OffsetY": 900,
+              "buffCondition": 1000867,
+              "desc": "有火buff 红孩儿砸地"
+            },
+            {
+              "Type": "bullet",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 40580501,
+              "buffCondition": 1000867,
+              "ForTarget": true,
+              "desc": "有火buff 火焰剑气"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 80009999,
+              "noBuffsCondition": [1000867, 1000866],
+              "desc": "没冰火buff 飞剑"
+            }
+          ]
         },
 
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 88880003,
-          "buffCondition": 1000866,
-          "BornDirOffsetXLeftValue": 91,
-          "BornDirOffsetXRightValue": 91,
-          "ForTarget": true,
-          "TimeDelay": 920,
-          "desc": "有冰buff，冰剑气"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 88880003,
-          "buffCondition": 1000866,
-          "BornDirOffsetXLeftValue": 180,
-          "BornDirOffsetXRightValue": 180,
-          "ForTarget": true,
-          "TimeDelay": 920,
-          "desc": "有冰buff，冰剑气"
-        },
-
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [44011401, 1016232],
-          "OffsetX": 900,
-          "OffsetY": 900,
-          "TimeDelay": 920,
-          "buffCondition": 1000867,
-          "desc": "有火buff 红孩儿砸地"
-        },
-
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 40580501,
-          "TimeDelay": 920,
-          "buffCondition": 1000867,
-          "ForTarget": true,
-          "desc": "有火buff 火焰剑气"
-        },
-
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 80009999,
-          "TimeDelay": 900,
-          "noBuffsCondition": [1000867, 1000866],
-          "desc": "没冰火buff 飞剑"
-        },
         {
           "Type": "buff",
           "BuffID": 1000181,
@@ -420,35 +413,35 @@
       "AfterActions": [
         {
           "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 44011401,
-          "OffsetX": 500,
-          "OffsetY": 500,
           "TimeDelay": 920,
-          "buffCondition": 1000867,
-          "desc": "有火buff 10705红孩儿砸地"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [2403471, 1017761],
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 920,
-          "buffCondition": 1000866,
-          "desc": "有冰buff 10705冰暴,雅香客冰雾气"
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileID": 44011401,
+              "OffsetX": 500,
+              "OffsetY": 500,
+              "buffCondition": 1000867,
+              "desc": "有火buff 10705红孩儿砸地"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [2403471, 1017761],
+              "OffsetX": 500,
+              "OffsetY": 500,
+              "buffCondition": 1000866,
+              "desc": "有冰buff 10705冰暴,雅香客冰雾气"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileID": 50058603,
+              "OffsetX": 500,
+              "OffsetY": 500,
+              "noBuffsCondition": [1000867, 1000866],
+              "desc": "没 冰火buff 10705黄符50058603"
+            }
+          ]
         },
 
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50058603,
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 920,
-          "noBuffsCondition": [1000867, 1000866],
-          "desc": "没 冰火buff 10705黄符50058603"
-        },
         {
           "Type": "buff",
           "BuffID": 289,
@@ -478,35 +471,33 @@
       "AfterActions": [
         {
           "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [140, 40100303, 2403372],
-          "OffsetX": 500,
-          "OffsetY": 500,
           "TimeDelay": 1250,
-          "buffCondition": 1000867,
-          "desc": "有火buff 业火,地面岩浆,地火"
-        },
-
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [2403471, 74010101, 152],
-          "OffsetX": 500,
-          "OffsetY": 500,
-          "TimeDelay": 1250,
-          "buffCondition": 1000866,
-          "desc": "有冰buff 冰暴,冰碎片,冰地波"
-        },
-
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [50058603, 50058601, 74011107],
-          "OffsetX": 600,
-          "OffsetY": 600,
-          "TimeDelay": 1250,
-          "noBuffsCondition": [1000867, 1000866],
-          "desc": "没 冰火buff 黄符50058603,金沙"
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [140, 40100303, 2403372],
+              "OffsetX": 500,
+              "OffsetY": 500,
+              "buffCondition": 1000867,
+              "desc": "有火buff 业火,地面岩浆,地火"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [2403471, 74010101, 152],
+              "OffsetX": 500,
+              "OffsetY": 500,
+              "buffCondition": 1000866,
+              "desc": "有冰buff 冰暴,冰碎片,冰地波"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [50058603, 50058601, 74011107],
+              "OffsetX": 600,
+              "OffsetY": 600,
+              "noBuffsCondition": [1000867, 1000866],
+              "desc": "没 冰火buff 黄符50058603,金沙"
+            }
+          ]
         },
 
         {
@@ -531,24 +522,25 @@
       "AfterActions": [
         {
           "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [30139802, 152, 2403471, 144],
           "TimeDelay": 100,
-          "OffsetX": 400,
-          "OffsetY": 400,
-          "buffCondition": 1000866,
-          "desc": "有冰buff 地面一圈冰刺，开山斧地波，巨猿4级冰暴，冰暴4"
-        },
-
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [
-            44051002, 44051003, 44051004, 44051005, 44051006, 44051007
-          ],
-          "TimeDelay": 100,
-          "noBuffCondition": 1000866,
-          "desc": "没有冰buff 夜叉王地刺"
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [30139802, 152, 2403471, 144],
+              "OffsetX": 400,
+              "OffsetY": 400,
+              "buffCondition": 1000866,
+              "desc": "有冰buff 地面一圈冰刺，开山斧地波，巨猿4级冰暴，冰暴4"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [
+                44051002, 44051003, 44051004, 44051005, 44051006, 44051007
+              ],
+              "noBuffCondition": 1000866,
+              "desc": "没有冰buff 夜叉王地刺"
+            }
+          ]
         }
       ]
     }

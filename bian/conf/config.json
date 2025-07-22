@@ -683,7 +683,7 @@
       "AlawaysCanCast": true
     },
     {
-      "Key": "A+A",
+      "Key": "",
       "Type": "COMMAND",
       "Label": "SpawnProjectile",
       "Name": "测试子弹释放",
@@ -738,8 +738,22 @@
     {
       "Key": "S+S",
       "Type": "ADD_BUFF",
-      "Buffers": [1000190, 1000192],
-      "Name": "敌人巨猿，己方幽魂",
+      "Buffers": [1000190],
+      "Name": "敌人巨猿",
+      "AlawaysCanCast": true
+    },
+    {
+      "Key": "S+D",
+      "Type": "ADD_BUFF",
+      "Buffers": [1000192],
+      "Name": "己方幽魂",
+      "AlawaysCanCast": true
+    },
+    {
+      "Key": "A+A",
+      "Type": "ADD_BUFF",
+      "Buffers": [1000193],
+      "Name": "己方残躯",
       "AlawaysCanCast": true
     }
   ]
