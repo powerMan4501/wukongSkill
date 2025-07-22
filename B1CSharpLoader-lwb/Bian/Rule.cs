@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UnrealEngine.Runtime;
 using UnrealEngine.Engine;
 using System.Reflection;
+using System.Runtime.InteropServices.ComTypes;
 namespace bian
 {
 
@@ -19,6 +20,8 @@ namespace bian
     public class RuleAction
     {
         public string Type { get; set; }
+        public List<RuleAction>? bullets { get; set; }
+
         public int BuffID { get; set; }
         public int SkillID { get; set; }
 
@@ -280,6 +283,74 @@ namespace bian
 
                     break;
                 case "bullet":
+
+                    if (action?.bullets != null && action?.bullets?.Count > 0)
+                    {
+
+                        var skipAction = false;
+                        foreach (var bulletItem in action.bullets)
+                        {
+                            // 如果设置了buff条件，就校验是否有对应的buff
+                            if (bulletItem.buffCondition > 0)
+                            {
+                                if (!BGUFunctionLibraryCS.BGUHasBuffByID(character, bulletItem.buffCondition))
+                                {
+
+
+                                    continue;
+                                }
+                            }
+                            if (bulletItem.buffsCondition != null && bulletItem.buffsCondition.Count > 0)
+                            {
+                                foreach (var buffer in bulletItem.buffsCondition)
+                                {
+                                    if (!BGUFunctionLibraryCS.BGUHasBuffByID(character, buffer))
+                                    {
+                                        skipAction = true;
+                                        break; // 退出 foreach 循环
+                                    }
+                                }
+                            }
+
+                            if (bulletItem.noBuffCondition > 0)
+                            {
+                                if (BGUFunctionLibraryCS.BGUHasBuffByID(character, bulletItem.noBuffCondition))
+
+                                {
+
+                                    // Console.WriteLine($"has buff {bullet.noBuffCondition}  {bullet.desc}");
+                                    continue;
+                                }
+                            }
+
+                            if (bulletItem.noBuffsCondition != null && bulletItem.noBuffsCondition.Count > 0)
+                            {
+                                foreach (var buffer in bulletItem.noBuffsCondition)
+                                {
+                                    if (BGUFunctionLibraryCS.BGUHasBuffByID(character, buffer))
+                                    {
+                                        skipAction = true;
+                                        break; // 退出 foreach 循环
+                                    }
+                                }
+                            }
+                            if (skipAction)
+                            {
+                                continue; // 跳过当前 for 循环的迭代
+                            }
+                            List<int> projectTileIds = bulletItem.ProjectTileIDs?.Count > 0 ? bulletItem.ProjectTileIDs : [bulletItem.ProjectTileID];
+                            if (projectTileIds?.Count > 0)
+                            {
+                                foreach (var projectTileId in projectTileIds)
+                                {
+                                    Helper.SpawnProjectile(character, bulletItem.Bullet, projectTileId, bulletItem.ForTarget, bulletItem.BulletCount, bulletItem.IsRandom, new FVector(bulletItem.OffsetX, bulletItem.OffsetY, bulletItem.OffsetZ), bulletItem);
+
+                                }
+
+                            }
+
+                        }
+                    }
                     if (action.Bullet != null)
                     {
                         List<int> projectTileIds = action.ProjectTileIDs?.Count > 0 ? action.ProjectTileIDs : [action.ProjectTileID];

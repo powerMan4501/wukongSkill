@@ -761,8 +761,8 @@ namespace bian
             gameStateReadonlyData.GetSpawnedMonsterList(out var OutMonsterList);
             var play = Helper.GetBGUPlayerCharacterCS();
             FVector actorLocation = play.GetActorLocation();
-            actorLocation.X += 100;
-            actorLocation.Y += 100;
+            actorLocation.X -= 200;
+            actorLocation.Y -= 200;
             FRotator fRotator2 = play.GetActorRotation();
 
             List<BGUCharacterCS> allActorsOfClassList = play.World.GetAllActorsOfClassList<BGUCharacterCS>();
@@ -774,6 +774,7 @@ namespace bian
                 {
                     var fs_name = item?.GetFullName().ToLower();
                     // 取所有的队友，排除自己
+                    Log.Info($"FenshenTeleport 己方队员：${fs_name}");
                     if (fs_name?.IndexOf("unit_player_wukong") < 0)
                     {
                         item?.Teleport(actorLocation, fRotator2);
