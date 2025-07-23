@@ -632,7 +632,7 @@ namespace bian
                         var backTime = (int)(skill?.backTime ?? 1700);
                         Utils.TryRunOnGameThread((Action)delegate
                         {
-                            character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(-1000, 0, 0);
+                            character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(-1000, 0, 100);
                             Helper.CastVigorSkillByID(character, skill.Id, backTime);
                         });
                         await Task.Delay(backTime);
