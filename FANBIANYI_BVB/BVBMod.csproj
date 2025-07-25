@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>BVBMod</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="CSharpModBase" />
+    <Reference Include="B1UI_GSE.Script" />
+    <Reference Include="UnrealEngine">
+      <HintPath>..\B1CSharpLoader-lwb\GameDll\UnrealEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="BtlSvr.Main" />
+    <Reference Include="GSE.ProtobufDB" />
+    <Reference Include="b1.Native" />
+    <Reference Include="UnrealEngine.Runtime">
+      <HintPath>..\B1CSharpLoader-lwb\GameDll\UnrealEngine.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
