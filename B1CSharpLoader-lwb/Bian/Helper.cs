@@ -734,16 +734,16 @@ namespace bian
                     var fs_name = item?.GetFullName().ToLower();
                     if (fs_name?.IndexOf("unit_player_wukong") > -1)
                     {
-                        // 排除自己
+                        BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666001, EBuffSourceType.GM, -1);
                         continue;
                     }
                     //己方霸体不吃毒火冰
-                    BGUFunctionLibraryCS.BGUAddBuff(item, item, 1000068, EBuffSourceType.GM, -1);
-                    BGUFunctionLibraryCS.BGUAddBuff(item, item, 888801, EBuffSourceType.GM, -1);
+                    BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666002, EBuffSourceType.GM, -1);
+                    BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666003, EBuffSourceType.GM, -1);
                 }
                 else
                 {
-                    BGUFunctionLibraryCS.BGUAddBuff(item, item, 888801, EBuffSourceType.GM, -1);
+                    BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666003, EBuffSourceType.GM, -1);
                 }
             }
 
@@ -786,7 +786,6 @@ namespace bian
                 {
                     var fs_name = item?.GetFullName().ToLower();
                     // 取所有的队友，排除自己
-                    Log.Info($"FenshenTeleport 己方队员：${fs_name}");
                     if (fs_name?.IndexOf("unit_player_wukong") < 0)
                     {
                         item?.Teleport(actorLocation, fRotator2);
@@ -827,7 +826,7 @@ namespace bian
             foreach (BGUCharacterCS item in allActorsOfClassList)
             {
 
-                if (item.CanBeDamaged && BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item))
+                if (BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item))
                 {
 
                     var fs_name = item?.GetFullName().ToLower();
@@ -839,22 +838,20 @@ namespace bian
                     // 取所有的队友
                     if (skillID > 0 && fs_name?.IndexOf("unit_monkeysummon") > -1)
                     {
-                        FUStSkillSDesc skillSDesc = BGW_GameDB.GetSkillSDesc(skillID, play);
-                        if (skillSDesc?.TemplatePath != null)
+                        try
                         {
-                            try
+                            //播放动画
+                            FCastSkillInfo castSkillInfo = new FCastSkillInfo(skillID, ECastSkillSourceType.GM);
+                            if (castSkillInfo.SkillID > 0)
                             {
-                                //播放动画
-                                FCastSkillInfo castSkillInfo = new FCastSkillInfo(skillID, ECastSkillSourceType.GM);
-
                                 // 触发技能事件
                                 BUS_EventCollectionCS.Get(item).Evt_UnitCastSkillTry.Invoke(castSkillInfo);
                             }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine($"Error {fs_name} casting skill {skillID} : {ex.Message}");
-                            }
 
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Error {fs_name} casting skill {skillID} : {ex.Message}");
                         }
                     }
                     else
@@ -887,7 +884,11 @@ namespace bian
                                     //播放动画
                                     FCastSkillInfo castSkillInfo = new FCastSkillInfo(randomSkillID, ECastSkillSourceType.GM);
 
-                                    BUS_EventCollectionCS.Get(item).Evt_UnitCastSkillTry.Invoke(castSkillInfo);
+                                    if (castSkillInfo.SkillID > 0)
+                                    {
+                                        // 触发技能事件
+                                        BUS_EventCollectionCS.Get(item).Evt_UnitCastSkillTry.Invoke(castSkillInfo);
+                                    }
                                 }
                                 catch (System.Exception)
                                 {
@@ -902,80 +903,7 @@ namespace bian
                 }
             }
 
-            // foreach (string item in OutMonsterList)
-            // {
-            //     var actorByGuid = BGU_DataUtil.GetActorByGuid(@this, item) as BGUCharacterCS;
-            //     var fs_name = actorByGuid?.GetFullName().ToLower();
 
-
-            //     if (skillID > 0 && fs_name?.IndexOf("unit_monkeysummon") > -1)
-            //     {
-
-            //         FUStSkillSDesc skillSDesc = BGW_GameDB.GetSkillSDesc(skillID, play);
-            //         var target = BGUFunctionLibraryCS.BGUGetTarget(play) as BGUCharacterCS;
-            //         if (needPort == true)
-            //         {
-            //             if (target != null)
-            //             {
-            //                 BGUFunctionLibraryCS.BGUAddBuff(actorByGuid, actorByGuid, 1000168, EBuffSourceType.GM, 200);
-            //             }
-            //             else
-            //             {
-            //                 actorByGuid?.Teleport(actorLocation, fRotator2);
-            //                 FHitResult wasMoved;
-            //                 actorByGuid.SetActorLocation(actorLocation, true, out wasMoved, false);
-            //                 Log.Info($"FenshenGSTryCastSkill FHitResult {wasMoved}");
-            //             }
-            //         }
-
-            //         if (skillSDesc?.TemplatePath != null)
-            //         {
-            //             try
-            //             {
-            //                 //播放动画
-            //                 FCastSkillInfo castSkillInfo = new FCastSkillInfo(skillID, ECastSkillSourceType.GM);
-
-            //                 // 触发技能事件
-            //                 BUS_EventCollectionCS.Get(actorByGuid).Evt_UnitCastSkillTry.Invoke(castSkillInfo);
-            //             }
-            //             catch (Exception ex)
-            //             {
-            //                 Console.WriteLine($"Error casting skill {skillID} : {ex.Message}");
-            //             }
-
-            //         }
-            //     }
-            //     else
-            //     {
-            //         if (fs_name?.IndexOf("mgd_yuan") > -1 || fs_name?.IndexOf("unit_monkeysummon") > -1 || fs_name?.IndexOf("mgd_jsds_summon") > -1)
-            //         {
-
-            //             var allSkillIDs = BGUFuncLibAICS.BGUGetUnitAllSkillID(actorByGuid);
-            //             Console.WriteLine($"执行随机技能: {fs_name} {allSkillIDs?[0]}");
-            //             if (allSkillIDs != null && allSkillIDs.Count > 0)
-            //             {
-            //                 // 创建一个 Random 对象
-            //                 Random random = new Random();
-            //                 // 从数组中随机获取一个索引
-            //                 int randomIndex = random.Next(allSkillIDs.Count);
-            //                 int randomSkillID = allSkillIDs[randomIndex];
-            //                 Console.WriteLine($"Random Skill ID: {randomSkillID}");
-            //                 if (randomSkillID > 0)
-            //                 {
-            //                     //播放动画
-            //                     FCastSkillInfo castSkillInfo = new FCastSkillInfo(randomSkillID, ECastSkillSourceType.GM);
-            //                     // 触发技能事件
-            //                     BUS_EventCollectionCS.Get(actorByGuid).Evt_UnitCastSkillTry.Invoke(castSkillInfo);
-            //                 }
-
-            //             }
-            //             else
-            //             {
-            //                 Console.WriteLine("No skills available.");
-            //             }
-            //         }
-            //     }
-            // }
         }
 
 
