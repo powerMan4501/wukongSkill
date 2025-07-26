@@ -818,23 +818,11 @@ namespace bian
         // 分身触发技能
         public static void FenshenGSTryCastSkill(int skillID, bool? needPort = false)
         {
-            UObject @this = Helper.GetWorld();
-            IBGC_TamerData gameStateReadonlyData = BGU_DataUtil.GetGameStateReadonlyData<IBGC_TamerData, BGC_TamerData>(@this);
-            if (gameStateReadonlyData == null)
-            {
-                return;
-            }
-            gameStateReadonlyData.GetSpawnedMonsterList(out var OutMonsterList);
-
-
-
             var play = Helper.GetBGUPlayerCharacterCS();
-            FVector actorLocation = play.GetActorLocation();
-            actorLocation.X -= 200;
-            actorLocation.Y -= 200;
-            FRotator fRotator2 = play.GetActorRotation();
+            if (play == null || play.World == null) return;
 
             List<BGUCharacterCS> allActorsOfClassList = play.World.GetAllActorsOfClassList<BGUCharacterCS>();
+            if (allActorsOfClassList == null || allActorsOfClassList.Count == 0) return;
 
             foreach (BGUCharacterCS item in allActorsOfClassList)
             {

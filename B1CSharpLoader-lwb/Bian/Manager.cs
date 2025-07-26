@@ -189,6 +189,10 @@ namespace bian
                                 {
                                     Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, false);
                                 }
+                                else
+                                {
+                                    Helper.FenshenGSTryCastSkill((int)0, false);
+                                }
 
                                 if (ruleItem?.speedRate > 0)
                                 {
@@ -207,7 +211,6 @@ namespace bian
 
             PlayTimeRate = PlayTimeRate_;
         }
-
 
 
 
