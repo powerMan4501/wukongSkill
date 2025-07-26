@@ -368,8 +368,6 @@ namespace bian
                             {
                                 if (!BGUFunctionLibraryCS.BGUHasBuffByID(character, bulletItem.buffCondition))
                                 {
-
-
                                     continue;
                                 }
                             }
