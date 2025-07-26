@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "KMtRLYI3jIo=",
+  "success": true,
+  "projectFilePath": "F:\\game\\heihou\\heihou_pak\\wukong_skill\\wukongSkill\\FANBIANYI_BVB\\BVBMod.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jason\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "C:\\Users\\jason\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\microsoft.netframework.referenceassemblies.net472.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

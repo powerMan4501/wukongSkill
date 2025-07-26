@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BVBMod", "BVBMod.csproj", "{464925E7-C4B1-322A-E894-0563A0D5DE29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{464925E7-C4B1-322A-E894-0563A0D5DE29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{464925E7-C4B1-322A-E894-0563A0D5DE29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{464925E7-C4B1-322A-E894-0563A0D5DE29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{464925E7-C4B1-322A-E894-0563A0D5DE29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7410F18-8B25-4299-B395-C107F8221196}
+	EndGlobalSection
+EndGlobal
