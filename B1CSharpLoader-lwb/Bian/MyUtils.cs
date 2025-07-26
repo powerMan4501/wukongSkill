@@ -1102,17 +1102,10 @@ public static class MyUtils
 
 				if (target != null)
 				{
-					//对目标发射
-					BGWDataAsset_ProjectileSpawnConfig configInstance = new BGWDataAsset_ProjectileSpawnConfig();
-					var targetBase = configInstance.TargetBase;
-					var spawnBase = configInstance.SpawnBase;
-
-					targetBase.BaseType = ProjectileBaseType.CurTarget_ProjectileSpawner;
-					targetBase.UseSocket = true;
-					targetBase.SocketName = (FName)"CAMERA_LOCK";
-
-					spawnBase.BaseType = ProjectileBaseType.ProjectileSpawner;
-
+					val6.TargetBase.BaseType = ProjectileBaseType.CurTarget_ProjectileSpawner;
+					val6.TargetBase.UseSocket = true;
+					val6.TargetBase.SocketName = (FName)"CAMERA_LOCK";
+					val6.SpawnBase.BaseType = ProjectileBaseType.ProjectileSpawner;
 				}
 				break;
 		}
