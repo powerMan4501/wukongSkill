@@ -16,28 +16,43 @@
         },
         {
           "Type": "montage",
-          "Name": "AM_Dasheng_ComboA_04_Z_1"
-        },
-
-        {
-          "Type": "montage",
           "Name": "AM_Wukong_JXSQ_Enter_B"
         }
       ],
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffID": 287
-        },
+          "BuffIDs": [287, 289]
+        }
+      ]
+    },
+
+    {
+      "Name": "大圣招，转身定，发射激光",
+      "speedRate": 1.5,
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_ComboA_04_Z_1"
+        }
+      ],
+      "AfterActions": [
         {
           "Type": "buff",
-          "BuffID": 289,
-          "BuffTime": 4000
+          "BuffIDs": [287, 289]
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 1011401,
+          "ForTarget": true,
+          "TimeDelay": 900,
+          "desc": "激光"
         }
       ]
     },
     {
-      "Name": "召唤横向金箍棒",
+      "Name": "2a切手",
       "Description": "",
       "Filters": [
         {
@@ -52,19 +67,27 @@
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 88880008,
+              "ProjectTileID": 88880003,
               "ForTarget": true,
-              "BornDirOffsetYLeftValue": -45,
-              "BornDirOffsetYRightValue": -45,
-              "BornDirOffsetXLeftValue": 90,
-              "BornDirOffsetXRightValue": 90
+              "buffCondition": 1000866,
+              "desc": "有冰buff,大圣平A1,发射冰剑气"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 88880008,
+              "ProjectTileID": 40580501,
               "ForTarget": true,
-              "BornDirOffsetXLeftValue": 270,
-              "BornDirOffsetXRightValue": 270
+              "buffCondition": 1000867,
+              "BornDirOffsetXLeftValue": 91,
+              "BornDirOffsetXRightValue": 91,
+              "desc": "有火buff,大圣平A1,发射火剑气"
+            },
+            {
+              "Type": "bullet",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 1713001,
+              "ForTarget": true,
+              "noBuffsCondition": [1000866, 100086],
+              "desc": "没有冰火buff,大圣平A1,就发射红剑气"
             }
           ]
         }
@@ -74,6 +97,7 @@
     {
       "Name": "残躯横扫一下捅一下，召唤横向金箍棒",
       "Description": "",
+      "speedRate": 1.4,
       "Filters": [
         {
           "Type": "montage",
@@ -83,23 +107,34 @@
       "AfterActions": [
         {
           "Type": "bullet",
+          "TimeDelay": 490,
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 88880008,
+              "ProjectTileID": 88880003,
               "ForTarget": true,
-              "BornDirOffsetYLeftValue": -45,
-              "BornDirOffsetYRightValue": -45,
-              "BornDirOffsetXLeftValue": 90,
-              "BornDirOffsetXRightValue": 90,
-              "TimeDelay": 490
+              "buffCondition": 1000866,
+              "BulletCount": 2,
+              "desc": "有冰buff,大圣平A1,发射冰剑气"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 88880008,
+              "ProjectTileID": 40580501,
               "ForTarget": true,
-              "BornDirOffsetXLeftValue": 270,
-              "BornDirOffsetXRightValue": 270
+              "buffCondition": 1000867,
+              "BornDirOffsetXLeftValue": 91,
+              "BornDirOffsetXRightValue": 91,
+              "BulletCount": 2,
+              "desc": "有火buff,大圣平A1,发射火剑气"
+            },
+            {
+              "Type": "bullet",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 1713001,
+              "ForTarget": true,
+              "noBuffsCondition": [1000866, 100086],
+              "BulletCount": 2,
+              "desc": "没有冰火buff,大圣平A1,就发射红剑气"
             }
           ]
         }
@@ -535,7 +570,7 @@
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
               "ProjectTileIDs": [
-                44051002, 44051003, 44051004, 44051005, 44051006, 44051007
+                44051002, 44051003, 44051005, 44051006, 44051007
               ],
               "noBuffCondition": 1000866,
               "desc": "没有冰buff 夜叉王地刺"
