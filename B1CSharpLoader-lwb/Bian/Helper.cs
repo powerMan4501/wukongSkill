@@ -706,35 +706,47 @@ namespace bian
         }
         public static void StrongMonster()
         {
-            UObject @this = Helper.GetWorld();
-            IBGC_TamerData gameStateReadonlyData = BGU_DataUtil.GetGameStateReadonlyData<IBGC_TamerData, BGC_TamerData>(@this);
-            if (gameStateReadonlyData == null)
-            {
-                return;
-            }
-            gameStateReadonlyData.GetSpawnedMonsterList(out var OutMonsterList);
+            // UObject @this = Helper.GetWorld();
+            // IBGC_TamerData gameStateReadonlyData = BGU_DataUtil.GetGameStateReadonlyData<IBGC_TamerData, BGC_TamerData>(@this);
+            // if (gameStateReadonlyData == null)
+            // {
+            //     return;
+            // }
+            // gameStateReadonlyData.GetSpawnedMonsterList(out var OutMonsterList);
             AActor play = Helper.GetBGUPlayerCharacterCS();
-            FVector actorLocation = play.GetActorLocation();
-            actorLocation.X += 100;
-            actorLocation.Y += 100;
-            FRotator fRotator2 = play.GetActorRotation();
+            // FVector actorLocation = play.GetActorLocation();
+            // actorLocation.X += 100;
+            // actorLocation.Y += 100;
+            if (play == null || play.World == null) return;
+            List<BGUCharacterCS> allActorsOfClassList = play.World.GetAllActorsOfClassList<BGUCharacterCS>();
+            if (allActorsOfClassList == null || allActorsOfClassList.Count == 0) return;
 
-            foreach (string item in OutMonsterList)
+            foreach (BGUCharacterCS item in allActorsOfClassList)
             {
-                AActor actorByGuid = BGU_DataUtil.GetActorByGuid(@this, item);
-                var fs_name = actorByGuid?.GetFullName().ToLower();
-                if ((fs_name?.IndexOf("wukong") > -1))
+
+                if (item == null || item?.GetFullName() == null)
                 {
-                    Log.Info($"StrongMonster ${fs_name}");
-                    BGUFunctionLibraryCS.BGUAddBuff(actorByGuid, actorByGuid, 888801, EBuffSourceType.GM, -1);
+                    continue;
+                }
+                if (BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item))
+                {
+
+                    var fs_name = item?.GetFullName().ToLower();
+                    if (fs_name?.IndexOf("unit_player_wukong") > -1)
+                    {
+                        // 排除自己
+                        continue;
+                    }
+                    //己方霸体不吃毒火冰
+                    BGUFunctionLibraryCS.BGUAddBuff(item, item, 1000068, EBuffSourceType.GM, -1);
+                    BGUFunctionLibraryCS.BGUAddBuff(item, item, 888801, EBuffSourceType.GM, -1);
                 }
                 else
                 {
-
-                    BGUFunctionLibraryCS.BGUAddBuff(actorByGuid, actorByGuid, 888801, EBuffSourceType.GM, -1);
+                    BGUFunctionLibraryCS.BGUAddBuff(item, item, 888801, EBuffSourceType.GM, -1);
                 }
-
             }
+
 
         }
         public static bool isSameTeam(BGUPlayerCharacterCS monster)
