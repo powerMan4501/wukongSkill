@@ -21,6 +21,7 @@ namespace bian
     {
         public string Type { get; set; }
         public List<RuleAction>? bullets { get; set; }
+        public List<RuleAction>? buffs { get; set; }
 
         public int BuffID { get; set; }
         public int SkillID { get; set; }
@@ -71,7 +72,7 @@ namespace bian
 
         public int BulletNumInOneWave { get; set; }
 
-        public List<int>? Buffs { get; set; }
+        public List<int>? BuffIDs { get; set; }
         public List<int>? ProjectTileIDs { get; set; }
         public List<int>? buffsCondition { get; set; }
         public List<int>? noBuffsCondition { get; set; }
@@ -181,7 +182,7 @@ namespace bian
             switch (action.Type.ToLower())
             {
                 case "buff":
-                    var buffs = action?.Buffs?.Count > 0 ? action?.Buffs : action.BuffID > 0 ? [action.BuffID] : null;
+                    var buffs = action?.BuffIDs?.Count > 0 ? action?.BuffIDs : action.BuffID > 0 ? [action.BuffID] : null;
                     if (buffs?.Count > 0)
                     {
                         var buffTime = timeLength;
@@ -189,6 +190,8 @@ namespace bian
                         {
                             buffTime = action.BuffTime;
                         }
+
+
                         foreach (var buff in buffs)
                         {
                             BGUFunctionLibraryCS.BGUAddBuff(character, character, buff, EBuffSourceType.GM, buffTime);
@@ -283,6 +286,76 @@ namespace bian
 
                     break;
                 case "bullet":
+
+
+                    if (action != null && action?.buffs?.Count > 0)
+                    {
+                        var buffArr = action?.buffs?.Count > 0 ? action.buffs : [];
+                        var buffTime = timeLength;
+
+                        if (buffArr?.Count > 0)
+                        {
+
+                            var skipAction = false;
+                            foreach (var bulletItem in buffArr)
+                            {
+
+
+                                // 如果设置了buff条件，就校验是否有对应的buff
+                                if (bulletItem.buffCondition > 0)
+                                {
+                                    if (!BGUFunctionLibraryCS.BGUHasBuffByID(character, bulletItem.buffCondition))
+                                    {
+
+                                        continue;
+                                    }
+                                }
+                                if (bulletItem.buffsCondition != null && bulletItem.buffsCondition.Count > 0)
+                                {
+                                    foreach (var buffer in bulletItem.buffsCondition)
+                                    {
+                                        if (!BGUFunctionLibraryCS.BGUHasBuffByID(character, buffer))
+                                        {
+                                            skipAction = true;
+                                            break; // 退出 foreach 循环
+                                        }
+                                    }
+                                }
+
+                                if (bulletItem.noBuffCondition > 0)
+                                {
+                                    if (BGUFunctionLibraryCS.BGUHasBuffByID(character, bulletItem.noBuffCondition))
+
+                                    {
+
+                                        continue;
+                                    }
+                                }
+
+                                if (bulletItem.noBuffsCondition != null && bulletItem.noBuffsCondition.Count > 0)
+                                {
+                                    foreach (var buffer in bulletItem.noBuffsCondition)
+                                    {
+                                        if (BGUFunctionLibraryCS.BGUHasBuffByID(character, buffer))
+                                        {
+                                            skipAction = true;
+                                            break; // 退出 foreach 循环
+                                        }
+                                    }
+                                }
+                                if (skipAction)
+                                {
+                                    continue; // 跳过当前 for 循环的迭代
+                                }
+                                if (bulletItem.BuffTime > 0)
+                                {
+                                    buffTime = bulletItem.BuffTime;
+                                }
+                                BGUFunctionLibraryCS.BGUAddBuff(character, character, bulletItem.BuffID, EBuffSourceType.GM, buffTime);
+                            }
+                        }
+
+                    }
 
                     if (action?.bullets != null && action?.bullets?.Count > 0)
                     {
