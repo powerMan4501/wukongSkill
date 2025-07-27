@@ -48,14 +48,19 @@
             {
               "Type": "bullet",
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 6,
+              "BulletNumInOneWave": 2,
               "ProjectTileID": 18890701,
-
               "ForTarget": true,
               "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff,大圣平A1,剑雨"
             }
           ]
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [5000],
+          "BuffTime": 500,
+          "desc": "棍光特效粒子"
         }
       ]
     },
@@ -104,7 +109,7 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 6,
+              "BulletNumInOneWave": 2,
               "ProjectTileID": 18890701,
               "ForTarget": true,
               "noBuffsCondition": [888666006, 888666007, 888666008],
@@ -144,13 +149,19 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 6,
+              "BulletNumInOneWave": 2,
               "ProjectTileID": 18890701,
               "ForTarget": true,
               "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff,大圣平A2,剑雨"
             }
           ]
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [5000],
+          "BuffTime": 500,
+          "desc": "棍光特效粒子"
         }
       ]
     },
@@ -198,7 +209,7 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 6,
+              "BulletNumInOneWave": 2,
               "ProjectTileID": 18890701,
 
               "ForTarget": true,
@@ -236,13 +247,19 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 6,
+              "BulletNumInOneWave": 2,
               "ProjectTileID": 18890701,
               "ForTarget": true,
               "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff，剑雨"
             }
           ]
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [5002],
+          "BuffTime": 500,
+          "desc": "棍光特效粒子"
         }
       ]
     },
@@ -290,45 +307,35 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 6,
+              "BulletNumInOneWave": 2,
               "ProjectTileID": 18890701,
               "ForTarget": true,
               "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff，剑雨"
             }
           ]
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [5004],
+          "BuffTime": 500,
+          "desc": "棍光特效粒子"
         }
       ]
     },
+
     {
-      "Name": "大圣平A5",
+      "Name": "马喽Q5红孩儿砸地",
       "Description": "",
       "skillID_fs": 1001105,
       "Filters": [
         {
           "Type": "montage",
-          "Name": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05"
-        }
-      ],
-      "AfterActions": [
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 74011107,
-          "OffsetX": 400,
-          "OffsetY": 400,
-          "TimeDelay": 900,
-          "desc": "金沙爆炸"
-        }
-      ]
-    },
-    {
-      "Name": "马喽Q5红孩儿砸地",
-      "Description": "",
-      "Filters": [
+          "Name": "AM_Wukong_ComboA_q5.AM_Wukong_ComboA_q5"
+        },
         {
           "Type": "montage",
-          "Name": "AM_Wukong_ComboA_q5.AM_Wukong_ComboA_q5"
+          "Name": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05"
         }
       ],
       "AfterActions": [
@@ -359,6 +366,12 @@
               "noBuffCondition": 888666007
             }
           ]
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [5009],
+          "BuffTime": 500,
+          "desc": "棍光特效粒子"
         }
       ]
     }
