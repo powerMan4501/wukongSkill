@@ -348,22 +348,21 @@
               "ProjectTileID": 30050301,
               "OffsetX": 400,
               "OffsetY": 400,
-              "buffCondition": 888666007
+              "desc": "不能的扩散波"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileID": 34010501,
+              "ProjectTileID": 88880005,
               "OffsetX": 400,
               "OffsetY": 400,
-              "buffCondition": 888666007
+              "desc": "黄符"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
               "ProjectTileID": 74011107,
               "OffsetX": 400,
               "OffsetY": 400,
-              "desc": "没火就金沙爆炸",
-              "noBuffCondition": 888666007
+              "desc": "没火就金沙爆炸"
             }
           ]
         },
