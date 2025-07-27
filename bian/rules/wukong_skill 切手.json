@@ -447,9 +447,7 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 88880011,
-          "SpeedLeftValue": 6000,
-          "SpeedRightValue": 6000,
+          "ProjectTileID": 88880010,
           "ForTarget": true,
           "desc": "杨戬飞剑"
         }
@@ -479,7 +477,8 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 88880011,
+              "ProjectTileID": 80000008,
+
               "noBuffCondition": 888666007,
               "SpeedLeftValue": 6000,
               "SpeedRightValue": 6000,
@@ -501,11 +500,23 @@
       "AfterActions": [
         {
           "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileIDs": [88880011, 80009913, 80009910, 80000008],
-          "ForTarget": true,
           "TimeDelay": 100,
-          "desc": "杨戬万剑，小型剑，密密麻麻（原本无伤害，目前给了10点）"
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileIDs": [80009913, 80009910, 80000008],
+              "ForTarget": true,
+              "desc": "杨戬万剑，小型剑，密密麻麻（原本无伤害，目前给了10点）"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileIDs": [88880011],
+              "ForTarget": true,
+              "BornDirOffsetYLeftValue": 180,
+              "BornDirOffsetYRightValue": 180,
+              "desc": "杨戬万剑，小型剑，密密麻麻（原本无伤害，目前给了10点）"
+            }
+          ]
         }
       ]
     },
@@ -577,6 +588,8 @@
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 88880010,
+
+              "ForTarget": true,
               "noBuffsCondition": [888666007, 888666006],
               "desc": "没冰火buff 飞剑"
             }

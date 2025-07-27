@@ -145,7 +145,6 @@
       "CanBreak": false
     },
 
-
     {
       "Id": 50015,
       "CanBreak": true,
@@ -179,6 +178,7 @@
     {
       "Id": 8596,
       "Name": "火蛙",
+      "Buffers": [888666007],
       "speedRate": 1.5,
       "Key": "NUMPAD0",
       "type": "magic",
@@ -194,6 +194,7 @@
     {
       "Id": 8522,
       "type": "magic",
+      "Buffers": [888666006],
       "CanBreak": false,
       "Name": "无量蝠，冰",
       "needBack": true,
@@ -203,16 +204,18 @@
     {
       "Id": 8542,
       "type": "magic",
+      "Buffers": [888666005],
       "CanBreak": false,
       "Name": "蘑菇，转",
       "needBack": true,
-      "backTime": 6350,
+      "backTime": 6050,
       "Key": "NUMPAD2"
     },
 
     {
       "Id": 8530,
       "type": "magic",
+      "Buffers": [888666008],
       "CanBreak": true,
       "needBack": true,
       "Name": "蝎子，毒",
