@@ -1,6 +1,6 @@
 {
   "Name": "悟空-",
-  "desc": "1000865:雷，1000866冰， 1000867火， 1000868毒",
+  "desc": "888666005:雷，1000866冰， 1000867火， 1000868毒",
   "Rules": [
     {
       "Name": "大圣平A1",
@@ -10,6 +10,10 @@
         {
           "Type": "montage",
           "Name": "AM_Dasheng_ComboA_01.AM_Dasheng_ComboA_01"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboA_q1.AM_Wukong_ComboA_q1"
         }
       ],
       "AfterActions": [
@@ -21,14 +25,14 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 88880003,
               "ForTarget": true,
-              "buffCondition": 1000866,
+              "buffCondition": 888666006,
               "desc": "有冰buff,大圣平A1,发射冰剑气"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 40580501,
+              "ProjectTileID": 88880009,
               "ForTarget": true,
-              "buffCondition": 1000867,
+              "buffCondition": 888666007,
               "BornDirOffsetXLeftValue": 91,
               "BornDirOffsetXRightValue": 91,
               "desc": "有火buff,大圣平A1,发射火剑气"
@@ -38,22 +42,22 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 1713001,
               "ForTarget": true,
-              "buffCondition": 1000868,
+              "buffCondition": 888666008,
               "desc": "有毒buff,大圣平A1,就发射红剑气"
             },
             {
               "Type": "bullet",
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 9,
+              "BulletNumInOneWave": 6,
               "ProjectTileID": 18890701,
               "TargetProjectilePosOffsetType": "RangeOffset",
-              "TargetMatrixDensity": 50,
-              "TargetCircleRadius": 500,
-              "NoiseX": 200,
+              "TargetMatrixDensity": 10,
+              "TargetCircleRadius": 10,
+              "NoiseX": 20,
               "NoiseY": 100,
               "NoiseZ": 100,
               "ForTarget": true,
-              "noBuffsCondition": [1000866, 1000867, 1000868],
+              "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff,大圣平A1,剑雨"
             }
           ]
@@ -68,6 +72,10 @@
         {
           "Type": "montage",
           "Name": "AM_Dasheng_ComboA_02.AM_Dasheng_ComboA_02"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboA_q2.AM_Wukong_ComboA_q2"
         }
       ],
       "AfterActions": [
@@ -79,15 +87,15 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 88880003,
               "ForTarget": true,
-              "buffCondition": 1000866,
+              "buffCondition": 888666006,
               "desc": "有冰buff,大圣平A2,发射冰剑气"
             },
             {
               "Type": "bullet",
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 40580501,
+              "ProjectTileID": 88880009,
               "ForTarget": true,
-              "buffCondition": 1000867,
+              "buffCondition": 888666007,
               "BornDirOffsetXLeftValue": 91,
               "BornDirOffsetXRightValue": 91,
               "desc": "有火buff,大圣平A2,发射火剑气"
@@ -96,7 +104,7 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 1713001,
               "ForTarget": true,
-              "buffCondition": 1000868,
+              "buffCondition": 888666008,
               "desc": "有毒buff,大圣平A2,就发射红剑气"
             }
           ]
@@ -110,16 +118,16 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 88880003,
               "ForTarget": true,
-              "buffCondition": 1000866,
+              "buffCondition": 888666006,
               "BornDirOffsetXLeftValue": 120,
               "BornDirOffsetXRightValue": 120,
               "desc": "有冰buff,大圣平A2,发射冰剑气"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 40580501,
+              "ProjectTileID": 88880009,
               "ForTarget": true,
-              "buffCondition": 1000867,
+              "buffCondition": 888666007,
               "BornDirOffsetXLeftValue": 30,
               "BornDirOffsetXRightValue": 30,
               "desc": "有火buff,大圣平A2,发射火剑气"
@@ -128,7 +136,7 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 1713001,
               "ForTarget": true,
-              "buffCondition": 1000868,
+              "buffCondition": 888666008,
               "desc": "有毒buff,大圣平A2,就发射红剑气"
             },
             {
@@ -138,12 +146,12 @@
               "ProjectTileID": 18890701,
               "TargetProjectilePosOffsetType": "RangeOffset",
               "TargetMatrixDensity": 50,
-              "TargetCircleRadius": 500,
-              "NoiseX": 200,
+              "TargetCircleRadius": 100,
+              "NoiseX": 20,
               "NoiseY": 100,
               "NoiseZ": 100,
               "ForTarget": true,
-              "noBuffsCondition": [1000866, 1000867, 1000868],
+              "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff,大圣平A2,剑雨"
             }
           ]
@@ -158,6 +166,10 @@
         {
           "Type": "montage",
           "Name": "AM_Dasheng_ComboA_03.AM_Dasheng_ComboA_03"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboA_q3.AM_Wukong_ComboA_q3"
         }
       ],
       "AfterActions": [
@@ -169,14 +181,14 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 88880003,
               "ForTarget": true,
-              "buffCondition": 1000866,
+              "buffCondition": 888666006,
               "desc": "有冰buff发射冰剑气"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 40580501,
+              "ProjectTileID": 88880009,
               "ForTarget": true,
-              "buffCondition": 1000867,
+              "buffCondition": 888666007,
               "BornDirOffsetXLeftValue": 91,
               "BornDirOffsetXRightValue": 91,
               "desc": "有火buff发射火剑气"
@@ -185,7 +197,7 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 1713001,
               "ForTarget": true,
-              "buffCondition": 1000868,
+              "buffCondition": 888666008,
               "desc": "毒，就发射红剑气"
             },
             {
@@ -194,12 +206,12 @@
               "ProjectTileID": 18890701,
               "TargetProjectilePosOffsetType": "RangeOffset",
               "TargetMatrixDensity": 50,
-              "TargetCircleRadius": 500,
-              "NoiseX": 200,
+              "TargetCircleRadius": 100,
+              "NoiseX": 20,
               "NoiseY": 100,
               "NoiseZ": 100,
               "ForTarget": true,
-              "noBuffsCondition": [1000866, 1000867, 1000868],
+              "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff，剑雨"
             }
           ]
@@ -212,14 +224,14 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 88880003,
               "ForTarget": true,
-              "buffCondition": 1000866,
+              "buffCondition": 888666006,
               "desc": "有冰buff发射冰剑气"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 40580501,
+              "ProjectTileID": 88880009,
               "ForTarget": true,
-              "buffCondition": 1000867,
+              "buffCondition": 888666007,
               "BornDirOffsetXLeftValue": 91,
               "BornDirOffsetXRightValue": 91,
               "desc": "有火buff发射火剑气"
@@ -228,7 +240,7 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 1713001,
               "ForTarget": true,
-              "buffCondition": 1000868,
+              "buffCondition": 888666008,
               "desc": "毒，就发射红剑气"
             },
             {
@@ -237,12 +249,12 @@
               "ProjectTileID": 18890701,
               "TargetProjectilePosOffsetType": "RangeOffset",
               "TargetMatrixDensity": 50,
-              "TargetCircleRadius": 500,
-              "NoiseX": 200,
+              "TargetCircleRadius": 100,
+              "NoiseX": 20,
               "NoiseY": 100,
               "NoiseZ": 100,
               "ForTarget": true,
-              "noBuffsCondition": [1000866, 1000867, 1000868],
+              "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff，剑雨"
             }
           ]
@@ -257,6 +269,10 @@
         {
           "Type": "montage",
           "Name": "AM_Dasheng_ComboA_04.AM_Dasheng_ComboA_04"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboA_q4.AM_Wukong_ComboA_q4"
         }
       ],
       "AfterActions": [
@@ -268,14 +284,14 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 88880003,
               "ForTarget": true,
-              "buffCondition": 1000866,
+              "buffCondition": 888666006,
               "desc": "有冰buff发射冰剑气"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 40580501,
+              "ProjectTileID": 88880009,
               "ForTarget": true,
-              "buffCondition": 1000867,
+              "buffCondition": 888666007,
               "BornDirOffsetXLeftValue": 91,
               "BornDirOffsetXRightValue": 91,
               "desc": "有火buff发射火剑气"
@@ -284,7 +300,7 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 1713001,
               "ForTarget": true,
-              "buffCondition": 1000868,
+              "buffCondition": 888666008,
               "desc": "有毒buff就发射红剑气"
             },
             {
@@ -293,12 +309,12 @@
               "ProjectTileID": 18890701,
               "TargetProjectilePosOffsetType": "RangeOffset",
               "TargetMatrixDensity": 50,
-              "TargetCircleRadius": 500,
-              "NoiseX": 200,
+              "TargetCircleRadius": 100,
+              "NoiseX": 20,
               "NoiseY": 100,
               "NoiseZ": 100,
               "ForTarget": true,
-              "noBuffsCondition": [1000866, 1000867, 1000868],
+              "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff，剑雨"
             }
           ]
@@ -333,7 +349,7 @@
       "Filters": [
         {
           "Type": "montage",
-          "Name": "AM_Wukong_ComboA_q5"
+          "Name": "AM_Wukong_ComboA_q5.AM_Wukong_ComboA_q5"
         }
       ],
       "AfterActions": [
@@ -346,14 +362,14 @@
               "ProjectTileID": 30050301,
               "OffsetX": 400,
               "OffsetY": 400,
-              "buffCondition": 1000867
+              "buffCondition": 888666007
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
               "ProjectTileID": 34010501,
               "OffsetX": 400,
               "OffsetY": 400,
-              "buffCondition": 1000867
+              "buffCondition": 888666007
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
@@ -361,7 +377,7 @@
               "OffsetX": 400,
               "OffsetY": 400,
               "desc": "没火就金沙爆炸",
-              "noBuffCondition": 1000867
+              "noBuffCondition": 888666007
             }
           ]
         }

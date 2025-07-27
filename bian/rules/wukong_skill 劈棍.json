@@ -66,7 +66,7 @@
               "ProjectTileIDs": [74010206, 70015801, 2403472],
               "OffsetX": 500,
               "OffsetY": 500,
-              "noBuffCondition": 1000866,
+              "noBuffCondition": 888666006,
               "desc": "没冰地面炸出火碎片,金箍棒火版本,四级火"
             },
 
@@ -75,7 +75,7 @@
               "ProjectTileIDs": [2403471, 74011208, 88880006],
               "OffsetX": 500,
               "OffsetY": 500,
-              "buffCondition": 1000866,
+              "buffCondition": 888666006,
               "desc": "冰buff，四级冰,冰碎片，金箍棒冰版本"
             }
           ]
@@ -137,7 +137,7 @@
               "ProjectTileID": 44011401,
               "OffsetX": 800,
               "OffsetY": 800,
-              "noBuffCondition": 1000866,
+              "noBuffCondition": 888666006,
               "desc": "没冰buff，红孩儿砸地"
             },
             {
@@ -145,7 +145,7 @@
               "ProjectTileID": 2403471,
               "OffsetX": 800,
               "OffsetY": 800,
-              "buffCondition": 1000866,
+              "buffCondition": 888666006,
               "desc": "有冰buff，冰暴"
             }
           ]
@@ -160,7 +160,7 @@
               "ProjectTileIDs": [44010401, 2403472],
               "OffsetX": 500,
               "OffsetY": 500,
-              "noBuffCondition": 1000866,
+              "noBuffCondition": 888666006,
               "desc": "没冰buff，炸炸炸,四级火"
             },
             {
@@ -168,7 +168,7 @@
               "ProjectTileIDs": [2403471, 74011208, 152],
               "OffsetX": 500,
               "OffsetY": 500,
-              "buffCondition": 1000866,
+              "buffCondition": 888666006,
               "desc": "有冰buff，四级冰,冰碎片,地波"
             }
           ]

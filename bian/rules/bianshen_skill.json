@@ -191,23 +191,7 @@
         }
       ]
     },
-    {
-      "Name": "马猴",
-      "Description": "召唤七星，作废",
-      "Filters": [
-        {
-          "Type": "montage",
-          "Name": "AM_player_lys_hou_xs_P3_R2_04_作废作废作废"
-        }
-      ],
-      "AfterActions": [
-        {
-          "Type": "summon",
-          "SummonID": 500301,
-          "SummonCount": 1
-        }
-      ]
-    },
+
     {
       "Name": "小黄龙",
       "Description": "三千阳春，释放小骊龙最后一下大雷圈",

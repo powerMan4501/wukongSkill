@@ -18,7 +18,7 @@
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
           "ProjectTileIDs": [152, 50051029, 2403471],
           "TimeDelay": 600,
-          "noBuffCondition": 1000867,
+          "noBuffCondition": 888666007,
           "OffsetX": 600,
           "OffsetY": 600,
           "desc": "没火buff,地波, 电圈,冰暴"
@@ -29,7 +29,7 @@
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
           "ProjectTileIDs": [2403472, 44011401, 1016232, 88880002],
           "TimeDelay": 600,
-          "buffCondition": 1000867,
+          "buffCondition": 888666007,
           "OffsetX": 600,
           "OffsetY": 600,
           "desc": "有火buff就地火,红孩儿砸地,炸炸炸,业火"
@@ -53,7 +53,7 @@
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
           "ProjectTileIDs": [50051029, 2403471],
           "TimeDelay": 600,
-          "noBuffCondition": 1000867,
+          "noBuffCondition": 888666007,
           "OffsetX": 600,
           "OffsetY": 600,
           "desc": "没火buff就电圈/冰暴"
@@ -64,7 +64,7 @@
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
           "ProjectTileIDs": [2403372, 44011401],
           "TimeDelay": 600,
-          "buffCondition": 1000867,
+          "buffCondition": 888666007,
           "OffsetX": 600,
           "OffsetY": 600,
           "desc": "有火buff就地火,红孩儿砸地"

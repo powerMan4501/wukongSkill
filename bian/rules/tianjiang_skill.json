@@ -672,7 +672,7 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffId": 1000122,
+          "BuffID": 1000122,
           "TimeDelay": 1540
         }
       ]
