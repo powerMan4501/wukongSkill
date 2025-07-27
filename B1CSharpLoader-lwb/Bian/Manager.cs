@@ -154,7 +154,6 @@ namespace bian
             }
 
 
-
             currentMontage = Montage.PathName;
             var mgr = Manager.GetModelManager();
             var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;
@@ -258,7 +257,7 @@ namespace bian
 
             if (bufferId > 0)
             {
-                BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 3000);
+                BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 4000);
             }
 
         }

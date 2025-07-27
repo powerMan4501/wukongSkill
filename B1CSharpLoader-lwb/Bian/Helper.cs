@@ -826,7 +826,7 @@ namespace bian
             foreach (BGUCharacterCS item in allActorsOfClassList)
             {
 
-                if (BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item))
+                if (BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item) && BGUFunctionLibraryCS.BGUHasBuffByID(item, 888666002))
                 {
 
                     var fs_name = item?.GetFullName().ToLower();
@@ -869,7 +869,6 @@ namespace bian
                                   700151, 700152, 700153, 700154, 700155
                                 ];
                         }
-                        // 排除主角自己
                         if (allSkillIDs != null && allSkillIDs?.Count > 0 && fs_name?.IndexOf("unit_player_wukong") < 0)
                         {
                             // 创建一个 Random 对象
@@ -890,10 +889,10 @@ namespace bian
                                         BUS_EventCollectionCS.Get(item).Evt_UnitCastSkillTry.Invoke(castSkillInfo);
                                     }
                                 }
-                                catch (System.Exception)
+                                catch (System.Exception e)
                                 {
 
-                                    Log.Error($"Error 播放技能出错 casting skill： {randomSkillID}");
+                                    Log.Error($"Error 播放技能出错 casting skill： {e.Message}");
                                 }
                             }
 

@@ -607,7 +607,7 @@ namespace bian
                                             return;
                                         }
                                         // 加个误差值
-                                        var diff = 390;
+                                        var diff = (int)Math.Round(timeDelay / 10.0 * 1.2);
                                         Console.WriteLine($"执行action currentPosition：{currentPosition * 1000} timeDelay-diff:{timeDelay - diff}--timeDelay：{timeDelay} ");
                                         if (currentPosition > 0 && currentPosition * 1000 >= timeDelay - diff)
                                         {
