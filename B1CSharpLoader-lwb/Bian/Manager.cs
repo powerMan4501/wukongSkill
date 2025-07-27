@@ -110,7 +110,6 @@ namespace bian
             List<int> buffers = [888666005, 888666006, 888666007, 888666008];
             if (buffers.Contains(BuffID))
             {
-
                 foreach (var buffer in buffers)
                 {
                     if (buffer != BuffID)

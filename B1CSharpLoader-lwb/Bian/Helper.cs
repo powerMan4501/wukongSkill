@@ -821,7 +821,13 @@ namespace bian
             if (play == null || play.World == null) return;
 
             List<BGUCharacterCS> allActorsOfClassList = play.World.GetAllActorsOfClassList<BGUCharacterCS>();
-            if (allActorsOfClassList == null || allActorsOfClassList.Count == 0) return;
+            if (allActorsOfClassList == null || allActorsOfClassList.Count == 0)
+            {
+
+                Helper.SummonReq(1001101, 1);
+                return;
+            }
+            ;
 
             foreach (BGUCharacterCS item in allActorsOfClassList)
             {
