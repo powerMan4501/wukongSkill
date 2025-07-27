@@ -268,7 +268,7 @@ namespace bian
                 // 平A5
                 BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, 888666024, EBuffEffectTriggerType.Remove);
                 bufferId = 888666025;
-                Helper.FenshenGSTryCastSkill(ID);
+
             }
             if (new int[] { 10705, 10706, 10720, 10721, 50003, 50005, 50007, 50001 }.Contains(ID))
             {

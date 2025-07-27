@@ -835,8 +835,10 @@ namespace bian
 
             if (filteredActors.Count == 0)
             {
-                Log.Info("添加分身 1001101");
-                Helper.SummonReq(1001101, 1, 9999);
+                Log.Info("添加分身 天命人1001101 大圣5009301");
+                // Helper.SummonReq(1001101, 1, 9999);
+                Helper.SummonReq(5009301, 1, 9999);
+
                 return;
             }
             foreach (BGUCharacterCS item in filteredActors)
