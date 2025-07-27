@@ -106,6 +106,20 @@ namespace bian
                 return;
             }
 
+            // 冰火雷毒buff互斥
+            List<int> buffers = [888666005, 888666006, 888666007, 888666008];
+            if (buffers.Contains(BuffID))
+            {
+
+                foreach (var buffer in buffers)
+                {
+                    if (buffer != BuffID)
+                    {
+                        BGUFunctionLibraryCS.BGURemoveBuffImmediately(Caster, buffer, EBuffEffectTriggerType.Remove);
+                    }
+                }
+            }
+
             var mgr = Manager.GetModelManager();
             if (mgr.Rules != null && mgr.Rules.Count > 0)
             {
@@ -234,22 +248,26 @@ namespace bian
             if (ID == 10802)
             {
                 // 平A2
+                BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, 888666021, EBuffEffectTriggerType.Remove);
                 bufferId = 888666022;
             }
             if (ID == 10803)
             {
                 // 平A3
+                BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, 888666022, EBuffEffectTriggerType.Remove);
                 bufferId = 888666023;
             }
             if (ID == 10804)
             {
                 // 平A4
+                BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, 888666023, EBuffEffectTriggerType.Remove);
                 bufferId = 888666024;
             }
             if (ID == 10805)
 
             {
                 // 平A5
+                BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, 888666024, EBuffEffectTriggerType.Remove);
                 bufferId = 888666025;
                 Helper.FenshenGSTryCastSkill(ID);
             }

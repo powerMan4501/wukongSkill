@@ -630,6 +630,16 @@ namespace bian
                     {
                         // await Task.Delay(650);
                         var backTime = (int)(skill?.backTime ?? 1700);
+                        if (skill?.Buffers != null && skill.Buffers.Count() > 0)
+                        {
+                            foreach (var buffer in skill.Buffers)
+                            {
+                                if (!BGUFunctionLibraryCS.BGUHasBuff(character, (EBPBuffID)buffer))
+                                {
+                                    BGUFunctionLibraryCS.BGUAddBuff(character, character, buffer, EBuffSourceType.GM, -1);
+                                }
+                            }
+                        }
                         Utils.TryRunOnGameThread((Action)delegate
                         {
                             character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(-1000, 0, 100);
