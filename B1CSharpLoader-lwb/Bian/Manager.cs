@@ -229,25 +229,28 @@ namespace bian
             if (ID == 10801)
             {
                 // 平A1
-                bufferId = 20101;
+                bufferId = 888666021;
             }
             if (ID == 10802)
             {
                 // 平A2
-                bufferId = 20102;
+                bufferId = 888666022;
             }
             if (ID == 10803)
             {
                 // 平A3
-                bufferId = 20103;
+                bufferId = 888666023;
             }
             if (ID == 10804)
             {
                 // 平A4
-                bufferId = 20104;
+                bufferId = 888666024;
             }
             if (ID == 10805)
+
             {
+                // 平A5
+                bufferId = 888666025;
                 Helper.FenshenGSTryCastSkill(ID);
             }
             if (new int[] { 10705, 10706, 10720, 10721, 50003, 50005, 50007, 50001 }.Contains(ID))
