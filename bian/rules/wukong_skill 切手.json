@@ -19,7 +19,7 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffID": 5014,
+          "BuffIDs": [5014, 888666018],
           "BuffTime": 1000,
           "desc": "棍光特效粒子"
         },
@@ -128,22 +128,7 @@
         }
       ]
     },
-    {
-      "Name": "大圣招，287识破 289连招buff",
-      "Filters": [
-        {
-          "Type": "montage",
-          "Name": "AM_Dasheng_ComboA_02_Z_1"
-        }
-      ],
-      "AfterActions": [
-        {
-          "Type": "buff",
-          "BuffIDs": [287, 289, 5072],
-          "desc": "识破buff，接招buff，棍光粒子"
-        }
-      ]
-    },
+
     {
       "Name": "大圣招，287识破 289连招buff",
       "Filters": [
@@ -155,7 +140,7 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [287, 289, 5081],
+          "BuffIDs": [888666018, 289, 5081],
           "desc": "识破buff，接招buff，棍光粒子"
         }
       ]
@@ -171,7 +156,7 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [287, 289],
+          "BuffIDs": [888666018, 289],
           "desc": "识破buff，接招buff"
         }
       ]
@@ -188,7 +173,7 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [287, 289]
+          "BuffIDs": [888666018, 289]
         },
         {
           "Type": "bullet",
@@ -265,6 +250,11 @@
               "desc": "没有冰火buff,大圣平A1,就发射红剑气"
             }
           ]
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [888666018, 289, 5072],
+          "desc": "识破buff，接招buff，棍光粒子"
         }
       ]
     },
@@ -312,6 +302,11 @@
               "desc": "没有冰火buff,大圣平A1,就发射红剑气"
             }
           ]
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [888666018, 289, 5072],
+          "desc": "识破buff，接招buff，棍光粒子"
         }
       ]
     },
@@ -327,8 +322,7 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [289, 505],
-          "BuffTime": 3000
+          "BuffIDs": [888666018, 289]
         },
 
         {
@@ -453,7 +447,7 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 80009901,
+          "ProjectTileID": 88880011,
           "SpeedLeftValue": 6000,
           "SpeedRightValue": 6000,
           "ForTarget": true,
@@ -485,7 +479,7 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 80009901,
+              "ProjectTileID": 88880011,
               "noBuffCondition": 888666007,
               "SpeedLeftValue": 6000,
               "SpeedRightValue": 6000,
@@ -508,7 +502,7 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileIDs": [80009901, 80009913, 80009910, 80000008],
+          "ProjectTileIDs": [88880011, 80009913, 80009910, 80000008],
           "ForTarget": true,
           "TimeDelay": 100,
           "desc": "杨戬万剑，小型剑，密密麻麻（原本无伤害，目前给了10点）"
@@ -603,8 +597,11 @@
         {
           "Type": "bullet",
           "TimeDelay": 50,
+          "ForTarget": true,
+          "BornDirOffsetYLeftValue": 180,
+          "BornDirOffsetYRightValue": 180,
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 80009999
+          "ProjectTileID": 88880010
         }
       ]
     },
@@ -622,7 +619,13 @@
       "AfterActions": [
         {
           "Type": "bullet",
-          "TimeDelay": 100,
+          "buffs": [
+            {
+              "BuffID": 888666018,
+              "BuffTime": 2000,
+              "desc": "立棍增加识破"
+            }
+          ],
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",

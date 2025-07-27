@@ -94,26 +94,6 @@
         }
       ]
     },
-    {
-      "Name": "棍花，循环buff",
-      "isLoop": true,
-      "Filters": [
-        {
-          "Type": "montage",
-          "Name": "AM_Wukong_ComboC_q_loop.AM_Wukong_ComboC_q_loop"
-        },
-        {
-          "Type": "montage",
-          "Name": "AM_Wukong_ComboC_z_loop.AM_Wukong_ComboC_z_loop"
-        }
-      ],
-      "AfterActions": [
-        {
-          "type": "buff",
-          "BuffID": 888666009
-        }
-      ]
-    },
 
     {
       "Name": "棍花重击，火冰剑气",

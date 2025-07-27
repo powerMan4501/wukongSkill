@@ -50,12 +50,7 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "BulletNumInOneWave": 6,
               "ProjectTileID": 18890701,
-              "TargetProjectilePosOffsetType": "RangeOffset",
-              "TargetMatrixDensity": 10,
-              "TargetCircleRadius": 10,
-              "NoiseX": 20,
-              "NoiseY": 100,
-              "NoiseZ": 100,
+
               "ForTarget": true,
               "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff,大圣平A1,剑雨"
@@ -106,6 +101,14 @@
               "ForTarget": true,
               "buffCondition": 888666008,
               "desc": "有毒buff,大圣平A2,就发射红剑气"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "BulletNumInOneWave": 6,
+              "ProjectTileID": 18890701,
+              "ForTarget": true,
+              "noBuffsCondition": [888666006, 888666007, 888666008],
+              "desc": "没冰火毒buff,大圣平A2,剑雨"
             }
           ]
         },
@@ -140,16 +143,9 @@
               "desc": "有毒buff,大圣平A2,就发射红剑气"
             },
             {
-              "Type": "bullet",
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 9,
+              "BulletNumInOneWave": 6,
               "ProjectTileID": 18890701,
-              "TargetProjectilePosOffsetType": "RangeOffset",
-              "TargetMatrixDensity": 50,
-              "TargetCircleRadius": 100,
-              "NoiseX": 20,
-              "NoiseY": 100,
-              "NoiseZ": 100,
               "ForTarget": true,
               "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff,大圣平A2,剑雨"
@@ -202,14 +198,9 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 9,
+              "BulletNumInOneWave": 6,
               "ProjectTileID": 18890701,
-              "TargetProjectilePosOffsetType": "RangeOffset",
-              "TargetMatrixDensity": 50,
-              "TargetCircleRadius": 100,
-              "NoiseX": 20,
-              "NoiseY": 100,
-              "NoiseZ": 100,
+
               "ForTarget": true,
               "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff，剑雨"
@@ -245,14 +236,8 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 9,
+              "BulletNumInOneWave": 6,
               "ProjectTileID": 18890701,
-              "TargetProjectilePosOffsetType": "RangeOffset",
-              "TargetMatrixDensity": 50,
-              "TargetCircleRadius": 100,
-              "NoiseX": 20,
-              "NoiseY": 100,
-              "NoiseZ": 100,
               "ForTarget": true,
               "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff，剑雨"
@@ -305,14 +290,8 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 9,
+              "BulletNumInOneWave": 6,
               "ProjectTileID": 18890701,
-              "TargetProjectilePosOffsetType": "RangeOffset",
-              "TargetMatrixDensity": 50,
-              "TargetCircleRadius": 100,
-              "NoiseX": 20,
-              "NoiseY": 100,
-              "NoiseZ": 100,
               "ForTarget": true,
               "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff，剑雨"

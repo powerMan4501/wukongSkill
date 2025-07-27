@@ -37,6 +37,29 @@
         }
       ]
     },
+
+    {
+      "Name": "激光buff,待修改",
+      "isLoop": true,
+      "Filters": [
+        {
+          "type": "buff",
+          "BuffID": 888666017
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 50,
+          "ForTarget": true,
+          "BornDirOffsetYLeftValue": 180,
+          "BornDirOffsetYRightValue": 180,
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileID": 88880010
+        }
+      ]
+    },
+
     {
       "Name": "戳棍巴山虎",
       "Description": "",
@@ -158,12 +181,6 @@
           "ForTarget": true,
           "TimeDelay": 150,
           "BulletNumInOneWave": 4,
-          "TargetProjectilePosOffsetType": "RangeOffset",
-          "TargetMatrixDensity": 120,
-          "TargetCircleRadius": 900,
-          "NoiseX": 100,
-          "NoiseY": 100,
-          "NoiseZ": 100,
           "desc": "杨戬万剑，小型剑，密密麻麻（原本无伤害，目前给了10点）"
         }
       ]
