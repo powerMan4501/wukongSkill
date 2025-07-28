@@ -26,7 +26,12 @@ namespace bian
         void TransBack();
         bool IsCurrentModel(string SkName);
     }
-
+    public interface SkillMap
+    {
+        public string? AnimPath { get; set; }
+        public int hasBuff { get; set; }
+        public int noHasBuff { get; set; }
+    }
     public class ModelManager
     {
 
@@ -1305,7 +1310,7 @@ namespace bian
 
         public string Author { get; set; }
 
-
+        public List<SkillMap>? skillMaps { get; set; }
         public bool IsTrans = false;
 
 

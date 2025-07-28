@@ -156,17 +156,23 @@ namespace bian
         private static void CastSkillWithAnimMontageMultiCast(BUS_GSEventCollection __instance, ref UAnimMontage Montage, ref float PlayTimeRate, float MontagePosOffset, FName StartSectionName)
         {
 
-            if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]CastSkillWithAnimMontageMultiCast"))
-            {
-
-            }
+            // if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]CastSkillWithAnimMontageMultiCast"))
+            // {
+            //  }
 
             if (!IsPlayer(__instance.GetOwner().PathName))
             {
                 return;
             }
 
+            var character = Helper.GetPlayerController();
 
+            var readOnlyData = BGU_DataUtil.GetPlayerControlReadonlyData<IBPC_PlayerRoleData, BPC_PlayerRoleData>(character);
+            if (readOnlyData != null)
+            {
+                Log.Info($"Evt_CastSkillWithAnimMontageMultiCast  {readOnlyData?.RoleData?.RoleCs?.Actor?.Wear?.Stance}");
+
+            }
             currentMontage = Montage.PathName;
             var mgr = Manager.GetModelManager();
             var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;

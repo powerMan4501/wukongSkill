@@ -835,7 +835,7 @@ namespace bian
 
             if (filteredActors.Count == 0)
             {
-                Log.Info("添加分身 天命人1001101 大圣5009301");
+
                 // Helper.SummonReq(1001101, 1, 9999);
                 Helper.SummonReq(5009301, 1, 9999);
 
@@ -849,12 +849,15 @@ namespace bian
                     // 排除自己
                     continue;
                 }
+                // n/Units/Player/TAMER_monkeysummon_dasheng.TAMER_monkeysummon
                 // 取所有的队友
-                if (skillID > 0 && fs_name?.IndexOf("unit_monkeysummon") > -1)
+                if (skillID > 0 && (fs_name?.IndexOf("unit_monkeysummon") > -1 || fs_name?.IndexOf("TAMER_monkeysummon") > -1))
                 {
                     try
                     {
                         //播放动画
+
+
                         FCastSkillInfo castSkillInfo = new FCastSkillInfo(skillID, ECastSkillSourceType.GM);
                         if (castSkillInfo.SkillID > 0)
                         {
@@ -894,9 +897,7 @@ namespace bian
                         {
                             try
                             {
-                                //播放动画
-                                FCastSkillInfo castSkillInfo = new FCastSkillInfo(randomSkillID, ECastSkillSourceType.GM);
-
+                                FCastSkillInfo castSkillInfo = new FCastSkillInfo(skillID, ECastSkillSourceType.GM);
                                 if (castSkillInfo.SkillID > 0)
                                 {
                                     // 触发技能事件
