@@ -266,13 +266,11 @@ namespace bian
             new SkillMappingRule { OriginalId = 10705, MappedId = 50003, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
             new SkillMappingRule { OriginalId = 10705, MappedId = 50005, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
             new SkillMappingRule { OriginalId = 10705, MappedId = 50007, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
-            new SkillMappingRule { OriginalId = 10705, MappedId = 50001, Condition = SkillMapCondition.any, desc="10705转成大圣Q1切手"},
 
 
             new SkillMappingRule { OriginalId = 10706, MappedId = 50003, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
             new SkillMappingRule { OriginalId = 10706, MappedId = 50005, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
             new SkillMappingRule { OriginalId = 10706, MappedId = 50007, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
-            new SkillMappingRule { OriginalId = 10706, MappedId = 50001, Condition = SkillMapCondition.any,  desc="10705转成大圣Q1切手"},
 
 
 
@@ -296,7 +294,7 @@ namespace bian
         {
             if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]SmartCastSkill"))
             {
-                // Log.Info($"bian: 真实的id SmartCastSkillTryMultiCast -->{ID}");
+                Log.Info($"bian: 真实的id SmartCastSkillTryMultiCast -->{ID}");
             }
             var character = Helper.GetBGUPlayerCharacterCS();
             var bufferId = 20101;
@@ -348,6 +346,7 @@ namespace bian
             }
             if (new int[] { 10705, 10706, 10720, 10721, 50003, 50005, 50007, 50001 }.Contains(ID))
             {
+                Log.Info($"bian: 切手加连招buff SmartCastSkillTryMultiCast -->{ID}");
                 BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);
             }
 
