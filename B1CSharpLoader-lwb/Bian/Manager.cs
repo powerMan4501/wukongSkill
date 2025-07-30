@@ -263,28 +263,30 @@ namespace bian
             new SkillMappingRule { OriginalId = 10805, MappedId = 10715, Condition = SkillMapCondition.StancePoke, desc="戳棍下, Q5变无豆进尺"},
             new SkillMappingRule { OriginalId = 10805, MappedId = 50015, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
 
-            new SkillMappingRule { OriginalId = 10705, MappedId = 50001, Condition = SkillMapCondition.hasBuff, conditionValue=888666021, desc="10705转成大圣Q1切手"},
             new SkillMappingRule { OriginalId = 10705, MappedId = 50003, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
             new SkillMappingRule { OriginalId = 10705, MappedId = 50005, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
             new SkillMappingRule { OriginalId = 10705, MappedId = 50007, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
+            new SkillMappingRule { OriginalId = 10705, MappedId = 50001, Condition = SkillMapCondition.any, desc="10705转成大圣Q1切手"},
 
 
-            new SkillMappingRule { OriginalId = 10706, MappedId = 50001, Condition = SkillMapCondition.hasBuff, conditionValue=888666021, desc="10705转成大圣Q1切手"},
             new SkillMappingRule { OriginalId = 10706, MappedId = 50003, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
             new SkillMappingRule { OriginalId = 10706, MappedId = 50005, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
             new SkillMappingRule { OriginalId = 10706, MappedId = 50007, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
+            new SkillMappingRule { OriginalId = 10706, MappedId = 50001, Condition = SkillMapCondition.any,  desc="10705转成大圣Q1切手"},
 
 
 
-            new SkillMappingRule { OriginalId = 10707, MappedId = 50002, Condition = SkillMapCondition.hasBuff, conditionValue=888666021, desc="10705转成大圣Q1切手"},
             new SkillMappingRule { OriginalId = 10707, MappedId = 50004, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
             new SkillMappingRule { OriginalId = 10707, MappedId = 50006, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
             new SkillMappingRule { OriginalId = 10707, MappedId = 50008, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
+            new SkillMappingRule { OriginalId = 10707, MappedId = 50002, Condition = SkillMapCondition.any,  desc="10705转成大圣Q1切手"},
 
-            new SkillMappingRule { OriginalId = 10708, MappedId = 50002, Condition = SkillMapCondition.hasBuff, conditionValue=888666021, desc="10705转成大圣Q1切手"},
+
             new SkillMappingRule { OriginalId = 10708, MappedId = 50004, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
             new SkillMappingRule { OriginalId = 10708, MappedId = 50006, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
             new SkillMappingRule { OriginalId = 10708, MappedId = 50008, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
+            new SkillMappingRule { OriginalId = 10708, MappedId = 50002, Condition = SkillMapCondition.any, desc="10705转成大圣Q1切手"},
+
 
         };
 
