@@ -10,7 +10,26 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System;
 using BtlShare;
+using ArchiveB1;
 
+public enum SkillMapCondition
+{
+    StancePoke,    // 戳棍姿态
+    StanceProp,//立棍
+    StanceHeavy,//劈棍
+    hasBuff,
+    disTance,
+    any,//无条件转化
+}
+
+public class SkillMappingRule
+{
+    public int OriginalId { get; set; }
+    public int MappedId { get; set; }
+    public SkillMapCondition Condition { get; set; }
+    public int? conditionValue { get; set; } // 可选：需要的buff 或者距离
+    public string? desc { get; set; }//描述
+}
 
 namespace bian
 {
@@ -25,7 +44,6 @@ namespace bian
         public static string? currentMontage;
         private static BuffDescRuntime DescRuntime;
         public static string Nameo;
-
 
         public static ModelManager GetModelManager()
         {
@@ -165,14 +183,7 @@ namespace bian
                 return;
             }
 
-            var character = Helper.GetPlayerController();
 
-            var readOnlyData = BGU_DataUtil.GetPlayerControlReadonlyData<IBPC_PlayerRoleData, BPC_PlayerRoleData>(character);
-            if (readOnlyData != null)
-            {
-                Log.Info($"Evt_CastSkillWithAnimMontageMultiCast  {readOnlyData?.RoleData?.RoleCs?.Actor?.Wear?.Stance}");
-
-            }
             currentMontage = Montage.PathName;
             var mgr = Manager.GetModelManager();
             var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;
@@ -231,11 +242,55 @@ namespace bian
         }
 
 
+        private static readonly List<SkillMappingRule> SkillMappingRules = new List<SkillMappingRule>
+        {
+            new SkillMappingRule { OriginalId = 10801, MappedId = 10701, Condition = SkillMapCondition.StancePoke, desc="戳棍下,棍的平A变成枪平A"},
+            new SkillMappingRule { OriginalId = 10801, MappedId = 50011, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
 
+
+            new SkillMappingRule { OriginalId = 10802, MappedId = 10702, Condition = SkillMapCondition.StancePoke, desc="戳棍下,棍的平A变成枪平A"},
+            new SkillMappingRule { OriginalId = 10802, MappedId = 50012, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
+
+
+            new SkillMappingRule { OriginalId = 10803, MappedId = 10703, Condition = SkillMapCondition.StancePoke, desc="戳棍下,棍的平A变成枪平A"},
+            new SkillMappingRule { OriginalId = 10803, MappedId = 50013, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
+
+
+            new SkillMappingRule { OriginalId = 10804, MappedId = 10704, Condition = SkillMapCondition.StancePoke, desc="戳棍下,棍的平A变成枪平A"},
+            new SkillMappingRule { OriginalId = 10804, MappedId = 50014, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
+
+
+            new SkillMappingRule { OriginalId = 10805, MappedId = 10715, Condition = SkillMapCondition.StancePoke, desc="戳棍下, Q5变无豆进尺"},
+            new SkillMappingRule { OriginalId = 10805, MappedId = 50015, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
+
+            new SkillMappingRule { OriginalId = 10705, MappedId = 50001, Condition = SkillMapCondition.hasBuff, conditionValue=888666021, desc="10705转成大圣Q1切手"},
+            new SkillMappingRule { OriginalId = 10705, MappedId = 50003, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
+            new SkillMappingRule { OriginalId = 10705, MappedId = 50005, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
+            new SkillMappingRule { OriginalId = 10705, MappedId = 50007, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
+
+
+            new SkillMappingRule { OriginalId = 10706, MappedId = 50001, Condition = SkillMapCondition.hasBuff, conditionValue=888666021, desc="10705转成大圣Q1切手"},
+            new SkillMappingRule { OriginalId = 10706, MappedId = 50003, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
+            new SkillMappingRule { OriginalId = 10706, MappedId = 50005, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
+            new SkillMappingRule { OriginalId = 10706, MappedId = 50007, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
+
+
+
+            new SkillMappingRule { OriginalId = 10707, MappedId = 50002, Condition = SkillMapCondition.hasBuff, conditionValue=888666021, desc="10705转成大圣Q1切手"},
+            new SkillMappingRule { OriginalId = 10707, MappedId = 50004, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
+            new SkillMappingRule { OriginalId = 10707, MappedId = 50006, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
+            new SkillMappingRule { OriginalId = 10707, MappedId = 50008, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
+
+            new SkillMappingRule { OriginalId = 10708, MappedId = 50002, Condition = SkillMapCondition.hasBuff, conditionValue=888666021, desc="10705转成大圣Q1切手"},
+            new SkillMappingRule { OriginalId = 10708, MappedId = 50004, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
+            new SkillMappingRule { OriginalId = 10708, MappedId = 50006, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
+            new SkillMappingRule { OriginalId = 10708, MappedId = 50008, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
+
+        };
 
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_SmartCastSkillTryMultiCast_Implementation")]
         [HarmonyPrefix]
-        private static void SmartCastSkillTryMultiCast(int ID)
+        private static void SmartCastSkillTryMultiCast(ref int ID, ref List<int> RuleIDList)
         {
             if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]SmartCastSkill"))
             {
@@ -244,7 +299,20 @@ namespace bian
             var character = Helper.GetBGUPlayerCharacterCS();
             var bufferId = 20101;
 
+            var control = Helper.GetPlayerController();
 
+            var readOnlyData = BGU_DataUtil.GetPlayerControlReadonlyData<IBPC_PlayerRoleData, BPC_PlayerRoleData>(control);
+            var stance = readOnlyData?.RoleData?.RoleCs?.Actor?.Wear?.Stance;//当前棍法
+            var isChuogun = stance == Stance.Poke;
+            var isLigun = stance == Stance.Prop;
+            var isPigun = stance == Stance.Heavy;
+
+            var currentId = ID;
+            if (readOnlyData != null)
+            {
+                Log.Info($"Evt_CastSkillWithAnimMontageMultiCast  {stance}");
+
+            }
             if (ID == 10801)
             {
                 // 平A1
@@ -286,6 +354,16 @@ namespace bian
                 BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 4000);
             }
 
+            var applicableRules = SkillMappingRules.Where(r => r.OriginalId == currentId);
+            if (applicableRules.Count() > 0)
+            {
+                var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
+                var matchItem = applicableRules.FirstOrDefault(r => r.Condition == SkillMapCondition.StancePoke && isChuogun || r.Condition == SkillMapCondition.hasBuff && r.conditionValue > 0 && BGUFunctionLibraryCS.BGUHasBuffByID(character, (int)r.conditionValue) || r.Condition == SkillMapCondition.disTance && r.conditionValue >= 0 && target != null && character.GetDistanceTo(target) >= r.conditionValue || r.Condition == SkillMapCondition.any);
+                if (matchItem != null)
+                {
+                    ID = matchItem.MappedId;
+                }
+            }
         }
 
 
