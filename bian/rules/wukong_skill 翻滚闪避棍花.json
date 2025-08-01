@@ -60,6 +60,7 @@
               "ProjectTileID": 88880009,
               "buffCondition": 888666007,
               "ForTarget": true,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有火buff，火焰剑气"
             },
             {
@@ -69,17 +70,18 @@
               "BornDirOffsetXLeftValue": 91,
               "BornDirOffsetXRightValue": 91,
               "ForTarget": true,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有冰buff，冰剑气"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 88880004,
+              "ProjectTileID": 44051501,
               "noBuffsCondition": [888666007, 888666006, 888666008],
               "SpeedLeftValue": 6000,
               "SpeedRightValue": 6000,
-              "BornDirOffsetXLeftValue": 91,
-              "BornDirOffsetXRightValue": 91,
+              "ProjectOffsetPosition":[500, 500, 500],
               "ForTarget": true,
+              "spawnBaseSocketName": "weapon_wei",
               "desc": "没有冰火毒buff，金色剑气"
             },
             {
@@ -88,6 +90,7 @@
               "ProjectTileID": 30131501,
               "buffCondition": 888666008,
               "ForTarget": true,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有毒buff，红剑气"
             }
           ]
@@ -115,6 +118,7 @@
           "BornDirOffsetXLeftValue": 45,
           "BornDirOffsetXRightValue": 45,
           "TimeDelay": 420,
+          "spawnBaseSocketName": "weapon_r_index_03",
           "SpeedLeftValue": 6000,
           "SpeedRightValue": 6000
         },
@@ -128,6 +132,7 @@
           "BornDirOffsetXLeftValue": 45,
           "BornDirOffsetXRightValue": 45,
           "TimeDelay": 420,
+          "spawnBaseSocketName": "weapon_r_index_03",
           "SpeedLeftValue": 6000,
           "SpeedRightValue": 6000
         },
@@ -141,6 +146,7 @@
           "BornDirOffsetXLeftValue": 45,
           "BornDirOffsetXRightValue": 45,
           "TimeDelay": 420,
+          "spawnBaseSocketName": "weapon_r_index_03",
           "SpeedLeftValue": 6000,
           "SpeedRightValue": 6000
         },
@@ -154,6 +160,7 @@
           "BornDirOffsetXLeftValue": 135,
           "BornDirOffsetXRightValue": 135,
           "TimeDelay": 420,
+          "spawnBaseSocketName": "weapon_r_index_03",
           "SpeedLeftValue": 6000,
           "SpeedRightValue": 6000
         }

@@ -26,6 +26,7 @@
               "ProjectTileID": 88880003,
               "ForTarget": true,
               "buffCondition": 888666006,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有冰buff,大圣平A1,发射冰剑气"
             },
             {
@@ -35,6 +36,7 @@
               "buffCondition": 888666007,
               "BornDirOffsetXLeftValue": 91,
               "BornDirOffsetXRightValue": 91,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有火buff,大圣平A1,发射火剑气"
             },
             {
@@ -43,6 +45,7 @@
               "ProjectTileID": 1713001,
               "ForTarget": true,
               "buffCondition": 888666008,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有毒buff,大圣平A1,就发射红剑气"
             },
             {
@@ -51,6 +54,7 @@
               "BulletNumInOneWave": 2,
               "ProjectTileID": 18890701,
               "ForTarget": true,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff,大圣平A1,剑雨"
             }
@@ -88,6 +92,7 @@
               "ProjectTileID": 88880003,
               "ForTarget": true,
               "buffCondition": 888666006,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有冰buff,大圣平A2,发射冰剑气"
             },
             {
@@ -98,6 +103,7 @@
               "buffCondition": 888666007,
               "BornDirOffsetXLeftValue": 91,
               "BornDirOffsetXRightValue": 91,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有火buff,大圣平A2,发射火剑气"
             },
             {
@@ -105,6 +111,7 @@
               "ProjectTileID": 1713001,
               "ForTarget": true,
               "buffCondition": 888666008,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有毒buff,大圣平A2,就发射红剑气"
             },
             {
@@ -112,6 +119,7 @@
               "BulletNumInOneWave": 2,
               "ProjectTileID": 18890701,
               "ForTarget": true,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff,大圣平A2,剑雨"
             }
@@ -129,6 +137,7 @@
               "buffCondition": 888666006,
               "BornDirOffsetXLeftValue": 120,
               "BornDirOffsetXRightValue": 120,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有冰buff,大圣平A2,发射冰剑气"
             },
             {
@@ -138,6 +147,7 @@
               "buffCondition": 888666007,
               "BornDirOffsetXLeftValue": 30,
               "BornDirOffsetXRightValue": 30,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有火buff,大圣平A2,发射火剑气"
             },
             {
@@ -145,6 +155,7 @@
               "ProjectTileID": 1713001,
               "ForTarget": true,
               "buffCondition": 888666008,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有毒buff,大圣平A2,就发射红剑气"
             },
             {
@@ -152,6 +163,7 @@
               "BulletNumInOneWave": 2,
               "ProjectTileID": 18890701,
               "ForTarget": true,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "noBuffsCondition": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff,大圣平A2,剑雨"
             }
@@ -189,6 +201,7 @@
               "ProjectTileID": 88880003,
               "ForTarget": true,
               "buffCondition": 888666006,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有冰buff发射冰剑气"
             },
             {
@@ -198,6 +211,7 @@
               "buffCondition": 888666007,
               "BornDirOffsetXLeftValue": 91,
               "BornDirOffsetXRightValue": 91,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有火buff发射火剑气"
             },
             {
@@ -205,6 +219,7 @@
               "ProjectTileID": 1713001,
               "ForTarget": true,
               "buffCondition": 888666008,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "毒，就发射红剑气"
             },
             {
@@ -214,6 +229,7 @@
 
               "ForTarget": true,
               "noBuffsCondition": [888666006, 888666007, 888666008],
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "没冰火毒buff，剑雨"
             }
           ]
@@ -227,6 +243,7 @@
               "ProjectTileID": 88880003,
               "ForTarget": true,
               "buffCondition": 888666006,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有冰buff发射冰剑气"
             },
             {
@@ -236,6 +253,7 @@
               "buffCondition": 888666007,
               "BornDirOffsetXLeftValue": 91,
               "BornDirOffsetXRightValue": 91,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有火buff发射火剑气"
             },
             {
@@ -243,6 +261,7 @@
               "ProjectTileID": 1713001,
               "ForTarget": true,
               "buffCondition": 888666008,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "毒，就发射红剑气"
             },
             {
@@ -251,6 +270,7 @@
               "ProjectTileID": 18890701,
               "ForTarget": true,
               "noBuffsCondition": [888666006, 888666007, 888666008],
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "没冰火毒buff，剑雨"
             }
           ]
@@ -287,6 +307,7 @@
               "ProjectTileID": 88880003,
               "ForTarget": true,
               "buffCondition": 888666006,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有冰buff发射冰剑气"
             },
             {
@@ -296,6 +317,7 @@
               "buffCondition": 888666007,
               "BornDirOffsetXLeftValue": 91,
               "BornDirOffsetXRightValue": 91,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有火buff发射火剑气"
             },
             {
@@ -303,6 +325,7 @@
               "ProjectTileID": 1713001,
               "ForTarget": true,
               "buffCondition": 888666008,
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有毒buff就发射红剑气"
             },
             {
@@ -311,6 +334,7 @@
               "ProjectTileID": 18890701,
               "ForTarget": true,
               "noBuffsCondition": [888666006, 888666007, 888666008],
+              "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "没冰火毒buff，剑雨"
             }
           ]
