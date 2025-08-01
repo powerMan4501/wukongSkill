@@ -7,6 +7,7 @@ using UnrealEngine.Runtime;
 using UnrealEngine.Engine;
 using System.Reflection;
 using System.Runtime.InteropServices.ComTypes;
+using B1UI.Script;
 namespace bian
 {
 
@@ -97,6 +98,7 @@ namespace bian
         public float? backTime { get; set; }
         public string? spawnBaseSocketName { get; set; }
         public int? intervalTime { get; set; }
+        public int? intervalTimes { get; set; }
         public List<int> ProjectOffsetPosition { get; set; }
 
 
@@ -558,6 +560,7 @@ namespace bian
 
                     }
                     var timeDelay = action.TimeDelay;
+                    var intervalTime = action?.intervalTime > 0 ? action.intervalTime : 0;
                     var MontagePathName = montage?.PathName;
                     if (action.TimeDelay > 1)
                     {
@@ -604,7 +607,7 @@ namespace bian
 
                                     if (ruleItem != null && montage != null)
                                     {
-                                        if (!ruleItem.IsMatchMontage(currMontage))
+                                        if (!ruleItem.IsMatchMontage(montage.PathName))
                                         {
                                             return;
                                         }
@@ -613,6 +616,31 @@ namespace bian
                                         Console.WriteLine($"执行action currentPosition：{currentPosition * 1000} timeDelay-diff:{timeDelay - diff}--timeDelay：{timeDelay} ");
                                         if (currentPosition > 0 && currentPosition * 1000 >= timeDelay - diff)
                                         {
+                                            if (!ruleItem.IsMatchMontage(montage.PathName))
+                                            {
+                                                return;
+                                            }
+
+                                            if (intervalTime > 0)
+                                            {
+
+                                                var num = montage.GetPlayLength() * 1000 < 1000 ? 1000 : montage.GetPlayLength() * 1000;
+                                                if (num > 15 * 1000)
+                                                {
+                                                    num = 15000;
+                                                }
+
+                                                var currentPosition1 = animInstance.Montage_GetPosition(montage);
+                                                var times = action?.intervalTimes > 0 ? action?.intervalTimes : num / intervalTime;
+                                                var loopTimes = 0;
+                                                while (ruleItem.IsMatchMontage(montage.PathName) && times > loopTimes)
+                                                {
+                                                    await Task.Delay((int)intervalTime); // 等待指定时间
+                                                    DoAction(action, timeLength / playRate);
+                                                    loopTimes++;
+                                                }
+                                                return;
+                                            }
                                             DoAction(action, timeLength / playRate);
                                         }
                                         else
@@ -621,7 +649,17 @@ namespace bian
                                             if (currentPosition > 0 && timeDelay - currentPosition * 1000 > diff)
                                             {
                                                 await Task.Delay((int)(timeDelay - currentPosition * 1000));
+
+                                                if (!ruleItem.IsMatchMontage(montage.PathName))
+                                                {
+                                                    return;
+                                                }
                                                 DoAction(action, timeLength / playRate);
+                                                return;
+                                            }
+
+                                            if (!ruleItem.IsMatchMontage(montage.PathName))
+                                            {
                                                 return;
                                             }
                                             DoAction(action, timeLength / playRate);
