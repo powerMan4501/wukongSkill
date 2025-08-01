@@ -247,18 +247,14 @@ namespace bian
             new SkillMappingRule { OriginalId = 10801, MappedId = 10701, Condition = SkillMapCondition.StancePoke, desc="戳棍下,棍的平A变成枪平A"},
             new SkillMappingRule { OriginalId = 10801, MappedId = 50011, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
 
-
             new SkillMappingRule { OriginalId = 10802, MappedId = 10702, Condition = SkillMapCondition.StancePoke, desc="戳棍下,棍的平A变成枪平A"},
             new SkillMappingRule { OriginalId = 10802, MappedId = 50012, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
-
 
             new SkillMappingRule { OriginalId = 10803, MappedId = 10703, Condition = SkillMapCondition.StancePoke, desc="戳棍下,棍的平A变成枪平A"},
             new SkillMappingRule { OriginalId = 10803, MappedId = 50013, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
 
-
             new SkillMappingRule { OriginalId = 10804, MappedId = 10704, Condition = SkillMapCondition.StancePoke, desc="戳棍下,棍的平A变成枪平A"},
             new SkillMappingRule { OriginalId = 10804, MappedId = 50014, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
-
 
             new SkillMappingRule { OriginalId = 10805, MappedId = 10715, Condition = SkillMapCondition.StancePoke, desc="戳棍下, Q5变无豆进尺"},
             new SkillMappingRule { OriginalId = 10805, MappedId = 50015, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
@@ -267,23 +263,35 @@ namespace bian
             new SkillMappingRule { OriginalId = 10705, MappedId = 50005, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
             new SkillMappingRule { OriginalId = 10705, MappedId = 50007, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
 
-
             new SkillMappingRule { OriginalId = 10706, MappedId = 50003, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
             new SkillMappingRule { OriginalId = 10706, MappedId = 50005, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
             new SkillMappingRule { OriginalId = 10706, MappedId = 50007, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
-
-
 
             new SkillMappingRule { OriginalId = 10707, MappedId = 50004, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
             new SkillMappingRule { OriginalId = 10707, MappedId = 50006, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
             new SkillMappingRule { OriginalId = 10707, MappedId = 50008, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
             new SkillMappingRule { OriginalId = 10707, MappedId = 50002, Condition = SkillMapCondition.any,  desc="10705转成大圣Q1切手"},
 
-
             new SkillMappingRule { OriginalId = 10708, MappedId = 50004, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
             new SkillMappingRule { OriginalId = 10708, MappedId = 50006, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
             new SkillMappingRule { OriginalId = 10708, MappedId = 50008, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
             new SkillMappingRule { OriginalId = 10708, MappedId = 50002, Condition = SkillMapCondition.any, desc="10705转成大圣Q1切手"},
+
+            new SkillMappingRule { OriginalId = 10713, MappedId = 50003, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
+            new SkillMappingRule { OriginalId = 10713, MappedId = 50005, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
+            new SkillMappingRule { OriginalId = 10713, MappedId = 50007, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
+
+            new SkillMappingRule { OriginalId = 10714, MappedId = 50004, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
+            new SkillMappingRule { OriginalId = 10714, MappedId = 50006, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
+            new SkillMappingRule { OriginalId = 10714, MappedId = 50008, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
+
+            new SkillMappingRule { OriginalId = 10721, MappedId = 50003, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
+            new SkillMappingRule { OriginalId = 10721, MappedId = 50005, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
+            new SkillMappingRule { OriginalId = 10721, MappedId = 50007, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
+
+            new SkillMappingRule { OriginalId = 10723, MappedId = 50004, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="转成大圣Q2切手"},
+            new SkillMappingRule { OriginalId = 10723, MappedId = 50006, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="转成大圣Q3切手"},
+            new SkillMappingRule { OriginalId = 10723, MappedId = 50008, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="转成大圣Q4切手"},
 
 
         };
@@ -307,6 +315,29 @@ namespace bian
             var isLigun = stance == Stance.Prop;
             var isPigun = stance == Stance.Heavy;
 
+
+            // 待定todo
+            if (ID == 10720)
+            {
+                ID = 10721;
+            }
+            if (ID == 10725)
+            {
+                ID = 10724;
+            }
+
+            if (ID == 10706)
+            {
+                ID = 10705;
+            }
+            if (ID == 10708)
+            {
+                ID = 10707;
+            }
+            if (ID == 10715)
+            {
+                ID = 10714;
+            }
             var currentId = ID;
             if (readOnlyData != null)
             {
@@ -344,9 +375,9 @@ namespace bian
                 bufferId = 888666025;
 
             }
+
             if (new int[] { 10705, 10706, 10720, 10721, 50003, 50005, 50007, 50001 }.Contains(ID))
             {
-                Log.Info($"bian: 切手加连招buff SmartCastSkillTryMultiCast -->{ID}");
                 BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);
             }
 

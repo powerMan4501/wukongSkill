@@ -536,11 +536,20 @@ namespace bian
                     targetBase.BaseType = ProjectileBaseType.CurTarget_ProjectileSpawner;
                     targetBase.UseSocket = true;
                     targetBase.SocketName = (FName)"CAMERA_LOCK";
-
                     spawnBase.BaseType = ProjectileBaseType.ProjectileSpawner;
 
                 }
-
+                if (action?.spawnBaseSocketName != null)
+                {
+                    spawnBase.UseSocket = true;
+                    spawnBase.SocketName = (FName)(action?.spawnBaseSocketName);
+                }
+                if (action?.ProjectOffsetPosition?.Count() > 0)
+                {
+                    ProjectileSpawnNSInfo.SpawnPosOffsetInfo.PosOffset.X += action.ProjectOffsetPosition[0];
+                    ProjectileSpawnNSInfo.SpawnPosOffsetInfo.PosOffset.Y += action.ProjectOffsetPosition[1];
+                    ProjectileSpawnNSInfo.SpawnPosOffsetInfo.PosOffset.Z += action.ProjectOffsetPosition[2];
+                }
                 if (isRandom)
                 {
                     offsetInfo.PosOffsetType = ProjectilePosOffsetType.RandomOffset;

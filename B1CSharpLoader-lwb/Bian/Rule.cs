@@ -95,7 +95,9 @@ namespace bian
         public double? ZRate { get; set; }
         public int? returnTime { get; set; }
         public float? backTime { get; set; }
-
+        public string? spawnBaseSocketName { get; set; }
+        public int? intervalTime { get; set; }
+        public List<int> ProjectOffsetPosition { get; set; }
 
 
         public RuleAction()
