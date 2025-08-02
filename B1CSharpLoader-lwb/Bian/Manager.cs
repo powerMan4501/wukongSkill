@@ -308,7 +308,7 @@ namespace bian
 
             new SkillMappingRule { OriginalId = 10723, MappedId = 54321011, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="转成大圣Q2切手"},
             new SkillMappingRule { OriginalId = 10723, MappedId = 54321013, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="转成大圣Q3切手"},
-            new SkillMappingRule { OriginalId = 10723, MappedId = 54321014, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="转成大圣Q4切手"},
+            new SkillMappingRule { OriginalId = 10723, MappedId = 54321015, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="转成大圣Q4切手"},
 
 
         };
