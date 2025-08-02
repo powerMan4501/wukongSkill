@@ -190,7 +190,7 @@
 
     {
       "Name": "大圣招，转身定的接招，跳起来砸",
-      "speedRate": 1.5,
+      "speedRate": 2,
       "Filters": [
         {
           "Type": "montage",
@@ -208,7 +208,7 @@
           "ProjectTileID": 74011107,
           "OffsetX": 600,
           "OffsetY": 600,
-          "TimeDelay": 900,
+          "TimeDelay": 800,
           "desc": "金沙"
         }
       ]
