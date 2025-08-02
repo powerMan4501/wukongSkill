@@ -222,7 +222,15 @@ namespace bian
                 var timeLength = SkillMontage.GetPlayLength() * 1000;
 
 
-
+                UAnimInstance? animInstance = null;
+                try
+                {
+                    animInstance = character.Mesh.GetAnimInstance();
+                }
+                catch (System.Exception e)
+                {
+                    Console.WriteLine($"获取动画实例出错${e.Message} {e.StackTrace}");
+                }
                 var finalBackTime = backTime;
                 Task.Run(async delegate
                 {
@@ -232,25 +240,20 @@ namespace bian
                     // 递归等待函数
                     async Task WaitForAnimation()
                     {
-                        UAnimInstance? animInstance = null;
-                        try
-                        {
-                            animInstance = character.Mesh.GetAnimInstance();
-                        }
-                        catch (System.Exception e)
-                        {
-                            Console.WriteLine($"获取动画实例出错${e.Message} {e.StackTrace}");
-                        }
+
                         if (animInstance == null) return;
 
                         var currentMontage = animInstance.GetCurrentActiveMontage();
                         if (currentMontage == null) return;
 
+
                         var currentPosition = animInstance.Montage_GetPosition(currentMontage);
                         var currentLength = currentMontage.GetPlayLength() * 1000;
-                        var remainingTime = (int)Math.Max(0, currentLength - currentPosition);
+                        var diff = currentLength * 0.1;
+                        var remainingTime = (int)Math.Max(0, currentLength - currentPosition - diff);
 
-                        if (remainingTime > 0)
+                        // 如果这期间用了精魄的其他技能，就等技能放完再退出精魄
+                        if (SkillMontage.PathName != currentMontage.PathName && remainingTime > 0)
                         {
                             await Task.Delay(remainingTime);
                             await WaitForAnimation(); // 递归检查下一段动画
