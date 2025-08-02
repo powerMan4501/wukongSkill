@@ -650,17 +650,17 @@ namespace bian
                             character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(-800, 0, -1);
                             Helper.CastVigorSkillByID(character, skill.Id, backTime);
                         });
-                        await Task.Delay(backTime);
 
-                        Utils.TryRunOnGameThread((Action)delegate
-                        {
-                            var character = Helper.GetBGUPlayerCharacterCS();
-                            BUS_MagicallyChangeComp magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
-                            Helper.ResetVigorSkill(magicChangeComp, skill.Id);
-                            character = Helper.GetBGUPlayerCharacterCS();
-                            BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10199, ECastSkillSourceType.GM));
-                            character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(0, 0, 0);
-                        });
+                        // await Task.Delay(backTime);
+                        // Utils.TryRunOnGameThread((Action)delegate
+                        // {
+                        //     var character = Helper.GetBGUPlayerCharacterCS();
+                        //     BUS_MagicallyChangeComp magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
+                        //     Helper.ResetVigorSkill(magicChangeComp, skill.Id);
+                        //     character = Helper.GetBGUPlayerCharacterCS();
+                        //     // BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10199, ECastSkillSourceType.GM));
+                        //     character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(0, 0, 0);
+                        // });
 
                     }
                     catch (System.Exception e)
