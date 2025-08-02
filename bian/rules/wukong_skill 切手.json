@@ -86,7 +86,7 @@
           "TimeDelay": 1250,
           "buffs": [
             {
-              "BuffID": 1000801,
+              "BuffID": 888666026,
               "BuffTime": 200,
               "desc": "直接时缓"
             }

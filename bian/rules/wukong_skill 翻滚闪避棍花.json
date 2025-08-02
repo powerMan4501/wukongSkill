@@ -79,9 +79,8 @@
               "noBuffsCondition": [888666007, 888666006, 888666008],
               "SpeedLeftValue": 6000,
               "SpeedRightValue": 6000,
-              "ProjectOffsetPosition":[500, 500, 500],
+           
               "ForTarget": true,
-              "spawnBaseSocketName": "weapon_wei",
               "desc": "没有冰火毒buff，金色剑气"
             },
             {
@@ -180,10 +179,9 @@
       ],
       "AfterActions": [
         {
-          "TimeDelay": 420,
           "Type": "buff",
           "BuffIDs": [103, 888666004],
-          "BuffTime": 200,
+          "BuffTime": 100,
           "desc": "喝药，回血"
         }
       ]

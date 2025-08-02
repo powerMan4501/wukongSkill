@@ -15,8 +15,8 @@
       "AfterActions": [
         {
           "Type": "bullet",
-          "TimeDelay": 100,
-          "intervalTime": 100,
+          "TimeDelay": 180,
+          "intervalTime": 50,
           "intervalTimes": 3,
           "bullets": [
             {

@@ -738,7 +738,7 @@
     {
       "Key": "S+S",
       "Type": "ADD_BUFF",
-      "Buffers": [1000190],
+      "Buffers": [1000190,103],
       "Name": "敌人巨猿",
       "AlawaysCanCast": true
     },

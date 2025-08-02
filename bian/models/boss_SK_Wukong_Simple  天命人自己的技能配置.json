@@ -115,13 +115,13 @@
       "Key": "A+RBUTTON"
     },
     {
-      "Id": 10713,
+      "Id": 54321002,
       "CanBreak": true,
       "Name": "退寸",
       "Key": "XBUTTON1"
     },
     {
-      "Id": 10714,
+      "Id": 54321003,
       "CanBreak": true,
       "Name": "进尺",
       "Key": "XBUTTON2"
