@@ -221,18 +221,9 @@ namespace bian
 
                 var timeLength = SkillMontage.GetPlayLength() * 1000;
 
-                UAnimInstance? animInstance = null;
-                try
-                {
-                    animInstance = character.Mesh.GetAnimInstance();
-                }
-                catch (System.Exception e)
-                {
-                    Console.WriteLine($"获取动画实例出错${e.Message} {e.StackTrace}");
 
-                }
 
-                var finalBackTime = timeLength > backTime ? timeLength : backTime;
+                var finalBackTime = backTime;
                 Task.Run(async delegate
                 {
                     await Task.Delay((int)finalBackTime);
@@ -241,6 +232,15 @@ namespace bian
                     // 递归等待函数
                     async Task WaitForAnimation()
                     {
+                        UAnimInstance? animInstance = null;
+                        try
+                        {
+                            animInstance = character.Mesh.GetAnimInstance();
+                        }
+                        catch (System.Exception e)
+                        {
+                            Console.WriteLine($"获取动画实例出错${e.Message} {e.StackTrace}");
+                        }
                         if (animInstance == null) return;
 
                         var currentMontage = animInstance.GetCurrentActiveMontage();

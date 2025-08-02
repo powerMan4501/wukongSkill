@@ -604,10 +604,10 @@ namespace bian
                                         // 获取动画当前播放时间
                                         currentPosition = animInstance.Montage_GetPosition(montage);
                                     }
-
-                                    if (ruleItem != null && montage != null)
+                                    var nowMontage = animInstance.GetCurrentActiveMontage();
+                                    if (ruleItem != null && montage != null && nowMontage != null)
                                     {
-                                        if (!ruleItem.IsMatchMontage(montage.PathName))
+                                        if (!ruleItem.IsMatchMontage(nowMontage.PathName))
                                         {
                                             return;
                                         }
@@ -616,7 +616,8 @@ namespace bian
                                         Console.WriteLine($"执行action currentPosition：{currentPosition * 1000} timeDelay-diff:{timeDelay - diff}--timeDelay：{timeDelay} ");
                                         if (currentPosition > 0 && currentPosition * 1000 >= timeDelay - diff)
                                         {
-                                            if (!ruleItem.IsMatchMontage(montage.PathName))
+                                            nowMontage = animInstance.GetCurrentActiveMontage();
+                                            if (nowMontage != null && !ruleItem.IsMatchMontage(nowMontage.PathName))
                                             {
                                                 return;
                                             }
@@ -633,7 +634,8 @@ namespace bian
                                                 var currentPosition1 = animInstance.Montage_GetPosition(montage);
                                                 var times = action?.intervalTimes > 0 ? action?.intervalTimes : num / intervalTime;
                                                 var loopTimes = 0;
-                                                while (ruleItem.IsMatchMontage(montage.PathName) && times > loopTimes)
+                                                nowMontage = animInstance.GetCurrentActiveMontage();
+                                                while (nowMontage != null && ruleItem.IsMatchMontage(nowMontage.PathName) && times > loopTimes)
                                                 {
                                                     await Task.Delay((int)intervalTime); // 等待指定时间
                                                     DoAction(action, timeLength / playRate);
@@ -649,16 +651,16 @@ namespace bian
                                             if (currentPosition > 0 && timeDelay - currentPosition * 1000 > diff)
                                             {
                                                 await Task.Delay((int)(timeDelay - currentPosition * 1000));
-
-                                                if (!ruleItem.IsMatchMontage(montage.PathName))
+                                                nowMontage = animInstance.GetCurrentActiveMontage();
+                                                if (nowMontage != null && !ruleItem.IsMatchMontage(nowMontage.PathName))
                                                 {
                                                     return;
                                                 }
                                                 DoAction(action, timeLength / playRate);
                                                 return;
                                             }
-
-                                            if (!ruleItem.IsMatchMontage(montage.PathName))
+                                            nowMontage = animInstance.GetCurrentActiveMontage();
+                                            if (nowMontage != null && !ruleItem.IsMatchMontage(nowMontage.PathName))
                                             {
                                                 return;
                                             }
