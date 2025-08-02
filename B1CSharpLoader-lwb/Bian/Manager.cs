@@ -99,10 +99,22 @@ namespace bian
         {
             if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]RequestSpawnAProjectile"))
             {
-                if (ProjectileSpawnInfo.ProjectileID == 1085601)
+
+                if (IsPlayer(ProjectileSpawnInfo.Spawner.PathName))
                 {
-                    Log.Info($"RequestSpawnAProjectile 飞棍 SkillID:{ProjectileSpawnInfo.SkillID} SpawnPosition:{ProjectileSpawnInfo.SpawnPosition}");
+                    if (ProjectileSpawnInfo.ProjectileID == 44051501)
+                    {
+                        var playerLocation = ProjectileSpawnInfo.Spawner.GetActorLocation();
+                        var xyz = ProjectileSpawnInfo.Spawner.GetActorForwardVector();
+                        var forwardVector = ProjectileSpawnInfo.Spawner.GetActorForwardVector();
+                        forwardVector.Y *= 800;  // 只在Y轴方向增加800单位
+                        forwardVector.X *= 800;  // 只在X轴方向增加800单位
+                        ProjectileSpawnInfo.SpawnPosition = playerLocation + forwardVector;
+                        Log.Info($"夜叉王飞轮子弹Y+800   forwardVector:{forwardVector} SpawnPosition:{ProjectileSpawnInfo.SpawnPosition}");
+                    }
+
                 }
+
             }
 
         }

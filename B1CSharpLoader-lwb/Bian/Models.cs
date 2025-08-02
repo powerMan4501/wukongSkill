@@ -647,7 +647,7 @@ namespace bian
                         }
                         Utils.TryRunOnGameThread((Action)delegate
                         {
-                            character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(-1000, 0, 100);
+                            character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(-800, 0, -1);
                             Helper.CastVigorSkillByID(character, skill.Id, backTime);
                         });
                         await Task.Delay(backTime);
@@ -883,7 +883,10 @@ namespace bian
                         {
 
                             originLocation = character_.GetActorLocation();
-                            BGUFunctionLibraryCS.BGUAddBuff(character_, character_, 1000168, EBuffSourceType.GM, keyItem.BuffTime ?? 1000);
+                            var targetLocation = target.GetActorLocation();
+                            targetLocation.X -= 200;
+                            character_.Teleport(targetLocation, character_.GetActorRotation());
+                            // BGUFunctionLibraryCS.BGUAddBuff(character_, character_, 888666028, EBuffSourceType.GM, keyItem.BuffTime ?? 1000);
                             return;
                         }
                         // Helper.SpawnProjectile(character_, "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'", 88880001, true, 1, false, new FVector(0, 0, 0), null);
