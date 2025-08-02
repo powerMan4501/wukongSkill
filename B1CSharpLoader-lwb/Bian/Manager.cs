@@ -289,13 +289,13 @@ namespace bian
             new SkillMappingRule { OriginalId = 10708, MappedId = 50008, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
             new SkillMappingRule { OriginalId = 10708, MappedId = 50002, Condition = SkillMapCondition.any, desc="10705转成大圣Q1切手"},
 
-            new SkillMappingRule { OriginalId = 10713, MappedId = 50003, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
-            new SkillMappingRule { OriginalId = 10713, MappedId = 50005, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
+            new SkillMappingRule { OriginalId = 10713, MappedId = 54321001, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="后退版jxsq"},
+            new SkillMappingRule { OriginalId = 10713, MappedId = 10519, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="完美定身"},
             new SkillMappingRule { OriginalId = 10713, MappedId = 50007, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
 
-            new SkillMappingRule { OriginalId = 10714, MappedId = 50004, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
-            new SkillMappingRule { OriginalId = 10714, MappedId = 50006, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
-            new SkillMappingRule { OriginalId = 10714, MappedId = 50008, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
+            new SkillMappingRule { OriginalId = 10714, MappedId = 1001247, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="射箭"},
+            new SkillMappingRule { OriginalId = 10714, MappedId = 1001233, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="残躯蓄力戳棍"},
+            new SkillMappingRule { OriginalId = 10714, MappedId = 1001224, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="残躯捅一下空中横扫很多下"},
 
             new SkillMappingRule { OriginalId = 10721, MappedId = 50003, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
             new SkillMappingRule { OriginalId = 10721, MappedId = 50005, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
