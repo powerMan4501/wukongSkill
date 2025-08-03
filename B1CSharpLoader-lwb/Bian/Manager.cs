@@ -202,7 +202,9 @@ namespace bian
                 if (BuffID == 287 || BuffID == 293)
                 {
                     // 劈棍和戳棍识破buff增加到0.9秒
-                    Duration = 900;
+                    Duration = 1000;
+                    BGUFunctionLibraryCS.BGUAddBuff(RootCaster, RootCaster, 218, EBuffSourceType.GM, Duration);//给识破buff加无敌
+                    //218
                     Log.Info($"buff {BuffID} add  ,Duration:{Duration} RootCaster:{RootCaster.PathName}");
                 }
 
