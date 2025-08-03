@@ -11,6 +11,9 @@ using System.Collections.Generic;
 using System;
 using BtlShare;
 using ArchiveB1;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 public enum SkillMapCondition
 {
@@ -68,6 +71,11 @@ namespace bian
             Manager.GetModelManager().InitConfig();
             Manager.GetModelManager().BindEvents();
 
+
+            // 加载技能映射规则
+            string configPath = Path.Combine("CSharpLoader", "Mods", "bian", "skillMaping");
+            LoadAllSkillMappingRules(configPath);
+
             if (harmony == null)
             {
                 harmony = new Harmony("mod.reece.bian");
@@ -93,6 +101,72 @@ namespace bian
             }
             return currentMontage;
         }
+
+        private static List<SkillMappingRule> AllSkillMappingRules = new List<SkillMappingRule>();
+        private static List<SkillMappingRule> LoadSkillMappingRulesFromJson(string filePath)
+        {
+            try
+            {
+                string jsonContent = File.ReadAllText(filePath);
+
+                // 配置JsonSerializer以正确处理枚举
+                var settings = new JsonSerializerSettings
+                {
+                    Converters = new List<JsonConverter> { new StringEnumConverter() }
+                };
+
+                var rules = JsonConvert.DeserializeObject<List<SkillMappingRule>>(jsonContent, settings);
+                return rules ?? new List<SkillMappingRule>();
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Failed to load skill mapping rules from {filePath}: {ex.Message}");
+                return new List<SkillMappingRule>();
+            }
+        }
+
+        public static void LoadAllSkillMappingRules(string configDirectory)
+        {
+            if (!Directory.Exists(configDirectory))
+            {
+                Log.Error($"Config directory not found: {configDirectory}");
+                // 尝试创建目录
+                try
+                {
+                    Directory.CreateDirectory(configDirectory);
+                    Log.Info($"Created config directory: {configDirectory}");
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Failed to create config directory: {ex.Message}");
+                    return;
+                }
+            }
+
+            // 清空现有规则
+            AllSkillMappingRules.Clear();
+
+            // 加载所有JSON文件
+            foreach (string file in Directory.GetFiles(configDirectory, "*.json"))
+            {
+                try
+                {
+                    var rules = LoadSkillMappingRulesFromJson(file);
+                    Log.Info($"Loaded {rules.Count} rules from {Path.GetFileName(file)}");
+                    // 直接将规则添加到总列表中，不需要分类
+                    AllSkillMappingRules.AddRange(rules);
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Error loading rules from {file}: {ex.Message}");
+                }
+            }
+
+            Log.Info($"Total loaded rules: {AllSkillMappingRules.Count}");
+        }
+
+
+
         [HarmonyPatch(typeof(GSDel_RequestSpawnAProjectile), "Invoke")]
         [HarmonyPrefix]
         private static void GSDel_RequestSpawnAProjectileInvoke(ref FGSProjectileSpawnInfo ProjectileSpawnInfo)
@@ -125,8 +199,11 @@ namespace bian
         {
             if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]BuffAdd_Multicast"))
             {
-                if (BuffID != 1015)
+                if (BuffID == 287 || BuffID == 293)
                 {
+                    // 劈棍和戳棍识破buff增加到0.9秒
+                    Duration = 900;
+                    Log.Info($"buff {BuffID} add  ,Duration:{Duration} RootCaster:{RootCaster.PathName}");
                 }
 
             }
@@ -254,82 +331,6 @@ namespace bian
         }
 
 
-        private static readonly List<SkillMappingRule> SkillMappingRules = new List<SkillMappingRule>
-        {
-            new SkillMappingRule { OriginalId = 10801, MappedId = 10701, Condition = SkillMapCondition.StancePoke, desc="戳棍下,棍的平A变成枪平A"},
-            new SkillMappingRule { OriginalId = 10801, MappedId = 50011, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
-
-            new SkillMappingRule { OriginalId = 10802, MappedId = 10702, Condition = SkillMapCondition.StancePoke, desc="戳棍下,棍的平A变成枪平A"},
-            new SkillMappingRule { OriginalId = 10802, MappedId = 50012, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
-
-            new SkillMappingRule { OriginalId = 10803, MappedId = 10703, Condition = SkillMapCondition.StancePoke, desc="戳棍下,棍的平A变成枪平A"},
-            new SkillMappingRule { OriginalId = 10803, MappedId = 50013, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
-
-            new SkillMappingRule { OriginalId = 10804, MappedId = 10704, Condition = SkillMapCondition.StancePoke, desc="戳棍下,棍的平A变成枪平A"},
-            new SkillMappingRule { OriginalId = 10804, MappedId = 50014, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
-
-            new SkillMappingRule { OriginalId = 10805, MappedId = 10715, Condition = SkillMapCondition.StancePoke, desc="戳棍下, Q5变无豆进尺"},
-            new SkillMappingRule { OriginalId = 10805, MappedId = 50015, Condition = SkillMapCondition.any, desc="无条件，转成大圣平A"},
-
-            new SkillMappingRule { OriginalId = 10705, MappedId = 54321016, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
-            new SkillMappingRule { OriginalId = 10705, MappedId = 54321018, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
-            new SkillMappingRule { OriginalId = 10705, MappedId = 54321020, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
-
-
-            new SkillMappingRule { OriginalId = 50002, MappedId = 54321017, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
-            new SkillMappingRule { OriginalId = 50002, MappedId = 54321019, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
-            new SkillMappingRule { OriginalId = 50002, MappedId = 54321021, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
-
-
-            new SkillMappingRule { OriginalId = 10713, MappedId = 54321004, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="2a退寸转化，后退版jxsq"},
-            new SkillMappingRule { OriginalId = 10713, MappedId = 54321006, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="2a退寸转化，完美定身"},
-            new SkillMappingRule { OriginalId = 10713, MappedId = 54321008, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="2a退寸转化，"},
-
-            new SkillMappingRule { OriginalId = 10714, MappedId = 54321005, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="2a进尺转化，"},
-            new SkillMappingRule { OriginalId = 10714, MappedId = 54321007, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="2a进尺转化，"},
-            new SkillMappingRule { OriginalId = 10714, MappedId = 54321009, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="2a进尺转化，"},
-
-            new SkillMappingRule { OriginalId = 10870, MappedId = 54321005, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="戳棍蓄力start0，2a转化"},
-            new SkillMappingRule { OriginalId = 10870, MappedId = 54321007, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="戳棍蓄力start0，3a转化"},
-            new SkillMappingRule { OriginalId = 10870, MappedId = 54321009, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="戳棍蓄力start0，4a转化"},
-
-            new SkillMappingRule { OriginalId = 10871, MappedId = 54321005, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="戳棍蓄力start0，2a转化"},
-            new SkillMappingRule { OriginalId = 10871, MappedId = 54321007, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="戳棍蓄力start0，3a转化"},
-            new SkillMappingRule { OriginalId = 10871, MappedId = 54321009, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="戳棍蓄力start0，4a转化"},
-
-
-            new SkillMappingRule { OriginalId = 10872, MappedId = 54321005, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="戳棍蓄力start0，2a转化"},
-            new SkillMappingRule { OriginalId = 10872, MappedId = 54321007, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="戳棍蓄力start0，3a转化"},
-            new SkillMappingRule { OriginalId = 10872, MappedId = 54321009, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="戳棍蓄力start0，4a转化"},
-
-            new SkillMappingRule { OriginalId = 10721, MappedId = 54321010, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="10705转成大圣Q2切手"},
-            new SkillMappingRule { OriginalId = 10721, MappedId = 54321012, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="10705转成大圣Q3切手"},
-            new SkillMappingRule { OriginalId = 10721, MappedId = 54321014, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="10705转成大圣Q4切手"},
-
-            new SkillMappingRule { OriginalId = 10723, MappedId = 54321011, Condition = SkillMapCondition.hasBuff, conditionValue=888666022, desc="转成大圣Q2切手"},
-            new SkillMappingRule { OriginalId = 10723, MappedId = 54321013, Condition = SkillMapCondition.hasBuff, conditionValue=888666023, desc="转成大圣Q3切手"},
-            new SkillMappingRule { OriginalId = 10723, MappedId = 54321015, Condition = SkillMapCondition.hasBuff, conditionValue=888666024, desc="转成大圣Q4切手"},
-
-
-        };
-
-
-        private static readonly List<SkillMappingRule> SkillMappingRules_tuichun = new List<SkillMappingRule>
-        {
-            new SkillMappingRule { OriginalId = 54321002, MappedId = 50001, Condition = SkillMapCondition.StanceHeavy, desc="劈棍下，变大圣切手1"},
-            new SkillMappingRule { OriginalId = 54321002, MappedId = 10721, Condition = SkillMapCondition.StanceProp, desc="立棍下，变风云转"},
-            new SkillMappingRule { OriginalId = 54321002, MappedId = 10713, Condition = SkillMapCondition.StancePoke, desc="戳棍下,变退寸"},
-        };
-
-        private static readonly List<SkillMappingRule> SkillMappingRules_jinchi = new List<SkillMappingRule>
-        {
-            new SkillMappingRule { OriginalId = 54321003, MappedId = 50002, Condition = SkillMapCondition.StanceHeavy, desc="劈棍下，变大圣10707"},
-            new SkillMappingRule { OriginalId = 54321003, MappedId = 10724, Condition = SkillMapCondition.StanceProp, desc="立棍下，变风云转"},
-            new SkillMappingRule { OriginalId = 54321003, MappedId = 10714, Condition = SkillMapCondition.StancePoke, desc="戳棍下,变退寸"},
-        };
-
-
-
         private static bool IsSkillMappingRuleMatch(SkillMappingRule rule, BGUCharacterCS character, bool isChuogun, bool isLigun, bool isPigun, BGUCharacterCS target = null)
         {
             // 姿态条件判断
@@ -354,6 +355,7 @@ namespace bian
             // 返回任意一个条件匹配即为true
             return stanceMatch || buffMatch || distanceMatch || anyMatch;
         }
+
 
 
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_SmartCastSkillTryMultiCast_Implementation")]
@@ -436,50 +438,35 @@ namespace bian
 
             }
 
+
+
             if (new int[] { 10705, 10706, 10720, 10721, 50003, 50005, 50007, 50001 }.Contains(ID))
             {
-                BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);
+                BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);//切手连招
+                BGUFunctionLibraryCS.BGUAddBuff(character, character, 888666018, EBuffSourceType.GM, 800);//识破buff
             }
+
+
+            // if (new int[] { 10707, 50002, 50004, 50006, 50008, 10714, 10724, 10723 }.Contains(ID))
+            // {
+            //     // 移除buff
+            //     List<int> attack_buffers = [888666021, 888666022, 888666023, 888666024, 888666025];
+            //     foreach (var buffer in attack_buffers)
+            //     {
+            //         BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, buffer, EBuffEffectTriggerType.Remove);
+            //     }
+            // }
 
             if (bufferId > 0)
             {
                 BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 4000);
             }
-
-            var applicableRules = SkillMappingRules.Where(r => r.OriginalId == currentId);
-            if (applicableRules.Count() > 0)
+            // 遍历所有规则
+            var mapArr = AllSkillMappingRules.Where(r => r.OriginalId == currentId);
+            if (mapArr.Count() > 0)
             {
                 var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
-                var matchItem = applicableRules.FirstOrDefault(r => IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
-
-                if (matchItem != null)
-                {
-                    ID = matchItem.MappedId;
-                }
-            }
-
-
-            if (ID == 54321002)
-            {
-                // 侧键退寸
-
-                var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
-                var matchItem = SkillMappingRules_tuichun.FirstOrDefault(r => IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
-
-                Log.Info($"匹配 {ID}, 棍法 {stance},{matchItem}");
-                if (matchItem != null)
-                {
-                    ID = matchItem.MappedId;
-                }
-            }
-
-            if (ID == 54321003)
-            {
-                // 侧键进尺
-
-                var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
-                var matchItem = SkillMappingRules_jinchi.FirstOrDefault(r => IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
-
+                var matchItem = mapArr.FirstOrDefault(r => IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
                 if (matchItem != null)
                 {
                     ID = matchItem.MappedId;
