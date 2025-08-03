@@ -1,0 +1,16 @@
+[
+  {
+    "OriginalId": 10801,
+    "MappedId": 10701,
+    "Condition": "StancePoke",
+    "conditionValue": null,
+    "desc": "戳棍下,棍的平A1变成枪平A"
+  },
+  {
+    "OriginalId": 10801,
+    "MappedId": 50011,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "无条件，棍的平A1转成大圣平A"
+  }
+]

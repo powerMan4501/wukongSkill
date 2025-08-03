@@ -16,12 +16,12 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [152, 50051029, 2403471],
+          "ProjectTileIDs": [152, 50051029, 2403471, 39010112],
           "TimeDelay": 600,
           "noBuffCondition": 888666007,
           "OffsetX": 600,
           "OffsetY": 600,
-          "desc": "没火buff,地波, 电圈,冰暴"
+          "desc": "没火buff,地波, 电圈,冰暴，青背龙雷暴"
         },
 
         {
@@ -51,12 +51,12 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [50051029, 2403471],
+          "ProjectTileIDs": [50051029, 2403471, 39010112],
           "TimeDelay": 600,
           "noBuffCondition": 888666007,
           "OffsetX": 600,
           "OffsetY": 600,
-          "desc": "没火buff就电圈/冰暴"
+          "desc": "没火buff就电圈/冰暴/青背龙雷暴"
         },
 
         {

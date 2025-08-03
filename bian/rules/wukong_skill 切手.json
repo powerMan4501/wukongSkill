@@ -5,7 +5,7 @@
     {
       "Name": "10705",
       "Description": "劈棍切手技",
-      "skillID_fs": 1001111,
+      "skillID_fs": 10705,
       "Filters": [
         {
           "Type": "montage",
@@ -19,7 +19,7 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [5014, 888666018],
+          "BuffIDs": [5014],
           "BuffTime": 1000,
           "desc": "棍光特效粒子"
         },
@@ -65,7 +65,7 @@
     {
       "Name": "10707",
       "Description": "斩棍",
-      "skillID_fs": 10708,
+      "skillID_fs": 10707,
       "Filters": [
         {
           "Type": "montage",
@@ -132,7 +132,8 @@
     },
 
     {
-      "Name": "大圣招，287识破 289连招buff",
+      "Name": "大圣招， 289连招buff",
+      "skillID_fs": 50005,
       "Filters": [
         {
           "Type": "montage",
@@ -142,13 +143,13 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [888666018, 289, 5081],
+          "BuffIDs": [289, 5081],
           "desc": "识破buff，接招buff，棍光粒子"
         }
       ]
     },
     {
-      "Name": "大圣招，287识破 289连招buff",
+      "Name": "大圣招， 289连招buff",
       "Filters": [
         {
           "Type": "montage",
@@ -158,7 +159,7 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [888666018, 289],
+          "BuffIDs": [289],
           "desc": "识破buff，接招buff"
         }
       ]
@@ -166,6 +167,7 @@
     {
       "Name": "大圣招，转身定，发射激光",
       "speedRate": 1.5,
+      "skillID_fs": 10705,
       "Filters": [
         {
           "Type": "montage",
@@ -175,7 +177,7 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [888666018, 289]
+          "BuffIDs": [289]
         },
         {
           "Type": "bullet",
@@ -191,6 +193,7 @@
     {
       "Name": "大圣招，转身定的接招，跳起来砸",
       "speedRate": 2,
+      "skillID_fs": 10707,
       "Filters": [
         {
           "Type": "montage",
@@ -216,6 +219,7 @@
     {
       "Name": "2a切手",
       "Description": "",
+      "skillID_fs": 50003,
       "Filters": [
         {
           "Type": "montage",
@@ -255,15 +259,16 @@
         },
         {
           "Type": "buff",
-          "BuffIDs": [888666018, 289, 5072],
+          "BuffIDs": [289, 5072],
           "desc": "识破buff，接招buff，棍光粒子"
         }
       ]
     },
 
     {
-      "Name": "残躯横扫一下捅一下，召唤横向金箍棒",
+      "Name": "残躯横扫一下捅一下",
       "Description": "",
+      "skillID_fs": 50003,
       "speedRate": 1.4,
       "Filters": [
         {
@@ -307,7 +312,7 @@
         },
         {
           "Type": "buff",
-          "BuffIDs": [888666018, 289, 5072],
+          "BuffIDs": [289, 5072],
           "desc": "识破buff，接招buff，棍光粒子"
         }
       ]
@@ -315,6 +320,7 @@
     {
       "Name": "风云转改成，空中小风车",
       "Description": "",
+      "skillID_fs": 10707,
       "Filters": [
         {
           "Type": "montage",
@@ -324,7 +330,7 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [888666018, 289]
+          "BuffIDs": [289]
         },
 
         {
@@ -643,13 +649,6 @@
       "AfterActions": [
         {
           "Type": "bullet",
-          "buffs": [
-            {
-              "BuffID": 888666018,
-              "BuffTime": 2000,
-              "desc": "立棍增加识破"
-            }
-          ],
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",

@@ -4,6 +4,7 @@
     {
       "Name": "蓄力戳棍全屏地火",
       "Description": "",
+      "speedRate": 1.3,
       "skillID_fs": 1001143,
       "Filters": [
         {
@@ -14,36 +15,28 @@
       "AfterActions": [
         {
           "Type": "bullet",
+          "TimeDelay": 1100,
           "bullets": [
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileID": 74010202,
-              "TimeDelay": 1280,
-              "noBuffCondition": 888666006,
-              "desc": "没冰buff就地火"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileID": 152,
-              "TimeDelay": 1280,
-              "buffCondition": 888666006,
-              "desc": "有冰buff就地波"
-            },
             {
               "Type": "bullet",
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
               "ProjectTileID": 1016262,
-              "ForTarget": true,
-              "TimeDelay": 1280
+              "ForTarget": true
             }
           ]
         },
-
         {
           "Type": "buff",
-          "BuffID": 5063,
-          "TimeDelay": 500,
-          "BuffTime": 1100
+          "BuffIDs": [888666026],
+          "BuffTime": 100,
+           "TimeDelay": 1100,
+          "desc": "时缓"
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [5063],
+          "BuffTime": 1400,
+          "desc": "棍光"
         }
       ]
     },

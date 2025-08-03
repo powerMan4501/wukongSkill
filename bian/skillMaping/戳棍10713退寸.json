@@ -1,0 +1,23 @@
+[ 
+  {
+    "OriginalId": 10713,
+    "MappedId": 54321004,
+    "Condition": "hasBuff",
+    "conditionValue": 888666022,
+    "desc": "2a退寸转化，后退版jxsq"
+  },
+  {
+    "OriginalId": 10713,
+    "MappedId": 54321006,
+    "Condition": "hasBuff",
+    "conditionValue": 888666023,
+    "desc": "2a退寸转化，完美定身"
+  },
+  {
+    "OriginalId": 10713,
+    "MappedId": 54321008,
+    "Condition": "hasBuff",
+    "conditionValue": 888666024,
+    "desc": "2a退寸转化，"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "OriginalId": 10705,
+    "MappedId": 54321016,
+    "Condition": "hasBuff",
+    "conditionValue": 888666022,
+    "desc": "10705转成大圣Q2切手"
+  },
+  {
+    "OriginalId": 10705,
+    "MappedId": 54321018,
+    "Condition": "hasBuff",
+    "conditionValue": 888666023,
+    "desc": "10705转成大圣Q3切手"
+  },
+  {
+    "OriginalId": 10705,
+    "MappedId": 54321020,
+    "Condition": "hasBuff",
+    "conditionValue": 888666024,
+    "desc": "10705转成大圣Q4切手"
+  }
+]

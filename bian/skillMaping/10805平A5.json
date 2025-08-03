@@ -1,0 +1,16 @@
+[
+  {
+    "OriginalId": 10805,
+    "MappedId": 10715,
+    "Condition": "StancePoke",
+    "conditionValue": null,
+    "desc": "戳棍下, Q5变无豆进尺"
+  },
+  {
+    "OriginalId": 10805,
+    "MappedId": 50015,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "无条件，转成大圣平A"
+  }
+]

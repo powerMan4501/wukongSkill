@@ -1,0 +1,44 @@
+[
+  {
+    "OriginalId": 10814,
+    "MappedId": 10863,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "3/4蓄start，转成3/4蓄攻击"
+  },
+  {
+    "OriginalId": 10815,
+    "MappedId": 10864,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "3/4蓄start，转成3/4蓄攻击"
+  },
+  {
+    "OriginalId": 10838,
+    "MappedId": 10833,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "3/4蓄start，转成3/4蓄攻击"
+  },
+  {
+    "OriginalId": 10839,
+    "MappedId": 10834,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "3/4蓄start，转成3/4蓄攻击"
+  },
+  {
+    "OriginalId": 10873,
+    "MappedId": 10889,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "3/4蓄start，转成3/4蓄攻击"
+  },
+  {
+    "OriginalId": 10874,
+    "MappedId": 10890,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "3/4蓄start，转成3/4蓄攻击"
+  }
+]

@@ -1,0 +1,22 @@
+[{
+    "OriginalId": 10714,
+    "MappedId": 54321005,
+    "Condition": "hasBuff",
+    "conditionValue": 888666022,
+    "desc": "2a进尺转化，"
+  },
+  {
+    "OriginalId": 10714,
+    "MappedId": 54321007,
+    "Condition": "hasBuff",
+    "conditionValue": 888666023,
+    "desc": "2a进尺转化，"
+  },
+  {
+    "OriginalId": 10714,
+    "MappedId": 54321009,
+    "Condition": "hasBuff",
+    "conditionValue": 888666024,
+    "desc": "2a进尺转化，"
+  }
+]

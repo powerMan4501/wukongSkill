@@ -1,0 +1,65 @@
+[
+  {
+    "OriginalId": 10870,
+    "MappedId": 54321005,
+    "Condition": "hasBuff",
+    "conditionValue": 888666022,
+    "desc": "戳棍蓄力start0，2a转化"
+  },
+  {
+    "OriginalId": 10870,
+    "MappedId": 54321007,
+    "Condition": "hasBuff",
+    "conditionValue": 888666023,
+    "desc": "戳棍蓄力start0，3a转化"
+  },
+  {
+    "OriginalId": 10870,
+    "MappedId": 54321009,
+    "Condition": "hasBuff",
+    "conditionValue": 888666024,
+    "desc": "戳棍蓄力start0，4a转化"
+  },
+  {
+    "OriginalId": 10871,
+    "MappedId": 54321005,
+    "Condition": "hasBuff",
+    "conditionValue": 888666022,
+    "desc": "戳棍蓄力start0，2a转化"
+  },
+  {
+    "OriginalId": 10871,
+    "MappedId": 54321007,
+    "Condition": "hasBuff",
+    "conditionValue": 888666023,
+    "desc": "戳棍蓄力start0，3a转化"
+  },
+  {
+    "OriginalId": 10871,
+    "MappedId": 54321009,
+    "Condition": "hasBuff",
+    "conditionValue": 888666024,
+    "desc": "戳棍蓄力start0，4a转化"
+  },
+  {
+    "OriginalId": 10872,
+    "MappedId": 54321005,
+    "Condition": "hasBuff",
+    "conditionValue": 888666022,
+    "desc": "戳棍蓄力start0，2a转化"
+  },
+  {
+    "OriginalId": 10872,
+    "MappedId": 54321007,
+    "Condition": "hasBuff",
+    "conditionValue": 888666023,
+    "desc": "戳棍蓄力start0，3a转化"
+  },
+  {
+    "OriginalId": 10872,
+    "MappedId": 54321009,
+    "Condition": "hasBuff",
+    "conditionValue": 888666024,
+    "desc": "戳棍蓄力start0，4a转化"
+  }
+]
