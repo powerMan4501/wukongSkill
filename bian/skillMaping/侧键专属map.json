@@ -5,7 +5,7 @@
     "canRepeat": true,
     "Condition": "StanceHeavy",
     "conditionValue": null,
-    "desc": "劈棍下，变大圣切手1"
+    "desc": "侧键1 劈棍下，变大圣切手1"
   },
   {
     "OriginalId": 54321002,
@@ -13,7 +13,7 @@
     "canRepeat": true,
     "Condition": "StanceProp",
     "conditionValue": null,
-    "desc": "立棍下，变风云转"
+    "desc": "侧键1 立棍下，变风云转"
   },
   {
     "OriginalId": 54321002,
@@ -21,7 +21,7 @@
     "canRepeat": true,
     "Condition": "StancePoke",
     "conditionValue": null,
-    "desc": "戳棍下,变退寸"
+    "desc": "侧键1 戳棍下,变退寸"
   },
   {
     "OriginalId": 54321003,
@@ -29,7 +29,7 @@
     "canRepeat": true,
     "Condition": "StanceHeavy",
     "conditionValue": null,
-    "desc": "劈棍下，变大圣10707"
+    "desc": "侧键2， 劈棍下，变大圣10707"
   },
   {
     "OriginalId": 54321003,
@@ -37,7 +37,7 @@
     "canRepeat": true,
     "Condition": "StanceProp",
     "conditionValue": null,
-    "desc": "立棍下，变风云转"
+    "desc": "侧键2，立棍下，变风云转"
   },
   {
     "OriginalId": 54321003,
@@ -45,6 +45,6 @@
     "canRepeat": true,
     "Condition": "StancePoke",
     "conditionValue": null,
-    "desc": "戳棍下,变退寸"
+    "desc": "侧键2，戳棍下,变退寸"
   }
 ]
