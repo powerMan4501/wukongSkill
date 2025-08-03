@@ -32,6 +32,7 @@ public class SkillMappingRule
     public SkillMapCondition Condition { get; set; }
     public int? conditionValue { get; set; } // 可选：需要的buff 或者距离
     public string? desc { get; set; }//描述
+    public bool? canRepeat { get; set; }//是否可以重复转化
 }
 
 namespace bian
@@ -199,7 +200,7 @@ namespace bian
         {
             if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]BuffAdd_Multicast"))
             {
-               
+
 
             }
 
@@ -208,7 +209,7 @@ namespace bian
                 return;
             }
 
-             if (BuffID == 287 || BuffID == 293)
+            if (BuffID == 287 || BuffID == 293)
             {
                 // 劈棍和戳棍识破buff增加到0.9秒
                 Duration = 1000;
@@ -216,7 +217,7 @@ namespace bian
                 //218
                 Log.Info($"buff {BuffID} add  ,Duration:{Duration} RootCaster:{RootCaster.PathName}");
             }
-            
+
 
             if (BuffID == 288)
             {
@@ -474,15 +475,33 @@ namespace bian
             {
                 BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 4000);
             }
+
+
             // 遍历所有规则
-            var mapArr = AllSkillMappingRules.Where(r => r.OriginalId == currentId);
+            // var mapArr = AllSkillMappingRules.Where(r => r.OriginalId == currentId); 
+
+            // 首先过滤出所有匹配的规则
+            var mapArr = AllSkillMappingRules.Where(r => r.OriginalId == currentId).ToList();
+
+
             if (mapArr.Count() > 0)
             {
                 var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
-                var matchItem = mapArr.FirstOrDefault(r => IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
+
+                // 优先检查canRepeat为true的规则
+                var repeatableRules = mapArr.Where(r => (bool)r.canRepeat).ToList();
+                var matchItem = repeatableRules.FirstOrDefault(r => IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
                 if (matchItem != null)
                 {
                     ID = matchItem.MappedId;
+                }
+
+                // 如果没有匹配的可重复规则，则检查其他规则
+                var nonRepeatableRules = mapArr.Where(r => !(bool)r.canRepeat).ToList();
+                var matchItem_ = nonRepeatableRules.FirstOrDefault(r => IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
+                if (matchItem_ != null)
+                {
+                    ID = matchItem_.MappedId;
                 }
             }
         }
