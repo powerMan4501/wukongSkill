@@ -2,6 +2,7 @@
   {
     "OriginalId": 54321002,
     "MappedId": 10705,
+    "canRepeat": true,
     "Condition": "StanceHeavy",
     "conditionValue": null,
     "desc": "劈棍下，变大圣切手1"
@@ -9,6 +10,7 @@
   {
     "OriginalId": 54321002,
     "MappedId": 10721,
+    "canRepeat": true,
     "Condition": "StanceProp",
     "conditionValue": null,
     "desc": "立棍下，变风云转"
@@ -16,6 +18,7 @@
   {
     "OriginalId": 54321002,
     "MappedId": 10713,
+    "canRepeat": true,
     "Condition": "StancePoke",
     "conditionValue": null,
     "desc": "戳棍下,变退寸"
@@ -23,6 +26,7 @@
   {
     "OriginalId": 54321003,
     "MappedId": 50002,
+    "canRepeat": true,
     "Condition": "StanceHeavy",
     "conditionValue": null,
     "desc": "劈棍下，变大圣10707"
@@ -30,6 +34,7 @@
   {
     "OriginalId": 54321003,
     "MappedId": 10724,
+    "canRepeat": true,
     "Condition": "StanceProp",
     "conditionValue": null,
     "desc": "立棍下，变风云转"
@@ -37,6 +42,7 @@
   {
     "OriginalId": 54321003,
     "MappedId": 10714,
+    "canRepeat": true,
     "Condition": "StancePoke",
     "conditionValue": null,
     "desc": "戳棍下,变退寸"
