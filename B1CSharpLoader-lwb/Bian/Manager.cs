@@ -493,22 +493,22 @@ namespace bian
                 var repeatableRules = mapArr.Where(r => r.canRepeat.HasValue && r.canRepeat.Value).ToList();
 
                 var matchItem = repeatableRules.FirstOrDefault(r => IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
-                Log.Info($" repeatableRules:{repeatableRules?.Count()}");
-                
+
                 if (matchItem != null)
                 {
-                    Log.Info($"可以重复转化 matchItem:{matchItem?.desc} ");
-                
+                    Log.Info($"可以重复转化 matchItem:{matchItem?.desc} {matchItem.MappedId}");
+
                     ID = matchItem.MappedId;
+                    currentId = matchItem.MappedId;
                 }
 
-                // 如果没有匹配的可重复规则，则检查其他规则
-                var nonRepeatableRules = mapArr.Where(r => !r.canRepeat.HasValue || !r.canRepeat.Value).ToList();
+                // 重新过滤
+                var newArr = AllSkillMappingRules.Where(r => r.OriginalId == currentId).ToList();
+                var nonRepeatableRules = newArr.Where(r => !r.canRepeat.HasValue || !r.canRepeat.Value).ToList();
                 var matchItem_ = nonRepeatableRules.FirstOrDefault(r => IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
-                Log.Info($"  nonRepeatableRules:{nonRepeatableRules?.Count()}");
                 if (matchItem_ != null)
                 {
-                    Log.Info($"matchItem_:{matchItem_?.desc} ");
+                    Log.Info($"不可以重复matchItem_:{matchItem_?.desc} {matchItem_.MappedId}");
                     ID = matchItem_.MappedId;
                 }
             }
