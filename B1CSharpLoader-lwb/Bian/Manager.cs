@@ -199,20 +199,31 @@ namespace bian
         {
             if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]BuffAdd_Multicast"))
             {
-                if (BuffID == 287 || BuffID == 293)
-                {
-                    // 劈棍和戳棍识破buff增加到0.9秒
-                    Duration = 1000;
-                    BGUFunctionLibraryCS.BGUAddBuff(RootCaster, RootCaster, 218, EBuffSourceType.GM, Duration);//给识破buff加无敌
-                    //218
-                    Log.Info($"buff {BuffID} add  ,Duration:{Duration} RootCaster:{RootCaster.PathName}");
-                }
+               
 
             }
 
             if (Caster == null || !IsPlayer(Caster.PathName))
             {
                 return;
+            }
+
+             if (BuffID == 287 || BuffID == 293)
+            {
+                // 劈棍和戳棍识破buff增加到0.9秒
+                Duration = 1000;
+                BGUFunctionLibraryCS.BGUAddBuff(RootCaster, RootCaster, 218, EBuffSourceType.GM, Duration);//给识破buff加无敌
+                //218
+                Log.Info($"buff {BuffID} add  ,Duration:{Duration} RootCaster:{RootCaster.PathName}");
+            }
+            
+
+            if (BuffID == 288)
+            {
+                // 识破成功，加识破成功专属buff 888666029, 霸体和棍势
+                BGUFunctionLibraryCS.BGUAddBuff(RootCaster, RootCaster, 888666029, EBuffSourceType.GM, Duration);//给识破buff加无敌
+                //218
+                Log.Info($"buff {BuffID} add  ,Duration:{Duration} RootCaster:{RootCaster.PathName}");
             }
 
             // 冰火雷毒buff互斥
