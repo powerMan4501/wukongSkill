@@ -15,6 +15,58 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
+
+public class BuffActiveCondition
+{
+    public int? ConditionType { get; set; } = null;
+    public string? ConditionParams { get; set; } = null;
+}
+
+public class BuffRange
+{
+    public int? RangeType { get; set; } = null;
+    public int? RangeCenterType { get; set; } = null;
+    public List<int>? RangeParam { get; set; } = null;
+}
+
+public class BuffEffect
+{
+    public int? EffectTrigger { get; set; } = null;
+    public int? EffectType { get; set; } = null;
+    public int? EffectTargetSelectType { get; set; } = null;
+    public List<string>? EffectParamsString { get; set; } = null;
+    public List<int>? EffectParams { get; set; } = null;
+    public List<float>? EffectParamsFloat { get; set; } = null;
+}
+
+public class BuffConfig
+{
+    public int ID { get; set; } = 0;
+    public string? BuffTips { get; set; } = null;
+    public BuffActiveCondition? BuffActiveCondition { get; set; } = null;
+    public int? BuffLayerCounterType { get; set; } = null;
+    public int? BuffCategory { get; set; } = null;
+    public int? CanRemoveWhenAttackHit { get; set; } = null;
+    public int? CanRemoveWhenAttacked { get; set; } = null;
+    public int? Delay { get; set; } = null;
+    public int? Duration { get; set; } = null;
+    public int? Interval { get; set; } = null;
+    public int? AlmostEndAheadTime { get; set; } = null;
+    public int? MaxLayer { get; set; } = null;
+    public int? TargetBase { get; set; } = null;
+    public int? TargetCount { get; set; } = null;
+    public int? TargetFilter { get; set; } = null;
+    public int? TargetTypeFilter { get; set; } = null;
+    public int? AffiliationTypeFilter { get; set; } = null;
+    public BuffRange? Range { get; set; } = null;
+    public List<BuffEffect>? BuffEffects { get; set; } = null;
+    public int? IsExclusiveBuff { get; set; } = null;
+    public int? CanBeInherited { get; set; } = null;
+    public string? Guard { get; set; } = null;
+}
+
+
+
 public enum SkillMapCondition
 {
     StancePoke,    // 戳棍姿态
@@ -58,11 +110,6 @@ namespace bian
             public int OwnerResID { get; set; }
             public int IsUseDispConfig { get; set; }
             public List<EffectConfig> EnterFX { get; set; }
-            public List<object> TickingCurveParam { get; set; }
-            public List<object> AlmostLeaveFX { get; set; }
-            public List<object> LeaveFX { get; set; }
-            public List<object> DamageFXSetting { get; set; }
-            public List<object> MaterialSetting { get; set; }
             public int ForceDisplay { get; set; }
         }
 
@@ -101,113 +148,157 @@ namespace bian
         }
 
         /// 加载并应用BuffDisp配置到游戏数据库中
+
         public static int LoadAndApplyBuffDispConfigs(string configDirectory = null)
         {
-            // 如果没有提供目录路径，使用默认路径
             if (configDirectory == null)
             {
                 configDirectory = Path.Combine("CSharpLoader", "Mods", "bian", "BuffDisp");
             }
 
-            var buffDispConfigs = LoadAllBuffDispConfigs(configDirectory);
-            var buffDispList = BGW_GameDB.GetAllBuffDispDesc();
-            Log.Info($"LoadAndApplyBuffDispConfigs buffDispList:{buffDispConfigs.Count}");
-            if (buffDispList != null && buffDispList.Count > 0 && buffDispConfigs != null)
+            if (!Directory.Exists(configDirectory))
             {
-                // 获取第一个BuffDispDesc作为模板
-                var templateBuffDisp = buffDispList.First().Value;
-                int processedCount = 0;
-
-                foreach (var dispConfig in buffDispConfigs)
+                Log.Error($"BuffDisp config directory not found: {configDirectory}");
+                try
                 {
-                    try
-                    {
-                        // 克隆模板对象
-                        var newBuffDisp = (FUStBuffDispDesc)templateBuffDisp.Clone();
-
-                        // 设置新BuffDisp的属性
-                        newBuffDisp.ID = dispConfig.ID;
-                        newBuffDisp.BuffID = dispConfig.BuffID;
-                        newBuffDisp.CasterResID = dispConfig.CasterResID;
-                        newBuffDisp.OwnerResID = dispConfig.OwnerResID;
-                        newBuffDisp.IsUseDispConfig = (EGSYesNo)dispConfig.IsUseDispConfig;
-                        newBuffDisp.ForceDisplay = (EGSYesNo)dispConfig.ForceDisplay;
-
-                        // 处理EnterFX
-                        if (dispConfig.EnterFX != null && dispConfig.EnterFX.Count > 0)
-                        {
-                            // 创建一个新的 FUStFXSetting 列表
-                            var newEnterFX = new List<FUStFXSetting>();
-
-                            // 将每个 EffectConfig 转换为 FUStFXSetting
-                            foreach (var fxConfig in dispConfig.EnterFX)
-                            {
-                                var newFx = new FUStFXSetting();
-                                newFx.PSPath = fxConfig.PSPath;
-                                newFx.Scale = fxConfig.Scale;
-                                newFx.IsAttach = (EGSYesNo)fxConfig.IsAttach;
-                                newFx.AttachName = fxConfig.AttachName;
-                                newFx.UseScaleFit = (EGSYesNo)fxConfig.UseScaleFit;
-                                newFx.IsAttachToSkin = (EGSYesNo)fxConfig.IsAttachToSkin;
-                                newFx.SkelMeshParamName = fxConfig.SkelMeshParamName;
-                                newFx.AddTags = fxConfig.AddTags;
-
-                                newEnterFX.Add(newFx);
-                            }
-
-                            // 使用反射来设置只读属性
-                            var enterFXProperty = typeof(FUStBuffDispDesc).GetProperty("EnterFX");
-                            if (enterFXProperty != null && enterFXProperty.CanWrite)
-                            {
-                                enterFXProperty.SetValue(newBuffDisp, newEnterFX);
-                            }
-                            else
-                            {
-                                // 如果属性不可写，尝试使用字段
-                                var enterFXField = typeof(FUStBuffDispDesc).GetField("EnterFX", BindingFlags.NonPublic | BindingFlags.Instance);
-                                if (enterFXField != null)
-                                {
-                                    enterFXField.SetValue(newBuffDisp, newEnterFX);
-                                }
-                            }
-                        }
-
-
-
-                        if (buffDispList.ContainsKey(dispConfig.BuffID))
-                        {
-                            buffDispList[dispConfig.BuffID] = newBuffDisp;
-                            Log.Info($"Updated existing BuffDisp config for ID: {dispConfig.BuffID}");
-                        }
-                        else
-                        {
-                            // 使用BuffID作为键，将新的BuffDisp添加到字典中
-                            buffDispList.Add(dispConfig.BuffID, newBuffDisp);
-                            Log.Info($"Added new BuffDisp config for ID: {dispConfig.BuffID}");
-                        }
-
-
-                        Log.Info($"Successfully added BuffDisp config for ID: {dispConfig.ID}");
-                        processedCount++;
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Error($"Failed to process BuffDisp config for ID {dispConfig.ID}: {ex.Message}");
-                    }
+                    Directory.CreateDirectory(configDirectory);
+                    Log.Info($"Created BuffDisp config directory: {configDirectory}");
                 }
-
-                Log.Info($"Total processed BuffDisp configs: {processedCount}");
-                return processedCount;
+                catch (Exception ex)
+                {
+                    Log.Error($"Failed to create BuffDisp config directory: {ex.Message}");
+                    return 0;
+                }
             }
-            else
+
+            var buffDispList = BGW_GameDB.GetAllBuffDispDesc();
+            if (buffDispList == null || buffDispList.Count == 0)
             {
-                Log.Error("Failed to load LoadAndApplyBuffDispConfigs configs or template BuffDisp is not available");
+                Log.Error("Failed to get buff disp list from game database");
                 return 0;
             }
+
+            int processedCount = 0;
+            foreach (string file in Directory.GetFiles(configDirectory, "*.json"))
+            {
+                try
+                {
+                    string jsonContent = File.ReadAllText(file);
+                    var settings = new JsonSerializerSettings
+                    {
+                        Converters = new List<JsonConverter> { new StringEnumConverter() }
+                    };
+                    var configs = JsonConvert.DeserializeObject<List<BuffDispConfig>>(jsonContent, settings);
+
+                    if (configs != null)
+                    {
+                        foreach (var config in configs)
+                        {
+                            try
+                            {
+                                FUStBuffDispDesc targetBuffDisp;
+
+                                if (buffDispList.ContainsKey(config.ID))
+                                {
+                                    // 更新现有buff
+                                    targetBuffDisp = buffDispList[config.ID];
+                                    Log.Info($"Updating existing BuffDisp with ID: {config.ID}");
+                                }
+                                else
+                                {
+                                    // 创建新buff，使用第一个buff作为模板
+                                    var templateBuff = buffDispList.First().Value;
+                                    targetBuffDisp = (FUStBuffDispDesc)templateBuff.Clone();
+                                    buffDispList.Add(config.ID, targetBuffDisp);
+                                    Log.Info($"Creating new BuffDisp with ID: {config.ID}");
+                                }
+
+                                // 使用反射更新所有非null属性
+                                var sourceType = typeof(BuffDispConfig);
+                                var targetType = typeof(FUStBuffDispDesc);
+                                var sourceProps = sourceType.GetProperties();
+
+                                foreach (var sourceProp in sourceProps)
+                                {
+                                    var sourceValue = sourceProp.GetValue(config);
+                                    if (sourceValue != null)
+                                    {
+                                        var targetProp = targetType.GetProperty(sourceProp.Name);
+                                        if (targetProp != null && targetProp.CanWrite)
+                                        {
+                                            // 特殊处理EnterFX列表
+                                            if (sourceProp.Name == "EnterFX" && sourceValue is List<EffectConfig> effects)
+                                            {
+                                                var newEffects = new List<FUStFXSetting>();
+                                                foreach (var effect in effects)
+                                                {
+                                                    var newEffect = new FUStFXSetting();
+                                                    var effectType = typeof(FUStFXSetting);
+                                                    var effectProps = typeof(EffectConfig).GetProperties();
+
+                                                    foreach (var effectProp in effectProps)
+                                                    {
+                                                        var effectValue = effectProp.GetValue(effect);
+                                                        if (effectValue != null)
+                                                        {
+                                                            var targetEffectProp = effectType.GetProperty(effectProp.Name);
+                                                            if (targetEffectProp != null && targetEffectProp.CanWrite)
+                                                            {
+                                                                // 特殊处理枚举类型转换
+                                                                if (targetEffectProp.PropertyType == typeof(EGSYesNo))
+                                                                {
+                                                                    targetEffectProp.SetValue(newEffect, (EGSYesNo)effectValue);
+                                                                }
+                                                                else
+                                                                {
+                                                                    targetEffectProp.SetValue(newEffect, effectValue);
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    newEffects.Add(newEffect);
+                                                }
+                                                targetProp.SetValue(targetBuffDisp, newEffects);
+                                            }
+                                            else
+                                            {
+                                                // 特殊处理枚举类型转换
+                                                if (targetProp.PropertyType == typeof(EGSYesNo))
+                                                {
+                                                    targetProp.SetValue(targetBuffDisp, (EGSYesNo)sourceValue);
+                                                }
+                                                else
+                                                {
+                                                    targetProp.SetValue(targetBuffDisp, sourceValue);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                processedCount++;
+                                Log.Info($"Successfully processed BuffDisp with BuffID: {config.BuffID}");
+                            }
+                            catch (Exception ex)
+                            {
+                                Log.Error($"Failed to process BuffDisp config for BuffID {config.BuffID}: {ex.Message}");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Error loading BuffDisp configs from {file}: {ex.Message}");
+                }
+            }
+
+            Log.Info($"Total processed BuffDisp configs: {processedCount}");
+            return processedCount;
         }
+
+
         public static int LoadAndApplyBuff(string configDirectory = null)
         {
-            // 如果没有提供目录路径，使用默认路径
             if (configDirectory == null)
             {
                 configDirectory = Path.Combine("CSharpLoader", "Mods", "bian", "BuffDesc");
@@ -216,108 +307,132 @@ namespace bian
             var buffConfigs = LoadAllBuffConfigs(configDirectory);
             var buffList = BGW_GameDB.GetAllBuffDesc();
 
-            if (buffList != null && buffList.Count > 0 && buffConfigs != null)
+            if (buffList == null || buffList.Count == 0 || buffConfigs == null)
             {
-                // 获取第一个BuffDispDesc作为模板
-                var templateBuffDisp = buffList.First().Value;
-                int processedCount = 0;
-
-                foreach (var buffConfig in buffConfigs)
-                {
-                    try
-                    {
-                        // 克隆模板对象
-                        var newBuffDisp = (FUStBuffDesc)templateBuffDisp.Clone();
-
-                        // 设置新BuffDisp的属性
-                        newBuffDisp.ID = buffConfig.ID;
-                        newBuffDisp.BuffActiveCondition = buffConfig.BuffActiveCondition;
-                        newBuffDisp.BuffLayerCounterType = buffConfig.BuffLayerCounterType;
-                        newBuffDisp.BuffCategory = buffConfig.BuffCategory;
-                        newBuffDisp.CanRemoveWhenAttackHit = buffConfig.CanRemoveWhenAttackHit;
-                        newBuffDisp.CanRemoveWhenAttacked = buffConfig.CanRemoveWhenAttacked;
-
-                        newBuffDisp.Duration = buffConfig.Duration;
-                        newBuffDisp.Delay = buffConfig.Delay;
-                        newBuffDisp.Interval = buffConfig.Interval;
-                        newBuffDisp.MaxLayer = buffConfig.MaxLayer;
-                        newBuffDisp.TargetBase = buffConfig.TargetBase;
-                        newBuffDisp.TargetCount = buffConfig.TargetCount;
-                        newBuffDisp.TargetFilter = buffConfig.TargetFilter;
-                        newBuffDisp.TargetTypeFilter = buffConfig.TargetTypeFilter;
-                        newBuffDisp.Range = buffConfig.Range;
-
-
-
-                        // 处理EnterFX
-                        if (buffConfig.BuffEffects != null && buffConfig.BuffEffects.Count > 0)
-                        {
-                            // 创建一个新的 FUStFXSetting 列表
-                            var newEnterFX = new List<FUStBuffEffectAttr>();
-
-                            // 将每个 EffectConfig 转换为 FUStFXSetting
-                            foreach (var fxConfig in buffConfig.BuffEffects)
-                            {
-                                var newFx = new FUStBuffEffectAttr();
-                                newFx.EffectTrigger = fxConfig.EffectTrigger;
-                                newFx.EffectType = fxConfig.EffectType;
-                                newFx.EffectTargetSelectType = fxConfig.EffectTargetSelectType;
-
-                                if (fxConfig.EffectParamsString != null && fxConfig.EffectParamsString.Count > 0)
-                                {
-                                    newFx.EffectParamsString.AddRange(fxConfig.EffectParamsString);
-                                }
-
-
-                                if (fxConfig.EffectParams != null && fxConfig.EffectParams.Count > 0)
-                                {
-                                    newFx.EffectParams.AddRange(fxConfig.EffectParams);
-                                }
-
-
-                                if (fxConfig.EffectParamsFloat != null && fxConfig.EffectParamsFloat.Count > 0)
-                                {
-                                    newFx.EffectParamsFloat.AddRange(fxConfig.EffectParamsFloat);
-                                }
-
-
-                                newEnterFX.Add(newFx);
-                            }
-
-
-                        }
-
-
-
-
-                        if (buffList.ContainsKey(buffConfig.ID))
-                        {
-                            buffList[buffConfig.ID] = newBuffDisp;
-                        }
-                        else
-                        {
-                            // 使用BuffID作为键，将新的BuffDisp添加到字典中
-                            buffList.Add(buffConfig.ID, newBuffDisp);
-                        }
-
-                        Log.Info($"Successfully 添加buff成功 BuffID: {buffConfig.ID}");
-                        processedCount++;
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Error($"Failed to process LoadAndApplyBuff config for BuffID {buffConfig.ID}: {ex.Message}");
-                    }
-                }
-
-                Log.Info($"Total processed LoadAndApplyBuff configs: {processedCount}");
-                return processedCount;
-            }
-            else
-            {
-                Log.Error("Failed to load LoadAndApplyBuff configs or template LoadAndApplyBuff is not available");
+                Log.Error("Failed to load buff configs or buff list is not available");
                 return 0;
             }
+
+            int processedCount = 0;
+            foreach (var buffConfig in buffConfigs)
+            {
+                try
+                {
+                    FUStBuffDesc targetBuff;
+
+                    if (buffList.ContainsKey(buffConfig.ID))
+                    {
+                        // 更新现有buff
+                        targetBuff = buffList[buffConfig.ID];
+                        Log.Info($"Updating existing buff with ID: {buffConfig.ID}");
+                    }
+                    else
+                    {
+                        // 创建新buff，使用ID为121的buff作为模板
+                        if (!buffList.TryGetValue(121, out var templateBuff))
+                        {
+                            Log.Error($"Template buff (ID: 121) not found");
+                            continue;
+                        }
+                        targetBuff = (FUStBuffDesc)templateBuff.Clone();
+                        buffList.Add(buffConfig.ID, targetBuff);
+                        Log.Info($"Creating new buff with ID: {buffConfig.ID}");
+                    }
+
+                    // 使用反射更新所有非null属性
+                    var sourceType = typeof(BuffConfig);
+                    var targetType = typeof(FUStBuffDesc);
+                    var sourceProps = sourceType.GetProperties();
+
+
+
+                    foreach (var sourceProp in sourceProps)
+                    {
+                        var sourceValue = sourceProp.GetValue(buffConfig);
+                        if (sourceValue != null)
+                        {
+                            var targetProp = targetType.GetProperty(sourceProp.Name);
+                            if (targetProp != null && targetProp.CanWrite)
+                            {
+                                try
+                                {
+                                    // 特殊处理BuffEffects列表
+                                    if (sourceProp.Name == "BuffEffects" && sourceValue is List<BuffEffect> effects)
+                                    {
+                                        var newEffects = new List<FUStBuffEffectAttr>();
+                                        foreach (var effect in effects)
+                                        {
+                                            var newEffect = new FUStBuffEffectAttr();
+                                            if (effect.EffectTrigger.HasValue)
+                                                newEffect.EffectTrigger = (EBuffEffectTriggerType)effect.EffectTrigger;
+                                            if (effect.EffectType.HasValue)
+                                                newEffect.EffectType = (EBuffAndSkillEffectType)effect.EffectType;
+                                            if (effect.EffectTargetSelectType.HasValue)
+                                                newEffect.EffectTargetSelectType = (EBuffEffectTargetSelectType)effect.EffectTargetSelectType;
+
+                                            if (effect.EffectParamsString != null)
+                                                newEffect.EffectParamsString.AddRange(effect.EffectParamsString);
+                                            if (effect.EffectParams != null)
+                                                newEffect.EffectParams.AddRange(effect.EffectParams);
+                                            if (effect.EffectParamsFloat != null)
+                                                newEffect.EffectParamsFloat.AddRange(effect.EffectParamsFloat);
+
+                                            newEffects.Add(newEffect);
+                                        }
+                                        targetProp.SetValue(targetBuff, newEffects);
+                                    }
+                                    else
+                                    {
+                                        // 处理枚举类型转换
+                                        if (targetProp.PropertyType.IsEnum)
+                                        {
+                                            if (sourceValue is int intValue)
+                                            {
+                                                targetProp.SetValue(targetBuff, Enum.ToObject(targetProp.PropertyType, intValue));
+                                            }
+                                            else
+                                            {
+                                                targetProp.SetValue(targetBuff, Enum.Parse(targetProp.PropertyType, sourceValue.ToString()));
+                                            }
+                                        }
+                                        // 处理可空枚举类型
+                                        else if (Nullable.GetUnderlyingType(targetProp.PropertyType)?.IsEnum == true)
+                                        {
+                                            if (sourceValue is int intValue)
+                                            {
+                                                targetProp.SetValue(targetBuff, Enum.ToObject(Nullable.GetUnderlyingType(targetProp.PropertyType), intValue));
+                                            }
+                                            else
+                                            {
+                                                targetProp.SetValue(targetBuff, Enum.Parse(Nullable.GetUnderlyingType(targetProp.PropertyType), sourceValue.ToString()));
+                                            }
+                                        }
+                                        else
+                                        {
+                                            targetProp.SetValue(targetBuff, sourceValue);
+                                        }
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    Log.Error($"Failed to set property {sourceProp.Name} for buff {buffConfig.ID}: {ex.Message}");
+                                }
+                            }
+                        }
+                    }
+                    processedCount++;
+                    Log.Info($"Successfully processed buff with ID: {buffConfig.ID}");
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Failed to process buff config for ID {buffConfig.ID}: {ex.Message}");
+                }
+            }
+
+            Log.Info($"Total processed buff configs: {processedCount}");
+            return processedCount;
         }
+
 
         public static FUStBuffDesc AddNewBuff_cpoy(int NewBuffID, int CopybuffID)
         {
@@ -406,54 +521,51 @@ namespace bian
             return allConfigs;
         }
 
-        public static List<FUStBuffDesc> LoadAllBuffConfigs(string configDirectory)
+        public static List<BuffConfig> LoadAllBuffConfigs(string configDirectory)
         {
             if (!Directory.Exists(configDirectory))
             {
-                Log.Error($"BuffDisp config directory not found: {configDirectory}");
+                Log.Error($"Buff config directory not found: {configDirectory}");
                 try
                 {
                     Directory.CreateDirectory(configDirectory);
-                    Log.Info($"Created BuffDisp config directory: {configDirectory}");
+                    Log.Info($"Created Buff config directory: {configDirectory}");
                 }
                 catch (Exception ex)
                 {
-                    Log.Error($"Failed to create BuffDisp config directory: {ex.Message}");
-                    return new List<FUStBuffDesc>();
+                    Log.Error($"Failed to create Buff config directory: {ex.Message}");
+                    return new List<BuffConfig>();
                 }
             }
 
-            List<FUStBuffDesc> allConfigs = new List<FUStBuffDesc>();
+            List<BuffConfig> allConfigs = new List<BuffConfig>();
 
-            // 加载所有JSON文件
             foreach (string file in Directory.GetFiles(configDirectory, "*.json"))
             {
                 try
                 {
                     string jsonContent = File.ReadAllText(file);
-
-                    // 配置JsonSerializer以正确处理数据
                     var settings = new JsonSerializerSettings
                     {
                         Converters = new List<JsonConverter> { new StringEnumConverter() }
                     };
-
-                    var configs = JsonConvert.DeserializeObject<List<FUStBuffDesc>>(jsonContent, settings);
+                    var configs = JsonConvert.DeserializeObject<List<BuffConfig>>(jsonContent, settings);
                     if (configs != null)
                     {
                         allConfigs.AddRange(configs);
-                        Log.Info($"Loaded {configs.Count} BuffDisp configs from {Path.GetFileName(file)}");
+                        Log.Info($"Loaded {configs.Count} Buff configs from {Path.GetFileName(file)}");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Log.Error($"Error loading BuffDisp configs from {file}: {ex.Message}");
+                    Log.Error($"Error loading Buff configs from {file}: {ex.Message}");
                 }
             }
 
-            Log.Info($"Total loaded BuffDisp configs: {allConfigs.Count}");
+            Log.Info($"Total loaded Buff configs: {allConfigs.Count}");
             return allConfigs;
         }
+
         public static void UnregisterManager()
         {
             Manager.GetModelManager().UnRegEvent();
@@ -577,7 +689,16 @@ namespace bian
             {
                 return;
             }
-            Log.Info($"buff {BuffID} add  ,Duration:{Duration} RootCaster:{RootCaster.PathName}");
+            var buffDesc = GameDBRuntime.GetFUStBuffDesc(BuffID);
+
+            if (buffDesc != null && buffDesc?.Duration > 1500 )
+            {
+                Log.Info($"buff {BuffID} add  ,buffDescBuffTips {buffDesc.BuffTips} {buffDesc.Duration} ");
+            }
+            // if (buffDesc != null && buffDesc?.BuffEffects != null && buffDesc?.BuffEffects?.Count > 0)
+            // {
+            //     Log.Info($"buff {BuffID} add  ,buffDescBuffTips {buffDesc.BuffTips} {buffDesc.Duration} EffectParams:{buffDesc?.BuffEffects[0]?.EffectParams[0]}");
+            // }
             if (BuffID == 287 || BuffID == 293)
             {
                 // 劈棍和戳棍识破buff增加到0.9秒
@@ -592,8 +713,8 @@ namespace bian
             {
                 // 识破成功，加识破成功专属buff 888666029, 霸体和棍势
                 BGUFunctionLibraryCS.BGUAddBuff(RootCaster, RootCaster, 888666029, EBuffSourceType.GM, Duration);//给识破buff加无敌
-                //218
-                
+                                                                                                                 //218
+
             }
 
             // 冰火雷毒buff互斥
@@ -865,7 +986,6 @@ namespace bian
 
                 if (matchItem != null)
                 {
-                    Log.Info($"可以重复转化 matchItem:{matchItem?.desc} {matchItem.MappedId}");
 
                     ID = matchItem.MappedId;
                     currentId = matchItem.MappedId;
@@ -877,7 +997,6 @@ namespace bian
                 var matchItem_ = nonRepeatableRules.FirstOrDefault(r => IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
                 if (matchItem_ != null)
                 {
-                    Log.Info($"不可以重复matchItem_:{matchItem_?.desc} {matchItem_.MappedId}");
                     ID = matchItem_.MappedId;
                 }
             }
