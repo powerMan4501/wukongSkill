@@ -1,0 +1,1180 @@
+[
+  {
+    "ID": 444405001,
+    "BuffTips": "2A棍光特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 444405003,
+    "BuffTips": "3A棍光buff",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 900,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 444405005,
+    "BuffTips": "4A棍光1buff",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1100,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 444405006,
+    "BuffTips": "4A棍光2buff",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1500,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405010,
+    "BuffTips": "5A特效1",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 600,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405011,
+    "BuffTips": "5A特效2",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 650,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405015,
+    "BuffTips": "劈棍切手技特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1100,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405017,
+    "BuffTips": "识破特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405019,
+    "BuffTips": "斩棍式特效1",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 444405020,
+    "BuffTips": "斩棍式特效2",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1500,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405024,
+    "BuffTips": "退寸特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 600,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405026,
+    "BuffTips": "搅阵特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1600,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405029,
+    "BuffTips": "进尺特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1200,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405031,
+    "BuffTips": "风云转特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1800,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405033,
+    "BuffTips": "江海翻特效1",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 700,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405034,
+    "BuffTips": "江海翻特效2",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1550,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405035,
+    "BuffTips": "江海翻特效3",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1550,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405040,
+    "BuffTips": "蓄力劈棍1特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1200,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405042,
+    "BuffTips": "蓄力劈棍2特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1600,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405044,
+    "BuffTips": "蓄力劈棍3特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1600,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405046,
+    "BuffTips": "蓄力劈棍4特效1",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 2000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405047,
+    "BuffTips": "蓄力劈棍4特效2",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1500,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405048,
+    "BuffTips": "蓄力劈棍4特效3",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1700,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405053,
+    "BuffTips": "大风车特效1",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405054,
+    "BuffTips": "大风车特效2",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1300,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405055,
+    "BuffTips": "大风车特效3",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 2500,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405060,
+    "BuffTips": "蓄力戳立棍1特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 444405062,
+    "BuffTips": "蓄力戳立棍2特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405064,
+    "BuffTips": "蓄力戳立棍3特效1",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 500,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405065,
+    "BuffTips": "蓄力戳立棍3特效2",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 800,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405066,
+    "BuffTips": "蓄力戳立棍3取特效1",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 300,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405071,
+    "BuffTips": "蓄力戳立棍4特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1200,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405073,
+    "BuffTips": "大圣2A切手特效1",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405074,
+    "BuffTips": "大圣2A切手特效2",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405075,
+    "BuffTips": "大圣2A切手特效3",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 2000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405080,
+    "BuffTips": "棍花下劈特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 2000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 444405082,
+    "BuffTips": "大圣3A切手特效",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  }
+]
