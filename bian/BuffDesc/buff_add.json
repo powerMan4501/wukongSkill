@@ -1,0 +1,297 @@
+[
+  {
+    "ID": 888666001,
+    "BuffTips": "主角，80%减伤，2倍速度",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 38,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [],
+        "EffectParamsFloat": [25000.0, 25000.0, 25000.0]
+      }
+    ]
+  },
+  {
+    "ID": 888666002,
+    "BuffTips": "分身专属，80%减伤，2倍速度",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 38,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [],
+        "EffectParamsFloat": [25000.0, 25000.0, 25000.0]
+      }
+    ]
+  },
+  {
+    "ID": 888666003,
+    "BuffTips": "给怪加血加攻击",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 1,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [51, 50000, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [151, 99999, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [53, 2000, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 888666004,
+    "BuffTips": "蓄力buff，待定"
+  },
+  {
+    "ID": 888666005,
+    "BuffTips": "雷buff"
+  },
+  {
+    "ID": 888666006,
+    "BuffTips": "冰buff"
+  },
+  {
+    "ID": 888666007,
+    "BuffTips": "火buff"
+  },
+  {
+    "ID": 888666008,
+    "BuffTips": "毒buff"
+  },
+  {
+    "ID": 888666009,
+    "BuffTips": "棍花buff，添加 888666010",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [888666009],
+        "EffectParamsFloat": [0]
+      }
+    ]
+  },
+  {
+    "ID": 888666010,
+    "BuffTips": "棍花buff，触发子弹用的"
+  },
+  {
+    "ID": 888666011,
+    "BuffTips": "搅阵buff，添加 888666012",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [888666012],
+        "EffectParamsFloat": [0]
+      }
+    ]
+  },
+  {
+    "ID": 888666012,
+    "BuffTips": "搅阵buff，触发子弹用的"
+  },
+
+  {
+    "ID": 888666013,
+    "BuffTips": "进尺buff，添加 888666014",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [888666014],
+        "EffectParamsFloat": [0]
+      }
+    ]
+  },
+  {
+    "ID": 888666014,
+    "BuffTips": "进尺buff，触发子弹用的"
+  },
+
+  {
+    "ID": 888666015,
+    "BuffTips": "风云转buff，添加 888666016",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [888666016],
+        "EffectParamsFloat": [0]
+      }
+    ]
+  },
+  {
+    "ID": 888666016,
+    "BuffTips": "风云转buff，触发子弹用的"
+  },
+
+  {
+    "ID": 888666021,
+    "BuffTips": "平A1 BUFF"
+  },
+  {
+    "ID": 888666022,
+    "BuffTips": "平A2 BUFF"
+  },
+
+  {
+    "ID": 888666023,
+    "BuffTips": "平A3 BUFF"
+  },
+  {
+    "ID": 888666024,
+    "BuffTips": "平A4 BUFF"
+  },
+
+  {
+    "ID": 888666025,
+    "BuffTips": "平A5 BUFF"
+  },
+  {
+    "ID": 888666026,
+    "BuffTips": "时缓 BUFF",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 64,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [
+          "BGWDataAsset_ScaleTimeSetting'/Game/00MainHZ/Characters/Transform/Player_ftxd/STS_player_ftxd_F2_Break.STS_player_ftxd_F2_Break'"
+        ],
+        "EffectParams": [],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 888666027,
+    "BuffTips": "时缓 BUFF",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 64,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [
+          "BGWDataAsset_ScaleTimeSetting'/Game/00MainHZ/Characters/Transform/Player_ftxd/STS_player_ftxd_F2_Break.STS_player_ftxd_F2_Break'"
+        ],
+        "EffectParams": [],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 888666028,
+    "BuffTips": "传送 BUFF",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 64,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [
+          "EnvQuery'/Game/00Main/Design/AI/EQS/EQ_TeleportSkillPoint_Fice.EQ_TeleportSkillPoint_Fice'"
+        ],
+        "EffectParams": [0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  }
+]

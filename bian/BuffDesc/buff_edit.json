@@ -1,0 +1,59 @@
+[
+  {
+    "ID": 287,
+    "BuffTips": "把识破buff，增加到1.1秒",
+    "Duration": 1100
+  },
+  {
+    "ID": 293,
+    "BuffTips": "把戳棍识破buff，增加到1.1秒",
+    "Duration": 1100
+  },
+  {
+    "ID": 2017,
+    "BuffTips": "天龙棍蓄雷去掉条件，每0.1秒积累50%异常和10棍势",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": "0"
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 95,
+        "EffectTargetSelectType": 0,
+        "EffectParams": [4, 6, 1, 5000]
+      },
+      {
+        "EffectTrigger": 2,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParams": [0],
+        "EffectParamsFloat": [10.0]
+      }
+    ]
+  },
+  {
+    "ID": 2014,
+    "BuffTips": "飞龙棍-表现，去掉条件",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    }
+  },
+  {
+    "ID": 2026,
+    "BuffTips": "狼牙棒，去掉条件",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    }
+  },
+  {
+    "ID": 2028,
+    "BuffTips": "业火棍，去掉条件",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    }
+  }
+]

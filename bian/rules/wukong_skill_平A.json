@@ -62,7 +62,7 @@
         },
         {
           "Type": "buff",
-          "BuffIDs": [444406001],
+          "BuffIDs": [444405001],
           "BuffTime": 500,
           "desc": "棍光特效粒子"
         }
@@ -392,7 +392,7 @@
         },
         {
           "Type": "buff",
-          "BuffIDs": [5009],
+          "BuffIDs": [444405010],
           "BuffTime": 500,
           "desc": "棍光特效粒子"
         }
