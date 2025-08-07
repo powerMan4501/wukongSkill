@@ -324,343 +324,198 @@ namespace bian
 
         public static int LoadAndApplyBuff(string configDirectory = null)
         {
-            if (configDirectory == null)
+            try
             {
-                configDirectory = Path.Combine("CSharpLoader", "Mods", "bian", "BuffDesc");
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BuffDesc");
+
+                var buffConfigs = LoadAllBuffConfigs(configDirectory);
+                var buffList = BGW_GameDB.GetAllBuffDesc();
+
+                if (buffList == null || buffList.Count == 0 || buffConfigs == null)
+                {
+                    Log.Error("Failed to load buff configs or buff list is not available");
+                    return 0;
+                }
+
+                const int templateBuffId = 295;
+                if (!buffList.TryGetValue(templateBuffId, out var templateBuff))
+                {
+                    Log.Error($"Template buff (ID: {templateBuffId}) not found");
+                    return 0;
+                }
+
+                var sourceType = typeof(BuffConfig);
+                var targetType = typeof(FUStBuffDesc);
+                var sourceProps = sourceType.GetProperties();
+                var processedCount = 0;
+
+                foreach (var buffConfig in buffConfigs)
+                {
+                    try
+                    {
+                        var targetBuff = GetOrCreateBuff(buffConfig, buffList, templateBuff);
+                        UpdateBuffProperties(buffConfig, targetBuff, sourceProps, targetType);
+                        processedCount++;
+                        Log.Info($"Successfully processed buff with ID: {buffConfig.ID}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process buff config for ID {buffConfig.ID}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed buff configs: {processedCount}");
+                return processedCount;
             }
-
-            var buffConfigs = LoadAllBuffConfigs(configDirectory);
-            var buffList = BGW_GameDB.GetAllBuffDesc();
-
-            if (buffList == null || buffList.Count == 0 || buffConfigs == null)
+            catch (Exception ex)
             {
-                Log.Error("Failed to load buff configs or buff list is not available");
+                Log.Error($"Critical error in LoadAndApplyBuff: {ex.Message}");
                 return 0;
             }
+        }
 
-            int processedCount = 0;
-            foreach (var buffConfig in buffConfigs)
+        private static FUStBuffDesc GetOrCreateBuff(BuffConfig config, Dictionary<int, FUStBuffDesc> buffList, FUStBuffDesc templateBuff)
+        {
+            if (buffList.TryGetValue(config.ID, out var existingBuff))
             {
+                Log.Info($"Updating existing buff with ID: {config.ID}");
+                return existingBuff;
+            }
+
+            var newBuff = (FUStBuffDesc)templateBuff.Clone();
+            buffList.Add(config.ID, newBuff);
+            Log.Info($"Creating new buff with ID: {config.ID}");
+            return newBuff;
+        }
+
+        private static void UpdateBuffProperties(BuffConfig source, FUStBuffDesc target, PropertyInfo[] sourceProps, Type targetType)
+        {
+            foreach (var sourceProp in sourceProps)
+            {
+                var sourceValue = sourceProp.GetValue(source);
+                if (sourceValue == null) continue;
+
+                var targetProp = targetType.GetProperty(sourceProp.Name);
+                if (targetProp == null) continue;
+
                 try
                 {
-                    FUStBuffDesc targetBuff;
-
-                    if (buffList.ContainsKey(buffConfig.ID))
+                    if (source.ID == 444406001)
                     {
-                        // 更新现有buff
-                        targetBuff = buffList[buffConfig.ID];
-                        Log.Info($"Updating existing buff with ID: {buffConfig.ID}");
-                    }
-                    else
-                    {
-                        // 创建新buff，使用ID为295的buff作为模板
-                        if (!buffList.TryGetValue(295, out var templateBuff))
-                        {
-                            Log.Error($"Template buff (ID: 295) not found");
-                            continue;
-                        }
-                        targetBuff = (FUStBuffDesc)templateBuff.Clone();
-                        buffList.Add(buffConfig.ID, targetBuff);
-                        Log.Info($"Creating new buff with ID: {buffConfig.ID}");
+                        Log.Info($"Processing {sourceProp.Name} for buff ID: {source.ID}");
                     }
 
-                    // 使用反射更新所有非null属性
-                    var sourceType = typeof(BuffConfig);
-                    var targetType = typeof(FUStBuffDesc);
-                    var sourceProps = sourceType.GetProperties();
-
-                    foreach (var sourceProp in sourceProps)
-                    {
-                        var sourceValue = sourceProp.GetValue(buffConfig);
-                        if (sourceValue != null)
-                        {
-                            var targetProp = targetType.GetProperty(sourceProp.Name);
-                            if (targetProp != null)
-                            {
-                                try
-                                {
-                                    if (buffConfig.ID == 444406001)
-                                    {
-                                        Log.Info($"遍历 {sourceProp.Name} for buff ID: {buffConfig.ID}");
-                                    }
-
-                                    // 特殊处理BuffEffects列表
-                                    // 特殊处理BuffEffects列表
-                                    if (sourceProp.Name == "BuffEffects" && sourceValue is List<BuffEffect> effects)
-                                    {
-                                        Log.Info($"更新 BuffEffects for buff ID: {buffConfig.ID}");
-
-                                        // 检查属性是否可写
-                                        if (targetProp.CanWrite)
-                                        {
-                                            var newEffects = new List<FUStBuffEffectAttr>();
-
-                                            foreach (var effect in effects)
-                                            {
-                                                var newEffect = new FUStBuffEffectAttr();
-                                                newEffect.EffectParamsString.Clear();
-                                                newEffect.EffectParams.Clear();
-                                                newEffect.EffectParamsFloat.Clear();
-                                                if (effect.EffectTrigger.HasValue)
-                                                    newEffect.EffectTrigger = (EBuffEffectTriggerType)effect.EffectTrigger;
-                                                if (effect.EffectType.HasValue)
-                                                    newEffect.EffectType = (EBuffAndSkillEffectType)effect.EffectType;
-                                                if (effect.EffectTargetSelectType.HasValue)
-                                                    newEffect.EffectTargetSelectType = (EBuffEffectTargetSelectType)effect.EffectTargetSelectType;
-
-                                                // 遍历数组并逐个添加元素
-                                                if (effect.EffectParamsString != null)
-                                                {
-                                                    foreach (var param in effect.EffectParamsString)
-                                                    {
-                                                        newEffect.EffectParamsString.Add(param);
-                                                    }
-                                                }
-                                                if (effect.EffectParams != null)
-                                                {
-                                                    foreach (var param in effect.EffectParams)
-                                                    {
-                                                        newEffect.EffectParams.Add(param);
-                                                    }
-                                                }
-                                                if (effect.EffectParamsFloat != null)
-                                                {
-                                                    foreach (var param in effect.EffectParamsFloat)
-                                                    {
-                                                        newEffect.EffectParamsFloat.Add(param);
-                                                    }
-                                                }
-
-                                                newEffects.Add(newEffect);
-                                            }
-                                            targetProp.SetValue(targetBuff, newEffects);
-                                        }
-                                        else
-                                        {
-                                            // 如果属性不可写，尝试获取现有列表并更新其内容
-                                            if (targetProp.CanRead)
-                                            {
-                                                try
-                                                {
-                                                    // 使用更安全的类型检查和转换
-                                                    var existingEffectsValue = targetProp.GetValue(targetBuff);
-                                                    if (existingEffectsValue != null)
-                                                    {
-                                                        // 检查是否是列表类型
-                                                        if (existingEffectsValue is System.Collections.IList existingEffects)
-                                                        {
-                                                            // 清空现有列表
-                                                            existingEffects.Clear();
-
-                                                            // 添加新的效果
-                                                            foreach (var effect in effects)
-                                                            {
-                                                                var newEffect = new FUStBuffEffectAttr();
-                                                                newEffect.EffectParamsString.Clear();
-                                                                newEffect.EffectParams.Clear();
-                                                                newEffect.EffectParamsFloat.Clear();
-                                                                if (effect.EffectTrigger.HasValue)
-                                                                    newEffect.EffectTrigger = (EBuffEffectTriggerType)effect.EffectTrigger;
-                                                                if (effect.EffectType.HasValue)
-                                                                    newEffect.EffectType = (EBuffAndSkillEffectType)effect.EffectType;
-                                                                if (effect.EffectTargetSelectType.HasValue)
-                                                                    newEffect.EffectTargetSelectType = (EBuffEffectTargetSelectType)effect.EffectTargetSelectType;
-
-                                                                // 遍历数组并逐个添加元素
-                                                                if (effect.EffectParamsString != null)
-                                                                {
-                                                                    foreach (var param in effect.EffectParamsString)
-                                                                    {
-                                                                        newEffect.EffectParamsString.Add(param);
-                                                                    }
-                                                                }
-                                                                if (effect.EffectParams != null)
-                                                                {
-                                                                    foreach (var param in effect.EffectParams)
-                                                                    {
-                                                                        newEffect.EffectParams.Add(param);
-                                                                    }
-                                                                }
-                                                                if (effect.EffectParamsFloat != null)
-                                                                {
-                                                                    foreach (var param in effect.EffectParamsFloat)
-                                                                    {
-                                                                        newEffect.EffectParamsFloat.Add(param);
-                                                                    }
-                                                                }
-
-                                                                existingEffects.Add(newEffect);
-                                                            }
-
-                                                            Log.Info($"Successfully updated BuffEffects list for buff ID: {buffConfig.ID}");
-                                                        }
-                                                        else
-                                                        {
-                                                            Log.Error($"BuffEffects property is not a list type for buff ID: {buffConfig.ID}");
-                                                        }
-                                                    }
-                                                    else
-                                                    {
-                                                        Log.Error($"BuffEffects list is null for buff ID: {buffConfig.ID}");
-                                                    }
-                                                }
-                                                catch (InvalidCastException ex)
-                                                {
-                                                    Log.Error($"Type cast error when updating BuffEffects for buff ID: {buffConfig.ID}: {ex.Message}");
-
-                                                    // 尝试使用反射获取列表的实际类型
-                                                    try
-                                                    {
-                                                        var propertyType = targetProp.PropertyType;
-                                                        if (propertyType.IsGenericType && propertyType.GetGenericTypeDefinition() == typeof(List<>))
-                                                        {
-                                                            var elementType = propertyType.GetGenericArguments()[0];
-                                                            Log.Info($"BuffEffects property type: List<{elementType.Name}>");
-
-                                                            // 尝试创建新列表并设置
-                                                            var newListType = typeof(List<>).MakeGenericType(elementType);
-                                                            var newList = Activator.CreateInstance(newListType);
-
-                                                            if (newList is System.Collections.IList genericList)
-                                                            {
-                                                                foreach (var effect in effects)
-                                                                {
-                                                                    var newEffect = new FUStBuffEffectAttr();
-                                                                    newEffect.EffectParamsString.Clear();
-                                                                    newEffect.EffectParams.Clear();
-                                                                    newEffect.EffectParamsFloat.Clear();
-                                                                    if (effect.EffectTrigger.HasValue)
-                                                                        newEffect.EffectTrigger = (EBuffEffectTriggerType)effect.EffectTrigger;
-                                                                    if (effect.EffectType.HasValue)
-                                                                        newEffect.EffectType = (EBuffAndSkillEffectType)effect.EffectType;
-                                                                    if (effect.EffectTargetSelectType.HasValue)
-                                                                        newEffect.EffectTargetSelectType = (EBuffEffectTargetSelectType)effect.EffectTargetSelectType;
-
-                                                                    // 遍历数组并逐个添加元素
-                                                                    if (effect.EffectParamsString != null)
-                                                                    {
-                                                                        foreach (var param in effect.EffectParamsString)
-                                                                        {
-                                                                            newEffect.EffectParamsString.Add(param);
-                                                                        }
-                                                                    }
-                                                                    if (effect.EffectParams != null)
-                                                                    {
-                                                                        foreach (var param in effect.EffectParams)
-                                                                        {
-                                                                            newEffect.EffectParams.Add(param);
-                                                                        }
-                                                                    }
-                                                                    if (effect.EffectParamsFloat != null)
-                                                                    {
-                                                                        foreach (var param in effect.EffectParamsFloat)
-                                                                        {
-                                                                            newEffect.EffectParamsFloat.Add(param);
-                                                                        }
-                                                                    }
-
-                                                                    genericList.Add(newEffect);
-                                                                }
-
-                                                                // 尝试使用反射设置属性值
-                                                                var setMethod = targetProp.GetSetMethod(true); // 获取非公共的setter
-                                                                if (setMethod != null)
-                                                                {
-                                                                    setMethod.Invoke(targetBuff, new object[] { newList });
-                                                                    Log.Info($"Successfully set BuffEffects using reflection for buff ID: {buffConfig.ID}");
-                                                                }
-                                                                else
-                                                                {
-                                                                    Log.Error($"BuffEffects property has no setter even with reflection for buff ID: {buffConfig.ID}");
-                                                                }
-                                                            }
-                                                        }
-                                                        else
-                                                        {
-                                                            Log.Error($"BuffEffects property is not a generic list type for buff ID: {buffConfig.ID}");
-                                                        }
-                                                    }
-                                                    catch (Exception reflectionEx)
-                                                    {
-                                                        Log.Error($"Reflection approach failed for BuffEffects on buff ID: {buffConfig.ID}: {reflectionEx.Message}");
-                                                    }
-                                                }
-                                                catch (Exception ex)
-                                                {
-                                                    Log.Error($"Error updating BuffEffects list for buff ID: {buffConfig.ID}: {ex.Message}");
-                                                }
-                                            }
-                                            else
-                                            {
-                                                Log.Error($"Cannot read or write BuffEffects property for buff ID: {buffConfig.ID}");
-                                            }
-                                        }
-                                    }
-
-                                    // 特殊处理BuffActiveCondition
-                                    else if (sourceProp.Name == "BuffActiveCondition" && sourceValue is BuffActiveCondition condition)
-                                    {
-                                        var targetCondition = new FUStBuffEffectActiveCondition();
-                                        CopyBuffActiveCondition(condition, targetCondition);
-                                        targetProp.SetValue(targetBuff, targetCondition);
-                                    }
-                                    // 特殊处理Range
-                                    else if (sourceProp.Name == "Range" && sourceValue is BuffRange range)
-                                    {
-                                        var targetRange = new FUStRange();
-                                        CopyBuffRange(range, targetRange);
-                                        targetProp.SetValue(targetBuff, targetRange);
-                                    }
-                                    else
-                                    {
-                                        // 处理枚举类型转换
-                                        if (targetProp.PropertyType.IsEnum)
-                                        {
-                                            if (sourceValue is int intValue)
-                                            {
-                                                targetProp.SetValue(targetBuff, Enum.ToObject(targetProp.PropertyType, intValue));
-                                            }
-                                            else
-                                            {
-                                                targetProp.SetValue(targetBuff, Enum.Parse(targetProp.PropertyType, sourceValue.ToString()));
-                                            }
-                                        }
-                                        // 处理可空枚举类型
-                                        else if (Nullable.GetUnderlyingType(targetProp.PropertyType)?.IsEnum == true)
-                                        {
-                                            if (sourceValue is int intValue)
-                                            {
-                                                targetProp.SetValue(targetBuff, Enum.ToObject(Nullable.GetUnderlyingType(targetProp.PropertyType), intValue));
-                                            }
-                                            else
-                                            {
-                                                targetProp.SetValue(targetBuff, Enum.Parse(Nullable.GetUnderlyingType(targetProp.PropertyType), sourceValue.ToString()));
-                                            }
-                                        }
-                                        else
-                                        {
-                                            targetProp.SetValue(targetBuff, sourceValue);
-                                        }
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    Log.Error($"Failed to set property {sourceProp.Name} for buff {buffConfig.ID}: {ex.Message}");
-                                }
-                            }
-                        }
-                    }
-                    processedCount++;
-                    Log.Info($"Successfully processed buff with ID: {buffConfig.ID}");
+                    UpdateProperty(sourceProp.Name, sourceValue, targetProp, target);
                 }
                 catch (Exception ex)
                 {
-                    Log.Error($"Failed to process buff config for ID {buffConfig.ID}: {ex.Message}");
+                    Log.Error($"Failed to set property {sourceProp.Name} for buff {source.ID}: {ex.Message}");
                 }
             }
+        }
 
-            Log.Info($"Total processed buff configs: {processedCount}");
-            return processedCount;
+        private static void UpdateProperty(string propertyName, object sourceValue, PropertyInfo targetProp, FUStBuffDesc targetBuff)
+        {
+            switch (propertyName)
+            {
+                case "BuffEffects" when sourceValue is List<BuffEffect> effects:
+                    UpdateBuffEffects(effects, targetProp, targetBuff);
+                    break;
+
+                case "BuffActiveCondition" when sourceValue is BuffActiveCondition condition:
+                    var targetCondition = new FUStBuffEffectActiveCondition();
+                    CopyBuffActiveCondition(condition, targetCondition);
+                    targetProp.SetValue(targetBuff, targetCondition);
+                    break;
+
+                case "Range" when sourceValue is BuffRange range:
+                    var targetRange = new FUStRange();
+                    CopyBuffRange(range, targetRange);
+                    targetProp.SetValue(targetBuff, targetRange);
+                    break;
+
+                default:
+                    UpdateRegularProperty(sourceValue, targetProp, targetBuff);
+                    break;
+            }
+        }
+
+        private static void UpdateBuffEffects(List<BuffEffect> effects, PropertyInfo targetProp, FUStBuffDesc targetBuff)
+        {
+            Log.Info($"Updating BuffEffects for buff ID: {targetBuff.ID}");
+
+            var newEffects = effects.Select(effect =>
+            {
+                var newEffect = new FUStBuffEffectAttr();
+                newEffect.EffectParamsString.Clear();
+                newEffect.EffectParams.Clear();
+                newEffect.EffectParamsFloat.Clear();
+
+                if (effect.EffectTrigger.HasValue)
+                    newEffect.EffectTrigger = (EBuffEffectTriggerType)effect.EffectTrigger;
+                if (effect.EffectType.HasValue)
+                    newEffect.EffectType = (EBuffAndSkillEffectType)effect.EffectType;
+                if (effect.EffectTargetSelectType.HasValue)
+                    newEffect.EffectTargetSelectType = (EBuffEffectTargetSelectType)effect.EffectTargetSelectType;
+
+                effect.EffectParamsString?.ForEach(param => newEffect.EffectParamsString.Add(param));
+                effect.EffectParams?.ForEach(param => newEffect.EffectParams.Add(param));
+                effect.EffectParamsFloat?.ForEach(param => newEffect.EffectParamsFloat.Add(param));
+
+                return newEffect;
+            }).ToList();
+
+            if (targetProp.CanWrite)
+            {
+                targetProp.SetValue(targetBuff, newEffects);
+            }
+            else
+            {
+                UpdateReadOnlyBuffEffects(targetProp, targetBuff, newEffects);
+            }
+        }
+
+        private static void UpdateReadOnlyBuffEffects(PropertyInfo targetProp, FUStBuffDesc targetBuff, List<FUStBuffEffectAttr> newEffects)
+        {
+            try
+            {
+                if (targetProp.GetValue(targetBuff) is not System.Collections.IList existingEffects)
+                {
+                    Log.Error($"BuffEffects property is not a list type for buff ID: {targetBuff.ID}");
+                    return;
+                }
+
+                existingEffects.Clear();
+                newEffects.ForEach(effect => existingEffects.Add(effect));
+                Log.Info($"Successfully updated BuffEffects list for buff ID: {targetBuff.ID}");
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Error updating BuffEffects list for buff ID: {targetBuff.ID}: {ex.Message}");
+            }
+        }
+
+        private static void UpdateRegularProperty(object sourceValue, PropertyInfo targetProp, FUStBuffDesc targetBuff)
+        {
+            var targetType = targetProp.PropertyType;
+
+            if (targetType.IsEnum)
+            {
+                targetProp.SetValue(targetBuff, sourceValue is int intValue
+                    ? Enum.ToObject(targetType, intValue)
+                    : Enum.Parse(targetType, sourceValue.ToString()));
+            }
+            else if (Nullable.GetUnderlyingType(targetType)?.IsEnum == true)
+            {
+                var underlyingType = Nullable.GetUnderlyingType(targetType);
+                targetProp.SetValue(targetBuff, sourceValue is int intValue
+                    ? Enum.ToObject(underlyingType, intValue)
+                    : Enum.Parse(underlyingType, sourceValue.ToString()));
+            }
+            else
+            {
+                targetProp.SetValue(targetBuff, sourceValue);
+            }
         }
 
 
