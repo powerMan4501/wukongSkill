@@ -14,6 +14,8 @@ using ArchiveB1;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.Collections;
+using UnrealEngine.InputCore;
 
 
 public class BuffActiveCondition
@@ -101,34 +103,6 @@ namespace bian
         private static BuffDescRuntime DescRuntime;
         public static string Nameo;
 
-
-        public class BuffDispConfig
-        {
-            public int ID { get; set; }
-            public int BuffID { get; set; }
-            public int CasterResID { get; set; }
-            public int OwnerResID { get; set; }
-            public int IsUseDispConfig { get; set; }
-            public List<EffectConfig> EnterFX { get; set; }
-            public int ForceDisplay { get; set; }
-        }
-
-        public class EffectConfig
-        {
-            public string PSPath { get; set; }
-            public int Scale { get; set; }
-            public int IsAttach { get; set; }
-            public string AttachName { get; set; }
-            public double WorldOffsetX { get; set; }
-            public double WorldOffsetY { get; set; }
-            public double WorldOffsetZ { get; set; }
-            public int UseScaleFit { get; set; }
-            public int IsAttachToSkin { get; set; }
-            public string SkelMeshParamName { get; set; }
-            public string AddTags { get; set; }
-        }
-
-
         public static ModelManager GetModelManager()
         {
             if (manager == null)
@@ -147,395 +121,6 @@ namespace bian
             UI.CreateUI();
         }
 
-        /// 加载并应用BuffDisp配置到游戏数据库中
-
-        public static int LoadAndApplyBuffDispConfigs(string configDirectory = null)
-        {
-            if (configDirectory == null)
-            {
-                configDirectory = Path.Combine("CSharpLoader", "Mods", "bian", "BuffDisp");
-            }
-
-            if (!Directory.Exists(configDirectory))
-            {
-                Log.Error($"BuffDisp config directory not found: {configDirectory}");
-                try
-                {
-                    Directory.CreateDirectory(configDirectory);
-                    Log.Info($"Created BuffDisp config directory: {configDirectory}");
-                }
-                catch (Exception ex)
-                {
-                    Log.Error($"Failed to create BuffDisp config directory: {ex.Message}");
-                    return 0;
-                }
-            }
-
-            var buffDispList = BGW_GameDB.GetAllBuffDispDesc();
-            if (buffDispList == null || buffDispList.Count == 0)
-            {
-                Log.Error("Failed to get buff disp list from game database");
-                return 0;
-            }
-
-            int processedCount = 0;
-            foreach (string file in Directory.GetFiles(configDirectory, "*.json"))
-            {
-                try
-                {
-                    string jsonContent = File.ReadAllText(file);
-                    var settings = new JsonSerializerSettings
-                    {
-                        Converters = new List<JsonConverter> { new StringEnumConverter() }
-                    };
-                    var configs = JsonConvert.DeserializeObject<List<BuffDispConfig>>(jsonContent, settings);
-
-                    if (configs != null)
-                    {
-                        foreach (var config in configs)
-                        {
-                            try
-                            {
-                                FUStBuffDispDesc targetBuffDisp;
-
-                                if (buffDispList.ContainsKey(config.ID))
-                                {
-                                    // 更新现有buff
-                                    targetBuffDisp = buffDispList[config.ID];
-                                    Log.Info($"Updating existing BuffDisp with ID: {config.ID}");
-                                }
-                                else
-                                {
-                                    // 创建新buff，使用第一个buff作为模板
-                                    buffDispList.TryGetValue(1010101, out var templateBuff);
-                                    targetBuffDisp = (FUStBuffDispDesc)templateBuff.Clone();
-                                    buffDispList.Add(config.ID, targetBuffDisp);
-                                    Log.Info($"Creating new BuffDisp with ID: {config.ID}");
-                                }
-
-                                // 使用反射更新所有非null属性
-                                var sourceType = typeof(BuffDispConfig);
-                                var targetType = typeof(FUStBuffDispDesc);
-                                var sourceProps = sourceType.GetProperties();
-
-                                foreach (var sourceProp in sourceProps)
-                                {
-                                    var sourceValue = sourceProp.GetValue(config);
-                                    if (sourceValue != null)
-                                    {
-                                        var targetProp = targetType.GetProperty(sourceProp.Name);
-                                        if (targetProp != null && targetProp.CanWrite)
-                                        {
-                                            // 特殊处理EnterFX列表
-                                            if (sourceProp.Name == "EnterFX" && sourceValue is List<EffectConfig> effects)
-                                            {
-                                                var newEffects = new List<EffectConfig>();
-                                                foreach (var effect in effects)
-                                                {
-                                                    var newEffect = new EffectConfig();
-                                                    var effectType = typeof(EffectConfig);
-                                                    var effectProps = typeof(EffectConfig).GetProperties();
-
-                                                    foreach (var effectProp in effectProps)
-                                                    {
-                                                        var effectValue = effectProp.GetValue(effect);
-                                                        if (effectValue != null)
-                                                        {
-                                                            var targetEffectProp = effectType.GetProperty(effectProp.Name);
-                                                            if (targetEffectProp != null && targetEffectProp.CanWrite)
-                                                            {
-                                                                // 特殊处理枚举类型转换
-                                                                if (targetEffectProp.PropertyType == typeof(EGSYesNo))
-                                                                {
-                                                                    targetEffectProp.SetValue(newEffect, (EGSYesNo)effectValue);
-                                                                }
-                                                                else
-                                                                {
-                                                                    targetEffectProp.SetValue(newEffect, effectValue);
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                    newEffects.Add(newEffect);
-                                                }
-                                                targetProp.SetValue(targetBuffDisp, newEffects);
-                                            }
-                                            else
-                                            {
-                                                // 特殊处理枚举类型转换
-                                                if (targetProp.PropertyType == typeof(EGSYesNo))
-                                                {
-                                                    targetProp.SetValue(targetBuffDisp, (EGSYesNo)sourceValue);
-                                                }
-                                                else
-                                                {
-                                                    targetProp.SetValue(targetBuffDisp, sourceValue);
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-                                processedCount++;
-                                Log.Info($"Successfully processed BuffDisp with BuffID: {config.BuffID}");
-                            }
-                            catch (Exception ex)
-                            {
-                                Log.Error($"Failed to process BuffDisp config for BuffID {config.BuffID}: {ex.Message}");
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Log.Error($"Error loading BuffDisp configs from {file}: {ex.Message}");
-                }
-            }
-
-            Log.Info($"Total processed BuffDisp configs: {processedCount}");
-            return processedCount;
-        }
-
-        private static void CopyBuffActiveCondition(BuffActiveCondition source, FUStBuffEffectActiveCondition target)
-        {
-            if (source == null || target == null) return;
-
-            if (source.ConditionType.HasValue)
-                target.ConditionType = (EGSBuffAndSkillEffectActiveCondition)source.ConditionType.Value;
-            if (source.ConditionParams != null)
-                target.ConditionParams = source.ConditionParams;
-        }
-
-        private static void CopyBuffRange(BuffRange source, FUStRange target)
-        {
-            if (source == null || target == null) return;
-
-            if (source.RangeType.HasValue)
-                target.RangeType = (ERangeType)source.RangeType.Value;
-            if (source.RangeCenterType.HasValue)
-                target.RangeCenterType = (EEffectRangeCenterType)source.RangeCenterType.Value;
-            if (source.RangeParam != null)
-            {
-                target.RangeParam.Clear();
-                foreach (var param in source.RangeParam)
-                    target.RangeParam.Add(param);
-            }
-        }
-
-        public static int LoadAndApplyBuff(string configDirectory = null)
-        {
-            try
-            {
-                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BuffDesc");
-
-                var buffConfigs = LoadAllBuffConfigs(configDirectory);
-                var buffList = BGW_GameDB.GetAllBuffDesc();
-
-                if (buffList == null || buffList.Count == 0 || buffConfigs == null)
-                {
-                    Log.Error("Failed to load buff configs or buff list is not available");
-                    return 0;
-                }
-
-                const int templateBuffId = 295;
-                if (!buffList.TryGetValue(templateBuffId, out var templateBuff))
-                {
-                    Log.Error($"Template buff (ID: {templateBuffId}) not found");
-                    return 0;
-                }
-
-                var sourceType = typeof(BuffConfig);
-                var targetType = typeof(FUStBuffDesc);
-                var sourceProps = sourceType.GetProperties();
-                var processedCount = 0;
-
-                foreach (var buffConfig in buffConfigs)
-                {
-                    try
-                    {
-                        var targetBuff = GetOrCreateBuff(buffConfig, buffList, templateBuff);
-                        UpdateBuffProperties(buffConfig, targetBuff, sourceProps, targetType);
-                        processedCount++;
-                        Log.Info($"Successfully processed buff with ID: {buffConfig.ID}");
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Error($"Failed to process buff config for ID {buffConfig.ID}: {ex.Message}");
-                    }
-                }
-
-                Log.Info($"Total processed buff configs: {processedCount}");
-                return processedCount;
-            }
-            catch (Exception ex)
-            {
-                Log.Error($"Critical error in LoadAndApplyBuff: {ex.Message}");
-                return 0;
-            }
-        }
-
-        private static FUStBuffDesc GetOrCreateBuff(BuffConfig config, Dictionary<int, FUStBuffDesc> buffList, FUStBuffDesc templateBuff)
-        {
-            if (buffList.TryGetValue(config.ID, out var existingBuff))
-            {
-                Log.Info($"Updating existing buff with ID: {config.ID}");
-                return existingBuff;
-            }
-
-            var newBuff = (FUStBuffDesc)templateBuff.Clone();
-            buffList.Add(config.ID, newBuff);
-            Log.Info($"Creating new buff with ID: {config.ID}");
-            return newBuff;
-        }
-
-        private static void UpdateBuffProperties(BuffConfig source, FUStBuffDesc target, PropertyInfo[] sourceProps, Type targetType)
-        {
-            foreach (var sourceProp in sourceProps)
-            {
-                var sourceValue = sourceProp.GetValue(source);
-                if (sourceValue == null) continue;
-
-                var targetProp = targetType.GetProperty(sourceProp.Name);
-                if (targetProp == null) continue;
-
-                try
-                {
-                    if (source.ID == 444406001)
-                    {
-                        Log.Info($"Processing {sourceProp.Name} for buff ID: {source.ID}");
-                    }
-
-                    UpdateProperty(sourceProp.Name, sourceValue, targetProp, target);
-                }
-                catch (Exception ex)
-                {
-                    Log.Error($"Failed to set property {sourceProp.Name} for buff {source.ID}: {ex.Message}");
-                }
-            }
-        }
-
-        private static void UpdateProperty(string propertyName, object sourceValue, PropertyInfo targetProp, FUStBuffDesc targetBuff)
-        {
-            switch (propertyName)
-            {
-                case "BuffEffects" when sourceValue is List<BuffEffect> effects:
-                    UpdateBuffEffects(effects, targetProp, targetBuff);
-                    break;
-
-                case "BuffActiveCondition" when sourceValue is BuffActiveCondition condition:
-                    var targetCondition = new FUStBuffEffectActiveCondition();
-                    CopyBuffActiveCondition(condition, targetCondition);
-                    targetProp.SetValue(targetBuff, targetCondition);
-                    break;
-
-                case "Range" when sourceValue is BuffRange range:
-                    var targetRange = new FUStRange();
-                    CopyBuffRange(range, targetRange);
-                    targetProp.SetValue(targetBuff, targetRange);
-                    break;
-
-                default:
-                    UpdateRegularProperty(sourceValue, targetProp, targetBuff);
-                    break;
-            }
-        }
-
-        private static void UpdateBuffEffects(List<BuffEffect> effects, PropertyInfo targetProp, FUStBuffDesc targetBuff)
-        {
-            Log.Info($"Updating BuffEffects for buff ID: {targetBuff.ID}");
-
-            var newEffects = effects.Select(effect =>
-            {
-                var newEffect = new FUStBuffEffectAttr();
-                newEffect.EffectParamsString.Clear();
-                newEffect.EffectParams.Clear();
-                newEffect.EffectParamsFloat.Clear();
-
-                if (effect.EffectTrigger.HasValue)
-                    newEffect.EffectTrigger = (EBuffEffectTriggerType)effect.EffectTrigger;
-                if (effect.EffectType.HasValue)
-                    newEffect.EffectType = (EBuffAndSkillEffectType)effect.EffectType;
-                if (effect.EffectTargetSelectType.HasValue)
-                    newEffect.EffectTargetSelectType = (EBuffEffectTargetSelectType)effect.EffectTargetSelectType;
-
-                effect.EffectParamsString?.ForEach(param => newEffect.EffectParamsString.Add(param));
-                effect.EffectParams?.ForEach(param => newEffect.EffectParams.Add(param));
-                effect.EffectParamsFloat?.ForEach(param => newEffect.EffectParamsFloat.Add(param));
-
-                return newEffect;
-            }).ToList();
-
-            if (targetProp.CanWrite)
-            {
-                targetProp.SetValue(targetBuff, newEffects);
-            }
-            else
-            {
-                UpdateReadOnlyBuffEffects(targetProp, targetBuff, newEffects);
-            }
-        }
-
-        private static void UpdateReadOnlyBuffEffects(PropertyInfo targetProp, FUStBuffDesc targetBuff, List<FUStBuffEffectAttr> newEffects)
-        {
-            try
-            {
-                if (targetProp.GetValue(targetBuff) is not System.Collections.IList existingEffects)
-                {
-                    Log.Error($"BuffEffects property is not a list type for buff ID: {targetBuff.ID}");
-                    return;
-                }
-
-                existingEffects.Clear();
-                newEffects.ForEach(effect => existingEffects.Add(effect));
-                Log.Info($"Successfully updated BuffEffects list for buff ID: {targetBuff.ID}");
-            }
-            catch (Exception ex)
-            {
-                Log.Error($"Error updating BuffEffects list for buff ID: {targetBuff.ID}: {ex.Message}");
-            }
-        }
-
-        private static void UpdateRegularProperty(object sourceValue, PropertyInfo targetProp, FUStBuffDesc targetBuff)
-        {
-            var targetType = targetProp.PropertyType;
-
-            if (targetType.IsEnum)
-            {
-                targetProp.SetValue(targetBuff, sourceValue is int intValue
-                    ? Enum.ToObject(targetType, intValue)
-                    : Enum.Parse(targetType, sourceValue.ToString()));
-            }
-            else if (Nullable.GetUnderlyingType(targetType)?.IsEnum == true)
-            {
-                var underlyingType = Nullable.GetUnderlyingType(targetType);
-                targetProp.SetValue(targetBuff, sourceValue is int intValue
-                    ? Enum.ToObject(underlyingType, intValue)
-                    : Enum.Parse(underlyingType, sourceValue.ToString()));
-            }
-            else
-            {
-                targetProp.SetValue(targetBuff, sourceValue);
-            }
-        }
-
-
-
-        public static FUStBuffDesc AddNewBuff_cpoy(int NewBuffID, int CopybuffID)
-        {
-            FUStBuffDesc fUStBuffDesc = GameDBRuntime.GetFUStBuffDesc(NewBuffID);
-            if (fUStBuffDesc != null)
-            {
-                return fUStBuffDesc;
-            }
-            if (BGW_GameDB.GetAllBuffDesc().TryGetValue(CopybuffID, out var value))
-            {
-                FUStBuffDesc val = new FUStBuffDesc();
-                val.MergeFrom(value);
-                val.ID = NewBuffID;
-                BGW_GameDB.GetAllBuffDesc().Add(val.ID, val);
-            }
-            return value;
-        }
         public static void RegisterManager()
         {
             Manager.GetModelManager().InitConfig();
@@ -544,10 +129,15 @@ namespace bian
 
             // 加载技能映射规则
             string configPath = Path.Combine("CSharpLoader", "Mods", "bian", "skillMaping");
-            LoadAllSkillMappingRules(configPath);
-            // 加载并应用BuffDisp配置
-            LoadAndApplyBuffDispConfigs();
-            LoadAndApplyBuff();
+            LoadUtils.LoadAllSkillMappingRules(configPath);
+
+            Task.Run(async delegate
+            {
+                await Task.Delay(1250);
+                LoadUtils.LoadAndApplyBuff();
+                await Task.Delay(2850);
+                LoadUtils.LoadAndApplyBuffDispConfigs();
+            });
 
 
             // 在这里可以将buffDispConfigs插入到游戏中的数据
@@ -558,99 +148,7 @@ namespace bian
                 harmony.PatchAll(assembly);
             }
         }
-        public static List<BuffDispConfig> LoadAllBuffDispConfigs(string configDirectory)
-        {
-            if (!Directory.Exists(configDirectory))
-            {
-                Log.Error($"BuffDisp config directory not found: {configDirectory}");
-                try
-                {
-                    Directory.CreateDirectory(configDirectory);
-                    Log.Info($"Created BuffDisp config directory: {configDirectory}");
-                }
-                catch (Exception ex)
-                {
-                    Log.Error($"Failed to create BuffDisp config directory: {ex.Message}");
-                    return new List<BuffDispConfig>();
-                }
-            }
 
-            List<BuffDispConfig> allConfigs = new List<BuffDispConfig>();
-
-            // 加载所有JSON文件
-            foreach (string file in Directory.GetFiles(configDirectory, "*.json"))
-            {
-                try
-                {
-                    string jsonContent = File.ReadAllText(file);
-
-                    // 配置JsonSerializer以正确处理数据
-                    var settings = new JsonSerializerSettings
-                    {
-                        Converters = new List<JsonConverter> { new StringEnumConverter() }
-                    };
-
-                    var configs = JsonConvert.DeserializeObject<List<BuffDispConfig>>(jsonContent, settings);
-                    if (configs != null)
-                    {
-                        allConfigs.AddRange(configs);
-                        Log.Info($"Loaded {configs.Count} BuffDisp configs from {Path.GetFileName(file)}");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Log.Error($"Error loading BuffDisp configs from {file}: {ex.Message}");
-                }
-            }
-
-            Log.Info($"Total loaded BuffDisp configs: {allConfigs.Count}");
-            return allConfigs;
-        }
-
-        public static List<BuffConfig> LoadAllBuffConfigs(string configDirectory)
-        {
-            if (!Directory.Exists(configDirectory))
-            {
-                Log.Error($"Buff config directory not found: {configDirectory}");
-                try
-                {
-                    Directory.CreateDirectory(configDirectory);
-                    Log.Info($"Created Buff config directory: {configDirectory}");
-                }
-                catch (Exception ex)
-                {
-                    Log.Error($"Failed to create Buff config directory: {ex.Message}");
-                    return new List<BuffConfig>();
-                }
-            }
-
-            List<BuffConfig> allConfigs = new List<BuffConfig>();
-
-            foreach (string file in Directory.GetFiles(configDirectory, "*.json"))
-            {
-                try
-                {
-                    string jsonContent = File.ReadAllText(file);
-                    var settings = new JsonSerializerSettings
-                    {
-                        Converters = new List<JsonConverter> { new StringEnumConverter() }
-                    };
-                    var configs = JsonConvert.DeserializeObject<List<BuffConfig>>(jsonContent, settings);
-                    if (configs != null)
-                    {
-                        allConfigs.AddRange(configs);
-                        Log.Info($"Loaded {configs.Count} Buff configs from {Path.GetFileName(file)}");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Log.Error($"Error loading Buff configs from {file}: {ex.Message}");
-                }
-            }
-
-            Log.Info($"Total loaded Buff configs: {allConfigs.Count}");
-            return allConfigs;
-        }
 
         public static void UnregisterManager()
         {
@@ -671,68 +169,23 @@ namespace bian
         }
 
         private static List<SkillMappingRule> AllSkillMappingRules = new List<SkillMappingRule>();
-        private static List<SkillMappingRule> LoadSkillMappingRulesFromJson(string filePath)
+
+        // 添加公共属性
+        public static IReadOnlyList<SkillMappingRule> SkillMappingRules
         {
-            try
-            {
-                string jsonContent = File.ReadAllText(filePath);
-
-                // 配置JsonSerializer以正确处理枚举
-                var settings = new JsonSerializerSettings
-                {
-                    Converters = new List<JsonConverter> { new StringEnumConverter() }
-                };
-
-                var rules = JsonConvert.DeserializeObject<List<SkillMappingRule>>(jsonContent, settings);
-                return rules ?? new List<SkillMappingRule>();
-            }
-            catch (Exception ex)
-            {
-                Log.Error($"Failed to load skill mapping rules from {filePath}: {ex.Message}");
-                return new List<SkillMappingRule>();
-            }
+            get { return AllSkillMappingRules.AsReadOnly(); }
         }
 
-        public static void LoadAllSkillMappingRules(string configDirectory)
+        // 添加公共方法来修改规则列表
+        public static void ClearSkillMappingRules()
         {
-            if (!Directory.Exists(configDirectory))
-            {
-                Log.Error($"Config directory not found: {configDirectory}");
-                // 尝试创建目录
-                try
-                {
-                    Directory.CreateDirectory(configDirectory);
-                    Log.Info($"Created config directory: {configDirectory}");
-                }
-                catch (Exception ex)
-                {
-                    Log.Error($"Failed to create config directory: {ex.Message}");
-                    return;
-                }
-            }
-
-            // 清空现有规则
             AllSkillMappingRules.Clear();
-
-            // 加载所有JSON文件
-            foreach (string file in Directory.GetFiles(configDirectory, "*.json"))
-            {
-                try
-                {
-                    var rules = LoadSkillMappingRulesFromJson(file);
-                    Log.Info($"Loaded {rules.Count} rules from {Path.GetFileName(file)}");
-                    // 直接将规则添加到总列表中，不需要分类
-                    AllSkillMappingRules.AddRange(rules);
-                }
-                catch (Exception ex)
-                {
-                    Log.Error($"Error loading rules from {file}: {ex.Message}");
-                }
-            }
-
-            Log.Info($"Total loaded rules: {AllSkillMappingRules.Count}");
         }
 
+        public static void AddSkillMappingRules(IEnumerable<SkillMappingRule> rules)
+        {
+            AllSkillMappingRules.AddRange(rules);
+        }
 
 
         [HarmonyPatch(typeof(GSDel_RequestSpawnAProjectile), "Invoke")]
@@ -749,10 +202,10 @@ namespace bian
                         var playerLocation = ProjectileSpawnInfo.Spawner.GetActorLocation();
                         var xyz = ProjectileSpawnInfo.Spawner.GetActorForwardVector();
                         var forwardVector = ProjectileSpawnInfo.Spawner.GetActorForwardVector();
-                        forwardVector.Y *= 800;  // 只在Y轴方向增加800单位
-                        forwardVector.X *= 800;  // 只在X轴方向增加800单位
+                        forwardVector.Y *= 600;  // 只在Y轴方向增加800单位
+                        forwardVector.X *= 600;  // 只在X轴方向增加800单位
                         ProjectileSpawnInfo.SpawnPosition = playerLocation + forwardVector;
-                        Log.Info($"夜叉王飞轮子弹Y+800   forwardVector:{forwardVector} SpawnPosition:{ProjectileSpawnInfo.SpawnPosition}");
+                        Log.Info($"夜叉王飞轮子弹Y+600   forwardVector:{forwardVector} SpawnPosition:{ProjectileSpawnInfo.SpawnPosition}");
                     }
 
                 }
@@ -760,6 +213,7 @@ namespace bian
             }
 
         }
+
 
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_BuffAdd_Multicast_Invoke")]
         [HarmonyPrefix]
@@ -777,8 +231,9 @@ namespace bian
             }
             var buffDesc = GameDBRuntime.GetFUStBuffDesc(BuffID);
 
-            if (buffDesc != null && buffDesc?.Duration > 1000)
+            if (buffDesc != null && (buffDesc?.Duration > 1000 || BuffID == 9870001 || BuffID == 888805000))
             {
+
                 Log.Info($"buff {BuffID} ,buffDescBuffTips：{buffDesc.BuffTips} ，Duration：{buffDesc.Duration} ");
                 if (buffDesc?.Range?.RangeParam != null && buffDesc.Range.RangeParam.Count > 0)
                 {
@@ -1055,13 +510,8 @@ namespace bian
                 BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 4000);
             }
 
-
-            // 遍历所有规则
-            // var mapArr = AllSkillMappingRules.Where(r => r.OriginalId == currentId); 
-
             // 首先过滤出所有匹配的规则
             var mapArr = AllSkillMappingRules.Where(r => r.OriginalId == currentId).ToList();
-
 
             if (mapArr.Count() > 0)
             {
@@ -1133,12 +583,14 @@ namespace bian
             MyUtils.SpwanProjectileByTracker3(intEffectParam, (MyUtils.ETrackType)intEffectParam2, intEffectParam3, new FVector((double)floatEffectParam, (double)floatEffectParam2, (double)floatEffectParam3), new FVector((double)floatEffectParam4, (double)floatEffectParam5, (double)floatEffectParam6), x, y, z, floatEffectParam7, intEffectParam4, intEffectParam5, intEffectParam6, intEffectParam7 == 1);
             return true;
         }
-        /*[HarmonyPatch(typeof(UInputPreProcEvent), "OnAnyKeyTriggerEvent")]
+
+
+        [HarmonyPatch(typeof(UInputPreProcEvent), "OnAnyKeyTriggerEvent")]
         [HarmonyPrefix]
         private static void OnAnyKeyTriggerEvent(FKey Key)
         {
-            Log.Debug($"bian: [PATCH]OnAnyKeyTriggerEvent  --> {Key.GetFName()}");
-        }*/
+            Log.Info($"bian: [PATCH]OnAnyKeyTriggerEvent  --> {Key.GetFName()}");
+        }
 
         /*[HarmonyPatch(typeof(BUS_MagicallyChangeComp), "OnCastMagicallyChangeSkill")]
         [HarmonyPrefix]
