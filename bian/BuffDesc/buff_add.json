@@ -175,44 +175,53 @@
   },
   {
     "ID": 888666005,
+    "Duration": -1,
     "BuffTips": "雷buff"
   },
   {
     "ID": 888666006,
+    "Duration": -1,
     "BuffTips": "冰buff"
   },
   {
     "ID": 888666007,
+    "Duration": -1,
     "BuffTips": "火buff"
   },
   {
     "ID": 888666008,
+    "Duration": -1,
     "BuffTips": "毒buff"
   },
   {
     "ID": 888666009,
+    "Duration": -1,
+    "Interval": 150,
     "BuffTips": "棍花buff，添加 888666010",
     "BuffEffects": [
       {
-        "EffectTrigger": 1,
+        "EffectTrigger": 2,
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [888666009],
+        "EffectParams": [888666010],
         "EffectParamsFloat": [0]
       }
     ]
   },
   {
     "ID": 888666010,
+    "Duration": 150,
     "BuffTips": "棍花buff，触发子弹用的"
   },
   {
     "ID": 888666011,
+    "Duration": -1,
+    "Interval": 150,
     "BuffTips": "搅阵buff，添加 888666012",
     "BuffEffects": [
       {
-        "EffectTrigger": 1,
+        "EffectTrigger": 2,
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
@@ -223,15 +232,18 @@
   },
   {
     "ID": 888666012,
+    "Duration": 150,
     "BuffTips": "搅阵buff，触发子弹用的"
   },
 
   {
     "ID": 888666013,
+    "Duration": -1,
+    "Interval": 150,
     "BuffTips": "进尺buff，添加 888666014",
     "BuffEffects": [
       {
-        "EffectTrigger": 1,
+        "EffectTrigger": 2,
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
@@ -242,15 +254,18 @@
   },
   {
     "ID": 888666014,
+    "Duration": 150,
     "BuffTips": "进尺buff，触发子弹用的"
   },
 
   {
     "ID": 888666015,
+    "Duration": -1,
+    "Interval": 150,
     "BuffTips": "风云转buff，添加 888666016",
     "BuffEffects": [
       {
-        "EffectTrigger": 1,
+        "EffectTrigger": 2,
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
@@ -261,29 +276,35 @@
   },
   {
     "ID": 888666016,
+    "Duration": 150,
     "BuffTips": "风云转buff，触发子弹用的"
   },
 
   {
     "ID": 888666021,
+    "Duration": 3050,
     "BuffTips": "平A1 BUFF"
   },
   {
     "ID": 888666022,
+    "Duration": 3050,
     "BuffTips": "平A2 BUFF"
   },
 
   {
     "ID": 888666023,
+    "Duration": 3050,
     "BuffTips": "平A3 BUFF"
   },
   {
     "ID": 888666024,
+    "Duration": 3050,
     "BuffTips": "平A4 BUFF"
   },
 
   {
     "ID": 888666025,
+    "Duration": 3050,
     "BuffTips": "平A5 BUFF"
   },
   {

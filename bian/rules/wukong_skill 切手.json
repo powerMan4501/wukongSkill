@@ -532,7 +532,7 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 80000008,
+              "ProjectTileID": 1016901,
               "noBuffCondition": 888666007,
               "SpeedLeftValue": 6000,
               "SpeedRightValue": 6000,
