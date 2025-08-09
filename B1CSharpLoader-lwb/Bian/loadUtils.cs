@@ -61,11 +61,11 @@ public class ChargeSkillBuffInfo
 
 public class ChargeSkillConfig
 {
-    public string desc { get; set; }
+    public string? desc { get; set; }
     public int ID { get; set; }
-    public int LoopCanMove { get; set; }
-    public int LoopCanRotate { get; set; }
-    public double ChargeMoveSpeedRate { get; set; }
+    public EGSYesNo? LoopCanMove { get; set; }
+    public EGSYesNo? LoopCanRotate { get; set; }
+    public EMoveSpeedType? ChargeMoveSpeedRate { get; set; }
     public List<ChargeSkillBuffInfo> ChargeSkillBuffInfoList { get; set; }
 }
 
@@ -404,6 +404,78 @@ namespace bian
                             }
                             break;
 
+                        // case "ChargeSkillBuffInfoList" when sourceValue is List<ChargeSkillBuffInfo> buffInfos:
+                        //     var buffInfoList = buffInfos.Select(buffInfo =>
+                        //     {
+                        //         var newBuffInfo = new FUStChargeSkillBuffInfo();
+                        //         newBuffInfo.BuffID = buffInfo.BuffID;
+                        //         newBuffInfo.BeginTimeInBeginStage = (float)buffInfo.BeginTimeInBeginStage;
+                        //         newBuffInfo.EndTimeInEndStage = (float)buffInfo.EndTimeInEndStage;
+                        //         return newBuffInfo;
+                        //     }).ToList();
+
+                        //     var chfields = target.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+                        //     var buffInfoListField = chfields.FirstOrDefault(f => f.Name.ToLower().Contains("chargeskillbuffinfolist"));
+
+                        //     if (buffInfoListField != null)
+                        //     {
+                        //         try
+                        //         {
+                        //             if (buffInfoListField.GetValue(target) is System.Collections.IList existingBuffInfos)
+                        //             {
+                        //                 existingBuffInfos.Clear();
+                        //                 buffInfoList.ForEach(buffInfo => existingBuffInfos.Add(buffInfo));
+                        //                 Log.Info($"Successfully updated ChargeSkillBuffInfoList");
+                        //             }
+                        //             else
+                        //             {
+                        //                 buffInfoListField.SetValue(target, buffInfoList);
+                        //                 Log.Info($"Successfully set new ChargeSkillBuffInfoList");
+                        //             }
+                        //         }
+                        //         catch (Exception ex)
+                        //         {
+                        //             Log.Error($"Failed to set ChargeSkillBuffInfoList: {ex.Message}");
+                        //         }
+                        //     }
+                        //     else
+                        //     {
+                        //         Log.Error("Could not find ChargeSkillBuffInfoList field in target type");
+                        //     }
+                        //     break;
+
+                        // 处理SummonConfig中的数组类型字段
+                        case "BornMontagePathList":
+                        case "DisappearMontagePathList":
+                            if (sourceValue is List<string> stringList)
+                            {
+                                HandleStringListProperty(target, targetProp, stringList);
+                            }
+                            break;
+
+                        case "BornSkillList":
+                        case "BuffList":
+                            if (sourceValue is List<int> intLists)
+                            {
+                                HandleIntListProperty(target, targetProp, intLists);
+                            }
+                            break;
+
+                        case "LoopCanMove":
+                        case "LoopCanRotate":
+                            if (sourceValue is int enumValue)
+                            {
+                                targetProp.SetValue(target, (EGSYesNo)enumValue);
+                            }
+                            break;
+
+                        case "ChargeMoveSpeedRate":
+                            if (sourceValue is EMoveSpeedType speedRate)
+                            {
+                                targetProp.SetValue(target, speedRate);
+                            }
+                            break;
+
                         case "ChargeSkillBuffInfoList" when sourceValue is List<ChargeSkillBuffInfo> buffInfos:
                             var buffInfoList = buffInfos.Select(buffInfo =>
                             {
@@ -444,22 +516,8 @@ namespace bian
                             }
                             break;
 
-                        // 处理SummonConfig中的数组类型字段
-                        case "BornMontagePathList":
-                        case "DisappearMontagePathList":
-                            if (sourceValue is List<string> stringList)
-                            {
-                                HandleStringListProperty(target, targetProp, stringList);
-                            }
-                            break;
 
-                        case "BornSkillList":
-                        case "BuffList":
-                            if (sourceValue is List<int> intLists)
-                            {
-                                HandleIntListProperty(target, targetProp, intLists);
-                            }
-                            break;
+
                         default:
                             var targetValue = ConvertValue(sourceValue, targetProp.PropertyType);
                             targetProp.SetValue(target, targetValue);
@@ -857,6 +915,10 @@ namespace bian
 
 
         // 加载并应用BulletComm配置 todo 目前有个问题 BGW_GameDB.GetAllBulletCommDesc() 拿不到数据
+        public static Dictionary<int, FUStBulletCommDesc> GetAllBulletCommDesc()
+        {
+            return BG_ProtobufDataAPI<FUStBulletCommDesc>.Get().GetAll();
+        }
         public static int LoadAndApplyBulletComm(string configDirectory = null)
         {
             try
@@ -864,22 +926,13 @@ namespace bian
                 configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BulletData", "BulletComm");
 
                 var bulletCommConfigs = LoadJsonConfigs<BulletCommConfig>(configDirectory, "BulletComm");
-                var bulletCommList = BGW_GameDB.GetAllBulletCommDesc();
+                var bulletCommList = BGW_GameDB.GetAllProjectileCommDesc();
 
-                // 修改点：如果bulletCommList为空，创建一个新的字典
-                if (bulletCommList == null)
-                {
-                    bulletCommList = new Dictionary<int, FUStBulletCommDesc>();
-                    Log.Info("Bullet comm list is null, creating a new one");
-                }
-                else if (bulletCommList.Count == 0)
-                {
-                    Log.Info("Bullet comm list is empty, but will continue processing");
-                }
 
-                if (bulletCommConfigs == null || bulletCommConfigs.Count == 0)
+
+                if (bulletCommConfigs == null || bulletCommList.Count == 0 || bulletCommConfigs.Count == 0)
                 {
-                    Log.Error("Failed to load bullet comm configs");
+                    Log.Error($"Failed to load bullet comm configs bulletCommList:{bulletCommList.Count}");
                     return 0;
                 }
 
@@ -888,7 +941,7 @@ namespace bian
                 if (!bulletCommList.TryGetValue(templateBulletId, out var templateBullet))
                 {
                     // 创建一个默认的模板子弹
-                    templateBullet = new FUStBulletCommDesc();
+                    templateBullet = new FUStProjectileCommDesc();
                     bulletCommList.Add(templateBulletId, templateBullet);
                     Log.Info($"Template bullet (ID: {templateBulletId}) not found, created a new one");
                 }
@@ -921,7 +974,7 @@ namespace bian
 
 
         // 获取或创建BulletComm
-        private static FUStBulletCommDesc GetOrCreateBulletComm(BulletCommConfig config, Dictionary<int, FUStBulletCommDesc> bulletCommList, FUStBulletCommDesc templateBullet)
+        private static FUStProjectileCommDesc GetOrCreateBulletComm(BulletCommConfig config, Dictionary<int, FUStProjectileCommDesc> bulletCommList, FUStProjectileCommDesc templateBullet)
         {
             if (bulletCommList.TryGetValue(config.ID, out var existingBullet))
             {
@@ -929,9 +982,8 @@ namespace bian
                 return existingBullet;
             }
 
-            var newBullet = (FUStBulletCommDesc)templateBullet.Clone();
+            var newBullet = (FUStProjectileCommDesc)templateBullet.Clone();
             bulletCommList.Add(config.ID, newBullet);
-            Log.Info($"Creating new bullet comm with ID: {config.ID}");
             return newBullet;
         }
 
@@ -1021,18 +1073,9 @@ namespace bian
                 var projectileDispConfigs = LoadJsonConfigs<ProjectileDispConfig>(configDirectory, "ProjectileDisp");
                 var projectileDispList = GetAllProjectileDispDesc();
 
-                // 修改点：如果projectileDispList为空，创建一个新的字典
-                if (projectileDispList == null)
-                {
-                    projectileDispList = new Dictionary<int, FUStProjectileDispDesc>();
-                    Log.Info("Projectile disp list is null, creating a new one");
-                }
-                else if (projectileDispList.Count == 0)
-                {
-                    Log.Info("Projectile disp list is empty, but will continue processing");
-                }
 
-                if (projectileDispConfigs == null || projectileDispConfigs.Count == 0)
+
+                if (projectileDispConfigs == null || projectileDispList.Count == 0 || projectileDispConfigs.Count == 0)
                 {
                     Log.Error("Failed to load projectile disp configs");
                     return 0;
@@ -1045,7 +1088,7 @@ namespace bian
                     // 创建一个默认的模板投射物
                     templateProjectile = new FUStProjectileDispDesc();
                     projectileDispList.Add(templateProjectileId, templateProjectile);
-                    Log.Info($"Template projectile (ID: {templateProjectileId}) not found, created a new one");
+                    // Log.Info($"Template projectile (ID: {templateProjectileId}) not found, created a new one");
                 }
 
                 var processedCount = 0;
@@ -1056,7 +1099,7 @@ namespace bian
                         var targetProjectile = GetOrCreateProjectileDisp(projectileConfig, projectileDispList, templateProjectile);
                         CopyProperties(projectileConfig, targetProjectile);
                         processedCount++;
-                        Log.Info($"Successfully processed projectile disp with ID: {projectileConfig.ID}");
+                        // Log.Info($"Successfully processed projectile disp with ID: {projectileConfig.ID}");
                     }
                     catch (Exception ex)
                     {
@@ -1137,7 +1180,7 @@ namespace bian
                         var targetSkill = GetOrCreateChargeSkill(skillConfig, chargeSkillList, templateSkill);
                         CopyProperties(skillConfig, targetSkill);
                         processedCount++;
-                        Log.Info($"Successfully processed charge skill with ID: {skillConfig.ID}");
+                        // Log.Info($"Successfully processed charge skill with ID: {skillConfig.ID}");
                     }
                     catch (Exception ex)
                     {
@@ -1175,6 +1218,8 @@ namespace bian
 
 
         // 加载并应用Summon配置
+
+
         public static int LoadAndApplySummon(string configDirectory = null)
         {
             try

@@ -137,7 +137,14 @@ namespace bian
             LoadUtils.LoadAllSkillMappingRules(configPath);
 
 
-
+            LoadUtils.LoadAndApplyBuffDispConfigs();
+            LoadUtils.LoadAndApplyBuff();
+            LoadUtils.LoadAndApplySummon();
+            LoadUtils.LoadAndApplyChargeSkill();
+            LoadUtils.LoadAndApplyBulletExpand();
+            LoadUtils.LoadAndApplyBulletComm();
+            LoadUtils.LoadAndApplyProjectileMove();
+            LoadUtils.LoadAndApplyProjectileDisp();
 
             // 在这里可以将buffDispConfigs插入到游戏中的数据
             if (harmony == null)
@@ -231,12 +238,12 @@ namespace bian
             }
             var buffDesc = GameDBRuntime.GetFUStBuffDesc(BuffID);
 
-            if (buffDesc != null && (buffDesc?.Duration > 1000))
+            if (buffDesc != null && (buffDesc?.Duration > 1000 || BuffID == 888666010 || BuffID == 888666012 || BuffID == 888666011))
             {
-
+                Log.Info($"buff {BuffID}，Duration:{buffDesc.Duration},Interval:{buffDesc.Interval},");
                 if (buffDesc?.Range?.RangeParam != null && buffDesc.Range.RangeParam.Count > 0)
                 {
-                    Log.Info($"buff {BuffID} ,range:{buffDesc.Range.RangeParam[0]} ，BuffActiveCondition：{buffDesc?.BuffActiveCondition?.ConditionParams}");
+                    Log.Info($"buff {BuffID} ,Duration:{buffDesc.Duration},Interval:{buffDesc.Interval},range:{buffDesc.Range.RangeParam[0]} ，BuffActiveCondition：{buffDesc?.BuffActiveCondition?.ConditionParams}");
                 }
 
                 if (buffDesc?.BuffEffects != null)
@@ -248,10 +255,7 @@ namespace bian
             // {
             //     Log.Info($"buff {BuffID} add  ,buffDescBuffTips {buffDesc.BuffTips} {buffDesc.Duration} EffectParams:{buffDesc?.BuffEffects[0]?.EffectParams[0]}");
             // }
-            if (BuffID == 287 || BuffID == 293)
-            {
-                BGUFunctionLibraryCS.BGUAddBuff(RootCaster, RootCaster, 218, EBuffSourceType.GM, Duration);//给识破buff加无敌
-            }
+
 
             // 冰火雷毒buff互斥
             List<int> buffers = [888666005, 888666006, 888666007, 888666008];
@@ -645,23 +649,21 @@ namespace bian
             if (currMontage == null) return;
 
             var currentPosition = animInstance.Montage_GetPosition(currMontage);
-            var currentLength = currMontage.GetPlayLength() * 1000;
+            var currentLength = currMontage.SequenceLength;
+
             var currentRate = currentPosition / currentLength;
 
             string keyName = Key.GetFName().ToString();
-            Log.Info($"bian: [PATCH]OnAnyKeyTriggerEvent  --> Key:{keyName} currentPosition,{currentPosition} currentLength:{currentLength},currentRate{currentRate}");
-            if (keyName == "LeftCommand" && !isBuffConfigsLoaded) // 添加标志变量检查
+            if (keyName == "Tab" && !isBuffConfigsLoaded) // 添加标志变量检查
             {
                 LoadUtils.LoadAndApplyBuffDispConfigs();
                 LoadUtils.LoadAndApplyBuff();
                 LoadUtils.LoadAndApplySummon();
                 LoadUtils.LoadAndApplyChargeSkill();
-                
-
                 LoadUtils.LoadAndApplyBulletExpand();
-                // LoadUtils.LoadAndApplyBulletComm();
-                // LoadUtils.LoadAndApplyProjectileMove();
-                // LoadUtils.LoadAndApplyProjectileDisp();
+                LoadUtils.LoadAndApplyBulletComm();
+                LoadUtils.LoadAndApplyProjectileMove();
+                LoadUtils.LoadAndApplyProjectileDisp();
 
                 isBuffConfigsLoaded = true; // 设置标志变量为true
             }
@@ -672,9 +674,8 @@ namespace bian
             {
                 string fullPath = currMontage.PathName;
                 string subString = combo.nowMontage;
-                Log.Info($"bian: 匹配动画{fullPath} ,{combo.nowMontage},是否匹配：:{fullPath.Contains(subString)}，播放比例：{currentRate >= combo.rate} 键值：{keyName == combo.InputCore}");
                 if (fullPath.Contains(subString) &&
-                    currentRate >= combo.rate &&
+                    currentPosition >= combo.rate &&
                     keyName == combo.InputCore)
                 {
                     var rule = new SkillMappingRule
