@@ -18,6 +18,59 @@ using b1.Protobuf.DataAPI;
 
 
 
+public class SummonConfig
+{
+    public string? desc { get; set; }
+    public int ID { get; set; }
+    public int? ResID { get; set; }
+    public double? SummonAliveTime { get; set; }
+    public string? SummonTamerTemplatePath { get; set; }
+    public string? SummonBPTemplatePath { get; set; }
+    public int? SummonUnitRotationType { get; set; }
+    public int? SummonUnitLocationType { get; set; }
+    public int? SelectPointRandom { get; set; }
+    public int? PointSetCachedReqID { get; set; }
+    public string? SummonDataAssetsPath { get; set; }
+    public string? SummonSpawnEQSPath { get; set; }
+    public string? SummonSpawnSceneItemTag { get; set; }
+    public string? BornEffectPath { get; set; }
+    public int? UseBornSkill { get; set; }
+    public List<string>? BornMontagePathList { get; set; }
+    public List<int>? BornSkillList { get; set; }
+    public List<string>? DisappearMontagePathList { get; set; }
+    public double? BornDelayTime { get; set; }
+    public int? SummonTargetMethod { get; set; }
+    public double? BornEffDisplayTime { get; set; }
+    public double? DestroyDelayTime { get; set; }
+    public List<int>? BuffList { get; set; }
+    public double? InitSpeed { get; set; }
+    public int? SyncBattleSC { get; set; }
+    public int? IsCopyEquip { get; set; }
+    public int? CopyAttrConfigID { get; set; }
+    public int? IsDestroyWhenSummonerDead { get; set; }
+    public int? IsSummonerAsMaster { get; set; }
+    public double? BeforeBornTime { get; set; }
+}
+
+public class ChargeSkillBuffInfo
+{
+    public int BuffID { get; set; }
+    public double BeginTimeInBeginStage { get; set; }
+    public double EndTimeInEndStage { get; set; }
+}
+
+public class ChargeSkillConfig
+{
+    public string desc { get; set; }
+    public int ID { get; set; }
+    public int LoopCanMove { get; set; }
+    public int LoopCanRotate { get; set; }
+    public double ChargeMoveSpeedRate { get; set; }
+    public List<ChargeSkillBuffInfo> ChargeSkillBuffInfoList { get; set; }
+}
+
+
+
 public class ProjectileDispConfig
 {
     public int ID { get; set; }
@@ -351,6 +404,62 @@ namespace bian
                             }
                             break;
 
+                        case "ChargeSkillBuffInfoList" when sourceValue is List<ChargeSkillBuffInfo> buffInfos:
+                            var buffInfoList = buffInfos.Select(buffInfo =>
+                            {
+                                var newBuffInfo = new FUStChargeSkillBuffInfo();
+                                newBuffInfo.BuffID = buffInfo.BuffID;
+                                newBuffInfo.BeginTimeInBeginStage = (float)buffInfo.BeginTimeInBeginStage;
+                                newBuffInfo.EndTimeInEndStage = (float)buffInfo.EndTimeInEndStage;
+                                return newBuffInfo;
+                            }).ToList();
+
+                            var chfields = target.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+                            var buffInfoListField = chfields.FirstOrDefault(f => f.Name.ToLower().Contains("chargeskillbuffinfolist"));
+
+                            if (buffInfoListField != null)
+                            {
+                                try
+                                {
+                                    if (buffInfoListField.GetValue(target) is System.Collections.IList existingBuffInfos)
+                                    {
+                                        existingBuffInfos.Clear();
+                                        buffInfoList.ForEach(buffInfo => existingBuffInfos.Add(buffInfo));
+                                        Log.Info($"Successfully updated ChargeSkillBuffInfoList");
+                                    }
+                                    else
+                                    {
+                                        buffInfoListField.SetValue(target, buffInfoList);
+                                        Log.Info($"Successfully set new ChargeSkillBuffInfoList");
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    Log.Error($"Failed to set ChargeSkillBuffInfoList: {ex.Message}");
+                                }
+                            }
+                            else
+                            {
+                                Log.Error("Could not find ChargeSkillBuffInfoList field in target type");
+                            }
+                            break;
+
+                        // 处理SummonConfig中的数组类型字段
+                        case "BornMontagePathList":
+                        case "DisappearMontagePathList":
+                            if (sourceValue is List<string> stringList)
+                            {
+                                HandleStringListProperty(target, targetProp, stringList);
+                            }
+                            break;
+
+                        case "BornSkillList":
+                        case "BuffList":
+                            if (sourceValue is List<int> intLists)
+                            {
+                                HandleIntListProperty(target, targetProp, intLists);
+                            }
+                            break;
                         default:
                             var targetValue = ConvertValue(sourceValue, targetProp.PropertyType);
                             targetProp.SetValue(target, targetValue);
@@ -363,7 +472,85 @@ namespace bian
                 }
             }
         }
+        // 处理字符串列表属性
+        private static void HandleStringListProperty(object target, PropertyInfo targetProp, List<string> stringList)
+        {
+            try
+            {
+                // 尝试通过反射找到对应的字段
+                var fields = target.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+                var targetField = fields.FirstOrDefault(f => f.Name.ToLower().Contains(targetProp.Name.ToLower()));
 
+                if (targetField != null)
+                {
+                    // 如果目标字段是RepeatedField<string>类型
+                    if (targetField.GetValue(target) is RepeatedField<string> targetList)
+                    {
+                        targetList.Clear();
+                        foreach (var item in stringList)
+                        {
+                            if (!string.IsNullOrEmpty(item)) // 过滤空字符串
+                            {
+                                targetList.Add(item);
+                            }
+                        }
+                        Log.Info($"Successfully updated {targetProp.Name} string list");
+                    }
+                    else
+                    {
+                        Log.Error($"Target field {targetField.Name} is not of type RepeatedField<string>");
+                    }
+                }
+                else
+                {
+                    Log.Error($"Could not find field for {targetProp.Name} property");
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Error updating {targetProp.Name} string list: {ex.Message}");
+            }
+        }
+
+        // 处理整数列表属性
+        private static void HandleIntListProperty(object target, PropertyInfo targetProp, List<int> intList)
+        {
+            try
+            {
+                // 尝试通过反射找到对应的字段
+                var fields = target.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+                var targetField = fields.FirstOrDefault(f => f.Name.ToLower().Contains(targetProp.Name.ToLower()));
+
+                if (targetField != null)
+                {
+                    // 如果目标字段是RepeatedField<int>类型
+                    if (targetField.GetValue(target) is RepeatedField<int> targetList)
+                    {
+                        targetList.Clear();
+                        foreach (var item in intList)
+                        {
+                            if (item != 0) // 过滤0值
+                            {
+                                targetList.Add(item);
+                            }
+                        }
+                        Log.Info($"Successfully updated {targetProp.Name} int list");
+                    }
+                    else
+                    {
+                        Log.Error($"Target field {targetField.Name} is not of type RepeatedField<int>");
+                    }
+                }
+                else
+                {
+                    Log.Error($"Could not find field for {targetProp.Name} property");
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Error updating {targetProp.Name} int list: {ex.Message}");
+            }
+        }
         // 复制BuffActiveCondition
         private static void CopyBuffActiveCondition(BuffActiveCondition source, FUStBuffEffectActiveCondition target)
         {
@@ -669,8 +856,7 @@ namespace bian
         }
 
 
-        // 加载并应用BulletComm配置
-        // 加载并应用BulletComm配置
+        // 加载并应用BulletComm配置 todo 目前有个问题 BGW_GameDB.GetAllBulletCommDesc() 拿不到数据
         public static int LoadAndApplyBulletComm(string configDirectory = null)
         {
             try
@@ -679,6 +865,7 @@ namespace bian
 
                 var bulletCommConfigs = LoadJsonConfigs<BulletCommConfig>(configDirectory, "BulletComm");
                 var bulletCommList = BGW_GameDB.GetAllBulletCommDesc();
+
                 // 修改点：如果bulletCommList为空，创建一个新的字典
                 if (bulletCommList == null)
                 {
@@ -903,6 +1090,169 @@ namespace bian
         }
 
         // 以上是子弹全部方法
+
+
+
+        public static Dictionary<int, FUStChargeSkillSDesc> GetAllFUStChargeSkillSDesc()
+        {
+
+            return BG_ProtobufDataAPI<FUStChargeSkillSDesc>.Get().GetAll();
+        }
+
+
+        public static int LoadAndApplyChargeSkill(string configDirectory = null)
+        {
+            try
+            {
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "ChargeSkill");
+
+                var chargeSkillConfigs = LoadJsonConfigs<ChargeSkillConfig>(configDirectory, "ChargeSkill");
+                var chargeSkillList = GetAllFUStChargeSkillSDesc();
+
+                if (chargeSkillList == null)
+                {
+                    chargeSkillList = new Dictionary<int, FUStChargeSkillSDesc>();
+                    Log.Info("Charge skill list is null, creating a new one");
+                }
+
+                if (chargeSkillConfigs == null || chargeSkillConfigs.Count == 0)
+                {
+                    Log.Error("Failed to load charge skill configs");
+                    return 0;
+                }
+
+                const int templateSkillId = 10720;
+                if (!chargeSkillList.TryGetValue(templateSkillId, out var templateSkill))
+                {
+                    templateSkill = new FUStChargeSkillSDesc();
+                    chargeSkillList.Add(templateSkillId, templateSkill);
+                    Log.Info($"Template skill (ID: {templateSkillId}) not found, created a new one");
+                }
+
+                var processedCount = 0;
+                foreach (var skillConfig in chargeSkillConfigs)
+                {
+                    try
+                    {
+                        var targetSkill = GetOrCreateChargeSkill(skillConfig, chargeSkillList, templateSkill);
+                        CopyProperties(skillConfig, targetSkill);
+                        processedCount++;
+                        Log.Info($"Successfully processed charge skill with ID: {skillConfig.ID}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process charge skill config for ID {skillConfig.ID}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed charge skill configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplyChargeSkill: {ex.Message}");
+                return 0;
+            }
+        }
+
+
+        // 修改蓄力技能
+        private static FUStChargeSkillSDesc GetOrCreateChargeSkill(ChargeSkillConfig config, Dictionary<int, FUStChargeSkillSDesc> chargeSkillList, FUStChargeSkillSDesc templateSkill)
+        {
+            if (chargeSkillList.TryGetValue(config.ID, out var existingSkill))
+            {
+                Log.Info($"Updating existing charge skill with ID: {config.ID}");
+                return existingSkill;
+            }
+
+            var newSkill = (FUStChargeSkillSDesc)templateSkill.Clone();
+            chargeSkillList.Add(config.ID, newSkill);
+            Log.Info($"Creating new charge skill with ID: {config.ID}");
+            return newSkill;
+        }
+
+
+
+
+        // 加载并应用Summon配置
+        public static int LoadAndApplySummon(string configDirectory = null)
+        {
+            try
+            {
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "Summon");
+
+                var summonConfigs = LoadJsonConfigs<SummonConfig>(configDirectory, "Summon");
+                var summonList = BGW_GameDB.GetAllSummonCommDesc();
+
+                // 如果summonList为空，创建一个新的字典
+                if (summonList == null)
+                {
+                    summonList = new Dictionary<int, FUStSummonCommDesc>();
+                    Log.Info("Summon list is null, creating a new one");
+                }
+                else if (summonList.Count == 0)
+                {
+                    Log.Info("Summon list is empty, but will continue processing");
+                }
+
+                if (summonConfigs == null || summonConfigs.Count == 0)
+                {
+                    Log.Error("Failed to load summon configs");
+                    return 0;
+                }
+
+                // 如果没有模板召唤物，使用默认值或创建一个
+                const int templateSummonId = 1001101;
+                if (!summonList.TryGetValue(templateSummonId, out var templateSummon))
+                {
+                    // 创建一个默认的模板召唤物
+                    templateSummon = new FUStSummonCommDesc();
+                    summonList.Add(templateSummonId, templateSummon);
+                    Log.Info($"Template summon (ID: {templateSummonId}) not found, created a new one");
+                }
+
+                var processedCount = 0;
+                foreach (var summonConfig in summonConfigs)
+                {
+                    try
+                    {
+                        var targetSummon = GetOrCreateSummon(summonConfig, summonList, templateSummon);
+                        CopyProperties(summonConfig, targetSummon);
+                        processedCount++;
+                        Log.Info($"Successfully processed summon with ID: {summonConfig.ID}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process summon config for ID {summonConfig.ID}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed summon configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplySummon: {ex.Message}");
+                return 0;
+            }
+        }
+
+        // 获取或创建Summon
+        private static FUStSummonCommDesc GetOrCreateSummon(SummonConfig config, Dictionary<int, FUStSummonCommDesc> summonList, FUStSummonCommDesc templateSummon)
+        {
+            if (summonList.TryGetValue(config.ID, out var existingSummon))
+            {
+                Log.Info($"Updating existing summon with ID: {config.ID}");
+                return existingSummon;
+            }
+
+            var newSummon = (FUStSummonCommDesc)templateSummon.Clone();
+            summonList.Add(config.ID, newSummon);
+            Log.Info($"Creating new summon with ID: {config.ID}");
+            return newSummon;
+        }
+
+
     }
 }
 

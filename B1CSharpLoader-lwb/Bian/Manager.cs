@@ -654,8 +654,11 @@ namespace bian
             {
                 LoadUtils.LoadAndApplyBuffDispConfigs();
                 LoadUtils.LoadAndApplyBuff();
+                LoadUtils.LoadAndApplySummon();
+                LoadUtils.LoadAndApplyChargeSkill();
+                
 
-                // LoadUtils.LoadAndApplyBulletExpand();
+                LoadUtils.LoadAndApplyBulletExpand();
                 // LoadUtils.LoadAndApplyBulletComm();
                 // LoadUtils.LoadAndApplyProjectileMove();
                 // LoadUtils.LoadAndApplyProjectileDisp();
