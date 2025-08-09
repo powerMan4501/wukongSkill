@@ -1,0 +1,29 @@
+[
+    {
+        "nowMontage": "AM_Wukong_ComboA_z_02",
+        "rate": 0.6,
+        "skillID": 10724,
+        "Condition": "any",
+        "InputCore": "RightMouseButton",
+        "conditionValue": 888666022,
+        "desc": "如果当前使用的技能是10707，且播放了60%以上，按鼠标左键满足条件可以使出10724"
+    },
+    {
+        "nowMontage": "AM_Dasheng_ComboA_01_Z_2",
+        "rate": 0.6,
+        "skillID": 10724,
+        "Condition": "any",
+        "InputCore": "RightMouseButton",
+        "conditionValue": 888666022,
+        "desc": "如果当前使用的技能是10707，且播放了60%以上，按鼠标左键满足条件可以使出10724"
+    },
+    {
+        "nowMontage": "AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2",
+        "rate": 0.6,
+        "skillID": 50004,
+        "Condition": "any",
+        "InputCore": "RightMouseButton",
+        "conditionValue": 888666023,
+        "desc": "如果当前使用的技能是大圣江海翻，且播放了60%以上，按鼠标右键满足条件可以使出大圣斩棍50004"
+    }
+]

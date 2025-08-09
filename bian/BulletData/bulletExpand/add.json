@@ -1,0 +1,98 @@
+[
+  {
+    "desc": "克隆业火",
+    "ID": 88880002,
+    "HitEffectsforChr": [1031102],
+    "BulletSweepCheckGap": 1,
+    "BulletSweepCheckDelayTime": 0.0,
+    "BulletCanThroughBlockage": 1
+  },
+  {
+    "desc": "克隆马猴冰剑气",
+    "ID": 88880003,
+    "HitEffectsforChr": [888555021, 910160],
+    "HitDestructibleStrengthType": 4,
+    "BulletSweepCheckGap": 5,
+    "BulletSweepCheckDelayTime": 0.0,
+    "BulletCanThroughBlockage": 1
+  },
+
+  {
+    "desc": "白眼魔君横向剑气",
+    "ID": 88880004,
+    "HitEffectsforChr": [50051302, 910460],
+    "HitDestructibleStrengthType": 4,
+    "BulletSweepCheckGap": 5,
+    "BulletSweepCheckDelayTime": 0.0,
+    "BulletCanThroughBlockage": 1
+  },
+
+  {
+    "desc": "百眼黄符",
+    "ID": 88880005,
+    "HitEffectsforChr": [1070701, 921420],
+    "HitDestructibleStrengthType": 4,
+    "BulletSweepCheckGap": 5,
+    "BulletSweepCheckDelayTime": 0.0,
+    "BulletCanThroughBlockage": 1
+  },
+
+  {
+    "desc": "金箍棒冰",
+    "ID": 88880006,
+    "HitEffectsforChr": [888555003, 888555004, 888555016, 888555024],
+    "HitDestructibleStrengthType": 4,
+    "BulletSweepCheckGap": 5,
+    "BulletSweepCheckDelayTime": 0.0,
+    "BulletCanThroughBlockage": 1
+  },
+
+  {
+    "desc": "磐锤",
+    "ID": 88880007,
+    "HitEffectsforChr": [8888040],
+    "HitDestructibleStrengthType": 4,
+    "BulletSweepCheckGap": 5,
+    "BulletSweepCheckDelayTime": 0.0,
+    "BulletCanThroughBlockage": 1
+  },
+
+  {
+    "desc": "发射版金箍棒",
+    "ID": 88880008,
+    "HitEffectsforChr": [1070701],
+    "HitDestructibleStrengthType": 4,
+    "BulletSweepCheckGap": 5,
+    "BulletSweepCheckDelayTime": 0.0,
+    "BulletCanThroughBlockage": 1
+  },
+
+  {
+    "desc": "火猴火焰剑气",
+    "ID": 88880009,
+    "HitEffectsforChr": [888555021, 888555017],
+    "HitDestructibleStrengthType": 4,
+    "BulletSweepCheckGap": 5,
+    "BulletSweepCheckDelayTime": 0.0,
+    "BulletCanThroughBlockage": 1
+  },
+
+  {
+    "desc": "杨戬飞剑 80009999",
+    "ID": 88880010,
+    "HitEffectsforChr": [888555019],
+    "HitDestructibleStrengthType": 4,
+    "BulletSweepCheckGap": 5,
+    "BulletSweepCheckDelayTime": 0.0,
+    "BulletCanThroughBlockage": 1
+  },
+  {
+    "desc": "杨戬飞剑 88880011",
+    "ID": 88880011,
+    "HitEffectsforChr": [888555019],
+    "HitDestructibleStrengthType": 4,
+    "BulletSweepCheckGap": 5,
+    "BulletSweepCheckDelayTime": 0.0,
+    "BulletCanThroughBlockage": 1
+  }
+]

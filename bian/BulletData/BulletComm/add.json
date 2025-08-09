@@ -1,0 +1,75 @@
+[
+  {
+    "desc": "克隆业火",
+    "ID": 88880002,
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/MagicFields/Player/Talent/BP_player_wukong_lava.BP_player_wukong_lava_C",
+    "ProjectileDelayDestroyTime": 3,
+    "ProjectileLifeTime": 11.2
+  },
+  {
+    "desc": "克隆马猴冰剑气",
+    "ID": 88880003,
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/PlayerBullets/Transform/Player_lys_hou/BP_player_lys_hou_Bullet_R2_H.BP_player_lys_hou_Bullet_R2_H_C",
+    "ProjectileDelayDestroyTime": 0,
+    "ProjectileLifeTime": 9
+  },
+  {
+    "desc": "白眼魔君横向剑气",
+    "ID": 88880004,
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/PSD/PSD_BaiYanMoJun_01/BP_PSD_BaiYanMoJun_01_Bullet_1301.BP_PSD_BaiYanMoJun_01_Bullet_1301_C",
+    "ProjectileDelayDestroyTime": 0,
+    "ProjectileLifeTime": 9
+  },
+  {
+    "desc": "百眼黄符",
+    "ID": 88880005,
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/PSD/PSD_BaiYanMoJun_01/Phase2/BP_PSD_BaiYanMoJun_P2_Bullet_8603.BP_PSD_BaiYanMoJun_P2_Bullet_8603_C",
+    "ProjectileDelayDestroyTime": 0,
+    "ProjectileLifeTime": 0.3
+  },
+
+  {
+    "desc": "金箍棒冰",
+    "ID": 88880006,
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/MGD/MGD_JSDS/BP_mgd_jsds_bullet_yaojian.BP_mgd_jsds_bullet_yaojian_C",
+    "ProjectileDelayDestroyTime": 2,
+    "ProjectileLifeTime": 2
+  },
+  {
+    "desc": "磐锤",
+    "ID": 88880007,
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BP_Player_Wukong_Atk_Panchui.BP_Player_Wukong_Atk_Panchui_C",
+    "ProjectileDelayDestroyTime": 3,
+    "ProjectileLifeTime": 0.3
+  },
+  {
+    "desc": "发射版金箍棒",
+    "ID": 88880008,
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BP_Player_Wukong_Atk_Panchui.BP_Player_Wukong_Atk_Panchui_C",
+    "ProjectileDelayDestroyTime": 1,
+    "ProjectileLifeTime": 3
+  },
+
+  {
+    "desc": "火猴火焰剑气",
+    "ID": 88880009,
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/HYS/HYS_yinbinghoumo_01/BP_hys_yinbinghoumo_01_atk_05_bullet.BP_hys_yinbinghoumo_01_atk_05_bullet_C",
+    "ProjectileDelayDestroyTime": 1,
+    "ProjectileLifeTime": 5
+  },
+
+  {
+    "desc": "杨戬飞剑 80009999",
+    "ID": 88880010,
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/MGD/MGD_yangjian_01/BP_mgd_yangjian_01_sword_99.BP_mgd_yangjian_01_sword_99_C",
+    "ProjectileDelayDestroyTime": 1,
+    "ProjectileLifeTime": 9
+  },
+   {
+    "desc": "杨戬飞剑 88880011",
+    "ID": 88880011,
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/MGD/MGD_yangjian_01/BP_mgd_yangjian_01_sword_99.BP_mgd_yangjian_01_sword_99_C",
+    "ProjectileDelayDestroyTime": 1,
+    "ProjectileLifeTime": 9
+  }
+]

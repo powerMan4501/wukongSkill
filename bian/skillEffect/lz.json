@@ -1,0 +1,145 @@
+[
+    {
+        "desc":"暂时未实现",
+        "ID": 888555001,
+        "EffectActiveCondition": {
+            "ConditionType": 0,
+            "ConditionParams": ""
+        },
+        "EffectType": 20,
+        "EffectCategory": 0,
+        "TargetBase": 1,
+        "TargetCount": 1,
+        "TargetFilter": 4,
+        "TargetTypeFilter": 1,
+        "AffiliationTypeFilter": 0,
+        "Range": {
+            "RangeType": 0,
+            "RangeCenterType": 0,
+            "RangeParam": []
+        },
+        "FXTransUseConfig": 0,
+        "PlayFXSocketName": "",
+        "PlayFXLocalDirX": 0.0,
+        "PlayFXLocalDirY": 0.0,
+        "PlayFXLocalDirZ": 0.0,
+        "FXCameraOffset": 0.0,
+        "HitActionDir": 0,
+        "HitOrientationType": 0,
+        "HitOriBaseCompName": "",
+        "CanFractureVictim": 0,
+        "CanCutVictim": 0,
+        "EffectParamsInt": [],
+        "EffectParamsFloat": [],
+        "EffectParamsStr": [
+            "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PSD/PSD_BaiYanMoJun_01/DataAsset/BGW_PSD_BaiYanMoJun_01_GroundBoom.BGW_PSD_BaiYanMoJun_01_GroundBoom'"
+        ],
+        "Guard": "Guard"
+    },
+    {
+        "ID": 888555002,
+        "EffectActiveCondition": {
+            "ConditionType": 0,
+            "ConditionParams": ""
+        },
+        "EffectType": 20,
+        "EffectCategory": 0,
+        "TargetBase": 1,
+        "TargetCount": 1,
+        "TargetFilter": 4,
+        "TargetTypeFilter": 1,
+        "AffiliationTypeFilter": 0,
+        "Range": {
+            "RangeType": 0,
+            "RangeCenterType": 0,
+            "RangeParam": []
+        },
+        "FXTransUseConfig": 0,
+        "PlayFXSocketName": "",
+        "PlayFXLocalDirX": 0.0,
+        "PlayFXLocalDirY": 0.0,
+        "PlayFXLocalDirZ": 0.0,
+        "FXCameraOffset": 0.0,
+        "HitActionDir": 0,
+        "HitOrientationType": 0,
+        "HitOriBaseCompName": "",
+        "CanFractureVictim": 0,
+        "CanCutVictim": 0,
+        "EffectParamsInt": [],
+        "EffectParamsFloat": [],
+        "EffectParamsStr": [
+            "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_Shougun_aoe.BGW_Player_Wukong_Atk_Shougun_aoe"
+        ]
+    },
+    {
+        "ID": 888555003,
+        "EffectActiveCondition": {
+            "ConditionType": 0,
+            "ConditionParams": ""
+        },
+        "EffectType": 20,
+        "EffectCategory": 0,
+        "TargetBase": 1,
+        "TargetCount": 1,
+        "TargetFilter": 4,
+        "TargetTypeFilter": 1,
+        "AffiliationTypeFilter": 0,
+        "Range": {
+            "RangeType": 0,
+            "RangeCenterType": 0,
+            "RangeParam": []
+        },
+        "FXTransUseConfig": 0,
+        "PlayFXSocketName": "",
+        "PlayFXLocalDirX": 0.0,
+        "PlayFXLocalDirY": 0.0,
+        "PlayFXLocalDirZ": 0.0,
+        "FXCameraOffset": 0.0,
+        "HitActionDir": 0,
+        "HitOrientationType": 0,
+        "HitOriBaseCompName": "",
+        "CanFractureVictim": 0,
+        "CanCutVictim": 0,
+        "EffectParamsInt": [],
+        "EffectParamsFloat": [],
+        "EffectParamsStr": [
+            "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PSD/PSD_zhubajie_02a/BGW_psd_zhubajie_02a_GenkitanBoom.BGW_psd_zhubajie_02a_GenkitanBoom'"
+        ]
+    },
+    {
+        "ID": 888555004,
+        "EffectActiveCondition": {
+            "ConditionType": 0,
+            "ConditionParams": ""
+        },
+        "EffectType": 20,
+        "EffectCategory": 0,
+        "TargetBase": 1,
+        "TargetCount": 1,
+        "TargetFilter": 4,
+        "TargetTypeFilter": 1,
+        "AffiliationTypeFilter": 0,
+        "Range": {
+            "RangeType": 0,
+            "RangeCenterType": 0,
+            "RangeParam": []
+        },
+        "FXTransUseConfig": 0,
+        "PlayFXSocketName": "",
+        "PlayFXLocalDirX": 0.0,
+        "PlayFXLocalDirY": 0.0,
+        "PlayFXLocalDirZ": 0.0,
+        "FXCameraOffset": 0.0,
+        "HitActionDir": 0,
+        "HitOrientationType": 0,
+        "HitOriBaseCompName": "",
+        "CanFractureVictim": 0,
+        "CanCutVictim": 0,
+        "EffectParamsInt": [],
+        "EffectParamsFloat": [],
+        "EffectParamsStr": [
+            "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/MGD/mgd_yuan/Physics/mgd_yuan_bigballfarspawn.mgd_yuan_bigballfarspawn'"
+        ]
+    }
+    
+]
