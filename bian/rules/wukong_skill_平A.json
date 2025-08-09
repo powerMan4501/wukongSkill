@@ -62,8 +62,8 @@
         },
         {
           "Type": "buff",
-          "BuffIDs": [444405001],
-          "BuffTime": 500,
+          "BuffIDs": [9870001],
+          "BuffTime": 1000,
           "desc": "棍光特效粒子"
         }
       ]
@@ -171,8 +171,8 @@
         },
         {
           "Type": "buff",
-          "BuffIDs": [444405001],
-          "BuffTime": 500,
+          "BuffIDs": [888805000],
+          "BuffTime": 1000,
           "desc": "棍光特效粒子"
         }
       ]
@@ -277,8 +277,8 @@
         },
         {
           "Type": "buff",
-          "BuffIDs": [444405003],
-          "BuffTime": 500,
+          "BuffIDs": [888805002],
+          "BuffTime": 1000,
           "desc": "棍光特效粒子"
         }
       ]
@@ -341,8 +341,8 @@
         },
         {
           "Type": "buff",
-          "BuffIDs": [444405005],
-          "BuffTime": 500,
+          "BuffIDs": [888805004],
+          "BuffTime": 1500,
           "desc": "棍光特效粒子"
         }
       ]
@@ -390,10 +390,10 @@
             }
           ]
         },
-        {
+       {
           "Type": "buff",
-          "BuffIDs": [444405010],
-          "BuffTime": 500,
+          "BuffIDs": [888805009],
+          "BuffTime": 1500,
           "desc": "棍光特效粒子"
         }
       ]

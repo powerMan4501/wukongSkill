@@ -20,6 +20,12 @@
           "OffsetY": 500,
           "TimeDelay": 1350,
           "desc": "业火，黄符"
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [888805041],
+          "BuffTime": 1500,
+          "desc": "棍光特效粒子"
         }
       ]
     },
@@ -43,6 +49,12 @@
           "OffsetY": 500,
           "TimeDelay": 1800,
           "desc": "业火黄符金沙"
+        },
+         {
+          "Type": "buff",
+          "BuffIDs": [888805043],
+          "BuffTime": 1600,
+          "desc": "棍光特效粒子"
         }
       ]
     },
@@ -81,6 +93,12 @@
               "desc": "冰buff，四级冰,冰碎片，金箍棒冰版本"
             }
           ]
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [888805045],
+          "BuffTime": 1600,
+          "desc": "棍光特效粒子"
         }
       ]
     },

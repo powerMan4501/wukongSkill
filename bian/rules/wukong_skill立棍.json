@@ -15,28 +15,48 @@
       "AfterActions": [
         {
           "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [152, 50051029, 2403471, 39010112],
           "TimeDelay": 600,
-          "noBuffCondition": 888666007,
-          "OffsetX": 600,
-          "OffsetY": 600,
-          "desc": "没火buff,地波, 电圈,冰暴，青背龙雷暴"
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [
+                152,
+                50051029,
+                2403471,
+                39010112
+              ],
+              "noBuffCondition": 888666007,
+              "OffsetX": 600,
+              "OffsetY": 60,
+              "desc": "没火buff,地波, 电圈,冰暴，青背龙雷暴"
+            },
+            {
+              "Type": "bullet",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [
+                2403472,
+                44011401,
+                1016232,
+                88880002
+              ],
+              "TimeDelay": 600,
+              "buffCondition": 888666007,
+              "OffsetX": 600,
+              "OffsetY": 600,
+              "desc": "有火buff就地火,红孩儿砸地,炸炸炸,业火"
+            }
+          ]
         },
-
         {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [2403472, 44011401, 1016232, 88880002],
-          "TimeDelay": 600,
-          "buffCondition": 888666007,
-          "OffsetX": 600,
-          "OffsetY": 600,
-          "desc": "有火buff就地火,红孩儿砸地,炸炸炸,业火"
+          "Type": "buff",
+          "BuffIDs": [
+            888805070
+          ],
+          "BuffTime": 1600,
+          "desc": "棍光特效粒子"
         }
       ]
     },
-
     {
       "Name": "3蓄力立棍 ",
       "Description": "",
@@ -50,28 +70,44 @@
       "AfterActions": [
         {
           "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [50051029, 2403471, 39010112],
           "TimeDelay": 600,
-          "noBuffCondition": 888666007,
-          "OffsetX": 600,
-          "OffsetY": 600,
-          "desc": "没火buff就电圈/冰暴/青背龙雷暴"
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [
+                50051029,
+                2403471,
+                39010112
+              ],
+              "noBuffCondition": 888666007,
+              "OffsetX": 600,
+              "OffsetY": 600,
+              "desc": "没火buff就电圈/冰暴/青背龙雷暴"
+            },
+            {
+              "Type": "bullet",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [
+                2403372,
+                44011401
+              ],
+              "buffCondition": 888666007,
+              "OffsetX": 600,
+              "OffsetY": 600,
+              "desc": "有火buff就地火,红孩儿砸地"
+            }
+          ]
         },
-
         {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [2403372, 44011401],
-          "TimeDelay": 600,
-          "buffCondition": 888666007,
-          "OffsetX": 600,
-          "OffsetY": 600,
-          "desc": "有火buff就地火,红孩儿砸地"
+          "Type": "buff",
+          "BuffIDs": [
+            888805063
+          ],
+          "BuffTime": 1200,
+          "desc": "棍光特效粒子"
         }
       ]
     },
-
     {
       "Name": "蓄力过程 ",
       "Description": "",

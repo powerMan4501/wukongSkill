@@ -76,10 +76,13 @@
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 44051501,
-              "noBuffsCondition": [888666007, 888666006, 888666008],
+              "noBuffsCondition": [
+                888666007,
+                888666006,
+                888666008
+              ],
               "SpeedLeftValue": 6000,
               "SpeedRightValue": 6000,
-           
               "ForTarget": true,
               "desc": "没有冰火毒buff，金色剑气"
             },
@@ -96,7 +99,6 @@
         }
       ]
     },
-
     {
       "Name": "棍花重击，火冰剑气",
       "Description": "",
@@ -109,63 +111,78 @@
       "AfterActions": [
         {
           "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 11012601,
-          "ForTarget": true,
-          "buffCondition": 888666007,
-          "desc": "火buff就发射火焰剑气",
-          "BornDirOffsetXLeftValue": 45,
-          "BornDirOffsetXRightValue": 45,
           "TimeDelay": 420,
-          "spawnBaseSocketName": "weapon_r_index_03",
-          "SpeedLeftValue": 6000,
-          "SpeedRightValue": 6000
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 11012601,
+              "ForTarget": true,
+              "buffCondition": 888666007,
+              "desc": "火buff就发射火焰剑气",
+              "BornDirOffsetXLeftValue": 45,
+              "BornDirOffsetXRightValue": 45,
+              "spawnBaseSocketName": "weapon_r_index_03",
+              "SpeedLeftValue": 6000,
+              "SpeedRightValue": 6000
+            },
+            {
+              "Type": "bullet",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 1703001,
+              "ForTarget": true,
+              "buffCondition": 888666006,
+              "desc": "冰buff就发射冰剑气",
+              "BornDirOffsetXLeftValue": 45,
+              "BornDirOffsetXRightValue": 45,
+              "TimeDelay": 420,
+              "spawnBaseSocketName": "weapon_r_index_03",
+              "SpeedLeftValue": 6000,
+              "SpeedRightValue": 6000
+            },
+            {
+              "Type": "bullet",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 50051301,
+              "ForTarget": true,
+              "noBuffsCondition": [
+                888666007,
+                888666006,
+                888666008
+              ],
+              "desc": "没有冰火毒buff就发射雷剑气",
+              "BornDirOffsetXLeftValue": 45,
+              "BornDirOffsetXRightValue": 45,
+              "TimeDelay": 420,
+              "spawnBaseSocketName": "weapon_r_index_03",
+              "SpeedLeftValue": 6000,
+              "SpeedRightValue": 6000
+            },
+            {
+              "Type": "bullet",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 30131502,
+              "ForTarget": true,
+              "buffCondition": 888666008,
+              "desc": "毒buff就发射红剑气",
+              "BornDirOffsetXLeftValue": 135,
+              "BornDirOffsetXRightValue": 135,
+              "TimeDelay": 420,
+              "spawnBaseSocketName": "weapon_r_index_03",
+              "SpeedLeftValue": 6000,
+              "SpeedRightValue": 6000
+            }
+          ]
         },
         {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 1703001,
-          "ForTarget": true,
-          "buffCondition": 888666006,
-          "desc": "冰buff就发射冰剑气",
-          "BornDirOffsetXLeftValue": 45,
-          "BornDirOffsetXRightValue": 45,
-          "TimeDelay": 420,
-          "spawnBaseSocketName": "weapon_r_index_03",
-          "SpeedLeftValue": 6000,
-          "SpeedRightValue": 6000
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 50051301,
-          "ForTarget": true,
-          "noBuffsCondition": [888666007, 888666006, 888666008],
-          "desc": "没有冰火毒buff就发射雷剑气",
-          "BornDirOffsetXLeftValue": 45,
-          "BornDirOffsetXRightValue": 45,
-          "TimeDelay": 420,
-          "spawnBaseSocketName": "weapon_r_index_03",
-          "SpeedLeftValue": 6000,
-          "SpeedRightValue": 6000
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 30131502,
-          "ForTarget": true,
-          "buffCondition": 888666008,
-          "desc": "毒buff就发射红剑气",
-          "BornDirOffsetXLeftValue": 135,
-          "BornDirOffsetXRightValue": 135,
-          "TimeDelay": 420,
-          "spawnBaseSocketName": "weapon_r_index_03",
-          "SpeedLeftValue": 6000,
-          "SpeedRightValue": 6000
+          "Type": "buff",
+          "BuffIDs": [
+            888805079
+          ],
+          "BuffTime": 1600,
+          "desc": "棍光特效粒子"
         }
       ]
     },
-
     {
       "Name": "喝药",
       "Description": "",
@@ -180,7 +197,10 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [103, 888666004],
+          "BuffIDs": [
+            103,
+            888666004
+          ],
           "BuffTime": 100,
           "desc": "喝药，回血"
         }

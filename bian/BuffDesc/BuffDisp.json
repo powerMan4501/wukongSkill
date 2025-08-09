@@ -1,6 +1,6 @@
 [
   {
-    "ID": 444405001,
+    "ID": 9870001,
     "BuffTips": "2A棍光特效",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -31,7 +31,7 @@
     "Guard": "Guard"
   },
   {
-    "ID": 444405003,
+    "ID": 9870003,
     "BuffTips": "3A棍光buff",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -62,7 +62,7 @@
     "Guard": "Guard"
   },
   {
-    "ID": 444405005,
+    "ID": 9870005,
     "BuffTips": "4A棍光1buff",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -93,7 +93,7 @@
     "Guard": "Guard"
   },
   {
-    "ID": 444405006,
+    "ID": 9870006,
     "BuffTips": "4A棍光2buff",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -125,7 +125,7 @@
   },
 
   {
-    "ID": 444405010,
+    "ID": 9870010,
     "BuffTips": "5A特效1",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -157,7 +157,7 @@
   },
 
   {
-    "ID": 444405011,
+    "ID": 9870011,
     "BuffTips": "5A特效2",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -189,7 +189,7 @@
   },
 
   {
-    "ID": 444405015,
+    "ID": 9870015,
     "BuffTips": "劈棍切手技特效",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -221,7 +221,7 @@
   },
 
   {
-    "ID": 444405017,
+    "ID": 9870017,
     "BuffTips": "识破特效",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -253,7 +253,7 @@
   },
 
   {
-    "ID": 444405019,
+    "ID": 9870019,
     "BuffTips": "斩棍式特效1",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -284,7 +284,7 @@
     "Guard": "Guard"
   },
   {
-    "ID": 444405020,
+    "ID": 9870020,
     "BuffTips": "斩棍式特效2",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -316,7 +316,7 @@
   },
 
   {
-    "ID": 444405024,
+    "ID": 9870024,
     "BuffTips": "退寸特效",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -348,7 +348,7 @@
   },
 
   {
-    "ID": 444405026,
+    "ID": 9870026,
     "BuffTips": "搅阵特效",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -380,7 +380,7 @@
   },
 
   {
-    "ID": 444405029,
+    "ID": 9870029,
     "BuffTips": "进尺特效",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -412,7 +412,7 @@
   },
 
   {
-    "ID": 444405031,
+    "ID": 9870031,
     "BuffTips": "风云转特效",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -444,7 +444,7 @@
   },
 
   {
-    "ID": 444405033,
+    "ID": 9870033,
     "BuffTips": "江海翻特效1",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -476,7 +476,7 @@
   },
 
   {
-    "ID": 444405034,
+    "ID": 9870034,
     "BuffTips": "江海翻特效2",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -508,7 +508,7 @@
   },
 
   {
-    "ID": 444405035,
+    "ID": 9870035,
     "BuffTips": "江海翻特效3",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -540,7 +540,7 @@
   },
 
   {
-    "ID": 444405040,
+    "ID": 9870040,
     "BuffTips": "蓄力劈棍1特效",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -572,7 +572,7 @@
   },
 
   {
-    "ID": 444405042,
+    "ID": 9870042,
     "BuffTips": "蓄力劈棍2特效",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -604,7 +604,7 @@
   },
 
   {
-    "ID": 444405044,
+    "ID": 9870044,
     "BuffTips": "蓄力劈棍3特效",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -636,7 +636,7 @@
   },
 
   {
-    "ID": 444405046,
+    "ID": 9870046,
     "BuffTips": "蓄力劈棍4特效1",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -668,7 +668,7 @@
   },
 
   {
-    "ID": 444405047,
+    "ID": 9870047,
     "BuffTips": "蓄力劈棍4特效2",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -700,7 +700,7 @@
   },
 
   {
-    "ID": 444405048,
+    "ID": 9870048,
     "BuffTips": "蓄力劈棍4特效3",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -732,7 +732,7 @@
   },
 
   {
-    "ID": 444405053,
+    "ID": 9870053,
     "BuffTips": "大风车特效1",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -764,7 +764,7 @@
   },
 
   {
-    "ID": 444405054,
+    "ID": 9870054,
     "BuffTips": "大风车特效2",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -796,7 +796,7 @@
   },
 
   {
-    "ID": 444405055,
+    "ID": 9870055,
     "BuffTips": "大风车特效3",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -828,7 +828,7 @@
   },
 
   {
-    "ID": 444405060,
+    "ID": 9870060,
     "BuffTips": "蓄力戳立棍1特效",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -859,7 +859,7 @@
     "Guard": "Guard"
   },
   {
-    "ID": 444405062,
+    "ID": 9870062,
     "BuffTips": "蓄力戳立棍2特效",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -891,7 +891,7 @@
   },
 
   {
-    "ID": 444405064,
+    "ID": 9870064,
     "BuffTips": "蓄力戳立棍3特效1",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -923,7 +923,7 @@
   },
 
   {
-    "ID": 444405065,
+    "ID": 9870065,
     "BuffTips": "蓄力戳立棍3特效2",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -955,7 +955,7 @@
   },
 
   {
-    "ID": 444405066,
+    "ID": 9870066,
     "BuffTips": "蓄力戳立棍3取特效1",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -987,7 +987,7 @@
   },
 
   {
-    "ID": 444405071,
+    "ID": 9870071,
     "BuffTips": "蓄力戳立棍4特效",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -1019,7 +1019,7 @@
   },
 
   {
-    "ID": 444405073,
+    "ID": 9870073,
     "BuffTips": "大圣2A切手特效1",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -1051,7 +1051,7 @@
   },
 
   {
-    "ID": 444405074,
+    "ID": 9870074,
     "BuffTips": "大圣2A切手特效2",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -1083,7 +1083,7 @@
   },
 
   {
-    "ID": 444405075,
+    "ID": 9870075,
     "BuffTips": "大圣2A切手特效3",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -1115,7 +1115,7 @@
   },
 
   {
-    "ID": 444405080,
+    "ID": 9870080,
     "BuffTips": "棍花下劈特效",
     "BuffActiveCondition": {
       "ConditionType": 0,
@@ -1147,7 +1147,7 @@
   },
 
   {
-    "ID": 444405082,
+    "ID": 9870082,
     "BuffTips": "大圣3A切手特效",
     "BuffActiveCondition": {
       "ConditionType": 0,

@@ -22,25 +22,26 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
               "ProjectTileID": 1016262,
               "ForTarget": true
+            },
+            {
+              "BuffIDs": [
+                888666026
+              ],
+              "BuffTime": 100,
+              "desc": "时缓"
             }
           ]
         },
         {
           "Type": "buff",
-          "BuffIDs": [888666026],
-          "BuffTime": 100,
-           "TimeDelay": 1100,
-          "desc": "时缓"
-        },
-        {
-          "Type": "buff",
-          "BuffIDs": [5063],
-          "BuffTime": 1400,
+          "BuffIDs": [
+            5070
+          ],
+          "BuffTime": 1200,
           "desc": "棍光"
         }
       ]
     },
-
     {
       "Name": "激光buff,待修改",
       "isLoop": true,
@@ -62,7 +63,6 @@
         }
       ]
     },
-
     {
       "Name": "戳棍巴山虎",
       "Description": "",
@@ -92,11 +92,15 @@
           "BuffTime": 400,
           "desc": "激光"
         },
-
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileIDs": [80009901, 80009913, 80009910, 80000008],
+          "ProjectTileIDs": [
+            80009901,
+            80009913,
+            80009910,
+            80000008
+          ],
           "ForTarget": true,
           "TimeDelay": 200,
           "BulletNumInOneWave": 3,
@@ -108,16 +112,16 @@
           "NoiseZ": 100,
           "desc": "杨戬万剑，小型剑，密密麻麻，打中带白色雾,飞剑带拖尾,飞剑带白色拖尾"
         },
-
         {
-          "Type": "buff",
-          "BuffID": 888666027,
-          "BuffTime": 500,
-          "desc": "造成伤害时缓"
+          "BuffIDs": [
+            888666026,
+            888805070
+          ],
+          "BuffTime": 1200,
+          "desc": "时缓，棍光"
         }
       ]
     },
-
     {
       "Name": "残躯4蓄力",
       "Description": "",
@@ -132,7 +136,10 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [74010206, 74011107],
+          "ProjectTileIDs": [
+            74010206,
+            74011107
+          ],
           "OffsetX": 500,
           "OffsetY": 500,
           "TimeDelay": 2910,
@@ -140,7 +147,6 @@
         }
       ]
     },
-
     {
       "Name": "戳棍 激光",
       "Description": "",
@@ -174,13 +180,19 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffID": 888666017,
+          "BuffIDs": [
+            888666017,
+            888666061
+          ],
           "BuffTime": 400
         },
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileIDs": [80009901, 80009913],
+          "ProjectTileIDs": [
+            80009901,
+            80009913
+          ],
           "ForTarget": true,
           "TimeDelay": 150,
           "BulletNumInOneWave": 4,
