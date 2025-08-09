@@ -1,32 +1,183 @@
 [
     {
-        "desc": "风云转，增加buff 暂时未实现",
-        "ID": 10721,
-        "LoopTemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboC/AM_wukong_comboc_z_01_loop.AM_wukong_comboc_z_01_loop",
-        "LoopCanMove": 0,
-        "LoopCanRotate": 0,
-        "ChargeMoveSpeedRate": 0,
-        "MaxChargeTime": -1.0,
-        "TriggerNextStageWhenOnLand": 0,
-        "TriggerNextStageUseFSM": 1,
-        "NextStageSkillID": 0,
-        "EndSkillID": 0,
-        "AutoEndWhenLockTarget": 0,
-        "ChargeSkillBuffInfoList": [
-            {
-                "BuffID": 271,
-                "BeginTimeInBeginStage": 0.0,
-                "EndTimeInEndStage": 0.4
-            }
-        ],
-        "ChargeSkillSuperArmorInfo": {
-            "HasSuperArmor": 0,
-            "BeginTimeInBeginStage": 0.0,
-            "EndTimeInEndStage": 0.0,
-            "SkillSuperArmorValue": 0.0,
-            "SSABreakAssignedAnim": ""
-        },
-        "ChargeLevelConfigPath": "",
-        "ChargeLevelConfigIndex": 0
-    }
+    "desc": "搅阵，增加buff 等实现",
+    "ID": 10711,
+    "LoopCanMove": 1,
+    "LoopCanRotate": 0,
+    "ChargeMoveSpeedRate": 1,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 273,
+        "BeginTimeInBeginStage": 0.1,
+        "EndTimeInEndStage":0
+      },
+      {
+        "BuffID": 888666011,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      }
+    ]
+  },
+  {
+    "desc": "风云转，增加buff 等实现",
+    "ID": 10720,
+    "LoopCanMove": 1,
+    "LoopCanRotate": 0,
+    "ChargeMoveSpeedRate": 1,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 271,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.4
+      },
+      {
+        "BuffID": 888666015,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      }
+    ]
+  },
+
+  {
+    "desc": "风云转，增加buff 等实现",
+    "ID": 10721,
+    "LoopCanMove": 1,
+    "LoopCanRotate": 0,
+    "ChargeMoveSpeedRate": 1,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 271,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.4
+      },
+      {
+        "BuffID": 888666015,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      }
+    ]
+  },
+
+
+   {
+    "desc": "棍花，增加buff 等实现",
+    "ID": 10842,
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 1,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 234,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 888666009,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      }
+    ]
+  },
+
+  {
+    "desc": "棍花，增加buff 等实现",
+    "ID": 10843,
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 1,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 235,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 888666009,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      }
+    ]
+  },
+
+  {
+    "desc": "棍花，增加buff 等实现",
+    "ID": 10846,
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 1,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 235,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 888666009,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      }
+    ]
+  },
+
+
+  {
+    "desc": "棍花，增加buff 等实现",
+    "ID": 10847,
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 1,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 235,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 888666009,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      }
+    ]
+  },
+
+
+  {
+    "desc": "棍花，增加buff 等实现",
+    "ID": 10848,
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 1,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 234,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 888666009,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      }
+    ]
+  },
+
+   {
+    "desc": "棍花，增加buff 等实现",
+    "ID": 10849,
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 1,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 234,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 888666009,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      }
+    ]
+  }
 ]

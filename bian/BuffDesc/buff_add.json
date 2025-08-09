@@ -33,12 +33,24 @@
         "EffectParamsString": [],
         "EffectParams": [],
         "EffectParamsFloat": [25000.0, 25000.0, 25000.0]
-      }
+      },
+        {
+          "EffectTrigger": 1,
+          "EffectType": 2,
+          "EffectTargetSelectType": 0,
+          "EffectParamsString": [],
+          "EffectParams": [
+            120,
+            8000,
+            0
+          ],
+          "EffectParamsFloat": []
+        }
     ]
   },
   {
     "ID": 888666002,
-    "BuffTips": "分身专属，80%减伤，2倍速度",
+    "BuffTips": "分身专属，80%减伤，2倍速度，5倍血",
     "BuffActiveCondition": {
       "ConditionType": 0,
       "ConditionParams": ""
@@ -47,7 +59,7 @@
     "BuffCategory": 0,
     "CanRemoveWhenAttackHit": 0,
     "CanRemoveWhenAttacked": 0,
-    "Delay": 0,
+    "Delay": 5000,
     "Duration": -1,
     "Interval": 0,
     "AlmostEndAheadTime": 0,
@@ -70,7 +82,35 @@
         "EffectParamsString": [],
         "EffectParams": [],
         "EffectParamsFloat": [25000.0, 25000.0, 25000.0]
-      }
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [51, 50000, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [151, 99999, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+          "EffectTrigger": 1,
+          "EffectType": 2,
+          "EffectTargetSelectType": 0,
+          "EffectParamsString": [],
+          "EffectParams": [
+            120,
+            10000,
+            0
+          ],
+          "EffectParamsFloat": []
+        }
     ]
   },
   {

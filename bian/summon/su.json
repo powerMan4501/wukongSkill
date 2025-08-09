@@ -1,47 +1,14 @@
 [
-    {
-        "desc":"暂时未实现",
-        "ID": 1001101,
-        "ResID": 10011,
-        "SummonAliveTime": 9999.0,
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Player/TAMER_monkeysummon_fs.TAMER_monkeysummon_fs_C",
-        "SummonBPTemplatePath": "/Game/00Main/Design/Units/Player/Unit_MonkeySummon_FS.Unit_MonkeySummon_FS_C",
-        "SummonUnitRotationType": 1,
-        "SummonUnitLocationType": 2,
-        "SelectPointRandom": 0,
-        "PointSetCachedReqID": 0,
-        "SummonDataAssetsPath": "BGWMonkeySummonDataAsset'/Game/00Main/Design/AI/EQS/DA_MonkeySummonDataAsset.DA_MonkeySummonDataAsset'",
-        "SummonSpawnEQSPath": "EnvQuery'/Game/00Main/Design/AI/BTs/Player/SummonMokey_FS/EQ_SummonMonkey_FS_Spawn.EQ_SummonMonkey_FS_Spawn'",
-        "SummonSpawnSceneItemTag": "",
-        "BornEffectPath": "ParticleSystem'/Game/00Main/VFX/Characters/sunwukong/Particles/P_Wukong_CMS_Smoke.P_Wukong_CMS_Smoke'",
-        "UseBornSkill": 0,
-        "BornMontagePathList": [
-            "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/SummonUnit/AM_Wukong_Summon_Appear.AM_Wukong_Summon_Appear'"
-        ],
-        "BornSkillList": [],
-        "DisappearMontagePathList": [
-            "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/SummonUnit/AM_Wukong_Summon_Disappear.AM_Wukong_Summon_Disappear'",
-            "",
-            "",
-            ""
-        ],
-        "BornDelayTime": 0.2,
-        "SummonTargetMethod": 1,
-        "BornEffDisplayTime": 0.2,
-        "DestroyDelayTime": 6.0,
-        "BuffList": [
-            1088,
-            888666002,
-            0,
-            0,
-            0
-        ],
-        "InitSpeed": 0.0,
-        "SyncBattleSC": 0,
-        "IsCopyEquip": 1,
-        "CopyAttrConfigID": 1001101,
-        "IsDestroyWhenSummonerDead": 1,
-        "IsSummonerAsMaster": 1,
-        "BeforeBornTime": 0.0
-    }
+  {
+    "desc": "分身猴，增加存在时间",
+    "ID": 1001101,
+    "SummonAliveTime": 9999.0,
+    "BuffList": [1088, 888666002, 0, 0, 0]
+  },
+  {
+    "desc": "大圣分身猴，增加存在时间",
+    "ID": 5009301,
+    "SummonAliveTime": 9999.0,
+    "BuffList": [283, 888666002, 0, 0, 0]
+  }
 ]
