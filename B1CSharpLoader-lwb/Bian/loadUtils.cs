@@ -13,6 +13,92 @@ using ArchiveB1;
 using CSharpModBase;
 using BtlB1;
 using Google.Protobuf.Collections;
+using b1.Protobuf.DataAPI;
+
+
+
+
+public class ProjectileDispConfig
+{
+    public int ID { get; set; }
+    public int? ProjectileFXUseDBC { get; set; }
+    public string ProjectileSpawnPSPath { get; set; }
+    public string ProjectileSelfSpawnDBCPath { get; set; }
+    public double? SpawnPStoSpawnInterval { get; set; }
+    public double? BulletLowestSpdCanPlayPS { get; set; }
+    public string BulletHitItemPSPath { get; set; }
+    public string BulletHitUnitPSPath { get; set; }
+    public string BulletLifeOverPSPath { get; set; }
+    public string BeHitedProjectilePlayFXPath { get; set; }
+    public string BeHitedProjectilePostAKPath { get; set; }
+    public string FXDestroyImmediatelyTag { get; set; }
+    public int? HitChrAudioID { get; set; }
+    public string Guard { get; set; }
+}
+
+
+public class ProjectileMoveConfig
+{
+    public int ID { get; set; }
+    public int? ProjectileMoveModeType { get; set; }
+    public int? ProjectileSpdType { get; set; }
+    public double? ProjectileFlyTime { get; set; }
+    public int? MoveClampToLand { get; set; }
+    public int? MoveAlignToLand { get; set; }
+    public string Guard { get; set; }
+}
+
+
+
+public class BulletCommConfig
+{
+    public int ID { get; set; }
+    public string? ProjectileBPTemplatePath { get; set; }
+    public int? ProjectileIsFresh { get; set; }
+    public int? ProjectileType { get; set; }
+    public double? ProjectileTypeParam { get; set; }
+    public double? ProjectileDelayDestroyTime { get; set; }
+    public double? ProjectileLifeTime { get; set; }
+    public double? ProjectileLifeSpeed { get; set; }
+    public int? LifeOverWithDetach { get; set; }
+    public string? ProjectileAnimPath { get; set; }
+    public int? ProjectileNumLimit { get; set; }
+    public int? BeHitedProjectileSwitchID { get; set; }
+    public string? ProjectileSweepReactionDataAssetPath { get; set; }
+    public int? ProjectileMeshIsFacingTarget { get; set; }
+    public int? ScaleCurveXAxisType { get; set; }
+    public int? ScaleCurveYAxisType { get; set; }
+    public string? ProjectileScaleCurvePath { get; set; }
+    public string? ProjectileInnerRadiusCurvePath { get; set; }
+    public int? ScaleOnlyApplyToCheck { get; set; }
+}
+
+
+public class BulletExpandConfig
+{
+    public string desc { get; set; }
+    public int ID { get; set; }
+    public int? BulletIsForMerge { get; set; }
+    public int? BulletIsMergeChild { get; set; }
+    public string BulletMergeTag { get; set; }
+    public List<int> LifeOverEffectID { get; set; }
+    public List<int> HitChrEffectsforSelf { get; set; }
+    public List<int> HitProjectileEffectsforSelf { get; set; }
+    public List<int> HitItemEffectsforSelf { get; set; }
+    public List<int> HitEffectsforChr { get; set; }
+    public List<int> HitEffectsforProjectile { get; set; }
+    public int? HitDestructibleStrengthType { get; set; }
+    public int? HitDestructibleDirectionType { get; set; }
+    public List<int> DelayTriggerEffects { get; set; }
+    public double? BulletSweepCheckGap { get; set; }
+    public double? BulletSweepCheckDelayTime { get; set; }
+    public int? BulletIsOnlyHitTarget { get; set; }
+    public int? BulletCanThroughBlockage { get; set; }
+    public string Guard { get; set; }
+}
+
+
+
 
 
 public class BuffDispConfig
@@ -241,6 +327,29 @@ namespace bian
                             }
                             break;
 
+                        case "LifeOverEffectID":
+                        case "HitChrEffectsforSelf":
+                        case "HitProjectileEffectsforSelf":
+                        case "HitItemEffectsforSelf":
+                        case "HitEffectsforChr":
+                        case "HitEffectsforProjectile":
+                        case "DelayTriggerEffects":
+                            if (sourceValue is List<int> intList && intList != null)
+                            {
+                                var targetList = targetProp.GetValue(target) as IList;
+                                if (targetList != null)
+                                {
+                                    targetList.Clear();
+                                    if (intList != null)
+                                    {
+                                        foreach (var item in intList)
+                                        {
+                                            targetList.Add(item);
+                                        }
+                                    }
+                                }
+                            }
+                            break;
 
                         default:
                             var targetValue = ConvertValue(sourceValue, targetProp.PropertyType);
@@ -283,70 +392,6 @@ namespace bian
             }
         }
 
-        // 复制BuffEffect
-        // 复制BuffEffect
-        private static void CopyBuffEffect(BuffEffect source, FUStBuffEffectAttr target)
-        {
-            if (source == null || target == null) return;
-
-            var sourceType = source.GetType();
-            var targetType = target.GetType();
-
-            foreach (var sourceProp in sourceType.GetProperties())
-            {
-                var sourceValue = sourceProp.GetValue(source);
-                if (sourceValue == null) continue;
-
-                var targetProp = targetType.GetProperty(sourceProp.Name);
-                if (targetProp == null) continue;
-
-                try
-                {
-                    // 处理列表类型的属性
-                    if (typeof(IEnumerable).IsAssignableFrom(targetProp.PropertyType) &&
-                        targetProp.PropertyType != typeof(string))
-                    {
-                        var backingField = targetType.GetField($"<{targetProp.Name}>k__BackingField",
-                            BindingFlags.NonPublic | BindingFlags.Instance);
-
-                        if (backingField != null)
-                        {
-                            var currentList = backingField.GetValue(target) as IList;
-                            if (currentList != null)
-                            {
-                                currentList.Clear();
-                                foreach (var item in (IEnumerable)sourceValue)
-                                {
-                                    currentList.Add(item);
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        // 检查属性是否可写
-                        if (targetProp.CanWrite)
-                        {
-                            targetProp.SetValue(target, ConvertValue(sourceValue, targetProp.PropertyType));
-                        }
-                        else
-                        {
-                            // 对于只读属性，使用反射直接设置值
-                            var backingField = targetType.GetField($"<{targetProp.Name}>k__BackingField",
-                                BindingFlags.NonPublic | BindingFlags.Instance);
-                            if (backingField != null)
-                            {
-                                backingField.SetValue(target, ConvertValue(sourceValue, targetProp.PropertyType));
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Log.Error($"Failed to copy property {sourceProp.Name}: {ex.Message}");
-                }
-            }
-        }
 
 
         // 处理特殊列表属性
@@ -458,6 +503,7 @@ namespace bian
                 var buffConfigs = LoadJsonConfigs<BuffConfig>(configDirectory, "Buff");
                 var buffList = BGW_GameDB.GetAllBuffDesc();
 
+
                 if (buffList == null || buffList.Count == 0 || buffConfigs == null)
                 {
                     Log.Error("Failed to load buff configs or buff list is not available");
@@ -553,5 +599,312 @@ namespace bian
             Log.Info($"Creating new buff with ID: {config.ID}");
             return newBuff;
         }
+
+
+
+
+
+        // 加载并应用BulletExpand配置
+        public static int LoadAndApplyBulletExpand(string configDirectory = null)
+        {
+            try
+            {
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BulletData", "bulletExpand");
+
+                var bulletExpandConfigs = LoadJsonConfigs<BulletExpandConfig>(configDirectory, "BulletExpand");
+                var bulletExpandList = BGW_GameDB.GetAllBulletExpandDesc();
+
+                if (bulletExpandList == null || bulletExpandList.Count == 0 || bulletExpandConfigs == null)
+                {
+                    Log.Error("Failed to load bullet expand configs or bullet expand list is not available");
+                    return 0;
+                }
+
+                const int templateBulletId = 117;
+                if (!bulletExpandList.TryGetValue(templateBulletId, out var templateBullet))
+                {
+                    Log.Error($"Template bullet (ID: {templateBulletId}) not found");
+                    return 0;
+                }
+
+                var processedCount = 0;
+                foreach (var bulletConfig in bulletExpandConfigs)
+                {
+                    try
+                    {
+                        var targetBullet = GetOrCreateBulletExpand(bulletConfig, bulletExpandList, templateBullet);
+                        CopyProperties(bulletConfig, targetBullet);
+                        processedCount++;
+                        Log.Info($"Successfully processed bullet expand with ID: {bulletConfig.ID}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process bullet expand config for ID {bulletConfig.ID}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed bullet expand configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplyBulletExpand: {ex.Message}");
+                return 0;
+            }
+        }
+
+        // 获取或创建BulletExpand
+        private static FUStBulletExpandDesc GetOrCreateBulletExpand(BulletExpandConfig config, Dictionary<int, FUStBulletExpandDesc> bulletExpandList, FUStBulletExpandDesc templateBullet)
+        {
+            if (bulletExpandList.TryGetValue(config.ID, out var existingBullet))
+            {
+                Log.Info($"Updating existing bullet expand with ID: {config.ID}");
+                return existingBullet;
+            }
+
+            var newBullet = (FUStBulletExpandDesc)templateBullet.Clone();
+            bulletExpandList.Add(config.ID, newBullet);
+            Log.Info($"Creating new bullet expand with ID: {config.ID}");
+            return newBullet;
+        }
+
+
+        // 加载并应用BulletComm配置
+        // 加载并应用BulletComm配置
+        public static int LoadAndApplyBulletComm(string configDirectory = null)
+        {
+            try
+            {
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BulletData", "BulletComm");
+
+                var bulletCommConfigs = LoadJsonConfigs<BulletCommConfig>(configDirectory, "BulletComm");
+                var bulletCommList = BGW_GameDB.GetAllBulletCommDesc();
+                // 修改点：如果bulletCommList为空，创建一个新的字典
+                if (bulletCommList == null)
+                {
+                    bulletCommList = new Dictionary<int, FUStBulletCommDesc>();
+                    Log.Info("Bullet comm list is null, creating a new one");
+                }
+                else if (bulletCommList.Count == 0)
+                {
+                    Log.Info("Bullet comm list is empty, but will continue processing");
+                }
+
+                if (bulletCommConfigs == null || bulletCommConfigs.Count == 0)
+                {
+                    Log.Error("Failed to load bullet comm configs");
+                    return 0;
+                }
+
+                // 修改点：如果没有模板子弹，使用默认值或创建一个
+                const int templateBulletId = 117;
+                if (!bulletCommList.TryGetValue(templateBulletId, out var templateBullet))
+                {
+                    // 创建一个默认的模板子弹
+                    templateBullet = new FUStBulletCommDesc();
+                    bulletCommList.Add(templateBulletId, templateBullet);
+                    Log.Info($"Template bullet (ID: {templateBulletId}) not found, created a new one");
+                }
+
+                var processedCount = 0;
+                foreach (var bulletConfig in bulletCommConfigs)
+                {
+                    try
+                    {
+                        var targetBullet = GetOrCreateBulletComm(bulletConfig, bulletCommList, templateBullet);
+                        CopyProperties(bulletConfig, targetBullet);
+                        processedCount++;
+                        Log.Info($"Successfully processed bullet comm with ID: {bulletConfig.ID}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process bullet comm config for ID {bulletConfig.ID}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed bullet comm configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplyBulletComm: {ex.Message}");
+                return 0;
+            }
+        }
+
+
+        // 获取或创建BulletComm
+        private static FUStBulletCommDesc GetOrCreateBulletComm(BulletCommConfig config, Dictionary<int, FUStBulletCommDesc> bulletCommList, FUStBulletCommDesc templateBullet)
+        {
+            if (bulletCommList.TryGetValue(config.ID, out var existingBullet))
+            {
+                Log.Info($"Updating existing bullet comm with ID: {config.ID}");
+                return existingBullet;
+            }
+
+            var newBullet = (FUStBulletCommDesc)templateBullet.Clone();
+            bulletCommList.Add(config.ID, newBullet);
+            Log.Info($"Creating new bullet comm with ID: {config.ID}");
+            return newBullet;
+        }
+
+
+
+
+        // 加载并应用ProjectileMove配置
+        public static int LoadAndApplyProjectileMove(string configDirectory = null)
+        {
+            try
+            {
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BulletData", "move");
+
+                var projectileMoveConfigs = LoadJsonConfigs<ProjectileMoveConfig>(configDirectory, "ProjectileMove");
+                var projectileMoveList = BGW_GameDB.GetAllProjectileMoveDesc();
+
+                if (projectileMoveList == null || projectileMoveList.Count == 0 || projectileMoveConfigs == null)
+                {
+                    Log.Error("Failed to load projectile move configs or projectile move list is not available");
+                    return 0;
+                }
+
+                const int templateProjectileId = 117;
+                if (!projectileMoveList.TryGetValue(templateProjectileId, out var templateProjectile))
+                {
+                    Log.Error($"Template projectile (ID: {templateProjectileId}) not found");
+                    return 0;
+                }
+
+                var processedCount = 0;
+                foreach (var projectileConfig in projectileMoveConfigs)
+                {
+                    try
+                    {
+                        var targetProjectile = GetOrCreateProjectileMove(projectileConfig, projectileMoveList, templateProjectile);
+                        CopyProperties(projectileConfig, targetProjectile);
+                        processedCount++;
+                        Log.Info($"Successfully processed projectile move with ID: {projectileConfig.ID}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process projectile move config for ID {projectileConfig.ID}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed projectile move configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplyProjectileMove: {ex.Message}");
+                return 0;
+            }
+        }
+
+        // 获取或创建ProjectileMove
+        private static FUStProjectileMoveDesc GetOrCreateProjectileMove(ProjectileMoveConfig config, Dictionary<int, FUStProjectileMoveDesc> projectileMoveList, FUStProjectileMoveDesc templateProjectile)
+        {
+            if (projectileMoveList.TryGetValue(config.ID, out var existingProjectile))
+            {
+                Log.Info($"Updating existing projectile move with ID: {config.ID}");
+                return existingProjectile;
+            }
+
+            var newProjectile = (FUStProjectileMoveDesc)templateProjectile.Clone();
+            projectileMoveList.Add(config.ID, newProjectile);
+            Log.Info($"Creating new projectile move with ID: {config.ID}");
+            return newProjectile;
+        }
+
+
+
+
+        // 加载并应用ProjectileDisp配置
+        public static Dictionary<int, FUStProjectileDispDesc> GetAllProjectileDispDesc()
+        {
+            return BG_ProtobufDataAPI<FUStProjectileDispDesc>.Get().GetAll();
+        }
+
+        // 加载并应用ProjectileDisp配置
+        public static int LoadAndApplyProjectileDisp(string configDirectory = null)
+        {
+            try
+            {
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BulletData", "disp");
+
+                var projectileDispConfigs = LoadJsonConfigs<ProjectileDispConfig>(configDirectory, "ProjectileDisp");
+                var projectileDispList = GetAllProjectileDispDesc();
+
+                // 修改点：如果projectileDispList为空，创建一个新的字典
+                if (projectileDispList == null)
+                {
+                    projectileDispList = new Dictionary<int, FUStProjectileDispDesc>();
+                    Log.Info("Projectile disp list is null, creating a new one");
+                }
+                else if (projectileDispList.Count == 0)
+                {
+                    Log.Info("Projectile disp list is empty, but will continue processing");
+                }
+
+                if (projectileDispConfigs == null || projectileDispConfigs.Count == 0)
+                {
+                    Log.Error("Failed to load projectile disp configs");
+                    return 0;
+                }
+
+                // 修改点：如果没有模板投射物，使用默认值或创建一个
+                const int templateProjectileId = 117;
+                if (!projectileDispList.TryGetValue(templateProjectileId, out var templateProjectile))
+                {
+                    // 创建一个默认的模板投射物
+                    templateProjectile = new FUStProjectileDispDesc();
+                    projectileDispList.Add(templateProjectileId, templateProjectile);
+                    Log.Info($"Template projectile (ID: {templateProjectileId}) not found, created a new one");
+                }
+
+                var processedCount = 0;
+                foreach (var projectileConfig in projectileDispConfigs)
+                {
+                    try
+                    {
+                        var targetProjectile = GetOrCreateProjectileDisp(projectileConfig, projectileDispList, templateProjectile);
+                        CopyProperties(projectileConfig, targetProjectile);
+                        processedCount++;
+                        Log.Info($"Successfully processed projectile disp with ID: {projectileConfig.ID}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process projectile disp config for ID {projectileConfig.ID}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed projectile disp configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplyProjectileDisp: {ex.Message}");
+                return 0;
+            }
+        }
+
+        // 获取或创建ProjectileDisp
+        private static FUStProjectileDispDesc GetOrCreateProjectileDisp(ProjectileDispConfig config, Dictionary<int, FUStProjectileDispDesc> projectileDispList, FUStProjectileDispDesc templateProjectile)
+        {
+            if (projectileDispList.TryGetValue(config.ID, out var existingProjectile))
+            {
+                Log.Info($"Updating existing projectile disp with ID: {config.ID}");
+                return existingProjectile;
+            }
+
+            var newProjectile = (FUStProjectileDispDesc)templateProjectile.Clone();
+            projectileDispList.Add(config.ID, newProjectile);
+            Log.Info($"Creating new projectile disp with ID: {config.ID}");
+            return newProjectile;
+        }
+
+        // 以上是子弹全部方法
     }
 }
+
+
+

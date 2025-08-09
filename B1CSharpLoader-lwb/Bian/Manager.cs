@@ -121,6 +121,11 @@ namespace bian
             UI.CreateUI();
         }
 
+
+
+
+
+
         public static void RegisterManager()
         {
             Manager.GetModelManager().InitConfig();
@@ -131,13 +136,7 @@ namespace bian
             string configPath = Path.Combine("CSharpLoader", "Mods", "bian", "skillMaping");
             LoadUtils.LoadAllSkillMappingRules(configPath);
 
-            Task.Run(async delegate
-            {
-                await Task.Delay(1250);
-                LoadUtils.LoadAndApplyBuff();
-                await Task.Delay(2850);
-                LoadUtils.LoadAndApplyBuffDispConfigs();
-            });
+
 
 
             // 在这里可以将buffDispConfigs插入到游戏中的数据
@@ -214,6 +213,8 @@ namespace bian
 
         }
 
+        private static bool isBuffLoaded = false; // 添加静态标志变量
+
 
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_BuffAdd_Multicast_Invoke")]
         [HarmonyPrefix]
@@ -221,7 +222,6 @@ namespace bian
         {
             if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]BuffAdd_Multicast"))
             {
-
 
             }
 
@@ -231,10 +231,9 @@ namespace bian
             }
             var buffDesc = GameDBRuntime.GetFUStBuffDesc(BuffID);
 
-            if (buffDesc != null && (buffDesc?.Duration > 1000 || BuffID == 9870001 || BuffID == 888805000))
+            if (buffDesc != null && (buffDesc?.Duration > 1000))
             {
 
-                Log.Info($"buff {BuffID} ,buffDescBuffTips：{buffDesc.BuffTips} ，Duration：{buffDesc.Duration} ");
                 if (buffDesc?.Range?.RangeParam != null && buffDesc.Range.RangeParam.Count > 0)
                 {
                     Log.Info($"buff {BuffID} ,range:{buffDesc.Range.RangeParam[0]} ，BuffActiveCondition：{buffDesc?.BuffActiveCondition?.ConditionParams}");
@@ -252,13 +251,6 @@ namespace bian
             if (BuffID == 287 || BuffID == 293)
             {
                 BGUFunctionLibraryCS.BGUAddBuff(RootCaster, RootCaster, 218, EBuffSourceType.GM, Duration);//给识破buff加无敌
-            }
-
-
-            if (BuffID == 288)
-            {
-                // 识破成功，加识破成功专属buff 888666029, 霸体和棍势
-                BGUFunctionLibraryCS.BGUAddBuff(RootCaster, RootCaster, 888666029, EBuffSourceType.GM, Duration);
             }
 
             // 冰火雷毒buff互斥
@@ -305,7 +297,7 @@ namespace bian
             }
             return false;
         }
-
+        private static bool isBuffConfigsLoaded = false; // 添加静态标志变量
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_CastSkillWithAnimMontageMultiCast_Implementation")]
         [HarmonyPrefix]
         private static void CastSkillWithAnimMontageMultiCast(BUS_GSEventCollection __instance, ref UAnimMontage Montage, ref float PlayTimeRate, float MontagePosOffset, FName StartSectionName)
@@ -585,12 +577,119 @@ namespace bian
         }
 
 
+
+
+        public class ComboConfig
+        {
+            public string nowMontage { get; set; }
+            public double rate { get; set; }
+            public int skillID { get; set; }
+            public SkillMapCondition Condition { get; set; }
+            public string InputCore { get; set; }
+            public int conditionValue { get; set; }
+            public string desc { get; set; }
+        }
+
+        private static List<ComboConfig> comboConfigs = new List<ComboConfig>();
+
+
+
+        private static void LoadComboConfigs()
+        {
+            string configFolderPath = Path.Combine("CSharpLoader", "Mods", "bian", "ComboSkill");
+            if (Directory.Exists(configFolderPath))
+            {
+                comboConfigs.Clear();
+                foreach (string file in Directory.GetFiles(configFolderPath, "*.json"))
+                {
+                    string json = File.ReadAllText(file);
+                    var configs = JsonConvert.DeserializeObject<List<ComboConfig>>(json);
+                    if (configs != null)
+                    {
+                        comboConfigs.AddRange(configs);
+                    }
+                }
+            }
+        }
+
+
+
+        private static void GetCharacterStance(BGUCharacterCS character, out bool isChuogun, out bool isLigun, out bool isPigun)
+        {
+            var control = Helper.GetPlayerController();
+            var readOnlyData = BGU_DataUtil.GetPlayerControlReadonlyData<IBPC_PlayerRoleData, BPC_PlayerRoleData>(control);
+            var stance = readOnlyData?.RoleData?.RoleCs?.Actor?.Wear?.Stance;
+            isChuogun = stance == Stance.Poke;
+            isLigun = stance == Stance.Prop;
+            isPigun = stance == Stance.Heavy;
+        }
+
+
+
+
         [HarmonyPatch(typeof(UInputPreProcEvent), "OnAnyKeyTriggerEvent")]
         [HarmonyPrefix]
+
         private static void OnAnyKeyTriggerEvent(FKey Key)
         {
-            Log.Info($"bian: [PATCH]OnAnyKeyTriggerEvent  --> {Key.GetFName()}");
+            if (comboConfigs.Count == 0)
+            {
+                LoadComboConfigs();
+            }
+
+            var character = Helper.GetBGUPlayerCharacterCS();
+            if (character == null) return;
+
+            UAnimInstance animInstance = character.Mesh.GetAnimInstance();
+            var currMontage = animInstance.GetCurrentActiveMontage();
+            if (currMontage == null) return;
+
+            var currentPosition = animInstance.Montage_GetPosition(currMontage);
+            var currentLength = currMontage.GetPlayLength() * 1000;
+            var currentRate = currentPosition / currentLength;
+
+            string keyName = Key.GetFName().ToString();
+            Log.Info($"bian: [PATCH]OnAnyKeyTriggerEvent  --> Key:{keyName} currentPosition,{currentPosition} currentLength:{currentLength},currentRate{currentRate}");
+            if (keyName == "LeftCommand" && !isBuffConfigsLoaded) // 添加标志变量检查
+            {
+                LoadUtils.LoadAndApplyBuffDispConfigs();
+                LoadUtils.LoadAndApplyBuff();
+
+                // LoadUtils.LoadAndApplyBulletExpand();
+                // LoadUtils.LoadAndApplyBulletComm();
+                // LoadUtils.LoadAndApplyProjectileMove();
+                // LoadUtils.LoadAndApplyProjectileDisp();
+
+                isBuffConfigsLoaded = true; // 设置标志变量为true
+            }
+            GetCharacterStance(character, out bool isChuogun, out bool isLigun, out bool isPigun);
+            var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
+
+            foreach (var combo in comboConfigs)
+            {
+                string fullPath = currMontage.PathName;
+                string subString = combo.nowMontage;
+                Log.Info($"bian: 匹配动画{fullPath} ,{combo.nowMontage},是否匹配：:{fullPath.Contains(subString)}，播放比例：{currentRate >= combo.rate} 键值：{keyName == combo.InputCore}");
+                if (fullPath.Contains(subString) &&
+                    currentRate >= combo.rate &&
+                    keyName == combo.InputCore)
+                {
+                    var rule = new SkillMappingRule
+                    {
+                        Condition = combo.Condition,
+                        conditionValue = combo.conditionValue
+                    };
+
+                    if (combo.Condition == SkillMapCondition.any || IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target))
+                    {
+                        BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(combo.skillID, null, EMontageBindReason.NormalSkill, false);
+                        break;
+                    }
+                }
+            }
         }
+
+
 
         /*[HarmonyPatch(typeof(BUS_MagicallyChangeComp), "OnCastMagicallyChangeSkill")]
         [HarmonyPrefix]

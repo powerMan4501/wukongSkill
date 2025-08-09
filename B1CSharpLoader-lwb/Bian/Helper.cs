@@ -906,8 +906,10 @@ namespace bian
                 BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item) &&
                 BGUFunctionLibraryCS.BGUHasBuffByID(item, 888666002)
             ).ToList();
-
-            if (filteredActors.Count == 0)
+            var teamFenshen = allActorsOfClassList.Where(item =>
+                BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item)
+            ).ToList();
+            if (teamFenshen.Count < 2)
             {
 
                 // Helper.SummonReq(1001101, 1, 9999);
