@@ -2,29 +2,7 @@
   {
     "ID": 888666001,
     "BuffTips": "主角，80%减伤，2倍速度",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    },
-    "BuffLayerCounterType": 0,
-    "BuffCategory": 0,
-    "CanRemoveWhenAttackHit": 0,
-    "CanRemoveWhenAttacked": 0,
-    "Delay": 0,
     "Duration": -1,
-    "Interval": 0,
-    "AlmostEndAheadTime": 0,
-    "MaxLayer": 1,
-    "TargetBase": 2,
-    "TargetCount": 1,
-    "TargetFilter": 1,
-    "TargetTypeFilter": 1,
-    "AffiliationTypeFilter": 0,
-    "Range": {
-      "RangeType": 0,
-      "RangeCenterType": 0,
-      "RangeParam": []
-    },
     "BuffEffects": [
       {
         "EffectTrigger": 1,
@@ -51,29 +29,8 @@
   {
     "ID": 888666002,
     "BuffTips": "分身专属，80%减伤，2倍速度，5倍血",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    },
-    "BuffLayerCounterType": 0,
-    "BuffCategory": 0,
-    "CanRemoveWhenAttackHit": 0,
-    "CanRemoveWhenAttacked": 0,
     "Delay": 5000,
     "Duration": -1,
-    "Interval": 0,
-    "AlmostEndAheadTime": 0,
-    "MaxLayer": 1,
-    "TargetBase": 2,
-    "TargetCount": 1,
-    "TargetFilter": 1,
-    "TargetTypeFilter": 1,
-    "AffiliationTypeFilter": 0,
-    "Range": {
-      "RangeType": 0,
-      "RangeCenterType": 0,
-      "RangeParam": []
-    },
     "BuffEffects": [
       {
         "EffectTrigger": 1,
@@ -116,29 +73,8 @@
   {
     "ID": 888666003,
     "BuffTips": "给怪加血加攻击",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    },
-    "BuffLayerCounterType": 1,
-    "BuffCategory": 0,
-    "CanRemoveWhenAttackHit": 0,
-    "CanRemoveWhenAttacked": 0,
-    "Delay": 0,
     "Duration": -1,
-    "Interval": 0,
-    "AlmostEndAheadTime": 0,
-    "MaxLayer": 1,
-    "TargetBase": 2,
-    "TargetCount": 1,
-    "TargetFilter": 1,
-    "TargetTypeFilter": 1,
-    "AffiliationTypeFilter": 0,
-    "Range": {
-      "RangeType": 0,
-      "RangeCenterType": 0,
-      "RangeParam": []
-    },
+    "MaxLayer": 5,
     "BuffEffects": [
       {
         "EffectTrigger": 1,
@@ -164,10 +100,7 @@
         "EffectParams": [53, 2000, 0, 0],
         "EffectParamsFloat": []
       }
-    ],
-    "IsExclusiveBuff": 0,
-    "CanBeInherited": 0,
-    "Guard": "Guard"
+    ]
   },
   {
     "ID": 888666004,

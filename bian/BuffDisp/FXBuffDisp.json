@@ -60,13 +60,7 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
   {
@@ -89,13 +83,7 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
   {
@@ -118,16 +106,10 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
-    {
+  {
     "ID": 555503207,
     "BuffID": 9870011,
     "CasterResID": 0,
@@ -147,17 +129,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
-   
 
   {
     "ID": 555503208,
@@ -179,18 +152,10 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
-
-
-   {
+  {
     "ID": 555503209,
     "BuffID": 9870017,
     "CasterResID": 0,
@@ -210,15 +175,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
 
   {
     "ID": 555503210,
@@ -240,16 +198,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
 
   {
     "ID": 555503211,
@@ -271,13 +221,7 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
   {
@@ -300,13 +244,7 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
   {
@@ -329,13 +267,7 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
   {
@@ -358,16 +290,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
 
   {
     "ID": 555503215,
@@ -389,13 +313,7 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
   {
@@ -418,16 +336,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
 
   {
     "ID": 555503217,
@@ -449,15 +359,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
 
   {
     "ID": 555503218,
@@ -479,16 +382,10 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
-   {
+  {
     "ID": 555503219,
     "BuffID": 9870040,
     "CasterResID": 0,
@@ -508,16 +405,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
 
   {
     "ID": 555503220,
@@ -539,17 +428,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
-
 
   {
     "ID": 555503221,
@@ -571,16 +451,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
 
   {
     "ID": 555503222,
@@ -602,20 +474,10 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
-
-
-
-
-   {
+  {
     "ID": 555503223,
     "BuffID": 9870047,
     "CasterResID": 0,
@@ -635,17 +497,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
-
 
   {
     "ID": 555503224,
@@ -667,16 +520,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
 
   {
     "ID": 555503225,
@@ -698,17 +543,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
-
 
   {
     "ID": 555503226,
@@ -730,19 +566,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
-
-
-
 
   {
     "ID": 555503227,
@@ -764,17 +589,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
-
 
   {
     "ID": 555503228,
@@ -796,19 +612,10 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
-
-
-
-   {
+  {
     "ID": 555503229,
     "BuffID": 9870062,
     "CasterResID": 0,
@@ -828,19 +635,10 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
-
-
-
-   {
+  {
     "ID": 555503230,
     "BuffID": 9870064,
     "CasterResID": 0,
@@ -860,18 +658,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
-
-
 
   {
     "ID": 555503231,
@@ -893,19 +681,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
-
-
-
 
   {
     "ID": 555503232,
@@ -927,19 +704,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
-
-
-
 
   {
     "ID": 555503233,
@@ -961,17 +727,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
-
 
   {
     "ID": 555503234,
@@ -993,19 +750,10 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
-
-
-
-    {
+  {
     "ID": 555503235,
     "BuffID": 9870074,
     "CasterResID": 0,
@@ -1025,17 +773,10 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
-
-   {
+  {
     "ID": 555503236,
     "BuffID": 9870075,
     "CasterResID": 0,
@@ -1055,16 +796,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
 
   {
     "ID": 555503237,
@@ -1086,16 +819,8 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
-
-
 
   {
     "ID": 555503238,
@@ -1117,13 +842,6 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   }
-
 ]
