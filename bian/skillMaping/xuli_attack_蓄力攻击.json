@@ -40,5 +40,47 @@
     "Condition": "any",
     "conditionValue": null,
     "desc": "3/4蓄start，转成3/4蓄攻击"
+  },
+
+
+
+  {
+    "OriginalId": 10830,
+    "MappedId": 50020,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "劈棍蓄力0豆攻击，变成2豆大圣劈棍50020"
+  },
+  {
+    "OriginalId": 10831,
+    "MappedId": 50021,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "劈棍蓄力1豆攻击，变成大圣2豆劈棍50021"
+  },
+
+   {
+    "OriginalId": 10832,
+    "MappedId": 50022,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "劈棍蓄力2豆攻击，变成大圣3豆劈棍 50022"
+  },
+
+
+    {
+    "OriginalId": 10833,
+    "MappedId": 50023,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "劈棍蓄力3豆攻击，变成大圣4豆劈棍 50023"
+  },
+
+   {
+    "OriginalId": 10834,
+    "MappedId": 50024,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "劈棍蓄力4豆攻击，变成大圣5豆劈棍 50024"
   }
 ]
