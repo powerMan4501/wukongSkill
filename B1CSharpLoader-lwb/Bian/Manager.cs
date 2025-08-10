@@ -177,6 +177,24 @@ namespace bian
         private static bool isBuffLoaded = false; // 添加静态标志变量
 
 
+
+
+        [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_TriggerSkillEffectBySkillMultiCast_Implementation")]
+        [HarmonyPrefix]
+        private static void TriggerSkillEffectBySkillMultiCast(ref int EffectID, ref AActor Caster, ref AActor Target, ref FEffectInstReq EffectInstReq)
+        {
+            Log.Info($"Evt_TriggerSkillEffectBySkillMultiCast_Implementation  EffectID:{EffectID} Caster:{Caster.PathName} Target:{Target.PathName} EffectInstReq:{EffectInstReq.HitLocation}");
+
+        }
+        [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_NotifyGraphClientMultiCast_Implementation")]
+        [HarmonyPrefix]
+        private static void NotifyGraphClientMultiCast(ref string FinalGuid, ref FGameplayTag NotifyTag)
+        {
+            Log.Info($"Evt_NotifyGraphClientMultiCast_Implementation  FinalGuid:{FinalGuid} NotifyTag:{NotifyTag.TagName}");
+
+        }
+
+
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_BuffAdd_Multicast_Invoke")]
         [HarmonyPrefix]
         private static void BuffAdd_Multicast(ref int BuffID, AActor Caster, AActor RootCaster, ref float Duration)
@@ -192,7 +210,7 @@ namespace bian
             }
             var buffDesc = GameDBRuntime.GetFUStBuffDesc(BuffID);
 
-            if (buffDesc != null && (buffDesc?.Duration > 1000 || BuffID == 888666010 || BuffID == 888666012 || BuffID == 888666011))
+            if (buffDesc != null && (buffDesc?.Duration > 1000 || BuffID == 9870001))
             {
                 Log.Info($"buff {BuffID}，Duration:{buffDesc.Duration},Interval:{buffDesc.Interval},");
                 if (buffDesc?.Range?.RangeParam != null && buffDesc.Range.RangeParam.Count > 0)
