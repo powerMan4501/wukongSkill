@@ -840,7 +840,7 @@ namespace bian
                 }
             }
 
-            // Log.Info($"Total processed BuffDisp configs: {processedCount}");
+            Log.Info($"Total processed BuffDisp configs: {processedCount}");
             return processedCount;
         }
 
@@ -881,7 +881,7 @@ namespace bian
                     }
                 }
 
-                // Log.Info($"Total processed buff configs: {processedCount}");
+                Log.Info($"Total processed buff configs: {processedCount}");
                 return processedCount;
             }
             catch (Exception ex)
@@ -922,14 +922,14 @@ namespace bian
         {
             if (buffDispList.ContainsKey(config.ID))
             {
-                Log.Info($"Updating existing BuffDisp with ID: {config.ID}");
+                // Log.Info($"Updating existing BuffDisp with ID: {config.ID}");
                 return buffDispList[config.ID];
             }
 
             buffDispList.TryGetValue(202901, out var templateBuff);
             var newBuff = (FUStBuffDispDesc)templateBuff.Clone();
             buffDispList.Add(config.ID, newBuff);
-            Log.Info($"Creating new BuffDisp with ID: {config.ID}");
+            // Log.Info($"Creating new BuffDisp with ID: {config.ID}");
             return newBuff;
         }
 
