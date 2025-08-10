@@ -165,7 +165,6 @@ namespace bian
                         forwardVector.Y *= 600;  // 只在Y轴方向增加800单位
                         forwardVector.X *= 600;  // 只在X轴方向增加800单位
                         ProjectileSpawnInfo.SpawnPosition = playerLocation + forwardVector;
-                        Log.Info($"夜叉王飞轮子弹Y+600   forwardVector:{forwardVector} SpawnPosition:{ProjectileSpawnInfo.SpawnPosition}");
                     }
 
                 }
@@ -176,6 +175,16 @@ namespace bian
 
         private static bool isBuffLoaded = false; // 添加静态标志变量
 
+        public static string GetLastCharacters(string input, int length)
+        {
+            if (string.IsNullOrEmpty(input))
+                return input;
+            if (length <= 0)
+                return string.Empty;
+            if (input.Length <= length)
+                return input;
+            return input.Substring(input.Length - length);
+        }
 
 
 
@@ -183,16 +192,20 @@ namespace bian
         [HarmonyPrefix]
         private static void TriggerSkillEffectBySkillMultiCast(ref int EffectID, ref AActor Caster, ref AActor Target, ref FEffectInstReq EffectInstReq)
         {
-            Log.Info($"Evt_TriggerSkillEffectBySkillMultiCast_Implementation  EffectID:{EffectID} Caster:{Caster.PathName} Target:{Target.PathName} EffectInstReq:{EffectInstReq.HitLocation}");
+            if (Caster == null || !IsPlayer(Caster.PathName))
+            {
+                return;
+            }
+            Log.Info($"Evt_TriggerSkillEffectBySkillMultiCast_Implementation  EffectID:{EffectID} Caster:{GetLastCharacters(Caster?.GetFullName(), 25)} Target:{GetLastCharacters(Target?.GetFullName(), 20)} EffectInstReq:{EffectInstReq.HitLocation}");
 
         }
-        [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_NotifyGraphClientMultiCast_Implementation")]
-        [HarmonyPrefix]
-        private static void NotifyGraphClientMultiCast(ref string FinalGuid, ref FGameplayTag NotifyTag)
-        {
-            Log.Info($"Evt_NotifyGraphClientMultiCast_Implementation  FinalGuid:{FinalGuid} NotifyTag:{NotifyTag.TagName}");
+        // [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_NotifyGraphClientMultiCast_Implementation")]
+        // [HarmonyPrefix]
+        // private static void NotifyGraphClientMultiCast(ref string FinalGuid, ref FGameplayTag NotifyTag)
+        // {
+        //     Log.Info($"Evt_NotifyGraphClientMultiCast_Implementation  FinalGuid:{FinalGuid} NotifyTag:{NotifyTag.TagName}");
 
-        }
+        // }
 
 
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_BuffAdd_Multicast_Invoke")]
@@ -204,13 +217,13 @@ namespace bian
 
             }
 
-            if (Caster == null || !IsPlayer(Caster.PathName))
+            if (Caster == null || !IsPlayer(Caster?.PathName))
             {
                 return;
             }
             var buffDesc = GameDBRuntime.GetFUStBuffDesc(BuffID);
 
-            if (buffDesc != null && (buffDesc?.Duration > 1000 || BuffID == 9870001))
+            if (buffDesc != null && (BuffID == 9870001 || BuffID == 888805000))
             {
                 Log.Info($"buff {BuffID}，Duration:{buffDesc.Duration},Interval:{buffDesc.Interval},");
                 if (buffDesc?.Range?.RangeParam != null && buffDesc.Range.RangeParam.Count > 0)
@@ -511,46 +524,46 @@ namespace bian
 
 
 
-        [HarmonyPatch(typeof(BUEffectSpawnBullets), "ApplyByBuff_Implement")]
-        [HarmonyPrefix]
-        private static bool ApplyByBuff_Implement(ref BuffInstData BuffInst, ref AActor Target, ref int EffectIdx, ref bool bIsPeriodical)
-        {
-            if (BuffInst == null)
-            {
-                return false;
-            }
-            int buffID = BuffInst.BuffID;
-            FUStBuffDesc originalBuffDesc = BGW_GameDB.GetOriginalBuffDesc(buffID);
-            IBUC_PassiveSkillData readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_PassiveSkillData, BUC_PassiveSkillData>(EntitySharedRefFuncLib.Actor(BuffInst.RootCasterRef));
-            if (originalBuffDesc != null)
-            {
-                DescRuntime = new BuffDescRuntime(buffID, readOnlyData, originalBuffDesc);
-            }
-            FSpawnBulletMinMaxValue x = default(FSpawnBulletMinMaxValue);
-            FSpawnBulletMinMaxValue y = default(FSpawnBulletMinMaxValue);
-            FSpawnBulletMinMaxValue z = default(FSpawnBulletMinMaxValue);
-            int intEffectParam = DescRuntime.GetIntEffectParam(EffectIdx, 0);
-            int intEffectParam2 = DescRuntime.GetIntEffectParam(EffectIdx, 1);
-            int intEffectParam3 = DescRuntime.GetIntEffectParam(EffectIdx, 2);
-            int intEffectParam4 = DescRuntime.GetIntEffectParam(EffectIdx, 3);
-            int intEffectParam5 = DescRuntime.GetIntEffectParam(EffectIdx, 4);
-            int intEffectParam6 = DescRuntime.GetIntEffectParam(EffectIdx, 5);
-            Nameo = DescRuntime.GetStringEffectParam(EffectIdx, 0);
-            int intEffectParam7 = DescRuntime.GetIntEffectParam(EffectIdx, 6);
-            float floatEffectParam = DescRuntime.GetFloatEffectParam(EffectIdx, 0);
-            float floatEffectParam2 = DescRuntime.GetFloatEffectParam(EffectIdx, 1);
-            float floatEffectParam3 = DescRuntime.GetFloatEffectParam(EffectIdx, 2);
-            float floatEffectParam4 = DescRuntime.GetFloatEffectParam(EffectIdx, 3);
-            float floatEffectParam5 = DescRuntime.GetFloatEffectParam(EffectIdx, 4);
-            float floatEffectParam6 = DescRuntime.GetFloatEffectParam(EffectIdx, 5);
-            float floatEffectParam7 = DescRuntime.GetFloatEffectParam(EffectIdx, 6);
-            MyUtils.sm = Nameo;
-            z.LeftValue = DescRuntime.GetIntEffectParam(EffectIdx, 7);
-            z.RightValue = DescRuntime.GetIntEffectParam(EffectIdx, 8);
-            z.IsEquidistance = true;
-            MyUtils.SpwanProjectileByTracker3(intEffectParam, (MyUtils.ETrackType)intEffectParam2, intEffectParam3, new FVector((double)floatEffectParam, (double)floatEffectParam2, (double)floatEffectParam3), new FVector((double)floatEffectParam4, (double)floatEffectParam5, (double)floatEffectParam6), x, y, z, floatEffectParam7, intEffectParam4, intEffectParam5, intEffectParam6, intEffectParam7 == 1);
-            return true;
-        }
+        // [HarmonyPatch(typeof(BUEffectSpawnBullets), "ApplyByBuff_Implement")]
+        // [HarmonyPrefix]
+        // private static bool ApplyByBuff_Implement(ref BuffInstData BuffInst, ref AActor Target, ref int EffectIdx, ref bool bIsPeriodical)
+        // {
+        //     if (BuffInst == null)
+        //     {
+        //         return false;
+        //     }
+        //     int buffID = BuffInst.BuffID;
+        //     FUStBuffDesc originalBuffDesc = BGW_GameDB.GetOriginalBuffDesc(buffID);
+        //     IBUC_PassiveSkillData readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_PassiveSkillData, BUC_PassiveSkillData>(EntitySharedRefFuncLib.Actor(BuffInst.RootCasterRef));
+        //     if (originalBuffDesc != null)
+        //     {
+        //         DescRuntime = new BuffDescRuntime(buffID, readOnlyData, originalBuffDesc);
+        //     }
+        //     FSpawnBulletMinMaxValue x = default(FSpawnBulletMinMaxValue);
+        //     FSpawnBulletMinMaxValue y = default(FSpawnBulletMinMaxValue);
+        //     FSpawnBulletMinMaxValue z = default(FSpawnBulletMinMaxValue);
+        //     int intEffectParam = DescRuntime.GetIntEffectParam(EffectIdx, 0);
+        //     int intEffectParam2 = DescRuntime.GetIntEffectParam(EffectIdx, 1);
+        //     int intEffectParam3 = DescRuntime.GetIntEffectParam(EffectIdx, 2);
+        //     int intEffectParam4 = DescRuntime.GetIntEffectParam(EffectIdx, 3);
+        //     int intEffectParam5 = DescRuntime.GetIntEffectParam(EffectIdx, 4);
+        //     int intEffectParam6 = DescRuntime.GetIntEffectParam(EffectIdx, 5);
+        //     Nameo = DescRuntime.GetStringEffectParam(EffectIdx, 0);
+        //     int intEffectParam7 = DescRuntime.GetIntEffectParam(EffectIdx, 6);
+        //     float floatEffectParam = DescRuntime.GetFloatEffectParam(EffectIdx, 0);
+        //     float floatEffectParam2 = DescRuntime.GetFloatEffectParam(EffectIdx, 1);
+        //     float floatEffectParam3 = DescRuntime.GetFloatEffectParam(EffectIdx, 2);
+        //     float floatEffectParam4 = DescRuntime.GetFloatEffectParam(EffectIdx, 3);
+        //     float floatEffectParam5 = DescRuntime.GetFloatEffectParam(EffectIdx, 4);
+        //     float floatEffectParam6 = DescRuntime.GetFloatEffectParam(EffectIdx, 5);
+        //     float floatEffectParam7 = DescRuntime.GetFloatEffectParam(EffectIdx, 6);
+        //     MyUtils.sm = Nameo;
+        //     z.LeftValue = DescRuntime.GetIntEffectParam(EffectIdx, 7);
+        //     z.RightValue = DescRuntime.GetIntEffectParam(EffectIdx, 8);
+        //     z.IsEquidistance = true;
+        //     MyUtils.SpwanProjectileByTracker3(intEffectParam, (MyUtils.ETrackType)intEffectParam2, intEffectParam3, new FVector((double)floatEffectParam, (double)floatEffectParam2, (double)floatEffectParam3), new FVector((double)floatEffectParam4, (double)floatEffectParam5, (double)floatEffectParam6), x, y, z, floatEffectParam7, intEffectParam4, intEffectParam5, intEffectParam6, intEffectParam7 == 1);
+        //     return true;
+        // }
 
 
 

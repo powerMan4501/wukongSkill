@@ -5,9 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnrealEngine.Runtime;
 using UnrealEngine.Engine;
-using System.Reflection;
-using System.Runtime.InteropServices.ComTypes;
-using B1UI.Script;
+using System.Linq;
 namespace bian
 {
 
@@ -160,291 +158,202 @@ namespace bian
             Description = "新规则";
         }
 
-        public bool IsMatchMontage(string montageName)
+
+
+
+        private bool CheckBuffConditions(BGUPlayerCharacterCS character, RuleAction action)
         {
-            if (montageName != null && montageName.Length > 0 && Filters != null && Filters.Count > 0)
+            if (action.buffCondition > 0 && !BGUFunctionLibraryCS.BGUHasBuffByID(character, action.buffCondition))
+                return false;
+
+            if (action.noBuffCondition > 0 && BGUFunctionLibraryCS.BGUHasBuffByID(character, action.noBuffCondition))
+                return false;
+
+            if (action.buffsCondition?.Count > 0 && !action.buffsCondition.All(buff => BGUFunctionLibraryCS.BGUHasBuffByID(character, buff)))
+                return false;
+
+            if (action.noBuffsCondition?.Count > 0 && action.noBuffsCondition.Any(buff => BGUFunctionLibraryCS.BGUHasBuffByID(character, buff)))
+                return false;
+
+            return true;
+        }
+
+        private bool CheckTalentConditions(BGUPlayerCharacterCS character, RuleAction action)
+        {
+            if (action.talentCondition > 0 && !BGUFunctionLibraryCS.BGUHasTalentByID(character, action.talentCondition))
+                return false;
+
+            if (action.noTalentCondition > 0 && BGUFunctionLibraryCS.BGUHasTalentByID(character, action.noTalentCondition))
+                return false;
+
+            return true;
+        }
+
+        private void HandleBuffAction(BGUPlayerCharacterCS character, RuleAction action, float timeLength)
+        {
+            var buffs = action?.BuffIDs?.Count > 0 ? action?.BuffIDs : action.BuffID > 0 ? [action.BuffID] : null;
+            if (buffs?.Count > 0)
             {
-                for (int i = 0; i < Filters.Count; i++)
+                var buffTime = action.BuffTime > 0 ? action.BuffTime : timeLength;
+                foreach (var buff in buffs)
                 {
-                    var filter = Filters[i];
-                    if (filter.Type == "montage")
+                    BGUFunctionLibraryCS.BGUAddBuff(character, character, buff, EBuffSourceType.GM, buffTime);
+                }
+            }
+        }
+
+        private void HandleBulletAction(BGUPlayerCharacterCS character, RuleAction action, float timeLength)
+        {
+            if (action?.buffs?.Count > 0)
+            {
+                var buffTime = timeLength;
+                foreach (var bulletItem in action.buffs.Where(b => CheckBuffConditions(character, b)))
+                {
+                    if (bulletItem.BuffTime > 0)
+                        buffTime = bulletItem.BuffTime;
+                    BGUFunctionLibraryCS.BGUAddBuff(character, character, bulletItem.BuffID, EBuffSourceType.GM, buffTime);
+                }
+            }
+
+            if (action?.bullets?.Count > 0)
+            {
+                foreach (var bulletItem in action.bullets.Where(b => CheckBuffConditions(character, b)))
+                {
+                    var projectTileIds = bulletItem.ProjectTileIDs?.Count > 0 ? bulletItem.ProjectTileIDs : [bulletItem.ProjectTileID];
+                    if (projectTileIds?.Count > 0)
                     {
-                        if (filter.Name != null && montageName.IndexOf(filter.Name) > -1)
+                        foreach (var projectTileId in projectTileIds)
                         {
-                            return true;
+                            Helper.SpawnProjectile(character, bulletItem.Bullet, projectTileId, bulletItem.ForTarget,
+                                bulletItem.BulletCount, bulletItem.IsRandom,
+                                new FVector(bulletItem.OffsetX, bulletItem.OffsetY, bulletItem.OffsetZ), bulletItem);
                         }
                     }
                 }
             }
-            return false;
+
+            if (action.Bullet != null)
+            {
+                var projectTileIds = action.ProjectTileIDs?.Count > 0 ? action.ProjectTileIDs : [action.ProjectTileID];
+                if (projectTileIds?.Count > 0)
+                {
+                    foreach (var projectTileId in projectTileIds)
+                    {
+                        Helper.SpawnProjectile(character, action.Bullet, projectTileId, action.ForTarget,
+                            action.BulletCount, action.IsRandom,
+                            new FVector(action.OffsetX, action.OffsetY, action.OffsetZ), action);
+                    }
+                }
+            }
+        }
+
+        private async Task ExecuteDelayedAction(Action action, int delay, bool checkMontage = true, UAnimMontage montage = null, Rule rule = null)
+        {
+            if (delay <= 0)
+            {
+                action();
+                return;
+            }
+
+            await Task.Delay(delay);
+            Utils.TryRunOnGameThread(() =>
+            {
+                if (checkMontage && montage != null && rule != null)
+                {
+                    var character = Helper.GetBGUPlayerCharacterCS();
+                    var animInstance = character.Mesh?.GetAnimInstance();
+                    if (animInstance == null) return;
+
+                    var currentMontage = animInstance.GetCurrentActiveMontage();
+                    if (currentMontage == null || !rule.IsMatchMontage(currentMontage.PathName))
+                        return;
+                }
+                action();
+            });
+        }
+
+        public bool IsMatchMontage(string montageName)
+        {
+            if (string.IsNullOrEmpty(montageName) || Filters == null || Filters.Count == 0)
+                return false;
+
+            return Filters.Any(filter =>
+                filter.Type == "montage" &&
+                !string.IsNullOrEmpty(filter.Name) &&
+                montageName.Contains(filter.Name));
         }
 
         public void DoAction(RuleAction action, float timeLength = 1000)
         {
             var character = Helper.GetBGUPlayerCharacterCS();
+            if (character == null) return;
 
             switch (action.Type.ToLower())
             {
                 case "buff":
-                    var buffs = action?.BuffIDs?.Count > 0 ? action?.BuffIDs : action.BuffID > 0 ? [action.BuffID] : null;
-                    if (buffs?.Count > 0)
-                    {
-                        var buffTime = timeLength;
-                        if (action.BuffTime > 0)
-                        {
-                            buffTime = action.BuffTime;
-                        }
-
-
-                        foreach (var buff in buffs)
-                        {
-                            BGUFunctionLibraryCS.BGUAddBuff(character, character, buff, EBuffSourceType.GM, buffTime);
-                        }
-                    }
+                    HandleBuffAction(character, action, timeLength);
                     break;
+
                 case "skill":
                     if (action.SkillID > 0)
                     {
-                        //BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(action.SkillID, null, EMontageBindReason.Default, false);
-                        //var csi = new FCastSkillInfo(action.SkillID, ECastSkillSourceType.Notify);
-                        //csi.NeedCheckSkillCanCast = false;
-                        //BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(csi);
-                        BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(action.SkillID, null, EMontageBindReason.NormalSkill, false);
+                        BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
+                            action.SkillID, null, EMontageBindReason.NormalSkill, false);
                     }
                     break;
 
                 case "trans":
-
                     if (action?.SkillID > 0)
                     {
-
-                        BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10100, ECastSkillSourceType.GM));
-                        Task.Run(async delegate
-                        {
-                            await Task.Delay(650);
-                            Utils.TryRunOnGameThread((Action)delegate
-                            {
-                                Helper.CastMimicrySkill(character, action.SkillID);
-                            });
-
-                        });
-
+                        BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(
+                            new FCastSkillInfo(10100, ECastSkillSourceType.GM));
+                        ExecuteDelayedAction(() =>
+                            Helper.CastMimicrySkill(character, action.SkillID), 650).ConfigureAwait(false);
                     }
-
                     break;
-
-                case "boss":
-
-
-
-                    break;
-
 
                 case "followcamera":
                     if (action?.XRate != 0 || action?.YRate != 0 || action?.ZRate != 0)
                     {
-                        var originRelativeLocation = character.FollowCamera.RelativeLocation;
-                        character = Helper.GetBGUPlayerCharacterCS();
-                        character.FollowCamera.RelativeLocation = new FVector((double)(action?.XRate ?? 0.0), (double)(action?.YRate ?? 0.0), action?.ZRate ?? 0.0);
-                        var returnTime = action?.returnTime > 0 ? action.returnTime : 1000;
-                        Task.Run(async delegate
-                        {
-                            await Task.Delay((int)returnTime);
-                            Utils.TryRunOnGameThread((Action)delegate
-                            {
-                                character.FollowCamera.RelativeLocation = new FVector(0.0, 0.0, 0.0);
-                            });
-
-                        });
+                        character.FollowCamera.RelativeLocation = new FVector(
+                            action?.XRate ?? 0.0, action?.YRate ?? 0.0, action?.ZRate ?? 0.0);
+                        ExecuteDelayedAction(() =>
+                            character.FollowCamera.RelativeLocation = new FVector(0.0, 0.0, 0.0),
+                            (int)(action?.returnTime ?? 1000)).ConfigureAwait(false);
                     }
                     break;
+
                 case "magic":
-
-
                     if (action?.SkillID > 0)
                     {
-                        // BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10100, ECastSkillSourceType.GM));
-                        Task.Run(async delegate
+                        var backTime = (int)(action?.backTime ?? 1900);
+                        ExecuteDelayedAction(() =>
                         {
-                            var character = Helper.GetBGUPlayerCharacterCS();
-                            // await Task.Delay(650);
-                            var backTime = (int)(action?.backTime ?? 1900);
-                            Utils.TryRunOnGameThread((Action)delegate
-                            {
-                                character.FollowCamera.RelativeLocation = new FVector((double)(action?.XRate ?? -1300.0), (double)(action?.YRate ?? 0.0), action?.ZRate ?? 10.0);
-                                Helper.CastVigorSkillByID(character, action.SkillID, backTime);
-                            });
+                            character.FollowCamera.RelativeLocation = new FVector(
+                                action?.XRate ?? -1300.0, action?.YRate ?? 0.0, action?.ZRate ?? 10.0);
+                            Helper.CastVigorSkillByID(character, action.SkillID, backTime);
+                        }, 0).ContinueWith(async _ =>
+                        {
                             await Task.Delay(backTime);
-                            Utils.TryRunOnGameThread((Action)delegate
-                       {
-                           var character = Helper.GetBGUPlayerCharacterCS();
-                           BUS_MagicallyChangeComp magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
-                           Helper.ResetVigorSkill(magicChangeComp, action.SkillID);
-                           character = Helper.GetBGUPlayerCharacterCS();
-                           BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10199, ECastSkillSourceType.GM));
-                           character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(0, 0, 0);
-                       });
+                            Utils.TryRunOnGameThread(() =>
+                            {
+                                var magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
+                                Helper.ResetVigorSkill(magicChangeComp, action.SkillID);
+                                BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(
+                                    new FCastSkillInfo(10199, ECastSkillSourceType.GM));
+                                character.FollowCamera.RelativeLocation = new FVector(0, 0, 0);
+                            });
                         });
                     }
-
-
                     break;
+
                 case "bullet":
-
-
-                    if (action != null && action?.buffs?.Count > 0)
-                    {
-                        var buffArr = action?.buffs?.Count > 0 ? action.buffs : [];
-                        var buffTime = timeLength;
-
-                        if (buffArr?.Count > 0)
-                        {
-
-                            var skipAction = false;
-                            foreach (var bulletItem in buffArr)
-                            {
-
-
-                                // 如果设置了buff条件，就校验是否有对应的buff
-                                if (bulletItem.buffCondition > 0)
-                                {
-                                    if (!BGUFunctionLibraryCS.BGUHasBuffByID(character, bulletItem.buffCondition))
-                                    {
-
-                                        continue;
-                                    }
-                                }
-                                if (bulletItem.buffsCondition != null && bulletItem.buffsCondition.Count > 0)
-                                {
-                                    foreach (var buffer in bulletItem.buffsCondition)
-                                    {
-                                        if (!BGUFunctionLibraryCS.BGUHasBuffByID(character, buffer))
-                                        {
-                                            skipAction = true;
-                                            break; // 退出 foreach 循环
-                                        }
-                                    }
-                                }
-
-                                if (bulletItem.noBuffCondition > 0)
-                                {
-                                    if (BGUFunctionLibraryCS.BGUHasBuffByID(character, bulletItem.noBuffCondition))
-
-                                    {
-
-                                        continue;
-                                    }
-                                }
-
-                                if (bulletItem.noBuffsCondition != null && bulletItem.noBuffsCondition.Count > 0)
-                                {
-                                    foreach (var buffer in bulletItem.noBuffsCondition)
-                                    {
-                                        if (BGUFunctionLibraryCS.BGUHasBuffByID(character, buffer))
-                                        {
-                                            skipAction = true;
-                                            break; // 退出 foreach 循环
-                                        }
-                                    }
-                                }
-                                if (skipAction)
-                                {
-                                    continue; // 跳过当前 for 循环的迭代
-                                }
-                                if (bulletItem.BuffTime > 0)
-                                {
-                                    buffTime = bulletItem.BuffTime;
-                                }
-                                BGUFunctionLibraryCS.BGUAddBuff(character, character, bulletItem.BuffID, EBuffSourceType.GM, buffTime);
-                            }
-                        }
-
-                    }
-
-                    if (action?.bullets != null && action?.bullets?.Count > 0)
-                    {
-
-                        var skipAction = false;
-                        foreach (var bulletItem in action.bullets)
-                        {
-                            // 如果设置了buff条件，就校验是否有对应的buff
-                            if (bulletItem.buffCondition > 0)
-                            {
-                                if (!BGUFunctionLibraryCS.BGUHasBuffByID(character, bulletItem.buffCondition))
-                                {
-                                    continue;
-                                }
-                            }
-                            if (bulletItem.buffsCondition != null && bulletItem.buffsCondition.Count > 0)
-                            {
-                                foreach (var buffer in bulletItem.buffsCondition)
-                                {
-                                    if (!BGUFunctionLibraryCS.BGUHasBuffByID(character, buffer))
-                                    {
-                                        skipAction = true;
-                                        break; // 退出 foreach 循环
-                                    }
-                                }
-                            }
-
-                            if (bulletItem.noBuffCondition > 0)
-                            {
-                                if (BGUFunctionLibraryCS.BGUHasBuffByID(character, bulletItem.noBuffCondition))
-
-                                {
-
-                                    // Console.WriteLine($"has buff {bullet.noBuffCondition}  {bullet.desc}");
-                                    continue;
-                                }
-                            }
-
-                            if (bulletItem.noBuffsCondition != null && bulletItem.noBuffsCondition.Count > 0)
-                            {
-                                foreach (var buffer in bulletItem.noBuffsCondition)
-                                {
-                                    if (BGUFunctionLibraryCS.BGUHasBuffByID(character, buffer))
-                                    {
-                                        skipAction = true;
-                                        break; // 退出 foreach 循环
-                                    }
-                                }
-                            }
-                            if (skipAction)
-                            {
-                                continue; // 跳过当前 for 循环的迭代
-                            }
-                            List<int> projectTileIds = bulletItem.ProjectTileIDs?.Count > 0 ? bulletItem.ProjectTileIDs : [bulletItem.ProjectTileID];
-                            if (projectTileIds?.Count > 0)
-                            {
-                                foreach (var projectTileId in projectTileIds)
-                                {
-                                    Helper.SpawnProjectile(character, bulletItem.Bullet, projectTileId, bulletItem.ForTarget, bulletItem.BulletCount, bulletItem.IsRandom, new FVector(bulletItem.OffsetX, bulletItem.OffsetY, bulletItem.OffsetZ), bulletItem);
-
-                                }
-
-                            }
-
-                        }
-                    }
-                    if (action.Bullet != null)
-                    {
-                        List<int> projectTileIds = action.ProjectTileIDs?.Count > 0 ? action.ProjectTileIDs : [action.ProjectTileID];
-                        // Log.Info($"bian: start run rule action: spawn-bullet {action.Bullet}");
-                        if (projectTileIds?.Count > 0)
-                        {
-                            foreach (var projectTileId in projectTileIds)
-                            {
-                                Helper.SpawnProjectile(character, action.Bullet, projectTileId, action.ForTarget, action.BulletCount, action.IsRandom, new FVector(action.OffsetX, action.OffsetY, action.OffsetZ), action);
-
-                            }
-
-                        }
-                    }
+                    HandleBulletAction(character, action, timeLength);
                     break;
+
                 case "summon":
                     if (action.SummonID > 0)
                     {
-                        // Log.Info($"bian: start run rule action: spawn-summon {action.SummonID}x{action.SummonCount}");
                         Helper.SummonReq(action.SummonID, action.SummonCount, action.SummonAliveTime);
                     }
                     break;
@@ -452,260 +361,107 @@ namespace bian
                 case "effect":
                     if (action.EffectID > 0)
                     {
-                        var type = EANTriggerEffectTargetType.Owner;
-                        if (action.ForTarget)
-                        {
-                            type = EANTriggerEffectTargetType.LastAttacker;
-                        }
+                        var type = action.ForTarget ? EANTriggerEffectTargetType.LastAttacker : EANTriggerEffectTargetType.Owner;
                         Helper.TriggerEffect(character, action.EffectID, type);
                     }
-                    break;
-                default:
                     break;
             }
         }
 
         public bool DoRule(float timeLength_, float playRate_, UAnimMontage montage = null, Rule ruleItem = null)
         {
-
             var timeLength = timeLength_ > 0 ? timeLength_ : 1000;
             var playRate = playRate_ > 0 ? playRate_ : 1;
-            if (AfterActions != null)
+
+            if (AfterActions == null) return true;
+
+            foreach (var action in AfterActions)
             {
+                var character = Helper.GetBGUPlayerCharacterCS();
+                if (character == null) continue;
 
-                for (int i = 0; i < AfterActions.Count; i++)
+                if (!CheckBuffConditions(character, action) || !CheckTalentConditions(character, action))
+                    continue;
+
+                // 设置默认延迟
+                if (action.Type.ToLower() == "skill" && action.TimeDelay <= 0)
+                    action.TimeDelay = 1;
+                if (action.TimeDelay <= 0 && action.Type.ToUpper() is "TRANS" or "BOSS" or "MAGIC")
+                    action.TimeDelay = 1;
+
+                var timeDelay = action.TimeDelay > 1 ? (int)(action.TimeDelay / playRate) : action.TimeDelay;
+                var intervalTime = action?.intervalTime > 0 ? action.intervalTime : 0;
+
+                if (action.TimeDelay > 0)
                 {
-
-
-                    var action = AfterActions[i];
-                    var character = Helper.GetBGUPlayerCharacterCS();
-                    bool skipAction = false;
-                    // 如果设置了buff条件，就校验是否有对应的buff
-                    if (action.buffCondition > 0)
+                    ExecuteDelayedAction(async () =>
                     {
-                        if (!BGUFunctionLibraryCS.BGUHasBuffByID(character, action.buffCondition))
-                        {
+                        var currMontage = Manager.GetCurrentMontage();
+                        if (character == null || currMontage == null || character.Mesh == null)
+                            return;
 
-                            // Console.WriteLine($"has no buff {action.buffCondition} {action.desc}");
-                            continue;
-                        }
-                    }
-                    if (action.buffsCondition != null && action.buffsCondition.Count > 0)
-                    {
-                        foreach (var buffer in action.buffsCondition)
+                        var animInstance = character.Mesh.GetAnimInstance();
+                        if (animInstance == null) return;
+
+                        float currentPosition = montage != null ? animInstance.Montage_GetPosition(montage) : 0;
+                        var nowMontage = animInstance.GetCurrentActiveMontage();
+
+                        if (ruleItem != null && montage != null && nowMontage != null)
                         {
-                            if (!BGUFunctionLibraryCS.BGUHasBuffByID(character, buffer))
+                            if (!ruleItem.IsMatchMontage(nowMontage.PathName))
+                                return;
+
+                            var diff = (int)Math.Round(timeDelay / 10.0 * 1.2);
+                            Console.WriteLine($"执行action currentPosition: {currentPosition * 1000},timeDelay-diff:{timeDelay - diff}--timeDelay：{timeDelay}");
+
+                            if (currentPosition > 0 && currentPosition * 1000 >= timeDelay - diff)
                             {
-                                skipAction = true;
-                                break; // 退出 foreach 循环
-                            }
-                        }
-                    }
-
-                    if (action.noBuffCondition > 0)
-                    {
-                        if (BGUFunctionLibraryCS.BGUHasBuffByID(character, action.noBuffCondition))
-
-                        {
-
-                            // Console.WriteLine($"has buff {action.noBuffCondition}  {action.desc}");
-                            continue;
-                        }
-                    }
-
-                    if (action.noBuffsCondition != null && action.noBuffsCondition.Count > 0)
-                    {
-                        foreach (var buffer in action.noBuffsCondition)
-                        {
-                            if (BGUFunctionLibraryCS.BGUHasBuffByID(character, buffer))
-                            {
-                                skipAction = true;
-                                break; // 退出 foreach 循环
-                            }
-                        }
-                    }
-
-                    if (skipAction)
-                    {
-                        continue; // 跳过当前 for 循环的迭代
-                    }
-                    if (action.noTalentCondition > 0)
-                    {
-                        if (BGUFunctionLibraryCS.BGUHasTalentByID(character, action.noTalentCondition))
-                        {
-                            // Console.WriteLine($"has talent {action.noTalentCondition}");
-                            continue;
-                        }
-                    }
-
-                    // 如果设置了天赋条件，就校验是否有对应的天赋
-                    if (action.talentCondition > 0)
-                    {
-                        if (!BGUFunctionLibraryCS.BGUHasTalentByID(character, action.talentCondition))
-                        {
-                            // Console.WriteLine($"has no talent {action.talentCondition}");
-                            continue;
-                        }
-                    }
-                    if (action.Type.ToLower() == "skill" && action.TimeDelay <= 0)
-                    {
-                        action.TimeDelay = 1;
-                    }
-                    if (action.TimeDelay <= 0)
-                    {
-                        if (action.Type.ToUpper() == "TRANS" || action.Type.ToUpper() == "BOSS" || action.Type.ToUpper() == "MAGIC")
-                        {
-                            action.TimeDelay = 1;
-                        }
-
-                    }
-                    var timeDelay = action.TimeDelay;
-                    var intervalTime = action?.intervalTime > 0 ? action.intervalTime : 0;
-                    var MontagePathName = montage?.PathName;
-                    if (action.TimeDelay > 1)
-                    {
-                        timeDelay = (int)(action.TimeDelay / playRate);
-                    }
-
-                    if (action.TimeDelay > 0)
-                    {
-                        Task.Run(async () =>
-                        {
-                            try
-                            {
-                                await Task.Delay(timeDelay);
-                                Utils.TryRunOnGameThread((Action)async delegate
+                                if (intervalTime > 0)
                                 {
-                                    var currMontage = Manager.GetCurrentMontage();
-                                    var character = Helper.GetBGUPlayerCharacterCS();
-                                    // 获取动画实例
-                                    if (character == null || currMontage == null || character.Mesh == null)
-                                    {
-                                        return;
-                                    }
+                                    var num = Math.Min(15000, Math.Max(1000, montage.GetPlayLength() * 1000));
+                                    var times = action?.intervalTimes > 0 ? action?.intervalTimes : num / intervalTime;
+                                    var loopTimes = 0;
 
-                                    UAnimInstance? animInstance = null;
-                                    try
+                                    while (nowMontage != null && ruleItem.IsMatchMontage(nowMontage.PathName) && times > loopTimes)
                                     {
-                                        animInstance = character.Mesh.GetAnimInstance();
-                                    }
-                                    catch (System.Exception e)
-                                    {
-                                        Console.WriteLine($"获取动画实例出错${e.Message} {e.StackTrace}");
-
-                                    }
-                                    if (animInstance == null)
-                                    {
-                                        return;
-                                    }
-                                    float currentPosition = 0;
-                                    if (montage != null)
-                                    {
-                                        // 获取动画当前播放时间
-                                        currentPosition = animInstance.Montage_GetPosition(montage);
-                                    }
-                                    var nowMontage = animInstance.GetCurrentActiveMontage();
-                                    if (ruleItem != null && montage != null && nowMontage != null)
-                                    {
-                                        if (!ruleItem.IsMatchMontage(nowMontage.PathName))
-                                        {
-                                            return;
-                                        }
-                                        // 加个误差值
-                                        var diff = (int)Math.Round(timeDelay / 10.0 * 1.2);
-                                        Console.WriteLine($"执行action currentPosition：{currentPosition * 1000} timeDelay-diff:{timeDelay - diff}--timeDelay：{timeDelay} ");
-                                        if (currentPosition > 0 && currentPosition * 1000 >= timeDelay - diff)
-                                        {
-                                            nowMontage = animInstance.GetCurrentActiveMontage();
-                                            if (nowMontage != null && !ruleItem.IsMatchMontage(nowMontage.PathName))
-                                            {
-                                                return;
-                                            }
-
-                                            if (intervalTime > 0)
-                                            {
-
-                                                var num = montage.GetPlayLength() * 1000 < 1000 ? 1000 : montage.GetPlayLength() * 1000;
-                                                if (num > 15 * 1000)
-                                                {
-                                                    num = 15000;
-                                                }
-
-                                                var currentPosition1 = animInstance.Montage_GetPosition(montage);
-                                                var times = action?.intervalTimes > 0 ? action?.intervalTimes : num / intervalTime;
-                                                var loopTimes = 0;
-                                                nowMontage = animInstance.GetCurrentActiveMontage();
-                                                while (nowMontage != null && ruleItem.IsMatchMontage(nowMontage.PathName) && times > loopTimes)
-                                                {
-                                                    await Task.Delay((int)intervalTime); // 等待指定时间
-                                                    DoAction(action, timeLength / playRate);
-                                                    loopTimes++;
-                                                }
-                                                return;
-                                            }
-                                            DoAction(action, timeLength / playRate);
-                                        }
-                                        else
-                                        {
-                                            // 处理时缓导致的动画变慢，还没播放到定义的时间点的情况
-                                            if (currentPosition > 0 && timeDelay - currentPosition * 1000 > diff)
-                                            {
-                                                await Task.Delay((int)(timeDelay - currentPosition * 1000));
-                                                nowMontage = animInstance.GetCurrentActiveMontage();
-                                                if (nowMontage != null && !ruleItem.IsMatchMontage(nowMontage.PathName))
-                                                {
-                                                    return;
-                                                }
-                                                DoAction(action, timeLength / playRate);
-                                                return;
-                                            }
-                                            nowMontage = animInstance.GetCurrentActiveMontage();
-                                            if (nowMontage != null && !ruleItem.IsMatchMontage(nowMontage.PathName))
-                                            {
-                                                return;
-                                            }
-                                            DoAction(action, timeLength / playRate);
-                                        }
-                                    }
-                                    else
-                                    {
+                                        await Task.Delay((int)intervalTime);
                                         DoAction(action, timeLength / playRate);
+                                        loopTimes++;
                                     }
-
-                                });
+                                    return;
+                                }
+                                DoAction(action, timeLength / playRate);
                             }
-                            catch (Exception e)
+                            else if (currentPosition > 0 && timeDelay - currentPosition * 1000 > diff)
                             {
-                                Log.Error($"执行 action.TimeDelay 报错 {e?.Message}");
+                                await Task.Delay((int)(timeDelay - currentPosition * 1000));
+                                nowMontage = animInstance.GetCurrentActiveMontage();
+                                if (nowMontage != null && !ruleItem.IsMatchMontage(nowMontage.PathName))
+                                    return;
+                                DoAction(action, timeLength / playRate);
                             }
-                        });
-                    }
-                    else
-                    {
-                        DoAction(action, timeLength / playRate);
-                    }
+                            else
+                            {
+                                DoAction(action, timeLength / playRate);
+                            }
+                        }
+                        else
+                        {
+                            DoAction(action, timeLength / playRate);
+                        }
+                    }, timeDelay, true, montage, ruleItem).ConfigureAwait(false);
+                }
+                else
+                {
+                    DoAction(action, timeLength / playRate);
                 }
             }
             return true;
         }
-
         public bool IsMatchBuff(int buffID)
         {
-            if (Filters != null && Filters.Count > 0)
-            {
-                for (int i = 0; i < Filters.Count; i++)
-                {
-                    var filter = Filters[i];
-                    if (filter.Type == "buff")
-                    {
-                        if (filter.BuffID == buffID)
-                        {
-                            return true;
-                        }
-                    }
-                }
-            }
-            return false;
+            return Filters?.Any(filter =>
+                filter.Type == "buff" && filter.BuffID == buffID) ?? false;
         }
     }
 }
