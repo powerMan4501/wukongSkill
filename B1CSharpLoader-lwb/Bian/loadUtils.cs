@@ -1475,7 +1475,7 @@ namespace bian
             {
                 configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "skillEffect");
 
-                var buffEffectConfigs = LoadJsonConfigs<SkillEffectConfig>(configDirectory, "BuffEffect");
+                var buffEffectConfigs = LoadJsonConfigs<SkillEffectConfig>(configDirectory, "skillEffect");
                 var buffEffectList = BGW_GameDB.GetAllSkillEffectDesc();
 
                 if (buffEffectList == null || buffEffectList.Count == 0 || buffEffectConfigs == null)
