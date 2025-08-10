@@ -84,7 +84,73 @@ namespace bian
             LoadUtils.LoadAndApplySkillDesc();
             LoadUtils.LoadAndApplySkillEffect();
         }
+        // 连招配置
+        private static List<ComboConfig> comboConfigs = new List<ComboConfig>();
+        // 监听的键值
+        private static HashSet<string> monitoredKeys = new HashSet<string>();
 
+
+        // 监听的效果id
+        private static Dictionary<int, List<Rule>> effectRulesMap = new Dictionary<int, List<Rule>>();
+
+
+        // 监听的BuffID
+        private static Dictionary<int, List<Rule>> buffRulesMap = new Dictionary<int, List<Rule>>();
+
+        // 监听的动画
+        private static Dictionary<string, List<Rule>> montageRulesMap = new Dictionary<string, List<Rule>>();
+
+        private static void InitializeEffectRulesMap()
+        {
+            effectRulesMap.Clear();
+            buffRulesMap.Clear();
+            var mgr = Manager.GetModelManager();
+            if (mgr.Rules != null && mgr.Rules.Count > 0)
+            {
+                for (int i = 0; i < mgr.Rules.Count; i++)
+                {
+                    var rule = mgr.Rules[i];
+                    if (rule.Rules != null && rule.Rules.Count > 0)
+                    {
+                        for (int j = 0; j < rule.Rules.Count; j++)
+                        {
+                            var ruleItem = rule.Rules[j];
+                            if (ruleItem.Filters != null && ruleItem.Filters.Count > 0)
+                            {
+                                foreach (var filter in ruleItem.Filters)
+                                {
+                                    if (filter.Type == "effect" && filter.EffectID > 0)
+                                    {
+                                        if (!effectRulesMap.ContainsKey(filter.EffectID))
+                                        {
+                                            effectRulesMap[filter.EffectID] = new List<Rule>();
+                                        }
+                                        effectRulesMap[filter.EffectID].Add(ruleItem);
+                                    }
+                                    else if (filter.Type == "buff" && filter.BuffID > 0)
+                                    {
+                                        if (!buffRulesMap.ContainsKey(filter.BuffID))
+                                        {
+                                            buffRulesMap[filter.BuffID] = new List<Rule>();
+                                        }
+                                        buffRulesMap[filter.BuffID].Add(ruleItem);
+
+                                    }
+                                    else if (filter.Type == "montage" && filter.Name != null)
+                                    {
+                                        if (!montageRulesMap.ContainsKey(filter.Name))
+                                        {
+                                            montageRulesMap[filter.Name] = new List<Rule>();
+                                        }
+                                        montageRulesMap[filter.Name].Add(ruleItem);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
 
         public static void RegisterManager()
@@ -98,7 +164,7 @@ namespace bian
             LoadUtils.LoadAllSkillMappingRules(configPath);
 
             loadAllStaticData();
-
+            InitializeEffectRulesMap();
 
             // 在这里可以将buffDispConfigs插入到游戏中的数据
             if (harmony == null)
@@ -196,8 +262,20 @@ namespace bian
             {
                 return;
             }
-            Log.Info($"Evt_TriggerSkillEffectBySkillMultiCast_Implementation  EffectID:{EffectID} Caster:{GetLastCharacters(Caster?.GetFullName(), 25)} Target:{GetLastCharacters(Target?.GetFullName(), 20)} EffectInstReq:{EffectInstReq.HitLocation}");
 
+            // 检查是否有对应的效果规则
+            if (!effectRulesMap.ContainsKey(EffectID))
+            {
+                return;
+            }
+            // 获取对应效果的所有规则
+            var matchingRules = effectRulesMap[EffectID];
+            foreach (var ruleItem in matchingRules)
+            {
+                ruleItem.Caster = Caster;
+                ruleItem.Target = Target;
+                ruleItem.DoRule(1000, 1, null, ruleItem);
+            }
         }
         // [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_NotifyGraphClientMultiCast_Implementation")]
         // [HarmonyPrefix]
@@ -225,7 +303,7 @@ namespace bian
 
             if (buffDesc != null && (BuffID == 9870001 || BuffID == 888805000))
             {
-                Log.Info($"buff {BuffID}，Duration:{buffDesc.Duration},Interval:{buffDesc.Interval},");
+                Log.Info($"buff {BuffID}，Duration:{buffDesc?.Duration},Interval:{buffDesc?.Interval},");
                 if (buffDesc?.Range?.RangeParam != null && buffDesc.Range.RangeParam.Count > 0)
                 {
                     Log.Info($"buff {BuffID} ,Duration:{buffDesc.Duration},Interval:{buffDesc.Interval},range:{buffDesc.Range.RangeParam[0]} ，BuffActiveCondition：{buffDesc?.BuffActiveCondition?.ConditionParams}");
@@ -254,26 +332,18 @@ namespace bian
                     }
                 }
             }
-
-            var mgr = Manager.GetModelManager();
-            if (mgr.Rules != null && mgr.Rules.Count > 0)
+            // 检查是否有对应的buff规则
+            if (!buffRulesMap.ContainsKey(BuffID))
             {
-                for (int i = 0; i < mgr.Rules.Count; i++)
-                {
-                    var rule = mgr.Rules[i];
-                    if (rule.Rules != null && rule.Rules.Count > 0)
-                    {
-                        for (int j = 0; j < rule.Rules.Count; j++)
-                        {
-                            var ruleItem = rule.Rules[j];
-                            if (ruleItem.IsMatchBuff(BuffID))
-                            {
-                                var Duration_ = Duration > 0 ? Duration : 1000;
-                                ruleItem.DoRule(Duration_, 1, null, null);
-                            }
-                        }
-                    }
-                }
+                return;
+            }
+            // 获取对应buff的所有规则
+            var matchingRules = buffRulesMap[BuffID];
+            foreach (var ruleItem in matchingRules)
+            {
+
+                var Duration_ = Duration > 0 ? Duration : 1000;
+                ruleItem.DoRule(Duration_, 1, null, ruleItem);
             }
 
         }
@@ -318,43 +388,37 @@ namespace bian
             {
                 PlayTimeRate_ = (float)currentModel.skillSpeedRate; //动画播放速率
             }
+            // montageName.Contains(filter.Name)
 
-            if (mgr.Rules != null && mgr.Rules.Count > 0)
+
+            // 检查是否有对应的动画规则
+            if (!montageRulesMap.Any(x => !string.IsNullOrEmpty(x.Key) && currentMontage.Contains(x.Key)))
             {
-
-                for (int i = 0; i < mgr.Rules.Count; i++)
+                return;
+            }
+            var matchingRules = montageRulesMap.FirstOrDefault(x => currentMontage.Contains(x.Key)).Value;
+            if (matchingRules.Count == 0)
+            {
+                return;
+            }
+            foreach (var ruleItem in matchingRules)
+            {
+                if (ruleItem?.skillID_fs > 0)
                 {
-                    var rule = mgr.Rules[i];
-                    if (rule.Rules != null && rule.Rules.Count > 0)
-                    {
-                        for (int j = 0; j < rule.Rules.Count; j++)
-                        {
-                            var ruleItem = rule.Rules[j];
-                            if (Montage != null && ruleItem.IsMatchMontage(Montage.PathName))
-                            {
-                                if (ruleItem?.skillID_fs > 0)
-                                {
-                                    Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, false);
-                                }
-                                else
-                                {
-                                    Helper.FenshenGSTryCastSkill((int)0, false);
-                                }
-
-                                if (ruleItem?.speedRate > 0)
-                                {
-                                    PlayTimeRate_ = (float)ruleItem.speedRate; //动画播放速率
-                                }
-                                ruleItem.DoRule(length, playRate, Montage, ruleItem);
-                            }
-                        }
-                    }
+                    Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, false);
                 }
+                else
+                {
+                    Helper.FenshenGSTryCastSkill((int)0, false);
+                }
+
+                if (ruleItem?.speedRate > 0)
+                {
+                    PlayTimeRate_ = (float)ruleItem.speedRate; //动画播放速率
+                }
+                ruleItem.DoRule(length, playRate, Montage, ruleItem);
             }
-            else
-            {
-                Helper.FenshenGSTryCastSkill(0, false);
-            }
+
 
             PlayTimeRate = PlayTimeRate_;
         }
@@ -579,7 +643,7 @@ namespace bian
             public string desc { get; set; }
         }
 
-        private static List<ComboConfig> comboConfigs = new List<ComboConfig>();
+
 
 
 
@@ -589,6 +653,7 @@ namespace bian
             if (Directory.Exists(configFolderPath))
             {
                 comboConfigs.Clear();
+                monitoredKeys.Clear(); // 清空按键集合
                 foreach (string file in Directory.GetFiles(configFolderPath, "*.json"))
                 {
                     string json = File.ReadAllText(file);
@@ -596,10 +661,19 @@ namespace bian
                     if (configs != null)
                     {
                         comboConfigs.AddRange(configs);
+                        // 收集所有需要监听的按键
+                        foreach (var config in configs)
+                        {
+                            if (!string.IsNullOrEmpty(config.InputCore))
+                            {
+                                monitoredKeys.Add(config.InputCore);
+                            }
+                        }
                     }
                 }
             }
         }
+
 
 
 
@@ -625,7 +699,16 @@ namespace bian
             {
                 LoadComboConfigs();
             }
-
+            string keyName = "";
+            if (Key != null && Key.GetFName() != null)
+            {
+                keyName = Key.GetFName().ToString();
+            }
+            // 如果按键不在监听列表中，直接返回
+            if (!monitoredKeys.Contains(keyName))
+            {
+                return;
+            }
             var character = Helper.GetBGUPlayerCharacterCS();
             if (character == null) return;
 
@@ -638,7 +721,6 @@ namespace bian
 
             var currentRate = currentPosition / currentLength;
 
-            string keyName = Key.GetFName().ToString();
             if (keyName == "Tab" && !isBuffConfigsLoaded) // 添加标志变量检查
             {
                 loadAllStaticData();

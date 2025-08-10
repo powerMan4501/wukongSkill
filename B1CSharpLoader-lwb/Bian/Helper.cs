@@ -549,9 +549,8 @@ namespace bian
                 // Log.Warn($"bian: projectile not found! {path}");
                 return;
             }
-            AActor aActor = character;
-            AActor target = BGUFunctionLibraryCS.BGUGetTarget(character);
-
+            AActor aActor = action?.Caster ?? character;
+            AActor target = action?.Target ?? BGUFunctionLibraryCS.BGUGetTarget(character);
             string targetString = "BGW_90_hfm_leiwa_Atk_41_Lv6_change";
             bool isShotBull = path.Contains(targetString);
             //发射类的子弹不执行这个

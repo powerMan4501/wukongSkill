@@ -14,6 +14,7 @@ namespace bian
         public string Type { get; set; }
         public string Name { get; set; }
         public int BuffID { get; set; }
+        public int EffectID { get; set; }
     }
 
     public class RuleAction
@@ -98,6 +99,8 @@ namespace bian
         public int? intervalTime { get; set; }
         public int? intervalTimes { get; set; }
         public List<int> ProjectOffsetPosition { get; set; }
+        public AActor? Caster { get; set; } // 临时存储施法者
+        public AActor? Target { get; set; } // 临时存储目标
 
 
         public RuleAction()
@@ -152,6 +155,9 @@ namespace bian
         public float? endTime { get; set; }
         public bool? isLoop { get; set; }
         public int? skillID_fs { get; set; }
+        // 添加以下两个属性
+        public AActor? Caster { get; set; } // 临时存储施法者
+        public AActor? Target { get; set; } // 临时存储目标
         public Rule()
         {
             Name = "新规则";
@@ -191,13 +197,19 @@ namespace bian
 
         private void HandleBuffAction(BGUPlayerCharacterCS character, RuleAction action, float timeLength)
         {
-            var buffs = action?.BuffIDs?.Count > 0 ? action?.BuffIDs : action.BuffID > 0 ? [action.BuffID] : null;
+            var buffs = action?.BuffIDs?.Count > 0 ? action?.BuffIDs : action?.BuffID > 0 ? [action.BuffID] : null;
             if (buffs?.Count > 0)
             {
-                var buffTime = action.BuffTime > 0 ? action.BuffTime : timeLength;
+                var buffTime = action?.BuffTime > 0 ? action.BuffTime : timeLength;
+                var target = action?.Target ?? character;
+                if (target == null)
+                {
+                    // 记录错误或抛出异常
+                    return;
+                }
                 foreach (var buff in buffs)
                 {
-                    BGUFunctionLibraryCS.BGUAddBuff(character, character, buff, EBuffSourceType.GM, buffTime);
+                    BGUFunctionLibraryCS.BGUAddBuff(character, target, buff, EBuffSourceType.GM, buffTime);
                 }
             }
         }
@@ -207,11 +219,19 @@ namespace bian
             if (action?.buffs?.Count > 0)
             {
                 var buffTime = timeLength;
+                var caster = action?.Caster ?? character;
+                var target = action?.Target ?? character;
+
+                if (caster == null || target == null)
+                {
+                    // 记录错误日志
+                    return;
+                }
                 foreach (var bulletItem in action.buffs.Where(b => CheckBuffConditions(character, b)))
                 {
                     if (bulletItem.BuffTime > 0)
                         buffTime = bulletItem.BuffTime;
-                    BGUFunctionLibraryCS.BGUAddBuff(character, character, bulletItem.BuffID, EBuffSourceType.GM, buffTime);
+                    BGUFunctionLibraryCS.BGUAddBuff(caster, target, bulletItem.BuffID, EBuffSourceType.GM, buffTime);
                 }
             }
 
@@ -378,6 +398,17 @@ namespace bian
             foreach (var action in AfterActions)
             {
                 var character = Helper.GetBGUPlayerCharacterCS();
+
+                if (ruleItem != null && ruleItem?.Caster != null)
+                {
+                    action.Caster = ruleItem.Caster;
+
+                }
+                if (ruleItem != null && ruleItem?.Target != null)
+                {
+                    action.Target = ruleItem.Target;
+                }
+
                 if (character == null) continue;
 
                 if (!CheckBuffConditions(character, action) || !CheckTalentConditions(character, action))
@@ -463,5 +494,11 @@ namespace bian
             return Filters?.Any(filter =>
                 filter.Type == "buff" && filter.BuffID == buffID) ?? false;
         }
+        public bool IsMatchEffect(int EffectID)
+        {
+            return Filters?.Any(filter =>
+                filter.Type == "effect" && filter.EffectID == EffectID) ?? false;
+        }
+
     }
 }
