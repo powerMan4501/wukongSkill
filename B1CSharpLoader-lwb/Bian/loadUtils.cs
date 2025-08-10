@@ -6,16 +6,79 @@ using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using UnrealEngine.Runtime;
 using b1;
 using BtlShare;
-using ArchiveB1;
 using CSharpModBase;
 using BtlB1;
 using Google.Protobuf.Collections;
 using b1.Protobuf.DataAPI;
 
 
+public class SkillEffectConfig
+{
+    public string? desc { get; set; }
+    public int ID { get; set; }
+    public BuffActiveCondition? EffectActiveCondition { get; set; }
+    public int? EffectType { get; set; }
+    public int? EffectCategory { get; set; }
+    public int? TargetBase { get; set; }
+    public int? TargetCount { get; set; }
+    public int? TargetFilter { get; set; }
+    public int? TargetTypeFilter { get; set; }
+    public int? AffiliationTypeFilter { get; set; }
+    public BuffRange? Range { get; set; }
+    public int? FXTransUseConfig { get; set; }
+    public string? PlayFXSocketName { get; set; }
+    public double? PlayFXLocalDirX { get; set; }
+    public double? PlayFXLocalDirY { get; set; }
+    public double? PlayFXLocalDirZ { get; set; }
+    public double? FXCameraOffset { get; set; }
+    public int? HitActionDir { get; set; }
+    public int? HitOrientationType { get; set; }
+    public string? HitOriBaseCompName { get; set; }
+    public int? CanFractureVictim { get; set; }
+    public int? CanCutVictim { get; set; }
+    public List<int>? EffectParamsInt { get; set; }
+    public List<double>? EffectParamsFloat { get; set; }
+    public List<string>? EffectParamsStr { get; set; }
+    public string? Guard { get; set; }
+}
+
+
+
+public class SkillConfig
+{
+    public string? desc { get; set; }
+    public int ID { get; set; }
+    public int? SkillBaseTarget { get; set; }
+    public int? SkillType { get; set; }
+    public double? MoveSkillDisMinRate { get; set; }
+    public double? MoveSkillDisMaxRate { get; set; }
+    public string? TemplatePath { get; set; }
+    public double? NoiseLoudness { get; set; }
+    public int? MinAttrCostType1 { get; set; }
+    public double? MinAttrCostBase1 { get; set; }
+    public double? MinAttrCostRatio1 { get; set; }
+    public int? MinAttrCostType2 { get; set; }
+    public double? MinAttrCostBase2 { get; set; }
+    public double? MinAttrCostRatio2 { get; set; }
+    public double? PreCooldownTime { get; set; }
+    public double? CooldownTime { get; set; }
+    public int? CooldownType { get; set; }
+    public int? DmgRangeType { get; set; }
+    public int? SkillRotateType { get; set; }
+    public int? OnlyPlayerControlledSkillRotate { get; set; }
+    public int? DoneAddBuffID { get; set; }
+    public int? SkillHitSetSimpleState { get; set; }
+    public string? AtkReboundingMontage { get; set; }
+    public string? LowAtkReboundingMontage { get; set; }
+    public string? SkillArmorBrokeMontage { get; set; }
+    public int? IsComboSkill { get; set; }
+    public int? IsOverlying { get; set; }
+    public int? IsCanMoveAttack { get; set; }
+    public string? CooldownSkills { get; set; }
+    public double? AdditionalHatredValue { get; set; }
+}
 
 
 public class SummonConfig
@@ -178,6 +241,55 @@ public class EffectConfig
     public int? IsAttachToSkin { get; set; }
     public string? SkelMeshParamName { get; set; }
     public string? AddTags { get; set; }
+}
+
+public class BuffActiveCondition
+{
+    public int? ConditionType { get; set; } = null;
+    public string? ConditionParams { get; set; } = null;
+}
+
+public class BuffRange
+{
+    public int? RangeType { get; set; } = null;
+    public int? RangeCenterType { get; set; } = null;
+    public List<int>? RangeParam { get; set; } = null;
+}
+
+public class BuffEffect
+{
+    public int? EffectTrigger { get; set; } = null;
+    public int? EffectType { get; set; } = null;
+    public int? EffectTargetSelectType { get; set; } = null;
+    public List<string>? EffectParamsString { get; set; } = null;
+    public List<int>? EffectParams { get; set; } = null;
+    public List<float>? EffectParamsFloat { get; set; } = null;
+}
+
+public class BuffConfig
+{
+    public int ID { get; set; } = 0;
+    public string? BuffTips { get; set; } = null;
+    public BuffActiveCondition? BuffActiveCondition { get; set; } = null;
+    public int? BuffLayerCounterType { get; set; } = null;
+    public int? BuffCategory { get; set; } = null;
+    public int? CanRemoveWhenAttackHit { get; set; } = null;
+    public int? CanRemoveWhenAttacked { get; set; } = null;
+    public int? Delay { get; set; } = null;
+    public int? Duration { get; set; } = null;
+    public int? Interval { get; set; } = null;
+    public int? AlmostEndAheadTime { get; set; } = null;
+    public int? MaxLayer { get; set; } = null;
+    public int? TargetBase { get; set; } = null;
+    public int? TargetCount { get; set; } = null;
+    public int? TargetFilter { get; set; } = null;
+    public int? TargetTypeFilter { get; set; } = null;
+    public int? AffiliationTypeFilter { get; set; } = null;
+    public BuffRange? Range { get; set; } = null;
+    public List<BuffEffect>? BuffEffects { get; set; } = null;
+    public int? IsExclusiveBuff { get; set; } = null;
+    public int? CanBeInherited { get; set; } = null;
+    public string? Guard { get; set; } = null;
 }
 
 
@@ -404,46 +516,6 @@ namespace bian
                             }
                             break;
 
-                        // case "ChargeSkillBuffInfoList" when sourceValue is List<ChargeSkillBuffInfo> buffInfos:
-                        //     var buffInfoList = buffInfos.Select(buffInfo =>
-                        //     {
-                        //         var newBuffInfo = new FUStChargeSkillBuffInfo();
-                        //         newBuffInfo.BuffID = buffInfo.BuffID;
-                        //         newBuffInfo.BeginTimeInBeginStage = (float)buffInfo.BeginTimeInBeginStage;
-                        //         newBuffInfo.EndTimeInEndStage = (float)buffInfo.EndTimeInEndStage;
-                        //         return newBuffInfo;
-                        //     }).ToList();
-
-                        //     var chfields = target.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
-                        //     var buffInfoListField = chfields.FirstOrDefault(f => f.Name.ToLower().Contains("chargeskillbuffinfolist"));
-
-                        //     if (buffInfoListField != null)
-                        //     {
-                        //         try
-                        //         {
-                        //             if (buffInfoListField.GetValue(target) is System.Collections.IList existingBuffInfos)
-                        //             {
-                        //                 existingBuffInfos.Clear();
-                        //                 buffInfoList.ForEach(buffInfo => existingBuffInfos.Add(buffInfo));
-                        //                 Log.Info($"Successfully updated ChargeSkillBuffInfoList");
-                        //             }
-                        //             else
-                        //             {
-                        //                 buffInfoListField.SetValue(target, buffInfoList);
-                        //                 Log.Info($"Successfully set new ChargeSkillBuffInfoList");
-                        //             }
-                        //         }
-                        //         catch (Exception ex)
-                        //         {
-                        //             Log.Error($"Failed to set ChargeSkillBuffInfoList: {ex.Message}");
-                        //         }
-                        //     }
-                        //     else
-                        //     {
-                        //         Log.Error("Could not find ChargeSkillBuffInfoList field in target type");
-                        //     }
-                        //     break;
-
                         // 处理SummonConfig中的数组类型字段
                         case "BornMontagePathList":
                         case "DisappearMontagePathList":
@@ -516,8 +588,41 @@ namespace bian
                             }
                             break;
 
+                        case "EffectParamsInt" when sourceValue is List<int> intParams:
+                            var targetIntList = targetProp.GetValue(target) as IList;
+                            if (targetIntList != null)
+                            {
+                                targetIntList.Clear();
+                                foreach (var param in intParams)
+                                {
+                                    targetIntList.Add(param);
+                                }
+                            }
+                            break;
 
+                        case "EffectParamsFloat" when sourceValue is List<double> floatParams:
+                            var targetFloatList = targetProp.GetValue(target) as IList;
+                            if (targetFloatList != null)
+                            {
+                                targetFloatList.Clear();
+                                foreach (var param in floatParams)
+                                {
+                                    targetFloatList.Add((float)param);
+                                }
+                            }
+                            break;
 
+                        case "EffectParamsStr" when sourceValue is List<string> strParams:
+                            var targetStrList = targetProp.GetValue(target) as IList;
+                            if (targetStrList != null)
+                            {
+                                targetStrList.Clear();
+                                foreach (var param in strParams)
+                                {
+                                    targetStrList.Add(param);
+                                }
+                            }
+                            break;
                         default:
                             var targetValue = ConvertValue(sourceValue, targetProp.PropertyType);
                             targetProp.SetValue(target, targetValue);
@@ -710,6 +815,7 @@ namespace bian
             configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BuffDisp");
 
             var buffDispList = BGW_GameDB.GetAllBuffDispDesc();
+
             if (buffDispList == null || buffDispList.Count == 0)
             {
                 Log.Error("Failed to get buff disp list from game database");
@@ -1297,6 +1403,133 @@ namespace bian
             return newSummon;
         }
 
+
+        // 加载技能
+        public static int LoadAndApplySkillDesc(string configDirectory = null)
+        {
+            try
+            {
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "skillDesc");
+
+                var skillConfigs = LoadJsonConfigs<SkillConfig>(configDirectory, "SkillDesc");
+                var skillList = BGW_GameDB.GetAllSkillSDesc();
+
+                if (skillList == null || skillList.Count == 0 || skillConfigs == null)
+                {
+                    Log.Error("Failed to load skill configs or skill list is not available");
+                    return 0;
+                }
+
+                const int templateSkillId = 10801;
+                if (!skillList.TryGetValue(templateSkillId, out var templateSkill))
+                {
+                    Log.Error($"Template skill (ID: {templateSkillId}) not found");
+                    return 0;
+                }
+
+                var processedCount = 0;
+                foreach (var skillConfig in skillConfigs)
+                {
+                    try
+                    {
+                        var targetSkill = GetOrCreateSkillDesc(skillConfig, skillList, templateSkill);
+                        CopyProperties(skillConfig, targetSkill);
+                        processedCount++;
+                        Log.Info($"Successfully processed skill with ID: {skillConfig.ID}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process skill config for ID {skillConfig.ID}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed skill configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplySkillDesc: {ex.Message}");
+                return 0;
+            }
+        }
+
+        private static FUStSkillSDesc GetOrCreateSkillDesc(SkillConfig config, Dictionary<int, FUStSkillSDesc> skillList, FUStSkillSDesc templateSkill)
+        {
+            if (skillList.TryGetValue(config.ID, out var existingSkill))
+            {
+                Log.Info($"Updating existing skill with ID: {config.ID}");
+                return existingSkill;
+            }
+
+            var newSkill = (FUStSkillSDesc)templateSkill.Clone();
+            skillList.Add(config.ID, newSkill);
+            Log.Info($"Creating new skill with ID: {config.ID}");
+            return newSkill;
+        }
+
+        // 加载技能效果
+
+        public static int LoadAndApplySkillEffect(string configDirectory = null)
+        {
+            try
+            {
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BuffEffect");
+
+                var buffEffectConfigs = LoadJsonConfigs<SkillEffectConfig>(configDirectory, "BuffEffect");
+                var buffEffectList = BGW_GameDB.GetAllSkillEffectDesc();
+
+                if (buffEffectList == null || buffEffectList.Count == 0 || buffEffectConfigs == null)
+                {
+                    Log.Error("Failed to load buff effect configs or buff effect list is not available");
+                    return 0;
+                }
+
+                const int templateBuffEffectId = 1001;
+                if (!buffEffectList.TryGetValue(templateBuffEffectId, out var templateBuffEffect))
+                {
+                    Log.Error($"Template buff effect (ID: {templateBuffEffectId}) not found");
+                    return 0;
+                }
+
+                var processedCount = 0;
+                foreach (var buffEffectConfig in buffEffectConfigs)
+                {
+                    try
+                    {
+                        var targetBuffEffect = GetOrCreateSkillEffect(buffEffectConfig, buffEffectList, templateBuffEffect);
+                        CopyProperties(buffEffectConfig, targetBuffEffect);
+                        processedCount++;
+                        Log.Info($"Successfully processed buff effect with ID: {buffEffectConfig.ID}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process buff effect config for ID {buffEffectConfig.ID}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed buff effect configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplyBuffEffect: {ex.Message}");
+                return 0;
+            }
+        }
+
+        private static FUStSkillEffectDesc GetOrCreateSkillEffect(SkillEffectConfig config, Dictionary<int, FUStSkillEffectDesc> buffEffectList, FUStSkillEffectDesc templateBuffEffect)
+        {
+            if (buffEffectList.TryGetValue(config.ID, out var existingBuffEffect))
+            {
+                Log.Info($"Updating existing buff effect with ID: {config.ID}");
+                return existingBuffEffect;
+            }
+
+            var newBuffEffect = (FUStSkillEffectDesc)templateBuffEffect.Clone();
+            buffEffectList.Add(config.ID, newBuffEffect);
+            Log.Info($"Creating new buff effect with ID: {config.ID}");
+            return newBuffEffect;
+        }
 
     }
 }

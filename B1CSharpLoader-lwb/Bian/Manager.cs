@@ -6,66 +6,14 @@ using UnrealEngine.Engine;
 using UnrealEngine.Runtime;
 using System.Reflection;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Collections.Generic;
 using System;
 using BtlShare;
 using ArchiveB1;
 using System.IO;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.Collections;
 using UnrealEngine.InputCore;
 
-
-public class BuffActiveCondition
-{
-    public int? ConditionType { get; set; } = null;
-    public string? ConditionParams { get; set; } = null;
-}
-
-public class BuffRange
-{
-    public int? RangeType { get; set; } = null;
-    public int? RangeCenterType { get; set; } = null;
-    public List<int>? RangeParam { get; set; } = null;
-}
-
-public class BuffEffect
-{
-    public int? EffectTrigger { get; set; } = null;
-    public int? EffectType { get; set; } = null;
-    public int? EffectTargetSelectType { get; set; } = null;
-    public List<string>? EffectParamsString { get; set; } = null;
-    public List<int>? EffectParams { get; set; } = null;
-    public List<float>? EffectParamsFloat { get; set; } = null;
-}
-
-public class BuffConfig
-{
-    public int ID { get; set; } = 0;
-    public string? BuffTips { get; set; } = null;
-    public BuffActiveCondition? BuffActiveCondition { get; set; } = null;
-    public int? BuffLayerCounterType { get; set; } = null;
-    public int? BuffCategory { get; set; } = null;
-    public int? CanRemoveWhenAttackHit { get; set; } = null;
-    public int? CanRemoveWhenAttacked { get; set; } = null;
-    public int? Delay { get; set; } = null;
-    public int? Duration { get; set; } = null;
-    public int? Interval { get; set; } = null;
-    public int? AlmostEndAheadTime { get; set; } = null;
-    public int? MaxLayer { get; set; } = null;
-    public int? TargetBase { get; set; } = null;
-    public int? TargetCount { get; set; } = null;
-    public int? TargetFilter { get; set; } = null;
-    public int? TargetTypeFilter { get; set; } = null;
-    public int? AffiliationTypeFilter { get; set; } = null;
-    public BuffRange? Range { get; set; } = null;
-    public List<BuffEffect>? BuffEffects { get; set; } = null;
-    public int? IsExclusiveBuff { get; set; } = null;
-    public int? CanBeInherited { get; set; } = null;
-    public string? Guard { get; set; } = null;
-}
 
 
 
@@ -122,7 +70,20 @@ namespace bian
         }
 
 
+        public static void loadAllStaticData()
+        {
+            LoadUtils.LoadAndApplyBuffDispConfigs();
+            LoadUtils.LoadAndApplyBuff();
+            LoadUtils.LoadAndApplySummon();
+            LoadUtils.LoadAndApplyChargeSkill();
+            LoadUtils.LoadAndApplyBulletExpand();
+            LoadUtils.LoadAndApplyBulletComm();
+            LoadUtils.LoadAndApplyProjectileMove();
+            LoadUtils.LoadAndApplyProjectileDisp();
 
+            LoadUtils.LoadAndApplySkillDesc();
+            LoadUtils.LoadAndApplySkillEffect();
+        }
 
 
 
@@ -136,15 +97,8 @@ namespace bian
             string configPath = Path.Combine("CSharpLoader", "Mods", "bian", "skillMaping");
             LoadUtils.LoadAllSkillMappingRules(configPath);
 
+            loadAllStaticData();
 
-            LoadUtils.LoadAndApplyBuffDispConfigs();
-            LoadUtils.LoadAndApplyBuff();
-            LoadUtils.LoadAndApplySummon();
-            LoadUtils.LoadAndApplyChargeSkill();
-            LoadUtils.LoadAndApplyBulletExpand();
-            LoadUtils.LoadAndApplyBulletComm();
-            LoadUtils.LoadAndApplyProjectileMove();
-            LoadUtils.LoadAndApplyProjectileDisp();
 
             // 在这里可以将buffDispConfigs插入到游戏中的数据
             if (harmony == null)
@@ -656,14 +610,7 @@ namespace bian
             string keyName = Key.GetFName().ToString();
             if (keyName == "Tab" && !isBuffConfigsLoaded) // 添加标志变量检查
             {
-                LoadUtils.LoadAndApplyBuffDispConfigs();
-                LoadUtils.LoadAndApplyBuff();
-                LoadUtils.LoadAndApplySummon();
-                LoadUtils.LoadAndApplyChargeSkill();
-                LoadUtils.LoadAndApplyBulletExpand();
-                LoadUtils.LoadAndApplyBulletComm();
-                LoadUtils.LoadAndApplyProjectileMove();
-                LoadUtils.LoadAndApplyProjectileDisp();
+                loadAllStaticData();
 
                 isBuffConfigsLoaded = true; // 设置标志变量为true
             }
