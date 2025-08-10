@@ -29,8 +29,8 @@
         "HitOriBaseCompName": "",
         "CanFractureVictim": 0,
         "CanCutVictim": 0,
-        "EffectParamsInt": [],
-        "EffectParamsFloat": [],
+        "EffectParamsInt": [298,293],
+        "EffectParamsFloat": [0.0,900.0],
         "EffectParamsStr": [
             "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PSD/PSD_BaiYanMoJun_01/DataAsset/BGW_PSD_BaiYanMoJun_01_GroundBoom.BGW_PSD_BaiYanMoJun_01_GroundBoom'"
         ],

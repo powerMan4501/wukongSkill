@@ -1,65 +1,131 @@
 [
-    {
-        "desc":"暂时未实现",
-        "ID": 50002,
-        "SkillBaseTarget": 0,
-        "SkillType": 1,
-        "MoveSkillDisMinRate": 0.1,
-        "MoveSkillDisMaxRate": 5.0,
-        "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_ComboA_01_Z_2.AM_Dasheng_ComboA_01_Z_2",
-        "NoiseLoudness": 1.0,
-        "MinAttrCostType1": 0,
-        "MinAttrCostBase1": 0.0,
-        "MinAttrCostRatio1": 0.0,
-        "MinAttrCostType2": 0,
-        "MinAttrCostBase2": 0.0,
-        "MinAttrCostRatio2": 0.0,
-        "PreCooldownTime": 0.0,
-        "CooldownTime": 0.0,
-        "CooldownType": 0,
-        "DmgRangeType": 1,
-        "SkillRotateType": 1,
-        "OnlyPlayerControlledSkillRotate": 1,
-        "DoneAddBuffID": 0,
-        "SkillHitSetSimpleState": 0,
-        "AtkReboundingMontage": "",
-        "LowAtkReboundingMontage": "",
-        "SkillArmorBrokeMontage": "",
-        "IsComboSkill": 1,
-        "IsOverlying": 0,
-        "IsCanMoveAttack": 0,
-        "CooldownSkills": "",
-        "AdditionalHatredValue": 3000.0
-    },
-    {
-        "ID": 10801,
-        "SkillBaseTarget": 0,
-        "SkillType": 1,
-        "MoveSkillDisMinRate": 0.01,
-        "MoveSkillDisMaxRate": 5.0,
-        "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboA/AM_Wukong_ComboA_q1.AM_Wukong_ComboA_q1",
-        "NoiseLoudness": 1.0,
-        "MinAttrCostType1": 3,
-        "MinAttrCostBase1": 1.0,
-        "MinAttrCostRatio1": 0.0,
-        "MinAttrCostType2": 0,
-        "MinAttrCostBase2": 0.0,
-        "MinAttrCostRatio2": 0.0,
-        "PreCooldownTime": 0.0,
-        "CooldownTime": 0.0,
-        "CooldownType": 0,
-        "DmgRangeType": 1,
-        "SkillRotateType": 1,
-        "OnlyPlayerControlledSkillRotate": 1,
-        "DoneAddBuffID": 0,
-        "SkillHitSetSimpleState": 0,
-        "AtkReboundingMontage": "/Game/00Main/Animation/Player/Wukong/AM/Behit/Tandao/AM_wukong_tandao_q1.AM_wukong_tandao_q1",
-        "LowAtkReboundingMontage": "",
-        "SkillArmorBrokeMontage": "",
-        "IsComboSkill": 1,
-        "IsOverlying": 0,
-        "IsCanMoveAttack": 0,
-        "CooldownSkills": "",
-        "AdditionalHatredValue": 1000.0
-    }
+  {
+    "desc": "后退版jxsq",
+    "ID": 54321001,
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Fashu/JXSQ/AM_Wukong_JXSQ_Enter_B.AM_Wukong_JXSQ_Enter_B"
+  },
+  {
+    "desc": "侧键专用，原版退寸",
+    "ID": 54321002,
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboB/AM_wukong_combob_z_01.AM_wukong_combob_z_01"
+  },
+
+  {
+    "desc": "侧键专用，原版进尺",
+    "ID": 54321003,
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboB/AM_wukong_combob_z_02.AM_wukong_combob_z_02"
+  },
+
+  {
+    "desc": "2a退寸转化专用，完美闪避",
+    "ID": 54321004,
+    "TemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/PreciseDodge/AM_Wukong_PreciseDodge_B_01.AM_Wukong_PreciseDodge_B_01'"
+  },
+
+  {
+    "desc": "2a进尺转化专用，破隐一击",
+    "ID": 54321005,
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/Fashu/JXSQ/AM_Wukong_JXSQ_Atk_01.AM_Wukong_JXSQ_Atk_01"
+  },
+
+  {
+    "desc": "3a退寸转化专用，后退版jxsq",
+    "ID": 54321006,
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Fashu/JXSQ/AM_Wukong_JXSQ_Enter_B.AM_Wukong_JXSQ_Enter_B"
+  },
+
+  {
+    "desc": "3a进尺转化专用，残躯蓄力戳棍",
+    "ID": 54321007,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_10_01.AM_mgd_jsds_atk_10_01"
+  },
+
+  {
+    "desc": "4a退寸转化专用，完美定身",
+    "ID": 54321008,
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Fashu/DingShen/AM_wukong_dingshen_02.AM_wukong_dingshen_02"
+  },
+
+  {
+    "desc": "4a进尺转化专用，残躯捅一下戳一下空中转很多下",
+    "ID": 54321009,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_04a.AM_mgd_jsds_atk_04a"
+  },
+
+  {
+    "desc": "2a立棍切手专用",
+    "ID": 54321010,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_04a.AM_mgd_jsds_atk_04a"
+  },
+
+  {
+    "desc": "2a立棍切手接招专用，棍子变粗砸一下",
+    "ID": 54321011,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_jdy_03_short.AM_mgd_jsds_atk_jdy_03_short"
+  },
+
+  {
+    "desc": "3a立棍切手专用，残躯转好几圈",
+    "ID": 54321012,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_jdy_05_short.AM_mgd_jsds_atk_jdy_05_short"
+  },
+
+  {
+    "desc": "3a立棍切手接招，大圣江海翻",
+    "ID": 54321013,
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2"
+  },
+  {
+    "desc": "4a立棍切手专用，转身定",
+    "ID": 54321014,
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1"
+  },
+
+  {
+    "desc": "4a立棍切手接招专用，筋斗云冲刺上去打好几下",
+    "ID": 54321015,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_jdy_03.AM_mgd_jsds_atk_jdy_03"
+  },
+
+  {
+    "desc": "2a劈棍切手专用，大圣模式2a切手",
+    "ID": 54321016,
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1"
+  },
+
+  {
+    "desc": "2a劈棍切手接招专用，残躯招：空中转很多下",
+    "ID": 54321017,
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_Atk_04a.AM_Dasheng_Atk_04a"
+  },
+
+  {
+    "desc": "3a劈棍切手，大圣模式3a切手",
+    "ID": 54321018,
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_ComboA_03_Z_1.AM_Dasheng_ComboA_03_Z_1"
+  },
+
+  {
+    "desc": "3a劈棍切手接招专用，残躯江海翻",
+    "ID": 54321019,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_02_01_02.AM_mgd_jsds_atk_02_01_02"
+  },
+
+  {
+    "desc": "4a劈棍切手,大圣模式转身定",
+    "ID": 54321020,
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1"
+  },
+
+  {
+    "desc": "4a劈棍切手接招，残躯招：空中转很多下",
+    "ID": 54321021,
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_Atk_04a.AM_Dasheng_Atk_04a"
+  },
+
+  {
+    "desc": "射箭",
+    "ID": 54322001,
+    "TemplatePath": "/Game/Mods/DSCQ/AM_mgd_yangjian_01_atk74a.AM_mgd_yangjian_01_atk74a"
+  }
 ]
