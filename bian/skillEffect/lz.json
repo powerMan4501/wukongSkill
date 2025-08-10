@@ -1,145 +1,251 @@
 [
-    {
-        "desc":"暂时未实现",
-        "ID": 888555001,
-        "EffectActiveCondition": {
-            "ConditionType": 0,
-            "ConditionParams": ""
-        },
-        "EffectType": 20,
-        "EffectCategory": 0,
-        "TargetBase": 1,
-        "TargetCount": 1,
-        "TargetFilter": 4,
-        "TargetTypeFilter": 1,
-        "AffiliationTypeFilter": 0,
-        "Range": {
-            "RangeType": 0,
-            "RangeCenterType": 0,
-            "RangeParam": []
-        },
-        "FXTransUseConfig": 0,
-        "PlayFXSocketName": "",
-        "PlayFXLocalDirX": 0.0,
-        "PlayFXLocalDirY": 0.0,
-        "PlayFXLocalDirZ": 0.0,
-        "FXCameraOffset": 0.0,
-        "HitActionDir": 0,
-        "HitOrientationType": 0,
-        "HitOriBaseCompName": "",
-        "CanFractureVictim": 0,
-        "CanCutVictim": 0,
-        "EffectParamsInt": [298,293],
-        "EffectParamsFloat": [0.0,900.0],
-        "EffectParamsStr": [
-            "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PSD/PSD_BaiYanMoJun_01/DataAsset/BGW_PSD_BaiYanMoJun_01_GroundBoom.BGW_PSD_BaiYanMoJun_01_GroundBoom'"
-        ],
-        "Guard": "Guard"
-    },
-    {
-        "ID": 888555002,
-        "EffectActiveCondition": {
-            "ConditionType": 0,
-            "ConditionParams": ""
-        },
-        "EffectType": 20,
-        "EffectCategory": 0,
-        "TargetBase": 1,
-        "TargetCount": 1,
-        "TargetFilter": 4,
-        "TargetTypeFilter": 1,
-        "AffiliationTypeFilter": 0,
-        "Range": {
-            "RangeType": 0,
-            "RangeCenterType": 0,
-            "RangeParam": []
-        },
-        "FXTransUseConfig": 0,
-        "PlayFXSocketName": "",
-        "PlayFXLocalDirX": 0.0,
-        "PlayFXLocalDirY": 0.0,
-        "PlayFXLocalDirZ": 0.0,
-        "FXCameraOffset": 0.0,
-        "HitActionDir": 0,
-        "HitOrientationType": 0,
-        "HitOriBaseCompName": "",
-        "CanFractureVictim": 0,
-        "CanCutVictim": 0,
-        "EffectParamsInt": [],
-        "EffectParamsFloat": [],
-        "EffectParamsStr": [
-            "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_Shougun_aoe.BGW_Player_Wukong_Atk_Shougun_aoe"
-        ]
-    },
-    {
-        "ID": 888555003,
-        "EffectActiveCondition": {
-            "ConditionType": 0,
-            "ConditionParams": ""
-        },
-        "EffectType": 20,
-        "EffectCategory": 0,
-        "TargetBase": 1,
-        "TargetCount": 1,
-        "TargetFilter": 4,
-        "TargetTypeFilter": 1,
-        "AffiliationTypeFilter": 0,
-        "Range": {
-            "RangeType": 0,
-            "RangeCenterType": 0,
-            "RangeParam": []
-        },
-        "FXTransUseConfig": 0,
-        "PlayFXSocketName": "",
-        "PlayFXLocalDirX": 0.0,
-        "PlayFXLocalDirY": 0.0,
-        "PlayFXLocalDirZ": 0.0,
-        "FXCameraOffset": 0.0,
-        "HitActionDir": 0,
-        "HitOrientationType": 0,
-        "HitOriBaseCompName": "",
-        "CanFractureVictim": 0,
-        "CanCutVictim": 0,
-        "EffectParamsInt": [],
-        "EffectParamsFloat": [],
-        "EffectParamsStr": [
-            "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PSD/PSD_zhubajie_02a/BGW_psd_zhubajie_02a_GenkitanBoom.BGW_psd_zhubajie_02a_GenkitanBoom'"
-        ]
-    },
-    {
-        "ID": 888555004,
-        "EffectActiveCondition": {
-            "ConditionType": 0,
-            "ConditionParams": ""
-        },
-        "EffectType": 20,
-        "EffectCategory": 0,
-        "TargetBase": 1,
-        "TargetCount": 1,
-        "TargetFilter": 4,
-        "TargetTypeFilter": 1,
-        "AffiliationTypeFilter": 0,
-        "Range": {
-            "RangeType": 0,
-            "RangeCenterType": 0,
-            "RangeParam": []
-        },
-        "FXTransUseConfig": 0,
-        "PlayFXSocketName": "",
-        "PlayFXLocalDirX": 0.0,
-        "PlayFXLocalDirY": 0.0,
-        "PlayFXLocalDirZ": 0.0,
-        "FXCameraOffset": 0.0,
-        "HitActionDir": 0,
-        "HitOrientationType": 0,
-        "HitOriBaseCompName": "",
-        "CanFractureVictim": 0,
-        "CanCutVictim": 0,
-        "EffectParamsInt": [],
-        "EffectParamsFloat": [],
-        "EffectParamsStr": [
-            "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/MGD/mgd_yuan/Physics/mgd_yuan_bigballfarspawn.mgd_yuan_bigballfarspawn'"
-        ]
-    }
-    
+  {
+    "desc": "激光柱",
+    "ID": 888555001,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PSD/PSD_BaiYanMoJun_01/DataAsset/BGW_PSD_BaiYanMoJun_01_GroundBoom.BGW_PSD_BaiYanMoJun_01_GroundBoom'"
+    ]
+  },
+
+  {
+    "desc": "开山斧地波",
+    "ID": 888555002,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_Shougun_aoe.BGW_Player_Wukong_Atk_Shougun_aoe"
+    ]
+  },
+
+  {
+    "desc": "猪八戒血浆",
+    "ID": 888555003,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PSD/PSD_zhubajie_02a/BGW_psd_zhubajie_02a_GenkitanBoom.BGW_psd_zhubajie_02a_GenkitanBoom'"
+    ]
+  },
+
+  {
+    "desc": "金沙爆炸",
+    "ID": 888555004,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/MGD/mgd_yuan/Physics/mgd_yuan_bigballfarspawn.mgd_yuan_bigballfarspawn'"
+    ]
+  },
+
+  {
+    "desc": "黄符落雷",
+    "ID": 888555005,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PSD/PSD_BaiYanMoJun_01/DataAsset/BGW_PSD_BaiYanMoJun_01_Bullet_8603.BGW_PSD_BaiYanMoJun_01_Bullet_8603'"
+    ]
+  },
+
+  {
+    "desc": "业火",
+    "ID": 888555006,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "/Game/00Main/Design/MagicFields/Player/Talent/BGW_player_wukong_lava.BGW_player_wukong_lava"
+    ]
+  },
+
+  {
+    "desc": "脚下冰刺",
+    "ID": 888555007,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/LYS/LYS_SengMian/DataAsset/BGW_LYS_SengMian_P1_Bullet_3102.BGW_LYS_SengMian_P1_Bullet_3102'"
+    ]
+  },
+
+  {
+    "desc": "火长老火球",
+    "ID": 888555008,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/HYS/HYS_HongHaiEr_01A/HHEFS_BaoZha_player.HHEFS_BaoZha_player'"
+    ]
+  },
+
+  {
+    "desc": "兽棍红雷",
+    "ID": 888555009,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_Shougun_lightning.BGW_Player_Wukong_Atk_Shougun_lightning"
+    ]
+  },
+
+  {
+    "desc": "巴山虎",
+    "ID": 888555010,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_20_hfm_bashanhu_BulletChange.BGW_20_hfm_bashanhu_BulletChange'"
+    ]
+  },
+
+  {
+    "desc": "石双双毒气",
+    "ID": 888555011,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/HFM/HFM_ShanZhen_03/BGW_HFM_ShanZhen_03_Bullet_0101.BGW_HFM_ShanZhen_03_Bullet_0101'"
+    ]
+  },
+
+  {
+    "desc": "亢金龙，电炸地板",
+    "ID": 888555012,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/LYS/LYS_KJLWoman/DA/BGW_LYS_KJLWoman_RaiQiang_BZ.BGW_LYS_KJLWoman_RaiQiang_BZ'"
+    ]
+  },
+
+  {
+    "desc": "甲虫王2",
+    "ID": 888555013,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_jiachongwang_02.BGW_Player_Wukong_Atk_jiachongwang_02"
+    ]
+  },
+
+  {
+    "desc": "辰龙AOE雷环，",
+    "ID": 888555014,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/LYS/LYS_RuYiLong_01/DataAsset/P1/BGW_LYS_RuYiLong_01_Bullet_9104.BGW_LYS_RuYiLong_01_Bullet_9104'"
+    ]
+  },
+  {
+    "desc": "积累100%雷异常",
+    "ID": 888555015,
+    "EffectType": 95,
+    "EffectParamsInt": [4, 4, 1, 10000],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": []
+  },
+
+  {
+    "desc": "积累100%冰异常",
+    "ID": 888555016,
+    "EffectType": 95,
+    "EffectParamsInt": [1, 4, 1, 10000],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": []
+  },
+
+  {
+    "desc": "积累100%火异常",
+    "ID": 888555017,
+    "EffectType": 95,
+    "EffectParamsInt": [2, 4, 1, 10000],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": []
+  },
+  {
+    "desc": "积累100%毒异常",
+    "ID": 888555018,
+    "EffectType": 95,
+    "EffectParamsInt": [2, 4, 1, 10000],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": []
+  },
+
+  {
+    "desc": "10%+10点伤害,0段蓄力",
+    "ID": 888555019,
+    "EffectType": 1,
+    "EffectParamsInt": [31, 21, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0.0, 10.0, 1000.0, 0.0, 0.0, 0.0, 10],
+    "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
+  },
+
+  {
+    "desc": "50%+50点伤害,0段蓄力",
+    "ID": 888555020,
+    "EffectType": 1,
+    "EffectParamsInt": [31, 21, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0.0, 50.0, 5000.0, 0.0, 0.0, 0.0, 50],
+    "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
+  },
+
+  {
+    "desc": "100%+100点伤害,0段蓄力",
+    "ID": 888555021,
+    "EffectType": 1,
+    "EffectParamsInt": [31, 21, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0.0, 100.0, 10000.0, 0.0, 0.0, 0.0, 100],
+    "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
+  },
+
+  {
+    "desc": "200%+200点伤害,0段蓄力",
+    "ID": 888555022,
+    "EffectType": 1,
+    "EffectParamsInt": [31, 21, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0.0, 200.0, 20000.0, 0.0, 0.0, 0.0, 200],
+    "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
+  },
+
+  {
+    "desc": "300%+300点伤害,0段蓄力",
+    "ID": 888555023,
+    "EffectType": 1,
+    "EffectParamsInt": [31, 21, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0.0, 300.0, 30000.0, 0.0, 0.0, 0.0, 300],
+    "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
+  },
+
+  {
+    "desc": "400%+400点伤害,金箍棒伤害效果",
+    "ID": 888555024,
+    "EffectType": 1,
+    "EffectParamsInt": [70, 25, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0.0, 400.0, 40000.0, 0.0, 0.0, 0.0, 400],
+    "EffectParamsStr": ["【主角】蓄力4"]
+  },
+  {
+    "desc": "200%+200点伤害",
+    "ID": 888555022,
+    "EffectType": 1,
+    "EffectParamsInt": [40, 25, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0.0, 200.0, 20000.0, 0.0, 0.0, 0.0, 200],
+    "EffectParamsStr": ["【主角】蓄力1"]
+  }
 ]
