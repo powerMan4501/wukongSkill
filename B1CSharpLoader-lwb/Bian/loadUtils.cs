@@ -1473,7 +1473,7 @@ namespace bian
         {
             try
             {
-                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BuffEffect");
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "skillEffect");
 
                 var buffEffectConfigs = LoadJsonConfigs<SkillEffectConfig>(configDirectory, "BuffEffect");
                 var buffEffectList = BGW_GameDB.GetAllSkillEffectDesc();
@@ -1484,7 +1484,7 @@ namespace bian
                     return 0;
                 }
 
-                const int templateBuffEffectId = 1001;
+                const int templateBuffEffectId = 1080101;
                 if (!buffEffectList.TryGetValue(templateBuffEffectId, out var templateBuffEffect))
                 {
                     Log.Error($"Template buff effect (ID: {templateBuffEffectId}) not found");
