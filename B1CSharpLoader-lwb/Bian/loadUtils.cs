@@ -311,11 +311,11 @@ namespace bian
                 try
                 {
                     Directory.CreateDirectory(configDirectory);
-                    Log.Info($"Created {configTypeName} config directory: {configDirectory}");
+                    // Log.Info($"Created {configTypeName} config directory: {configDirectory}");
                 }
                 catch (Exception ex)
                 {
-                    Log.Error($"Failed to create {configTypeName} config directory: {ex.Message}");
+                    // Log.Error($"Failed to create {configTypeName} config directory: {ex.Message}");
                     return new List<T>();
                 }
             }
@@ -330,16 +330,16 @@ namespace bian
                     if (configs != null)
                     {
                         allConfigs.AddRange(configs);
-                        Log.Info($"Loaded {configs.Count} {configTypeName} configs from {Path.GetFileName(file)}");
+                        // Log.Info($"Loaded {configs.Count} {configTypeName} configs from {Path.GetFileName(file)}");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Log.Error($"Error loading {configTypeName} configs from {file}: {ex.Message}");
+                    // Log.Error($"Error loading {configTypeName} configs from {file}: {ex.Message}");
                 }
             }
 
-            Log.Info($"Total loaded {configTypeName} configs: {allConfigs.Count}");
+            // Log.Info($"Total loaded {configTypeName} configs: {allConfigs.Count}");
             return allConfigs;
         }
 
@@ -411,22 +411,22 @@ namespace bian
                                     {
                                         existingEffects.Clear();
                                         newEffects.ForEach(effect => existingEffects.Add(effect));
-                                        Log.Info($"Successfully updated BuffEffects list");
+                                        // Log.Info($"Successfully updated BuffEffects list");
                                     }
                                     else
                                     {
                                         buffEffectsField.SetValue(target, newEffects);
-                                        Log.Info($"Successfully set new BuffEffects list");
+                                        // Log.Info($"Successfully set new BuffEffects list");
                                     }
                                 }
                                 catch (Exception ex)
                                 {
-                                    Log.Error($"Failed to set BuffEffects: {ex.Message}");
+                                    // Log.Error($"Failed to set BuffEffects: {ex.Message}");
                                 }
                             }
                             else
                             {
-                                Log.Error("Could not find BuffEffects field in target type");
+                                // Log.Error("Could not find BuffEffects field in target type");
                             }
                             break;
 
@@ -473,22 +473,22 @@ namespace bian
                                     {
                                         existingEffects.Clear();
                                         enterEffects.ForEach(effect => existingEffects.Add(effect));
-                                        Log.Info($"Successfully updated EnterFX list");
+                                        // Log.Info($"Successfully updated EnterFX list");
                                     }
                                     else
                                     {
                                         enterFxField.SetValue(target, enterEffects);
-                                        Log.Info($"Successfully set new EnterFX list");
+                                        // Log.Info($"Successfully set new EnterFX list");
                                     }
                                 }
                                 catch (Exception ex)
                                 {
-                                    Log.Error($"Failed to set EnterFX: {ex.Message}");
+                                    // Log.Error($"Failed to set EnterFX: {ex.Message}");
                                 }
                             }
                             else
                             {
-                                Log.Error("Could not find EnterFX field in target type");
+                                // Log.Error("Could not find EnterFX field in target type");
                             }
                             break;
 
@@ -569,12 +569,12 @@ namespace bian
                                     {
                                         existingBuffInfos.Clear();
                                         buffInfoList.ForEach(buffInfo => existingBuffInfos.Add(buffInfo));
-                                        Log.Info($"Successfully updated ChargeSkillBuffInfoList");
+                                        // Log.Info($"Successfully updated ChargeSkillBuffInfoList");
                                     }
                                     else
                                     {
                                         buffInfoListField.SetValue(target, buffInfoList);
-                                        Log.Info($"Successfully set new ChargeSkillBuffInfoList");
+                                        // Log.Info($"Successfully set new ChargeSkillBuffInfoList");
                                     }
                                 }
                                 catch (Exception ex)
@@ -657,21 +657,21 @@ namespace bian
                                 targetList.Add(item);
                             }
                         }
-                        Log.Info($"Successfully updated {targetProp.Name} string list");
+                        // Log.Info($"Successfully updated {targetProp.Name} string list");
                     }
                     else
                     {
-                        Log.Error($"Target field {targetField.Name} is not of type RepeatedField<string>");
+                        // Log.Error($"Target field {targetField.Name} is not of type RepeatedField<string>");
                     }
                 }
                 else
                 {
-                    Log.Error($"Could not find field for {targetProp.Name} property");
+                    // Log.Error($"Could not find field for {targetProp.Name} property");
                 }
             }
             catch (Exception ex)
             {
-                Log.Error($"Error updating {targetProp.Name} string list: {ex.Message}");
+                // Log.Error($"Error updating {targetProp.Name} string list: {ex.Message}");
             }
         }
 
@@ -697,16 +697,16 @@ namespace bian
                                 targetList.Add(item);
                             }
                         }
-                        Log.Info($"Successfully updated {targetProp.Name} int list");
+                        // Log.Info($"Successfully updated {targetProp.Name} int list");
                     }
                     else
                     {
-                        Log.Error($"Target field {targetField.Name} is not of type RepeatedField<int>");
+                        // Log.Error($"Target field {targetField.Name} is not of type RepeatedField<int>");
                     }
                 }
                 else
                 {
-                    Log.Error($"Could not find field for {targetProp.Name} property");
+                    // Log.Error($"Could not find field for {targetProp.Name} property");
                 }
             }
             catch (Exception ex)
@@ -775,11 +775,11 @@ namespace bian
                 }
 
                 backingField.SetValue(target, targetList);
-                Log.Info($"Successfully updated {targetProp.Name} property");
+                // Log.Info($"Successfully updated {targetProp.Name} property");
             }
             catch (Exception ex)
             {
-                Log.Error($"Error updating {targetProp.Name} property: {ex.Message}");
+                // Log.Error($"Error updating {targetProp.Name} property: {ex.Message}");
             }
         }
 
@@ -832,15 +832,15 @@ namespace bian
                     var targetBuffDisp = GetOrCreateBuffDisp(buffDispList, config);
                     CopyProperties(config, targetBuffDisp);
                     processedCount++;
-                    Log.Info($"Successfully processed BuffDisp with BuffID: {config.BuffID}");
+                    // Log.Info($"Successfully processed BuffDisp with BuffID: {config.BuffID}");
                 }
                 catch (Exception ex)
                 {
-                    Log.Error($"Failed to process BuffDisp config for BuffID {config.BuffID}: {ex.Message}");
+                    // Log.Error($"Failed to process BuffDisp config for BuffID {config.BuffID}: {ex.Message}");
                 }
             }
 
-            Log.Info($"Total processed BuffDisp configs: {processedCount}");
+            // Log.Info($"Total processed BuffDisp configs: {processedCount}");
             return processedCount;
         }
 
@@ -857,14 +857,12 @@ namespace bian
 
                 if (buffList == null || buffList.Count == 0 || buffConfigs == null)
                 {
-                    Log.Error("Failed to load buff configs or buff list is not available");
                     return 0;
                 }
 
                 const int templateBuffId = 295;
                 if (!buffList.TryGetValue(templateBuffId, out var templateBuff))
                 {
-                    Log.Error($"Template buff (ID: {templateBuffId}) not found");
                     return 0;
                 }
 
@@ -876,20 +874,19 @@ namespace bian
                         var targetBuff = GetOrCreateBuff(buffConfig, buffList, templateBuff);
                         CopyProperties(buffConfig, targetBuff);
                         processedCount++;
-                        Log.Info($"Successfully processed buff with ID: {buffConfig.ID}");
                     }
                     catch (Exception ex)
                     {
-                        Log.Error($"Failed to process buff config for ID {buffConfig.ID}: {ex.Message}");
+                        // Log.Error($"Failed to process buff config for ID {buffConfig.ID}: {ex.Message}");
                     }
                 }
 
-                Log.Info($"Total processed buff configs: {processedCount}");
+                // Log.Info($"Total processed buff configs: {processedCount}");
                 return processedCount;
             }
             catch (Exception ex)
             {
-                Log.Error($"Critical error in LoadAndApplyBuff: {ex.Message}");
+                // Log.Error($"Critical error in LoadAndApplyBuff: {ex.Message}");
                 return 0;
             }
         }
@@ -903,11 +900,11 @@ namespace bian
                 try
                 {
                     Directory.CreateDirectory(configDirectory);
-                    Log.Info($"Created config directory: {configDirectory}");
+                    // Log.Info($"Created config directory: {configDirectory}");
                 }
                 catch (Exception ex)
                 {
-                    Log.Error($"Failed to create config directory: {ex.Message}");
+                    // Log.Error($"Failed to create config directory: {ex.Message}");
                     return;
                 }
             }
@@ -916,7 +913,7 @@ namespace bian
             Manager.ClearSkillMappingRules();
             Manager.AddSkillMappingRules(rules);
 
-            Log.Info($"Total loaded rules: {Manager.SkillMappingRules.Count}");
+            // Log.Info($"Total loaded rules: {Manager.SkillMappingRules.Count}");
         }
 
 
@@ -941,13 +938,13 @@ namespace bian
         {
             if (buffList.TryGetValue(config.ID, out var existingBuff))
             {
-                Log.Info($"Updating existing buff with ID: {config.ID}");
+                // Log.Info($"Updating existing buff with ID: {config.ID}");
                 return existingBuff;
             }
 
             var newBuff = (FUStBuffDesc)templateBuff.Clone();
             buffList.Add(config.ID, newBuff);
-            Log.Info($"Creating new buff with ID: {config.ID}");
+            // Log.Info($"Creating new buff with ID: {config.ID}");
             return newBuff;
         }
 
@@ -986,20 +983,20 @@ namespace bian
                         var targetBullet = GetOrCreateBulletExpand(bulletConfig, bulletExpandList, templateBullet);
                         CopyProperties(bulletConfig, targetBullet);
                         processedCount++;
-                        Log.Info($"Successfully processed bullet expand with ID: {bulletConfig.ID}");
+                        // Log.Info($"Successfully processed bullet expand with ID: {bulletConfig.ID}");
                     }
                     catch (Exception ex)
                     {
-                        Log.Error($"Failed to process bullet expand config for ID {bulletConfig.ID}: {ex.Message}");
+                        // Log.Error($"Failed to process bullet expand config for ID {bulletConfig.ID}: {ex.Message}");
                     }
                 }
 
-                Log.Info($"Total processed bullet expand configs: {processedCount}");
+                // Log.Info($"Total processed bullet expand configs: {processedCount}");
                 return processedCount;
             }
             catch (Exception ex)
             {
-                Log.Error($"Critical error in LoadAndApplyBulletExpand: {ex.Message}");
+                // Log.Error($"Critical error in LoadAndApplyBulletExpand: {ex.Message}");
                 return 0;
             }
         }
@@ -1009,13 +1006,13 @@ namespace bian
         {
             if (bulletExpandList.TryGetValue(config.ID, out var existingBullet))
             {
-                Log.Info($"Updating existing bullet expand with ID: {config.ID}");
+                // Log.Info($"Updating existing bullet expand with ID: {config.ID}");
                 return existingBullet;
             }
 
             var newBullet = (FUStBulletExpandDesc)templateBullet.Clone();
             bulletExpandList.Add(config.ID, newBullet);
-            Log.Info($"Creating new bullet expand with ID: {config.ID}");
+            // Log.Info($"Creating new bullet expand with ID: {config.ID}");
             return newBullet;
         }
 
@@ -1049,7 +1046,7 @@ namespace bian
                     // 创建一个默认的模板子弹
                     templateBullet = new FUStProjectileCommDesc();
                     bulletCommList.Add(templateBulletId, templateBullet);
-                    Log.Info($"Template bullet (ID: {templateBulletId}) not found, created a new one");
+                    // Log.Info($"Template bullet (ID: {templateBulletId}) not found, created a new one");
                 }
 
                 var processedCount = 0;
@@ -1060,20 +1057,20 @@ namespace bian
                         var targetBullet = GetOrCreateBulletComm(bulletConfig, bulletCommList, templateBullet);
                         CopyProperties(bulletConfig, targetBullet);
                         processedCount++;
-                        Log.Info($"Successfully processed bullet comm with ID: {bulletConfig.ID}");
+                        // Log.Info($"Successfully processed bullet comm with ID: {bulletConfig.ID}");
                     }
                     catch (Exception ex)
                     {
-                        Log.Error($"Failed to process bullet comm config for ID {bulletConfig.ID}: {ex.Message}");
+                        // Log.Error($"Failed to process bullet comm config for ID {bulletConfig.ID}: {ex.Message}");
                     }
                 }
 
-                Log.Info($"Total processed bullet comm configs: {processedCount}");
+                // Log.Info($"Total processed bullet comm configs: {processedCount}");
                 return processedCount;
             }
             catch (Exception ex)
             {
-                Log.Error($"Critical error in LoadAndApplyBulletComm: {ex.Message}");
+                // Log.Error($"Critical error in LoadAndApplyBulletComm: {ex.Message}");
                 return 0;
             }
         }
@@ -1084,7 +1081,7 @@ namespace bian
         {
             if (bulletCommList.TryGetValue(config.ID, out var existingBullet))
             {
-                Log.Info($"Updating existing bullet comm with ID: {config.ID}");
+                // Log.Info($"Updating existing bullet comm with ID: {config.ID}");
                 return existingBullet;
             }
 
@@ -1127,20 +1124,20 @@ namespace bian
                         var targetProjectile = GetOrCreateProjectileMove(projectileConfig, projectileMoveList, templateProjectile);
                         CopyProperties(projectileConfig, targetProjectile);
                         processedCount++;
-                        Log.Info($"Successfully processed projectile move with ID: {projectileConfig.ID}");
+                        // Log.Info($"Successfully processed projectile move with ID: {projectileConfig.ID}");
                     }
                     catch (Exception ex)
                     {
-                        Log.Error($"Failed to process projectile move config for ID {projectileConfig.ID}: {ex.Message}");
+                        // Log.Error($"Failed to process projectile move config for ID {projectileConfig.ID}: {ex.Message}");
                     }
                 }
 
-                Log.Info($"Total processed projectile move configs: {processedCount}");
+                // Log.Info($"Total processed projectile move configs: {processedCount}");
                 return processedCount;
             }
             catch (Exception ex)
             {
-                Log.Error($"Critical error in LoadAndApplyProjectileMove: {ex.Message}");
+                // Log.Error($"Critical error in LoadAndApplyProjectileMove: {ex.Message}");
                 return 0;
             }
         }
@@ -1150,13 +1147,13 @@ namespace bian
         {
             if (projectileMoveList.TryGetValue(config.ID, out var existingProjectile))
             {
-                Log.Info($"Updating existing projectile move with ID: {config.ID}");
+                // Log.Info($"Updating existing projectile move with ID: {config.ID}");
                 return existingProjectile;
             }
 
             var newProjectile = (FUStProjectileMoveDesc)templateProjectile.Clone();
             projectileMoveList.Add(config.ID, newProjectile);
-            Log.Info($"Creating new projectile move with ID: {config.ID}");
+            // Log.Info($"Creating new projectile move with ID: {config.ID}");
             return newProjectile;
         }
 
@@ -1213,12 +1210,12 @@ namespace bian
                     }
                 }
 
-                Log.Info($"Total processed projectile disp configs: {processedCount}");
+                // Log.Info($"Total processed projectile disp configs: {processedCount}");
                 return processedCount;
             }
             catch (Exception ex)
             {
-                Log.Error($"Critical error in LoadAndApplyProjectileDisp: {ex.Message}");
+                // Log.Error($"Critical error in LoadAndApplyProjectileDisp: {ex.Message}");
                 return 0;
             }
         }
@@ -1228,13 +1225,13 @@ namespace bian
         {
             if (projectileDispList.TryGetValue(config.ID, out var existingProjectile))
             {
-                Log.Info($"Updating existing projectile disp with ID: {config.ID}");
+                // Log.Info($"Updating existing projectile disp with ID: {config.ID}");
                 return existingProjectile;
             }
 
             var newProjectile = (FUStProjectileDispDesc)templateProjectile.Clone();
             projectileDispList.Add(config.ID, newProjectile);
-            Log.Info($"Creating new projectile disp with ID: {config.ID}");
+            // Log.Info($"Creating new projectile disp with ID: {config.ID}");
             return newProjectile;
         }
 
@@ -1261,12 +1258,12 @@ namespace bian
                 if (chargeSkillList == null)
                 {
                     chargeSkillList = new Dictionary<int, FUStChargeSkillSDesc>();
-                    Log.Info("Charge skill list is null, creating a new one");
+                    // Log.Info("Charge skill list is null, creating a new one");
                 }
 
                 if (chargeSkillConfigs == null || chargeSkillConfigs.Count == 0)
                 {
-                    Log.Error("Failed to load charge skill configs");
+                    // Log.Error("Failed to load charge skill configs");
                     return 0;
                 }
 
@@ -1275,7 +1272,7 @@ namespace bian
                 {
                     templateSkill = new FUStChargeSkillSDesc();
                     chargeSkillList.Add(templateSkillId, templateSkill);
-                    Log.Info($"Template skill (ID: {templateSkillId}) not found, created a new one");
+                    // Log.Info($"Template skill (ID: {templateSkillId}) not found, created a new one");
                 }
 
                 var processedCount = 0;
@@ -1290,16 +1287,16 @@ namespace bian
                     }
                     catch (Exception ex)
                     {
-                        Log.Error($"Failed to process charge skill config for ID {skillConfig.ID}: {ex.Message}");
+                        // Log.Error($"Failed to process charge skill config for ID {skillConfig.ID}: {ex.Message}");
                     }
                 }
 
-                Log.Info($"Total processed charge skill configs: {processedCount}");
+                // Log.Info($"Total processed charge skill configs: {processedCount}");
                 return processedCount;
             }
             catch (Exception ex)
             {
-                Log.Error($"Critical error in LoadAndApplyChargeSkill: {ex.Message}");
+                // Log.Error($"Critical error in LoadAndApplyChargeSkill: {ex.Message}");
                 return 0;
             }
         }
@@ -1310,13 +1307,13 @@ namespace bian
         {
             if (chargeSkillList.TryGetValue(config.ID, out var existingSkill))
             {
-                Log.Info($"Updating existing charge skill with ID: {config.ID}");
+                // Log.Info($"Updating existing charge skill with ID: {config.ID}");
                 return existingSkill;
             }
 
             var newSkill = (FUStChargeSkillSDesc)templateSkill.Clone();
             chargeSkillList.Add(config.ID, newSkill);
-            Log.Info($"Creating new charge skill with ID: {config.ID}");
+            // Log.Info($"Creating new charge skill with ID: {config.ID}");
             return newSkill;
         }
 
@@ -1339,16 +1336,16 @@ namespace bian
                 if (summonList == null)
                 {
                     summonList = new Dictionary<int, FUStSummonCommDesc>();
-                    Log.Info("Summon list is null, creating a new one");
+                    // Log.Info("Summon list is null, creating a new one");
                 }
                 else if (summonList.Count == 0)
                 {
-                    Log.Info("Summon list is empty, but will continue processing");
+                    // Log.Info("Summon list is empty, but will continue processing");
                 }
 
                 if (summonConfigs == null || summonConfigs.Count == 0)
                 {
-                    Log.Error("Failed to load summon configs");
+                    // Log.Error("Failed to load summon configs");
                     return 0;
                 }
 
@@ -1359,7 +1356,7 @@ namespace bian
                     // 创建一个默认的模板召唤物
                     templateSummon = new FUStSummonCommDesc();
                     summonList.Add(templateSummonId, templateSummon);
-                    Log.Info($"Template summon (ID: {templateSummonId}) not found, created a new one");
+                    // Log.Info($"Template summon (ID: {templateSummonId}) not found, created a new one");
                 }
 
                 var processedCount = 0;
@@ -1370,20 +1367,20 @@ namespace bian
                         var targetSummon = GetOrCreateSummon(summonConfig, summonList, templateSummon);
                         CopyProperties(summonConfig, targetSummon);
                         processedCount++;
-                        Log.Info($"Successfully processed summon with ID: {summonConfig.ID}");
+                        // Log.Info($"Successfully processed summon with ID: {summonConfig.ID}");
                     }
                     catch (Exception ex)
                     {
-                        Log.Error($"Failed to process summon config for ID {summonConfig.ID}: {ex.Message}");
+                        // Log.Error($"Failed to process summon config for ID {summonConfig.ID}: {ex.Message}");
                     }
                 }
 
-                Log.Info($"Total processed summon configs: {processedCount}");
+                // Log.Info($"Total processed summon configs: {processedCount}");
                 return processedCount;
             }
             catch (Exception ex)
             {
-                Log.Error($"Critical error in LoadAndApplySummon: {ex.Message}");
+                // Log.Error($"Critical error in LoadAndApplySummon: {ex.Message}");
                 return 0;
             }
         }
@@ -1393,13 +1390,13 @@ namespace bian
         {
             if (summonList.TryGetValue(config.ID, out var existingSummon))
             {
-                Log.Info($"Updating existing summon with ID: {config.ID}");
+                // Log.Info($"Updating existing summon with ID: {config.ID}");
                 return existingSummon;
             }
 
             var newSummon = (FUStSummonCommDesc)templateSummon.Clone();
             summonList.Add(config.ID, newSummon);
-            Log.Info($"Creating new summon with ID: {config.ID}");
+            // Log.Info($"Creating new summon with ID: {config.ID}");
             return newSummon;
         }
 
@@ -1435,7 +1432,7 @@ namespace bian
                         var targetSkill = GetOrCreateSkillDesc(skillConfig, skillList, templateSkill);
                         CopyProperties(skillConfig, targetSkill);
                         processedCount++;
-                        Log.Info($"Successfully processed skill with ID: {skillConfig.ID}");
+                        // Log.Info($"Successfully processed skill with ID: {skillConfig.ID}");
                     }
                     catch (Exception ex)
                     {
@@ -1443,7 +1440,7 @@ namespace bian
                     }
                 }
 
-                Log.Info($"Total processed skill configs: {processedCount}");
+                // Log.Info($"Total processed skill configs: {processedCount}");
                 return processedCount;
             }
             catch (Exception ex)
@@ -1457,13 +1454,13 @@ namespace bian
         {
             if (skillList.TryGetValue(config.ID, out var existingSkill))
             {
-                Log.Info($"Updating existing skill with ID: {config.ID}");
+                // Log.Info($"Updating existing skill with ID: {config.ID}");
                 return existingSkill;
             }
 
             var newSkill = (FUStSkillSDesc)templateSkill.Clone();
             skillList.Add(config.ID, newSkill);
-            Log.Info($"Creating new skill with ID: {config.ID}");
+            // Log.Info($"Creating new skill with ID: {config.ID}");
             return newSkill;
         }
 
@@ -1499,20 +1496,19 @@ namespace bian
                         var targetBuffEffect = GetOrCreateSkillEffect(buffEffectConfig, buffEffectList, templateBuffEffect);
                         CopyProperties(buffEffectConfig, targetBuffEffect);
                         processedCount++;
-                        Log.Info($"Successfully processed buff effect with ID: {buffEffectConfig.ID}");
                     }
                     catch (Exception ex)
                     {
-                        Log.Error($"Failed to process buff effect config for ID {buffEffectConfig.ID}: {ex.Message}");
+                        // Log.Error($"Failed to process buff effect config for ID {buffEffectConfig.ID}: {ex.Message}");
                     }
                 }
 
-                Log.Info($"Total processed buff effect configs: {processedCount}");
+                // Log.Info($"Total processed buff effect configs: {processedCount}");
                 return processedCount;
             }
             catch (Exception ex)
             {
-                Log.Error($"Critical error in LoadAndApplyBuffEffect: {ex.Message}");
+                // Log.Error($"Critical error in LoadAndApplyBuffEffect: {ex.Message}");
                 return 0;
             }
         }
@@ -1521,13 +1517,13 @@ namespace bian
         {
             if (buffEffectList.TryGetValue(config.ID, out var existingBuffEffect))
             {
-                Log.Info($"Updating existing buff effect with ID: {config.ID}");
+                // Log.Info($"Updating existing buff effect with ID: {config.ID}");
                 return existingBuffEffect;
             }
 
             var newBuffEffect = (FUStSkillEffectDesc)templateBuffEffect.Clone();
             buffEffectList.Add(config.ID, newBuffEffect);
-            Log.Info($"Creating new buff effect with ID: {config.ID}");
+            // Log.Info($"Creating new buff effect with ID: {config.ID}");
             return newBuffEffect;
         }
 
