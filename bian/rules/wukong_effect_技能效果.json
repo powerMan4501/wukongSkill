@@ -1,0 +1,48 @@
+{
+  "Name": "悟空的技能id",
+  "desc": "888666005:雷，1000866冰， 1000867火， 1000868毒",
+  "Rules": [
+    {
+      "Name": "平A的效果",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 1080101
+        },
+        {
+          "Type": "effect",
+          "EffectID": 5001101
+        },
+        {
+          "Type": "effect",
+          "EffectID": 5001201
+        },
+        {
+          "Type": "effect",
+          "EffectID": 5001301
+        }
+      ],
+
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 30240201,
+          "noBuffCondition": 888666007,
+          "ForTarget": true,
+          "desc": "雷长老落雷"
+        },
+
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 40100101,
+          "buffCondition": 888666007,
+          "ForTarget": true,
+          "desc": "火长老火球"
+        }
+      ]
+    }
+  ]
+}

@@ -101,14 +101,15 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
               "ProjectTileIDs": [
                 140,
-                40100303,
-                2403372
+                58111003,
+                2403372,
+                44010401
               ],
               "OffsetX": 100,
               "OffsetY": 100,
               "spawnBaseSocketName": "weapon_r_index_06",
               "buffCondition": 888666007,
-              "desc": "有火buff 业火,地面岩浆,地火"
+              "desc": "有火buff 业火,地面岩浆,地火，炸炸炸"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
