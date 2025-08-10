@@ -1,7 +1,7 @@
 [
   {
     "ID": 9870001,
-    "BuffTips": "2A棍光特效",
+    "BuffTips": "2A棍光特效，克隆202901",
     "BuffActiveCondition": {
       "ConditionType": 0,
       "ConditionParams": ""

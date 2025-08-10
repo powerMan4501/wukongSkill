@@ -1,10 +1,8 @@
 [
   {
+    "desc": "2A棍光特效，克隆202901",
     "ID": 555503202,
     "BuffID": 9870001,
-    "CasterResID": 0,
-    "OwnerResID": 0,
-    "IsUseDispConfig": 1,
     "EnterFX": [
       {
         "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/wswy/DBC_JSDS_XuLi_B_2.DBC_JSDS_XuLi_B_2'",
@@ -19,21 +17,12 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
   {
     "ID": 555503203,
     "BuffID": 9870003,
-    "CasterResID": 0,
-    "OwnerResID": 0,
-    "IsUseDispConfig": 1,
     "EnterFX": [
       {
         "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/yswy/DBC_XuLi_B_2.DBC_XuLi_B_2'",
@@ -48,13 +37,7 @@
         "SkelMeshParamName": "",
         "AddTags": ""
       }
-    ],
-    "TickingCurveParam": [],
-    "AlmostLeaveFX": [],
-    "LeaveFX": [],
-    "DamageFXSetting": [],
-    "MaterialSetting": [],
-    "ForceDisplay": 0
+    ]
   },
 
   {
