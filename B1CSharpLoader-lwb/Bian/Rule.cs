@@ -101,6 +101,7 @@ namespace bian
         public List<int> ProjectOffsetPosition { get; set; }
         public AActor? Caster { get; set; } // 临时存储施法者
         public AActor? Target { get; set; } // 临时存储目标
+        public FEffectInstReq? EffectInstReq { get; set; } // 临时存储目标
 
 
         public RuleAction()
@@ -158,6 +159,8 @@ namespace bian
         // 添加以下两个属性
         public AActor? Caster { get; set; } // 临时存储施法者
         public AActor? Target { get; set; } // 临时存储目标
+        public FEffectInstReq? EffectInstReq { get; set; } // 临时存储目标
+
         public Rule()
         {
             Name = "新规则";
@@ -408,7 +411,11 @@ namespace bian
                 {
                     action.Target = ruleItem.Target;
                 }
+                if (ruleItem != null && ruleItem.EffectInstReq != null)
+                {
 
+                    action.EffectInstReq = ruleItem.EffectInstReq;
+                }
                 if (character == null) continue;
 
                 if (!CheckBuffConditions(character, action) || !CheckTalentConditions(character, action))

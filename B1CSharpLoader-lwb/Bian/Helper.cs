@@ -549,8 +549,16 @@ namespace bian
                 // Log.Warn($"bian: projectile not found! {path}");
                 return;
             }
-            AActor aActor = action?.Caster ?? character;
-            AActor target = action?.Target ?? BGUFunctionLibraryCS.BGUGetTarget(character);
+            AActor aActor = character;
+            AActor target = BGUFunctionLibraryCS.BGUGetTarget(character);
+            if (action?.Caster != null)
+            {
+                aActor = action.Caster;
+            }
+            if (action?.Target != null)
+            {
+                target = action.Target;
+            }
             string targetString = "BGW_90_hfm_leiwa_Atk_41_Lv6_change";
             bool isShotBull = path.Contains(targetString);
             //发射类的子弹不执行这个
@@ -564,7 +572,7 @@ namespace bian
                 aActor = target;
             }
             FEffectInstReq fEffectInstReq = new FEffectInstReq(character);
-            FEffectInstReq effectInstReq = fEffectInstReq;
+      
             BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
 
             if (projectileID <= 0)
@@ -701,6 +709,11 @@ namespace bian
                     ProjectileSpawnNSInfo.TargetPosOffsetInfo.RangeOffsetInfo.CircleRadius = (int)action.TargetCircleRadius;
                     ProjectileSpawnNSInfo.TargetPosOffsetInfo.PosOffsetType = (b1.ProjectilePosOffsetType)Enum.Parse(typeof(b1.ProjectilePosOffsetType), "RangeOffset");
                 }
+                 if (action?.EffectInstReq != null)
+                {
+                    fEffectInstReq = (FEffectInstReq)action.EffectInstReq;
+                    spawnBase.BaseType = ProjectileBaseType.UseEffectPosition;
+                }
                 ProjectileSpawnNSInfo.InitSpawnInfo(spawnBase, offsetInfo, none_target, bGWDataAsset_ProjectileSpawnConfig.SpawnBase_NoneTarget, bGWDataAsset_ProjectileSpawnConfig.SpawnPosOffsetInfo_NoneTarget, character, aActor, aActor, null, in fEffectInstReq);
                 ProjectileSpawnNSInfo.AttachToSpawnBase = bGWDataAsset_ProjectileSpawnConfig.AttachToSpawnBase;
                 ProjectileSpawnNSInfo.AttachRule_Rot = bGWDataAsset_ProjectileSpawnConfig.AttachRule_Rot;
@@ -757,6 +770,7 @@ namespace bian
                 ProjectileSpawnNSInfo.SpawnWaveCounter = 0;
                 ProjectileSpawnNSInfo.bEnableMultiTargetMode = bGWDataAsset_ProjectileSpawnConfig.bEnableMultiTargetMode;
                 ProjectileSpawnNSInfo.MutilTargetRule = bGWDataAsset_ProjectileSpawnConfig.MutilTargetRule;
+               
                 bUS_GSEventCollection.Evt_OnNotifyStateSpawnProjectileObj.Invoke(ref ProjectileSpawnNSInfo);
             }
         }

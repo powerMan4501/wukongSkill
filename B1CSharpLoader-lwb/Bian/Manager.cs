@@ -69,6 +69,7 @@ namespace bian
             UI.CreateUI();
         }
 
+        private static bool isBuffConfigsLoaded = false; // 添加静态标志变量
 
         public static void loadAllStaticData()
         {
@@ -80,9 +81,9 @@ namespace bian
             LoadUtils.LoadAndApplyBulletComm();
             LoadUtils.LoadAndApplyProjectileMove();
             LoadUtils.LoadAndApplyProjectileDisp();
-
             LoadUtils.LoadAndApplySkillDesc();
             LoadUtils.LoadAndApplySkillEffect();
+            isBuffConfigsLoaded = true; // 设置标志变量为true
         }
         // 连招配置
         private static List<ComboConfig> comboConfigs = new List<ComboConfig>();
@@ -162,8 +163,8 @@ namespace bian
             // 加载技能映射规则
             string configPath = Path.Combine("CSharpLoader", "Mods", "bian", "skillMaping");
             LoadUtils.LoadAllSkillMappingRules(configPath);
-
             loadAllStaticData();
+            LoadComboConfigs();
             InitializeEffectRulesMap();
 
             // 在这里可以将buffDispConfigs插入到游戏中的数据
@@ -274,6 +275,8 @@ namespace bian
             {
                 ruleItem.Caster = Caster;
                 ruleItem.Target = Target;
+                ruleItem.EffectInstReq = EffectInstReq;
+
                 ruleItem.DoRule(1000, 1, null, ruleItem);
             }
         }
@@ -356,7 +359,6 @@ namespace bian
             }
             return false;
         }
-        private static bool isBuffConfigsLoaded = false; // 添加静态标志变量
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_CastSkillWithAnimMontageMultiCast_Implementation")]
         [HarmonyPrefix]
         private static void CastSkillWithAnimMontageMultiCast(BUS_GSEventCollection __instance, ref UAnimMontage Montage, ref float PlayTimeRate, float MontagePosOffset, FName StartSectionName)
@@ -697,7 +699,8 @@ namespace bian
         {
             if (comboConfigs.Count == 0)
             {
-                LoadComboConfigs();
+
+                return;
             }
             string keyName = "";
             if (Key != null && Key.GetFName() != null)
@@ -724,8 +727,6 @@ namespace bian
             if (keyName == "Tab" && !isBuffConfigsLoaded) // 添加标志变量检查
             {
                 loadAllStaticData();
-
-                isBuffConfigsLoaded = true; // 设置标志变量为true
             }
             GetCharacterStance(character, out bool isChuogun, out bool isLigun, out bool isPigun);
             var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
