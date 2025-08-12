@@ -263,10 +263,11 @@ namespace bian
             {
                 return;
             }
-
+            Log.Info($"TriggerSkillEffectBySkillMultiCast EffectID: {EffectID}");
             // 检查是否有对应的效果规则
             if (!effectRulesMap.ContainsKey(EffectID))
             {
+
                 return;
             }
             // 获取对应效果的所有规则
