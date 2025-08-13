@@ -1,0 +1,336 @@
+[
+ 
+  {
+    "ID": 555503202,
+    "BuffID": 6655401,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/wswy/DBC_JSDS_XuLi_B_2.DBC_JSDS_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503203,
+    "BuffID": 6655403,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/yswy/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503204,
+    "BuffID": 6655405,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/yswy/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503205,
+    "BuffID": 6655406,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/yswy/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503206,
+    "BuffID": 6655410,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/wswy/DBC_JSDS_XuLi_B_2.DBC_JSDS_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503207,
+    "BuffID": 6655411,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/wswy/DBC_JSDS_XuLi_B_2.DBC_JSDS_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503208,
+    "BuffID": 6655415,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyx/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503209,
+    "BuffID": 6655417,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyy/DBC_XuLi_B_3.DBC_XuLi_B_3'"
+      }
+    ]
+  },
+  {
+    "ID": 555503210,
+    "BuffID": 6655419,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyy/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503211,
+    "BuffID": 6655420,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyy/DBC_XuLi_B_3.DBC_XuLi_B_3'"
+      }
+    ]
+  },
+  {
+    "ID": 555503212,
+    "BuffID": 6655424,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyx/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503213,
+    "BuffID": 6655426,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/yswy/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503214,
+    "BuffID": 6655429,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyx/DBC_XuLi_B_3.DBC_XuLi_B_3'"
+      }
+    ]
+  },
+  {
+    "ID": 555503215,
+    "BuffID": 6655431,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyx/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503216,
+    "BuffID": 6655433,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyx/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503217,
+    "BuffID": 6655434,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyy/DBC_XuLi_B_3.DBC_XuLi_B_3'"
+      }
+    ]
+  },
+  {
+    "ID": 555503218,
+    "BuffID": 6655435,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/jhf3/DBC_XuLi_B_3.DBC_XuLi_B_3'"
+      }
+    ]
+  },
+  {
+    "ID": 555503219,
+    "BuffID": 6655440,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/wswy/DBC_JSDS_XuLi_B_2.DBC_JSDS_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503220,
+    "BuffID": 6655442,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyx/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503221,
+    "BuffID": 6655444,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyx/DBC_XuLi_B_3.DBC_XuLi_B_3'"
+      }
+    ]
+  },
+  {
+    "ID": 555503222,
+    "BuffID": 6655446,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyy/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503223,
+    "BuffID": 6655447,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyy/DBC_XuLi_B_3.DBC_XuLi_B_3'"
+      }
+    ]
+  },
+  {
+    "ID": 555503224,
+    "BuffID": 6655448,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyx/DBC_XuLi_B_4.DBC_XuLi_B_4'"
+      }
+    ]
+  },
+  {
+    "ID": 555503225,
+    "BuffID": 6655453,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyy/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503226,
+    "BuffID": 6655454,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyy/DBC_XuLi_B_3.DBC_XuLi_B_3'"
+      }
+    ]
+  },
+  {
+    "ID": 555503227,
+    "BuffID": 6655455,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyx/DBC_XuLi_B_4.DBC_XuLi_B_4'"
+      }
+    ]
+  },
+  {
+    "ID": 555503228,
+    "BuffID": 6655460,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/wswy/DBC_JSDS_XuLi_B_2.DBC_JSDS_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503229,
+    "BuffID": 6655462,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyx/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503230,
+    "BuffID": 6655464,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/wswy/DBC_JSDS_XuLi_B_2.DBC_JSDS_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503231,
+    "BuffID": 6655465,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/wswy/DBC_XuLi_B_3.DBC_XuLi_B_3'"
+      }
+    ]
+  },
+  {
+    "ID": 555503232,
+    "BuffID": 6655466,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyy/DBC_XuLi_B_3.DBC_XuLi_B_3'"
+      }
+    ]
+  },
+  {
+    "ID": 555503233,
+    "BuffID": 6655471,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyx/DBC_XuLi_B_4.DBC_XuLi_B_4'"
+      }
+    ]
+  },
+  {
+    "ID": 555503234,
+    "BuffID": 6655473,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyy/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503235,
+    "BuffID": 6655474,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyx/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503236,
+    "BuffID": 6655475,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyy/DBC_XuLi_B_3.DBC_XuLi_B_3'"
+      }
+    ]
+  },
+  {
+    "ID": 555503237,
+    "BuffID": 6655480,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/yswy/DBC_XuLi_B_2.DBC_XuLi_B_2'"
+      }
+    ]
+  },
+  {
+    "ID": 555503238,
+    "BuffID": 6655482,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/ysyx/DBC_XuLi_B_3.DBC_XuLi_B_3'"
+      }
+    ]
+  }
+]

@@ -1,0 +1,389 @@
+{
+  "2823": {
+    "ID": 2823,
+    "BuffTips": "磐锤-GP成功加表现Buff的Buff",
+    "BuffActiveCondition": {
+      "ConditionType": "HasTalent",
+      "ConditionParams": "105020"
+    },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [2826],
+        "EffectParamsFloat": [0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2824": {
+    "ID": 2824,
+    "BuffTips": "兽棍诸相-加撑棍火表现Buff的Buff",
+    "BuffActiveCondition": {
+      "ConditionType": "HasTalent",
+      "ConditionParams": "105022"
+    },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [2825],
+        "EffectParamsFloat": [0.0]
+      },
+      {
+        "EffectTrigger": "Remove",
+        "EffectType": "RemoveBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [2825],
+        "EffectParamsFloat": [-1.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2825": {
+    "ID": 2825,
+    "BuffTips": "兽棍诸相-撑棍火表现Buff",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2826": {
+    "ID": 2826,
+    "BuffTips": "磐锤-GP成功表现Buff",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2827": {
+    "ID": 2827,
+    "BuffTips": "兽棍诸相-火附魔Buff",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 30000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2828": {
+    "ID": 2828,
+    "BuffTips": "兽棍诸相-加火棍表现Buff的Buff",
+    "BuffActiveCondition": {
+      "ConditionType": "HasTalent",
+      "ConditionParams": "105022"
+    },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [2827],
+        "EffectParamsFloat": [0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2829": {
+    "ID": 2829,
+    "BuffTips": "磐锤-戳棍GP成功加表现Buff的Buff",
+    "BuffActiveCondition": {
+      "ConditionType": "HasBuff",
+      "ConditionParams": "2003,296"
+    },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [2826],
+        "EffectParamsFloat": [0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "10421": {
+    "ID": 10421,
+    "BuffTips": "主角变身蝙蝠",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "PlayerTrans",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [21, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "SetSimpleState",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [1, 17, 18],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddAttr",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [188, 10000, 0, 1],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "10471": {
+    "ID": 10471,
+    "BuffTips": "蝙蝠变回主角",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "PlayerTrans",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [10, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "SetSimpleState",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [1, 17, 18],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "666": {
+    "ID": 666,
+    "BuffTips": "守关怪反隐通用",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "SetSimpleState",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [163],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  }
+}

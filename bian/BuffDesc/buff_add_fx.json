@@ -9,8 +9,8 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870001],
-        "EffectParamsFloat": [0.0]
+        "EffectParams": [6655401],
+        "EffectParamsFloat": [1000.0]
       }
     ]
   },
@@ -24,7 +24,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870003],
+        "EffectParams": [6655403],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -39,7 +39,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870007, 9870008],
+        "EffectParams": [6655407, 6655408],
         "EffectParamsFloat": [0.0, 0.0]
       }
     ]
@@ -54,7 +54,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870005],
+        "EffectParams": [6655405],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -70,7 +70,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870006],
+        "EffectParams": [6655406],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -85,7 +85,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870012, 9870013],
+        "EffectParams": [6655412, 6655413],
         "EffectParamsFloat": [0.0, 0.0]
       }
     ]
@@ -100,7 +100,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870010],
+        "EffectParams": [6655410],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -116,7 +116,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870011],
+        "EffectParams": [6655411],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -131,7 +131,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870015],
+        "EffectParams": [6655415],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -146,7 +146,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870017],
+        "EffectParams": [6655417],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -176,7 +176,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870019],
+        "EffectParams": [6655419],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -192,7 +192,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870020],
+        "EffectParams": [6655420],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -207,7 +207,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870024],
+        "EffectParams": [6655424],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -222,7 +222,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870026],
+        "EffectParams": [6655426],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -237,7 +237,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870029],
+        "EffectParams": [6655429],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -252,7 +252,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870031],
+        "EffectParams": [6655431],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -282,7 +282,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870033],
+        "EffectParams": [6655433],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -298,7 +298,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870034],
+        "EffectParams": [6655434],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -314,7 +314,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870035],
+        "EffectParams": [6655435],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -329,7 +329,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870040],
+        "EffectParams": [6655440],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -344,7 +344,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870042],
+        "EffectParams": [6655442],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -359,7 +359,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870044],
+        "EffectParams": [6655444],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -389,7 +389,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870046],
+        "EffectParams": [6655446],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -405,7 +405,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870047],
+        "EffectParams": [6655447],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -421,7 +421,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870048],
+        "EffectParams": [6655448],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -451,7 +451,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870053],
+        "EffectParams": [6655453],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -467,7 +467,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870054],
+        "EffectParams": [6655454],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -483,7 +483,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870055],
+        "EffectParams": [6655455],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -498,7 +498,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870060],
+        "EffectParams": [6655460],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -513,7 +513,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870062],
+        "EffectParams": [6655462],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -528,7 +528,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870067, 9870068, 9870069],
+        "EffectParams": [6655467, 6655468, 6655469],
         "EffectParamsFloat": [0.0, 0.0, 0.0]
       }
     ]
@@ -543,7 +543,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870064],
+        "EffectParams": [6655464],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -558,7 +558,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870065],
+        "EffectParams": [6655465],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -574,7 +574,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870066],
+        "EffectParams": [6655466],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -589,7 +589,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870071],
+        "EffectParams": [6655471],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -620,7 +620,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870073],
+        "EffectParams": [6655473],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -636,7 +636,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870074],
+        "EffectParams": [6655474],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -652,7 +652,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870075],
+        "EffectParams": [6655475],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -667,7 +667,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870080],
+        "EffectParams": [6655480],
         "EffectParamsFloat": [0.0]
       }
     ]
@@ -682,7 +682,7 @@
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [9870082],
+        "EffectParams": [6655482],
         "EffectParamsFloat": [0.0]
       }
     ]

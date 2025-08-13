@@ -23,23 +23,80 @@
           "EffectID": 5001301
         }
       ],
-
       "AfterActions": [
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 30240201,
-          "noBuffCondition": 888666007,
-          "ForTarget": true,
-          "desc": "雷长老落雷"
+          "ProjectTileID": 34010501,
+          "noBuffsCondition": [888666006, 888666007],
+          "desc": "雷buff, 落雷"
         },
-
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 30123101,
+          "buffCondition": 888666006,
+          "desc": "冰buff,冰刺"
+        },
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
           "ProjectTileID": 40100101,
           "buffCondition": 888666007,
-          "ForTarget": true,
+          "desc": "火buff,火长老火球"
+        }
+      ]
+    },
+    {
+      "Name": "无量蝠冰刃",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 1012261
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 2403471,
+          "desc": "冰暴"
+        }
+      ]
+    },
+    {
+      "Name": "火蛙喷火",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 1026215
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 40100301,
+          "desc": "火长老火球"
+        }
+      ]
+    },
+    {
+      "Name": "鼠司空，激光",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 1011401
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 50058603,
           "desc": "火长老火球"
         }
       ]

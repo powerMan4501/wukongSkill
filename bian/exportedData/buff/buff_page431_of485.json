@@ -1,0 +1,394 @@
+{
+  "2027": {
+    "ID": 2027,
+    "BuffTips": "狼牙棒不断恢复棍势Buff",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 5000,
+    "Interval": 100,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Time",
+        "EffectType": "IncreasePevalue",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [0],
+        "EffectParamsFloat": [2.5]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2028": {
+    "ID": 2028,
+    "BuffTips": "业火棍，去掉条件",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [2029],
+        "EffectParamsFloat": [0.0]
+      },
+      {
+        "EffectTrigger": "Remove",
+        "EffectType": "RemoveBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [2029],
+        "EffectParamsFloat": [-1.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2029": {
+    "ID": 2029,
+    "BuffTips": "莲火杖表现Buff",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2030": {
+    "ID": 2030,
+    "BuffTips": "白衣衣服每秒回血-水上额外",
+    "BuffActiveCondition": {
+      "ConditionType": "CheckPhysMat",
+      "ConditionParams": "2,13,14,15"
+    },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Positive",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 500,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "RecoverAttr",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [151, 50, 0, 1],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2031": {
+    "ID": 2031,
+    "BuffTips": "白衣衣服每秒回血",
+    "BuffActiveCondition": {
+      "ConditionType": "ByAttr",
+      "ConditionParams": "0,151,1,-1,5000"
+    },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Positive",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 1000,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Time",
+        "EffectType": "RecoverAttr",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [151, 150, 0, 1],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": "Time",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [2030],
+        "EffectParamsFloat": [0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2032": {
+    "ID": 2032,
+    "BuffTips": "白衣棍用于特效的触发Buff1",
+    "BuffActiveCondition": {
+      "ConditionType": "HasTalent",
+      "ConditionParams": "105003"
+    },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [2033],
+        "EffectParamsFloat": [0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2033": {
+    "ID": 2033,
+    "BuffTips": "白衣棍用于特效的触发Buff2",
+    "BuffActiveCondition": {
+      "ConditionType": "CheckPhysMat",
+      "ConditionParams": "2,13,14,15"
+    },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [2034],
+        "EffectParamsFloat": [0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2034": {
+    "ID": 2034,
+    "BuffTips": "白衣棍加Q5伤害Buff",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "TriggerPassiveSkill",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [15003, 2],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2035": {
+    "ID": 2035,
+    "BuffTips": "白衣套3-水上体力恢复更快触发",
+    "BuffActiveCondition": {
+      "ConditionType": "CheckPhysMat",
+      "ConditionParams": "2,13,14,15"
+    },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 500,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Time",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [2036, 2037],
+        "EffectParamsFloat": [0.0, 0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "2036": {
+    "ID": 2036,
+    "BuffTips": "白衣套3-水上体力恢复更快",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddAttr",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [79, -5000, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  }
+}

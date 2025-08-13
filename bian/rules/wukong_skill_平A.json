@@ -62,7 +62,7 @@
         },
         {
           "Type": "buff",
-          "BuffIDs": [9870001],
+          "BuffIDs": [888805000],
           "BuffTime": 1000,
           "desc": "棍光特效粒子"
         }

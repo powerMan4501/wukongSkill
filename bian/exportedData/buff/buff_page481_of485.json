@@ -1,0 +1,372 @@
+{
+  "888805000": {
+    "ID": 888805000,
+    "BuffTips": "添加2a棍光，克隆空buff295",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [6655401],
+        "EffectParamsFloat": [1000.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "888805002": {
+    "ID": 888805002,
+    "BuffTips": "添加3a棍光，",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 900,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [6655403],
+        "EffectParamsFloat": [0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "888805004": {
+    "ID": 888805004,
+    "BuffTips": "4A",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 1500,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [6655407, 6655408],
+        "EffectParamsFloat": [0.0, 0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "888805007": {
+    "ID": 888805007,
+    "BuffTips": "4A取特效1",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 1100,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [6655405],
+        "EffectParamsFloat": [0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "888805008": {
+    "ID": 888805008,
+    "BuffTips": "4A取特效2",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 1100,
+    "Duration": 1500,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [6655406],
+        "EffectParamsFloat": [0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "888805009": {
+    "ID": 888805009,
+    "BuffTips": "5a",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [6655412, 6655413],
+        "EffectParamsFloat": [0.0, 0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "888805012": {
+    "ID": 888805012,
+    "BuffTips": "5A取特效1",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 600,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [6655410],
+        "EffectParamsFloat": [0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "888805013": {
+    "ID": 888805013,
+    "BuffTips": "5A取特效2",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 600,
+    "Duration": 600,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [6655411],
+        "EffectParamsFloat": [0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "888805014": {
+    "ID": 888805014,
+    "BuffTips": "劈棍切好10705",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 1100,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [6655415],
+        "EffectParamsFloat": [0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  },
+  "888805016": {
+    "ID": 888805016,
+    "BuffTips": "识破",
+    "BuffActiveCondition": { "ConditionType": "Always", "ConditionParams": "" },
+    "BuffLayerCounterType": "ReduceLayer",
+    "BuffCategory": "Neutral",
+    "CanRemoveWhenAttackHit": "No",
+    "CanRemoveWhenAttacked": "No",
+    "Delay": 0,
+    "Duration": 1000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": "Owner",
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": "TargetBaseObj",
+      "RangeCenterType": "ActorPosition",
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": "Generation",
+        "EffectType": "AddBuff",
+        "EffectTargetSelectType": "BuffTarget",
+        "EffectParamsString": [],
+        "EffectParams": [6655417],
+        "EffectParamsFloat": [0.0]
+      }
+    ],
+    "IsExclusiveBuff": "No",
+    "CanBeInherited": "No",
+    "Guard": ""
+  }
+}

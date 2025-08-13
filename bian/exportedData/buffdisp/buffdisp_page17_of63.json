@@ -1,0 +1,305 @@
+{
+  "202701": {
+    "ID": 202701,
+    "BuffID": 2027,
+    "CasterResID": 0,
+    "OwnerResID": 10,
+    "IsUseDispConfig": "Yes",
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/Equip/Langya/DBC_Equip_Weapon_Langya_Loop.DBC_Equip_Weapon_Langya_Loop'",
+        "Scale": 0.0,
+        "IsAttach": "No",
+        "AttachName": "",
+        "WorldOffsetX": 0.0,
+        "WorldOffsetY": 0.0,
+        "WorldOffsetZ": 0.0,
+        "UseScaleFit": "No",
+        "IsAttachToSkin": "No",
+        "SkelMeshParamName": "",
+        "AddTags": ""
+      }
+    ],
+    "TickingCurveParam": [],
+    "AlmostLeaveFX": [],
+    "LeaveFX": [],
+    "DamageFXSetting": [],
+    "MaterialSetting": [],
+    "ForceDisplay": "No",
+    "AllowReplay": "No"
+  },
+  "202901": {
+    "ID": 202901,
+    "BuffID": 2029,
+    "CasterResID": 0,
+    "OwnerResID": 0,
+    "IsUseDispConfig": "Yes",
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/Equip/Yehuo/DBC_Equip_Weapon_Yehuo_Loop.DBC_Equip_Weapon_Yehuo_Loop'",
+        "Scale": 0.0,
+        "IsAttach": "No",
+        "AttachName": "",
+        "WorldOffsetX": 0.0,
+        "WorldOffsetY": 0.0,
+        "WorldOffsetZ": 0.0,
+        "UseScaleFit": "No",
+        "IsAttachToSkin": "No",
+        "SkelMeshParamName": "",
+        "AddTags": ""
+      }
+    ],
+    "TickingCurveParam": [],
+    "AlmostLeaveFX": [],
+    "LeaveFX": [],
+    "DamageFXSetting": [],
+    "MaterialSetting": [],
+    "ForceDisplay": "No",
+    "AllowReplay": "No"
+  },
+  "204501": {
+    "ID": 204501,
+    "BuffID": 2045,
+    "CasterResID": 0,
+    "OwnerResID": 10,
+    "IsUseDispConfig": "Yes",
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/Equip/Xingzhe/DBC_Equip_XIngzhe_Trail.DBC_Equip_XIngzhe_Trail'",
+        "Scale": 0.0,
+        "IsAttach": "No",
+        "AttachName": "",
+        "WorldOffsetX": 0.0,
+        "WorldOffsetY": 0.0,
+        "WorldOffsetZ": 0.0,
+        "UseScaleFit": "No",
+        "IsAttachToSkin": "No",
+        "SkelMeshParamName": "",
+        "AddTags": ""
+      }
+    ],
+    "TickingCurveParam": [],
+    "AlmostLeaveFX": [],
+    "LeaveFX": [],
+    "DamageFXSetting": [],
+    "MaterialSetting": [],
+    "ForceDisplay": "No",
+    "AllowReplay": "No"
+  },
+  "206301": {
+    "ID": 206301,
+    "BuffID": 2063,
+    "CasterResID": 0,
+    "OwnerResID": 10011,
+    "IsUseDispConfig": "Yes",
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/Talent/Equip/DBC_wukong_huangfeng_summon.DBC_wukong_huangfeng_summon'",
+        "Scale": 0.0,
+        "IsAttach": "No",
+        "AttachName": "",
+        "WorldOffsetX": 0.0,
+        "WorldOffsetY": 0.0,
+        "WorldOffsetZ": 0.0,
+        "UseScaleFit": "No",
+        "IsAttachToSkin": "No",
+        "SkelMeshParamName": "",
+        "AddTags": ""
+      }
+    ],
+    "TickingCurveParam": [],
+    "AlmostLeaveFX": [],
+    "LeaveFX": [],
+    "DamageFXSetting": [],
+    "MaterialSetting": [],
+    "ForceDisplay": "No",
+    "AllowReplay": "No"
+  },
+  "206501": {
+    "ID": 206501,
+    "BuffID": 2065,
+    "CasterResID": 0,
+    "OwnerResID": 10,
+    "IsUseDispConfig": "Yes",
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/Niagara/Equip/HuangFeng/DBC/DBC_Weapon_Buff_HFG_Trail.DBC_Weapon_Buff_HFG_Trail'",
+        "Scale": 0.0,
+        "IsAttach": "No",
+        "AttachName": "",
+        "WorldOffsetX": 0.0,
+        "WorldOffsetY": 0.0,
+        "WorldOffsetZ": 0.0,
+        "UseScaleFit": "No",
+        "IsAttachToSkin": "No",
+        "SkelMeshParamName": "",
+        "AddTags": ""
+      }
+    ],
+    "TickingCurveParam": [],
+    "AlmostLeaveFX": [],
+    "LeaveFX": [],
+    "DamageFXSetting": [],
+    "MaterialSetting": [],
+    "ForceDisplay": "No",
+    "AllowReplay": "No"
+  },
+  "207201": {
+    "ID": 207201,
+    "BuffID": 2072,
+    "CasterResID": 0,
+    "OwnerResID": 10,
+    "IsUseDispConfig": "No",
+    "EnterFX": [
+      {
+        "PSPath": "NiagaraSystem'/Game/00Main/VFX/Characters/sunwukong/Niagara/Talent/NG_wukong_yechawang_eye.NG_wukong_yechawang_eye'",
+        "Scale": 0.0,
+        "IsAttach": "Yes",
+        "AttachName": "FX_Eye_R",
+        "WorldOffsetX": 0.0,
+        "WorldOffsetY": 0.0,
+        "WorldOffsetZ": 0.0,
+        "UseScaleFit": "No",
+        "IsAttachToSkin": "No",
+        "SkelMeshParamName": "",
+        "AddTags": ""
+      },
+      {
+        "PSPath": "NiagaraSystem'/Game/00Main/VFX/Characters/sunwukong/Niagara/Talent/NG_wukong_yechawang_eye.NG_wukong_yechawang_eye'",
+        "Scale": 0.0,
+        "IsAttach": "Yes",
+        "AttachName": "FX_Eye_L",
+        "WorldOffsetX": 0.0,
+        "WorldOffsetY": 0.0,
+        "WorldOffsetZ": 0.0,
+        "UseScaleFit": "No",
+        "IsAttachToSkin": "No",
+        "SkelMeshParamName": "",
+        "AddTags": ""
+      }
+    ],
+    "TickingCurveParam": [],
+    "AlmostLeaveFX": [],
+    "LeaveFX": [],
+    "DamageFXSetting": [],
+    "MaterialSetting": [],
+    "ForceDisplay": "No",
+    "AllowReplay": "No"
+  },
+  "209201": {
+    "ID": 209201,
+    "BuffID": 2092,
+    "CasterResID": 0,
+    "OwnerResID": 0,
+    "IsUseDispConfig": "Yes",
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/Equip/Heifeng/DBC_Equip_JXSQ_Heifeng_Loop.DBC_Equip_JXSQ_Heifeng_Loop'",
+        "Scale": 0.0,
+        "IsAttach": "No",
+        "AttachName": "",
+        "WorldOffsetX": 0.0,
+        "WorldOffsetY": 0.0,
+        "WorldOffsetZ": 0.0,
+        "UseScaleFit": "No",
+        "IsAttachToSkin": "No",
+        "SkelMeshParamName": "",
+        "AddTags": ""
+      }
+    ],
+    "TickingCurveParam": [],
+    "AlmostLeaveFX": [],
+    "LeaveFX": [],
+    "DamageFXSetting": [],
+    "MaterialSetting": [],
+    "ForceDisplay": "No",
+    "AllowReplay": "No"
+  },
+  "212301": {
+    "ID": 212301,
+    "BuffID": 2123,
+    "CasterResID": 0,
+    "OwnerResID": 10,
+    "IsUseDispConfig": "Yes",
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/Equip/Cangfeng/DBC_Equip_PreciseDodge_Cangfeng.DBC_Equip_PreciseDodge_Cangfeng'",
+        "Scale": 0.0,
+        "IsAttach": "No",
+        "AttachName": "",
+        "WorldOffsetX": 0.0,
+        "WorldOffsetY": 0.0,
+        "WorldOffsetZ": 0.0,
+        "UseScaleFit": "No",
+        "IsAttachToSkin": "No",
+        "SkelMeshParamName": "",
+        "AddTags": ""
+      }
+    ],
+    "TickingCurveParam": [],
+    "AlmostLeaveFX": [],
+    "LeaveFX": [],
+    "DamageFXSetting": [],
+    "MaterialSetting": [],
+    "ForceDisplay": "No",
+    "AllowReplay": "No"
+  },
+  "213301": {
+    "ID": 213301,
+    "BuffID": 2133,
+    "CasterResID": 0,
+    "OwnerResID": 10,
+    "IsUseDispConfig": "Yes",
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/Equip/Nigou/DBC_Equip_Nigou.DBC_Equip_Nigou'",
+        "Scale": 0.0,
+        "IsAttach": "No",
+        "AttachName": "",
+        "WorldOffsetX": 0.0,
+        "WorldOffsetY": 0.0,
+        "WorldOffsetZ": 0.0,
+        "UseScaleFit": "No",
+        "IsAttachToSkin": "Yes",
+        "SkelMeshParamName": "VertSurfaceActor",
+        "AddTags": ""
+      }
+    ],
+    "TickingCurveParam": [],
+    "AlmostLeaveFX": [],
+    "LeaveFX": [],
+    "DamageFXSetting": [],
+    "MaterialSetting": [],
+    "ForceDisplay": "No",
+    "AllowReplay": "No"
+  },
+  "215101": {
+    "ID": 215101,
+    "BuffID": 2151,
+    "CasterResID": 0,
+    "OwnerResID": 10,
+    "IsUseDispConfig": "Yes",
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/Equip/Wuyou/DBC_Equip_Wuyou_TTTB.DBC_Equip_Wuyou_TTTB'",
+        "Scale": 0.0,
+        "IsAttach": "No",
+        "AttachName": "",
+        "WorldOffsetX": 0.0,
+        "WorldOffsetY": 0.0,
+        "WorldOffsetZ": 0.0,
+        "UseScaleFit": "No",
+        "IsAttachToSkin": "No",
+        "SkelMeshParamName": "",
+        "AddTags": ""
+      }
+    ],
+    "TickingCurveParam": [],
+    "AlmostLeaveFX": [],
+    "LeaveFX": [],
+    "DamageFXSetting": [],
+    "MaterialSetting": [],
+    "ForceDisplay": "No",
+    "AllowReplay": "No"
+  }
+}
