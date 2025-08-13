@@ -222,24 +222,20 @@ public class BuffDispConfig
 {
     public int ID { get; set; }
     public int BuffID { get; set; }
-    public int? CasterResID { get; set; }
-    public int? OwnerResID { get; set; }
-    public int? IsUseDispConfig { get; set; }
     public List<EffectConfig> EnterFX { get; set; }
-    public int? ForceDisplay { get; set; }
 }
 
 public class EffectConfig
 {
     public string PSPath { get; set; }
-    public int? Scale { get; set; }
-    public int? IsAttach { get; set; }
+    public float? Scale { get; set; }
+    public EGSYesNo? IsAttach { get; set; }
     public string? AttachName { get; set; }
-    public double? WorldOffsetX { get; set; }
-    public double? WorldOffsetY { get; set; }
-    public double? WorldOffsetZ { get; set; }
-    public int? UseScaleFit { get; set; }
-    public int? IsAttachToSkin { get; set; }
+    public float? WorldOffsetX { get; set; }
+    public float? WorldOffsetY { get; set; }
+    public float? WorldOffsetZ { get; set; }
+    public EGSYesNo? UseScaleFit { get; set; }
+    public EGSYesNo? IsAttachToSkin { get; set; }
     public string? SkelMeshParamName { get; set; }
     public string? AddTags { get; set; }
 }
@@ -303,6 +299,116 @@ namespace bian
             Converters = new List<JsonConverter> { new StringEnumConverter() }
         };
 
+
+        // 自动导出报错信息
+        public static void ExportErrorToJson(Exception ex)
+        {
+            try
+            {
+                string errorDirectory = Path.Combine("CSharpLoader", "Mods", "bian", "errorMsg");
+                if (!Directory.Exists(errorDirectory))
+                {
+                    Directory.CreateDirectory(errorDirectory);
+                }
+
+                var errorData = new
+                {
+                    Time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                    Message = ex.Message,
+                    StackTrace = ex.StackTrace,
+                    Source = ex.Source
+                };
+
+                string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                string jsonContent = JsonConvert.SerializeObject(errorData, JsonSettings);
+                string filePath = Path.Combine(errorDirectory, $"{timestamp}.json");
+                File.WriteAllText(filePath, jsonContent);
+            }
+            catch (Exception writeEx)
+            {
+                Log.Error($"Failed to export error to JSON: {writeEx.Message}");
+            }
+        }
+
+        // 把游戏数据导出去，每10条数据生成一个JSON文件
+        public static void ExportDataToJson<T>(string dataType) where T : class
+        {
+            try
+            {
+                string exportDirectory = Path.Combine("CSharpLoader", "Mods", "bian", "exportedData", dataType);
+                if (!Directory.Exists(exportDirectory))
+                {
+                    Directory.CreateDirectory(exportDirectory);
+                }
+
+                var data = new Dictionary<int, T>();
+
+                // 根据类型获取不同的数据
+                switch (dataType.ToLower())
+                {
+                    case "buffdisp":
+                        if (BGW_GameDB.GetAllBuffDispDesc() is Dictionary<int, FUStBuffDispDesc> buffDispData)
+                        {
+                            data = buffDispData as Dictionary<int, T>;
+                        }
+                        break;
+                    case "buff":
+                        if (BGW_GameDB.GetAllBuffDesc() is Dictionary<int, FUStBuffDesc> buffData)
+                        {
+                            data = buffData as Dictionary<int, T>;
+                        }
+                        break;
+                    case "skill":
+                        if (BGW_GameDB.GetAllSkillSDesc() is Dictionary<int, FUStSkillSDesc> skillData)
+                        {
+                            data = skillData as Dictionary<int, T>;
+                        }
+                        break;
+                        // 可以继续添加其他类型的支持
+                }
+
+                if (data != null && data.Count > 0)
+                {
+                    int totalItems = data.Count;
+                    int itemsPerPage = 10;
+                    int totalPages = (int)Math.Ceiling((double)totalItems / itemsPerPage);
+
+                    Log.Info($"Starting to export {totalItems} {dataType} data in {totalPages} pages");
+
+                    // 将字典转换为列表以便分页
+                    var dataList = data.ToList();
+
+                    for (int page = 1; page <= totalPages; page++)
+                    {
+                        // 计算当前页的数据范围
+                        int startIndex = (page - 1) * itemsPerPage;
+                        int count = Math.Min(itemsPerPage, totalItems - startIndex);
+                        var pageData = dataList.Skip(startIndex).Take(count).ToDictionary(x => x.Key, x => x.Value);
+
+                        // 序列化当前页数据
+                        string jsonContent = JsonConvert.SerializeObject(pageData, JsonSettings);
+
+                        // 创建文件名，包含页码信息
+                        string fileName = $"{dataType}_page{page}_of{totalPages}.json";
+                        string filePath = Path.Combine(exportDirectory, fileName);
+
+                        // 写入文件
+                        File.WriteAllText(filePath, jsonContent);
+
+                        Log.Info($"Successfully exported {dataType} data page {page}/{totalPages} to {fileName}");
+                    }
+                }
+                else
+                {
+                    Log.Error($"No data found for type: {dataType}");
+                }
+            }
+            catch (Exception ex)
+            {
+                ExportErrorToJson(ex); // 使用第一个方法导出错误信息
+            }
+        }
+
         // 通用JSON配置加载方法
         public static List<T> LoadJsonConfigs<T>(string configDirectory, string configTypeName) where T : class
         {
@@ -316,7 +422,7 @@ namespace bian
                 }
                 catch (Exception ex)
                 {
-                    // Log.Error($"Failed to create {configTypeName} config directory: {ex.Message}");
+                    Log.Error($"Failed to create {configTypeName} config directory: {ex.Message}");
                     return new List<T>();
                 }
             }
@@ -331,16 +437,15 @@ namespace bian
                     if (configs != null)
                     {
                         allConfigs.AddRange(configs);
-                        // Log.Info($"Loaded {configs.Count} {configTypeName} configs from {Path.GetFileName(file)}");
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Log.Error($"Error loading {configTypeName} configs from {file}: {ex.Message}");
+                    Log.Error($"Error loading {configTypeName} configs from {file}: {ex.Message}");
                 }
             }
 
-            // Log.Info($"Total loaded {configTypeName} configs: {allConfigs.Count}");
+            Log.Info($"Total loaded {configTypeName} configs: {allConfigs.Count}");
             return allConfigs;
         }
 
@@ -813,19 +918,18 @@ namespace bian
         // 加载并应用BuffDisp配置
         public static int LoadAndApplyBuffDispConfigs(string configDirectory = null)
         {
-            configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BuffDisp");
+            configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "buff_disp");
 
             var buffDispList = BGW_GameDB.GetAllBuffDispDesc();
-
-            if (buffDispList == null || buffDispList.Count == 0)
+            var configs = LoadJsonConfigs<BuffDispConfig>(configDirectory, "buff_disp");
+            if (buffDispList == null || buffDispList.Count == 0 || configs == null)
             {
                 Log.Error("Failed to get buff disp list from game database");
                 return 0;
             }
 
-            var configs = LoadJsonConfigs<BuffDispConfig>(configDirectory, "BuffDisp");
-            var processedCount = 0;
 
+            var processedCount = 0;
             foreach (var config in configs)
             {
                 try

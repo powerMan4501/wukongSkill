@@ -73,17 +73,25 @@ namespace bian
 
         public static void loadAllStaticData()
         {
-            LoadUtils.LoadAndApplyBuffDispConfigs();
-            LoadUtils.LoadAndApplyBuff();
-            LoadUtils.LoadAndApplySummon();
-            LoadUtils.LoadAndApplyChargeSkill();
-            LoadUtils.LoadAndApplyBulletExpand();
-            LoadUtils.LoadAndApplyBulletComm();
-            LoadUtils.LoadAndApplyProjectileMove();
-            LoadUtils.LoadAndApplyProjectileDisp();
-            LoadUtils.LoadAndApplySkillDesc();
-            LoadUtils.LoadAndApplySkillEffect();
-            isBuffConfigsLoaded = true; // 设置标志变量为true
+
+
+
+
+            Helper.DelayExecute(1500, () =>
+            {
+                LoadUtils.LoadAndApplySummon();
+                LoadUtils.LoadAndApplyChargeSkill();
+                LoadUtils.LoadAndApplyBulletExpand();
+                LoadUtils.LoadAndApplyBulletComm();
+                LoadUtils.LoadAndApplyProjectileMove();
+                LoadUtils.LoadAndApplyProjectileDisp();
+                LoadUtils.LoadAndApplySkillDesc();
+                LoadUtils.LoadAndApplySkillEffect();
+                LoadUtils.LoadAndApplyBuffDispConfigs();
+                LoadUtils.LoadAndApplyBuff();
+                isBuffConfigsLoaded = true; // 设置标志变量为true
+            });
+
         }
         // 连招配置
         private static List<ComboConfig> comboConfigs = new List<ComboConfig>();
@@ -305,19 +313,7 @@ namespace bian
             }
             var buffDesc = GameDBRuntime.GetFUStBuffDesc(BuffID);
 
-            if (buffDesc != null && (BuffID == 9870001 || BuffID == 888805000))
-            {
-                Log.Info($"buff {BuffID}，Duration:{buffDesc?.Duration},Interval:{buffDesc?.Interval},");
-                if (buffDesc?.Range?.RangeParam != null && buffDesc.Range.RangeParam.Count > 0)
-                {
-                    Log.Info($"buff {BuffID} ,Duration:{buffDesc.Duration},Interval:{buffDesc.Interval},range:{buffDesc.Range.RangeParam[0]} ，BuffActiveCondition：{buffDesc?.BuffActiveCondition?.ConditionParams}");
-                }
-
-                if (buffDesc?.BuffEffects != null)
-                {
-                    Log.Info($"buff {BuffID} EffectParams:{buffDesc?.BuffEffects?.Count()} ");
-                }
-            }
+            
             // if (buffDesc != null && buffDesc?.BuffEffects != null && buffDesc?.BuffEffects?.Count > 0)
             // {
             //     Log.Info($"buff {BuffID} add  ,buffDescBuffTips {buffDesc.BuffTips} {buffDesc.Duration} EffectParams:{buffDesc?.BuffEffects[0]?.EffectParams[0]}");
@@ -708,6 +704,20 @@ namespace bian
             {
                 keyName = Key.GetFName().ToString();
             }
+
+            if (keyName == "Tab") // 添加标志变量检查
+            {
+                if (!isBuffConfigsLoaded)
+                {
+                    loadAllStaticData();
+                }
+                else
+                {
+                    Log.Info($"ExportDataToJson buff buffdisp");
+                    LoadUtils.ExportDataToJson<FUStBuffDesc>("buff");
+                    LoadUtils.ExportDataToJson<FUStBuffDispDesc>("buffdisp");
+                }
+            }
             // 如果按键不在监听列表中，直接返回
             if (!monitoredKeys.Contains(keyName))
             {
@@ -725,10 +735,7 @@ namespace bian
 
             var currentRate = currentPosition / currentLength;
 
-            if (keyName == "Tab" && !isBuffConfigsLoaded) // 添加标志变量检查
-            {
-                loadAllStaticData();
-            }
+
             GetCharacterStance(character, out bool isChuogun, out bool isLigun, out bool isPigun);
             var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
 
