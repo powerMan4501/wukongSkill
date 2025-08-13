@@ -731,11 +731,6 @@ namespace bian
             if (currMontage == null) return;
 
             var currentPosition = animInstance.Montage_GetPosition(currMontage);
-            var currentLength = currMontage.SequenceLength;
-
-            var currentRate = currentPosition / currentLength;
-
-
             GetCharacterStance(character, out bool isChuogun, out bool isLigun, out bool isPigun);
             var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
 
