@@ -1,52 +1,77 @@
 [
-    {
-        "nowMontage": "AM_Wukong_ComboA_z_02",
-        "rate": 1.95,
-        "skillID": 10724,
-        "Condition": "any",
-        "InputCore": "RightMouseButton",
-        "conditionValue": 888666022,
-        "desc": "如果当前使用的技能是10707，且播放了1.95以上，按鼠标左键满足条件可以使出10724"
-    },
-    {
-        "nowMontage": "AM_Dasheng_ComboA_01_Z_2",
-        "rate": 1.95,
-        "skillID": 50006,
-        "Condition": "any",
-        "InputCore": "RightMouseButton",
-        "conditionValue": 888666022,
-        "desc": "如果当前使用的技能是大圣10707，且播放了1.95s以上，按鼠标左键满足条件可以使出大圣江海翻50006"
-    },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_01_Z_1.AM_Dasheng_ComboA_01_Z_1",
+    "rate": 0.8,
+    "skillID": 50002,
+    "Condition": "any",
+    "InputCore": "RightMouseButton",
+    "conditionValue": 888666022,
+    "desc": "如果当前使用的技能是大圣10705，且播放了0.8以上，按鼠标左键满足条件可以使出大圣10707"
+  },
+  {
+    "nowMontage": "AM_Wukong_ComboA_z_01.AM_Wukong_ComboA_z_01",
+    "rate": 0.8,
+    "skillID": 50002,
+    "Condition": "any",
+    "InputCore": "RightMouseButton",
+    "conditionValue": 888666022,
+    "desc": "如果当前使用的技能是10705，且播放了0.8以上，按鼠标左键满足条件可以使出大圣10707"
+  },
+  {
+    "nowMontage": "AM_Wukong_ComboA_z_02",
+    "rate": 1.95,
+    "skillID": 10724,
+    "Condition": "any",
+    "InputCore": "RightMouseButton",
+    "conditionValue": 888666022,
+    "desc": "如果当前使用的技能是10707，且播放了1.95以上，按鼠标左键满足条件可以使出10724"
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_01_Z_2",
+    "rate": 1.95,
+    "skillID": 50006,
+    "Condition": "any",
+    "InputCore": "RightMouseButton",
+    "conditionValue": 888666022,
+    "desc": "如果当前使用的技能是大圣10707，且播放了1.95s以上，按鼠标左键满足条件可以使出大圣江海翻50006"
+  },
 
+  {
+    "nowMontage": "AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2",
+    "rate": 2,
+    "skillID": 10713,
+    "Condition": "any",
+    "InputCore": "RightMouseButton",
+    "conditionValue": 888666023,
+    "desc": "如果当前使用的技能是大圣江海翻，且播放了2s以上，按鼠标右键满足条件可以使出退寸"
+  },
 
-    {
-        "nowMontage": "AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2",
-        "rate": 2,
-        "skillID": 50001,
-        "Condition": "any",
-        "InputCore": "RightMouseButton",
-        "conditionValue": 888666023,
-        "desc": "如果当前使用的技能是大圣江海翻，且播放了2s以上，按鼠标右键满足条件可以使出大圣切手50001"
-    },
+  {
+    "nowMontage": "AM_wukong_comboc_z_02",
+    "rate": 2,
+    "skillID": 10713,
+    "Condition": "any",
+    "InputCore": "RightMouseButton",
+    "conditionValue": 888666023,
+    "desc": "如果当前使用的技能是江海翻，且播放了2s以上，按鼠标右键满足条件可以使出退寸"
+  },
+  {
+    "nowMontage": "AM_wukong_combob_z_01.AM_wukong_combob_z_01",
+    "rate": 0.5,
+    "skillID": 10714,
+    "Condition": "any",
+    "InputCore": "RightMouseButton",
+    "conditionValue": 888666023,
+    "desc": "如果当前使用的技能是退寸，且播放了0.5s以上，按鼠标右键满足条件可以使出进尺"
+  },
 
-     {
-        "nowMontage": "AM_wukong_comboc_z_02",
-        "rate": 2,
-        "skillID": 50001,
-        "Condition": "any",
-        "InputCore": "RightMouseButton",
-        "conditionValue": 888666023,
-        "desc": "如果当前使用的技能是江海翻，且播放了2s以上，按鼠标右键满足条件可以使出大圣50001"
-    },
-
-    {
-        "nowMontage": "AM_Dasheng_ComboA_01_Z_1",
-        "rate": 1,
-        "skillID": 50002,
-        "Condition": "any",
-        "InputCore": "RightMouseButton",
-        "conditionValue": 888666023,
-        "desc": "如果当前使用的技能是大圣切手5001，且播放了1s以上，按鼠标右键满足条件可以使出大圣斩棍50002"
-    }
-
+  {
+    "nowMontage": "AM_wukong_combob_z_02.AM_wukong_combob_z_02",
+    "rate": 1,
+    "skillID": 50001,
+    "Condition": "any",
+    "InputCore": "RightMouseButton",
+    "conditionValue": 888666023,
+    "desc": "如果当前使用的技能是进尺，且播放了1s以上，按鼠标右键满足条件可以使出大圣破棍式50001"
+  }
 ]
