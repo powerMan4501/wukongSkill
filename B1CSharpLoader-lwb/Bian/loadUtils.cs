@@ -945,7 +945,14 @@ namespace bian
                 }
             }
 
+
             Log.Info($"Total processed BuffDisp configs: {processedCount}");
+
+            Helper.DelayExecute(500, () =>
+          {
+              var method = typeof(BGW_GameDB).GetMethod("InitBuffDispMap", BindingFlags.NonPublic | BindingFlags.Static);
+              method?.Invoke(null, null);
+          });
             return processedCount;
         }
 
