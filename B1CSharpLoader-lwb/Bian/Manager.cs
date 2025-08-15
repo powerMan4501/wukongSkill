@@ -297,6 +297,14 @@ namespace bian
 
         // }
 
+        // 通用的buff互斥处理方法
+        private static void HandleBuffMutex(AActor caster, int currentBuffId, List<int> mutexBuffIds)
+        {
+            foreach (var buffId in mutexBuffIds.Where(id => id != currentBuffId))
+            {
+                BGUFunctionLibraryCS.BGURemoveBuffImmediately(caster, buffId, EBuffEffectTriggerType.Remove);
+            }
+        }
 
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_BuffAdd_Multicast_Invoke")]
         [HarmonyPrefix]
@@ -313,7 +321,7 @@ namespace bian
             }
             var buffDesc = GameDBRuntime.GetFUStBuffDesc(BuffID);
 
-            
+
             // if (buffDesc != null && buffDesc?.BuffEffects != null && buffDesc?.BuffEffects?.Count > 0)
             // {
             //     Log.Info($"buff {BuffID} add  ,buffDescBuffTips {buffDesc.BuffTips} {buffDesc.Duration} EffectParams:{buffDesc?.BuffEffects[0]?.EffectParams[0]}");
@@ -324,13 +332,14 @@ namespace bian
             List<int> buffers = [888666005, 888666006, 888666007, 888666008];
             if (buffers.Contains(BuffID))
             {
-                foreach (var buffer in buffers)
-                {
-                    if (buffer != BuffID)
-                    {
-                        BGUFunctionLibraryCS.BGURemoveBuffImmediately(Caster, buffer, EBuffEffectTriggerType.Remove);
-                    }
-                }
+                HandleBuffMutex(Caster, BuffID, buffers);
+            }
+
+            // 棍光 buff互斥
+            List<int> gun_buffers = [66655401, 66655402, 66655403, 66655404, 66655405, 66655406, 66655407, 66655408, 555503209];
+            if (gun_buffers.Contains(BuffID))
+            {
+                HandleBuffMutex(Caster, BuffID, gun_buffers);
             }
             // 检查是否有对应的buff规则
             if (!buffRulesMap.ContainsKey(BuffID))
