@@ -25,18 +25,17 @@
             },
             {
               "BuffIDs": [
-                888666026
+                888666026,
+                66655408
               ],
-              "BuffTime": 100,
+              "BuffTime": 600,
               "desc": "时缓"
             }
           ]
         },
         {
           "Type": "buff",
-          "BuffIDs": [
-            5070
-          ],
+          "BuffIDs": [66655409],
           "BuffTime": 1200,
           "desc": "棍光"
         }
@@ -88,8 +87,8 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffID": 888666017,
-          "BuffTime": 400,
+          "BuffIDs": [888666017,66655408],
+          "BuffTime": 800,
           "desc": "激光"
         },
         {
@@ -115,7 +114,8 @@
         {
           "BuffIDs": [
             888666026,
-            888805070
+            888805070,
+            66655408
           ],
           "BuffTime": 1200,
           "desc": "时缓，棍光"
@@ -180,11 +180,8 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [
-            888666017,
-            888666061
-          ],
-          "BuffTime": 400
+          "BuffIDs": [888666017,66655409],
+          "BuffTime": 800
         },
         {
           "Type": "bullet",

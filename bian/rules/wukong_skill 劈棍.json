@@ -23,7 +23,7 @@
         },
         {
           "Type": "buff",
-          "BuffIDs": [888805041],
+          "BuffIDs": [66655406],
           "BuffTime": 1500,
           "desc": "棍光特效粒子"
         }
@@ -52,7 +52,7 @@
         },
          {
           "Type": "buff",
-          "BuffIDs": [888805043],
+          "BuffIDs": [66655407],
           "BuffTime": 1600,
           "desc": "棍光特效粒子"
         }
@@ -96,7 +96,7 @@
         },
         {
           "Type": "buff",
-          "BuffIDs": [888805045],
+          "BuffIDs": [66655408],
           "BuffTime": 1600,
           "desc": "棍光特效粒子"
         }
@@ -141,7 +141,6 @@
       "AfterActions": [
         {
           "Type": "bullet",
-
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
           "ProjectTileID": 153,
           "OffsetX": 800,

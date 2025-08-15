@@ -1,188 +1,53 @@
 [
-  
   {
-    "ID": 6655401,
-    "BuffTips": "2A棍光特效，克隆空buff295",
+    "ID": 66655401,
+    "BuffTips": "透明橙黄棍光特效，DBC/wswy/DBC_JSDS_XuLi_B_2.DBC_JSDS_XuLi_B_2",
     "Duration": -1
   },
   {
-    "ID": 6655403,
-    "BuffTips": "3A棍光buff",
+    "ID": 66655402,
+    "BuffTips": "透明橙黄棍光特效，DBC/yswy/DBC_XuLi_B_2.DBC_XuLi_B_2",
     "Duration": -1
   },
   {
-    "ID": 6655405,
-    "BuffTips": "4A棍光1buff",
+    "ID": 66655403,
+    "BuffTips": "闪一下，再透明橙黄棍光特效，DBC/ysyx/DBC_XuLi_B_2.DBC_XuLi_B_2",
     "Duration": -1
   },
   {
-    "ID": 6655406,
-    "BuffTips": "4A棍光2buff",
-    "Duration": 1500
+    "ID": 66655404,
+    "BuffTips": "爆发红色粒子，再透明橙黄棍光特效，DBC/ysyy/DBC_XuLi_B_3.DBC_XuLi_B_3",
+    "Duration": -1
   },
   {
-    "ID": 6655410,
-    "BuffTips": "5A特效1",
-    "Duration": 600
+    "ID": 66655405,
+    "BuffTips": "发出响声，再透明橙黄棍光特效，DBC/ysyy/DBC_XuLi_B_2.DBC_XuLi_B_2",
+    "Duration": -1
   },
   {
-    "ID": 6655411,
-    "BuffTips": "5A特效2",
-    "Duration": 650
+    "ID": 66655406,
+    "BuffTips": "闪一下，再橙红棍光DBC/ysyx/DBC_XuLi_B_3.DBC_XuLi_B_3",
+    "Duration": -1
   },
   {
-    "ID": 6655415,
-    "BuffTips": "劈棍切手技特效",
-    "Duration": 1100
+    "ID": 66655407,
+    "BuffTips": "闪一下，再橙红棍光，DBC/jhf3/DBC_XuLi_B_3.DBC_XuLi_B_3",
+    "Duration": -1
   },
   {
-    "ID": 6655417,
-    "BuffTips": "识破特效",
-    "Duration": 1000
+    "ID": 66655408,
+    "BuffTips": "爆闪红光，再橙红棍光，DBC/ysyx/DBC_XuLi_B_4.DBC_XuLi_B_4",
+    "Duration": -1
   },
   {
-    "ID": 6655419,
-    "BuffTips": "斩棍式特效1",
-    "Duration": 1000
+    "ID": 66655409,
+    "BuffTips": "没有闪，橙红棍光DBC/wswy/DBC_XuLi_B_3.DBC_XuLi_B_3",
+    "Duration": -1
   },
+
   {
-    "ID": 6655420,
-    "BuffTips": "斩棍式特效2",
-    "Duration": 1500
-  },
-  {
-    "ID": 6655424,
-    "BuffTips": "退寸特效",
-    "Duration": 600
-  },
-  {
-    "ID": 6655426,
-    "BuffTips": "搅阵特效",
-    "Duration": 1600
-  },
-  {
-    "ID": 6655429,
-    "BuffTips": "进尺特效",
-    "Duration": 1200
-  },
-  {
-    "ID": 6655431,
-    "BuffTips": "风云转特效",
-    "Duration": 1800
-  },
-  {
-    "ID": 6655433,
-    "BuffTips": "江海翻特效1",
-    "Duration": 700
-  },
-  {
-    "ID": 6655434,
-    "BuffTips": "江海翻特效2",
-    "Duration": 1550
-  },
-  {
-    "ID": 6655435,
-    "BuffTips": "江海翻特效3",
-    "Duration": 1550
-  },
-  {
-    "ID": 6655440,
-    "BuffTips": "蓄力劈棍1特效",
-    "Duration": 1200
-  },
-  {
-    "ID": 6655442,
-    "BuffTips": "蓄力劈棍2特效",
-    "Duration": 1600
-  },
-  {
-    "ID": 6655444,
-    "BuffTips": "蓄力劈棍3特效",
-    "Duration": 1600
-  },
-  {
-    "ID": 6655446,
-    "BuffTips": "蓄力劈棍4特效1",
-    "Duration": 2000
-  },
-  {
-    "ID": 6655447,
-    "BuffTips": "蓄力劈棍4特效2",
-    "Duration": 1500
-  },
-  {
-    "ID": 6655448,
-    "BuffTips": "蓄力劈棍4特效3",
-    "Duration": 1700
-  },
-  {
-    "ID": 6655453,
-    "BuffTips": "大风车特效1",
-    "Duration": 1000
-  },
-  {
-    "ID": 6655454,
-    "BuffTips": "大风车特效2",
-    "Duration": 1300
-  },
-  {
-    "ID": 6655455,
-    "BuffTips": "大风车特效3",
-    "Duration": 2500
-  },
-  {
-    "ID": 6655460,
-    "BuffTips": "蓄力戳立棍1特效",
-    "Duration": 1000
-  },
-  {
-    "ID": 6655462,
-    "BuffTips": "蓄力戳立棍2特效",
-    "Duration": 1000
-  },
-  {
-    "ID": 6655464,
-    "BuffTips": "蓄力戳立棍3特效1",
-    "Duration": 500
-  },
-  {
-    "ID": 6655465,
-    "BuffTips": "蓄力戳立棍3特效2",
-    "Duration": 800
-  },
-  {
-    "ID": 6655466,
-    "BuffTips": "蓄力戳立棍3取特效1",
-    "Duration": 300
-  },
-  {
-    "ID": 6655471,
-    "BuffTips": "蓄力戳立棍4特效",
-    "Duration": 1200
-  },
-  {
-    "ID": 6655473,
-    "BuffTips": "大圣2A切手特效1",
-    "Duration": 1000
-  },
-  {
-    "ID": 6655474,
-    "BuffTips": "大圣2A切手特效2",
-    "Duration": 1000
-  },
-  {
-    "ID": 6655475,
-    "BuffTips": "大圣2A切手特效3",
-    "Duration": 2000
-  },
-  {
-    "ID": 6655480,
-    "BuffTips": "棍花下劈特效",
-    "Duration": 2000
-  },
-  {
-    "ID": 6655482,
-    "BuffTips": "大圣3A切手特效",
-    "Duration": 1000
+    "ID": 888666011,
+    "BuffTips": "搅阵专属 没有闪，橙红棍光DBC/wswy/DBC_XuLi_B_3.DBC_XuLi_B_3",
+    "Duration": -1
   }
 ]
