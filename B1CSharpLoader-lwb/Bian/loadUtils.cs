@@ -12,7 +12,7 @@ using CSharpModBase;
 using BtlB1;
 using Google.Protobuf.Collections;
 using b1.Protobuf.DataAPI;
-using System.Threading.Tasks;
+
 
 
 public class SkillEffectConfig
@@ -292,6 +292,17 @@ public class BuffConfig
 
 namespace bian
 {
+
+    public class ComboConfig
+    {
+        public string nowMontage { get; set; }
+        public double rate { get; set; }
+        public int skillID { get; set; }
+        public SkillMapCondition Condition { get; set; }
+        public string InputCore { get; set; }
+        public int conditionValue { get; set; }
+        public string desc { get; set; }
+    }
     public static class LoadUtils
     {
         private static readonly JsonSerializerSettings JsonSettings = new JsonSerializerSettings
@@ -299,6 +310,44 @@ namespace bian
             Converters = new List<JsonConverter> { new StringEnumConverter() }
         };
 
+
+
+        // 加载连招配置
+        public static List<ComboConfig> LoadComboConfigs(string configDirectory = null)
+        {
+            configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "ComboSkill");
+            var comboConfigs = new List<ComboConfig>();
+            var monitoredKeys = new HashSet<string>();
+
+            if (Directory.Exists(configDirectory))
+            {
+                foreach (string file in Directory.GetFiles(configDirectory, "*.json"))
+                {
+                    try
+                    {
+                        string json = File.ReadAllText(file);
+                        var configs = JsonConvert.DeserializeObject<List<ComboConfig>>(json);
+                        if (configs != null)
+                        {
+                            comboConfigs.AddRange(configs);
+                            // 收集所有需要监听的按键
+                            foreach (var config in configs)
+                            {
+                                if (!string.IsNullOrEmpty(config.InputCore))
+                                {
+                                    monitoredKeys.Add(config.InputCore);
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Error loading combo config from {file}: {ex.Message}");
+                    }
+                }
+            }
+            return comboConfigs;
+        }
 
         // 自动导出报错信息
         public static void ExportErrorToJson(Exception ex)
@@ -335,7 +384,7 @@ namespace bian
         {
             try
             {
-                string exportDirectory = Path.Combine("CSharpLoader", "Mods", "bian", "exportedData", dataType);
+                string exportDirectory = Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "exportedData", dataType);
                 if (!Directory.Exists(exportDirectory))
                 {
                     Directory.CreateDirectory(exportDirectory);
@@ -918,7 +967,8 @@ namespace bian
         // 加载并应用BuffDisp配置
         public static int LoadAndApplyBuffDispConfigs(string configDirectory = null)
         {
-            configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "buff_disp");
+            configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "buff_disp");
+
 
             var buffDispList = BGW_GameDB.GetAllBuffDispDesc();
             var configs = LoadJsonConfigs<BuffDispConfig>(configDirectory, "buff_disp");
@@ -961,7 +1011,7 @@ namespace bian
         {
             try
             {
-                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BuffDesc");
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "BuffDesc");
 
                 var buffConfigs = LoadJsonConfigs<BuffConfig>(configDirectory, "Buff");
                 var buffList = BGW_GameDB.GetAllBuffDesc();
@@ -1005,8 +1055,10 @@ namespace bian
         }
 
         // 加载技能映射规则
-        public static void LoadAllSkillMappingRules(string configDirectory)
+        public static void LoadAllSkillMappingRules(string configDirectory=null)
         {
+            configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "skillMaping");
+
             if (!Directory.Exists(configDirectory))
             {
                 Log.Error($"Config directory not found: {configDirectory}");
@@ -1070,7 +1122,8 @@ namespace bian
         {
             try
             {
-                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BulletData", "bulletExpand");
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "BulletData", "bulletExpand");
+
 
                 var bulletExpandConfigs = LoadJsonConfigs<BulletExpandConfig>(configDirectory, "BulletExpand");
                 var bulletExpandList = BGW_GameDB.GetAllBulletExpandDesc();
@@ -1139,7 +1192,8 @@ namespace bian
         {
             try
             {
-                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BulletData", "BulletComm");
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "BulletData", "BulletComm");
+
 
                 var bulletCommConfigs = LoadJsonConfigs<BulletCommConfig>(configDirectory, "BulletComm");
                 var bulletCommList = BGW_GameDB.GetAllProjectileCommDesc();
@@ -1211,7 +1265,7 @@ namespace bian
         {
             try
             {
-                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BulletData", "move");
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "BulletData", "move");
 
                 var projectileMoveConfigs = LoadJsonConfigs<ProjectileMoveConfig>(configDirectory, "ProjectileMove");
                 var projectileMoveList = BGW_GameDB.GetAllProjectileMoveDesc();
@@ -1284,7 +1338,8 @@ namespace bian
         {
             try
             {
-                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "BulletData", "disp");
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "BulletData", "disp");
+
 
                 var projectileDispConfigs = LoadJsonConfigs<ProjectileDispConfig>(configDirectory, "ProjectileDisp");
                 var projectileDispList = GetAllProjectileDispDesc();
@@ -1363,7 +1418,7 @@ namespace bian
         {
             try
             {
-                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "ChargeSkill");
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "ChargeSkill");
 
                 var chargeSkillConfigs = LoadJsonConfigs<ChargeSkillConfig>(configDirectory, "ChargeSkill");
                 var chargeSkillList = GetAllFUStChargeSkillSDesc();
@@ -1440,7 +1495,7 @@ namespace bian
         {
             try
             {
-                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "Summon");
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "Summon");
 
                 var summonConfigs = LoadJsonConfigs<SummonConfig>(configDirectory, "Summon");
                 var summonList = BGW_GameDB.GetAllSummonCommDesc();
@@ -1519,7 +1574,7 @@ namespace bian
         {
             try
             {
-                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "skillDesc");
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "skillDesc");
 
                 var skillConfigs = LoadJsonConfigs<SkillConfig>(configDirectory, "SkillDesc");
                 var skillList = BGW_GameDB.GetAllSkillSDesc();
@@ -1583,7 +1638,7 @@ namespace bian
         {
             try
             {
-                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "skillEffect");
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "skillEffect");
 
                 var buffEffectConfigs = LoadJsonConfigs<SkillEffectConfig>(configDirectory, "skillEffect");
                 var buffEffectList = BGW_GameDB.GetAllSkillEffectDesc();

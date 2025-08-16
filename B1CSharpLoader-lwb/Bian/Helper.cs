@@ -572,7 +572,7 @@ namespace bian
                 aActor = target;
             }
             FEffectInstReq fEffectInstReq = new FEffectInstReq(character);
-      
+
             BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
 
             if (projectileID <= 0)
@@ -709,7 +709,7 @@ namespace bian
                     ProjectileSpawnNSInfo.TargetPosOffsetInfo.RangeOffsetInfo.CircleRadius = (int)action.TargetCircleRadius;
                     ProjectileSpawnNSInfo.TargetPosOffsetInfo.PosOffsetType = (b1.ProjectilePosOffsetType)Enum.Parse(typeof(b1.ProjectilePosOffsetType), "RangeOffset");
                 }
-                 if (action?.EffectInstReq != null)
+                if (action?.EffectInstReq != null)
                 {
                     fEffectInstReq = (FEffectInstReq)action.EffectInstReq;
                     spawnBase.BaseType = ProjectileBaseType.UseEffectPosition;
@@ -770,7 +770,7 @@ namespace bian
                 ProjectileSpawnNSInfo.SpawnWaveCounter = 0;
                 ProjectileSpawnNSInfo.bEnableMultiTargetMode = bGWDataAsset_ProjectileSpawnConfig.bEnableMultiTargetMode;
                 ProjectileSpawnNSInfo.MutilTargetRule = bGWDataAsset_ProjectileSpawnConfig.MutilTargetRule;
-               
+
                 bUS_GSEventCollection.Evt_OnNotifyStateSpawnProjectileObj.Invoke(ref ProjectileSpawnNSInfo);
             }
         }
@@ -852,13 +852,6 @@ namespace bian
         }
         public static void FenshenTeleport()
         {
-            UObject @this = Helper.GetWorld();
-            IBGC_TamerData gameStateReadonlyData = BGU_DataUtil.GetGameStateReadonlyData<IBGC_TamerData, BGC_TamerData>(@this);
-            if (gameStateReadonlyData == null)
-            {
-                return;
-            }
-            gameStateReadonlyData.GetSpawnedMonsterList(out var OutMonsterList);
             var play = Helper.GetBGUPlayerCharacterCS();
             FVector actorLocation = play.GetActorLocation();
             actorLocation.X -= 200;
@@ -881,133 +874,130 @@ namespace bian
 
                 }
             }
-
-            // foreach (string item in OutMonsterList)
-            // {
-            //     var actorByGuid = BGU_DataUtil.GetActorByGuid(@this, item);
-            //     var fs_name = actorByGuid?.GetFullName().ToLower();
-            //     if (fs_name?.IndexOf("unit_monkeysummon") > -1 || fs_name?.IndexOf("mgd_yuan") > -1)
-            //     {
-
-            //         var target = BGUFunctionLibraryCS.BGUGetTarget(play) as BGUCharacterCS;
-            //         if (target != null)
-            //         {
-            //             // BGUFunctionLibraryCS.BGUAddBuff(actorByGuid, actorByGuid, 1000168, EBuffSourceType.GM, 200);
-            //             actorByGuid?.Teleport(actorLocation, fRotator2);
-            //         }
-            //         else
-            //         {
-            //             actorByGuid?.Teleport(actorLocation, fRotator2);
-            //         }
-            //     }
-            // }
         }
         // 分身触发技能
+        // 添加缓存字段
+        private static List<BGUCharacterCS> _cachedCharacters = new List<BGUCharacterCS>();
+        private static DateTime _lastCacheUpdate = DateTime.MinValue;
+        private static readonly TimeSpan _cacheUpdateInterval = TimeSpan.FromMilliseconds(5000); // 缓存更新间隔
+
+        // 分身触发技能 - 优化版本
         public static void FenshenGSTryCastSkill(int skillID, bool? needPort = false)
         {
             var play = Helper.GetBGUPlayerCharacterCS();
             if (play == null || play.World == null) return;
 
-            List<BGUCharacterCS> allActorsOfClassList = play.World.GetAllActorsOfClassList<BGUCharacterCS>();
-            if (allActorsOfClassList == null || allActorsOfClassList.Count == 0)
+            // 检查是否需要更新缓存
+            if (DateTime.Now - _lastCacheUpdate > _cacheUpdateInterval || _cachedCharacters.Count == 0)
             {
-                return;
+                UpdateCharacterCache(play.World);
             }
 
-            // 使用 LINQ 查询过滤满足条件的项
-            var filteredActors = allActorsOfClassList.Where(item =>
+            // 使用缓存数据进行过滤
+            var filteredActors = _cachedCharacters.Where(item =>
                 BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item) &&
                 BGUFunctionLibraryCS.BGUHasBuffByID(item, 888666002)
             ).ToList();
-            var teamFenshen = allActorsOfClassList.Where(item =>
+
+            var teamFenshen = _cachedCharacters.Where(item =>
                 BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item)
             ).ToList();
+
             if (teamFenshen.Count < 2)
             {
-
-                // Helper.SummonReq(1001101, 1, 9999);
                 Helper.SummonReq(5009301, 1, 9999);
 
+                // 立即更新缓存以包含新召唤的单位
+                UpdateCharacterCache(play.World);
                 return;
             }
-            foreach (BGUCharacterCS item in filteredActors)
+
+            // 处理技能释放逻辑
+            ProcessSkillCast(filteredActors, skillID);
+        }
+
+        // 更新角色缓存
+        private static void UpdateCharacterCache(UWorld world)
+        {
+            _cachedCharacters = world.GetAllActorsOfClassList<BGUCharacterCS>();
+            _lastCacheUpdate = DateTime.Now;
+        }
+
+        // 处理技能释放逻辑
+        private static void ProcessSkillCast(List<BGUCharacterCS> actors, int skillID)
+        {
+            foreach (BGUCharacterCS item in actors)
             {
                 var fs_name = item?.GetFullName().ToLower();
                 if (fs_name?.IndexOf("unit_player_wukong") > -1)
                 {
-                    // 排除自己
-                    continue;
+                    continue; // 排除自己
                 }
-                // n/Units/Player/TAMER_monkeysummon_dasheng.TAMER_monkeysummon
-                // 取所有的队友
+
                 if (skillID > 0 && (fs_name?.IndexOf("unit_monkeysummon") > -1 || fs_name?.IndexOf("TAMER_monkeysummon") > -1))
                 {
-                    try
-                    {
-                        //播放动画
-
-
-                        FCastSkillInfo castSkillInfo = new FCastSkillInfo(skillID, ECastSkillSourceType.GM);
-                        if (castSkillInfo.SkillID > 0)
-                        {
-                            // 触发技能事件
-                            BUS_EventCollectionCS.Get(item).Evt_UnitCastSkillTry.Invoke(castSkillInfo);
-                        }
-
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Error {fs_name} casting skill {skillID} : {ex.Message}");
-                    }
+                    TryCastSkill(item, skillID);
                 }
                 else
                 {
-
                     var allSkillIDs = BGUFuncLibAICS.BGUGetUnitAllSkillID(item);
                     if (fs_name?.IndexOf("unit_mgd_jsds_summon_c") > -1)
                     {
-                        allSkillIDs = [700101, 700102, 700103, 700104,
-                                700105, 700106, 700107, 700108, 700109, 700110,
-                                 700111, 700112, 700113, 700114, 700115, 700116, 700117, 700118, 700119, 700120,
-                                 700121, 700122, 700123, 700124, 700125, 700126, 700127, 700128, 700129, 700130,
-                                 700131, 700132, 700133, 700134, 700135, 700136, 700137, 700138, 700139, 700140,
-                                 700141, 700142, 700143, 700144, 700145, 700146, 700147, 700148, 700149, 700150,
-                                  700151, 700152, 700153, 700154, 700155
-                            ];
+                        allSkillIDs = GetSpecialSkillIDs();
                     }
+
                     if (allSkillIDs != null && allSkillIDs?.Count > 0 && fs_name?.IndexOf("unit_player_wukong") < 0)
                     {
-                        // 创建一个 Random 对象
-                        Random random = new Random();
-                        // 从数组中随机获取一个索引
-                        int randomIndex = random.Next(allSkillIDs.Count);
-                        int randomSkillID = allSkillIDs[randomIndex];
+                        var randomSkillID = GetRandomSkillID(allSkillIDs);
                         if (randomSkillID > 0)
                         {
-                            try
-                            {
-                                FCastSkillInfo castSkillInfo = new FCastSkillInfo(skillID, ECastSkillSourceType.GM);
-                                if (castSkillInfo.SkillID > 0)
-                                {
-                                    // 触发技能事件
-                                    BUS_EventCollectionCS.Get(item).Evt_UnitCastSkillTry.Invoke(castSkillInfo);
-                                }
-                            }
-                            catch (System.Exception e)
-                            {
-
-                                Log.Error($"Error 播放技能出错 casting skill： {e.Message}");
-                            }
+                            TryCastSkill(item, randomSkillID);
                         }
-
                     }
-
                 }
-
             }
-
-
         }
+
+        // 尝试释放技能
+        private static void TryCastSkill(BGUCharacterCS character, int skillID)
+        {
+            try
+            {
+                FCastSkillInfo castSkillInfo = new FCastSkillInfo(skillID, ECastSkillSourceType.GM);
+                if (castSkillInfo.SkillID > 0)
+                {
+                    BUS_EventCollectionCS.Get(character).Evt_UnitCastSkillTry.Invoke(castSkillInfo);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Error casting skill {skillID}: {ex.Message}");
+            }
+        }
+
+        // 获取特殊技能ID列表
+        private static List<int> GetSpecialSkillIDs()
+        {
+            return new List<int>
+    {
+        700101, 700102, 700103, 700104,
+        700105, 700106, 700107, 700108, 700109, 700110,
+        700111, 700112, 700113, 700114, 700115, 700116, 700117, 700118, 700119, 700120,
+        700121, 700122, 700123, 700124, 700125, 700126, 700127, 700128, 700129, 700130,
+        700131, 700132, 700133, 700134, 700135, 700136, 700137, 700138, 700139, 700140,
+        700141, 700142, 700143, 700144, 700145, 700146, 700147, 700148, 700149, 700150,
+        700151, 700152, 700153, 700154, 700155
+    };
+        }
+
+        // 获取随机技能ID
+        private static int GetRandomSkillID(List<int> skillIDs)
+        {
+            Random random = new Random();
+            int randomIndex = random.Next(skillIDs.Count);
+            return skillIDs[randomIndex];
+        }
+
 
 
         public static bool IsWukong(BGUCharacterCS character)

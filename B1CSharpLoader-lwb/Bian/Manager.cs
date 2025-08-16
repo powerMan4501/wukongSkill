@@ -43,13 +43,38 @@ namespace bian
     public static class Manager
     {
 
+        // 核心组件
         private static ModelManager manager;
         private static Harmony harmony;
         private static Ui UI;
 
         public static string? currentMontage;
-        private static BuffDescRuntime DescRuntime;
         public static string Nameo;
+
+
+        // 连招配置
+        private static List<ComboConfig> comboConfigs = new List<ComboConfig>();
+        // 监听的键值
+        private static HashSet<string> monitoredKeys = new HashSet<string>();
+
+        // 监听的效果id
+        private static Dictionary<int, List<Rule>> effectRulesMap = new Dictionary<int, List<Rule>>();
+
+        // 监听的BuffID
+        private static Dictionary<int, List<Rule>> buffRulesMap = new Dictionary<int, List<Rule>>();
+
+        // 监听的动画
+        private static Dictionary<string, List<Rule>> montageRulesMap = new Dictionary<string, List<Rule>>();
+
+        private static List<SkillMappingRule> AllSkillMappingRules = new List<SkillMappingRule>();
+        private static bool isBuffConfigsLoaded = false; // 添加静态标志变量
+
+        // 添加公共属性
+        public static IReadOnlyList<SkillMappingRule> SkillMappingRules
+        {
+            get { return AllSkillMappingRules.AsReadOnly(); }
+        }
+
 
         public static ModelManager GetModelManager()
         {
@@ -69,15 +94,17 @@ namespace bian
             UI.CreateUI();
         }
 
-        private static bool isBuffConfigsLoaded = false; // 添加静态标志变量
+
 
         public static void loadAllStaticData()
         {
+            // 加载技能映射规则
+            LoadUtils.LoadAllSkillMappingRules();
+            LoadComboConfigs();//全部连招
+            InitializeEffectRulesMap();//初始化技能子弹效果rule
 
-
-
-
-            Helper.DelayExecute(1500, () =>
+            if (isBuffConfigsLoaded) { return; }
+            Helper.DelayExecute(2500, () =>
             {
                 LoadUtils.LoadAndApplySummon();
                 LoadUtils.LoadAndApplyChargeSkill();
@@ -93,21 +120,7 @@ namespace bian
             });
 
         }
-        // 连招配置
-        private static List<ComboConfig> comboConfigs = new List<ComboConfig>();
-        // 监听的键值
-        private static HashSet<string> monitoredKeys = new HashSet<string>();
 
-
-        // 监听的效果id
-        private static Dictionary<int, List<Rule>> effectRulesMap = new Dictionary<int, List<Rule>>();
-
-
-        // 监听的BuffID
-        private static Dictionary<int, List<Rule>> buffRulesMap = new Dictionary<int, List<Rule>>();
-
-        // 监听的动画
-        private static Dictionary<string, List<Rule>> montageRulesMap = new Dictionary<string, List<Rule>>();
 
         private static void InitializeEffectRulesMap()
         {
@@ -161,6 +174,17 @@ namespace bian
             }
         }
 
+        [HarmonyPatch(typeof(BGW_GameDB))]
+        [HarmonyPatch("Init")]
+        public static class BGW_GameDB_Init_Patch
+        {
+            public static void Postfix()
+            {
+                Log.Info("BGW_GameDB_Init_Patch");
+                loadAllStaticData();
+            }
+        }
+
 
         public static void RegisterManager()
         {
@@ -168,13 +192,7 @@ namespace bian
             Manager.GetModelManager().BindEvents();
 
 
-            // 加载技能映射规则
-            string configPath = Path.Combine("CSharpLoader", "Mods", "bian", "skillMaping");
-            LoadUtils.LoadAllSkillMappingRules(configPath);
             loadAllStaticData();
-            LoadComboConfigs();
-            InitializeEffectRulesMap();
-
             // 在这里可以将buffDispConfigs插入到游戏中的数据
             if (harmony == null)
             {
@@ -203,13 +221,6 @@ namespace bian
             return currentMontage;
         }
 
-        private static List<SkillMappingRule> AllSkillMappingRules = new List<SkillMappingRule>();
-
-        // 添加公共属性
-        public static IReadOnlyList<SkillMappingRule> SkillMappingRules
-        {
-            get { return AllSkillMappingRules.AsReadOnly(); }
-        }
 
         // 添加公共方法来修改规则列表
         public static void ClearSkillMappingRules()
@@ -458,232 +469,181 @@ namespace bian
         }
 
 
+        /// <param name="isChuogun">是否为戳棍姿态</param>
+        /// <param name="isLigun">是否为立棍姿态</param>
+        /// <param name="isPigun">是否为劈棍姿态</param>
+        /// <returns>是否成功获取姿态信息</returns>
+        private static bool TryGetCharacterStance(out bool isChuogun, out bool isLigun, out bool isPigun)
+        {
+            isChuogun = false;
+            isLigun = false;
+            isPigun = false;
 
+            var control = Helper.GetPlayerController();
+            var readOnlyData = BGU_DataUtil.GetPlayerControlReadonlyData<IBPC_PlayerRoleData, BPC_PlayerRoleData>(control);
+            if (readOnlyData?.RoleData?.RoleCs?.Actor?.Wear?.Stance == null)
+            {
+                return false;
+            }
+
+            var stance = readOnlyData.RoleData.RoleCs.Actor.Wear.Stance;
+            isChuogun = stance == Stance.Poke;
+            isLigun = stance == Stance.Prop;
+            isPigun = stance == Stance.Heavy;
+
+            return true;
+        }
+
+        private static Dictionary<int, int> GetSkillMappings()
+        {
+            return new Dictionary<int, int>
+                {
+                    {10720, 10721},
+                    {10725, 10724},
+                    {10706, 10705},
+                    {10708, 50002},
+                    {10715, 10714}
+                };
+        }
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_SmartCastSkillTryMultiCast_Implementation")]
         [HarmonyPrefix]
         private static void SmartCastSkillTryMultiCast(ref int ID, ref List<int> RuleIDList)
         {
             if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]SmartCastSkill"))
             {
-                Log.Info($"bian: 真实的id SmartCastSkillTryMultiCast -->{ID}");
+                // Log.Info($"bian: 真实的id SmartCastSkillTryMultiCast -->{ID}");
             }
+
             var character = Helper.GetBGUPlayerCharacterCS();
-            var bufferId = 20101;
+            if (character == null) return;
 
-            var control = Helper.GetPlayerController();
-
-            var readOnlyData = BGU_DataUtil.GetPlayerControlReadonlyData<IBPC_PlayerRoleData, BPC_PlayerRoleData>(control);
-            var stance = readOnlyData?.RoleData?.RoleCs?.Actor?.Wear?.Stance;//当前棍法
-            var isChuogun = stance == Stance.Poke;
-            var isLigun = stance == Stance.Prop;
-            var isPigun = stance == Stance.Heavy;
-
-
-            // 待定todo
-            if (ID == 10720)
+            // 获取角色姿态信息
+            if (!TryGetCharacterStance(out bool isChuogun, out bool isLigun, out bool isPigun))
             {
-                ID = 10721;
-            }
-            if (ID == 10725)
-            {
-                ID = 10724;
+                return;
             }
 
-            if (ID == 10706 || ID == 10705)
+            // 获取技能ID映射配置
+            var skillMappings = GetSkillMappings();
+
+            // 应用技能ID映射
+            if (skillMappings.ContainsKey(ID))
             {
-                ID = 10705;
+                ID = skillMappings[ID];
             }
-            if (ID == 10708 || ID == 10707)
-            {
-                ID = 50002;
-            }
-            if (ID == 10715)
-            {
-                ID = 10714;
-            }
+
             var currentId = ID;
-            if (readOnlyData != null)
+            var bufferId = GetBufferIdForSkill(ID);
+
+            // 处理特殊技能组
+            HandleSpecialSkillGroup(ID, character);
+
+            // 添加连招相关buff
+            if (IsComboSkill(ID))
             {
-                Log.Info($"Evt_CastSkillWithAnimMontageMultiCast  {stance}");
-
+                BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);
+                BGUFunctionLibraryCS.BGUAddBuff(character, character, 888666018, EBuffSourceType.GM, 800);
             }
-            if (ID == 10801)
-            {
-                // 平A1
-                bufferId = 888666021;
-            }
-            if (ID == 10802)
-            {
-                // 平A2
-                BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, 888666021, EBuffEffectTriggerType.Remove);
-                bufferId = 888666022;
-            }
-            if (ID == 10803)
-            {
-                // 平A3
-                BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, 888666022, EBuffEffectTriggerType.Remove);
-                bufferId = 888666023;
-            }
-            if (ID == 10804)
-            {
-                // 平A4
-                BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, 888666023, EBuffEffectTriggerType.Remove);
-                bufferId = 888666024;
-            }
-            if (ID == 10805)
-
-            {
-                // 平A5
-                BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, 888666024, EBuffEffectTriggerType.Remove);
-                bufferId = 888666025;
-
-            }
-
-
-
-            if (new int[] { 10705, 10706, 10720, 10721, 50003, 50005, 50007, 50001 }.Contains(ID))
-            {
-                BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);//切手连招
-                BGUFunctionLibraryCS.BGUAddBuff(character, character, 888666018, EBuffSourceType.GM, 800);//识破buff
-            }
-
-
-            // if (new int[] { 10707, 50002, 50004, 50006, 50008, 10714, 10724, 10723 }.Contains(ID))
-            // {
-            //     // 移除buff
-            //     List<int> attack_buffers = [888666021, 888666022, 888666023, 888666024, 888666025];
-            //     foreach (var buffer in attack_buffers)
-            //     {
-            //         BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, buffer, EBuffEffectTriggerType.Remove);
-            //     }
-            // }
 
             if (bufferId > 0)
             {
                 BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 4000);
             }
 
-            // 首先过滤出所有匹配的规则
-            var mapArr = AllSkillMappingRules.Where(r => r.OriginalId == currentId).ToList();
+            // 处理技能映射规则
+            ProcessSkillMappingRules(ref ID, currentId, character, isChuogun, isLigun, isPigun);
+        }
 
-            if (mapArr.Count() > 0)
+
+
+
+        private static int GetBufferIdForSkill(int skillId)
+        {
+            var bufferMappings = new Dictionary<int, int>
             {
-                var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
+                {10801, 888666021},
+                {10802, 888666022},
+                {10803, 888666023},
+                {10804, 888666024},
+                {10805, 888666025}
+            };
 
-                // 优先检查canRepeat为true的规则
-                // 优先检查canRepeat为true的规则
-                var repeatableRules = mapArr.Where(r => r.canRepeat.HasValue && r.canRepeat.Value).ToList();
-
-                var matchItem = repeatableRules.FirstOrDefault(r => IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
-
-                if (matchItem != null)
+            // 清理之前的buff
+            if (bufferMappings.ContainsValue(skillId))
+            {
+                var character = Helper.GetBGUPlayerCharacterCS();
+                var buffToRemove = bufferMappings.FirstOrDefault(x => x.Value == skillId).Key;
+                if (buffToRemove > 0)
                 {
-
-                    ID = matchItem.MappedId;
-                    currentId = matchItem.MappedId;
+                    BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, buffToRemove, EBuffEffectTriggerType.Remove);
                 }
+            }
 
-                // 重新过滤
-                var newArr = AllSkillMappingRules.Where(r => r.OriginalId == currentId).ToList();
-                var nonRepeatableRules = newArr.Where(r => !r.canRepeat.HasValue || !r.canRepeat.Value).ToList();
-                var matchItem_ = nonRepeatableRules.FirstOrDefault(r => IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
-                if (matchItem_ != null)
-                {
-                    ID = matchItem_.MappedId;
-                }
+            return bufferMappings.ContainsKey(skillId) ? bufferMappings[skillId] : 0;
+        }
+
+        private static void HandleSpecialSkillGroup(int skillId, BGUCharacterCS character)
+        {
+            // 处理10705和10706的组合
+            if (skillId == 10705 || skillId == 10706)
+            {
+                // 特殊处理逻辑
             }
         }
 
-
-
-        // [HarmonyPatch(typeof(BUEffectSpawnBullets), "ApplyByBuff_Implement")]
-        // [HarmonyPrefix]
-        // private static bool ApplyByBuff_Implement(ref BuffInstData BuffInst, ref AActor Target, ref int EffectIdx, ref bool bIsPeriodical)
-        // {
-        //     if (BuffInst == null)
-        //     {
-        //         return false;
-        //     }
-        //     int buffID = BuffInst.BuffID;
-        //     FUStBuffDesc originalBuffDesc = BGW_GameDB.GetOriginalBuffDesc(buffID);
-        //     IBUC_PassiveSkillData readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_PassiveSkillData, BUC_PassiveSkillData>(EntitySharedRefFuncLib.Actor(BuffInst.RootCasterRef));
-        //     if (originalBuffDesc != null)
-        //     {
-        //         DescRuntime = new BuffDescRuntime(buffID, readOnlyData, originalBuffDesc);
-        //     }
-        //     FSpawnBulletMinMaxValue x = default(FSpawnBulletMinMaxValue);
-        //     FSpawnBulletMinMaxValue y = default(FSpawnBulletMinMaxValue);
-        //     FSpawnBulletMinMaxValue z = default(FSpawnBulletMinMaxValue);
-        //     int intEffectParam = DescRuntime.GetIntEffectParam(EffectIdx, 0);
-        //     int intEffectParam2 = DescRuntime.GetIntEffectParam(EffectIdx, 1);
-        //     int intEffectParam3 = DescRuntime.GetIntEffectParam(EffectIdx, 2);
-        //     int intEffectParam4 = DescRuntime.GetIntEffectParam(EffectIdx, 3);
-        //     int intEffectParam5 = DescRuntime.GetIntEffectParam(EffectIdx, 4);
-        //     int intEffectParam6 = DescRuntime.GetIntEffectParam(EffectIdx, 5);
-        //     Nameo = DescRuntime.GetStringEffectParam(EffectIdx, 0);
-        //     int intEffectParam7 = DescRuntime.GetIntEffectParam(EffectIdx, 6);
-        //     float floatEffectParam = DescRuntime.GetFloatEffectParam(EffectIdx, 0);
-        //     float floatEffectParam2 = DescRuntime.GetFloatEffectParam(EffectIdx, 1);
-        //     float floatEffectParam3 = DescRuntime.GetFloatEffectParam(EffectIdx, 2);
-        //     float floatEffectParam4 = DescRuntime.GetFloatEffectParam(EffectIdx, 3);
-        //     float floatEffectParam5 = DescRuntime.GetFloatEffectParam(EffectIdx, 4);
-        //     float floatEffectParam6 = DescRuntime.GetFloatEffectParam(EffectIdx, 5);
-        //     float floatEffectParam7 = DescRuntime.GetFloatEffectParam(EffectIdx, 6);
-        //     MyUtils.sm = Nameo;
-        //     z.LeftValue = DescRuntime.GetIntEffectParam(EffectIdx, 7);
-        //     z.RightValue = DescRuntime.GetIntEffectParam(EffectIdx, 8);
-        //     z.IsEquidistance = true;
-        //     MyUtils.SpwanProjectileByTracker3(intEffectParam, (MyUtils.ETrackType)intEffectParam2, intEffectParam3, new FVector((double)floatEffectParam, (double)floatEffectParam2, (double)floatEffectParam3), new FVector((double)floatEffectParam4, (double)floatEffectParam5, (double)floatEffectParam6), x, y, z, floatEffectParam7, intEffectParam4, intEffectParam5, intEffectParam6, intEffectParam7 == 1);
-        //     return true;
-        // }
-
-
-
-
-        public class ComboConfig
+        private static bool IsComboSkill(int skillId)
         {
-            public string nowMontage { get; set; }
-            public double rate { get; set; }
-            public int skillID { get; set; }
-            public SkillMapCondition Condition { get; set; }
-            public string InputCore { get; set; }
-            public int conditionValue { get; set; }
-            public string desc { get; set; }
+            int[] comboSkills = { 10705, 10706, 10720, 10721, 50003, 50005, 50007, 50001 };
+            return comboSkills.Contains(skillId);
         }
 
+        private static void ProcessSkillMappingRules(ref int ID, int currentId, BGUCharacterCS character,
+            bool isChuogun, bool isLigun, bool isPigun)
+        {
+            var mapArr = AllSkillMappingRules.Where(r => r.OriginalId == currentId).ToList();
+            if (!mapArr.Any()) return;
 
+            var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
 
+            // 优先处理可重复规则
+            var repeatableRules = mapArr.Where(r => r.canRepeat.HasValue && r.canRepeat.Value).ToList();
+            var matchItem = repeatableRules.FirstOrDefault(r =>
+                IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
+
+            if (matchItem != null)
+            {
+                ID = matchItem.MappedId;
+                currentId = matchItem.MappedId;
+            }
+
+            // 处理不可重复规则
+            var nonRepeatableRules = AllSkillMappingRules
+                .Where(r => r.OriginalId == currentId && (!r.canRepeat.HasValue || !r.canRepeat.Value))
+                .ToList();
+
+            var matchItem_ = nonRepeatableRules.FirstOrDefault(r =>
+                IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
+
+            if (matchItem_ != null)
+            {
+                ID = matchItem_.MappedId;
+            }
+        }
 
 
         private static void LoadComboConfigs()
         {
-            string configFolderPath = Path.Combine("CSharpLoader", "Mods", "bian", "ComboSkill");
-            if (Directory.Exists(configFolderPath))
+            comboConfigs = LoadUtils.LoadComboConfigs();
+            monitoredKeys.Clear(); // 清空按键集合
+                                   // 收集所有需要监听的按键
+            foreach (var config in comboConfigs)
             {
-                comboConfigs.Clear();
-                monitoredKeys.Clear(); // 清空按键集合
-                foreach (string file in Directory.GetFiles(configFolderPath, "*.json"))
+                if (!string.IsNullOrEmpty(config.InputCore))
                 {
-                    string json = File.ReadAllText(file);
-                    var configs = JsonConvert.DeserializeObject<List<ComboConfig>>(json);
-                    if (configs != null)
-                    {
-                        comboConfigs.AddRange(configs);
-                        // 收集所有需要监听的按键
-                        foreach (var config in configs)
-                        {
-                            if (!string.IsNullOrEmpty(config.InputCore))
-                            {
-                                monitoredKeys.Add(config.InputCore);
-                            }
-                        }
-                    }
+                    monitoredKeys.Add(config.InputCore);
                 }
             }
         }
-
-
-
 
         private static void GetCharacterStance(BGUCharacterCS character, out bool isChuogun, out bool isLigun, out bool isPigun)
         {
@@ -714,19 +674,7 @@ namespace bian
                 keyName = Key.GetFName().ToString();
             }
 
-            if (keyName == "Tab") // 添加标志变量检查
-            {
-                if (!isBuffConfigsLoaded)
-                {
-                    loadAllStaticData();
-                }
-                else
-                {
-                    Log.Info($"ExportDataToJson buff buffdisp");
-                    LoadUtils.ExportDataToJson<FUStBuffDesc>("buff");
-                    LoadUtils.ExportDataToJson<FUStBuffDispDesc>("buffdisp");
-                }
-            }
+
             // 如果按键不在监听列表中，直接返回
             if (!monitoredKeys.Contains(keyName))
             {
@@ -766,20 +714,5 @@ namespace bian
             }
         }
 
-
-
-        /*[HarmonyPatch(typeof(BUS_MagicallyChangeComp), "OnCastMagicallyChangeSkill")]
-        [HarmonyPrefix]
-        private static void OnCastMagicallyChangeSkill(BGWDataAsset_MagicallyChangeConfig Config, int SkillID, int RecoverSkillID, BUS_MagicallyChangeComp __instance)
-        {
-            Log.Debug($"bian: [PATCH]OnCastMagicallyChangeSkill  --> SkillID:{SkillID} Config:{Config.PathName} RecoverSkillID: {RecoverSkillID}");
-        }
-
-        [HarmonyPatch(typeof(BUS_MagicallyChangeComp), "DoCastMagicallyChangeSkill")]
-        [HarmonyPrefix]
-        private static void DoCastMagicallyChangeSkill(UBGWDataAsset Config, int SkillID, int RecoverSkillID, BUS_MagicallyChangeComp __instance)
-        {
-            Log.Debug($"bian: [PATCH]OnCastMagicallyChangeSkill  --> SkillID:{SkillID} Config:{Config.PathName} RecoverSkillID: {RecoverSkillID}");
-        }*/
     }
 }
