@@ -521,11 +521,15 @@ namespace bian
                     // 处理特殊属性
                     switch (sourceProp.Name)
                     {
-                        case "BuffActiveCondition" when sourceValue is BuffActiveCondition condition:
+                        case "EffectActiveCondition" when sourceValue is BuffActiveCondition condition:
                             var targetCondition = new FUStBuffEffectActiveCondition();
-                            CopyBuffActiveCondition(condition, targetCondition);
+                            if (condition.ConditionType.HasValue)
+                                targetCondition.ConditionType = (EGSBuffAndSkillEffectActiveCondition)condition.ConditionType.Value;
+                            if (!string.IsNullOrEmpty(condition.ConditionParams))
+                                targetCondition.ConditionParams = condition.ConditionParams;
                             targetProp.SetValue(target, targetCondition);
                             break;
+
 
                         case "Range" when sourceValue is BuffRange range:
                             var targetRange = new FUStRange();
@@ -1055,7 +1059,7 @@ namespace bian
         }
 
         // 加载技能映射规则
-        public static void LoadAllSkillMappingRules(string configDirectory=null)
+        public static void LoadAllSkillMappingRules(string configDirectory = null)
         {
             configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "skillMaping");
 
