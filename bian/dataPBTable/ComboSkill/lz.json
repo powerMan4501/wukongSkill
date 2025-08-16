@@ -1,7 +1,7 @@
 [
   {
     "nowMontage": "AM_Dasheng_ComboA_01_Z_1.AM_Dasheng_ComboA_01_Z_1",
-    "rate": 0.8,
+    "rate": 0.95,
     "skillID": 50002,
     "Condition": "any",
     "InputCore": "RightMouseButton",
@@ -10,7 +10,7 @@
   },
   {
     "nowMontage": "AM_Wukong_ComboA_z_01.AM_Wukong_ComboA_z_01",
-    "rate": 0.8,
+    "rate": 0.95,
     "skillID": 50002,
     "Condition": "any",
     "InputCore": "RightMouseButton",
