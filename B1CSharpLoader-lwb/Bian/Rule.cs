@@ -243,6 +243,11 @@ namespace bian
                 foreach (var bulletItem in action.bullets.Where(b => CheckBuffConditions(character, b)))
                 {
                     var projectTileIds = bulletItem.ProjectTileIDs?.Count > 0 ? bulletItem.ProjectTileIDs : [bulletItem.ProjectTileID];
+                    if (action.EffectInstReq != null)
+                    {
+                        bulletItem.EffectInstReq = action.EffectInstReq;
+                    }
+
                     if (projectTileIds?.Count > 0)
                     {
                         foreach (var projectTileId in projectTileIds)
@@ -426,7 +431,6 @@ namespace bian
                     action.TimeDelay = 1;
                 if (action.TimeDelay <= 0 && action.Type.ToUpper() is "TRANS" or "BOSS" or "MAGIC")
                     action.TimeDelay = 1;
-
                 var timeDelay = action.TimeDelay > 1 ? (int)(action.TimeDelay / playRate) : action.TimeDelay;
                 var intervalTime = action?.intervalTime > 0 ? action.intervalTime : 0;
 
