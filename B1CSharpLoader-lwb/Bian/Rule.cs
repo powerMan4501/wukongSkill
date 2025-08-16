@@ -408,100 +408,136 @@ namespace bian
             foreach (var action in AfterActions)
             {
                 var character = Helper.GetBGUPlayerCharacterCS();
-
-                if (ruleItem != null && ruleItem?.Caster != null)
-                {
-                    action.Caster = ruleItem.Caster;
-
-                }
-                if (ruleItem != null && ruleItem?.Target != null)
-                {
-                    action.Target = ruleItem.Target;
-                }
-                if (ruleItem != null && ruleItem.EffectInstReq != null && !(action?.noUseEffectLocation ?? false))
-                {
-
-                    action.EffectInstReq = ruleItem.EffectInstReq;
-                }
                 if (character == null) continue;
 
+                // 设置ruleItem相关属性
+                SetRuleItemProperties(action, ruleItem);
+
+                // 检查条件
                 if (!CheckBuffConditions(character, action) || !CheckTalentConditions(character, action))
                     continue;
 
-                // 设置默认延迟
-                if (action.Type.ToLower() == "skill" && action.TimeDelay <= 0)
-                    action.TimeDelay = 1;
-                if (action.TimeDelay <= 0 && action.Type.ToUpper() is "TRANS" or "BOSS" or "MAGIC")
-                    action.TimeDelay = 1;
-                var timeDelay = action.TimeDelay > 1 ? (int)(action.TimeDelay / playRate) : action.TimeDelay;
-                var intervalTime = action?.intervalTime > 0 ? action.intervalTime : 0;
-
-                if (action.TimeDelay > 0)
+                // 设置默认延迟并计算时间参数
+                if (!SetupActionDelay(action, playRate, out var timeDelay, out var intervalTime))
                 {
-                    ExecuteDelayedAction(async () =>
-                    {
-                        var currMontage = Manager.GetCurrentMontage();
-                        if (character == null || currMontage == null || character.Mesh == null)
-                            return;
+                    DoAction(action, timeLength / playRate);
+                    continue;
+                }
 
-                        var animInstance = character.Mesh.GetAnimInstance();
-                        if (animInstance == null) return;
+                // 处理短延迟情况
+                if (action.TimeDelay < 680)
+                {
+                    DoAction(action, timeLength / playRate);
+                    continue;
+                }
 
-                        float currentPosition = montage != null ? animInstance.Montage_GetPosition(montage) : 0;
-                        var nowMontage = animInstance.GetCurrentActiveMontage();
+                // 处理需要延迟执行的情况
+                ExecuteDelayedAction(async () =>
+                {
+                    await HandleAnimationBasedExecution(action, timeLength, playRate, timeDelay, intervalTime, character, montage, ruleItem);
+                }, timeDelay, true, montage, ruleItem).ConfigureAwait(false);
+            }
+            return true;
+        }
 
-                        if (ruleItem != null && montage != null && nowMontage != null)
-                        {
-                            if (!ruleItem.IsMatchMontage(nowMontage.PathName))
-                                return;
+        // 设置ruleItem相关属性
+        private void SetRuleItemProperties(RuleAction action, Rule ruleItem)
+        {
+            if (ruleItem == null) return;
 
-                            var diff = (int)Math.Round(timeDelay / 10.0 * 1.2);
-                            Console.WriteLine($"执行action currentPosition: {currentPosition * 1000},timeDelay-diff:{timeDelay - diff}--timeDelay：{timeDelay}");
+            if (ruleItem.Caster != null) action.Caster = ruleItem.Caster;
+            if (ruleItem.Target != null) action.Target = ruleItem.Target;
+            if (ruleItem.EffectInstReq != null && !(action?.noUseEffectLocation ?? false))
+                action.EffectInstReq = ruleItem.EffectInstReq;
+        }
 
-                            if (currentPosition > 0 && currentPosition * 1000 >= timeDelay - diff)
-                            {
-                                if (intervalTime > 0)
-                                {
-                                    var num = Math.Min(15000, Math.Max(1000, montage.GetPlayLength() * 1000));
-                                    var times = action?.intervalTimes > 0 ? action?.intervalTimes : num / intervalTime;
-                                    var loopTimes = 0;
+        // 设置默认延迟并计算时间参数
+        private bool SetupActionDelay(RuleAction action, float playRate, out int timeDelay, out int intervalTime)
+        {
+            // 设置默认延迟
+            if (action.Type.ToLower() == "skill" && action.TimeDelay <= 0)
+                action.TimeDelay = 1;
+            if (action.TimeDelay <= 0 && action.Type.ToUpper() is "TRANS" or "BOSS" or "MAGIC")
+                action.TimeDelay = 1;
 
-                                    while (nowMontage != null && ruleItem.IsMatchMontage(nowMontage.PathName) && times > loopTimes)
-                                    {
-                                        await Task.Delay((int)intervalTime);
-                                        DoAction(action, timeLength / playRate);
-                                        loopTimes++;
-                                    }
-                                    return;
-                                }
-                                DoAction(action, timeLength / playRate);
-                            }
-                            else if (currentPosition > 0 && timeDelay - currentPosition * 1000 > diff)
-                            {
-                                await Task.Delay((int)(timeDelay - currentPosition * 1000));
-                                nowMontage = animInstance.GetCurrentActiveMontage();
-                                if (nowMontage != null && !ruleItem.IsMatchMontage(nowMontage.PathName))
-                                    return;
-                                DoAction(action, timeLength / playRate);
-                            }
-                            else
-                            {
-                                DoAction(action, timeLength / playRate);
-                            }
-                        }
-                        else
-                        {
-                            DoAction(action, timeLength / playRate);
-                        }
-                    }, timeDelay, true, montage, ruleItem).ConfigureAwait(false);
+            timeDelay = action.TimeDelay > 1 ? (int)(action.TimeDelay / playRate) : action.TimeDelay;
+            intervalTime = (int)(action?.intervalTime > 0 ? action.intervalTime : 0);
+
+            return action.TimeDelay > 0;
+        }
+
+        // 处理基于动画的执行
+        private async Task HandleAnimationBasedExecution(RuleAction action, float timeLength, float playRate,
+            int timeDelay, int intervalTime, BGUPlayerCharacterCS character, UAnimMontage montage, Rule ruleItem)
+        {
+            var currMontage = Manager.GetCurrentMontage();
+            if (character == null || currMontage == null || character.Mesh == null)
+                return;
+
+            var animInstance = character.Mesh.GetAnimInstance();
+            if (animInstance == null) return;
+
+            float currentPosition = montage != null ? animInstance.Montage_GetPosition(montage) : 0;
+            var nowMontage = animInstance.GetCurrentActiveMontage();
+
+            if (ruleItem != null && montage != null && nowMontage != null)
+            {
+                if (!ruleItem.IsMatchMontage(nowMontage.PathName))
+                    return;
+
+                var diff = (int)Math.Round(timeDelay / 10.0 * 1.2);
+                Console.WriteLine($"执行action currentPosition: {currentPosition * 1000},timeDelay-diff:{timeDelay - diff}--timeDelay：{timeDelay}");
+
+                // 根据当前位置和时间延迟决定如何执行
+                if (currentPosition > 0 && currentPosition * 1000 >= timeDelay - diff)
+                {
+                    await ExecuteWithInterval(action, timeLength, playRate, intervalTime, montage, nowMontage, ruleItem);
+                }
+                else if (currentPosition > 0 && timeDelay - currentPosition * 1000 > diff)
+                {
+                    await Task.Delay((int)(timeDelay - currentPosition * 1000));
+                    nowMontage = animInstance.GetCurrentActiveMontage();
+                    if (nowMontage != null && !ruleItem.IsMatchMontage(nowMontage.PathName))
+                        return;
+                    DoAction(action, timeLength / playRate);
                 }
                 else
                 {
                     DoAction(action, timeLength / playRate);
                 }
             }
-            return true;
+            else
+            {
+                DoAction(action, timeLength / playRate);
+            }
         }
+
+        // 执行带间隔的重复操作
+        private async Task ExecuteWithInterval(RuleAction action, float timeLength, float playRate,
+            int intervalTime, UAnimMontage montage, UAnimMontage nowMontage, Rule ruleItem)
+        {
+            if (intervalTime <= 0)
+            {
+                DoAction(action, timeLength / playRate);
+                return;
+            }
+
+            var num = Math.Min(15000, Math.Max(1000, montage.GetPlayLength() * 1000));
+            var times = action?.intervalTimes > 0 ? action?.intervalTimes.Value : (int)(num / intervalTime);
+
+
+            for (int loopTimes = 0; loopTimes < times; loopTimes++)
+            {
+                // 检查动画是否仍然匹配
+                nowMontage = Helper.GetBGUPlayerCharacterCS()?.Mesh?.GetAnimInstance()?.GetCurrentActiveMontage();
+                if (nowMontage == null || !ruleItem.IsMatchMontage(nowMontage.PathName))
+                    break;
+
+                await Task.Delay((int)intervalTime);
+                DoAction(action, timeLength / playRate);
+            }
+        }
+
         public bool IsMatchBuff(int buffID)
         {
             return Filters?.Any(filter =>
