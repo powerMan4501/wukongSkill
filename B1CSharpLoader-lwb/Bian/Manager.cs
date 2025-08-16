@@ -96,14 +96,14 @@ namespace bian
 
 
 
-        public static void loadAllStaticData()
+        public static void loadAllStaticData(bool forceUpdate = false)
         {
             // 加载技能映射规则
             LoadUtils.LoadAllSkillMappingRules();
             LoadComboConfigs();//全部连招
             InitializeEffectRulesMap();//初始化技能子弹效果rule
 
-            if (isBuffConfigsLoaded) { return; }
+            if (isBuffConfigsLoaded&&!forceUpdate) { return; }
             Helper.DelayExecute(2500, () =>
             {
                 LoadUtils.LoadAndApplySummon();
@@ -192,7 +192,7 @@ namespace bian
             Manager.GetModelManager().BindEvents();
 
 
-            loadAllStaticData();
+            loadAllStaticData(true);
             // 在这里可以将buffDispConfigs插入到游戏中的数据
             if (harmony == null)
             {
