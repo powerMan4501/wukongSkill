@@ -2,7 +2,6 @@
   {
     "desc": "后退版jxsq，耗蓝改成1",
     "ID": 1009501,
-    "EffectType": 1,
     "EffectParamsInt": [2],
     "EffectParamsFloat": [1, 0],
     "EffectParamsStr": []
