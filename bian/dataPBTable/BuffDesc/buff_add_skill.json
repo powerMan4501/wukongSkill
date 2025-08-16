@@ -1,0 +1,109 @@
+[
+  {
+    "ID": 800050001,
+    "BuffTips": "大圣1a切手，类似10705，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800050002,
+    "BuffTips": "大圣1a切手接招，类似10707，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800050003,
+    "BuffTips": "大圣2a切手，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800050004,
+    "BuffTips": "大圣2a切手接招，类似10707，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800050005,
+    "BuffTips": "大圣3a切手，小横扫，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800050006,
+    "BuffTips": "大圣3a切手接招，江海翻，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800050007,
+    "BuffTips": "大圣4a切手，转身定，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800050008,
+    "BuffTips": "大圣4a切手接招，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800050015,
+    "BuffTips": "大圣Q5，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+ 
+   {
+    "ID": 800050021,
+    "BuffTips": "大圣2豆蓄力，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800050022,
+    "BuffTips": "大圣3豆蓄力，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+   {
+    "ID": 800050023,
+    "BuffTips": "大圣4豆蓄力，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+   {
+    "ID": 800050024,
+    "BuffTips": "大圣5豆蓄力，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+
+   {
+    "ID": 800010705,
+    "BuffTips": "马喽10705，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800010707,
+    "BuffTips": "马喽10707，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+
+   {
+    "ID": 800010723,
+    "BuffTips": "马喽风云转落地10723，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800010724,
+    "BuffTips": "马喽10724，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  }
+
+
+]

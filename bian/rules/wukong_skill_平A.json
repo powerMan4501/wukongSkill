@@ -356,49 +356,7 @@
         {
           "Type": "montage",
           "Name": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05"
-        }
-      ],
-      "AfterActions": [
-        {
-          "Type": "bullet",
-          "TimeDelay": 810,
-          "bullets": [
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileID": 30050301,
-              "OffsetX": 400,
-              "OffsetY": 400,
-              "desc": "不能的扩散波"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileID": 88880005,
-              "OffsetX": 400,
-              "OffsetY": 400,
-              "desc": "黄符"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileID": 74011107,
-              "OffsetX": 400,
-              "OffsetY": 400,
-              "desc": "没火就金沙爆炸"
-            }
-          ]
         },
-        {
-          "Type": "buff",
-          "BuffIDs": [66655406],
-          "BuffTime": 1900,
-          "desc": "棍光特效粒子"
-        }
-      ]
-    },
-    {
-      "Name": "马喽Q5",
-      "Description": "",
-      "skillID_fs": 1001105,
-      "Filters": [
         {
           "Type": "montage",
           "Name": "AM_Wukong_ComboA_q5.AM_Wukong_ComboA_q5"

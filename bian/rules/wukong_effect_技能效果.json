@@ -1,6 +1,6 @@
 {
   "Name": "悟空的技能id",
-  "desc": "888666005:雷，1000866冰， 1000867火， 1000868毒",
+  "desc": "888666005:雷，888666006 冰， 888666007火， 888666008毒",
   "Rules": [
     {
       "Name": "平A的效果",
@@ -94,25 +94,7 @@
         }
       ]
     },
-    {
-      "Name": "鼠司空，激光",
-      "Description": "",
-      "Filters": [
-        {
-          "Type": "effect",
-          "EffectID": 1011401
-        }
-      ],
-      "AfterActions": [
-        {
-          "Type": "bullet",
-          "TimeDelay": 0,
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 50058603,
-          "desc": "黄符"
-        }
-      ]
-    },
+    
 
     {
       "Name": "飞棍",
@@ -200,6 +182,45 @@
           ]
         }
       ]
+    },
+
+    {
+      "Name": "大圣大风车，前两段伤害",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 5002401
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [44011401],
+              "hasBuff": 888666007,
+              "desc": "有火buff，红孩儿砸地"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [2403471],
+              "hasBuff": 888666006,
+              "desc": "有冰buff，巨猿冰暴"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [74011107],
+              "noHasAnyBuff": [888666006, 888666007],
+              "desc": "没有火bufff，金沙爆炸"
+            }
+          ]
+        }
+      ]
     }
+
+    
   ]
 }

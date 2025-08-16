@@ -7,8 +7,8 @@
       "skillID_fs": 1001133,
       "Filters": [
         {
-          "Type": "montage",
-          "Name": "_xuli_attack_2"
+          "Type": "buff",
+          "BuffID": 800050021
         }
       ],
       "AfterActions": [
@@ -18,14 +18,8 @@
           "ProjectTileIDs": [140, 50058603],
           "OffsetX": 500,
           "OffsetY": 500,
-          "TimeDelay": 1350,
+          "TimeDelay": 0,
           "desc": "业火，黄符"
-        },
-        {
-          "Type": "buff",
-          "BuffIDs": [66655406],
-          "BuffTime": 1500,
-          "desc": "棍光特效粒子"
         }
       ]
     },
@@ -36,8 +30,8 @@
       "skillID_fs": 1001133,
       "Filters": [
         {
-          "Type": "montage",
-          "Name": "_xuli_attack_3"
+          "Type": "buff",
+          "BuffID": 800050022
         }
       ],
       "AfterActions": [
@@ -47,14 +41,8 @@
           "ProjectTileIDs": [140, 50058603, 74011107],
           "OffsetX": 500,
           "OffsetY": 500,
-          "TimeDelay": 1800,
+          "TimeDelay": 0,
           "desc": "业火黄符金沙"
-        },
-         {
-          "Type": "buff",
-          "BuffIDs": [66655407],
-          "BuffTime": 1600,
-          "desc": "棍光特效粒子"
         }
       ]
     },
@@ -63,15 +51,15 @@
       "Description": "",
       "Filters": [
         {
-          "Type": "montage",
-          "Name": "_xuli_attack_4"
+          "Type": "buff",
+          "BuffID": 800050023
         }
       ],
       "skillID_fs": 10834,
       "AfterActions": [
         {
           "Type": "bullet",
-          "TimeDelay": 2350,
+          "TimeDelay": 0,
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
@@ -93,37 +81,6 @@
               "desc": "冰buff，四级冰,冰碎片，金箍棒冰版本"
             }
           ]
-        },
-        {
-          "Type": "buff",
-          "BuffIDs": [66655408],
-          "BuffTime": 1600,
-          "desc": "棍光特效粒子"
-        }
-      ]
-    },
-
-    {
-      "Name": "残躯 蓄力4",
-      "Description": "",
-      "skillID_fs": 10834,
-      "Filters": [
-        {
-          "Type": "montage",
-          "Name": "AM_mgd_jsds_atk_07"
-        }
-      ],
-      "AfterActions": [
-        {
-          "Type": "buff",
-          "BuffID": 5070,
-          "TimeDelay": 500,
-          "BuffTime": 3000
-        },
-        {
-          "Type": "buff",
-          "BuffID": 2028,
-          "BuffTime": 3000
         }
       ]
     },
@@ -133,46 +90,15 @@
       "Description": "",
       "Filters": [
         {
-          "Type": "montage",
-          "Name": "AM_dasheng_xuli_attack_5"
+          "Type": "buff",
+          "BuffID": 800050024
         }
       ],
       "skillID_fs": 50024,
       "AfterActions": [
         {
           "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 153,
-          "OffsetX": 800,
-          "OffsetY": 800,
-          "TimeDelay": 50
-        },
-        {
-          "Type": "bullet",
-          "TimeDelay": 2070,
-          "bullets": [
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileID": 44011401,
-              "OffsetX": 800,
-              "OffsetY": 800,
-              "noHasBuff": 888666006,
-              "desc": "没冰buff，红孩儿砸地"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileID": 2403471,
-              "OffsetX": 800,
-              "OffsetY": 800,
-              "hasBuff": 888666006,
-              "desc": "有冰buff，冰暴"
-            }
-          ]
-        },
-
-        {
-          "Type": "bullet",
-          "TimeDelay": 2770,
+          "TimeDelay": 0,
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",

@@ -1,0 +1,83 @@
+{
+  "Name": "悟空-",
+  "Rules": [
+    {
+      "Name": "大圣蓄力2",
+      "Description": "",
+      "skillID_fs": 1001133,
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "_xuli_attack_2"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffIDs": [66655406],
+          "BuffTime": 1500,
+          "desc": "棍光特效粒子"
+        }
+      ]
+    },
+
+    {
+      "Name": "大圣蓄力3",
+      "Description": "",
+      "skillID_fs": 1001133,
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "_xuli_attack_3"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffIDs": [66655407],
+          "BuffTime": 1600,
+          "desc": "棍光特效粒子"
+        }
+      ]
+    },
+    {
+      "Name": "大圣蓄力4",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "_xuli_attack_4"
+        }
+      ],
+      "skillID_fs": 10834,
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffIDs": [66655408],
+          "BuffTime": 1600,
+          "desc": "棍光特效粒子"
+        }
+      ]
+    },
+
+    {
+      "Name": "大圣蓄力5,大风车",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_dasheng_xuli_attack_5"
+        }
+      ],
+      "skillID_fs": 50024,
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffIDs": [66655408],
+          "BuffTime": 3600,
+          "desc": "棍光特效粒子"
+        }
+      ]
+    }
+  ]
+}

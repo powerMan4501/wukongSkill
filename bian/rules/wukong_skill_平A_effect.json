@@ -3,11 +3,15 @@
   "desc": "888666005:雷，1000866冰， 1000867火， 1000868毒",
   "Rules": [
     {
-      "Name": "马喽Q5，改成监听效果",
+      "Name": "马喽Q5，改成监听效果,大圣Q5改成监听buff",
       "Filters": [
         {
           "Type": "effect",
           "EffectID": 1080506
+        },
+        {
+          "Type": "buff",
+          "BuffID": 800050015
         }
       ],
       "AfterActions": [

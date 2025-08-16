@@ -127,5 +127,10 @@
     "desc": "射箭",
     "ID": 54322001,
     "TemplatePath": "/Game/Mods/DSCQ/AM_mgd_yangjian_01_atk74a.AM_mgd_yangjian_01_atk74a"
+  },
+  {
+    "desc": "夜叉王江海翻",
+    "ID": 50010724,
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboC/AM_wukong_comboc_z_02_ycw.AM_wukong_comboc_z_02_ycw"
   }
 ]
