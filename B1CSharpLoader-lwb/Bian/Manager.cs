@@ -106,22 +106,6 @@ namespace bian
                     Log.Info($"Retrying to get buffDispList. Retries left: {maxRetries - 1}");
                     Helper.DelayExecute(retryInterval, () => GetBuffDispListWithRetry(5000, maxRetries - 1));
                 }
-                else
-                {
-                    Log.Error("Failed to get buffDispList after maximum retries");
-                    // 即使重试失败，也要继续加载其他配置
-                    LoadUtils.LoadAndApplySummon();
-                    LoadUtils.LoadAndApplyChargeSkill();
-                    LoadUtils.LoadAndApplyBulletExpand();
-                    LoadUtils.LoadAndApplyBulletComm();
-                    LoadUtils.LoadAndApplyProjectileMove();
-                    LoadUtils.LoadAndApplyProjectileDisp();
-                    LoadUtils.LoadAndApplySkillDesc();
-                    LoadUtils.LoadAndApplySkillEffect();
-                    LoadUtils.LoadAndApplyBuffDispConfigs();
-                    LoadUtils.LoadAndApplyBuff();
-                    isBuffConfigsLoaded = true;
-                }
             }
             else
             {
