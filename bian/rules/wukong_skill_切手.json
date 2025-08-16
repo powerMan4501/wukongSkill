@@ -3,14 +3,11 @@
   "desc": "888666005:雷，1000866冰， 1000867火， 1000868毒",
   "Rules": [
     {
-      "Name": "10705",
-      "Description": "劈棍切手技",
+      "Name": "50001，大圣版10705",
+      "Description": "大圣劈棍切手技",
       "skillID_fs": 10705,
       "Filters": [
-        {
-          "Type": "montage",
-          "Name": "AM_Wukong_ComboA_z_01"
-        },
+      
         {
           "Type": "montage",
           "Name": "AM_Dasheng_ComboA_01_Z_1"
@@ -56,6 +53,25 @@
               "desc": "没 冰火buff 10705黄符50058603"
             }
           ]
+        }
+      ]
+    },
+     {
+      "Name": "10705",
+      "Description": "马喽劈棍切手技,棍光",
+      "skillID_fs": 10705,
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboA_z_01"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffIDs": [66655405],
+          "BuffTime": 1500,
+          "desc": "棍光特效粒子"
         }
       ]
     },
@@ -467,7 +483,7 @@
         {
           "Type": "buff",
           "BuffIDs": [66655409],
-          "BuffTime": 1400,
+          "BuffTime": 500,
           "desc": "棍光"
         }
       ]
@@ -543,7 +559,7 @@
     },
     {
       "Name": "进尺",
-      "Description": "",
+      "Description": "10714",
       "skillID_fs": 1001114,
       "Filters": [
         {
@@ -553,78 +569,9 @@
       ],
       "AfterActions": [
         {
-          "Type": "bullet",
-          "TimeDelay": 920,
-          "buffs": [
-            {
-              "BuffID": 888666013,
-              "BuffTime": 1000,
-              "noHasAnyBuff": [888666007, 888666006],
-              "desc": "没冰火buff 飞剑"
-            }
-          ],
-          "bullets": [
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "OffsetX": 900,
-              "OffsetY": 900,
-              "ProjectTileIDs": [2403471, 30139802, 30139802],
-              "hasBuff": 888666006,
-              "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "有冰buff，触发冰暴"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 88880003,
-              "hasBuff": 888666006,
-              "BornDirOffsetXLeftValue": 91,
-              "BornDirOffsetXRightValue": 91,
-              "ForTarget": true,
-              "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "有冰buff，冰剑气"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 88880003,
-              "hasBuff": 888666006,
-              "BornDirOffsetXLeftValue": 180,
-              "BornDirOffsetXRightValue": 180,
-              "ForTarget": true,
-              "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "有冰buff，冰剑气"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [44011401, 1016232],
-              "OffsetX": 600,
-              "OffsetY": 600,
-              "hasBuff": 888666007,
-              "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "有火buff 红孩儿砸地"
-            },
-            {
-              "Type": "bullet",
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 88880009,
-              "hasBuff": 888666007,
-              "ForTarget": true,
-              "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "有火buff 火焰剑气"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 88880010,
-              "ForTarget": true,
-              "noHasAnyBuff": [888666007, 888666006],
-              "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "没冰火buff 飞剑"
-            }
-          ]
-        },
-        {
           "Type": "buff",
-          "BuffIDs": [66655404],
-          "BuffTime": 1800,
+          "BuffIDs": [66655405],
+          "BuffTime": 1900,
           "desc": "棍光特效粒子"
         }
       ]

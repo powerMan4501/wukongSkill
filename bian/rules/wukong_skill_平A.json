@@ -349,14 +349,10 @@
     },
 
     {
-      "Name": "马喽Q5红孩儿砸地",
+      "Name": "大圣Q5",
       "Description": "",
       "skillID_fs": 1001105,
       "Filters": [
-        {
-          "Type": "montage",
-          "Name": "AM_Wukong_ComboA_q5.AM_Wukong_ComboA_q5"
-        },
         {
           "Type": "montage",
           "Name": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05"
@@ -390,7 +386,26 @@
             }
           ]
         },
-       {
+        {
+          "Type": "buff",
+          "BuffIDs": [66655406],
+          "BuffTime": 1900,
+          "desc": "棍光特效粒子"
+        }
+      ]
+    },
+    {
+      "Name": "马喽Q5",
+      "Description": "",
+      "skillID_fs": 1001105,
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_ComboA_q5.AM_Wukong_ComboA_q5"
+        }
+      ],
+      "AfterActions": [
+        {
           "Type": "buff",
           "BuffIDs": [66655406],
           "BuffTime": 1900,

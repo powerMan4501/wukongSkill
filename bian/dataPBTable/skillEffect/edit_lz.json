@@ -12,5 +12,32 @@
     "EffectParamsInt": [40, 25, 1, 0, 0, 0, 0],
     "EffectParamsFloat": [0.0, 100.0, 30000.0, 0.0, 0.0, 0.0, 100],
     "EffectParamsStr": ["【主角】蓄力2"]
+  },
+  {
+    "desc": "Q5子弹去掉条件和效果",
+    "ID": 1080506,
+    "EffectType": 17,
+    "EffectActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    }
+  },
+  {
+    "desc": "10705，磐锤去掉条件和效果",
+    "ID": 1099943,
+    "EffectType": 17,
+    "EffectActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    }
+  },
+  {
+    "desc": "10714，进尺去掉条件和效果",
+    "ID": 1099915,
+    "EffectActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "EffectType": 17
   }
 ]
