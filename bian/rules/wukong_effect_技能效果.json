@@ -26,24 +26,29 @@
       "AfterActions": [
         {
           "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 34010501,
-          "noBuffsCondition": [888666006, 888666007],
-          "desc": "雷buff, 落雷"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 30123101,
-          "buffCondition": 888666006,
-          "desc": "冰buff,冰刺"
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 40100101,
-          "buffCondition": 888666007,
-          "desc": "火buff,火长老火球"
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileID": 34010501,
+              "noHasAnyBuff": [888666006, 888666007],
+              "desc": "雷buff, 落雷"
+            },
+            {
+              "Type": "bullet",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileID": 30123101,
+              "hasBuff": 888666006,
+              "desc": "冰buff,冰刺"
+            },
+            {
+              "Type": "bullet",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileID": 40100101,
+              "hasBuff": 888666007,
+              "desc": "火buff,火长老火球"
+            }
+          ]
         }
       ]
     },
@@ -59,6 +64,7 @@
       "AfterActions": [
         {
           "Type": "bullet",
+          "TimeDelay": 0,
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
           "ProjectTileID": 2403471,
           "desc": "冰暴"
@@ -77,6 +83,7 @@
       "AfterActions": [
         {
           "Type": "bullet",
+          "TimeDelay": 0,
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
           "ProjectTileID": 40100301,
           "desc": "火长老火球"
@@ -95,9 +102,98 @@
       "AfterActions": [
         {
           "Type": "bullet",
+          "TimeDelay": 0,
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
           "ProjectTileID": 50058603,
-          "desc": "火长老火球"
+          "desc": "黄符"
+        }
+      ]
+    },
+
+    {
+      "Name": "飞棍",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 1085301
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [2403472, 44010401],
+              "hasBuff": 888666007,
+              "desc": "有火buff，巨猿四级火圈，炸炸炸"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [40042202, 2403471, 152],
+              "hasBuff": 888666006,
+              "desc": "有冰buff，马猴冰，巨猿四级冰暴"
+            },
+
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [34013020, 34010501, 39010112],
+              "noHasAnyBuff": [888666007, 888666006],
+              "desc": "没有有冰火buff，亢金龙电炸地板，亢金龙落雷，wudulong落雷"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "射箭",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 80009924
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileIDs": [50058603, 30190102],
+          "desc": "黄符，范围黄雷"
+        }
+      ]
+    },
+    {
+      "Name": "破隐一击",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 1009601
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [118],
+              "hasBuff": 888666005,
+              "desc": "有雷buff，落雷"
+            },
+
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [1016262],
+              "noHasAnyBuff": [888666005],
+              "desc": "没有雷buff，巴山虎"
+            }
+          ]
         }
       ]
     }
