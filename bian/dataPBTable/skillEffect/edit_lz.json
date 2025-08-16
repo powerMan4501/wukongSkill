@@ -1,0 +1,17 @@
+[
+  {
+    "desc": "后退版jxsq，耗蓝改成1",
+    "ID": 1009501,
+    "EffectType": 1,
+    "EffectParamsInt": [2],
+    "EffectParamsFloat": [1, 0],
+    "EffectParamsStr": []
+  },
+  {
+    "desc": "破隐一击，增加伤害和硬直，原版是300%/主角蓄力2/硬直31/22",
+    "ID": 1009601,
+    "EffectParamsInt": [40, 25, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0.0, 100.0, 30000.0, 0.0, 0.0, 0.0, 100],
+    "EffectParamsStr": ["【主角】蓄力2"]
+  }
+]
