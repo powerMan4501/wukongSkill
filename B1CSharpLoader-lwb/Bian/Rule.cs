@@ -22,6 +22,7 @@ namespace bian
         public string Type { get; set; }
         public List<RuleAction>? bullets { get; set; }
         public List<RuleAction>? buffs { get; set; }
+        public bool? noUseEffectLocation { get; set; }
 
         public int BuffID { get; set; }
         public int SkillID { get; set; }
@@ -243,7 +244,8 @@ namespace bian
                 foreach (var bulletItem in action.bullets.Where(b => CheckBuffConditions(character, b)))
                 {
                     var projectTileIds = bulletItem.ProjectTileIDs?.Count > 0 ? bulletItem.ProjectTileIDs : [bulletItem.ProjectTileID];
-                    if (action.EffectInstReq != null)
+
+                    if (action.EffectInstReq != null && !(action?.noUseEffectLocation ?? false))
                     {
                         bulletItem.EffectInstReq = action.EffectInstReq;
                     }
@@ -416,7 +418,7 @@ namespace bian
                 {
                     action.Target = ruleItem.Target;
                 }
-                if (ruleItem != null && ruleItem.EffectInstReq != null)
+                if (ruleItem != null && ruleItem.EffectInstReq != null && !(action?.noUseEffectLocation ?? false))
                 {
 
                     action.EffectInstReq = ruleItem.EffectInstReq;

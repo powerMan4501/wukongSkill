@@ -95,17 +95,37 @@ namespace bian
         }
 
 
-
-        public static void loadAllStaticData(bool forceUpdate = false)
+        private static void GetBuffDispListWithRetry(int retryInterval = 1000, int maxRetries = 30)
         {
-            // 加载技能映射规则
-            LoadUtils.LoadAllSkillMappingRules();
-            LoadComboConfigs();//全部连招
-            InitializeEffectRulesMap();//初始化技能子弹效果rule
+            var buffDispList = BGW_GameDB.GetAllBuffDispDesc();
 
-            if (isBuffConfigsLoaded&&!forceUpdate) { return; }
-            Helper.DelayExecute(2500, () =>
+            if (buffDispList == null || buffDispList.Count == 0)
             {
+                if (maxRetries > 0)
+                {
+                    Log.Info($"Retrying to get buffDispList. Retries left: {maxRetries - 1}");
+                    Helper.DelayExecute(retryInterval, () => GetBuffDispListWithRetry(5000, maxRetries - 1));
+                }
+                else
+                {
+                    Log.Error("Failed to get buffDispList after maximum retries");
+                    // 即使重试失败，也要继续加载其他配置
+                    LoadUtils.LoadAndApplySummon();
+                    LoadUtils.LoadAndApplyChargeSkill();
+                    LoadUtils.LoadAndApplyBulletExpand();
+                    LoadUtils.LoadAndApplyBulletComm();
+                    LoadUtils.LoadAndApplyProjectileMove();
+                    LoadUtils.LoadAndApplyProjectileDisp();
+                    LoadUtils.LoadAndApplySkillDesc();
+                    LoadUtils.LoadAndApplySkillEffect();
+                    LoadUtils.LoadAndApplyBuffDispConfigs();
+                    LoadUtils.LoadAndApplyBuff();
+                    isBuffConfigsLoaded = true;
+                }
+            }
+            else
+            {
+                // 成功获取到buffDispList，继续加载其他配置
                 LoadUtils.LoadAndApplySummon();
                 LoadUtils.LoadAndApplyChargeSkill();
                 LoadUtils.LoadAndApplyBulletExpand();
@@ -116,8 +136,21 @@ namespace bian
                 LoadUtils.LoadAndApplySkillEffect();
                 LoadUtils.LoadAndApplyBuffDispConfigs();
                 LoadUtils.LoadAndApplyBuff();
-                isBuffConfigsLoaded = true; // 设置标志变量为true
-            });
+                isBuffConfigsLoaded = true;
+            }
+        }
+
+        public static void loadAllStaticData(bool forceUpdate = false, int delayTime = 1000)
+        {
+            // 加载技能映射规则
+            LoadUtils.LoadAllSkillMappingRules();
+            LoadComboConfigs();//全部连招
+            InitializeEffectRulesMap();//初始化技能子弹效果rule
+
+            if (isBuffConfigsLoaded && !forceUpdate) { return; }
+
+            // 使用新的递归方法获取buffDispList
+            GetBuffDispListWithRetry(delayTime);
 
         }
 
@@ -181,7 +214,7 @@ namespace bian
             public static void Postfix()
             {
                 Log.Info("BGW_GameDB_Init_Patch");
-                loadAllStaticData();
+                loadAllStaticData(false, 1000);
             }
         }
 
@@ -192,7 +225,7 @@ namespace bian
             Manager.GetModelManager().BindEvents();
 
 
-            loadAllStaticData(true);
+            loadAllStaticData(true, 0);
             // 在这里可以将buffDispConfigs插入到游戏中的数据
             if (harmony == null)
             {
