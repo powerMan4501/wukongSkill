@@ -52,8 +52,8 @@ namespace bian
         public int SpeedLeftValue { get; set; }
 
         public int SpeedRightValue { get; set; }
-        public int buffCondition { get; set; }
-        public int noBuffCondition { get; set; }
+        public int hasBuff { get; set; }
+        public int noHasBuff { get; set; }
 
 
         public int talentCondition { get; set; }
@@ -74,8 +74,8 @@ namespace bian
 
         public List<int>? BuffIDs { get; set; }
         public List<int>? ProjectTileIDs { get; set; }
-        public List<int>? buffsCondition { get; set; }
-        public List<int>? noBuffsCondition { get; set; }
+        public List<int>? hasAnyBuff { get; set; }
+        public List<int>? noHasAnyBuff { get; set; }
 
 
         public string? TargetProjectilePosOffsetType { get; set; }
@@ -172,16 +172,16 @@ namespace bian
 
         private bool CheckBuffConditions(BGUPlayerCharacterCS character, RuleAction action)
         {
-            if (action.buffCondition > 0 && !BGUFunctionLibraryCS.BGUHasBuffByID(character, action.buffCondition))
+            if (action.hasBuff > 0 && !BGUFunctionLibraryCS.BGUHasBuffByID(character, action.hasBuff))
                 return false;
 
-            if (action.noBuffCondition > 0 && BGUFunctionLibraryCS.BGUHasBuffByID(character, action.noBuffCondition))
+            if (action.noHasBuff > 0 && BGUFunctionLibraryCS.BGUHasBuffByID(character, action.noHasBuff))
                 return false;
 
-            if (action.buffsCondition?.Count > 0 && !action.buffsCondition.All(buff => BGUFunctionLibraryCS.BGUHasBuffByID(character, buff)))
+            if (action.hasAnyBuff?.Count > 0 && !action.hasAnyBuff.All(buff => BGUFunctionLibraryCS.BGUHasBuffByID(character, buff)))
                 return false;
 
-            if (action.noBuffsCondition?.Count > 0 && action.noBuffsCondition.Any(buff => BGUFunctionLibraryCS.BGUHasBuffByID(character, buff)))
+            if (action.noHasAnyBuff?.Count > 0 && action.noHasAnyBuff.Any(buff => BGUFunctionLibraryCS.BGUHasBuffByID(character, buff)))
                 return false;
 
             return true;
