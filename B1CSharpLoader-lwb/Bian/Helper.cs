@@ -186,7 +186,7 @@ namespace bian
             }
         }
 
-        public static void CastVigorSkillByID(BGUPlayerCharacterCS character, int VigorSkillID, float backTime = 0)
+        public static void CastVigorSkillByID(BGUPlayerCharacterCS character, int VigorSkillID, float backTime = 0, int? MagicSkillID = 0)
         {
             var magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(character);
 
@@ -210,71 +210,69 @@ namespace bian
             {
                 BGS.Evt_BuffAdd.Invoke(soulSkillDesc.BuffId, character, character, -1f, EBuffSourceType.MagicallyChange);
             }
-            methodInfo.Invoke(magicChangeComp, new object[] { config as UBGWDataAsset, soulSkillDesc.SkillId, soulSkillDesc.SkillIdReEnter });
+            var finalId = MagicSkillID > 0 ? MagicSkillID : soulSkillDesc.SkillId;
+            methodInfo.Invoke(magicChangeComp, new object[] { config as UBGWDataAsset, finalId, soulSkillDesc.SkillIdReEnter });
 
 
-            if (backTime > 0)
-            {
-                var skillData = GameDBRuntime.GetFUStSkillSDesc(soulSkillDesc.SkillId);
-                var skillTemplatePath = skillData.TemplatePath;
-                var SkillMontage = BGW_PreloadAssetMgr.Get(character).TryGetCachedResourceObj<UAnimMontage>(skillTemplatePath, ELoadResourceType.SyncLoadAndCache);
+            // if (backTime > 0)
+            // {
+            //     var skillData = GameDBRuntime.GetFUStSkillSDesc(soulSkillDesc.SkillId);
+            //     var skillTemplatePath = skillData.TemplatePath;
+            //     var SkillMontage = BGW_PreloadAssetMgr.Get(character).TryGetCachedResourceObj<UAnimMontage>(skillTemplatePath, ELoadResourceType.SyncLoadAndCache);
 
-                var timeLength = SkillMontage.GetPlayLength() * 1000;
-
-
-                UAnimInstance? animInstance = null;
-                try
-                {
-                    animInstance = character.Mesh.GetAnimInstance();
-                }
-                catch (System.Exception e)
-                {
-                    Console.WriteLine($"获取动画实例出错${e.Message} {e.StackTrace}");
-                }
-                var finalBackTime = backTime;
-                Task.Run(async delegate
-                {
-                    await Task.Delay((int)finalBackTime);
+            //     var timeLength = SkillMontage.GetPlayLength() * 1000;
+            //     UAnimInstance? animInstance = null;
+            //     try
+            //     {
+            //         animInstance = character.Mesh.GetAnimInstance();
+            //     }
+            //     catch (System.Exception e)
+            //     {
+            //         Console.WriteLine($"获取动画实例出错${e.Message} {e.StackTrace}");
+            //     }
+            //     var finalBackTime = backTime;
+            //     Task.Run(async delegate
+            //     {
+            //         await Task.Delay((int)finalBackTime);
 
 
-                    // 递归等待函数
-                    async Task WaitForAnimation()
-                    {
+            //         // 递归等待函数
+            //         async Task WaitForAnimation()
+            //         {
 
-                        if (animInstance == null) return;
+            //             if (animInstance == null) return;
 
-                        var currentMontage = animInstance.GetCurrentActiveMontage();
-                        if (currentMontage == null) return;
-
-
-                        var currentPosition = animInstance.Montage_GetPosition(currentMontage);
-                        var currentLength = currentMontage.GetPlayLength() * 1000;
-                        var diff = currentLength * 0.1;
-                        var remainingTime = (int)Math.Max(0, currentLength - currentPosition - diff);
-
-                        // 如果这期间用了精魄的其他技能，就等技能放完再退出精魄
-                        if (SkillMontage.PathName != currentMontage.PathName && remainingTime > 0)
-                        {
-                            await Task.Delay(remainingTime);
-                            await WaitForAnimation(); // 递归检查下一段动画
-                        }
-                    }
-
-                    await WaitForAnimation(); // 开始递归等待
+            //             var currentMontage = animInstance.GetCurrentActiveMontage();
+            //             if (currentMontage == null) return;
 
 
-                    Utils.TryRunOnGameThread((Action)delegate
-                    {
-                        var character = Helper.GetBGUPlayerCharacterCS();
-                        BUS_MagicallyChangeComp magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
-                        Helper.ResetVigorSkill(magicChangeComp, VigorSkillID);
-                        character = Helper.GetBGUPlayerCharacterCS();
-                        // BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10199, ECastSkillSourceType.GM));
-                        character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(0, 0, 0);
-                    });
-                });
+            //             var currentPosition = animInstance.Montage_GetPosition(currentMontage);
+            //             var currentLength = currentMontage.GetPlayLength() * 1000;
+            //             var diff = currentLength * 0.1;
+            //             var remainingTime = (int)Math.Max(0, currentLength - currentPosition - diff);
 
-            }
+            //             // 如果这期间用了精魄的其他技能，就等技能放完再退出精魄
+            //             if (SkillMontage.PathName != currentMontage.PathName && remainingTime > 0)
+            //             {
+            //                 await Task.Delay(remainingTime);
+            //                 await WaitForAnimation(); // 递归检查下一段动画
+            //             }
+            //         }
+
+            //         await WaitForAnimation(); // 开始递归等待
+
+
+            //         Utils.TryRunOnGameThread((Action)delegate
+            //         {
+            //             var character = Helper.GetBGUPlayerCharacterCS();
+            //             BUS_MagicallyChangeComp magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
+            //             Helper.ResetVigorSkill(magicChangeComp, VigorSkillID);
+            //             character = Helper.GetBGUPlayerCharacterCS();
+            //             // BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10199, ECastSkillSourceType.GM));
+            //             character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(0, 0, 0);
+            //         });
+            //     });
+            // }
 
             // BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
 
@@ -515,7 +513,7 @@ namespace bian
             return (FCalliopeGuid)summonGuid;
         }
 
-        public static void SummonReq(Int64 SummonID, Int64 SummonCount, int SummonAliveTime = 12)
+        public static void SummonReq(Int64 SummonID, Int64 SummonCount, int SummonAliveTime = 12, int? skillID = 0)
         {
             var character = Helper.GetBGUPlayerCharacterCS();
 
@@ -531,12 +529,26 @@ namespace bian
             fSummonReq.SummonID = (Int32)SummonID;
             fSummonReq.SpawnConfigWrap = FSummonSpawnConfigWrap.WrapSpawnConfig_BySummonCommDesc((Int32)SummonID, character);
             fSummonReq.SpawnConfigWrap.SummonAliveTime = SummonAliveTime;
+            fSummonReq.SpawnConfigWrap.DestroyDelayTime = 0;
+
+            if (skillID.HasValue && skillID.Value > 0)
+            {
+                var skillDesc = BGW_GameDB.GetSkillSDesc(skillID.Value, character);
+                if (skillDesc != null)
+                {
+                    fSummonReq.SpawnConfigWrap.BornSkillIDs = [skillID.Value];
+                    fSummonReq.SpawnConfigWrap.UseBornSkill = true;
+                }
+
+            }
             fSummonReq.SummonCount = (Int32)SummonCount;
             fSummonReq.Summoner = character;
             fSummonReq.bTeleportSelf = false;
             fSummonReq.EffectCaster = null;
             fSummonReq.BuffOwner = null;
+
             fSummonReq.HitLocation = BGUFuncLibActorTransformCS.BGUGetActorLocation(character);
+
             FSummonReq inSummonReq = fSummonReq;
             BPS_EventCollectionCS.GetLocal(character).Evt_RequestSummon.Invoke(inSummonReq);
         }
@@ -723,6 +735,11 @@ namespace bian
                 {
                     ProjectileSpawnNSInfo.BornDirBaseInfo.BornDirType = ProjectileBornDirType.LookAtTargetPos;
                 }
+
+                if (action != null && action?.BornDirType == "LookAtTargetPos")
+                {
+                    ProjectileSpawnNSInfo.BornDirBaseInfo.BornDirType = ProjectileBornDirType.LookAtTargetPos;
+                }
                 switch (ProjectileSpawnNSInfo.BornDirBaseInfo.BornDirType)
                 {
                     case ProjectileBornDirType.UseEffectNormal:
@@ -884,36 +901,36 @@ namespace bian
         // 分身触发技能 - 优化版本
         public static void FenshenGSTryCastSkill(int skillID, bool? needPort = false)
         {
-            var play = Helper.GetBGUPlayerCharacterCS();
-            if (play == null || play.World == null) return;
+            // var play = Helper.GetBGUPlayerCharacterCS();
+            // if (play == null || play.World == null) return;
+            SummonReq(1111222003, 1, 3, skillID);
+            // // 检查是否需要更新缓存
+            // if (DateTime.Now - _lastCacheUpdate > _cacheUpdateInterval || _cachedCharacters.Count == 0)
+            // {
+            //     UpdateCharacterCache(play.World);
+            // }
 
-            // 检查是否需要更新缓存
-            if (DateTime.Now - _lastCacheUpdate > _cacheUpdateInterval || _cachedCharacters.Count == 0)
-            {
-                UpdateCharacterCache(play.World);
-            }
+            // // 使用缓存数据进行过滤
+            // var filteredActors = _cachedCharacters.Where(item =>
+            //     BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item) &&
+            //     BGUFunctionLibraryCS.BGUHasBuffByID(item, 888666002)
+            // ).ToList();
 
-            // 使用缓存数据进行过滤
-            var filteredActors = _cachedCharacters.Where(item =>
-                BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item) &&
-                BGUFunctionLibraryCS.BGUHasBuffByID(item, 888666002)
-            ).ToList();
+            // var teamFenshen = _cachedCharacters.Where(item =>
+            //     BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item)
+            // ).ToList();
 
-            var teamFenshen = _cachedCharacters.Where(item =>
-                BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item)
-            ).ToList();
+            // if (teamFenshen.Count < 2)
+            // {
+            //     Helper.SummonReq(5009301, 1, 9999);
 
-            if (teamFenshen.Count < 2)
-            {
-                Helper.SummonReq(5009301, 1, 9999);
-
-                // 立即更新缓存以包含新召唤的单位
-                UpdateCharacterCache(play.World);
-                return;
-            }
+            //     // 立即更新缓存以包含新召唤的单位
+            //     UpdateCharacterCache(play.World);
+            //     return;
+            // }
 
             // 处理技能释放逻辑
-            ProcessSkillCast(filteredActors, skillID);
+            // ProcessSkillCast(filteredActors, skillID);
         }
 
         // 更新角色缓存

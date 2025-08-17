@@ -33,8 +33,8 @@ namespace bian
         public string? type { get; set; }
 
         public float? backTime { get; set; }
-
-
+        public List<float>? RelativeLocation { get; set; }
+        public int? MagicSkillID { get; set; }
         private string FName;
 
 

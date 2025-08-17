@@ -647,8 +647,16 @@ namespace bian
                         }
                         Utils.TryRunOnGameThread((Action)delegate
                         {
-                            character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(-800, 0, -1);
-                            Helper.CastVigorSkillByID(character, skill.Id, backTime);
+                            if (skill?.RelativeLocation != null && skill.RelativeLocation.Count > 2)
+                            {
+                                var RelativeLocation = skill.RelativeLocation;
+                                character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(RelativeLocation[0], RelativeLocation[1], RelativeLocation[2]);
+                            }
+                            else
+                            {
+                                character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(-800, 0, -1);
+                            }
+                            Helper.CastVigorSkillByID(character, skill.Id, backTime, skill?.MagicSkillID);
                         });
 
                         // await Task.Delay(backTime);

@@ -103,6 +103,7 @@ namespace bian
         public AActor? Caster { get; set; } // 临时存储施法者
         public AActor? Target { get; set; } // 临时存储目标
         public FEffectInstReq? EffectInstReq { get; set; } // 临时存储目标
+        public string? BornDirType { get; set; }
 
 
         public RuleAction()

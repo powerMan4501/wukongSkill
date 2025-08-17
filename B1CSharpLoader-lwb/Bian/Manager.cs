@@ -347,14 +347,10 @@ namespace bian
             {
                 return;
             }
-            var buffDesc = GameDBRuntime.GetFUStBuffDesc(BuffID);
-
-
-            // if (buffDesc != null && buffDesc?.BuffEffects != null && buffDesc?.BuffEffects?.Count > 0)
+            // if (BuffID != 1015)
             // {
-            //     Log.Info($"buff {BuffID} add  ,buffDescBuffTips {buffDesc.BuffTips} {buffDesc.Duration} EffectParams:{buffDesc?.BuffEffects[0]?.EffectParams[0]}");
+            //     Log.Info($"Evt_BuffAdd_Multicast_Invoke {BuffID}");
             // }
-
 
             // 冰火雷毒buff互斥
             List<int> buffers = [888666005, 888666006, 888666007, 888666008];
@@ -443,10 +439,7 @@ namespace bian
                 {
                     Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, false);
                 }
-                else
-                {
-                    Helper.FenshenGSTryCastSkill((int)0, false);
-                }
+               
 
                 if (ruleItem?.speedRate > 0)
                 {

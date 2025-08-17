@@ -501,6 +501,17 @@ namespace bian
         // 通用属性复制方法
         // 文件位置：[Bian\loadUtils.cs](Bian\loadUtils.cs#L100-L200)
         // 通用属性复制方法
+        private static FUStBuffEffectActiveCondition ConvertBuffActiveCondition(BuffActiveCondition source)
+        {
+            var target = new FUStBuffEffectActiveCondition();
+            if (source.ConditionType.HasValue)
+                target.ConditionType = (EGSBuffAndSkillEffectActiveCondition)source.ConditionType.Value;
+            if (!string.IsNullOrEmpty(source.ConditionParams))
+                target.ConditionParams = source.ConditionParams;
+            return target;
+        }
+
+
         public static void CopyProperties<TSource, TTarget>(TSource source, TTarget target)
         {
             if (source == null || target == null) return;
@@ -521,15 +532,13 @@ namespace bian
                     // 处理特殊属性
                     switch (sourceProp.Name)
                     {
-                        case "EffectActiveCondition" when sourceValue is BuffActiveCondition condition:
-                            var targetCondition = new FUStBuffEffectActiveCondition();
-                            if (condition.ConditionType.HasValue)
-                                targetCondition.ConditionType = (EGSBuffAndSkillEffectActiveCondition)condition.ConditionType.Value;
-                            if (!string.IsNullOrEmpty(condition.ConditionParams))
-                                targetCondition.ConditionParams = condition.ConditionParams;
-                            targetProp.SetValue(target, targetCondition);
+                        case "BuffActiveCondition" when sourceValue is BuffActiveCondition condition:
+                            targetProp.SetValue(target, ConvertBuffActiveCondition(condition));
                             break;
 
+                        case "EffectActiveCondition" when sourceValue is BuffActiveCondition condition:
+                            targetProp.SetValue(target, ConvertBuffActiveCondition(condition));
+                            break;
 
                         case "Range" when sourceValue is BuffRange range:
                             var targetRange = new FUStRange();
