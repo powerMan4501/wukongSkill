@@ -6,7 +6,7 @@
     "Condition": "any",
     "InputCore": "RightMouseButton",
     "conditionValue": 888666022,
-    "desc": "如果当前使用的技能是大圣10705，且播放了0.8以上，按鼠标左键满足条件可以使出大圣10707"
+    "desc": "大圣版50001破棍接：AM_Dasheng_ComboA_01_Z_2"
   },
   {
     "nowMontage": "AM_Wukong_ComboA_z_01.AM_Wukong_ComboA_z_01",
@@ -15,7 +15,7 @@
     "Condition": "any",
     "InputCore": "RightMouseButton",
     "conditionValue": 888666022,
-    "desc": "如果当前使用的技能是10705，且播放了0.8以上，按鼠标左键满足条件可以使出大圣10707"
+    "desc": "马喽破棍10705接：AM_Dasheng_ComboA_01_Z_2"
   },
   {
     "nowMontage": "AM_Wukong_ComboA_z_02",
