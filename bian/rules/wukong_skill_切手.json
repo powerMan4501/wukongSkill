@@ -287,7 +287,6 @@
     },
     {
       "Name": "退寸",
-      "skillID_fs": 1001113,
       "Description": "",
       "Filters": [
         {
@@ -428,7 +427,6 @@
     },
     {
       "Name": "10720 风云转",
-      "skillID_fs": 1001115,
       "Description": "风云转，普通地刺 冰地刺",
       "Filters": [
         {
@@ -442,7 +440,7 @@
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [30139802, 152, 2403471, 144],
+              "ProjectTileIDs": [30139802, 152, 2403471],
               "OffsetX": 400,
               "OffsetY": 400,
               "hasBuff": 888666006,

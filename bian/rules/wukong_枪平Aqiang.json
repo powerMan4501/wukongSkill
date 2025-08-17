@@ -5,7 +5,6 @@
     {
       "Name": "枪平A1",
       "Description": "",
-      "skillID_fs": 10701,
       "Filters": [
         {
           "Type": "montage",
@@ -55,7 +54,6 @@
     {
       "Name": "枪平A2",
       "Description": "",
-      "skillID_fs": 10702,
       "Filters": [
         {
           "Type": "montage",
@@ -120,7 +118,6 @@
     {
       "Name": "枪平A3",
       "Description": "",
-      "skillID_fs": 10703,
       "Filters": [
         {
           "Type": "montage",
@@ -171,7 +168,6 @@
       "Name": "枪平A4",
       "Description": "",
       "speedRate": 1.5,
-      "skillID_fs": 10704,
       "Filters": [
         {
           "Type": "montage",
