@@ -12,17 +12,25 @@
         "EffectParams": [],
         "EffectParamsFloat": [25000.0, 25000.0, 25000.0]
       },
-        {
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [120, 8000, 0],
+        "EffectParamsFloat": []
+      },
+      {
           "EffectTrigger": 1,
-          "EffectType": 2,
+          "EffectType": 152,
           "EffectTargetSelectType": 0,
           "EffectParamsString": [],
-          "EffectParams": [
-            120,
-            8000,
-            0
-          ],
-          "EffectParamsFloat": []
+          "EffectParams": [],
+          "EffectParamsFloat": [
+            9900,
+            9900,
+            9900
+          ]
         }
     ]
   },
@@ -57,17 +65,13 @@
         "EffectParamsFloat": []
       },
       {
-          "EffectTrigger": 1,
-          "EffectType": 2,
-          "EffectTargetSelectType": 0,
-          "EffectParamsString": [],
-          "EffectParams": [
-            120,
-            10000,
-            0
-          ],
-          "EffectParamsFloat": []
-        }
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [120, 10000, 0],
+        "EffectParamsFloat": []
+      }
     ]
   },
   {
@@ -287,5 +291,68 @@
         "EffectParamsFloat": []
       }
     ]
+  },
+
+  {
+    "ID": 888666029,
+    "BuffTips": "分身自杀用，3秒后自杀",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "Delay": 3000,
+    "Duration": -1,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 9,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 888666030,
+    "BuffTips": "分身自杀用，4秒后自杀",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "Delay": 4000,
+    "Duration": -1,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 9,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 888666031,
+    "BuffTips": "分身自杀用，5秒后自杀",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "Delay": 5000,
+    "Duration": -1,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 9,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [],
+        "EffectParamsFloat": []
+      }
+    ]
   }
+
+  
 ]

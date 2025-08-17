@@ -93,5 +93,23 @@
         "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/wswy/DBC_XuLi_B_3.DBC_XuLi_B_3'"
       }
     ]
+  },
+  {
+    "ID": 555503211,
+    "BuffID": 888666015,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/wswy/DBC_XuLi_B_3.DBC_XuLi_B_3'"
+      }
+    ]
+  },
+   {
+    "ID": 555503212,
+    "BuffID": 888666009,
+    "EnterFX": [
+      {
+        "PSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/wswy/DBC_XuLi_B_3.DBC_XuLi_B_3'"
+      }
+    ]
   }
 ]
