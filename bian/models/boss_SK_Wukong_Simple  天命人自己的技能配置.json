@@ -198,12 +198,7 @@
       "RelativeLocation": [-800, 0, -1],
       "Key": "NUMPAD6"
     },
-    {
-      "Id": 10890,
-      "Name": "戳棍",
-      "Key": "NUMPAD7",
-      "CanBreak": true
-    },
+   
     {
       "Id": 8513,
       "type": "magic",
@@ -232,7 +227,7 @@
       "CanBreak": false,
       "Name": "大头排云掌",
       "needBack": true,
-      "backTime": 1200,
+      "backTime": 1800,
       "MagicSkillID": 102433,
       "Description": "",
       "RelativeLocation": [-800, 0, -1],
