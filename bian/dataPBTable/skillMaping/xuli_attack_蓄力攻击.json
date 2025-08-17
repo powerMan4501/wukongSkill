@@ -82,5 +82,43 @@
     "Condition": "any",
     "conditionValue": null,
     "desc": "劈棍蓄力4豆攻击，变成大圣5豆劈棍 50024"
+  },
+
+
+  {
+    "OriginalId": 10881,
+    "MappedId": 10886,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "棍的蓄力戳棍，转化成枪的蓄力戳棍"
+  },
+  {
+    "OriginalId": 10882,
+    "MappedId": 10887,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "棍的蓄力戳棍，转化成枪的蓄力戳棍"
+  },
+  {
+    "OriginalId": 10883,
+    "MappedId": 10888,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "棍的蓄力戳棍，转化成枪的蓄力戳棍"
+  },
+  {
+    "OriginalId": 10884,
+    "MappedId": 10889,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "棍的蓄力戳棍，转化成枪的蓄力戳棍"
+  },
+
+  {
+    "OriginalId": 10885,
+    "MappedId": 10890,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "棍的蓄力戳棍，转化成枪的蓄力戳棍"
   }
 ]

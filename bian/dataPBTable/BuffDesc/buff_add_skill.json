@@ -134,5 +134,37 @@
     "BuffTips": "马喽立棍4蓄，用来触发子弹",
     "Duration": 500,
     "BuffEffects": []
+  },
+
+
+   {
+    "ID": 800010886,
+    "BuffTips": "马喽戳棍0蓄，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+   {
+    "ID": 800010887,
+    "BuffTips": "马喽戳棍1蓄，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+   {
+    "ID": 800010888,
+    "BuffTips": "马喽戳棍2蓄，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+    {
+    "ID": 800010889,
+    "BuffTips": "马喽戳棍3蓄，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+   {
+    "ID": 800010890,
+    "BuffTips": "马喽戳棍4蓄，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
   }
 ]

@@ -101,7 +101,7 @@
       ]
     },
     {
-      "Name": "大圣招，转身定，发射激光",
+      "Name": "大圣招，转身定",
       "speedRate": 1.5,
       "skillID_fs": 50008,
       "Filters": [

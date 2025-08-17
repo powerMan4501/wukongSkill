@@ -24,10 +24,7 @@
               "ForTarget": true
             },
             {
-              "BuffIDs": [
-                888666026,
-                66655408
-              ],
+              "BuffIDs": [888666026, 66655408],
               "BuffTime": 600,
               "desc": "时缓"
             }
@@ -42,23 +39,29 @@
       ]
     },
     {
-      "Name": "激光buff,待修改",
+      "Name": "激光buff,待修改 ",
       "isLoop": true,
       "Filters": [
         {
           "type": "buff",
-          "BuffID": 888666017
+          "BuffID": 888660172
+        },
+        {
+          "type": "buff",
+          "BuffID": 888660170
         }
       ],
       "AfterActions": [
         {
           "Type": "bullet",
-          "TimeDelay": 50,
-          "ForTarget": true,
-          "BornDirOffsetYLeftValue": 180,
-          "BornDirOffsetYRightValue": 180,
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileID": 88880010
+          "ProjectTileID": 80000011,
+          "SpeedLeftValue": 1,
+          "SpeedRightValue": 1,
+          "ForTarget": true,
+          "TimeDelay": 0,
+          "spawnBaseSocketName": "weapon_r_index_03",
+          "desc": "激光"
         }
       ]
     },
@@ -87,19 +90,14 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [888666017,66655408],
+          "BuffIDs": [888666017, 66655408],
           "BuffTime": 800,
           "desc": "激光"
         },
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileIDs": [
-            80009901,
-            80009913,
-            80009910,
-            80000008
-          ],
+          "ProjectTileIDs": [80009901, 80009913, 80009910, 80000008],
           "ForTarget": true,
           "TimeDelay": 200,
           "BulletNumInOneWave": 3,
@@ -112,11 +110,7 @@
           "desc": "杨戬万剑，小型剑，密密麻麻，打中带白色雾,飞剑带拖尾,飞剑带白色拖尾"
         },
         {
-          "BuffIDs": [
-            888666026,
-            888805070,
-            66655408
-          ],
+          "BuffIDs": [888666026, 888805070, 66655408],
           "BuffTime": 1200,
           "desc": "时缓，棍光"
         }
@@ -136,10 +130,7 @@
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [
-            74010206,
-            74011107
-          ],
+          "ProjectTileIDs": [74010206, 74011107],
           "OffsetX": 500,
           "OffsetY": 500,
           "TimeDelay": 2910,
@@ -154,20 +145,13 @@
       "Filters": [
         {
           "Type": "montage",
-          "Name": "xuli_B_attack_0"
-        },
-        {
-          "Type": "montage",
           "Name": "xuli_B_attack_1"
         },
         {
           "Type": "montage",
           "Name": "xuli_B_attack_2"
         },
-        {
-          "Type": "montage",
-          "Name": "xuli_b_attack_0"
-        },
+
         {
           "Type": "montage",
           "Name": "xuli_b_attack_1"
@@ -180,16 +164,45 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [888666017,66655409],
+          "BuffIDs": [888666017, 66655409],
           "BuffTime": 800
         },
         {
           "Type": "bullet",
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-          "ProjectTileIDs": [
-            80009901,
-            80009913
-          ],
+          "ProjectTileIDs": [80009901, 80009913],
+          "ForTarget": true,
+          "TimeDelay": 150,
+          "BulletNumInOneWave": 4,
+          "desc": "杨戬万剑，小型剑，密密麻麻（原本无伤害，目前给了10点）"
+        }
+      ]
+    },
+    {
+      "Name": "戳棍 激光",
+      "Description": "",
+      "skillID_fs": 1001142,
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "xuli_B_attack_0"
+        },
+
+        {
+          "Type": "montage",
+          "Name": "xuli_b_attack_0"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffIDs": [888660170, 66655409],
+          "BuffTime": 800
+        },
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "ProjectTileIDs": [80009901, 80009913],
           "ForTarget": true,
           "TimeDelay": 150,
           "BulletNumInOneWave": 4,

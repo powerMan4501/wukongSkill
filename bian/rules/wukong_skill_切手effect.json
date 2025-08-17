@@ -1,6 +1,6 @@
 {
   "Name": "悟空的技能id",
-  "desc": "888666005:雷，1000866冰， 1000867火， 1000868毒",
+  "desc": "888666005:雷，1000866冰， 888666007火， 1000868毒",
   "Rules": [
     {
       "Name": "马喽10705，改成监听buff",
@@ -12,6 +12,10 @@
         {
           "Type": "buff",
           "BuffID": 800010705
+        },
+        {
+          "Type": "effect",
+          "BuffID": 1099943
         }
       ],
       "AfterActions": [
@@ -370,12 +374,11 @@
       "AfterActions": [
         {
           "Type": "bullet",
-       "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
           "ProjectTileID": 1011401,
-              "SpeedLeftValue": 1,
-              "SpeedRightValue": 1,
+          "SpeedLeftValue": 1,
+          "SpeedRightValue": 1,
           "ForTarget": true,
-          "BulletType": "laser",
           "TimeDelay": 0,
           "BornDirType": "LookAtTargetPos",
           "spawnBaseSocketName": "hand_l",
