@@ -100,7 +100,7 @@
       ]
     },
     {
-      "Name": "棍花重击，火冰剑气",
+      "Name": "棍花重击，特效",
       "Description": "",
       "Filters": [
         {
@@ -109,9 +109,31 @@
         }
       ],
       "AfterActions": [
+         
+        {
+          "Type": "buff",
+          "BuffIDs": [
+            888805079
+          ],
+          "BuffTime": 1600,
+          "desc": "棍光特效粒子"
+        }
+      ]
+    },
+      {
+      "Name": "棍花重击，监听buff，火冰剑气",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "buff",
+          "BuffID": 800010852
+        }
+     
+      ],
+      "AfterActions": [
         {
           "Type": "bullet",
-          "TimeDelay": 420,
+          "TimeDelay": 0,
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
@@ -134,7 +156,6 @@
               "desc": "冰buff就发射冰剑气",
               "BornDirOffsetXLeftValue": 45,
               "BornDirOffsetXRightValue": 45,
-              "TimeDelay": 420,
               "spawnBaseSocketName": "weapon_r_index_03",
               "SpeedLeftValue": 6000,
               "SpeedRightValue": 6000
@@ -152,7 +173,6 @@
               "desc": "没有冰火毒buff就发射雷剑气",
               "BornDirOffsetXLeftValue": 45,
               "BornDirOffsetXRightValue": 45,
-              "TimeDelay": 420,
               "spawnBaseSocketName": "weapon_r_index_03",
               "SpeedLeftValue": 6000,
               "SpeedRightValue": 6000
@@ -166,20 +186,11 @@
               "desc": "毒buff就发射红剑气",
               "BornDirOffsetXLeftValue": 135,
               "BornDirOffsetXRightValue": 135,
-              "TimeDelay": 420,
               "spawnBaseSocketName": "weapon_r_index_03",
               "SpeedLeftValue": 6000,
               "SpeedRightValue": 6000
             }
           ]
-        },
-        {
-          "Type": "buff",
-          "BuffIDs": [
-            888805079
-          ],
-          "BuffTime": 1600,
-          "desc": "棍光特效粒子"
         }
       ]
     },

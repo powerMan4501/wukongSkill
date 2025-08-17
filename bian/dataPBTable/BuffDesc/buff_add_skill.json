@@ -53,8 +53,8 @@
     "Duration": 500,
     "BuffEffects": []
   },
- 
-   {
+
+  {
     "ID": 800050021,
     "BuffTips": "大圣2豆蓄力，用来触发子弹",
     "Duration": 500,
@@ -66,20 +66,20 @@
     "Duration": 500,
     "BuffEffects": []
   },
-   {
+  {
     "ID": 800050023,
     "BuffTips": "大圣4豆蓄力，用来触发子弹",
     "Duration": 500,
     "BuffEffects": []
   },
-   {
+  {
     "ID": 800050024,
     "BuffTips": "大圣5豆蓄力，用来触发子弹",
     "Duration": 500,
     "BuffEffects": []
   },
 
-   {
+  {
     "ID": 800010705,
     "BuffTips": "马喽10705，用来触发子弹",
     "Duration": 500,
@@ -92,7 +92,7 @@
     "BuffEffects": []
   },
 
-   {
+  {
     "ID": 800010723,
     "BuffTips": "马喽风云转落地10723，用来触发子弹",
     "Duration": 500,
@@ -103,7 +103,12 @@
     "BuffTips": "马喽10724，用来触发子弹",
     "Duration": 500,
     "BuffEffects": []
+  },
+
+  {
+    "ID": 800010852,
+    "BuffTips": "马喽棍花重击10852，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
   }
-
-
 ]
