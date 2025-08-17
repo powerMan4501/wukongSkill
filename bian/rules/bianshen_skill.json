@@ -680,36 +680,7 @@
         }
       ]
     },
-    {
-      "Name": "幽魂",
-      "Description": "磕头给目标上地爆",
-      "Filters": [
-        {
-          "Type": "montage",
-          "Name": "AM_GYCY_YanJianXi_01b_Atk_Fast_24"
-        },
-        {
-          "Type": "montage",
-          "Name": "AM_GYCY_YanJianXi_Atk_Fast_24"
-        }
-      ],
-      "AfterActions": [
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
-          "ProjectTileID": 74010208,
-          "ForTarget": true,
-          "TimeDelay": 1200
-        },
-        {
-          "Type": "bullet",
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
-          "ProjectTileID": 74011106,
-          "ForTarget": true,
-          "TimeDelay": 1250
-        }
-      ]
-    },
+    
     {
       "Name": "幽魂",
       "Description": "精魄磕头给目标上地爆",

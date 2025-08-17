@@ -29,7 +29,7 @@
   },
 
   {
-    "desc": "金箍棒冰",
+    "desc": "金箍棒克隆",
     "ID": 88880006,
     "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/MGD/MGD_JSDS/BP_mgd_jsds_bullet_yaojian.BP_mgd_jsds_bullet_yaojian_C",
     "ProjectileDelayDestroyTime": 2,

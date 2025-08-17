@@ -22,7 +22,6 @@
   "Level1Scale": 1.0,
   "Level2Scale": 1.0,
   "Skills": [
-   
     {
       "Id": 54321007,
       "Name": "戳棍",
@@ -35,15 +34,14 @@
       "Key": "S+SPACE",
       "CanBreak": false
     },
-    
-   
+
     {
       "Id": 50007,
       "CanBreak": true,
       "Name": "大圣模式，转身定身",
       "Key": "A+LBUTTON"
     },
-   
+
     {
       "Id": 50005,
       "Name": "大圣切手技，小横扫",
@@ -118,35 +116,7 @@
       "CanBreak": false
     },
 
-    {
-      "Id": 50015,
-      "CanBreak": true,
-      "Name": "大圣Q5",
-      "Description": "",
-      "Key": ""
-    },
-
-    {
-      "Id": 50012,
-      "CanBreak": true,
-      "Name": "大圣Q1",
-      "Step": 2,
-      "Key": ""
-    },
-    {
-      "Id": 50013,
-      "CanBreak": true,
-      "Name": "大圣Q1",
-      "Step": 3,
-      "Key": ""
-    },
-    {
-      "Id": 50014,
-      "CanBreak": true,
-      "Name": "大圣Q1",
-      "Step": 4,
-      "Key": ""
-    },
+   
 
     {
       "Id": 8596,
@@ -156,9 +126,10 @@
       "Key": "NUMPAD0",
       "type": "magic",
       "CanBreak": false,
+      "RelativeLocation": [-800, 0, -1],
       "backTime": 3300
     },
-     
+
     {
       "Id": 8522,
       "type": "magic",
@@ -167,6 +138,7 @@
       "Name": "无量蝠，冰",
       "needBack": true,
       "backTime": 1800,
+      "RelativeLocation": [-800, 0, -1],
       "Key": "NUMPAD1"
     },
     {
@@ -177,6 +149,7 @@
       "Name": "蘑菇，转",
       "needBack": true,
       "backTime": 6050,
+      "RelativeLocation": [-800, 0, -1],
       "Key": "NUMPAD2"
     },
 
@@ -189,6 +162,7 @@
       "Name": "蝎子，毒",
       "backTime": 1700,
       "Description": "",
+      "RelativeLocation": [-900, 0, -1],
       "Key": "NUMPAD3"
     },
     {
@@ -199,19 +173,30 @@
       "needBack": true,
       "backTime": 1100,
       "Description": "",
+      "RelativeLocation": [-800, 0, -1],
       "Key": "NUMPAD4"
     },
     {
-      "Id": 54321019,
-      "Name": "残躯江海翻",
+      "Id": 8513,
+      "type": "magic",
       "CanBreak": false,
+      "Name": "大头磕头",
+      "needBack": true,
+      "backTime": 1200,
+      "Description": "",
+      "RelativeLocation": [-800, 0, -1],
       "Key": "NUMPAD5"
     },
     {
-      "Id": 54321021,
-      "Name": "残躯招：空中转很多下",
-      "Key": "NUMPAD6",
-      "CanBreak": true
+      "Id": 8534,
+      "type": "magic",
+      "CanBreak": false,
+      "Name": "地罗刹_重盾",
+      "needBack": true,
+      "backTime": 1100,
+      "Description": "",
+      "RelativeLocation": [-800, 0, -1],
+      "Key": "NUMPAD6"
     },
     {
       "Id": 10890,
@@ -219,6 +204,41 @@
       "Key": "NUMPAD7",
       "CanBreak": true
     },
+    {
+      "Id": 8513,
+      "type": "magic",
+      "CanBreak": false,
+      "Name": "大头磕头",
+      "needBack": true,
+      "backTime": 1200,
+      "Description": "",
+      "RelativeLocation": [-800, 0, -1],
+      "Key": "NUMPAD5"
+    },
+    {
+      "Id": 8534,
+      "type": "magic",
+      "CanBreak": false,
+      "Name": "地罗刹_重盾",
+      "needBack": true,
+      "backTime": 1100,
+      "Description": "",
+      "RelativeLocation": [-800, 0, -1],
+      "Key": "NUMPAD6"
+    },
+    {
+      "Id": 8513,
+      "type": "magic",
+      "CanBreak": false,
+      "Name": "大头排云掌",
+      "needBack": true,
+      "backTime": 1200,
+      "MagicSkillID": 102433,
+      "Description": "",
+      "RelativeLocation": [-800, 0, -1],
+      "Key": "NUMPAD7"
+    },
+
     {
       "Id": 10519,
       "Name": "完美定身",

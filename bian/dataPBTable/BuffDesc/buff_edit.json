@@ -64,5 +64,71 @@
       "ConditionType": 3,
       "ConditionParams": "888666007"
     }
-  }
+  },
+
+   {
+      "ID": 20234,
+      "BuffTips": "【化身】海罗刹-盾 【Buff】受击召唤疯虎子弹",
+      "BuffActiveCondition": {
+        "ConditionType": 0,
+        "ConditionParams": ""
+      },
+      "BuffLayerCounterType": 0,
+      "BuffCategory": 0,
+      "CanRemoveWhenAttackHit": 0,
+      "CanRemoveWhenAttacked": 0,
+      "Delay": 0,
+      "Duration": -1,
+      "Interval": 0,
+      "AlmostEndAheadTime": 0,
+      "MaxLayer": 1,
+      "TargetBase": 2,
+      "TargetCount": 1,
+      "TargetFilter": 1,
+      "TargetTypeFilter": 1,
+      "AffiliationTypeFilter": 0,
+      "Range": {
+        "RangeType": 0,
+        "RangeCenterType": 0,
+        "RangeParam": []
+      },
+      "BuffEffects": [
+        {
+          "EffectTrigger": 1,
+          "EffectType": 7,
+          "EffectTargetSelectType": 0,
+          "EffectParamsString": [],
+          "EffectParams": [
+            1,
+            7,
+            18,
+            45,
+            80
+          ],
+          "EffectParamsFloat": []
+        },
+        {
+          "EffectTrigger": 7,
+          "EffectType": 20,
+          "EffectTargetSelectType": 0,
+          "EffectParamsString": [
+            "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_20_hfm_bashanhu_BulletChange.BGW_20_hfm_bashanhu_BulletChange'"
+          ],
+          "EffectParams": [],
+          "EffectParamsFloat": []
+        },
+        {
+          "EffectTrigger": 3,
+          "EffectType": 46,
+          "EffectTargetSelectType": 0,
+          "EffectParamsString": [],
+          "EffectParams": [
+            20634
+          ],
+          "EffectParamsFloat": [
+            0.0
+          ]
+        }
+      ]
+    }
 ]

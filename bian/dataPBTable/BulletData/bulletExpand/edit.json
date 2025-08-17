@@ -16,5 +16,18 @@
     "BulletSweepCheckGap": 5,
     "BulletSweepCheckDelayTime": 0.0,
     "BulletCanThroughBlockage": 1
+  },
+
+  {
+    "desc": "普通完美闪避",
+    "ID": 117,
+    "LifeOverEffectID": [888555023, 9999],
+    "HitDestructibleStrengthType": 4
+  },
+  {
+    "desc": "带雷的完美闪避",
+    "ID": 131,
+    "LifeOverEffectID": [888555023, 9999],
+    "HitDestructibleStrengthType": 4
   }
 ]

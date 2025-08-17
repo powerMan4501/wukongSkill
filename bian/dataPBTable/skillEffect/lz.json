@@ -247,5 +247,17 @@
     "EffectParamsInt": [40, 25, 1, 0, 0, 0, 0],
     "EffectParamsFloat": [0.0, 200.0, 20000.0, 0.0, 0.0, 0.0, 200],
     "EffectParamsStr": ["【主角】蓄力1"]
+  },
+
+
+  {
+    "desc": "完美闪避子弹消失专用，金沙爆炸",
+    "ID": 888555023,
+    "EffectType": 20,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/MGD/mgd_yuan/Physics/mgd_yuan_bigballfarspawn.mgd_yuan_bigballfarspawn'"
+    ]
   }
 ]

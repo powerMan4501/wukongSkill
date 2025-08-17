@@ -63,12 +63,12 @@
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [74010206, 70015801, 2403472],
+              "ProjectTileIDs": [74010206, 88880006, 2403472],
               "OffsetX": 200,
               "OffsetY": 200,
               "noHasBuff": 888666006,
               "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "没冰地面炸出火碎片,金箍棒火版本,四级火"
+              "desc": "没冰地面炸出火碎片,金箍棒,四级火"
             },
 
             {
@@ -78,7 +78,7 @@
               "OffsetY": 200,
               "hasBuff": 888666006,
               "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "冰buff，四级冰,冰碎片，金箍棒冰版本"
+              "desc": "冰buff，四级冰,冰碎片，金箍棒"
             }
           ]
         }

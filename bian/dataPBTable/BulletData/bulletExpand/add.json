@@ -38,9 +38,9 @@
   },
 
   {
-    "desc": "金箍棒冰",
+    "desc": "克隆金箍棒",
     "ID": 88880006,
-    "HitEffectsforChr": [888555003, 888555004, 888555016, 888555024],
+    "HitEffectsforChr": [888555024],
     "HitDestructibleStrengthType": 4,
     "BulletSweepCheckGap": 5,
     "BulletSweepCheckDelayTime": 0.0,

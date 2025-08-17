@@ -15,14 +15,14 @@
   },
   {
     "OriginalId": 10838,
-    "MappedId": 10833,
+    "MappedId": 50023,
     "Condition": "any",
     "conditionValue": null,
     "desc": "3/4蓄start，转成3/4蓄攻击"
   },
   {
     "OriginalId": 10839,
-    "MappedId": 10834,
+    "MappedId": 50024,
     "Condition": "any",
     "conditionValue": null,
     "desc": "3/4蓄start，转成3/4蓄攻击"
