@@ -22,15 +22,7 @@
       "ConditionParams": ""
     }
   },
-  {
-    "desc": "10705，磐锤去掉条件和效果",
-    "ID": 1099943,
-    "EffectType": 17,
-    "EffectActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    }
-  },
+  
   {
     "desc": "10714，进尺去掉条件和效果",
     "ID": 1099915,

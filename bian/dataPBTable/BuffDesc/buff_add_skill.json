@@ -106,8 +106,32 @@
   },
 
   {
-    "ID": 800010852,
-    "BuffTips": "马喽棍花重击10852，用来触发子弹",
+    "ID": 800010860,
+    "BuffTips": "马喽立棍0蓄，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800010861,
+    "BuffTips": "马喽立棍1蓄，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800010862,
+    "BuffTips": "马喽立棍2蓄，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800010863,
+    "BuffTips": "马喽立棍3蓄，用来触发子弹",
+    "Duration": 500,
+    "BuffEffects": []
+  },
+  {
+    "ID": 800010864,
+    "BuffTips": "马喽立棍4蓄，用来触发子弹",
     "Duration": 500,
     "BuffEffects": []
   }

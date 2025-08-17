@@ -11,10 +11,10 @@
   },
   {
     "ID": 2014,
-    "BuffTips": "飞龙棍-表现，去掉条件",
+    "BuffTips": "飞龙棍-表现，条件改成没有火buff",
     "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
+      "ConditionType": 7,
+      "ConditionParams": "888666007"
     }
   },
   {
@@ -55,6 +55,14 @@
     "BuffActiveCondition": {
       "ConditionType": 0,
       "ConditionParams": ""
+    }
+  },
+  {
+    "ID": 2828,
+    "BuffTips": "兽棍诸相-加火棍表现Buff的Buff，条件改成有火buff",
+    "BuffActiveCondition": {
+      "ConditionType": 3,
+      "ConditionParams": "888666007"
     }
   }
 ]

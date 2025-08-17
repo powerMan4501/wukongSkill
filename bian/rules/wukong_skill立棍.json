@@ -8,23 +8,18 @@
       "skillID_fs": 1001199,
       "Filters": [
         {
-          "Type": "montage",
-          "Name": "AM_Wukong_Xuli_C_attack_4"
+          "Type": "buff",
+          "BuffID": 800010864
         }
       ],
       "AfterActions": [
         {
           "Type": "bullet",
-          "TimeDelay": 600,
+          "TimeDelay": 0,
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [
-                152,
-                50051029,
-                2403471,
-                39010112
-              ],
+              "ProjectTileIDs": [152, 50051029, 2403471, 39010112],
               "noHasBuff": 888666007,
               "OffsetX": 600,
               "OffsetY": 60,
@@ -33,12 +28,7 @@
             {
               "Type": "bullet",
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [
-                2403472,
-                44011401,
-                1016232,
-                88880002
-              ],
+              "ProjectTileIDs": [2403472, 44011401, 1016232, 88880002],
               "TimeDelay": 600,
               "hasBuff": 888666007,
               "OffsetX": 600,
@@ -46,39 +36,59 @@
               "desc": "有火buff就地火,红孩儿砸地,炸炸炸,业火"
             }
           ]
-        },
+        }
+      ]
+    },
+
+    {
+      "Name": "4蓄力立棍 特效",
+      "Description": "",
+      "skillID_fs": 1001199,
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_Xuli_C_attack_4"
+        }
+      ],
+      "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [
-            66655404
-          ],
+          "BuffIDs": [66655404],
           "BuffTime": 1600,
           "desc": "棍光特效粒子"
         }
       ]
     },
     {
-      "Name": "3蓄力立棍 ",
+      "Name": "3蓄力立棍 子弹",
       "Description": "",
       "skillID_fs": 1001153,
       "Filters": [
         {
-          "Type": "montage",
-          "Name": "AM_Wukong_Xuli_C_attack_3"
+          "Type": "buff",
+          "BuffID": 800010863
+        },
+        {
+          "Type": "buff",
+          "BuffID": 800010862
+        },
+        {
+          "Type": "buff",
+          "BuffID": 800010861
+        },
+        {
+          "Type": "buff",
+          "BuffID": 800010860
         }
       ],
       "AfterActions": [
         {
           "Type": "bullet",
-          "TimeDelay": 600,
+          "TimeDelay": 0,
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [
-                50051029,
-                2403471,
-                39010112
-              ],
+              "ProjectTileIDs": [50051029, 2403471, 39010112],
               "noHasBuff": 888666007,
               "OffsetX": 600,
               "OffsetY": 600,
@@ -87,22 +97,42 @@
             {
               "Type": "bullet",
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [
-                2403372,
-                44011401
-              ],
+              "ProjectTileIDs": [2403372, 44011401],
               "hasBuff": 888666007,
               "OffsetX": 600,
               "OffsetY": 600,
               "desc": "有火buff就地火,红孩儿砸地"
             }
           ]
+        }
+      ]
+    },
+    {
+      "Name": "3蓄力立棍 特效",
+      "Description": "",
+      "skillID_fs": 1001153,
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_Xuli_C_attack_3"
+        },
+         {
+          "Type": "montage",
+          "Name": "AM_Wukong_Xuli_C_attack_2"
         },
         {
+          "Type": "montage",
+          "Name": "AM_Wukong_Xuli_C_attack_1"
+        },
+         {
+          "Type": "montage",
+          "Name": "AM_Wukong_Xuli_C_attack_0"
+        }
+      ],
+      "AfterActions": [
+        {
           "Type": "buff",
-          "BuffIDs": [
-            66655406
-          ],
+          "BuffIDs": [66655406],
           "BuffTime": 1200,
           "desc": "棍光特效粒子"
         }
