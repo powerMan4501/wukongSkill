@@ -29,5 +29,17 @@
     "ID": 131,
     "LifeOverEffectID": [888555023, 9999],
     "HitDestructibleStrengthType": 4
+  },
+  {
+    "desc": "鳖宝子弹",
+    "ID": 40550101,
+    "HitEffectsforChr": [40559901, 888555017],
+    "HitDestructibleStrengthType": 4
+  },
+  {
+    "desc": "红孩儿砸地",
+    "ID": 44011401,
+    "HitEffectsforChr": [888555021, 888555017],
+    "HitDestructibleStrengthType": 4
   }
 ]

@@ -33,6 +33,15 @@
     "EffectType": 17
   },
   {
+    "desc": "飞龙棍子弹效果，去掉条件和效果",
+    "ID": 1099939,
+    "EffectActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    }
+  },
+
+  {
     "desc": "磐锤，进尺去掉条件和效果",
     "ID": 1099943,
     "EffectActiveCondition": {
@@ -40,5 +49,12 @@
       "ConditionParams": ""
     },
     "EffectType": 17
+  },
+  {
+    "desc": "疯虎元气弹增加保底伤害",
+    "ID": 1016263,
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0],
+    "EffectParamsFloat": [1000.0, 1200.0, 120140.0, 0.0, 0.0, 0.0, 1300.0],
+    "EffectParamsStr": ["【主角】蓄力3"]
   }
 ]

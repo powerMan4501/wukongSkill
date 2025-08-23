@@ -25,6 +25,22 @@
         {
           "Type": "effect",
           "EffectID": 1071401
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1072102
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1012601
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1012602
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1012604
         }
       ],
       "AfterActions": [
@@ -34,7 +50,7 @@
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileID": 34010501,
+              "ProjectTileID": 118,
               "noHasAnyBuff": [888666006, 888666007],
               "desc": "雷buff, 落雷"
             },
@@ -57,12 +73,20 @@
       ]
     },
     {
-      "Name": "无量蝠冰刃",
+      "Name": "无量蝠冰刃/喷冰，隼居士冰刃",
       "Description": "",
       "Filters": [
         {
           "Type": "effect",
           "EffectID": 1012261
+        },
+        {
+          "Type": "effect",
+          "EffectID": 30210204
+        },
+        {
+          "Type": "effect",
+          "EffectID": 30300302
         }
       ],
       "AfterActions": [
@@ -76,12 +100,16 @@
       ]
     },
     {
-      "Name": "火蛙喷火",
+      "Name": "火蛙喷火，夜叉王刀砍",
       "Description": "",
       "Filters": [
         {
           "Type": "effect",
           "EffectID": 1026215
+        },
+        {
+          "Type": "effect",
+          "EffectID": 44050601
         }
       ],
       "AfterActions": [
@@ -89,8 +117,8 @@
           "Type": "bullet",
           "TimeDelay": 0,
           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileID": 40100301,
-          "desc": "火长老火球"
+          "ProjectTileID": 40550101,
+          "desc": "鳖宝子弹"
         }
       ]
     },
@@ -152,6 +180,26 @@
       ]
     },
     {
+      "Name": "大头磕头，地裂",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 1011361
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileIDs": [74011107, 30050301],
+          "desc": "金沙，波动"
+        }
+      ]
+    },
+
+    {
       "Name": "破隐一击",
       "Description": "",
       "Filters": [
@@ -167,9 +215,9 @@
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [118],
+              "ProjectTileIDs": [50058603],
               "hasBuff": 888666005,
-              "desc": "有雷buff，落雷"
+              "desc": "有雷buff，黄符"
             },
 
             {
@@ -340,13 +388,21 @@
       ]
     },
 
-      {
-      "Name": "虫总兵精魄技能效果",
+    {
+      "Name": "虫总兵精魄技能效果，大头如来神掌，石蛙",
       "Description": "巴山虎",
       "Filters": [
         {
           "Type": "effect",
           "EffectID": 1012701
+        },
+        {
+          "Type": "effect",
+          "EffectID": 10243301
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1026216
         }
       ],
       "AfterActions": [
@@ -369,9 +425,65 @@
 
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [49981301],
+              "ProjectTileIDs": [1016262],
               "noHasAnyBuff": [888666005, 888666006],
-              "desc": "没有雷火冰buff，毒液池"
+              "desc": "没有雷火冰buff，巴山虎"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "Name": "鳖宝锤子/飞天大坐/夜叉王地刺",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 40551301
+        },
+        {
+          "Type": "effect",
+          "EffectID": 40550701
+        },
+        {
+          "Type": "effect",
+          "EffectID": 44051003
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [44011401],
+              "desc": "红孩儿砸地"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "Name": "不能精魄技能效果",
+      "Description": "冰刺冰暴",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 1012605
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [2403471],
+              "desc": "冰暴"
             }
           ]
         }

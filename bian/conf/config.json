@@ -672,88 +672,19 @@
       "Name": "变身为【石苍苍】",
       "Label": "SK_HFM_ShanZhen_02"
     },
-    {
-      "Key": "A+W",
-      "Type": "COMMAND",
-      "Label": "SpawnProjectile",
-      "Name": "测试子弹释放",
-      "Params": [
-        "/Game/00Main/Design/Bullets/MGD/MGD_yangjian_01/DA/SP_mgd_yangjian_01_biglaser_01.SP_mgd_yangjian_01_biglaser_01"
-      ],
-      "AlawaysCanCast": true
-    },
-    {
-      "Key": "",
-      "Type": "COMMAND",
-      "Label": "SpawnProjectile",
-      "Name": "测试子弹释放",
-      "Params": [
-        "/Game/00Main/Design/MagicFields/Player/Talent/BGW_player_wukong_lava.BGW_player_wukong_lava"
-      ],
-      "AlawaysCanCast": true
-    },
-    {
-      "Key": "A+D",
-      "Type": "COMMAND",
-      "Label": "SpawnProjectile",
-      "Name": "测试子弹释放",
-      "Params": [
-        "/Game/00Main/Design/Bullets/LYS/LYS_HuangMei_03/SP_LYS_HuangMei_03_B1801_Shock.SP_LYS_HuangMei_03_B1801_Shock"
-      ],
-      "AlawaysCanCast": true
-    },
-    {
-      "Key": "A+S",
-      "Type": "COMMAND",
-      "Label": "SpawnProjectile",
-      "Name": "测试子弹释放",
-      "Params": [
-        "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/HYS/HYS_HongHaiEr_01A/HHEFS_BaoZha_player.HHEFS_BaoZha_player'"
-      ],
-      "AlawaysCanCast": true
-    },
-    {
-      "Key": "",
-      "Type": "COMMAND",
-      "Label": "SpawnProjectile",
-      "Name": "测试子弹释放",
-      "Params": [
-        "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_q5.BGW_Player_Wukong_Atk_q5"
-      ],
-      "AlawaysCanCast": true
-    },
+ 
+    
     {
       "Key": "S+W",
       "Type": "Teleport",
       "ForTarget": true,
-      "Name": "往前500",
+      "Name": "shift+w 飞雷神，传送到目标前面",
       "AlawaysCanCast": true
     },
     {
       "Key": "S+A",
       "Type": "strong_monster",
-      "Name": "把怪加强，五倍血",
-      "AlawaysCanCast": true
-    },
-    {
-      "Key": "S+S",
-      "Type": "ADD_BUFF",
-      "Buffers": [1000190,103],
-      "Name": "敌人巨猿",
-      "AlawaysCanCast": true
-    },
-    {
-      "Key": "S+D",
-      "Type": "ADD_BUFF",
-      "Buffers": [1000192],
-      "Name": "己方幽魂",
-      "AlawaysCanCast": true
-    },
-    {
-      "Key": "A+A",
-      "Type": "ADD_BUFF",
-      "Buffers": [1000193],
-      "Name": "己方残躯",
+      "Name": "shift+a 把怪加强，五倍血",
       "AlawaysCanCast": true
     }
   ]

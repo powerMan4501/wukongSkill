@@ -1,0 +1,226 @@
+[
+  {
+    "nowMontage": "AM_Dasheng_ComboA_01.AM_Dasheng_ComboA_01",
+    "rate": 0.3,
+    "type": "magic",
+    "backTime": 1600,
+    "skillID": 8526,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "平A1接不能老拳"
+  },
+   {
+    "nowMontage": "AM_Dasheng_ComboA_02.AM_Dasheng_ComboA_02",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8526,
+    "backTime": 1600,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "平A1接不能老拳"
+  },
+   {
+    "nowMontage": "AM_Dasheng_ComboA_03.AM_Dasheng_ComboA_03",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8526,
+    "backTime": 2500,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "平A1接不能老拳"
+  },
+   {
+    "nowMontage": "AM_Dasheng_ComboA_04.AM_Dasheng_ComboA_04",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8526,
+    "backTime": 2300,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "平A1接不能老拳"
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05",
+    "rate": 0.9,
+    "type": "magic",
+    "skillID": 8513,
+    "backTime": 1500,
+    "MagicSkillID": 11313,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "平A5接大头磕头"
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_01_Z_1.AM_Dasheng_ComboA_01_Z_1",
+    "rate": 0.95,
+    "type": "magic",
+    "skillID": 8513,
+    "backTime": 1500,
+    "MagicSkillID": 11313,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "大圣版50001破棍接：大头磕头"
+  },
+  {
+    "nowMontage": "AM_Wukong_ComboA_z_01.AM_Wukong_ComboA_z_01",
+    "rate": 0.95,
+    "type": "magic",
+    "skillID": 8513,
+    "backTime": 1500,
+    "MagicSkillID": 11313,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666022,
+    "desc": "马喽破棍10705接：大头磕头"
+  },
+  {
+    "nowMontage": "AM_Wukong_ComboA_z_02",
+    "rate": 1.95,
+    "type": "magic",
+    "skillID": 8513,
+    "backTime": 2500,
+    "MagicSkillID": 102433,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666022,
+    "desc": "如果当前使用的技能是10707，大头排云掌"
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_01_Z_2",
+    "rate": 1.95,
+    "type": "magic",
+    "skillID": 8513,
+    "backTime": 2500,
+    "MagicSkillID": 102433,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666022,
+    "desc": "如果当前使用的技能是大圣10707，大头排云掌"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2",
+    "rate": 2,
+    "type": "magic",
+    "skillID": 8535,
+    "backTime": 2900,
+    "MagicSkillID": 405507,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "如果当前使用的技能是大圣江海翻，鳖宝飞天大坐"
+  },
+
+  {
+    "nowMontage": "AM_wukong_comboc_z_02",
+    "rate": 2,
+    "type": "magic",
+    "skillID": 8535,
+    "backTime": 2200,
+    "MagicSkillID": 405507,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "如果当前使用的技能是江海翻，鳖宝飞天大坐"
+  },
+  {
+    "nowMontage": "AM_wukong_combob_z_02.AM_wukong_combob_z_02",
+    "rate": 0.5,
+    "type": "magic",
+    "skillID": 8130,
+    "backTime": 1500,
+    "MagicSkillID": 10130,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "如果当前使用的技能是进尺，尾后针"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_JXSQ_Atk_01.AM_Wukong_JXSQ_Atk_01",
+    "type": "magic",
+    "skillID": 8513,
+    "backTime": 1500,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "接：大头磕头"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1",
+    "rate": 1,
+    "type": "magic",
+    "skillID": 8471,
+    "backTime": 5000,
+    "MagicSkillID": 303003,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "接隼居士飞起冰5下"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_02_Z_2.AM_Dasheng_ComboA_02_Z_2",
+    "rate": 1,
+    "type": "magic",
+    "skillID": 8471,
+    "backTime": 5000,
+    "MagicSkillID": 303003,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "接接隼居士飞起冰5下"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_03_Z_1.AM_Dasheng_ComboA_03_Z_1",
+    "rate": 0.6,
+    "type": "magic",
+    "skillID": 8471,
+    "backTime": 3500,
+    "MagicSkillID": 303016,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "接隼居士 螺旋前冲"
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2",
+    "rate": 1,
+    "type": "magic",
+    "skillID": 8471,
+    "backTime": 5000,
+    "MagicSkillID": 303003,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "接转身定：接接隼居士飞起冰5下"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1",
+    "rate": 1.2,
+    "type": "magic",
+    "skillID": 8471,
+    "backTime": 5000,
+    "MagicSkillID": 303003,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "接隼居士飞起冰5下"
+  },
+  {
+    "type": "magic",
+    "skillID": 8471,
+    "backTime": 5000,
+    "MagicSkillID": 303003,
+    "Condition": "hasBuff",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 800010723,
+    "desc": "风云转结束，接隼居士飞起冰5下"
+  }
+]

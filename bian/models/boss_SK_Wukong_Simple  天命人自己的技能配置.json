@@ -89,13 +89,13 @@
       "Id": 54321002,
       "CanBreak": true,
       "Name": "退寸",
-      "Key": "XBUTTON1"
+      "Key": ""
     },
     {
       "Id": 54321003,
       "CanBreak": true,
       "Name": "进尺",
-      "Key": "XBUTTON2"
+      "Key": ""
     },
     {
       "Id": 54322001,
@@ -126,8 +126,7 @@
       "Key": "NUMPAD0",
       "type": "magic",
       "CanBreak": false,
-      "RelativeLocation": [-800, 0, -1],
-      "backTime": 3300
+      "RelativeLocation": [-800, 0, -1]
     },
 
     {
@@ -136,19 +135,17 @@
       "Buffers": [888666006],
       "CanBreak": false,
       "Name": "无量蝠，冰",
-      "needBack": true,
-      "backTime": 1800,
       "RelativeLocation": [-800, 0, -1],
       "Key": "NUMPAD1"
     },
     {
-      "Id": 8542,
+      "Id": 8514,
       "type": "magic",
       "Buffers": [888666005],
       "CanBreak": false,
-      "Name": "蘑菇，转",
+      "Name": "鼠司空，激光",
       "needBack": true,
-      "backTime": 6050,
+      "backTime": 2000,
       "RelativeLocation": [-800, 0, -1],
       "Key": "NUMPAD2"
     },
@@ -160,7 +157,6 @@
       "CanBreak": true,
       "needBack": true,
       "Name": "蝎子，毒",
-      "backTime": 1700,
       "Description": "",
       "RelativeLocation": [-900, 0, -1],
       "Key": "NUMPAD3"
@@ -176,17 +172,7 @@
       "RelativeLocation": [-800, 0, -1],
       "Key": "NUMPAD4"
     },
-    {
-      "Id": 8513,
-      "type": "magic",
-      "CanBreak": false,
-      "Name": "大头磕头",
-      "needBack": true,
-      "backTime": 1200,
-      "Description": "",
-      "RelativeLocation": [-800, 0, -1],
-      "Key": "NUMPAD5"
-    },
+  
     {
       "Id": 8534,
       "type": "magic",
@@ -205,32 +191,21 @@
       "CanBreak": false,
       "Name": "大头磕头",
       "needBack": true,
-      "backTime": 1200,
       "Description": "",
       "RelativeLocation": [-800, 0, -1],
       "Key": "NUMPAD5"
     },
-    {
-      "Id": 8534,
-      "type": "magic",
-      "CanBreak": false,
-      "Name": "地罗刹_重盾",
-      "needBack": true,
-      "backTime": 1100,
-      "Description": "",
-      "RelativeLocation": [-800, 0, -1],
-      "Key": "NUMPAD6"
-    },
+   
     {
       "Id": 8513,
       "type": "magic",
       "CanBreak": false,
       "Name": "大头排云掌",
       "needBack": true,
-      "backTime": 1800,
+      "backTime": 2500,
       "MagicSkillID": 102433,
       "Description": "",
-      "RelativeLocation": [-800, 0, -1],
+      "RelativeLocation": [-800, 0, 100],
       "Key": "NUMPAD7"
     },
 

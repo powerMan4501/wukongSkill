@@ -1,0 +1,192 @@
+[
+  
+    {
+    "nowMontage": "AM_Dasheng_ComboA_01.AM_Dasheng_ComboA_01",
+    "rate": 0.3,
+    "skillID": 50001,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "平A1接50001 AM_Dasheng_ComboA_01_Z_1.AM_Dasheng_ComboA_01_Z_1"
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_02.AM_Dasheng_ComboA_02",
+    "rate": 0.3,
+    "skillID": 50003,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "平A2接50002 AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1"
+  },
+   {
+    "nowMontage": "AM_Dasheng_ComboA_04.AM_Dasheng_ComboA_04",
+    "rate": 0.3,
+    "skillID": 50007,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "平A4接转身定50007 AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1"
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05",
+    "rate": 0.3,
+    "skillID": 10864,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "平A5接立棍4"
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_01_Z_1.AM_Dasheng_ComboA_01_Z_1",
+    "rate": 0.95,
+    "skillID": 50002,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666022,
+    "desc": "大圣版50001破棍接：AM_Dasheng_ComboA_01_Z_2"
+  },
+  {
+    "nowMontage": "AM_Wukong_ComboA_z_01.AM_Wukong_ComboA_z_01",
+    "rate": 0.95,
+    "skillID": 50002,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666022,
+    "desc": "马喽破棍10705接：AM_Dasheng_ComboA_01_Z_2"
+  },
+  {
+    "nowMontage": "AM_Wukong_ComboA_z_02",
+    "rate": 1.95,
+    "skillID": 50010724,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666022,
+    "desc": "如果当前使用的技能是10707，且播放了1.95以上，按鼠标左键满足条件可以使出夜叉王10724"
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_01_Z_2",
+    "rate": 1.95,
+    "skillID": 50006,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666022,
+    "desc": "如果当前使用的技能是大圣10707，且播放了1.95s以上，按鼠标左键满足条件可以使出大圣江海翻50006AM_Dasheng_ComboA_03_Z_2"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2",
+    "rate": 2,
+    "skillID": 10713,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "如果当前使用的技能是大圣江海翻，且播放了2s以上，按鼠标右键满足条件可以使出退寸AM_wukong_combob_z_01"
+  },
+
+  {
+    "nowMontage": "AM_wukong_comboc_z_02",
+    "rate": 2,
+    "skillID": 10713,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "如果当前使用的技能是江海翻，且播放了2s以上，按鼠标右键满足条件可以使出退寸AM_wukong_combob_z_01"
+  },
+  {
+    "nowMontage": "AM_wukong_combob_z_01.AM_wukong_combob_z_01",
+    "rate": 0.2,
+    "skillID": 10714,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "如果当前使用的技能是退寸，且播放了0.5s以上，按鼠标右键满足条件可以使出进尺AM_wukong_combob_z_02"
+  },
+
+  {
+    "nowMontage": "AM_wukong_combob_z_02.AM_wukong_combob_z_02",
+    "rate": 1,
+    "skillID": 10096,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "接：AM_Wukong_JXSQ_Atk_01.AM_Wukong_JXSQ_Atk_01"
+  },
+ {
+    "nowMontage": "AM_Wukong_JXSQ_Atk_01.AM_Wukong_JXSQ_Atk_01",
+    "rate": 0.5,
+    "skillID": 50003,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "接：AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1"
+  },
+
+
+   {
+    "nowMontage": "AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1",
+    "rate": 1,
+    "skillID": 50004,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "接AM_Dasheng_ComboA_02_Z_2.AM_Dasheng_ComboA_02_Z_2"
+  },
+
+   {
+    "nowMontage": "AM_Dasheng_ComboA_02_Z_2.AM_Dasheng_ComboA_02_Z_2",
+    "rate": 1,
+    "skillID": 50013,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "接Q3:AM_Dasheng_ComboA_03.AM_Dasheng_ComboA_03"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_03.AM_Dasheng_ComboA_03",
+    "rate": 0.6,
+    "skillID": 50005,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "接AM_Dasheng_ComboA_03_Z_1.AM_Dasheng_ComboA_03_Z_1"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_03_Z_1.AM_Dasheng_ComboA_03_Z_1",
+    "rate": 0.6,
+    "skillID": 50006,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "接大圣江海翻：AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2"
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2",
+    "rate": 1,
+    "skillID": 50007,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "接转身定：AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1",
+    "rate": 1.2,
+    "skillID": 10863,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "接:3蓄力立棍"
+  },
+
+
+  {
+    "skillID": 10713,
+    "Condition": "any",
+    "conditionValue": 888666023,
+    "InputCore": "ThumbMouseButton",
+    "desc": "没有任何条件就使出退寸"
+  }
+]

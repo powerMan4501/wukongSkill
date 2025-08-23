@@ -1,23 +1,25 @@
 [
-  {
-    "OriginalId": 50002,
-    "MappedId": 54321017,
-    "Condition": "hasBuff",
-    "conditionValue": 888666022,
-    "desc": "10705转成大圣Q2切手"
-  },
-  {
-    "OriginalId": 50002,
-    "MappedId": 54321019,
-    "Condition": "hasBuff",
-    "conditionValue": 888666023,
-    "desc": "10705转成大圣Q3切手"
-  },
+ 
   {
     "OriginalId": 50002,
     "MappedId": 54321021,
     "Condition": "hasBuff",
-    "conditionValue": 888666024,
-    "desc": "10705转成大圣Q4切手"
-  }
+    "conditionValue": 20104,
+    "desc": "10707转成大圣Q4切手"
+  },
+    {
+    "OriginalId": 50002,
+    "MappedId": 54321019,
+    "Condition": "hasBuff",
+    "conditionValue": 20103,
+    "desc": "10707转成大圣Q3切手"
+  },
+   {
+    "OriginalId": 50002,
+    "MappedId": 54321017,
+    "Condition": "hasBuff",
+    "conditionValue": 20102,
+    "desc": "10707转成大圣Q2切手"
+  },
+
 ]
