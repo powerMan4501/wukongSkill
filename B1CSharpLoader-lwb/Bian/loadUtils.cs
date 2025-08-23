@@ -295,13 +295,16 @@ namespace bian
 
     public class ComboConfig
     {
-        public string nowMontage { get; set; }
-        public double rate { get; set; }
+        public string? nowMontage { get; set; }
+        public double? rate { get; set; }
         public int skillID { get; set; }
         public SkillMapCondition Condition { get; set; }
         public string InputCore { get; set; }
-        public int conditionValue { get; set; }
-        public string desc { get; set; }
+        public int? conditionValue { get; set; }
+        public string? desc { get; set; }
+        public string? type { get; set; }
+        public float? backTime { get; set; }
+        public int? MagicSkillID { get; set; }
     }
     public static class LoadUtils
     {

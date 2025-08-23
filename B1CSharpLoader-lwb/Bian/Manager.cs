@@ -500,7 +500,8 @@ namespace bian
                     {10724, 50010724},
                     {10706, 10705},
                     {10708, 50002},
-                    {10715, 10714}
+                    {10707, 50002},
+                    { 10715, 10714}
                 };
         }
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_SmartCastSkillTryMultiCast_Implementation")]
@@ -661,6 +662,16 @@ namespace bian
         }
 
 
+        private static void CastMagicSkill(BGUCharacterCS character, ComboConfig combo)
+        {
+            Helper.DelayExecute(10, () =>
+            {
+                Utils.TryRunOnGameThread((Action)delegate
+                {
+                    Helper.CastVigorSkillByID((BGUPlayerCharacterCS)character, combo.skillID, combo?.backTime ?? 0, combo?.MagicSkillID ?? 0);
+                });
+            });
+        }
 
 
         [HarmonyPatch(typeof(UInputPreProcEvent), "OnAnyKeyTriggerEvent")]
@@ -715,6 +726,12 @@ namespace bian
                             if (combo.Condition == SkillMapCondition.any ||
                                 IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target))
                             {
+                                if (combo.type == "magic")
+                                {
+                                    CastMagicSkill(character, combo);
+                                    return;
+                                }
+
                                 BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
                                     combo.skillID, null, EMontageBindReason.NormalSkill, false);
                                 return; // 找到匹配的规则后立即返回
@@ -734,6 +751,11 @@ namespace bian
                     if (combo.Condition == SkillMapCondition.any ||
                         IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target))
                     {
+                        if (combo.type == "magic")
+                        {
+                            CastMagicSkill(character, combo);
+                            return;
+                        }
                         BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
                             combo.skillID, null, EMontageBindReason.NormalSkill, false);
                         return; // 找到匹配的规则后立即返回
