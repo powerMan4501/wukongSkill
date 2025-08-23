@@ -1032,7 +1032,6 @@ namespace bian
                 var buffConfigs = LoadJsonConfigs<BuffConfig>(configDirectory, "Buff");
                 var buffList = BGW_GameDB.GetAllBuffDesc();
 
-
                 if (buffList == null || buffList.Count == 0 || buffConfigs == null)
                 {
                     return 0;
@@ -1710,7 +1709,15 @@ namespace bian
             // Log.Info($"Creating new buff effect with ID: {config.ID}");
             return newBuffEffect;
         }
-
+        // 修改铜头不可击溃
+        public static void ModifyIronData()
+        {
+            var ironDataList = BG_ProtobufDataAPI<FUStIronBodyConfigDesc>.Get().GetAll();
+            foreach (var ironData in ironDataList.Values)
+            {
+                ironData.PlayerDefense = 999;
+            }
+        }
     }
 }
 

@@ -120,6 +120,7 @@ namespace bian
                 LoadUtils.LoadAndApplySkillEffect();
                 LoadUtils.LoadAndApplyBuffDispConfigs();
                 LoadUtils.LoadAndApplyBuff();
+                LoadUtils.ModifyIronData();
                 isBuffConfigsLoaded = true;
             }
         }
