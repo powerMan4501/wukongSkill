@@ -1713,10 +1713,14 @@ namespace bian
         public static void ModifyIronData()
         {
             var ironDataList = BG_ProtobufDataAPI<FUStIronBodyConfigDesc>.Get().GetAll();
-            foreach (var ironData in ironDataList.Values)
+            if (ironDataList != null && ironDataList?.Count > 0)
             {
-                ironData.PlayerDefense = 999;
+                foreach (var ironData in ironDataList.Values)
+                {
+                    ironData.PlayerDefense = 999;
+                }
             }
+
         }
     }
 }
