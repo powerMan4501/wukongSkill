@@ -10,8 +10,6 @@ using System.Collections.Generic;
 using System;
 using BtlShare;
 using ArchiveB1;
-using System.IO;
-using Newtonsoft.Json;
 using UnrealEngine.InputCore;
 
 
@@ -56,6 +54,8 @@ namespace bian
         private static List<ComboConfig> comboConfigs = new List<ComboConfig>();
         // 监听的键值
         private static HashSet<string> monitoredKeys = new HashSet<string>();
+        private static Dictionary<string, List<ComboConfig>> keyToComboConfigsMap = new Dictionary<string, List<ComboConfig>>();
+
 
         // 监听的效果id
         private static Dictionary<int, List<Rule>> effectRulesMap = new Dictionary<int, List<Rule>>();
@@ -191,16 +191,7 @@ namespace bian
             }
         }
 
-        [HarmonyPatch(typeof(BGW_GameDB))]
-        [HarmonyPatch("Init")]
-        public static class BGW_GameDB_Init_Patch
-        {
-            public static void Postfix()
-            {
-                Log.Info("BGW_GameDB_Init_Patch");
-                loadAllStaticData(false, 1000);
-            }
-        }
+
 
 
         public static void RegisterManager()
@@ -439,7 +430,7 @@ namespace bian
                 {
                     Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, false);
                 }
-               
+
 
                 if (ruleItem?.speedRate > 0)
                 {
@@ -479,10 +470,6 @@ namespace bian
         }
 
 
-        /// <param name="isChuogun">是否为戳棍姿态</param>
-        /// <param name="isLigun">是否为立棍姿态</param>
-        /// <param name="isPigun">是否为劈棍姿态</param>
-        /// <returns>是否成功获取姿态信息</returns>
         private static bool TryGetCharacterStance(out bool isChuogun, out bool isLigun, out bool isPigun)
         {
             isChuogun = false;
@@ -544,7 +531,7 @@ namespace bian
             }
 
             var currentId = ID;
-            var bufferId = GetBufferIdForSkill(ID);
+            // var bufferId = GetBufferIdForSkill(ID);
 
             // 处理特殊技能组
             HandleSpecialSkillGroup(ID, character);
@@ -556,10 +543,10 @@ namespace bian
                 BGUFunctionLibraryCS.BGUAddBuff(character, character, 888666018, EBuffSourceType.GM, 800);
             }
 
-            if (bufferId > 0)
-            {
-                BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 4000);
-            }
+            // if (bufferId > 0)
+            // {
+            //     BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 4000);
+            // }
 
             // 处理技能映射规则
             ProcessSkillMappingRules(ref ID, currentId, character, isChuogun, isLigun, isPigun);
@@ -645,13 +632,20 @@ namespace bian
         private static void LoadComboConfigs()
         {
             comboConfigs = LoadUtils.LoadComboConfigs();
-            monitoredKeys.Clear(); // 清空按键集合
-                                   // 收集所有需要监听的按键
+            monitoredKeys.Clear();
+            keyToComboConfigsMap.Clear();
+
             foreach (var config in comboConfigs)
             {
                 if (!string.IsNullOrEmpty(config.InputCore))
                 {
                     monitoredKeys.Add(config.InputCore);
+
+                    if (!keyToComboConfigsMap.ContainsKey(config.InputCore))
+                    {
+                        keyToComboConfigsMap[config.InputCore] = new List<ComboConfig>();
+                    }
+                    keyToComboConfigsMap[config.InputCore].Add(config);
                 }
             }
         }
@@ -674,41 +668,62 @@ namespace bian
 
         private static void OnAnyKeyTriggerEvent(FKey Key)
         {
-            if (comboConfigs.Count == 0)
+            if (keyToComboConfigsMap.Count == 0)
             {
-
                 return;
             }
+
             string keyName = "";
-            if (Key != null && Key.GetFName() != null)
+            if (Key != null)
             {
                 keyName = Key.GetFName().ToString();
             }
-
-
-            // 如果按键不在监听列表中，直接返回
-            if (!monitoredKeys.Contains(keyName))
+            if (string.IsNullOrEmpty(keyName) || !keyToComboConfigsMap.ContainsKey(keyName))
             {
                 return;
             }
+
             var character = Helper.GetBGUPlayerCharacterCS();
             if (character == null) return;
 
             UAnimInstance animInstance = character.Mesh.GetAnimInstance();
-            var currMontage = animInstance.GetCurrentActiveMontage();
-            if (currMontage == null) return;
+            var currMontage = animInstance?.GetCurrentActiveMontage();
 
-            var currentPosition = animInstance.Montage_GetPosition(currMontage);
+
+            var currentPosition = animInstance?.Montage_GetPosition(currMontage);
             GetCharacterStance(character, out bool isChuogun, out bool isLigun, out bool isPigun);
             var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
 
-            foreach (var combo in comboConfigs)
+            // 直接获取该按键对应的所有规则
+            var keyCombos = keyToComboConfigsMap[keyName];
+            foreach (var combo in keyCombos)
             {
-                string fullPath = currMontage.PathName;
-                string subString = combo.nowMontage;
-                if (fullPath.Contains(subString) &&
-                    currentPosition >= combo.rate &&
-                    keyName == combo.InputCore)
+                // 如果nowMontage有值，才检查动画相关条件
+                if (!string.IsNullOrEmpty(combo.nowMontage))
+                {
+                    if (currMontage != null)
+                    {
+                        string fullPath = currMontage.PathName;
+                        if (fullPath.Contains(combo.nowMontage) && currentPosition >= combo.rate)
+                        {
+                            var rule = new SkillMappingRule
+                            {
+                                Condition = combo.Condition,
+                                conditionValue = combo.conditionValue
+                            };
+
+                            if (combo.Condition == SkillMapCondition.any ||
+                                IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target))
+                            {
+                                BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
+                                    combo.skillID, null, EMontageBindReason.NormalSkill, false);
+                                return; // 找到匹配的规则后立即返回
+                            }
+                        }
+                    }
+
+                }
+                else
                 {
                     var rule = new SkillMappingRule
                     {
@@ -716,10 +731,12 @@ namespace bian
                         conditionValue = combo.conditionValue
                     };
 
-                    if (combo.Condition == SkillMapCondition.any || IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target))
+                    if (combo.Condition == SkillMapCondition.any ||
+                        IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target))
                     {
-                        BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(combo.skillID, null, EMontageBindReason.NormalSkill, false);
-                        break;
+                        BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
+                            combo.skillID, null, EMontageBindReason.NormalSkill, false);
+                        return; // 找到匹配的规则后立即返回
                     }
                 }
             }

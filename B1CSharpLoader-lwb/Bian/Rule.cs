@@ -357,7 +357,7 @@ namespace bian
                 case "magic":
                     if (action?.SkillID > 0)
                     {
-                        var backTime = (int)(action?.backTime ?? 1900);
+                        var backTime = (int)(action?.backTime ?? 0);
                         ExecuteDelayedAction(() =>
                         {
                             character.FollowCamera.RelativeLocation = new FVector(
@@ -426,11 +426,20 @@ namespace bian
                 }
 
                 // 处理短延迟情况
+                // 处理短延迟情况
                 if (action.TimeDelay < 680)
                 {
-                    DoAction(action, timeLength / playRate);
+                    if (action.TimeDelay > 0)
+                    {
+                        ExecuteDelayedAction(() => DoAction(action, timeLength / playRate), action.TimeDelay).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        DoAction(action, timeLength / playRate);
+                    }
                     continue;
                 }
+
 
                 // 处理需要延迟执行的情况
                 ExecuteDelayedAction(async () =>

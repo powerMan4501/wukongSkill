@@ -634,7 +634,7 @@ namespace bian
                     try
                     {
                         // await Task.Delay(650);
-                        var backTime = (int)(skill?.backTime ?? 1700);
+                        var backTime = (int)(skill?.backTime ?? 0);
                         if (skill?.Buffers != null && skill.Buffers.Count() > 0)
                         {
                             foreach (var buffer in skill.Buffers)
