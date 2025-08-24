@@ -26,7 +26,7 @@
     "rate": 0.3,
     "type": "magic",
     "skillID": 8526,
-    "backTime": 2500,
+    "backTime": 2200,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
@@ -37,7 +37,7 @@
     "rate": 0.3,
     "type": "magic",
     "skillID": 8526,
-    "backTime": 2300,
+    "backTime": 2100,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
@@ -58,24 +58,24 @@
     "nowMontage": "AM_Dasheng_ComboA_01_Z_1.AM_Dasheng_ComboA_01_Z_1",
     "rate": 0.95,
     "type": "magic",
-    "skillID": 8513,
-    "backTime": 1500,
-    "MagicSkillID": 11313,
+    "skillID": 8535,
+    "backTime": 2200,
+    "MagicSkillID": 405512,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "大圣版50001破棍接：大头磕头"
+    "desc": "大圣版50001破棍接：鳖宝砸"
   },
   {
     "nowMontage": "AM_Wukong_ComboA_z_01.AM_Wukong_ComboA_z_01",
     "rate": 0.95,
     "type": "magic",
-    "skillID": 8513,
-    "backTime": 1500,
-    "MagicSkillID": 11313,
+    "skillID": 8535,
+    "backTime": 2200,
+    "MagicSkillID": 405512,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666022,
-    "desc": "马喽破棍10705接：大头磕头"
+    "desc": "马喽破棍10705接：鳖宝砸"
   },
   {
     "nowMontage": "AM_Wukong_ComboA_z_02",
@@ -101,18 +101,28 @@
     "conditionValue": 888666022,
     "desc": "如果当前使用的技能是大圣10707，大头排云掌"
   },
-
   {
-    "nowMontage": "AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2",
-    "rate": 2,
+    "nowMontage": "AM_Dasheng_ComboA_03_Z_2",
+    "rate": 1.9,
     "type": "magic",
     "skillID": 8535,
-    "backTime": 2900,
-    "MagicSkillID": 405507,
+    "backTime": 2200,
+    "MagicSkillID": 405512,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "如果当前使用的技能是大圣江海翻，鳖宝飞天大坐"
+    "desc": "如果当前使用的技能是大圣江海翻，鳖宝砸"
+  }, {
+    "nowMontage": "AM_mgd_jsds_atk_02_01_02",
+    "rate": 1.9,
+    "type": "magic",
+    "skillID": 8535,
+    "backTime": 2200,
+    "MagicSkillID": 405512,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "如果当前使用的技能是残躯江海翻，鳖宝砸"
   },
 
   {

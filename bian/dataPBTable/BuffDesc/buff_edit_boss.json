@@ -1,0 +1,56 @@
+[
+  {
+    "ID": 405502,
+    "BuffTips": "肌肉龙猫BUFF-锤子发光累积，增加条件，让主角无法触发",
+    "BuffActiveCondition": {
+      "ConditionType": 5,
+      "ConditionParams": "100101"
+    },
+    "CanRemoveWhenAttackHit": 1,
+    "CanRemoveWhenAttacked": 1
+  },
+
+  {
+    "ID": 405503,
+    "BuffTips": "肌肉龙猫BUFF-锤子爆炸预警",
+    "BuffActiveCondition": {
+      "ConditionType": 5,
+      "ConditionParams": "100101"
+    },
+    "CanRemoveWhenAttackHit": 1,
+    "CanRemoveWhenAttacked": 1
+  },
+
+  {
+    "ID": 405504,
+    "BuffTips": "肌肉龙猫BUFF-锤子爆炸预警",
+    "BuffActiveCondition": {
+      "ConditionType": 5,
+      "ConditionParams": "100101"
+    },
+    "CanRemoveWhenAttackHit": 1,
+    "CanRemoveWhenAttacked": 1
+  },
+
+  {
+    "ID": 405507,
+    "BuffTips": "肌肉龙猫BUFF-锤子爆炸预警",
+    "BuffActiveCondition": {
+      "ConditionType": 5,
+      "ConditionParams": "100101"
+    },
+    "CanRemoveWhenAttackHit": 1,
+    "CanRemoveWhenAttacked": 1
+  },
+
+  {
+    "ID": 405508,
+    "BuffTips": "肌肉龙猫BUFF-锤子爆炸预警",
+    "BuffActiveCondition": {
+      "ConditionType": 5,
+      "ConditionParams": "100101"
+    },
+    "CanRemoveWhenAttackHit": 1,
+    "CanRemoveWhenAttacked": 1
+  }
+]

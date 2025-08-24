@@ -6,7 +6,7 @@
   "ZRateBig": 0.1,
   "XRate": -400,
   "ZRate": 200,
-  "CoolDownRate": 85,
+  "CoolDownRate": 100,
   "XRateSmall": 2,
   "Level1Scale": 1,
   "Level2Scale": 2.2,

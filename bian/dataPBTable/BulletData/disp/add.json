@@ -82,7 +82,7 @@
     "ProjectileSelfSpawnDBCPath": "",
     "SpawnPStoSpawnInterval": 0.0,
     "BulletLowestSpdCanPlayPS": 0.0,
-    "HitChrAudioID": 0
+    "HitChrAudioID": 1021
   },
 
   {
@@ -93,7 +93,7 @@
     "ProjectileSelfSpawnDBCPath": "",
     "SpawnPStoSpawnInterval": 0.0,
     "BulletLowestSpdCanPlayPS": 0.0,
-    "HitChrAudioID": 0
+    "HitChrAudioID":1021
   },
 
   {
@@ -104,6 +104,17 @@
     "ProjectileSelfSpawnDBCPath": "",
     "SpawnPStoSpawnInterval": 0.0,
     "BulletLowestSpdCanPlayPS": 0.0,
-    "HitChrAudioID": 0
+    "HitChrAudioID": 1021
+  },
+
+  {
+    "desc": "克隆赤发鬼的箭 1017261",
+    "ID": 88880012,
+    "ProjectileFXUseDBC": 0,
+    "ProjectileSpawnPSPath": "",
+    "ProjectileSelfSpawnDBCPath": "",
+    "SpawnPStoSpawnInterval": 0.0,
+    "BulletLowestSpdCanPlayPS": 0.0,
+    "HitChrAudioID": 1021
   }
 ]

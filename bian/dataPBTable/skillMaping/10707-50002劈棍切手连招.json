@@ -1,5 +1,11 @@
 [
- 
+  {
+    "OriginalId": 10707,
+    "MappedId": 54321021,
+    "Condition": "hasBuff",
+    "conditionValue": 20104,
+    "desc": "10707转成大圣Q4切手"
+  },
   {
     "OriginalId": 50002,
     "MappedId": 54321021,
@@ -7,14 +13,28 @@
     "conditionValue": 20104,
     "desc": "10707转成大圣Q4切手"
   },
-    {
+  {
+    "OriginalId": 50002,
+    "MappedId": 54321021,
+    "Condition": "hasBuff",
+    "conditionValue": 800050007,
+    "desc": "10707有转身定buff就转成大圣Q4切手"
+  },
+  {
+    "OriginalId": 54321011,
+    "MappedId": 54321021,
+    "Condition": "hasBuff",
+    "conditionValue": 800050007,
+    "desc": "10707有转身定buff就转成大圣Q4切手"
+  },
+  {
     "OriginalId": 50002,
     "MappedId": 54321019,
     "Condition": "hasBuff",
     "conditionValue": 20103,
     "desc": "10707转成大圣Q3切手"
   },
-   {
+  {
     "OriginalId": 50002,
     "MappedId": 54321017,
     "Condition": "hasBuff",

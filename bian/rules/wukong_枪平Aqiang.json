@@ -108,8 +108,8 @@
 
         {
           "Type": "buff",
-          "BuffIDs": [66655402],
-          "BuffTime": 1500,
+          "BuffIDs": [66655402, 20102],
+          "BuffTime": 3500,
           "desc": "棍光特效粒子"
         }
       ]
@@ -157,8 +157,8 @@
 
         {
           "Type": "buff",
-          "BuffIDs": [66655403],
-          "BuffTime": 1900,
+          "BuffIDs": [66655403, 20103],
+          "BuffTime": 3900,
           "desc": "棍光特效粒子"
         }
       ]
@@ -200,8 +200,8 @@
 
         {
           "Type": "buff",
-          "BuffIDs": [66655407],
-          "BuffTime": 1900,
+          "BuffIDs": [66655407, 20104],
+          "BuffTime": 3900,
           "desc": "棍光特效粒子"
         }
       ]

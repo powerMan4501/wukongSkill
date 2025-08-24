@@ -30,7 +30,7 @@
   {
     "desc": "百眼黄符",
     "ID": 88880005,
-    "HitEffectsforChr": [1070701, 921420],
+    "HitEffectsforChr": [888555022, 888555015],
     "HitDestructibleStrengthType": 4,
     "BulletSweepCheckGap": 5,
     "BulletSweepCheckDelayTime": 0.0,
@@ -89,6 +89,16 @@
   {
     "desc": "杨戬飞剑 88880011",
     "ID": 88880011,
+    "HitEffectsforChr": [888555019],
+    "HitDestructibleStrengthType": 4,
+    "BulletSweepCheckGap": 5,
+    "BulletSweepCheckDelayTime": 0.0,
+    "BulletCanThroughBlockage": 1
+  },
+
+  {
+    "desc": "克隆赤发鬼的箭 1017261",
+    "ID": 88880012,
     "HitEffectsforChr": [888555019],
     "HitDestructibleStrengthType": 4,
     "BulletSweepCheckGap": 5,

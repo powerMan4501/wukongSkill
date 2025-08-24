@@ -53,9 +53,9 @@
   },
 
   {
-    "desc": "2a立棍切手专用",
+    "desc": "2a立棍切手专用，横扫一下捅一下",
     "ID": 54321010,
-    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_04a.AM_mgd_jsds_atk_04a"
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_01.AM_mgd_jsds_atk_01"
   },
 
   {

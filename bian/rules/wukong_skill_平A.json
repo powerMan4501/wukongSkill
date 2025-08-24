@@ -50,12 +50,11 @@
             {
               "Type": "bullet",
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 2,
-              "ProjectTileID": 18890701,
+              "ProjectTileID": 34016010,
               "ForTarget": true,
               "spawnBaseSocketName": "weapon_r_index_06",
               "noHasAnyBuff": [888666006, 888666007, 888666008],
-              "desc": "没冰火毒buff,大圣平A1,剑雨"
+              "desc": "没冰火毒buff,大圣平A1,电剑气"
             }
           ]
         },
@@ -114,12 +113,11 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 2,
-              "ProjectTileID": 18890701,
+              "ProjectTileID": 34016010,
               "ForTarget": true,
               "spawnBaseSocketName": "weapon_r_index_06",
               "noHasAnyBuff": [888666006, 888666007, 888666008],
-              "desc": "没冰火毒buff,大圣平A2,剑雨"
+              "desc": "没冰火毒buff,大圣平A2,电剑气"
             }
           ]
         },
@@ -158,12 +156,11 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 2,
-              "ProjectTileID": 18890701,
+              "ProjectTileID": 34016010,
               "ForTarget": true,
               "spawnBaseSocketName": "weapon_r_index_06",
               "noHasAnyBuff": [888666006, 888666007, 888666008],
-              "desc": "没冰火毒buff,大圣平A2,剑雨"
+              "desc": "没冰火毒buff,大圣平A2,电剑气"
             }
           ]
         },
@@ -221,13 +218,11 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 2,
-              "ProjectTileID": 18890701,
-
+              "ProjectTileID": 34016010,
               "ForTarget": true,
               "noHasAnyBuff": [888666006, 888666007, 888666008],
               "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "没冰火毒buff，剑雨"
+              "desc": "没冰火毒buff，电剑气"
             }
           ]
         },
@@ -263,12 +258,11 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 2,
-              "ProjectTileID": 18890701,
+              "ProjectTileID": 34016010,
               "ForTarget": true,
               "noHasAnyBuff": [888666006, 888666007, 888666008],
               "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "没冰火毒buff，剑雨"
+              "desc": "没冰火毒buff，电剑气"
             }
           ]
         },
@@ -326,12 +320,11 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 2,
-              "ProjectTileID": 18890701,
+              "ProjectTileID": 34016010,
               "ForTarget": true,
               "noHasAnyBuff": [888666006, 888666007, 888666008],
               "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "没冰火毒buff，剑雨"
+              "desc": "没冰火毒buff，电剑气"
             }
           ]
         },

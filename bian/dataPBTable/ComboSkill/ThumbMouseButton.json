@@ -125,7 +125,7 @@
    {
     "nowMontage": "AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1",
     "rate": 1,
-    "skillID": 50004,
+    "skillID": 54321011,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
     "conditionValue": 888666023,

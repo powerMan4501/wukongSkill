@@ -25,7 +25,7 @@
     "ID": 88880005,
     "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/PSD/PSD_BaiYanMoJun_01/Phase2/BP_PSD_BaiYanMoJun_P2_Bullet_8603.BP_PSD_BaiYanMoJun_P2_Bullet_8603_C",
     "ProjectileDelayDestroyTime": 0,
-    "ProjectileLifeTime": 0.3
+    "ProjectileLifeTime": 0.25
   },
 
   {
@@ -69,6 +69,15 @@
     "desc": "杨戬飞剑 88880011",
     "ID": 88880011,
     "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/MGD/MGD_yangjian_01/BP_mgd_yangjian_01_sword_99.BP_mgd_yangjian_01_sword_99_C",
+    "ProjectileDelayDestroyTime": 1,
+    "ProjectileLifeTime": 9
+  },
+
+
+  {
+    "desc": "克隆赤发鬼的箭 1017261",
+    "ID": 88880012,
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BP_30_lys_chifagui_01a_Bullet.BP_30_lys_chifagui_01a_Bullet_C",
     "ProjectileDelayDestroyTime": 1,
     "ProjectileLifeTime": 9
   }

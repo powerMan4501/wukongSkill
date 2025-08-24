@@ -114,7 +114,7 @@
         {
           "Type": "buff",
           "BuffIDs": [289, 66655407],
-          "BuffTime": 1000
+          "BuffTime": 2000
         }
       ]
     },
@@ -148,7 +148,6 @@
         }
       ],
       "AfterActions": [
-        
         {
           "Type": "buff",
           "BuffIDs": [289, 66655405],
@@ -304,8 +303,8 @@
         },
         {
           "Type": "buff",
-          "BuffIDs": [66655409],
-          "BuffTime": 500,
+          "BuffIDs": [66655409, 289],
+          "BuffTime": 2500,
           "desc": "棍光"
         }
       ]
@@ -332,15 +331,37 @@
               "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有火buff 鼠弩手弓箭"
             },
+
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 1016901,
-              "noHasBuff": 888666007,
-              "SpeedLeftValue": 6000,
-              "SpeedRightValue": 6000,
+              "ProjectTileID": 1017961,
+              "hasBuff": 888666008,
+              "SpeedLeftValue": 5000,
+              "SpeedRightValue": 5000,
               "ForTarget": true,
               "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "没火buff，杨戬飞剑"
+              "desc": "毒buff，蜻蜓精的箭"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 30142501,
+              "hasBuff": 888666005,
+              "SpeedLeftValue": 5000,
+              "SpeedRightValue": 5000,
+              "ForTarget": true,
+              "spawnBaseSocketName": "weapon_r_index_06",
+              "desc": "雷buff，雷球"
+            },
+
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 88880012,
+              "noHasAnyBuff": [888666005,888666007,888666008],
+              "SpeedLeftValue": 5000,
+              "SpeedRightValue": 5000,
+              "ForTarget": true,
+              "spawnBaseSocketName": "weapon_r_index_06",
+              "desc": "没火buff，赤发鬼的箭"
             }
           ]
         }
