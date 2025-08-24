@@ -121,6 +121,8 @@ namespace bian
                 LoadUtils.LoadAndApplyBuffDispConfigs();
                 LoadUtils.LoadAndApplyBuff();
                 LoadUtils.ModifyIronData();
+                LoadUtils.ModifyPlayCtrlDescData();
+                LoadUtils.LoadAndApplyPassiveSkills();
                 isBuffConfigsLoaded = true;
             }
         }
@@ -502,7 +504,7 @@ namespace bian
                     {10706, 10705},
                     {10708, 50002},
                     {10707, 50002},
-                    { 10715, 10714}
+                    {10715, 10714}
                 };
         }
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_SmartCastSkillTryMultiCast_Implementation")]
@@ -531,18 +533,14 @@ namespace bian
             {
                 ID = skillMappings[ID];
             }
-
+          
             var currentId = ID;
             // var bufferId = GetBufferIdForSkill(ID);
-
-            // 处理特殊技能组
-            HandleSpecialSkillGroup(ID, character);
 
             // 添加连招相关buff
             if (IsComboSkill(ID))
             {
                 BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);
-                BGUFunctionLibraryCS.BGUAddBuff(character, character, 888666018, EBuffSourceType.GM, 800);
             }
 
             // if (bufferId > 0)
@@ -582,14 +580,7 @@ namespace bian
             return bufferMappings.ContainsKey(skillId) ? bufferMappings[skillId] : 0;
         }
 
-        private static void HandleSpecialSkillGroup(int skillId, BGUCharacterCS character)
-        {
-            // 处理10705和10706的组合
-            if (skillId == 10705 || skillId == 10706)
-            {
-                // 特殊处理逻辑
-            }
-        }
+      
 
         private static bool IsComboSkill(int skillId)
         {
@@ -628,6 +619,7 @@ namespace bian
             {
                 ID = matchItem_.MappedId;
             }
+              Log.Info($"bian: final skllid SmartCastSkillTryMultiCast currentId:{currentId} -to-> {ID}");
         }
 
 

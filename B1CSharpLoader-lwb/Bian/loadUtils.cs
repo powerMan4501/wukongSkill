@@ -13,7 +13,13 @@ using BtlB1;
 using Google.Protobuf.Collections;
 using b1.Protobuf.DataAPI;
 
-
+public class PassiveConfig
+{
+    public string? desc { get; set; }
+    public int ID { get; set; }
+    public float? BaseValue { get; set; }
+    // 可以添加更多需要修改的属性
+}
 
 public class SkillEffectConfig
 {
@@ -1718,6 +1724,84 @@ namespace bian
                 foreach (var ironData in ironDataList.Values)
                 {
                     ironData.PlayerDefense = 999;
+                }
+            }
+
+        }
+
+
+        // 加载并应用被动技能配置
+        public static int LoadAndApplyPassiveSkills(string configDirectory = null)
+        {
+            try
+            {
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "PassiveSkills");
+
+                var passiveConfigs = LoadJsonConfigs<PassiveConfig>(configDirectory, "PassiveSkills");
+                var passList = BG_ProtobufDataAPI<FUStPassiveSkillDesc>.Get().GetAll();
+
+                if (passiveConfigs == null || passiveConfigs.Count == 0)
+                {
+                    Log.Error("Failed to load passive skill configs");
+                    return 0;
+                }
+
+                if (passList == null || passList.Count == 0)
+                {
+                    Log.Error("Failed to get passive skill list from game database");
+                    return 0;
+                }
+
+                var processedCount = 0;
+                foreach (var config in passiveConfigs)
+                {
+                    try
+                    {
+                        if (passList.TryGetValue(config.ID, out var passiveSkill))
+                        {
+                            // 修改BaseValue
+                            if (config.BaseValue.HasValue)
+                            {
+                                passiveSkill.BaseValue = (float)config.BaseValue.Value;
+                                Log.Info($"Updated BaseValue for passive skill ID {config.ID} to {config.BaseValue}");
+                            }
+
+                            // 可以添加更多属性的修改逻辑
+
+                            processedCount++;
+                        }
+                        else
+                        {
+                            Log.Error($"Passive skill with ID {config.ID} not found");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process passive skill config for ID {config.ID}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed passive skill configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplyPassiveSkills: {ex.Message}");
+                return 0;
+            }
+        }
+
+
+        // 索敌距离
+        public static void ModifyPlayCtrlDescData()
+        {
+            var dataList = BG_ProtobufDataAPI<FUStPlayerSkillCtrlDesc>.Get().GetAll();
+            if (dataList != null && dataList?.Count > 0)
+            {
+                foreach (var ironItem in dataList.Values)
+                {
+                    ironItem.AttackRange = 6000;
+                    ironItem.AttackSelectZLimit = 1500;
                 }
             }
 
