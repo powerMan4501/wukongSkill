@@ -123,6 +123,7 @@ namespace bian
                 LoadUtils.ModifyIronData();
                 LoadUtils.ModifyPlayCtrlDescData();
                 LoadUtils.LoadAndApplyPassiveSkills();
+                LoadUtils.ModifySuitDesc();
                 isBuffConfigsLoaded = true;
             }
         }
@@ -399,6 +400,7 @@ namespace bian
 
 
             currentMontage = Montage.PathName;
+            NotifyUtils.getNotifyToJson(Montage);
             var mgr = Manager.GetModelManager();
             var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;
             var length = Montage.GetPlayLength() * 1000;

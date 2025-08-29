@@ -13,6 +13,7 @@ using BtlB1;
 using Google.Protobuf.Collections;
 using b1.Protobuf.DataAPI;
 
+
 public class PassiveConfig
 {
     public string? desc { get; set; }
@@ -712,13 +713,15 @@ namespace bian
 
                         case "LoopCanMove":
                         case "LoopCanRotate":
-                            if (sourceValue is int enumValue)
+                            if (sourceValue is EGSYesNo enumValue)
                             {
-                                targetProp.SetValue(target, (EGSYesNo)enumValue);
+                                targetProp.SetValue(target, enumValue);
                             }
+
                             break;
 
                         case "ChargeMoveSpeedRate":
+
                             if (sourceValue is EMoveSpeedType speedRate)
                             {
                                 targetProp.SetValue(target, speedRate);
@@ -1021,10 +1024,10 @@ namespace bian
             Log.Info($"Total processed BuffDisp configs: {processedCount}");
 
             Helper.DelayExecute(500, () =>
-          {
-              var method = typeof(BGW_GameDB).GetMethod("InitBuffDispMap", BindingFlags.NonPublic | BindingFlags.Static);
-              method?.Invoke(null, null);
-          });
+            {
+                var method = typeof(BGW_GameDB).GetMethod("InitBuffDispMap", BindingFlags.NonPublic | BindingFlags.Static);
+                method?.Invoke(null, null);
+            });
             return processedCount;
         }
 
@@ -1480,7 +1483,7 @@ namespace bian
                     }
                 }
 
-                // Log.Info($"Total processed charge skill configs: {processedCount}");
+                Log.Info($"Total processed charge skill configs: {processedCount}");
                 return processedCount;
             }
             catch (Exception ex)
@@ -1715,6 +1718,7 @@ namespace bian
             // Log.Info($"Creating new buff effect with ID: {config.ID}");
             return newBuffEffect;
         }
+
         // 修改铜头不可击溃
         public static void ModifyIronData()
         {
@@ -1724,7 +1728,26 @@ namespace bian
                 foreach (var ironData in ironDataList.Values)
                 {
                     ironData.PlayerDefense = 999;
+                    ironData.EndPreciseWindowTime = (float)(ironData?.EndPreciseWindowTime > 0 ? 3 : 0);
                 }
+            }
+
+
+            FUStIronBodyConfigDesc originalIronBodyConfigDesc10 = BGW_GameDB.GetOriginalIronBodyConfigDesc(10);
+            FUStIronBodyConfigDesc originalIronBodyConfigDesc50 = BGW_GameDB.GetOriginalIronBodyConfigDesc(50);
+            FUStIronBodyConfigDesc originalIronBodyConfigDesc25 = BGW_GameDB.GetOriginalIronBodyConfigDesc(25);
+            if (originalIronBodyConfigDesc10 != null)
+            {
+                originalIronBodyConfigDesc10.EndPreciseWindowTime = 3;
+                Log.Info($"Original IronBodyConfigDesc: {originalIronBodyConfigDesc10?.EndPreciseWindowTime}");
+            }
+            if (originalIronBodyConfigDesc50 != null)
+            {
+                originalIronBodyConfigDesc50.EndPreciseWindowTime = 3;
+            }
+            if (originalIronBodyConfigDesc25 != null)
+            {
+                originalIronBodyConfigDesc25.EndPreciseWindowTime = 3;
             }
 
         }
@@ -1805,6 +1828,26 @@ namespace bian
                 }
             }
 
+        }
+
+
+        // 套装只需要一套就能生效
+        public static void ModifySuitDesc()
+        {
+            var dataList = BG_ProtobufDataAPI<FUStSuitDesc>.Get().GetAll();
+            if (dataList != null && dataList?.Count > 0)
+            {
+                foreach (var itemData in dataList.Values)
+                {
+                    if (itemData.SuitInfo.Count > 0)
+                    {
+                        foreach (var suitInfo in itemData.SuitInfo)
+                        {
+                            suitInfo.TriggerNum = 1;
+                        }
+                    }
+                }
+            }
         }
     }
 }
