@@ -297,10 +297,12 @@
   {
     "ID": 888666028,
     "BuffTips": "传送 BUFF",
+    "Delay": 0,
+    "Duration": 300,
     "BuffEffects": [
       {
         "EffectTrigger": 1,
-        "EffectType": 64,
+        "EffectType": 15,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [
           "EnvQuery'/Game/00Main/Design/AI/EQS/EQ_TeleportSkillPoint_Fice.EQ_TeleportSkillPoint_Fice'"

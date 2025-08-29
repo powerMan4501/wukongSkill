@@ -1,0 +1,24 @@
+{
+  "Name": "悟空",
+  "desc": "888666005:雷，888666006冰， 888666007火， 888666008毒",
+  "Rules": [
+    {
+      "Name": "",
+      "Description": "大头磕头",
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": ".AM_10_gycy_yanjianxi_atk"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffIDs": [888666028],
+          "BuffTime": 100,
+          "desc": "传送到目标"
+        }
+      ]
+    }
+  ]
+}

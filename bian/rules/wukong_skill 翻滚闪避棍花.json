@@ -74,11 +74,7 @@
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 44051501,
-              "noHasAnyBuff": [
-                888666007,
-                888666006,
-                888666008
-              ],
+              "noHasAnyBuff": [888666007, 888666006, 888666008],
               "SpeedLeftValue": 6000,
               "SpeedRightValue": 6000,
               "ForTarget": true,
@@ -107,18 +103,15 @@
         }
       ],
       "AfterActions": [
-         
         {
           "Type": "buff",
-          "BuffIDs": [
-            888805079
-          ],
+          "BuffIDs": [888805079],
           "BuffTime": 1600,
           "desc": "棍光特效粒子"
         }
       ]
     },
-      {
+    {
       "Name": "棍花重击，监听buff，火冰剑气",
       "Description": "",
       "Filters": [
@@ -126,7 +119,6 @@
           "Type": "buff",
           "BuffID": 800010852
         }
-     
       ],
       "AfterActions": [
         {
@@ -163,11 +155,7 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileID": 50051301,
               "ForTarget": true,
-              "noHasAnyBuff": [
-                888666007,
-                888666006,
-                888666008
-              ],
+              "noHasAnyBuff": [888666007, 888666006, 888666008],
               "desc": "没有冰火毒buff就发射雷剑气",
               "BornDirOffsetXLeftValue": 45,
               "BornDirOffsetXRightValue": 45,
@@ -205,12 +193,29 @@
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [
-            103,
-            888666004
-          ],
+          "BuffIDs": [103, 888666004],
           "BuffTime": 100,
           "desc": "喝药，回血"
+        }
+      ]
+    },
+
+    {
+      "Name": "芭蕉扇",
+      "Description": "二倍速度",
+      "speedRate": 2,
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "AM_Wukong_BaJiaoShan.AM_Wukong_BaJiaoShan"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffIDs": [211],
+          "BuffTime": 2000,
+          "desc": "霸体"
         }
       ]
     }

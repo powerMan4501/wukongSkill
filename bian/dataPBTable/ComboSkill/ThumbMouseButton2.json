@@ -10,7 +10,7 @@
     "conditionValue": 888666023,
     "desc": "平A1接不能老拳"
   },
-   {
+  {
     "nowMontage": "AM_Dasheng_ComboA_02.AM_Dasheng_ComboA_02",
     "rate": 0.3,
     "type": "magic",
@@ -21,7 +21,7 @@
     "conditionValue": 888666023,
     "desc": "平A1接不能老拳"
   },
-   {
+  {
     "nowMontage": "AM_Dasheng_ComboA_03.AM_Dasheng_ComboA_03",
     "rate": 0.3,
     "type": "magic",
@@ -32,7 +32,7 @@
     "conditionValue": 888666023,
     "desc": "平A1接不能老拳"
   },
-   {
+  {
     "nowMontage": "AM_Dasheng_ComboA_04.AM_Dasheng_ComboA_04",
     "rate": 0.3,
     "type": "magic",
@@ -105,37 +105,38 @@
     "nowMontage": "AM_Dasheng_ComboA_03_Z_2",
     "rate": 1.9,
     "type": "magic",
-    "skillID": 8535,
-    "backTime": 2200,
-    "MagicSkillID": 405512,
+    "skillID": 8527,
+    "backTime": 1100,
+    "MagicSkillID": 10127,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "如果当前使用的技能是大圣江海翻，鳖宝砸"
-  }, {
+    "desc": "如果当前使用的技能是大圣江海翻，虫总兵"
+  },
+  {
     "nowMontage": "AM_mgd_jsds_atk_02_01_02",
     "rate": 1.9,
     "type": "magic",
-    "skillID": 8535,
-    "backTime": 2200,
-    "MagicSkillID": 405512,
+    "skillID": 8527,
+    "backTime": 1100,
+    "MagicSkillID": 10127,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "如果当前使用的技能是残躯江海翻，鳖宝砸"
+    "desc": "如果当前使用的技能是残躯江海翻，虫总兵"
   },
 
   {
     "nowMontage": "AM_wukong_comboc_z_02",
     "rate": 2,
     "type": "magic",
-    "skillID": 8535,
-    "backTime": 2200,
-    "MagicSkillID": 405507,
+    "skillID": 8527,
+    "backTime": 1100,
+    "MagicSkillID": 10127,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "如果当前使用的技能是江海翻，鳖宝飞天大坐"
+    "desc": "如果当前使用的技能是江海翻，虫总兵"
   },
   {
     "nowMontage": "AM_wukong_combob_z_02.AM_wukong_combob_z_02",

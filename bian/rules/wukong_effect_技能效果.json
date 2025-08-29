@@ -73,7 +73,7 @@
       ]
     },
     {
-      "Name": "无量蝠冰刃/喷冰，隼居士冰刃",
+      "Name": "无量蝠冰刃/喷冰，隼居士冰刃，芭蕉扇",
       "Description": "",
       "Filters": [
         {
@@ -87,7 +87,12 @@
         {
           "Type": "effect",
           "EffectID": 30300302
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1099503
         }
+        
       ],
       "AfterActions": [
         {

@@ -1,0 +1,18 @@
+
+
+[
+  {
+    "OriginalId": 10502,
+    "MappedId": 54321008,
+    "Condition": "StancePoke",
+    "conditionValue": null,
+    "desc": "戳棍下, 完美定身"
+  },
+  {
+    "OriginalId": 10502,
+    "MappedId": 54321011,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "无条件，变粗砸一下"
+  }
+]

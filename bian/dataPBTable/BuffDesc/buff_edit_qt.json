@@ -1,0 +1,91 @@
+[
+  {
+    "ID": 912608,
+    "BuffTips": "对关底BOSS_6级_火",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0, 3, 0, 0, 2, 1, 1, 4],
+        "EffectParamsFloat": [0.0, 60.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      }
+    ]
+  },
+
+  {
+    "ID": 912508,
+    "BuffTips": "对关底BOSS_5级_火",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0, 3, 0, 0, 2, 1, 1, 4],
+        "EffectParamsFloat": [0.0, 60.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      }
+    ]
+  },
+
+  {
+    "ID": 912408,
+    "BuffTips": "对关底BOSS_4级_火",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0, 3, 0, 0, 2, 1, 1, 4],
+        "EffectParamsFloat": [0.0, 60.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      }
+    ]
+  },
+
+  {
+    "ID": 912308,
+    "BuffTips": "对关底BOSS_3级_火",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0, 3, 0, 0, 2, 1, 1, 4],
+        "EffectParamsFloat": [0.0, 60.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      }
+    ]
+  },
+
+  {
+    "ID": 912208,
+    "BuffTips": "对关底BOSS_2级_火",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0, 3, 0, 0, 2, 1, 1, 4],
+        "EffectParamsFloat": [0.0, 60.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      }
+    ]
+  },
+
+  {
+    "ID": 912108,
+    "BuffTips": "对关底BOSS_1级_火",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0, 3, 0, 0, 2, 1, 1, 4],
+        "EffectParamsFloat": [0.0, 60.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      }
+    ]
+  }
+]

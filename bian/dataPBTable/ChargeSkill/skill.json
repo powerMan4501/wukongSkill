@@ -1,5 +1,39 @@
 [
+  {
+    "ID": 10505,
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "MaxChargeTime": 5
+  },
+  {
+    "ID": 10870,
+    "LoopCanMove": 1
+  },
     {
+    "ID": 10871,
+    "LoopCanMove": 1
+  },
+   {
+    "ID": 10872,
+    "LoopCanMove": 1
+  },
+  {
+    "ID": 10873,
+    "LoopCanMove": 1
+  },
+  {
+    "ID": 10874,
+    "LoopCanMove": 1
+  },
+  {
+    "ID": 10875,
+    "LoopCanMove": 1
+  },
+  {
+    "ID": 10876,
+    "LoopCanMove": 1
+  },
+  {
     "desc": "搅阵，增加buff 等实现",
     "ID": 10711,
     "LoopCanMove": 1,
@@ -8,7 +42,7 @@
       {
         "BuffID": 273,
         "BeginTimeInBeginStage": 0.1,
-        "EndTimeInEndStage":0
+        "EndTimeInEndStage": 0
       },
       {
         "BuffID": 888666011,
@@ -55,8 +89,7 @@
     ]
   },
 
-
-   {
+  {
     "desc": "棍花，增加buff 等实现",
     "ID": 10842,
     "LoopCanMove": 1,
@@ -113,7 +146,6 @@
     ]
   },
 
-
   {
     "desc": "棍花，增加buff 等实现",
     "ID": 10847,
@@ -132,7 +164,6 @@
       }
     ]
   },
-
 
   {
     "desc": "棍花，增加buff 等实现",
@@ -153,7 +184,7 @@
     ]
   },
 
-   {
+  {
     "desc": "棍花，增加buff 等实现",
     "ID": 10849,
     "LoopCanMove": 1,
