@@ -1,0 +1,23 @@
+[
+  {
+    "anim": "YanJianXi",
+    "addRadius": 1500
+  },
+
+  {
+    "anim": "Player/Transform/VigorSkill/",
+    "addRadius": 1500
+  },
+  {
+    "anim": "xuli",
+    "addRadius": 1500
+  },
+  {
+    "anim": "AM_Wukong_ComboA_z",
+    "addRadius": 500
+  },
+  {
+    "anim": "NiaoZui",
+    "addRadius": 500
+  }
+]

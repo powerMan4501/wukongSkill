@@ -22,12 +22,7 @@
   "Level1Scale": 1.0,
   "Level2Scale": 1.0,
   "Skills": [
-    {
-      "Id": 54321007,
-      "Name": "戳棍",
-      "Key": "S+RBUTTON",
-      "CanBreak": false
-    },
+   
     {
       "Id": 54321001,
       "Name": "后撤 JXSQ",
@@ -131,10 +126,45 @@
       "Key": "NUMPAD0",
       "type": "magic",
       "CanBreak": false,
-      "backTime": 3700,
-      "RelativeLocation": [-800, 0, -1]
+      "MagicSkillID": 11396,
+      "backTime": 3200,
+      "RelativeLocation": [-500, 0, 1]
     },
-
+    {
+      "Id": 8595,
+      "Name": "冰蛙",
+      "Buffers": [888666006],
+      "speedRate": 1.5,
+      "MagicSkillID": 11395,
+      "Key": "S+RBUTTON",
+      "type": "magic",
+      "CanBreak": false,
+      "backTime": 3200,
+      "RelativeLocation": [-500, 0, 1]
+    },
+    {
+      "Id": 8599,
+      "Name": "石蛙",
+      "speedRate": 1.5,
+      "MagicSkillID": 11399,
+      "Key": "A+NUMPAD0",
+      "type": "magic",
+      "CanBreak": false,
+      "backTime": 3200,
+      "RelativeLocation": [-500, 0, 1]
+    },
+    {
+      "Id": 8597,
+      "Name": "毒蛙",
+      "Buffers": [888666008],
+      "speedRate": 1.5,
+      "MagicSkillID": 11397,
+      "Key": "C+NUMPAD0",
+      "type": "magic",
+      "CanBreak": false,
+      "backTime": 3200,
+      "RelativeLocation": [-500, 0, 1]
+    },
     {
       "Id": 8522,
       "type": "magic",

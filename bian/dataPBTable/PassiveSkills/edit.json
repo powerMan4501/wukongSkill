@@ -1,23 +1,33 @@
 [
   {
-    "desc": "把厉无咎减铜头时间改成加时间，原版是-0.2",
+    "desc": "把厉无咎减铜头时间改成加时间 修改IronBodyWindowTimeLength，原版是-0.2",
     "ID": 81,
-    "BaseValue": 2
+    "BaseValue": 0.8
   },
   {
-    "desc": "把厉无咎减铜头时间改成加时间，原版是-0.3",
+    "desc": "把厉无咎减铜头时间改成加时间 修改 IronBodyWindowTimeLength，原版是-0.3",
     "ID": 82,
-    "BaseValue": 3
+    "BaseValue": 0.9
   },
 
-   {
-    "desc": "把厉无咎减铜头时间改成加时间，原版是-200",
+  {
+    "desc": "把厉无咎减铜头时间改成加时间 修改BuffDuration，原版是-200",
     "ID": 83,
-    "BaseValue": 2000
+    "BaseValue": 800
   },
   {
-    "desc": "把厉无咎减铜头时间改成加时间，原版是-300",
+    "desc": "把厉无咎减铜头时间改成加时间 修改BuffDuration，原版是-300",
     "ID": 84,
-    "BaseValue": 3000
+    "BaseValue": 900
+  },
+  {
+    "ID": 85,
+    "BaseValue": 0.8,
+    "desc": "把厉无咎减铜头时间改成加时间 修改ChargeSkillMaxChargeTime，原版是-0.2"
+  },
+  {
+    "ID": 86,
+    "BaseValue": 0.9,
+    "desc": "把厉无咎减铜头时间改成加时间 修改ChargeSkillMaxChargeTime，原版是-0.3"
   }
 ]

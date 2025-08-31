@@ -43,6 +43,54 @@
           ]
         }
       ]
+    },
+    {
+      "Name": "毒蛙，效果",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 1026214
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [10030401],
+              "desc": "毒"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "冰蛙，冰暴效果",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 1026213
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [2403471]
+            }
+          ]
+        }
+      ]
     }
+
+
+    
   ]
 }
