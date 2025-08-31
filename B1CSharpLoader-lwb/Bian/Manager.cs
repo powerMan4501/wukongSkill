@@ -124,6 +124,7 @@ namespace bian
                 LoadUtils.ModifyPlayCtrlDescData();
                 LoadUtils.LoadAndApplyPassiveSkills();
                 LoadUtils.ModifySuitDesc();
+                NotifyUtils.LoadNotifyData();
                 isBuffConfigsLoaded = true;
             }
         }
@@ -294,7 +295,7 @@ namespace bian
             {
                 return;
             }
-            Log.Info($"TriggerSkillEffectBySkillMultiCast EffectID: {EffectID}");
+          
             // 检查是否有对应的效果规则
             if (!effectRulesMap.ContainsKey(EffectID))
             {
@@ -400,12 +401,13 @@ namespace bian
 
 
             currentMontage = Montage.PathName;
-            NotifyUtils.getNotifyToJson(Montage);
+
             var mgr = Manager.GetModelManager();
             var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;
             var length = Montage.GetPlayLength() * 1000;
             var playRate = 1f;
 
+            NotifyUtils.handleNotify(Montage);
 
             if (currentModel != null && currentModel.PlayTimeRate > 0)
             {
@@ -429,8 +431,10 @@ namespace bian
             {
                 return;
             }
+
             foreach (var ruleItem in matchingRules)
             {
+
                 if (ruleItem?.skillID_fs > 0)
                 {
                     Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, false);
@@ -535,7 +539,7 @@ namespace bian
             {
                 ID = skillMappings[ID];
             }
-          
+
             var currentId = ID;
             // var bufferId = GetBufferIdForSkill(ID);
 
@@ -582,7 +586,7 @@ namespace bian
             return bufferMappings.ContainsKey(skillId) ? bufferMappings[skillId] : 0;
         }
 
-      
+
 
         private static bool IsComboSkill(int skillId)
         {
@@ -621,7 +625,7 @@ namespace bian
             {
                 ID = matchItem_.MappedId;
             }
-              Log.Info($"bian: final skllid SmartCastSkillTryMultiCast currentId:{currentId} -to-> {ID}");
+            Log.Info($"bian: final skllid SmartCastSkillTryMultiCast currentId:{currentId} -to-> {ID}");
         }
 
 
