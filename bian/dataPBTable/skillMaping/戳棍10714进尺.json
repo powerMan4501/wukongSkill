@@ -12,13 +12,20 @@
     "MappedId": 10797,
     "Condition": "hasBuff",
     "conditionValue": 20103,
-    "desc": "2a进尺转化，10797"
+    "desc": "3a进尺转化，10797"
   },
   {
     "OriginalId": 10714,
     "MappedId": 54321005,
     "Condition": "hasBuff",
     "conditionValue": 20102,
-    "desc": "2a进尺转化，破隐一击"
+    "desc": "4a进尺转化，破隐一击"
+  },
+  {
+    "OriginalId": 10714,
+    "MappedId": 10864,
+    "Condition": "hasBuff",
+    "conditionValue": 227,
+    "desc": "有铜头buff，进尺变立棍4"
   }
 ]

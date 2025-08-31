@@ -1,5 +1,4 @@
 [
-  
   {
     "ID": 227,
     "BuffTips": "铜头成功后表现由0.4秒改成1.6秒",
@@ -73,6 +72,15 @@
       "ConditionParams": ""
     }
   },
+
+  {
+    "ID": 2824,
+    "BuffTips": "兽棍诸相-加撑棍火表现Buff的Buff",
+    "BuffActiveCondition": {
+      "ConditionType": 3,
+      "ConditionParams": "888666007"
+    }
+  },
   {
     "ID": 2828,
     "BuffTips": "兽棍诸相-加火棍表现Buff的Buff，条件改成有火buff",
@@ -82,6 +90,58 @@
     }
   },
 
+  {
+    "ID": 2165,
+    "Duration": -1,
+    "Interval": 300000,
+    "BuffTips": "牛魔套去掉血量限制",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    }
+  },
+  {
+    "ID": 2166,
+    "BuffTips": "牛魔套4-禁止闪身改成，免疫抓投",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [19],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 2167,
+    "Duration": -1,
+    "BuffTips": "牛魔套去掉血量限制",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    }
+  },
+
+  {
+    "ID": 2168,
+    "Duration": -1,
+    "BuffTips": "牛魔套去掉血量限制",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    }
+  },
+  {
+    "ID": 2169,
+    "Duration": -1,
+    "BuffTips": "牛魔套去掉血量限制",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    }
+  },
   {
     "ID": 20234,
     "BuffTips": "【化身】海罗刹-盾 【Buff】受击召唤疯虎子弹",
@@ -134,21 +194,6 @@
         "EffectParamsString": [],
         "EffectParams": [20634],
         "EffectParamsFloat": [0.0]
-      }
-    ]
-  },
-
-  {
-    "ID": 2166,
-    "BuffTips": "牛魔套4-禁止闪身改成，免疫抓投",
-    "BuffEffects": [
-      {
-        "EffectTrigger": 1,
-        "EffectType": 7,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [19],
-        "EffectParamsFloat": []
       }
     ]
   }

@@ -83,7 +83,6 @@
           "ProjectTileIDs": [80009901, 80009913, 80009910, 80000008],
           "ForTarget": true,
           "TimeDelay": 200,
-          "BulletNumInOneWave": 3,
           "TargetProjectilePosOffsetType": "RangeOffset",
           "TargetMatrixDensity": 100,
           "TargetCircleRadius": 900,

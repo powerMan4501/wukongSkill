@@ -96,7 +96,6 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "BulletNumInOneWave": 2,
               "ProjectTileID": 18890701,
               "ForTarget": true,
               "spawnBaseSocketName": "weapon_r_index_06",

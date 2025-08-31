@@ -1,0 +1,10 @@
+
+[
+  {
+    "OriginalId": 10713,
+    "MappedId": 54321005,
+    "Condition": "hasBuff",
+    "conditionValue": 227,
+    "desc": "退寸，有铜头成功buff变成破隐一击"
+  }
+]
