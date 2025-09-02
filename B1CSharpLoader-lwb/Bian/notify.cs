@@ -20,6 +20,12 @@ using UnrealEngine.Runtime;
 
 namespace bian;
 
+public class AnimSweepConfig
+{
+    public string anim { get; set; }
+    public int addRadius { get; set; }
+}
+
 // 添加数据模型类
 public class NotifyParams
 {
@@ -56,6 +62,7 @@ public class NotifyData
 // 在 bian 命名空间内添加这个辅助类
 public static class BANS_GSCalcAMScaleHelper
 {
+
     public static object CreateInstance()
     {
         // 使用反射创建实例
@@ -115,6 +122,46 @@ public static class NotifyUtils
 {
     private static readonly Dictionary<string, bool> ProcessedAnimCache = new Dictionary<string, bool>();
     private static List<NotifyData> notifyDataList = new List<NotifyData>();
+    private static List<AnimSweepConfig> sweepConfigList = new List<AnimSweepConfig>();
+
+
+    public static void LoadSweepConfig()
+{
+    try
+    {
+        string folderPath = Path.Combine("CSharpLoader", "Mods", "bian", "AnimSweepCheck");
+        if (!Directory.Exists(folderPath))
+        {
+            Log.Warn($"Directory not found: {folderPath}");
+            return;
+        }
+
+        string[] jsonFiles = Directory.GetFiles(folderPath, "*.json");
+        if (jsonFiles.Length == 0)
+        {
+            Log.Warn($"No JSON files found in: {folderPath}");
+            return;
+        }
+
+        foreach (string file in jsonFiles)
+        {
+            try
+            {
+                string jsonContent = File.ReadAllText(file);
+                List<AnimSweepConfig> configs = JsonConvert.DeserializeObject<List<AnimSweepConfig>>(jsonContent) ?? new List<AnimSweepConfig>();
+                sweepConfigList.AddRange(configs);
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Error processing file {file}: {ex.Message}");
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        Log.Error($"Error loading sweep config: {ex.Message}");
+    }
+}
 
 
     // 添加加载JSON数据的方法
@@ -165,30 +212,6 @@ public static class NotifyUtils
             System.Console.WriteLine($"Error loading notify data: {ex.Message}");
         }
     }
-    private static FAnimNotifyEvent DeepCopyNotifyEvent(FAnimNotifyEvent source)
-    {
-        if (source == null) return new FAnimNotifyEvent();
-
-        var copy = new FAnimNotifyEvent();
-        var type = typeof(FAnimNotifyEvent);
-
-        // 获取所有实例属性
-        var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
-
-        foreach (var property in properties)
-        {
-            // 跳过索引器
-            if (property.GetIndexParameters().Length > 0) continue;
-
-            // 获取源对象的属性值
-            var value = property.GetValue(source);
-
-            // 设置到新对象
-            property.SetValue(copy, value);
-        }
-
-        return copy;
-    }
 
     public static void handleNotify(UAnimMontage Montage)
     {
@@ -216,13 +239,11 @@ public static class NotifyUtils
             NotifyData matchingData = notifyDataList.FirstOrDefault(data => data.PathName == Montage.PathName);
             var addRadius = 100;
 
-            if (strPathName.Contains("/Transform/VigorSkill/"))
+            // 替换原有的硬编码判断逻辑
+            var config = sweepConfigList.FirstOrDefault(c => strPathName.Contains(c.anim));
+            if (config != null)
             {
-                addRadius = 1500;
-            }
-            else if (strPathName.Contains("xuli_attack"))
-            {
-                addRadius = 1000;
+                addRadius = config.addRadius;
             }
             // 查找相同类型的通知作为模板
             foreach (FAnimNotifyEvent item in AnimNotifyEventList)

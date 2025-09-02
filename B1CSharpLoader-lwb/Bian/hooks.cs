@@ -32,9 +32,10 @@ public class Hooks
         }
     }
 
-    // 新增的拦截器类
+
+   // 新增的拦截器类
     [HarmonyPatch]
-    public class HookBUS_PassiveSkillComp
+    public class HookBUS_ChargeSkill
     {
         private static MethodBase TargetMethod()
         {
@@ -46,11 +47,7 @@ public class Hooks
             try
             {
                 if (isInit) return;
-                // 在 OnAttach 执行前加载和应用被动技能配置
-                LoadUtils.LoadAndApplyPassiveSkills();
                 LoadUtils.LoadAndApplyChargeSkill();
-                LoadUtils.ModifyIronData();
-                Console.WriteLine($"InitPassiveSkillMap.Prefix");
                 isInit = true;
             }
 
@@ -62,61 +59,37 @@ public class Hooks
         }
     }
 
-    // [HarmonyPatch]
-    // public class HookBUS_IronBodyComp
-    // {
-    //     private static MethodBase TargetMethod()
-    //     {
-    //         return AccessTools.Method("b1.BUS_IronBodyComp:OnAttach", (Type[])null, (Type[])null);
-    //     }
-
-    //     [HarmonyPostfix]
-    //     private static void Postfix(ref BUS_IronBodyComp __instance)
-    //     {
-
-    //         Log.Info($" ironBodyData OnAttach __instance：{__instance}");
-    //         if (__instance != null)
-    //         {
-    //             // 使用反射来访问和修改私有字段
-    //             var ironBodyDataField = typeof(BUS_IronBodyComp).GetField("IronBodyData", BindingFlags.NonPublic | BindingFlags.Instance);
-    //             if (ironBodyDataField != null)
-    //             {
-    //                 var ironBodyData = ironBodyDataField.GetValue(__instance);
-    //                 if (ironBodyData != null)
-    //                 {
-    //                     var endPreciseWindowTimeProperty = ironBodyData.GetType().GetProperty("EndPreciseWindowTime");
-    //                     if (endPreciseWindowTimeProperty != null)
-    //                     {
-    //                         endPreciseWindowTimeProperty.SetValue(ironBodyData, 3f);
-    //                         Log.Info($" ironBodyData set EndPreciseWindowTime to 3");
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
 
 
-    // [HarmonyPatch]
-    // public class HookBUS_IronBodyComp
-    // {
-    //     private static MethodBase TargetMethod()
-    //     {
-    //         return AccessTools.Method("b1.BUS_IronBodyComp:OnAttach", (Type[])null, (Type[])null);
-    //     }
 
-    //     [HarmonyPatch]
-    //     private static void Prefix()
-    //     {
-    //         if (isInit) return;
-    //         LoadUtils.ModifyIronData();
-    //         LoadUtils.LoadAndApplyPassiveSkills();
-    //         LoadUtils.LoadAndApplyChargeSkill();
-    //         Console.WriteLine($"BUS_IronBodyComp.Prefix");
-    //         isInit = true;
-    //     }
-    // }
 
+    // 新增的拦截器类
+    [HarmonyPatch]
+    public class HookBUS_PassiveSkillComp
+    {
+        private static MethodBase TargetMethod()
+        {
+            return AccessTools.Method("b1.BGW_GameDB:InitPassiveSkillMap", (Type[])null, (Type[])null);
+        }
+        [HarmonyPrefix]
+        private static void Prefix()
+        {
+            try
+            {
+                // 在 OnAttach 执行前加载和应用被动技能配置
+                LoadUtils.LoadAndApplyPassiveSkills();
+                LoadUtils.LoadAndApplyChargeSkill();
+                LoadUtils.ModifyIronData();
+                Console.WriteLine($"InitPassiveSkillMap.Prefix");
+            }
+
+            catch (Exception ex)
+            {
+                // 记录错误但不阻止原始方法执行
+                Console.WriteLine($"Error in HookBUS_PassiveSkillComp.Prefix: {ex.Message}");
+            }
+        }
+    }
 
     // [HarmonyPatch]
     // public class HookUAnimNotifyState

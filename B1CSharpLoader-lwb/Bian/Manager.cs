@@ -48,6 +48,7 @@ namespace bian
 
         public static string? currentMontage;
         public static string Nameo;
+        public static bool isBig = false;
 
 
         // 连招配置
@@ -124,7 +125,9 @@ namespace bian
                 LoadUtils.ModifyPlayCtrlDescData();
                 LoadUtils.LoadAndApplyPassiveSkills();
                 LoadUtils.ModifySuitDesc();
+                NotifyUtils.LoadSweepConfig();
                 NotifyUtils.LoadNotifyData();
+                LoadUtils.ModifyHP();
                 isBuffConfigsLoaded = true;
             }
         }
@@ -246,7 +249,44 @@ namespace bian
             AllSkillMappingRules.AddRange(rules);
         }
 
+        // [HarmonyPatch(typeof(BUS_WeaponCommComp), "OnPlayOrStopAnimation")]
+        // [HarmonyPrefix]
+        // private static void OnPlayOrStopAnimation(bool IsPlay, bool IsLoop = false, UAnimationAsset NewAnimToPlay = null)
+        // {
 
+        //     Log.Info($"OnPlayOrStopAnimation  NewAnimToPlay:{NewAnimToPlay.GetFullName()}");
+        //     if (!(NewAnimToPlay != null && NewAnimToPlay.GetFullName().ToLower().Contains("wukong")))
+        //     {
+        //         return;
+        //     }
+        //     // 获取当前玩家角色
+        //     var player = Helper.GetBGUPlayerCharacterCS();
+        //     if (player == null) return;
+
+        //     AActor aActor2 = BGUFunctionLibraryCS.BGUGetWeaponByIndex(player, 0);
+        //     if (!(aActor2 != null))
+        //     {
+        //         return;
+        //     }
+        //     BGUWeaponBase bGUWeaponBase = aActor2 as BGUWeaponBase;
+        //     if (!(bGUWeaponBase != null))
+        //     {
+        //         return;
+        //     }
+        //     // 检查是否是主角的武器
+        //     if (IsPlay)
+        //     {
+        //         // 将武器长度设置为5倍
+        //         bGUWeaponBase.SetActorScale3D(new FVector(5.0f, 1.0f, 1.0f));
+        //     }
+        //     else
+        //     {
+        //         // 动画停止时恢复原始大小
+        //         bGUWeaponBase.SetActorScale3D(new FVector(1.0f, 1.0f, 1.0f));
+        //     }
+        // }
+
+    
         [HarmonyPatch(typeof(GSDel_RequestSpawnAProjectile), "Invoke")]
         [HarmonyPrefix]
         private static void GSDel_RequestSpawnAProjectileInvoke(ref FGSProjectileSpawnInfo ProjectileSpawnInfo)
@@ -258,11 +298,12 @@ namespace bian
                 {
                     if (ProjectileSpawnInfo.ProjectileID == 44051501)
                     {
+                        // 夜叉王飞轮往前增加700
                         var playerLocation = ProjectileSpawnInfo.Spawner.GetActorLocation();
                         var xyz = ProjectileSpawnInfo.Spawner.GetActorForwardVector();
                         var forwardVector = ProjectileSpawnInfo.Spawner.GetActorForwardVector();
-                        forwardVector.Y *= 600;  // 只在Y轴方向增加800单位
-                        forwardVector.X *= 600;  // 只在X轴方向增加800单位
+                        forwardVector.Y *= 700;
+                        forwardVector.X *= 700;
                         ProjectileSpawnInfo.SpawnPosition = playerLocation + forwardVector;
                     }
 
@@ -295,7 +336,7 @@ namespace bian
             {
                 return;
             }
-          
+            // Log.Info($"Evt_TriggerSkillEffect EffectID:{EffectID}");
             // 检查是否有对应的效果规则
             if (!effectRulesMap.ContainsKey(EffectID))
             {
@@ -366,6 +407,8 @@ namespace bian
             {
                 return;
             }
+
+
             // 获取对应buff的所有规则
             var matchingRules = buffRulesMap[BuffID];
             foreach (var ruleItem in matchingRules)
@@ -406,8 +449,30 @@ namespace bian
             var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;
             var length = Montage.GetPlayLength() * 1000;
             var playRate = 1f;
-
             NotifyUtils.handleNotify(Montage);
+
+            // // 执行放大武器
+            // AActor aActor2 = BGUFunctionLibraryCS.BGUGetWeaponByIndex(__instance.GetOwner(), 0);
+            // var weaponList = BGU_DataUtil.GetUnPersistentReadOnlyData<IBUC_WeaponManagerData, BUC_WeaponManagerData>(__instance.GetOwner());
+            // Log.Info($"Evt_CastSkillWithAnimMontageMultiCast aActor2:{aActor2} weaponList:{weaponList?.GetWeaponNum()}");
+            // if (aActor2 != null)
+            // {
+            //     BGUWeaponBase bGUWeaponBase = aActor2 as BGUWeaponBase;
+            //     Log.Info($"Evt_CastSkillWithAnimMontageMultiCast bGUWeaponBase:{bGUWeaponBase}");
+            //     if (!isBig)
+            //     {
+            //         // 将武器长度设置为5倍
+            //         bGUWeaponBase.SetActorScale3D(new FVector(5.0f, 1.0f, 1.0f));
+            //         isBig = true;
+            //     }
+            //     else
+            //     {
+            //         // 动画停止时恢复原始大小
+            //         bGUWeaponBase.SetActorScale3D(new FVector(1.0f, 1.0f, 1.0f));
+            //         isBig = false;
+            //     }
+
+            // }
 
             if (currentModel != null && currentModel.PlayTimeRate > 0)
             {
@@ -431,13 +496,15 @@ namespace bian
             {
                 return;
             }
-
+            // 一个循环只执行一次分身
+            bool hasExecutedSkill = false;
             foreach (var ruleItem in matchingRules)
             {
 
-                if (ruleItem?.skillID_fs > 0)
+                if (!hasExecutedSkill && ruleItem?.skillID_fs > 0) // 增加标志判断
                 {
                     Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, false);
+                    hasExecutedSkill = true; // 设置标志为true
                 }
 
 

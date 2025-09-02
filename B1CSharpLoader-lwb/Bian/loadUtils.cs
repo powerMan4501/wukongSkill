@@ -1068,6 +1068,12 @@ namespace bian
                 }
 
                 Log.Info($"Total processed buff configs: {processedCount}");
+                // 100101
+                // GameDBRuntime，
+                var talentSDesc = GameDBRuntime.GetTalentSDesc(100101);
+                talentSDesc.AddBuffIDs = string.Join(",", new List<int> { 888666001 });
+
+
 
                 return processedCount;
             }
@@ -1728,31 +1734,32 @@ namespace bian
                 foreach (var ironData in ironDataList.Values)
                 {
                     ironData.PlayerDefense = 999;
-                    ironData.EndPreciseWindowTime = (float)(ironData?.EndPreciseWindowTime > 0 ? 3 : 0);
+                    ironData.EndPreciseWindowTime = (float)(ironData?.EndPreciseWindowTime > 0 ? 5 : 0);
                 }
-            }
 
-
-            FUStIronBodyConfigDesc originalIronBodyConfigDesc10 = BGW_GameDB.GetOriginalIronBodyConfigDesc(10);
-            FUStIronBodyConfigDesc originalIronBodyConfigDesc50 = BGW_GameDB.GetOriginalIronBodyConfigDesc(50);
-            FUStIronBodyConfigDesc originalIronBodyConfigDesc25 = BGW_GameDB.GetOriginalIronBodyConfigDesc(25);
-            if (originalIronBodyConfigDesc10 != null)
-            {
-                originalIronBodyConfigDesc10.EndPreciseWindowTime = 3;
-                Log.Info($"Original IronBodyConfigDesc: {originalIronBodyConfigDesc10?.EndPreciseWindowTime}");
             }
-            if (originalIronBodyConfigDesc50 != null)
-            {
-                originalIronBodyConfigDesc50.EndPreciseWindowTime = 3;
-            }
-            if (originalIronBodyConfigDesc25 != null)
-            {
-                originalIronBodyConfigDesc25.EndPreciseWindowTime = 3;
-            }
-
         }
 
 
+        // 修改血上限
+        public static void ModifyHP()
+        {
+            var unitList = BGW_GameDB.GetAllUnitBattleInfoExtendDesc();
+            if (unitList != null && unitList?.Count > 0)
+            {
+                foreach (var itemData in unitList.Values)
+                {
+                    if (itemData.HPFixedDM < 90000 && (int)itemData.QualityType < 9)
+
+                    {
+                        var num = itemData.QualityType;
+                        itemData.HPFixedDM = itemData.HPFixedDM + (int)num * 10000;
+
+                    }
+                }
+
+            }
+        }
         // 加载并应用被动技能配置
         public static int LoadAndApplyPassiveSkills(string configDirectory = null)
         {
@@ -1786,7 +1793,6 @@ namespace bian
                             if (config.BaseValue.HasValue)
                             {
                                 passiveSkill.BaseValue = (float)config.BaseValue.Value;
-                                Log.Info($"Updated BaseValue for passive skill ID {config.ID} to {config.BaseValue}");
                             }
 
                             // 可以添加更多属性的修改逻辑
@@ -1844,6 +1850,11 @@ namespace bian
                         foreach (var suitInfo in itemData.SuitInfo)
                         {
                             suitInfo.TriggerNum = 1;
+                            if (suitInfo.SuitEffectID == 901612)
+                            {
+                                suitInfo.SuitEffectDesc = "免疫投技，获得<EquipDetail_SuitDesc_KW>强硬</>效果";
+                                Log.Info($"SuitEffectID: {suitInfo.SuitEffectID} {suitInfo.SuitEffectDesc}");
+                            }
                         }
                     }
                 }
