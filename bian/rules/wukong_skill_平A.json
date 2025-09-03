@@ -47,12 +47,13 @@
               "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有毒buff,大圣平A1,就发射红剑气"
             },
+
             {
               "Type": "bullet",
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 34016010,
-              "ForTarget": true,
+              "AttachToSpawnBase": true,
               "spawnBaseSocketName": "weapon_r_index_06",
+           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [118],
               "noHasAnyBuff": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff,大圣平A1,电剑气"
             }
@@ -111,13 +112,15 @@
               "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有毒buff,大圣平A2,就发射红剑气"
             },
+
             {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 34016010,
-              "ForTarget": true,
+              "Type": "bullet",
+              "AttachToSpawnBase": true,
               "spawnBaseSocketName": "weapon_r_index_06",
+               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [34010501],
               "noHasAnyBuff": [888666006, 888666007, 888666008],
-              "desc": "没冰火毒buff,大圣平A2,电剑气"
+              "desc": "没冰火毒buff,大圣平A1,电剑气"
             }
           ]
         },
@@ -154,13 +157,16 @@
               "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有毒buff,大圣平A2,就发射红剑气"
             },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 34016010,
-              "ForTarget": true,
+            
+
+             {
+              "Type": "bullet",
+              "AttachToSpawnBase": true,
               "spawnBaseSocketName": "weapon_r_index_06",
+               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [34010501],
               "noHasAnyBuff": [888666006, 888666007, 888666008],
-              "desc": "没冰火毒buff,大圣平A2,电剑气"
+              "desc": "没冰火毒buff,大圣平A1,电剑气"
             }
           ]
         },

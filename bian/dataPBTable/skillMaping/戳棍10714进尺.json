@@ -23,9 +23,9 @@
   },
   {
     "OriginalId": 10714,
-    "MappedId": 10864,
+    "MappedId": 10863,
     "Condition": "hasBuff",
     "conditionValue": 227,
-    "desc": "有铜头buff，进尺变立棍4"
+    "desc": "有铜头buff，进尺变立棍3"
   }
 ]

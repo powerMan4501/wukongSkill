@@ -172,7 +172,7 @@
       "CanBreak": false,
       "Name": "无量蝠，冰",
       "backTime": 2200,
-      "RelativeLocation": [-800, 0, -1],
+      "RelativeLocation": [-900, 0, -1],
       "Key": "NUMPAD1"
     },
     {
@@ -196,7 +196,7 @@
       "Name": "蝎子，毒",
       "Description": "",
       "backTime": 1700,
-      "RelativeLocation": [-900, 0, -1],
+      "RelativeLocation": [-950, 0, -1],
       "Key": "NUMPAD3"
     },
     {
@@ -207,7 +207,7 @@
       "needBack": true,
       "backTime": 1100,
       "Description": "",
-      "RelativeLocation": [-800, 0, -1],
+      "RelativeLocation": [-500, 0, -1],
       "Key": "NUMPAD4"
     },
 

@@ -1,13 +1,19 @@
-
-
 [
   {
     "OriginalId": 10502,
     "MappedId": 54321008,
     "Condition": "StancePoke",
     "conditionValue": null,
-    "desc": "戳棍下, 完美定身"
+    "desc": "戳棍下,铜头反击变 完美定身 StancePoke-戳棍姿态 StanceProp-立棍 StanceHeavy-劈棍"
   },
+  {
+    "OriginalId": 10502,
+    "MappedId": 10797,
+    "Condition": "StanceProp",
+    "conditionValue": null,
+    "desc": "立棍下,铜头反击变 10797冲上去挑起"
+  },
+
   {
     "OriginalId": 10502,
     "MappedId": 54321011,

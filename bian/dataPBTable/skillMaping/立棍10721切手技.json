@@ -20,5 +20,12 @@
     "Condition": "hasBuff",
     "conditionValue": 20102,
     "desc": "10721风云转转成大圣Q2切手"
+  },
+  {
+    "OriginalId": 10721,
+    "MappedId": 50010724,
+    "Condition": "hasBuff",
+    "conditionValue": 227,
+    "desc": "有铜头buff，风云转变夜叉王江海翻"
   }
 ]

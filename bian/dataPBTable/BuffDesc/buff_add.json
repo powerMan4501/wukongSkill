@@ -1,7 +1,7 @@
 [
   {
     "ID": 888666001,
-    "BuffTips": "主角，80%减伤，2倍速度",
+    "BuffTips": "主角，80%减伤，2倍速度，完美闪避范围加大，死亡自动复活",
     "Duration": -1,
     "BuffEffects": [
       {
@@ -21,17 +21,21 @@
         "EffectParamsFloat": []
       },
       {
-          "EffectTrigger": 1,
-          "EffectType": 152,
-          "EffectTargetSelectType": 0,
-          "EffectParamsString": [],
-          "EffectParams": [],
-          "EffectParamsFloat": [
-            9900,
-            9900,
-            9900
-          ]
-        }
+        "EffectTrigger": 1,
+        "EffectType": 152,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [],
+        "EffectParamsFloat": [9900, 9900, 9900]
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 162,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [],
+        "EffectParamsFloat": []
+      }
     ]
   },
   {
@@ -234,7 +238,7 @@
     "Delay": 300,
     "BuffTips": "2/3/4豆激光buff，触发子弹用的"
   },
- 
+
   {
     "ID": 888666021,
     "Duration": 4050,
