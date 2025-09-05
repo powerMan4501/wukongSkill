@@ -703,10 +703,17 @@ namespace bian
                     ProjectileSpawnNSInfo.BornDirBaseInfo.BornDirType = ProjectileBornDirType.LookAtTargetPos;
                 }
 
-                if (action != null && action?.BornDirType == "LookAtTargetPos")
+                if (action != null && action?.BornDirType != null)
                 {
-                    ProjectileSpawnNSInfo.BornDirBaseInfo.BornDirType = ProjectileBornDirType.LookAtTargetPos;
+                    ProjectileSpawnNSInfo.BornDirBaseInfo.BornDirType =
+                        (b1.ProjectileBornDirType)Enum.Parse(typeof(b1.ProjectileBornDirType), action.BornDirType);
+
                 }
+                if (action != null && action?.AttachToSpawnBase != null)
+                {
+                    ProjectileSpawnNSInfo.AttachToSpawnBase = (bool)action.AttachToSpawnBase;
+                }
+
                 switch (ProjectileSpawnNSInfo.BornDirBaseInfo.BornDirType)
                 {
                     case ProjectileBornDirType.UseEffectNormal:

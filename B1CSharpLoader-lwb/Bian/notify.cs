@@ -126,42 +126,42 @@ public static class NotifyUtils
 
 
     public static void LoadSweepConfig()
-{
-    try
     {
-        string folderPath = Path.Combine("CSharpLoader", "Mods", "bian", "AnimSweepCheck");
-        if (!Directory.Exists(folderPath))
+        try
         {
-            Log.Warn($"Directory not found: {folderPath}");
-            return;
-        }
-
-        string[] jsonFiles = Directory.GetFiles(folderPath, "*.json");
-        if (jsonFiles.Length == 0)
-        {
-            Log.Warn($"No JSON files found in: {folderPath}");
-            return;
-        }
-
-        foreach (string file in jsonFiles)
-        {
-            try
+            string folderPath = Path.Combine("CSharpLoader", "Mods", "bian", "AnimSweepCheck");
+            if (!Directory.Exists(folderPath))
             {
-                string jsonContent = File.ReadAllText(file);
-                List<AnimSweepConfig> configs = JsonConvert.DeserializeObject<List<AnimSweepConfig>>(jsonContent) ?? new List<AnimSweepConfig>();
-                sweepConfigList.AddRange(configs);
+                Log.Warn($"Directory not found: {folderPath}");
+                return;
             }
-            catch (Exception ex)
+
+            string[] jsonFiles = Directory.GetFiles(folderPath, "*.json");
+            if (jsonFiles.Length == 0)
             {
-                Log.Error($"Error processing file {file}: {ex.Message}");
+                Log.Warn($"No JSON files found in: {folderPath}");
+                return;
             }
+
+            foreach (string file in jsonFiles)
+            {
+                try
+                {
+                    string jsonContent = File.ReadAllText(file);
+                    List<AnimSweepConfig> configs = JsonConvert.DeserializeObject<List<AnimSweepConfig>>(jsonContent) ?? new List<AnimSweepConfig>();
+                    sweepConfigList.AddRange(configs);
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Error processing file {file}: {ex.Message}");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Log.Error($"Error loading sweep config: {ex.Message}");
         }
     }
-    catch (Exception ex)
-    {
-        Log.Error($"Error loading sweep config: {ex.Message}");
-    }
-}
 
 
     // 添加加载JSON数据的方法
@@ -253,7 +253,7 @@ public static class NotifyUtils
                     for (int i = 0; i < sweepCheck.SweepCheckShape.Count; i++)
                     {
                         var sweepItem = sweepCheck.SweepCheckShape[i];
-                        sweepItem.Radius = sweepItem.Radius + addRadius;
+                        sweepItem.Radius = sweepItem.Radius < 1000 ? sweepItem.Radius + addRadius : sweepItem.Radius;
                         sweepCheck.SweepCheckShape[i] = sweepItem;
                     }
                 }

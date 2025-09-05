@@ -286,7 +286,7 @@ namespace bian
         //     }
         // }
 
-    
+
         [HarmonyPatch(typeof(GSDel_RequestSpawnAProjectile), "Invoke")]
         [HarmonyPrefix]
         private static void GSDel_RequestSpawnAProjectileInvoke(ref FGSProjectileSpawnInfo ProjectileSpawnInfo)
@@ -451,28 +451,6 @@ namespace bian
             var playRate = 1f;
             NotifyUtils.handleNotify(Montage);
 
-            // // 执行放大武器
-            // AActor aActor2 = BGUFunctionLibraryCS.BGUGetWeaponByIndex(__instance.GetOwner(), 0);
-            // var weaponList = BGU_DataUtil.GetUnPersistentReadOnlyData<IBUC_WeaponManagerData, BUC_WeaponManagerData>(__instance.GetOwner());
-            // Log.Info($"Evt_CastSkillWithAnimMontageMultiCast aActor2:{aActor2} weaponList:{weaponList?.GetWeaponNum()}");
-            // if (aActor2 != null)
-            // {
-            //     BGUWeaponBase bGUWeaponBase = aActor2 as BGUWeaponBase;
-            //     Log.Info($"Evt_CastSkillWithAnimMontageMultiCast bGUWeaponBase:{bGUWeaponBase}");
-            //     if (!isBig)
-            //     {
-            //         // 将武器长度设置为5倍
-            //         bGUWeaponBase.SetActorScale3D(new FVector(5.0f, 1.0f, 1.0f));
-            //         isBig = true;
-            //     }
-            //     else
-            //     {
-            //         // 动画停止时恢复原始大小
-            //         bGUWeaponBase.SetActorScale3D(new FVector(1.0f, 1.0f, 1.0f));
-            //         isBig = false;
-            //     }
-
-            // }
 
             if (currentModel != null && currentModel.PlayTimeRate > 0)
             {
@@ -496,8 +474,12 @@ namespace bian
             {
                 return;
             }
+
+
+
             // 一个循环只执行一次分身
             bool hasExecutedSkill = false;
+            bool hasCaledWeapon = false;
             foreach (var ruleItem in matchingRules)
             {
 
@@ -506,7 +488,16 @@ namespace bian
                     Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, false);
                     hasExecutedSkill = true; // 设置标志为true
                 }
-
+                if (!hasCaledWeapon && ruleItem?.scaleWeaponNum > 1)
+                {
+                    OnScaleWeapon((float)ruleItem.scaleWeaponNum);
+                    hasCaledWeapon = true;
+                }
+                else
+                {
+                    hasCaledWeapon = false; // 重置标志
+                    OnScaleWeapon(1);
+                }
 
                 if (ruleItem?.speedRate > 0)
                 {
@@ -580,6 +571,89 @@ namespace bian
                     {10715, 10714}
                 };
         }
+
+        public static float scaleWeaponNum = 1;
+        // 在Manager类的开头添加计时器变量
+        private static System.Timers.Timer scaleResetTimer;
+        private static void OnScaleWeapon(float num = 2)
+        {
+
+            // 获取当前玩家
+            var player = Helper.GetBGUPlayerCharacterCS();
+            if (player == null || scaleWeaponNum == num) return;
+            scaleWeaponNum = num;
+            List<UActorComponent> componentsByTag = player.GetComponentsByClass(UClass.GetClass<USkeletalMeshComponent>());
+            Log.Info($"bian: componentsByTag: {componentsByTag.Count}");
+            if (componentsByTag != null && componentsByTag.Count > 0)
+            {
+                foreach (var uStaticMeshComponent in componentsByTag)
+                {
+
+                    if (uStaticMeshComponent != null && uStaticMeshComponent.GetName() != null && uStaticMeshComponent.GetName().ToLower().Contains("weapon"))
+                    {
+                        var item_ = uStaticMeshComponent as USkeletalMeshComponent;
+                        item_.SetRelativeScale3D(new FVector(num, 1, 1));
+                    }
+                }
+                // 重置计时器
+                ResetScaleResetTimer();
+            }
+        }
+        // 添加重置计时器方法
+        private static void ResetScaleResetTimer()
+        {
+            // 如果计时器存在，先停止并释放
+            if (scaleResetTimer != null)
+            {
+                scaleResetTimer.Stop();
+                scaleResetTimer.Dispose();
+            }
+
+            // 创建新的计时器，2.5秒后触发
+            scaleResetTimer = new System.Timers.Timer(2500);
+            scaleResetTimer.AutoReset = false; // 只触发一次
+            scaleResetTimer.Elapsed += (sender, e) =>
+            {
+                // 在主线程上执行UI操作
+                Utils.TryRunOnGameThread((Action)delegate
+                {
+                    ResetWeaponScale();
+                });
+            };
+            scaleResetTimer.Start();
+        }
+
+        // 添加恢复棍子原始大小的方法
+        private static void ResetWeaponScale()
+        {
+            var player = Helper.GetBGUPlayerCharacterCS();
+            if (player == null) return;
+
+            List<UActorComponent> componentsByTag = player.GetComponentsByClass(UClass.GetClass<USkeletalMeshComponent>());
+            if (componentsByTag != null && componentsByTag.Count > 0)
+            {
+                foreach (var uStaticMeshComponent in componentsByTag)
+                {
+                    if (uStaticMeshComponent != null && uStaticMeshComponent.GetName() != null && uStaticMeshComponent.GetName().ToLower().Contains("weapon"))
+                    {
+                        var item_ = uStaticMeshComponent as USkeletalMeshComponent;
+                        item_.SetRelativeScale3D(new FVector(1, 1, 1));
+                        scaleWeaponNum = 1;
+                        Log.Info("Weapon scale reset to original size");
+                    }
+                }
+            }
+
+            // 清理计时器
+            if (scaleResetTimer != null)
+            {
+                scaleResetTimer.Stop();
+                scaleResetTimer.Dispose();
+                scaleResetTimer = null;
+            }
+        }
+
+
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_SmartCastSkillTryMultiCast_Implementation")]
         [HarmonyPrefix]
         private static void SmartCastSkillTryMultiCast(ref int ID, ref List<int> RuleIDList)
@@ -795,12 +869,12 @@ namespace bian
                                 if (combo.type == "magic")
                                 {
                                     CastMagicSkill(character, combo);
-                                    return;
+                                    break;
                                 }
 
                                 BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
                                     combo.skillID, null, EMontageBindReason.NormalSkill, false);
-                                return; // 找到匹配的规则后立即返回
+                                break;
                             }
                         }
                     }

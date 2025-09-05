@@ -72,7 +72,7 @@ namespace bian
         public int BornDirOffsetZRightValue { get; set; }
 
         public int BulletNumInOneWave { get; set; }
-
+        public bool? AttachToSpawnBase { get; set; }
         public List<int>? BuffIDs { get; set; }
         public List<int>? ProjectTileIDs { get; set; }
         public List<int>? hasAnyBuff { get; set; }
@@ -151,6 +151,8 @@ namespace bian
         public List<Filter> Filters { get; set; }
         public List<RuleAction> AfterActions { get; set; }
 
+
+        public float? scaleWeaponNum { get; set; }
         public float? startTimeRate { get; set; }
         public float? endTimeRate { get; set; }
         public float? speedRate { get; set; }
