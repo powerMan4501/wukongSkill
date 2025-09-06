@@ -27,37 +27,36 @@ public class Hooks
         {
             if ((UObject)(object)__instance != null)
             {
+                Console.WriteLine($" AfterInitAllComp.Prefix: ");
                 Manager.loadAllStaticData(false, 0);
             }
         }
     }
+    //    // 新增的拦截器类
+    //     [HarmonyPatch]
+    //     public class HookBUS_ChargeSkill
+    //     {
+    //         private static MethodBase TargetMethod()
+    //         {
+    //             return AccessTools.Method("b1.BUS_PassiveSkillComp:OnAttach", (Type[])null, (Type[])null);
+    //         }
+    //         [HarmonyPrefix]
+    //         private static void Prefix()
+    //         {
+    //             try
+    //             {
+    //                 if (isInit) return;
+    //                 LoadUtils.LoadAndApplyChargeSkill();
+    //                 isInit = true;
+    //             }
 
-
-   // 新增的拦截器类
-    [HarmonyPatch]
-    public class HookBUS_ChargeSkill
-    {
-        private static MethodBase TargetMethod()
-        {
-            return AccessTools.Method("b1.BUS_PassiveSkillComp:OnAttach", (Type[])null, (Type[])null);
-        }
-        [HarmonyPrefix]
-        private static void Prefix()
-        {
-            try
-            {
-                if (isInit) return;
-                LoadUtils.LoadAndApplyChargeSkill();
-                isInit = true;
-            }
-
-            catch (Exception ex)
-            {
-                // 记录错误但不阻止原始方法执行
-                Console.WriteLine($"Error in HookBUS_PassiveSkillComp.Prefix: {ex.Message}");
-            }
-        }
-    }
+    //             catch (Exception ex)
+    //             {
+    //                 // 记录错误但不阻止原始方法执行
+    //                 Console.WriteLine($"Error in HookBUS_PassiveSkillComp.Prefix: {ex.Message}");
+    //             }
+    //         }
+    //     }
 
 
 
