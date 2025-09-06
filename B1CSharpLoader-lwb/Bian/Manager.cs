@@ -22,6 +22,7 @@ public enum SkillMapCondition
     StanceHeavy,//劈棍
     hasBuff,
     disTance,
+    hasTalent,//拥有某个天赋
     any,//无条件转化
 }
 
@@ -523,6 +524,11 @@ namespace bian
                              rule.conditionValue > 0 &&
                              BGUFunctionLibraryCS.BGUHasBuffByID(character, (int)rule.conditionValue);
 
+
+            //天赋条件判断
+            bool talentMatch = rule.Condition == SkillMapCondition.hasTalent &&
+                             rule.conditionValue > 0 &&
+                             BGUFunctionLibraryCS.BGUHasTalentByID(character, (int)rule.conditionValue);
             // 距离条件判断
             bool distanceMatch = rule.Condition == SkillMapCondition.disTance &&
                                  rule.conditionValue >= 0 &&
@@ -533,7 +539,7 @@ namespace bian
             bool anyMatch = rule.Condition == SkillMapCondition.any;
 
             // 返回任意一个条件匹配即为true
-            return stanceMatch || buffMatch || distanceMatch || anyMatch;
+            return stanceMatch || buffMatch || distanceMatch || talentMatch || anyMatch;
         }
 
 
