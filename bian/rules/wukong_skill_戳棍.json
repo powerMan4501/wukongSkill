@@ -6,6 +6,7 @@
       "Name": "戳棍3/4棍光",
       "Description": "",
       "skillID_fs": 1001143,
+      "scaleWeaponNum": 5,
       "Filters": [
         {
           "Type": "montage",
@@ -37,6 +38,7 @@
       "Name": "戳棍 激光",
       "Description": "",
       "skillID_fs": 1001142,
+      "scaleWeaponNum": 3,
       "Filters": [
         {
           "Type": "montage",
@@ -68,6 +70,7 @@
       "Name": "戳棍 激光",
       "Description": "",
       "skillID_fs": 1001142,
+      "scaleWeaponNum": 2,
       "Filters": [
         {
           "Type": "montage",

@@ -5,6 +5,7 @@
     {
       "Name": "枪平A1",
       "Description": "",
+      "scaleWeaponNum": 2,
       "Filters": [
         {
           "Type": "montage",
@@ -54,6 +55,7 @@
     {
       "Name": "枪平A2",
       "Description": "",
+      "scaleWeaponNum": 2,
       "Filters": [
         {
           "Type": "montage",
@@ -117,6 +119,7 @@
     {
       "Name": "枪平A3",
       "Description": "",
+      "scaleWeaponNum": 2,
       "Filters": [
         {
           "Type": "montage",
@@ -167,6 +170,7 @@
       "Name": "枪平A4",
       "Description": "",
       "speedRate": 1.5,
+      "scaleWeaponNum": 2,
       "Filters": [
         {
           "Type": "montage",

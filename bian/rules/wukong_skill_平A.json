@@ -5,6 +5,7 @@
     {
       "Name": "大圣平A1",
       "Description": "",
+      "scaleWeaponNum": 2,
       "Filters": [
         {
           "Type": "montage",
@@ -52,7 +53,7 @@
               "Type": "bullet",
               "AttachToSpawnBase": true,
               "spawnBaseSocketName": "weapon_r_index_06",
-           "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
               "ProjectTileIDs": [118],
               "noHasAnyBuff": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff,大圣平A1,电剑气"
@@ -70,6 +71,7 @@
     {
       "Name": "大圣平A2",
       "Description": "",
+      "scaleWeaponNum": 2,
       "Filters": [
         {
           "Type": "montage",
@@ -117,7 +119,7 @@
               "Type": "bullet",
               "AttachToSpawnBase": true,
               "spawnBaseSocketName": "weapon_r_index_06",
-               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
               "ProjectTileIDs": [34010501],
               "noHasAnyBuff": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff,大圣平A1,电剑气"
@@ -157,13 +159,12 @@
               "spawnBaseSocketName": "weapon_r_index_06",
               "desc": "有毒buff,大圣平A2,就发射红剑气"
             },
-            
 
-             {
+            {
               "Type": "bullet",
               "AttachToSpawnBase": true,
               "spawnBaseSocketName": "weapon_r_index_06",
-               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
               "ProjectTileIDs": [34010501],
               "noHasAnyBuff": [888666006, 888666007, 888666008],
               "desc": "没冰火毒buff,大圣平A1,电剑气"
@@ -181,6 +182,7 @@
     {
       "Name": "大圣平A3",
       "Description": "",
+      "scaleWeaponNum": 2,
       "Filters": [
         {
           "Type": "montage",
@@ -283,6 +285,7 @@
     {
       "Name": "大圣平A4",
       "Description": "",
+      "scaleWeaponNum": 2,
       "Filters": [
         {
           "Type": "montage",
@@ -347,6 +350,7 @@
       "Name": "大圣Q5",
       "Description": "",
       "skillID_fs": 1001105,
+      "scaleWeaponNum": 5,
       "Filters": [
         {
           "Type": "montage",

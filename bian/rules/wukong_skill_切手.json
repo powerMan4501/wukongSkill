@@ -6,6 +6,7 @@
       "Name": "50001，大圣版10705",
       "Description": "大圣劈棍切手技",
       "skillID_fs": 10705,
+      "scaleWeaponNum": 4,
       "Filters": [
         {
           "Type": "montage",
@@ -25,6 +26,7 @@
       "Name": "10705",
       "Description": "马喽劈棍切手技,棍光",
       "skillID_fs": 10705,
+      "scaleWeaponNum": 4,
       "Filters": [
         {
           "Type": "montage",
@@ -44,6 +46,7 @@
       "Name": "10707",
       "Description": "斩棍",
       "skillID_fs": 10707,
+      "scaleWeaponNum": 2,
       "Filters": [
         {
           "Type": "montage",
@@ -250,6 +253,7 @@
       "Description": "",
       "skillID_fs": 50006,
       "speedRate": 1.5,
+      "scaleWeaponNum": 2,
       "Filters": [
         {
           "Type": "montage",

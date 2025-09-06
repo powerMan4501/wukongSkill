@@ -51,7 +51,7 @@
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
               "ProjectTileID": 118,
-              "noHasAnyBuff": [888666006, 888666007],
+              "noHasAnyBuff": [888666006, 888666007, 888666008],
               "desc": "雷buff, 落雷"
             },
             {
@@ -67,6 +67,13 @@
               "ProjectTileID": 40100101,
               "hasBuff": 888666007,
               "desc": "火buff,火长老火球"
+            },
+            {
+              "Type": "bullet",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileID": 10030401,
+              "hasBuff": 888666008,
+              "desc": "毒buff,广谋毒蛇喷的毒"
             }
           ]
         }
@@ -92,7 +99,6 @@
           "Type": "effect",
           "EffectID": 1099503
         }
-        
       ],
       "AfterActions": [
         {
@@ -235,6 +241,49 @@
               "ProjectTileIDs": [88880005],
               "noHasAnyBuff": [888666006, 888666007],
               "desc": "有雷buff，黄符"
+            }
+          ]
+        }
+      ]
+    },
+     {
+      "Name": "蓄力戳棍4",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 1089001
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [44011401,40550101],
+              "hasBuff": 888666007,
+              "desc": "有火buff，红孩儿砸地，鳖宝子弹"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [2403471,30123101],
+              "hasBuff": 888666006,
+              "desc": "有冰buff，巨猿冰暴，冰刺"
+            },
+
+             {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [51002002,10030401],
+              "hasBuff": 888666008,
+              "desc": "有毒buff，猪八戒，蛇毒"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [51002002,74011107],
+              "noHasAnyBuff": [888666006, 888666007,888666008],
+              "desc": "有雷buff，猪八戒,金沙"
             }
           ]
         }
@@ -506,7 +555,29 @@
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
               "ProjectTileIDs": [2403471],
-              "desc": "冰暴"
+              "hasBuff": 888666006,
+              "desc": "有冰buff，冰暴"
+            },
+            {
+              "Type": "bullet",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileID": 40100101,
+              "hasBuff": 888666007,
+              "desc": "火buff,火长老火球"
+            },
+            {
+              "Type": "bullet",
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileID": 10030401,
+              "hasBuff": 888666008,
+              "desc": "毒buff,广谋毒蛇喷的毒"
+            },
+
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [1016262],
+              "noHasAnyBuff": [888666006, 888666007, 888666008],
+              "desc": "没有毒火冰buff，巴山虎"
             }
           ]
         }
