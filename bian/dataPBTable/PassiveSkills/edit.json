@@ -1,14 +1,5 @@
 [
-  {
-    "ID": 79,
-    "BaseValue": 100.0,
-    "desc": "厉无咎回蓝，原版是10.0"
-  },
-  {
-    "ID": 80,
-    "BaseValue": 150.0,
-    "desc": "厉无咎回蓝，原版是15.0"
-  },
+ 
   {
     "desc": "把厉无咎减铜头时间改成加时间 修改IronBodyWindowTimeLength，原版是-0.2",
     "ID": 81,

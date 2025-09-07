@@ -5,18 +5,35 @@
     {
       "Name": "",
       "Description": "大头磕头",
+      "speedRate": 1.3,
       "Filters": [
         {
           "Type": "montage",
           "Name": ".AM_10_gycy_yanjianxi_atk"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_GYCY_YanJianXi_01_Atk_Fast_33"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_40_psd_jiachongzongbing_02_atk_10"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_GYCY_YanJianXi_01b_Atk_Fast_26"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_GYCY_YanJianXi_01_Atk_Fast_37"
         }
       ],
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [888666028],
-          "BuffTime": 100,
-          "desc": "传送到目标"
+          "BuffIDs": [412201],
+          "BuffTime": 1000,
+          "desc": "弹刀"
         }
       ]
     }

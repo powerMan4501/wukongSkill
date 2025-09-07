@@ -1,0 +1,16 @@
+[
+  {
+    "desc": "蝎子二连扫",
+    "ID": 49991001,
+    "EffectParamsInt": [40, 25, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0.0, 100.0, 30000.0, 0.0, 0.0, 0.0, 100],
+    "EffectParamsStr": ["【主角】蓄力2"]
+  },
+  {
+    "desc": "蝎子二连扫",
+    "ID": 49991002,
+    "EffectParamsInt": [40, 25, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0.0, 100.0, 30000.0, 0.0, 0.0, 0.0, 100],
+    "EffectParamsStr": ["【主角】蓄力3"]
+  }
+]

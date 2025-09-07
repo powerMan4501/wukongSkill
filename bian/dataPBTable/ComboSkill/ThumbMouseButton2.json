@@ -11,6 +11,18 @@
     "desc": "平A1接不能老拳"
   },
   {
+    "nowMontage": "AM_Wukong_ComboB_q1.AM_Wukong_ComboB_q1",
+    "rate": 0.3,
+    "type": "magic",
+    "backTime": 1600,
+    "skillID": 8526,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "戳棍平A1接不能老拳"
+  },
+
+  {
     "nowMontage": "AM_Dasheng_ComboA_02.AM_Dasheng_ComboA_02",
     "rate": 0.3,
     "type": "magic",
@@ -19,7 +31,18 @@
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "平A1接不能老拳"
+    "desc": "平A2接不能老拳"
+  },
+  {
+    "nowMontage": "AM_Wukong_ComboB_q2.AM_Wukong_ComboB_q2",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8526,
+    "backTime": 1600,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "戳棍平A2接不能老拳"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_03.AM_Dasheng_ComboA_03",
@@ -30,7 +53,18 @@
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "平A1接不能老拳"
+    "desc": "平A3接不能老拳"
+  },
+  {
+    "nowMontage": "AM_Wukong_ComboB_q3.AM_Wukong_ComboB_q3",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8526,
+    "backTime": 2200,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "戳棍平A3接不能老拳"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_04.AM_Dasheng_ComboA_04",
@@ -41,8 +75,32 @@
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "平A1接不能老拳"
+    "desc": "平A4接不能老拳"
   },
+  {
+    "nowMontage": "AM_Wukong_ComboB_q4.AM_Wukong_ComboB_q4",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8526,
+    "backTime": 2100,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666023,
+    "desc": "戳棍平A4接不能老拳"
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05",
+    "rate": 0.9,
+    "type": "magic",
+    "skillID": 8513,
+    "backTime": 2500,
+    "MagicSkillID": 102437,
+    "Condition": "disTance",
+    "conditionValue": 1000,
+    "InputCore": "ThumbMouseButton2",
+    "desc": "平A5，距离900以上接大头狂奔前进拍地爆2次"
+  },
+
   {
     "nowMontage": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05",
     "rate": 0.9,
@@ -51,9 +109,23 @@
     "backTime": 1500,
     "MagicSkillID": 11313,
     "Condition": "any",
+    "conditionValue": 0,
     "InputCore": "ThumbMouseButton2",
-    "desc": "平A5接大头磕头"
+    "desc": "平A5，接大头磕头"
   },
+
+  {
+    "nowMontage": "AM_mgd_jsds_atk_02_02_short",
+    "rate": 0.9,
+    "type": "magic",
+    "skillID": 8130,
+    "backTime": 2800,
+    "MagicSkillID": 499910,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "残躯Q5接蝎子二连砸"
+  },
+
   {
     "nowMontage": "AM_Dasheng_ComboA_01_Z_1.AM_Dasheng_ComboA_01_Z_1",
     "rate": 0.95,
@@ -84,10 +156,10 @@
     "skillID": 8513,
     "backTime": 2500,
     "MagicSkillID": 102433,
-    "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666022,
-    "desc": "如果当前使用的技能是10707，大头排云掌"
+    "Condition": "disTance",
+    "conditionValue": 1000,
+    "desc": "如果当前使用的技能是10707，距离800以上接大头排云掌"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_01_Z_2",
@@ -96,10 +168,33 @@
     "skillID": 8513,
     "backTime": 2500,
     "MagicSkillID": 102433,
-    "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666022,
-    "desc": "如果当前使用的技能是大圣10707，大头排云掌"
+    "Condition": "disTance",
+    "conditionValue": 1000,
+    "desc": "如果当前使用的技能是10707，距离1000以上接大头排云掌"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_ComboA_z_02",
+    "rate": 1.95,
+    "type": "magic",
+    "skillID": 8513,
+    "backTime": 2200,
+    "MagicSkillID": 102426,
+    "InputCore": "ThumbMouseButton2",
+    "Condition": "any",
+    "desc": "如果当前使用的技能是10707， 接大头地爆一次"
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_01_Z_2",
+    "rate": 1.95,
+    "type": "magic",
+    "skillID": 8513,
+    "backTime": 2200,
+    "MagicSkillID": 102426,
+    "InputCore": "ThumbMouseButton2",
+    "Condition": "any",
+    "desc": "如果当前使用的技能是10707， 接大头地爆一次"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_03_Z_2",

@@ -67,7 +67,7 @@
       "Id": 10126,
       "CanBreak": false,
       "Name": "精魄技能，连招5，很强的索敌",
-      "Key": "XBUTTON2",
+      "Key": "",
       "Buffs": [20104, 1000094]
     },
     {
@@ -90,7 +90,7 @@
       "CanBreak": false,
       "Name": "扫堂腿+跳起来砸地冲击波",
       "Buffs": [1000095],
-      "Key": "XBUTTON1"
+      "Key": ""
     },
     {
       "Id": 10126,

@@ -1,16 +1,41 @@
 [
   {
-    "anim": "YanJianXi",
-    "addRadius": 1500
+    "anim": "AM_GYCY_YanJianXi_01_Atk_Fast_33",
+    "addRadius": 1500,
+    "desc": "大头如来神掌"
+  },
+  {
+    "anim": "AM_10_gycy_yanjianxi_atk_24_Lv",
+    "addRadius": 1500,
+    "desc": "大头精魄磕头"
+  },
+  {
+    "anim": "AM_GYCY_YanJianXi_01b_Atk_Fast_26",
+    "addRadius": 2000,
+    "desc": "大头地爆一次"
+  },{
+    "anim": "AM_GYCY_YanJianXi_01_Atk_Fast_37",
+    "addRadius": 1000,
+    "desc": "大头狂奔前进地爆2次"
   },
 
   {
+    "anim": "AM_40_psd_jiachongzongbing_02_atk_10",
+    "addRadius": 1500,
+    "desc": "虫总兵"
+  },
+  {
+    "anim": "AM_psd_xiezijing_og_atk_10.AM_psd_xiezijing_og_atk_10",
+    "addRadius": 800,
+    "desc": "蝎子二连横扫"
+  },
+  {
     "anim": "Player/Transform/VigorSkill/",
-    "addRadius": 1500
+    "addRadius": 1000
   },
   {
     "anim": "xuli",
-    "addRadius": 1500
+    "addRadius": 500
   },
   {
     "anim": "AM_Wukong_ComboA_z",

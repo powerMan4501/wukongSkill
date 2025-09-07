@@ -132,5 +132,15 @@
     "desc": "夜叉王江海翻",
     "ID": 50010724,
     "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboC/AM_wukong_comboc_z_02_ycw.AM_wukong_comboc_z_02_ycw"
+  },
+  {
+    "desc": "残躯中等蓄力戳棍",
+    "ID": 54321022,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_08_01_02.AM_mgd_jsds_atk_08_01_02"
+  },
+  {
+    "desc": "残躯版Q5",
+    "ID": 54321023,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_02_02_short.AM_mgd_jsds_atk_02_02_short"
   }
 ]

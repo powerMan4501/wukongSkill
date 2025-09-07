@@ -28,21 +28,40 @@
     "desc": "3/4蓄start，转成3/4蓄攻击"
   },
   {
+    "OriginalId": 10870,
+    "MappedId": 10886,
+    "Condition": "disTance",
+    "conditionValue": 10,
+    "desc": "0蓄戳棍start，转成0蓄攻击"
+  },
+ {
+    "OriginalId": 10871,
+    "MappedId": 10887,
+    "Condition": "disTance",
+    "conditionValue": 10,
+    "desc": "1蓄戳棍start，转成1蓄攻击"
+  },
+  {
+    "OriginalId": 10872,
+    "MappedId": 10888,
+    "Condition": "disTance",
+    "conditionValue": 10,
+    "desc": "2蓄戳棍start，转成2蓄攻击"
+  },
+  {
     "OriginalId": 10873,
     "MappedId": 10889,
     "Condition": "any",
     "conditionValue": null,
-    "desc": "3/4蓄start，转成3/4蓄攻击"
+    "desc": "3/4蓄戳棍start，转成3/4蓄攻击"
   },
   {
     "OriginalId": 10874,
     "MappedId": 10890,
     "Condition": "any",
     "conditionValue": null,
-    "desc": "3/4蓄start，转成3/4蓄攻击"
+    "desc": "3/4蓄戳棍start，转成3/4蓄攻击"
   },
-
-
 
   {
     "OriginalId": 10830,
@@ -59,7 +78,7 @@
     "desc": "劈棍蓄力1豆攻击，变成大圣2豆劈棍50021"
   },
 
-   {
+  {
     "OriginalId": 10832,
     "MappedId": 50022,
     "Condition": "any",
@@ -67,8 +86,7 @@
     "desc": "劈棍蓄力2豆攻击，变成大圣3豆劈棍 50022"
   },
 
-
-    {
+  {
     "OriginalId": 10833,
     "MappedId": 50023,
     "Condition": "any",
@@ -76,14 +94,13 @@
     "desc": "劈棍蓄力3豆攻击，变成大圣4豆劈棍 50023"
   },
 
-   {
+  {
     "OriginalId": 10834,
     "MappedId": 50024,
     "Condition": "any",
     "conditionValue": null,
     "desc": "劈棍蓄力4豆攻击，变成大圣5豆劈棍 50024"
   },
-
 
   {
     "OriginalId": 10881,

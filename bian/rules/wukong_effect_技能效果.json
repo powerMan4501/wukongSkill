@@ -246,7 +246,7 @@
         }
       ]
     },
-     {
+    {
       "Name": "蓄力戳棍4",
       "Description": "",
       "Filters": [
@@ -262,27 +262,27 @@
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [44011401,40550101],
+              "ProjectTileIDs": [44011401, 40550101],
               "hasBuff": 888666007,
               "desc": "有火buff，红孩儿砸地，鳖宝子弹"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [2403471,30123101],
+              "ProjectTileIDs": [2403471, 30123101],
               "hasBuff": 888666006,
               "desc": "有冰buff，巨猿冰暴，冰刺"
             },
 
-             {
+            {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [51002002,10030401],
+              "ProjectTileIDs": [51002002, 10030401],
               "hasBuff": 888666008,
               "desc": "有毒buff，猪八戒，蛇毒"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [51002002,74011107],
-              "noHasAnyBuff": [888666006, 888666007,888666008],
+              "ProjectTileIDs": [51002002, 74011107],
+              "noHasAnyBuff": [888666006, 888666007, 888666008],
               "desc": "有雷buff，猪八戒,金沙"
             }
           ]
@@ -456,7 +456,7 @@
     },
 
     {
-      "Name": "虫总兵精魄技能效果，大头如来神掌，石蛙",
+      "Name": "虫总兵精魄技能效果，大头如来神掌，石蛙,大头地爆",
       "Description": "巴山虎",
       "Filters": [
         {
@@ -466,6 +466,18 @@
         {
           "Type": "effect",
           "EffectID": 10243301
+        },
+        {
+          "Type": "effect",
+          "EffectID": 10242601
+        },
+        {
+          "Type": "effect",
+          "EffectID": 10243701
+        },
+        {
+          "Type": "effect",
+          "EffectID": 10243702
         }
       ],
       "AfterActions": [
@@ -561,16 +573,16 @@
             {
               "Type": "bullet",
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileID": 40100101,
+              "ProjectTileID": 40550101,
               "hasBuff": 888666007,
-              "desc": "火buff,火长老火球"
+              "desc": "火buff,鳖宝子弹"
             },
             {
               "Type": "bullet",
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileID": 10030401,
+              "ProjectTileIDs": [51002002, 10030401],
               "hasBuff": 888666008,
-              "desc": "毒buff,广谋毒蛇喷的毒"
+              "desc": "毒buff,猪八戒，蛇毒"
             },
 
             {
