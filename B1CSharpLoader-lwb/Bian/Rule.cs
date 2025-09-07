@@ -427,27 +427,71 @@ namespace bian
                     continue;
                 }
 
-                // 处理短延迟情况
-                // 处理短延迟情况
-                if (action.TimeDelay < 680)
+                if (montage != null && ruleItem != null)
+                {
+                    // 如果是比较短的延迟就直接执行，不走动画匹配
+                    if (action.TimeDelay < 800)
+                    {
+                        // 如果是多次执行就间隔执行
+                        if (intervalTime > 0)
+                        {
+                            var num = Math.Min(15000, Math.Max(1000, montage.GetPlayLength() * 1000));
+                            var times = action?.intervalTimes > 0 ? action?.intervalTimes.Value : (int)(num / intervalTime);
+                            for (int loopTimes = 0; loopTimes < times; loopTimes++)
+                            {
+                                ExecuteDelayedAction(() => DoAction(action, timeLength / playRate), intervalTime).ConfigureAwait(false);
+                            }
+                        }
+                        else
+                        {
+                            ExecuteDelayedAction(() => DoAction(action, timeLength / playRate), action.TimeDelay).ConfigureAwait(false);
+                        }
+                        continue;
+                    }
+                    else
+                    {
+                        // 走动画匹配的逻辑
+                        ExecuteDelayedAction(async () =>
+                        {
+                            await HandleAnimationBasedExecution(action, timeLength, playRate, timeDelay, intervalTime, character, montage, ruleItem);
+                        }, timeDelay, true, montage, ruleItem).ConfigureAwait(false);
+                    }
+
+                }
+                else
                 {
                     if (action.TimeDelay > 0)
                     {
                         ExecuteDelayedAction(() => DoAction(action, timeLength / playRate), action.TimeDelay).ConfigureAwait(false);
+                        continue;
                     }
                     else
                     {
                         DoAction(action, timeLength / playRate);
+                        continue;
                     }
-                    continue;
                 }
 
+                // 处理短延迟情况
+                // if (action.TimeDelay < 680)
+                // {
+                //     if (action.TimeDelay > 0)
+                //     {
+                //         ExecuteDelayedAction(() => DoAction(action, timeLength / playRate), action.TimeDelay).ConfigureAwait(false);
+                //     }
+                //     else
+                //     {
+                //         DoAction(action, timeLength / playRate);
+                //     }
+                //     continue;
+                // }
 
-                // 处理需要延迟执行的情况
-                ExecuteDelayedAction(async () =>
-                {
-                    await HandleAnimationBasedExecution(action, timeLength, playRate, timeDelay, intervalTime, character, montage, ruleItem);
-                }, timeDelay, true, montage, ruleItem).ConfigureAwait(false);
+
+                // // 处理需要延迟执行的情况
+                // ExecuteDelayedAction(async () =>
+                // {
+                //     await HandleAnimationBasedExecution(action, timeLength, playRate, timeDelay, intervalTime, character, montage, ruleItem);
+                // }, timeDelay, true, montage, ruleItem).ConfigureAwait(false);
             }
             return true;
         }
@@ -497,10 +541,9 @@ namespace bian
                 if (!ruleItem.IsMatchMontage(nowMontage.PathName))
                     return;
 
-                var diff = (int)Math.Round(timeDelay / 10.0 * 1.2);
-                Console.WriteLine($"执行action currentPosition: {currentPosition * 1000},timeDelay-diff:{timeDelay - diff}--timeDelay：{timeDelay}");
+                var diff = timeDelay > 800 ? (int)Math.Round(timeDelay / 10.0 * 1.3) : 200;
 
-                // 根据当前位置和时间延迟决定如何执行
+                // 如果已经播放到了指定位置，则执行
                 if (currentPosition > 0 && currentPosition * 1000 >= timeDelay - diff)
                 {
                     await ExecuteWithInterval(action, timeLength, playRate, intervalTime, montage, nowMontage, ruleItem);

@@ -15,6 +15,7 @@ using BtlB1;
 using Google.Protobuf.Collections;
 using b1.Protobuf.DataAPI;
 using UnrealEngine.Runtime;
+using UnrealEngine.AnimationBlueprintLibrary;
 
 
 
@@ -57,6 +58,45 @@ public class NotifyData
     public string PathName { get; set; }
     public int ID { get; set; }
     public List<NotifyItem> notifys { get; set; }
+}
+// 在 bian 命名空间内添加这个辅助类
+public static class BANS_GSAttackWarnningHelper
+{
+    public static object CreateInstance()
+    {
+        // 使用反射创建实例
+        var assembly = Assembly.GetAssembly(typeof(BANS_GSAddBuffByID)); // 假设 BANS_GSAddBuffByID 和 BANS_GSAttackWarnning 在同一程序集
+        var type = assembly.GetType("b1.BANS_GSAttackWarnning"); // 使用完整的类型名称
+        return Activator.CreateInstance(type, true); // true 表示允许访问非公共构造函数
+    }
+
+    public static object GetProperty(object instance, string propertyName)
+    {
+        var type = instance.GetType();
+        var property = type.GetProperty(propertyName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+        if (property != null)
+        {
+            return property.GetValue(instance);
+        }
+        return null;
+    }
+
+    public static void SetProperty(object instance, string propertyName, object value)
+    {
+        var type = instance.GetType();
+        var property = type.GetProperty(propertyName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+        if (property != null)
+        {
+            property.SetValue(instance, value);
+        }
+    }
+
+    public static bool IsAttackWarning(object instance)
+    {
+        if (instance == null) return false;
+        var type = instance.GetType();
+        return type.Name == "BANS_GSAttackWarnning";
+    }
 }
 
 // 在 bian 命名空间内添加这个辅助类
@@ -213,6 +253,27 @@ public static class NotifyUtils
         }
     }
 
+
+
+    public class LWB_CustomNotify : UAnimNotify
+    {
+        public static FName NotifyName => new FName(nameof(LWB_CustomNotify));
+
+        protected override bool Received_Notify_Implementation(
+            USkeletalMeshComponent MeshComp,
+            UAnimSequenceBase Animation,
+            FAnimNotifyEventReference EventReference)
+        {
+            // 在这里实现你的自定义事件逻辑
+            // 例如：触发某个事件、调用某个函数等
+
+            // 返回true表示通知已处理
+            Log.Info($"LWB_CustomNotify received Animation: {Animation?.PathName}");
+            return true;
+        }
+    }
+
+
     public static void handleNotify(UAnimMontage Montage)
     {
         try
@@ -221,18 +282,34 @@ public static class NotifyUtils
             {
                 return;
             }
+
+
+            // if (AnimNotifyEventList != null && AnimNotifyEventList.Count > 0)
+            // {
+            //     Log.Info($"{Montage.GetName()} AnimNotifyEventList Count: {AnimNotifyEventList.Count} ");
+            //     // 输出 AnimNotifyEventList 中的 NotifyName
+            //     var animNotifyEventNames = AnimNotifyEventList.Select(item => item.NotifyName.ToString()).ToList();
+            //     if (animNotifyEventNames.Count > 0)
+            //     {
+            //         Log.Info($"AnimNotifyEventList NotifyNames: {string.Join(", ", animNotifyEventNames)}");
+            //     }
+            // }
+
             if (ProcessedAnimCache.ContainsKey(Montage.PathName))
             {
                 return;
             }
+            UGSE_AnimFuncLib.GetAllNotifyEvent(Montage, out var AnimNotifyEventList);
             // 确保数据已加载
             if (notifyDataList.Count == 0)
             {
                 LoadNotifyData();
             }
 
-
-            UGSE_AnimFuncLib.GetAllNotifyEvent(Montage, out var AnimNotifyEventList);
+            if (!(AnimNotifyEventList != null && AnimNotifyEventList.Count > 0))
+            {
+                return;
+            }
 
             // 查找匹配的JSON数据
             var strPathName = Montage.PathName.ToString();
@@ -259,14 +336,32 @@ public static class NotifyUtils
                 }
                 else if (item.NotifyName == new FName("BANS_GSCalcAMScale"))
                 {
+
                     // 获取当前属性值
                     var currentValue = BANS_GSCalcAMScaleHelper.GetProperty(item.NotifyStateClass, "AMScaleMaxRate");
+
                     // 只有当当前值小于10时才修改为10
-                    if (currentValue is double doubleValue && doubleValue < 10)
+                    if ((float)currentValue < 10)
                     {
+                        var AMScaleItem = item.NotifyStateClass;
                         BANS_GSCalcAMScaleHelper.SetProperty(item.NotifyStateClass, "AMScaleMaxRate", 10);
                     }
                 }
+                else if (item.NotifyName == new FName("BANS_GSDodgeWindow") || item.NotifyName == new FName("ComboWindow"))
+                {
+                    item.LinkValue = 0.1f; // 设置触发时间为0.1秒
+                }
+                else if (BANS_GSAttackWarnningHelper.IsAttackWarning(item.NotifyStateClass))
+                {
+                    // 获取 hitLevel 属性
+                    var hitLevel = BANS_GSAttackWarnningHelper.GetProperty(item.NotifyStateClass, "HitLevel");
+                    // 在这里可以处理 hitLevel 属性
+                    if ((int)hitLevel < 5)
+                    {
+                        BANS_GSAttackWarnningHelper.SetProperty(item.NotifyStateClass, "HitLevel", 5);
+                    }
+                }
+
 
             }
 
@@ -279,76 +374,19 @@ public static class NotifyUtils
             //         {
             //             continue;
             //         }
-            //         // 查找相同类型的通知作为模板
-            //         FAnimNotifyEvent templateEvent = AnimNotifyEventList.FirstOrDefault(e =>
-            //             e.NotifyStateClass?.GetType().Name == notifyItem.NotifyStateClass) ?? AnimNotifyEventList[0];
-            //         FAnimNotifyEvent? newNotify = new FAnimNotifyEvent();
-            //         // 根据通知类型创建相应的通知类
-
-            //         if (newNotify != null && templateEvent != null)
+            //         // 添加自定义通知
+            //         var notify = UAnimationLibrary.AddAnimationNotifyEvent(
+            //             animSequenceBase,
+            //             LWB_CustomNotify.NotifyName,
+            //           (float)(notifyItem?.NotifyParams?.LinkValue ?? 0.1),                             // 触发时间（秒）
+            //          UClass.GetClass<LWB_CustomNotify>()
+            //         );
+            //         Log.Info($"Added notify: {notify}");
+            //         if (notify != null)
             //         {
-            //             // 设置通知参数
-            //             newNotify.TriggerTimeOffset = 0;
-            //             newNotify.EndTriggerTimeOffset = 0;
-            //             newNotify.TriggerWeightThreshold = templateEvent.TriggerWeightThreshold;
-            //             newNotify.NotifyName = templateEvent.NotifyName;
-            //             newNotify.Notify = templateEvent.Notify;
-            //             newNotify.NotifyStateClass = templateEvent.NotifyStateClass;
-            //             newNotify.Duration = (float)(notifyItem?.NotifyParams?.Duration ?? 0.5);
-            //             newNotify.EndLink = templateEvent.EndLink;
-
-            //             newNotify.MontageTickType = templateEvent.MontageTickType;
-            //             newNotify.NotifyTriggerChance = templateEvent.NotifyTriggerChance;
-            //             newNotify.NotifyFilterType = templateEvent.NotifyFilterType;
-            //             newNotify.NotifyFilterLOD = templateEvent.NotifyFilterLOD;
-
-
-            //             newNotify.TrackIndex = templateEvent.TrackIndex;
-            //             newNotify.LinkedMontage = templateEvent.LinkedMontage;
-            //             newNotify.SlotIndex = templateEvent.SlotIndex;
-
-            //             newNotify.SegmentIndex = templateEvent.SegmentIndex;
-            //             newNotify.CachedLinkMethod = templateEvent.CachedLinkMethod;
-            //             newNotify.SegmentBeginTime = templateEvent.SegmentBeginTime;
-
-
-
-            //             newNotify.SegmentLength = (float)(notifyItem?.NotifyParams?.SegmentLength ?? 2);
-
-            //             newNotify.LinkValue = (float)(notifyItem?.NotifyParams?.LinkValue ?? 0.0);
-            //             newNotify.LinkedSequence = templateEvent.LinkedSequence;
-
-
-            //             // 根据类型创建通知状态类
-            //             if (notifyItem?.NotifyStateClass == "BANS_GSAddBuffByID")
-            //             {
-            //                 var addBuffNotify = UObject.NewObject<BANS_GSAddBuffByID>();
-            //                 addBuffNotify.BuffID = notifyItem?.StateClassParams?.BuffID ?? 287;
-            //                 newNotify.NotifyStateClass = addBuffNotify;
-            //                 newNotify.NotifyName = new FName("BANS_GSAddBuffByID");
-
-
-
-            //                 AnimNotifyEventList[AnimNotifyEventList.Count - 1].NotifyStateClass = newNotify.NotifyStateClass;
-            //                 AnimNotifyEventList[AnimNotifyEventList.Count - 1].NotifyName = newNotify.NotifyName;
-            //                 AnimNotifyEventList[AnimNotifyEventList.Count - 1].LinkValue = newNotify.LinkValue;
-            //                 AnimNotifyEventList[AnimNotifyEventList.Count - 1].LinkedSequence = newNotify.LinkedSequence;
-
-            //             }
-            //             else if (notifyItem?.NotifyStateClass == "BANS_GSCalcAMScale")
-            //             {
-            //                 // 使用辅助类创建实例
-            //                 var calcAMScaleNotify = BANS_GSCalcAMScaleHelper.CreateInstance();
-
-            //                 // 使用新的辅助方法批量设置属性值
-            //                 BANS_GSCalcAMScaleHelper.SetProperties(calcAMScaleNotify, notifyItem?.StateClassParams);
-
-            //                 newNotify.NotifyStateClass = calcAMScaleNotify as UAnimNotifyState;
-            //                 newNotify.NotifyName = new FName("BANS_GSCalcAMScale");
-
-            //             }
-
+            //             Log.Info($"Added notify success: {notify.GetFName()}");
             //         }
+
             //     }
             // }
             // 标记该动画蒙太奇已处理

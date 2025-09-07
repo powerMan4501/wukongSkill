@@ -103,8 +103,22 @@ public class Hooks
     //     {
     //         try
     //         {
-    //             // 在这里实现你的自定义逻辑
-    //             Console.WriteLine($"AnimNotifyState End:GetFName: {Animation?.GetFName()}, GetFullName:{Animation?.GetFullName()}");
+    //             if (MeshComp.SkeletalMesh.GetFullName().ToLower().IndexOf("SK_Wukong_Simple".ToLower()) > -1)
+    //             {
+    //                 var currentTime = Manager.GetCurrentTime();
+    //                 var currentMontage = Manager.GetCurrentMontage();
+    //                 var nowTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+    //                 // 计算时间差
+    //                 if (!string.IsNullOrEmpty(currentTime))
+    //                 {
+    //                     DateTime current = DateTime.Parse(currentTime);
+    //                     DateTime now = DateTime.Parse(nowTime);
+    //                     TimeSpan diff = now - current;
+    //                     double secondsDiff = diff.TotalSeconds;
+    //                     Log.Info($"Received_Notify_Implementation Animation: {Animation.GetName()},  difference: {secondsDiff} seconds");
+    //                 }
+
+    //             }
     //         }
     //         catch (Exception ex)
     //         {

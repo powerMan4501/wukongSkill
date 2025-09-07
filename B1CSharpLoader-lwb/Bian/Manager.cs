@@ -48,6 +48,7 @@ namespace bian
         private static Ui UI;
 
         public static string? currentMontage;
+        public static string? currentTime;
         public static string Nameo;
         public static bool isBig = false;
 
@@ -105,7 +106,6 @@ namespace bian
             {
                 if (maxRetries > 0)
                 {
-                    Log.Info($"Retrying to get buffDispList. Retries left: {maxRetries - 1}");
                     Helper.DelayExecute(retryInterval, () => GetBuffDispListWithRetry(5000, maxRetries - 1));
                 }
             }
@@ -238,6 +238,14 @@ namespace bian
             return currentMontage;
         }
 
+        public static string GetCurrentTime()
+        {
+            if (currentTime == null)
+            {
+                return "";
+            }
+            return currentTime;
+        }
 
         // 添加公共方法来修改规则列表
         public static void ClearSkillMappingRules()
@@ -250,42 +258,6 @@ namespace bian
             AllSkillMappingRules.AddRange(rules);
         }
 
-        // [HarmonyPatch(typeof(BUS_WeaponCommComp), "OnPlayOrStopAnimation")]
-        // [HarmonyPrefix]
-        // private static void OnPlayOrStopAnimation(bool IsPlay, bool IsLoop = false, UAnimationAsset NewAnimToPlay = null)
-        // {
-
-        //     Log.Info($"OnPlayOrStopAnimation  NewAnimToPlay:{NewAnimToPlay.GetFullName()}");
-        //     if (!(NewAnimToPlay != null && NewAnimToPlay.GetFullName().ToLower().Contains("wukong")))
-        //     {
-        //         return;
-        //     }
-        //     // 获取当前玩家角色
-        //     var player = Helper.GetBGUPlayerCharacterCS();
-        //     if (player == null) return;
-
-        //     AActor aActor2 = BGUFunctionLibraryCS.BGUGetWeaponByIndex(player, 0);
-        //     if (!(aActor2 != null))
-        //     {
-        //         return;
-        //     }
-        //     BGUWeaponBase bGUWeaponBase = aActor2 as BGUWeaponBase;
-        //     if (!(bGUWeaponBase != null))
-        //     {
-        //         return;
-        //     }
-        //     // 检查是否是主角的武器
-        //     if (IsPlay)
-        //     {
-        //         // 将武器长度设置为5倍
-        //         bGUWeaponBase.SetActorScale3D(new FVector(5.0f, 1.0f, 1.0f));
-        //     }
-        //     else
-        //     {
-        //         // 动画停止时恢复原始大小
-        //         bGUWeaponBase.SetActorScale3D(new FVector(1.0f, 1.0f, 1.0f));
-        //     }
-        // }
 
 
         [HarmonyPatch(typeof(GSDel_RequestSpawnAProjectile), "Invoke")]
@@ -355,13 +327,7 @@ namespace bian
                 ruleItem.DoRule(1000, 1, null, ruleItem);
             }
         }
-        // [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_NotifyGraphClientMultiCast_Implementation")]
-        // [HarmonyPrefix]
-        // private static void NotifyGraphClientMultiCast(ref string FinalGuid, ref FGameplayTag NotifyTag)
-        // {
-        //     Log.Info($"Evt_NotifyGraphClientMultiCast_Implementation  FinalGuid:{FinalGuid} NotifyTag:{NotifyTag.TagName}");
 
-        // }
 
         // 通用的buff互斥处理方法
         private static void HandleBuffMutex(AActor caster, int currentBuffId, List<int> mutexBuffIds)
@@ -445,7 +411,7 @@ namespace bian
 
 
             currentMontage = Montage.PathName;
-
+            // currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
             var mgr = Manager.GetModelManager();
             var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;
             var length = Montage.GetPlayLength() * 1000;
@@ -589,7 +555,6 @@ namespace bian
             if (player == null || scaleWeaponNum == num) return;
             scaleWeaponNum = num;
             List<UActorComponent> componentsByTag = player.GetComponentsByClass(UClass.GetClass<USkeletalMeshComponent>());
-            Log.Info($"bian: componentsByTag: {componentsByTag.Count}");
             if (componentsByTag != null && componentsByTag.Count > 0)
             {
                 foreach (var uStaticMeshComponent in componentsByTag)
@@ -645,7 +610,6 @@ namespace bian
                         var item_ = uStaticMeshComponent as USkeletalMeshComponent;
                         item_.SetRelativeScale3D(new FVector(1, 1, 1));
                         scaleWeaponNum = 1;
-                        Log.Info("Weapon scale reset to original size");
                     }
                 }
             }
@@ -772,7 +736,6 @@ namespace bian
             {
                 ID = matchItem_.MappedId;
             }
-            Log.Info($"bian: final skllid SmartCastSkillTryMultiCast currentId:{currentId} -to-> {ID}");
         }
 
 
@@ -819,7 +782,7 @@ namespace bian
             });
         }
 
-
+   
         [HarmonyPatch(typeof(UInputPreProcEvent), "OnAnyKeyTriggerEvent")]
         [HarmonyPrefix]
 
