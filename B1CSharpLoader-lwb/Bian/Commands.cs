@@ -159,15 +159,7 @@ namespace bian
             }
         }
 
-        public void SpawnProjectile(ModelManager manager, string path)
-        {
-            // Log.Debug($"bian: trigger SpawnProjectile-->{path}!");
-            var character = Helper.GetBGUPlayerCharacterCS();
-            if (character != null)
-            {
-                Helper.SpawnProjectile(character, path);
-            }
-        }
+      
 
         public void TransBack(ModelManager manager)
         {

@@ -454,6 +454,7 @@ namespace bian
                     }
                     Utils.RegisterGamePadBind(keyFlag, () =>
                     {
+                        
                         TriggerSkill(realKey);
                     });
                     if (realKey != key)
@@ -647,15 +648,15 @@ namespace bian
                         }
                         Utils.TryRunOnGameThread((Action)delegate
                         {
-                            if (skill?.RelativeLocation != null && skill.RelativeLocation.Count > 2)
-                            {
-                                var RelativeLocation = skill.RelativeLocation;
-                                character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(RelativeLocation[0], RelativeLocation[1], RelativeLocation[2]);
-                            }
-                            else
-                            {
-                                character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(-800, 0, -1);
-                            }
+                            // if (skill?.RelativeLocation != null && skill.RelativeLocation.Count > 2)
+                            // {
+                            //     var RelativeLocation = skill.RelativeLocation;
+                            //     character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(RelativeLocation[0], RelativeLocation[1], RelativeLocation[2]);
+                            // }
+                            // else
+                            // {
+                            //     character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(-800, 0, -1);
+                            // }
                             Helper.CastVigorSkillByID(character, skill.Id, backTime, skill?.MagicSkillID);
                         });
 
@@ -1001,6 +1002,10 @@ namespace bian
 
         public bool TriggerSkill(string key)
         {
+            if (Helper.isPlayVigorSkillByID)
+            {
+                return false;
+            }
             BGUPlayerCharacterCS character = null;
             try
             {

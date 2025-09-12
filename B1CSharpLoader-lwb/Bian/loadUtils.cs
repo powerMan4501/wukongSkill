@@ -12,6 +12,15 @@ using CSharpModBase;
 using BtlB1;
 using Google.Protobuf.Collections;
 using b1.Protobuf.DataAPI;
+using bian;
+
+
+public class AnimRuleBySweepCheck
+{
+    public string montage { get; set; }
+    public double linkValue { get; set; }
+    public List<RuleAction> AfterActions { get; set; }
+}
 
 
 public class PassiveConfig
@@ -1860,6 +1869,56 @@ namespace bian
                 }
             }
         }
+
+
+        public static List<AnimRuleBySweepCheck> allSweepCheckAnimRules;
+        public static List<AnimRuleBySweepCheck> LoadAnimRulesBySweepCheck(string configDirectory = null)
+        {
+
+            if (allSweepCheckAnimRules != null && allSweepCheckAnimRules.Count > 0)
+            {
+                return allSweepCheckAnimRules;
+            }
+            configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "AnimRulesBySweepCheck");
+            var allRules = new List<AnimRuleBySweepCheck>();
+
+            if (!Directory.Exists(configDirectory))
+            {
+                Log.Error($"AnimRulesBySweepCheck directory not found: {configDirectory}");
+                try
+                {
+                    Directory.CreateDirectory(configDirectory);
+                    Log.Info($"Created AnimRulesBySweepCheck directory: {configDirectory}");
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Failed to create AnimRulesBySweepCheck directory: {ex.Message}");
+                    return allRules;
+                }
+            }
+
+            foreach (string file in Directory.GetFiles(configDirectory, "*.json"))
+            {
+                try
+                {
+                    string json = File.ReadAllText(file);
+                    var rules = JsonConvert.DeserializeObject<List<AnimRuleBySweepCheck>>(json);
+                    if (rules != null)
+                    {
+                        allRules.AddRange(rules);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Error loading anim rules from {file}: {ex.Message}");
+                }
+            }
+
+            Log.Info($"Total loaded anim rules: {allRules.Count}");
+            allSweepCheckAnimRules = allRules;
+            return allRules;
+        }
+
     }
 }
 

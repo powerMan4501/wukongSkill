@@ -111,6 +111,7 @@ namespace bian
             }
             else
             {
+
                 // 成功获取到buffDispList，继续加载其他配置
                 LoadUtils.LoadAndApplySummon();
                 LoadUtils.LoadAndApplyChargeSkill();
@@ -129,19 +130,21 @@ namespace bian
                 NotifyUtils.LoadSweepConfig();
                 NotifyUtils.LoadNotifyData();
                 LoadUtils.ModifyHP();
+
+                LoadUtils.LoadAnimRulesBySweepCheck();
                 isBuffConfigsLoaded = true;
             }
         }
 
         public static void loadAllStaticData(bool forceUpdate = false, int delayTime = 1000)
         {
+
+
+            if (isBuffConfigsLoaded && !forceUpdate) { return; }
             // 加载技能映射规则
             LoadUtils.LoadAllSkillMappingRules();
             LoadComboConfigs();//全部连招
             InitializeEffectRulesMap();//初始化技能子弹效果rule
-
-            if (isBuffConfigsLoaded && !forceUpdate) { return; }
-
             // 使用新的递归方法获取buffDispList
             GetBuffDispListWithRetry(delayTime);
 
@@ -782,7 +785,7 @@ namespace bian
             });
         }
 
-   
+
         [HarmonyPatch(typeof(UInputPreProcEvent), "OnAnyKeyTriggerEvent")]
         [HarmonyPrefix]
 
@@ -863,11 +866,11 @@ namespace bian
                         if (combo.type == "magic")
                         {
                             CastMagicSkill(character, combo);
-                            return;
+                            break;
                         }
                         BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
                             combo.skillID, null, EMontageBindReason.NormalSkill, false);
-                        return; // 找到匹配的规则后立即返回
+                        break; // 找到匹配的规则后立即返回
                     }
                 }
             }

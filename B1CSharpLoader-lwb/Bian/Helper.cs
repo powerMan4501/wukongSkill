@@ -187,67 +187,140 @@ namespace bian
         }
 
 
+        private static readonly Dictionary<Type, Dictionary<string, MethodInfo>> _methodCache = new Dictionary<Type, Dictionary<string, MethodInfo>>();
+
+        private static MethodInfo GetCachedMethodInfo(Type type, string methodName)
+        {
+            if (!_methodCache.TryGetValue(type, out var typeMethods))
+            {
+                typeMethods = new Dictionary<string, MethodInfo>();
+                _methodCache[type] = typeMethods;
+            }
+
+            if (!typeMethods.TryGetValue(methodName, out var methodInfo))
+            {
+                methodInfo = type.GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Instance);
+                typeMethods[methodName] = methodInfo;
+            }
+
+            return methodInfo;
+        }
+
+        private static BUS_MagicallyChangeComp? _cachedMagicChangeComp;
+        private static BGUPlayerCharacterCS? _cachedCharacter;
+        private static BUS_MagicallyChangeComp? GetCachedMagicChangeComp(BGUPlayerCharacterCS character)
+        {
+            if (_cachedCharacter != character || _cachedMagicChangeComp == null)
+            {
+                _cachedMagicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(character);
+                _cachedCharacter = character;
+            }
+            return _cachedMagicChangeComp;
+        }
+        private static readonly Dictionary<int, BGWDataAsset_MagicallyChangeConfig> _vigorSkillConfigCache = new Dictionary<int, BGWDataAsset_MagicallyChangeConfig>();
+
+        public static bool isPlayVigorSkillByID;
+        public static int playVigorSkillID;
+        public static BGUPlayerCharacterCS playVigorCharacter;
 
 
+        public static void updateIsPlayVigorSkillByID(bool isPlay)
+        {
+            isPlayVigorSkillByID = isPlay;
+        }
         public static void CastVigorSkillByID(BGUPlayerCharacterCS character, int VigorSkillID, float backTime = 0, int? MagicSkillID = 0)
         {
 
 
-            var magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(character);
+            var magicChangeComp = GetCachedMagicChangeComp(character);
+            if (magicChangeComp == null)
+            {
+                return;
+            }
 
-            MethodInfo methodInfo = magicChangeComp.GetType().GetMethod("DoCastMagicallyChangeSkill", BindingFlags.NonPublic | BindingFlags.Instance);
+            // 优化后的代码：
+            // MethodInfo methodInfo = GetCachedMethodInfo(magicChangeComp.GetType(), "DoCastMagicallyChangeSkill");
+
             var soulSkillDesc = GameDBRuntime.GetSoulSkillDesc(VigorSkillID);
 
             if (soulSkillDesc == null || magicChangeComp == null)
             {
                 return;
             }
-            BGWDataAsset_MagicallyChangeConfig config = BGW_PreloadAssetMgr.Get(magicChangeComp).TryGetCachedResourceObj<BGWDataAsset_MagicallyChangeConfig>(soulSkillDesc.DAPath, ELoadResourceType.SyncLoadAndCache);
+            // 检查缓存中是否已存在该配置
+            if (!_vigorSkillConfigCache.TryGetValue(VigorSkillID, out var config))
+            {
+                // 缓存不存在，则加载配置
+                config = BGW_PreloadAssetMgr.Get(magicChangeComp).TryGetCachedResourceObj<BGWDataAsset_MagicallyChangeConfig>(soulSkillDesc.DAPath, ELoadResourceType.SyncLoadAndCache);
+                if (config != null)
+                {
+                    // 将新加载的配置加入缓存
+                    _vigorSkillConfigCache[VigorSkillID] = config;
+                }
+            }
+
             if (config == null)
             {
                 return;
             }
-            FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
-            BUC_MagicallyChangeData data = fieldData.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
-
-            data.DurMagicallyChange = false;  // 不变回去，需要手动变回                    // 添加buffer  
             var BGS = GetBUS_GSEventCollection();
-            // 211
-
-            if (soulSkillDesc.BuffId > 0)
-            {
-                BGS.Evt_BuffAdd.Invoke(soulSkillDesc.BuffId, character, character, -1f, EBuffSourceType.MagicallyChange);
-            }
+            // if (soulSkillDesc.BuffId > 0)
+            // {
+            //     BGS.Evt_BuffAdd.Invoke(soulSkillDesc.BuffId, character, character, -1f, EBuffSourceType.MagicallyChange);
+            // }
             // 打断当前所有动画
-            UGSE_AnimFuncLib.StopAllMontages(character, 0f);
-            UGSE_AnimFuncLib.TickAnimationAndRefreshBone(character);
+            // UGSE_AnimFuncLib.StopAllMontages(character, 0f);
+            // UGSE_AnimFuncLib.TickAnimationAndRefreshBone(character);
             var Duration = backTime > 0 ? backTime : 1000f;
             BGS.Evt_BuffAdd.Invoke(22010, character, character, Duration, EBuffSourceType.MagicallyChange);
             var finalId = MagicSkillID > 0 ? MagicSkillID : soulSkillDesc.SkillId;
             try
             {
-                methodInfo.Invoke(magicChangeComp, [config, finalId, soulSkillDesc.SkillIdReEnter]);
+                isPlayVigorSkillByID = true;
+                playVigorSkillID = (int)finalId;
+                playVigorCharacter = character;
+                // methodInfo.Invoke(magicChangeComp, [config, finalId, soulSkillDesc.SkillIdReEnter]);
+
+                BGUFunctionLibraryCS.CastMagicallyChangeSkill((AActor)character, config, (int)finalId, soulSkillDesc.SkillIdReEnter);
             }
             catch (System.Exception ex)
             {
                 Log.Error($"bian:{ex?.Message} ");
 
             }
-            if (backTime > 0)
+            // if (backTime > 0)
+            // {
+            //     var finalBackTime = backTime;
+            //     Task.Run(async delegate
+            //     {
+            //         await Task.Delay((int)finalBackTime);
+            //         Utils.TryRunOnGameThread((Action)delegate
+            //         {
+            //             Helper.ResetVigorSkill(magicChangeComp, VigorSkillID);
+            //             character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(0, 0, 0);
+            //         });
+            //     });
+            // }
+
+        }
+        public static void ResetVigorSkillByID(BGUPlayerCharacterCS character)
+        {
+            if (character == null)
             {
-
-                var finalBackTime = backTime;
-                Task.Run(async delegate
-                {
-                    await Task.Delay((int)finalBackTime);
-                    Utils.TryRunOnGameThread((Action)delegate
-                    {
-                        Helper.ResetVigorSkill(magicChangeComp, VigorSkillID);
-                        character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(0, 0, 0);
-                    });
-                });
+                return;
             }
-
+            var magicChangeComp = GetCachedMagicChangeComp(character);
+            if (magicChangeComp == null)
+            {
+                return;
+            }
+            MethodInfo reset = typeof(BUS_MagicallyChangeComp).GetMethod("Reset", BindingFlags.NonPublic | BindingFlags.Instance);
+            if (reset == null)
+            {
+                return;
+            }
+            reset.Invoke(magicChangeComp, new Object[] { EResetReason_MagicallyChange.None });
+            character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(0, 0, 0);
         }
         public static void CastVigorSkill(BGUPlayerCharacterCS character, int VigorSkillID, bool reset = false)
         {
@@ -359,7 +432,7 @@ namespace bian
 
         }
 
-        public static void CastMimicrySkill(BGUPlayerCharacterCS character, int VigorSkillID)
+        public static void CastMimicrySkill(BGUPlayerCharacterCS character, int VigorSkillID, int? MagicSkillID = 0)
         {
             // 获取变身技能描述
             var soulSkillDesc = GameDBRuntime.GetSoulSkillDesc(VigorSkillID);

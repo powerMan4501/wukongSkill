@@ -360,23 +360,24 @@ namespace bian
                     if (action?.SkillID > 0)
                     {
                         var backTime = (int)(action?.backTime ?? 0);
-                        ExecuteDelayedAction(() =>
-                        {
-                            character.FollowCamera.RelativeLocation = new FVector(
-                                action?.XRate ?? -1300.0, action?.YRate ?? 0.0, action?.ZRate ?? 10.0);
-                            Helper.CastVigorSkillByID(character, action.SkillID, backTime);
-                        }, 0).ContinueWith(async _ =>
-                        {
-                            await Task.Delay(backTime);
-                            Utils.TryRunOnGameThread(() =>
-                            {
-                                var magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
-                                Helper.ResetVigorSkill(magicChangeComp, action.SkillID);
-                                BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(
-                                    new FCastSkillInfo(10199, ECastSkillSourceType.GM));
-                                character.FollowCamera.RelativeLocation = new FVector(0, 0, 0);
-                            });
-                        });
+                         Helper.CastVigorSkillByID(character, action.SkillID, backTime);
+                        // ExecuteDelayedAction(() =>
+                        // {
+                        //     character.FollowCamera.RelativeLocation = new FVector(
+                        //         action?.XRate ?? -1300.0, action?.YRate ?? 0.0, action?.ZRate ?? 10.0);
+                        //     Helper.CastVigorSkillByID(character, action.SkillID, backTime);
+                        // }, 0).ContinueWith(async _ =>
+                        // {
+                        //     await Task.Delay(backTime);
+                        //     Utils.TryRunOnGameThread(() =>
+                        //     {
+                        //         var magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
+                        //         Helper.ResetVigorSkill(magicChangeComp, action.SkillID);
+                        //         BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(
+                        //             new FCastSkillInfo(10199, ECastSkillSourceType.GM));
+                        //         character.FollowCamera.RelativeLocation = new FVector(0, 0, 0);
+                        //     });
+                        // });
                     }
                     break;
 
@@ -401,6 +402,31 @@ namespace bian
             }
         }
 
+
+
+        public void DoAfterActions(List<RuleAction> actions)
+        {
+            if (actions == null || actions.Count == 0) return;
+            foreach (var action in actions)
+            {
+                var character = Helper.GetBGUPlayerCharacterCS();
+                if (character == null) continue;
+                // 检查条件
+                if (!CheckBuffConditions(character, action) || !CheckTalentConditions(character, action))
+                    continue;
+                if (action.TimeDelay > 0)
+                {
+                    ExecuteDelayedAction(() => DoAction(action, 1000 / 1), action.TimeDelay).ConfigureAwait(false);
+                    continue;
+                }
+                else
+                {
+                    DoAction(action, 1000 / 1);
+                    continue;
+                }
+            }
+
+        }
         public bool DoRule(float timeLength_, float playRate_, UAnimMontage montage = null, Rule ruleItem = null)
         {
             var timeLength = timeLength_ > 0 ? timeLength_ : 1000;
@@ -472,26 +498,6 @@ namespace bian
                     }
                 }
 
-                // 处理短延迟情况
-                // if (action.TimeDelay < 680)
-                // {
-                //     if (action.TimeDelay > 0)
-                //     {
-                //         ExecuteDelayedAction(() => DoAction(action, timeLength / playRate), action.TimeDelay).ConfigureAwait(false);
-                //     }
-                //     else
-                //     {
-                //         DoAction(action, timeLength / playRate);
-                //     }
-                //     continue;
-                // }
-
-
-                // // 处理需要延迟执行的情况
-                // ExecuteDelayedAction(async () =>
-                // {
-                //     await HandleAnimationBasedExecution(action, timeLength, playRate, timeDelay, intervalTime, character, montage, ruleItem);
-                // }, timeDelay, true, montage, ruleItem).ConfigureAwait(false);
             }
             return true;
         }
