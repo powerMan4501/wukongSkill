@@ -321,6 +321,8 @@ namespace bian
         public string? type { get; set; }
         public float? backTime { get; set; }
         public int? MagicSkillID { get; set; }
+        public float? Scale3D { get; set; }
+        public string? bossLabel { get; set; }
     }
     public static class LoadUtils
     {

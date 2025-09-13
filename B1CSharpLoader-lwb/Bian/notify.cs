@@ -274,7 +274,7 @@ public static class NotifyUtils
     }
 
 
-    public static void handleNotify(UAnimMontage Montage)
+    public static void handleNotify(UAnimMontage Montage, float? MoveOffset = 1)
     {
         try
         {
@@ -346,12 +346,24 @@ public static class NotifyUtils
 
                     // 获取当前属性值
                     var currentValue = BANS_GSCalcAMScaleHelper.GetProperty(item.NotifyStateClass, "AMScaleMaxRate");
+                    var AMScaleMoveOffset = BANS_GSCalcAMScaleHelper.GetProperty(item.NotifyStateClass, "AMScaleMoveOffset");
 
                     // 只有当当前值小于10时才修改为10
                     if ((float)currentValue < 10)
                     {
                         var AMScaleItem = item.NotifyStateClass;
                         BANS_GSCalcAMScaleHelper.SetProperty(item.NotifyStateClass, "AMScaleMaxRate", 10);
+                    }
+                    if ((float)AMScaleMoveOffset >= -500 && (float)AMScaleMoveOffset <= -100)
+                    {
+                        var AMScaleItem = item.NotifyStateClass;
+
+                        if (MoveOffset > 1)
+                        {
+                            var finalValue = (float)AMScaleMoveOffset - (float)MoveOffset;
+                            BANS_GSCalcAMScaleHelper.SetProperty(item.NotifyStateClass, "AMScaleMoveOffset", finalValue);
+
+                        }
                     }
                 }
                 else if (item.NotifyName == new FName("BANS_GSDodgeWindow") || item.NotifyName == new FName("ComboWindow"))

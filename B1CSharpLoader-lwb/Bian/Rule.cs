@@ -104,6 +104,9 @@ namespace bian
         public AActor? Target { get; set; } // 临时存储目标
         public FEffectInstReq? EffectInstReq { get; set; } // 临时存储目标
         public string? BornDirType { get; set; }
+        public float? Scale3D { get; set; }
+
+        
 
 
         public RuleAction()
@@ -152,6 +155,7 @@ namespace bian
         public List<RuleAction> AfterActions { get; set; }
 
 
+        public float? MoveOffset { get; set; }
         public float? scaleWeaponNum { get; set; }
         public float? startTimeRate { get; set; }
         public float? endTimeRate { get; set; }
@@ -360,7 +364,7 @@ namespace bian
                     if (action?.SkillID > 0)
                     {
                         var backTime = (int)(action?.backTime ?? 0);
-                         Helper.CastVigorSkillByID(character, action.SkillID, backTime);
+                         Helper.CastVigorSkillByID(character, action.SkillID, backTime, (int?)(action?.Scale3D ?? 1));
                         // ExecuteDelayedAction(() =>
                         // {
                         //     character.FollowCamera.RelativeLocation = new FVector(

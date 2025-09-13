@@ -417,20 +417,30 @@ namespace bian
 
 
             currentMontage = Montage.PathName;
-            if (currentMontage.Contains("Animation/Player/Wukong/"))
+            if (currentMontage.Contains("Animation/Player/Wukong/") || currentMontage.Contains("AM_wukong_trans_from_Vigor"))
             {
                 Helper.updateIsPlayVigorSkillByID(false);
             }
+            // if (currentMontage.Contains("AM_wukong_trans_from_Vigor"))
+            // {
+            //     Log.Info(" back AM_wukong_trans_from_Vigor");
+            //     var character = __instance.GetOwner() as BGUPlayerCharacterCS;
+            //     if (character != null)
+            //     {
+            //         character.FollowCamera.RelativeLocation = new FVector(0, 0, 0);
+            //         character.SetActorScale3D(new FVector(1, 1, 1));
+            //     }
+            // }
             if (!currentMontage.Contains("AM_Wukong_Dodge"))
             {
                 comboMontage = Montage.PathName;
             }
+
             // currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
             var mgr = Manager.GetModelManager();
             var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;
             var length = Montage.GetPlayLength() * 1000;
             var playRate = 1f;
-            NotifyUtils.handleNotify(Montage);
 
 
             if (currentModel != null && currentModel.PlayTimeRate > 0)
@@ -448,11 +458,15 @@ namespace bian
             // 检查是否有对应的动画规则
             if (!montageRulesMap.Any(x => !string.IsNullOrEmpty(x.Key) && currentMontage.Contains(x.Key)))
             {
+                NotifyUtils.handleNotify(Montage);
+
                 return;
             }
             var matchingRules = montageRulesMap.FirstOrDefault(x => currentMontage.Contains(x.Key)).Value;
             if (matchingRules.Count == 0)
             {
+                NotifyUtils.handleNotify(Montage);
+
                 return;
             }
 
@@ -464,6 +478,10 @@ namespace bian
             foreach (var ruleItem in matchingRules)
             {
 
+                if (ruleItem.MoveOffset != null && ruleItem.MoveOffset > 0)
+                {
+                    NotifyUtils.handleNotify(Montage, (float)ruleItem.MoveOffset);
+                }
                 if (!hasExecutedSkill && ruleItem?.skillID_fs > 0) // 增加标志判断
                 {
                     Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, false);
@@ -477,6 +495,7 @@ namespace bian
                 else
                 {
                     hasCaledWeapon = false; // 重置标志
+                    NotifyUtils.handleNotify(Montage, 1);
                     OnScaleWeapon(1);
                 }
 
@@ -788,13 +807,22 @@ namespace bian
         }
 
 
-        private static void CastMagicSkill(BGUCharacterCS character, ComboConfig combo)
+        private static void CastMagicSkill(BGUCharacterCS character, ComboConfig combo, string type)
         {
+
             Helper.DelayExecute(10, () =>
             {
                 Utils.TryRunOnGameThread((Action)delegate
                 {
-                    Helper.CastVigorSkillByID((BGUPlayerCharacterCS)character, combo.skillID, combo?.backTime ?? 0, combo?.MagicSkillID ?? 0);
+                    if (type == "magic")
+                    {
+                        Helper.CastVigorSkillByID((BGUPlayerCharacterCS)character, combo.skillID, combo?.backTime ?? 0, combo?.MagicSkillID ?? 0, combo?.Scale3D ?? 1);
+                    }
+
+                    if (type == "bossLabel")
+                    {
+                        Helper.CastVigorSkillByModel((BGUPlayerCharacterCS)character, combo.bossLabel, combo.type ?? "", combo?.MagicSkillID ?? 0);
+                    }
                 });
             });
         }
@@ -852,9 +880,15 @@ namespace bian
                             if (combo.Condition == SkillMapCondition.any ||
                                 IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target))
                             {
-                                if (combo.type == "magic")
+
+                                if (combo.bossLabel != null)
                                 {
-                                    CastMagicSkill(character, combo);
+                                    CastMagicSkill(character, combo, "bossLabel");
+                                    break;
+                                }
+                                else if (combo.type == "magic")
+                                {
+                                    CastMagicSkill(character, combo, "magic");
                                     break;
                                 }
 
@@ -877,9 +911,14 @@ namespace bian
                     if (combo.Condition == SkillMapCondition.any ||
                         IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target))
                     {
-                        if (combo.type == "magic")
+                        if (combo.bossLabel != null)
                         {
-                            CastMagicSkill(character, combo);
+                            CastMagicSkill(character, combo, "bossLabel");
+                            break;
+                        }
+                        else if (combo.type == "magic")
+                        {
+                            CastMagicSkill(character, combo, "magic");
                             break;
                         }
                         BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(

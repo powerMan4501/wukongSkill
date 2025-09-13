@@ -657,7 +657,7 @@ namespace bian
                             // {
                             //     character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(-800, 0, -1);
                             // }
-                            Helper.CastVigorSkillByID(character, skill.Id, backTime, skill?.MagicSkillID);
+                            Helper.CastVigorSkillByID(character, skill.Id, backTime, skill?.MagicSkillID, (int?)skill?.Scale3D ?? 1);
                         });
 
                         // await Task.Delay(backTime);

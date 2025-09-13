@@ -187,14 +187,6 @@ public class BU_PlayerTransSystem : BaseGameHelper
 
 	private void MagicallyChangeConfigA(BGWDataAsset_MagicallyChangeConfig config, BUTamerActor bUTamerActor)
 	{
-		//IL_00e8: Unknown result type (might be due to invalid IL or missing references)
-		//IL_010e: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0113: Unknown result type (might be due to invalid IL or missing references)
-		//IL_013a: Unknown result type (might be due to invalid IL or missing references)
-		//IL_016d: Unknown result type (might be due to invalid IL or missing references)
-		//IL_01b0: Unknown result type (might be due to invalid IL or missing references)
-		//IL_01dc: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0205: Unknown result type (might be due to invalid IL or missing references)
 		if (((UObject)(object)config == null) | ((UObject)(object)bUTamerActor == null))
 		{
 			return;

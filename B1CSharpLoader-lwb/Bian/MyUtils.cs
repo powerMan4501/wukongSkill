@@ -13,6 +13,7 @@ using BtlShare;
 using Google.Protobuf.Collections;
 using UnrealEngine.Engine;
 using UnrealEngine.Runtime;
+using b1.Plugins.TressFX;
 
 namespace bian;
 
@@ -389,7 +390,7 @@ public static class MyUtils
 
 	public static void SpwanProjectileByTracker(int ProjectileID, ETrackType trackType, int BulletNum, float Duration = 0f, float Xoffset = 0f, float Yoffset = 0f, float Zoffset = 0f, bool isSpeedUp = true)
 	{
-	
+
 		if (ProjectileID == 0)
 		{
 			return;
@@ -1142,6 +1143,89 @@ public static class MyUtils
 			((IEnumerable<FUStBuffEffectAttr>)val.BuffEffects).First().EffectParamsString.Clear();
 			((IEnumerable<FUStBuffEffectAttr>)val.BuffEffects).First().EffectParamsString.Add((IEnumerable<string>)new string[1] { value });
 			BGUFunctionLibraryCS.BGUAddBuff(Caster, Caster, 591101, (EBuffSourceType)0, (BuffDurationTimer != 0f) ? BuffDurationTimer : 1000f);
+		}
+	}
+
+	public static USpringArmComponent GetComponent(BGUPlayerCharacterCS PlayerCharacter)
+	{
+		foreach (UActorComponent item in ((AActor)(object)PlayerCharacter).GetComponentsByClass((TSubclassOf<UActorComponent>)UClass.GetClass<USpringArmComponent>()))
+		{
+			if (item != (UObject)(object)PlayerCharacter.CameraBoom1)
+			{
+				return item as USpringArmComponent;
+			}
+		}
+		return UGSE_ActorFuncLib.AddComponentByClass((AActor)(object)PlayerCharacter, (TSubclassOf<UActorComponent>)UClass.GetClass<USpringArmComponent>(), true, default(FTransform), false) as USpringArmComponent;
+	}
+	public static void SetCamera()
+	{
+		APawn controlledPawn = GetControlledPawn();
+		BGUPlayerCharacterCS val = (BGUPlayerCharacterCS)(object)((controlledPawn is BGUPlayerCharacterCS) ? controlledPawn : null);
+		if ((UObject)(object)val != null)
+		{
+			BUS_EventCollectionCS.Get((AActor)(object)val).Evt_EnableCustomFOV.Invoke(true);
+			val.FollowCamera.FieldOfView = 90f;
+			USpringArmComponent component = GetComponent(val);
+			component.AttachTo(((ACharacter)(object)val).Mesh, new FName("CAMERA_LOCK"), EAttachLocation.SnapToTarget, bWeldSimulatedBodies: false);
+			component.SetRelativeScale3D(new FVector(1f));
+			component.TargetArmLength = 900f;
+			component.DoCollisionTest = false;
+			component.UsePawnControlRotation = true;
+			component.EnableCameraRotationLag = true;
+			val.FollowCamera.AttachTo(component, FName.None, EAttachLocation.SnapToTarget, bWeldSimulatedBodies: false);
+			val.FollowCamera.SetRelativeLocation(default(FVector), bSweep: false, out var _, bTeleport: true);
+		}
+	}
+
+
+	public static void MagicallyChangeConfigA(BGWDataAsset_MagicallyChangeConfig config, BUTamerActor bUTamerActor)
+	{
+		if (((UObject)(object)config == null) | ((UObject)(object)bUTamerActor == null))
+		{
+			return;
+		}
+		config.TamerAssetPath = ((UObject)(object)bUTamerActor).PathName;
+		ACharacter monster = (ACharacter)(object)bUTamerActor.GetMonster();
+		config.CapsuleHalfHeight = monster.CapsuleComponent.GetUnscaledCapsuleHalfHeight();
+		config.CapsuleRadius = monster.CapsuleComponent.GetUnscaledCapsuleRadius();
+		config.SKMesh = monster.Mesh.SkeletalMesh;
+		config.ABPClass = monster.Mesh.AnimClass;
+		USkeletalMesh sKMesh = config.SKMesh;
+		config.PhysicsAsset = ((sKMesh != null) ? sKMesh.PhysicsAsset : null);
+		config.TFXConfig.Clear();
+		foreach (UActorComponent item2 in monster.GetComponentsByClass(MyUtils.LoadAsset<UClass>("/Script/TressFX.TressFXComponent")))
+		{
+			UTressFXComponent val = (UTressFXComponent)(object)((item2 is UTressFXComponent) ? item2 : null);
+			if ((UObject)(object)val != null)
+			{
+				FMagicallyChangeConfig_TFXConfig item = new FMagicallyChangeConfig_TFXConfig
+				{
+					TFXAsset = val.Asset,
+					HairMaterial = val.HairMaterial,
+					ShadeSettings = val.ShadeSettings,
+					LodScreenSize = val.LodScreenSize,
+					bEnableSimulation = val.EnableSimulation
+				};
+				config.TFXConfig.Add(item);
+			}
+		}
+		config.Weapons.SetValues(bUTamerActor.ConfigInfoComp.UnitCDesc.Weapons);
+		config.InteractBones.Clear();
+		foreach (KeyValuePair<FName, FBoneUseForDispMap> item3 in bUTamerActor.ConfigInfoComp.DispInteractBoneMap)
+		{
+			config.InteractBones.Add(item3.Value);
+		}
+		FUStUnitCommDesc unitCommDesc = BGW_GameDB.GetUnitCommDesc(bUTamerActor.ConfigInfoComp.UnitCDesc.ResID);
+		if (unitCommDesc != null)
+		{
+			int defaultBattleInfoExtendID = unitCommDesc.DefaultBattleInfoExtendID;
+			int overrideID = bUTamerActor.ConfigInfoComp.UnitCDesc.OverrideID;
+			FUStUnitBattleInfoExtendDesc unitBattleInfoExtendDesc = BGW_GameDB.GetUnitBattleInfoExtendDesc((overrideID > 0) ? overrideID : defaultBattleInfoExtendID);
+			if (unitBattleInfoExtendDesc != null)
+			{
+				config.Override_AbnormalDispID_Attacker = unitBattleInfoExtendDesc.AbnormalDispAttackerID;
+				config.Override_AbnormalDispID_Victim = unitBattleInfoExtendDesc.AbnormalDispVictimID;
+			}
 		}
 	}
 }
