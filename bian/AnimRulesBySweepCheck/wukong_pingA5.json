@@ -2,6 +2,16 @@
   {
     "montage": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05",
     "linkValue": 0.8666667,
+    "scaleWeaponNum": 5,
+    "MoveOffset": 500,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655406],
+        "BuffTime": 1900,
+        "desc": "棍光特效粒子"
+      }
+    ],
     "AfterActions": [
       {
         "Type": "bullet",
@@ -29,6 +39,16 @@
   {
     "montage": "AM_Wukong_ComboA_q5.AM_Wukong_ComboA_q5",
     "linkValue": 0.8666667,
+    "scaleWeaponNum": 5,
+    "MoveOffset": 500,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655406],
+        "BuffTime": 1900,
+        "desc": "棍光特效粒子"
+      }
+    ],
     "AfterActions": [
       {
         "Type": "bullet",
@@ -38,6 +58,7 @@
             "ProjectTileID": 30050301,
             "OffsetX": 400,
             "OffsetY": 400,
+            "spawnBaseSocketName": "weapon_r_index_06",
             "desc": "不能的扩散波"
           },
           {
@@ -45,6 +66,7 @@
             "ProjectTileID": 88880005,
             "OffsetX": 400,
             "OffsetY": 400,
+            "spawnBaseSocketName": "weapon_r_index_06",
             "desc": "黄符"
           },
           {
@@ -52,6 +74,7 @@
             "ProjectTileID": 74011107,
             "OffsetX": 400,
             "OffsetY": 400,
+            "spawnBaseSocketName": "weapon_r_index_06",
             "desc": "没火就金沙爆炸"
           }
         ]

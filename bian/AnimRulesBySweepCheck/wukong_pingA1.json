@@ -2,6 +2,16 @@
   {
     "montage": "AM_Dasheng_ComboA_01.AM_Dasheng_ComboA_01",
     "linkValue": 0,
+    "scaleWeaponNum": 3.5,
+    "MoveOffset": 100,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655401],
+        "BuffTime": 1000,
+        "desc": "棍光特效粒子"
+      }
+    ],
     "AfterActions": [
       {
         "Type": "bullet",
@@ -51,6 +61,16 @@
   {
     "montage": "AM_Wukong_ComboA_q1.AM_Wukong_ComboA_q1",
     "linkValue": 0,
+    "scaleWeaponNum": 3.5,
+    "MoveOffset": 100,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655401],
+        "BuffTime": 1000,
+        "desc": "棍光特效粒子"
+      }
+    ],
     "AfterActions": [
       {
         "Type": "bullet",

@@ -1,7 +1,10 @@
 [
   {
-    "montage": ".AM_10_gycy_yanjianxi_atk_24_",
+    "desc": "大头精魄磕头",
+    "montage": "AM_10_gycy_yanjianxi_atk_24_",
     "linkValue": 0.7,
+    "addRadius": 1500,
+    "speedRate": 1.3,
     "AfterActions": [
       {
         "Type": "bullet",
@@ -13,19 +16,35 @@
       }
     ]
   },
-
-  
   {
+    "desc": "大头，如来神掌",
+    "montage": "AM_GYCY_YanJianXi_01_Atk_Fast_33",
+    "linkValue": 0,
+    "addRadius": 1500,
+    "speedRate": 1.3,
+    "AfterActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [74011107],
+        "OffsetX": 400,
+        "OffsetY": 400,
+        "desc": "金沙，波动"
+      }
+    ]
+  },
+
+  {
+    "desc": "蝎子二连横扫，毒液池",
     "montage": "AM_psd_xiezijing_og_atk_10.AM_psd_xiezijing_og_atk_10",
     "linkValue": 0,
     "AfterActions": [
       {
         "Type": "bullet",
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-        "ProjectTileIDs":  [49981301, 1016202],
+        "ProjectTileIDs": [49981301, 1016202],
         "OffsetX": 400,
-        "OffsetY": 400,
-        "desc": "蝎子二连横扫，毒液池"
+        "OffsetY": 400
       }
     ]
   }

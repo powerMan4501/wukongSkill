@@ -2,6 +2,16 @@
   {
     "montage": "AM_Wukong_ComboB_q1.AM_Wukong_ComboB_q1",
     "linkValue": 0,
+    "scaleWeaponNum": 3,
+    "MoveOffset": 500,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655401],
+        "BuffTime": 800,
+        "desc": "棍光特效粒子"
+      }
+    ],
     "AfterActions": [
       {
         "Type": "bullet",
@@ -34,6 +44,16 @@
   {
     "montage": "AM_Wukong_ComboB_q2.AM_Wukong_ComboB_q2",
     "linkValue": 0,
+    "scaleWeaponNum": 3,
+    "MoveOffset": 500,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655402, 20102],
+        "BuffTime": 3500,
+        "desc": "棍光特效粒子"
+      }
+    ],
     "AfterActions": [
       {
         "Type": "bullet",
@@ -81,6 +101,16 @@
   {
     "montage": "AM_Wukong_ComboB_q3.AM_Wukong_ComboB_q3",
     "linkValue": 0,
+    "scaleWeaponNum": 3,
+    "MoveOffset": 400,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655403, 20103],
+        "BuffTime": 3900,
+        "desc": "棍光特效粒子"
+      }
+    ],
     "AfterActions": [
       {
         "Type": "bullet",
@@ -115,6 +145,17 @@
   {
     "montage": "AM_Wukong_ComboB_q4.AM_Wukong_ComboB_q4",
     "linkValue": 0.9666666,
+    "speedRate": 1.5,
+    "scaleWeaponNum": 3,
+    "MoveOffset": 100,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655407, 20104],
+        "BuffTime": 3900,
+        "desc": "棍光特效粒子"
+      }
+    ],
     "AfterActions": [
       {
         "Type": "bullet",
