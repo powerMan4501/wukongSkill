@@ -48,6 +48,7 @@ namespace bian
         private static Ui UI;
 
         public static string? currentMontage;
+        public static string? comboMontage;
         public static string? currentTime;
         public static string Nameo;
         public static bool isBig = false;
@@ -319,6 +320,8 @@ namespace bian
 
                 return;
             }
+
+
             // 获取对应效果的所有规则
             var matchingRules = effectRulesMap[EffectID];
             foreach (var ruleItem in matchingRules)
@@ -414,6 +417,14 @@ namespace bian
 
 
             currentMontage = Montage.PathName;
+            if (currentMontage.Contains("Animation/Player/Wukong/"))
+            {
+                Helper.updateIsPlayVigorSkillByID(false);
+            }
+            if (!currentMontage.Contains("AM_Wukong_Dodge"))
+            {
+                comboMontage = Montage.PathName;
+            }
             // currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
             var mgr = Manager.GetModelManager();
             var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;
@@ -557,6 +568,9 @@ namespace bian
             var player = Helper.GetBGUPlayerCharacterCS();
             if (player == null || scaleWeaponNum == num) return;
             scaleWeaponNum = num;
+            // 获取角色的朝向向量
+            var forwardVector = player.GetActorForwardVector();
+            if (forwardVector == null) return;
             List<UActorComponent> componentsByTag = player.GetComponentsByClass(UClass.GetClass<USkeletalMeshComponent>());
             if (componentsByTag != null && componentsByTag.Count > 0)
             {

@@ -871,8 +871,9 @@ namespace bian
             // actorLocation.Y += 100;
             if (play == null || play.World == null) return;
             List<BGUCharacterCS> allActorsOfClassList = play.World.GetAllActorsOfClassList<BGUCharacterCS>();
+            List<BGUProjectileBaseActor> projectList = play.World.GetAllActorsOfClassList<BGUProjectileBaseActor>();
             if (allActorsOfClassList == null || allActorsOfClassList.Count == 0) return;
-
+            Log.Info($"allActorsOfClassList count: ${allActorsOfClassList.Count} projectList:{projectList?.Count}");
             foreach (BGUCharacterCS item in allActorsOfClassList)
             {
 

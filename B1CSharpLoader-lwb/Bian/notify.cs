@@ -330,8 +330,15 @@ public static class NotifyUtils
                     for (int i = 0; i < sweepCheck.SweepCheckShape.Count; i++)
                     {
                         var sweepItem = sweepCheck.SweepCheckShape[i];
-                        sweepItem.Radius = sweepItem.Radius < 1000 ? sweepItem.Radius + addRadius : sweepItem.Radius;
+                        var addNum = sweepItem.Radius < 1000 ? sweepItem.Radius + addRadius : sweepItem.Radius;
+                        sweepItem.Radius = addNum;
+                        var scaleNum = Math.Round(addNum / sweepItem.Radius, 3);
+                        if (scaleNum > 1)
+                        {
+                            sweepItem.SKComp.SetRelativeScale3D(new FVector(scaleNum, scaleNum, scaleNum));
+                        }
                         sweepCheck.SweepCheckShape[i] = sweepItem;
+
                     }
                 }
                 else if (item.NotifyName == new FName("BANS_GSCalcAMScale"))
@@ -362,33 +369,7 @@ public static class NotifyUtils
                     }
                 }
 
-
             }
-
-            // if (matchingData != null && matchingData?.notifys != null && matchingData?.notifys?.Count > 0)
-            // {
-            //     // 添加JSON数据中的通知
-            //     foreach (var notifyItem in matchingData.notifys)
-            //     {
-            //         if (notifyItem == null || notifyItem.NotifyStateClass == null)
-            //         {
-            //             continue;
-            //         }
-            //         // 添加自定义通知
-            //         var notify = UAnimationLibrary.AddAnimationNotifyEvent(
-            //             animSequenceBase,
-            //             LWB_CustomNotify.NotifyName,
-            //           (float)(notifyItem?.NotifyParams?.LinkValue ?? 0.1),                             // 触发时间（秒）
-            //          UClass.GetClass<LWB_CustomNotify>()
-            //         );
-            //         Log.Info($"Added notify: {notify}");
-            //         if (notify != null)
-            //         {
-            //             Log.Info($"Added notify success: {notify.GetFName()}");
-            //         }
-
-            //     }
-            // }
             // 标记该动画蒙太奇已处理
             ProcessedAnimCache[Montage.PathName] = true;
         }

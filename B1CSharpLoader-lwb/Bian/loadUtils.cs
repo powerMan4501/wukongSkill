@@ -1763,7 +1763,6 @@ namespace bian
                     {
                         var num = itemData.QualityType;
                         itemData.HPFixedDM = itemData.HPFixedDM + (int)num * 10000;
-
                     }
                 }
 

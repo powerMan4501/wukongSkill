@@ -61,11 +61,11 @@ public class Hooks
                 {
                     return;
                 }
+                Console.WriteLine($"InitPassiveSkillMap.Prefix");
 
                 LoadUtils.LoadAndApplyPassiveSkills();
                 LoadUtils.LoadAndApplyChargeSkill();
                 LoadUtils.ModifyIronData();
-                Console.WriteLine($"InitPassiveSkillMap.Prefix");
                 isInit = true;
             }
 
@@ -80,27 +80,23 @@ public class Hooks
 
 
 
-    [HarmonyPatch]
-    public class HookMagicallyChange
-    {
-        private static MethodBase TargetMethod()
-        {
-            return AccessTools.Method("b1.BUS_MagicallyChangeComp:OnPlayMontageCallback", (Type[])null, (Type[])null);
-        }
+    // [HarmonyPatch]
+    // public class HookMagicallyChange
+    // {
+    //     private static MethodBase TargetMethod()
+    //     {
+    //         return AccessTools.Method("b1.BUS_MagicallyChangeComp:OnPlayMontageCallback", (Type[])null, (Type[])null);
+    //     }
 
-        [HarmonyPatch]
-        private static void Prefix(EMontageBindReason Reason, UAnimMontage Montage, EMontageCallbackState State)
-        {
-            if (Helper.isPlayVigorSkillByID && State == EMontageCallbackState.OnCompleted)
-            {
-                Helper.updateIsPlayVigorSkillByID(false);
-            }
-            if (Montage != null && State == EMontageCallbackState.OnCompleted)
-            {
-                Console.WriteLine($" BUS_MagicallyChangeComp.OnPlayMontageCallback:Reason{Reason} ,Montage:{Montage.GetName()} State,{State}");
-            }
-        }
-    }
+    //     [HarmonyPatch]
+    //     private static void Prefix(EMontageBindReason Reason, UAnimMontage Montage, EMontageCallbackState State)
+    //     {
+    //         if (Helper.isPlayVigorSkillByID && State != EMontageCallbackState.Default && State != EMontageCallbackState.OnStarted)
+    //         {
+    //             Helper.updateIsPlayVigorSkillByID(false);
+    //         }
+    //     }
+    // }
 
 
 
@@ -147,21 +143,15 @@ public class Hooks
 
                     if (allRules.Count > 0)
                     {
-
                         var matchedRule = allRules.FirstOrDefault(rule =>
-      !string.IsNullOrEmpty(nowMontage) &&
-      nowMontage.Contains(rule.montage) &&
-      (rule?.linkValue == 0 || rule?.linkValue.ToString() == linkValue.ToString()));
-
-
+                            !string.IsNullOrEmpty(nowMontage) &&
+                            nowMontage.Contains(rule.montage) &&
+                            (rule?.linkValue == 0 || rule?.linkValue.ToString() == linkValue.ToString()));
                         if (matchedRule != null && matchedRule?.AfterActions?.Count > 0)
                         {
-                            Console.WriteLine($" BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()} , matchedRule,{matchedRule.AfterActions.Count}");
                             var rule = new Rule();
                             rule.DoAfterActions(matchedRule.AfterActions);
                         }
-
-
                     }
                 }
 
