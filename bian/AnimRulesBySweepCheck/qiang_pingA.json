@@ -13,7 +13,6 @@
             "SpeedLeftValue": 7000,
             "SpeedRightValue": 7000,
             "ForTarget": true,
-            "intervalTime": 150,
             "spawnBaseSocketName": "weapon_r_index_02",
             "desc": "有火buff 鼠弩手弓箭"
           },
@@ -24,7 +23,6 @@
             "SpeedLeftValue": 6000,
             "SpeedRightValue": 6000,
             "ForTarget": true,
-            "intervalTime": 150,
             "spawnBaseSocketName": "weapon_r_index_02",
             "desc": "没火buff，杨戬飞剑"
           }

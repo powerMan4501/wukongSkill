@@ -310,14 +310,12 @@
   {
     "nowMontage": "AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1",
     "rate": 1.2,
-    "type": "magic",
-    "skillID": 8471,
-    "backTime": 5000,
-    "MagicSkillID": 303003,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_yangjian_01",
+    "MagicSkillID": 800009,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
-    "desc": "接隼居士飞起冰5下"
+    "desc": "转身定，接杨戬飞过去开山斧"
   },
   {
     "type": "magic",

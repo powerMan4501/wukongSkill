@@ -6,6 +6,7 @@
       "Name": "枪平A1",
       "Description": "",
       "scaleWeaponNum": 3,
+      "MoveOffset": 500,
       "Filters": [
         {
           "Type": "montage",
@@ -26,6 +27,7 @@
       "Name": "枪平A2",
       "Description": "",
       "scaleWeaponNum": 3,
+      "MoveOffset": 500,
       "Filters": [
         {
           "Type": "montage",
@@ -46,6 +48,7 @@
       "Name": "枪平A3",
       "Description": "",
       "scaleWeaponNum": 3,
+      "MoveOffset":400,
       "Filters": [
         {
           "Type": "montage",
@@ -67,6 +70,7 @@
       "Description": "",
       "speedRate": 1.5,
       "scaleWeaponNum": 3,
+      "MoveOffset": 100,
       "Filters": [
         {
           "Type": "montage",

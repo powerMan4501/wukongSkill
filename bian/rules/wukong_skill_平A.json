@@ -5,7 +5,8 @@
     {
       "Name": "大圣平A1",
       "Description": "",
-      "scaleWeaponNum": 2,
+      "scaleWeaponNum": 3.5,
+      "MoveOffset": 100,
       "Filters": [
         {
           "Type": "montage",
@@ -29,7 +30,8 @@
     {
       "Name": "大圣平A2",
       "Description": "",
-      "scaleWeaponNum": 2,
+      "scaleWeaponNum": 3.5,
+      "MoveOffset": 100,
       "Filters": [
         {
           "Type": "montage",
@@ -53,7 +55,8 @@
     {
       "Name": "大圣平A3",
       "Description": "",
-      "scaleWeaponNum": 2,
+      "scaleWeaponNum": 3.5,
+      "MoveOffset": 100,
       "Filters": [
         {
           "Type": "montage",
@@ -77,7 +80,8 @@
     {
       "Name": "大圣平A4",
       "Description": "",
-      "scaleWeaponNum": 2,
+      "scaleWeaponNum": 3.5,
+      "MoveOffset": 100,
       "Filters": [
         {
           "Type": "montage",
@@ -104,6 +108,7 @@
       "Description": "",
       "skillID_fs": 1001105,
       "scaleWeaponNum": 5,
+      "MoveOffset": 600,
       "Filters": [
         {
           "Type": "montage",

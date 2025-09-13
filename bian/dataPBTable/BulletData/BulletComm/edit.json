@@ -8,5 +8,16 @@
     "desc": "马喽安身法改成残躯的",
     "ID": 1052003,
     "ProjectileBPTemplatePath": "/Game/00Main/Design/MagicFields/MGD/MGD_JSDS/BP_mgd_jsds_anshenshu_02.BP_mgd_jsds_anshenshu_02_C"
+  },
+
+  {
+    "desc": "蝎子毒",
+    "ID": 49991302,
+    "ProjectileLifeTime": 90
+  },
+  {
+    "desc": "蝎子毒",
+    "ID": 49991303,
+    "ProjectileLifeTime": 90
   }
 ]
