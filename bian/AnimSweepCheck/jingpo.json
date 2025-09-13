@@ -15,7 +15,7 @@
     "desc": "大头地爆一次"
   },{
     "anim": "AM_GYCY_YanJianXi_01_Atk_Fast_37",
-    "addRadius": 1000,
+    "addRadius": 500,
     "desc": "大头狂奔前进地爆2次"
   },
 

@@ -1,0 +1,40 @@
+[
+  {
+    "montage": "AM_mgd_jsds_atk_01",
+    "linkValue": 0,
+    "AfterActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 88880003,
+            "ForTarget": true,
+            "hasBuff": 888666006,
+            "BulletCount": 2,
+            "desc": "有冰buff,大圣平A1,发射冰剑气"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 88880009,
+            "ForTarget": true,
+            "hasBuff": 888666007,
+            "BornDirOffsetXLeftValue": 91,
+            "BornDirOffsetXRightValue": 91,
+            "BulletCount": 2,
+            "desc": "有火buff,大圣平A1,发射火剑气"
+          },
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 1713001,
+            "ForTarget": true,
+            "noHasAnyBuff": [888666006, 100086],
+            "BulletCount": 2,
+            "desc": "没有冰火buff,大圣平A1,就发射红剑气"
+          }
+        ]
+      }
+    ]
+  }
+]

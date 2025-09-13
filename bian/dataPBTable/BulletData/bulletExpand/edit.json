@@ -43,7 +43,6 @@
     "HitDestructibleStrengthType": 4
   },
 
-
   {
     "desc": "猪八戒血浆",
     "ID": 40550101,
@@ -56,5 +55,11 @@
     "ID": 74011107,
     "HitEffectsforChr": [74019202, 910460],
     "HitDestructibleStrengthType": 4
+  },
+  {
+    "desc": "杨戬激光",
+    "ID": 80000011,
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
   }
 ]

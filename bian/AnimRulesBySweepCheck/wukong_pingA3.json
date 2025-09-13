@@ -1,0 +1,88 @@
+[
+  {
+    "montage": "AM_Dasheng_ComboA_03.AM_Dasheng_ComboA_03",
+    "linkValue": 0,
+    "AfterActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+        {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 88880003,
+              "ForTarget": true,
+              "hasBuff": 888666006,
+              "spawnBaseSocketName": "weapon_r_index_06",
+              "desc": "有冰buff发射冰剑气"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 88880009,
+              "ForTarget": true,
+              "hasBuff": 888666007,
+              "BornDirOffsetXLeftValue": 91,
+              "BornDirOffsetXRightValue": 91,
+              "spawnBaseSocketName": "weapon_r_index_06",
+              "desc": "有火buff发射火剑气"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 1713001,
+              "ForTarget": true,
+              "hasBuff": 888666008,
+              "spawnBaseSocketName": "weapon_r_index_06",
+              "desc": "毒，就发射红剑气"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 30142501,
+              "ForTarget": true,
+              "noHasAnyBuff": [888666006, 888666007, 888666008],
+              "spawnBaseSocketName": "weapon_r_index_07",
+              "desc": "没冰火毒buff，电剑气"
+            }
+        ]
+      }
+    ]
+  },
+
+  {
+    "montage": "AM_Wukong_ComboA_q3.AM_Wukong_ComboA_q3",
+    "linkValue": 0,
+    "AfterActions": [
+        {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 88880003,
+              "ForTarget": true,
+              "hasBuff": 888666006,
+              "spawnBaseSocketName": "weapon_r_index_06",
+              "desc": "有冰buff发射冰剑气"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 88880009,
+              "ForTarget": true,
+              "hasBuff": 888666007,
+              "BornDirOffsetXLeftValue": 91,
+              "BornDirOffsetXRightValue": 91,
+              "spawnBaseSocketName": "weapon_r_index_06",
+              "desc": "有火buff发射火剑气"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 1713001,
+              "ForTarget": true,
+              "hasBuff": 888666008,
+              "spawnBaseSocketName": "weapon_r_index_06",
+              "desc": "毒，就发射红剑气"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 30142501,
+              "ForTarget": true,
+              "noHasAnyBuff": [888666006, 888666007, 888666008],
+              "spawnBaseSocketName": "weapon_r_index_07",
+              "desc": "没冰火毒buff，电剑气"
+            }
+    ]
+  }
+]

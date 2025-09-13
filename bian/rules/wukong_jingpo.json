@@ -26,14 +26,42 @@
         {
           "Type": "montage",
           "Name": "AM_GYCY_YanJianXi_01_Atk_Fast_37"
+        },
+        {
+          "Type": "montage",
+          "Name": "/Animation/MOD/AM/CanQu/"
         }
       ],
       "AfterActions": [
         {
           "Type": "buff",
-          "BuffIDs": [412201],
-          "BuffTime": 1000,
+          "BuffIDs": [211],
+          "BuffTime": 2000,
           "desc": "弹刀"
+        }
+      ]
+    },
+
+    {
+      "Name": "",
+      "Description": "残躯棍子，伸长两倍",
+      "scaleWeaponNum": 2,
+      "Filters": [
+        {
+          "Type": "montage",
+          "Name": "/Animation/MOD/AM/CanQu/"
+        },
+        {
+          "Type": "montage",
+          "Name": "AM_Dasheng_Atk_04a.AM_Dasheng_Atk_04a"
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "buff",
+          "BuffIDs": [888666009],
+          "BuffTime": 2500,
+          "desc": "棍光"
         }
       ]
     }

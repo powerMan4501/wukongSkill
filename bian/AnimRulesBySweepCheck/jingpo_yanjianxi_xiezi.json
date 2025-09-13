@@ -1,0 +1,33 @@
+[
+  {
+    "montage": ".AM_10_gycy_yanjianxi_atk_24_",
+    "linkValue": 0.7,
+    "AfterActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [74011107, 30050301],
+        "OffsetX": 400,
+        "OffsetY": 400,
+        "desc": "金沙，波动"
+      }
+    ]
+  },
+
+  
+  {
+    "montage": "AM_psd_xiezijing_og_atk_10.AM_psd_xiezijing_og_atk_10",
+    "linkValue": 0,
+    "AfterActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs":  [49981301, 1016202],
+        "OffsetX": 400,
+        "OffsetY": 400,
+        "desc": "蝎子二连横扫，毒液池"
+      }
+    ]
+  }
+
+]

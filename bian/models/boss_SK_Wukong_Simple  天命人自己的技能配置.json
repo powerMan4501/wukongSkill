@@ -22,7 +22,6 @@
   "Level1Scale": 1.0,
   "Level2Scale": 1.0,
   "Skills": [
-   
     {
       "Id": 54321001,
       "Name": "后撤 JXSQ",
@@ -127,8 +126,7 @@
       "type": "magic",
       "CanBreak": false,
       "MagicSkillID": 11396,
-      "backTime": 3200,
-      "RelativeLocation": [-500, 0, 1]
+      "backTime": 3200
     },
     {
       "Id": 8595,
@@ -139,8 +137,7 @@
       "Key": "S+RBUTTON",
       "type": "magic",
       "CanBreak": false,
-      "backTime": 3200,
-      "RelativeLocation": [-500, 0, 1]
+      "backTime": 3200
     },
     {
       "Id": 8599,
@@ -150,8 +147,7 @@
       "Key": "A+NUMPAD0",
       "type": "magic",
       "CanBreak": false,
-      "backTime": 3200,
-      "RelativeLocation": [-500, 0, 1]
+      "backTime": 3200
     },
     {
       "Id": 8597,
@@ -162,8 +158,7 @@
       "Key": "C+NUMPAD0",
       "type": "magic",
       "CanBreak": false,
-      "backTime": 3200,
-      "RelativeLocation": [-500, 0, 1]
+      "backTime": 3200
     },
     {
       "Id": 8522,
@@ -172,7 +167,6 @@
       "CanBreak": false,
       "Name": "无量蝠，冰",
       "backTime": 2200,
-      "RelativeLocation": [-900, 0, -1],
       "Key": "NUMPAD1"
     },
     {
@@ -183,7 +177,6 @@
       "Name": "鼠司空，激光",
       "needBack": true,
       "backTime": 2000,
-      "RelativeLocation": [-800, 0, -1],
       "Key": "NUMPAD2"
     },
 
@@ -196,7 +189,6 @@
       "Name": "蝎子，毒",
       "Description": "",
       "backTime": 1700,
-      "RelativeLocation": [-950, 0, -1],
       "Key": "NUMPAD3"
     },
     {
@@ -207,7 +199,6 @@
       "needBack": true,
       "backTime": 1100,
       "Description": "",
-      "RelativeLocation": [-500, 0, -1],
       "Key": "NUMPAD4"
     },
 
@@ -219,7 +210,6 @@
       "needBack": true,
       "backTime": 1100,
       "Description": "",
-      "RelativeLocation": [-800, 0, -1],
       "Key": "NUMPAD6"
     },
 
@@ -231,7 +221,6 @@
       "needBack": true,
       "Description": "",
       "backTime": 1700,
-      "RelativeLocation": [-800, 0, -1],
       "Key": "NUMPAD5"
     },
 
@@ -244,7 +233,6 @@
       "backTime": 2500,
       "MagicSkillID": 102433,
       "Description": "",
-      "RelativeLocation": [-800, 0, 100],
       "Key": "NUMPAD7"
     },
 

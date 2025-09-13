@@ -5,7 +5,7 @@
     {
       "Name": "枪平A1",
       "Description": "",
-      "scaleWeaponNum": 2,
+      "scaleWeaponNum": 3,
       "Filters": [
         {
           "Type": "montage",
@@ -13,36 +13,6 @@
         }
       ],
       "AfterActions": [
-        {
-          "Type": "bullet",
-          "TimeDelay": 180,
-          "intervalTime": 50,
-          "intervalTimes": 3,
-          "bullets": [
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 1016901,
-              "hasBuff": 888666007,
-              "SpeedLeftValue": 7000,
-              "SpeedRightValue": 7000,
-              "ForTarget": true,
-              "intervalTime": 150,
-              "spawnBaseSocketName": "weapon_r_index_02",
-              "desc": "有火buff 鼠弩手弓箭"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 80000008,
-              "noHasBuff": 888666007,
-              "SpeedLeftValue": 6000,
-              "SpeedRightValue": 6000,
-              "ForTarget": true,
-              "intervalTime": 150,
-              "spawnBaseSocketName": "weapon_r_index_02",
-              "desc": "没火buff，杨戬飞剑"
-            }
-          ]
-        },
         {
           "Type": "buff",
           "BuffIDs": [66655401],
@@ -55,7 +25,7 @@
     {
       "Name": "枪平A2",
       "Description": "",
-      "scaleWeaponNum": 2,
+      "scaleWeaponNum": 3,
       "Filters": [
         {
           "Type": "montage",
@@ -63,50 +33,6 @@
         }
       ],
       "AfterActions": [
-        {
-          "Type": "bullet",
-          "TimeDelay": 100,
-          "intervalTime": 150,
-          "intervalTimes": 5,
-          "bullets": [
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 88880003,
-              "ForTarget": true,
-              "hasBuff": 888666006,
-              "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "有冰buff,大圣平A2,发射冰剑气"
-            },
-            {
-              "Type": "bullet",
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 88880009,
-              "ForTarget": true,
-              "hasBuff": 888666007,
-              "BornDirOffsetXLeftValue": 91,
-              "BornDirOffsetXRightValue": 91,
-              "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "有火buff,大圣平A2,发射火剑气"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 1713001,
-              "ForTarget": true,
-              "hasBuff": 888666008,
-              "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "有毒buff,大圣平A2,就发射红剑气"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 18890701,
-              "ForTarget": true,
-              "spawnBaseSocketName": "weapon_r_index_06",
-              "noHasAnyBuff": [888666006, 888666007, 888666008],
-              "desc": "没冰火毒buff,大圣平A2,剑雨"
-            }
-          ]
-        },
-
         {
           "Type": "buff",
           "BuffIDs": [66655402, 20102],
@@ -119,7 +45,7 @@
     {
       "Name": "枪平A3",
       "Description": "",
-      "scaleWeaponNum": 2,
+      "scaleWeaponNum": 3,
       "Filters": [
         {
           "Type": "montage",
@@ -127,36 +53,6 @@
         }
       ],
       "AfterActions": [
-        {
-          "Type": "bullet",
-          "TimeDelay": 100,
-          "intervalTime": 150,
-          "intervalTimes": 7,
-          "bullets": [
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 1016901,
-              "hasBuff": 888666007,
-              "SpeedLeftValue": 7000,
-              "SpeedRightValue": 7000,
-              "ForTarget": true,
-              "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "有火buff 鼠弩手弓箭"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 80000008,
-              "noHasBuff": 888666007,
-              "SpeedLeftValue": 6000,
-              "SpeedRightValue": 6000,
-              "ForTarget": true,
-
-              "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "没火buff，杨戬飞剑"
-            }
-          ]
-        },
-
         {
           "Type": "buff",
           "BuffIDs": [66655403, 20103],
@@ -170,7 +66,7 @@
       "Name": "枪平A4",
       "Description": "",
       "speedRate": 1.5,
-      "scaleWeaponNum": 2,
+      "scaleWeaponNum": 3,
       "Filters": [
         {
           "Type": "montage",
@@ -178,29 +74,6 @@
         }
       ],
       "AfterActions": [
-        {
-          "Type": "bullet",
-          "TimeDelay": 950,
-          "bullets": [
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileID": 74011107,
-              "OffsetX": 200,
-              "OffsetY": 200,
-              "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "没火就金沙爆炸"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
-              "ProjectTileID": 1016262,
-              "OffsetX": 200,
-              "OffsetY": 200,
-              "spawnBaseSocketName": "weapon_r_index_06",
-              "desc": "巴山虎"
-            }
-          ]
-        },
-
         {
           "Type": "buff",
           "BuffIDs": [66655407, 20104],

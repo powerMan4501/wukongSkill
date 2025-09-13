@@ -190,25 +190,7 @@
         }
       ]
     },
-    {
-      "Name": "大头磕头，地裂",
-      "Description": "",
-      "Filters": [
-        {
-          "Type": "effect",
-          "EffectID": 1011361
-        }
-      ],
-      "AfterActions": [
-        {
-          "Type": "bullet",
-          "TimeDelay": 0,
-          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-          "ProjectTileIDs": [74011107, 30050301],
-          "desc": "金沙，波动"
-        }
-      ]
-    },
+   
 
     {
       "Name": "破隐一击",
