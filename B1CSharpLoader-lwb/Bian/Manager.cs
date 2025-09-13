@@ -129,7 +129,7 @@ namespace bian
                 LoadUtils.LoadAndApplyPassiveSkills();
                 LoadUtils.ModifySuitDesc();
                 NotifyUtils.LoadSweepConfig();
-                NotifyUtils.LoadNotifyData();
+                // NotifyUtils.LoadNotifyData();
                 LoadUtils.ModifyHP();
 
                 LoadUtils.LoadAnimRulesBySweepCheck();
@@ -406,108 +406,128 @@ namespace bian
         private static void CastSkillWithAnimMontageMultiCast(BUS_GSEventCollection __instance, ref UAnimMontage Montage, ref float PlayTimeRate, float MontagePosOffset, FName StartSectionName)
         {
 
-            // if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]CastSkillWithAnimMontageMultiCast"))
-            // {
-            //  }
-
             if (!IsPlayer(__instance.GetOwner().PathName))
             {
                 return;
             }
-
-
             currentMontage = Montage.PathName;
             if (currentMontage.Contains("Animation/Player/Wukong/") || currentMontage.Contains("AM_wukong_trans_from_Vigor"))
             {
                 Helper.updateIsPlayVigorSkillByID(false);
             }
-            // if (currentMontage.Contains("AM_wukong_trans_from_Vigor"))
-            // {
-            //     Log.Info(" back AM_wukong_trans_from_Vigor");
-            //     var character = __instance.GetOwner() as BGUPlayerCharacterCS;
-            //     if (character != null)
-            //     {
-            //         character.FollowCamera.RelativeLocation = new FVector(0, 0, 0);
-            //         character.SetActorScale3D(new FVector(1, 1, 1));
-            //     }
-            // }
+          
             if (!currentMontage.Contains("AM_Wukong_Dodge"))
             {
                 comboMontage = Montage.PathName;
             }
 
+            var allRules = Hooks.GetCachedAnimRules();
+            if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
+            var matchedRule = allRules.FirstOrDefault(rule =>
+                     !string.IsNullOrEmpty(currentMontage) &&
+                     currentMontage.Contains(rule.montage));
+            if (matchedRule == null)
+            {
+                OnScaleWeapon(1);
+                return;
+            }
+
+            if (matchedRule?.CastActions?.Count > 0)
+            {
+                var rule = new Rule();
+                rule.DoAfterActions(matchedRule.CastActions);
+            }
+            if (matchedRule?.speedRate != null)
+            {
+                PlayTimeRate = (float)matchedRule.speedRate;
+            }
+
+            if (matchedRule?.scaleWeaponNum != null)
+            {
+                OnScaleWeapon((float)matchedRule.scaleWeaponNum);
+            }
+            else
+            {
+                OnScaleWeapon(1);
+            }
+
+            if (matchedRule?.MoveOffset != null)
+            {
+                NotifyUtils.handleNotify(Montage, (float)matchedRule?.MoveOffset);
+            }
+
+
+
+
+
             // currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
-            var mgr = Manager.GetModelManager();
-            var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;
-            var length = Montage.GetPlayLength() * 1000;
-            var playRate = 1f;
+            // var mgr = Manager.GetModelManager();
+            // var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;
+            // var length = Montage.GetPlayLength() * 1000;
+            // var playRate = 1f;
 
 
-            if (currentModel != null && currentModel.PlayTimeRate > 0)
-            {
-                playRate = currentModel.PlayTimeRate;
-            }
-            var PlayTimeRate_ = PlayTimeRate;
-            if (currentModel?.skillSpeedRate > 0)
-            {
-                PlayTimeRate_ = (float)currentModel.skillSpeedRate; //动画播放速率
-            }
+            // if (currentModel != null && currentModel.PlayTimeRate > 0)
+            // {
+            //     playRate = currentModel.PlayTimeRate;
+            // }
+            // var PlayTimeRate_ = PlayTimeRate;
+            // if (currentModel?.skillSpeedRate > 0)
+            // {
+            //     PlayTimeRate_ = (float)currentModel.skillSpeedRate; //动画播放速率
+            // }
             // montageName.Contains(filter.Name)
 
 
-            // 检查是否有对应的动画规则
-            if (!montageRulesMap.Any(x => !string.IsNullOrEmpty(x.Key) && currentMontage.Contains(x.Key)))
-            {
-                NotifyUtils.handleNotify(Montage);
+            // // 检查是否有对应的动画规则
+            // if (!montageRulesMap.Any(x => !string.IsNullOrEmpty(x.Key) && currentMontage.Contains(x.Key)))
+            // {
+            //     NotifyUtils.handleNotify(Montage);
 
-                return;
-            }
-            var matchingRules = montageRulesMap.FirstOrDefault(x => currentMontage.Contains(x.Key)).Value;
-            if (matchingRules.Count == 0)
-            {
-                NotifyUtils.handleNotify(Montage);
+            //     return;
+            // }
+            // var matchingRules = montageRulesMap.FirstOrDefault(x => currentMontage.Contains(x.Key)).Value;
+            // if (matchingRules.Count == 0)
+            // {
+            //     NotifyUtils.handleNotify(Montage);
 
-                return;
-            }
+            //     return;
+            // }
+            // // 一个循环只执行一次分身
+            // bool hasExecutedSkill = false;
+            // bool hasCaledWeapon = false;
+            // foreach (var ruleItem in matchingRules)
+            // {
 
+            //     if (ruleItem.MoveOffset != null && ruleItem.MoveOffset > 0)
+            //     {
+            //         NotifyUtils.handleNotify(Montage, (float)ruleItem.MoveOffset);
+            //     }
+            //     if (!hasExecutedSkill && ruleItem?.skillID_fs > 0) // 增加标志判断
+            //     {
+            //         Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, false);
+            //         hasExecutedSkill = true; // 设置标志为true
+            //     }
+            //     if (!hasCaledWeapon && ruleItem?.scaleWeaponNum > 1)
+            //     {
+            //         OnScaleWeapon((float)ruleItem.scaleWeaponNum);
+            //         hasCaledWeapon = true;
+            //     }
+            //     else
+            //     {
+            //         hasCaledWeapon = false; // 重置标志
+            //         NotifyUtils.handleNotify(Montage, 1);
+            //         OnScaleWeapon(1);
+            //     }
 
-
-            // 一个循环只执行一次分身
-            bool hasExecutedSkill = false;
-            bool hasCaledWeapon = false;
-            foreach (var ruleItem in matchingRules)
-            {
-
-                if (ruleItem.MoveOffset != null && ruleItem.MoveOffset > 0)
-                {
-                    NotifyUtils.handleNotify(Montage, (float)ruleItem.MoveOffset);
-                }
-                if (!hasExecutedSkill && ruleItem?.skillID_fs > 0) // 增加标志判断
-                {
-                    Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, false);
-                    hasExecutedSkill = true; // 设置标志为true
-                }
-                if (!hasCaledWeapon && ruleItem?.scaleWeaponNum > 1)
-                {
-                    OnScaleWeapon((float)ruleItem.scaleWeaponNum);
-                    hasCaledWeapon = true;
-                }
-                else
-                {
-                    hasCaledWeapon = false; // 重置标志
-                    NotifyUtils.handleNotify(Montage, 1);
-                    OnScaleWeapon(1);
-                }
-
-                if (ruleItem?.speedRate > 0)
-                {
-                    PlayTimeRate_ = (float)ruleItem.speedRate; //动画播放速率
-                }
-                ruleItem.DoRule(length, playRate, Montage, ruleItem);
-            }
+            //     if (ruleItem?.speedRate > 0)
+            //     {
+            //         PlayTimeRate_ = (float)ruleItem.speedRate; //动画播放速率
+            //     }
+            //     ruleItem.DoRule(length, playRate, Montage, ruleItem);
+            // }
 
 
-            PlayTimeRate = PlayTimeRate_;
         }
 
 

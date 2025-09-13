@@ -18,8 +18,14 @@ using bian;
 public class AnimRuleBySweepCheck
 {
     public string montage { get; set; }
-    public double linkValue { get; set; }
-    public List<RuleAction> AfterActions { get; set; }
+    public double? linkValue { get; set; }
+    public List<RuleAction>? AfterActions { get; set; }
+    public List<RuleAction>? CastActions { get; set; }
+    public float? speedRate { get; set; }
+    public float? MoveOffset { get; set; }
+    public float? scaleWeaponNum { get; set; }
+
+    
 }
 
 

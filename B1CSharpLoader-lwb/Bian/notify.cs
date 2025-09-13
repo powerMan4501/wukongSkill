@@ -301,10 +301,10 @@ public static class NotifyUtils
             }
             UGSE_AnimFuncLib.GetAllNotifyEvent(Montage, out var AnimNotifyEventList);
             // 确保数据已加载
-            if (notifyDataList.Count == 0)
-            {
-                LoadNotifyData();
-            }
+            // if (notifyDataList.Count == 0)
+            // {
+            //     LoadNotifyData();
+            // }
 
             if (!(AnimNotifyEventList != null && AnimNotifyEventList.Count > 0))
             {
@@ -313,7 +313,6 @@ public static class NotifyUtils
 
             // 查找匹配的JSON数据
             var strPathName = Montage.PathName.ToString();
-            NotifyData matchingData = notifyDataList.FirstOrDefault(data => data.PathName == Montage.PathName);
             var addRadius = 100;
 
             // 替换原有的硬编码判断逻辑
