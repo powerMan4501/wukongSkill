@@ -333,19 +333,16 @@ namespace bian
                     break;
 
                 case "removeBuff":
-                    var buffIds = new List<int>();
                     if (action?.BuffID != null && action?.BuffID > 0)
                     {
-                        buffIds = [action.BuffID];
+                        BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, action.BuffID, EBuffEffectTriggerType.Remove);
                     }
                     if (action?.BuffIDs != null && action?.BuffIDs?.Count > 0)
                     {
-                        buffIds = action.BuffIDs;
-                    }
-
-                    foreach (var buffId in buffIds)
-                    {
-                        BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, buffId, EBuffEffectTriggerType.Remove);
+                        foreach (var buffId in action.BuffIDs)
+                        {
+                            BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, buffId, EBuffEffectTriggerType.Remove);
+                        }
                     }
                     break;
 
