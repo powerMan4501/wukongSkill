@@ -139,7 +139,7 @@ public class Hooks
                     if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
                     var nowMontage = NotifyParam.Animation.PathName;
                     var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
-                    Console.WriteLine($" BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()} ,linkValue:{linkValue},{NotifyParam.owner.GetName()},MeshComp,{NotifyParam.MeshComp.GetName()}");
+                    Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()} ,linkValue:{linkValue} ");
 
                     if (allRules.Count > 0)
                     {

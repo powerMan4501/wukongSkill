@@ -313,7 +313,7 @@ namespace bian
             {
                 return;
             }
-            // Log.Info($"Evt_TriggerSkillEffect EffectID:{EffectID}");
+            Log.Info($"Evt_TriggerSkillEffect EffectID:{EffectID}");
             // 检查是否有对应的效果规则
             if (!effectRulesMap.ContainsKey(EffectID))
             {
