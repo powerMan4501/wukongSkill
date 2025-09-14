@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UnrealEngine.Runtime;
 using UnrealEngine.Engine;
 using System.Linq;
+using BtlShare;
 namespace bian
 {
 
@@ -106,7 +107,7 @@ namespace bian
         public string? BornDirType { get; set; }
         public float? Scale3D { get; set; }
 
-        
+
 
 
         public RuleAction()
@@ -331,6 +332,23 @@ namespace bian
                     HandleBuffAction(character, action, timeLength);
                     break;
 
+                case "removeBuff":
+                    var buffIds = new List<int>();
+                    if (action?.BuffID != null && action?.BuffID > 0)
+                    {
+                        buffIds = [action.BuffID];
+                    }
+                    if (action?.BuffIDs != null && action?.BuffIDs?.Count > 0)
+                    {
+                        buffIds = action.BuffIDs;
+                    }
+
+                    foreach (var buffId in buffIds)
+                    {
+                        BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, buffId, EBuffEffectTriggerType.Remove);
+                    }
+                    break;
+
                 case "skill":
                     if (action.SkillID > 0)
                     {
@@ -364,7 +382,7 @@ namespace bian
                     if (action?.SkillID > 0)
                     {
                         var backTime = (int)(action?.backTime ?? 0);
-                         Helper.CastVigorSkillByID(character, action.SkillID, backTime, (int?)(action?.Scale3D ?? 1));
+                        Helper.CastVigorSkillByID(character, action.SkillID, backTime, (int?)(action?.Scale3D ?? 1));
                         // ExecuteDelayedAction(() =>
                         // {
                         //     character.FollowCamera.RelativeLocation = new FVector(
