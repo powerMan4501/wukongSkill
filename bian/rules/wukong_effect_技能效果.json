@@ -117,10 +117,6 @@
         {
           "Type": "effect",
           "EffectID": 1026215
-        },
-        {
-          "Type": "effect",
-          "EffectID": 44050601
         }
       ],
       "AfterActions": [
@@ -190,7 +186,6 @@
         }
       ]
     },
-   
 
     {
       "Name": "破隐一击",
@@ -208,9 +203,9 @@
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [44011401],
+              "ProjectTileIDs": [40550101],
               "hasBuff": 888666007,
-              "desc": "有火buff，红孩儿砸地"
+              "desc": "有火buff，鳖宝"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
@@ -428,7 +423,7 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [49981301],
+              "ProjectTileIDs": [49981301, 888555011],
               "noHasAnyBuff": [888666005, 888666006, 888666007],
               "desc": "没有雷火冰buff，毒液池"
             }
@@ -511,10 +506,6 @@
         {
           "Type": "effect",
           "EffectID": 40550701
-        },
-        {
-          "Type": "effect",
-          "EffectID": 44051003
         }
       ],
       "AfterActions": [
@@ -533,13 +524,18 @@
     },
 
     {
-      "Name": "不能精魄技能效果",
+      "Name": "不能，虫校尉精魄技能效果",
       "Description": "冰刺冰暴",
       "Filters": [
         {
           "Type": "effect",
           "EffectID": 1012605
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1017801
         }
+        
       ],
       "AfterActions": [
         {

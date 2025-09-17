@@ -36,9 +36,9 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [49981301],
+              "ProjectTileIDs": [888555011],
               "noHasAnyBuff": [888666005, 888666006, 888666007],
-              "desc": "没有雷火冰buff，毒液池"
+              "desc": "没有雷火冰buff，石双双毒气"
             }
           ]
         }

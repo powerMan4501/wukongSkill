@@ -7,6 +7,14 @@
     "EffectParamsStr": []
   },
   {
+    "desc": "定身，耗蓝改成1",
+    "ID": 1051851,
+    "EffectParamsInt": [2],
+    "EffectParamsFloat": [1, 0],
+    "EffectParamsStr": []
+  },
+
+  {
     "desc": "破隐一击，增加伤害和硬直，原版是300%/主角蓄力2/硬直31/22",
     "ID": 1009601,
     "EffectParamsInt": [40, 25, 1, 0, 0, 0, 0],

@@ -2,7 +2,7 @@
   {
     "montage": "AM_wukong_qiang_xuli_b_attack_0",
     "linkValue": 0,
-    "scaleWeaponNum": 2,
+"scaleWeaponNum": 3,
     "CastActions": [
       {
         "Type": "buff",
@@ -78,7 +78,7 @@
   {
     "montage": "AM_wukong_qiang_xuli_b_attack_1",
     "linkValue": 0,
-    "scaleWeaponNum": 3,
+"scaleWeaponNum": 3,
     "CastActions": [
       {
         "Type": "buff",
@@ -99,6 +99,7 @@
             "SpeedRightValue": 7000,
             "ForTarget": true,
             "BulletNumInOneWave": 5,
+
             "spawnBaseSocketName": "weapon_r_index_07",
             "desc": "有火buff 鼠弩手弓箭"
           },
@@ -140,10 +141,10 @@
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
             "ProjectTileID": 80000011,
-            "SpeedLeftValue": 1,
-            "SpeedRightValue": 1,
+            "SpeedLeftValue": 1000,
+            "SpeedRightValue": 1000,
             "ForTarget": true,
-            "spawnBaseSocketName": "weapon_wei",
+            "spawnBaseSocketName": "weapon_r_index_03",
             "desc": "激光"
           }
         ]
@@ -154,7 +155,7 @@
   {
     "montage": "AM_wukong_qiang_xuli_b_attack_2",
     "linkValue": 0,
-    "scaleWeaponNum": 3,
+"scaleWeaponNum": 3,
     "CastActions": [
       {
         "Type": "buff",
@@ -216,10 +217,10 @@
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
             "ProjectTileID": 80000011,
-            "SpeedLeftValue": 1,
-            "SpeedRightValue": 1,
+            "SpeedLeftValue": 1000,
+            "SpeedRightValue": 1000,
             "ForTarget": true,
-            "spawnBaseSocketName": "weapon_wei",
+            "spawnBaseSocketName": "weapon_r_index_03",
             "desc": "激光"
           }
         ]
@@ -230,7 +231,6 @@
   {
     "montage": "AM_wukong_qiang_xuli_b_attack_3",
     "linkValue": 0,
-    "scaleWeaponNum": 4,
     "CastActions": [
       {
         "Type": "buff",
@@ -292,21 +292,22 @@
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
             "ProjectTileID": 80000011,
-            "SpeedLeftValue": 1,
-            "SpeedRightValue": 1,
+            "SpeedLeftValue": 1000,
+            "SpeedRightValue": 1000,
             "ForTarget": true,
-            "spawnBaseSocketName": "weapon_wei",
+            "spawnBaseSocketName": "weapon_r_index_03",
             "desc": "激光"
           }
         ]
       }
+      
     ]
   },
 
   {
     "montage": "AM_wukong_qiang_xuli_b_attack_4",
     "linkValue": 0,
-    "scaleWeaponNum": 5,
+    "MoveOffset": 500,
     "CastActions": [
       {
         "Type": "buff",
@@ -368,14 +369,15 @@
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
             "ProjectTileID": 80000011,
-            "SpeedLeftValue": 1,
-            "SpeedRightValue": 1,
+            "SpeedLeftValue": 1000,
+            "SpeedRightValue": 1000,
             "ForTarget": true,
-            "spawnBaseSocketName": "weapon_r_index_07",
+            "spawnBaseSocketName": "weapon_r_index_03",
             "desc": "激光"
           }
         ]
       },
+     
       {
         "Type": "buff",
         "BuffIDs": [888666026],
@@ -390,7 +392,7 @@
     "montage": "AM_mgd_jsds_atk_10_01",
     "speedRate": 1.3,
     "linkValue": 0,
-    "scaleWeaponNum": 5,
+   "scaleWeaponNum": 3,
     "CastActions": [
       {
         "Type": "buff",
@@ -452,10 +454,10 @@
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
             "ProjectTileID": 80000011,
-            "SpeedLeftValue": 1,
-            "SpeedRightValue": 1,
+            "SpeedLeftValue": 1000,
+            "SpeedRightValue": 1000,
             "ForTarget": true,
-            "spawnBaseSocketName": "weapon_wei",
+            "spawnBaseSocketName": "weapon_r_index_03",
             "desc": "激光"
           }
         ]

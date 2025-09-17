@@ -1,0 +1,206 @@
+[
+  {
+    "desc": "喝药",
+    "montage": "AM_Wukong_heyao",
+    "linkValue": 0,
+    "speedRate": 2,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [103, 888666004],
+        "BuffTime": 100,
+        "desc": "喝药，回血"
+      }
+    ]
+  },
+
+  {
+    "desc": "后撤召唤子弹",
+    "montage": "AM_Wukong_JXSQ_Enter_B",
+    "linkValue": 0,
+    "CastActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileID": 131,
+        "ForTarget": true
+      }
+    ]
+  },
+
+  {
+    "desc": "翻滚，加凤穿花",
+    "montage": "AM_Wukong_Dodge",
+    "linkValue": 0,
+    "CastActions": [
+      {
+        "type": "buff",
+        "BuffID": 1129
+      }
+    ]
+  },
+
+  {
+    "desc": "棍花 ",
+    "montage": "AM_Wukong_ComboC_z_loop",
+    "linkValue": 0.2993329,
+    "AfterActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 88880009,
+            "hasBuff": 888666007,
+            "ForTarget": true,
+            "spawnBaseSocketName": "hand_r",
+            "desc": "有火buff，火焰剑气"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 88880003,
+            "hasBuff": 888666006,
+            "BornDirOffsetXLeftValue": 91,
+            "BornDirOffsetXRightValue": 91,
+            "ForTarget": true,
+            "spawnBaseSocketName": "hand_r",
+            "desc": "有冰buff，冰剑气"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 44051501,
+            "noHasAnyBuff": [888666007, 888666006, 888666008],
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "ForTarget": true,
+            "desc": "没有冰火毒buff，飞轮"
+          },
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 30131501,
+            "hasBuff": 888666008,
+            "ForTarget": true,
+            "spawnBaseSocketName": "hand_r",
+            "desc": "有毒buff，红剑气"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "desc": "棍花 重击",
+    "montage": "AM_Wukong_ComboC_z_specialend",
+    "linkValue": 0.585206,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888805079],
+        "BuffTime": 1600,
+        "desc": "棍光特效粒子"
+      }
+    ],
+    "AfterActions": [
+      {
+        "Type": "bullet",
+        "TimeDelay": 0,
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 11012601,
+            "ForTarget": true,
+            "hasBuff": 888666007,
+            "desc": "火buff就发射火焰剑气",
+            "BornDirOffsetXLeftValue": 45,
+            "BornDirOffsetXRightValue": 45,
+            "spawnBaseSocketName": "weapon_r_index_03",
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000
+          },
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 1703001,
+            "ForTarget": true,
+            "hasBuff": 888666006,
+            "desc": "冰buff就发射冰剑气",
+            "BornDirOffsetXLeftValue": 45,
+            "BornDirOffsetXRightValue": 45,
+            "spawnBaseSocketName": "weapon_r_index_03",
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000
+          },
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 50051301,
+            "ForTarget": true,
+            "noHasAnyBuff": [888666007, 888666006, 888666008],
+            "desc": "没有冰火毒buff就发射雷剑气",
+            "BornDirOffsetXLeftValue": 45,
+            "BornDirOffsetXRightValue": 45,
+            "spawnBaseSocketName": "weapon_r_index_03",
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000
+          },
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 30131502,
+            "ForTarget": true,
+            "hasBuff": 888666008,
+            "desc": "毒buff就发射红剑气",
+            "BornDirOffsetXLeftValue": 135,
+            "BornDirOffsetXRightValue": 135,
+            "spawnBaseSocketName": "weapon_r_index_03",
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "desc": "芭蕉扇",
+    "montage": "AM_Wukong_BaJiaoShan",
+    "linkValue": 0,
+    "speedRate": 2,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 2000,
+        "desc": "霸体"
+      }
+    ],
+    "AfterActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 47055601,
+            "ForTarget": true,
+            "desc": "冰龙卷",
+            "SpeedLeftValue": 4000,
+            "SpeedRightValue": 4000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "破隐一击",
+    "montage": "AM_Wukong_JXSQ_Atk_01",
+    "linkValue": 0,
+    "CastActions": [
+      {
+        "Type": "removeBuff",
+        "BuffIDs": [123, 20102],
+        "desc": "移除破隐一击"
+      }
+    ]
+  }
+]

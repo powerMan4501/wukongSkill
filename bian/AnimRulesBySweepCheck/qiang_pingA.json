@@ -2,8 +2,8 @@
   {
     "montage": "AM_Wukong_ComboB_q1.AM_Wukong_ComboB_q1",
     "linkValue": 0,
-    "scaleWeaponNum": 3,
-    "MoveOffset": 500,
+    "scaleWeaponNum": 8,
+    "MoveOffset": 1000,
     "CastActions": [
       {
         "Type": "buff",
@@ -44,8 +44,8 @@
   {
     "montage": "AM_Wukong_ComboB_q2.AM_Wukong_ComboB_q2",
     "linkValue": 0,
-    "scaleWeaponNum": 3,
-    "MoveOffset": 500,
+    "scaleWeaponNum": 8,
+    "MoveOffset": 1000,
     "CastActions": [
       {
         "Type": "buff",
@@ -101,8 +101,8 @@
   {
     "montage": "AM_Wukong_ComboB_q3.AM_Wukong_ComboB_q3",
     "linkValue": 0,
-    "scaleWeaponNum": 3,
-    "MoveOffset": 400,
+    "scaleWeaponNum": 8,
+    "MoveOffset": 600,
     "CastActions": [
       {
         "Type": "buff",
@@ -146,7 +146,7 @@
     "montage": "AM_Wukong_ComboB_q4.AM_Wukong_ComboB_q4",
     "linkValue": 0.9666666,
     "speedRate": 1.5,
-    "scaleWeaponNum": 3,
+    "scaleWeaponNum": 8,
     "MoveOffset": 100,
     "CastActions": [
       {

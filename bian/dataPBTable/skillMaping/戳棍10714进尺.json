@@ -4,7 +4,7 @@
     "MappedId": 54321011,
     "Condition": "hasBuff",
     "conditionValue": 20104,
-    "desc": "2a进尺转化，棍子变粗砸一下"
+    "desc": "4a进尺转化，棍子变粗砸一下"
   },
 
   {
@@ -19,7 +19,7 @@
     "MappedId": 54321005,
     "Condition": "hasBuff",
     "conditionValue": 20102,
-    "desc": "4a进尺转化，破隐一击"
+    "desc": "2a进尺转化，破隐一击"
   },
   {
     "OriginalId": 10714,

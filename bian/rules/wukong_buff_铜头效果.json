@@ -1,0 +1,95 @@
+{
+  "Name": "悟",
+  "desc": "888666005:雷，888666006冰， 888666007火， 888666008毒",
+  "Rules": [
+    {
+      "Name": "铜头成功放地刺，破隐buff",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "buff",
+          "BuffID": 231
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 44051005
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [123],
+          "BuffTime": 3000,
+          "desc": "破隐一击"
+        }
+      ]
+    },
+
+    {
+      "Name": "进尺专用子弹，buff",
+      "Filters": [
+        {
+          "Type": "buff",
+          "BuffID": 888666014
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 1016901,
+              "hasBuff": 888666007,
+              "SpeedLeftValue": 7000,
+              "SpeedRightValue": 7000,
+              "ForTarget": true,
+              "spawnBaseSocketName": "weapon_r_index_04",
+              "desc": "有火buff 鼠弩手弓箭"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 1017961,
+              "hasBuff": 888666008,
+              "SpeedLeftValue": 5000,
+              "SpeedRightValue": 5000,
+              "ForTarget": true,
+              "spawnBaseSocketName": "weapon_r_index_04",
+              "desc": "毒buff，蜻蜓精的箭"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileID": 30142501,
+              "hasBuff": 888666005,
+              "SpeedLeftValue": 5000,
+              "SpeedRightValue": 5000,
+              "ForTarget": true,
+              "spawnBaseSocketName": "weapon_r_index_04",
+              "desc": "雷buff，雷球"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileIDs": [80009913, 80009910, 80000008],
+              "ForTarget": true,
+              "spawnBaseSocketName": "weapon_r_index_04",
+              "noHasAnyBuff": [888666005, 888666007, 888666008],
+              "desc": "杨戬万剑，小型剑，密密麻麻（原本无伤害，目前给了10点）"
+            },
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+              "ProjectTileIDs": [88880011],
+              "ForTarget": true,
+              "BornDirOffsetYLeftValue": 180,
+              "BornDirOffsetYRightValue": 180,
+              "spawnBaseSocketName": "weapon_r_index_04",
+              "noHasAnyBuff": [888666005, 888666007, 888666008],
+              "desc": "杨戬万剑，小型剑，密密麻麻（原本无伤害，目前给了10点）"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "desc": "完美定身，耗蓝改成1，冷却改成8",
+    "ID": 10519,
+    "MinAttrCostBase1": 1,
+    "CooldownTime": 8
+  }
+]
