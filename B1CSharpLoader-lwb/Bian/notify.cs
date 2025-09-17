@@ -348,12 +348,12 @@ public static class NotifyUtils
                     var AMScaleMoveOffset = BANS_GSCalcAMScaleHelper.GetProperty(item.NotifyStateClass, "AMScaleMoveOffset");
 
                     // 只有当当前值小于10时才修改为10
-                    if ((float)currentValue < 10)
+                    if ((float)currentValue < 8)
                     {
                         var AMScaleItem = item.NotifyStateClass;
-                        BANS_GSCalcAMScaleHelper.SetProperty(item.NotifyStateClass, "AMScaleMaxRate", 10);
+                        BANS_GSCalcAMScaleHelper.SetProperty(item.NotifyStateClass, "AMScaleMaxRate", 8);
                     }
-                    if ((float)AMScaleMoveOffset >= -500 && (float)AMScaleMoveOffset <= -100)
+                    if ((float)AMScaleMoveOffset >= -800 && (float)AMScaleMoveOffset <= -10)
                     {
                         var AMScaleItem = item.NotifyStateClass;
 

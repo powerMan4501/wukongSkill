@@ -23,6 +23,7 @@ public enum SkillMapCondition
     hasBuff,
     disTance,
     hasTalent,//拥有某个天赋
+    montage,//动画
     any,//无条件转化
 }
 
@@ -140,11 +141,11 @@ namespace bian
         public static void loadAllStaticData(bool forceUpdate = false, int delayTime = 1000)
         {
 
-
+            LoadComboConfigs();//全部连招
             if (isBuffConfigsLoaded && !forceUpdate) { return; }
             // 加载技能映射规则
             LoadUtils.LoadAllSkillMappingRules();
-            LoadComboConfigs();//全部连招
+
             InitializeEffectRulesMap();//初始化技能子弹效果rule
             // 使用新的递归方法获取buffDispList
             GetBuffDispListWithRetry(delayTime);
@@ -415,7 +416,15 @@ namespace bian
             {
                 Helper.updateIsPlayVigorSkillByID(false);
             }
-          
+
+            if (currentMontage.Contains("AM_wukong_trans_from_Vigor"))
+            {
+                var character = __instance.GetOwner() as BGUPlayerCharacterCS;
+                if (character != null)
+                {
+                    character.FollowCamera.RelativeLocation = new FVector(0, 0, 0);
+                }
+            }
             if (!currentMontage.Contains("AM_Wukong_Dodge"))
             {
                 comboMontage = Montage.PathName;
@@ -426,11 +435,11 @@ namespace bian
             var matchedRule = allRules.FirstOrDefault(rule =>
                      !string.IsNullOrEmpty(currentMontage) &&
                      currentMontage.Contains(rule.montage));
-            if (matchedRule == null)
-            {
-                OnScaleWeapon(1);
-                return;
-            }
+            // if (matchedRule == null)
+            // {
+            //     OnScaleWeapon(1);
+            //     return;
+            // }
 
             if (matchedRule?.CastActions?.Count > 0)
             {
@@ -448,7 +457,7 @@ namespace bian
             }
             else
             {
-                OnScaleWeapon(1);
+                // OnScaleWeapon(1);
             }
 
             if (matchedRule?.MoveOffset != null)
@@ -529,7 +538,22 @@ namespace bian
 
 
         }
+        public static UAnimMontage? GetPlayerCurrentActiveMontage(BGUCharacterCS character)
+        {
 
+            if (character == null)
+            {
+                return null;
+            }
+
+            UAnimInstance animInstance = character.Mesh.GetAnimInstance();
+            if (character == animInstance)
+            {
+                return null;
+            }
+            return animInstance.GetCurrentActiveMontage();
+
+        }
 
         private static bool IsSkillMappingRuleMatch(SkillMappingRule rule, BGUCharacterCS character, bool isChuogun, bool isLigun, bool isPigun, BGUCharacterCS target = null)
         {
@@ -554,8 +578,13 @@ namespace bian
                                  target != null &&
                                  character.GetDistanceTo(target) >= rule.conditionValue;
 
+            // var currentMontage = GetPlayerCurrentActiveMontage(character);
+            // bool animMatch = rule.Condition == SkillMapCondition.montage &&
+            //                                 rule.conditionValue != null && currentMontage.PathName.Contains(rule.conditionValue.ToString());
+
             // 无条件判断
             bool anyMatch = rule.Condition == SkillMapCondition.any;
+
 
             // 返回任意一个条件匹配即为true
             return stanceMatch || buffMatch || distanceMatch || talentMatch || anyMatch;
@@ -607,19 +636,20 @@ namespace bian
             var player = Helper.GetBGUPlayerCharacterCS();
             if (player == null || scaleWeaponNum == num) return;
             scaleWeaponNum = num;
-            // 获取角色的朝向向量
-            var forwardVector = player.GetActorForwardVector();
-            if (forwardVector == null) return;
+
             List<UActorComponent> componentsByTag = player.GetComponentsByClass(UClass.GetClass<USkeletalMeshComponent>());
             if (componentsByTag != null && componentsByTag.Count > 0)
             {
                 foreach (var uStaticMeshComponent in componentsByTag)
                 {
-
                     if (uStaticMeshComponent != null && uStaticMeshComponent.GetName() != null && uStaticMeshComponent.GetName().ToLower().Contains("weapon"))
                     {
-                        var item_ = uStaticMeshComponent as USkeletalMeshComponent;
-                        item_.SetRelativeScale3D(new FVector(num, 1, 1));
+                        var weaponComponent = uStaticMeshComponent as USkeletalMeshComponent;
+                        if (weaponComponent != null)
+                        {
+                            weaponComponent.SetRelativeScale3D(new FVector(num, 1.2, 1));
+                        }
+
                     }
                 }
                 // 重置计时器
@@ -659,11 +689,12 @@ namespace bian
             List<UActorComponent> componentsByTag = player.GetComponentsByClass(UClass.GetClass<USkeletalMeshComponent>());
             if (componentsByTag != null && componentsByTag.Count > 0)
             {
-                foreach (var uStaticMeshComponent in componentsByTag)
+                foreach (var item in componentsByTag)
                 {
-                    if (uStaticMeshComponent != null && uStaticMeshComponent.GetName() != null && uStaticMeshComponent.GetName().ToLower().Contains("weapon"))
+                    if (item != null && item.GetName() != null && item.GetName().ToLower().Contains("weapon"))
                     {
-                        var item_ = uStaticMeshComponent as USkeletalMeshComponent;
+                        Log.Info($"Weapon Name: {item.GetName()}");
+                        var item_ = item as USkeletalMeshComponent;
                         item_.SetRelativeScale3D(new FVector(1, 1, 1));
                         scaleWeaponNum = 1;
                     }
@@ -863,6 +894,7 @@ namespace bian
             {
                 keyName = Key.GetFName().ToString();
             }
+
             if (string.IsNullOrEmpty(keyName) || !keyToComboConfigsMap.ContainsKey(keyName))
             {
                 return;
@@ -875,78 +907,126 @@ namespace bian
             var currMontage = animInstance?.GetCurrentActiveMontage();
 
 
+
             var currentPosition = animInstance?.Montage_GetPosition(currMontage);
             GetCharacterStance(character, out bool isChuogun, out bool isLigun, out bool isPigun);
             var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
 
             // 直接获取该按键对应的所有规则
             var keyCombos = keyToComboConfigsMap[keyName];
-            foreach (var combo in keyCombos)
+
+
+
+            var matchedCombo = keyCombos.FirstOrDefault(combo =>
             {
-                // 如果nowMontage有值，才检查动画相关条件
+                // 检查动画条件
                 if (!string.IsNullOrEmpty(combo.nowMontage))
                 {
-                    if (currMontage != null)
-                    {
-                        string fullPath = currMontage.PathName;
-                        if (fullPath.Contains(combo.nowMontage) && currentPosition >= combo.rate)
-                        {
-                            var rule = new SkillMappingRule
-                            {
-                                Condition = combo.Condition,
-                                conditionValue = combo.conditionValue
-                            };
+                    if (currMontage == null) return false;
+                    string fullPath = currMontage.PathName;
+                    if (!fullPath.Contains(combo.nowMontage) || currentPosition < combo.rate)
+                        return false;
+                }
 
-                            if (combo.Condition == SkillMapCondition.any ||
-                                IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target))
-                            {
+                // 检查规则条件
+                var rule = new SkillMappingRule
+                {
+                    Condition = combo.Condition,
+                    conditionValue = combo.conditionValue
+                };
 
-                                if (combo.bossLabel != null)
-                                {
-                                    CastMagicSkill(character, combo, "bossLabel");
-                                    break;
-                                }
-                                else if (combo.type == "magic")
-                                {
-                                    CastMagicSkill(character, combo, "magic");
-                                    break;
-                                }
+                return combo.Condition == SkillMapCondition.any ||
+                       IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target);
+            });
 
-                                BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
-                                    combo.skillID, null, EMontageBindReason.NormalSkill, false);
-                                break;
-                            }
-                        }
-                    }
 
+            // 找到匹配的combo后执行相应技能
+            if (matchedCombo != null)
+            {
+                if (matchedCombo.bossLabel != null)
+                {
+                    CastMagicSkill(character, matchedCombo, "bossLabel");
+                }
+                else if (matchedCombo.type == "magic")
+                {
+                    CastMagicSkill(character, matchedCombo, "magic");
                 }
                 else
                 {
-                    var rule = new SkillMappingRule
-                    {
-                        Condition = combo.Condition,
-                        conditionValue = combo.conditionValue
-                    };
-
-                    if (combo.Condition == SkillMapCondition.any ||
-                        IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target))
-                    {
-                        if (combo.bossLabel != null)
-                        {
-                            CastMagicSkill(character, combo, "bossLabel");
-                            break;
-                        }
-                        else if (combo.type == "magic")
-                        {
-                            CastMagicSkill(character, combo, "magic");
-                            break;
-                        }
-                        BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
-                            combo.skillID, null, EMontageBindReason.NormalSkill, false);
-                        break; // 找到匹配的规则后立即返回
-                    }
+                    BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
+                        matchedCombo.skillID, null, EMontageBindReason.NormalSkill, false);
                 }
             }
+
+
+
+            // foreach (var combo in keyCombos)
+            // {
+            //     // 如果nowMontage有值，才检查动画相关条件
+            //     if (!string.IsNullOrEmpty(combo.nowMontage))
+            //     {
+            //         if (currMontage != null)
+            //         {
+            //             string fullPath = currMontage.PathName;
+            //             Log.Info($"Key {keyName} ,{fullPath.Contains(combo.nowMontage)},currentPosition:{currentPosition}");
+            //             if (fullPath.Contains(combo.nowMontage) && currentPosition >= combo.rate)
+            //             {
+            //                 var rule = new SkillMappingRule
+            //                 {
+            //                     Condition = combo.Condition,
+            //                     conditionValue = combo.conditionValue
+            //                 };
+
+            //                 if (combo.Condition == SkillMapCondition.any ||
+            //                     IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target))
+            //                 {
+
+            //                     if (combo.bossLabel != null)
+            //                     {
+            //                         CastMagicSkill(character, combo, "bossLabel");
+            //                         break;
+            //                     }
+            //                     else if (combo.type == "magic")
+            //                     {
+            //                         CastMagicSkill(character, combo, "magic");
+            //                         break;
+            //                     }
+
+            //                     BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
+            //                         combo.skillID, null, EMontageBindReason.NormalSkill, false);
+            //                     break;
+            //                 }
+            //             }
+            //         }
+
+            //     }
+            //     else
+            //     {
+            //         var rule = new SkillMappingRule
+            //         {
+            //             Condition = combo.Condition,
+            //             conditionValue = combo.conditionValue
+            //         };
+
+            //         if (combo.Condition == SkillMapCondition.any ||
+            //             IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target))
+            //         {
+            //             if (combo.bossLabel != null)
+            //             {
+            //                 CastMagicSkill(character, combo, "bossLabel");
+            //                 break;
+            //             }
+            //             else if (combo.type == "magic")
+            //             {
+            //                 CastMagicSkill(character, combo, "magic");
+            //                 break;
+            //             }
+            //             BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
+            //                 combo.skillID, null, EMontageBindReason.NormalSkill, false);
+            //             break; // 找到匹配的规则后立即返回
+            //         }
+            //     }
+            // }
         }
 
     }

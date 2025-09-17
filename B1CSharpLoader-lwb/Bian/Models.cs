@@ -1002,7 +1002,7 @@ namespace bian
 
         public bool TriggerSkill(string key)
         {
-            if (Helper.isPlayVigorSkillByID)
+            if (Helper.isPlayVigorSkillByID && key.Contains("BUTTON"))
             {
                 return false;
             }

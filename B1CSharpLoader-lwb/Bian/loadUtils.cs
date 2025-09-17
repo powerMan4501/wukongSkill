@@ -25,7 +25,7 @@ public class AnimRuleBySweepCheck
     public float? MoveOffset { get; set; }
     public float? scaleWeaponNum { get; set; }
 
-    
+
 }
 
 
@@ -373,6 +373,7 @@ namespace bian
                     }
                 }
             }
+            Log.Info($"success load combo config: {comboConfigs.Count}");
             return comboConfigs;
         }
 

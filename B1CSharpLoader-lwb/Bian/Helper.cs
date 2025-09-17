@@ -287,6 +287,7 @@ namespace bian
         public static void CastVigorSkillByModel(BGUPlayerCharacterCS character, string bossLabel, string type, int skillId)
         {
             // 检查缓存中是否已存在该配置
+            Log.Info($"bian:{bossLabel} ,type,{type} ,skillId,{skillId} ");
             if (!boss_vigorSkillConfigCache.TryGetValue(bossLabel, out var config))
             {
                 ModelManager modelManager = new ModelManager();
@@ -372,19 +373,19 @@ namespace bian
                     }
                     config.Weapons.SetValues(weapons);
                 }
-                // if (model.Level1Scale > 0 && model.Level1Scale != 1)
-                // {
-                //     var scale = model.Level1Scale;
+                if (model.Level1Scale > 0 && model.Level1Scale != 1)
+                {
+                    var scale = model.Level1Scale;
 
-                //     if (character != null)
-                //     {
-                //         character.SetActorScale3D(new FVector(scale, scale, scale));
-                //     }
-                // }
-                // if (model.XRate != 0 || model.ZRate != 0)
-                // {
-                //     character.FollowCamera.RelativeLocation = new FVector(model.XRate, 0, model.ZRate);
-                // }
+                    if (character != null)
+                    {
+                        character.SetActorScale3D(new FVector(scale, scale, scale));
+                    }
+                }
+                if (model.XRate != 0 || model.ZRate != 0)
+                {
+                    character.FollowCamera.RelativeLocation = new FVector(model.XRate, 0, model.ZRate);
+                }
                 // 将新加载的配置加入缓存
                 boss_vigorSkillConfigCache[bossLabel] = config;
             }
