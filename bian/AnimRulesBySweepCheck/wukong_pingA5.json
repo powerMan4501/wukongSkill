@@ -2,8 +2,8 @@
   {
     "montage": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05",
     "linkValue": 0.8666667,
-"scaleWeaponNum": 5,
-    "MoveOffset": 500,
+    "scaleWeaponNum": 4,
+    "MoveOffset": 100,
     "CastActions": [
       {
         "Type": "buff",
@@ -39,8 +39,8 @@
   {
     "montage": "AM_Wukong_ComboA_q5.AM_Wukong_ComboA_q5",
     "linkValue": 0.8666667,
-"scaleWeaponNum": 5,
-    "MoveOffset": 500,
+    "scaleWeaponNum": 4,
+    "MoveOffset": 100,
     "CastActions": [
       {
         "Type": "buff",

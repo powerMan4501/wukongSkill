@@ -46,7 +46,7 @@
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
         "ProjectTileID": 1016262,
         "ForTarget": true,
-        "desc": "发射巴山虎"
+        "desc": "给目标上巴山虎"
       }
     ]
   },

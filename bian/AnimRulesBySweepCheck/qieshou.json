@@ -3,7 +3,7 @@
     "desc": "1a切手，大圣版10705",
     "montage": "AM_Dasheng_ComboA_01_Z_1",
     "linkValue": 0,
-    "scaleWeaponNum": 8,
+    "scaleWeaponNum": 4,
     "CastActions": [
       {
         "Type": "buff",
@@ -54,7 +54,7 @@
     "desc": "1a切手，马喽10705",
     "montage": "AM_Wukong_ComboA_z_01",
     "linkValue": 0,
-    "scaleWeaponNum": 8,
+    "scaleWeaponNum": 4,
     "CastActions": [
       {
         "Type": "buff",
@@ -108,7 +108,7 @@
     "desc": "1a切手2，10707，大圣版",
     "montage": "AM_Dasheng_ComboA_01_Z_2",
     "linkValue": 0,
-    "scaleWeaponNum": 3,
+    "scaleWeaponNum": 4,
     "CastActions": [
       {
         "Type": "buff",
@@ -171,7 +171,7 @@
     "desc": "1a切手2，10707，马喽版",
     "montage": "AM_Wukong_ComboA_z_02",
     "linkValue": 0,
-    "scaleWeaponNum": 3,
+    "scaleWeaponNum": 4,
     "CastActions": [
       {
         "Type": "buff",
@@ -234,7 +234,7 @@
     "montage": "AM_Dasheng_ComboA_02_Z_1",
     "speedRate": 1.5,
     "linkValue": 0.76666665,
-    "scaleWeaponNum": 3,
+    "scaleWeaponNum": 4,
     "CastActions": [
       {
         "Type": "buff",
@@ -303,7 +303,7 @@
     "desc": "2a切手2，10707，大圣版",
     "montage": "AM_Dasheng_ComboA_02_Z_2",
     "linkValue": 0,
-    "scaleWeaponNum": 3,
+    "scaleWeaponNum": 4,
     "CastActions": [
       {
         "Type": "buff",
@@ -364,7 +364,7 @@
     "desc": "3a切手，小横扫一下",
     "montage": "AM_Dasheng_ComboA_03_Z_1",
     "linkValue": 0,
-    "scaleWeaponNum": 3,
+    "scaleWeaponNum": 4,
     "CastActions": [
       {
         "Type": "buff",
@@ -378,7 +378,7 @@
     "desc": "3a切手2，江海翻",
     "montage": "AM_Dasheng_ComboA_03_Z_2",
     "linkValue": 1.233464,
-    "scaleWeaponNum": 3,
+    "scaleWeaponNum": 4,
     "CastActions": [
       {
         "Type": "buff",
@@ -460,7 +460,7 @@
     "montage": "AM_Dasheng_ComboA_04_Z_2",
     "linkValue": 0,
     "speedRate": 1.5,
-    "scaleWeaponNum": 3,
+    "scaleWeaponNum": 4,
     "CastActions": [
       {
         "Type": "buff",
@@ -646,7 +646,7 @@
     "desc": "立棍1a切手2，江海翻",
     "montage": "AM_wukong_comboc_z_02",
     "linkValue": 1.3,
-    "scaleWeaponNum": 3,
+    "scaleWeaponNum": 4,
     "CastActions": [
       {
         "BuffID": 66655408,

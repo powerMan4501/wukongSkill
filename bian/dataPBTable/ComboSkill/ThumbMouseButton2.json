@@ -344,5 +344,37 @@
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "大圣4a，接夜叉王地刺"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_Dodge",
+    "rate": 0.4,
+    "type": "BOSS",
+    "bossLabel": "SK_HFM_Hu_Stone_01",
+    "MagicSkillID": 202202,
+    "Condition": "StanceHeavy",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "翻滚后，劈棍下接虎先锋连续拳脚好几下"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_Dodge",
+    "rate": 0.4,
+    "type": "BOSS",
+    "bossLabel": "SK_HFM_Hu_Stone_01",
+    "MagicSkillID": 202203,
+    "Condition": "StanceProp",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "翻滚后，立棍下接虎先锋拔刀斩"
+  },
+  {
+    "nowMontage": "AM_Wukong_Dodge",
+    "rate": 0.4,
+    "type": "BOSS",
+    "bossLabel": "SK_HFM_Hu_Stone_01",
+    "MagicSkillID": 202220,
+    "Condition": "StancePoke",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "翻滚后，戳棍棍下接虎先锋冲拳"
   }
 ]
