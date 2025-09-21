@@ -13,17 +13,34 @@ using BtlB1;
 using Google.Protobuf.Collections;
 using b1.Protobuf.DataAPI;
 using bian;
+using ResB1;
 
+public class SoulSkillConfig
+{
+    public int Id { get; set; }
+    public string? SkillName { get; set; }
+    public string DAPath { get; set; }
+    public int? SkillId { get; set; }
+    public int? BuffId { get; set; }
+    public int? AttrEffectId { get; set; }
+    public int? EffectTalentId { get; set; }
+    public string? EffectTalentDesc { get; set; }
 
+}
 public class AnimRuleBySweepCheck
 {
     public string montage { get; set; }
     public double? linkValue { get; set; }
     public List<RuleAction>? AfterActions { get; set; }
+    public List<RuleAction>? SweepActions { get; set; }
+    public List<RuleAction>? hitActions { get; set; }
+    public List<RuleAction>? bulletsActions { get; set; }
+
     public List<RuleAction>? CastActions { get; set; }
     public float? speedRate { get; set; }
     public float? MoveOffset { get; set; }
     public float? scaleWeaponNum { get; set; }
+    public int? addRadius { get; set; }
 
 
 }
@@ -1751,8 +1768,10 @@ namespace bian
             {
                 foreach (var ironData in ironDataList.Values)
                 {
-                    ironData.PlayerDefense = 999;
-                    ironData.EndPreciseWindowTime = (float)(ironData?.EndPreciseWindowTime > 0 ? 5 : 0);
+                    if (ironData.PlayerDefense > 1 && ironData.PlayerDefense < 999)
+                    {
+                        ironData.PlayerDefense = 999;
+                    }
                 }
 
             }
@@ -1844,10 +1863,17 @@ namespace bian
             var dataList = BG_ProtobufDataAPI<FUStPlayerSkillCtrlDesc>.Get().GetAll();
             if (dataList != null && dataList?.Count > 0)
             {
-                foreach (var ironItem in dataList.Values)
+                foreach (var attackItem in dataList.Values)
                 {
-                    ironItem.AttackRange = 6000;
-                    ironItem.AttackSelectZLimit = 1500;
+                    if (attackItem.AttackRange < 6000)
+                    {
+                        attackItem.AttackRange = 6000;
+                    }
+                    if (attackItem.AttackSelectZLimit < 1500)
+                    {
+                        attackItem.AttackSelectZLimit = 1500;
+                    }
+
                 }
             }
 
@@ -1858,26 +1884,111 @@ namespace bian
         public static void ModifySuitDesc()
         {
             var dataList = BG_ProtobufDataAPI<FUStSuitDesc>.Get().GetAll();
-            if (dataList != null && dataList?.Count > 0)
+            if (dataList?.Values == null || dataList.Count == 0)
+                return;
+
+            foreach (var itemData in dataList.Values.Where(item => item?.SuitInfo?.Count > 0))
             {
-                foreach (var itemData in dataList.Values)
+                foreach (var suitInfo in itemData.SuitInfo.Where(s => s != null))
                 {
-                    if (itemData.SuitInfo.Count > 0)
+                    if (suitInfo.TriggerNum > 1)
+                        suitInfo.TriggerNum = 1;
+
+                    if (suitInfo.SuitEffectID == 901612)
                     {
-                        foreach (var suitInfo in itemData.SuitInfo)
-                        {
-                            suitInfo.TriggerNum = 1;
-                            if (suitInfo.SuitEffectID == 901612)
-                            {
-                                suitInfo.SuitEffectDesc = "免疫投技，获得<EquipDetail_SuitDesc_KW>强硬</>效果";
-                                Log.Info($"SuitEffectID: {suitInfo.SuitEffectID} {suitInfo.SuitEffectDesc}");
-                            }
-                        }
+                        suitInfo.SuitEffectDesc = "免疫投技，获得<EquipDetail_SuitDesc_KW>强硬</>效果";
                     }
                 }
             }
         }
 
+
+
+
+
+
+        public static int ModifySoulskill(string configDirectory = null)
+        {
+            try
+            {
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "soulSkillDesc");
+
+                var soulSkillConfigs = LoadJsonConfigs<SoulSkillConfig>(configDirectory, "SoulSkill");
+                var soulSkillList = BG_ProtobufDataAPI<SoulSkillDesc>.Get().GetAll();
+
+                if (soulSkillConfigs == null || soulSkillConfigs.Count == 0)
+                {
+                    Log.Error("Failed to load soul skill configs");
+                    return 0;
+                }
+
+                if (soulSkillList == null)
+                {
+                    soulSkillList = new Dictionary<int, SoulSkillDesc>();
+                }
+
+                const int templateSkillId = 8011;
+                if (!soulSkillList.TryGetValue(templateSkillId, out var templateSkill))
+                {
+                    templateSkill = new SoulSkillDesc();
+                    soulSkillList.Add(templateSkillId, templateSkill);
+                }
+                templateSkill.CastEnergy = 1;
+                templateSkill.Type = 0;
+                templateSkill.ReuseModle = 0;
+                templateSkill.ReuseSkillIcon = 0;
+                templateSkill.ReuseSkillVideo = 0;
+                templateSkill.UpgradeNextId = 0;
+                templateSkill.UpgradeDesc.Clear();
+
+                templateSkill.UpgradeCostMoney = 0;
+                templateSkill.CostItem.Clear();
+                templateSkill.BuffId = 0;
+                templateSkill.MappingRandomId = "";
+                templateSkill.AttrEffectId = 0;
+                templateSkill.EffectTalentId = 0;
+                templateSkill.EffectTalentDesc = "";
+                templateSkill.OverrideAbnormalDispIDAttacker = 0;
+                templateSkill.OverrideAbnormalDispIDAttacker = 0;
+
+
+                var processedCount = 0;
+                foreach (var skillConfig in soulSkillConfigs)
+                {
+                    try
+                    {
+                        var targetSkill = GetOrCreateSoulSkill(skillConfig, soulSkillList, templateSkill);
+
+                        CopyProperties(skillConfig, targetSkill);
+                        processedCount++;
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process soul skill config for ID {skillConfig.Id}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed soul skill configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplySoulSkill: {ex.Message}");
+                return 0;
+            }
+        }
+
+        private static SoulSkillDesc GetOrCreateSoulSkill(SoulSkillConfig config, Dictionary<int, SoulSkillDesc> soulSkillList, SoulSkillDesc templateSkill)
+        {
+            if (soulSkillList.TryGetValue(config.Id, out var existingSkill))
+            {
+                return existingSkill;
+            }
+
+            var newSkill = (SoulSkillDesc)templateSkill.Clone();
+            soulSkillList.Add(config.Id, newSkill);
+            return newSkill;
+        }
 
         public static List<AnimRuleBySweepCheck> allSweepCheckAnimRules;
         public static List<AnimRuleBySweepCheck> LoadAnimRulesBySweepCheck(string configDirectory = null)

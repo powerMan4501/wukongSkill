@@ -92,6 +92,7 @@ namespace bian
             if (field != null)
             {
                 List<UActorCompBaseCS> comps = field.GetValue(acc) as List<UActorCompBaseCS>;
+                if (comps == null) return null;
                 foreach (var comp in comps)
                 {
                     if (comp is T)
@@ -110,7 +111,9 @@ namespace bian
             if (magicChangeComp != null)
             {
                 FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
+                if (fieldData == null) return;
                 BUC_MagicallyChangeData data = fieldData?.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
+                if (data == null) return;
                 data.DurMagicallyChange = true;
                 data.bIsPendingCast = false;
                 data.bIsPendingReset = true;
@@ -118,7 +121,7 @@ namespace bian
                 data.CastReason = ECastReason_MagicallyChange.VigorSkill;
                 data.CurVigorSkillID = VigorSkillID;
                 data.MimicrySkillTimer = 0;
-
+                data.RecoverSkillID = 10199;
                 var soulSkillDesc = GameDBRuntime.GetSoulSkillDesc(VigorSkillID);
                 if (soulSkillDesc != null)
                 {
@@ -143,7 +146,7 @@ namespace bian
                         var config = BGW_PreloadAssetMgr.Get(magicChangeComp).TryGetCachedResourceObj<BGWDataAsset_MagicallyChangeConfig>(soulSkillDesc.DAPath, ELoadResourceType.SyncLoadAndCache);
                         data.PendingConfig = config;
                         MethodInfo reset = typeof(BUS_MagicallyChangeComp).GetMethod("Reset", BindingFlags.NonPublic | BindingFlags.Instance);
-                        reset.Invoke(magicChangeComp, new Object[] { data.ResetReason }); ;
+                        reset.Invoke(magicChangeComp, new Object[] { data.ResetReason });
                     }
                 }
             }
@@ -272,7 +275,6 @@ namespace bian
                 {
                     character.SetActorScale3D(new FVector((float)Scale3D));
                 }
-                Log.Info($"bian:{finalId} {soulSkillDesc.SkillIdReEnter} ");
                 BGUFunctionLibraryCS.CastMagicallyChangeSkill(character, config, (int)finalId, 10199);
                 // MyUtils.SetCamera();
 
@@ -283,19 +285,22 @@ namespace bian
 
             }
         }
-
-        public static void CastVigorSkillByModel(BGUPlayerCharacterCS character, string bossLabel, string type, int skillId)
+        public static BGWDataAsset_MagicallyChangeConfig? getMagicConfig(BGUPlayerCharacterCS character, string bossLabel, string type)
         {
-            // 检查缓存中是否已存在该配置
-            Log.Info($"bian:{bossLabel} ,type,{type} ,skillId,{skillId} ");
+
             if (!boss_vigorSkillConfigCache.TryGetValue(bossLabel, out var config))
             {
+                var magicChangeComp = GetCachedMagicChangeComp(character);
+                if (magicChangeComp == null)
+                {
+                    return null;
+                }
                 ModelManager modelManager = new ModelManager();
                 modelManager.InitConfig();  // 初始化配置
                 BossModel model = modelManager.FindModelByLabel(bossLabel, type) as BossModel;
                 if (model == null)
                 {
-                    return;
+                    return null;
                 }
                 UObject defaultObject = UClass.GetClass<BGWDataAsset_MagicallyChangeConfig>().GetDefaultObject();
                 BGWDataAsset_MagicallyChangeConfig val = (BGWDataAsset_MagicallyChangeConfig)(object)((defaultObject is BGWDataAsset_MagicallyChangeConfig) ? defaultObject : null);
@@ -304,9 +309,8 @@ namespace bian
                 var BossConf = model?.BossConf;
                 if (BossConf == null)
                 {
-                    return;
+                    return null;
                 }
-                var magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(character);
                 config = BGW_PreloadAssetMgr.Get(magicChangeComp).TryGetCachedResourceObj<BGWDataAsset_MagicallyChangeConfig>("BGWDataAsset_MagicallyChangeConfig'/Game/00MainHZ/Characters/Transform/VigorSkill/S2/MC_40_psd_hutoushe_01.MC_40_psd_hutoushe_01'", ELoadResourceType.SyncLoadAndCache);
                 config.ABPClass = LoadClass(BossConf.ABPClass);
                 config.SKMesh = UObject.LoadObject<USkeletalMesh>(GetWorld(), BossConf.SKMesh);
@@ -375,25 +379,39 @@ namespace bian
                 }
                 if (model.Level1Scale > 0 && model.Level1Scale != 1)
                 {
-                    var scale = model.Level1Scale;
+                    config.UnitScale = model.Level1Scale;
+                }
 
-                    if (character != null)
-                    {
-                        character.SetActorScale3D(new FVector(scale, scale, scale));
-                    }
-                }
-                if (model.XRate != 0 || model.ZRate != 0)
-                {
-                    character.FollowCamera.RelativeLocation = new FVector(model.XRate, 0, model.ZRate);
-                }
                 // 将新加载的配置加入缓存
                 boss_vigorSkillConfigCache[bossLabel] = config;
             }
 
+            return config;
+        }
+
+        public static void CastVigorSkillByModel(BGUPlayerCharacterCS character, string bossLabel, string type, int skillId)
+        {
+            // 检查缓存中是否已存在该配置
+            Log.Info($"bian:{bossLabel} ,type,{type} ,skillId,{skillId} ");
+            var magicChangeComp = GetCachedMagicChangeComp(character);
+            if (magicChangeComp == null)
+            {
+                return;
+            }
+            var config = getMagicConfig(character, bossLabel, type);
             if (config == null)
             {
                 return;
             }
+
+            FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
+            if (fieldData == null) return;
+            BUC_MagicallyChangeData data = fieldData.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
+            if (data == null) return;
+            data.ResetReason = EResetReason_MagicallyChange.Normal;
+            data.CastReason = ECastReason_MagicallyChange.NormalSkill;
+            data.DurMagicallyChange = true;
+            data.RecoverSkillID = 10199;
             isPlayVigorSkillByID = true;
             BGUFunctionLibraryCS.CastMagicallyChangeSkill((AActor)MyUtils.GetControlledPawn(), config, skillId, 10199);
             // MyUtils.SetCamera();
@@ -954,24 +972,19 @@ namespace bian
                 action();
             });
         }
+        public static List<ABGUCharacter> getMonsterByDistance(float MaxDistance = 6000)
+        {
+            var play = GetBGUPlayerCharacterCS();
+            UBGUSelectUtil.SphereOverlapBGUCharacters(play, BGUFuncLibActorTransformCS.BGUGetActorLocation(play), MaxDistance, out var OutArray);
+            return OutArray;
+        }
         public static void StrongMonster()
         {
-            // UObject @this = Helper.GetWorld();
-            // IBGC_TamerData gameStateReadonlyData = BGU_DataUtil.GetGameStateReadonlyData<IBGC_TamerData, BGC_TamerData>(@this);
-            // if (gameStateReadonlyData == null)
-            // {
-            //     return;
-            // }
-            // gameStateReadonlyData.GetSpawnedMonsterList(out var OutMonsterList);
-            AActor play = Helper.GetBGUPlayerCharacterCS();
-            // FVector actorLocation = play.GetActorLocation();
-            // actorLocation.X += 100;
-            // actorLocation.Y += 100;
+            AActor play = GetBGUPlayerCharacterCS();
             if (play == null || play.World == null) return;
-            List<BGUCharacterCS> allActorsOfClassList = play.World.GetAllActorsOfClassList<BGUCharacterCS>();
-            List<BGUProjectileBaseActor> projectList = play.World.GetAllActorsOfClassList<BGUProjectileBaseActor>();
+            List<ABGUCharacter> allActorsOfClassList = getMonsterByDistance(9000);
+
             if (allActorsOfClassList == null || allActorsOfClassList.Count == 0) return;
-            Log.Info($"allActorsOfClassList count: ${allActorsOfClassList.Count} projectList:{projectList?.Count}");
             foreach (BGUCharacterCS item in allActorsOfClassList)
             {
 

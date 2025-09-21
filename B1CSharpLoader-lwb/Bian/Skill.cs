@@ -36,6 +36,7 @@ namespace bian
         public List<float>? RelativeLocation { get; set; }
         public int? MagicSkillID { get; set; }
         public float? Scale3D { get; set; }
+        public string? bossLabel { get; set; }
 
         
         private string FName;

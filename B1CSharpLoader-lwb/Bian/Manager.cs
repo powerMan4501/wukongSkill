@@ -132,6 +132,7 @@ namespace bian
                 NotifyUtils.LoadSweepConfig();
                 // NotifyUtils.LoadNotifyData();
                 LoadUtils.ModifyHP();
+                // LoadUtils.ModifySoulskill();
 
                 LoadUtils.LoadAnimRulesBySweepCheck();
                 isBuffConfigsLoaded = true;
@@ -460,10 +461,8 @@ namespace bian
                 // OnScaleWeapon(1);
             }
 
-            if (matchedRule?.MoveOffset != null)
-            {
-                NotifyUtils.handleNotify(Montage, (float)matchedRule?.MoveOffset);
-            }
+            Hooks.handleNotify(Montage, 0);
+
 
 
 
@@ -647,7 +646,8 @@ namespace bian
                         var weaponComponent = uStaticMeshComponent as USkeletalMeshComponent;
                         if (weaponComponent != null)
                         {
-                            weaponComponent.SetRelativeScale3D(new FVector(num, 1.2, 1));
+
+                            weaponComponent.SetRelativeScale3D(new FVector(num, 1.1, 1));
                         }
 
                     }
@@ -861,9 +861,7 @@ namespace bian
         private static void CastMagicSkill(BGUCharacterCS character, ComboConfig combo, string type)
         {
 
-            Helper.DelayExecute(10, () =>
-            {
-                Utils.TryRunOnGameThread((Action)delegate
+            Utils.TryRunOnGameThread((Action)delegate
                 {
                     if (type == "magic")
                     {
@@ -875,7 +873,6 @@ namespace bian
                         Helper.CastVigorSkillByModel((BGUPlayerCharacterCS)character, combo.bossLabel, combo.type ?? "", combo?.MagicSkillID ?? 0);
                     }
                 });
-            });
         }
 
 
@@ -905,9 +902,6 @@ namespace bian
 
             UAnimInstance animInstance = character.Mesh.GetAnimInstance();
             var currMontage = animInstance?.GetCurrentActiveMontage();
-
-
-
             var currentPosition = animInstance?.Montage_GetPosition(currMontage);
             GetCharacterStance(character, out bool isChuogun, out bool isLigun, out bool isPigun);
             var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;

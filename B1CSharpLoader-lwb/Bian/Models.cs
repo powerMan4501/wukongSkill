@@ -454,7 +454,7 @@ namespace bian
                     }
                     Utils.RegisterGamePadBind(keyFlag, () =>
                     {
-                        
+
                         TriggerSkill(realKey);
                     });
                     if (realKey != key)
@@ -626,7 +626,8 @@ namespace bian
         public bool CastSkill(BGUPlayerCharacterCS character, Skill skill, EMontageBindReason Source, bool Force, int Rate = 0, int[] Buffers = null, float playTimeRate = 1)
         {
 
-            if (skill?.type?.ToLower() == "magic" & skill?.Id != null)
+            var skillType = skill?.type?.ToLower();
+            if (skillType == "magic" & skill?.Id != null)
             {
                 // BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(10100, ECastSkillSourceType.GM));
                 Task.Run(async delegate
@@ -678,6 +679,11 @@ namespace bian
                         Log.Error($"bian: cast skill error {e}");
                     }
                 });
+                return true;
+            }
+            else if (skillType == "boss" && skill?.bossLabel != null)
+            {
+                Helper.CastVigorSkillByModel(character, skill.bossLabel, skill.type ?? "", skill?.MagicSkillID ?? 0);
                 return true;
             }
             else
