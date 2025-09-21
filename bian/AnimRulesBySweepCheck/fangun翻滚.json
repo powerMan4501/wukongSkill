@@ -44,7 +44,7 @@
     "desc": "棍花 ",
     "montage": "AM_Wukong_ComboC_z_loop",
     "linkValue": 0.2993329,
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -101,7 +101,7 @@
         "desc": "棍光特效粒子"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "TimeDelay": 0,
@@ -175,7 +175,7 @@
         "desc": "霸体"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [

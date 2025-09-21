@@ -12,7 +12,7 @@
         "desc": "棍光特效粒子,接招buff"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -63,7 +63,7 @@
         "desc": "棍光特效粒子,接招buff"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -117,7 +117,7 @@
         "desc": "棍光特效粒子"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -180,7 +180,7 @@
         "desc": "棍光特效粒子"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -242,7 +242,7 @@
         "desc": "识破buff，接招buff，棍光粒子"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -278,7 +278,7 @@
     "desc": "2a切手，横扫一下捅一下，捅出去的那一下",
     "montage": "AM_Dasheng_ComboA_02_Z_1",
     "linkValue": 1.2333333,
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -312,7 +312,7 @@
         "desc": "棍光特效粒子"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -395,7 +395,7 @@
         "desc": "小黄龙雷电"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -474,7 +474,7 @@
     "desc": "戳棍1a切手,搅阵",
     "montage": "wukong_combob_z_01_loop",
     "linkValue": 0.3,
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -557,7 +557,7 @@
         "desc": "棍光特效粒子"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -617,7 +617,7 @@
         "desc": "棍光特效粒子"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -662,7 +662,7 @@
         "desc": "小黄龙雷电"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [

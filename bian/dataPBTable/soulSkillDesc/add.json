@@ -1,0 +1,75 @@
+[
+  {
+    "Id": 8880,
+    "SkillName": "化身夜叉王，扔刀踩地，冒出地刺攻击大范围敌人",
+    "UserResId": 10,
+    "DAPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_honghaier_02a.TAMER_hys_honghaier_02a_C",
+    "CastEnergy": 1,
+    "SkillId": 440555,
+    "SkillIdWhenLeave": 10100,
+    "SkillIdReEnter": 10199,
+    "BuffId": 0,
+    "ReEnterWaitTime": 1.6,
+    "LeaveFXPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/Transform/Vigorskill/DBC_vigorskill_common.DBC_vigorskill_common'",
+    "ReEnterFadeOutFXPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/Niagara/Huashen/DBC/DBC_Wukong_HS_MS_Out.DBC_Wukong_HS_MS_Out'",
+    "DelayTimeWithoutLeave": 0.0,
+    "CameraPreview": "CPS_RZD_S",
+    "Type": 0,
+    "MimicryMaxTime": 0.0,
+    "ReuseModle": 0,
+    "ReuseSkillIcon": 0,
+    "ReuseSkillVideo": 0,
+    "UpgradeNextId": 0,
+    "UpgradeDesc": [],
+    "UpgradeCostMoney": 0,
+    "CostItem": [],
+    "LocalizationTag": 1,
+    "ReplaceDropId": 1012,
+    "LevelId": 10,
+    "MappingRandomId": "",
+    "AttrEffectId": 0,
+    "EffectTalentId": 0,
+    "EffectTalentDesc": "",
+    "OverrideAbnormalDispIDAttacker": 0,
+    "OverrideAbnormalDispIDVictim": 100,
+    "BossConf": {
+      "CapsuleHalfHeight": 240.0,
+      "CapsuleRadius": 60.0,
+      "SKMesh": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_HongHaiEr_02A/Mesh/SK_HYS_HongHaiEr_02A.SK_HYS_HongHaiEr_02A",
+      "ABPClass": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_HongHaiEr_02A/ABP_HYS_HongHaiEr_02A.ABP_HYS_HongHaiEr_02A_C",
+      "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_HongHaiEr_02A/Mesh/PA_HYS_HongHaiEr_02A.PA_HYS_HongHaiEr_02A",
+      "Weapons": null,
+      "TFXConfigs": [
+        {
+          "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_HongHaiEr_02A/Hair/Hair_per20_back_strands.Hair_per20_back_strands_TFX",
+          "EnableSimulation": true,
+          "LodScreenSize": 2.5,
+          "ShadeSettings": {
+            "FiberRadius": 0.01,
+            "FiberSpacing": 0.1,
+            "HairThickness": 0.2,
+            "RootTangentBlending": 0.0,
+            "ShadowThickness": 0.05
+          },
+          "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_HongHaiEr_02A/Materials/M_hys_honghaier_02a_hair_hair.M_hys_honghaier_02a_hair_hair"
+        },
+        {
+          "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_HongHaiEr_02A/Hair/Hair_per20_front.Hair_per20_front_TFX",
+          "EnableSimulation": true,
+          "LodScreenSize": 2.5,
+          "ShadeSettings": {
+            "FiberRadius": 0.01,
+            "FiberSpacing": 0.1,
+            "HairThickness": 0.2,
+            "RootTangentBlending": 0.0,
+            "ShadowThickness": 0.05
+          },
+          "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_HongHaiEr_02A/Materials/M_hys_honghaier_02a_hair_hair.M_hys_honghaier_02a_hair_hair"
+        }
+      ],
+      "InteractBones": null,
+      "Override_AbnormalDispID_Attacker": 0,
+      "Override_AbnormalDispID_Victim": 100
+    }
+  }
+]

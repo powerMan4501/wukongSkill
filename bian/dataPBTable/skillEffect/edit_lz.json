@@ -30,16 +30,6 @@
       "ConditionParams": ""
     }
   },
-
-  {
-    "desc": "10714，进尺去掉条件和效果",
-    "ID": 1099915,
-    "EffectActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    },
-    "EffectType": 17
-  },
   {
     "desc": "飞龙棍子弹效果，去掉条件和效果",
     "ID": 1099939,

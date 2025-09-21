@@ -12,7 +12,7 @@
         "desc": "棍光特效粒子"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -71,7 +71,7 @@
         "desc": "棍光特效粒子"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [

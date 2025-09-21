@@ -237,9 +237,10 @@
     },
 
     {
-      "Id": 10519,
-      "Name": "完美定身",
-      "Buffs": [1000288, 1000804, 202],
+      "MagicSkillID": 440515,
+      "type": "BOSS",
+      "bossLabel": "SK_HYS_HongHaiEr_02A",
+      "Name": "测试夜叉王地刺",
       "Key": "NUMPAD8",
       "CanBreak": true
     },

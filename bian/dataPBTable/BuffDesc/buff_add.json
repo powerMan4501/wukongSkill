@@ -138,44 +138,15 @@
     "ID": 888666009,
     "Duration": -1,
     "Interval": 150,
-    "BuffTips": "棍花buff，添加 888666010",
-    "BuffEffects": [
-      {
-        "EffectTrigger": 2,
-        "EffectType": 46,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [888666010],
-        "EffectParamsFloat": [0]
-      }
-    ]
-  },
-  {
-    "ID": 888666010,
-    "Duration": 150,
-    "BuffTips": "棍花buff，触发子弹用的"
+    "BuffTips": "棍花buff"
   },
   {
     "ID": 888666011,
     "Duration": -1,
     "Interval": 150,
-    "BuffTips": "搅阵buff，添加 888666012",
-    "BuffEffects": [
-      {
-        "EffectTrigger": 2,
-        "EffectType": 46,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [888666012],
-        "EffectParamsFloat": [0]
-      }
-    ]
+    "BuffTips": "搅阵buff"
   },
-  {
-    "ID": 888666012,
-    "Duration": 150,
-    "BuffTips": "搅阵buff，触发子弹用的"
-  },
+  
 
   {
     "ID": 888666013,
@@ -203,23 +174,9 @@
     "ID": 888666015,
     "Duration": -1,
     "Interval": 150,
-    "BuffTips": "风云转buff，添加 888666016",
-    "BuffEffects": [
-      {
-        "EffectTrigger": 2,
-        "EffectType": 46,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [888666016],
-        "EffectParamsFloat": [0]
-      }
-    ]
+    "BuffTips": "风云转buff，添加"
   },
-  {
-    "ID": 888666016,
-    "Duration": 150,
-    "BuffTips": "风云转buff，触发子弹用的"
-  },
+ 
   {
     "ID": 888660170,
     "Duration": -1,

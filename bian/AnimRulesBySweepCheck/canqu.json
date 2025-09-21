@@ -13,7 +13,7 @@
         "desc": "棍光特效粒子"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -62,7 +62,7 @@
         "desc": "棍光特效粒子"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -117,7 +117,7 @@
         "desc": "小黄龙雷电"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -180,7 +180,7 @@
         "BuffID": 20104
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -208,7 +208,7 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [49981301, 888555011],
+            "ProjectTileIDs": [49981301, 22030101],
             "noHasAnyBuff": [888666005, 888666006, 888666007],
             "spawnBaseSocketName": "weapon_r_index_07",
             "desc": "没有雷火冰buff，毒液池"
@@ -232,7 +232,7 @@
         "desc": "棍光特效粒子"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -260,7 +260,7 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [49981301, 888555011],
+            "ProjectTileIDs": [49981301, 22030101],
             "noHasAnyBuff": [888666005, 888666006, 888666007],
             "spawnBaseSocketName": "weapon_r_index_07",
             "desc": "没有雷火冰buff，毒液池"

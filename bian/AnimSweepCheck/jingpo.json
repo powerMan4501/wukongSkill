@@ -13,7 +13,8 @@
     "anim": "AM_GYCY_YanJianXi_01b_Atk_Fast_26",
     "addRadius": 2000,
     "desc": "大头地爆一次"
-  },{
+  },
+  {
     "anim": "AM_GYCY_YanJianXi_01_Atk_Fast_37",
     "addRadius": 500,
     "desc": "大头狂奔前进地爆2次"
@@ -43,6 +44,10 @@
   },
   {
     "anim": "NiaoZui",
+    "addRadius": 500
+  },
+  {
+    "anim": "AM_HYS_HongHaiEr_02A_Atk_09_C",
     "addRadius": 500
   }
 ]

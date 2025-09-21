@@ -5,7 +5,7 @@
     "linkValue": 0.7,
     "addRadius": 1500,
     "speedRate": 1.3,
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
@@ -22,7 +22,7 @@
     "linkValue": 0.9231205,
     "addRadius": 1500,
     "speedRate": 1.4,
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
@@ -40,7 +40,7 @@
     "linkValue": 1.866667,
     "addRadius": 1500,
     "speedRate": 1.8,
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
@@ -55,7 +55,7 @@
     "desc": "蝎子二连横扫，毒液池",
     "montage": "AM_psd_xiezijing_og_atk_10.AM_psd_xiezijing_og_atk_10",
     "linkValue": 0,
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
@@ -69,7 +69,7 @@
     "desc": "蝎子尾后针，毒液池",
     "montage": "AM_40_psd_xiezijing_01a_atk_02",
     "linkValue": 0.9,
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",

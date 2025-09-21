@@ -11,7 +11,7 @@
         "desc": "棍光特效粒子"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -58,7 +58,7 @@
         "desc": "有火buff，红孩儿火焰"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -147,7 +147,7 @@
         "BuffID": 20103
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [

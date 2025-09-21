@@ -2,7 +2,7 @@
   {
     "montage": "AM_mgd_yangjian_01_atk09",
     "linkValue": 0,
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [

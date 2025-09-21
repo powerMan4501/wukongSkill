@@ -12,7 +12,7 @@
         "desc": "棍光特效粒子"
       }
     ],
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -58,7 +58,7 @@
   {
     "montage": "AM_Wukong_ComboA_q4.AM_Wukong_ComboA_q4",
     "linkValue": 0,
-    "AfterActions": [
+    "SweepActions": [
       {
         "Type": "bullet",
         "TimeDelay": 200,
