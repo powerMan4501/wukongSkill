@@ -73,23 +73,7 @@ public class Hooks
 
 
 
-    // [HarmonyPatch]
-    // public class HookMagicallyChange
-    // {
-    //     private static MethodBase TargetMethod()
-    //     {
-    //         return AccessTools.Method("b1.BUS_MagicallyChangeComp:OnPlayMontageCallback", (Type[])null, (Type[])null);
-    //     }
 
-    //     [HarmonyPatch]
-    //     private static void Prefix(EMontageBindReason Reason, UAnimMontage Montage, EMontageCallbackState State)
-    //     {
-    //         if (Helper.isPlayVigorSkillByID && State != EMontageCallbackState.Default && State != EMontageCallbackState.OnStarted)
-    //         {
-    //             Helper.updateIsPlayVigorSkillByID(false);
-    //         }
-    //     }
-    // }
 
 
 
@@ -311,4 +295,5 @@ public class Hooks
             return;
         }
     }
+
 }
