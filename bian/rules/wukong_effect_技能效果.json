@@ -98,6 +98,10 @@
         {
           "Type": "effect",
           "EffectID": 1099503
+        },
+        {
+          "Type": "effect",
+          "EffectID": 30210401
         }
       ],
       "AfterActions": [
@@ -535,7 +539,6 @@
           "Type": "effect",
           "EffectID": 1017801
         }
-        
       ],
       "AfterActions": [
         {
@@ -595,6 +598,60 @@
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
               "ProjectTileIDs": [34016004],
               "desc": "落雷"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "Name": "杨戬 次元斩",
+      "Description": "黄符",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 80001901
+        },
+
+        {
+          "Type": "effect",
+          "EffectID": 80009802
+        },
+
+        {
+          "Type": "effect",
+          "EffectID": 80001902
+        },
+
+        {
+          "Type": "effect",
+          "EffectID": 80009817
+        },
+
+        {
+          "Type": "effect",
+          "EffectID": 80009813
+        },
+
+        {
+          "Type": "effect",
+          "EffectID": 80001904
+        },
+
+        {
+          "Type": "effect",
+          "EffectID": 80009803
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [88880005],
+              "desc": "黄符"
             }
           ]
         }

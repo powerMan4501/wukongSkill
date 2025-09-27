@@ -40,5 +40,19 @@
         "desc": "夜叉王地刺"
       }
     ]
+  },
+  {
+    "desc": "夜叉王横扫",
+    "montage": "AM_HYS_HongHaiEr_02A_Atk_06_dalei",
+    "linkValue": 0,
+    "speedRate": 1.2,
+    "bulletsActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [44051005, 44051006, 44051007],
+        "desc": "夜叉王地刺"
+      }
+    ]
   }
 ]

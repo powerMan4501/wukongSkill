@@ -110,11 +110,12 @@
     "nowMontage": "AM_Dasheng_ComboA_04.AM_Dasheng_ComboA_04",
     "rate": 0.3,
     "type": "magic",
-    "skillID": 8599,
+    "skillID": 8527,
+    "MagicSkillID": 10127,
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "立棍平A4 石蛙"
+    "desc": "立棍平A4 虫总兵"
   },
 
   {
@@ -132,23 +133,23 @@
     "nowMontage": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05",
     "rate": 0.9,
     "type": "magic",
-    "skillID": 8513,
-    "MagicSkillID": 11313,
+    "skillID": 8526,
+    "MagicSkillID": 300505,
     "Condition": "StanceHeavy",
     "conditionValue": 0,
     "InputCore": "ThumbMouseButton2",
-    "desc": "劈棍平A5，接大头磕头"
+    "desc": "劈棍平A5，接不能以武入禅：慢速打一拳+排云掌：AM_LYS_TuiSeng_02_Atk_Fast_05a"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_05",
     "rate": 0.3,
     "type": "BOSS",
     "bossLabel": "SK_HYS_HongHaiEr_02A",
-    "MagicSkillID": 440555,
+    "MagicSkillID": 440515,
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "立棍平A5接夜叉王，扔刀踩地刺"
+    "desc": "立棍平A5接夜叉王，瞬发地刺"
   },
   {
     "nowMontage": "AM_mgd_jsds_atk_02_02_short",
@@ -175,11 +176,10 @@
     "nowMontage": "AM_Wukong_ComboA_z_01.AM_Wukong_ComboA_z_01",
     "rate": 0.95,
     "type": "magic",
-    "skillID": 8534,
+    "skillID": 8513,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666022,
-    "desc": "马喽破棍10705接：盾"
+    "desc": "马喽破棍10705接：大头磕头"
   },
 
   {
@@ -208,42 +208,39 @@
     "nowMontage": "AM_Dasheng_ComboA_03_Z_2",
     "rate": 1.9,
     "type": "magic",
-    "skillID": 8527,
-    "backTime": 1100,
-    "MagicSkillID": 10127,
+    "skillID": 8437,
+    "MagicSkillID": 201211,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "如果当前使用的技能是大圣江海翻，虫总兵"
+    "desc": "如果当前使用的技能是大圣江海翻，石先锋"
   },
   {
     "nowMontage": "AM_mgd_jsds_atk_02_01_02",
     "rate": 1.9,
     "type": "magic",
-    "skillID": 8527,
-    "backTime": 1100,
-    "MagicSkillID": 10127,
+    "skillID": 8437,
+    "MagicSkillID": 201211,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "如果当前使用的技能是残躯江海翻，虫总兵"
+    "desc": "如果当前使用的技能是残躯江海翻，石先锋"
   },
 
   {
     "nowMontage": "AM_wukong_comboc_z_02",
     "rate": 2,
     "type": "magic",
-    "skillID": 8527,
-    "backTime": 1100,
-    "MagicSkillID": 10127,
+     "skillID": 8437,
+    "MagicSkillID": 201211,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "如果当前使用的技能是江海翻，虫总兵"
+    "desc": "如果当前使用的技能是江海翻，石先锋"
   },
   {
     "nowMontage": "AM_wukong_combob_z_02.AM_wukong_combob_z_02",
-    "rate": 0.5,
+    "rate": 0.7,
     "type": "magic",
     "skillID": 8130,
     "backTime": 1500,
@@ -302,18 +299,7 @@
     "conditionValue": 888666023,
     "desc": "接隼居士 螺旋前冲"
   },
-  {
-    "nowMontage": "AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2",
-    "rate": 1,
-    "type": "magic",
-    "skillID": 8471,
-    "backTime": 5000,
-    "MagicSkillID": 303003,
-    "Condition": "any",
-    "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
-    "desc": "接转身定：接接隼居士飞起冰5下"
-  },
+  
 
   {
     "nowMontage": "AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1",
@@ -337,7 +323,7 @@
   },
   {
     "nowMontage": "AM_dasheng_atk_04a",
-    "rate": 0.4,
+    "rate": 0.8,
     "type": "BOSS",
     "bossLabel": "SK_HYS_HongHaiEr_02A",
     "MagicSkillID": 440515,
@@ -348,7 +334,7 @@
 
   {
     "nowMontage": "AM_Wukong_Dodge",
-    "rate": 0.4,
+    "rate": 0.5,
     "type": "BOSS",
     "bossLabel": "SK_HFM_Hu_Stone_01",
     "MagicSkillID": 202202,
@@ -359,7 +345,7 @@
 
   {
     "nowMontage": "AM_Wukong_Dodge",
-    "rate": 0.4,
+    "rate": 0.5,
     "type": "BOSS",
     "bossLabel": "SK_HFM_Hu_Stone_01",
     "MagicSkillID": 202203,
@@ -369,7 +355,7 @@
   },
   {
     "nowMontage": "AM_Wukong_Dodge",
-    "rate": 0.4,
+    "rate": 0.5,
     "type": "BOSS",
     "bossLabel": "SK_HFM_Hu_Stone_01",
     "MagicSkillID": 202220,

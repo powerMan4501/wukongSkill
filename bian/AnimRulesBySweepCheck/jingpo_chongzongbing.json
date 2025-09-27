@@ -1,0 +1,22 @@
+[
+  {
+    "desc": "大头精魄磕头",
+    "montage": "AM_40_psd_jiachongzongbing_02_atk_10",
+    "linkValue": 0,
+    "addRadius": 2500,
+    "AMScaleRate": 100,
+    "speedRate": 1.1,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [30050301],
+            "desc": "金沙波动"
+          }
+        ]
+      }
+    ]
+  }
+]

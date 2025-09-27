@@ -23,10 +23,12 @@
     "SweepActions": [
       {
         "Type": "bullet",
-        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
-        "ProjectTileID": 51002002,
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+        "ProjectTileID": 1016261,
         "ForTarget": true,
-        "desc": "给目标上猪八戒"
+        "SpeedLeftValue": 16000,
+        "SpeedRightValue": 16000,
+        "desc": "向目标发射巴山虎"
       }
     ]
   },

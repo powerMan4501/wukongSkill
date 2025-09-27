@@ -77,14 +77,7 @@
     "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
   },
 
-  {
-    "desc": "200%+200点伤害,0段蓄力",
-    "ID": 888555022,
-    "EffectType": 1,
-    "EffectParamsInt": [31, 21, 1, 0, 0, 0, 0],
-    "EffectParamsFloat": [0.0, 200.0, 20000.0, 0.0, 0.0, 0.0, 200],
-    "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
-  },
+
 
   {
     "desc": "300%+300点伤害,0段蓄力",
@@ -109,7 +102,7 @@
     "EffectType": 1,
     "EffectParamsInt": [40, 25, 1, 0, 0, 0, 0],
     "EffectParamsFloat": [0.0, 200.0, 20000.0, 0.0, 0.0, 0.0, 200],
-    "EffectParamsStr": ["【主角】蓄力1"]
+    "EffectParamsStr": ["【主角】蓄力2"]
   },
 
 

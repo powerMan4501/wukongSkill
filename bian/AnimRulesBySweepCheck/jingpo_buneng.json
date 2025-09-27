@@ -1,0 +1,126 @@
+[
+  {
+    "desc": "不能，Q4砸地",
+    "montage": "AM_30_lys_tuiseng_02_comboAq5_atk_03",
+    "linkValue": 1.4,
+    "addRadius": 1500,
+    "speedRate": 1.3,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471,30050301],
+            "hasBuff": 888666006,
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "desc": "有冰buff，冰暴波动"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011198, 30050301],
+            "noHasAnyBuff": [888666006],
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "desc": "没有冰buff，金沙和波动"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "不能，以武入禅",
+    "montage": "AM_LYS_TuiSeng_02_Atk_Fast_05a",
+    "linkValue": 0,
+    "addRadius": 1500,
+    "speedRate": 1.3,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471],
+            "hasBuff": 888666006,
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "desc": "有冰buff，冰暴"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 1016201,
+            "ForTarget": true,
+            "noHasAnyBuff": [888666006],
+            "SpeedLeftValue": 16000,
+            "SpeedRightValue": 16000,
+            "desc": "没有冰buff，发射巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "desc": "不能，连续排云掌",
+    "montage": "AM_LYS_TuiSeng_02_Atk_Fast_06a",
+    "linkValue": 0,
+    "addRadius": 1500,
+    "speedRate": 1.3,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471],
+            "hasBuff": 888666006,
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "desc": "有冰buff，冰暴"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 1016201,
+            "ForTarget": true,
+            "noHasAnyBuff": [888666006],
+            "SpeedLeftValue": 16000,
+            "SpeedRightValue": 16000,
+            "desc": "没有冰buff，发射巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "不能，摆架势之后打出排云掌和扫堂腿",
+    "montage": "AM_LYS_TuiSeng_02_Atk_Fast_08",
+    "linkValue": 0,
+    "addRadius": 1500,
+    "speedRate": 1.4,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471],
+            "hasBuff": 888666006,
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "desc": "有冰buff，冰暴"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 1016201,
+            "ForTarget": true,
+            "noHasAnyBuff": [888666006],
+            "SpeedLeftValue": 16000,
+            "SpeedRightValue": 16000,
+            "desc": "没有冰buff，发射巴山虎"
+          }
+        ]
+      }
+    ]
+  }
+]

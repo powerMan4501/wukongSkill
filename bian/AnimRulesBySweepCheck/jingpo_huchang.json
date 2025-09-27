@@ -1,0 +1,24 @@
+[
+  {
+    "desc": "虎伥，精魄",
+    "montage": "AM_20_hfm_shawuliang_01_atk_08_Lv6",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.3,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 1016201,
+            "ForTarget": true,
+            "SpeedLeftValue": 16000,
+            "SpeedRightValue": 16000,
+            "desc": "发射巴山虎"
+          }
+        ]
+      }
+    ]
+  }
+]

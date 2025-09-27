@@ -1,0 +1,33 @@
+[
+  {
+    "desc": "石先锋，疯狂捶地",
+    "montage": "AM_HFM_ShiXianFeng_atk_11_SummonVer",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.2,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 30050301],
+            "noHasBuff": 888666007,
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "没有火buff，金沙波动"
+          },
+
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40550101, 74010207],
+            "hasBuff": 888666007,
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "有火buff，鳖宝子弹和火圈"
+          }
+        ]
+      }
+    ]
+  }
+]

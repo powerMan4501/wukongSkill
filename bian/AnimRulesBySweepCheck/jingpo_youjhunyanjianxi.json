@@ -1,0 +1,147 @@
+[
+  {
+    "desc": "大头精魄磕头",
+    "montage": "AM_10_gycy_yanjianxi_atk_24_",
+    "linkValue": 0.7,
+    "addRadius": 1500,
+    "AMScaleRate": 100,
+    "speedRate": 1.3,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 30050301],
+            "noHasBuff": 888666007,
+            "OffsetX": 400,
+            "OffsetY": 400,
+            "desc": "没有火buff，金沙波动"
+          },
+
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 74010207],
+            "hasBuff": 888666007,
+            "OffsetX": 400,
+            "OffsetY": 400,
+            "desc": "有火buff，金沙，火圈"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "大头，一次地爆",
+    "montage": "AM_GYCY_YanJianXi_01b_Atk_Fast_26",
+    "linkValue": 0,
+    "addRadius": 1500,
+    "speedRate": 1.2,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 30050301],
+            "noHasBuff": 888666007,
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "没有火buff，金沙波动"
+          },
+
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40550101, 74010207],
+            "hasBuff": 888666007,
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "有火buff，鳖宝子弹和火圈"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "大头，连续地爆",
+    "montage": "AM_GYCY_YanJianXi_01_Atk_Fast_32",
+    "linkValue": 0,
+    "addRadius": 1500,
+    "speedRate": 1.3,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [30050301],
+            "noHasBuff": 888666007,
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "没有火buff，波动"
+          },
+
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74010207],
+            "hasBuff": 888666007,
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "有火buff，火圈"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "desc": "大头狂奔前进地爆",
+    "montage": "AM_GYCY_YanJianXi_01_Atk_Fast_37",
+    "linkValue": 0.9231205,
+    "addRadius": 1500,
+    "speedRate": 1.4,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [30050301],
+            "noHasBuff": 888666007,
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "没有火buff，波动"
+          },
+
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74010207],
+            "hasBuff": 888666007,
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "有火buff，火圈"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "desc": "大头，如来神掌",
+    "montage": "AM_GYCY_YanJianXi_01_Atk_Fast_33",
+    "linkValue": 1.866667,
+    "addRadius": 2500,
+    "speedRate": 1.8,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+        "ProjectTileID": 1016261,
+        "ForTarget": true,
+        "SpeedLeftValue": 16000,
+        "SpeedRightValue": 16000,
+        "desc": "向目标发射巴山虎"
+      }
+    ]
+  }
+]

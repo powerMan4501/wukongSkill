@@ -20,11 +20,7 @@
     "desc": "大头狂奔前进地爆2次"
   },
 
-  {
-    "anim": "AM_40_psd_jiachongzongbing_02_atk_10",
-    "addRadius": 1500,
-    "desc": "虫总兵"
-  },
+
   {
     "anim": "AM_psd_xiezijing_og_atk_10.AM_psd_xiezijing_og_atk_10",
     "addRadius": 800,

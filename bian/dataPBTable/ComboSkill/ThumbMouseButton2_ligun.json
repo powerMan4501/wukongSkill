@@ -1,0 +1,56 @@
+[
+  {
+    "nowMontage": "AM_Wukong_Xuli_C_attack_4",
+    "rate": 0.4,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_yangjian_01",
+    "MagicSkillID": 800084,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "立棍4，万剑归宗大招"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_Xuli_C_attack_3",
+    "rate": 0.4,
+    "type": "magic",
+    "skillID": 8322,
+    "MagicSkillID": 302104,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "立棍3，无量蝠，释放大量兵刃"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_Xuli_C_attack_2",
+    "rate": 0.4,
+    "type": "BOSS",
+    "bossLabel": "SK_szlc_tanglang01",
+    "MagicSkillID": 471326,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "立棍2，飞到空中释放刀气"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_Xuli_C_attack_1",
+    "rate": 0.4,
+    "type": "BOSS",
+    "bossLabel": "SK_szlc_tanglang01",
+    "MagicSkillID": 471325,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "立棍1，远程技能，后退一步飞到空中释放刀"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_Xuli_C_attack_0",
+    "rate": 0.4,
+    "type": "BOSS",
+    "bossLabel": "SK_szlc_tanglang01",
+    "MagicSkillID": 471329,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "立棍0，远程技能，后退一步飞到空中释放刀气"
+  }
+]

@@ -1,0 +1,88 @@
+[
+  {
+    "desc": "蝎子二连横扫，毒液池",
+    "montage": "AM_psd_xiezijing_og_atk_10.AM_psd_xiezijing_og_atk_10",
+    "linkValue": 0,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [49981301, 1016202],
+        "OffsetX": 400,
+        "OffsetY": 400
+      }
+    ]
+  },
+  {
+    "desc": "蝎子尾后针，毒液池",
+    "montage": "AM_40_psd_xiezijing_01a_atk_02",
+    "linkValue": 0.9,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [49981301, 1016202],
+        "OffsetX": 400,
+        "OffsetY": 400
+      }
+    ]
+  },
+  {
+    "desc": "蝎子尾后针，退后+突进攻击",
+    "montage": "AM_psd_xiezijing_og_atk_31",
+    "linkValue": 0,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [49981301, 1016202],
+        "OffsetX": 400,
+        "OffsetY": 400
+      }
+    ]
+  },
+  {
+    "desc": "蝎子打打打",
+    "montage": "AM_psd_xiezijing_og_atk_15",
+    "linkValue": 0,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [49981301, 1016202],
+        "OffsetX": 400,
+        "OffsetY": 400
+      }
+    ]
+  },
+  {
+    "desc": "蝎子托马斯",
+    "montage": "AM_psd_xiezijing_og_atk_11",
+    "linkValue": 0,
+    "speedRate": 1.2,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [49981301],
+        "OffsetX": 600,
+        "OffsetY": 600
+      }
+    ]
+  },
+
+  {
+    "desc": "蝎子，刺地爆毒",
+    "montage": "AM_psd_xiezijing_og_atk_13",
+    "linkValue": 0,
+    "speedRate": 1.2,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [22030101, 30050301],
+        "desc": "石双双毒气，波动"
+      }
+    ]
+  }
+]

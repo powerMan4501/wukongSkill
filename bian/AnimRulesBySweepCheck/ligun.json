@@ -140,7 +140,7 @@
     "montage": "AM_wukong_comboa_q1_dingshen",
     "linkValue": 0.4666667,
     "speedRate": 1.4,
-    "scaleWeaponNum": 4,
+    "scaleWeaponNum": 3,
     "CastActions": [
       {
         "Type": "removeBuff",

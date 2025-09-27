@@ -1,66 +1,110 @@
 [
   {
+    "OriginalId": 10811,
+    "MappedId": 10860,
+    "Condition": "disTance",
+    "conditionValue": 10,
+    "desc": "立棍 0蓄start，有目标时，转成0蓄攻击"
+  },
+  {
+    "OriginalId": 10812,
+    "MappedId": 10861,
+    "Condition": "disTance",
+    "conditionValue": 10,
+    "desc": "立棍 1蓄start，有目标时，转成0蓄攻击"
+  },
+  {
+    "OriginalId": 10813,
+    "MappedId": 10862,
+    "Condition": "disTance",
+    "conditionValue": 10,
+    "desc": "立棍 2蓄start，有目标时，转成0蓄攻击"
+  },
+  {
     "OriginalId": 10814,
     "MappedId": 10863,
     "Condition": "any",
     "conditionValue": null,
-    "desc": "3/4蓄start，转成3/4蓄攻击"
+    "desc": "立棍 3/4蓄start，转成3/4蓄攻击"
   },
   {
     "OriginalId": 10815,
     "MappedId": 10864,
     "Condition": "any",
     "conditionValue": null,
-    "desc": "3/4蓄start，转成3/4蓄攻击"
+    "desc": "立棍 3/4蓄start，转成3/4蓄攻击"
+  },
+
+  {
+    "OriginalId": 10835,
+    "MappedId": 10830,
+    "Condition": "disTance",
+    "conditionValue": 10,
+    "desc": "劈棍0蓄start，有目标时，转成0蓄攻击"
+  },
+
+  {
+    "OriginalId": 10836,
+    "MappedId": 10831,
+    "Condition": "disTance",
+    "conditionValue": 10,
+    "desc": "劈棍1蓄start，有目标时，转成1蓄攻击"
+  },
+  {
+    "OriginalId": 10837,
+    "MappedId": 50022,
+    "Condition": "disTance",
+    "conditionValue": 10,
+    "desc": "劈棍2蓄start，有目标时，转成2蓄攻击"
   },
   {
     "OriginalId": 10838,
     "MappedId": 50023,
     "Condition": "any",
     "conditionValue": null,
-    "desc": "3/4蓄start，转成3/4蓄攻击"
+    "desc": "劈棍 3/4蓄start，转成3/4蓄攻击"
   },
   {
     "OriginalId": 10839,
     "MappedId": 50024,
     "Condition": "any",
     "conditionValue": null,
-    "desc": "3/4蓄start，转成3/4蓄攻击"
+    "desc": "劈棍3/4蓄start，转成3/4蓄攻击"
   },
   {
     "OriginalId": 10870,
     "MappedId": 10886,
     "Condition": "disTance",
     "conditionValue": 10,
-    "desc": "0蓄戳棍start，转成0蓄攻击"
+    "desc": "戳棍 0蓄戳棍start，转成0蓄攻击"
   },
- {
+  {
     "OriginalId": 10871,
     "MappedId": 10887,
     "Condition": "disTance",
     "conditionValue": 10,
-    "desc": "1蓄戳棍start，转成1蓄攻击"
+    "desc": "戳棍 1蓄戳棍start，转成1蓄攻击"
   },
   {
     "OriginalId": 10872,
     "MappedId": 10888,
     "Condition": "disTance",
     "conditionValue": 10,
-    "desc": "2蓄戳棍start，转成2蓄攻击"
+    "desc": "戳棍2蓄戳棍start，转成2蓄攻击"
   },
   {
     "OriginalId": 10873,
     "MappedId": 10889,
     "Condition": "any",
     "conditionValue": null,
-    "desc": "3/4蓄戳棍start，转成3/4蓄攻击"
+    "desc": "戳棍3/4蓄戳棍start，转成3/4蓄攻击"
   },
   {
     "OriginalId": 10874,
     "MappedId": 10890,
     "Condition": "any",
     "conditionValue": null,
-    "desc": "3/4蓄戳棍start，转成3/4蓄攻击"
+    "desc": "戳棍3/4蓄戳棍start，转成3/4蓄攻击"
   },
 
   {

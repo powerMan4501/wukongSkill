@@ -3,7 +3,7 @@
     "desc": "残躯横扫一下捅一下",
     "montage": "AM_mgd_jsds_atk_01",
     "linkValue": 0,
-    "scaleWeaponNum": 4,
+    "scaleWeaponNum": 3,
     "speedRate": 1.5,
     "CastActions": [
       {
@@ -52,7 +52,7 @@
     "desc": "残躯版Q5",
     "montage": "AM_mgd_jsds_atk_02_02_short",
     "linkValue": 0,
-    "scaleWeaponNum": 4,
+    "scaleWeaponNum": 3,
     "speedRate": 1.5,
     "CastActions": [
       {
@@ -99,7 +99,7 @@
     "montage": "AM_mgd_jsds_atk_02_01_02",
     "desc": "残躯江海翻",
     "linkValue": 1.382158,
-    "scaleWeaponNum": 4,
+    "scaleWeaponNum": 3,
     "speedRate": 1.5,
     "CastActions": [
       {
@@ -166,7 +166,7 @@
     "montage": "AM_mgd_jsds_atk_jdy_03_short",
     "desc": "残躯棍子变粗砸一下",
     "linkValue": 0,
-    "scaleWeaponNum": 4,
+    "scaleWeaponNum": 3,
     "speedRate": 1.5,
     "CastActions": [
       {
@@ -222,7 +222,7 @@
     "montage": "AM_Dasheng_Atk_04a.AM_Dasheng_Atk_04a",
     "desc": "大圣Atk_04a",
     "linkValue": 0,
-    "scaleWeaponNum": 4,
+    "scaleWeaponNum": 3,
     "speedRate": 1.5,
     "CastActions": [
       {

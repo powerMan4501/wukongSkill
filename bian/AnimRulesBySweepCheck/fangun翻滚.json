@@ -17,6 +17,7 @@
   {
     "desc": "后撤召唤子弹",
     "montage": "AM_Wukong_JXSQ_Enter_B",
+    "moveMode": "MOVE_Flying",
     "linkValue": 0,
     "CastActions": [
       {
@@ -31,6 +32,7 @@
   {
     "desc": "翻滚，加凤穿花",
     "montage": "AM_Wukong_Dodge",
+    "moveMode": "MOVE_Walking",
     "linkValue": 0,
     "CastActions": [
       {
@@ -43,6 +45,7 @@
   {
     "desc": "棍花 ",
     "montage": "AM_Wukong_ComboC_z_loop",
+    "openShooterMode": true,
     "linkValue": 0.2993329,
     "SweepActions": [
       {
@@ -93,6 +96,7 @@
     "desc": "棍花 重击",
     "montage": "AM_Wukong_ComboC_z_specialend",
     "linkValue": 0.585206,
+    "closeShooterMode": true,
     "CastActions": [
       {
         "Type": "buff",

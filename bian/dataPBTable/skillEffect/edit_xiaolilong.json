@@ -1,0 +1,26 @@
+[
+  {
+    "desc": "小骊龙，锤子互砸一次范围伤害",
+    "ID": 30250801,
+    "EffectParamsInt": [40, 25, 6, 0, 2, 4, 0],
+    "EffectParamsFloat": [0.0, 100.0, 15600.0, 0.0, 0.0, 0.0, 100],
+    "EffectParamsStr": ["【主角】蓄力2"]
+  },
+
+   {
+    "desc": "小骊龙，范围伤害",
+    "ID": 30250901,
+    "EffectParamsInt": [40, 25, 6, 0, 2, 4, 0],
+    "EffectParamsFloat": [0.0, 100.0, 15600.0, 0.0, 0.0, 0.0, 100],
+    "EffectParamsStr": ["【主角】蓄力2"]
+  },
+
+   {
+    "desc": "小骊龙，范围伤害",
+    "ID": 30250904,
+    "EffectParamsInt": [40, 25, 6, 0, 2, 4, 0],
+    "EffectParamsFloat": [0.0, 100.0, 22500.0, 0.0, 0.0, 0.0, 100],
+    "EffectParamsStr": ["【主角】蓄力3"]
+  }
+  
+]

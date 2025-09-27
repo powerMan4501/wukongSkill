@@ -1,0 +1,112 @@
+[
+
+{
+    "desc": "螳螂，飞天发射剑气",
+    "montage": "AM_SZLC_tanglang_atk_26_p3",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.4,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 1016201,
+            "ForTarget": true,
+            "SpeedLeftValue": 16000,
+            "SpeedRightValue": 16000,
+            "desc": "发射巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "螳螂，飞天发射剑气",
+    "montage": "AM_SZLC_tanglang_atk_29",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.4,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 1016201,
+            "ForTarget": true,
+            "SpeedLeftValue": 16000,
+            "SpeedRightValue": 16000,
+            "desc": "发射巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "螳螂",
+    "montage": "AM_SZLC_tanglang_block_04",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.4,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 1016201,
+            "ForTarget": true,
+            "SpeedLeftValue": 16000,
+            "SpeedRightValue": 16000,
+            "desc": "发射巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "desc": "螳螂",
+    "montage": "AM_SZLC_tanglang_atk_12end",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.4,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [51002002],
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "desc": "猪八戒"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "螳螂",
+    "montage": "AM_SZLC_tanglang_atk_22end",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.4,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [51002002],
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "desc": "猪八戒"
+          }
+        ]
+      }
+    ]
+  }
+]

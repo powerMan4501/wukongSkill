@@ -2,7 +2,7 @@
   {
     "montage": "AM_Dasheng_ComboA_02.AM_Dasheng_ComboA_02",
     "linkValue": 0,
-    "scaleWeaponNum": 4,
+    "scaleWeaponNum": 3,
     "MoveOffset": 100,
     "CastActions": [
       {
@@ -44,7 +44,7 @@
             "desc": "有毒buff,大圣平A2,就发射红剑气"
           },
 
-         {
+          {
             "Type": "bullet",
             "ForTarget": true,
             "spawnBaseSocketName": "weapon_r_index_06",
@@ -61,7 +61,7 @@
   {
     "montage": "AM_Wukong_ComboA_q2.AM_Wukong_ComboA_q2",
     "linkValue": 0,
-"scaleWeaponNum": 4,
+    "scaleWeaponNum": 3,
     "MoveOffset": 100,
     "CastActions": [
       {
@@ -103,7 +103,7 @@
             "desc": "有毒buff,大圣平A2,就发射红剑气"
           },
 
-         {
+          {
             "Type": "bullet",
             "ForTarget": true,
             "spawnBaseSocketName": "weapon_r_index_06",

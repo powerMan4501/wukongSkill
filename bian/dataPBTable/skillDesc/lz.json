@@ -142,5 +142,32 @@
     "desc": "残躯版Q5",
     "ID": 54321023,
     "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_02_02_short.AM_mgd_jsds_atk_02_02_short"
+  },
+
+  {
+    "desc": "破天棍1",
+    "ID": 54321031,
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboA/AM_Wukong_ComboA_q1.AM_Wukong_ComboA_q1"
+  },
+
+  {
+    "desc": "破天棍2",
+    "ID": 54321032,
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboA/AM_Wukong_ComboA_q2.AM_Wukong_ComboA_q2"
+  },
+  {
+    "desc": "破天棍3",
+    "ID": 54321033,
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboA/AM_Wukong_ComboA_q3.AM_Wukong_ComboA_q3"
+  },
+   {
+    "desc": "破天棍4",
+    "ID": 54321034,
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboA/AM_Wukong_ComboA_q4.AM_Wukong_ComboA_q4"
+  },
+   {
+    "desc": "立棍平a5",
+    "ID": 54321035,
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli_C/AM_Wukong_Xuli_C_attack_2_low.AM_Wukong_Xuli_C_attack_2_low"
   }
 ]

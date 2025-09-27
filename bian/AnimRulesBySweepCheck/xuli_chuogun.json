@@ -2,7 +2,7 @@
   {
     "montage": "AM_wukong_qiang_xuli_b_attack_0",
     "linkValue": 0,
-    "scaleWeaponNum": 4,
+    "scaleWeaponNum": 3,
     "CastActions": [
       {
         "Type": "buff",
@@ -78,7 +78,7 @@
   {
     "montage": "AM_wukong_qiang_xuli_b_attack_1",
     "linkValue": 0,
-    "scaleWeaponNum": 4,
+    "scaleWeaponNum": 3,
     "CastActions": [
       {
         "Type": "buff",
@@ -155,7 +155,7 @@
   {
     "montage": "AM_wukong_qiang_xuli_b_attack_2",
     "linkValue": 0,
-    "scaleWeaponNum": 4,
+    "scaleWeaponNum": 3,
     "CastActions": [
       {
         "Type": "buff",
@@ -391,7 +391,7 @@
     "montage": "AM_mgd_jsds_atk_10_01",
     "speedRate": 1.3,
     "linkValue": 0,
-    "scaleWeaponNum": 4,
+    "scaleWeaponNum": 3,
     "CastActions": [
       {
         "Type": "buff",

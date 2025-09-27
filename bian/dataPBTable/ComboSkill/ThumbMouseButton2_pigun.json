@@ -1,0 +1,45 @@
+[
+  {
+    "nowMontage": "_xuli_attack_5",
+    "rate": 2.2,
+    "type": "magic",
+    "skillID": 8513,
+    "MagicSkillID": 102432,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "劈棍5蓄接大头4连地爆"
+  },
+  {
+    "nowMontage": "_xuli_attack_4",
+    "rate": 2.2,
+    "type": "magic",
+    "skillID": 8513,
+    "MagicSkillID": 102432,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "劈棍4蓄接大头4连地爆"
+  },
+
+   {
+    "nowMontage": "_xuli_attack_3",
+    "rate": 1.8,
+    "type": "magic",
+   "skillID": 8526,
+    "MagicSkillID": 300508,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "劈棍3蓄接不能：很长的摆架势前摇之后，打出好几个排云掌 "
+  },
+
+
+  {
+    "nowMontage": "_xuli_attack_2",
+    "rate": 1.2,
+    "type": "magic",
+   "skillID": 8526,
+    "MagicSkillID": 300506,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "劈棍3蓄接不能：连续几个排云掌 AM_LYS_TuiSeng_02_Atk_Fast_06a"
+  }
+]
