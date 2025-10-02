@@ -684,7 +684,7 @@ namespace bian
                         if (weaponComponent != null)
                         {
 
-                            weaponComponent.SetRelativeScale3D(new FVector(num, 1.1, 1));
+                            weaponComponent.SetRelativeScale3D(new FVector(num, 1, 1));
                         }
 
                     }
