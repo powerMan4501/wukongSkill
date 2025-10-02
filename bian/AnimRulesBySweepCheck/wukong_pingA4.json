@@ -58,6 +58,7 @@
   {
     "montage": "AM_Wukong_ComboA_q4.AM_Wukong_ComboA_q4",
     "linkValue": 0,
+    "scaleWeaponNum": 5,
     "SweepActions": [
       {
         "Type": "bullet",

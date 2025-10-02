@@ -1,0 +1,133 @@
+[
+  {
+    "desc": "鬼王",
+    "montage": "AM_HYS_LuoChaGui_01_Atk_02",
+    "linkValue": 0,
+    "addRadius": 1500,
+    "speedRate": 1.8,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 30050301, 152],
+            "OffsetX": 400,
+            "OffsetY": 400,
+            "desc": "金沙波动"
+          }
+        ]
+      }
+    ],
+    "hitActions": [
+      {
+        "Type": "bullet",
+        "TimeDelay": 0,
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1016262],
+            "desc": "巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "鬼王",
+    "montage": "AM_HYS_LuoChaGui_01_Atk_01",
+    "linkValue": 0,
+    "addRadius": 1500,
+    "speedRate": 1.8,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 30050301],
+            "OffsetX": 400,
+            "OffsetY": 400,
+            "desc": "金沙波动"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "鬼王，右足球踢",
+    "montage": "AM_HYS_LuoChaGui_01_Atk_03",
+    "linkValue": 2.867692,
+    "addRadius": 1500,
+    "speedRate": 1.8,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 1016262],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "金沙巴山虎"
+          }
+        ]
+      }
+    ],
+     "hitActions": [
+      {
+        "Type": "bullet",
+        "TimeDelay": 0,
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1016262],
+            "desc": "巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "鬼王，足球踢之后，左手一巴掌",
+    "montage": "AM_HYS_LuoChaGui_01_Atk_03",
+    "linkValue": 5.366195,
+    "addRadius": 1500,
+    "speedRate": 1.8,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 1016262],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "金沙巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "鬼王，冲上去熊抱",
+    "montage": "AM_HYS_LuoChaGui_01_Atk_08",
+    "linkValue": 0,
+    "addRadius": 1500,
+    "speedRate": 1.8,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 1016262],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "金沙巴山虎"
+          }
+        ]
+      }
+    ]
+  }
+]

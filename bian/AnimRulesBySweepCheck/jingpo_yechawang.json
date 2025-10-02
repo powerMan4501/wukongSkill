@@ -46,6 +46,121 @@
     "montage": "AM_HYS_HongHaiEr_02A_Atk_06_dalei",
     "linkValue": 0,
     "speedRate": 1.2,
+    "notifies": [
+      {
+        "NotifyTrackName": "BANS_GSSweepCheck",
+        "StartTime": 2.3964026,
+        "EndTime": 3,
+        "notifyParam": {
+          "sweepCheckShape": [
+            { "SocketName": "h1l", "Radius": 190 },
+            { "SocketName": "h2l", "Radius": 190 },
+            { "SocketName": "h3l", "Radius": 190 },
+            { "SocketName": "h4l", "Radius": 190 },
+            { "SocketName": "h5l", "Radius": 190 },
+            { "SocketName": "h6l", "Radius": 190 },
+            { "SocketName": "h7l", "Radius": 190 },
+            { "SocketName": "h8l", "Radius": 190 },
+            { "SocketName": "h9l", "Radius": 190 }
+          ],
+          "EffectIDList": [1088901]
+        }
+      },
+      {
+        "NotifyTrackName": "BANS_GSSweepCheck",
+        "StartTime": 4,
+        "EndTime": 5.5,
+        "notifyParam": {
+          "sweepCheckShape": [
+            { "SocketName": "h1r", "Radius": 190 },
+            { "SocketName": "h2r", "Radius": 190 },
+            { "SocketName": "h3r", "Radius": 190 },
+            { "SocketName": "h4r", "Radius": 190 },
+            { "SocketName": "h5r", "Radius": 190 },
+            { "SocketName": "h6r", "Radius": 190 },
+            { "SocketName": "h7r", "Radius": 190 },
+            { "SocketName": "h8r", "Radius": 190 },
+            { "SocketName": "h9r", "Radius": 190 }
+          ],
+          "EffectIDList": [1088901]
+        }
+      }
+    ],
+    "bulletsActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [44051005, 44051006, 44051007],
+        "desc": "夜叉王地刺"
+      }
+    ]
+  },
+
+  {
+    "desc": "夜叉无前摇横扫",
+    "montage": "AM_HYS_HongHaiEr_02A_Atk_08",
+    "linkValue": 0,
+    "speedRate": 1.2,
+    "bulletsActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [44051005, 44051006, 44051007],
+        "desc": "夜叉王地刺"
+      }
+    ]
+  },
+  {
+    "desc": "夜叉王平A多次接地刺",
+    "montage": "AM_HYS_HongHaiEr_02A_Atk_10",
+    "linkValue": 0,
+    "speedRate": 1.2,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [44051005, 44051006, 44051007],
+        "desc": "夜叉王地刺"
+      }
+    ]
+  },
+
+  {
+    "desc": "夜叉王平A多次接地刺",
+    "montage": "AM_HYS_HongHaiEr_02A_Atk_07",
+    "addRadius": 100,
+    "linkValue": 0,
+    "speedRate": 1.2,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [44051002],
+        "desc": "夜叉王地刺"
+      }
+    ]
+  },
+
+  {
+    "desc": "夜叉王平A多次接地刺，最后一次伤害判定，爆发震浪",
+    "montage": "AM_HYS_HongHaiEr_02A_Atk_07",
+    "addRadius": 1000,
+    "linkValue": 3.339809,
+    "speedRate": 1.2,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [44051003],
+        "desc": "夜叉王地刺"
+      }
+    ]
+  },
+  {
+    "desc": "夜叉王平A多次接地刺,最后一次爆发地刺",
+    "montage": "AM_HYS_HongHaiEr_02A_Atk_07",
+    "linkValue": 4.460944,
+    "speedRate": 1.2,
     "bulletsActions": [
       {
         "Type": "bullet",

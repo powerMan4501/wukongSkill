@@ -244,7 +244,14 @@
       "Key": "NUMPAD8",
       "CanBreak": true
     },
-
+ {
+      "MagicSkillID": 440508,
+      "type": "BOSS",
+      "bossLabel": "SK_HYS_HongHaiEr_02A",
+      "Name": "3连中距离横扫",
+      "Key": "S+NUMPAD8",
+      "CanBreak": true
+    },
     {
       "Id": 10096,
       "Name": "JSXQ",

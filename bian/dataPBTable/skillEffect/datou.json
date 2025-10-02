@@ -1,9 +1,0 @@
-[
-  {
-    "desc": "大头地爆",
-    "ID": 10242601,
-    "EffectParamsInt": [40, 25, 1, 0, 0, 0, 0],
-    "EffectParamsFloat": [0.0, 100.0, 30000.0, 0.0, 0.0, 0.0, 100],
-    "EffectParamsStr": ["【主角】蓄力4"]
-  }
-]

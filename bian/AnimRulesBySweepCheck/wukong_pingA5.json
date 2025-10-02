@@ -27,7 +27,7 @@
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
             "noHasAnyBuff": [888666007],
-            "ProjectTileIDs": [30050301, 88880005, 74011107],
+            "ProjectTileIDs": [30050301, 50058603, 74011107],
             "spawnBaseSocketName": "weapon_r_index_07",
             "desc": "每火buff，不能的扩散波，黄符，金沙爆炸"
           }
@@ -39,7 +39,7 @@
   {
     "montage": "AM_Wukong_ComboA_q5.AM_Wukong_ComboA_q5",
     "linkValue": 0.8666667,
-    "scaleWeaponNum": 3,
+     "scaleWeaponNum": 5,
     "MoveOffset": 100,
     "CastActions": [
       {
@@ -63,7 +63,7 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileID": 88880005,
+            "ProjectTileID": 50058603,
             "OffsetX": 400,
             "OffsetY": 400,
             "spawnBaseSocketName": "weapon_r_index_06",

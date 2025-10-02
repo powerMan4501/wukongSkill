@@ -1,0 +1,114 @@
+[
+  {
+    "nowMontage": "AM_wukong_atk_air_01.AM_wukong_atk_air_01",
+    "rate": 0.2,
+    "type": "magic",
+    "skillID": 8522,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "跳跃攻击接无量蝠"
+  },
+
+  {
+    "nowMontage": "AM_wukong_atk_air_heavy_start_0",
+    "rate": 0.2,
+    "type": "BOSS",
+    "bossLabel": "SK_LYS_KJLWoman",
+    "MagicSkillID": 340116,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "跳跃重击0开始，飞到空中释放4道索敌雷丝"
+  },
+
+  {
+    "nowMontage": "AM_wukong_atk_air_heavy_start_1",
+    "rate": 0.2,
+    "type": "BOSS",
+    "bossLabel": "SK_LYS_KJLWoman",
+    "MagicSkillID": 340109,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "跳跃重击1开始，飞到空中，发射很多索敌闪电"
+  },
+   {
+    "nowMontage": "AM_wukong_atk_air_heavy_start_2",
+    "rate": 0.2,
+    "type": "BOSS",
+    "bossLabel": "SK_LYS_HuangMei_03",
+    "MagicSkillID": 380025,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "跳跃重击2开始，黄眉360连续大横扫好几次"
+  },
+  {
+    "nowMontage": "AM_wukong_atk_air_heavy_start_3",
+    "rate": 0.2,
+    "type": "BOSS",
+    "bossLabel": "SK_LYS_HuangMei_03",
+    "MagicSkillID": 380022,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "跳跃重击3开始，黄眉身体爆发大量雷电，伤害高"
+  },
+   {
+    "nowMontage": "AM_wukong_atk_air_heavy_start_4",
+    "rate": 0.2,
+    "type": "BOSS",
+    "bossLabel": "SK_LYS_HuangMei_03",
+    "MagicSkillID": 380018,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "跳跃重击4开始，黄眉举起锤子，画地为牢，召唤雷球打击敌人"
+  },
+  {
+    "nowMontage": "AM_wukong_atk_air_heavy_end_0",
+    "rate": 0.2,
+    "type": "BOSS",
+    "bossLabel": "SK_HYS_HongHaiEr_02A",
+    "MagicSkillID": 440534,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "跳跃重击，夜叉王横扫"
+  },
+
+  {
+    "nowMontage": "AM_wukong_atk_air_heavy_end_1",
+    "rate": 0.2,
+    "type": "BOSS",
+    "bossLabel": "SK_HYS_HongHaiEr_02A",
+    "MagicSkillID": 440508,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "跳跃重击1，夜叉王三连横扫"
+  },
+  {
+    "nowMontage": "AM_wukong_atk_air_heavy_end_2",
+    "rate": 0.2,
+    "type": "BOSS",
+    "bossLabel": "SK_HYS_HongHaiEr_02A",
+    "MagicSkillID": 440537,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "跳跃重击2，夜叉王瞬发地刺跳起砍"
+  },
+  {
+    "nowMontage": "AM_wukong_atk_air_heavy_end_3",
+    "rate": 0.2,
+    "type": "BOSS",
+    "bossLabel": "SK_HYS_HongHaiEr_02A",
+    "MagicSkillID": 440517,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "跳跃重击3，较短的平A连招+跳起瞬发地刺"
+  },
+  {
+    "nowMontage": "AM_wukong_atk_air_heavy_end_4",
+    "rate": 0.2,
+    "type": "BOSS",
+    "bossLabel": "SK_HYS_HongHaiEr_02A",
+    "MagicSkillID": 440534,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "跳跃重击4，很长的平a连招+跳起瞬发地刺"
+  }
+]

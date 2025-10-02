@@ -3,7 +3,7 @@
     "desc": "喝药",
     "montage": "AM_Wukong_heyao",
     "linkValue": 0,
-    "speedRate": 2,
+    "speedRate": 4,
     "CastActions": [
       {
         "Type": "buff",

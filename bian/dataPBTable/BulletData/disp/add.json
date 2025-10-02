@@ -1,14 +1,5 @@
 [
-  {
-    "desc": "克隆业火",
-    "ID": 88880002,
-    "ProjectileFXUseDBC": 0,
-    "ProjectileSpawnPSPath": "",
-    "ProjectileSelfSpawnDBCPath": "",
-    "SpawnPStoSpawnInterval": 0.0,
-    "BulletLowestSpdCanPlayPS": 0.0,
-    "HitChrAudioID": 0
-  },
+ 
   {
     "desc": "克隆马猴冰剑气",
     "ID": 88880003,
@@ -30,16 +21,7 @@
     "HitChrAudioID": 0
   },
 
-  {
-    "desc": "百眼黄符",
-    "ID": 88880005,
-    "ProjectileFXUseDBC": 0,
-    "ProjectileSpawnPSPath": "",
-    "ProjectileSelfSpawnDBCPath": "",
-    "SpawnPStoSpawnInterval": 0.0,
-    "BulletLowestSpdCanPlayPS": 0.0,
-    "HitChrAudioID": 0
-  },
+
 
   {
     "desc": "金箍棒冰",
@@ -52,27 +34,8 @@
     "HitChrAudioID": 0
   },
 
-  {
-    "desc": "磐锤",
-    "ID": 88880007,
-    "ProjectileFXUseDBC": 0,
-    "ProjectileSpawnPSPath": "",
-    "ProjectileSelfSpawnDBCPath": "",
-    "SpawnPStoSpawnInterval": 0.0,
-    "BulletLowestSpdCanPlayPS": 0.0,
-    "HitChrAudioID": 0
-  },
 
-  {
-    "desc": "发射版金箍棒",
-    "ID": 88880008,
-    "ProjectileFXUseDBC": 0,
-    "ProjectileSpawnPSPath": "",
-    "ProjectileSelfSpawnDBCPath": "",
-    "SpawnPStoSpawnInterval": 0.0,
-    "BulletLowestSpdCanPlayPS": 0.0,
-    "HitChrAudioID": 0
-  },
+
 
   {
     "desc": "火猴火焰剑气",

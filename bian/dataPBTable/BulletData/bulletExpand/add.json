@@ -1,12 +1,5 @@
 [
-  {
-    "desc": "克隆业火",
-    "ID": 88880002,
-    "HitEffectsforChr": [1031102],
-    "BulletSweepCheckGap": 1,
-    "BulletSweepCheckDelayTime": 0.0,
-    "BulletCanThroughBlockage": 1
-  },
+ 
   {
     "desc": "克隆马猴冰剑气",
     "ID": 88880003,
@@ -27,15 +20,7 @@
     "BulletCanThroughBlockage": 1
   },
 
-  {
-    "desc": "百眼黄符",
-    "ID": 88880005,
-    "HitEffectsforChr": [888555022, 888555015],
-    "HitDestructibleStrengthType": 4,
-    "BulletSweepCheckGap": 5,
-    "BulletSweepCheckDelayTime": 0.0,
-    "BulletCanThroughBlockage": 1
-  },
+
 
   {
     "desc": "克隆金箍棒",
@@ -47,25 +32,8 @@
     "BulletCanThroughBlockage": 1
   },
 
-  {
-    "desc": "磐锤",
-    "ID": 88880007,
-    "HitEffectsforChr": [8888040],
-    "HitDestructibleStrengthType": 4,
-    "BulletSweepCheckGap": 5,
-    "BulletSweepCheckDelayTime": 0.0,
-    "BulletCanThroughBlockage": 1
-  },
 
-  {
-    "desc": "发射版金箍棒",
-    "ID": 88880008,
-    "HitEffectsforChr": [1070701],
-    "HitDestructibleStrengthType": 4,
-    "BulletSweepCheckGap": 5,
-    "BulletSweepCheckDelayTime": 0.0,
-    "BulletCanThroughBlockage": 1
-  },
+ 
 
   {
     "desc": "火猴火焰剑气",

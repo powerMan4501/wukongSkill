@@ -219,7 +219,7 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [88880005],
+              "ProjectTileIDs": [50058603],
               "noHasAnyBuff": [888666006, 888666007],
               "desc": "有雷buff，黄符"
             }
@@ -650,7 +650,7 @@
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [88880005],
+              "ProjectTileIDs": [50058603],
               "desc": "黄符"
             }
           ]

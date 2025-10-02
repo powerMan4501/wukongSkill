@@ -1,4 +1,14 @@
 [
+   {
+    "desc": "飞剑视觉，增加时间",
+    "ID": 145,
+    "ProjectileLifeTime": 9.2
+  },
+  {
+    "desc": "真正飞剑，增加时间",
+    "ID": 147,
+    "ProjectileLifeTime": 8.3
+  },
   {
     "desc": "分身安身法改成残躯的",
     "ID": 1052001,

@@ -65,10 +65,11 @@
         "Type": "bullet",
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
         "ProjectTileIDs": [49981301],
-        "OffsetX": 600,
-        "OffsetY": 600
+        "OffsetX": 400,
+        "OffsetY": 400
       }
-    ]
+    ],
+    "hitEffects": [30250904]
   },
 
   {

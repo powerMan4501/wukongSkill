@@ -1,11 +1,5 @@
 [
-  {
-    "desc": "克隆业火",
-    "ID": 88880002,
-    "ProjectileBPTemplatePath": "/Game/00Main/Design/MagicFields/Player/Talent/BP_player_wukong_lava.BP_player_wukong_lava_C",
-    "ProjectileDelayDestroyTime": 3,
-    "ProjectileLifeTime": 11.2
-  },
+ 
   {
     "desc": "克隆马猴冰剑气",
     "ID": 88880003,
@@ -20,13 +14,7 @@
     "ProjectileDelayDestroyTime": 0,
     "ProjectileLifeTime": 9
   },
-  {
-    "desc": "百眼黄符",
-    "ID": 88880005,
-    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/PSD/PSD_BaiYanMoJun_01/Phase2/BP_PSD_BaiYanMoJun_P2_Bullet_8603.BP_PSD_BaiYanMoJun_P2_Bullet_8603_C",
-    "ProjectileDelayDestroyTime": 0,
-    "ProjectileLifeTime": 0.25
-  },
+
 
   {
     "desc": "金箍棒克隆",
@@ -35,20 +23,8 @@
     "ProjectileDelayDestroyTime": 2,
     "ProjectileLifeTime": 2
   },
-  {
-    "desc": "磐锤",
-    "ID": 88880007,
-    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BP_Player_Wukong_Atk_Panchui.BP_Player_Wukong_Atk_Panchui_C",
-    "ProjectileDelayDestroyTime": 3,
-    "ProjectileLifeTime": 0.3
-  },
-  {
-    "desc": "发射版金箍棒",
-    "ID": 88880008,
-    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BP_Player_Wukong_Atk_Panchui.BP_Player_Wukong_Atk_Panchui_C",
-    "ProjectileDelayDestroyTime": 1,
-    "ProjectileLifeTime": 3
-  },
+
+ 
 
   {
     "desc": "火猴火焰剑气",

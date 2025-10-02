@@ -4,7 +4,6 @@
     "montage": "AM_Dasheng_ComboA_01_Z_1",
     "linkValue": 0,
     "scaleWeaponNum": 3,
-    "AMScaleRate": 100,
     "CastActions": [
       {
         "Type": "buff",
@@ -54,7 +53,6 @@
   {
     "desc": "1a切手，马喽10705",
     "montage": "AM_Wukong_ComboA_z_01",
-    "AMScaleRate": 100,
     "linkValue": 0,
     "scaleWeaponNum": 3,
     "CastActions": [

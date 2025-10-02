@@ -1,13 +1,5 @@
 [
-  {
-    "desc": "克隆业火",
-    "ID": 88880002,
-    "ProjectileMoveModeType": 1,
-    "ProjectileSpdType": 1,
-    "ProjectileFlyTime": 0.0,
-    "MoveClampToLand": 1,
-    "MoveAlignToLand": 1
-  },
+
 
   {
     "desc": "克隆马猴冰剑气",
@@ -19,25 +11,7 @@
     "MoveAlignToLand": 0
   },
 
-  {
-    "desc": "白眼魔君横向剑气",
-    "ID": 88880004,
-    "ProjectileMoveModeType": 1,
-    "ProjectileSpdType": 1,
-    "ProjectileFlyTime": 0.0,
-    "MoveClampToLand": 0,
-    "MoveAlignToLand": 0
-  },
 
-  {
-    "desc": "百眼黄符",
-    "ID": 88880005,
-    "ProjectileMoveModeType": 1,
-    "ProjectileSpdType": 1,
-    "ProjectileFlyTime": 0.0,
-    "MoveClampToLand": 0,
-    "MoveAlignToLand": 0
-  },
 
   {
     "desc": "金箍棒冰",
@@ -49,25 +23,8 @@
     "MoveAlignToLand": 0
   },
 
-  {
-    "desc": "磐锤",
-    "ID": 88880007,
-    "ProjectileMoveModeType": 1,
-    "ProjectileSpdType": 1,
-    "ProjectileFlyTime": 0.0,
-    "MoveClampToLand": 0,
-    "MoveAlignToLand": 0
-  },
 
-  {
-    "desc": "发射版金箍棒",
-    "ID": 88880008,
-    "ProjectileMoveModeType": 1,
-    "ProjectileSpdType": 1,
-    "ProjectileFlyTime": 0.0,
-    "MoveClampToLand": 0,
-    "MoveAlignToLand": 0
-  },
+
 
   {
     "desc": "火猴火焰剑气",

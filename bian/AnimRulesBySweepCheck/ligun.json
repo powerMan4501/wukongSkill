@@ -3,6 +3,7 @@
     "desc": "4蓄力立棍 全屏地火",
     "montage": "AM_Wukong_Xuli_C_attack_4",
     "linkValue": 0.5666667,
+    "addRadius": 1500,
     "CastActions": [
       {
         "Type": "buff",
@@ -26,7 +27,7 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [2403472, 44011401, 1016232, 88880002],
+            "ProjectTileIDs": [2403472, 44011401, 1016232, 140],
             "hasBuff": 888666007,
             "OffsetX": 500,
             "OffsetY": 500,
@@ -41,6 +42,7 @@
     "desc": "3蓄力立棍 全屏地火",
     "montage": "AM_Wukong_Xuli_C_attack_3",
     "linkValue": 0.6366079,
+    "addRadius": 1500,
     "CastActions": [
       {
         "Type": "buff",
@@ -91,6 +93,28 @@
         "BuffIDs": [66655406],
         "BuffTime": 1200,
         "desc": "棍光特效粒子"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [50051029, 2403471, 39010112],
+            "noHasBuff": 888666007,
+            "spawnBaseSocketName": "weapon_r_index_04",
+            "desc": "没火buff就电圈/冰暴/青背龙雷暴"
+          },
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403372, 44011401],
+            "hasBuff": 888666007,
+            "spawnBaseSocketName": "weapon_r_index_04",
+            "desc": "有火buff就地火,红孩儿砸地"
+          }
+        ]
       }
     ]
   },
