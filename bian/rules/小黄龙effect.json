@@ -65,6 +65,8 @@
           "Type": "effect",
           "EffectID": 1904301
         }
+       
+        
       ],
       "AfterActions": [
         {
@@ -73,7 +75,7 @@
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [154, 50051029,39010112],
+              "ProjectTileIDs": [154, 50051029, 39010112],
               "desc": "落雷,电圈,青背龙雷暴"
             }
           ]

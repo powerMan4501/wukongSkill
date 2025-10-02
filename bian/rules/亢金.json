@@ -1,0 +1,31 @@
+{
+  "Name": "悟空的技能id",
+  "desc": "888666005:雷，888666006 冰， 888666007火， 888666008毒",
+  "Rules": [
+    {
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 34016000
+        },
+        {
+          "Type": "effect",
+          "EffectID": 34012006
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [50051029, 39010112],
+              "desc": "电圈,青背龙雷暴"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -35,14 +35,23 @@
           {
             "Type": "effect",
             "EffectID": 49998802
+          },
+          {
+            "Type": "effect",
+            "EffectID": 30250904
           }
         ],
         "AfterActions": [
           {
             "Type": "bullet",
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [1016202],
-            "TimeDelay": 0
+            "TimeDelay": 0,
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [1016202],
+                "desc": "巴山虎"
+              }
+            ]
           }
         ]
       }

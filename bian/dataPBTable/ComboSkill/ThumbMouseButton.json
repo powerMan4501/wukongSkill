@@ -1,6 +1,5 @@
 [
-  
-    {
+  {
     "nowMontage": "AM_Dasheng_ComboA_01.AM_Dasheng_ComboA_01",
     "rate": 0.3,
     "skillID": 50001,
@@ -18,7 +17,7 @@
     "conditionValue": 888666023,
     "desc": "平A2接50002 AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1"
   },
-   {
+  {
     "nowMontage": "AM_Dasheng_ComboA_04.AM_Dasheng_ComboA_04",
     "rate": 0.3,
     "skillID": 50007,
@@ -94,12 +93,12 @@
   },
   {
     "nowMontage": "AM_wukong_combob_z_01.AM_wukong_combob_z_01",
-    "rate": 0.2,
+    "rate": 0.1,
     "skillID": 10714,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
     "conditionValue": 888666023,
-    "desc": "如果当前使用的技能是退寸，且播放了0.5s以上，按鼠标右键满足条件可以使出进尺AM_wukong_combob_z_02"
+    "desc": "如果当前使用的技能是退寸，且播放了0.1s以上，按鼠标右键满足条件可以使出进尺AM_wukong_combob_z_02"
   },
 
   {
@@ -111,7 +110,7 @@
     "conditionValue": 888666023,
     "desc": "接：AM_Wukong_JXSQ_Atk_01.AM_Wukong_JXSQ_Atk_01"
   },
- {
+  {
     "nowMontage": "AM_Wukong_JXSQ_Atk_01.AM_Wukong_JXSQ_Atk_01",
     "rate": 0.5,
     "skillID": 50003,
@@ -121,8 +120,7 @@
     "desc": "接：AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1"
   },
 
-
-   {
+  {
     "nowMontage": "AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1",
     "rate": 1,
     "skillID": 54321011,
@@ -132,7 +130,7 @@
     "desc": "接AM_Dasheng_ComboA_02_Z_2.AM_Dasheng_ComboA_02_Z_2"
   },
 
-   {
+  {
     "nowMontage": "AM_Dasheng_ComboA_02_Z_2.AM_Dasheng_ComboA_02_Z_2",
     "rate": 1,
     "skillID": 50013,
@@ -181,12 +179,25 @@
     "desc": "接:3蓄力立棍"
   },
 
-
   {
-    "skillID": 10713,
-    "Condition": "any",
-    "conditionValue": 888666023,
+    "skillID": 10705,
+    "Condition": "StanceHeavy",
+    "conditionValue": 0,
     "InputCore": "ThumbMouseButton",
-    "desc": "没有任何条件就使出退寸"
+    "desc": "劈棍下，10705"
+  },
+   {
+    "skillID": 50001,
+    "Condition": "StanceProp",
+    "conditionValue": 0,
+    "InputCore": "ThumbMouseButton",
+    "desc": "立棍下，50001"
+  },
+  {
+    "skillID": 54321002,
+    "Condition": "StancePoke",
+    "conditionValue": 0,
+    "InputCore": "ThumbMouseButton",
+    "desc": "戳棍下退寸"
   }
 ]
