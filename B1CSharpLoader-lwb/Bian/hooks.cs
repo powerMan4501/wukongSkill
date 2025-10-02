@@ -7,6 +7,9 @@ using UnrealEngine.Engine;
 using CSharpModBase;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using Newtonsoft.Json;
+
 
 
 namespace bian;
@@ -19,56 +22,56 @@ public class Hooks
 
     private static List<AnimRuleBySweepCheck> _cachedAnimRules = null; // 缓存动画规则
 
-    [HarmonyPatch]
-    public class HookBGGGameStateCS
-    {
-        private static MethodBase TargetMethod()
-        {
-            return AccessTools.Method("b1.BGGGameStateCS:AfterInitAllComp", (Type[])null, (Type[])null);
-        }
+    // [HarmonyPatch]
+    // public class HookBGGGameStateCS
+    // {
+    //     private static MethodBase TargetMethod()
+    //     {
+    //         return AccessTools.Method("b1.BGGGameStateCS:AfterInitAllComp", (Type[])null, (Type[])null);
+    //     }
 
-        [HarmonyPatch]
-        private static void Prefix(ref BGGGameStateCS __instance)
-        {
-            if ((UObject)(object)__instance != null)
-            {
-                Console.WriteLine($" AfterInitAllComp.Prefix: ");
-                Manager.loadAllStaticData(false, 0);
-            }
-        }
-    }
+    //     [HarmonyPatch]
+    //     private static void Prefix(ref BGGGameStateCS __instance)
+    //     {
+    //         if ((UObject)(object)__instance != null)
+    //         {
+    //             Console.WriteLine($" AfterInitAllComp.Prefix: ");
+    //             Manager.loadAllStaticData(false, 0);
+    //         }
+    //     }
+    // }
 
 
-    [HarmonyPatch]
-    public class HookBUS_PassiveSkillComp
-    {
-        private static MethodBase TargetMethod()
-        {
-            return AccessTools.Method("b1.BGW_GameDB:InitPassiveSkillMap", (Type[])null, (Type[])null);
-        }
-        [HarmonyPrefix]
-        private static void Prefix()
-        {
-            try
-            {
-                if (isInit)
-                {
-                    return;
-                }
-                Console.WriteLine($"InitPassiveSkillMap.Prefix");
-                LoadUtils.LoadAndApplyPassiveSkills();
-                LoadUtils.LoadAndApplyChargeSkill();
-                LoadUtils.ModifyIronData();
-                isInit = true;
-            }
+    // [HarmonyPatch]
+    // public class HookBUS_PassiveSkillComp
+    // {
+    //     private static MethodBase TargetMethod()
+    //     {
+    //         return AccessTools.Method("b1.BGW_GameDB:InitPassiveSkillMap", (Type[])null, (Type[])null);
+    //     }
+    //     [HarmonyPrefix]
+    //     private static void Prefix()
+    //     {
+    //         try
+    //         {
+    //             if (isInit)
+    //             {
+    //                 return;
+    //             }
+    //             Console.WriteLine($"InitPassiveSkillMap.Prefix");
+    //             LoadUtils.LoadAndApplyPassiveSkills();
+    //             LoadUtils.LoadAndApplyChargeSkill();
+    //             LoadUtils.ModifyIronData();
+    //             isInit = true;
+    //         }
 
-            catch (Exception ex)
-            {
-                // 记录错误但不阻止原始方法执行
-                Console.WriteLine($"Error in HookBUS_PassiveSkillComp.Prefix: {ex.Message}");
-            }
-        }
-    }
+    //         catch (Exception ex)
+    //         {
+    //             // 记录错误但不阻止原始方法执行
+    //             Console.WriteLine($"Error in HookBUS_PassiveSkillComp.Prefix: {ex.Message}");
+    //         }
+    //     }
+    // }
 
 
 
@@ -110,13 +113,61 @@ public class Hooks
         private static void Prefix(FUStGSNotifyParam NotifyParam, float TotalDuration)
         {
 
-            if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner.GetName().IndexOf("Unit_Player_Wukong_C") > -1)
+            if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner.GetName().IndexOf("Unit_Player") > -1)
             {
                 var allRules = GetCachedAnimRules();
                 if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
                 var nowMontage = NotifyParam.Animation.PathName;
                 var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
-                Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()} ,linkValue:{linkValue} ");
+
+
+
+                // // 导出骨骼点到JSON文件
+                // string ownerName = NotifyParam.owner.GetName();
+                // string fileName = $"{ownerName}_{NotifyParam.Animation.GetFName()}_bones.json";
+                // string exportPath = Path.Combine("CSharpLoader", "Mods", "bian", "bonesData");
+                // string fullPath = Path.Combine(exportPath, fileName);
+
+                // if (!File.Exists(fullPath))
+                // {
+                //     var MeshComp = NotifyParam.MeshComp;
+                //     var num = MeshComp?.GetNumBones();
+                //     var boneList = new List<string>();
+                //     if (num > 0 && MeshComp != null)
+                //     {
+                //         for (int i = 0; i < num; i++)
+                //         {
+                //             var BoneName = MeshComp.GetBoneName(i).ToString();
+                //             boneList.Add(BoneName);
+                //         }
+                //         // 确保目录存在
+                //         if (!Directory.Exists(exportPath))
+                //         {
+                //             Directory.CreateDirectory(exportPath);
+                //         }
+
+                //         string jsonContent = JsonConvert.SerializeObject(boneList, Formatting.Indented);
+                //         File.WriteAllText(fullPath, jsonContent);
+                //     }
+                // }
+
+                // string linkValueFileName = $"{NotifyParam.Animation.GetFName()}_BANS_GSSweepCheck_linkValue_{linkValue}.txt";
+                // string linkValueExportPath = Path.Combine("CSharpLoader", "Mods", "bian", "linkValueData");
+                // string linkValueFullPath = Path.Combine(linkValueExportPath, linkValueFileName);
+                // // 确保目录存在
+                // if (!Directory.Exists(linkValueExportPath))
+                // {
+                //     Directory.CreateDirectory(linkValueExportPath);
+                // }
+
+                // // 只在文件不存在时写入linkValue数据
+                // if (!File.Exists(linkValueFullPath))
+                // {
+                //     string linkValueData = linkValue.ToString();
+                //     File.WriteAllText(linkValueFullPath, linkValueData);
+                // }
+
+                Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()} ,linkValue:{linkValue}");
                 if (allRules.Count > 0)
                 {
                     var matchedRule = allRules.FirstOrDefault(rule =>
@@ -134,6 +185,74 @@ public class Hooks
     }
 
 
+    [HarmonyPatch]
+    public class HookBUS_SweepCheckHitComp
+    {
+        private static MethodBase TargetMethod()
+        {
+            return AccessTools.Method("b1.BUS_SweepCheckHitComp:OnSweepCheckHit", (Type[])null, (Type[])null);
+        }
+
+        [HarmonyPatch]
+        private static void Prefix(ref AActor Victim, ref float SweepProtectTime, ref string SkillTaskUniqID, in FEffectInstReq EffectInstReq, ref List<AbnormalStateAccConfig> AbnormalStateEffectList, ref List<FTriggerEffectWithCondition> EffectsWithCondition_Before, ref List<int> EffectIDList, ref List<FTriggerEffectWithCondition> EffectsWithCondition_After, ref int GroupID, ref int FromInstanceID)
+        {
+
+            var attacker = EffectInstReq.Attacker;
+            if (attacker == null) return;
+            var name = attacker?.PathName;
+            if (name == null || name.ToLower().IndexOf("unit_player") < 0)
+            {
+                return;
+            }
+            var character = Helper.GetBGUPlayerCharacterCS();
+            UAnimMontage? currentMontage = null;
+            if (character == null)
+            {
+                return;
+            }
+            UAnimInstance animInstance = character.Mesh.GetAnimInstance();
+            if (character == animInstance)
+            {
+                return;
+            }
+            currentMontage = animInstance.GetCurrentActiveMontage();
+
+            var allRules = GetCachedAnimRules();
+            if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
+            var nowMontage = currentMontage.PathName;
+            if (nowMontage == null)
+            {
+                return;
+            }
+
+            Console.WriteLine($"OnSweepCheckHit: {currentMontage?.GetFName()} ,SkillTaskUniqID:{SkillTaskUniqID},GroupID:{GroupID},FromInstanceID:{FromInstanceID},Victim:{Victim?.GetName()}");
+            if (allRules.Count > 0)
+            {
+                var matchedRule = allRules.FirstOrDefault(rule =>
+                    !string.IsNullOrEmpty(nowMontage) &&
+                    nowMontage.Contains(rule.montage));
+
+                if (matchedRule != null) return;
+                if (matchedRule?.hitActions != null && matchedRule?.hitActions?.Count > 0)
+                {
+                    var rule = new Rule();
+                    foreach (var action in matchedRule.hitActions)
+                    {
+                        action.Caster = character;
+                        action.Target = Victim;
+                        action.EffectInstReq = EffectInstReq;
+                    }
+                    rule.DoAfterActions(matchedRule.hitActions);
+                }
+
+                if (matchedRule?.hitEffects?.Count > 0)
+                {
+                    EffectIDList.AddRange(matchedRule.hitEffects);
+                }
+            }
+
+        }
+    }
 
 
 
@@ -150,14 +269,32 @@ public class Hooks
         private static void Prefix(FUStGSNotifyParam NotifyParam)
         {
 
-            if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner.GetName().IndexOf("Unit_Player_Wukong_C") > -1)
+            if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner.GetName().IndexOf("Unit_Player") > -1)
             {
                 var allRules = GetCachedAnimRules();
                 if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
                 var nowMontage = NotifyParam.Animation.PathName;
                 var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
                 var fname = NotifyParam.Animation.GetFName();
-                Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()} ,linkValue:{linkValue} ");
+
+                // string linkValueFileName = $"{NotifyParam.Animation.GetFName()}_BANS_GSSpawnBullets_linkValue_{linkValue}.txt";
+                // string linkValueExportPath = Path.Combine("CSharpLoader", "Mods", "bian", "linkValueData");
+                // string linkValueFullPath = Path.Combine(linkValueExportPath, linkValueFileName);
+                // // 确保目录存在
+                // if (!Directory.Exists(linkValueExportPath))
+                // {
+                //     Directory.CreateDirectory(linkValueExportPath);
+                // }
+
+                // // 只在文件不存在时写入linkValue数据
+                // if (!File.Exists(linkValueFullPath))
+                // {
+                //     string linkValueData = linkValue.ToString();
+                //     File.WriteAllText(linkValueFullPath, linkValueData);
+                // }
+
+
+                Console.WriteLine($"BANS_GSSpawnBullets.NotifyParam: {NotifyParam.Animation.GetFName()} ,linkValue:{linkValue} ");
                 if (allRules.Count > 0)
                 {
                     var matchedRule = allRules.FirstOrDefault(rule =>
@@ -173,6 +310,25 @@ public class Hooks
             }
         }
     }
+
+
+    [HarmonyPatch]
+    public class HookGameDBRuntimeInit
+    {
+        private static MethodBase TargetMethod()
+        {
+            return AccessTools.Method("b1.BGW_GameDB:Init", (Type[])null, (Type[])null);
+        }
+
+        [HarmonyPatch]
+        private static void Prefix()
+        {
+            Console.WriteLine($" BGW_GameDB.Prefix: ");
+            Manager.loadAllStaticData(false, 0);
+        }
+    }
+
+
 
     private static readonly Dictionary<string, bool> ProcessedAnimCache = new Dictionary<string, bool>();
 

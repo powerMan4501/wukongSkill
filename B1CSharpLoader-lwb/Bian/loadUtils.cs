@@ -14,6 +14,7 @@ using Google.Protobuf.Collections;
 using b1.Protobuf.DataAPI;
 using bian;
 using ResB1;
+using UnrealEngine.Engine;
 
 public class SoulSkillConfig
 {
@@ -27,6 +28,19 @@ public class SoulSkillConfig
     public string? EffectTalentDesc { get; set; }
 
 }
+
+public class NotifyParam
+{
+    public List<FUStCheckShape> sweepCheckShape { get; set; }
+    public List<int> EffectIDList { get; set; }
+}
+public class notifyItem
+{
+    public string? NotifyTrackName { get; set; }
+    public NotifyParam? notifyParam { get; set; }
+    public float? StartTime { get; set; }
+    public float? EndTime { get; set; }
+}
 public class AnimRuleBySweepCheck
 {
     public string montage { get; set; }
@@ -35,12 +49,18 @@ public class AnimRuleBySweepCheck
     public List<RuleAction>? SweepActions { get; set; }
     public List<RuleAction>? hitActions { get; set; }
     public List<RuleAction>? bulletsActions { get; set; }
+    public List<notifyItem>? notifies { get; set; }
+    public List<int>? hitEffects { get; set; }
 
     public List<RuleAction>? CastActions { get; set; }
     public float? speedRate { get; set; }
     public float? MoveOffset { get; set; }
     public float? scaleWeaponNum { get; set; }
     public int? addRadius { get; set; }
+    public float? AMScaleRate { get; set; }
+    public bool? openShooterMode { get; set; }
+    public bool? closeShooterMode { get; set; }
+    public EMovementMode? moveMode { get; set; }
 
 
 }
@@ -1058,7 +1078,7 @@ namespace bian
 
             Log.Info($"Total processed BuffDisp configs: {processedCount}");
 
-            Helper.DelayExecute(500, () =>
+            Helper.DelayExecute(100, () =>
             {
                 var method = typeof(BGW_GameDB).GetMethod("InitBuffDispMap", BindingFlags.NonPublic | BindingFlags.Static);
                 method?.Invoke(null, null);
@@ -1786,7 +1806,7 @@ namespace bian
             {
                 foreach (var itemData in unitList.Values)
                 {
-                    if (itemData.HPFixedDM < 90000 && (int)itemData.QualityType < 9)
+                    if (itemData.HPFixedDM > 500 && itemData.HPFixedDM < 90000 && (int)itemData.QualityType < 9)
 
                     {
                         var num = itemData.QualityType;
@@ -1865,11 +1885,11 @@ namespace bian
             {
                 foreach (var attackItem in dataList.Values)
                 {
-                    if (attackItem.AttackRange < 6000)
+                    if (attackItem.AttackRange > 100 && attackItem.AttackRange < 6000)
                     {
                         attackItem.AttackRange = 6000;
                     }
-                    if (attackItem.AttackSelectZLimit < 1500)
+                    if (attackItem.AttackSelectZLimit > 0 && attackItem.AttackSelectZLimit < 1500)
                     {
                         attackItem.AttackSelectZLimit = 1500;
                     }

@@ -426,9 +426,9 @@ namespace bian
         public void DoAfterActions(List<RuleAction> actions)
         {
             if (actions == null || actions.Count == 0) return;
+            var character = Helper.GetBGUPlayerCharacterCS();
             foreach (var action in actions)
             {
-                var character = Helper.GetBGUPlayerCharacterCS();
                 if (character == null) continue;
                 // 检查条件
                 if (!CheckBuffConditions(character, action) || !CheckTalentConditions(character, action))

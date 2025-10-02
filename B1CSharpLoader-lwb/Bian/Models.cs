@@ -901,10 +901,9 @@ namespace bian
                             var targetLocation = target.GetActorLocation();
                             targetLocation.X -= 200;
                             character_.Teleport(targetLocation, character_.GetActorRotation());
-                            // BGUFunctionLibraryCS.BGUAddBuff(character_, character_, 888666028, EBuffSourceType.GM, keyItem.BuffTime ?? 1000);
+                           
                             return;
                         }
-                        // Helper.SpawnProjectile(character_, "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'", 88880001, true, 1, false, new FVector(0, 0, 0), null);
                     }
                     else
                     {

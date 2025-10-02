@@ -116,12 +116,14 @@ namespace bian
 
                 // 成功获取到buffDispList，继续加载其他配置
                 LoadUtils.LoadAndApplySummon();
-                LoadUtils.LoadAndApplyChargeSkill();
+                // LoadUtils.LoadAndApplyChargeSkill();
                 LoadUtils.LoadAndApplyBulletExpand();
                 LoadUtils.LoadAndApplyBulletComm();
                 LoadUtils.LoadAndApplyProjectileMove();
                 LoadUtils.LoadAndApplyProjectileDisp();
                 LoadUtils.LoadAndApplySkillDesc();
+
+                
                 LoadUtils.LoadAndApplySkillEffect();
                 LoadUtils.LoadAndApplyBuffDispConfigs();
                 LoadUtils.LoadAndApplyBuff();
@@ -129,10 +131,8 @@ namespace bian
                 LoadUtils.ModifyPlayCtrlDescData();
                 LoadUtils.LoadAndApplyPassiveSkills();
                 LoadUtils.ModifySuitDesc();
-                NotifyUtils.LoadSweepConfig();
-                // NotifyUtils.LoadNotifyData();
+            
                 LoadUtils.ModifyHP();
-                // LoadUtils.ModifySoulskill();
 
                 LoadUtils.LoadAnimRulesBySweepCheck();
                 isBuffConfigsLoaded = true;
@@ -331,7 +331,6 @@ namespace bian
                 ruleItem.Caster = Caster;
                 ruleItem.Target = Target;
                 ruleItem.EffectInstReq = EffectInstReq;
-
                 ruleItem.DoRule(1000, 1, null, ruleItem);
             }
         }
@@ -413,14 +412,17 @@ namespace bian
                 return;
             }
             currentMontage = Montage.PathName;
+            if (Helper.isPlayVigorSkillByID)
+            {
+                Helper.GetBUS_GSEventCollection().Evt_UnitStateTrigger.Invoke(EBUStateTrigger.AttackStateBegin, -1f);
+            }
             if (currentMontage.Contains("Animation/Player/Wukong/") || currentMontage.Contains("AM_wukong_trans_from_Vigor"))
             {
                 Helper.updateIsPlayVigorSkillByID(false);
             }
-
+            var character = __instance.GetOwner() as BGUPlayerCharacterCS;
             if (currentMontage.Contains("AM_wukong_trans_from_Vigor"))
             {
-                var character = __instance.GetOwner() as BGUPlayerCharacterCS;
                 if (character != null)
                 {
                     character.FollowCamera.RelativeLocation = new FVector(0, 0, 0);
@@ -447,10 +449,46 @@ namespace bian
                 var rule = new Rule();
                 rule.DoAfterActions(matchedRule.CastActions);
             }
+
+            if (matchedRule?.AMScaleRate != null)
+            {
+                if (character != null)
+                {
+
+                    BUS_EventCollectionCS.Get(character).Evt_SetAMScaleRateByPosMultiCast.Invoke(EAMScaleType.ScaleForTarget, EAMScaleRateAxis.AxisX, 0, 0.2f, 0, false, false, 0.3f, 0.1f, 0.4f, 0.01f, 20f, -900, 0);
+
+                    // var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
+                    // if (target != null)
+                    // {
+                    //     if (character.GetDistanceTo(target) > 500)
+                    //     {
+                    //         character.SetActorLocation(character.GetActorForwardVector() * 500.0f, bSweep: true, out var _, bTeleport: false);
+                    //     }
+                    // }
+                    // else
+                    // {
+                    //     character.SetActorLocation(character.GetActorForwardVector() * 500.0f, bSweep: true, out var _, bTeleport: false);
+                    // }
+                }
+            }
+            if (matchedRule?.openShooterMode != null && character != null)
+            {
+                BUS_EventCollectionCS.Get(character).Evt_UnitStateTrigger.Invoke(EBUStateTrigger.ShooterModeTrigger, -1f);
+            }
+            if (matchedRule?.closeShooterMode != null && character != null)
+            {
+                BUS_EventCollectionCS.Get(character).Evt_UnitStateTrigger.Invoke(EBUStateTrigger.ShooterModeClear, -1f);
+            }
+
+            if (matchedRule?.moveMode != null && character != null)
+            {
+                character.CharacterMovement.SetMovementMode((EMovementMode)matchedRule.moveMode, 0);
+            }
             if (matchedRule?.speedRate != null)
             {
                 PlayTimeRate = (float)matchedRule.speedRate;
             }
+
 
             if (matchedRule?.scaleWeaponNum != null)
             {
@@ -551,7 +589,6 @@ namespace bian
                 return null;
             }
             return animInstance.GetCurrentActiveMontage();
-
         }
 
         private static bool IsSkillMappingRuleMatch(SkillMappingRule rule, BGUCharacterCS character, bool isChuogun, bool isLigun, bool isPigun, BGUCharacterCS target = null)

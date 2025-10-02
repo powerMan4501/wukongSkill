@@ -246,17 +246,18 @@ namespace bian
             {
                 return;
             }
+            BGWDataAsset_MagicallyChangeConfig config = BGW_PreloadAssetMgr.Get(magicChangeComp).TryGetCachedResourceObj<BGWDataAsset_MagicallyChangeConfig>(soulSkillDesc.DAPath, ELoadResourceType.SyncLoadAndCache);
             // 检查缓存中是否已存在该配置
-            if (!_vigorSkillConfigCache.TryGetValue(VigorSkillID, out var config))
-            {
-                // 缓存不存在，则加载配置
-                config = BGW_PreloadAssetMgr.Get(magicChangeComp).TryGetCachedResourceObj<BGWDataAsset_MagicallyChangeConfig>(soulSkillDesc.DAPath, ELoadResourceType.SyncLoadAndCache);
-                if (config != null)
-                {
-                    // 将新加载的配置加入缓存
-                    _vigorSkillConfigCache[VigorSkillID] = config;
-                }
-            }
+            // if (!_vigorSkillConfigCache.TryGetValue(VigorSkillID, out var config))
+            // {
+            //     // 缓存不存在，则加载配置
+            //     config = BGW_PreloadAssetMgr.Get(magicChangeComp).TryGetCachedResourceObj<BGWDataAsset_MagicallyChangeConfig>(soulSkillDesc.DAPath, ELoadResourceType.SyncLoadAndCache);
+            //     if (config != null)
+            //     {
+            //         // 将新加载的配置加入缓存
+            //         // _vigorSkillConfigCache[VigorSkillID] = config;
+            //     }
+            // }
 
             if (config == null)
             {
@@ -288,7 +289,9 @@ namespace bian
         public static BGWDataAsset_MagicallyChangeConfig? getMagicConfig(BGUPlayerCharacterCS character, string bossLabel, string type)
         {
 
-            if (!boss_vigorSkillConfigCache.TryGetValue(bossLabel, out var config))
+            // !boss_vigorSkillConfigCache.TryGetValue(bossLabel, out var config))
+            BGWDataAsset_MagicallyChangeConfig config;
+            if (true)
             {
                 var magicChangeComp = GetCachedMagicChangeComp(character);
                 if (magicChangeComp == null)
@@ -383,7 +386,7 @@ namespace bian
                 }
 
                 // 将新加载的配置加入缓存
-                boss_vigorSkillConfigCache[bossLabel] = config;
+                // boss_vigorSkillConfigCache[bossLabel] = config;
             }
 
             return config;
