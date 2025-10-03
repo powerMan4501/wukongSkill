@@ -43,21 +43,5 @@
     "ID": 66655409,
     "BuffTips": "没有闪，橙红棍光DBC/wswy/DBC_XuLi_B_3.DBC_XuLi_B_3",
     "Duration": -1
-  },
-  {
-    "ID": 888666015,
-    "BuffTips": "风云转专属 透明橙黄棍光特效，DBC/yswy/DBC_XuLi_B_2.DBC_XuLi_B_2",
-    "Duration": -1
-  },
-
-  {
-    "ID": 888666009,
-    "BuffTips": "棍花专属 透明橙黄棍光特效，DBC/yswy/DBC_XuLi_B_2.DBC_XuLi_B_2",
-    "Duration": -1
-  },
-  {
-    "ID": 888666011,
-    "BuffTips": "搅阵专属 没有闪，橙红棍光DBC/wswy/DBC_XuLi_B_3.DBC_XuLi_B_3",
-    "Duration": -1
   }
 ]

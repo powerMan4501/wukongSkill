@@ -64,14 +64,7 @@
       "ConditionParams": ""
     }
   },
-  {
-    "ID": 2028,
-    "BuffTips": "业火棍，去掉条件",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    }
-  },
+ 
 
   {
     "ID": 2824,
@@ -183,33 +176,6 @@
         "EffectParamsString": [],
         "EffectParams": [20634],
         "EffectParamsFloat": [0.0]
-      }
-    ]
-  },
-
-  {
-    "ID": 700101,
-    "BuffTips": "僵尸大圣安身术火Buff",
-    "CanRemoveWhenAttackHit": 0,
-    "CanRemoveWhenAttacked": 0,
-    "Duration": -1,
-    "Interval": 100,
-    "BuffEffects": [
-      {
-        "EffectTrigger": 2,
-        "EffectType": 95,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [2, 1, 1, 1000],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 2,
-        "EffectType": 1,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [0, 3, 1, 1, 2, 0, 0, 4],
-        "EffectParamsFloat": [0.0, 200.0, 2000.0, 0.0, 0.0, 0.0, 0.0]
       }
     ]
   },

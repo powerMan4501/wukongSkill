@@ -134,18 +134,7 @@
     "Duration": -1,
     "BuffTips": "毒buff"
   },
-  {
-    "ID": 888666009,
-    "Duration": -1,
-    "Interval": 150,
-    "BuffTips": "棍花buff"
-  },
-  {
-    "ID": 888666011,
-    "Duration": -1,
-    "Interval": 150,
-    "BuffTips": "搅阵buff"
-  },
+ 
   
 
   {
@@ -170,12 +159,6 @@
     "BuffTips": "进尺buff，触发子弹用的"
   },
 
-  {
-    "ID": 888666015,
-    "Duration": -1,
-    "Interval": 150,
-    "BuffTips": "风云转buff，添加"
-  },
  
   {
     "ID": 888660170,
