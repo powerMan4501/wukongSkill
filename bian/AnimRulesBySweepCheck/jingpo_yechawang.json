@@ -46,6 +46,7 @@
     "montage": "AM_HYS_HongHaiEr_02A_Atk_06_dalei",
     "linkValue": 0,
     "speedRate": 1.2,
+    "AMSpeedRate": 1,
     "notifies": [
       {
         "NotifyTrackName": "BANS_GSSweepCheck",

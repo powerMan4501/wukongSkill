@@ -37,6 +37,7 @@
         "type": "buff",
         "BuffID": 1129
       }
+      
     ]
   },
 
@@ -197,7 +198,7 @@
     "desc": "破隐一击",
     "montage": "AM_Wukong_JXSQ_Atk_01",
     "linkValue": 0,
-    "CastActions": [
+    "SweepActions": [
       {
         "Type": "removeBuff",
         "BuffIDs": [123, 20102],

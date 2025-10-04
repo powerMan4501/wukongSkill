@@ -1,0 +1,41 @@
+[
+  {
+    "nowMontage": "AM_Wukong_PreciseDodge_F_01",
+    "rate": 0.5,
+    "type": "RushSkill",
+    "RushDir": "Forward",
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "完美闪避接jxsq"
+  },
+
+   {
+    "nowMontage": "AM_Wukong_PreciseDodge_R_01.AM_Wukong_PreciseDodge_R_01",
+    "rate": 0.5,
+    "type": "RushSkill",
+    "RushDir": "Right",
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "完美闪避接jxsq"
+  },
+
+   {
+    "nowMontage": "AM_Wukong_PreciseDodge_B_01.AM_Wukong_PreciseDodge_B_01",
+    "rate": 0.5,
+    "type": "RushSkill",
+    "RushDir": "Backward",
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "完美闪避接jxsq"
+  },
+
+   {
+    "nowMontage": "AM_Wukong_PreciseDodge_L_01.AM_Wukong_PreciseDodge_L_01",
+    "rate": 0.5,
+    "type": "RushSkill",
+    "RushDir": "Left",
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "完美闪避接jxsq"
+  }
+]

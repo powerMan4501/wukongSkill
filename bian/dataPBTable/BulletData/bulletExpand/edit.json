@@ -68,32 +68,39 @@
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1
   },
-  
+
   {
     "desc": "亢金龙索敌蕾丝",
     "ID": 34016001,
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1
   },
-  
+
   {
     "desc": "亢金龙索敌蕾丝",
     "ID": 34016002,
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1
   },
-  
+
   {
     "desc": "亢金龙索敌蕾丝",
     "ID": 34016003,
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1
   },
-  
+
   {
     "desc": "亢金龙索敌蕾丝",
     "ID": 34016004,
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1
+  },
+  {
+    "desc": "蛇毒",
+    "ID": 10030401,
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1,
+    "HitEffectsforChr": [888555021, 888555018]
   }
 ]

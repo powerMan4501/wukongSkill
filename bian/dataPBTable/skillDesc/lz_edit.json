@@ -1,8 +1,26 @@
 [
   {
-    "desc": "完美定身，耗蓝改成1，冷却改成8",
+    "desc": "完美定身，耗蓝改成1，冷却改成5",
     "ID": 10519,
     "MinAttrCostBase1": 1,
-    "CooldownTime": 8
+    "CooldownTime": 5
+  },
+  {
+    "desc": "JXSQ，耗蓝改成1，冷却改成5",
+    "ID": 10095,
+    "SkillBaseTarget": 0,
+    "SkillType": 10,
+    "NoiseLoudness": 1.0,
+    "MinAttrCostType1": 2,
+    "MinAttrCostBase1": 1.0,
+    "CooldownTime": 5.0,
+    "DmgRangeType": 1,
+    "SkillRotateType": 3,
+    "SkillHitSetSimpleState": 0,
+    "AtkReboundingMontage": "",
+    "LowAtkReboundingMontage": "",
+    "SkillArmorBrokeMontage": "",
+    "CooldownSkills": "",
+    "AdditionalHatredValue": 0.0
   }
 ]

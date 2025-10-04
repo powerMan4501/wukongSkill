@@ -32,8 +32,17 @@
     {
       "Id": 10505,
       "Name": "铜头铁臂",
-      "Key": "S+A",
+      "Key": "S+Z",
       "CanBreak": false
+    },
+
+    {
+      "type": "BOSS",
+      "bossLabel": "SK_LuoChaGui_01",
+      "MagicSkillID": 401203,
+      "Name": "鬼王足球踢",
+      "Key": "S+X",
+      "CanBreak": true
     },
 
     {
@@ -244,7 +253,7 @@
       "Key": "NUMPAD8",
       "CanBreak": true
     },
- {
+    {
       "MagicSkillID": 440508,
       "type": "BOSS",
       "bossLabel": "SK_HYS_HongHaiEr_02A",

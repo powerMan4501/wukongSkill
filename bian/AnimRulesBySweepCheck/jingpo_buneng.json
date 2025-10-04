@@ -11,7 +11,7 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [2403471,30050301],
+            "ProjectTileIDs": [2403471, 30050301],
             "hasBuff": 888666006,
             "OffsetX": 500,
             "OffsetY": 500,
@@ -118,6 +118,35 @@
             "SpeedLeftValue": 16000,
             "SpeedRightValue": 16000,
             "desc": "没有冰buff，发射巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "desc": "不空，发射鬼火",
+    "montage": "AM_30_lys_laoseng_tandao_01",
+    "linkValue": 0,
+    "CastActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [40121801, 40121201],
+            "hasBuff": 888666007,
+            "ForTarget": true,
+            "desc": "发射鬼火"
+          },
+
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [10030401],
+            "noHasBuff": 888666008,
+            "BulletCount": 2,
+            "ForTarget": true,
+            "desc": "没有火buff，蛇毒"
           }
         ]
       }

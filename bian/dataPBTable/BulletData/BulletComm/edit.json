@@ -29,5 +29,11 @@
     "desc": "蝎子毒",
     "ID": 49991303,
     "ProjectileLifeTime": 90
+  },
+
+   {
+    "desc": "蛇毒",
+    "ID": 10030401,
+    "ProjectileLifeTime": 8
   }
 ]

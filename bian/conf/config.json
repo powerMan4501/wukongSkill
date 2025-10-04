@@ -686,6 +686,13 @@
       "Type": "strong_monster",
       "Name": "shift+a 把怪加强，五倍血",
       "AlawaysCanCast": true
+    },
+
+     {
+      "Key": "S+D",
+      "Type": "refresh_data",
+      "Name": "刷新mod数据",
+      "AlawaysCanCast": true
     }
   ]
 }
