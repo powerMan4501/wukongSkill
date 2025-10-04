@@ -876,6 +876,10 @@ namespace bian
                     // 加强怪
                     Helper.StrongMonster();
                     break;
+                case "refresh_data":
+                    // 刷新数据
+                    Manager.loadAllStaticData(true, 0);
+                    break;
                 case "Teleport":
 
                     var character_ = Helper.GetBGUPlayerCharacterCS();
@@ -901,7 +905,7 @@ namespace bian
                             var targetLocation = target.GetActorLocation();
                             targetLocation.X -= 200;
                             character_.Teleport(targetLocation, character_.GetActorRotation());
-                           
+
                             return;
                         }
                     }

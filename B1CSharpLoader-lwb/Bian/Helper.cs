@@ -1375,8 +1375,61 @@ namespace bian
         }
 
 
-
-
-
+        public static void addJXSQBuffs(BGUCharacterCS actor)
+        {
+            List<int> buffs = [118, 119, 122, 123, 1056, 1059, 2093];
+            foreach (int buffID in buffs)
+            {
+                if (!BGUFunctionLibraryCS.BGUHasBuffByID(actor, buffID))
+                {
+                    BGUFunctionLibraryCS.BGUAddBuff(actor, actor, buffID, EBuffSourceType.PhantomRush, 10000);
+                }
+            }
+        }
+        // 完美闪避变成jxsq
+        public static void changeDodgeSkill(BGUCharacterCS actor, string montageName)
+        {
+            if (actor == null) return;
+            Log.Info($"bian: changeDodgeSkill montageName:{montageName}");
+            DelayExecute(700, () =>
+            {
+                try
+                {
+                    // 再次检查 actor 是否有效
+                    if (actor == null) return;
+                    BUS_GSEventCollection val = BUS_EventCollectionCS.Get(actor);
+                    if (val == null) return;
+                    val.Evt_RequestSmartCastSkill.Invoke(10095, null, EMontageBindReason.NormalSkill, true);
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Error in changeDodgeSkill: {ex.Message}");
+                }
+            });
+        }
+        public static void doPhantomRushSkill(BGUCharacterCS actor, string direction)
+        {
+            ESkillDirection phantomRushDir = ESkillDirection.None;
+            Log.Info($"bian: doPhantomRushSkill direction:{direction}");
+            switch (direction)
+            {
+                case "null":
+                    phantomRushDir = ESkillDirection.Forward;
+                    break;
+                case "Forward":
+                    phantomRushDir = ESkillDirection.Forward;
+                    break;
+                case "Backward":
+                    phantomRushDir = ESkillDirection.Backward;
+                    break;
+                case "Left":
+                    phantomRushDir = ESkillDirection.Left;
+                    break;
+                case "Right":
+                    phantomRushDir = ESkillDirection.Right;
+                    break;
+            }
+            BUS_EventCollectionCS.Get(actor).Evt_TriggerPhantomRush.Invoke(phantomRushDir);
+        }
     }
 }

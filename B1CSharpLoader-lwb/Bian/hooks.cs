@@ -22,24 +22,25 @@ public class Hooks
 
     private static List<AnimRuleBySweepCheck> _cachedAnimRules = null; // 缓存动画规则
 
-    // [HarmonyPatch]
-    // public class HookBGGGameStateCS
-    // {
-    //     private static MethodBase TargetMethod()
-    //     {
-    //         return AccessTools.Method("b1.BGGGameStateCS:AfterInitAllComp", (Type[])null, (Type[])null);
-    //     }
+    [HarmonyPatch]
+    public class HookBGGGameStateCS
+    {
+        private static MethodBase TargetMethod()
+        {
+            return AccessTools.Method("b1.BGGGameStateCS:AfterInitAllComp", (Type[])null, (Type[])null);
+        }
 
-    //     [HarmonyPatch]
-    //     private static void Prefix(ref BGGGameStateCS __instance)
-    //     {
-    //         if ((UObject)(object)__instance != null)
-    //         {
-    //             Console.WriteLine($" AfterInitAllComp.Prefix: ");
-    //             Manager.loadAllStaticData(false, 0);
-    //         }
-    //     }
-    // }
+        [HarmonyPatch]
+        private static void Prefix(ref BGGGameStateCS __instance)
+        {
+            if ((UObject)(object)__instance != null)
+            {
+                Console.WriteLine($"AfterInitAllComp.Prefix ");
+
+                Manager.loadAllStaticData(false, 0);
+            }
+        }
+    }
 
 
     // [HarmonyPatch]
@@ -185,74 +186,73 @@ public class Hooks
     }
 
 
-    [HarmonyPatch]
-    public class HookBUS_SweepCheckHitComp
-    {
-        private static MethodBase TargetMethod()
-        {
-            return AccessTools.Method("b1.BUS_SweepCheckHitComp:OnSweepCheckHit", (Type[])null, (Type[])null);
-        }
+    // [HarmonyPatch]
+    // public class HookBUS_SweepCheckHitComp
+    // {
+    //     private static MethodBase TargetMethod()
+    //     {
+    //         return AccessTools.Method("b1.BUS_SweepCheckHitComp:OnSweepCheckHit", (Type[])null, (Type[])null);
+    //     }
 
-        [HarmonyPatch]
-        private static void Prefix(ref AActor Victim, ref float SweepProtectTime, ref string SkillTaskUniqID, in FEffectInstReq EffectInstReq, ref List<AbnormalStateAccConfig> AbnormalStateEffectList, ref List<FTriggerEffectWithCondition> EffectsWithCondition_Before, ref List<int> EffectIDList, ref List<FTriggerEffectWithCondition> EffectsWithCondition_After, ref int GroupID, ref int FromInstanceID)
-        {
+    //     [HarmonyPatch]
+    //     private static void Prefix(ref AActor Victim, ref float SweepProtectTime, ref string SkillTaskUniqID, in FEffectInstReq EffectInstReq, ref List<AbnormalStateAccConfig> AbnormalStateEffectList, ref List<FTriggerEffectWithCondition> EffectsWithCondition_Before, ref List<int> EffectIDList, ref List<FTriggerEffectWithCondition> EffectsWithCondition_After, ref int GroupID, ref int FromInstanceID)
+    //     {
 
-            var attacker = EffectInstReq.Attacker;
-            if (attacker == null) return;
-            var name = attacker?.PathName;
-            if (name == null || name.ToLower().IndexOf("unit_player") < 0)
-            {
-                return;
-            }
-            var character = Helper.GetBGUPlayerCharacterCS();
-            UAnimMontage? currentMontage = null;
-            if (character == null)
-            {
-                return;
-            }
-            UAnimInstance animInstance = character.Mesh.GetAnimInstance();
-            if (character == animInstance)
-            {
-                return;
-            }
-            currentMontage = animInstance.GetCurrentActiveMontage();
+    //         var attacker = EffectInstReq.Attacker;
+    //         if (attacker == null) return;
+    //         var name = attacker?.PathName;
+    //         if (name == null || name.ToLower().IndexOf("unit_player") < 0)
+    //         {
+    //             return;
+    //         }
+    //         var character = Helper.GetBGUPlayerCharacterCS();
+    //         UAnimMontage? currentMontage = null;
+    //         if (character == null)
+    //         {
+    //             return;
+    //         }
+    //         UAnimInstance animInstance = character.Mesh.GetAnimInstance();
+    //         if (character == animInstance)
+    //         {
+    //             return;
+    //         }
+    //         currentMontage = animInstance.GetCurrentActiveMontage();
 
-            var allRules = GetCachedAnimRules();
-            if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
-            var nowMontage = currentMontage.PathName;
-            if (nowMontage == null)
-            {
-                return;
-            }
+    //         var allRules = GetCachedAnimRules();
+    //         if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
+    //         var nowMontage = currentMontage.PathName;
+    //         if (nowMontage == null)
+    //         {
+    //             return;
+    //         }
 
-            Console.WriteLine($"OnSweepCheckHit: {currentMontage?.GetFName()} ,SkillTaskUniqID:{SkillTaskUniqID},GroupID:{GroupID},FromInstanceID:{FromInstanceID},Victim:{Victim?.GetName()}");
-            if (allRules.Count > 0)
-            {
-                var matchedRule = allRules.FirstOrDefault(rule =>
-                    !string.IsNullOrEmpty(nowMontage) &&
-                    nowMontage.Contains(rule.montage));
+    //         if (allRules.Count > 0)
+    //         {
+    //             var matchedRule = allRules.FirstOrDefault(rule =>
+    //                 !string.IsNullOrEmpty(nowMontage) &&
+    //                 nowMontage.Contains(rule.montage));
 
-                if (matchedRule != null) return;
-                if (matchedRule?.hitActions != null && matchedRule?.hitActions?.Count > 0)
-                {
-                    var rule = new Rule();
-                    foreach (var action in matchedRule.hitActions)
-                    {
-                        action.Caster = character;
-                        action.Target = Victim;
-                        action.EffectInstReq = EffectInstReq;
-                    }
-                    rule.DoAfterActions(matchedRule.hitActions);
-                }
+    //             if (matchedRule != null) return;
+    //             if (matchedRule?.hitActions != null && matchedRule?.hitActions?.Count > 0)
+    //             {
+    //                 var rule = new Rule();
+    //                 foreach (var action in matchedRule.hitActions)
+    //                 {
+    //                     action.Caster = character;
+    //                     action.Target = Victim;
+    //                     action.EffectInstReq = EffectInstReq;
+    //                 }
+    //                 rule.DoAfterActions(matchedRule.hitActions);
+    //             }
 
-                if (matchedRule?.hitEffects?.Count > 0)
-                {
-                    EffectIDList.AddRange(matchedRule.hitEffects);
-                }
-            }
+    //             if (matchedRule?.hitEffects?.Count > 0)
+    //             {
+    //                 EffectIDList.AddRange(matchedRule.hitEffects);
+    //             }
+    //         }
 
-        }
-    }
+    //     }
+    // }
 
 
 
@@ -312,21 +312,21 @@ public class Hooks
     }
 
 
-    [HarmonyPatch]
-    public class HookGameDBRuntimeInit
-    {
-        private static MethodBase TargetMethod()
-        {
-            return AccessTools.Method("b1.BGW_GameDB:Init", (Type[])null, (Type[])null);
-        }
+    // [HarmonyPatch]
+    // public class HookGameDBRuntimeInit
+    // {
+    //     private static MethodBase TargetMethod()
+    //     {
+    //         return AccessTools.Method("b1.BGW_GameDB:Init", (Type[])null, (Type[])null);
+    //     }
 
-        [HarmonyPatch]
-        private static void Prefix()
-        {
-            Console.WriteLine($" BGW_GameDB.Prefix: ");
-            Manager.loadAllStaticData(false, 0);
-        }
-    }
+    //     [HarmonyPatch]
+    //     private static void Prefix()
+    //     {
+    //         Console.WriteLine($" BGW_GameDB.Prefix: ");
+    //         Manager.loadAllStaticData(false, 0);
+    //     }
+    // }
 
 
 
@@ -358,11 +358,6 @@ public class Hooks
                 return;
             }
             UGSE_AnimFuncLib.GetAllNotifyEvent(Montage, out var AnimNotifyEventList);
-            // 确保数据已加载
-            // if (notifyDataList.Count == 0)
-            // {
-            //     LoadNotifyData();
-            // }
 
             if (!(AnimNotifyEventList != null && AnimNotifyEventList.Count > 0))
             {
@@ -377,9 +372,20 @@ public class Hooks
 
             // 替换原有的硬编码判断逻辑
             var config = allRules.FirstOrDefault(c => strPathName.Contains(c.montage));
+            var hitEffects = new List<int>();
+            float am_speed = 0;
             if (config != null)
             {
                 addRadius = config.addRadius ?? 100;
+
+                if (config.hitEffects != null && config.hitEffects.Count > 0)
+                {
+                    hitEffects.AddRange(config.hitEffects);
+                }
+                if (config.AMSpeedRate != null && config.AMSpeedRate > 0)
+                {
+                    am_speed = (float)config.AMSpeedRate;
+                }
             }
             // 查找相同类型的通知作为模板
             foreach (FAnimNotifyEvent item in AnimNotifyEventList)
@@ -396,9 +402,18 @@ public class Hooks
                         {
                             sweepItem.SKComp.SetRelativeScale3D(new FVector(scaleNum, scaleNum, scaleNum));
                         }
+
                         sweepCheck.SweepCheckShape[i] = sweepItem;
 
                     }
+                    if (hitEffects.Count > 0)
+                    {
+                        foreach (var hitEffect in hitEffects)
+                        {
+                            sweepCheck.EffectIDList.Add(hitEffect);
+                        }
+                    }
+
                 }
                 else if (item.NotifyName == new FName("BANS_GSCalcAMScale"))
                 {
@@ -428,6 +443,27 @@ public class Hooks
                 else if (item.NotifyName == new FName("BANS_GSDodgeWindow") || item.NotifyName == new FName("ComboWindow"))
                 {
                     item.LinkValue = 0.1f; // 设置触发时间为0.1秒
+                }
+                else if (item.NotifyName == new FName("BANS_GSSetAMSpeedRate"))
+                {
+                    // 使用反射来获取和设置属性值
+                    var notifyStateClassType = item.NotifyStateClass.GetType();
+
+                    // 获取 SectionSpeedRate 属性
+                    var sectionSpeedRateProperty = notifyStateClassType.GetProperty("SectionSpeedRate");
+                    if (sectionSpeedRateProperty != null)
+                    {
+                        // 获取当前属性值
+                        var currentValue = sectionSpeedRateProperty.GetValue(item.NotifyStateClass);
+                        float sectionSpeedRate = (float)currentValue;
+
+                        // 检查并修改值
+                        if (sectionSpeedRate < 1.5 && am_speed > 0)
+                        {
+                            sectionSpeedRateProperty.SetValue(item.NotifyStateClass, am_speed);
+                        }
+                    }
+
                 }
                 else if (BANS_GSAttackWarnningHelper.IsAttackWarning(item.NotifyStateClass))
                 {

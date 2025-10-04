@@ -106,32 +106,32 @@ namespace bian
 
             if (buffDispList == null || buffDispList.Count == 0)
             {
-                if (maxRetries > 0)
-                {
-                    Helper.DelayExecute(retryInterval, () => GetBuffDispListWithRetry(5000, maxRetries - 1));
-                }
+                // if (maxRetries > 0)
+                // {
+                //     Helper.DelayExecute(retryInterval, () => GetBuffDispListWithRetry(5000, maxRetries - 1));
+                // }
             }
             else
             {
 
-                // 成功获取到buffDispList，继续加载其他配置
-                LoadUtils.LoadAndApplySummon();
-                // LoadUtils.LoadAndApplyChargeSkill();
+                /// LoadUtils.LoadAndApplySummon();
+                LoadUtils.LoadAndApplyChargeSkill();
                 LoadUtils.LoadAndApplyBulletExpand();
                 LoadUtils.LoadAndApplyBulletComm();
                 LoadUtils.LoadAndApplyProjectileMove();
                 LoadUtils.LoadAndApplyProjectileDisp();
                 LoadUtils.LoadAndApplySkillDesc();
 
-                
+
                 LoadUtils.LoadAndApplySkillEffect();
+                LoadUtils.LoadAndApplyPassiveSkills();
                 LoadUtils.LoadAndApplyBuffDispConfigs();
                 LoadUtils.LoadAndApplyBuff();
                 LoadUtils.ModifyIronData();
                 LoadUtils.ModifyPlayCtrlDescData();
-                LoadUtils.LoadAndApplyPassiveSkills();
+
                 LoadUtils.ModifySuitDesc();
-            
+
                 LoadUtils.ModifyHP();
 
                 LoadUtils.LoadAnimRulesBySweepCheck();
@@ -402,6 +402,8 @@ namespace bian
             }
             return false;
         }
+
+
         [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_CastSkillWithAnimMontageMultiCast_Implementation")]
         [HarmonyPrefix]
         private static void CastSkillWithAnimMontageMultiCast(BUS_GSEventCollection __instance, ref UAnimMontage Montage, ref float PlayTimeRate, float MontagePosOffset, FName StartSectionName)
@@ -432,6 +434,14 @@ namespace bian
             {
                 comboMontage = Montage.PathName;
             }
+            // 添加jxsq 相关buff
+            if (currentMontage.Contains(".AM_Wukong_JXSQ_Enter_") && character != null)
+            {
+                Helper.addJXSQBuffs(character);
+            }
+          
+
+
 
             var allRules = Hooks.GetCachedAnimRules();
             if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
@@ -450,25 +460,12 @@ namespace bian
                 rule.DoAfterActions(matchedRule.CastActions);
             }
 
-            if (matchedRule?.AMScaleRate != null)
+            if (matchedRule?.AMScaleRate != null && matchedRule?.AMScaleRate > 1)
             {
                 if (character != null)
                 {
 
-                    BUS_EventCollectionCS.Get(character).Evt_SetAMScaleRateByPosMultiCast.Invoke(EAMScaleType.ScaleForTarget, EAMScaleRateAxis.AxisX, 0, 0.2f, 0, false, false, 0.3f, 0.1f, 0.4f, 0.01f, 20f, -900, 0);
-
-                    // var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
-                    // if (target != null)
-                    // {
-                    //     if (character.GetDistanceTo(target) > 500)
-                    //     {
-                    //         character.SetActorLocation(character.GetActorForwardVector() * 500.0f, bSweep: true, out var _, bTeleport: false);
-                    //     }
-                    // }
-                    // else
-                    // {
-                    //     character.SetActorLocation(character.GetActorForwardVector() * 500.0f, bSweep: true, out var _, bTeleport: false);
-                    // }
+                    BUS_EventCollectionCS.Get(character).Evt_SetAMScaleRateByPosMultiCast.Invoke(EAMScaleType.ScaleForTarget, EAMScaleRateAxis.AxisX, 0, 0.2f, 0, false, false, 0.3f, 0.1f, 0.4f, 0.01f, (float)(matchedRule.AMScaleRate), -900, 0);
                 }
             }
             if (matchedRule?.openShooterMode != null && character != null)
@@ -494,86 +491,8 @@ namespace bian
             {
                 OnScaleWeapon((float)matchedRule.scaleWeaponNum);
             }
-            else
-            {
-                // OnScaleWeapon(1);
-            }
 
             Hooks.handleNotify(Montage, 0);
-
-
-
-
-
-
-            // currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
-            // var mgr = Manager.GetModelManager();
-            // var currentModel = mgr.GetCurrentModel(__instance.GetOwner() as BGUPlayerCharacterCS) as BaseModel;
-            // var length = Montage.GetPlayLength() * 1000;
-            // var playRate = 1f;
-
-
-            // if (currentModel != null && currentModel.PlayTimeRate > 0)
-            // {
-            //     playRate = currentModel.PlayTimeRate;
-            // }
-            // var PlayTimeRate_ = PlayTimeRate;
-            // if (currentModel?.skillSpeedRate > 0)
-            // {
-            //     PlayTimeRate_ = (float)currentModel.skillSpeedRate; //动画播放速率
-            // }
-            // montageName.Contains(filter.Name)
-
-
-            // // 检查是否有对应的动画规则
-            // if (!montageRulesMap.Any(x => !string.IsNullOrEmpty(x.Key) && currentMontage.Contains(x.Key)))
-            // {
-            //     NotifyUtils.handleNotify(Montage);
-
-            //     return;
-            // }
-            // var matchingRules = montageRulesMap.FirstOrDefault(x => currentMontage.Contains(x.Key)).Value;
-            // if (matchingRules.Count == 0)
-            // {
-            //     NotifyUtils.handleNotify(Montage);
-
-            //     return;
-            // }
-            // // 一个循环只执行一次分身
-            // bool hasExecutedSkill = false;
-            // bool hasCaledWeapon = false;
-            // foreach (var ruleItem in matchingRules)
-            // {
-
-            //     if (ruleItem.MoveOffset != null && ruleItem.MoveOffset > 0)
-            //     {
-            //         NotifyUtils.handleNotify(Montage, (float)ruleItem.MoveOffset);
-            //     }
-            //     if (!hasExecutedSkill && ruleItem?.skillID_fs > 0) // 增加标志判断
-            //     {
-            //         Helper.FenshenGSTryCastSkill((int)ruleItem.skillID_fs, false);
-            //         hasExecutedSkill = true; // 设置标志为true
-            //     }
-            //     if (!hasCaledWeapon && ruleItem?.scaleWeaponNum > 1)
-            //     {
-            //         OnScaleWeapon((float)ruleItem.scaleWeaponNum);
-            //         hasCaledWeapon = true;
-            //     }
-            //     else
-            //     {
-            //         hasCaledWeapon = false; // 重置标志
-            //         NotifyUtils.handleNotify(Montage, 1);
-            //         OnScaleWeapon(1);
-            //     }
-
-            //     if (ruleItem?.speedRate > 0)
-            //     {
-            //         PlayTimeRate_ = (float)ruleItem.speedRate; //动画播放速率
-            //     }
-            //     ruleItem.DoRule(length, playRate, Montage, ruleItem);
-            // }
-
-
         }
         public static UAnimMontage? GetPlayerCurrentActiveMontage(BGUCharacterCS character)
         {
@@ -909,6 +828,10 @@ namespace bian
                     {
                         Helper.CastVigorSkillByModel((BGUPlayerCharacterCS)character, combo.bossLabel, combo.type ?? "", combo?.MagicSkillID ?? 0);
                     }
+                    if (type == "RushSkill")
+                    {
+                        Helper.doPhantomRushSkill((BGUPlayerCharacterCS)character, combo.RushDir ?? "Forward");
+                    }
                 });
         }
 
@@ -981,6 +904,10 @@ namespace bian
                 else if (matchedCombo.type == "magic")
                 {
                     CastMagicSkill(character, matchedCombo, "magic");
+                }
+                else if (matchedCombo.type == "RushSkill")
+                {
+                    CastMagicSkill(character, matchedCombo, "RushSkill");
                 }
                 else
                 {

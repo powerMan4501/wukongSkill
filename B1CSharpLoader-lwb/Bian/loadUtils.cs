@@ -61,6 +61,7 @@ public class AnimRuleBySweepCheck
     public bool? openShooterMode { get; set; }
     public bool? closeShooterMode { get; set; }
     public EMovementMode? moveMode { get; set; }
+    public float? AMSpeedRate { get; set; }
 
 
 }
@@ -366,6 +367,9 @@ namespace bian
         public int? MagicSkillID { get; set; }
         public float? Scale3D { get; set; }
         public string? bossLabel { get; set; }
+        public string? RushDir { get; set; }
+
+
     }
     public static class LoadUtils
     {
@@ -393,9 +397,13 @@ namespace bian
                         var configs = JsonConvert.DeserializeObject<List<ComboConfig>>(json);
                         if (configs != null)
                         {
+                            // 去重处理
+                            var uniqueConfigs = configs.GroupBy(c => new { c.nowMontage, c.rate, c.skillID, c.Condition, c.InputCore })
+                                                      .Select(g => g.First())
+                                                      .ToList();
                             comboConfigs.AddRange(configs);
                             // 收集所有需要监听的按键
-                            foreach (var config in configs)
+                            foreach (var config in uniqueConfigs)
                             {
                                 if (!string.IsNullOrEmpty(config.InputCore))
                                 {
@@ -1058,7 +1066,8 @@ namespace bian
                 return 0;
             }
 
-
+            // 去重处理
+            configs = configs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
             var processedCount = 0;
             foreach (var config in configs)
             {
@@ -1100,7 +1109,8 @@ namespace bian
                 {
                     return 0;
                 }
-
+                // 去重处理
+                buffConfigs = buffConfigs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
                 const int templateBuffId = 295;
                 if (!buffList.TryGetValue(templateBuffId, out var templateBuff))
                 {
@@ -1160,8 +1170,14 @@ namespace bian
             }
 
             var rules = LoadJsonConfigs<SkillMappingRule>(configDirectory, "SkillMapping");
+            if (rules == null || rules.Count == 0) return;
+            // 对技能映射规则进行去重
+            var AllSkillMappingRules = rules
+                .GroupBy(rule => new { rule.OriginalId, rule.MappedId, rule.Condition })
+                .Select(group => group.First())
+                .ToList();
             Manager.ClearSkillMappingRules();
-            Manager.AddSkillMappingRules(rules);
+            Manager.AddSkillMappingRules(AllSkillMappingRules);
 
             // Log.Info($"Total loaded rules: {Manager.SkillMappingRules.Count}");
         }
@@ -1218,7 +1234,8 @@ namespace bian
                     Log.Error("Failed to load bullet expand configs or bullet expand list is not available");
                     return 0;
                 }
-
+                // 去重处理
+                bulletExpandConfigs = bulletExpandConfigs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
                 const int templateBulletId = 117;
                 if (!bulletExpandList.TryGetValue(templateBulletId, out var templateBullet))
                 {
@@ -1291,6 +1308,8 @@ namespace bian
                     return 0;
                 }
 
+                // 去重处理
+                bulletCommConfigs = bulletCommConfigs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
                 // 修改点：如果没有模板子弹，使用默认值或创建一个
                 const int templateBulletId = 117;
                 if (!bulletCommList.TryGetValue(templateBulletId, out var templateBullet))
@@ -1360,7 +1379,8 @@ namespace bian
                     Log.Error("Failed to load projectile move configs or projectile move list is not available");
                     return 0;
                 }
-
+                // 去重处理
+                projectileMoveConfigs = projectileMoveConfigs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
                 const int templateProjectileId = 117;
                 if (!projectileMoveList.TryGetValue(templateProjectileId, out var templateProjectile))
                 {
@@ -1436,7 +1456,8 @@ namespace bian
                     Log.Error("Failed to load projectile disp configs");
                     return 0;
                 }
-
+                // 去重处理
+                projectileDispConfigs = projectileDispConfigs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
                 // 修改点：如果没有模板投射物，使用默认值或创建一个
                 const int templateProjectileId = 117;
                 if (!projectileDispList.TryGetValue(templateProjectileId, out var templateProjectile))
@@ -1520,6 +1541,8 @@ namespace bian
                     return 0;
                 }
 
+                // 去重处理
+                chargeSkillConfigs = chargeSkillConfigs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
                 const int templateSkillId = 10720;
                 if (!chargeSkillList.TryGetValue(templateSkillId, out var templateSkill))
                 {
@@ -1601,7 +1624,8 @@ namespace bian
                     // Log.Error("Failed to load summon configs");
                     return 0;
                 }
-
+                // 去重处理
+                summonConfigs = summonConfigs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
                 // 如果没有模板召唤物，使用默认值或创建一个
                 const int templateSummonId = 1001101;
                 if (!summonList.TryGetValue(templateSummonId, out var templateSummon))
@@ -1676,7 +1700,8 @@ namespace bian
                     Log.Error($"Template skill (ID: {templateSkillId}) not found");
                     return 0;
                 }
-
+                // 去重处理
+                skillConfigs = skillConfigs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
                 var processedCount = 0;
                 foreach (var skillConfig in skillConfigs)
                 {
@@ -1740,7 +1765,8 @@ namespace bian
                     Log.Error($"Template buff effect (ID: {templateBuffEffectId}) not found");
                     return 0;
                 }
-
+                // 去重处理
+                buffEffectConfigs = buffEffectConfigs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
                 var processedCount = 0;
                 foreach (var buffEffectConfig in buffEffectConfigs)
                 {
@@ -1837,7 +1863,8 @@ namespace bian
                     Log.Error("Failed to get passive skill list from game database");
                     return 0;
                 }
-
+                // 去重处理
+                passiveConfigs = passiveConfigs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
                 var processedCount = 0;
                 foreach (var config in passiveConfigs)
                 {
