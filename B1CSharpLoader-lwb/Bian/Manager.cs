@@ -133,7 +133,7 @@ namespace bian
                 LoadUtils.ModifySuitDesc();
 
                 LoadUtils.ModifyHP();
-
+                LoadUtils.ModifyEquipDesc();
                 LoadUtils.LoadAnimRulesBySweepCheck();
                 isBuffConfigsLoaded = true;
             }
@@ -838,8 +838,7 @@ namespace bian
                     }
                     if (type == "TRANS")
                     {
-
-                        Helper.CastTranskillByID((BGUPlayerCharacterCS)character, combo.skillID, combo?.backTime ?? 0, combo?.MagicSkillID ?? 0, combo?.Scale3D ?? 1);
+                        Helper.CastTranskillByID((BGUPlayerCharacterCS)character, combo?.ResId ?? 0, combo?.MagicSkillID ?? 0);
                     }
 
                 });

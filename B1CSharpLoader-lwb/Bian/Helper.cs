@@ -277,25 +277,34 @@ namespace bian
         }
 
 
-        public static void CastTranskillByID(BGUPlayerCharacterCS character, int VigorSkillID, float backTime = 0, int? MagicSkillID = 0, float? Scale3D = 1)
+        public static void CastTranskillByID(BGUPlayerCharacterCS character, int ResId, int MagicSkillID = 0)
         {
-            var magicChangeComp = GetCachedMagicChangeComp(character);
-            if (magicChangeComp == null)
-            {
-                return;
-            }
 
-            var soulSkillDesc = GameDBRuntime.GetSoulSkillDesc(VigorSkillID);
-
-            if (soulSkillDesc == null || magicChangeComp == null)
+            BPS_GSEventCollection bPS_GSEventCollection = BPS_EventCollectionCS.Get((character as BGUPlayerCharacterCS).PlayerState);
+            PlayerTransParam playerTransParam = new PlayerTransParam
             {
-                return;
-            }
-            var BGS = Helper.GetBUS_GSEventCollection();
-            FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
-            if (fieldData == null) return;
-            fieldData.SetValue(magicChangeComp, MagicSkillID);
-            BGS.Evt_TriggerVigorSkill.Invoke(VigorSkillID);
+                TargetResId = ResId,
+                SpawnSkillId = (int)MagicSkillID,
+                NeedBlend = true
+            };
+            bPS_GSEventCollection.Evt_TriggerPlayerTransBegin.Invoke(EPlayerTransBeginType.SkillEffect, playerTransParam);
+            // var magicChangeComp = GetCachedMagicChangeComp(character);
+            // if (magicChangeComp == null)
+            // {
+            //     return;
+            // }
+
+            // var soulSkillDesc = GameDBRuntime.GetSoulSkillDesc(VigorSkillID);
+
+            // if (soulSkillDesc == null || magicChangeComp == null)
+            // {
+            //     return;
+            // }
+            // var BGS = Helper.GetBUS_GSEventCollection();
+            // FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
+            // if (fieldData == null) return;
+            // fieldData.SetValue(magicChangeComp, MagicSkillID);
+            // BGS.Evt_TriggerVigorSkill.Invoke(VigorSkillID);
         }
         public static BGWDataAsset_MagicallyChangeConfig? getMagicConfig(BGUPlayerCharacterCS character, string bossLabel, string type)
         {

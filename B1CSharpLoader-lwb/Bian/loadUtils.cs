@@ -365,6 +365,7 @@ namespace bian
         public string? type { get; set; }
         public float? backTime { get; set; }
         public int? MagicSkillID { get; set; }
+        public int? ResId { get; set; }
         public float? Scale3D { get; set; }
         public string? bossLabel { get; set; }
         public string? RushDir { get; set; }
@@ -1947,11 +1948,26 @@ namespace bian
                     }
                 }
             }
+
         }
 
 
 
+        public static void ModifyEquipDesc()
+        {
+            var dataList = BG_ProtobufDataAPI<EquipDesc>.Get().GetAll();
+            if (dataList?.Values == null || dataList.Count == 0)
+                return;
 
+            foreach (var itemData in dataList.Values)
+            {
+                 if(itemData?.Id == 16035)
+                {
+                     itemData.EquipEffectDesc = "装备后，每秒恢复20点生命/法力/法宝/变身能量；攻击触发暴击立即恢复20点棍势";
+                }
+            }
+
+        }
 
 
         public static int ModifySoulskill(string configDirectory = null)
