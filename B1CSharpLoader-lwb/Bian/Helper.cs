@@ -247,17 +247,6 @@ namespace bian
                 return;
             }
             BGWDataAsset_MagicallyChangeConfig config = BGW_PreloadAssetMgr.Get(magicChangeComp).TryGetCachedResourceObj<BGWDataAsset_MagicallyChangeConfig>(soulSkillDesc.DAPath, ELoadResourceType.SyncLoadAndCache);
-            // 检查缓存中是否已存在该配置
-            // if (!_vigorSkillConfigCache.TryGetValue(VigorSkillID, out var config))
-            // {
-            //     // 缓存不存在，则加载配置
-            //     config = BGW_PreloadAssetMgr.Get(magicChangeComp).TryGetCachedResourceObj<BGWDataAsset_MagicallyChangeConfig>(soulSkillDesc.DAPath, ELoadResourceType.SyncLoadAndCache);
-            //     if (config != null)
-            //     {
-            //         // 将新加载的配置加入缓存
-            //         // _vigorSkillConfigCache[VigorSkillID] = config;
-            //     }
-            // }
 
             if (config == null)
             {
@@ -285,6 +274,28 @@ namespace bian
                 Log.Error($"bian:{ex?.Message} ");
 
             }
+        }
+
+
+        public static void CastTranskillByID(BGUPlayerCharacterCS character, int VigorSkillID, float backTime = 0, int? MagicSkillID = 0, float? Scale3D = 1)
+        {
+            var magicChangeComp = GetCachedMagicChangeComp(character);
+            if (magicChangeComp == null)
+            {
+                return;
+            }
+
+            var soulSkillDesc = GameDBRuntime.GetSoulSkillDesc(VigorSkillID);
+
+            if (soulSkillDesc == null || magicChangeComp == null)
+            {
+                return;
+            }
+            var BGS = Helper.GetBUS_GSEventCollection();
+            FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
+            if (fieldData == null) return;
+            fieldData.SetValue(magicChangeComp, MagicSkillID);
+            BGS.Evt_TriggerVigorSkill.Invoke(VigorSkillID);
         }
         public static BGWDataAsset_MagicallyChangeConfig? getMagicConfig(BGUPlayerCharacterCS character, string bossLabel, string type)
         {

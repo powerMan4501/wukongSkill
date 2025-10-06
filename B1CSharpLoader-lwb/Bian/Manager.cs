@@ -311,10 +311,11 @@ namespace bian
         [HarmonyPrefix]
         private static void TriggerSkillEffectBySkillMultiCast(ref int EffectID, ref AActor Caster, ref AActor Target, ref FEffectInstReq EffectInstReq)
         {
-            if (Caster == null || !IsPlayer(Caster.PathName))
+            if (Caster == null || (!IsPlayer(Caster.PathName) && !Caster.PathName.Contains("TAMER_player_tornado")))
             {
                 return;
             }
+
             Log.Info($"Evt_TriggerSkillEffect EffectID:{EffectID}");
             // 检查是否有对应的效果规则
             if (!effectRulesMap.ContainsKey(EffectID))
@@ -414,15 +415,18 @@ namespace bian
                 return;
             }
             currentMontage = Montage.PathName;
+            var character = __instance.GetOwner() as BGUPlayerCharacterCS;
+
             if (Helper.isPlayVigorSkillByID)
             {
+                BGUFunctionLibraryCS.BGUAddBuff(character, character, 211, EBuffSourceType.GM, 3000);
                 Helper.GetBUS_GSEventCollection().Evt_UnitStateTrigger.Invoke(EBUStateTrigger.AttackStateBegin, -1f);
             }
             if (currentMontage.Contains("Animation/Player/Wukong/") || currentMontage.Contains("AM_wukong_trans_from_Vigor"))
             {
                 Helper.updateIsPlayVigorSkillByID(false);
             }
-            var character = __instance.GetOwner() as BGUPlayerCharacterCS;
+
             if (currentMontage.Contains("AM_wukong_trans_from_Vigor"))
             {
                 if (character != null)
@@ -439,7 +443,7 @@ namespace bian
             {
                 Helper.addJXSQBuffs(character);
             }
-          
+
 
 
 
@@ -832,6 +836,12 @@ namespace bian
                     {
                         Helper.doPhantomRushSkill((BGUPlayerCharacterCS)character, combo.RushDir ?? "Forward");
                     }
+                    if (type == "TRANS")
+                    {
+
+                        Helper.CastTranskillByID((BGUPlayerCharacterCS)character, combo.skillID, combo?.backTime ?? 0, combo?.MagicSkillID ?? 0, combo?.Scale3D ?? 1);
+                    }
+
                 });
         }
 
@@ -909,82 +919,17 @@ namespace bian
                 {
                     CastMagicSkill(character, matchedCombo, "RushSkill");
                 }
+                else if (matchedCombo.type == "TRANS")
+                {
+                    CastMagicSkill(character, matchedCombo, "TRANS");
+                }
+
                 else
                 {
                     BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
                         matchedCombo.skillID, null, EMontageBindReason.NormalSkill, false);
                 }
             }
-
-
-
-            // foreach (var combo in keyCombos)
-            // {
-            //     // 如果nowMontage有值，才检查动画相关条件
-            //     if (!string.IsNullOrEmpty(combo.nowMontage))
-            //     {
-            //         if (currMontage != null)
-            //         {
-            //             string fullPath = currMontage.PathName;
-            //             Log.Info($"Key {keyName} ,{fullPath.Contains(combo.nowMontage)},currentPosition:{currentPosition}");
-            //             if (fullPath.Contains(combo.nowMontage) && currentPosition >= combo.rate)
-            //             {
-            //                 var rule = new SkillMappingRule
-            //                 {
-            //                     Condition = combo.Condition,
-            //                     conditionValue = combo.conditionValue
-            //                 };
-
-            //                 if (combo.Condition == SkillMapCondition.any ||
-            //                     IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target))
-            //                 {
-
-            //                     if (combo.bossLabel != null)
-            //                     {
-            //                         CastMagicSkill(character, combo, "bossLabel");
-            //                         break;
-            //                     }
-            //                     else if (combo.type == "magic")
-            //                     {
-            //                         CastMagicSkill(character, combo, "magic");
-            //                         break;
-            //                     }
-
-            //                     BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
-            //                         combo.skillID, null, EMontageBindReason.NormalSkill, false);
-            //                     break;
-            //                 }
-            //             }
-            //         }
-
-            //     }
-            //     else
-            //     {
-            //         var rule = new SkillMappingRule
-            //         {
-            //             Condition = combo.Condition,
-            //             conditionValue = combo.conditionValue
-            //         };
-
-            //         if (combo.Condition == SkillMapCondition.any ||
-            //             IsSkillMappingRuleMatch(rule, character, isChuogun, isLigun, isPigun, target))
-            //         {
-            //             if (combo.bossLabel != null)
-            //             {
-            //                 CastMagicSkill(character, combo, "bossLabel");
-            //                 break;
-            //             }
-            //             else if (combo.type == "magic")
-            //             {
-            //                 CastMagicSkill(character, combo, "magic");
-            //                 break;
-            //             }
-            //             BUS_EventCollectionCS.Get(character).Evt_RequestSmartCastSkill.Invoke(
-            //                 combo.skillID, null, EMontageBindReason.NormalSkill, false);
-            //             break; // 找到匹配的规则后立即返回
-            //         }
-            //     }
-            // }
         }
 
     }
