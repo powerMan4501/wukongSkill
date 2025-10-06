@@ -1,4 +1,5 @@
 [
+ 
   {
     "nowMontage": "AM_Dasheng_ComboA_01.AM_Dasheng_ComboA_01",
     "rate": 0.3,
@@ -15,10 +16,10 @@
     "nowMontage": "AM_Dasheng_ComboA_01.AM_Dasheng_ComboA_01",
     "rate": 0.3,
     "type": "magic",
-    "skillID": 8561,
+    "skillID": 8511,
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
-    "desc": "立棍下平A1，接狼刺客"
+    "desc": "立棍下平A1，广谋"
   },
 
   {
@@ -37,7 +38,6 @@
     "rate": 0.3,
     "type": "magic",
     "skillID": 8526,
-    "backTime": 1600,
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
@@ -48,11 +48,11 @@
     "nowMontage": "AM_Dasheng_ComboA_02.AM_Dasheng_ComboA_02",
     "rate": 0.3,
     "type": "magic",
-    "skillID": 8571,
+    "skillID": 8567,
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "立棍平A2接隼居士扇风"
+    "desc": "立棍平A2接疾蝠"
   },
   {
     "nowMontage": "AM_Wukong_ComboB_q2.AM_Wukong_ComboB_q2",
@@ -110,25 +110,32 @@
     "nowMontage": "AM_Dasheng_ComboA_04.AM_Dasheng_ComboA_04",
     "rate": 0.3,
     "type": "magic",
-    "skillID": 8527,
-    "MagicSkillID": 10127,
+    "skillID": 8562,
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "立棍平A4 虫总兵"
+    "desc": "立棍平A4 疯虎"
   },
 
   {
     "nowMontage": "AM_Wukong_ComboB_q4.AM_Wukong_ComboB_q4",
     "rate": 0.3,
     "type": "magic",
-    "skillID": 8530,
+    "skillID": 8537,
+    "Condition": "hasBuff",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 888666007,
+    "desc": "戳棍平A4，火buff接燧先锋"
+  },
+{
+    "nowMontage": "AM_Wukong_ComboB_q4.AM_Wukong_ComboB_q4",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8597,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
-    "desc": "戳棍平A4接尾后针"
+    "desc": "戳棍平A4，毒蛙"
   },
-
   {
     "nowMontage": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05",
     "rate": 0.9,
@@ -258,7 +265,7 @@
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666023,
-    "desc": "接：大头磕头"
+    "desc": "破隐一级接：大头磕头"
   },
 
   {
@@ -313,13 +320,11 @@
   },
   {
     "type": "magic",
-    "skillID": 8471,
-    "backTime": 5000,
-    "MagicSkillID": 303003,
+    "skillID": 8527,
     "Condition": "hasBuff",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 800010723,
-    "desc": "风云转结束，接隼居士飞起冰5下"
+    "desc": "风云转结束，接虫总兵"
   },
   {
     "nowMontage": "AM_dasheng_atk_04a",

@@ -3,13 +3,12 @@
     "nowMontage": "AM_wukong_qiang_xuli_b_attack_4",
     "rate": 0.4,
     "type": "magic",
-    "skillID": 8130,
-    "MagicSkillID": 499911,
+    "skillID": 8599,
+    "MagicSkillID": 11399,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "戳棍4，蝎子托马斯旋转攻击好几圈"
+    "desc": "戳棍4，石蛙"
   },
-
   {
     "nowMontage": "AM_wukong_qiang_xuli_b_attack_3",
     "rate": 0.4,
@@ -26,21 +25,21 @@
     "rate": 0.4,
     "type": "magic",
     "skillID": 8130,
-    "MagicSkillID": 499913,
+    "MagicSkillID": 499911,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "戳棍2，尾巴刺向敌人脚下，持续生成毒液池，多段伤害，很不错 "
+    "desc": "戳棍2，蝎子托马斯旋转攻击好几圈"
   },
 
   {
     "nowMontage": "AM_wukong_qiang_xuli_b_attack_1",
     "rate": 0.4,
     "type": "magic",
-    "skillID": 8130,
-    "MagicSkillID": 499902,
+    "skillID": 8571,
+    "MagicSkillID": 11397,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "戳棍1，平A+尾后针，地上毒液"
+    "desc": "戳棍1，隼居士"
   },
 
   {

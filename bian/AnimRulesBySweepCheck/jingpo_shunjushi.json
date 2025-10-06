@@ -1,0 +1,24 @@
+[
+  {
+    "desc": "隼居士，精魄技能",
+    "montage": "AM_30_lys_baitouweng_atk_04_Lv",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.4,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [30302201, 30302001],
+            "SpeedLeftValue": 7000,
+            "SpeedRightValue": 7000,
+            "ForTarget": true,
+            "desc": " 发射冰剑气"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,4 +1,43 @@
 [
+     {
+    "nowMontage": ".AM_Wukong_Dodge_F_",
+    "rate": 0.2,
+    "type": "RushSkill",
+    "RushDir": "Forward",
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "desc": "前翻滚接jxsq"
+  },
+
+  {
+    "nowMontage": ".AM_Wukong_Dodge_R_",
+    "rate": 0.2,
+    "type": "RushSkill",
+    "RushDir": "Right",
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "desc": "翻滚接jxsq"
+  },
+
+  {
+    "nowMontage": ".AM_Wukong_Dodge_B_",
+    "rate": 0.2,
+    "type": "RushSkill",
+    "RushDir": "Backward",
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "desc": "翻滚接jxsq"
+  },
+
+  {
+    "nowMontage": ".AM_Wukong_Dodge_L_",
+    "rate": 0.2,
+    "type": "RushSkill",
+    "RushDir": "Left",
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "desc": "翻滚接jxsq"
+  },
   {
     "nowMontage": "AM_Dasheng_ComboA_01.AM_Dasheng_ComboA_01",
     "rate": 0.3,
@@ -74,7 +113,7 @@
 
   {
     "nowMontage": "AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2",
-    "rate": 2,
+    "rate": 1.5,
     "skillID": 10713,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
@@ -83,7 +122,7 @@
   },
 
   {
-    "nowMontage": "AM_wukong_comboc_z_02",
+    "nowMontage": ".AM_wukong_comboc_z_02",
     "rate": 2,
     "skillID": 10713,
     "Condition": "any",
@@ -92,23 +131,23 @@
     "desc": "如果当前使用的技能是江海翻，且播放了2s以上，按鼠标右键满足条件可以使出退寸AM_wukong_combob_z_01"
   },
   {
-    "nowMontage": "AM_wukong_combob_z_01.AM_wukong_combob_z_01",
-    "rate": 0.1,
+    "nowMontage": ".AM_wukong_combob_z_01",
+    "rate": 0.3,
     "skillID": 10714,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
     "conditionValue": 888666023,
-    "desc": "如果当前使用的技能是退寸，且播放了0.1s以上，按鼠标右键满足条件可以使出进尺AM_wukong_combob_z_02"
+    "desc": "退寸，接进尺"
   },
 
   {
-    "nowMontage": "AM_wukong_combob_z_02.AM_wukong_combob_z_02",
-    "rate": 1,
-    "skillID": 10096,
+    "nowMontage": ".AM_wukong_combob_z_02",
+    "rate": 0.3,
+    "skillID": 10713,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
     "conditionValue": 888666023,
-    "desc": "接：AM_Wukong_JXSQ_Atk_01.AM_Wukong_JXSQ_Atk_01"
+    "desc": "进尺接：退寸"
   },
   {
     "nowMontage": "AM_Wukong_JXSQ_Atk_01.AM_Wukong_JXSQ_Atk_01",
@@ -117,7 +156,7 @@
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
     "conditionValue": 888666023,
-    "desc": "接：AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1"
+    "desc": "破隐一击接：AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1"
   },
 
   {
@@ -179,6 +218,24 @@
     "desc": "接:3蓄力立棍"
   },
 
+   {
+    "nowMontage": "AM_wukong_dingshen_02",
+    "rate": 0.3,
+    "skillID": 10096,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "完美定身接破隐一击"
+  },
+  {
+    "nowMontage": "AM_Wukong_JXSQ_Enter_",
+    "rate": 0.3,
+    "skillID": 10096,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "conditionValue": 888666023,
+    "desc": "jxsq接破隐一击"
+  },
   {
     "skillID": 10705,
     "Condition": "StanceHeavy",
@@ -186,7 +243,7 @@
     "InputCore": "ThumbMouseButton",
     "desc": "劈棍下，10705"
   },
-   {
+  {
     "skillID": 50001,
     "Condition": "StanceProp",
     "conditionValue": 0,

@@ -16,11 +16,21 @@
     "type": "BOSS",
     "bossLabel": "SK_HYS_HongHaiEr_02A",
     "MagicSkillID": 440596,
+    "Condition": "disTance",
+    "conditionValue": 1500,
+    "InputCore": "ThumbMouseButton2",
+    "desc": "立棍3，距离1500以上夜叉王开局横扫"
+  },
+  {
+    "nowMontage": "AM_Wukong_Xuli_C_attack_3",
+    "rate": 0.4,
+    "type": "BOSS",
+    "bossLabel": "SK_hys_shanzhen_01",
+    "MagicSkillID": 580165,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "立棍3，夜叉王开局横扫"
+    "desc": "立棍3，多次磕头"
   },
-
   {
     "nowMontage": "AM_Wukong_Xuli_C_attack_2",
     "rate": 0.4,

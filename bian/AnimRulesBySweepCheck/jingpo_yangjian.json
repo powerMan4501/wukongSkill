@@ -71,5 +71,28 @@
         ]
       }
     ]
+  },
+
+  {
+    "desc": "杨戬，飞天万剑归宗",
+    "montage": "AM_mgd_yangjian_01_skill02",
+    "linkValue": 0,
+    "speedRate": 1.4,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [310],
+        "BuffTime": 8900,
+        "desc": "无敌"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "buff",
+        "BuffID": 888666013,
+        "BuffTime": 1000,
+        "desc": "进尺buff，释放飞剑"
+      }
+    ]
   }
 ]

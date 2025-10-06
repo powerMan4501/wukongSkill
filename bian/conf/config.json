@@ -682,7 +682,7 @@
       "AlawaysCanCast": true
     },
     {
-      "Key": "S+A",
+      "Key": "TAB",
       "Type": "strong_monster",
       "Name": "shift+a 把怪加强，五倍血",
       "AlawaysCanCast": true

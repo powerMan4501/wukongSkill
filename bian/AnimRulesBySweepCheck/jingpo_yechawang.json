@@ -4,6 +4,7 @@
     "montage": "AM_HYS_HongHaiEr_02A_Atk_05_02_02",
     "linkValue": 0,
     "speedRate": 1.2,
+    "AMSpeedRate": 1,
     "SweepActions": [
       {
         "Type": "bullet",
@@ -102,6 +103,7 @@
     "montage": "AM_HYS_HongHaiEr_02A_Atk_08",
     "linkValue": 0,
     "speedRate": 1.2,
+    "AMSpeedRate": 1,
     "bulletsActions": [
       {
         "Type": "bullet",
@@ -116,6 +118,7 @@
     "montage": "AM_HYS_HongHaiEr_02A_Atk_10",
     "linkValue": 0,
     "speedRate": 1.2,
+    "AMSpeedRate": 1,
     "SweepActions": [
       {
         "Type": "bullet",

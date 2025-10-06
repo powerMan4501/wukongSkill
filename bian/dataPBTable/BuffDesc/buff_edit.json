@@ -64,7 +64,6 @@
       "ConditionParams": ""
     }
   },
- 
 
   {
     "ID": 2824,
@@ -86,12 +85,32 @@
   {
     "ID": 2165,
     "Duration": -1,
-    "Interval": 300000,
+    "Interval": 0,
     "BuffTips": "牛魔套去掉血量限制",
     "BuffActiveCondition": {
       "ConditionType": 0,
       "ConditionParams": ""
-    }
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [17,18],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 77,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [
+          "/Game/00MainHZ/Characters/Wukong/SL_niumo_wukong.SL_niumo_wukong"
+        ],
+        "EffectParams": [256],
+        "EffectParamsFloat": []
+      }
+    ]
   },
   {
     "ID": 2166,
@@ -201,7 +220,7 @@
         "EffectParams": [152, 50, 0, 0],
         "EffectParamsFloat": []
       },
-       {
+      {
         "EffectTrigger": 2,
         "EffectType": 3,
         "EffectTargetSelectType": 0,

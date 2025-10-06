@@ -102,5 +102,22 @@
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1,
     "HitEffectsforChr": [888555021, 888555018]
+  },
+
+
+   {
+    "desc": "杨戬飞剑",
+    "ID": 80009998,
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1,
+    "HitEffectsforChr": [888555019]
+  },
+
+   {
+    "desc": "杨戬飞剑",
+    "ID": 80009999,
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1,
+    "HitEffectsforChr": [888555019]
   }
 ]

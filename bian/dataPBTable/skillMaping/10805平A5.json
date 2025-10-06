@@ -6,14 +6,7 @@
     "conditionValue": null,
     "desc": "戳棍下, Q5变残躯Q5"
   },
- {
-    "OriginalId": 10805,
-    "MappedId": 54321035,
-    "Condition": "StanceProp",
-    "conditionValue": null,
-    "desc": "立棍下,棍的平A变成破天棍"
-  },
-
+ 
   
   {
     "OriginalId": 10805,

@@ -69,7 +69,7 @@
         "OffsetY": 400
       }
     ],
-    "hitEffects": [888555022]
+    "hitEffects": [888555033]
   },
 
   {
@@ -85,5 +85,13 @@
         "desc": "石双双毒气，波动"
       }
     ]
+  },
+
+  {
+    "desc": "蝎子，其他技能",
+    "montage": "AM_psd_xiezijing_og_atk",
+    "linkValue": 0,
+    "speedRate": 1.2,
+    "hitEffects": [888555033]
   }
 ]

@@ -1,0 +1,109 @@
+[
+  {
+    "desc": "牛魔大招",
+    "montage": "AM_hys_niumo_01_atk_13",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.3,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1016262],
+            "noHasBuff": 888666007,
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "没有火buff，巴山虎"
+          },
+
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40550101, 74010207],
+            "hasBuff": 888666007,
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "有火buff，鳖宝子弹"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "desc": "牛魔大招",
+    "montage": "AM_hys_niumo_01_atk_14",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.3,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1016262],
+            "noHasBuff": 888666007,
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "没有火buff，巴山虎"
+          },
+
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40550101, 74010207],
+            "hasBuff": 888666007,
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "有火buff，鳖宝子弹"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "岩浆石头人最后一下磕头",
+    "montage": "AM_hys_shanzhen_01_atk_fast_65",
+    "linkValue": 4.830887,
+    "addRadius": 500,
+    "speedRate": 1.3,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [58111003, 74010207],
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "有火buff，巴山虎，地面涌出岩浆，巨猿火圈"
+          }
+        ]
+      }
+    ],
+    "hitEffects": [888555034]
+  },
+  {
+    "desc": "岩浆石头人磕头",
+    "montage": "AM_hys_shanzhen_01_atk_fast_65",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.5,
+    "AMSpeedRate": 1.5,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1013701],
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "有火buff，石先锋岩浆"
+          }
+        ]
+      }
+    ]
+  }
+]

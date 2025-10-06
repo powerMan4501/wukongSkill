@@ -7,13 +7,6 @@
     "desc": "戳棍下,棍的平A2变成枪平A"
   },
 
-   {
-    "OriginalId": 10802,
-    "MappedId": 54321032,
-    "Condition": "StanceProp",
-    "conditionValue": null,
-    "desc": "立棍下,棍的平A变成破天棍"
-  },
   {
     "OriginalId": 10802,
     "MappedId": 50012,

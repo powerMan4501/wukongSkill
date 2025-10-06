@@ -46,7 +46,6 @@
               "SpeedLeftValue": 7000,
               "SpeedRightValue": 7000,
               "ForTarget": true,
-              "spawnBaseSocketName": "weapon_r_index_04",
               "desc": "有火buff 鼠弩手弓箭"
             },
             {
@@ -56,7 +55,6 @@
               "SpeedLeftValue": 5000,
               "SpeedRightValue": 5000,
               "ForTarget": true,
-              "spawnBaseSocketName": "weapon_r_index_04",
               "desc": "毒buff，蜻蜓精的箭"
             },
             {
@@ -66,14 +64,12 @@
               "SpeedLeftValue": 5000,
               "SpeedRightValue": 5000,
               "ForTarget": true,
-              "spawnBaseSocketName": "weapon_r_index_04",
               "desc": "雷buff，雷球"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
               "ProjectTileIDs": [80009913, 80009910, 80000008],
               "ForTarget": true,
-              "spawnBaseSocketName": "weapon_r_index_04",
               "noHasAnyBuff": [888666005, 888666007, 888666008],
               "desc": "杨戬万剑，小型剑，密密麻麻（原本无伤害，目前给了10点）"
             },
@@ -83,7 +79,6 @@
               "ForTarget": true,
               "BornDirOffsetYLeftValue": 180,
               "BornDirOffsetYRightValue": 180,
-              "spawnBaseSocketName": "weapon_r_index_04",
               "noHasAnyBuff": [888666005, 888666007, 888666008],
               "desc": "杨戬万剑，小型剑，密密麻麻（原本无伤害，目前给了10点）"
             }
