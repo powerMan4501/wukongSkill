@@ -2,12 +2,12 @@
   {
     "nowMontage": "AM_wukong_qiang_xuli_b_attack_4",
     "rate": 0.4,
-    "type": "magic",
-    "skillID": 8599,
-    "MagicSkillID": 11399,
+    "Type": "BOSS",
+    "bossLabel": "SK_HFM_Niu_01",
+    "MagicSkillID": 401804,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "戳棍4，石蛙"
+    "desc": "戳棍4，精英牛魔连续砍好几下"
   },
   {
     "nowMontage": "AM_wukong_qiang_xuli_b_attack_3",
@@ -36,7 +36,6 @@
     "rate": 0.4,
     "type": "magic",
     "skillID": 8571,
-    "MagicSkillID": 11397,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "戳棍1，隼居士"

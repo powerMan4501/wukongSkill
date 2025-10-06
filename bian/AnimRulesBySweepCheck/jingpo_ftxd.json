@@ -3,10 +3,11 @@
     "desc": "巨猿疯狂砸地",
     "montage": "AM_mgd_yuan_atk_09_P",
     "linkValue": 0,
-    "addRadius": 1000,
-    "speedRate": 1.8,
+    "addRadius": 500,
+    "speedRate": 1.5,
+    "AMScaleRate": 10,
     "SweepActions": [
-     {
+      {
         "Type": "bullet",
         "bullets": [
           {
@@ -28,5 +29,14 @@
         ]
       }
     ]
+  },
+
+  {
+    "desc": "巨猿疯狂砸地",
+    "montage": "AM_mgd_yuan_atk_",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.5,
+    "AMScaleRate": 10
   }
 ]

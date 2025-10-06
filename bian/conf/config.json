@@ -381,7 +381,7 @@
     },
 
     {
-      "Key": "S+F12",
+      "Key": "",
       "Type": "BOSS",
       "Label": "SK_HGS_TianJiang_01",
       "Name": "变身为【天将】"
@@ -423,7 +423,7 @@
       "Name": "变身为【牛魔】"
     },
     {
-      "Key": "",
+      "Key": "S+F12",
       "Type": "BOSS",
       "Label": "SK_HFM_ShiGanDang",
       "Name": "变身为【石敢当】"

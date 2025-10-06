@@ -53,7 +53,7 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [40550101, 44010401, 1013701],
+            "ProjectTileIDs": [40550101, 44010401, 1013702],
             "OffsetX": 300,
             "OffsetY": 300,
             "desc": "鳖宝子弹，红孩儿炸炸炸,石先锋岩浆"

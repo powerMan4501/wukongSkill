@@ -11,9 +11,21 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileIDs": [30302201, 30302001],
-            "SpeedLeftValue": 7000,
-            "SpeedRightValue": 7000,
+            "ProjectTileIDs": [30302201],
+            "BornDirOffsetXLeftValue": 45,
+            "BornDirOffsetXRightValue": 45,
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "ForTarget": true,
+            "desc": "发射冰剑气"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [30302201],
+            "BornDirOffsetXLeftValue": 135,
+            "BornDirOffsetXRightValue": 135,
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
             "ForTarget": true,
             "desc": " 发射冰剑气"
           }

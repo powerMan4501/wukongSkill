@@ -97,7 +97,7 @@
         "EffectType": 7,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [17,18],
+        "EffectParams": [17, 18],
         "EffectParamsFloat": []
       },
       {
@@ -229,5 +229,65 @@
         "EffectParamsFloat": []
       }
     ]
+  },
+
+  {
+    "ID": 96035,
+    "BuffTips": "君子牌",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 1000,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 87,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [7],
+        "EffectParamsFloat": [-20, 0.0]
+      },
+      {
+        "EffectTrigger": 2,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [152, 20, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 2,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [151, 20, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 2,
+        "EffectType": 87,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [8],
+        "EffectParamsFloat": [-40.0, 0.0]
+      },
+      {
+        "EffectTrigger": 10,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0],
+        "EffectParamsFloat": [20]
+      }
+    ],
+    "CanBeInherited": 1
   }
 ]

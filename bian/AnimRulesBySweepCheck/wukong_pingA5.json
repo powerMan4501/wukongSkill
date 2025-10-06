@@ -19,7 +19,7 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [44011401, 40550101, 1013701],
+            "ProjectTileIDs": [44011401, 40550101, 1013702],
             "hasBuff": 888666007,
             "spawnBaseSocketName": "weapon_r_index_07",
             "desc": "有火buff，红孩儿砸地，鳖宝子弹, 燧先锋岩浆"

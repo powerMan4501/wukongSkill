@@ -1,15 +1,6 @@
 [
   {
     "OriginalId": 10805,
-    "MappedId": 54321023,
-    "Condition": "StancePoke",
-    "conditionValue": null,
-    "desc": "戳棍下, Q5变残躯Q5"
-  },
- 
-  
-  {
-    "OriginalId": 10805,
     "MappedId": 50015,
     "Condition": "hasTalent",
     "conditionValue": 105002,

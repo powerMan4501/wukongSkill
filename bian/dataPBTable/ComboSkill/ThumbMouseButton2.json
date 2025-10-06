@@ -159,15 +159,15 @@
     "desc": "立棍平A5接夜叉王，瞬发地刺"
   },
   {
-    "nowMontage": "AM_mgd_jsds_atk_02_02_short",
+    "nowMontage": "AM_Dasheng_ComboA_05",
     "rate": 0.9,
     "type": "magic",
     "skillID": 8130,
     "backTime": 2800,
     "MagicSkillID": 499910,
-    "Condition": "any",
+    "Condition": "StancePoke",
     "InputCore": "ThumbMouseButton2",
-    "desc": "残躯Q5接蝎子二连砸"
+    "desc": "戳棍下Q5接蝎子二连砸"
   },
 
   {

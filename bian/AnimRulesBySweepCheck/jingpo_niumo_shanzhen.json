@@ -96,11 +96,57 @@
         "Type": "bullet",
         "bullets": [
           {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [1013701],
+                    "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1013702],
             "OffsetX": 200,
             "OffsetY": 200,
-            "desc": "有火buff，石先锋岩浆"
+            "desc": "火buff，石先锋岩浆"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "精英牛魔，最后一击",
+    "montage": "AM_HFM_Niu_02_Atk_Fast_04",
+    "linkValue": 5.033797,
+    "addRadius": 500,
+    "speedRate": 1.5,
+    "AMSpeedRate": 1.5,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [58111003, 74010207],
+            "OffsetX": 400,
+            "OffsetY": 400,
+            "desc": "有火buff，地面涌出岩浆，巨猿火圈"
+          }
+        ]
+      }
+    ],
+    "hitEffects": [888555034]
+  },
+
+  {
+    "desc": "精英牛魔，三连砍杀",
+    "montage": "AM_HFM_Niu_02_Atk_Fast_04",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.5,
+    "AMSpeedRate": 1.5,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1013702],
+            "OffsetX": 400,
+            "OffsetY": 400,
+            "desc": "石先锋岩浆"
           }
         ]
       }
