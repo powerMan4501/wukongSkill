@@ -11,7 +11,8 @@
     "TFXConfigs": null,
     "InteractBones": null,
     "Override_AbnormalDispID_Attacker": 0,
-    "Override_AbnormalDispID_Victim": 100
+    "Override_AbnormalDispID_Victim": 100,
+    "UnitScale": 0.3
   },
   "Name": "SK_hys_zhanche_01a",
   "Label": "SK_hys_zhanche_01a",
@@ -46,18 +47,14 @@
       "CanBreak": false,
       "Name": "双手砸出小岩浆",
       "Key": "LBUTTON",
-      "Buffers": [
-        1000089
-      ]
+      "Buffers": [1000089]
     },
     {
       "Id": 405313,
       "CanBreak": false,
       "Name": "喷射大量火球",
       "Key": "RBUTTON",
-      "Buffers": [
-        1000089
-      ]
+      "Buffers": [1000089]
     },
     {
       "Id": 405304,
@@ -65,9 +62,7 @@
       "Name": "往前喷火",
       "Key": "S+RBUTTON",
       "Step": 1,
-      "Buffers": [
-        1000089
-      ]
+      "Buffers": [1000089]
     },
     {
       "Id": 405306,
@@ -75,9 +70,7 @@
       "Name": "往前扇形喷火",
       "Key": "S+RBUTTON",
       "Step": 2,
-      "Buffers": [
-        1000089
-      ]
+      "Buffers": [1000089]
     },
     {
       "Id": 405336,
@@ -85,9 +78,7 @@
       "Name": "往周围喷火",
       "Key": "S+RBUTTON",
       "Step": 3,
-      "Buffers": [
-        1000089
-      ]
+      "Buffers": [1000089]
     },
     {
       "Id": 405302,
@@ -164,9 +155,7 @@
       "CanBreak": false,
       "Name": "双手砸出小岩浆",
       "Key": "X",
-      "Buffers": [
-        1000089
-      ]
+      "Buffers": [1000089]
     },
     {
       "Id": 405334,

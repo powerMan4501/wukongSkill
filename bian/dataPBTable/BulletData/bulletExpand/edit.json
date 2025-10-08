@@ -125,6 +125,6 @@
     "ID": 58111003,
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1,
-    "HitEffectsforChr": [58111001,921230]
+    "HitEffectsforChr": [58111001, 921230]
   }
 ]

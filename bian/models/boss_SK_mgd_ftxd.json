@@ -11,7 +11,7 @@
   "Level2Scale": 1,
   "CoolDownRate": 50,
   "TransDone": {
-    "Buffers": [24072, 24082, 96009, 92245, 1000097, 1000896]
+    "Buffers": [24072, 24082, 96009, 92245]
   },
   "EnterSkill": {
     "Id": 10424,

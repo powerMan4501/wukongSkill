@@ -134,8 +134,6 @@
     "Duration": -1,
     "BuffTips": "毒buff"
   },
- 
-  
 
   {
     "ID": 888666013,
@@ -159,53 +157,6 @@
     "BuffTips": "进尺buff，触发子弹用的"
   },
 
- 
-  {
-    "ID": 888660170,
-    "Duration": -1,
-    "Delay": 1050,
-    "BuffTips": "0豆戳棍激光buff，触发子弹用的"
-  },
-  {
-    "ID": 888660171,
-    "Duration": -1,
-    "Delay": 300,
-    "BuffTips": "1豆激光buff，触发子弹用的"
-  },
-  {
-    "ID": 888660172,
-    "Duration": -1,
-    "Delay": 300,
-    "BuffTips": "2/3/4豆激光buff，触发子弹用的"
-  },
-
-  {
-    "ID": 888666021,
-    "Duration": 4050,
-    "BuffTips": "平A1 BUFF"
-  },
-  {
-    "ID": 888666022,
-    "Duration": 4050,
-    "BuffTips": "平A2 BUFF"
-  },
-
-  {
-    "ID": 888666023,
-    "Duration": 4050,
-    "BuffTips": "平A3 BUFF"
-  },
-  {
-    "ID": 888666024,
-    "Duration": 4050,
-    "BuffTips": "平A4 BUFF"
-  },
-
-  {
-    "ID": 888666025,
-    "Duration": 4050,
-    "BuffTips": "平A5 BUFF"
-  },
   {
     "ID": 888666026,
     "BuffTips": "时缓 BUFF",
@@ -222,22 +173,7 @@
       }
     ]
   },
-  {
-    "ID": 888666027,
-    "BuffTips": "时缓 BUFF",
-    "BuffEffects": [
-      {
-        "EffectTrigger": 1,
-        "EffectType": 64,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [
-          "BGWDataAsset_ScaleTimeSetting'/Game/00MainHZ/Characters/Transform/Player_ftxd/STS_player_ftxd_F2_Break.STS_player_ftxd_F2_Break'"
-        ],
-        "EffectParams": [],
-        "EffectParamsFloat": []
-      }
-    ]
-  },
+
   {
     "ID": 888666028,
     "BuffTips": "传送 BUFF",
@@ -252,67 +188,6 @@
           "EnvQuery'/Game/00Main/Design/AI/EQS/EQ_TeleportSkillPoint_Fice.EQ_TeleportSkillPoint_Fice'"
         ],
         "EffectParams": [0, 0],
-        "EffectParamsFloat": []
-      }
-    ]
-  },
-
-  {
-    "ID": 888666029,
-    "BuffTips": "分身自杀用，2秒后自杀",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    },
-    "Delay": 2000,
-    "Duration": -1,
-    "BuffEffects": [
-      {
-        "EffectTrigger": 1,
-        "EffectType": 9,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [],
-        "EffectParamsFloat": []
-      }
-    ]
-  },
-  {
-    "ID": 888666030,
-    "BuffTips": "分身自杀用，3秒后自杀",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    },
-    "Delay": 3000,
-    "Duration": -1,
-    "BuffEffects": [
-      {
-        "EffectTrigger": 1,
-        "EffectType": 9,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [],
-        "EffectParamsFloat": []
-      }
-    ]
-  },
-  {
-    "ID": 888666031,
-    "BuffTips": "分身自杀用，4秒后自杀",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    },
-    "Delay": 4000,
-    "Duration": -1,
-    "BuffEffects": [
-      {
-        "EffectTrigger": 1,
-        "EffectType": 9,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [],
         "EffectParamsFloat": []
       }
     ]

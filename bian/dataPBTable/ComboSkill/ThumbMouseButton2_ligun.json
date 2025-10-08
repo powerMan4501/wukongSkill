@@ -2,12 +2,12 @@
   {
     "nowMontage": "AM_Wukong_Xuli_C_attack_4",
     "rate": 0.4,
-      "Type": "TRANS",
-    "ResId": 19,
-    "MagicSkillID": 19043,
+    "type": "BOSS",
+    "bossLabel": "SK_hys_shanzhen_01",
+    "MagicSkillID": 580103,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "立棍4，三千阳春"
+    "desc": "立棍4，迅速冲上去撞"
   },
 
   {
@@ -26,7 +26,7 @@
     "rate": 0.4,
     "type": "BOSS",
     "bossLabel": "SK_hys_shanzhen_01",
-    "MagicSkillID": 580165,
+    "MagicSkillID": 580107,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "立棍3，多次磕头"

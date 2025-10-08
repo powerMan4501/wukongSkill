@@ -8,7 +8,6 @@
     "skillID": 8526,
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "劈棍平A1接不能老拳"
   },
 
@@ -29,7 +28,6 @@
     "skillID": 8520,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "戳棍平A1接不空"
   },
 
@@ -40,7 +38,6 @@
     "skillID": 8526,
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "劈棍平A2接不能老拳"
   },
 
@@ -51,7 +48,6 @@
     "skillID": 8567,
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "立棍平A2接疾蝠"
   },
   {
@@ -70,7 +66,6 @@
     "skillID": 8526,
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "劈棍平A3接不能老拳"
   },
 
@@ -81,7 +76,6 @@
     "skillID": 8578,
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "立棍平A3接虫校尉"
   },
 
@@ -92,7 +86,6 @@
     "skillID": 8514,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "戳棍平A3接鼠司空"
   },
   {
@@ -102,7 +95,6 @@
     "skillID": 8526,
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "劈棍平A4接不能老拳"
   },
 
@@ -113,7 +105,6 @@
     "skillID": 8562,
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "立棍平A4 疯虎"
   },
 
@@ -155,7 +146,6 @@
     "MagicSkillID": 440515,
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "立棍平A5接夜叉王，瞬发地刺"
   },
   {
@@ -219,7 +209,6 @@
     "MagicSkillID": 201211,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "如果当前使用的技能是大圣江海翻，石先锋"
   },
   {
@@ -230,7 +219,6 @@
     "MagicSkillID": 201211,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "如果当前使用的技能是残躯江海翻，石先锋"
   },
 
@@ -242,7 +230,6 @@
     "MagicSkillID": 201211,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "如果当前使用的技能是江海翻，石先锋"
   },
   {
@@ -264,7 +251,6 @@
     "backTime": 1500,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "破隐一级接：大头磕头"
   },
 
@@ -277,7 +263,6 @@
     "MagicSkillID": 303003,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "接隼居士飞起冰5下"
   },
 
@@ -290,7 +275,6 @@
     "MagicSkillID": 303003,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "接接隼居士飞起冰5下"
   },
 
@@ -303,7 +287,6 @@
     "MagicSkillID": 303016,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666023,
     "desc": "接隼居士 螺旋前冲"
   },
   

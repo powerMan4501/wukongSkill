@@ -1,0 +1,35 @@
+[
+  {
+    "desc": "战车喷射岩浆",
+    "montage": "AM_hys_zhanche_01d_atk_13",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.5,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [1998, 211],
+        "BuffTime": 3800,
+        "desc": "100%暴击"
+      }
+    ]
+  },
+
+  {
+    "desc": "战车其他招式",
+    "montage": "AM_hys_zhanche_01d_atk_",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.4,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [1998, 211],
+        "BuffTime": 3800,
+        "desc": "100%暴击"
+      }
+    ]
+  }
+]

@@ -5,6 +5,14 @@
     "linkValue": 0,
     "addRadius": 1000,
     "speedRate": 1.8,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
     "SweepActions": [
       {
         "Type": "bullet",
@@ -19,7 +27,8 @@
         ]
       }
     ],
-    "hitEffects": [888555033]
+    "hitEffects": [888555034],
+    "replaceEffects": true
   },
   {
     "desc": "鬼王，左右脚各踩一次",
@@ -27,6 +36,14 @@
     "linkValue": 0,
     "addRadius": 1000,
     "speedRate": 1.8,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
     "SweepActions": [
       {
         "Type": "bullet",
@@ -41,7 +58,8 @@
         ]
       }
     ],
-    "hitEffects": [888555032]
+    "hitEffects": [888555033],
+    "replaceEffects": true
   },
   {
     "desc": "鬼王，右足球踢",
@@ -49,13 +67,21 @@
     "linkValue": 2.867692,
     "addRadius": 500,
     "speedRate": 1.8,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
     "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [1016262,40121201],
+            "ProjectTileIDs": [1016262, 40121201],
             "OffsetX": 300,
             "OffsetY": 300,
             "desc": "巴山虎"
@@ -63,7 +89,8 @@
         ]
       }
     ],
-    "hitEffects": [888555024]
+    "hitEffects": [888555024],
+    "replaceEffects": true
   },
   {
     "desc": "鬼王，足球踢之后，左手一巴掌",
@@ -77,15 +104,14 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [1016262,40121201],
+            "ProjectTileIDs": [1016262, 40121201],
             "OffsetX": 300,
             "OffsetY": 300,
             "desc": "巴山虎"
           }
         ]
       }
-    ],
-    "hitEffects": [888555032]
+    ]
   },
   {
     "desc": "鬼王，冲上去熊抱",
@@ -93,13 +119,21 @@
     "linkValue": 0,
     "addRadius": 1500,
     "speedRate": 1.8,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
     "SweepActions": [
       {
         "Type": "bullet",
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [1016262,40121201],
+            "ProjectTileIDs": [1016262, 40121201],
             "OffsetX": 300,
             "OffsetY": 300,
             "desc": "巴山虎"
@@ -107,6 +141,7 @@
         ]
       }
     ],
-    "hitEffects": [888555033]
+    "hitEffects": [888555034],
+    "replaceEffects": true
   }
 ]

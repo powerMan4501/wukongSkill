@@ -130,9 +130,16 @@
     {
       "Key": "F5",
       "Type": "BOSS",
+      "Label": "SK_LYS_WuDuLong_03A",
+      "Name": "变身为【青背龙】"
+    },
+    {
+      "Key": "",
+      "Type": "BOSS",
       "Label": "SK_HFM_HFDS_01a",
       "Name": "变身为【黄风大圣】"
     },
+    
     {
       "Key": "",
       "Type": "BOSS",

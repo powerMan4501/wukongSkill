@@ -14,25 +14,21 @@
     "Id": 8130
   },
   "TransDone": {
-    "Buffers": [
-      96009
-    ]
+    "Buffers": [96009]
   },
   "Skills": [
     {
       "Id": 10130,
       "CanBreak": true,
       "Name": "尾后针",
-      "Key": "XBUTTON2",
+      "Key": "XBUTTON2"
     },
     {
       "Id": 499907,
       "CanBreak": true,
       "Name": "举起钳子，然后疯狂刺砸好几下",
       "Key": "S+XBUTTON2",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 499901,
@@ -45,144 +41,112 @@
       "CanBreak": true,
       "Name": "各种尾巴攻击很不错",
       "Key": "XBUTTON1",
-      "Buffs": [
-        1000099
-      ]
+      "Buffs": [1000099]
     },
     {
       "Id": 499906,
       "CanBreak": true,
       "Name": "钳子插入地面然后快速突进冲撞",
       "Key": "S+XBUTTON1",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 499910,
       "CanBreak": true,
       "Name": "尾巴二连砸击",
       "Key": "LBUTTON",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 499909,
       "CanBreak": true,
       "Name": "尾后针",
       "Key": "S+LBUTTON",
-      "Buffs": [
-        1000099
-      ]
+      "Buffs": [1000099]
     },
     {
       "Id": 499911,
       "CanBreak": true,
       "Name": "托马斯旋转攻击好几圈，很不错",
       "Key": "RBUTTON",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 499912,
       "CanBreak": true,
       "Name": "空翻尾巴砸出毒液池",
       "Key": "S+RBUTTON",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 499931,
       "CanBreak": true,
       "Name": "退后+突进攻击",
       "Key": "SPACE",
-      "Buffs": [
-        1000099
-      ]
+      "Buffs": [1000099]
     },
     {
       "Id": 499932,
       "CanBreak": true,
       "Name": "尾后针，很不错",
       "Key": "Z",
-      "Buffs": [
-        1000099
-      ]
+      "Buffs": [1000099]
     },
     {
       "Id": 499934,
       "CanBreak": true,
       "Name": "钳子插入地面然后快速突进冲撞",
       "Key": "X",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 499938,
       "CanBreak": true,
       "Name": "入地",
       "Key": "C",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 499902,
       "CanBreak": true,
       "Name": "平A+尾后针，地上毒液",
       "Key": "V",
-      "Buffs": [
-        1000099
-      ]
+      "Buffs": [1000099]
     },
     {
       "Id": 499913,
       "CanBreak": true,
       "Name": "尾巴刺向敌人脚下，持续生成毒液池，多段伤害，很不错",
       "Key": "A+X",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 499914,
       "CanBreak": true,
       "Name": "平A好几下，最后甩出毒液",
       "Key": "NUMPAD1",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 499915,
       "CanBreak": true,
       "Name": "各种尾巴攻击很不错",
       "Key": "NUMPAD0",
-      "Buffs": [
-        1000099
-      ]
+      "Buffs": [1000099]
     },
     {
       "Id": 499903,
       "CanBreak": true,
       "Name": "原地等待1秒然后突进平A几下",
       "Key": "NUMPAD2",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 499904,
       "CanBreak": true,
       "Name": "慢速举起钳子然后快速突进平A",
       "Key": "NUMPAD3",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 499905,

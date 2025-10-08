@@ -69,7 +69,8 @@
         "OffsetY": 400
       }
     ],
-    "hitEffects": [888555033]
+    "hitEffects": [888555033],
+    "replaceEffects": true
   },
 
   {
@@ -92,6 +93,7 @@
     "montage": "AM_psd_xiezijing_og_atk",
     "linkValue": 0,
     "speedRate": 1.2,
-    "hitEffects": [888555033]
+    "hitEffects": [888555033],
+    "replaceEffects": true
   }
 ]

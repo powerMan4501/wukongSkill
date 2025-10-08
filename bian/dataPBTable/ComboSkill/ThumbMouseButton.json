@@ -44,7 +44,6 @@
     "skillID": 50001,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "平A1接50001 AM_Dasheng_ComboA_01_Z_1.AM_Dasheng_ComboA_01_Z_1"
   },
   {
@@ -53,7 +52,6 @@
     "skillID": 50003,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "平A2接50002 AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1"
   },
   {
@@ -62,7 +60,6 @@
     "skillID": 50007,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "平A4接转身定50007 AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1"
   },
   {
@@ -71,7 +68,6 @@
     "skillID": 10864,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "平A5接立棍4"
   },
   {
@@ -80,7 +76,6 @@
     "skillID": 50002,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666022,
     "desc": "大圣版50001破棍接：AM_Dasheng_ComboA_01_Z_2"
   },
   {
@@ -89,7 +84,6 @@
     "skillID": 50002,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666022,
     "desc": "马喽破棍10705接：AM_Dasheng_ComboA_01_Z_2"
   },
   {
@@ -98,7 +92,6 @@
     "skillID": 50010724,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666022,
     "desc": "如果当前使用的技能是10707，且播放了1.95以上，按鼠标左键满足条件可以使出夜叉王10724"
   },
   {
@@ -107,7 +100,6 @@
     "skillID": 50006,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666022,
     "desc": "如果当前使用的技能是大圣10707，且播放了1.95s以上，按鼠标左键满足条件可以使出大圣江海翻50006AM_Dasheng_ComboA_03_Z_2"
   },
 
@@ -117,7 +109,6 @@
     "skillID": 10713,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "如果当前使用的技能是大圣江海翻，且播放了2s以上，按鼠标右键满足条件可以使出退寸AM_wukong_combob_z_01"
   },
 
@@ -127,7 +118,6 @@
     "skillID": 10713,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "如果当前使用的技能是江海翻，且播放了2s以上，按鼠标右键满足条件可以使出退寸AM_wukong_combob_z_01"
   },
   {
@@ -136,7 +126,6 @@
     "skillID": 10714,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "退寸，接进尺"
   },
 
@@ -146,7 +135,6 @@
     "skillID": 10713,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "进尺接：退寸"
   },
   {
@@ -155,7 +143,6 @@
     "skillID": 50003,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "破隐一击接：AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1"
   },
 
@@ -165,7 +152,6 @@
     "skillID": 54321011,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "接AM_Dasheng_ComboA_02_Z_2.AM_Dasheng_ComboA_02_Z_2"
   },
 
@@ -175,7 +161,6 @@
     "skillID": 50013,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "接Q3:AM_Dasheng_ComboA_03.AM_Dasheng_ComboA_03"
   },
 
@@ -185,7 +170,6 @@
     "skillID": 50005,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "接AM_Dasheng_ComboA_03_Z_1.AM_Dasheng_ComboA_03_Z_1"
   },
 
@@ -195,7 +179,6 @@
     "skillID": 50006,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "接大圣江海翻：AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2"
   },
   {
@@ -204,7 +187,6 @@
     "skillID": 50007,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "接转身定：AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1"
   },
 
@@ -214,7 +196,6 @@
     "skillID": 10863,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "接:3蓄力立棍"
   },
 
@@ -224,7 +205,6 @@
     "skillID": 10096,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "完美定身接破隐一击"
   },
   {
@@ -233,7 +213,6 @@
     "skillID": 10096,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "conditionValue": 888666023,
     "desc": "jxsq接破隐一击"
   },
   {

@@ -23,7 +23,8 @@
   "Level2Scale": 1.0,
   "Skills": [
     {
-      "Id": 54321001,
+      "type": "RushSkill",
+      "RushDir": "Backward",
       "Name": "后撤 JXSQ",
       "Key": "S+SPACE",
       "CanBreak": false
@@ -36,12 +37,52 @@
       "CanBreak": false
     },
 
+     {
+      "Id": 8596,
+      "Name": "火蛙,大招，喷火，把战场变成岩浆",
+      "speedRate": 1.5,
+      "Key": "S+S",
+      "type": "magic",
+      "MagicSkillID": 416340
+    },
+    {
+      "type": "BOSS",
+      "bossLabel": "SK_hys_shanzhen_01",
+      "MagicSkillID": 580103,
+      "Name": "石头人冲撞",
+      "Key": "S+D",
+      "CanBreak": true
+    },
+      {
+      "type": "BOSS",
+      "bossLabel": "SK_HGS_TianJiang_01",
+      "MagicSkillID": 413431,
+      "Name": "天将，召唤雷电",
+      "Key": "S+Z",
+      "CanBreak": true
+    },
+    {
+      "type": "BOSS",
+      "bossLabel": "SK_HFM_ShiGanDang",
+      "MagicSkillID": 220512,
+      "Name": "石敢当，小跳起扑地，中范围出现地面石头，然后石头爆炸",
+      "Key": "",
+      "CanBreak": true
+    },
     {
       "type": "BOSS",
       "bossLabel": "SK_LuoChaGui_01",
       "MagicSkillID": 401203,
       "Name": "鬼王足球踢",
       "Key": "S+X",
+      "CanBreak": true
+    },
+    {
+      "type": "BOSS",
+      "bossLabel": "SK_hys_zhanche_01a",
+      "MagicSkillID": 405313,
+      "Name": "喷射大量火球",
+      "Key": "S+C",
       "CanBreak": true
     },
 
@@ -134,8 +175,7 @@
       "Key": "NUMPAD0",
       "type": "magic",
       "CanBreak": false,
-      "MagicSkillID": 11396,
-      "backTime": 3200
+      "MagicSkillID": 11396
     },
     {
       "Id": 8595,
@@ -143,7 +183,7 @@
       "Buffers": [888666006],
       "speedRate": 1.5,
       "MagicSkillID": 11395,
-      "Key": "S+RBUTTON",
+      "Key": "",
       "type": "magic",
       "CanBreak": false,
       "backTime": 3200
@@ -153,7 +193,7 @@
       "Name": "石蛙",
       "speedRate": 1.5,
       "MagicSkillID": 11399,
-      "Key": "A+NUMPAD0",
+      "Key": "S+RBUTTON",
       "type": "magic",
       "CanBreak": false,
       "backTime": 3200
@@ -166,8 +206,7 @@
       "MagicSkillID": 11397,
       "Key": "C+NUMPAD0",
       "type": "magic",
-      "CanBreak": false,
-      "backTime": 3200
+      "CanBreak": false
     },
     {
       "Id": 8522,

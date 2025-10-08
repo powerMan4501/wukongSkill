@@ -29,6 +29,14 @@
         {
           "Type": "effect",
           "EffectID": 1901504
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1902001
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1902101
         }
       ],
       "AfterActions": [
@@ -52,7 +60,38 @@
       ]
     },
     {
+      "desc": "三千阳春",
       "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 1903101
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1903201
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1903301
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1903601
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1903701
+        },
+
+        {
+          "Type": "effect",
+          "EffectID": 1903801
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1903901
+        },
+
         {
           "Type": "effect",
           "EffectID": 1904101
@@ -65,8 +104,6 @@
           "Type": "effect",
           "EffectID": 1904301
         }
-       
-        
       ],
       "AfterActions": [
         {
@@ -76,7 +113,7 @@
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
               "ProjectTileIDs": [154, 50051029, 39010112],
-              "desc": "落雷,电圈,青背龙雷暴"
+              "desc": "兽棍红雷,电圈,青背龙雷暴"
             }
           ]
         }

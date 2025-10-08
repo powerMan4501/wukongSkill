@@ -1,0 +1,35 @@
+[
+  {
+    "desc": "火蛙喷岩浆",
+    "montage": "AM_szlc_wa_01_atk_40",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.5,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ]
+  },
+
+  {
+    "desc": "火蛙",
+    "montage": "AM_szlc_wa_01_atk_",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.5,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ]
+  }
+]

@@ -61,7 +61,7 @@
   "XRateBig": 0.3,
   "ZRateBig": 0.1,
   "XRateSmall": 2.0,
-  "Level1Scale": 1.0,
+  "Level1Scale": 0.8,
   "Level2Scale": 1.0,
   "DisableDepthOfField": false,
   "TransDone": null,

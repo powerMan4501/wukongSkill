@@ -11,7 +11,8 @@
     "TFXConfigs": null,
     "InteractBones": null,
     "Override_AbnormalDispID_Attacker": 0,
-    "Override_AbnormalDispID_Victim": 0
+    "Override_AbnormalDispID_Victim": 0,
+    "UnitScale": 0.5
   },
   "Name": "SK_HFM_ShiGanDang",
   "Label": "SK_HFM_ShiGanDang",
@@ -20,7 +21,7 @@
   "XRateBig": 0.3,
   "ZRateBig": 0.1,
   "XRateSmall": 2.0,
-  "Level1Scale": 1.0,
+  "Level1Scale": 0.4,
   "Level2Scale": 1.0,
   "TransDone": null,
   "XRate": -1500.0,
@@ -29,121 +30,121 @@
     {
       "Id": 220501,
       "CanBreak": true,
-      "Name": "未命名",
-      "Key": "LBUTTON"
+      "Name": "狂奔前进，AM_HFM_ShiGanDang_01_Atk_01",
+      "Key": ""
     },
     {
       "Id": 220502,
       "CanBreak": true,
-      "Name": "未命名",
-      "Key": "RBUTTON"
+      "Name": "左下砸拳引发小范围地爆",
+      "Key": ""
     },
     {
       "Id": 220503,
       "CanBreak": true,
-      "Name": "未命名",
-      "Key": "XBUTTON1"
+      "Name": "右下砸拳引发小范围地爆",
+      "Key": ""
     },
     {
       "Id": 220504,
       "CanBreak": true,
-      "Name": "未命名",
-      "Key": "XBUTTON2"
+      "Name": "坐下砸拳+右下砸拳",
+      "Key": ""
     },
     {
       "Id": 220505,
       "CanBreak": true,
-      "Name": "未命名",
-      "Key": "Q"
+      "Name": "小跳起扑地，引发地波",
+      "Key": "LBUTTON"
     },
     {
       "Id": 220506,
       "CanBreak": true,
-      "Name": "未命名",
-      "Key": "E"
+      "Name": "左脚踩地，然后慢速双手下砸引发地波",
+      "Key": "RBUTTON"
     },
     {
       "Id": 220507,
       "CanBreak": true,
-      "Name": "未命名",
-      "Key": "R"
+      "Name": "右勾拳+左手下砸拳",
+      "Key": ""
     },
     {
       "Id": 220508,
       "CanBreak": true,
-      "Name": "未命名",
-      "Key": "T"
+      "Name": "大招，垂直打一拳砸地，然后引发大范围地爆",
+      "Key": "Z"
     },
     {
       "Id": 220510,
       "CanBreak": true,
-      "Name": "未命名",
-      "Key": "Z"
+      "Name": "身体往身后右侧砸地，引发中范围地爆",
+      "Key": ""
     },
     {
       "Id": 220511,
       "CanBreak": true,
-      "Name": "未命名",
-      "Key": "X"
+      "Name": "身体往身后左侧砸地，引发中范围地爆",
+      "Key": ""
     },
     {
       "Id": 220512,
       "CanBreak": true,
-      "Name": "未命名",
-      "Key": "C"
+      "Name": "小跳起扑地，中范围出现地面石头，然后石头爆炸，有索敌",
+      "Key": "X"
     },
     {
       "Id": 220513,
       "CanBreak": true,
-      "Name": "未命名",
-      "Key": "V"
+      "Name": "身体往身后右侧砸地，引发中范围地爆",
+      "Key": ""
     },
     {
       "Id": 220514,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "身体往身后左侧砸地，引发中范围地爆",
       "Key": ""
     },
     {
       "Id": 220515,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "转身左手横扫一下",
       "Key": ""
     },
     {
       "Id": 220516,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "转身右手横扫一下",
       "Key": ""
     },
     {
       "Id": 220517,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "右平勾拳",
       "Key": ""
     },
     {
       "Id": 220518,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "左平勾拳",
       "Key": ""
     },
     {
       "Id": 220519,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "咆哮挑衅",
       "Key": ""
     },
     {
       "Id": 220521,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "咆哮挑衅",
       "Key": ""
     },
     {
       "Id": 220522,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "转身手横扫一下",
       "Key": ""
     },
     {
@@ -155,8 +156,8 @@
     {
       "Id": 220530,
       "CanBreak": false,
-      "Name": "未命名",
-      "Key": "SPACE",
+      "Name": "入场动画",
+      "Key": "SPACE"
     },
     {
       "Id": 220531,
@@ -209,79 +210,79 @@
     {
       "Id": 220561,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "狂奔前进",
       "Key": ""
     },
     {
       "Id": 220562,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "咆哮挑衅一下",
       "Key": ""
     },
     {
       "Id": 220563,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "右拳砸地，然后横扫",
       "Key": ""
     },
     {
       "Id": 220564,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "左拳砸地，然后小地爆",
       "Key": ""
     },
     {
       "Id": 220565,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "右拳砸地，然后小地爆",
       "Key": ""
     },
     {
       "Id": 220566,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "狂奔前进",
       "Key": ""
     },
     {
       "Id": 220581,
       "CanBreak": true,
-      "Name": "未命名",
-      "Key": ""
+      "Name": "大招，垂直打一拳砸地，然后引发大范围地爆",
+      "Key": "C"
     },
     {
       "Id": 220591,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "转身拳",
       "Key": ""
     },
     {
       "Id": 220592,
       "CanBreak": true,
-      "Name": "未命名",
-      "Key": ""
+      "Name": "大招，垂直打一拳砸地，然后引发大范围地爆",
+      "Key": "V"
     },
     {
       "Id": 220593,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "砸拳，然后横扫",
       "Key": ""
     },
     {
       "Id": 220594,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "砸拳，然后横扫",
       "Key": ""
     },
     {
       "Id": 220595,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "大招，垂直打一拳砸地，然后引发大范围地爆",
       "Key": ""
     },
     {
       "Id": 220596,
       "CanBreak": true,
-      "Name": "未命名",
+      "Name": "砸拳，然后横扫",
       "Key": ""
     }
   ]

@@ -35,15 +35,5 @@
     "desc": "蛇毒",
     "ID": 10030401,
     "ProjectileLifeTime": 8
-  },
-  {
-    "desc": "燧先锋岩浆",
-    "ID": 1013701,
-    "ProjectileLifeTime": 6
-  },
-  {
-    "desc": "燧先锋岩浆",
-    "ID": 1013702,
-    "ProjectileLifeTime": 6
   }
 ]

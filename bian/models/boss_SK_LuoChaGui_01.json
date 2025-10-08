@@ -33,7 +33,8 @@
       }
     ],
     "Override_AbnormalDispID_Attacker": 4014,
-    "Override_AbnormalDispID_Victim": 102
+    "Override_AbnormalDispID_Victim": 102,
+    "UnitScale": 0.5
   },
   "Name": "鬼王",
   "Label": "SK_LuoChaGui_01",

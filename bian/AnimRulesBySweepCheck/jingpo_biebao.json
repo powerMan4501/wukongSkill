@@ -18,7 +18,8 @@
         ]
       }
     ],
-    "hitEffects": [888555034]
+    "hitEffects": [888555034],
+    "replaceEffects": true
   },
   {
     "desc": "鳖宝，精魄技能",
@@ -40,7 +41,8 @@
         ]
       }
     ],
-    "hitEffects": [888555034]
+    "hitEffects": [888555034],
+    "replaceEffects": true
   },
   {
     "desc": "鳖宝，精魄技能",
