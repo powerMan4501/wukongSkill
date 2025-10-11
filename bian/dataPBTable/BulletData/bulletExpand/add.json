@@ -1,5 +1,4 @@
 [
- 
   {
     "desc": "克隆马猴冰剑气",
     "ID": 88880003,
@@ -20,8 +19,6 @@
     "BulletCanThroughBlockage": 1
   },
 
-
-
   {
     "desc": "克隆金箍棒",
     "ID": 88880006,
@@ -31,9 +28,6 @@
     "BulletSweepCheckDelayTime": 0.0,
     "BulletCanThroughBlockage": 1
   },
-
-
- 
 
   {
     "desc": "火猴火焰剑气",
@@ -70,6 +64,16 @@
     "HitEffectsforChr": [888555019],
     "HitDestructibleStrengthType": 4,
     "BulletSweepCheckGap": 5,
+    "BulletSweepCheckDelayTime": 0.0,
+    "BulletCanThroughBlockage": 1
+  },
+
+  {
+    "desc": "克隆画地为牢 38003801",
+    "ID": 88880013,
+    "HitEffectsforChr": [39019112, 921420],
+    "HitDestructibleStrengthType": 4,
+    "BulletSweepCheckGap": 1,
     "BulletSweepCheckDelayTime": 0.0,
     "BulletCanThroughBlockage": 1
   }

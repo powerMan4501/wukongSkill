@@ -67,7 +67,7 @@
     "desc": "100%+100点伤害,0段蓄力",
     "ID": 888555021,
     "EffectType": 1,
-    "EffectParamsInt": [31, 21, 1, 0, 0, 0, 0],
+    "EffectParamsInt": [31, 21, 1, 0, 0, 0, 4444401],
     "EffectParamsFloat": [0.0, 100.0, 10000.0, 0.0, 0.0, 0.0, 100],
     "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
   },
@@ -82,12 +82,19 @@
       "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/MGD/mgd_yuan/Physics/mgd_yuan_bigballfarspawn.mgd_yuan_bigballfarspawn'"
     ]
   },
-
+  {
+    "desc": "100%+100点伤害",
+    "ID": 888555031,
+    "EffectType": 1,
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444401],
+    "EffectParamsFloat": [100.0, 100.0, 10000.0, 1000.0, 0.0, 0.0, 100],
+    "EffectParamsStr": ["【主角】蓄力1"]
+  },
   {
     "desc": "200%+200点伤害",
     "ID": 888555032,
     "EffectType": 1,
-    "EffectParamsInt": [40, 25, 1, 0, 0, 0, 0],
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444402],
     "EffectParamsFloat": [200.0, 200.0, 20000.0, 2000.0, 0.0, 0.0, 200],
     "EffectParamsStr": ["【主角】蓄力2"]
   },
@@ -95,15 +102,15 @@
     "desc": "300%+300点伤害",
     "ID": 888555033,
     "EffectType": 1,
-    "EffectParamsInt": [40, 25, 1, 0, 0, 0, 0],
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444403],
     "EffectParamsFloat": [300.0, 300.0, 30000.0, 3000.0, 0.0, 0.0, 300],
     "EffectParamsStr": ["【主角】蓄力3"]
   },
   {
-    "desc": "400%+400点伤害,金箍棒伤害效果",
+    "desc": "400%+400点伤害",
     "ID": 888555034,
     "EffectType": 1,
-    "EffectParamsInt": [70, 25, 1, 0, 0, 0, 0],
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
     "EffectParamsFloat": [400.0, 400.0, 40000.0, 4000.0, 0.0, 0.0, 400],
     "EffectParamsStr": ["【主角】蓄力4"]
   }

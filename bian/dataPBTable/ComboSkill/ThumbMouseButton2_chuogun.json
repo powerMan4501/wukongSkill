@@ -15,6 +15,7 @@
     "type": "magic",
     "skillID": 8130,
     "MagicSkillID": 499915,
+    "UnitScale": 0.8,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "戳棍3，各种尾巴攻击很不错"
@@ -26,6 +27,7 @@
     "type": "magic",
     "skillID": 8130,
     "MagicSkillID": 499911,
+    "UnitScale": 0.8,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "戳棍2，蝎子托马斯旋转攻击好几圈"
@@ -46,6 +48,7 @@
     "rate": 0.4,
     "type": "magic",
     "skillID": 8130,
+    "UnitScale": 0.8,
     "MagicSkillID": 499931,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",

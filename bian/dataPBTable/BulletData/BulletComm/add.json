@@ -56,5 +56,13 @@
     "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BP_30_lys_chifagui_01a_Bullet.BP_30_lys_chifagui_01a_Bullet_C",
     "ProjectileDelayDestroyTime": 1,
     "ProjectileLifeTime": 9
+  },
+
+   {
+    "desc": "克隆画地为牢 38003801",
+    "ID": 88880013,
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/LYS/LYS_HuangMei_03/MF_LYS_HuangMei_03_AntiASS.MF_LYS_HuangMei_03_AntiASS_C",
+    "ProjectileDelayDestroyTime": 1,
+    "ProjectileLifeTime": 5
   }
 ]

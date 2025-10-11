@@ -31,5 +31,27 @@
         "desc": "100%暴击"
       }
     ]
+  },
+
+  {
+    "desc": "燧先锋砸地",
+    "montage": "AM_50_hys_shixianfeng_02_atk_04_",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.3,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [140, 74010207],
+            "OffsetX": 400,
+            "OffsetY": 400,
+            "desc": "业火，巨猿火圈"
+          }
+        ]
+      }
+    ]
   }
 ]

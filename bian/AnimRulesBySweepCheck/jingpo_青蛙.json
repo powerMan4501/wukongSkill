@@ -31,5 +31,22 @@
         "desc": "霸体"
       }
     ]
+  },
+  {
+    "desc": "精魄蛙",
+    "montage": ".AM_10_gycy_wa_01_atk_",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.2,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "hitEffects": [888555031]
   }
 ]

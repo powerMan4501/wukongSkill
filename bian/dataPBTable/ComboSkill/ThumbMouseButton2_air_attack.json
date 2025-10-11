@@ -4,6 +4,7 @@
     "rate": 0.2,
     "type": "magic",
     "skillID": 8522,
+    "UnitScale": 0.4,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "跳跃攻击接无量蝠"
@@ -30,7 +31,7 @@
     "InputCore": "ThumbMouseButton2",
     "desc": "跳跃重击1开始，飞到空中，发射很多索敌闪电"
   },
-   {
+  {
     "nowMontage": "AM_wukong_atk_air_heavy_start_2",
     "rate": 0.2,
     "type": "BOSS",
@@ -50,7 +51,7 @@
     "InputCore": "ThumbMouseButton2",
     "desc": "跳跃重击3开始，黄眉身体爆发大量雷电，伤害高"
   },
-   {
+  {
     "nowMontage": "AM_wukong_atk_air_heavy_start_4",
     "rate": 0.2,
     "type": "BOSS",

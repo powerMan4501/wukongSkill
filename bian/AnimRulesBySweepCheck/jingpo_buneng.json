@@ -3,7 +3,7 @@
     "desc": "不能，Q4砸地",
     "montage": "AM_30_lys_tuiseng_02_comboAq5_atk_03",
     "linkValue": 1.4,
-    "addRadius": 1500,
+    "addRadius": 500,
     "speedRate": 1.3,
     "SweepActions": [
       {
@@ -33,7 +33,7 @@
     "desc": "不能，以武入禅",
     "montage": "AM_LYS_TuiSeng_02_Atk_Fast_05a",
     "linkValue": 0,
-    "addRadius": 1500,
+    "addRadius": 500,
     "speedRate": 1.3,
     "SweepActions": [
       {
@@ -65,7 +65,7 @@
     "desc": "不能，连续排云掌",
     "montage": "AM_LYS_TuiSeng_02_Atk_Fast_06a",
     "linkValue": 0,
-    "addRadius": 1500,
+    "addRadius": 500,
     "speedRate": 1.3,
     "SweepActions": [
       {
@@ -96,7 +96,7 @@
     "desc": "不能，摆架势之后打出排云掌和扫堂腿",
     "montage": "AM_LYS_TuiSeng_02_Atk_Fast_08",
     "linkValue": 0,
-    "addRadius": 1500,
+    "addRadius": 500,
     "speedRate": 1.4,
     "SweepActions": [
       {

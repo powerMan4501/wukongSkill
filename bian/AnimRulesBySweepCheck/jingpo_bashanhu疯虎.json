@@ -1,0 +1,49 @@
+[
+  {
+    "desc": "疯虎精魄技能",
+    "montage": "AM_20_hfm_bashanhu_01_atk_06_",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.3,
+    "AMSpeedRate": 1.3,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 2800,
+        "desc": "霸体"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 1016201,
+            "ForTarget": true,
+            "SpeedLeftValue": 16000,
+            "SpeedRightValue": 16000,
+            "desc": "发射巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "desc": "疯虎其他招式",
+    "montage": "AM_20_hfm_bashanhu_01_atk_",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.5,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ]
+  }
+]

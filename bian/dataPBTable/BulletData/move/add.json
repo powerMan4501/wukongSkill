@@ -1,6 +1,4 @@
 [
-
-
   {
     "desc": "克隆马猴冰剑气",
     "ID": 88880003,
@@ -11,8 +9,6 @@
     "MoveAlignToLand": 0
   },
 
-
-
   {
     "desc": "金箍棒冰",
     "ID": 88880006,
@@ -22,9 +18,6 @@
     "MoveClampToLand": 1,
     "MoveAlignToLand": 0
   },
-
-
-
 
   {
     "desc": "火猴火焰剑气",
@@ -55,13 +48,23 @@
     "MoveClampToLand": 0,
     "MoveAlignToLand": 0
   },
-   {
+  {
     "desc": "克隆赤发鬼的箭 1017261",
     "ID": 88880012,
     "ProjectileMoveModeType": 1,
     "ProjectileSpdType": 1,
     "ProjectileFlyTime": 0.0,
     "MoveClampToLand": 0,
+    "MoveAlignToLand": 0
+  },
+
+  {
+    "desc": "克隆画地为牢 38003801",
+    "ID": 88880013,
+    "ProjectileMoveModeType": 1,
+    "ProjectileSpdType": 1,
+    "ProjectileFlyTime": 0.0,
+    "MoveClampToLand": 1,
     "MoveAlignToLand": 0
   }
 ]

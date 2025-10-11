@@ -1,5 +1,74 @@
 [
- 
+  {
+    "nowMontage": "AM_Wukong_PreciseDodge_F_01",
+    "rate": 0.5,
+    "skillID": 10992,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "前完美闪避接定风珠"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_PreciseDodge_R_01.AM_Wukong_PreciseDodge_R_01",
+    "rate": 0.5,
+    "skillID": 10995,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "右完美闪避接芭蕉扇"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_PreciseDodge_B_01.AM_Wukong_PreciseDodge_B_01",
+    "rate": 0.5,
+    "skillID": 10519,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "后完美闪避接完美定身"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_PreciseDodge_L_01.AM_Wukong_PreciseDodge_L_01",
+    "rate": 0.5,
+    "skillID": 10994,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "左完美闪避接绣花针"
+  },
+  {
+    "nowMontage": "AM_Wukong_JXSQ_Enter_F",
+    "rate": 0.5,
+    "skillID": 10992,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "前jxsq接定风珠"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_JXSQ_Enter_R",
+    "rate": 0.5,
+    "skillID": 10995,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "右jxsq接芭蕉扇"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_JXSQ_Enter_B",
+    "rate": 0.5,
+    "skillID": 10519,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "后jxsq接完美定身"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_JXSQ_Enter_L",
+    "rate": 0.5,
+    "skillID": 10994,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "左jxsq接绣花针"
+  },
   {
     "nowMontage": "AM_Dasheng_ComboA_01.AM_Dasheng_ComboA_01",
     "rate": 0.3,
@@ -103,6 +172,7 @@
     "rate": 0.3,
     "type": "magic",
     "skillID": 8562,
+    "UnitScale": 0.6,
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
     "desc": "立棍平A4 疯虎"
@@ -113,12 +183,13 @@
     "rate": 0.3,
     "type": "magic",
     "skillID": 8537,
+    "UnitScale": 0.5,
     "Condition": "hasBuff",
     "InputCore": "ThumbMouseButton2",
     "conditionValue": 888666007,
     "desc": "戳棍平A4，火buff接燧先锋"
   },
-{
+  {
     "nowMontage": "AM_Wukong_ComboB_q4.AM_Wukong_ComboB_q4",
     "rate": 0.3,
     "type": "magic",
@@ -153,7 +224,7 @@
     "rate": 0.9,
     "type": "magic",
     "skillID": 8130,
-    "backTime": 2800,
+    "UnitScale": 0.8,
     "MagicSkillID": 499910,
     "Condition": "StancePoke",
     "InputCore": "ThumbMouseButton2",
@@ -226,7 +297,7 @@
     "nowMontage": "AM_wukong_comboc_z_02",
     "rate": 2,
     "type": "magic",
-     "skillID": 8437,
+    "skillID": 8437,
     "MagicSkillID": 201211,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
@@ -237,7 +308,7 @@
     "rate": 0.7,
     "type": "magic",
     "skillID": 8130,
-    "backTime": 1500,
+    "UnitScale": 0.8,
     "MagicSkillID": 10130,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
@@ -289,7 +360,6 @@
     "InputCore": "ThumbMouseButton2",
     "desc": "接隼居士 螺旋前冲"
   },
-  
 
   {
     "nowMontage": "AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1",

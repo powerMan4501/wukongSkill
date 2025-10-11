@@ -1,5 +1,4 @@
 [
- 
   {
     "desc": "克隆马猴冰剑气",
     "ID": 88880003,
@@ -21,8 +20,6 @@
     "HitChrAudioID": 0
   },
 
-
-
   {
     "desc": "金箍棒冰",
     "ID": 88880006,
@@ -33,9 +30,6 @@
     "BulletLowestSpdCanPlayPS": 0.0,
     "HitChrAudioID": 0
   },
-
-
-
 
   {
     "desc": "火猴火焰剑气",
@@ -56,7 +50,7 @@
     "ProjectileSelfSpawnDBCPath": "",
     "SpawnPStoSpawnInterval": 0.0,
     "BulletLowestSpdCanPlayPS": 0.0,
-    "HitChrAudioID":1021
+    "HitChrAudioID": 1021
   },
 
   {
@@ -79,5 +73,16 @@
     "SpawnPStoSpawnInterval": 0.0,
     "BulletLowestSpdCanPlayPS": 0.0,
     "HitChrAudioID": 1021
+  },
+
+  {
+    "desc": "克隆画地为牢 38003801",
+    "ID": 88880013,
+    "ProjectileFXUseDBC": 0,
+    "ProjectileSpawnPSPath": "",
+    "ProjectileSelfSpawnDBCPath": "",
+    "SpawnPStoSpawnInterval": 0.0,
+    "BulletLowestSpdCanPlayPS": 0.0,
+    "HitChrAudioID": 5301
   }
 ]

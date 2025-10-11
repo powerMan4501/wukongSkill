@@ -1,5 +1,45 @@
 [
-     {
+  {
+    "nowMontage": ".AM_Wukong_PreciseDodge_F_01",
+    "rate": 0.2,
+    "type": "RushSkill",
+    "RushDir": "Forward",
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "desc": "前完美闪避接jxsq"
+  },
+
+  {
+    "nowMontage": ".AM_Wukong_PreciseDodge_R_01",
+    "rate": 0.2,
+    "type": "RushSkill",
+    "RushDir": "Right",
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "desc": "右完美闪避接jxsq"
+  },
+
+  {
+    "nowMontage": ".AM_Wukong_Dodge_B_",
+    "rate": 0.2,
+    "type": "RushSkill",
+    "RushDir": "Backward",
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "desc": "后完美闪避接jxsq"
+  },
+
+  {
+    "nowMontage": ".AM_Wukong_PreciseDodge_L_01",
+    "rate": 0.2,
+    "type": "RushSkill",
+    "RushDir": "Left",
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "desc": "左完美闪避接jxsq"
+  },
+
+  {
     "nowMontage": ".AM_Wukong_Dodge_F_",
     "rate": 0.2,
     "type": "RushSkill",
@@ -199,7 +239,7 @@
     "desc": "接:3蓄力立棍"
   },
 
-   {
+  {
     "nowMontage": "AM_wukong_dingshen_02",
     "rate": 0.3,
     "skillID": 10096,

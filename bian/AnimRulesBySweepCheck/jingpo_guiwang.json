@@ -117,7 +117,7 @@
     "desc": "鬼王，冲上去熊抱",
     "montage": "AM_HYS_LuoChaGui_01_Atk_08",
     "linkValue": 0,
-    "addRadius": 1500,
+    "addRadius": 500,
     "speedRate": 1.8,
     "CastActions": [
       {

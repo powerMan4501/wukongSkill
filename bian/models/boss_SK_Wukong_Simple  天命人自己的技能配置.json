@@ -41,7 +41,7 @@
       "Id": 8596,
       "Name": "火蛙,大招，喷火，把战场变成岩浆",
       "speedRate": 1.5,
-      "Key": "S+S",
+      "Key": "S+D",
       "type": "magic",
       "MagicSkillID": 416340
     },
@@ -50,7 +50,7 @@
       "bossLabel": "SK_hys_shanzhen_01",
       "MagicSkillID": 580103,
       "Name": "石头人冲撞",
-      "Key": "S+D",
+      "Key": "S+S",
       "CanBreak": true
     },
       {
@@ -214,7 +214,7 @@
       "Buffers": [888666006],
       "CanBreak": false,
       "Name": "无量蝠，冰",
-      "backTime": 2200,
+     "UnitScale": 0.4,
       "Key": "NUMPAD1"
     },
     {

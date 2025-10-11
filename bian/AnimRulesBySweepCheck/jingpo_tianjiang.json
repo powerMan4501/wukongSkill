@@ -6,26 +6,23 @@
     "addRadius": 5500,
     "speedRate": 1.5,
     "AMScaleRate": 10,
+    "AMSpeedRate": 1.5,
     "CastActions": [
       {
         "Type": "buff",
         "BuffIDs": [310],
         "BuffTime": 4800,
         "desc": "无敌"
-      }
-    ],
-    "SweepActions": [
+      },
       {
         "Type": "bullet",
-        "bullets": [
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [50051029, 118],
-            "desc": "电圈/落雷"
-          }
-        ]
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileID": 88880013,
+        "desc": "画地为牢"
       }
-    ]
+    ],
+    "hitEffects": [39019112],
+    "replaceEffects": true
   },
 
   {
