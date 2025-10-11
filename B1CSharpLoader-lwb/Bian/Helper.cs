@@ -232,7 +232,7 @@ namespace bian
         {
             isPlayVigorSkillByID = isPlay;
         }
-        public static void CastVigorSkillByID(BGUPlayerCharacterCS character, int VigorSkillID, float backTime = 0, int? MagicSkillID = 0, float? Scale3D = 1)
+        public static void CastVigorSkillByID(BGUPlayerCharacterCS character, int VigorSkillID, float UnitScale, int? MagicSkillID = 0, float? Scale3D = 1)
         {
             var magicChangeComp = GetCachedMagicChangeComp(character);
             if (magicChangeComp == null)
@@ -253,8 +253,16 @@ namespace bian
                 return;
             }
             var BGS = GetBUS_GSEventCollection();
-            var Duration = backTime > 0 ? backTime : 1000f;
-            BGS.Evt_BuffAdd.Invoke(22010, character, character, Duration, EBuffSourceType.MagicallyChange);
+            if (UnitScale > 0 && UnitScale != 1)
+            {
+                config.UnitScale = (float)UnitScale;
+            }
+            else
+            {
+                config.UnitScale = (float)1.0;
+
+            }
+            BGS.Evt_BuffAdd.Invoke(22010, character, character, 1000, EBuffSourceType.MagicallyChange);
             var finalId = MagicSkillID > 0 ? MagicSkillID : soulSkillDesc.SkillId;
             try
             {
@@ -288,23 +296,6 @@ namespace bian
                 NeedBlend = true
             };
             bPS_GSEventCollection.Evt_TriggerPlayerTransBegin.Invoke(EPlayerTransBeginType.SkillEffect, playerTransParam);
-            // var magicChangeComp = GetCachedMagicChangeComp(character);
-            // if (magicChangeComp == null)
-            // {
-            //     return;
-            // }
-
-            // var soulSkillDesc = GameDBRuntime.GetSoulSkillDesc(VigorSkillID);
-
-            // if (soulSkillDesc == null || magicChangeComp == null)
-            // {
-            //     return;
-            // }
-            // var BGS = Helper.GetBUS_GSEventCollection();
-            // FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
-            // if (fieldData == null) return;
-            // fieldData.SetValue(magicChangeComp, MagicSkillID);
-            // BGS.Evt_TriggerVigorSkill.Invoke(VigorSkillID);
         }
         public static BGWDataAsset_MagicallyChangeConfig? getMagicConfig(BGUPlayerCharacterCS character, string bossLabel, string type)
         {
@@ -400,9 +391,14 @@ namespace bian
                     }
                     config.Weapons.SetValues(weapons);
                 }
-                if (model.Level1Scale > 0 && model.Level1Scale != 1)
+                if (BossConf.UnitScale > 0 && BossConf.UnitScale != 1)
                 {
-                    config.UnitScale = model.Level1Scale;
+                    config.UnitScale = (float)BossConf.UnitScale;
+                }
+                else
+                {
+                    config.UnitScale = (float)1.0;
+
                 }
 
                 // 将新加载的配置加入缓存
@@ -1220,6 +1216,15 @@ namespace bian
 
                 var model = new BossModel();
                 model.BossConf = new BossConfig();
+                model.AttrFloat = new Dictionary<string, float>();
+
+                // 遍历所有EBGUAttrFloat属性
+                foreach (EBGUAttrFloat attrType in Enum.GetValues(typeof(EBGUAttrFloat)))
+                {
+                    if (attrType == EBGUAttrFloat.None || attrType == EBGUAttrFloat.EnumMax)
+                        continue;
+                    model.AttrFloat[attrType.ToString()] = BGUFunctionLibraryCS.GetAttrValue(actor, attrType);
+                }
 
                 try
                 {
@@ -1228,6 +1233,7 @@ namespace bian
                     // BGUFuncLibNonRuntime.LoadProtobufData<FUStUnitBattleInfoExtendDesc>();
                     ACharacter aCharacter = tM.GetMonster() as ACharacter;
                     //GetAllMertials(aCharacter);
+
 
                     // Log.Debug($"bian: start convert boss config");
                     model.BossConf.CapsuleHalfHeight = aCharacter.CapsuleComponent.GetUnscaledCapsuleHalfHeight();

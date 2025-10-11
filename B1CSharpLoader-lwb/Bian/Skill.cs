@@ -32,13 +32,14 @@ namespace bian
 
         public string? type { get; set; }
 
-        public float? backTime { get; set; }
+        public float? UnitScale { get; set; }
         public List<float>? RelativeLocation { get; set; }
         public int? MagicSkillID { get; set; }
         public float? Scale3D { get; set; }
         public string? bossLabel { get; set; }
+        public string? RushDir;
 
-        
+
         private string FName;
 
 

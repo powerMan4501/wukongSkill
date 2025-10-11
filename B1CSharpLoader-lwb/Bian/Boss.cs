@@ -74,6 +74,8 @@ namespace bian
 
         public int Override_AbnormalDispID_Victim { set; get; }
         public Skill? doneSkill { set; get; }
+        public float? UnitScale { set; get; }
+
 
     }
 }

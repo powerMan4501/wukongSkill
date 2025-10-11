@@ -636,7 +636,7 @@ namespace bian
                     try
                     {
                         // await Task.Delay(650);
-                        var backTime = (int)(skill?.backTime ?? 0);
+
                         if (skill?.Buffers != null && skill.Buffers.Count() > 0)
                         {
                             foreach (var buffer in skill.Buffers)
@@ -658,7 +658,7 @@ namespace bian
                             // {
                             //     character.FollowCamera.RelativeLocation = new UnrealEngine.Runtime.FVector(-800, 0, -1);
                             // }
-                            Helper.CastVigorSkillByID(character, skill.Id, backTime, skill?.MagicSkillID, (int?)skill?.Scale3D ?? 1);
+                            Helper.CastVigorSkillByID(character, skill.Id, skill?.UnitScale ?? 1, skill?.MagicSkillID, (int?)skill?.Scale3D ?? 1);
                         });
 
                         // await Task.Delay(backTime);
@@ -686,6 +686,12 @@ namespace bian
                 Helper.CastVigorSkillByModel(character, skill.bossLabel, skill.type ?? "", skill?.MagicSkillID ?? 0);
                 return true;
             }
+            else if (skillType == "rushskill")
+            {
+                Helper.doPhantomRushSkill(character, skill.RushDir ?? "Forward");
+                return true;
+            }
+
             else
             {
                 FUStSkillSDesc skillSDesc = BGW_GameDB.GetSkillSDesc(skill.Id, character);
@@ -1500,6 +1506,7 @@ namespace bian
         public string TamerPath { set; get; }
 
         public BossConfig BossConf { set; get; }
+        public Dictionary<string, float>? AttrFloat { set; get; }
         private BGWDataAsset_MagicallyChangeConfig config = null;
 
         public bool IsCurrentModel(string SkName)

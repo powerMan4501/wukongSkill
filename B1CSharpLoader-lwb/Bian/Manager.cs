@@ -132,7 +132,9 @@ namespace bian
 
                 LoadUtils.ModifySuitDesc();
 
-                LoadUtils.ModifyHP();
+                // LoadUtils.ModifyHP();
+
+                LoadUtils.LoadAndApplyDamageExpandDesc();
                 LoadUtils.ModifyEquipDesc();
                 LoadUtils.LoadAnimRulesBySweepCheck();
                 isBuffConfigsLoaded = true;
@@ -457,7 +459,6 @@ namespace bian
             //     OnScaleWeapon(1);
             //     return;
             // }
-
             if (matchedRule?.CastActions?.Count > 0)
             {
                 var rule = new Rule();
@@ -825,7 +826,7 @@ namespace bian
                 {
                     if (type == "magic")
                     {
-                        Helper.CastVigorSkillByID((BGUPlayerCharacterCS)character, combo.skillID, combo?.backTime ?? 0, combo?.MagicSkillID ?? 0, combo?.Scale3D ?? 1);
+                        Helper.CastVigorSkillByID((BGUPlayerCharacterCS)character, combo.skillID, combo?.UnitScale ?? 1, combo?.MagicSkillID ?? 0, combo?.Scale3D ?? 1);
                     }
 
                     if (type == "bossLabel")

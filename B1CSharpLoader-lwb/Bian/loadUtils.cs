@@ -16,6 +16,29 @@ using bian;
 using ResB1;
 using UnrealEngine.Engine;
 
+public class DamageExpandConfig
+{
+    public string desc { get; set; }
+    public int ID { get; set; }
+    public int? CanTriggerScar { get; set; }
+    public int? CanTriggerFX { get; set; }
+    public int? CanTriggerFightBackCounter { get; set; }
+    public int? DamageReason { get; set; }
+    public int? DamageImmueLevel { get; set; }
+    public int? CritRateAddition { get; set; }
+    public double? CritDmgAddition { get; set; }
+    public int? IgnoreBeAttacked { get; set; }
+    public double? AddTargetCurHpRatio { get; set; }
+    public double? ImmobilizeHit { get; set; }
+    public double? PartDamage { get; set; }
+    public double? PevalueIncrements { get; set; }
+    public double? TransIncrements { get; set; }
+    public int? HitWeightGearType { get; set; }
+    public int? PillarFormTerminatorType { get; set; }
+    public int? BrokenFrozenImmediately { get; set; }
+}
+
+
 public class SoulSkillConfig
 {
     public int Id { get; set; }
@@ -51,6 +74,7 @@ public class AnimRuleBySweepCheck
     public List<RuleAction>? bulletsActions { get; set; }
     public List<notifyItem>? notifies { get; set; }
     public List<int>? hitEffects { get; set; }
+    public bool? replaceEffects { get; set; }
 
     public List<RuleAction>? CastActions { get; set; }
     public float? speedRate { get; set; }
@@ -363,7 +387,7 @@ namespace bian
         public int? conditionValue { get; set; }
         public string? desc { get; set; }
         public string? type { get; set; }
-        public float? backTime { get; set; }
+        public float? UnitScale { get; set; }
         public int? MagicSkillID { get; set; }
         public int? ResId { get; set; }
         public float? Scale3D { get; set; }
@@ -1837,10 +1861,9 @@ namespace bian
 
                     {
                         var num = itemData.QualityType;
-                        itemData.HPFixedDM = itemData.HPFixedDM + (int)num * 10000;
+                        itemData.HPFixedDM = itemData.HPFixedDM + (int)num * 1 * 10000;
                     }
                 }
-
             }
         }
         // 加载并应用被动技能配置
@@ -1961,9 +1984,9 @@ namespace bian
 
             foreach (var itemData in dataList.Values)
             {
-                 if(itemData?.Id == 16035)
+                if (itemData?.Id == 16035)
                 {
-                     itemData.EquipEffectDesc = "装备后，每秒恢复20点生命/法力/法宝/变身能量；攻击触发暴击立即恢复20点棍势";
+                    itemData.EquipEffectDesc = "装备后，每秒恢复20点生命/法力/法宝/变身能量；攻击触发暴击立即恢复20点棍势";
                 }
             }
 
@@ -2099,6 +2122,77 @@ namespace bian
             Log.Info($"Total loaded anim rules: {allRules.Count}");
             allSweepCheckAnimRules = allRules;
             return allRules;
+        }
+
+
+
+
+        public static int LoadAndApplyDamageExpandDesc(string configDirectory = null)
+        {
+            try
+            {
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "DamageExpandDesc");
+
+                var damageExpandConfigs = LoadJsonConfigs<DamageExpandConfig>(configDirectory, "DamageExpandDesc");
+                var dataList = BG_ProtobufDataAPI<FUStSkillDamageExpandDesc>.Get().GetAll();
+
+                if (damageExpandConfigs == null || damageExpandConfigs.Count == 0)
+                {
+                    Log.Error("Failed to load damage expand configs");
+                    return 0;
+                }
+
+                if (dataList == null)
+                {
+                    dataList = new Dictionary<int, FUStSkillDamageExpandDesc>();
+                }
+
+                // 去重处理
+                damageExpandConfigs = damageExpandConfigs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
+
+                const int templateId = 123456; // 使用一个已存在的ID作为模板
+                if (!dataList.TryGetValue(templateId, out var templateExpand))
+                {
+                    templateExpand = new FUStSkillDamageExpandDesc();
+                    templateExpand.CritRateAddition = 1;
+                    dataList.Add(templateId, templateExpand);
+                }
+                templateExpand.CritRateAddition = 1;
+                var processedCount = 0;
+                foreach (var config in damageExpandConfigs)
+                {
+                    try
+                    {
+                        var targetExpand = GetOrCreateDamageExpandDesc(config, dataList, templateExpand);
+                        CopyProperties(config, targetExpand);
+                        processedCount++;
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process damage expand config for ID {config.ID}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed damage expand configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplyDamageExpandDesc: {ex.Message}");
+                return 0;
+            }
+        }
+
+        private static FUStSkillDamageExpandDesc GetOrCreateDamageExpandDesc(DamageExpandConfig config, Dictionary<int, FUStSkillDamageExpandDesc> dataList, FUStSkillDamageExpandDesc templateExpand)
+        {
+            if (dataList.TryGetValue(config.ID, out var existingExpand))
+            {
+                return existingExpand;
+            }
+
+            var newExpand = (FUStSkillDamageExpandDesc)templateExpand.Clone();
+            dataList.Add(config.ID, newExpand);
+            return newExpand;
         }
 
     }

@@ -106,7 +106,7 @@ namespace bian
         public FEffectInstReq? EffectInstReq { get; set; } // 临时存储目标
         public string? BornDirType { get; set; }
         public float? Scale3D { get; set; }
-
+        public float? UnitScale { get; set; }
 
 
 
@@ -378,8 +378,7 @@ namespace bian
                 case "magic":
                     if (action?.SkillID > 0)
                     {
-                        var backTime = (int)(action?.backTime ?? 0);
-                        Helper.CastVigorSkillByID(character, action.SkillID, backTime, (int?)(action?.Scale3D ?? 1));
+                        Helper.CastVigorSkillByID(character, action.SkillID, action?.UnitScale ?? 1, (int?)(action?.Scale3D ?? 1));
                         // ExecuteDelayedAction(() =>
                         // {
                         //     character.FollowCamera.RelativeLocation = new FVector(

@@ -408,6 +408,10 @@ public class Hooks
                     }
                     if (hitEffects.Count > 0)
                     {
+                        if (config?.replaceEffects == true)
+                        {
+                            sweepCheck.EffectIDList.Clear();
+                        }
                         foreach (var hitEffect in hitEffects)
                         {
                             sweepCheck.EffectIDList.Add(hitEffect);
