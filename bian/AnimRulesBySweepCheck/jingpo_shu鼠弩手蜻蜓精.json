@@ -1,0 +1,85 @@
+[
+  {
+    "desc": "鼠弩手，无前摇射箭",
+    "montage": "AM_HFM_ShuNuShou_01b_Atk_Fast_01",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "bulletsActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [1016901],
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "BulletCount": 5,
+            "targetBaseSocketName": "pelvis",
+            "spawnBaseSocketName": "wuq01",
+            "ForTarget": true,
+            "desc": "发射火箭"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [1016901],
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "BulletCount": 5,
+            "targetBaseSocketName": "head",
+            "spawnBaseSocketName": "wuq01",
+            "ForTarget": true,
+            "desc": "发射火箭"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [1016901],
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "BulletCount": 5,
+            "targetBaseSocketName": "CAMERA_LOCK",
+            "spawnBaseSocketName": "wuq01",
+            "ForTarget": true,
+            "desc": "发射火箭"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "desc": "鼠弩手，其余招式",
+    "montage": "AM_HFM_ShuNuShou_01b_Atk_Fast",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4
+  },
+
+  {
+    "desc": "蜻蜓精，精魄射箭",
+    "montage": "AM_40_psd_chong_03_atk_",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "bulletsActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [1017961],
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "targetBaseSocketName": "CAMERA_LOCK",
+            "spawnBaseSocketName": "wuq01",
+            "ForTarget": true,
+            "desc": "发射火箭"
+          }
+        ]
+      }
+    ]
+  }
+]

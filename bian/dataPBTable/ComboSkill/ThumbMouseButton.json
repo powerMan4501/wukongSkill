@@ -1,7 +1,7 @@
 [
   {
     "nowMontage": ".AM_Wukong_PreciseDodge_F_01",
-    "rate": 0.2,
+    "rate": 0.1,
     "type": "RushSkill",
     "RushDir": "Forward",
     "Condition": "any",
@@ -11,7 +11,7 @@
 
   {
     "nowMontage": ".AM_Wukong_PreciseDodge_R_01",
-    "rate": 0.2,
+    "rate": 0.1,
     "type": "RushSkill",
     "RushDir": "Right",
     "Condition": "any",
@@ -21,7 +21,7 @@
 
   {
     "nowMontage": ".AM_Wukong_Dodge_B_",
-    "rate": 0.2,
+    "rate": 0.1,
     "type": "RushSkill",
     "RushDir": "Backward",
     "Condition": "any",
@@ -31,7 +31,7 @@
 
   {
     "nowMontage": ".AM_Wukong_PreciseDodge_L_01",
-    "rate": 0.2,
+    "rate": 0.1,
     "type": "RushSkill",
     "RushDir": "Left",
     "Condition": "any",

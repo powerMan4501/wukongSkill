@@ -1,7 +1,7 @@
 [
   {
     "nowMontage": "AM_Wukong_PreciseDodge_F_01",
-    "rate": 0.5,
+    "rate": 0.1,
     "skillID": 10992,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
@@ -10,7 +10,7 @@
 
   {
     "nowMontage": "AM_Wukong_PreciseDodge_R_01.AM_Wukong_PreciseDodge_R_01",
-    "rate": 0.5,
+    "rate": 0.1,
     "skillID": 10995,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
@@ -19,7 +19,7 @@
 
   {
     "nowMontage": "AM_Wukong_PreciseDodge_B_01.AM_Wukong_PreciseDodge_B_01",
-    "rate": 0.5,
+    "rate": 0.1,
     "skillID": 10519,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
@@ -28,7 +28,7 @@
 
   {
     "nowMontage": "AM_Wukong_PreciseDodge_L_01.AM_Wukong_PreciseDodge_L_01",
-    "rate": 0.5,
+    "rate": 0.1,
     "skillID": 10994,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
@@ -36,7 +36,7 @@
   },
   {
     "nowMontage": "AM_Wukong_JXSQ_Enter_F",
-    "rate": 0.5,
+    "rate": 0.1,
     "skillID": 10992,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
@@ -45,7 +45,7 @@
 
   {
     "nowMontage": "AM_Wukong_JXSQ_Enter_R",
-    "rate": 0.5,
+    "rate": 0.1,
     "skillID": 10995,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
@@ -54,7 +54,7 @@
 
   {
     "nowMontage": "AM_Wukong_JXSQ_Enter_B",
-    "rate": 0.5,
+    "rate": 0.1,
     "skillID": 10519,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
@@ -63,7 +63,7 @@
 
   {
     "nowMontage": "AM_Wukong_JXSQ_Enter_L",
-    "rate": 0.5,
+    "rate": 0.1,
     "skillID": 10994,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",

@@ -1,0 +1,52 @@
+[
+  {
+    "desc": "广谋，精魄技能",
+    "montage": "AM_10_gycy_she_01_atk_07_",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "CastActions": [
+      {
+        "Type": "bullet",
+        "TimeDelay": 500,
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [10030101],
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "ForTarget": true,
+            "BulletCount": 5,
+            "desc": "发射光球"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "疾蝠，精魄技能",
+    "montage": "AM_20_hfm_roubianfu_atk_04_",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "bulletsActions": [
+      {
+        "Type": "bullet",
+        "TimeDelay": 0,
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [1016761],
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "ForTarget": true,
+            "BulletCount": 5,
+            "desc": "发射蝙蝠子弹"
+          }
+        ]
+      }
+    ]
+  }
+]

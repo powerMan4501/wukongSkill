@@ -1,0 +1,91 @@
+{
+  "Name": "悟空的技能id",
+  "desc": "888666005:雷，888666006 冰， 888666007火， 888666008毒",
+  "Rules": [
+    {
+      "Name": "鼠弩手扔的炸弹",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 20230201
+        },
+         {
+          "Type": "effect",
+          "EffectID": 20230202
+        }
+        
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [2403472, 44010401, 58111003],
+              "desc": "有火buff，巨猿四级火圈，炸炸炸"
+            }
+          ]
+        }
+      ]
+    },
+       {
+      "Name": "战车喷的火",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 40501301
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [44010401, 58111003],
+              "desc": "有火buff，炸炸炸，地面岩浆"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "Name": "蜻蜓精射箭",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 1017901
+        },
+
+        {
+          "Type": "effect",
+          "EffectID": 1017931
+        },
+
+        {
+          "Type": "effect",
+          "EffectID": 1017961
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [10030401],
+              "desc": "蛇毒"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

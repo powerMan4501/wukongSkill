@@ -37,11 +37,19 @@
       "CanBreak": false
     },
 
+    {
+      "Id": 8569,
+      "Name": "鼠弩手扔炸弹",
+      "speedRate": 1.5,
+      "Key": "S+D",
+      "type": "magic",
+      "MagicSkillID": 202302
+    },
      {
       "Id": 8596,
       "Name": "火蛙,大招，喷火，把战场变成岩浆",
       "speedRate": 1.5,
-      "Key": "S+D",
+      "Key": "",
       "type": "magic",
       "MagicSkillID": 416340
     },
@@ -53,7 +61,7 @@
       "Key": "S+S",
       "CanBreak": true
     },
-      {
+    {
       "type": "BOSS",
       "bossLabel": "SK_HGS_TianJiang_01",
       "MagicSkillID": 413431,
@@ -148,6 +156,7 @@
       "Name": "进尺",
       "Key": ""
     },
+   
     {
       "Id": 54322001,
       "CanBreak": true,
@@ -166,13 +175,22 @@
       "Key": "A+C",
       "CanBreak": false
     },
-
+    {
+      "Id": 8569,
+      "Name": "鼠弩手",
+      "Buffers": [888666007],
+      "speedRate": 1.5,
+      "Key": "NUMPAD0",
+      "type": "magic",
+      "CanBreak": false,
+      "MagicSkillID": 202332
+    },
     {
       "Id": 8596,
       "Name": "火蛙",
       "Buffers": [888666007],
       "speedRate": 1.5,
-      "Key": "NUMPAD0",
+      "Key": "",
       "type": "magic",
       "CanBreak": false,
       "MagicSkillID": 11396
@@ -214,7 +232,7 @@
       "Buffers": [888666006],
       "CanBreak": false,
       "Name": "无量蝠，冰",
-     "UnitScale": 0.4,
+      "UnitScale": 0.4,
       "Key": "NUMPAD1"
     },
     {
@@ -227,7 +245,16 @@
       "backTime": 2000,
       "Key": "NUMPAD2"
     },
-
+ {
+      "Id": 8579,
+      "type": "magic",
+      "Buffers": [888666008],
+      "CanBreak": true,
+      "needBack": true,
+      "Name": "蜻蜓精，毒",
+      "Description": "",
+      "Key": "NUMPAD3"
+    },
     {
       "Id": 8530,
       "type": "magic",
@@ -236,8 +263,7 @@
       "needBack": true,
       "Name": "蝎子，毒",
       "Description": "",
-      "backTime": 1700,
-      "Key": "NUMPAD3"
+      "Key": ""
     },
     {
       "Id": 8527,

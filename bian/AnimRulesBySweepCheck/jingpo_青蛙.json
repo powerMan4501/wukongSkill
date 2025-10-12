@@ -1,6 +1,6 @@
 [
   {
-    "desc": "火蛙喷岩浆",
+    "desc": "火蛙,大招，喷岩浆",
     "montage": "AM_szlc_wa_01_atk_40",
     "linkValue": 0,
     "addRadius": 500,
@@ -29,6 +29,21 @@
         "BuffIDs": [211],
         "BuffTime": 3800,
         "desc": "霸体"
+      }
+    ],
+    "bulletsActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [20230901],
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "ForTarget": true,
+            "desc": "发射鼠弩手炸弹"
+          }
+        ]
       }
     ]
   },
