@@ -1,8 +1,0 @@
-namespace b1.Protobuf.BG_ParserManager;
-
-public enum FILE_PROCESS_STATUS
-{
-	PROCESS_FAILED,
-	PROCESS_SUCCEEDED,
-	PROCESS_NOT_STARTED
-}
