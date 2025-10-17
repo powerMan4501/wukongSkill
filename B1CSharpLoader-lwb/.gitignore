@@ -81,3 +81,6 @@ ModelManifest.xml
 .vs
 .vscode
 GameDll
+GameDll/*
+GameDll/fanbainyi2
+GameDll/fanbainyi2/*
