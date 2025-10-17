@@ -13,6 +13,8 @@ namespace bian
         public static int index = 0;
         public static int offset = 0;
         public static int prevIndex = 0;
+        public static int ShieldMax = 6000;
+        public static int SkillSuperArmor = 6000;
 
         public void MaiDongHuiLai(ModelManager manager)
         {
@@ -20,18 +22,56 @@ namespace bian
             var character = Helper.GetBGUPlayerCharacterCS();
             if (character.Mesh.SkeletalMesh.GetFullName().ToLower().IndexOf("SK_Wukong_Simple".ToLower()) > -1)
             {
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, (EBGUAttrFloat)158, BGUFunctionLibraryCS.GetAttrValue(character, (EBGUAttrFloat)8));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, (EBGUAttrFloat)151, BGUFunctionLibraryCS.GetAttrValue(character, (EBGUAttrFloat)1));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, (EBGUAttrFloat)152, BGUFunctionLibraryCS.GetAttrValue(character, (EBGUAttrFloat)2));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, (EBGUAttrFloat)189, BGUFunctionLibraryCS.GetAttrValue(character, (EBGUAttrFloat)15));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, (EBGUAttrFloat)201, BGUFunctionLibraryCS.GetAttrValue(character, (EBGUAttrFloat)16));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, (EBGUAttrFloat)202, BGUFunctionLibraryCS.GetAttrValue(character, (EBGUAttrFloat)17));
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Stamina, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.StaminaMax));
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Hp, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.HpMax));
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Mp, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.MpMax));
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.SpecialEnergy, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.SpecialEnergyMax));
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.FabaoEnergy, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.FabaoEnergyMax));
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.VigorEnergy, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.VigorEnergyMax));
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.BlockCollapseArmorMax, ShieldMax);
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.BlockCollapseArmor, ShieldMax);
+
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.ShieldMax, ShieldMax);
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Shield, ShieldMax);
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.SkillSuperArmorMax, SkillSuperArmor);
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.SkillSuperArmor, SkillSuperArmor);
+                var UnitBarInfoComp = Helper.FindActorCompByClass<BUS_UnitBarInfoComp>(character);
+
+                var World = Helper.GetWorld();
+                BGW_UIEventCollection bGW_UIEventCollection = BGW_UIEventCollection.Get(World);
+                Log.Info($"bian: bGW_UIEventCollection is {bGW_UIEventCollection?.GetFName()}" );
+                if (bGW_UIEventCollection != null)
+                {
+                    bGW_UIEventCollection.Evt_UI_SetShieldBarActive(ECSExtension.ToEntity(character), true);
+                }
+                if (UnitBarInfoComp != null)
+                {
+                    // 获取 UnitBarInfoData 私有字段
+                    var unitBarInfoDataField = typeof(BUS_UnitBarInfoComp).GetField("UnitBarInfoData",
+                        System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+
+                    if (unitBarInfoDataField != null)
+                    {
+                        // 获取 UnitBarInfoData 实例
+                        var unitBarInfoData = unitBarInfoDataField.GetValue(UnitBarInfoComp);
+
+                        // 获取 ShieldShowInUI 属性
+                        var shieldShowInUIProperty = unitBarInfoData.GetType().GetProperty("ShieldShowInUI");
+
+                        if (shieldShowInUIProperty != null)
+                        {
+                            // 设置 ShieldShowInUI 为 true
+                            shieldShowInUIProperty.SetValue(unitBarInfoData, true);
+                        }
+                    }
+                }
+
             }
             else
             {
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, (EBGUAttrFloat)158, BGUFunctionLibraryCS.GetAttrValue(character, (EBGUAttrFloat)8));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, (EBGUAttrFloat)151, BGUFunctionLibraryCS.GetAttrValue(character, (EBGUAttrFloat)1));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, (EBGUAttrFloat)152, BGUFunctionLibraryCS.GetAttrValue(character, (EBGUAttrFloat)2));
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Stamina, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.StaminaMax));
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Hp, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.HpMax));
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Mp, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.MpMax));
             }
             BGUFunctionLibraryCS.BGUAddBuff(character, character, 450, EBuffSourceType.GM, 1000);
         }
@@ -159,7 +199,7 @@ namespace bian
             }
         }
 
-      
+
 
         public void TransBack(ModelManager manager)
         {

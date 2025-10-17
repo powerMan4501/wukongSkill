@@ -98,6 +98,9 @@ namespace bian
         public int? returnTime { get; set; }
         public float? backTime { get; set; }
         public string? spawnBaseSocketName { get; set; }
+        public string? targetBaseSocketName { get; set; }
+
+
         public int? intervalTime { get; set; }
         public int? intervalTimes { get; set; }
         public List<int> ProjectOffsetPosition { get; set; }
@@ -181,6 +184,13 @@ namespace bian
 
         private bool CheckBuffConditions(BGUPlayerCharacterCS character, RuleAction action)
         {
+            // 首先检查 BGUHasBuffByID 方法是否存在
+            var method = typeof(BGUFunctionLibraryCS).GetMethod("BGUHasBuffByID");
+            if (method == null)
+            {
+                Log.Error("BGUHasBuffByID method not found in BGUFunctionLibraryCS");
+                return false;
+            }
             if (action.hasBuff > 0 && !BGUFunctionLibraryCS.BGUHasBuffByID(character, action.hasBuff))
                 return false;
 
@@ -198,6 +208,14 @@ namespace bian
 
         private bool CheckTalentConditions(BGUPlayerCharacterCS character, RuleAction action)
         {
+            if (action?.talentCondition == null) return true;
+            // 首先检查 BGUHasTalentByID 方法是否存在
+            var method = typeof(BGUFunctionLibraryCS).GetMethod("BGUHasTalentByID");
+            if (method == null)
+            {
+                Log.Error("BGUHasTalentByID method not found in BGUFunctionLibraryCS");
+                return true;
+            }
             if (action.talentCondition > 0 && !BGUFunctionLibraryCS.BGUHasTalentByID(character, action.talentCondition))
                 return false;
 
@@ -325,8 +343,8 @@ namespace bian
         {
             var character = Helper.GetBGUPlayerCharacterCS();
             if (character == null) return;
-
-            switch (action.Type.ToLower())
+            Log.Info($"DoAction type:{action.Type},desc:{action?.desc}");
+            switch (action?.Type?.ToLower())
             {
                 case "buff":
                     HandleBuffAction(character, action, timeLength);
@@ -426,13 +444,16 @@ namespace bian
         {
             if (actions == null || actions.Count == 0) return;
             var character = Helper.GetBGUPlayerCharacterCS();
+            Log.Info($"DoAfterActions {actions.Count}");
             foreach (var action in actions)
             {
                 if (character == null) continue;
                 // 检查条件
-                if (!CheckBuffConditions(character, action) || !CheckTalentConditions(character, action))
+                var result = CheckBuffConditions(character, action);
+                if (!result || !CheckTalentConditions(character, action))
                     continue;
-                if (action.TimeDelay > 0)
+                Log.Info($"DoAfterActions check hasBuff: {action.hasBuff} , {result}");
+                if (action?.TimeDelay > 0)
                 {
                     ExecuteDelayedAction(() => DoAction(action, 1000 / 1), action.TimeDelay).ConfigureAwait(false);
                     continue;

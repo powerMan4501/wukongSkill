@@ -63,16 +63,16 @@ namespace bian
 
 
         // 监听的效果id
-        private static Dictionary<int, List<Rule>> effectRulesMap = new Dictionary<int, List<Rule>>();
+        public static Dictionary<int, List<Rule>> effectRulesMap = new Dictionary<int, List<Rule>>();
 
         // 监听的BuffID
-        private static Dictionary<int, List<Rule>> buffRulesMap = new Dictionary<int, List<Rule>>();
+        public static Dictionary<int, List<Rule>> buffRulesMap = new Dictionary<int, List<Rule>>();
 
         // 监听的动画
-        private static Dictionary<string, List<Rule>> montageRulesMap = new Dictionary<string, List<Rule>>();
+        public static Dictionary<string, List<Rule>> montageRulesMap = new Dictionary<string, List<Rule>>();
 
-        private static List<SkillMappingRule> AllSkillMappingRules = new List<SkillMappingRule>();
-        private static bool isBuffConfigsLoaded = false; // 添加静态标志变量
+        public static List<SkillMappingRule> AllSkillMappingRules = new List<SkillMappingRule>();
+        public static bool isBuffConfigsLoaded = false; // 添加静态标志变量
 
         // 添加公共属性
         public static IReadOnlyList<SkillMappingRule> SkillMappingRules
@@ -132,7 +132,9 @@ namespace bian
 
                 LoadUtils.ModifySuitDesc();
 
-                // LoadUtils.ModifyHP();
+                LoadUtils.ModifyHP();
+                LoadUtils.ModifySoulskill();
+                LoadUtils.ModifyTrans();
 
                 LoadUtils.LoadAndApplyDamageExpandDesc();
                 LoadUtils.ModifyEquipDesc();
@@ -223,7 +225,15 @@ namespace bian
             {
                 harmony = new Harmony("mod.reece.bian");
                 var assembly = Assembly.GetExecutingAssembly();
-                harmony.PatchAll(assembly);
+                try
+                {
+                    harmony.PatchAll(assembly);
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Harmony patch failed: {ex.Message}");
+                    Log.Error($"Stack trace: {ex.StackTrace}");
+                }
             }
         }
 
@@ -268,31 +278,31 @@ namespace bian
 
 
 
-        [HarmonyPatch(typeof(GSDel_RequestSpawnAProjectile), "Invoke")]
-        [HarmonyPrefix]
-        private static void GSDel_RequestSpawnAProjectileInvoke(ref FGSProjectileSpawnInfo ProjectileSpawnInfo)
-        {
-            if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]RequestSpawnAProjectile"))
-            {
+        // [HarmonyPatch(typeof(GSDel_RequestSpawnAProjectile), "Invoke")]
+        // [HarmonyPrefix]
+        // private static void GSDel_RequestSpawnAProjectileInvoke(ref FGSProjectileSpawnInfo ProjectileSpawnInfo)
+        // {
+        //     if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]RequestSpawnAProjectile"))
+        //     {
 
-                if (IsPlayer(ProjectileSpawnInfo.Spawner.PathName))
-                {
-                    if (ProjectileSpawnInfo.ProjectileID == 44051501)
-                    {
-                        // 夜叉王飞轮往前增加700
-                        var playerLocation = ProjectileSpawnInfo.Spawner.GetActorLocation();
-                        var xyz = ProjectileSpawnInfo.Spawner.GetActorForwardVector();
-                        var forwardVector = ProjectileSpawnInfo.Spawner.GetActorForwardVector();
-                        forwardVector.Y *= 700;
-                        forwardVector.X *= 700;
-                        ProjectileSpawnInfo.SpawnPosition = playerLocation + forwardVector;
-                    }
+        //         if (IsPlayer(ProjectileSpawnInfo.Spawner.PathName))
+        //         {
+        //             if (ProjectileSpawnInfo.ProjectileID == 44051501)
+        //             {
+        //                 // 夜叉王飞轮往前增加700
+        //                 var playerLocation = ProjectileSpawnInfo.Spawner.GetActorLocation();
+        //                 var xyz = ProjectileSpawnInfo.Spawner.GetActorForwardVector();
+        //                 var forwardVector = ProjectileSpawnInfo.Spawner.GetActorForwardVector();
+        //                 forwardVector.Y *= 700;
+        //                 forwardVector.X *= 700;
+        //                 ProjectileSpawnInfo.SpawnPosition = playerLocation + forwardVector;
+        //             }
 
-                }
+        //         }
 
-            }
+        //     }
 
-        }
+        // }
 
         private static bool isBuffLoaded = false; // 添加静态标志变量
 
@@ -309,34 +319,34 @@ namespace bian
 
 
 
-        [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_TriggerSkillEffectBySkillMultiCast_Implementation")]
-        [HarmonyPrefix]
-        private static void TriggerSkillEffectBySkillMultiCast(ref int EffectID, ref AActor Caster, ref AActor Target, ref FEffectInstReq EffectInstReq)
-        {
-            if (Caster == null || (!IsPlayer(Caster.PathName) && !Caster.PathName.Contains("TAMER_player_tornado")))
-            {
-                return;
-            }
+        // [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_TriggerSkillEffectBySkillMultiCast_Implementation")]
+        // [HarmonyPrefix]
+        // private static void TriggerSkillEffectBySkillMultiCast(ref int EffectID, ref AActor Caster, ref AActor Target, ref FEffectInstReq EffectInstReq)
+        // {
+        //     if (Caster == null || (!IsPlayer(Caster?.PathName) && !Caster.PathName.Contains("TAMER_player_tornado")))
+        //     {
+        //         return;
+        //     }
 
-            Log.Info($"Evt_TriggerSkillEffect EffectID:{EffectID}");
-            // 检查是否有对应的效果规则
-            if (!effectRulesMap.ContainsKey(EffectID))
-            {
+        //     Log.Info($"Evt_TriggerSkillEffect EffectID:{EffectID}");
+        //     // 检查是否有对应的效果规则
+        //     if (!effectRulesMap.ContainsKey(EffectID))
+        //     {
 
-                return;
-            }
+        //         return;
+        //     }
 
 
-            // 获取对应效果的所有规则
-            var matchingRules = effectRulesMap[EffectID];
-            foreach (var ruleItem in matchingRules)
-            {
-                ruleItem.Caster = Caster;
-                ruleItem.Target = Target;
-                ruleItem.EffectInstReq = EffectInstReq;
-                ruleItem.DoRule(1000, 1, null, ruleItem);
-            }
-        }
+        //     // 获取对应效果的所有规则
+        //     var matchingRules = effectRulesMap[EffectID];
+        //     foreach (var ruleItem in matchingRules)
+        //     {
+        //         ruleItem.Caster = Caster;
+        //         ruleItem.Target = Target;
+        //         ruleItem.EffectInstReq = EffectInstReq;
+        //         ruleItem.DoRule(1000, 1, null, ruleItem);
+        //     }
+        // }
 
 
         // 通用的buff互斥处理方法
@@ -348,58 +358,50 @@ namespace bian
             }
         }
 
-        [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_BuffAdd_Multicast_Invoke")]
-        [HarmonyPrefix]
-        private static void BuffAdd_Multicast(ref int BuffID, AActor Caster, AActor RootCaster, ref float Duration)
-        {
-            if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]BuffAdd_Multicast"))
-            {
+        // [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_BuffAdd_Multicast_Invoke")]
+        // [HarmonyPrefix]
+        // private static void BuffAdd_Multicast(ref int BuffID, AActor Caster, AActor RootCaster, ref float Duration)
+        // {
+        //     if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]BuffAdd_Multicast"))
+        //     {
 
-            }
+        //     }
 
-            if (Caster == null || !IsPlayer(Caster?.PathName))
-            {
-                return;
-            }
-            // if (BuffID != 1015)
-            // {
-            //     Log.Info($"Evt_BuffAdd_Multicast_Invoke {BuffID}");
-            // }
+        //     if (Caster == null || !IsPlayer(Caster?.PathName))
+        //     {
+        //         return;
+        //     }
+        //     // 冰火雷毒buff互斥
+        //     List<int> buffers = [888666005, 888666006, 888666007, 888666008];
+        //     if (buffers.Contains(BuffID))
+        //     {
+        //         HandleBuffMutex(Caster, BuffID, buffers);
+        //     }
 
-            // 冰火雷毒buff互斥
-            List<int> buffers = [888666005, 888666006, 888666007, 888666008];
-            if (buffers.Contains(BuffID))
-            {
-                HandleBuffMutex(Caster, BuffID, buffers);
-            }
+        //     // 棍光 buff互斥
+        //     List<int> gun_buffers = [66655401, 66655402, 66655403, 66655404, 66655405, 66655406, 66655407, 66655408, 555503209];
+        //     if (gun_buffers.Contains(BuffID))
+        //     {
+        //         HandleBuffMutex(Caster, BuffID, gun_buffers);
+        //     }
+        //     // 检查是否有对应的buff规则
+        //     if (!buffRulesMap.ContainsKey(BuffID))
+        //     {
+        //         return;
+        //     }
+        //     // 获取对应buff的所有规则
+        //     var matchingRules = buffRulesMap[BuffID];
+        //     foreach (var ruleItem in matchingRules)
+        //     {
+        //         var Duration_ = Duration > 0 ? Duration : 1000;
+        //         ruleItem.DoRule(Duration_, 1, null, ruleItem);
+        //     }
 
-            // 棍光 buff互斥
-            List<int> gun_buffers = [66655401, 66655402, 66655403, 66655404, 66655405, 66655406, 66655407, 66655408, 555503209];
-            if (gun_buffers.Contains(BuffID))
-            {
-                HandleBuffMutex(Caster, BuffID, gun_buffers);
-            }
-            // 检查是否有对应的buff规则
-            if (!buffRulesMap.ContainsKey(BuffID))
-            {
-                return;
-            }
-
-
-            // 获取对应buff的所有规则
-            var matchingRules = buffRulesMap[BuffID];
-            foreach (var ruleItem in matchingRules)
-            {
-
-                var Duration_ = Duration > 0 ? Duration : 1000;
-                ruleItem.DoRule(Duration_, 1, null, ruleItem);
-            }
-
-        }
+        // }
 
         private static bool IsPlayer(string name)
         {
-            if (name != null && name.ToLower().IndexOf("unit_player") > -1)
+            if (name != null && name?.ToLower()?.IndexOf("unit_player") > -1)
             {
                 return true;
             }
@@ -407,98 +409,98 @@ namespace bian
         }
 
 
-        [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_CastSkillWithAnimMontageMultiCast_Implementation")]
-        [HarmonyPrefix]
-        private static void CastSkillWithAnimMontageMultiCast(BUS_GSEventCollection __instance, ref UAnimMontage Montage, ref float PlayTimeRate, float MontagePosOffset, FName StartSectionName)
-        {
+        // [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_CastSkillWithAnimMontageMultiCast_Implementation")]
+        // [HarmonyPrefix]
+        // private static void CastSkillWithAnimMontageMultiCast(BUS_GSEventCollection __instance, ref UAnimMontage Montage, ref float PlayTimeRate, float MontagePosOffset, FName StartSectionName)
+        // {
 
-            if (!IsPlayer(__instance.GetOwner().PathName))
-            {
-                return;
-            }
-            currentMontage = Montage.PathName;
-            var character = __instance.GetOwner() as BGUPlayerCharacterCS;
+        //     if (!IsPlayer(__instance.GetOwner().PathName))
+        //     {
+        //         return;
+        //     }
+        //     currentMontage = Montage.PathName;
+        //     var character = __instance.GetOwner() as BGUPlayerCharacterCS;
 
-            if (Helper.isPlayVigorSkillByID)
-            {
-                BGUFunctionLibraryCS.BGUAddBuff(character, character, 211, EBuffSourceType.GM, 3000);
-                Helper.GetBUS_GSEventCollection().Evt_UnitStateTrigger.Invoke(EBUStateTrigger.AttackStateBegin, -1f);
-            }
-            if (currentMontage.Contains("Animation/Player/Wukong/") || currentMontage.Contains("AM_wukong_trans_from_Vigor"))
-            {
-                Helper.updateIsPlayVigorSkillByID(false);
-            }
+        //     if (Helper.isPlayVigorSkillByID)
+        //     {
+        //         BGUFunctionLibraryCS.BGUAddBuff(character, character, 211, EBuffSourceType.GM, 3000);
+        //         Helper.GetBUS_GSEventCollection().Evt_UnitStateTrigger.Invoke(EBUStateTrigger.AttackStateBegin, -1f);
+        //     }
+        //     if (currentMontage.Contains("Animation/Player/Wukong/") || currentMontage.Contains("AM_wukong_trans_from_Vigor"))
+        //     {
+        //         Helper.updateIsPlayVigorSkillByID(false);
+        //     }
 
-            if (currentMontage.Contains("AM_wukong_trans_from_Vigor"))
-            {
-                if (character != null)
-                {
-                    character.FollowCamera.RelativeLocation = new FVector(0, 0, 0);
-                }
-            }
-            if (!currentMontage.Contains("AM_Wukong_Dodge"))
-            {
-                comboMontage = Montage.PathName;
-            }
-            // 添加jxsq 相关buff
-            if (currentMontage.Contains(".AM_Wukong_JXSQ_Enter_") && character != null)
-            {
-                Helper.addJXSQBuffs(character);
-            }
-
-
+        //     if (currentMontage.Contains("AM_wukong_trans_from_Vigor"))
+        //     {
+        //         if (character != null)
+        //         {
+        //             character.FollowCamera.RelativeLocation = new FVector(0, 0, 0);
+        //         }
+        //     }
+        //     if (!currentMontage.Contains("AM_Wukong_Dodge"))
+        //     {
+        //         comboMontage = Montage.PathName;
+        //     }
+        //     // 添加jxsq 相关buff
+        //     if (currentMontage.Contains(".AM_Wukong_JXSQ_Enter_") && character != null)
+        //     {
+        //         Helper.addJXSQBuffs(character);
+        //     }
 
 
-            var allRules = Hooks.GetCachedAnimRules();
-            if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
-            var matchedRule = allRules.FirstOrDefault(rule =>
-                     !string.IsNullOrEmpty(currentMontage) &&
-                     currentMontage.Contains(rule.montage));
-            // if (matchedRule == null)
-            // {
-            //     OnScaleWeapon(1);
-            //     return;
-            // }
-            if (matchedRule?.CastActions?.Count > 0)
-            {
-                var rule = new Rule();
-                rule.DoAfterActions(matchedRule.CastActions);
-            }
-
-            if (matchedRule?.AMScaleRate != null && matchedRule?.AMScaleRate > 1)
-            {
-                if (character != null)
-                {
-
-                    BUS_EventCollectionCS.Get(character).Evt_SetAMScaleRateByPosMultiCast.Invoke(EAMScaleType.ScaleForTarget, EAMScaleRateAxis.AxisX, 0, 0.2f, 0, false, false, 0.3f, 0.1f, 0.4f, 0.01f, (float)(matchedRule.AMScaleRate), -900, 0);
-                }
-            }
-            if (matchedRule?.openShooterMode != null && character != null)
-            {
-                BUS_EventCollectionCS.Get(character).Evt_UnitStateTrigger.Invoke(EBUStateTrigger.ShooterModeTrigger, -1f);
-            }
-            if (matchedRule?.closeShooterMode != null && character != null)
-            {
-                BUS_EventCollectionCS.Get(character).Evt_UnitStateTrigger.Invoke(EBUStateTrigger.ShooterModeClear, -1f);
-            }
-
-            if (matchedRule?.moveMode != null && character != null)
-            {
-                character.CharacterMovement.SetMovementMode((EMovementMode)matchedRule.moveMode, 0);
-            }
-            if (matchedRule?.speedRate != null)
-            {
-                PlayTimeRate = (float)matchedRule.speedRate;
-            }
 
 
-            if (matchedRule?.scaleWeaponNum != null)
-            {
-                OnScaleWeapon((float)matchedRule.scaleWeaponNum);
-            }
+        //     var allRules = Hooks.GetCachedAnimRules();
+        //     if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
+        //     var matchedRule = allRules.FirstOrDefault(rule =>
+        //              !string.IsNullOrEmpty(currentMontage) &&
+        //              currentMontage.Contains(rule.montage));
+        //     // if (matchedRule == null)
+        //     // {
+        //     //     OnScaleWeapon(1);
+        //     //     return;
+        //     // }
+        //     if (matchedRule?.CastActions?.Count > 0)
+        //     {
+        //         var rule = new Rule();
+        //         rule.DoAfterActions(matchedRule.CastActions);
+        //     }
 
-            Hooks.handleNotify(Montage, 0);
-        }
+        //     if (matchedRule?.AMScaleRate != null && matchedRule?.AMScaleRate > 1)
+        //     {
+        //         if (character != null)
+        //         {
+
+        //             BUS_EventCollectionCS.Get(character).Evt_SetAMScaleRateByPosMultiCast.Invoke(EAMScaleType.ScaleForTarget, EAMScaleRateAxis.AxisX, 0, 0.2f, 0, false, false, 0.3f, 0.1f, 0.4f, 0.01f, (float)(matchedRule.AMScaleRate), -900, 0);
+        //         }
+        //     }
+        //     if (matchedRule?.openShooterMode != null && character != null)
+        //     {
+        //         BUS_EventCollectionCS.Get(character).Evt_UnitStateTrigger.Invoke(EBUStateTrigger.ShooterModeTrigger, -1f);
+        //     }
+        //     if (matchedRule?.closeShooterMode != null && character != null)
+        //     {
+        //         BUS_EventCollectionCS.Get(character).Evt_UnitStateTrigger.Invoke(EBUStateTrigger.ShooterModeClear, -1f);
+        //     }
+
+        //     if (matchedRule?.moveMode != null && character != null)
+        //     {
+        //         character.CharacterMovement.SetMovementMode((EMovementMode)matchedRule.moveMode, 0);
+        //     }
+        //     if (matchedRule?.speedRate != null)
+        //     {
+        //         PlayTimeRate = (float)matchedRule.speedRate;
+        //     }
+
+
+        //     if (matchedRule?.scaleWeaponNum != null)
+        //     {
+        //         OnScaleWeapon((float)matchedRule.scaleWeaponNum);
+        //     }
+
+        //     Hooks.handleNotify(Montage, 0);
+        // }
         public static UAnimMontage? GetPlayerCurrentActiveMontage(BGUCharacterCS character)
         {
 
@@ -589,7 +591,7 @@ namespace bian
         public static float scaleWeaponNum = 1;
         // 在Manager类的开头添加计时器变量
         private static System.Timers.Timer scaleResetTimer;
-        private static void OnScaleWeapon(float num = 2)
+        public static void OnScaleWeapon(float num = 2)
         {
 
             // 获取当前玩家
@@ -597,7 +599,7 @@ namespace bian
             if (player == null || scaleWeaponNum == num) return;
             scaleWeaponNum = num;
 
-            List<UActorComponent> componentsByTag = player.GetComponentsByClass(UClass.GetClass<USkeletalMeshComponent>());
+            TArrayUnsafe<UActorComponent> componentsByTag = player.GetComponentsByClass(UClass.GetClass<USkeletalMeshComponent>());
             if (componentsByTag != null && componentsByTag.Count > 0)
             {
                 foreach (var uStaticMeshComponent in componentsByTag)
@@ -607,15 +609,13 @@ namespace bian
                         var weaponComponent = uStaticMeshComponent as USkeletalMeshComponent;
                         if (weaponComponent != null)
                         {
-
                             weaponComponent.SetRelativeScale3D(new FVector(num, 1, 1));
                         }
-
                     }
                 }
-                // 重置计时器
                 ResetScaleResetTimer();
             }
+
         }
         // 添加重置计时器方法
         private static void ResetScaleResetTimer()
@@ -647,7 +647,7 @@ namespace bian
             var player = Helper.GetBGUPlayerCharacterCS();
             if (player == null) return;
 
-            List<UActorComponent> componentsByTag = player.GetComponentsByClass(UClass.GetClass<USkeletalMeshComponent>());
+            TArrayUnsafe<UActorComponent> componentsByTag = player.GetComponentsByClass(UClass.GetClass<USkeletalMeshComponent>());
             if (componentsByTag != null && componentsByTag.Count > 0)
             {
                 foreach (var item in componentsByTag)
@@ -662,6 +662,7 @@ namespace bian
                 }
             }
 
+
             // 清理计时器
             if (scaleResetTimer != null)
             {
@@ -672,50 +673,50 @@ namespace bian
         }
 
 
-        [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_SmartCastSkillTryMultiCast_Implementation")]
-        [HarmonyPrefix]
-        private static void SmartCastSkillTryMultiCast(ref int ID, ref List<int> RuleIDList)
-        {
-            if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]SmartCastSkill"))
-            {
-                // Log.Info($"bian: 真实的id SmartCastSkillTryMultiCast -->{ID}");
-            }
+        // [HarmonyPatch(typeof(BUS_GSEventCollection), "OnRequestSmartCastSkill")]
+        // [HarmonyPrefix]
+        // private static void SmartCastSkillTryMultiCast(ref int ID, ref List<int> RuleIDList)
+        // {
+        //     if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]SmartCastSkill"))
+        //     {
+        //         // Log.Info($"bian: 真实的id SmartCastSkillTryMultiCast -->{ID}");
+        //     }
 
-            var character = Helper.GetBGUPlayerCharacterCS();
-            if (character == null) return;
+        //     var character = Helper.GetBGUPlayerCharacterCS();
+        //     if (character == null) return;
 
-            // 获取角色姿态信息
-            if (!TryGetCharacterStance(out bool isChuogun, out bool isLigun, out bool isPigun))
-            {
-                return;
-            }
+        //     // 获取角色姿态信息
+        //     if (!TryGetCharacterStance(out bool isChuogun, out bool isLigun, out bool isPigun))
+        //     {
+        //         return;
+        //     }
 
-            // 获取技能ID映射配置
-            var skillMappings = GetSkillMappings();
+        //     // 获取技能ID映射配置
+        //     var skillMappings = GetSkillMappings();
 
-            // 应用技能ID映射
-            if (skillMappings.ContainsKey(ID))
-            {
-                ID = skillMappings[ID];
-            }
+        //     // 应用技能ID映射
+        //     if (skillMappings.ContainsKey(ID))
+        //     {
+        //         ID = skillMappings[ID];
+        //     }
 
-            var currentId = ID;
-            // var bufferId = GetBufferIdForSkill(ID);
+        //     var currentId = ID;
+        //     // var bufferId = GetBufferIdForSkill(ID);
 
-            // 添加连招相关buff
-            if (IsComboSkill(ID))
-            {
-                BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);
-            }
+        //     // 添加连招相关buff
+        //     if (IsComboSkill(ID))
+        //     {
+        //         BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);
+        //     }
 
-            // if (bufferId > 0)
-            // {
-            //     BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 4000);
-            // }
+        //     // if (bufferId > 0)
+        //     // {
+        //     //     BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 4000);
+        //     // }
 
-            // 处理技能映射规则
-            ProcessSkillMappingRules(ref ID, currentId, character, isChuogun, isLigun, isPigun);
-        }
+        //     // 处理技能映射规则
+        //     ProcessSkillMappingRules(ref ID, currentId, character, isChuogun, isLigun, isPigun);
+        // }
 
 
 
@@ -861,7 +862,7 @@ namespace bian
             {
                 keyName = Key.GetFName().ToString();
             }
-
+            Log.Info($"keyName: {keyName}" );
             if (string.IsNullOrEmpty(keyName) || !keyToComboConfigsMap.ContainsKey(keyName))
             {
                 return;

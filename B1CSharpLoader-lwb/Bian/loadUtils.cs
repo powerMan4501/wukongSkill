@@ -1860,8 +1860,30 @@ namespace bian
                     if (itemData.HPFixedDM > 500 && itemData.HPFixedDM < 90000 && (int)itemData.QualityType < 9)
 
                     {
-                        var num = itemData.QualityType;
-                        itemData.HPFixedDM = itemData.HPFixedDM + (int)num * 1 * 10000;
+                        var num = (int)itemData.QualityType;
+                        if (num > 5)
+                        {
+                            num = 5;
+                        }
+                        if (itemData.DefaultFreezeDefValue > 100)
+                        {
+                            itemData.DefaultFreezeDefValue = 50;
+                        }
+                        if (itemData.DefaultBurnDefValue > 100)
+                        {
+                            itemData.DefaultBurnDefValue = 50;
+                        }
+
+                        if (itemData.DefaultPoisonDefValue > 100)
+                        {
+                            itemData.DefaultPoisonDefValue = 50;
+                        }
+
+                        if (itemData.DefaultThunderDefValue > 100)
+                        {
+                            itemData.DefaultThunderDefValue = 50;
+                        }
+                        itemData.HPFixedDM = itemData.HPFixedDM + (int)num * 10 * 10000;
                     }
                 }
             }
@@ -1993,87 +2015,44 @@ namespace bian
         }
 
 
-        public static int ModifySoulskill(string configDirectory = null)
+        public static void ModifySoulskill()
         {
-            try
+            var soulSkillList = BG_ProtobufDataAPI<SoulSkillDesc>.Get().GetAll();
+            if (soulSkillList == null || soulSkillList.Count == 0) return;
+            foreach (var soulSkill in soulSkillList.Values)
             {
-                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "soulSkillDesc");
-
-                var soulSkillConfigs = LoadJsonConfigs<SoulSkillConfig>(configDirectory, "SoulSkill");
-                var soulSkillList = BG_ProtobufDataAPI<SoulSkillDesc>.Get().GetAll();
-
-                if (soulSkillConfigs == null || soulSkillConfigs.Count == 0)
+                if (soulSkill.CastEnergy > 2)
                 {
-                    Log.Error("Failed to load soul skill configs");
-                    return 0;
+                    soulSkill.CastEnergy = 2;
                 }
-
-                if (soulSkillList == null)
-                {
-                    soulSkillList = new Dictionary<int, SoulSkillDesc>();
-                }
-
-                const int templateSkillId = 8011;
-                if (!soulSkillList.TryGetValue(templateSkillId, out var templateSkill))
-                {
-                    templateSkill = new SoulSkillDesc();
-                    soulSkillList.Add(templateSkillId, templateSkill);
-                }
-                templateSkill.CastEnergy = 1;
-                templateSkill.Type = 0;
-                templateSkill.ReuseModle = 0;
-                templateSkill.ReuseSkillIcon = 0;
-                templateSkill.ReuseSkillVideo = 0;
-                templateSkill.UpgradeNextId = 0;
-                templateSkill.UpgradeDesc.Clear();
-
-                templateSkill.UpgradeCostMoney = 0;
-                templateSkill.CostItem.Clear();
-                templateSkill.BuffId = 0;
-                templateSkill.MappingRandomId = "";
-                templateSkill.AttrEffectId = 0;
-                templateSkill.EffectTalentId = 0;
-                templateSkill.EffectTalentDesc = "";
-                templateSkill.OverrideAbnormalDispIDAttacker = 0;
-                templateSkill.OverrideAbnormalDispIDAttacker = 0;
-
-
-                var processedCount = 0;
-                foreach (var skillConfig in soulSkillConfigs)
-                {
-                    try
-                    {
-                        var targetSkill = GetOrCreateSoulSkill(skillConfig, soulSkillList, templateSkill);
-
-                        CopyProperties(skillConfig, targetSkill);
-                        processedCount++;
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Error($"Failed to process soul skill config for ID {skillConfig.Id}: {ex.Message}");
-                    }
-                }
-
-                Log.Info($"Total processed soul skill configs: {processedCount}");
-                return processedCount;
-            }
-            catch (Exception ex)
-            {
-                Log.Error($"Critical error in LoadAndApplySoulSkill: {ex.Message}");
-                return 0;
             }
         }
 
-        private static SoulSkillDesc GetOrCreateSoulSkill(SoulSkillConfig config, Dictionary<int, SoulSkillDesc> soulSkillList, SoulSkillDesc templateSkill)
+        public static void ModifyTrans()
         {
-            if (soulSkillList.TryGetValue(config.Id, out var existingSkill))
+            var transList = BG_ProtobufDataAPI<FUStPlayerTransAttrDesc>.Get().GetAll();
+            if (transList == null || transList.Count == 0) return;
+            foreach (var itemData in transList.Values)
             {
-                return existingSkill;
-            }
+                if (itemData.FreezeDefBase < 999)
+                {
+                    itemData.FreezeDefBase = 999;
+                }
+                if (itemData.BurnDefBase < 999)
+                {
+                    itemData.BurnDefBase = 999;
+                }
 
-            var newSkill = (SoulSkillDesc)templateSkill.Clone();
-            soulSkillList.Add(config.Id, newSkill);
-            return newSkill;
+                if (itemData.PoisonDefBase < 999)
+                {
+                    itemData.PoisonDefBase = 999;
+                }
+
+                if (itemData.ThunderDefBase < 999)
+                {
+                    itemData.ThunderDefBase = 999;
+                }
+            }
         }
 
         public static List<AnimRuleBySweepCheck> allSweepCheckAnimRules;

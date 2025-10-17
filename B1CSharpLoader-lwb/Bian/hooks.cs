@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using Newtonsoft.Json;
+using BtlShare;
 
 
 
@@ -41,39 +42,6 @@ public class Hooks
             }
         }
     }
-
-
-    // [HarmonyPatch]
-    // public class HookBUS_PassiveSkillComp
-    // {
-    //     private static MethodBase TargetMethod()
-    //     {
-    //         return AccessTools.Method("b1.BGW_GameDB:InitPassiveSkillMap", (Type[])null, (Type[])null);
-    //     }
-    //     [HarmonyPrefix]
-    //     private static void Prefix()
-    //     {
-    //         try
-    //         {
-    //             if (isInit)
-    //             {
-    //                 return;
-    //             }
-    //             Console.WriteLine($"InitPassiveSkillMap.Prefix");
-    //             LoadUtils.LoadAndApplyPassiveSkills();
-    //             LoadUtils.LoadAndApplyChargeSkill();
-    //             LoadUtils.ModifyIronData();
-    //             isInit = true;
-    //         }
-
-    //         catch (Exception ex)
-    //         {
-    //             // 记录错误但不阻止原始方法执行
-    //             Console.WriteLine($"Error in HookBUS_PassiveSkillComp.Prefix: {ex.Message}");
-    //         }
-    //     }
-    // }
-
 
 
 
@@ -120,56 +88,8 @@ public class Hooks
                 if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
                 var nowMontage = NotifyParam.Animation.PathName;
                 var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
-
-
-
-                // // 导出骨骼点到JSON文件
-                // string ownerName = NotifyParam.owner.GetName();
-                // string fileName = $"{ownerName}_{NotifyParam.Animation.GetFName()}_bones.json";
-                // string exportPath = Path.Combine("CSharpLoader", "Mods", "bian", "bonesData");
-                // string fullPath = Path.Combine(exportPath, fileName);
-
-                // if (!File.Exists(fullPath))
-                // {
-                //     var MeshComp = NotifyParam.MeshComp;
-                //     var num = MeshComp?.GetNumBones();
-                //     var boneList = new List<string>();
-                //     if (num > 0 && MeshComp != null)
-                //     {
-                //         for (int i = 0; i < num; i++)
-                //         {
-                //             var BoneName = MeshComp.GetBoneName(i).ToString();
-                //             boneList.Add(BoneName);
-                //         }
-                //         // 确保目录存在
-                //         if (!Directory.Exists(exportPath))
-                //         {
-                //             Directory.CreateDirectory(exportPath);
-                //         }
-
-                //         string jsonContent = JsonConvert.SerializeObject(boneList, Formatting.Indented);
-                //         File.WriteAllText(fullPath, jsonContent);
-                //     }
-                // }
-
-                // string linkValueFileName = $"{NotifyParam.Animation.GetFName()}_BANS_GSSweepCheck_linkValue_{linkValue}.txt";
-                // string linkValueExportPath = Path.Combine("CSharpLoader", "Mods", "bian", "linkValueData");
-                // string linkValueFullPath = Path.Combine(linkValueExportPath, linkValueFileName);
-                // // 确保目录存在
-                // if (!Directory.Exists(linkValueExportPath))
-                // {
-                //     Directory.CreateDirectory(linkValueExportPath);
-                // }
-
-                // // 只在文件不存在时写入linkValue数据
-                // if (!File.Exists(linkValueFullPath))
-                // {
-                //     string linkValueData = linkValue.ToString();
-                //     File.WriteAllText(linkValueFullPath, linkValueData);
-                // }
-
                 Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()} ,linkValue:{linkValue}");
-                if (allRules.Count > 0)
+                if (allRules?.Count > 0)
                 {
                     var matchedRule = allRules.FirstOrDefault(rule =>
                         !string.IsNullOrEmpty(nowMontage) &&
@@ -177,82 +97,22 @@ public class Hooks
                         (rule?.linkValue == 0 || rule?.linkValue.ToString() == linkValue.ToString()));
                     if (matchedRule != null && matchedRule?.SweepActions?.Count > 0)
                     {
+
                         var rule = new Rule();
-                        rule.DoAfterActions(matchedRule.SweepActions);
+                        var method = typeof(Rule).GetMethod("DoAfterActions");
+                        Log.Info($"do rule {matchedRule.montage}");
+                        if (method == null)
+                        {
+                            Log.Info($"do rule no method");
+                            return;
+                        }
+
+                        rule?.DoAfterActions(matchedRule.SweepActions);
                     }
                 }
             }
         }
     }
-
-
-    // [HarmonyPatch]
-    // public class HookBUS_SweepCheckHitComp
-    // {
-    //     private static MethodBase TargetMethod()
-    //     {
-    //         return AccessTools.Method("b1.BUS_SweepCheckHitComp:OnSweepCheckHit", (Type[])null, (Type[])null);
-    //     }
-
-    //     [HarmonyPatch]
-    //     private static void Prefix(ref AActor Victim, ref float SweepProtectTime, ref string SkillTaskUniqID, in FEffectInstReq EffectInstReq, ref List<AbnormalStateAccConfig> AbnormalStateEffectList, ref List<FTriggerEffectWithCondition> EffectsWithCondition_Before, ref List<int> EffectIDList, ref List<FTriggerEffectWithCondition> EffectsWithCondition_After, ref int GroupID, ref int FromInstanceID)
-    //     {
-
-    //         var attacker = EffectInstReq.Attacker;
-    //         if (attacker == null) return;
-    //         var name = attacker?.PathName;
-    //         if (name == null || name.ToLower().IndexOf("unit_player") < 0)
-    //         {
-    //             return;
-    //         }
-    //         var character = Helper.GetBGUPlayerCharacterCS();
-    //         UAnimMontage? currentMontage = null;
-    //         if (character == null)
-    //         {
-    //             return;
-    //         }
-    //         UAnimInstance animInstance = character.Mesh.GetAnimInstance();
-    //         if (character == animInstance)
-    //         {
-    //             return;
-    //         }
-    //         currentMontage = animInstance.GetCurrentActiveMontage();
-
-    //         var allRules = GetCachedAnimRules();
-    //         if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
-    //         var nowMontage = currentMontage.PathName;
-    //         if (nowMontage == null)
-    //         {
-    //             return;
-    //         }
-
-    //         if (allRules.Count > 0)
-    //         {
-    //             var matchedRule = allRules.FirstOrDefault(rule =>
-    //                 !string.IsNullOrEmpty(nowMontage) &&
-    //                 nowMontage.Contains(rule.montage));
-
-    //             if (matchedRule != null) return;
-    //             if (matchedRule?.hitActions != null && matchedRule?.hitActions?.Count > 0)
-    //             {
-    //                 var rule = new Rule();
-    //                 foreach (var action in matchedRule.hitActions)
-    //                 {
-    //                     action.Caster = character;
-    //                     action.Target = Victim;
-    //                     action.EffectInstReq = EffectInstReq;
-    //                 }
-    //                 rule.DoAfterActions(matchedRule.hitActions);
-    //             }
-
-    //             if (matchedRule?.hitEffects?.Count > 0)
-    //             {
-    //                 EffectIDList.AddRange(matchedRule.hitEffects);
-    //             }
-    //         }
-
-    //     }
-    // }
 
 
 
@@ -312,23 +172,6 @@ public class Hooks
     }
 
 
-    // [HarmonyPatch]
-    // public class HookGameDBRuntimeInit
-    // {
-    //     private static MethodBase TargetMethod()
-    //     {
-    //         return AccessTools.Method("b1.BGW_GameDB:Init", (Type[])null, (Type[])null);
-    //     }
-
-    //     [HarmonyPatch]
-    //     private static void Prefix()
-    //     {
-    //         Console.WriteLine($" BGW_GameDB.Prefix: ");
-    //         Manager.loadAllStaticData(false, 0);
-    //     }
-    // }
-
-
 
     private static readonly Dictionary<string, bool> ProcessedAnimCache = new Dictionary<string, bool>();
 
@@ -341,24 +184,12 @@ public class Hooks
                 return;
             }
 
-
-            // if (AnimNotifyEventList != null && AnimNotifyEventList.Count > 0)
-            // {
-            //     Log.Info($"{Montage.GetName()} AnimNotifyEventList Count: {AnimNotifyEventList.Count} ");
-            //     // 输出 AnimNotifyEventList 中的 NotifyName
-            //     var animNotifyEventNames = AnimNotifyEventList.Select(item => item.NotifyName.ToString()).ToList();
-            //     if (animNotifyEventNames.Count > 0)
-            //     {
-            //         Log.Info($"AnimNotifyEventList NotifyNames: {string.Join(", ", animNotifyEventNames)}");
-            //     }
-            // }
-
             if (ProcessedAnimCache.ContainsKey(Montage.PathName))
             {
                 return;
             }
-            UGSE_AnimFuncLib.GetAllNotifyEvent(Montage, out var AnimNotifyEventList);
-
+            TArrayUnsafe<FAnimNotifyEvent> AnimNotifyEventList = new TArrayUnsafe<FAnimNotifyEvent>();
+            UGSE_AnimFuncLib.GetOneAnimAllNotifyEventIncludeAS(Montage, AnimNotifyEventList);
             if (!(AnimNotifyEventList != null && AnimNotifyEventList.Count > 0))
             {
                 return;
@@ -491,5 +322,177 @@ public class Hooks
             return;
         }
     }
+
+
+
+    private static bool IsPlayer(string name)
+    {
+        if (name != null && name?.ToLower()?.IndexOf("unit_player") > -1)
+        {
+            return true;
+        }
+        return false;
+    }
+    [HarmonyPatch]
+    public class HookTriggerSkillEffect
+    {
+        private static MethodBase TargetMethod()
+        {
+            try
+            {
+                // 使用字符串格式查找方法
+                var method = AccessTools.Method("b1.BUS_GSEventCollection:Evt_TriggerSkillEffectBySkillMultiCast");
+                if (method == null)
+                {
+                    Console.WriteLine("Failed to find target method: TriggerSkillEffectBySkill_Impl");
+                }
+                return method;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in TargetMethod: {ex.Message}");
+                return null;
+            }
+        }
+        [HarmonyPatch]
+        private static void Prefix(int EffectID, AActor Caster, AActor Target, FEffectInstReq EffectInstReq)
+        {
+
+            if (Caster == null || (!IsPlayer(Caster.PathName) && !Caster.PathName.Contains("TAMER_player_tornado")))
+            {
+                return;
+            }
+            var effectRulesMap = Manager.effectRulesMap;
+            Log.Info($"Evt_TriggerSkillEffect EffectID:{EffectID}");
+            // 检查是否有对应的效果规则
+            if (!effectRulesMap.ContainsKey(EffectID))
+            {
+
+                return;
+            }
+
+
+            // 获取对应效果的所有规则
+            var matchingRules = effectRulesMap[EffectID];
+            foreach (var ruleItem in matchingRules)
+            {
+                ruleItem.Caster = Caster;
+                ruleItem.Target = Target;
+                ruleItem.EffectInstReq = EffectInstReq;
+                ruleItem.DoRule(1000, 1, null, ruleItem);
+            }
+        }
+    }
+
+    // 通用的buff互斥处理方法
+    private static void HandleBuffMutex(AActor caster, int currentBuffId, List<int> mutexBuffIds)
+    {
+        foreach (var buffId in mutexBuffIds.Where(id => id != currentBuffId))
+        {
+            BGUFunctionLibraryCS.BGURemoveBuffImmediately(caster, buffId, EBuffEffectTriggerType.Remove);
+        }
+    }
+    [HarmonyPatch]
+    public class HookBuffAdd
+    {
+        private static MethodBase TargetMethod()
+        {
+            return AccessTools.Method("b1.BUS_BuffComp:BuffBegin", (Type[])null, (Type[])null);
+        }
+
+        [HarmonyPatch]
+        private static void Prefix(ref int BuffID, AActor Caster, AActor RootCaster, ref float Duration)
+        {
+
+
+            if (Caster == null || !IsPlayer(Caster?.PathName))
+            {
+                return;
+            }
+            // 冰火雷毒buff互斥
+            List<int> buffers = [888666005, 888666006, 888666007, 888666008];
+            if (buffers.Contains(BuffID))
+            {
+                HandleBuffMutex(Caster, BuffID, buffers);
+            }
+
+            // 棍光 buff互斥
+            List<int> gun_buffers = [66655401, 66655402, 66655403, 66655404, 66655405, 66655406, 66655407, 66655408, 555503209];
+            if (gun_buffers.Contains(BuffID))
+            {
+                HandleBuffMutex(Caster, BuffID, gun_buffers);
+            }
+            var buffRulesMap = Manager.buffRulesMap;
+            // 检查是否有对应的buff规则
+            if (!buffRulesMap.ContainsKey(BuffID))
+            {
+                return;
+            }
+            // 获取对应buff的所有规则
+            var matchingRules = buffRulesMap[BuffID];
+            foreach (var ruleItem in matchingRules)
+            {
+                var Duration_ = Duration > 0 ? Duration : 1000;
+                ruleItem.DoRule(Duration_, 1, null, ruleItem);
+            }
+        }
+    }
+
+
+
+
+    // [HarmonyPatch]
+    // public class HookCastSkillAnime
+    // {
+    //     private static MethodBase TargetMethod()
+    //     {
+    //         return AccessTools.Method("b1.BUS_GSEventCollection:Evt_CastSkillWithAnimMontageMultiCast_Implementation", (Type[])null, (Type[])null);
+    //     }
+
+    //     [HarmonyPatch]
+    //     private static void Prefix(BUS_GSEventCollection __instance, ref UAnimMontage Montage, ref float PlayTimeRate, ref float MontagePosOffset, FName StartSectionName, EMontageBindReason Reason = EMontageBindReason.Default)
+    //     {
+
+    //         if (!IsPlayer(__instance.GetOwner().PathName))
+    //         {
+    //             return;
+    //         }
+    //         var currentMontage = Montage?.PathName;
+    //         if (currentMontage == null) return;
+    //         if (currentMontage.Contains("Animation/Player/Wukong/") || currentMontage.Contains("AM_wukong_trans_from_Vigor"))
+    //         {
+    //             Helper.updateIsPlayVigorSkillByID(false);
+    //         }
+
+    //         var allRules = GetCachedAnimRules();
+    //         if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
+    //         var matchedRule = allRules.FirstOrDefault(rule =>
+    //                  !string.IsNullOrEmpty(currentMontage) &&
+    //                  currentMontage.Contains(rule.montage));
+    //         if (matchedRule?.CastActions?.Count > 0)
+    //         {
+    //             var rule = new Rule();
+    //             rule.DoAfterActions(matchedRule.CastActions);
+    //         }
+
+    //         if (matchedRule?.speedRate != null)
+    //         {
+    //             PlayTimeRate = (float)matchedRule.speedRate;
+    //         }
+
+
+    //         if (matchedRule?.scaleWeaponNum != null)
+    //         {
+    //             Manager.OnScaleWeapon((float)matchedRule.scaleWeaponNum);
+    //         }
+
+    //         handleNotify(Montage, 0);
+    //     }
+
+    // }
+
+
+
+
 
 }

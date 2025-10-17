@@ -797,6 +797,12 @@ namespace bian
                     spawnBase.BaseType = ProjectileBaseType.ProjectileSpawner;
 
                 }
+
+                if (action?.targetBaseSocketName != null)
+                {
+
+                    targetBase.SocketName = (FName)(action.targetBaseSocketName);
+                }
                 if (action?.spawnBaseSocketName != null)
                 {
                     spawnBase.UseSocket = true;
@@ -1022,11 +1028,37 @@ namespace bian
                     }
                     //己方霸体不吃毒火冰
                     BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666002, EBuffSourceType.GM, -1);
-                    BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666003, EBuffSourceType.GM, -1);
+
+                    var atk = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.Atk) + 50;
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Atk, atk);
+
+                    var maxHp = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.HpMax) + 50000;
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.HpMax, maxHp);
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Hp, maxHp);
                 }
                 else
                 {
-                    BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666003, EBuffSourceType.GM, -1);
+                    // BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666003, EBuffSourceType.GM, -1);
+
+                    var atk = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.Atk) + 50;
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Atk, atk);
+
+                    var maxHp = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.HpMax) + 50000;
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.HpMax, maxHp);
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Hp, maxHp);
+
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.BurnDef, 0);
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.ThunderDef, 0);
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.PoisonDef, 0);
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.FreezeDef, 0);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.FreezeImmue, true);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.BurnImmue, true);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.PoisonImmue, true);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ThunderImmue, true);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueBurnAcc, true);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmuePoisonAcc, true);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueThunderAcc, true);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueFreezeAcc, true);
                 }
             }
 
@@ -1271,16 +1303,19 @@ namespace bian
                         // Log.Debug($"bian: Skip load Weapons,count == 0");
                     }
 
-                    List<UActorComponent> tfxComps = aCharacter.GetComponentsByClass(UClass.GetClass<UTressFXComponent>());
-                    List<UActorComponent> childComp = aCharacter.GetComponentsByClass(UClass.GetClass<UChildActorComponent>());
-
-                    for (int i = 0; i < childComp.Count; i++)
+                    TArrayUnsafe<UActorComponent> tfxComps = aCharacter.GetComponentsByClass(UClass.GetClass<UTressFXComponent>());
+                    TArrayUnsafe<UActorComponent> childComp = aCharacter.GetComponentsByClass(UClass.GetClass<UChildActorComponent>());
+                
+                    for (int i = 0; i < childComp?.Count; i++)
                     {
                         UChildActorComponent uChildActorComponent = childComp[i] as UChildActorComponent;
                         if (!uChildActorComponent.ChildActor.IsNullOrDestroyed())
                         {
-                            List<UActorComponent> componentsByClass5 = uChildActorComponent.ChildActor.GetComponentsByClass(UClass.GetClass<UTressFXComponent>());
-                            tfxComps.AddRange(componentsByClass5);
+                            TArrayUnsafe<UActorComponent> componentsByClass5 = uChildActorComponent.ChildActor.GetComponentsByClass(UClass.GetClass<UTressFXComponent>());
+                            for (int j = 0; j < componentsByClass5.Count; j++)
+                            {
+                                tfxComps.Add(componentsByClass5[j]);
+                            }
                         }
                     }
 
