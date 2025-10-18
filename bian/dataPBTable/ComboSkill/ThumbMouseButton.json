@@ -132,7 +132,7 @@
     "skillID": 50010724,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "desc": "如果当前使用的技能是10707，且播放了1.95以上，按鼠标左键满足条件可以使出夜叉王10724"
+    "desc": "如果当前使用的技能是10707，且播放了1.95以上，满足条件可以使出夜叉王10724"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_01_Z_2",
@@ -140,7 +140,7 @@
     "skillID": 50006,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "desc": "如果当前使用的技能是大圣10707，且播放了1.95s以上，按鼠标左键满足条件可以使出大圣江海翻50006AM_Dasheng_ComboA_03_Z_2"
+    "desc": "如果当前使用的技能是大圣10707，且播放了1.95s以上，满足条件可以使出大圣江海翻50006AM_Dasheng_ComboA_03_Z_2"
   },
 
   {
@@ -149,9 +149,16 @@
     "skillID": 10713,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "desc": "如果当前使用的技能是大圣江海翻，且播放了2s以上，按鼠标右键满足条件可以使出退寸AM_wukong_combob_z_01"
+    "desc": "如果当前使用的技能是大圣江海翻，且播放了2s以上，可以使出退寸AM_wukong_combob_z_01"
   },
-
+{
+    "nowMontage": "AM_wukong_comboa_q1_dingshen",
+    "rate": 0.3,
+    "skillID": 50010724,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "desc": "如果当前使用的技能是小横扫，满足条件可以使出夜叉王10724"
+  },
   {
     "nowMontage": ".AM_wukong_comboc_z_02",
     "rate": 2,

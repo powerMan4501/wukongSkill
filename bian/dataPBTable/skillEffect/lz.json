@@ -87,7 +87,7 @@
     "ID": 888555031,
     "EffectType": 1,
     "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444401],
-    "EffectParamsFloat": [100.0, 100.0, 10000.0, 1000.0, 0.0, 0.0, 100],
+    "EffectParamsFloat": [1000.0, 100.0, 10000.0, 1000.0, 0.0, 0.0, 100],
     "EffectParamsStr": ["【主角】蓄力1"]
   },
   {
@@ -95,7 +95,7 @@
     "ID": 888555032,
     "EffectType": 1,
     "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444402],
-    "EffectParamsFloat": [200.0, 200.0, 20000.0, 2000.0, 0.0, 0.0, 200],
+    "EffectParamsFloat": [2000.0, 200.0, 20000.0, 2000.0, 0.0, 0.0, 200],
     "EffectParamsStr": ["【主角】蓄力2"]
   },
   {
@@ -103,7 +103,7 @@
     "ID": 888555033,
     "EffectType": 1,
     "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444403],
-    "EffectParamsFloat": [300.0, 300.0, 30000.0, 3000.0, 0.0, 0.0, 300],
+    "EffectParamsFloat": [3000.0, 300.0, 30000.0, 3000.0, 0.0, 0.0, 300],
     "EffectParamsStr": ["【主角】蓄力3"]
   },
   {
@@ -111,7 +111,7 @@
     "ID": 888555034,
     "EffectType": 1,
     "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
-    "EffectParamsFloat": [400.0, 400.0, 40000.0, 4000.0, 0.0, 0.0, 400],
+    "EffectParamsFloat": [40000.0, 400.0, 40000.0, 4000.0, 0.0, 0.0, 400],
     "EffectParamsStr": ["【主角】蓄力4"]
   }
 ]

@@ -42,6 +42,24 @@
     "InputCore": "ThumbMouseButton2",
     "desc": "前jxsq接定风珠"
   },
+  {
+    "nowMontage": "AM_wukong_comboa_q1_dingshen",
+    "rate": 0.3,
+    "skillID": 10992,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "如果当前使用的技能是小横扫，接定风珠"
+  },
+  {
+    "nowMontage": "AM_wukong_dingfengzhu_02",
+    "rate": 0.3,
+    "type": "BOSS",
+    "bossLabel": "SK_psd_daoshi_02",
+    "MagicSkillID": 431108,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "定风珠 接糜道人无前摇八卦阵"
+  },
 
   {
     "nowMontage": "AM_Wukong_JXSQ_Enter_R",
@@ -193,10 +211,30 @@
     "nowMontage": "AM_Wukong_ComboB_q4.AM_Wukong_ComboB_q4",
     "rate": 0.3,
     "type": "magic",
+    "skillID": 8595,
+    "Condition": "hasBuff",
+    "conditionValue": 888666007,
+    "InputCore": "ThumbMouseButton2",
+    "desc": "戳棍平A4，冰buff，冰蛙"
+  },
+  {
+    "nowMontage": "AM_Wukong_ComboB_q4.AM_Wukong_ComboB_q4",
+    "rate": 0.3,
+    "type": "magic",
     "skillID": 8597,
+    "Condition": "hasBuff",
+    "conditionValue": 888666008,
+    "InputCore": "ThumbMouseButton2",
+    "desc": "戳棍平A4，毒buff，毒蛙"
+  },
+  {
+    "nowMontage": "AM_Wukong_ComboB_q4.AM_Wukong_ComboB_q4",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8599,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "戳棍平A4，毒蛙"
+    "desc": "戳棍平A4，石蛙"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05",
@@ -253,55 +291,53 @@
   {
     "nowMontage": "AM_Wukong_ComboA_z_02",
     "rate": 1.95,
-    "type": "magic",
-    "skillID": 8513,
-    "backTime": 2200,
-    "MagicSkillID": 102426,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700140,
     "InputCore": "ThumbMouseButton2",
     "Condition": "any",
-    "desc": "如果当前使用的技能是10707， 接大头地爆一次"
+    "desc": "如果当前使用的技能是10707，  接残躯空中侧身好几次"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_01_Z_2",
-    "rate": 1.95,
-    "type": "magic",
-    "skillID": 8513,
-    "backTime": 2200,
-    "MagicSkillID": 102426,
+    "rate": 1.9,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700140,
     "InputCore": "ThumbMouseButton2",
     "Condition": "any",
-    "desc": "如果当前使用的技能是10707， 接大头地爆一次"
+    "desc": "如果当前使用的技能是10707， 接残躯空中侧身好几次"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_03_Z_2",
     "rate": 1.9,
-    "type": "magic",
-    "skillID": 8437,
-    "MagicSkillID": 201211,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700153,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "如果当前使用的技能是大圣江海翻，石先锋"
+    "desc": "如果当前使用的技能是大圣江海翻，残躯跳起空中踢腿落地再横扫"
   },
   {
     "nowMontage": "AM_mgd_jsds_atk_02_01_02",
     "rate": 1.9,
-    "type": "magic",
-    "skillID": 8437,
-    "MagicSkillID": 201211,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700153,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "如果当前使用的技能是残躯江海翻，石先锋"
+    "desc": "如果当前使用的技能是残躯江海翻，残躯跳起空中踢腿落地再横扫"
   },
 
   {
     "nowMontage": "AM_wukong_comboc_z_02",
     "rate": 2,
-    "type": "magic",
-    "skillID": 8437,
-    "MagicSkillID": 201211,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700153,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "如果当前使用的技能是江海翻，石先锋"
+    "desc": "如果当前使用的技能是残躯江海翻，残躯跳起空中踢腿落地再横扫"
   },
   {
     "nowMontage": "AM_wukong_combob_z_02.AM_wukong_combob_z_02",
@@ -391,34 +427,125 @@
   },
 
   {
-    "nowMontage": "AM_Wukong_Dodge",
-    "rate": 0.5,
+    "nowMontage": "AM_Wukong_Dodge_B",
+    "rate": 0.2,
     "type": "BOSS",
     "bossLabel": "SK_HFM_Hu_Stone_01",
     "MagicSkillID": 202202,
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
-    "desc": "翻滚后，劈棍下接虎先锋连续拳脚好几下"
+    "desc": "后翻滚，劈棍下接虎先锋连续拳脚好几下"
   },
-
   {
-    "nowMontage": "AM_Wukong_Dodge",
+    "nowMontage": "AM_Wukong_Dodge_F",
+    "rate": 0.2,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700146,
+    "Condition": "StanceHeavy",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "前翻滚，残躯分身劈棍"
+  },
+  {
+    "nowMontage": "AM_Wukong_Dodge_L",
+    "rate": 0.2,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700116,
+    "Condition": "StanceHeavy",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "左翻滚，残躯跳起来，4蓄劈棍"
+  },
+  {
+    "nowMontage": "AM_Wukong_Dodge_R",
+    "rate": 0.2,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700140,
+    "Condition": "StanceHeavy",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "右翻滚，残躯空中侧身好几次"
+  },
+  {
+    "nowMontage": "AM_Wukong_Dodge_B",
     "rate": 0.5,
     "type": "BOSS",
     "bossLabel": "SK_HFM_Hu_Stone_01",
     "MagicSkillID": 202203,
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
-    "desc": "翻滚后，立棍下接虎先锋拔刀斩"
+    "desc": "后滚后，立棍下接虎先锋拔刀斩"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_Dodge_F",
+    "rate": 0.1,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700148,
+    "Condition": "StanceProp",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "前滚后，立棍下突进飞到敌人跟前，横扫，跳起空中踢腿落地再横扫，类似700134"
   },
   {
-    "nowMontage": "AM_Wukong_Dodge",
+    "nowMontage": "AM_Wukong_Dodge_L",
+    "rate": 0.1,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700154,
+    "Condition": "StanceProp",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "L滚后，飞起踩一下再重击劈棍"
+  },
+  {
+    "nowMontage": "AM_Wukong_Dodge_R",
+    "rate": 0.1,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700115,
+    "Condition": "StanceProp",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "R滚后，大风车"
+  },
+  {
+    "nowMontage": "AM_Wukong_Dodge_B",
     "rate": 0.5,
     "type": "BOSS",
     "bossLabel": "SK_HFM_Hu_Stone_01",
     "MagicSkillID": 202220,
     "Condition": "StancePoke",
     "InputCore": "ThumbMouseButton2",
-    "desc": "翻滚后，戳棍棍下接虎先锋冲拳"
+    "desc": "B翻滚后，戳棍棍下接虎先锋冲拳"
+  },
+  {
+    "nowMontage": "AM_Wukong_Dodge_F",
+    "rate": 0.5,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700125,
+    "Condition": "StancePoke",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "F翻滚后，残躯蓄力戳棍"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_Dodge_L",
+    "rate": 0.5,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700143,
+    "Condition": "StancePoke",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "L翻滚后，类似大风车"
+  },
+  {
+    "nowMontage": "AM_Wukong_Dodge_R",
+    "rate": 0.5,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700120,
+    "Condition": "StancePoke",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "R翻滚后，中等突刺"
   }
 ]

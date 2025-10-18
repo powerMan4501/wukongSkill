@@ -37,7 +37,7 @@
   {
     "desc": "3a进尺转化专用，残躯蓄力戳棍",
     "ID": 54321007,
-    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_10_01.AM_mgd_jsds_atk_10_01"
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboB/AM_wukong_combob_z_02.AM_wukong_combob_z_02"
   },
 
   {
@@ -49,25 +49,25 @@
   {
     "desc": "4a进尺转化专用，残躯捅一下戳一下空中转很多下",
     "ID": 54321009,
-    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_04a.AM_mgd_jsds_atk_04a"
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboB/AM_wukong_combob_z_02.AM_wukong_combob_z_02"
   },
 
   {
     "desc": "2a立棍切手专用，横扫一下捅一下",
     "ID": 54321010,
-    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_01.AM_mgd_jsds_atk_01"
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1"
   },
 
   {
-    "desc": "2a立棍切手接招专用，棍子变粗砸一下",
+    "desc": "2a立棍切手接招专用",
     "ID": 54321011,
-    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_jdy_03_short.AM_mgd_jsds_atk_jdy_03_short"
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_ComboA_02_Z_2.AM_Dasheng_ComboA_02_Z_2"
   },
 
   {
     "desc": "3a立棍切手专用，残躯转好几圈",
     "ID": 54321012,
-    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_jdy_05_short.AM_mgd_jsds_atk_jdy_05_short"
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_ComboA_03_Z_1.AM_Dasheng_ComboA_03_Z_1"
   },
 
   {
@@ -84,7 +84,7 @@
   {
     "desc": "4a立棍切手接招专用，筋斗云冲刺上去打好几下",
     "ID": 54321015,
-    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_jdy_03.AM_mgd_jsds_atk_jdy_03"
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2"
   },
 
   {
@@ -94,9 +94,9 @@
   },
 
   {
-    "desc": "2a劈棍切手接招专用，残躯招：空中转很多下",
+    "desc": "2a劈棍切手接招专用，",
     "ID": 54321017,
-    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_Atk_04a.AM_Dasheng_Atk_04a"
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_ComboA_02_Z_2.AM_Dasheng_ComboA_02_Z_2"
   },
 
   {
@@ -108,7 +108,7 @@
   {
     "desc": "3a劈棍切手接招专用，残躯江海翻",
     "ID": 54321019,
-    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_02_01_02.AM_mgd_jsds_atk_02_01_02"
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2"
   },
 
   {
@@ -120,54 +120,13 @@
   {
     "desc": "4a劈棍切手接招，残躯招：空中转很多下",
     "ID": 54321021,
-    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_Atk_04a.AM_Dasheng_Atk_04a"
+    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboC/AM_wukong_comboc_z_02_ycw.AM_wukong_comboc_z_02_ycw"
   },
 
-  {
-    "desc": "射箭",
-    "ID": 54322001,
-    "TemplatePath": "/Game/Mods/DSCQ/AM_mgd_yangjian_01_atk74a.AM_mgd_yangjian_01_atk74a"
-  },
+  
   {
     "desc": "夜叉王江海翻",
     "ID": 50010724,
     "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboC/AM_wukong_comboc_z_02_ycw.AM_wukong_comboc_z_02_ycw"
-  },
-  {
-    "desc": "残躯中等蓄力戳棍",
-    "ID": 54321022,
-    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_08_01_02.AM_mgd_jsds_atk_08_01_02"
-  },
-  {
-    "desc": "残躯版Q5",
-    "ID": 54321023,
-    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_02_02_short.AM_mgd_jsds_atk_02_02_short"
-  },
-
-  {
-    "desc": "破天棍1",
-    "ID": 54321031,
-    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboA/AM_Wukong_ComboA_q1.AM_Wukong_ComboA_q1"
-  },
-
-  {
-    "desc": "破天棍2",
-    "ID": 54321032,
-    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboA/AM_Wukong_ComboA_q2.AM_Wukong_ComboA_q2"
-  },
-  {
-    "desc": "破天棍3",
-    "ID": 54321033,
-    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboA/AM_Wukong_ComboA_q3.AM_Wukong_ComboA_q3"
-  },
-   {
-    "desc": "破天棍4",
-    "ID": 54321034,
-    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboA/AM_Wukong_ComboA_q4.AM_Wukong_ComboA_q4"
-  },
-   {
-    "desc": "立棍平a5",
-    "ID": 54321035,
-    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli_C/AM_Wukong_Xuli_C_attack_2_low.AM_Wukong_Xuli_C_attack_2_low"
   }
 ]

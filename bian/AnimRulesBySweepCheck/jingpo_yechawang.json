@@ -63,7 +63,7 @@
     "montage": "AM_HYS_HongHaiEr_02A_Atk_08",
     "linkValue": 0,
     "speedRate": 1.4,
-    "AMSpeedRate": 1,
+    "AMSpeedRate": 1.4,
     "bulletsActions": [
       {
         "Type": "bullet",
@@ -71,7 +71,9 @@
         "ProjectTileIDs": [44051005, 44051006, 44051007],
         "desc": "夜叉王地刺"
       }
-    ]
+    ],
+    "hitEffects": [888555034],
+    "replaceEffects": true
   },
   {
     "desc": "夜叉王平A多次接地刺",

@@ -51,7 +51,7 @@
   {
     "desc": "疯虎元气弹增加保底伤害",
     "ID": 1016263,
-    "EffectParamsInt": [10, 25, 1, 0, 0, 0],
+    "EffectParamsInt": [10, 25, 1, 0, 0, 4444402],
     "EffectParamsFloat": [1000.0, 1200.0, 120140.0, 0.0, 0.0, 0.0, 1300.0],
     "EffectParamsStr": ["【主角】蓄力3"]
   }

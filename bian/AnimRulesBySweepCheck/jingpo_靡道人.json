@@ -1,0 +1,39 @@
+[
+  {
+    "desc": "靡道人,摘星换斗",
+    "montage": "AM_psd_daoshi_04_atk_15",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.5,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "hitEffects": [888555034],
+    "replaceEffects": true
+  },
+
+  {
+    "desc": "靡道人,其他招式",
+    "montage": "AM_psd_daoshi_04_atk",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.5,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "hitEffects": [888555033],
+    "replaceEffects": true
+  }
+]

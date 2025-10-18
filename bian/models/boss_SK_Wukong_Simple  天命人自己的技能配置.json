@@ -45,7 +45,7 @@
       "type": "magic",
       "MagicSkillID": 202302
     },
-     {
+    {
       "Id": 8596,
       "Name": "火蛙,大招，喷火，把战场变成岩浆",
       "speedRate": 1.5,
@@ -95,15 +95,18 @@
     },
 
     {
-      "Id": 50007,
-      "CanBreak": true,
-      "Name": "大圣模式，转身定身",
+      "type": "BOSS",
+      "bossLabel": "SK_mgd_jsds",
+      "MagicSkillID": 700158,
+      "Name": "释放定海神针",
       "Key": "A+LBUTTON"
     },
 
     {
-      "Id": 50005,
-      "Name": "大圣切手技，小横扫",
+      "Type": "TRANS",
+      "ResId": 19,
+      "MagicSkillID": 19043,
+      "Name": "变小黄龙",
       "Key": "C+RBUTTON",
       "CanBreak": true,
       "Buffs": [1000809]
@@ -156,13 +159,7 @@
       "Name": "进尺",
       "Key": ""
     },
-   
-    {
-      "Id": 54322001,
-      "CanBreak": true,
-      "Name": "射箭",
-      "Key": "A+X"
-    },
+
     {
       "Id": 10909,
       "CanBreak": true,
@@ -245,7 +242,7 @@
       "backTime": 2000,
       "Key": "NUMPAD2"
     },
- {
+    {
       "Id": 8579,
       "type": "magic",
       "Buffers": [888666008],

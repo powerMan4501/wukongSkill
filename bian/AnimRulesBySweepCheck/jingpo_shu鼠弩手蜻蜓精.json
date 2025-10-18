@@ -76,7 +76,7 @@
             "targetBaseSocketName": "CAMERA_LOCK",
             "spawnBaseSocketName": "wuq01",
             "ForTarget": true,
-            "desc": "发射火箭"
+            "desc": "发射毒箭"
           }
         ]
       }

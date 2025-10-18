@@ -3,33 +3,16 @@
   "desc": "888666005:雷，888666006 冰， 888666007火， 888666008毒",
   "Rules": [
     {
-      "Name": "平A的效果",
+      "Name": "平A的效果，不能",
       "Description": "",
       "Filters": [
-        {
-          "Type": "effect",
-          "EffectID": 1080101
-        },
-        {
-          "Type": "effect",
-          "EffectID": 5001101
-        },
-        {
-          "Type": "effect",
-          "EffectID": 5001201
-        },
-        {
-          "Type": "effect",
-          "EffectID": 5001301
-        },
+       
+      
         {
           "Type": "effect",
           "EffectID": 1071401
         },
-        {
-          "Type": "effect",
-          "EffectID": 1072102
-        },
+       
         {
           "Type": "effect",
           "EffectID": 1012601

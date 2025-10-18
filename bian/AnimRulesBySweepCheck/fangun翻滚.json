@@ -69,12 +69,12 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 44051501,
+            "ProjectTileID": 43110102,
             "noHasAnyBuff": [888666007, 888666006, 888666008],
             "SpeedLeftValue": 6000,
             "SpeedRightValue": 6000,
             "ForTarget": true,
-            "desc": "没有冰火毒buff，飞轮"
+            "desc": "没有冰火毒buff，靡道人剑气"
           },
           {
             "Type": "bullet",

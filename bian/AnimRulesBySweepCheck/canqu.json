@@ -268,5 +268,314 @@
         ]
       }
     ]
+  },
+ {
+    "desc": "残躯分身4蓄劈棍",
+    "montage": ".AM_mgd_jsds_atk_07_cm",
+    "linkValue": 2.7,
+    "speedRate": 1.3,
+    "addRadius": 100,
+    "hitEffects": [888555034],
+    "replaceEffects": true,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [140, 58111003, 2403372, 44010401],
+
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "hasBuff": 888666007,
+            "desc": "有火buff 业火,地面岩浆,地火，炸炸炸"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471, 74010101, 152],
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "hasBuff": 888666006,
+            "desc": "有冰buff 冰暴,冰碎片,冰地波"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [50058603, 50058601, 74011107],
+
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "hasBuff": 888666005,
+            "desc": "有雷buff 黄符50058603,金沙"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [49981301, 1016202, 51002002],
+            "noHasAnyBuff": [888666005, 888666006, 888666007],
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "没有雷火冰buff，毒液池，猪八戒，巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "残躯4蓄劈棍",
+    "montage": ".AM_mgd_jsds_atk_07.",
+    "linkValue": 0,
+    "speedRate": 1.3,
+    "addRadius": 100,
+    "hitEffects": [888555034],
+    "replaceEffects": true,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [140, 58111003, 2403372, 44010401],
+
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "hasBuff": 888666007,
+            "desc": "有火buff 业火,地面岩浆,地火，炸炸炸"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471, 74010101, 152],
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "hasBuff": 888666006,
+            "desc": "有冰buff 冰暴,冰碎片,冰地波"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [50058603, 50058601, 74011107],
+
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "hasBuff": 888666005,
+            "desc": "有雷buff 黄符50058603,金沙"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [49981301, 1016202, 51002002],
+            "noHasAnyBuff": [888666005, 888666006, 888666007],
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "没有雷火冰buff，毒液池，猪八戒，巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "蓄力戳棍",
+    "montage": "AM_mgd_jsds_atk_10_01",
+    "speedRate": 1.3,
+    "linkValue": 0,
+    "hitEffects": [888555034],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 50058603],
+            "hasBuff": 888666005,
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "有雷buff，金沙黄符"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471, 40042202],
+            "hasBuff": 888666006,
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "有冰buff，冰暴，冰雾气"
+          },
+
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [44011401, 140],
+            "hasBuff": 888666007,
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "有火buff，红孩儿爆炸，业火"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [49981301, 22030101],
+            "noHasAnyBuff": [888666005, 888666006, 888666007],
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "没有雷火冰buff，毒液池"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "desc": "残躯定海神针",
+    "montage": "AM_mgd_jsds_atk_21",
+    "linkValue": 0,
+    "speedRate": 1.3,
+    "addRadius": 100,
+    "hitEffects": [888555034]
+  },
+  {
+    "desc": "残躯砸砸砸",
+    "montage": "AM_mgd_jsds_atk_jdy_03",
+    "linkValue": 0,
+    "speedRate": 1.3,
+    "addRadius": 100,
+    "hitEffects": [888555034],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 50058603],
+            "hasBuff": 888666005,
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "有雷buff，金沙黄符"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471, 40042202],
+            "hasBuff": 888666006,
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "有冰buff，冰暴，冰雾气"
+          },
+
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [44011401, 140],
+            "hasBuff": 888666007,
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "有火buff，红孩儿爆炸，业火"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [49981301, 22030101],
+            "noHasAnyBuff": [888666005, 888666006, 888666007],
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "没有雷火冰buff，毒液池"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "残躯大风车",
+    "montage": "AM_mgd_jsds_atk_06",
+    "linkValue": 0,
+    "speedRate": 1.3,
+    "addRadius": 100,
+    "hitEffects": [888555034],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 50058603],
+            "hasBuff": 888666005,
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "有雷buff，金沙黄符"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471, 40042202],
+            "hasBuff": 888666006,
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "有冰buff，冰暴，冰雾气"
+          },
+
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [44011401, 140],
+            "hasBuff": 888666007,
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "有火buff，红孩儿爆炸，业火"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [49981301, 22030101],
+            "noHasAnyBuff": [888666005, 888666006, 888666007],
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "没有雷火冰buff，毒液池"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "残躯，4蓄力劈棍",
+    "montage": "AM_mgd_jsds_atk_jdy_04",
+    "linkValue": 2.933333,
+    "speedRate": 1.3,
+    "addRadius": 100,
+    "hitEffects": [888555034],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 50058603],
+            "hasBuff": 888666005,
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "有雷buff，金沙黄符"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471, 40042202],
+            "hasBuff": 888666006,
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "有冰buff，冰暴，冰雾气"
+          },
+
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [44011401, 140],
+            "hasBuff": 888666007,
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "有火buff，红孩儿爆炸，业火"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [49981301, 22030101],
+            "noHasAnyBuff": [888666005, 888666006, 888666007],
+            "OffsetX": 700,
+            "OffsetY": 700,
+            "desc": "没有雷火冰buff，毒液池"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "desc": "残躯其余招式",
+    "montage": "AM_mgd_jsds_atk_",
+    "linkValue": 0,
+    "speedRate": 1.3,
+    "addRadius": 100,
+    "hitEffects": [888555034]
   }
 ]

@@ -2,12 +2,12 @@
   {
     "nowMontage": "_xuli_attack_5",
     "rate": 2.2,
-    "type": "magic",
-    "skillID": 8513,
-    "MagicSkillID": 102432,
+    "type": "BOSS",
+    "bossLabel": "SK_mgd_jsds",
+    "MagicSkillID": 700146,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "劈棍5蓄接大头4连地爆"
+    "desc": "劈棍5蓄接残躯分身劈棍"
   },
   {
     "nowMontage": "_xuli_attack_4",

@@ -52,5 +52,15 @@
     },
     "CanRemoveWhenAttackHit": 1,
     "CanRemoveWhenAttacked": 1
+  },
+  {
+    "ID": 440217,
+    "BuffTips": "兴烘掀合体期间无敌模式",
+    "Duration": 200
+  },
+  {
+    "ID": 440317,
+    "BuffTips": "兴烘掀合体期间无敌模式",
+    "Duration": 200
   }
 ]

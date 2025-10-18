@@ -80,32 +80,16 @@
   },
   {
     "ID": 888666003,
-    "BuffTips": "给怪加血加攻击",
+    "BuffTips": "给怪加一倍的血上限",
     "Duration": -1,
-    "MaxLayer": 5,
+    "MaxLayer": 10,
     "BuffEffects": [
       {
         "EffectTrigger": 1,
         "EffectType": 2,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [51, 50000, 0, 0],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 1,
-        "EffectType": 3,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [151, 99999, 0, 0],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 1,
-        "EffectType": 2,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [53, 2000, 0, 0],
+        "EffectParams": [51, 10000, 0, 0],
         "EffectParamsFloat": []
       }
     ]
