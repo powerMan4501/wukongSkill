@@ -1032,21 +1032,27 @@ namespace bian
                     var atk = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.Atk) + 50;
                     BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Atk, atk);
 
-                    var maxHp = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.HpMax) + 50000;
-                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.HpMax, maxHp);
+                    var maxHp = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.HpMax);
+                    // BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.HpMax, maxHp);
                     BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Hp, maxHp);
                 }
                 else
                 {
-                    // BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666003, EBuffSourceType.GM, -1);
+
 
                     var atk = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.Atk) + 50;
-                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Atk, atk);
+                    if (atk < 1000)
+                    {
+                        BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Atk, atk);
+                    }
 
-                    var maxHp = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.HpMax) + 50000;
-                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.HpMax, maxHp);
+                    var maxHp = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.HpMax);
+                    if (maxHp < 10000 * 10)
+                    {
+                        BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666003, EBuffSourceType.GM, -1);
+                    }
+
                     BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Hp, maxHp);
-
                     BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.BurnDef, 0);
                     BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.ThunderDef, 0);
                     BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.PoisonDef, 0);
@@ -1234,6 +1240,9 @@ namespace bian
 
         public static ITransable? ExportTamer(BGUCharacterCS actor)
         {
+            LoadUtils.ExportDataToJson<FUStBuffDesc>("buff");
+            LoadUtils.ExportDataToJson<FUStBuffDispDesc>("buffdisp");
+            LoadUtils.ExportDataToJson<FUStSkillSDesc>("skill");
             if (actor != null)
             {
                 BUTamerActor tM = actor.GetTamerOwner() as BUTamerActor;
@@ -1305,7 +1314,7 @@ namespace bian
 
                     TArrayUnsafe<UActorComponent> tfxComps = aCharacter.GetComponentsByClass(UClass.GetClass<UTressFXComponent>());
                     TArrayUnsafe<UActorComponent> childComp = aCharacter.GetComponentsByClass(UClass.GetClass<UChildActorComponent>());
-                
+
                     for (int i = 0; i < childComp?.Count; i++)
                     {
                         UChildActorComponent uChildActorComponent = childComp[i] as UChildActorComponent;

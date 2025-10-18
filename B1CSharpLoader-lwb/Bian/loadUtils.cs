@@ -1883,7 +1883,9 @@ namespace bian
                         {
                             itemData.DefaultThunderDefValue = 50;
                         }
-                        itemData.HPFixedDM = itemData.HPFixedDM + (int)num * 10 * 10000;
+                        var hpNum = (int)num * 10 * 10000;
+                        itemData.HPFixedDM = Math.Min(itemData.HPFixedDM + hpNum, 25 * 10000);
+
                     }
                 }
             }

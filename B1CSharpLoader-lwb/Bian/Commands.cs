@@ -88,7 +88,6 @@ namespace bian
 
         public void SummonReq(ModelManager manager, Int64 SummonID, Int64 SummonCount)
         {
-            var character = Helper.GetBGUPlayerCharacterCS();
 
             Helper.SummonReq(SummonID, SummonCount);
         }

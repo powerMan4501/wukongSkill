@@ -10,6 +10,8 @@ using System.Linq;
 using System.IO;
 using Newtonsoft.Json;
 using BtlShare;
+using b1.EventDelDefine;
+using ArchiveB1;
 
 
 
@@ -189,7 +191,7 @@ public class Hooks
                 return;
             }
             TArrayUnsafe<FAnimNotifyEvent> AnimNotifyEventList = new TArrayUnsafe<FAnimNotifyEvent>();
-            UGSE_AnimFuncLib.GetOneAnimAllNotifyEventIncludeAS(Montage, AnimNotifyEventList);
+            UGSE_AnimFuncLib.GetAllNotifyEvent(Montage, AnimNotifyEventList);
             if (!(AnimNotifyEventList != null && AnimNotifyEventList.Count > 0))
             {
                 return;
@@ -333,37 +335,29 @@ public class Hooks
         }
         return false;
     }
+
     [HarmonyPatch]
     public class HookTriggerSkillEffect
     {
-        private static MethodBase TargetMethod()
+        private static readonly Dictionary<int, DateTime> _lastTriggerTimes = new Dictionary<int, DateTime>();
+
+
+        [HarmonyPatch(typeof(GSDel_TriggerSkillEffect), "Invoke")]
+        [HarmonyPrefix]
+        private static void Prefix(int EffectID, FEffectInstReq EffectInstReq, AActor InnerTarget, bool bWithRPCEvent)
         {
-            try
-            {
-                // 使用字符串格式查找方法
-                var method = AccessTools.Method("b1.BUS_GSEventCollection:Evt_TriggerSkillEffectBySkillMultiCast");
-                if (method == null)
-                {
-                    Console.WriteLine("Failed to find target method: TriggerSkillEffectBySkill_Impl");
-                }
-                return method;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in TargetMethod: {ex.Message}");
-                return null;
-            }
-        }
-        [HarmonyPatch]
-        private static void Prefix(int EffectID, AActor Caster, AActor Target, FEffectInstReq EffectInstReq)
-        {
+            var Caster = EffectInstReq.Attacker;
+
+
 
             if (Caster == null || (!IsPlayer(Caster.PathName) && !Caster.PathName.Contains("TAMER_player_tornado")))
             {
                 return;
             }
-            var effectRulesMap = Manager.effectRulesMap;
             Log.Info($"Evt_TriggerSkillEffect EffectID:{EffectID}");
+            var Target = InnerTarget;
+            var effectRulesMap = Manager.effectRulesMap;
+
             // 检查是否有对应的效果规则
             if (!effectRulesMap.ContainsKey(EffectID))
             {
@@ -371,7 +365,17 @@ public class Hooks
                 return;
             }
 
-
+            var currentTime = DateTime.Now;
+            // 检查该效果ID是否在0.2秒内已经触发过
+            if (_lastTriggerTimes.TryGetValue(EffectID, out var lastTime))
+            {
+                if ((currentTime - lastTime).TotalMilliseconds < 100)
+                {
+                    return; // 距离上次触发不足0.1秒，跳过本次触发
+                }
+            }
+            // 更新最后触发时间
+            _lastTriggerTimes[EffectID] = currentTime;
             // 获取对应效果的所有规则
             var matchingRules = effectRulesMap[EffectID];
             foreach (var ruleItem in matchingRules)
@@ -409,6 +413,11 @@ public class Hooks
             {
                 return;
             }
+            if (BuffID != 1015)
+            {
+                Log.Info($"Evt_BuffAdd BuffID:{BuffID}");
+
+            }
             // 冰火雷毒buff互斥
             List<int> buffers = [888666005, 888666006, 888666007, 888666008];
             if (buffers.Contains(BuffID))
@@ -440,59 +449,186 @@ public class Hooks
 
 
 
+    public static string? getPlayerActiveMontage()
+    {
+        var character = Helper.GetBGUPlayerCharacterCS();
+        if (character == null) return null;
+        var animInstance = character.Mesh?.GetAnimInstance();
+        if (animInstance == null) return null;
 
-    // [HarmonyPatch]
-    // public class HookCastSkillAnime
-    // {
-    //     private static MethodBase TargetMethod()
-    //     {
-    //         return AccessTools.Method("b1.BUS_GSEventCollection:Evt_CastSkillWithAnimMontageMultiCast_Implementation", (Type[])null, (Type[])null);
-    //     }
-
-    //     [HarmonyPatch]
-    //     private static void Prefix(BUS_GSEventCollection __instance, ref UAnimMontage Montage, ref float PlayTimeRate, ref float MontagePosOffset, FName StartSectionName, EMontageBindReason Reason = EMontageBindReason.Default)
-    //     {
-
-    //         if (!IsPlayer(__instance.GetOwner().PathName))
-    //         {
-    //             return;
-    //         }
-    //         var currentMontage = Montage?.PathName;
-    //         if (currentMontage == null) return;
-    //         if (currentMontage.Contains("Animation/Player/Wukong/") || currentMontage.Contains("AM_wukong_trans_from_Vigor"))
-    //         {
-    //             Helper.updateIsPlayVigorSkillByID(false);
-    //         }
-
-    //         var allRules = GetCachedAnimRules();
-    //         if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
-    //         var matchedRule = allRules.FirstOrDefault(rule =>
-    //                  !string.IsNullOrEmpty(currentMontage) &&
-    //                  currentMontage.Contains(rule.montage));
-    //         if (matchedRule?.CastActions?.Count > 0)
-    //         {
-    //             var rule = new Rule();
-    //             rule.DoAfterActions(matchedRule.CastActions);
-    //         }
-
-    //         if (matchedRule?.speedRate != null)
-    //         {
-    //             PlayTimeRate = (float)matchedRule.speedRate;
-    //         }
+        var currentMontage = animInstance.GetCurrentActiveMontage();
+        if (currentMontage == null || currentMontage.PathName == null) return null;
+        return currentMontage.PathName;
+    }
 
 
-    //         if (matchedRule?.scaleWeaponNum != null)
-    //         {
-    //             Manager.OnScaleWeapon((float)matchedRule.scaleWeaponNum);
-    //         }
+    [HarmonyPatch]
+    public static class CastSkillPatch
+    {
+        [HarmonyPatch(typeof(BUS_MovementSystem), "OnSkillWithAnimMontage")]
+        [HarmonyPrefix]
+        static void Prefix(BUS_MovementSystem __instance, UAnimMontage Montage, ref float PlayTimeRate, float MontagePosOffset, FName StartSectionName, EMontageBindReason Reason)
+        {
 
-    //         handleNotify(Montage, 0);
-    //     }
-
-    // }
+            if (__instance == null || Montage == null) return;
+            if (__instance?.GetOwner() == null) return;
+            if (__instance.GetOwner()?.PathName == null) return;
+            if (!IsPlayer(__instance.GetOwner().PathName))
+            {
+                return;
+            }
+            var currentMontage = Montage.PathName;
+            if (currentMontage == null) return;
 
 
 
+            Log.Info($"Evt_CastSkillAnime Montage:{Montage.GetName()}");
+
+            if (currentMontage.Contains("Animation/Player/Wukong/") || currentMontage.Contains("AM_wukong_trans_from_Vigor"))
+            {
+                Helper.updateIsPlayVigorSkillByID(false);
+            }
+
+            var allRules = GetCachedAnimRules();
+            if (allRules == null || allRules.Count == 0) return;
+
+            var matchedRule = allRules.FirstOrDefault(rule =>
+                     !string.IsNullOrEmpty(currentMontage) &&
+                     currentMontage.Contains(rule.montage));
+
+            if (matchedRule?.CastActions?.Count > 0)
+            {
+                var rule = new Rule();
+                rule.DoAfterActions(matchedRule.CastActions);
+            }
+
+            PlayTimeRate = matchedRule?.speedRate != null ? (float)matchedRule.speedRate : PlayTimeRate;
+
+            if (matchedRule?.scaleWeaponNum != null)
+            {
+                Manager.OnScaleWeapon((float)matchedRule.scaleWeaponNum);
+            }
+
+            handleNotify(Montage, 0);
+        }
+    }
+
+
+
+    private static bool TryGetCharacterStance(out bool isChuogun, out bool isLigun, out bool isPigun)
+    {
+        isChuogun = false;
+        isLigun = false;
+        isPigun = false;
+
+        var control = Helper.GetPlayerController();
+        var readOnlyData = BGU_DataUtil.GetPlayerControlReadonlyData<IBPC_PlayerRoleData, BPC_PlayerRoleData>(control);
+        if (readOnlyData?.RoleData?.RoleCs?.Actor?.Wear?.Stance == null)
+        {
+            return false;
+        }
+
+        var stance = readOnlyData.RoleData.RoleCs.Actor.Wear.Stance;
+        isChuogun = stance == Stance.Poke;
+        isLigun = stance == Stance.Prop;
+        isPigun = stance == Stance.Heavy;
+
+        return true;
+    }
+
+    private static Dictionary<int, int> GetSkillMappings()
+    {
+        return new Dictionary<int, int>
+                {
+                    {10720, 10721},
+                    {10725, 50010724},
+                    {10724, 50010724},
+                    {10706, 10705},
+                    {10708, 50002},
+                    {10707, 50002},
+                    {10715, 10714}
+                };
+    }
+
+    private static bool IsComboSkill(int skillId)
+    {
+        int[] comboSkills = { 10705, 10706, 10720, 10721, 50003, 50005, 50007, 50001 };
+        return comboSkills.Contains(skillId);
+    }
+    private static void ProcessSkillMappingRules(ref int ID, int currentId, BGUCharacterCS character,
+            bool isChuogun, bool isLigun, bool isPigun)
+    {
+        var AllSkillMappingRules = Manager.AllSkillMappingRules;
+        var mapArr = AllSkillMappingRules.Where(r => r.OriginalId == currentId).ToList();
+        if (!mapArr.Any()) return;
+
+        var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
+
+        // 优先处理可重复规则
+        var repeatableRules = mapArr.Where(r => r.canRepeat.HasValue && r.canRepeat.Value).ToList();
+        var matchItem = repeatableRules.FirstOrDefault(r =>
+            Manager.IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
+
+        if (matchItem != null)
+        {
+            ID = matchItem.MappedId;
+            currentId = matchItem.MappedId;
+        }
+
+        // 处理不可重复规则
+        var nonRepeatableRules = AllSkillMappingRules
+            .Where(r => r.OriginalId == currentId && (!r.canRepeat.HasValue || !r.canRepeat.Value))
+            .ToList();
+
+        var matchItem_ = nonRepeatableRules.FirstOrDefault(r =>
+            Manager.IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
+
+        if (matchItem_ != null)
+        {
+            ID = matchItem_.MappedId;
+        }
+    }
+
+    [HarmonyPatch]
+    public static class RequestSmartCastSkillPatch
+    {
+        [HarmonyPatch(typeof(GSDel_RequestSmartCastSkill), "Invoke")]
+        [HarmonyPrefix]
+        static void Prefix(ref int ID, List<int> RuleIDList, EMontageBindReason Reason, bool bNeedCheckSkillCanCast, ECastSkillSourceType SourceType)
+        {
+
+
+            // 获取角色姿态信息
+            if (!TryGetCharacterStance(out bool isChuogun, out bool isLigun, out bool isPigun))
+            {
+                return;
+            }
+
+            // 获取技能ID映射配置
+            var skillMappings = GetSkillMappings();
+
+            // 应用技能ID映射
+            if (skillMappings.ContainsKey(ID))
+            {
+                ID = skillMappings[ID];
+            }
+
+            var currentId = ID;
+            var character = Helper.GetBGUPlayerCharacterCS();
+            if (character == null) return;
+
+            Log.Info($"CastSkill skillId:{ID}");
+            // 添加连招相关buff
+            if (IsComboSkill(ID))
+            {
+
+                BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);
+            }
+
+            // 处理技能映射规则
+            ProcessSkillMappingRules(ref ID, currentId, character, isChuogun, isLigun, isPigun);
+        }
+    }
 
 
 }

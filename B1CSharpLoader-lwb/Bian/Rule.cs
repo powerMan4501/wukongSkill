@@ -444,7 +444,6 @@ namespace bian
         {
             if (actions == null || actions.Count == 0) return;
             var character = Helper.GetBGUPlayerCharacterCS();
-            Log.Info($"DoAfterActions {actions.Count}");
             foreach (var action in actions)
             {
                 if (character == null) continue;
@@ -452,7 +451,6 @@ namespace bian
                 var result = CheckBuffConditions(character, action);
                 if (!result || !CheckTalentConditions(character, action))
                     continue;
-                Log.Info($"DoAfterActions check hasBuff: {action.hasBuff} , {result}");
                 if (action?.TimeDelay > 0)
                 {
                     ExecuteDelayedAction(() => DoAction(action, 1000 / 1), action.TimeDelay).ConfigureAwait(false);

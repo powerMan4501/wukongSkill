@@ -517,7 +517,7 @@ namespace bian
             return animInstance.GetCurrentActiveMontage();
         }
 
-        private static bool IsSkillMappingRuleMatch(SkillMappingRule rule, BGUCharacterCS character, bool isChuogun, bool isLigun, bool isPigun, BGUCharacterCS target = null)
+        public static bool IsSkillMappingRuleMatch(SkillMappingRule rule, BGUCharacterCS character, bool isChuogun, bool isLigun, bool isPigun, BGUCharacterCS target = null)
         {
             // 姿态条件判断
             bool stanceMatch = (rule.Condition == SkillMapCondition.StancePoke && isChuogun) ||
@@ -673,53 +673,6 @@ namespace bian
         }
 
 
-        // [HarmonyPatch(typeof(BUS_GSEventCollection), "OnRequestSmartCastSkill")]
-        // [HarmonyPrefix]
-        // private static void SmartCastSkillTryMultiCast(ref int ID, ref List<int> RuleIDList)
-        // {
-        //     if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]SmartCastSkill"))
-        //     {
-        //         // Log.Info($"bian: 真实的id SmartCastSkillTryMultiCast -->{ID}");
-        //     }
-
-        //     var character = Helper.GetBGUPlayerCharacterCS();
-        //     if (character == null) return;
-
-        //     // 获取角色姿态信息
-        //     if (!TryGetCharacterStance(out bool isChuogun, out bool isLigun, out bool isPigun))
-        //     {
-        //         return;
-        //     }
-
-        //     // 获取技能ID映射配置
-        //     var skillMappings = GetSkillMappings();
-
-        //     // 应用技能ID映射
-        //     if (skillMappings.ContainsKey(ID))
-        //     {
-        //         ID = skillMappings[ID];
-        //     }
-
-        //     var currentId = ID;
-        //     // var bufferId = GetBufferIdForSkill(ID);
-
-        //     // 添加连招相关buff
-        //     if (IsComboSkill(ID))
-        //     {
-        //         BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);
-        //     }
-
-        //     // if (bufferId > 0)
-        //     // {
-        //     //     BGUFunctionLibraryCS.BGUAddBuff(character, character, bufferId, EBuffSourceType.GM, 4000);
-        //     // }
-
-        //     // 处理技能映射规则
-        //     ProcessSkillMappingRules(ref ID, currentId, character, isChuogun, isLigun, isPigun);
-        // }
-
-
-
 
         private static int GetBufferIdForSkill(int skillId)
         {
@@ -849,7 +802,6 @@ namespace bian
 
         [HarmonyPatch(typeof(UInputPreProcEvent), "OnAnyKeyTriggerEvent")]
         [HarmonyPrefix]
-
         private static void OnAnyKeyTriggerEvent(FKey Key)
         {
             if (keyToComboConfigsMap.Count == 0)
