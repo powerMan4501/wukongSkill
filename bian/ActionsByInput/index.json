@@ -1,0 +1,46 @@
+[
+  {
+    "code": "SDS",
+    "actions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [30050301],
+            "OffsetX": 400,
+            "OffsetY": 400,
+            "desc": "金沙波动"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "code": "ASA",
+    "actions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [19998801],
+            "OffsetX": 400,
+            "OffsetY": 400,
+            "desc": "金沙波动"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "SSS",
+    "actions": [
+      {
+        "Type": "xuelunyan",
+        "desc": "血轮眼，如果当前是马喽就变身，如果当前已经变身，就执行敌人当前释放的技能"
+      }
+    ]
+  }
+]

@@ -126,5 +126,20 @@
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1,
     "HitEffectsforChr": [58111001, 921230]
+  },
+
+  {
+    "desc": "石敢当",
+    "ID": 22051201,
+    "BulletCanThroughBlockage": 1,
+    "HitEffectsforChr": [888555034],
+    "HitDestructibleStrengthType": 4
+  },
+   {
+    "desc": "石敢当",
+    "ID": 22051202,
+    "BulletCanThroughBlockage": 1,
+    "HitEffectsforChr": [888555034],
+    "HitDestructibleStrengthType": 4
   }
 ]

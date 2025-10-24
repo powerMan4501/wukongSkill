@@ -20,7 +20,7 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [50051029, 118],
+            "ProjectTileIDs": [30250101, 118],
             "desc": "电圈/落雷"
           }
         ]

@@ -37,9 +37,9 @@
   },
 
   {
-    "montage": "AM_Wukong_ComboA_q5.AM_Wukong_ComboA_q5",
-    "linkValue": 0.8666667,
-     "scaleWeaponNum": 5,
+    "montage": "AM_Wukong_ComboA_q5",
+    "linkValue": 0.8,
+    "scaleWeaponNum": 5,
     "MoveOffset": 100,
     "CastActions": [
       {

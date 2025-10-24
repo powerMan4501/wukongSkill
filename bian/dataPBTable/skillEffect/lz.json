@@ -113,5 +113,21 @@
     "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
     "EffectParamsFloat": [40000.0, 400.0, 40000.0, 4000.0, 0.0, 0.0, 400],
     "EffectParamsStr": ["【主角】蓄力4"]
+  },
+  {
+    "desc": "500%+500点伤害",
+    "ID": 888555035,
+    "EffectType": 1,
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
+    "EffectParamsFloat": [50000.0, 500.0, 50000.0, 5000.0, 0.0, 0.0, 500],
+    "EffectParamsStr": ["【主角】蓄力4"]
+  },
+  {
+    "desc": "400%+4000点伤害,大头如来神掌",
+    "ID": 888555036,
+    "EffectType": 1,
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
+    "EffectParamsFloat": [50000.0, 4000.0, 40000.0, 5000.0, 0.0, 0.0, 4000],
+    "EffectParamsStr": ["【主角】蓄力4"]
   }
 ]

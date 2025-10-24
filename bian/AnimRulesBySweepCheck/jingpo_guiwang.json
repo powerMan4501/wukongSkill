@@ -63,7 +63,7 @@
   },
   {
     "desc": "鬼王，右足球踢",
-    "montage": "AM_HYS_LuoChaGui_01_Atk_03",
+    "montage": ".AM_HYS_LuoChaGui_01_Atk_03",
     "linkValue": 2.867692,
     "addRadius": 500,
     "speedRate": 1.8,
@@ -94,7 +94,7 @@
   },
   {
     "desc": "鬼王，足球踢之后，左手一巴掌",
-    "montage": "AM_HYS_LuoChaGui_01_Atk_03",
+    "montage": ".AM_HYS_LuoChaGui_01_Atk_03",
     "linkValue": 5.366195,
     "addRadius": 500,
     "speedRate": 1.8,

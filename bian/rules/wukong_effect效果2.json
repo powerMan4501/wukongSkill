@@ -90,28 +90,7 @@
       ]
     },
 
-    {
-      "Name": "石蛙，巴山虎效果",
-      "Description": "",
-      "Filters": [
-        {
-          "Type": "effect",
-          "EffectID": 1026216
-        }
-      ],
-      "AfterActions": [
-        {
-          "Type": "bullet",
-          "TimeDelay": 0,
-          "bullets": [
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [1016262]
-            }
-          ]
-        }
-      ]
-    },
+ 
 
     {
       "Name": "小骊龙锤子互砸",

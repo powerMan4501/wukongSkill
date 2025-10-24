@@ -3,7 +3,7 @@
     "desc": "石敢当砸地大招",
     "montage": "AM_HFM_ShiGanDang_01_Atk_12",
     "linkValue": 0,
-    "addRadius": 500,
+    "addRadius": 2500,
     "speedRate": 1.5,
     "AMScaleRate": 10,
     "CastActions": [
@@ -36,7 +36,91 @@
           }
         ]
       }
-    ]
+    ],
+    "hitEffects": [888555035],
+    "replaceEffects": true
+  },
+  {
+    "desc": "右勾拳+左手下砸拳",
+    "montage": "AM_HFM_ShiGanDang_01_Atk_07",
+    "linkValue": 0,
+    "addRadius": 2500,
+    "speedRate": 2,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [1998, 211],
+        "BuffTime": 3800,
+        "desc": "100%暴击"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011198, 30050301],
+            "hasBuff": 888666006,
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "有冰buff，金沙波动"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74010207, 40550101],
+            "noHasAnyBuff": [888666006],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "没有冰buff，鳖宝子弹和火圈"
+          }
+        ]
+      }
+    ],
+    "hitEffects": [888555035],
+    "replaceEffects": true
+  },
+  {
+    "desc": "垂直打一拳砸地，然后引发大范围地爆",
+    "montage": "AM_HFM_ShiGanDang_01_Atk_08",
+    "linkValue": 0,
+    "addRadius": 2500,
+    "speedRate": 2,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [1998, 211],
+        "BuffTime": 3800,
+        "desc": "100%暴击"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011198, 30050301],
+            "hasBuff": 888666006,
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "有冰buff，金沙波动"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74010207, 40550101],
+            "noHasAnyBuff": [888666006],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "没有冰buff，鳖宝子弹和火圈"
+          }
+        ]
+      }
+    ],
+    "hitEffects": [888555035],
+    "replaceEffects": true
   },
 
   {
@@ -53,6 +137,8 @@
         "BuffTime": 3800,
         "desc": "100%暴击"
       }
-    ]
+    ],
+    "hitEffects": [888555035],
+    "replaceEffects": true
   }
 ]

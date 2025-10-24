@@ -269,7 +269,7 @@
       }
     ]
   },
- {
+  {
     "desc": "残躯分身4蓄劈棍",
     "montage": ".AM_mgd_jsds_atk_07_cm",
     "linkValue": 2.7,
@@ -375,6 +375,7 @@
     "speedRate": 1.3,
     "linkValue": 0,
     "hitEffects": [888555034],
+    "replaceEffects": true,
     "SweepActions": [
       {
         "Type": "bullet",
@@ -421,9 +422,19 @@
     "desc": "残躯定海神针",
     "montage": "AM_mgd_jsds_atk_21",
     "linkValue": 0,
-    "speedRate": 1.3,
+    "speedRate": 1.5,
     "addRadius": 100,
-    "hitEffects": [888555034]
+    "hitEffects": [888555034],
+    "replaceEffects": true,
+    "bulletsActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [1016262],
+        "ForTarget": true,
+        "desc": "巴山虎"
+      }
+    ]
   },
   {
     "desc": "残躯砸砸砸",
@@ -432,6 +443,7 @@
     "speedRate": 1.3,
     "addRadius": 100,
     "hitEffects": [888555034],
+    "replaceEffects": true,
     "SweepActions": [
       {
         "Type": "bullet",
@@ -480,6 +492,7 @@
     "speedRate": 1.3,
     "addRadius": 100,
     "hitEffects": [888555034],
+    "replaceEffects": true,
     "SweepActions": [
       {
         "Type": "bullet",
@@ -528,6 +541,7 @@
     "speedRate": 1.3,
     "addRadius": 100,
     "hitEffects": [888555034],
+    "replaceEffects": true,
     "SweepActions": [
       {
         "Type": "bullet",
@@ -576,6 +590,7 @@
     "linkValue": 0,
     "speedRate": 1.3,
     "addRadius": 100,
-    "hitEffects": [888555034]
+    "hitEffects": [888555034],
+    "replaceEffects": true
   }
 ]

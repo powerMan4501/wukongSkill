@@ -1,7 +1,7 @@
 {
   "Desction": "KeyMapping中定义的为键位映射",
   "TransDone": {
-    "Buffers": [1112, 1000068, 92245]
+    "Buffers": [1112, 211, 92245]
   },
   "Debug": {
     "LOG": [
@@ -110,7 +110,7 @@
       "Name": "变身为【龙】"
     },
     {
-      "Key": "C+F4",
+      "Key": "S+F5",
       "Type": "BOSS",
       "Label": "SK_psd_daoshi_02",
       "Name": "变身为【糜道人】"
@@ -153,7 +153,7 @@
       "Name": "变身为【马】"
     },
     {
-      "Key": "S+F5",
+      "Key": "A+F5",
       "Type": "BOSS",
       "Label": "SK_LuoChaGui_01",
       "Name": "变身为【鬼王】"
@@ -525,6 +525,13 @@
       "Type": "COMMAND",
       "Label": "JingDouYun",
       "Name": "筋斗云",
+      "AlawaysCanCast": false
+    },
+     {
+      "Key": "D6",
+      "Type": "COMMAND",
+      "Label": "XieLongYan",
+      "Name": "血轮眼",
       "AlawaysCanCast": false
     },
     {

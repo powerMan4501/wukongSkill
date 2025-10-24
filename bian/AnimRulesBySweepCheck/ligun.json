@@ -18,7 +18,7 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [152, 50051029, 2403471, 39010112],
+            "ProjectTileIDs": [152, 30250101, 2403471, 39010112],
             "noHasBuff": 888666007,
             "OffsetX": 500,
             "OffsetY": 500,
@@ -66,7 +66,7 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [50051029, 2403471, 39010112],
+            "ProjectTileIDs": [30250101, 2403471, 39010112],
             "noHasBuff": 888666007,
             "spawnBaseSocketName": "weapon_r_index_04",
             "desc": "没火buff就电圈/冰暴/青背龙雷暴"
@@ -101,7 +101,7 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [50051029, 2403471, 39010112],
+            "ProjectTileIDs": [30250101, 2403471, 39010112],
             "noHasBuff": 888666007,
             "spawnBaseSocketName": "weapon_r_index_04",
             "desc": "没火buff就电圈/冰暴/青背龙雷暴"
@@ -155,7 +155,7 @@
       {
         "Type": "bullet",
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
-        "ProjectTileID": 50051029
+        "ProjectTileID": 30250101
       }
     ]
   },

@@ -1,0 +1,24 @@
+[
+  {
+    "desc": "犀牛大招",
+    "montage": "AM_szlc_xiniu_01_atk_16",
+    "linkValue": 0,
+    "addRadius": 1500,
+    "speedRate": 1.5,
+    "hitEffects": [888555035],
+    "replaceEffects": true,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+            "ForTarget": true,
+            "ProjectTileIDs": [74011107, 50058603],
+            "desc": "金沙黄符"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -45,21 +45,25 @@
   {
     "nowMontage": "_xuli_attack_1",
     "rate": 1.2,
-    "type": "BOSS",
-    "bossLabel": "SK_LuoChaGui_01",
-    "MagicSkillID": 401203,
+    "type": "magic",
+    "skillID": 8535,
+    "MagicSkillID": 405502,
+    "UnitScale": 0.8,
+    "speedRate": 1.9,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "劈棍1，鬼王足球踢"
+    "desc": "劈棍1，鳖宝锤子砸"
   },
   {
     "nowMontage": "_xuli_attack_0",
     "rate": 1.2,
-    "type": "BOSS",
-    "bossLabel": "SK_LuoChaGui_01",
-    "MagicSkillID": 401202,
+    "type": "magic",
+    "skillID": 8535,
+    "MagicSkillID": 405513,
+    "UnitScale": 0.8,
+    "speedRate": 1.9,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "劈棍0，鬼王踩一下"
+    "desc": "劈棍0，全屏+掀翻地面"
   }
 ]

@@ -6,10 +6,8 @@
     "speedRate": 4,
     "CastActions": [
       {
-        "Type": "buff",
-        "BuffIDs": [103, 888666004],
-        "BuffTime": 100,
-        "desc": "喝药，回血"
+        "Type": "MaiDongHuiLai",
+        "desc": "全属性全满，增加6000护盾和霸体值"
       }
     ]
   },
@@ -43,7 +41,7 @@
   {
     "desc": "棍花 ",
     "montage": "AM_Wukong_ComboC_z_loop",
-    "openShooterMode": true,
+    "scaleWeaponNum": 2,
     "linkValue": 0.2993329,
     "SweepActions": [
       {

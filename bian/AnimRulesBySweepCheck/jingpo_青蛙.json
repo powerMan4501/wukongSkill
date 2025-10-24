@@ -47,6 +47,25 @@
       }
     ]
   },
+
+    {
+    "desc": "石蛙",
+    "montage": ".AM_10_gycy_wa_01_atk_41_shi",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.2,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "hitEffects": [888555034],
+      "replaceEffects": true
+  },
   {
     "desc": "精魄蛙",
     "montage": ".AM_10_gycy_wa_01_atk_",
@@ -62,6 +81,7 @@
         "desc": "霸体"
       }
     ],
-    "hitEffects": [888555031]
+    "hitEffects": [888555033],
+      "replaceEffects": true
   }
 ]

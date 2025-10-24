@@ -4,6 +4,14 @@
     "montage": "AM_HYS_NiaoZui_Atk_",
     "linkValue": 0,
     "addRadius": 200,
+     "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
     "SweepActions": [
       {
         "Type": "bullet",
@@ -18,7 +26,7 @@
         ]
       }
     ],
-    "hitEffects": [888555034],
+    "hitEffects": [888555035],
     "replaceEffects": true
   },
   {
@@ -27,6 +35,14 @@
     "speedRate": 1.9,
     "linkValue": 2.666667,
     "addRadius": 200,
+     "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
     "SweepActions": [
       {
         "Type": "bullet",

@@ -525,26 +525,7 @@
       }
     ]
   },
-  {
-    "desc": "戳棍1a切手，退寸",
-    "montage": ".AM_wukong_combob_z_01",
-    "linkValue": 0,
-    "CastActions": [
-      {
-        "Type": "bullet",
-        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-        "ProjectTileID": 88880010,
-        "ForTarget": true,
-        "desc": "杨戬飞剑"
-      },
-      {
-        "Type": "buff",
-        "BuffIDs": [66655409, 289],
-        "BuffTime": 2500,
-        "desc": "棍光"
-      }
-    ]
-  },
+  
 
   {
     "desc": "戳棍1a切手2，进尺",

@@ -1,13 +1,26 @@
 [
-  {
+ 
+    {
     "nowMontage": "AM_wukong_qiang_xuli_b_attack_4",
     "rate": 0.4,
-    "Type": "BOSS",
-    "bossLabel": "SK_HFM_Niu_01",
-    "MagicSkillID": 401804,
+    "UnitScale": 0.8,
+    "type": "BOSS",
+    "bossLabel": "SK_LYS_Dage",
+    "MagicSkillID": 19043,
+    "Condition": "disTance",
+    "conditionValue": 500,
+    "InputCore": "ThumbMouseButton2",
+    "desc": "戳棍0，距离500以上，三千阳春3"
+  },
+   {
+    "nowMontage": "AM_wukong_qiang_xuli_b_attack_4",
+    "rate": 0.4,
+    "type": "BOSS",
+    "bossLabel": "SK_HFM_ShiGanDang",
+    "MagicSkillID": 220512,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "戳棍4，精英牛魔连续砍好几下"
+    "desc": "戳棍4，石敢当砸地"
   },
   {
     "nowMontage": "AM_wukong_qiang_xuli_b_attack_3",
@@ -42,7 +55,30 @@
     "InputCore": "ThumbMouseButton2",
     "desc": "戳棍1，隼居士"
   },
-
+    {
+    "nowMontage": "AM_wukong_qiang_xuli_b_attack_0",
+    "rate": 0.4,
+    "UnitScale": 0.5,
+    "type": "BOSS",
+    "bossLabel": "SK_szlc_xiniu_01",
+    "MagicSkillID": 470716,
+    "Condition": "disTance",
+    "conditionValue": 2500,
+    "InputCore": "ThumbMouseButton2",
+    "desc": "戳棍0，距离2500以上，金甲犀大招"
+  },
+  {
+    "nowMontage": "AM_wukong_qiang_xuli_b_attack_0",
+    "rate": 0.4,
+    "UnitScale": 0.8,
+    "type": "BOSS",
+    "bossLabel": "SK_LYS_Dage",
+    "MagicSkillID": 19041,
+    "Condition": "disTance",
+    "conditionValue": 500,
+    "InputCore": "ThumbMouseButton2",
+    "desc": "戳棍0，距离500以上，三千阳春1"
+  },
   {
     "nowMontage": "AM_wukong_qiang_xuli_b_attack_0",
     "rate": 0.4,

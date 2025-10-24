@@ -77,6 +77,15 @@
       "Key": "",
       "CanBreak": true
     },
+
+    {
+      "type": "BOSS",
+      "bossLabel": "SK_HFM_HFDS_01a",
+      "MagicSkillID": 600823,
+      "Name": "打腹板的黄风大圣,挥舞叉子砸击，重击很远",
+      "Key": "A+X",
+      "CanBreak": true
+    },
     {
       "type": "BOSS",
       "bossLabel": "SK_LuoChaGui_01",
@@ -95,14 +104,6 @@
     },
 
     {
-      "type": "BOSS",
-      "bossLabel": "SK_mgd_jsds",
-      "MagicSkillID": 700158,
-      "Name": "释放定海神针",
-      "Key": "A+LBUTTON"
-    },
-
-    {
       "Type": "TRANS",
       "ResId": 19,
       "MagicSkillID": 19043,
@@ -112,41 +113,49 @@
       "Buffs": [1000809]
     },
     {
-      "Id": 50003,
-      "CanBreak": true,
-      "Name": "大圣模式，横扫一下再捅一下",
-      "Key": "C+XBUTTON1"
+      "type": "BOSS",
+      "bossLabel": "SK_mgd_jsds",
+      "MagicSkillID": 700158,
+      "Name": "释放定海神针",
+      "Key": "A+LBUTTON"
     },
     {
-      "Id": 50006,
-      "CanBreak": true,
-      "Name": "大圣模式，类似10707",
-      "Key": "C+XBUTTON2"
+      "type": "BOSS",
+      "bossLabel": "SK_HFM_ShiGanDang",
+      "MagicSkillID": 220507,
+      "Name": "右勾拳+左手下砸拳",
+      "Key": "A+RBUTTON"
     },
     {
-      "Id": 54321011,
-      "CanBreak": true,
-      "Name": "大圣模式，类似10707",
+      "type": "BOSS",
+      "bossLabel": "SK_HFM_ShiGanDang",
+      "MagicSkillID": 220508,
+      "Name": "垂直打一拳砸地，然后引发大范围地爆",
       "Key": "A+XBUTTON1"
     },
+    {
+      "type": "BOSS",
+      "bossLabel": "SK_HFM_ShiGanDang",
+      "MagicSkillID": 220505,
+      "Name": "小跳起扑地，引发地波",
+      "Key": "A+XBUTTON2"
+    },
+
+    {
+      "Id": 10520,
+      "CanBreak": true,
+      "Name": "安身",
+      "Key": "C+XBUTTON2"
+    },
+   
+
     {
       "Id": 50005,
       "CanBreak": true,
       "Name": "大圣模式，小横扫一下",
       "Key": ""
     },
-    {
-      "Id": 50006,
-      "CanBreak": true,
-      "Name": "大圣模式，类似10707",
-      "Key": "A+XBUTTON2"
-    },
-    {
-      "Id": 50008,
-      "CanBreak": true,
-      "Name": "大圣模式，跳起来砸",
-      "Key": "A+RBUTTON"
-    },
+
     {
       "Id": 54321002,
       "CanBreak": true,
