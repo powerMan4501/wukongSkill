@@ -29,7 +29,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147353678"
+        "HairMaterial": "/Game/00MainHZ/Characters/PSD_ZhiZhu_02b/Materials/M_psd_wulong_mask_beard.M_psd_wulong_mask_beard"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/PSD_ZhiZhu_02b/Hair/HAIR_main.HAIR_main_TFX",
@@ -42,7 +42,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147353677"
+        "HairMaterial": "/Game/00MainHZ/Characters/PSD_ZhiZhu_02b/Materials/M_psd_wulong_mask_main.M_psd_wulong_mask_main"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/PSD_ZhiZhu_02b/Hair/HAIR_pony.HAIR_pony_TFX",
@@ -55,7 +55,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147353676"
+        "HairMaterial": "/Game/00MainHZ/Characters/PSD_ZhiZhu_02b/Materials/M_psd_wulong_mask_main.M_psd_wulong_mask_main"
       }
     ],
     "InteractBones": null,
@@ -65,7 +65,7 @@
     "UnitScale": null
   },
   "AttrFloat": {
-    "HpMax": 252720.0,
+    "HpMax": 98700.3,
     "MpMax": 0.0,
     "B1StunMax": 0.0,
     "StaminaDepletedLimit": 0.0,
@@ -90,9 +90,9 @@
     "PevalueMax": 0.0,
     "YinAbnormalAccMax": 120.0,
     "YangAbnormalAccMax": 120.0,
-    "HpMaxMul": 10000.0,
+    "HpMaxMul": 5000.0,
     "MpMaxMul": 0.0,
-    "AtkMul": 0.0,
+    "AtkMul": 2500.0,
     "DefMul": 0.0,
     "B1StunMaxMul": 0.0,
     "StaminaDepletedLimitMul": 0.0,
@@ -110,9 +110,9 @@
     "EnergyMinConsumeMul": 0.0,
     "EnergyConsumeSpeedMul": 0.0,
     "EnergyIncreaseSpeedMul": 0.0,
-    "HpMaxBase": 9720.0,
+    "HpMaxBase": 19353.0,
     "MpMaxBase": 0.0,
-    "AtkBase": 108.0,
+    "AtkBase": 282.0,
     "DefBase": 0.0,
     "B1StunMaxBase": 10000.0,
     "StaminaDepletedLimitBase": 0.0,
@@ -157,14 +157,14 @@
     "EnergyMinConsumeBase": 0.0,
     "EnergyConsumeSpeedBase": 0.0,
     "EnergyIncreaseSpeedBase": 0.0,
-    "Hp": 252720.0,
+    "Hp": 98700.3,
     "Mp": 0.0,
-    "Atk": 108.0,
+    "Atk": 352.5,
     "Def": 0.0,
     "B1Stun": 0.0,
     "Stamina": 0.0,
     "StaminaRecover": 0.0,
-    "SkillSuperArmor": 0.0,
+    "SkillSuperArmor": 25000.0,
     "CritRate": 0.0,
     "CritMultiplier": 0.0,
     "Tenacity": 0.0,

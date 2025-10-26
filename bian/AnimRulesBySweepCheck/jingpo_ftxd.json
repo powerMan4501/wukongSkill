@@ -9,7 +9,7 @@
     "CastActions": [
       {
         "Type": "buff",
-        "BuffIDs": [1998,211],
+        "BuffIDs": [1998, 211],
         "BuffTime": 3800,
         "desc": "100%暴击,霸体"
       }
@@ -78,6 +78,23 @@
     "addRadius": 500,
     "speedRate": 1.4,
     "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 2900,
+        "desc": "霸体"
+      }
+    ]
+  },
+  {
+    "desc": "巨猿疯狂砸地",
+    "montage": "AM_player_ftxd",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.4,
+    "AMScaleRate": 10,
+    "hitEffects": [888555035],
     "CastActions": [
       {
         "Type": "buff",

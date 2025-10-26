@@ -72,7 +72,7 @@
     "addRadius": 500,
     "speedRate": 1.5,
     "AMScaleRate": 10,
-    "hitEffects": [888555035],
+    "hitEffects": [888555036],
     "replaceEffects": true,
     "CastActions": [
       {

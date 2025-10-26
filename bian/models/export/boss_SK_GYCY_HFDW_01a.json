@@ -25,7 +25,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146995740"
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS_LaoHeShang/Materials/MF_HFS_LaoHeShang_Hair.MF_HFS_LaoHeShang_Hair"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS_LaoHeShang/Hair/HAIR_upperbeard.HAIR_upperbeard_TFX",
@@ -38,7 +38,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146995739"
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Materials/M_gycy_xiong_beard.M_gycy_xiong_beard"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS_LaoHeShang/Hair/HAIR_lowerbeard.HAIR_lowerbeard_TFX",
@@ -51,7 +51,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146995738"
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Materials/M_gycy_xiong_beard.M_gycy_xiong_beard"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS_LaoHeShang/Hair/HAIR_eyebrow.HAIR_eyebrow_TFX",
@@ -64,7 +64,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146995737"
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Materials/M_gycy_xiong_beard.M_gycy_xiong_beard"
       }
     ],
     "InteractBones": [
@@ -103,7 +103,7 @@
     "UnitScale": null
   },
   "AttrFloat": {
-    "HpMax": 43488.0,
+    "HpMax": 44265.5977,
     "MpMax": 0.0,
     "B1StunMax": 0.0,
     "StaminaDepletedLimit": 0.0,
@@ -118,7 +118,7 @@
     "VigorEnergyMax": 0.0,
     "BlockCollapseArmorMax": 200.0,
     "FreezeAbnormalAccMax": 150.0,
-    "BurnAbnormalAccMax": 199.650009,
+    "BurnAbnormalAccMax": 150.0,
     "PoisonAbnormalAccMax": 150.0,
     "ThunderAbnormalAccMax": 150.0,
     "BlindSlotMax": 100.0,
@@ -130,7 +130,7 @@
     "YangAbnormalAccMax": 150.0,
     "HpMaxMul": 0.0,
     "MpMaxMul": 0.0,
-    "AtkMul": 6000.0,
+    "AtkMul": 28000.0,
     "DefMul": 0.0,
     "B1StunMaxMul": 0.0,
     "StaminaDepletedLimitMul": 0.0,
@@ -138,7 +138,7 @@
     "StaminaRecoverMul": 0.0,
     "KptturnSpeedMul": 0.0,
     "FreezeAbnormalAccMaxMul": 0.0,
-    "BurnAbnormalAccMaxMul": 3310.001,
+    "BurnAbnormalAccMaxMul": 0.0,
     "PoisonAbnormalAccMaxMul": 0.0,
     "ThunderAbnormalAccMaxMul": 0.0,
     "YinAbnormalAccMaxMul": 0.0,
@@ -148,7 +148,7 @@
     "EnergyMinConsumeMul": 0.0,
     "EnergyConsumeSpeedMul": 0.0,
     "EnergyIncreaseSpeedMul": 0.0,
-    "HpMaxBase": 2880.0,
+    "HpMaxBase": 15264.0,
     "MpMaxBase": 0.0,
     "AtkBase": 45.0,
     "DefBase": 0.0,
@@ -195,9 +195,9 @@
     "EnergyMinConsumeBase": 0.0,
     "EnergyConsumeSpeedBase": 0.0,
     "EnergyIncreaseSpeedBase": 0.0,
-    "Hp": 20215.0,
+    "Hp": 44265.5977,
     "Mp": 0.0,
-    "Atk": 71.99999,
+    "Atk": 171.0,
     "Def": 0.0,
     "B1Stun": 0.0,
     "Stamina": 0.0,

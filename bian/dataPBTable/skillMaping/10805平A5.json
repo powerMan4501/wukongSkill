@@ -2,7 +2,7 @@
   {
     "OriginalId": 10805,
     "MappedId": 50015,
-    "Condition": "hasTalent",
+    "Condition": "any",
     "conditionValue": 105002,
     "desc": "有金箍棒，棍的平A转成大圣平A"
   }

@@ -1,7 +1,7 @@
 [
   {
     "ID": 888666001,
-    "BuffTips": "主角，80%减伤，2倍速度，完美闪避范围加大，死亡自动复活",
+    "BuffTips": "主角，80%减伤，2倍速度，完美闪避范围加大，死亡自动复活,暴击/杀怪/打伤/被打伤回复棍势",
     "Duration": -1,
     "BuffEffects": [
       {
@@ -35,6 +35,39 @@
         "EffectParamsString": [],
         "EffectParams": [],
         "EffectParamsFloat": []
+      },
+     
+      {
+        "EffectTrigger": 7,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0],
+        "EffectParamsFloat": [5]
+      },
+       {
+        "EffectTrigger": 10,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0],
+        "EffectParamsFloat": [5]
+      },
+       {
+        "EffectTrigger": 11,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0],
+        "EffectParamsFloat": [5]
+      },
+       {
+        "EffectTrigger": 14,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0],
+        "EffectParamsFloat": [10]
       }
     ]
   },
@@ -80,7 +113,7 @@
   },
   {
     "ID": 888666003,
-    "BuffTips": "给怪加一倍的血上限",
+    "BuffTips": "给怪加2倍的血上限",
     "Duration": -1,
     "MaxLayer": 10,
     "BuffEffects": [
@@ -89,7 +122,7 @@
         "EffectType": 2,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [51, 10000, 0, 0],
+        "EffectParams": [51, 20000, 0, 0],
         "EffectParamsFloat": []
       }
     ]

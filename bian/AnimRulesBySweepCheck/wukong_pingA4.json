@@ -2,12 +2,13 @@
   {
     "montage": "AM_Dasheng_ComboA_04.AM_Dasheng_ComboA_04",
     "linkValue": 0,
-"scaleWeaponNum": 3,
+    "scaleWeaponNum": 3,
     "MoveOffset": 100,
     "CastActions": [
       {
         "Type": "buff",
-        "BuffIDs": [66655409],
+        "TimeDelay": 50,
+        "BuffIDs": [66655402],
         "BuffTime": 1500,
         "desc": "棍光特效粒子"
       }
@@ -59,10 +60,18 @@
     "montage": "AM_Wukong_ComboA_q4.AM_Wukong_ComboA_q4",
     "linkValue": 0,
     "scaleWeaponNum": 5,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "TimeDelay": 50,
+        "BuffIDs": [66655402],
+        "BuffTime": 1500,
+        "desc": "棍光特效粒子"
+      }
+    ],
     "SweepActions": [
       {
         "Type": "bullet",
-        "TimeDelay": 200,
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",

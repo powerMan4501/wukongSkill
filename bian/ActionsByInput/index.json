@@ -34,21 +34,37 @@
       }
     ]
   },
+  
   {
-    "code": "SSS",
+    "code": "SGSA",
     "actions": [
       {
-        "Type": "xuelunyan",
-        "desc": "血轮眼，如果当前是马喽就变身，如果当前已经变身，就执行敌人当前释放的技能"
+        "type": "BOSS",
+        "bossLabel": "SK_HFM_ShiGanDang",
+        "MagicSkillID": 220512,
+        "Name": "石敢当，小跳起扑地，中范围出现地面石头，然后石头爆炸"
       }
     ]
   },
   {
-    "code": "ALL",
+    "code": "SGSB",
     "actions": [
       {
-        "Type": "AllItem",
-        "desc": "得到所有物品"
+        "type": "BOSS",
+        "bossLabel": "SK_HFM_ShiGanDang",
+        "MagicSkillID": 220506,
+        "Name": "左脚踩地，然后慢速双手下砸引发地波"
+      }
+    ]
+  },
+   {
+    "code": "SGSC",
+    "actions": [
+      {
+        "type": "BOSS",
+        "bossLabel": "SK_HFM_ShiGanDang",
+        "MagicSkillID": 220508,
+        "Name": "大招，垂直打一拳砸地，然后引发大范围地爆"
       }
     ]
   }

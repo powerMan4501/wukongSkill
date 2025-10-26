@@ -89,7 +89,7 @@
         ]
       }
     ],
-    "hitEffects": [888555024],
+    "hitEffects": [888555025],
     "replaceEffects": true
   },
   {
@@ -98,6 +98,8 @@
     "linkValue": 5.366195,
     "addRadius": 500,
     "speedRate": 1.8,
+    "hitEffects": [888555025],
+    "replaceEffects": true,
     "SweepActions": [
       {
         "Type": "bullet",

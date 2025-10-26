@@ -124,8 +124,7 @@
       "Id": 401203,
       "CanBreak": true,
       "Name": "冲上去足球踢然后扇一巴掌 AM_HYS_LuoChaGui_01_Atk_03",
-      "Key": "XBUTTON2",
-      "Buffs": [1000095]
+      "Key": "XBUTTON2"
     },
     {
       "Id": 401215,

@@ -20,7 +20,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147189632"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147082936"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_bashanhu_01/Hair/HAIR_body_long_gs.HAIR_body_long_gs_TFX",
@@ -33,7 +33,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147189631"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147082935"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_bashanhu_01/Hair/HAIR_body_short.HAIR_body_short_TFX",
@@ -46,7 +46,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147189630"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147082934"
       }
     ],
     "InteractBones": [
@@ -113,7 +113,7 @@
     "UnitScale": null
   },
   "AttrFloat": {
-    "HpMax": 194400.0,
+    "HpMax": 227010.656,
     "MpMax": 0.0,
     "B1StunMax": 0.0,
     "StaminaDepletedLimit": 0.0,
@@ -138,9 +138,9 @@
     "PevalueMax": 0.0,
     "YinAbnormalAccMax": 120.0,
     "YangAbnormalAccMax": 120.0,
-    "HpMaxMul": 0.0,
+    "HpMaxMul": 24500.0,
     "MpMaxMul": 0.0,
-    "AtkMul": 2500.0,
+    "AtkMul": -2500.0,
     "DefMul": 0.0,
     "B1StunMaxMul": 0.0,
     "StaminaDepletedLimitMul": 0.0,
@@ -158,9 +158,9 @@
     "EnergyMinConsumeMul": 0.0,
     "EnergyConsumeSpeedMul": 0.0,
     "EnergyIncreaseSpeedMul": 0.0,
-    "HpMaxBase": 4860.0,
+    "HpMaxBase": 19353.0,
     "MpMaxBase": 0.0,
-    "AtkBase": 54.0,
+    "AtkBase": 282.0,
     "DefBase": 0.0,
     "B1StunMaxBase": 10000.0,
     "StaminaDepletedLimitBase": 0.0,
@@ -205,14 +205,14 @@
     "EnergyMinConsumeBase": 0.0,
     "EnergyConsumeSpeedBase": 0.0,
     "EnergyIncreaseSpeedBase": 0.0,
-    "Hp": 174935.0,
+    "Hp": 59622.6563,
     "Mp": 0.0,
-    "Atk": 67.5,
+    "Atk": 211.5,
     "Def": 0.0,
     "B1Stun": 0.0,
     "Stamina": 0.0,
     "StaminaRecover": 0.0,
-    "SkillSuperArmor": 500.0,
+    "SkillSuperArmor": 409.299957,
     "CritRate": 0.0,
     "CritMultiplier": 0.0,
     "Tenacity": 1.0,
