@@ -7,6 +7,9 @@ using UnrealEngine.Runtime;
 using UnrealEngine.Engine;
 using System.Linq;
 using BtlShare;
+using CsB1;
+using B1UI;
+using ResB1;
 namespace bian
 {
 
@@ -24,7 +27,7 @@ namespace bian
         public List<RuleAction>? bullets { get; set; }
         public List<RuleAction>? buffs { get; set; }
         public bool? noUseEffectLocation { get; set; }
-
+        public object[] Params { get; set; }
         public int BuffID { get; set; }
         public int SkillID { get; set; }
 
@@ -103,6 +106,8 @@ namespace bian
 
         public int? intervalTime { get; set; }
         public int? intervalTimes { get; set; }
+        public int? ItemID { get; set; }
+        public int? ItemCount { get; set; }
         public List<int> ProjectOffsetPosition { get; set; }
         public AActor? Caster { get; set; } // 临时存储施法者
         public AActor? Target { get; set; } // 临时存储目标
@@ -110,6 +115,10 @@ namespace bian
         public string? BornDirType { get; set; }
         public float? Scale3D { get; set; }
         public float? UnitScale { get; set; }
+        public int? actionId { get; set; }
+
+
+
 
 
 
@@ -397,23 +406,6 @@ namespace bian
                     if (action?.SkillID > 0)
                     {
                         Helper.CastVigorSkillByID(character, action.SkillID, action?.UnitScale ?? 1, (int?)(action?.Scale3D ?? 1));
-                        // ExecuteDelayedAction(() =>
-                        // {
-                        //     character.FollowCamera.RelativeLocation = new FVector(
-                        //         action?.XRate ?? -1300.0, action?.YRate ?? 0.0, action?.ZRate ?? 10.0);
-                        //     Helper.CastVigorSkillByID(character, action.SkillID, backTime);
-                        // }, 0).ContinueWith(async _ =>
-                        // {
-                        //     await Task.Delay(backTime);
-                        //     Utils.TryRunOnGameThread(() =>
-                        //     {
-                        //         var magicChangeComp = Helper.FindActorCompByClass<BUS_MagicallyChangeComp>(character);
-                        //         Helper.ResetVigorSkill(magicChangeComp, action.SkillID);
-                        //         BUS_EventCollectionCS.Get(character)?.Evt_UnitCastSkillTry.Invoke(
-                        //             new FCastSkillInfo(10199, ECastSkillSourceType.GM));
-                        //         character.FollowCamera.RelativeLocation = new FVector(0, 0, 0);
-                        //     });
-                        // });
                     }
                     break;
 
@@ -428,6 +420,83 @@ namespace bian
                     }
                     break;
 
+                case "weak_monster":
+                    Helper.WeakMonster();
+                    break;
+                case "strong_monster":
+                    // 加强怪
+                    Helper.StrongMonster();
+                    break;
+                case "addallsummonlifetime":
+
+                    BUS_EventCollectionCS.Get(character)?.Evt_AddAllSummonLifeTime.Invoke((float)(action?.SummonAliveTime ?? 100f));
+
+                    break;
+
+
+                case "ironbody":
+                    var eventCollection = BUS_EventCollectionCS.Get(character);
+                    if (eventCollection?.Evt_IronBodyStart != null)
+                    {
+                        eventCollection.Evt_IronBodyStart.Invoke();
+                    }
+                    break;
+                case "xuelunyan":
+                    var command = new Commands();
+                    command.xuelunyan(manager);
+                    break;
+                case "maidonghuilai":
+                    var commands = new Commands();
+                    commands.MaiDongHuiLai(null);
+                    break;
+                case "resetskillcd":
+                    BUS_EventCollectionCS.Get(character)?.Evt_ResetSkillCD.Invoke();
+                    break;
+
+                case "enterskillcam":
+                    if (action?.actionId != null)
+                    {
+                        BPS_EventCollectionCS.GetLocal(character).Evt_EnterSkillCam.Invoke(character, (int)action.actionId);
+                    }
+                    break;
+                case "exitskillcam":
+                    BPS_EventCollectionCS.GetLocal(character).Evt_ExitSkillCam.Invoke(character);
+                    break;
+
+                case "changeequip":
+                    if (action?.actionId != null)
+                    {
+                        EquipDesc equipDesc = GameDBRuntime.GetEquipDesc((int)action.actionId);
+                        if (equipDesc != null)
+                        {
+                            BUS_EventCollectionCS.Get(character).Evt_BattleLogicChangeEquip.Invoke(equipDesc.EquipPosition, equipDesc.Id);
+                        }
+                    }
+
+                    break;
+                case "additem":
+                    if (action?.ItemID > 0 && action?.ItemCount > 0)
+                    {
+                        Log.Info($"DoAction additem:{action.ItemID},ItemCount:{action?.ItemCount}");
+                        var listParams = new List<string> { action.ItemID.ToString(), action.ItemCount.ToString() };
+                        PlayerGmExecutor.TryInvokeGmCmd(GSG.GamePlayer, getPlayerDataMgr(), "AddItem", listParams);
+                        updateData();
+                    }
+
+
+                    break;
+
+                case "allitem":
+                    Log.Info($"DoAction AllItem");
+                    PlayerGmExecutor.TryInvokeGmCmd(GSG.GamePlayer, getPlayerDataMgr(), "AllItem", []);
+                    updateData();
+                    break;
+
+                case "alltaskitem":
+                    PlayerGmExecutor.TryInvokeGmCmd(GSG.GamePlayer, getPlayerDataMgr(), "AllTaskItem", []);
+                    updateData();
+
+                    break;
                 case "effect":
                     if (action.EffectID > 0)
                     {
@@ -438,8 +507,20 @@ namespace bian
             }
         }
 
+        public CommB1.PlayerDataMgr getPlayerDataMgr()
+        {
+            return GSG.GamePlayer.CreateTransaction((OPReason)1);
 
+        }
+        public void updateData()
+        {
+            var playerDataMgr = getPlayerDataMgr();
+            if (playerDataMgr != null)
+            {
+                playerDataMgr.Commit();
+            }
 
+        }
         public void DoAfterActions(List<RuleAction> actions)
         {
             if (actions == null || actions.Count == 0) return;

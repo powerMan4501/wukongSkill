@@ -131,9 +131,12 @@ namespace bian
                 LoadUtils.ModifyPlayCtrlDescData();
 
                 LoadUtils.ModifySuitDesc();
-
+                LoadUtils.ModifyPrice();
                 LoadUtils.ModifyHP();
                 LoadUtils.ModifySoulskill();
+                LoadUtils.ModifyCommDropRuleDesc();
+                LoadUtils.ModifyWeaponBuild();
+                LoadUtils.ModifyShopDesc();
                 LoadUtils.ModifyTrans();
 
                 LoadUtils.LoadAndApplyDamageExpandDesc();
@@ -142,11 +145,13 @@ namespace bian
                 isBuffConfigsLoaded = true;
             }
         }
-
+        public static List<ActionConfig> ActionsByInput;
+        public static string inputCodeStr;
         public static void loadAllStaticData(bool forceUpdate = false, int delayTime = 1000)
         {
 
             LoadComboConfigs();//全部连招
+            ActionsByInput = LoadUtils.LoadActionConfigs();
             if (isBuffConfigsLoaded && !forceUpdate) { return; }
             // 加载技能映射规则
             LoadUtils.LoadAllSkillMappingRules();
@@ -610,6 +615,7 @@ namespace bian
                         if (weaponComponent != null)
                         {
                             weaponComponent.SetRelativeScale3D(new FVector(num, 1, 1));
+                            // weaponComponent.SetWorldScale3D(new FVector(num, num, 1));
                         }
                     }
                 }
@@ -813,8 +819,30 @@ namespace bian
             if (Key != null)
             {
                 keyName = Key.GetFName().ToString();
+                inputCodeStr += keyName;
             }
-            Log.Info($"keyName: {keyName}" );
+
+            Log.Info($"keyName: {keyName} ,inputCodeStr:{inputCodeStr}");
+            if (ActionsByInput != null && ActionsByInput?.Count > 0)
+            {
+                var matchItem = ActionsByInput.FirstOrDefault(item => inputCodeStr?.ToLower()?.Contains(item.code?.ToLower()) ?? false
+                );
+
+                if (matchItem != null && matchItem?.actions?.Count > 0)
+                {
+                    var rule = new Rule();
+                    inputCodeStr = null;
+                    rule?.DoAfterActions(matchItem.actions);
+                }
+                ;
+
+
+
+            }
+            if (inputCodeStr != null && inputCodeStr?.Length > 20)
+            {
+                inputCodeStr = null;
+            }
             if (string.IsNullOrEmpty(keyName) || !keyToComboConfigsMap.ContainsKey(keyName))
             {
                 return;

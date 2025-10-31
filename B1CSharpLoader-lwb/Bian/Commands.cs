@@ -14,13 +14,15 @@ namespace bian
         public static int offset = 0;
         public static int prevIndex = 0;
         public static int ShieldMax = 6000;
-        public static int SkillSuperArmor = 6000;
+        public static int SkillSuperArmor = 20000;
 
-        public void MaiDongHuiLai(ModelManager manager)
+        public void MaiDongHuiLai(ModelManager? manager)
         {
-            // Log.Debug("bian: trigger maidonghuilai!");
+
             var character = Helper.GetBGUPlayerCharacterCS();
-            if (character.Mesh.SkeletalMesh.GetFullName().ToLower().IndexOf("SK_Wukong_Simple".ToLower()) > -1)
+            if (character == null) return;
+            var meshName = character?.Mesh?.SkeletalMesh?.GetFullName();
+            if (character?.Mesh?.SkeletalMesh?.GetFullName()?.ToLower()?.IndexOf("SK_Wukong_Simple".ToLower()) > -1)
             {
                 BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Stamina, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.StaminaMax));
                 BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Hp, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.HpMax));
@@ -35,36 +37,16 @@ namespace bian
                 BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Shield, ShieldMax);
                 BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.SkillSuperArmorMax, SkillSuperArmor);
                 BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.SkillSuperArmor, SkillSuperArmor);
-                var UnitBarInfoComp = Helper.FindActorCompByClass<BUS_UnitBarInfoComp>(character);
 
-                var World = Helper.GetWorld();
-                BGW_UIEventCollection bGW_UIEventCollection = BGW_UIEventCollection.Get(World);
-                Log.Info($"bian: bGW_UIEventCollection is {bGW_UIEventCollection?.GetFName()}" );
-                if (bGW_UIEventCollection != null)
-                {
-                    bGW_UIEventCollection.Evt_UI_SetShieldBarActive(ECSExtension.ToEntity(character), true);
-                }
-                if (UnitBarInfoComp != null)
-                {
-                    // 获取 UnitBarInfoData 私有字段
-                    var unitBarInfoDataField = typeof(BUS_UnitBarInfoComp).GetField("UnitBarInfoData",
-                        System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                var maxHulu = BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.BloodBottomNumMax);
+                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.BloodBottomNum, maxHulu);
 
-                    if (unitBarInfoDataField != null)
-                    {
-                        // 获取 UnitBarInfoData 实例
-                        var unitBarInfoData = unitBarInfoDataField.GetValue(UnitBarInfoComp);
-
-                        // 获取 ShieldShowInUI 属性
-                        var shieldShowInUIProperty = unitBarInfoData.GetType().GetProperty("ShieldShowInUI");
-
-                        if (shieldShowInUIProperty != null)
-                        {
-                            // 设置 ShieldShowInUI 为 true
-                            shieldShowInUIProperty.SetValue(unitBarInfoData, true);
-                        }
-                    }
-                }
+                // var World = Helper.GetWorld();
+                // BGW_UIEventCollection bGW_UIEventCollection = BGW_UIEventCollection.Get(World);
+                // if (bGW_UIEventCollection != null)
+                // {
+                //     bGW_UIEventCollection.Evt_UI_SetShieldBarActive(ECSExtension.ToEntity(character), true);
+                // }
 
             }
             else
@@ -73,7 +55,12 @@ namespace bian
                 BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Hp, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.HpMax));
                 BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Mp, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.MpMax));
             }
-            BGUFunctionLibraryCS.BGUAddBuff(character, character, 450, EBuffSourceType.GM, 1000);
+            if (character != null)
+            {
+                Helper.SetCharacterShieldActive(character, true);
+            }
+            BGUFunctionLibraryCS.BGUAddBuff(character, character, 450, EBuffSourceType.GM, 250);
+
         }
 
         public void SetActorTimeLineSpeed(ModelManager manager, float rate)
@@ -267,7 +254,59 @@ namespace bian
             }
 
         }
+        public void xuelunyan(ModelManager manager)
+        {
+            // Log.Debug("bian: trigger XueLongYan!");
+            var character = Helper.GetBGUPlayerCharacterCS();
+            var actor = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
 
+            if (actor != null && character != null)
+            {
+                var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
+                if (target != null && actor?.Mesh != null)
+                {
+
+                    if (actor?.Mesh?.GetName() == character.Mesh?.GetName())
+                    {
+                        UAnimInstance animInstance = actor.Mesh.GetAnimInstance();
+                        if (animInstance != null)
+                        {
+                            var montage = animInstance.GetCurrentActiveMontage();
+                            if (montage != null)
+                            {
+                                UAnimInstance animInstance_player = character.Mesh.GetAnimInstance();
+                                animInstance_player.Montage_Play(montage, 1.2f);
+                            }
+                        }
+                        return;
+                    }
+                    var model = Helper.ExportTamer(target);
+                    if (model != null)
+                    {
+                        if (((BaseModel)model).Label.ToLower().IndexOf("wukong") == -1)
+                        {
+                            if (manager.FindModelByLabel(((BaseModel)model).Label, "") == null)
+                            {
+                                manager.AddModel(model);
+                            }
+                            UAnimInstance animInstance = actor?.Mesh?.GetAnimInstance();
+                            if (animInstance != null)
+                            {
+                                var montage = animInstance.GetCurrentActiveMontage();
+                                model.TransToModel();
+                            }
+
+                        }
+
+                    }
+                    else
+                    {
+                        // Log.Error($"bian: export failed!");
+                    }
+                }
+            }
+
+        }
         public void ShowUI(ModelManager manager)
         {
             Manager.CreateUi();

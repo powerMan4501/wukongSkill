@@ -1,6 +1,7 @@
 ﻿
 using b1;
 using b1.BGW;
+using b1.ECS;
 using b1.Plugins.Calliope;
 using b1.Plugins.TressFX;
 using BtlB1;
@@ -189,6 +190,20 @@ namespace bian
             }
         }
 
+        public static void SetCharacterShieldActive(BGUCharacterCS character, bool isActive)
+        {
+            if (character == null) return;
+
+            // 获取UI事件集合
+            var uiEventCollection = BGW_UIEventCollection.Get(character.World);
+            if (uiEventCollection != null)
+            {
+                // 将角色转换为Entity
+                Entity entity = ECSExtension.ToEntity(character);
+                // 通过事件系统调用SetShieldBarActive
+                uiEventCollection.Evt_UI_SetShieldBarActive?.Invoke(entity, isActive);
+            }
+        }
 
         private static readonly Dictionary<Type, Dictionary<string, MethodInfo>> _methodCache = new Dictionary<Type, Dictionary<string, MethodInfo>>();
 
@@ -705,7 +720,7 @@ namespace bian
             fSummonReq.SpawnConfigWrap = FSummonSpawnConfigWrap.WrapSpawnConfig_BySummonCommDesc((Int32)SummonID, character);
             fSummonReq.SpawnConfigWrap.SummonAliveTime = SummonAliveTime;
             fSummonReq.SpawnConfigWrap.DestroyDelayTime = 0;
-
+            fSummonReq.SpawnConfigWrap.SpawnBirthBuff = [888666002];
             if (skillID.HasValue && skillID.Value > 0)
             {
                 var skillDesc = BGW_GameDB.GetSkillSDesc(skillID.Value, character);
@@ -1033,26 +1048,24 @@ namespace bian
                     BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Atk, atk);
 
                     var maxHp = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.HpMax);
-                    // BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.HpMax, maxHp);
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.HpMax, maxHp);
                     BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Hp, maxHp);
                 }
                 else
                 {
 
-
-                    var atk = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.Atk) + 50;
+                    var maxHp = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.HpMax);
+                    if (maxHp < 10000 * 150)
+                    {
+                        BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666003, EBuffSourceType.GM, -1);
+                    }
+                    var atk = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.Atk) + 20;
                     if (atk < 1000)
                     {
                         BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Atk, atk);
                     }
 
-                    var maxHp = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.HpMax);
-                    if (maxHp < 10000 * 10)
-                    {
-                        BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666003, EBuffSourceType.GM, -1);
-                    }
-
-                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Hp, maxHp);
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.HpMax, maxHp + 500);
                     BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.BurnDef, 0);
                     BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.ThunderDef, 0);
                     BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.PoisonDef, 0);
@@ -1065,10 +1078,67 @@ namespace bian
                     BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmuePoisonAcc, true);
                     BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueThunderAcc, true);
                     BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueFreezeAcc, true);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueDamage, true);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.CommonDamageImmue, true);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.StrongDamageImmue, true);
+
+                    Task.Run(async delegate
+                    {
+                        await Task.Delay(100);
+                        Utils.TryRunOnGameThread((Action)delegate
+                        {
+                            BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Hp, BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.HpMax));
+                        });
+                    });
                 }
             }
 
 
+        }
+
+        public static void WeakMonster()
+        {
+            AActor play = GetBGUPlayerCharacterCS();
+            if (play == null || play.World == null) return;
+            List<ABGUCharacter> allActorsOfClassList = getMonsterByDistance(9000);
+            if (allActorsOfClassList == null || allActorsOfClassList.Count == 0) return;
+            foreach (BGUCharacterCS item in allActorsOfClassList)
+            {
+
+                if (item == null || item?.GetFullName() == null)
+                {
+                    continue;
+                }
+                if (BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item))
+                {
+                    continue;
+                }
+                var atk = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.Atk);
+                if (atk > 10)
+                {
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Atk, atk - 10);
+                }
+                var maxHp = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.HpMax);
+                if (maxHp > 500)
+                {
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.HpMax, maxHp - 500);
+                }
+                BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.BurnDef, 0);
+                BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.ThunderDef, 0);
+                BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.PoisonDef, 0);
+                BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.FreezeDef, 0);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.FreezeImmue, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.BurnImmue, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.PoisonImmue, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ThunderImmue, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueBurnAcc, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmuePoisonAcc, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueThunderAcc, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueFreezeAcc, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueDamage, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.CommonDamageImmue, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.StrongDamageImmue, true);
+            }
         }
         public static bool isSameTeam(BGUPlayerCharacterCS monster)
         {
@@ -1240,9 +1310,9 @@ namespace bian
 
         public static ITransable? ExportTamer(BGUCharacterCS actor)
         {
-            LoadUtils.ExportDataToJson<FUStBuffDesc>("buff");
-            LoadUtils.ExportDataToJson<FUStBuffDispDesc>("buffdisp");
-            LoadUtils.ExportDataToJson<FUStSkillSDesc>("skill");
+            // LoadUtils.ExportDataToJson<ShopItemGroupDesc>("shopdesc");
+            // LoadUtils.ExportDataToJson<FUStBuffDispDesc>("buffdisp");
+            // LoadUtils.ExportDataToJson<FUStSkillSDesc>("skill");
             if (actor != null)
             {
                 BUTamerActor tM = actor.GetTamerOwner() as BUTamerActor;

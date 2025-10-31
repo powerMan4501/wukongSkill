@@ -15,6 +15,14 @@ using b1.Protobuf.DataAPI;
 using bian;
 using ResB1;
 using UnrealEngine.Engine;
+using b1.Protobuf.GSProtobufRuntimeAPI;
+
+
+public class ActionConfig
+{
+    public string code { get; set; }
+    public List<RuleAction> actions { get; set; }
+}
 
 public class DamageExpandConfig
 {
@@ -511,6 +519,8 @@ namespace bian
                             data = skillData as Dictionary<int, T>;
                         }
                         break;
+
+
                         // 可以继续添加其他类型的支持
                 }
 
@@ -1861,9 +1871,10 @@ namespace bian
 
                     {
                         var num = (int)itemData.QualityType;
-                        if (num > 5)
+                        var hpNum = (int)num * 2 * 1000;
+                        if (num > 6)
                         {
-                            num = 5;
+                            hpNum = (int)num * 1 * 1000;
                         }
                         if (itemData.DefaultFreezeDefValue > 100)
                         {
@@ -1883,8 +1894,8 @@ namespace bian
                         {
                             itemData.DefaultThunderDefValue = 50;
                         }
-                        var hpNum = (int)num * 10 * 10000;
-                        itemData.HPFixedDM = Math.Min(itemData.HPFixedDM + hpNum, 25 * 10000);
+
+                        itemData.HPFixedDM = Math.Min(itemData.HPFixedDM + hpNum, 40 * 10000);
 
                     }
                 }
@@ -1960,15 +1971,14 @@ namespace bian
             {
                 foreach (var attackItem in dataList.Values)
                 {
-                    if (attackItem.AttackRange > 100 && attackItem.AttackRange < 6000)
+                    if (attackItem.AttackRange > 100 && attackItem.AttackRange < 2000)
                     {
-                        attackItem.AttackRange = 6000;
+                        attackItem.AttackRange = 2000;
                     }
                     if (attackItem.AttackSelectZLimit > 0 && attackItem.AttackSelectZLimit < 1500)
                     {
                         attackItem.AttackSelectZLimit = 1500;
                     }
-
                 }
             }
 
@@ -2028,6 +2038,92 @@ namespace bian
                     soulSkill.CastEnergy = 2;
                 }
             }
+
+        }
+
+        public static void ModifyDrop()
+        {
+            var itemsList = BG_ProtobufDataAPI<FUStUnitBattleInfoExtendDesc>.Get().GetAll();
+            if (itemsList == null || itemsList.Count == 0) return;
+            var listArr = new List<int> { 23008, 34022, 34012 };
+            //91019  金趁心,业火晶
+            foreach (var item in itemsList.Values)
+            {
+                if (item.DropRule.Count >= 0)
+                {
+                    item.DropRule.AddRange(listArr);
+                }
+            }
+        }
+
+        public static void ModifyPrice()
+        {
+            RepeatedField<ItemDesc> itemsList = GameDBRuntime.GetTBItemDesc().List;
+            if (itemsList == null || itemsList.Count == 0) return;
+            foreach (var item in itemsList)
+            {
+                if (item.SellPrice > 0)
+                {
+                    item.SellPrice = item.SellPrice + 200 * 10000;
+                }
+            }
+
+            
+         
+        }
+        public static void ModifyCommDropRuleDesc()
+        {
+            var itemsList = BG_ProtobufDataAPI<CommDropRuleDesc>.Get().GetAll();
+            if (itemsList == null || itemsList.Count == 0) return;
+            // 100% 掉落
+
+            foreach (var item in itemsList.Values)
+            {
+                item.GroupDropRate = 100000;
+                item.RollType = DropRollType.All;
+                item.ExtraMoney = 100 * 10000;
+                item.ExtraExp = 500;
+
+                foreach (var Itemnum in item.RandDrop)
+                {
+                    Itemnum.Rate = 100000;
+                }
+                item.RandDrop.AddRange(new List<DropItemOne> { new DropItemOne { ItemId = 1006, Rate = 100000, MinNum = 1, MaxNum = 1 }, new DropItemOne { ItemId = 3961, Rate = 100000, MinNum = 1, MaxNum = 1 } });
+
+                foreach (var ItemLib in item.DropLib)
+                {
+                    ItemLib.Weight = 10000;
+                }
+            }
+        }
+        public static void ModifyWeaponBuild()
+        {
+            var itemsList = BG_ProtobufDataAPI<WeaponBuildDesc>.Get().GetAll();
+            if (itemsList == null || itemsList.Count == 0) return;
+            var listArr = new List<ItemOne> { new ItemOne { Id = 1002, Num = 10 } };
+            foreach (var item in itemsList.Values)
+            {
+                if (item.CostItem.Count > 0)
+                {
+                    item.CostItem.Clear();
+                    item.CostItem.AddRange(listArr);
+                }
+                if (item.TransformItem.Count > 0)
+                {
+                    item.TransformItem.Clear();
+                    item.TransformItem.AddRange(listArr);
+                }
+
+            }
+        }
+
+        public static void ModifyShopDesc()
+        {
+            var itemsList = BG_ProtobufDataAPI<ShopItemGroupDesc>.Get().GetAll();
+            Log.Info($"Loaded ShopItemGroupDesc: {itemsList?.Count}");
+            if (itemsList == null || itemsList.Count == 0) return;
+
+
         }
 
         public static void ModifyTrans()
@@ -2175,6 +2271,49 @@ namespace bian
             dataList.Add(config.ID, newExpand);
             return newExpand;
         }
+
+
+        public static List<ActionConfig> LoadActionConfigs(string configDirectory = null)
+        {
+            configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "ActionsByInput");
+            var actionConfigs = new List<ActionConfig>();
+
+            if (!Directory.Exists(configDirectory))
+            {
+                Log.Error($"Action configs directory not found: {configDirectory}");
+                try
+                {
+                    Directory.CreateDirectory(configDirectory);
+                    Log.Info($"Created action configs directory: {configDirectory}");
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Failed to create action configs directory: {ex.Message}");
+                    return actionConfigs;
+                }
+            }
+
+            foreach (string file in Directory.GetFiles(configDirectory, "*.json"))
+            {
+                try
+                {
+                    string json = File.ReadAllText(file);
+                    var configs = JsonConvert.DeserializeObject<List<ActionConfig>>(json);
+                    if (configs != null)
+                    {
+                        actionConfigs.AddRange(configs);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Error loading action config from {file}: {ex.Message}");
+                }
+            }
+
+            Log.Info($"Total loaded action configs: {actionConfigs.Count}");
+            return actionConfigs;
+        }
+
 
     }
 }
