@@ -1,0 +1,194 @@
+[
+  {
+    "desc": "超大的定海神针",
+    "ID": 84321001,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_DingHaiShenZhen_Big.AM_DingHaiShenZhen_Big"
+  },
+
+  {
+    "desc": "残躯安身法",
+    "ID": 84321002,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_JSDSAnShenShu.AM_JSDSAnShenShu"
+  },
+
+  {
+    "desc": "残躯定海神针，待bgm",
+    "ID": 84321003,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_JSDSDingHaiShenZhenA.AM_JSDSDingHaiShenZhenA"
+  },
+
+  {
+    "desc": "立棍小飞棍",
+    "ID": 84321004,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_JSDSLiGunXZA.AM_JSDSLiGunXZA"
+  },
+
+  {
+    "desc": "残躯版，横扫一下捅一下",
+    "ID": 84321005,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_01.AM_mgd_jsds_atk_01"
+  },
+
+  {
+    "desc": "逆时针横扫",
+    "ID": 84321006,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_01_01.AM_mgd_jsds_atk_01_01"
+  },
+
+  {
+    "desc": "顺时针超大范围横扫",
+    "ID": 84321007,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_01_01_01.AM_mgd_jsds_atk_01_01_01"
+  },
+
+  {
+    "desc": "前进棍花，然后砸",
+    "ID": 84321008,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_02.AM_mgd_jsds_atk_02"
+  },
+
+  {
+    "desc": "残躯江海翻",
+    "ID": 84321009,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_02_01_02.AM_mgd_jsds_atk_02_01_02"
+  },
+
+  {
+    "desc": "残躯枪Q5",
+    "ID": 84321010,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_02_02_short.AM_mgd_jsds_atk_02_02_short"
+  },
+
+  {
+    "desc": "残躯枪Q5",
+    "ID": 84321011,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_02_02_short_weak.AM_mgd_jsds_atk_02_02_short_weak"
+  },
+
+  {
+    "desc": "扔棍子，然后迅速冲上去接住棍子空中三连砸",
+    "ID": 84321012,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_03_02.AM_mgd_jsds_atk_03_02"
+  },
+
+  {
+    "desc": "捅一下，大圣空中转很多下，4a",
+    "ID": 84321013,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_04a.AM_mgd_jsds_atk_04a"
+  },
+
+  {
+    "desc": "大风车",
+    "ID": 84321014,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_06.AM_mgd_jsds_atk_06"
+  },
+  {
+    "desc": "小横扫一下，似乎可当平A",
+    "ID": 84321015,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_08_01.AM_mgd_jsds_atk_08_01"
+  },
+
+  {
+    "desc": "小捅一下似乎可当平A",
+    "ID": 84321016,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_08_01_02.AM_mgd_jsds_atk_08_01_02"
+  },
+
+  {
+    "desc": "满蓄戳棍",
+    "ID": 84321017,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_10_01.AM_mgd_jsds_atk_10_01"
+  },
+
+  {
+    "desc": "冲上去挑起",
+    "ID": 84321018,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_12_01.AM_mgd_jsds_atk_12_01"
+  },
+
+  {
+    "desc": "背小横扫",
+    "ID": 84321019,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_12_02.AM_mgd_jsds_atk_12_02"
+  },
+
+  {
+    "desc": "大风车",
+    "ID": 84321020,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_06.AM_mgd_jsds_atk_06"
+  },
+
+  {
+    "desc": "小砸一下，类似大圣模式转身定之后的砸",
+    "ID": 84320020,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_14_02_short.AM_mgd_jsds_atk_14_02_short"
+  },
+  {
+    "desc": "大风车",
+    "ID": 84321021,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_06.AM_mgd_jsds_atk_06"
+  },
+  {
+    "desc": "撑杆，空中下砸，不错",
+    "ID": 84321022,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_19.AM_mgd_jsds_atk_19"
+  },
+  {
+    "desc": "筋斗云空中追击三连横扫，不错",
+    "ID": 84321023,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_jdy_02.AM_mgd_jsds_atk_jdy_02"
+  },
+  {
+    "desc": "棍子变粗砸砸砸",
+    "ID": 84321024,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_jdy_03.AM_mgd_jsds_atk_jdy_03"
+  },
+  {
+    "desc": "棍子变粗砸一下",
+    "ID": 84321025,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_jdy_03_short.AM_mgd_jsds_atk_jdy_03_short"
+  },
+  {
+    "desc": "上筋斗云撞一下，然后4蓄劈棍",
+    "ID": 84321026,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_jdy_04.AM_mgd_jsds_atk_jdy_04"
+  },
+  {
+    "desc": "上筋斗云撞一下，然后落地二连横扫",
+    "ID": 84321027,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_jdy_05.AM_mgd_jsds_atk_jdy_05"
+  },
+  {
+    "desc": "连续几个横扫，可当切手",
+    "ID": 84321028,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_jdy_05_short.AM_mgd_jsds_atk_jdy_05_short"
+  },
+  {
+    "desc": "连续几个横扫，可当切手",
+    "ID": 84321029,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_jdy_05_short_weak.AM_mgd_jsds_atk_jdy_05_short_weak"
+  },
+  {
+    "desc": "筋斗云大风车",
+    "ID": 84321030,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_atk_jdy_06.AM_mgd_jsds_atk_jdy_06"
+  }
+  ,
+  {
+    "desc": "立棍分身，有bug",
+    "ID": 84321031,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_cm_02.AM_mgd_jsds_cm_02"
+  }
+  ,
+  {
+    "desc": "立棍分身，有bug",
+    "ID": 84321032,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_mgd_jsds_FenShen_02.AM_mgd_jsds_FenShen_02"
+  }
+  ,
+  {
+    "desc": "大范围横扫",
+    "ID": 84321033,
+    "TemplatePath": "/Game/00Main/Animation/MOD/AM/CanQu/AM_TianXian_ATK_01_01_01.AM_TianXian_ATK_01_01_01"
+  }
+]

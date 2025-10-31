@@ -3,12 +3,16 @@
   "desc": "888666005:雷，888666006 冰， 888666007火， 888666008毒",
   "Rules": [
     {
-      "Name": "定风珠，效果",
+      "Name": "定风珠，效果,小飞棍",
       "Description": "",
       "Filters": [
         {
           "Type": "effect",
           "EffectID": 1099201
+        },
+        {
+          "Type": "effect",
+          "EffectID": 70013201
         }
       ],
       "AfterActions": [
@@ -89,8 +93,6 @@
         }
       ]
     },
-
- 
 
     {
       "Name": "小骊龙锤子互砸",

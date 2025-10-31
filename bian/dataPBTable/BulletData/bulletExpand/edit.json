@@ -135,11 +135,44 @@
     "HitEffectsforChr": [888555034],
     "HitDestructibleStrengthType": 4
   },
-   {
+  {
     "desc": "石敢当",
     "ID": 22051202,
     "BulletCanThroughBlockage": 1,
     "HitEffectsforChr": [888555034],
     "HitDestructibleStrengthType": 4
+  },
+  {
+    "desc": "boss巨猿火圈",
+    "ID": 74010207,
+    "HitEffectsforChr": [888555033, 921230],
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
+  },
+  {
+    "desc": "波动",
+    "ID": 30050301,
+    "HitEffectsforChr": [888555033],
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
+  },
+  {
+    "desc": "广谋小蛇毒液",
+    "ID": 10380101,
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
+  },
+  {
+    "desc": "鼠弩手",
+    "ID": 1016901,
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
+  },
+  {
+    "desc": "金箍棒",
+    "ID": 70015801,
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1,
+    "HitEffectsforChr": [888555037]
   }
 ]

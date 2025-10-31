@@ -7,10 +7,8 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [30050301],
-            "OffsetX": 400,
-            "OffsetY": 400,
-            "desc": "金沙波动"
+            "ProjectTileIDs": [74010207],
+            "desc": "火圈"
           }
         ]
       }
@@ -25,16 +23,61 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [19998801],
-            "OffsetX": 400,
-            "OffsetY": 400,
-            "desc": "金沙波动"
+            "ProjectTileIDs": [30050301],
+            "desc": "波动"
           }
         ]
       }
     ]
   },
-  
+  {
+    "code": "ion",
+    "actions": [
+      {
+        "type": "ironbody",
+        "Name": "TTTB"
+      }
+    ]
+  },
+  {
+    "code": "RESET",
+    "actions": [
+      {
+        "type": "resetskillcd",
+        "Name": "技能cd"
+      }
+    ]
+  },
+
+  {
+    "code": "weak",
+    "actions": [
+      {
+        "type": "weak_monster",
+        "Name": "弱化怪物"
+      }
+    ]
+  },
+
+  {
+    "code": "zhuang",
+    "actions": [
+      {
+        "type": "strong_monster",
+        "Name": "加强怪物"
+      }
+    ]
+  },
+  {
+    "code": "adda",
+    "actions": [
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 999,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
   {
     "code": "SGSA",
     "actions": [
@@ -57,7 +100,7 @@
       }
     ]
   },
-   {
+  {
     "code": "SGSC",
     "actions": [
       {
@@ -65,6 +108,30 @@
         "bossLabel": "SK_HFM_ShiGanDang",
         "MagicSkillID": 220508,
         "Name": "大招，垂直打一拳砸地，然后引发大范围地爆"
+      }
+    ]
+  },
+  {
+    "code": "zhao",
+    "actions": [
+      {
+        "Type": "summon",
+        "SummonID": 1013901,
+        "SummonCount": 2,
+        "desc": "召唤2个精魄小火灵"
+      },
+      {
+        "Type": "summon",
+        "SummonID": 103801,
+        "SummonCount": 2,
+        "desc": "召唤2个蛇"
+      },
+
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 999,
+        "TimeDelay": 1000,
+        "Name": "增加召唤物存活时间"
       }
     ]
   }

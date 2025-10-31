@@ -1,0 +1,37 @@
+[
+  {
+    "desc": "空中侧身好几圈",
+    "ID": 64321001,
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_Atk_04a.AM_Dasheng_Atk_04a"
+  },
+
+  {
+    "desc": "砸一下，然后左右拍地，再滚回来扮猴子",
+    "ID": 64321002,
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Action/Montage/Attack/AM/AM_DaSheng_BaiNian_JieLiLuiPi_03.AM_DaSheng_BaiNian_JieLiLuiPi_03"
+  },
+
+  {
+    "desc": "砸一下，然后枪A5",
+    "ID": 64321003,
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Action/Montage/Attack/AM/AM_DaSheng_BaiNian_LiDingZhengZhan_01.AM_DaSheng_BaiNian_LiDingZhengZhan_01"
+  },
+
+  {
+    "desc": "扔飞棍，但满屏红雷特效太逆天",
+    "ID": 64321004,
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Action/Montage/Attack/AM/AM_DaSheng_FeiGun_DingHaiShenZheng_4.AM_DaSheng_FeiGun_DingHaiShenZheng_4"
+  },
+
+  {
+    "desc": "顺时针前扫一圈半，打完可以接江海翻",
+    "ID": 64321005,
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Action/Montage/Attack/AM/AM_DaSheng_HuiBangHengSao_Hong.AM_DaSheng_HuiBangHengSao_Hong"
+  },
+
+  {
+    "desc": "斩棍之后可接，空中侧身好几下",
+    "ID": 64321006,
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Action/Montage/Attack/AM/AM_DaSheng_YuanWuQv_ZhongPi.AM_DaSheng_YuanWuQv_ZhongPi"
+  }
+]

@@ -38,11 +38,12 @@
     },
 
     {
+      "type": "magic",
       "Id": 8569,
       "Name": "鼠弩手扔炸弹",
       "speedRate": 1.5,
       "Key": "S+D",
-      "type": "magic",
+
       "MagicSkillID": 202302
     },
     {
@@ -83,7 +84,7 @@
       "bossLabel": "SK_HFM_HFDS_01a",
       "MagicSkillID": 600823,
       "Name": "打腹板的黄风大圣,挥舞叉子砸击，重击很远",
-      "Key": "A+X",
+      "Key": "",
       "CanBreak": true
     },
     {
@@ -91,7 +92,7 @@
       "bossLabel": "SK_LuoChaGui_01",
       "MagicSkillID": 401203,
       "Name": "鬼王足球踢",
-      "Key": "S+X",
+      "Key": "A+X",
       "CanBreak": true
     },
     {
@@ -99,25 +100,30 @@
       "bossLabel": "SK_hys_zhanche_01a",
       "MagicSkillID": 405313,
       "Name": "喷射大量火球",
+      "Key": "",
+      "CanBreak": true
+    },
+    {
+      "type": "magic",
+      "Id": 8541,
+      "Name": "蘑菇女",
       "Key": "S+C",
       "CanBreak": true
     },
 
     {
-      "Type": "TRANS",
-      "ResId": 19,
-      "MagicSkillID": 19043,
-      "Name": "变小黄龙",
+      "type": "magic",
+      "Id": 8542,
+      "Name": "蘑菇男",
       "Key": "C+RBUTTON",
-      "CanBreak": true,
-      "Buffs": [1000809]
+      "CanBreak": true
     },
     {
       "type": "BOSS",
       "bossLabel": "SK_mgd_jsds",
       "MagicSkillID": 700158,
       "Name": "释放定海神针",
-      "Key": "A+LBUTTON"
+      "Key": ""
     },
     {
       "type": "BOSS",
@@ -147,7 +153,6 @@
       "Name": "安身",
       "Key": "C+XBUTTON2"
     },
-   
 
     {
       "Id": 50005,
@@ -169,6 +174,12 @@
       "Key": ""
     },
 
+    {
+      "Id": 84321001,
+      "CanBreak": true,
+      "Name": "残躯版定海神针",
+      "Key": "A+LBUTTON"
+    },
     {
       "Id": 10909,
       "CanBreak": true,
@@ -233,13 +244,22 @@
       "CanBreak": false
     },
     {
+      "Id": 8571,
+      "MagicSkillID": 303005,
+      "type": "magic",
+      "Buffers": [888666006],
+      "CanBreak": false,
+      "Name": "隼居士，左右扇风",
+      "Key": "NUMPAD1"
+    },
+    {
       "Id": 8522,
       "type": "magic",
       "Buffers": [888666006],
       "CanBreak": false,
       "Name": "无量蝠，冰",
       "UnitScale": 0.4,
-      "Key": "NUMPAD1"
+      "Key": ""
     },
     {
       "Id": 8514,

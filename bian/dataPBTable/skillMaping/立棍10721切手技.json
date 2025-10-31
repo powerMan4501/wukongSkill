@@ -1,25 +1,25 @@
 [
   {
     "OriginalId": 10721,
-    "MappedId": 54321014,
+    "MappedId": 84321033,
     "Condition": "hasBuff",
     "conditionValue": 20104,
-    "desc": "10721转成大圣Q4切手"
+    "desc": "10721转成大范围横扫"
   },
   {
     "OriginalId": 10721,
-    "MappedId": 54321012,
+    "MappedId": 84321028,
     "Condition": "hasBuff",
     "conditionValue": 20103,
-    "desc": "10721转成大圣Q3切手"
+    "desc": "10721转成连续几个横扫"
   },
 
   {
     "OriginalId": 10721,
-    "MappedId": 54321010,
+    "MappedId": 84321005,
     "Condition": "hasBuff",
     "conditionValue": 20102,
-    "desc": "10721风云转转成大圣Q2切手"
+    "desc": "残躯版，横扫一下捅一下"
   },
   {
     "OriginalId": 10721,

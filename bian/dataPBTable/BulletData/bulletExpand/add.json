@@ -22,7 +22,7 @@
   {
     "desc": "克隆金箍棒",
     "ID": 88880006,
-    "HitEffectsforChr": [888555024],
+    "HitEffectsforChr": [888555036],
     "HitDestructibleStrengthType": 4,
     "BulletSweepCheckGap": 5,
     "BulletSweepCheckDelayTime": 0.0,

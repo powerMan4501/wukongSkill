@@ -32,5 +32,111 @@
         ]
       }
     ]
+  },
+  {
+    "desc": "隼居士，举扇子+龙卷风",
+    "montage": "AM_lys_baitouweng_atk_02",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.4,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [30302201],
+            "BornDirOffsetXLeftValue": 45,
+            "BornDirOffsetXRightValue": 45,
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "ForTarget": true,
+            "desc": "发射冰剑气"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [30302201],
+            "BornDirOffsetXLeftValue": 135,
+            "BornDirOffsetXRightValue": 135,
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "ForTarget": true,
+            "desc": " 发射冰剑气"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "隼居士，螺旋前冲",
+    "montage": "AM_lys_baitouweng_atk_06_inCombo",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.4,
+    "hitEffects": [888555033],
+    "replaceEffects": true,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [30302201],
+            "BornDirOffsetXLeftValue": 45,
+            "BornDirOffsetXRightValue": 45,
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "ForTarget": true,
+            "desc": "发射冰剑气"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [30302201],
+            "BornDirOffsetXLeftValue": 135,
+            "BornDirOffsetXRightValue": 135,
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "ForTarget": true,
+            "desc": " 发射冰剑气"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "隼居士，左右扇风",
+    "montage": "AM_lys_baitouweng_atk_05",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.4,
+    "hitEffects": [888555033],
+    "replaceEffects": true,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [30302201],
+            "BornDirOffsetXLeftValue": 45,
+            "BornDirOffsetXRightValue": 45,
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "ForTarget": true,
+            "desc": "发射冰剑气"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [30302201],
+            "BornDirOffsetXLeftValue": 135,
+            "BornDirOffsetXRightValue": 135,
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "ForTarget": true,
+            "desc": " 发射冰剑气"
+          }
+        ]
+      }
+    ]
   }
 ]

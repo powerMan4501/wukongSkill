@@ -1,0 +1,89 @@
+[
+  {
+    "desc": "跳起，4蓄砸",
+    "ID": 74321001,
+    "TemplatePath": "/Game/00Main/Animation/Player/MGD_JSDS/Montage/AM_mgd_jsds_atk_07.AM_mgd_jsds_atk_07"
+  },
+  {
+    "desc": "大风车",
+    "ID": 74321002,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/Attack/AM/AM_JSDS_DaFengChe.AM_JSDS_DaFengChe"
+  },
+    {
+    "desc": "残躯版定海神针",
+    "ID": 74321003,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/Attack/AM/AM_JSDS_DingHaiShenZhen.AM_JSDS_DingHaiShenZhen"
+  },
+  {
+    "desc": "残躯蓄力戳棍",
+    "ID": 74321004,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/Attack/AM/AM_JSDS_DuanXvHongChuo.AM_JSDS_DuanXvHongChuo"
+  },
+  {
+    "desc": "残躯版，大圣Q2切手",
+    "ID": 74321005,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/Attack/AM/AM_JSDS_HengSaoQianChuo.AM_JSDS_HengSaoQianChuo"
+  },
+    {
+    "desc": "切手，后滚翻，扔棍子，挑一下，捅一下",
+    "ID": 74321006,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/Attack/AM/AM_JSDS_KongFanZhiGun_ShiPo.AM_JSDS_KongFanZhiGun_ShiPo"
+  },
+  {
+    "desc": "捅一下，然后空中大圣4a",
+    "ID": 74321007,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/Attack/AM/AM_JSDS_LianChuoLunZhuan.AM_JSDS_LianChuoLunZhuan"
+  },
+
+  {
+    "desc": "撑杆砸",
+    "ID": 74321008,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/Attack/AM/AM_JSDS_LiGunChengGan_ZhongPi_19.AM_JSDS_LiGunChengGan_ZhongPi_19"
+  },
+
+   {
+    "desc": "立棍召唤N个小飞棍",
+    "ID": 74321009,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/Attack/AM/AM_JSDS_LiGunFeiYing.AM_JSDS_LiGunFeiYing"
+  },
+   {
+    "desc": "踢几下，棍打几下",
+    "ID": 74321010,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/Attack/AM/AM_JSDS_LingKongLianTi.AM_JSDS_LingKongLianTi"
+  },
+
+   {
+    "desc": "飞起踩头+4蓄劈棍",
+    "ID": 74321011,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/Attack/AM/AM_JSDS_TengKongFuChong_ZhongPi_4.AM_JSDS_TengKongFuChong_ZhongPi_4"
+  },
+
+   {
+    "desc": "棍花，然后砸",
+    "ID": 74321012,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/Attack/AM/AM_JSDS_WuGunXiaZa.AM_JSDS_WuGunXiaZa"
+  },
+
+  {
+    "desc": "Q3后左右小横扫",
+    "ID": 74321013,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/Attack/AM/AM_JSDS_YaoJianGunHua.AM_JSDS_YaoJianGunHua"
+  },
+  {
+    "desc": "踢棍子过去，然后飞棍去拿棍子，空中砸好几下",
+    "ID": 74321014,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/Attack/AM/AM_JSDS_ZhiGun_DaLunZhuan_TengKong.AM_JSDS_ZhiGun_DaLunZhuan_TengKong"
+  },
+
+  {
+    "desc": "残躯安身法",
+    "ID": 74321015,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/FaShu/AM/AM_JSDS_FaShu_AnShenFa_TengKong.AM_JSDS_FaShu_AnShenFa_TengKong"
+  },
+
+   {
+    "desc": "立棍，召唤分身，有bug",
+    "ID": 74321016,
+    "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/FaShu/AM/AM_JSDS_FaShu_LiGunGanTou_HaoMaoHuaSheng.AM_JSDS_FaShu_LiGunGanTou_HaoMaoHuaSheng"
+  }
+]

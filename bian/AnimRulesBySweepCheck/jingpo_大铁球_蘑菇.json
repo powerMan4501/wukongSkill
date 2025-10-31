@@ -1,0 +1,68 @@
+[
+  {
+    "desc": "大铁球，冲撞",
+    "montage": "AM_50_hys_ball_01_atk_02_",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.5,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "hitEffects": [888555034],
+    "replaceEffects": true,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1016262],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "蘑菇男",
+    "montage": "AM_70_zhusun_01_atk_02_Lv",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.5,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 5800,
+        "desc": "霸体"
+      }
+    ],
+    "hitEffects": [888555031],
+    "replaceEffects": true
+  },
+  {
+    "desc": "蘑菇女",
+    "montage": "AM_70_zhusun_03_atk_01",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.5,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 5800,
+        "desc": "霸体"
+      }
+    ]
+  }
+]

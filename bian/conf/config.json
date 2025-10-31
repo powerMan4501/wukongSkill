@@ -514,7 +514,7 @@
       "Name": "导出当前关卡支持变身的所有BOSS的配置"
     },
     {
-      "Key": "J",
+      "Key": "",
       "Type": "COMMAND",
       "Label": "SwitchPlayerTeamWithTarget",
       "Name": "与当前锁定的目标交换阵营（无目标时恢复玩家默认阵营）",
@@ -535,7 +535,7 @@
       "AlawaysCanCast": false
     },
     {
-      "Key": "K",
+      "Key": "",
       "Type": "COMMAND",
       "Label": "SyncTeamWithTarget",
       "Name": "与当前锁定的目标同步阵营",

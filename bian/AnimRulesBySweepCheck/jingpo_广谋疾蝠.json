@@ -21,6 +21,12 @@
             "desc": "发射光球"
           }
         ]
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 999,
+        "TimeDelay": 2500,
+        "Name": "增加召唤物存活时间"
       }
     ]
   },

@@ -1,0 +1,41 @@
+[
+  {
+    "desc": "盾牌，精魄技能",
+    "montage": "AM_50_hys_huijingrenou_03_soulskill",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "CastActions": [
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 999,
+        "TimeDelay": 1500,
+        "Name": "增加召唤物存活时间"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011198, 30050301],
+            "hasBuff": 888666006,
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "有冰buff，金沙波动"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74010207, 40550101],
+            "noHasAnyBuff": [888666006],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "没有冰buff，鳖宝子弹和火圈"
+          }
+        ]
+      }
+    ]
+  }
+]

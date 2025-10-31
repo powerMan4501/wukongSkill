@@ -269,13 +269,38 @@
     "InputCore": "ThumbMouseButton",
     "desc": "劈棍下，10705"
   },
+   {
+    "nowMontage": ".AM_TianXian_ATK_01_01_01",
+    "rate": 0.5,
+    "skillID": 84321006,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "desc": "接:逆时针横扫"
+  },
+   {
+    "nowMontage": "AM_mgd_jsds_atk_01_01.AM_mgd_jsds_atk_01_01",
+    "rate": 0.5,
+    "skillID": 84321007,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "desc": "逆时针横扫接，顺时针超大范围横扫"
+  },
+   {
+    "nowMontage": "AM_mgd_jsds_atk_01_01_01.AM_mgd_jsds_atk_01_01_01",
+    "rate": 0.5,
+    "skillID": 84321009,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton",
+    "desc": "顺时针超大范围横扫接，残躯江海翻"
+  },
   {
-    "skillID": 50001,
+    "skillID": 84321033,
     "Condition": "StanceProp",
     "conditionValue": 0,
     "InputCore": "ThumbMouseButton",
-    "desc": "立棍下，50001"
+    "desc": "立棍下，大范围横扫"
   },
+  
   {
     "skillID": 54321002,
     "Condition": "StancePoke",

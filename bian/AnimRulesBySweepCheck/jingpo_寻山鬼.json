@@ -1,0 +1,39 @@
+[
+  {
+    "desc": "精魄技能",
+    "montage": "AM_30_lys_xunshangui_01a_atk_03_0",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "hitEffects": [888555034],
+    "replaceEffects": true
+  },
+
+  {
+    "desc": "地狼",
+    "montage": "AM_20_hfm_suoyang_01a_atk_05",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "hitEffects": [888555034],
+    "replaceEffects": true
+  }
+]

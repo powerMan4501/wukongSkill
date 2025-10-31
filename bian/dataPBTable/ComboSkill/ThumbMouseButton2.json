@@ -141,10 +141,10 @@
     "nowMontage": "AM_Wukong_ComboB_q2.AM_Wukong_ComboB_q2",
     "rate": 0.3,
     "type": "magic",
-    "skillID": 8517,
+    "skillID": 8576,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "戳棍平A2接虎伥"
+    "desc": "戳棍平A2巡山鬼"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_03.AM_Dasheng_ComboA_03",
@@ -282,28 +282,28 @@
     "nowMontage": "AM_Wukong_ComboA_z_01.AM_Wukong_ComboA_z_01",
     "rate": 0.95,
     "type": "magic",
-    "skillID": 8513,
+    "skillID": 8517,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "马喽破棍10705接：大头磕头"
+    "desc": "马喽破棍10705接：虎怅"
   },
 
   {
     "nowMontage": "AM_Wukong_ComboA_z_02",
     "rate": 1.95,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700140,
+    "type": "magic",
+    "skillID": 8532,
+    "MagicSkillID": 11332,
     "InputCore": "ThumbMouseButton2",
     "Condition": "any",
-    "desc": "如果当前使用的技能是10707，  接残躯空中侧身好几次"
+    "desc": "如果当前使用的技能是10707，大铁球"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_01_Z_2",
     "rate": 1.9,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700140,
+    "type": "magic",
+    "skillID": 8532,
+    "MagicSkillID": 11332,
     "InputCore": "ThumbMouseButton2",
     "Condition": "any",
     "desc": "如果当前使用的技能是10707， 接残躯空中侧身好几次"
@@ -339,6 +339,20 @@
     "InputCore": "ThumbMouseButton2",
     "desc": "如果当前使用的技能是残躯江海翻，残躯跳起空中踢腿落地再横扫"
   },
+
+
+  
+   {
+    "nowMontage": ".AM_wukong_combob_z_01",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8570,
+    "UnitScale": 0.8,
+    "MagicSkillID": 10170,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "如果当前使用的技能是退寸，地狼"
+  },
   {
     "nowMontage": "AM_wukong_combob_z_02.AM_wukong_combob_z_02",
     "rate": 0.7,
@@ -365,12 +379,11 @@
     "nowMontage": "AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1",
     "rate": 1,
     "type": "magic",
-    "skillID": 8471,
-    "backTime": 5000,
-    "MagicSkillID": 303003,
+    "skillID": 8571,
+    "MagicSkillID": 303016,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "接隼居士飞起冰5下"
+    "desc": "接螺旋前冲"
   },
 
   {
@@ -378,11 +391,10 @@
     "rate": 1,
     "type": "magic",
     "skillID": 8471,
-    "backTime": 5000,
-    "MagicSkillID": 303003,
+    "MagicSkillID": 303002,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "接接隼居士飞起冰5下"
+    "desc": "接举扇子+龙卷风"
   },
 
   {

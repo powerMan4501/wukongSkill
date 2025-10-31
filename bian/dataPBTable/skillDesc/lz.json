@@ -84,7 +84,7 @@
   {
     "desc": "4a立棍切手接招专用，筋斗云冲刺上去打好几下",
     "ID": 54321015,
-    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_ComboA_03_Z_2.AM_Dasheng_ComboA_03_Z_2"
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Action/Montage/Attack/AM/AM_DaSheng_YuanWuQv_ZhongPi.AM_DaSheng_YuanWuQv_ZhongPi"
   },
 
   {
@@ -96,7 +96,7 @@
   {
     "desc": "2a劈棍切手接招专用，",
     "ID": 54321017,
-    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_ComboA_02_Z_2.AM_Dasheng_ComboA_02_Z_2"
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_Atk_04a.AM_Dasheng_Atk_04a"
   },
 
   {
@@ -120,7 +120,7 @@
   {
     "desc": "4a劈棍切手接招，残躯招：空中转很多下",
     "ID": 54321021,
-    "TemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboC/AM_wukong_comboc_z_02_ycw.AM_wukong_comboc_z_02_ycw"
+    "TemplatePath": "/Game/00Main/Animation/Player/MGD_JSDS/Montage/AM_mgd_jsds_atk_07.AM_mgd_jsds_atk_07"
   },
 
   
