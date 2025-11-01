@@ -188,7 +188,7 @@
 
   {
     "nowMontage": "AM_JSDS_TengKongFuChong_ZhongPi_4",
-    "rate": 1.4,
+    "rate": 0.5,
     "skillID": 74321008,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
@@ -201,5 +201,13 @@
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "接跳起，4蓄砸 AM_mgd_jsds_atk_07"
+  },
+  {
+    "nowMontage": "AM_mgd_jsds_atk_07",
+    "rate": 1.4,
+    "skillID": 74321002,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "接大风车 AM_JSDS_DaFengChe"
   }
 ]

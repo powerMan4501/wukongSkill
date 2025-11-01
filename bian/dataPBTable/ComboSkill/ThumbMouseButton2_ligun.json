@@ -2,12 +2,10 @@
   {
     "nowMontage": "AM_Wukong_Xuli_C_attack_4",
     "rate": 0.4,
-    "type": "BOSS",
-    "bossLabel": "SK_hys_shanzhen_01",
-    "MagicSkillID": 580103,
+    "skillID": 84321004,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "立棍4，迅速冲上去撞"
+    "desc": "立棍4，立棍小飞棍"
   },
 
   {

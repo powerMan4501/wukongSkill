@@ -1,41 +1,11 @@
 [
   {
-    "code": "LeftShiftwS",
-    "actions": [
-      {
-        "Type": "skill",
-        "SkillID": 84321001,
-        "desc": "超大的定海神针"
-      }
-    ]
-  },
-  {
     "code": "CapsLock",
     "actions": [
       {
         "Type": "skill",
         "SkillID": 84321023,
         "desc": "筋斗云空中追击三连横扫，不错"
-      }
-    ]
-  },
-  {
-    "code": "LeftShifts",
-    "actions": [
-      {
-        "Type": "skill",
-        "SkillID": 84321004,
-        "desc": "立棍小飞棍"
-      }
-    ]
-  },
-  {
-    "code": "LeftShiftd",
-    "actions": [
-      {
-        "Type": "skill",
-        "SkillID": 84321012,
-        "desc": "扔棍子，然后迅速冲上去接住棍子空中三连砸"
       }
     ]
   }
