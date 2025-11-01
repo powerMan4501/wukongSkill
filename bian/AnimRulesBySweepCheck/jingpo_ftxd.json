@@ -88,13 +88,13 @@
     ]
   },
   {
-    "desc": "巨猿疯狂砸地",
+    "desc": "巨猿ftxd",
     "montage": "AM_player_ftxd",
     "linkValue": 0,
     "addRadius": 500,
     "speedRate": 1.4,
     "AMScaleRate": 10,
-    "hitEffects": [888555035],
+    "hitEffects": [888555040],
     "CastActions": [
       {
         "Type": "buff",

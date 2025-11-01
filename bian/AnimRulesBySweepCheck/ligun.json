@@ -165,12 +165,6 @@
     "linkValue": 0.4666667,
     "speedRate": 1.4,
     "scaleWeaponNum": 3,
-    "CastActions": [
-      {
-        "Type": "removeBuff",
-        "BuffID": 20103
-      }
-    ],
     "SweepActions": [
       {
         "Type": "bullet",

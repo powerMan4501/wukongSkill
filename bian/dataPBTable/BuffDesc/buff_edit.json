@@ -14,16 +14,7 @@
     "BuffTips": "铜头成功后免伤时间由0.3秒改成1.5秒",
     "Duration": 1500
   },
-  {
-    "ID": 287,
-    "BuffTips": "把识破buff，增加到0.9秒",
-    "Duration": 900
-  },
-  {
-    "ID": 293,
-    "BuffTips": "把戳棍识破buff，增加到0.9秒",
-    "Duration": 900
-  },
+  
   {
     "ID": 2014,
     "BuffTips": "飞龙棍-表现，条件改成没有火buff",

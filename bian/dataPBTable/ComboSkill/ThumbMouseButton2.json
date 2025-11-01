@@ -239,13 +239,39 @@
   {
     "nowMontage": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05",
     "rate": 0.9,
-    "type": "magic",
-    "skillID": 8526,
-    "MagicSkillID": 300505,
+    "skillID": 84321028,
     "Condition": "StanceHeavy",
     "conditionValue": 0,
     "InputCore": "ThumbMouseButton2",
-    "desc": "劈棍平A5，接不能以武入禅：慢速打一拳+排云掌：AM_LYS_TuiSeng_02_Atk_Fast_05a"
+    "desc": "劈棍平A5，接 连续几个横扫 AM_mgd_jsds_atk_jdy_05_short"
+  },
+  {
+    "nowMontage": "AM_mgd_jsds_atk_jdy_05_short",
+    "rate": 0.9,
+    "skillID": 64321001,
+    "Condition": "any",
+    "conditionValue": 0,
+    "InputCore": "ThumbMouseButton2",
+    "desc": "连续几个横扫 空中侧身好几圈 AM_Dasheng_Atk_04a"
+  },
+  {
+    "nowMontage": ".AM_Dasheng_Atk_04a",
+    "rate": 0.9,
+    "skillID": 84321026,
+    "Condition": "any",
+    "conditionValue": 0,
+    "InputCore": "ThumbMouseButton2",
+    "desc": "接上筋斗云撞一下，然后4蓄劈棍 AM_mgd_jsds_atk_jdy_04"
+  },
+
+  {
+    "nowMontage": "AM_mgd_jsds_atk_jdy_04",
+    "rate": 0.9,
+    "skillID": 84321023,
+    "Condition": "any",
+    "conditionValue": 0,
+    "InputCore": "ThumbMouseButton2",
+    "desc": "接不能筋斗云空中追击三连横扫 AM_mgd_jsds_atk_jdy_02"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_05",
@@ -290,7 +316,7 @@
 
   {
     "nowMontage": "AM_Wukong_ComboA_z_02",
-    "rate": 1.95,
+    "rate": 1.4,
     "type": "magic",
     "skillID": 8532,
     "MagicSkillID": 11332,
@@ -300,20 +326,32 @@
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_01_Z_2",
-    "rate": 1.9,
-    "type": "magic",
-    "skillID": 8532,
-    "MagicSkillID": 11332,
+    "rate": 1.4,
+    "skillID": 84321024,
     "InputCore": "ThumbMouseButton2",
     "Condition": "any",
-    "desc": "如果当前使用的技能是10707， 接残躯空中侧身好几次"
+    "desc": "如果当前使用的技能是10707， 接棍子变粗砸砸砸AM_mgd_jsds_atk_jdy_03"
+  },
+  {
+    "nowMontage": "AM_mgd_jsds_atk_jdy_03",
+    "rate": 1.1,
+    "skillID": 84321022,
+    "InputCore": "ThumbMouseButton2",
+    "Condition": "any",
+    "desc": "AM_mgd_jsds_atk_jdy_03接撑杆，空中下砸 AM_mgd_jsds_atk_19"
+  },
+  {
+    "nowMontage": "AM_mgd_jsds_atk_19",
+    "rate": 1.1,
+    "skillID": 84321026,
+    "InputCore": "ThumbMouseButton2",
+    "Condition": "any",
+    "desc": "撑杆，空中下砸 AM_mgd_jsds_atk_19 接 上筋斗云撞一下，然后4蓄劈棍AM_mgd_jsds_atk_jdy_04"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_03_Z_2",
     "rate": 1.9,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700153,
+    "skillID": 74321011,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "如果当前使用的技能是大圣江海翻，残躯跳起空中踢腿落地再横扫"
@@ -321,9 +359,7 @@
   {
     "nowMontage": "AM_mgd_jsds_atk_02_01_02",
     "rate": 1.9,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700153,
+    "skillID": 74321011,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "如果当前使用的技能是残躯江海翻，残躯跳起空中踢腿落地再横扫"
@@ -332,17 +368,13 @@
   {
     "nowMontage": "AM_wukong_comboc_z_02",
     "rate": 2,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700153,
+    "skillID": 84321014,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "如果当前使用的技能是残躯江海翻，残躯跳起空中踢腿落地再横扫"
+    "desc": "如果当前使用的技能是立棍的江海翻，残躯跳起空中踢腿落地再横扫"
   },
 
-
-  
-   {
+  {
     "nowMontage": ".AM_wukong_combob_z_01",
     "rate": 0.3,
     "type": "magic",
@@ -420,12 +452,26 @@
     "desc": "转身定，接杨戬飞过去开山斧"
   },
   {
+    "nowMontage": ".AM_wukong_comboc_z_01_start",
     "type": "magic",
-    "skillID": 8527,
-    "Condition": "hasBuff",
+    "rate": 0.1,
+    "skillID": 8532,
+    "MagicSkillID": 11332,
+    "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "conditionValue": 800010723,
-    "desc": "风云转结束，接虫总兵"
+    "conditionValue": 0,
+    "desc": "风云转开始，大铁球"
+  },
+  {
+    "nowMontage": ".AM_wukong_comboc_z_01_end",
+    "type": "magic",
+    "rate": 0.1,
+    "skillID": 8532,
+    "MagicSkillID": 11332,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "conditionValue": 0,
+    "desc": "风云转end，大铁球"
   },
   {
     "nowMontage": "AM_dasheng_atk_04a",

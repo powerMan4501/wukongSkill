@@ -87,6 +87,52 @@
       }
     ]
   },
+  {
+    "desc": "残躯棍花 ",
+    "montage": "CanQu/AM_mgd_jsds_atk_02",
+    "scaleWeaponNum": 2,
+    "linkValue": 0.2993329,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 88880009,
+            "hasBuff": 888666007,
+            "ForTarget": true,
+            "desc": "有火buff，火焰剑气"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 88880003,
+            "hasBuff": 888666006,
+            "BornDirOffsetXLeftValue": 91,
+            "BornDirOffsetXRightValue": 91,
+            "ForTarget": true,
+            "desc": "有冰buff，冰剑气"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 43110102,
+            "noHasAnyBuff": [888666007, 888666006, 888666008],
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "ForTarget": true,
+            "desc": "没有冰火毒buff，靡道人剑气"
+          },
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 30131501,
+            "hasBuff": 888666008,
+            "ForTarget": true,
+            "desc": "有毒buff，红剑气"
+          }
+        ]
+      }
+    ]
+  },
 
   {
     "desc": "棍花 重击",
@@ -199,7 +245,7 @@
     "SweepActions": [
       {
         "Type": "removeBuff",
-        "BuffIDs": [123, 20102],
+        "BuffIDs": [123],
         "desc": "移除破隐一击"
       }
     ]

@@ -4,7 +4,8 @@
     "montage": "AM_HYS_NiaoZui_Atk_",
     "linkValue": 0,
     "addRadius": 200,
-     "CastActions": [
+    "speedRate": 1.5,
+    "CastActions": [
       {
         "Type": "buff",
         "BuffIDs": [211],
@@ -35,7 +36,7 @@
     "speedRate": 1.9,
     "linkValue": 2.666667,
     "addRadius": 200,
-     "CastActions": [
+    "CastActions": [
       {
         "Type": "buff",
         "BuffIDs": [211],
@@ -65,6 +66,7 @@
     "montage": "AM_50_hys_niaozui_atk_10",
     "linkValue": 3.666667,
     "addRadius": 200,
+    "speedRate": 1.5,
     "SweepActions": [
       {
         "Type": "bullet",

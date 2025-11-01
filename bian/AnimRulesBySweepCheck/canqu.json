@@ -174,10 +174,6 @@
         "BuffIDs": [66655407],
         "BuffTime": 2900,
         "desc": "棍光特效粒子"
-      },
-      {
-        "Type": "removeBuff",
-        "BuffID": 20104
       }
     ],
     "SweepActions": [
@@ -593,4 +589,5 @@
     "hitEffects": [888555034],
     "replaceEffects": true
   }
+  
 ]

@@ -162,10 +162,10 @@
   {
     "nowMontage": ".AM_wukong_comboc_z_02",
     "rate": 2,
-    "skillID": 10713,
+    "skillID": 84321027,
     "Condition": "any",
     "InputCore": "ThumbMouseButton",
-    "desc": "如果当前使用的技能是江海翻，且播放了2s以上，按鼠标右键满足条件可以使出退寸AM_wukong_combob_z_01"
+    "desc": "如果当前使用的技能是江海翻，且播放了2s以上，上筋斗云撞一下，然后落地二连横扫"
   },
   {
     "nowMontage": ".AM_wukong_combob_z_01",

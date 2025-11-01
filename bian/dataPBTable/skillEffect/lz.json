@@ -145,5 +145,23 @@
     "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
     "EffectParamsFloat": [17400.0, 1740.0, 74000.0, 7400.0, 0.0, 0.0, 7400],
     "EffectParamsStr": ["【主角】蓄力4"]
+  },
+
+  {
+    "desc": "4%+740,超大的定海神针,残躯空中三连击",
+    "ID": 888555039,
+    "EffectType": 1,
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
+    "EffectParamsFloat": [17400.0, 1740.0, 74000.0, 7400.0, 0.0, 0.0, 7400],
+    "EffectParamsStr": ["【主角】蓄力4"]
+  },
+
+  {
+    "desc": "给残躯移植的其他技能用的",
+    "ID": 888555040,
+    "EffectType": 1,
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444401],
+    "EffectParamsFloat": [7400.0, 740.0, 7400.0, 7400.0, 0.0, 0.0, 7400],
+    "EffectParamsStr": ["【主角】蓄力4"]
   }
 ]

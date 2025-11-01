@@ -1,13 +1,51 @@
 [
   {
-    "nowMontage": "_xuli_attack_5",
-    "rate": 2.2,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700146,
+    "nowMontage": ".AM_dasheng_flystick",
+    "rate": 0.6,
+    "skillID": 84321025,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "劈棍5蓄接残躯分身劈棍"
+    "desc": "飞棍，棍子变粗砸一下"
+  },
+  {
+    "nowMontage": ".AM_Wukong_FlyStick",
+    "rate": 0.6,
+    "skillID": 84321025,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "飞棍，棍子变粗砸一下"
+  },
+  {
+    "nowMontage": "AM_DingHaiShenZhen_Big",
+    "rate": 0.8,
+    "skillID": 84321014,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "超大定海神针接大风车 AM_mgd_jsds_atk_06"
+  },
+   {
+    "nowMontage": "AM_mgd_jsds_atk_06",
+    "rate": 0.8,
+    "skillID": 84321024,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "大风车 接 棍子变粗砸砸砸 AM_mgd_jsds_atk_jdy_03"
+  },
+  {
+    "nowMontage": "_xuli_attack_5",
+    "rate": 2.2,
+    "skillID": 84321023,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "劈棍5蓄接 筋斗云空中追击三连横扫 AM_mgd_jsds_atk_jdy_02"
+  },
+  {
+    "nowMontage": "AM_mgd_jsds_atk_jdy_02",
+    "rate": 1.2,
+    "skillID": 84321022,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "筋斗云空中追击三连横扫 接撑杆，空中下砸AM_mgd_jsds_atk_19"
   },
   {
     "nowMontage": "_xuli_attack_4",
@@ -23,12 +61,10 @@
   {
     "nowMontage": "_xuli_attack_3",
     "rate": 1.8,
-    "type": "magic",
-    "skillID": 8526,
-    "MagicSkillID": 300508,
+    "skillID": 74321008,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "劈棍3蓄接不能：很长的摆架势前摇之后，打出好几个排云掌 "
+    "desc": "撑杆砸 "
   },
 
   {
@@ -45,25 +81,125 @@
   {
     "nowMontage": "_xuli_attack_1",
     "rate": 1.2,
-    "type": "magic",
-    "skillID": 8535,
-    "MagicSkillID": 405502,
-    "UnitScale": 0.8,
-    "speedRate": 1.9,
+    "skillID": 84321025,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "劈棍1，鳖宝锤子砸"
+    "desc": "劈棍1，棍子变粗砸一下"
   },
   {
     "nowMontage": "_xuli_attack_0",
     "rate": 1.2,
-    "type": "magic",
-    "skillID": 8535,
-    "MagicSkillID": 405513,
-    "UnitScale": 0.8,
-    "speedRate": 1.9,
+    "skillID": 74321012,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "劈棍0，全屏+掀翻地面"
+    "desc": "劈棍0，棍花，然后砸 AM_JSDS_WuGunXiaZa"
+  },
+  {
+    "nowMontage": "AM_JSDS_WuGunXiaZa",
+    "rate": 1.2,
+    "skillID": 74321013,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "棍花然后砸 Q3后左右小横扫 AM_JSDS_YaoJianGunHua"
+  },
+  {
+    "nowMontage": "AM_JSDS_YaoJianGunHua",
+    "rate": 1.2,
+    "skillID": 74321010,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "AM_JSDS_YaoJianGunHua 踢几下，棍打几下 AM_JSDS_LingKongLianTi"
+  },
+  {
+    "nowMontage": "AM_JSDS_LingKongLianTi",
+    "rate": 1.2,
+    "skillID": 74321014,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "踢棍子过去，然后飞棍去拿棍子，空中砸好几下 AM_JSDS_ZhiGun_DaLunZhuan_TengKong"
+  },
+
+  {
+    "nowMontage": "AM_JSDS_ZhiGun_DaLunZhuan_TengKong",
+    "rate": 1.2,
+    "skillID": 74321015,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "残躯安身法 AM_JSDS_FaShu_AnShenFa_TengKong"
+  },
+  {
+    "nowMontage": "AM_JSDS_FaShu_AnShenFa_TengKong",
+    "rate": 0.2,
+    "skillID": 74321004,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "残躯安身法 接戳棍 AM_JSDS_DuanXvHongChuo"
+  },
+
+  {
+    "nowMontage": "AM_JSDS_DuanXvHongChuo",
+    "rate": 1.4,
+    "skillID": 74321009,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "接立棍飞棍 AM_JSDS_LiGunFeiYing"
+  },
+  {
+    "nowMontage": "AM_JSDS_LiGunFeiYing",
+    "rate": 1.4,
+    "skillID": 74321005,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "接残躯版，大圣Q2切手 AM_JSDS_HengSaoQianChuo"
+  },
+  {
+    "nowMontage": "AM_JSDS_HengSaoQianChuo",
+    "rate": 1.4,
+    "skillID": 74321007,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "接残躯版，捅一下，然后空中大圣4a AM_JSDS_LianChuoLunZhuan"
+  },
+  {
+    "nowMontage": "AM_JSDS_LianChuoLunZhuan",
+    "rate": 1.4,
+    "skillID": 74321003,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "接残躯版定海神针 AM_JSDS_DingHaiShenZhen"
+  },
+  {
+    "nowMontage": "AM_JSDS_DingHaiShenZhen",
+    "rate": 1.4,
+    "skillID": 74321002,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "接大风车 AM_JSDS_DaFengChe"
+  },
+
+  {
+    "nowMontage": "AM_JSDS_DaFengChe",
+    "rate": 1.4,
+    "skillID": 74321011,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "接飞起踩头+4蓄劈棍 AM_JSDS_TengKongFuChong_ZhongPi_4"
+  },
+
+  {
+    "nowMontage": "AM_JSDS_TengKongFuChong_ZhongPi_4",
+    "rate": 1.4,
+    "skillID": 74321008,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "接撑杆砸 AM_JSDS_LiGunChengGan_ZhongPi_19"
+  },
+  {
+    "nowMontage": "AM_JSDS_LiGunChengGan_ZhongPi_19",
+    "rate": 1.4,
+    "skillID": 74321001,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "接跳起，4蓄砸 AM_mgd_jsds_atk_07"
   }
 ]

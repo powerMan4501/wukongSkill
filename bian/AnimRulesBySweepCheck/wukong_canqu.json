@@ -18,11 +18,11 @@
   },
   {
     "desc": "筋斗云三连击",
-    "montage": "AM_mgd_jsds_atk_jdy_02",
+    "montage": ".AM_mgd_jsds_atk_jdy_02",
     "linkValue": 0,
-    "speedRate": 1.3,
+    "speedRate": 1.4,
     "addRadius": 500,
-    "hitEffects": [888555034],
+    "hitEffects": [888555039],
     "replaceEffects": true,
     "SweepActions": [
       {
@@ -30,20 +30,20 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [74011107, 30050301],
+            "ProjectTileIDs": [30050301],
             "noHasBuff": 888666007,
             "OffsetX": 400,
             "OffsetY": 400,
-            "desc": "没有火buff，金沙波动"
+            "desc": "没有火buff，波动"
           },
 
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [74011107, 74010207],
+            "ProjectTileIDs": [74010207],
             "hasBuff": 888666007,
             "OffsetX": 400,
             "OffsetY": 400,
-            "desc": "有火buff，金沙，火圈"
+            "desc": "有火buff，火圈"
           }
         ]
       }
@@ -81,5 +81,22 @@
         ]
       }
     ]
+  },
+  {
+    "desc": "残躯移植的棍花",
+    "montage": "CanQu/AM_mgd_jsds_atk_02",
+    "linkValue": 0,
+    "speedRate": 1.3,
+    "addRadius": 100,
+    "hitEffects": [888555032],
+    "replaceEffects": true
+  },
+   {
+    "desc": "残躯移植的其他技能",
+    "montage": "CanQu/AM_mgd_jsds_atk_",
+    "linkValue": 0,
+    "speedRate": 1.3,
+    "addRadius": 100,
+    "hitEffects": [888555040]
   }
 ]

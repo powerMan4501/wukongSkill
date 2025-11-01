@@ -4,12 +4,12 @@
     "montage": "AM_HFM_ShiGanDang_01_Atk_12",
     "linkValue": 0,
     "addRadius": 2500,
-    "speedRate": 1.5,
+    "speedRate": 1.9,
     "AMScaleRate": 10,
     "CastActions": [
       {
         "Type": "buff",
-        "BuffIDs": [1998, 211],
+        "BuffIDs": [211],
         "BuffTime": 3800,
         "desc": "100%暴击"
       }
@@ -37,7 +37,7 @@
         ]
       }
     ],
-    "hitEffects": [888555035],
+    "hitEffects": [888555036],
     "replaceEffects": true
   },
   {
@@ -50,7 +50,7 @@
     "CastActions": [
       {
         "Type": "buff",
-        "BuffIDs": [1998, 211],
+        "BuffIDs": [211],
         "BuffTime": 3800,
         "desc": "100%暴击"
       }
@@ -78,7 +78,7 @@
         ]
       }
     ],
-    "hitEffects": [888555035],
+    "hitEffects": [888555036],
     "replaceEffects": true
   },
   {
@@ -91,7 +91,7 @@
     "CastActions": [
       {
         "Type": "buff",
-        "BuffIDs": [1998, 211],
+        "BuffIDs": [211],
         "BuffTime": 3800,
         "desc": "100%暴击"
       }
@@ -119,7 +119,7 @@
         ]
       }
     ],
-    "hitEffects": [888555035],
+    "hitEffects": [888555036],
     "replaceEffects": true
   },
 
@@ -133,12 +133,12 @@
     "CastActions": [
       {
         "Type": "buff",
-        "BuffIDs": [1998, 211],
+        "BuffIDs": [211],
         "BuffTime": 3800,
         "desc": "100%暴击"
       }
     ],
-    "hitEffects": [888555035],
+    "hitEffects": [888555036],
     "replaceEffects": true
   }
 ]

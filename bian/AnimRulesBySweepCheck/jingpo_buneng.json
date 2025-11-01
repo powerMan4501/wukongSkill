@@ -106,7 +106,7 @@
     "montage": "AM_LYS_TuiSeng_02_Atk_Fast_08",
     "linkValue": 0,
     "addRadius": 500,
-    "speedRate": 1.4,
+    "speedRate": 1.9,
     "SweepActions": [
       {
         "Type": "bullet",

@@ -3,7 +3,7 @@
   "desc": "888666005:雷，888666006 冰， 888666007火， 888666008毒",
   "Rules": [
     {
-      "Name": "定风珠，效果,小飞棍",
+      "Name": "定风珠，效果,小飞棍,残躯击打效果",
       "Description": "",
       "Filters": [
         {
@@ -13,6 +13,14 @@
         {
           "Type": "effect",
           "EffectID": 70013201
+        },
+        {
+          "Type": "effect",
+          "EffectID": 888555039
+        },
+        {
+          "Type": "effect",
+          "EffectID": 888555040
         }
       ],
       "AfterActions": [

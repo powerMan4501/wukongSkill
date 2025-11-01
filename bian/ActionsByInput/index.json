@@ -30,15 +30,7 @@
       }
     ]
   },
-  {
-    "code": "ion",
-    "actions": [
-      {
-        "type": "ironbody",
-        "Name": "TTTB"
-      }
-    ]
-  },
+ 
   {
     "code": "RESET",
     "actions": [
