@@ -12,6 +12,9 @@ using Newtonsoft.Json;
 using BtlShare;
 using b1.EventDelDefine;
 using ArchiveB1;
+using B1UI.GSUI;
+using CommB1;
+using ResB1;
 
 
 
@@ -630,5 +633,51 @@ public class Hooks
         }
     }
 
+    [HarmonyPatch]
+    public static class DSShopPatch
+    {
+        [HarmonyPatch(typeof(DSShop), "CalBuyStat")]
+        static bool Prefix(ref DSShop.ECheckBuyStat __result)
+        {
+            __result = DSShop.ECheckBuyStat.CanBuy;
+            return false; // 跳过原始方法的执行
+        }
+
+        [HarmonyPatch(typeof(DSShop), "CanBuyMinValue")]
+        [HarmonyPrefix]
+        static bool Prefix(ref int __result)
+        {
+            __result = 99;
+            return false; // 跳过原始方法的执行
+        }
+
+
+        [HarmonyPatch(typeof(DSShop), "GetIsCanSell")]
+        [HarmonyPrefix]
+        static bool Prefix(ref bool __result)
+        {
+            __result = true;
+            return false; // 跳过原始方法的执行
+        }
+
+    }
+
+
+
+    [HarmonyPatch]
+    public static class RefreshShopGoods_Patch
+    {
+        [HarmonyPatch(typeof(PlayerShop), "RefreshShopGoods")]
+        static void Prefix(ShopItemDesc ShopItemDesc, int TargetShopId, ref int AddGoodsNum)
+        {
+            AddGoodsNum = 99;
+        }
+
+        [HarmonyPatch(typeof(PlayerShop), "BuyShopItem")]
+        public static void Prefix(ref int ShopId, ref int GoodsId, ref int BuyNum, ref bool CheckLimit)
+        {
+            CheckLimit = false;
+        }
+    }
 
 }

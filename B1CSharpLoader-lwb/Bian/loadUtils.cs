@@ -2066,10 +2066,14 @@ namespace bian
                 {
                     item.SellPrice = item.SellPrice + 200 * 10000;
                 }
+                if (item.CarryMax > 0 && item.CarryMax < 999)
+                {
+                    item.CarryMax = 999;
+                }
             }
 
-            
-         
+
+
         }
         public static void ModifyCommDropRuleDesc()
         {
@@ -2095,6 +2099,24 @@ namespace bian
                     ItemLib.Weight = 10000;
                 }
             }
+
+
+            var itemsList2 = BG_ProtobufDataAPI<UnitDropNumDesc>.Get().GetAll();
+            if (itemsList2 == null || itemsList2.Count == 0) return;
+            foreach (var item2 in itemsList2.Values)
+            {
+                if (item2?.Random.Count > 0)
+                {
+                    foreach (var ItemNum in item2.Random)
+                    {
+                        if (ItemNum.Weight < 10000)
+                        {
+                            ItemNum.Weight = 10000;
+                        }
+                    }
+                }
+            }
+
         }
         public static void ModifyWeaponBuild()
         {
