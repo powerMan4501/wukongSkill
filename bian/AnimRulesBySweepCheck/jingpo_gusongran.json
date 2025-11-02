@@ -1,0 +1,27 @@
+[
+  {
+    "desc": "骨耸然",
+    "montage": "AM_20_hfm_magu_01a_atk_05_",
+    "linkValue": 6.5,
+    "addRadius": 100,
+    "AMScaleRate": 10,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "hitEffects": [888555032],
+    "replaceEffects": true,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [30050301],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "波动"
+          }
+        ]
+      }
+    ]
+  }
+]

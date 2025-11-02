@@ -70,14 +70,14 @@
   {
     "nowMontage": "AM_wukong_qiang_xuli_b_attack_0",
     "rate": 0.4,
+    "type": "magic",
+    "skillID": 499913,
     "UnitScale": 0.8,
-    "type": "BOSS",
-    "bossLabel": "SK_LYS_Dage",
-    "MagicSkillID": 19041,
+    "MagicSkillID": 499931,
     "Condition": "disTance",
     "conditionValue": 500,
     "InputCore": "ThumbMouseButton2",
-    "desc": "戳棍0，距离500以上，三千阳春1"
+    "desc": "戳棍0，距离500以上，尾巴刺向敌人脚下，持续生成毒液池，多段伤害，很不错"
   },
   {
     "nowMontage": "AM_wukong_qiang_xuli_b_attack_0",

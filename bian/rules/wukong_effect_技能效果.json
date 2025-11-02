@@ -6,13 +6,11 @@
       "Name": "平A的效果，不能",
       "Description": "",
       "Filters": [
-       
-      
         {
           "Type": "effect",
           "EffectID": 1071401
         },
-       
+
         {
           "Type": "effect",
           "EffectID": 1012601
@@ -98,12 +96,16 @@
       ]
     },
     {
-      "Name": "火蛙喷火，夜叉王刀砍",
+      "Name": "火蛙喷火，夜叉王刀砍，泥塑金刚",
       "Description": "",
       "Filters": [
         {
           "Type": "effect",
           "EffectID": 1026215
+        },
+        {
+          "Type": "effect",
+          "EffectID": 888555041
         }
       ],
       "AfterActions": [

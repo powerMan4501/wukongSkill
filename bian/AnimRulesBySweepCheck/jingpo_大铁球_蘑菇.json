@@ -39,11 +39,36 @@
     "speedRate": 1.5,
     "AMScaleRate": 10,
     "CastActions": [
+    
       {
         "Type": "buff",
-        "BuffIDs": [211],
-        "BuffTime": 5800,
-        "desc": "霸体"
+        "BuffIDs": [20983],
+        "BuffTime": 2000,
+        "hasBuff": 888666006,
+        "desc": "有冰buff，加冰异常buff"
+      },
+      {
+        "Type": "buff",
+        "BuffIDs": [20986],
+        "BuffTime": 2000,
+        "hasBuff": 888666005,
+        "desc": "有lei buff，加lei异常buff"
+      },
+
+      {
+        "Type": "buff",
+        "BuffIDs": [20984],
+        "BuffTime": 2000,
+        "hasBuff": 888666007,
+        "desc": "有lei buff，加lei异常buff"
+      },
+
+      {
+        "Type": "buff",
+        "BuffIDs": [20985],
+        "BuffTime": 2000,
+        "noHasAnyBuff": [888666005, 888666006, 888666007],
+        "desc": "加du异常buff"
       }
     ],
     "hitEffects": [888555031],

@@ -87,29 +87,31 @@
     "rate": 0.2,
     "type": "BOSS",
     "bossLabel": "SK_HYS_HongHaiEr_02A",
-    "MagicSkillID": 440537,
+    "MagicSkillID": 440555,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "跳跃重击2，夜叉王瞬发地刺跳起砍"
+    "desc": "跳跃重击2，扔掉刀踩下去，再长出地刺"
   },
   {
     "nowMontage": "AM_wukong_atk_air_heavy_end_3",
     "rate": 0.2,
-    "type": "BOSS",
-    "bossLabel": "SK_HYS_HongHaiEr_02A",
-    "MagicSkillID": 440517,
+      "type": "magic",
+    "skillID": 499912,
+    "UnitScale": 0.8,
+    "MagicSkillID": 499910,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "跳跃重击3，较短的平A连招+跳起瞬发地刺"
+    "desc": "跳跃重击3，尾巴二连砸击"
   },
   {
     "nowMontage": "AM_wukong_atk_air_heavy_end_4",
     "rate": 0.2,
-    "type": "BOSS",
-    "bossLabel": "SK_HYS_HongHaiEr_02A",
-    "MagicSkillID": 440534,
+    "type": "magic",
+    "skillID": 499912,
+    "UnitScale": 0.8,
+    "MagicSkillID": 499931,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "跳跃重击4，很长的平a连招+跳起瞬发地刺"
+    "desc": "跳跃重击4，空翻尾巴砸出毒液池"
   }
 ]

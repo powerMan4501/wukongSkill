@@ -163,5 +163,13 @@
     "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444401],
     "EffectParamsFloat": [7400.0, 740.0, 7400.0, 7400.0, 0.0, 0.0, 7400],
     "EffectParamsStr": ["【主角】蓄力4"]
+  },
+    {
+    "desc": "泥塑金刚",
+    "ID": 888555041,
+    "EffectType": 1,
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444401],
+    "EffectParamsFloat": [7400.0, 740.0, 7400.0, 7400.0, 0.0, 0.0, 7400],
+    "EffectParamsStr": ["【主角】蓄力4"]
   }
 ]

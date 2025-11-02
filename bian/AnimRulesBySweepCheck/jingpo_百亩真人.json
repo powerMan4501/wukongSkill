@@ -1,20 +1,16 @@
-
-
 [
   {
     "desc": "",
     "montage": "AM_20_hfm_hou_01_atk_05_Lv6",
     "linkValue": 0,
     "addRadius": 100,
-    "speedRate": 2.2,
-    "AMSpeedRate": 2.2,
     "AMScaleRate": 10,
     "CastActions": [
       {
-        "Type": "buff",
-        "BuffIDs": [211],
-        "BuffTime": 3800,
-        "desc": "霸体"
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileID": 88880013,
+        "desc": "画地为牢"
       }
     ],
     "hitEffects": [888555034],
@@ -25,10 +21,10 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [1016262],
+            "ProjectTileIDs": [51007701],
             "OffsetX": 300,
             "OffsetY": 300,
-            "desc": "巴山虎"
+            "desc": "泥浆"
           }
         ]
       }

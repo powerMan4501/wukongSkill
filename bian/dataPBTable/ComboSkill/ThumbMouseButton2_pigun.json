@@ -202,12 +202,28 @@
     "InputCore": "ThumbMouseButton2",
     "desc": "接跳起，4蓄砸 AM_mgd_jsds_atk_07"
   },
-  {
+   {
     "nowMontage": "AM_mgd_jsds_atk_07",
     "rate": 1.4,
-    "skillID": 74321002,
+    "skillID": 84321027,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "接大风车 AM_JSDS_DaFengChe"
+    "desc": "接上筋斗云撞一下，然后落地二连横扫 AM_mgd_jsds_atk_jdy_05"
+  },
+  {
+    "nowMontage": "AM_mgd_jsds_atk_jdy_05",
+    "rate": 1.4,
+    "skillID": 84321030,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "筋斗云大风车AM_mgd_jsds_atk_jdy_06"
+  },
+   {
+    "nowMontage": "AM_mgd_jsds_atk_jdy_06",
+    "rate": 1.4,
+    "skillID": 84321024,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "AM_mgd_jsds_atk_jdy_03"
   }
 ]

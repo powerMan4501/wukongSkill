@@ -115,6 +115,7 @@
       "type": "magic",
       "Id": 8542,
       "Name": "蘑菇男",
+      "MagicSkillID": 11342,
       "Key": "C+RBUTTON",
       "CanBreak": true
     },

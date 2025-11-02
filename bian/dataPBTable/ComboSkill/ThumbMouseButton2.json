@@ -91,7 +91,6 @@
     "nowMontage": "AM_Dasheng_ComboA_01.AM_Dasheng_ComboA_01",
     "rate": 0.3,
     "type": "magic",
-    "backTime": 1600,
     "skillID": 8526,
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
@@ -401,7 +400,6 @@
     "nowMontage": "AM_Wukong_JXSQ_Atk_01.AM_Wukong_JXSQ_Atk_01",
     "type": "magic",
     "skillID": 8513,
-    "backTime": 1500,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "破隐一级接：大头磕头"
@@ -433,23 +431,22 @@
     "nowMontage": "AM_Dasheng_ComboA_03_Z_1.AM_Dasheng_ComboA_03_Z_1",
     "rate": 0.6,
     "type": "magic",
-    "skillID": 8471,
-    "backTime": 3500,
-    "MagicSkillID": 303016,
+    "skillID": 8572,
+    "MagicSkillID": 11372,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "接隼居士 螺旋前冲"
+    "desc": "接赤发鬼"
   },
 
   {
     "nowMontage": "AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1",
     "rate": 1.2,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_yangjian_01",
-    "MagicSkillID": 800009,
+    "type": "magic",
+    "skillID": 8471,
+    "MagicSkillID": 303016,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "转身定，接杨戬飞过去开山斧"
+    "desc": "转身定，接螺旋前冲"
   },
   {
     "nowMontage": ".AM_wukong_comboc_z_01_start",
@@ -487,52 +484,52 @@
   {
     "nowMontage": "AM_Wukong_Dodge_B",
     "rate": 0.2,
-    "type": "BOSS",
-    "bossLabel": "SK_HFM_Hu_Stone_01",
-    "MagicSkillID": 202202,
+    "type": "magic",
+    "skillID": 8535,
+    "MagicSkillID": 405507,
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
-    "desc": "后翻滚，劈棍下接虎先锋连续拳脚好几下"
+    "desc": "后翻滚，鳖宝飞天大坐"
   },
   {
     "nowMontage": "AM_Wukong_Dodge_F",
     "rate": 0.2,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700146,
+    "type": "magic",
+    "skillID": 8526,
+    "MagicSkillID": 300505,
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
-    "desc": "前翻滚，残躯分身劈棍"
+    "desc": "前翻滚，不能以武入禅"
   },
   {
     "nowMontage": "AM_Wukong_Dodge_L",
     "rate": 0.2,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700116,
+    "type": "magic",
+    "skillID": 8535,
+    "MagicSkillID": 405512,
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
-    "desc": "左翻滚，残躯跳起来，4蓄劈棍"
+    "desc": "左翻滚，鳖宝锤子砸"
   },
   {
     "nowMontage": "AM_Wukong_Dodge_R",
     "rate": 0.2,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700140,
+    "type": "magic",
+    "skillID": 8535,
+    "MagicSkillID": 405513,
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
-    "desc": "右翻滚，残躯空中侧身好几次"
+    "desc": "右翻滚，鳖宝转圈轮砸一下"
   },
   {
     "nowMontage": "AM_Wukong_Dodge_B",
     "rate": 0.5,
-    "type": "BOSS",
-    "bossLabel": "SK_HFM_Hu_Stone_01",
-    "MagicSkillID": 202203,
+    "type": "magic",
+    "skillID": 8574,
+    "MagicSkillID": 10174,
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
-    "desc": "后滚后，立棍下接虎先锋拔刀斩"
+    "desc": "后滚后，立棍下接 泥塑金刚"
   },
 
   {
@@ -568,12 +565,12 @@
   {
     "nowMontage": "AM_Wukong_Dodge_B",
     "rate": 0.5,
-    "type": "BOSS",
-    "bossLabel": "SK_HFM_Hu_Stone_01",
-    "MagicSkillID": 202220,
+    "type": "magic",
+    "skillID": 8565,
+    "MagicSkillID": 11365,
     "Condition": "StancePoke",
     "InputCore": "ThumbMouseButton2",
-    "desc": "B翻滚后，戳棍棍下接虎先锋冲拳"
+    "desc": "B翻滚后，戳棍棍下骨悚然"
   },
   {
     "nowMontage": "AM_Wukong_Dodge_F",
