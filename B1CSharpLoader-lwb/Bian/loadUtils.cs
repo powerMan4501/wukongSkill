@@ -2045,7 +2045,7 @@ namespace bian
         {
             var itemsList = BG_ProtobufDataAPI<FUStUnitBattleInfoExtendDesc>.Get().GetAll();
             if (itemsList == null || itemsList.Count == 0) return;
-            var listArr = new List<int> { 23008, 34022, 34012 };
+            var listArr = new List<int> { 91101, 91102, 992061 };
             //91019  金趁心,业火晶
             foreach (var item in itemsList.Values)
             {
@@ -2079,7 +2079,6 @@ namespace bian
         {
             var itemsList = BG_ProtobufDataAPI<CommDropRuleDesc>.Get().GetAll();
             if (itemsList == null || itemsList.Count == 0) return;
-            // 100% 掉落
 
             foreach (var item in itemsList.Values)
             {
@@ -2092,38 +2091,45 @@ namespace bian
                 {
                     Itemnum.Rate = 100000;
                 }
-                item.RandDrop.AddRange(new List<DropItemOne> { new DropItemOne { ItemId = 1006, Rate = 100000, MinNum = 1, MaxNum = 1 }, new DropItemOne { ItemId = 3961, Rate = 100000, MinNum = 1, MaxNum = 1 } });
-
-                foreach (var ItemLib in item.DropLib)
+                foreach (var Itemnum in item.UniqueDropOnce)
                 {
-                    ItemLib.Weight = 10000;
-                }
-            }
-
-
-            var itemsList2 = BG_ProtobufDataAPI<UnitDropNumDesc>.Get().GetAll();
-            if (itemsList2 == null || itemsList2.Count == 0) return;
-            foreach (var item2 in itemsList2.Values)
-            {
-                if (item2?.Random.Count > 0)
-                {
-                    foreach (var ItemNum in item2.Random)
+                    if (Itemnum.Num < 20)
                     {
-                        if (ItemNum.Weight < 10000)
-                        {
-                            ItemNum.Weight = 10000;
-                        }
+                        Itemnum.Num = 20;
                     }
                 }
+
+
+                // foreach (var ItemLib in item.DropLib)
+                // {
+                //     ItemLib.Weight = 10000;
+                // }
             }
+
+
+            // var itemsList2 = BG_ProtobufDataAPI<UnitDropNumDesc>.Get().GetAll();
+            // if (itemsList2 == null || itemsList2.Count == 0) return;
+            // foreach (var item2 in itemsList2.Values)
+            // {
+            //     if (item2?.Random.Count > 0)
+            //     {
+            //         foreach (var ItemNum in item2.Random)
+            //         {
+            //             if (ItemNum.Weight < 10000)
+            //             {
+            //                 ItemNum.Weight = 10000;
+            //             }
+            //         }
+            //     }
+            // }
 
         }
         public static void ModifyWeaponBuild()
         {
-            var itemsList = BG_ProtobufDataAPI<WeaponBuildDesc>.Get().GetAll();
-            if (itemsList == null || itemsList.Count == 0) return;
+            var itemsList = GSProtobufRuntimeAPI<TBWeaponBuildDesc, WeaponBuildDesc>.Get().GetAll().List;
+            if (itemsList == null) return;
             var listArr = new List<ItemOne> { new ItemOne { Id = 1002, Num = 10 } };
-            foreach (var item in itemsList.Values)
+            foreach (var item in itemsList)
             {
                 if (item.CostItem.Count > 0)
                 {
@@ -2135,9 +2141,9 @@ namespace bian
                     item.TransformItem.Clear();
                     item.TransformItem.AddRange(listArr);
                 }
-
             }
         }
+
 
         public static void ModifyShopDesc()
         {
