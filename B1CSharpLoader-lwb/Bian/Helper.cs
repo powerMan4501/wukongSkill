@@ -20,8 +20,10 @@ using UnrealEngine.Runtime;
 
 namespace bian
 {
-    public static class Helper
+    public class Helper
     {
+        private static ModelManager manager;
+
         private static UWorld? world;
         public static FCalliopeGuid? summonGuid;
 
@@ -312,29 +314,37 @@ namespace bian
             };
             bPS_GSEventCollection.Evt_TriggerPlayerTransBegin.Invoke(EPlayerTransBeginType.SkillEffect, playerTransParam);
         }
+        
         public static BGWDataAsset_MagicallyChangeConfig? getMagicConfig(BGUPlayerCharacterCS character, string bossLabel, string type)
         {
 
             // !boss_vigorSkillConfigCache.TryGetValue(bossLabel, out var config))
-            BGWDataAsset_MagicallyChangeConfig config;
+            // BGWDataAsset_MagicallyChangeConfig config;
+            // 改为
+            string cacheKey = $"{bossLabel}_{type}";
+            var config = new BGWDataAsset_MagicallyChangeConfig();
             if (true)
             {
+
                 var magicChangeComp = GetCachedMagicChangeComp(character);
                 if (magicChangeComp == null)
                 {
                     return null;
                 }
-                ModelManager modelManager = new ModelManager();
-                modelManager.InitConfig();  // 初始化配置
-                BossModel model = modelManager.FindModelByLabel(bossLabel, type) as BossModel;
+
+                var allModels = LoadUtils.allModels;
+
+                bossModel model = allModels.FirstOrDefault(x => x.Label == bossLabel && x.Type == type);
+
                 if (model == null)
                 {
                     return null;
                 }
-                UObject defaultObject = UClass.GetClass<BGWDataAsset_MagicallyChangeConfig>().GetDefaultObject();
-                BGWDataAsset_MagicallyChangeConfig val = (BGWDataAsset_MagicallyChangeConfig)(object)((defaultObject is BGWDataAsset_MagicallyChangeConfig) ? defaultObject : null);
+                // UObject defaultObject = UClass.GetClass<BGWDataAsset_MagicallyChangeConfig>().GetDefaultObject();
+                // BGWDataAsset_MagicallyChangeConfig val = (BGWDataAsset_MagicallyChangeConfig)(object)((defaultObject is BGWDataAsset_MagicallyChangeConfig) ? defaultObject : null);
 
-                config = val;
+                // config = val;
+
                 var BossConf = model?.BossConf;
                 if (BossConf == null)
                 {
@@ -417,7 +427,7 @@ namespace bian
                 }
 
                 // 将新加载的配置加入缓存
-                // boss_vigorSkillConfigCache[bossLabel] = config;
+                // boss_vigorSkillConfigCache[cacheKey] = config;
             }
 
             return config;

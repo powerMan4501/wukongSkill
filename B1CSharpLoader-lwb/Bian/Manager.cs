@@ -114,7 +114,7 @@ namespace bian
             else
             {
 
-                /// LoadUtils.LoadAndApplySummon();
+                LoadUtils.LoadAllBossModels();
                 LoadUtils.LoadAndApplyChargeSkill();
                 LoadUtils.LoadAndApplyBulletExpand();
                 LoadUtils.LoadAndApplyBulletComm();

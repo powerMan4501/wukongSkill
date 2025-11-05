@@ -18,6 +18,13 @@ using UnrealEngine.Engine;
 using b1.Protobuf.GSProtobufRuntimeAPI;
 
 
+
+public class bossModel : BaseModel
+{
+
+    public BossConfig BossConf { set; get; }
+    public string TamerPath { set; get; }
+}
 public class ActionConfig
 {
     public string code { get; set; }
@@ -2068,7 +2075,11 @@ namespace bian
                 }
                 if (item.CarryMax > 0 && item.CarryMax < 999)
                 {
-                    item.CarryMax = 999;
+                    if (item.ItemType != ItemType.Equip && item.ItemType != ItemType.SoulSkill && item.ItemType != ItemType.TaskItem)
+                    {
+                        item.CarryMax = 999;
+                    }
+
                 }
             }
 
@@ -2342,6 +2353,51 @@ namespace bian
             return actionConfigs;
         }
 
+
+
+     public static List<bossModel>? allModels = new List<bossModel>();
+
+        public static List<bossModel> LoadAllBossModels(string currentDirectory = null)
+        {
+            currentDirectory ??= AppDomain.CurrentDomain.BaseDirectory;
+            string modelsDirectory = Path.Combine(currentDirectory, @"CSharpLoader\Mods\bian\models");
+
+            if (!Directory.Exists(modelsDirectory))
+            {
+                Log.Error($"Models directory not found: {modelsDirectory}");
+                return new List<bossModel>();
+            }
+
+            // 初始化 allModels
+            if (allModels == null)
+            {
+                allModels = new List<bossModel>();
+            }
+
+            string[] jsonFiles = Directory.GetFiles(modelsDirectory, "*.json");
+
+            foreach (string filePath in jsonFiles)
+            {
+                try
+                {
+                    string jsonContent = File.ReadAllText(filePath);
+                    var model = JsonConvert.DeserializeObject<bossModel>(jsonContent);
+
+                    if (model != null)
+                    {
+                        allModels.Add(model);
+                        Log.Info($"Successfully loaded model: {model.Label} from {Path.GetFileName(filePath)}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Error loading model from {filePath}: {ex.Message}");
+                }
+            }
+
+            Log.Info($"Total loaded models: {allModels.Count}");
+            return allModels;
+        }
 
     }
 }
