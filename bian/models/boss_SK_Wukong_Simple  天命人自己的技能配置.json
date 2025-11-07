@@ -75,6 +75,14 @@
       "bossLabel": "SK_HFM_ShiGanDang",
       "MagicSkillID": 220512,
       "Name": "石敢当，小跳起扑地，中范围出现地面石头，然后石头爆炸",
+      "Key": "",
+      "CanBreak": true
+    },
+    {
+      "type": "BOSS",
+      "bossLabel": "SK_HYS_HongHaiEr_01A",
+      "MagicSkillID": 440171,
+      "Name": "大招，打铁花",
       "Key": "S+XBUTTON2",
       "CanBreak": true
     },
@@ -92,6 +100,23 @@
       "bossLabel": "SK_LuoChaGui_01",
       "MagicSkillID": 401203,
       "Name": "鬼王足球踢",
+      "Key": "A+S",
+      "CanBreak": true
+    },
+    {
+      "type": "BOSS",
+      "bossLabel": "SK_lys_chuilong_01a",
+      "MagicSkillID": 302504,
+      "Name": "跳起+捶地",
+      "UnitScale": 0.7,
+      "Key": "A+W",
+      "CanBreak": true
+    },
+    {
+      "type": "BOSS",
+      "bossLabel": "SK_LuoChaGui_01",
+      "MagicSkillID": 401211,
+      "Name": "鬼王一拳打在地上触发范围火",
       "Key": "",
       "CanBreak": true
     },
@@ -149,14 +174,14 @@
       "bossLabel": "SK_HFM_ShiGanDang",
       "MagicSkillID": 220508,
       "Name": "垂直打一拳砸地，然后引发大范围地爆",
-      "Key": "A+XBUTTON1"
+      "Key": "A+A"
     },
     {
       "type": "BOSS",
       "bossLabel": "SK_HFM_ShiGanDang",
       "MagicSkillID": 220505,
       "Name": "小跳起扑地，引发地波",
-      "Key": "A+XBUTTON2"
+      "Key": "A+D"
     },
 
     {

@@ -19,10 +19,10 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [1016262, 30050301],
+            "ProjectTileIDs":  [40121201, 30050301],
             "OffsetX": 400,
             "OffsetY": 400,
-            "desc": "金沙波动"
+            "desc": "鬼火波动"
           }
         ]
       }
@@ -61,6 +61,39 @@
     "hitEffects": [888555033],
     "replaceEffects": true
   },
+
+ {
+    "desc": "鬼王一拳打在地上触发范围火",
+    "montage": "AM_HYS_LuoChaGui_01_Atk_11",
+    "linkValue": 0,
+    "addRadius": 200,
+    "speedRate": 1.8,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40121201, 30050301],
+            "OffsetX": 400,
+            "OffsetY": 400,
+            "desc": "鬼火波动"
+          }
+        ]
+      }
+    ],
+    "hitEffects": [888555035],
+    "replaceEffects": true
+  },
+  
   {
     "desc": "鬼王，右足球踢",
     "montage": ".AM_HYS_LuoChaGui_01_Atk_03",

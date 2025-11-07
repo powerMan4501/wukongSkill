@@ -1,0 +1,26 @@
+[
+  {
+    "desc": "打铁花",
+    "montage": "AM_HYS_HongHaiEr_01A_Atk_01_Fire",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+        
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74010207],
+            "noHasAnyBuff": [888666006],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "没有冰buff，火圈"
+          }
+        ]
+      }
+    ]
+  }
+]

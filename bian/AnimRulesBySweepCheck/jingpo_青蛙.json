@@ -13,6 +13,19 @@
         "BuffTime": 3800,
         "desc": "霸体"
       }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74010207],
+         
+            "desc": "火圈"
+          }
+        ]
+      }
     ]
   },
 
@@ -48,7 +61,7 @@
     ]
   },
 
-    {
+  {
     "desc": "石蛙",
     "montage": ".AM_10_gycy_wa_01_atk_41_shi",
     "linkValue": 0,
@@ -64,7 +77,7 @@
       }
     ],
     "hitEffects": [888555034],
-      "replaceEffects": true
+    "replaceEffects": true
   },
   {
     "desc": "精魄蛙",
@@ -82,6 +95,6 @@
       }
     ],
     "hitEffects": [888555033],
-      "replaceEffects": true
+    "replaceEffects": true
   }
 ]

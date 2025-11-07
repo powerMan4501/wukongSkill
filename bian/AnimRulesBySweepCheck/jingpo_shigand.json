@@ -4,7 +4,8 @@
     "montage": "AM_HFM_ShiGanDang_01_Atk_12",
     "linkValue": 0,
     "addRadius": 2500,
-    "speedRate": 1.9,
+    "speedRate": 2,
+    "AMSpeedRate": 2,
     "AMScaleRate": 10,
     "CastActions": [
       {
@@ -46,6 +47,7 @@
     "linkValue": 0,
     "addRadius": 2500,
     "speedRate": 2,
+    "AMSpeedRate": 2,
     "AMScaleRate": 10,
     "CastActions": [
       {
@@ -85,8 +87,9 @@
     "desc": "垂直打一拳砸地，然后引发大范围地爆",
     "montage": "AM_HFM_ShiGanDang_01_Atk_08",
     "linkValue": 0,
-    "addRadius": 2500,
+    "addRadius": 3500,
     "speedRate": 2,
+    "AMSpeedRate": 2,
     "AMScaleRate": 10,
     "CastActions": [
       {
@@ -129,6 +132,7 @@
     "linkValue": 0,
     "addRadius": 500,
     "speedRate": 1.5,
+    "AMSpeedRate": 1.5,
     "AMScaleRate": 10,
     "CastActions": [
       {

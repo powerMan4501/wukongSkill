@@ -174,7 +174,7 @@
     {
       "Id": 800040,
       "CanBreak": false,
-      "Name": "平A一下再砍出地波",
+      "Name": "平A一下再砍出地波 AM_mgd_yangjian_01_atk10B",
       "Key": "S+XBUTTON2",
       "Step": 1,
       "Buffs": [1000094]
@@ -362,7 +362,7 @@
     {
       "Id": 800074,
       "CanBreak": false,
-      "Name": "远程技能",
+      "Name": "射箭 远程技能",
       "Key": "S+Z",
       "Buffs": [1000110]
     },
