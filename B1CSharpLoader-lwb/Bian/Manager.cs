@@ -142,6 +142,7 @@ namespace bian
                 LoadUtils.LoadAndApplyDamageExpandDesc();
                 LoadUtils.ModifyEquipDesc();
                 LoadUtils.LoadAnimRulesBySweepCheck();
+                LoadUtils.ModifyPlayerLevelDesc();
                 isBuffConfigsLoaded = true;
             }
         }

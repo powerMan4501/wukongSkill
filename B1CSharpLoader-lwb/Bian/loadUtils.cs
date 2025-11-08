@@ -2075,7 +2075,7 @@ namespace bian
                 }
                 if (item.CarryMax > 0 && item.CarryMax < 999)
                 {
-                    if (item.ItemType != ItemType.Equip && item.ItemType != ItemType.SoulSkill && item.ItemType != ItemType.TaskItem)
+                    if (item.ItemType == ItemType.Consume)
                     {
                         item.CarryMax = 999;
                     }
@@ -2102,13 +2102,7 @@ namespace bian
                 {
                     Itemnum.Rate = 100000;
                 }
-                foreach (var Itemnum in item.UniqueDropOnce)
-                {
-                    if (Itemnum.Num < 20)
-                    {
-                        Itemnum.Num = 20;
-                    }
-                }
+
 
 
                 // foreach (var ItemLib in item.DropLib)
@@ -2162,6 +2156,45 @@ namespace bian
             Log.Info($"Loaded ShopItemGroupDesc: {itemsList?.Count}");
             if (itemsList == null || itemsList.Count == 0) return;
 
+
+        }
+
+        public static void ModifyPlayerLevelDesc()
+        {
+            var itemsList = GSProtobufRuntimeAPI<TBPlayerLevelDesc, PlayerLevelDesc>.Get().GetAll().List;
+            if (itemsList == null || itemsList.Count == 0) return;
+            // 使用Random类生成1-50之间的随机数
+            var random = new Random();
+            foreach (var itemData in itemsList)
+            {
+                if (itemData?.NextLevelGainTalent > 0)
+                {
+
+                    itemData.NextLevelGainTalent = random.Next(1, 51);
+                }
+            }
+            // 获取最大ID的项
+            var maxItem = itemsList.OrderByDescending(x => x.Id).FirstOrDefault();
+            if (maxItem == null) return;
+
+            // 从最大项开始添加90个新项
+            for (int i = 1; i <= 90; i++)
+            {
+                int newId = maxItem.Id + i;
+                // 检查是否已存在相同ID的等级数据
+                if (itemsList.Any(x => x.Id == newId))
+                {
+
+                    continue;
+                }
+                var newItem = new PlayerLevelDesc
+                {
+                    Id = newId,
+                    NextLevelExp = maxItem.NextLevelExp + i,
+                    NextLevelGainTalent = maxItem.NextLevelGainTalent + i
+                };
+                itemsList.Add(newItem);
+            }
 
         }
 
@@ -2355,7 +2388,7 @@ namespace bian
 
 
 
-     public static List<bossModel>? allModels = new List<bossModel>();
+        public static List<bossModel>? allModels = new List<bossModel>();
 
         public static List<bossModel> LoadAllBossModels(string currentDirectory = null)
         {
