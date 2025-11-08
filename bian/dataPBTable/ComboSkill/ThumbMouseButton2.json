@@ -297,7 +297,7 @@
   {
     "nowMontage": "AM_Dasheng_ComboA_01_Z_1.AM_Dasheng_ComboA_01_Z_1",
     "rate": 0.95,
-     "type": "magic",
+    "type": "magic",
     "skillID": 8513,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
@@ -404,7 +404,7 @@
     "InputCore": "ThumbMouseButton2",
     "desc": "破隐一级接：大头磕头"
   },
-   {
+  {
     "nowMontage": "AM_dasheng_jxsq_atk_01",
     "type": "magic",
     "skillID": 8513,
@@ -416,8 +416,8 @@
   {
     "nowMontage": "AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1",
     "rate": 1,
-      "type": "magic",
-    "skillID": 8513,
+    "type": "magic",
+    "skillID": 8571,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "接螺旋前冲"
@@ -448,7 +448,7 @@
   {
     "nowMontage": "AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1",
     "rate": 1.2,
-     "type": "magic",
+    "type": "magic",
     "skillID": 8513,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",

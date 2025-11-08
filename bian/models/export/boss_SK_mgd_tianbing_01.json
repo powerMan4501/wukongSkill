@@ -43,7 +43,7 @@
     "UnitScale": null
   },
   "AttrFloat": {
-    "HpMax": 6677.467,
+    "HpMax": 4707.067,
     "MpMax": 0.0,
     "B1StunMax": 0.0,
     "StaminaDepletedLimit": 0.0,
@@ -135,7 +135,7 @@
     "EnergyMinConsumeBase": 0.0,
     "EnergyConsumeSpeedBase": 0.0,
     "EnergyIncreaseSpeedBase": 0.0,
-    "Hp": 0.0,
+    "Hp": 2379.067,
     "Mp": 0.0,
     "Atk": 150.943985,
     "Def": 0.0,

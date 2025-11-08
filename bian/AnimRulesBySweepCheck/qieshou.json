@@ -8,7 +8,7 @@
       {
         "Type": "buff",
         "BuffIDs": [66655405, 289],
-        "BuffTime": 2500,
+        "BuffTime": 3500,
         "desc": "棍光特效粒子,接招buff"
       }
     ],
@@ -239,6 +239,7 @@
       {
         "Type": "buff",
         "BuffIDs": [289, 66655405],
+        "BuffTime": 3500,
         "desc": "识破buff，接招buff，棍光粒子"
       }
     ],
@@ -367,6 +368,7 @@
       {
         "Type": "buff",
         "BuffIDs": [289, 66655406],
+        "BuffTime": 3500,
         "desc": "识破buff，接招buff，棍光粒子"
       }
     ]
@@ -447,7 +449,7 @@
       {
         "Type": "buff",
         "BuffIDs": [289, 66655407],
-        "BuffTime": 2000,
+        "BuffTime": 3000,
         "desc": "识破buff，接招buff，棍光粒子"
       }
     ]
