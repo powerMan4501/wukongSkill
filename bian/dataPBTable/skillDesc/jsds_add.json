@@ -53,7 +53,7 @@
   },
 
    {
-    "desc": "飞起踩头+4蓄劈棍",
+    "desc": "飞起踩头+4蓄劈棍，但会立正",
     "ID": 74321011,
     "TemplatePath": "/Game/00Main/Animation/Player_jsds/Action/Montage/Attack/AM/AM_JSDS_TengKongFuChong_ZhongPi_4.AM_JSDS_TengKongFuChong_ZhongPi_4"
   },

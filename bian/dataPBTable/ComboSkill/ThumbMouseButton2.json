@@ -297,11 +297,11 @@
   {
     "nowMontage": "AM_Dasheng_ComboA_01_Z_1.AM_Dasheng_ComboA_01_Z_1",
     "rate": 0.95,
-    "type": "magic",
-    "skillID": 8534,
+     "type": "magic",
+    "skillID": 8513,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "大圣版50001破棍接：盾"
+    "desc": "大圣版50001破棍接：大头磕头"
   },
   {
     "nowMontage": "AM_Wukong_ComboA_z_01.AM_Wukong_ComboA_z_01",
@@ -350,18 +350,18 @@
   {
     "nowMontage": "AM_Dasheng_ComboA_03_Z_2",
     "rate": 1.9,
-    "skillID": 74321011,
+    "skillID": 64321001,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "如果当前使用的技能是大圣江海翻，残躯跳起空中踢腿落地再横扫"
+    "desc": "如果当前使用的技能是大圣江海翻，空中侧身好几下"
   },
   {
     "nowMontage": "AM_mgd_jsds_atk_02_01_02",
     "rate": 1.9,
-    "skillID": 74321011,
+    "skillID": 64321001,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "如果当前使用的技能是残躯江海翻，残躯跳起空中踢腿落地再横扫"
+    "desc": "如果当前使用的技能是残躯江海翻，空中侧身好几下"
   },
 
   {
@@ -397,7 +397,15 @@
   },
 
   {
-    "nowMontage": "AM_Wukong_JXSQ_Atk_01.AM_Wukong_JXSQ_Atk_01",
+    "nowMontage": "AM_Wukong_JXSQ_Atk_01",
+    "type": "magic",
+    "skillID": 8513,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "破隐一级接：大头磕头"
+  },
+   {
+    "nowMontage": "AM_dasheng_jxsq_atk_01",
     "type": "magic",
     "skillID": 8513,
     "Condition": "any",
@@ -408,9 +416,8 @@
   {
     "nowMontage": "AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1",
     "rate": 1,
-    "type": "magic",
-    "skillID": 8571,
-    "MagicSkillID": 303016,
+      "type": "magic",
+    "skillID": 8513,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "接螺旋前冲"
@@ -441,12 +448,11 @@
   {
     "nowMontage": "AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1",
     "rate": 1.2,
-    "type": "magic",
-    "skillID": 8471,
-    "MagicSkillID": 303016,
+     "type": "magic",
+    "skillID": 8513,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "转身定，接螺旋前冲"
+    "desc": "转身定，接大头磕头"
   },
   {
     "nowMontage": ".AM_wukong_comboc_z_01_start",

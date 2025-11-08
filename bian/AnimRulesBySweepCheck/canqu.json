@@ -1,53 +1,5 @@
 [
-  {
-    "desc": "残躯横扫一下捅一下",
-    "montage": "AM_mgd_jsds_atk_01",
-    "linkValue": 0,
-    "scaleWeaponNum": 3,
-    "speedRate": 1.5,
-    "CastActions": [
-      {
-        "Type": "buff",
-        "BuffIDs": [66655407],
-        "BuffTime": 3900,
-        "desc": "棍光特效粒子"
-      }
-    ],
-    "SweepActions": [
-      {
-        "Type": "bullet",
-        "bullets": [
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 88880003,
-            "ForTarget": true,
-            "hasBuff": 888666006,
-            "spawnBaseSocketName": "weapon_r_index_06",
-            "desc": "有冰buff,大圣平A1,发射冰剑气"
-          },
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 88880009,
-            "ForTarget": true,
-            "hasBuff": 888666007,
-            "BornDirOffsetXLeftValue": 91,
-            "BornDirOffsetXRightValue": 91,
-            "spawnBaseSocketName": "weapon_r_index_06",
-            "desc": "有火buff,大圣平A1,发射火剑气"
-          },
-          {
-            "Type": "bullet",
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 1713001,
-            "ForTarget": true,
-            "noHasAnyBuff": [888666006, 100086],
-            "spawnBaseSocketName": "weapon_r_index_06",
-            "desc": "没有冰火buff,大圣平A1,就发射红剑气"
-          }
-        ]
-      }
-    ]
-  },
+
   {
     "desc": "残躯版Q5",
     "montage": "AM_mgd_jsds_atk_02_02_short",

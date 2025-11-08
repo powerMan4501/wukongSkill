@@ -180,10 +180,10 @@
   {
     "nowMontage": "AM_JSDS_DaFengChe",
     "rate": 1.4,
-    "skillID": 74321011,
+    "skillID": 84321024,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "接飞起踩头+4蓄劈棍 AM_JSDS_TengKongFuChong_ZhongPi_4"
+    "desc": "接砸砸砸 AM_mgd_jsds_atk_jdy_03"
   },
 
   {

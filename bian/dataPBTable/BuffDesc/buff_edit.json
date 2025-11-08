@@ -14,7 +14,7 @@
     "BuffTips": "铜头成功后免伤时间由0.3秒改成1.5秒",
     "Duration": 1500
   },
-  
+
   {
     "ID": 2014,
     "BuffTips": "飞龙棍-表现，条件改成没有火buff",
@@ -75,33 +75,11 @@
 
   {
     "ID": 2165,
-    "Duration": -1,
-    "Interval": 0,
     "BuffTips": "牛魔套去掉血量限制",
     "BuffActiveCondition": {
       "ConditionType": 0,
       "ConditionParams": ""
-    },
-    "BuffEffects": [
-      {
-        "EffectTrigger": 1,
-        "EffectType": 7,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [17, 18],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 1,
-        "EffectType": 77,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [
-          "/Game/00MainHZ/Characters/Wukong/SL_niumo_wukong.SL_niumo_wukong"
-        ],
-        "EffectParams": [256],
-        "EffectParamsFloat": []
-      }
-    ]
+    }
   },
   {
     "ID": 2166,
@@ -117,34 +95,9 @@
       }
     ]
   },
-  {
-    "ID": 2167,
-    "Duration": -1,
-    "BuffTips": "牛魔套去掉血量限制",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    }
-  },
 
-  {
-    "ID": 2168,
-    "Duration": -1,
-    "BuffTips": "牛魔套去掉血量限制",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    }
-  },
-  {
-    "ID": 2169,
-    "Duration": -1,
-    "BuffTips": "牛魔套去掉血量限制",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    }
-  },
+
+
   {
     "ID": 20234,
     "BuffTips": "【化身】海罗刹-盾 【Buff】受击召唤疯虎子弹",

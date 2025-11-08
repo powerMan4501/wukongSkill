@@ -184,14 +184,7 @@
     "InputCore": "ThumbMouseButton",
     "desc": "进尺接：退寸"
   },
-  {
-    "nowMontage": "AM_Wukong_JXSQ_Atk_01.AM_Wukong_JXSQ_Atk_01",
-    "rate": 0.5,
-    "skillID": 50003,
-    "Condition": "any",
-    "InputCore": "ThumbMouseButton",
-    "desc": "破隐一击接：AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1"
-  },
+
 
   {
     "nowMontage": "AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1",

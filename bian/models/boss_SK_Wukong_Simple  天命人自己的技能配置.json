@@ -70,7 +70,7 @@
       "Key": "S+Z",
       "CanBreak": true
     },
-   
+
     {
       "type": "BOSS",
       "bossLabel": "SK_HYS_HongHaiEr_01A",
@@ -88,23 +88,7 @@
       "Key": "",
       "CanBreak": true
     },
-    {
-      "type": "BOSS",
-      "bossLabel": "SK_LuoChaGui_01",
-      "MagicSkillID": 401203,
-      "Name": "鬼王足球踢",
-      "Key": "A+S",
-      "CanBreak": true
-    },
-    {
-      "type": "BOSS",
-      "bossLabel": "SK_lys_chuilong_01a",
-      "MagicSkillID": 302504,
-      "Name": "跳起+捶地",
-    
-      "Key": "A+W",
-      "CanBreak": true
-    },
+
     {
       "type": "BOSS",
       "bossLabel": "SK_LuoChaGui_01",
@@ -155,35 +139,98 @@
       "Description": "",
       "Key": "S+XBUTTON1"
     },
+
+    {
+      "type": "actions",
+      "afterActions": [
+        {
+          "type": "magicskill",
+          "magicID": 8527,
+          "Scale3D": 0.9,
+          "resetBack": true,
+          "desc": "虫总兵"
+        }
+      ],
+      "Key": "S+XBUTTON1"
+    },
     {
       "type": "BOSS",
       "bossLabel": "SK_HFM_ShiGanDang",
       "MagicSkillID": 220507,
       "Name": "右勾拳+左手下砸拳",
-      "Key": "A+RBUTTON"
-    },
-    {
-      "type": "BOSS",
-      "bossLabel": "SK_HFM_ShiGanDang",
-      "MagicSkillID": 220508,
-      "Name": "垂直打一拳砸地，然后引发大范围地爆",
-      "Key": "A+A"
-    },
-    {
-      "type": "BOSS",
-      "bossLabel": "SK_HFM_ShiGanDang",
-      "MagicSkillID": 220505,
-      "Name": "小跳起扑地，引发地波",
       "Key": ""
     },
- {
-      "type": "BOSS",
-      "bossLabel": "SK_HFM_ShiGanDang",
-      "MagicSkillID": 220512,
-      "Name": "石敢当，小跳起扑地，中范围出现地面石头，然后石头爆炸",
-      "Key": "A+D",
-      "CanBreak": true
+
+    {
+      "type": "actions",
+      "afterActions": [
+        {
+          "type": "bossskill",
+          "bossLabel": "SK_HFM_ShiGanDang",
+          "bossType": "BOSS",
+          "MagicSkillID": 220508,
+          "resetBack": false,
+          "desc": "垂直打一拳砸地，然后引发大范围地爆"
+        }
+      ],
+      "Key": "A+A"
     },
+
+    {
+      "type": "actions",
+      "afterActions": [
+        {
+          "type": "bossskill",
+          "bossLabel": "SK_LuoChaGui_01",
+          "bossType": "BOSS",
+          "MagicSkillID": 401203,
+          "hasBuff": 888666007,
+          "resetBack": false,
+          "desc": "有火buff，鬼王足球踢"
+        },
+        {
+          "type": "magicskill",
+          "magicID": 8571,
+          "MagicSkillID": 303016,
+          "hasBuff": 888666006,
+          "resetBack": false,
+          "desc": "有冰buff，隼居士螺旋前冲"
+        },
+        {
+          "type": "magicskill",
+          "magicID": 8530,
+          "MagicSkillID": 499932,
+          "hasBuff": 888666008,
+          "resetBack": false,
+          "desc": "有毒buff，喷毒"
+        },
+        {
+          "type": "bossskill",
+          "bossLabel": "SK_lys_chuilong_01a",
+          "bossType": "BOSS",
+          "MagicSkillID": 302504,
+          "noHasAnyBuff": [888666006, 888666007, 888666008],
+          "resetBack": false,
+          "desc": "没有冰火毒buff，小骊龙往前跳起砸地，砸出大雷暴"
+        }
+      ],
+      "Key": "A+W"
+    },
+    {
+      "type": "actions",
+      "afterActions": [
+        {
+          "type": "bossskill",
+          "bossLabel": "SK_HFM_ShiGanDang",
+          "bossType": "BOSS",
+          "MagicSkillID": 220512,
+          "resetBack": false,
+          "desc": "石敢当，小跳起扑地，中范围出现地面石头，然后石头爆炸"
+        }
+      ],
+      "Key": "A+D"
+    },
+
     {
       "Id": 10520,
       "CanBreak": true,
@@ -212,12 +259,6 @@
     },
 
     {
-      "Id": 84321001,
-      "CanBreak": true,
-      "Name": "残躯版定海神针",
-      "Key": "A+LBUTTON"
-    },
-    {
       "Id": 10909,
       "CanBreak": true,
       "Name": "缩地",
@@ -235,15 +276,34 @@
       "Key": "A+X",
       "CanBreak": true
     },
+
     {
-      "Id": 8569,
-      "Name": "鼠弩手",
-      "Buffers": [888666007],
-      "speedRate": 1.5,
-      "Key": "NUMPAD0",
-      "type": "magic",
-      "CanBreak": false,
-      "MagicSkillID": 202332
+      "type": "actions",
+      "afterActions": [
+        { "type": "trans_dasheng", "changeTime": 999 }
+      ],
+      "Key": "A+RBUTTON"
+    },
+    {
+      "type": "actions",
+      "afterActions": [
+        {
+          "type": "magicskill",
+          "magicID": 8569,
+          "speedRate": 1.5,
+          "MagicSkillID": 202332,
+          "resetBack": false,
+          "desc": "鼠弩手"
+        },
+
+        {
+          "type": "buff",
+          "BuffIDs": [888666007],
+          "BuffTime": -1,
+          "desc": "火buff"
+        }
+      ],
+      "Key": "NUMPAD0"
     },
     {
       "Id": 8596,
