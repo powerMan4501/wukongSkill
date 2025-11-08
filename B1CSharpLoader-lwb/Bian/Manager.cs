@@ -143,6 +143,7 @@ namespace bian
                 LoadUtils.ModifyEquipDesc();
                 LoadUtils.LoadAnimRulesBySweepCheck();
                 LoadUtils.ModifyPlayerLevelDesc();
+                // LoadUtils.Modifyqitiandasheng();
                 isBuffConfigsLoaded = true;
             }
         }
@@ -792,7 +793,7 @@ namespace bian
 
                     if (type == "bossLabel")
                     {
-                        Helper.CastVigorSkillByModel((BGUPlayerCharacterCS)character, combo.bossLabel, combo.type ?? "", combo?.MagicSkillID ?? 0);
+                        Helper.CastVigorSkillByModel((BGUPlayerCharacterCS)character, combo.bossLabel, combo.type ?? "", combo?.MagicSkillID ?? 0, combo?.resetBack ?? false);
                     }
                     if (type == "RushSkill")
                     {
@@ -889,7 +890,22 @@ namespace bian
             // 找到匹配的combo后执行相应技能
             if (matchedCombo != null)
             {
-                if (matchedCombo.bossLabel != null)
+
+                if (matchedCombo?.afterActions != null && matchedCombo?.afterActions?.Count > 0)
+                {
+                    var rule = new Rule();
+                    var method = typeof(Rule).GetMethod("DoAfterActions");
+                    if (method == null)
+                    {
+                        Log.Info($"do rule no method");
+                        return;
+                    }
+
+                    rule?.DoAfterActions(matchedCombo.afterActions);
+                }
+                else
+
+            if (matchedCombo.bossLabel != null)
                 {
                     CastMagicSkill(character, matchedCombo, "bossLabel");
                 }

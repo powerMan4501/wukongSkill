@@ -1,0 +1,84 @@
+{
+  "List_": [
+    {
+      "Name": "打开主菜单",
+      "HookKey": 192,
+      "Method": "OpenMainMenu"
+    },
+    {
+      "Name": "锁血",
+      "HookKey": 112,
+      "Method": "OnGSLockHP"
+    },
+    {
+      "Name": "锁蓝",
+      "HookKey": 113,
+      "Method": "OnGSLockMP"
+    },
+    {
+      "Name": "锁棍势",
+      "HookKey": 114,
+      "Method": "OnGSLockPE"
+    },
+    {
+      "Name": "锁定耐力",
+      "HookKey": 115,
+      "Method": "OnGSLockStamina"
+    },
+    {
+      "Name": "锁精魄能量",
+      "HookKey": 116,
+      "Method": "OnGSLockVigorEnergy"
+    },
+    {
+      "Name": "超级移速",
+      "HookKey": 0,
+      "Method": "OnGSSetSpeed"
+    },
+    {
+      "Name": "重置CD",
+      "HookKey": 117,
+      "Method": "OnGSLockCD"
+    },
+    {
+      "Name": "精准闪避",
+      "HookKey": 0,
+      "Method": "OnGSPreciseDodge"
+    },
+    {
+      "Name": "自动识破",
+      "HookKey": 0,
+      "Method": "OnGSPreciseGP"
+    },
+    {
+      "Name": "精准定身",
+      "HookKey": 0,
+      "Method": "OnGSPreciseHMQ"
+    },
+    {
+      "Name": "筋斗云",
+      "HookKey": 71,
+      "Method": "OnGSLockJDY"
+    },
+    {
+      "Name": "加速蓄力(5倍和蓄4豆)",
+      "HookKey": 0,
+      "Method": "OnGsKuaiSuXuLi"
+    },
+    {
+      "Name": "法术轮回",
+      "HookKey": 0,
+      "Method": "OnGSLockSpellRebirth"
+    },
+    {
+      "Name": "作者测试专用(1)",
+      "HookKey": 13,
+      "Method": "test"
+    },
+    {
+      "Name": "作者测试专用(2)",
+      "HookKey": 35,
+      "Method": "test1"
+    }
+  ]
+}

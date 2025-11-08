@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>BlackMythWukong_Game_Helper</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="B1UI_GSE.Script">
+      <HintPath>E:\qqfile\gamedll\B1UI_GSE.Script.dll</HintPath>
+    </Reference>
+    <Reference Include="GSE.ProtobufDB" />
+    <Reference Include="UnrealEngine">
+      <HintPath>..\..\..\..\..\..\..\..\..\wukong_skill\wukongSkill\B1CSharpLoader-lwb\GameDll\UnrealEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="BtlSvr.Main">
+      <HintPath>E:\qqfile\gamedll\BtlSvr.Main.dll</HintPath>
+    </Reference>
+    <Reference Include="Protobuf.RunTime" />
+    <Reference Include="Google.Protobuf" />
+    <Reference Include="UnrealEngine.Runtime">
+      <HintPath>..\..\..\..\..\..\..\..\..\wukong_skill\wukongSkill\B1CSharpLoader-lwb\GameDll\UnrealEngine.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="b1.NativePlugins" />
+    <Reference Include="0Harmony" />
+    <Reference Include="CSharpModBase" />
+    <Reference Include="b1.Native" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="GSE.Core" />
+    <Reference Include="Diana.Common" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+</Project>

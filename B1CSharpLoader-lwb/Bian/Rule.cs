@@ -23,6 +23,21 @@ namespace bian
 
     public class RuleAction
     {
+
+
+
+        public int? changeTime { get; set; }
+        public bool? resetBack { get; set; }
+        public string? bossLabel { get; set; }
+        public string? RushDir { get; set; }
+        public string? skillType { get; set; }
+        public string? bossType { get; set; }
+
+
+        public int? magicID { get; set; }
+        public int? MagicSkillID { get; set; }
+        public int? ResId { get; set; }
+
         public string Type { get; set; }
         public List<RuleAction>? bullets { get; set; }
         public List<RuleAction>? buffs { get; set; }
@@ -182,6 +197,7 @@ namespace bian
         public AActor? Target { get; set; } // 临时存储目标
         public FEffectInstReq? EffectInstReq { get; set; } // 临时存储目标
 
+
         public Rule()
         {
             Name = "新规则";
@@ -239,7 +255,7 @@ namespace bian
             var buffs = action?.BuffIDs?.Count > 0 ? action?.BuffIDs : action?.BuffID > 0 ? [action.BuffID] : null;
             if (buffs?.Count > 0)
             {
-                var buffTime = action?.BuffTime > 0 ? action.BuffTime : timeLength;
+                var buffTime = (action?.BuffTime > 0 || action?.BuffTime == -1) ? action.BuffTime : timeLength;
                 var target = action?.Target ?? character;
                 if (target == null)
                 {
@@ -504,6 +520,37 @@ namespace bian
                         Helper.TriggerEffect(character, action.EffectID, type);
                     }
                     break;
+
+                case "bossskill":
+                    if (action.bossLabel != null && action.bossType != null && action?.MagicSkillID != null)
+                    {
+                        Helper.CastVigorSkillByModel(character, action.bossLabel, action.bossType ?? "", action?.MagicSkillID ?? 0, action?.resetBack ?? false);
+                    }
+                    break;
+                case "magicskill":
+                    if (action.magicID != null)
+                    {
+                        Helper.CastVigorSkillByID(character, (int)action.magicID, action?.UnitScale ?? 1, action?.MagicSkillID ?? 0, action?.Scale3D ?? 1, action?.resetBack ?? false);
+                    }
+                    break;
+                case "transskill":
+                    if (action?.ResId != null && action?.MagicSkillID != null)
+                    {
+                        Helper.CastTranskillByID(character, action?.ResId ?? 0, action?.MagicSkillID ?? 0);
+
+                    }
+                    break;
+                case "rushskill":
+                    Helper.doPhantomRushSkill(character, action.RushDir ?? "Forward");
+
+                    break;
+
+                case "trans_dasheng":
+                    Helper.change_to_dasheng(action?.changeTime ?? 999);
+                    break;
+
+
+
             }
         }
 

@@ -683,7 +683,7 @@ namespace bian
             }
             else if (skillType == "boss" && skill?.bossLabel != null)
             {
-                Helper.CastVigorSkillByModel(character, skill.bossLabel, skill.type ?? "", skill?.MagicSkillID ?? 0);
+                Helper.CastVigorSkillByModel(character, skill.bossLabel, skill.type ?? "", skill?.MagicSkillID ?? 0, skill?.resetBack ?? false);
                 return true;
             }
             else if (skillType == "rushskill")
@@ -827,6 +827,7 @@ namespace bian
         {
             switch (keyItem.Type)
             {
+
                 case "TRANS":
                 case "BOSS":
                 case "MAGIC":
@@ -1021,7 +1022,7 @@ namespace bian
             {
                 return false;
             }
-            BGUPlayerCharacterCS character = null;
+            BGUPlayerCharacterCS character;
             try
             {
                 character = Helper.GetBGUPlayerCharacterCS();
@@ -1088,7 +1089,23 @@ namespace bian
                 {
                     if (skill.Key == key)
                     {
+                        if (skill?.type == "actions")
+                        {
+                            Log.Info($"bian: actions {skill.type}");
+                            if (skill?.afterActions != null && skill?.afterActions?.Count > 0)
+                            {
+                                var rule = new Rule();
+                                var method = typeof(Rule).GetMethod("DoAfterActions");
+                                if (method == null)
+                                {
+                                    Log.Info($"do rule no method");
+                                    continue;
+                                }
+                                rule?.DoAfterActions(skill.afterActions);
+                                continue;
+                            }
 
+                        }
                         int rate = ((BaseModel)obj).CoolDownRate;
                         float playTimeRate = ((BaseModel)obj).PlayTimeRate;
                         if (skill.Step > 0 && skill.StepCount > 0)

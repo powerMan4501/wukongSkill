@@ -394,6 +394,7 @@ namespace bian
 
     public class ComboConfig
     {
+        public List<RuleAction>? afterActions { get; set; }
         public string? nowMontage { get; set; }
         public double? rate { get; set; }
         public int skillID { get; set; }
@@ -408,7 +409,7 @@ namespace bian
         public float? Scale3D { get; set; }
         public string? bossLabel { get; set; }
         public string? RushDir { get; set; }
-
+        public bool? resetBack { get; set; }
 
     }
     public static class LoadUtils
@@ -2163,41 +2164,44 @@ namespace bian
         {
             var itemsList = GSProtobufRuntimeAPI<TBPlayerLevelDesc, PlayerLevelDesc>.Get().GetAll().List;
             if (itemsList == null || itemsList.Count == 0) return;
-            // 使用Random类生成1-50之间的随机数
-            var random = new Random();
+
             foreach (var itemData in itemsList)
             {
                 if (itemData?.NextLevelGainTalent > 0)
                 {
 
-                    itemData.NextLevelGainTalent = random.Next(1, 51);
+                    itemData.NextLevelGainTalent = 50;
                 }
             }
-            // 获取最大ID的项
-            var maxItem = itemsList.OrderByDescending(x => x.Id).FirstOrDefault();
-            if (maxItem == null) return;
 
-            // 从最大项开始添加90个新项
-            for (int i = 1; i <= 90; i++)
+
+        }
+        public static void Modifyqitiandasheng()
+        {
+            var Owner = Helper.GetPlayerController();
+            FUStTransQiTianDaShengConfigDesc transQiTianDaShengConfigDesc = BGW_GameDB.GetTransQiTianDaShengConfigDesc(1, Owner);
+            FUStTransQiTianDaShengConfigDesc transQiTianDaShengConfigDesc2 = BGW_GameDB.GetTransQiTianDaShengConfigDesc(2, Owner);
+
+
+            if (transQiTianDaShengConfigDesc != null)
             {
-                int newId = maxItem.Id + i;
-                // 检查是否已存在相同ID的等级数据
-                if (itemsList.Any(x => x.Id == newId))
+                transQiTianDaShengConfigDesc.RelatedEquipIDList.Clear();
+                transQiTianDaShengConfigDesc.RelatedEquipIDList.Add(12002);//只需要黄金甲就行
+                transQiTianDaShengConfigDesc.RelatedTalentIDList.Clear();
+                if (transQiTianDaShengConfigDesc.Duration > 0)
                 {
-
-                    continue;
+                    transQiTianDaShengConfigDesc.Duration = 999;
                 }
-                var newItem = new PlayerLevelDesc
-                {
-                    Id = newId,
-                    NextLevelExp = maxItem.NextLevelExp + i,
-                    NextLevelGainTalent = maxItem.NextLevelGainTalent + i
-                };
-                itemsList.Add(newItem);
+
+            }
+            if (transQiTianDaShengConfigDesc2 != null)
+            {
+                transQiTianDaShengConfigDesc2.RelatedEquipIDList.Clear();
+                transQiTianDaShengConfigDesc2.RelatedEquipIDList.Add(12002);//只需要黄金甲就行
+                transQiTianDaShengConfigDesc2.RelatedTalentIDList.Clear();
             }
 
         }
-
         public static void ModifyTrans()
         {
             var transList = BG_ProtobufDataAPI<FUStPlayerTransAttrDesc>.Get().GetAll();

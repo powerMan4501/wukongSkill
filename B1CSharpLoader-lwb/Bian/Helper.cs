@@ -249,7 +249,7 @@ namespace bian
         {
             isPlayVigorSkillByID = isPlay;
         }
-        public static void CastVigorSkillByID(BGUPlayerCharacterCS character, int VigorSkillID, float UnitScale, int? MagicSkillID = 0, float? Scale3D = 1)
+        public static void CastVigorSkillByID(BGUPlayerCharacterCS character, int VigorSkillID, float UnitScale, int? MagicSkillID = 0, float? Scale3D = 1, bool resetBack = false)
         {
             var magicChangeComp = GetCachedMagicChangeComp(character);
             if (magicChangeComp == null)
@@ -291,6 +291,14 @@ namespace bian
                     character.SetActorScale3D(new FVector((float)Scale3D));
                 }
                 BGUFunctionLibraryCS.CastMagicallyChangeSkill(character, config, (int)finalId, 10199);
+                if (resetBack == true)
+                {
+                    FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
+                    if (fieldData == null) return;
+                    BUC_MagicallyChangeData data = fieldData.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
+                    if (data == null) return;
+                    data.DurMagicallyChange = (bool)resetBack;  // 不变回去，需要手动变回 
+                }
                 // MyUtils.SetCamera();
 
             }
@@ -314,7 +322,7 @@ namespace bian
             };
             bPS_GSEventCollection.Evt_TriggerPlayerTransBegin.Invoke(EPlayerTransBeginType.SkillEffect, playerTransParam);
         }
-        
+
         public static BGWDataAsset_MagicallyChangeConfig? getMagicConfig(BGUPlayerCharacterCS character, string bossLabel, string type)
         {
 
@@ -433,7 +441,7 @@ namespace bian
             return config;
         }
 
-        public static void CastVigorSkillByModel(BGUPlayerCharacterCS character, string bossLabel, string type, int skillId)
+        public static void CastVigorSkillByModel(BGUPlayerCharacterCS character, string bossLabel, string type, int skillId, bool? resetBack = false)
         {
             // 检查缓存中是否已存在该配置
             Log.Info($"bian:{bossLabel} ,type,{type} ,skillId,{skillId} ");
@@ -452,6 +460,10 @@ namespace bian
             if (fieldData == null) return;
             BUC_MagicallyChangeData data = fieldData.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
             if (data == null) return;
+            if (resetBack == true)
+            {
+                data.DurMagicallyChange = (bool)resetBack;  // 不变回去，需要手动变回 
+            }
             data.ResetReason = EResetReason_MagicallyChange.Normal;
             data.CastReason = ECastReason_MagicallyChange.NormalSkill;
             data.DurMagicallyChange = true;
@@ -1580,6 +1592,23 @@ namespace bian
                     break;
             }
             BUS_EventCollectionCS.Get(actor).Evt_TriggerPhantomRush.Invoke(phantomRushDir);
+        }
+
+        public static void change_to_dasheng(int? time = 999)
+        {
+            var Owner = GetControlledPawn();
+            if (Owner != null)
+            {
+                FUStTransQiTianDaShengConfigDesc transQiTianDaShengConfigDesc = BGW_GameDB.GetTransQiTianDaShengConfigDesc(1, Owner);
+                transQiTianDaShengConfigDesc.Duration = time ?? 999;
+                BUS_GSEventCollection obj = BUS_EventCollectionCS.Get(Owner);
+                if (obj != null)
+                {
+                    obj.Evt_TriggerTrans2DaSheng.Invoke();
+                }
+                BGUFunctionLibraryCS.BGUSetAttrValue((AActor)MyUtils.GetControlledPawn(), (EBGUAttrFloat)191, 480f);
+                Console.WriteLine($"change_to_dasheng 进入大圣模式");
+            }
         }
     }
 }

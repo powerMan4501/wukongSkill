@@ -23,6 +23,8 @@ namespace bian
         public int? positionZ { get; set; }
         public bool? ForTarget { get; set; }
         public List<int>? Buffers { get; set; }
+        public List<RuleAction>? afterActions { get; set; }
+        
 
         // BuffId
 

@@ -1,0 +1,212 @@
+{
+  "List": [
+    {
+      "Name": "添加物品",
+      "Method": "AddItem",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "获取所有任务道具",
+      "Method": "AllTaskItem",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "获取经验",
+      "Method": "AddExp",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "获取法术",
+      "Method": "AddSpell",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "获取天赋",
+      "Method": "AddTalent",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "消耗道具",
+      "Method": "CostItem",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "全天赋",
+      "Method": "AllTalent",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "全道具(只会获得材料和消耗物，不包括酒)",
+      "Method": "AllItem",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "解锁所有BossRush",
+      "Method": "AllBossRush",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "所有酒",
+      "Method": "AllWine",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "获取所有种子",
+      "Method": "AllSeeds",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "全装备",
+      "Method": "AllEquip",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "全葫芦",
+      "Method": "AllHulu",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "全武器",
+      "Method": "AllWeapon",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "全法术",
+      "Method": "AllSpell",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "获得所有属性道具",
+      "Method": "AllAttrItem",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "获得所有单方",
+      "Method": "AllRecipe",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "获取大圣所有根器",
+      "Method": "AllLegacy",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "解锁所有土地庙",
+      "Method": "OnActiveAllRebirthPoint",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "全图鉴",
+      "Method": "AllCard",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "所有防具升到最高级",
+      "Method": "AllArmorToTop",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "角色等级设置为0，清除角色背包 天赋 法术",
+      "Method": "ClearRoleBag",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "清除大圣遗物和大圣天赋",
+      "Method": "GMClearLegacy",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "解锁所有商店",
+      "Method": "RefreshAllShop",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "获得所有精魄战技",
+      "Method": "AllSoulSkill",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "Name": "全成就",
+      "Method": "AllAchievements",
+      "Parameters": [
+        "1",
+        "1"
+      ]
+    }
+  ]
+}

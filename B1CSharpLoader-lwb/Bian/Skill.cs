@@ -38,10 +38,11 @@ namespace bian
         public float? Scale3D { get; set; }
         public string? bossLabel { get; set; }
         public string? RushDir;
+        public List<RuleAction>? afterActions { get; set; }
 
 
         private string FName;
-
+        public bool? resetBack;
 
 
         public int[] GetAllBuffers()
