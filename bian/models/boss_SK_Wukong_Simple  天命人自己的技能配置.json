@@ -70,14 +70,7 @@
       "Key": "S+Z",
       "CanBreak": true
     },
-    {
-      "type": "BOSS",
-      "bossLabel": "SK_HFM_ShiGanDang",
-      "MagicSkillID": 220512,
-      "Name": "石敢当，小跳起扑地，中范围出现地面石头，然后石头爆炸",
-      "Key": "",
-      "CanBreak": true
-    },
+   
     {
       "type": "BOSS",
       "bossLabel": "SK_HYS_HongHaiEr_01A",
@@ -108,7 +101,7 @@
       "bossLabel": "SK_lys_chuilong_01a",
       "MagicSkillID": 302504,
       "Name": "跳起+捶地",
-      "UnitScale": 0.7,
+    
       "Key": "A+W",
       "CanBreak": true
     },
@@ -181,9 +174,16 @@
       "bossLabel": "SK_HFM_ShiGanDang",
       "MagicSkillID": 220505,
       "Name": "小跳起扑地，引发地波",
-      "Key": "A+D"
+      "Key": ""
     },
-
+ {
+      "type": "BOSS",
+      "bossLabel": "SK_HFM_ShiGanDang",
+      "MagicSkillID": 220512,
+      "Name": "石敢当，小跳起扑地，中范围出现地面石头，然后石头爆炸",
+      "Key": "A+D",
+      "CanBreak": true
+    },
     {
       "Id": 10520,
       "CanBreak": true,

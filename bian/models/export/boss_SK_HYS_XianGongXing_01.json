@@ -29,7 +29,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146673109"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146988260"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_XianGongXing_01/Hair/HAIR_mainback_gs.HAIR_mainback_gs_TFX",
@@ -42,7 +42,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146673108"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146988259"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_XianGongXing_01/Hair/HAIR_mainfront_gs.HAIR_mainfront_gs_TFX",
@@ -55,7 +55,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146673107"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146988258"
       }
     ],
     "InteractBones": null,
@@ -65,7 +65,7 @@
     "UnitScale": null
   },
   "AttrFloat": {
-    "HpMax": 1019905.38,
+    "HpMax": 49284.2773,
     "MpMax": 0.0,
     "B1StunMax": 0.0,
     "StaminaDepletedLimit": 0.0,
@@ -79,7 +79,7 @@
     "FabaoEnergyMax": 0.0,
     "VigorEnergyMax": 0.0,
     "BlockCollapseArmorMax": 30.0,
-    "FreezeAbnormalAccMax": 120.0,
+    "FreezeAbnormalAccMax": 172.8,
     "BurnAbnormalAccMax": 120.0,
     "PoisonAbnormalAccMax": 120.0,
     "ThunderAbnormalAccMax": 120.0,
@@ -90,16 +90,16 @@
     "PevalueMax": 0.0,
     "YinAbnormalAccMax": 120.0,
     "YangAbnormalAccMax": 120.0,
-    "HpMaxMul": 160000.0,
+    "HpMaxMul": 0.0,
     "MpMaxMul": 0.0,
-    "AtkMul": 2200.0,
+    "AtkMul": 8900.0,
     "DefMul": 0.0,
     "B1StunMaxMul": 0.0,
     "StaminaDepletedLimitMul": 0.0,
     "StaminaMaxMul": 0.0,
     "StaminaRecoverMul": 0.0,
     "KptturnSpeedMul": 0.0,
-    "FreezeAbnormalAccMaxMul": 0.0,
+    "FreezeAbnormalAccMaxMul": 4400.001,
     "BurnAbnormalAccMaxMul": 0.0,
     "PoisonAbnormalAccMaxMul": 0.0,
     "ThunderAbnormalAccMaxMul": 0.0,
@@ -110,7 +110,7 @@
     "EnergyMinConsumeMul": 0.0,
     "EnergyConsumeSpeedMul": 0.0,
     "EnergyIncreaseSpeedMul": 0.0,
-    "HpMaxBase": 16142.0,
+    "HpMaxBase": 21637.0,
     "MpMaxBase": 0.0,
     "AtkBase": 136.0,
     "DefBase": 0.0,
@@ -157,14 +157,14 @@
     "EnergyMinConsumeBase": 0.0,
     "EnergyConsumeSpeedBase": 0.0,
     "EnergyIncreaseSpeedBase": 0.0,
-    "Hp": 552643.4,
+    "Hp": 0.0,
     "Mp": 0.0,
-    "Atk": 165.92,
+    "Atk": 257.04,
     "Def": 0.0,
     "B1Stun": 0.0,
     "Stamina": 0.0,
     "StaminaRecover": 0.0,
-    "SkillSuperArmor": 10000.0,
+    "SkillSuperArmor": 0.0,
     "CritRate": 0.0,
     "CritMultiplier": 0.0,
     "Tenacity": 1.0,

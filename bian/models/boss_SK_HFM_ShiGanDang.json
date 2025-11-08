@@ -12,7 +12,7 @@
     "InteractBones": null,
     "Override_AbnormalDispID_Attacker": 0,
     "Override_AbnormalDispID_Victim": 0,
-    "UnitScale": 0.5
+    "UnitScale": 0.4
   },
   "Name": "SK_HFM_ShiGanDang",
   "Label": "SK_HFM_ShiGanDang",

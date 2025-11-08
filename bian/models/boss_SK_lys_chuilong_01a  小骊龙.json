@@ -50,7 +50,8 @@
     ],
     "InteractBones": null,
     "Override_AbnormalDispID_Attacker": 0,
-    "Override_AbnormalDispID_Victim": 100
+    "Override_AbnormalDispID_Victim": 100,
+    "UnitScale": 0.7
   },
   "Name": "小骊龙",
   "Label": "SK_lys_chuilong_01a",
