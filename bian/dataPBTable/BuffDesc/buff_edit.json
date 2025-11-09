@@ -96,8 +96,6 @@
     ]
   },
 
-
-
   {
     "ID": 20234,
     "BuffTips": "【化身】海罗刹-盾 【Buff】受击召唤疯虎子弹",
@@ -233,5 +231,73 @@
       }
     ],
     "CanBeInherited": 1
+  },
+  {
+    "ID": 2053,
+    "BuffTips": "大圣手-暴击减CDBuff",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 10,
+        "EffectType": 114,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [10095, 1],
+        "EffectParamsFloat": [-10.0]
+      },
+      {
+        "EffectTrigger": 10,
+        "EffectType": 114,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [10505, 1],
+        "EffectParamsFloat": [-10.0]
+      },
+      {
+        "EffectTrigger": 10,
+        "EffectType": 114,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [10507, 1],
+        "EffectParamsFloat": [-10.0]
+      },
+      {
+        "EffectTrigger": 10,
+        "EffectType": 114,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [10509, 1],
+        "EffectParamsFloat": [-10.0]
+      },
+      {
+        "EffectTrigger": 10,
+        "EffectType": 114,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [10516, 1],
+        "EffectParamsFloat": [-10.0]
+      },
+      {
+        "EffectTrigger": 10,
+        "EffectType": 114,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [10518, 1],
+        "EffectParamsFloat": [-10.0]
+      }
+    ]
+  },
+  {
+    "ID": 2054,
+    "BuffTips": "大圣手-暴击减CDBuff",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 10,
+        "EffectType": 114,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [10520, 1],
+        "EffectParamsFloat": [-10.0]
+      }
+    ]
   }
 ]

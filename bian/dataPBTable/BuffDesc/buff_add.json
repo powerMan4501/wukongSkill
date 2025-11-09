@@ -1,7 +1,7 @@
 [
   {
     "ID": 6660006,
-    "BuffTips": "金箍棒，若触发则暴击回复生命/法力/法宝/棍势各20点",
+    "BuffTips": "金箍棒，若攻击命中敌人则回复法力和棍势各20点",
     "BuffActiveCondition": {
       "ConditionType": 0,
       "ConditionParams": ""
@@ -9,16 +9,23 @@
     "Duration": -1,
     "BuffEffects": [
       {
-        "EffectTrigger": 10,
+        "EffectTrigger": 14,
         "EffectType": 3,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
         "EffectParams": [152, 20, 0, 0],
         "EffectParamsFloat": []
       },
-
       {
-        "EffectTrigger": 10,
+        "EffectTrigger": 14,
+        "EffectType": 87,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [7],
+        "EffectParamsFloat": [-20.0, 0.0]
+      },
+      {
+        "EffectTrigger": 14,
         "EffectType": 87,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
@@ -26,7 +33,7 @@
         "EffectParamsFloat": [-20.0, 0.0]
       },
       {
-        "EffectTrigger": 10,
+        "EffectTrigger": 14,
         "EffectType": 134,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],

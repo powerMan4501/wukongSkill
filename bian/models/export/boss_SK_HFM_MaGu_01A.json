@@ -11,10 +11,6 @@
       {
         "Weapon": "/Game/00MainHZ/Characters/Weapon/HFM/HFM_MaGu_01A/HFM_MaGu_01A_Dao.HFM_MaGu_01A_Dao_C",
         "SocketName": "weapon_r"
-      },
-      {
-        "Weapon": "/Game/00MainHZ/Characters/Weapon/HFM/HFM_MaGu_01A/HFM_MaGu_01A_Dun.HFM_MaGu_01A_Dun_C",
-        "SocketName": "weapon_l"
       }
     ],
     "TFXConfigs": null,
@@ -25,7 +21,7 @@
     "UnitScale": null
   },
   "AttrFloat": {
-    "HpMax": 73083.33,
+    "HpMax": 72615.6,
     "MpMax": 0.0,
     "B1StunMax": 0.0,
     "StaminaDepletedLimit": 0.0,
@@ -50,7 +46,7 @@
     "PevalueMax": 0.0,
     "YinAbnormalAccMax": 100.0,
     "YangAbnormalAccMax": 100.0,
-    "HpMaxMul": 40000.0,
+    "HpMaxMul": 80000.0,
     "MpMaxMul": 0.0,
     "AtkMul": 22880.0,
     "DefMul": 0.0,
@@ -87,7 +83,7 @@
     "CritRateDefBase": 0.0,
     "CritDmgMulDefBase": 0.0,
     "DmgAdditionBase": 0.0,
-    "DmgDefBase": -2000.0,
+    "DmgDefBase": 0.0,
     "BlockCollapseArmorMaxBase": 0.0,
     "DingshenDefAdditionBase": 0.0,
     "FreezeAbnormalAccMaxBase": 100.0,
@@ -117,14 +113,14 @@
     "EnergyMinConsumeBase": 0.0,
     "EnergyConsumeSpeedBase": 0.0,
     "EnergyIncreaseSpeedBase": 0.0,
-    "Hp": 11155.3281,
+    "Hp": 72615.6,
     "Mp": 0.0,
     "Atk": 138.096,
     "Def": 0.0,
     "B1Stun": 0.0,
     "Stamina": 0.0,
     "StaminaRecover": 0.0,
-    "SkillSuperArmor": 0.0,
+    "SkillSuperArmor": 25000.0,
     "CritRate": 0.0,
     "CritMultiplier": 0.0,
     "Tenacity": 0.0,
@@ -133,7 +129,7 @@
     "CritRateDef": 0.0,
     "CritDmgMulDef": 0.0,
     "DmgAddition": 0.0,
-    "DmgDef": -2000.0,
+    "DmgDef": 0.0,
     "BlockCollapseArmor": 200.0,
     "DingshenDefAddition": 0.0,
     "FreezeAbnormalAcc": 0.0,
