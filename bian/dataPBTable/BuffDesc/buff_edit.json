@@ -299,5 +299,25 @@
         "EffectParamsFloat": [-10.0]
       }
     ]
+  },
+
+  {
+    "ID": 2701,
+    "BuffTips": "狼头-对低血量加攻击触发",
+    "BuffActiveCondition": {
+      "ConditionType": 14,
+      "ConditionParams": "0,151,1,-1,5000"
+    },
+
+    "BuffEffects": [
+      {
+        "EffectTrigger": 14,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [2702],
+        "EffectParamsFloat": [0.0]
+      }
+    ]
   }
 ]

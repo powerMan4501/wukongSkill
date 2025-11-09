@@ -197,13 +197,13 @@
   {
     "nowMontage": "AM_JSDS_LiGunChengGan_ZhongPi_19",
     "rate": 1.4,
-    "skillID": 74321001,
+    "skillID": 84321012,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "接跳起，4蓄砸 AM_mgd_jsds_atk_07"
+    "desc": "接跳起，扔棍子，然后迅速冲上去接住棍子空中三连砸"
   },
    {
-    "nowMontage": "AM_mgd_jsds_atk_07",
+    "nowMontage": "AM_mgd_jsds_atk_03_02.AM_mgd_jsds_atk_03_02",
     "rate": 1.4,
     "skillID": 84321027,
     "Condition": "any",
@@ -225,5 +225,24 @@
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "AM_mgd_jsds_atk_jdy_03"
+  },
+
+  
+  {
+    "nowMontage": ".AM_JSDSLiGunXZA",
+    "rate": 1.4,
+    "skillID": 84321030,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "立棍打招，接筋斗云大风车AM_mgd_jsds_atk_jdy_06"
+  },
+ {
+    "nowMontage": "AM_DaSheng_YuanWuQv_ZhongPi.AM_DaSheng_YuanWuQv_ZhongPi",
+    "rate": 1.4,
+    "skillID": 84321030,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "空中侧身好几下，接筋斗云大风车AM_mgd_jsds_atk_jdy_06"
   }
 ]
+ 

@@ -11,6 +11,10 @@
       {
         "Weapon": "/Game/00MainHZ/Characters/Weapon/HFM/HFM_MaGu_01A/HFM_MaGu_01A_Dao.HFM_MaGu_01A_Dao_C",
         "SocketName": "weapon_r"
+      },
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/HFM/HFM_MaGu_01A/HFM_MaGu_01A_Dun.HFM_MaGu_01A_Dun_C",
+        "SocketName": "weapon_l"
       }
     ],
     "TFXConfigs": null,
@@ -21,7 +25,7 @@
     "UnitScale": null
   },
   "AttrFloat": {
-    "HpMax": 72615.6,
+    "HpMax": 32624.3984,
     "MpMax": 0.0,
     "B1StunMax": 0.0,
     "StaminaDepletedLimit": 0.0,
@@ -46,7 +50,7 @@
     "PevalueMax": 0.0,
     "YinAbnormalAccMax": 100.0,
     "YangAbnormalAccMax": 100.0,
-    "HpMaxMul": 80000.0,
+    "HpMaxMul": 20000.0,
     "MpMaxMul": 0.0,
     "AtkMul": 22880.0,
     "DefMul": 0.0,
@@ -113,7 +117,7 @@
     "EnergyMinConsumeBase": 0.0,
     "EnergyConsumeSpeedBase": 0.0,
     "EnergyIncreaseSpeedBase": 0.0,
-    "Hp": 72615.6,
+    "Hp": 32624.3984,
     "Mp": 0.0,
     "Atk": 138.096,
     "Def": 0.0,

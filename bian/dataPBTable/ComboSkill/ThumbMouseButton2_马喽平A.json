@@ -1,4 +1,14 @@
 [
+  
+    {
+    "nowMontage": ".AM_mgd_jsds_atk_12_01",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8520,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "冲刺平A1接不空"
+  },
   {
     "nowMontage": "AM_Wukong_ComboA_q1.AM_Wukong_ComboA_q1",
     "rate": 0.3,

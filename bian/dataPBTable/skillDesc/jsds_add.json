@@ -1,6 +1,6 @@
 [
   {
-    "desc": "跳起，4蓄砸",
+    "desc": "跳起，4蓄砸，但是没有音效",
     "ID": 74321001,
     "TemplatePath": "/Game/00Main/Animation/Player/MGD_JSDS/Montage/AM_mgd_jsds_atk_07.AM_mgd_jsds_atk_07"
   },

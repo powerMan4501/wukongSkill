@@ -13,8 +13,8 @@
     "Id": 12001,
     "EquipName": "凤翅紫金冠",
     "AttrEffectId": 2001,
-    "EquipEffectId": 900302,
-    "EquipEffectDesc": "持续回复少许生命"
+    "EquipEffectId": 907006,
+    "EquipEffectDesc": "攻击生命少于一半的对手时，获得一定程度伤害加成"
   },
   {
     "Id": 12002,
@@ -36,5 +36,13 @@
     "AttrEffectId": 2004,
     "EquipEffectId": 106008,
     "EquipEffectDesc": "增加少许移动速度"
+  },
+
+  {
+    "Id": 18010,
+    "EquipName": "上清宝葫芦",
+    "AttrEffectId": 8010,
+    "EffectTalentId": 303161,
+    "EffectTalentDesc": "缓慢恢复些微生命"
   }
 ]

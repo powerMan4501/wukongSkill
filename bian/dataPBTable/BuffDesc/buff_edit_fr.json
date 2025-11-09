@@ -18,5 +18,21 @@
     "ID": 20104,
     "BuffTips": "把平a4 buff，增加到8.5秒",
     "Duration": 8500
+  },
+  {
+    "ID": 21161,
+    "BuffTips": "【化身Lv1】缓慢恢复些微生命(2s回2%）",
+    "Duration": -1,
+    "Interval": 2000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [151, 200, 0, 1],
+        "EffectParamsFloat": []
+      }
+    ]
   }
 ]
