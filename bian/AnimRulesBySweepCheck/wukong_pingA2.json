@@ -7,7 +7,7 @@
     "CastActions": [
       {
         "Type": "buff",
-        "BuffIDs": [66655402],
+        "BuffIDs": [66655401],
         "BuffTime": 1000,
         "desc": "棍光特效粒子"
       }

@@ -1,16 +1,11 @@
 [
   {
-    "code": "SDS",
+    "code": "ADDI",
     "actions": [
       {
-        "Type": "bullet",
-        "bullets": [
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [74010207],
-            "desc": "火圈"
-          }
-        ]
+        "Type": "additem",
+        "ItemID": 3310,
+        "ItemCount": 99
       }
     ]
   },
@@ -30,7 +25,7 @@
       }
     ]
   },
- 
+
   {
     "code": "RESET",
     "actions": [
@@ -123,6 +118,24 @@
         "type": "addallsummonlifetime",
         "SummonAliveTime": 999,
         "TimeDelay": 1000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+  {
+    "code": "you",
+    "actions": [
+      {
+        "Type": "summon",
+        "SummonID": 200201,
+        "SummonCount": 1,
+        "desc": "召唤马哥"
+      },
+
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 999,
+        "TimeDelay": 2000,
         "Name": "增加召唤物存活时间"
       }
     ]

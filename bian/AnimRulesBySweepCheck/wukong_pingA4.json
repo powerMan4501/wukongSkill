@@ -8,7 +8,7 @@
       {
         "Type": "buff",
         "TimeDelay": 50,
-        "BuffIDs": [66655402],
+        "BuffIDs": [66655401],
         "BuffTime": 1500,
         "desc": "棍光特效粒子"
       }

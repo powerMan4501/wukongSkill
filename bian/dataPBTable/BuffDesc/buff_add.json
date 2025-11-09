@@ -1,5 +1,41 @@
 [
   {
+    "ID": 6660006,
+    "BuffTips": "金箍棒，若触发则暴击回复生命/法力/法宝/棍势各20点",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "Duration": -1,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 10,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [152, 20, 0, 0],
+        "EffectParamsFloat": []
+      },
+
+      {
+        "EffectTrigger": 10,
+        "EffectType": 87,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [8],
+        "EffectParamsFloat": [-20.0, 0.0]
+      },
+      {
+        "EffectTrigger": 10,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0],
+        "EffectParamsFloat": [20]
+      }
+    ]
+  },
+  {
     "ID": 888666001,
     "BuffTips": "主角，80%减伤，2倍速度，完美闪避范围加大，死亡自动复活,暴击/杀怪/打伤/被打伤回复棍势",
     "Duration": -1,
@@ -36,7 +72,7 @@
         "EffectParams": [],
         "EffectParamsFloat": []
       },
-     
+
       {
         "EffectTrigger": 7,
         "EffectType": 134,
@@ -45,7 +81,7 @@
         "EffectParams": [0],
         "EffectParamsFloat": [5]
       },
-       {
+      {
         "EffectTrigger": 10,
         "EffectType": 134,
         "EffectTargetSelectType": 0,
@@ -53,7 +89,7 @@
         "EffectParams": [0],
         "EffectParamsFloat": [5]
       },
-       {
+      {
         "EffectTrigger": 11,
         "EffectType": 134,
         "EffectTargetSelectType": 0,
@@ -61,7 +97,7 @@
         "EffectParams": [0],
         "EffectParamsFloat": [5]
       },
-       {
+      {
         "EffectTrigger": 14,
         "EffectType": 134,
         "EffectTargetSelectType": 0,
@@ -214,6 +250,52 @@
         ],
         "EffectParams": [0, 0],
         "EffectParamsFloat": []
+      }
+    ]
+  },
+
+  {
+    "ID": 2031,
+    "BuffTips": "白衣衣服每秒回血",
+    "BuffActiveCondition": {
+      "ConditionType": 4,
+      "ConditionParams": "0,151,1,-1,9999"
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 1,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 1000,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [151, 150, 0, 10],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 2,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [2030],
+        "EffectParamsFloat": [0.0]
       }
     ]
   }

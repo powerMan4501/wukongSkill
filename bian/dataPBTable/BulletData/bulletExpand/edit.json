@@ -174,5 +174,19 @@
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1,
     "HitEffectsforChr": [888555037]
+  },
+  {
+    "desc": "马猴红剑气",
+    "ID": 1713001,
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1,
+    "HitEffectsforChr": [888555031, 888555018]
+  },
+  {
+    "desc": "猪八戒",
+    "ID": 51002002,
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1,
+    "HitEffectsforChr": [888555032, 888555018]
   }
 ]

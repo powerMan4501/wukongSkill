@@ -1,0 +1,74 @@
+[
+     {
+      "ID": 11342,
+      "CanCyclicMapping": 0,
+      "ResultRull": 2,
+      "MappingConfigList": [
+        {
+          "SkillMappingConditionType": 1,
+          "IntParams": [
+            888666006
+          ],
+          "FloatParams": [],
+          "SkillIDs": [
+            10141
+          ],
+          "MontagePaths": [
+            "AnimMontage'/Game/00Main/Animation/Player/Transform/VigorSkill/Montage/Lv6/AM_70_zhusun_01_atk_02_BING.AM_70_zhusun_01_atk_02_BING'"
+          ],
+          "SectionNameList": []
+        },
+        {
+          "SkillMappingConditionType": 1,
+          "IntParams": [
+            888666008
+          ],
+          "FloatParams": [],
+          "SkillIDs": [
+            10141
+          ],
+          "MontagePaths": [
+            "AnimMontage'/Game/00Main/Animation/Player/Transform/VigorSkill/Montage/Lv6/AM_70_zhusun_01_atk_02_DU.AM_70_zhusun_01_atk_02_DU'"
+          ],
+          "SectionNameList": []
+        },
+        {
+          "SkillMappingConditionType": 1,
+          "IntParams": [
+            888666007
+          ],
+          "FloatParams": [],
+          "SkillIDs": [
+            10141
+          ],
+          "MontagePaths": [
+            "AnimMontage'/Game/00Main/Animation/Player/Transform/VigorSkill/Montage/Lv6/AM_70_zhusun_01_atk_02_HUO.AM_70_zhusun_01_atk_02_HUO'"
+          ],
+          "SectionNameList": []
+        },
+        {
+          "SkillMappingConditionType": 1,
+          "IntParams": [
+            888666005
+          ],
+          "FloatParams": [],
+          "SkillIDs": [
+            10141
+          ],
+          "MontagePaths": [
+            "AnimMontage'/Game/00Main/Animation/Player/Transform/VigorSkill/Montage/Lv6/AM_70_zhusun_01_atk_02_LEI.AM_70_zhusun_01_atk_02_LEI'"
+          ],
+          "SectionNameList": []
+        },
+         {
+          "SkillMappingConditionType": 0,
+          "SkillIDs": [
+            10141
+          ],
+          "MontagePaths": [
+            "AnimMontage'/Game/00Main/Animation/Player/Transform/VigorSkill/Montage/Lv6/AM_70_zhusun_01_atk_02_LEI.AM_70_zhusun_01_atk_02_LEI'"
+          ]
+        }
+      ]
+    }
+]

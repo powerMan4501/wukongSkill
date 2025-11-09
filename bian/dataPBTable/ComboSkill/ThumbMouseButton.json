@@ -1,5 +1,13 @@
 [
   {
+    "nowMontage": "_PreciseDodge_",
+    "rate": 0.1,
+    "skillID": 54321005,
+    "Condition": "any",
+    "InputCore": "LeftMouseButton",
+    "desc": "大圣模式完美闪避接破隐一击"
+  },
+  {
     "nowMontage": ".AM_Wukong_PreciseDodge_F_01",
     "rate": 0.1,
     "type": "RushSkill",
@@ -151,7 +159,7 @@
     "InputCore": "ThumbMouseButton",
     "desc": "如果当前使用的技能是大圣江海翻，且播放了2s以上，可以使出退寸AM_wukong_combob_z_01"
   },
-{
+  {
     "nowMontage": "AM_wukong_comboa_q1_dingshen",
     "rate": 0.3,
     "skillID": 50010724,
@@ -184,7 +192,6 @@
     "InputCore": "ThumbMouseButton",
     "desc": "进尺接：退寸"
   },
-
 
   {
     "nowMontage": "AM_Dasheng_ComboA_02_Z_1.AM_Dasheng_ComboA_02_Z_1",
@@ -262,7 +269,7 @@
     "InputCore": "ThumbMouseButton",
     "desc": "劈棍下，10705"
   },
-   {
+  {
     "nowMontage": ".AM_TianXian_ATK_01_01_01",
     "rate": 0.5,
     "skillID": 84321006,
@@ -270,7 +277,7 @@
     "InputCore": "ThumbMouseButton",
     "desc": "接:逆时针横扫"
   },
-   {
+  {
     "nowMontage": "AM_mgd_jsds_atk_01_01.AM_mgd_jsds_atk_01_01",
     "rate": 0.5,
     "skillID": 84321007,
@@ -278,7 +285,7 @@
     "InputCore": "ThumbMouseButton",
     "desc": "逆时针横扫接，顺时针超大范围横扫"
   },
-   {
+  {
     "nowMontage": "AM_mgd_jsds_atk_01_01_01.AM_mgd_jsds_atk_01_01_01",
     "rate": 0.5,
     "skillID": 84321009,
@@ -293,7 +300,7 @@
     "InputCore": "ThumbMouseButton",
     "desc": "立棍下，大范围横扫"
   },
-  
+
   {
     "skillID": 54321002,
     "Condition": "StancePoke",

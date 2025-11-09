@@ -6,8 +6,9 @@
     "speedRate": 4,
     "CastActions": [
       {
-        "Type": "MaiDongHuiLai",
-        "desc": "全属性全满，增加6000护盾和霸体值"
+        "Type": "buff",
+        "BuffID": 304,
+        "desc": "复活点，回血回蓝回葫芦清除技能cd"
       }
     ]
   },

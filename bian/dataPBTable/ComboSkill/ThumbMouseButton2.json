@@ -298,10 +298,10 @@
     "nowMontage": "AM_Dasheng_ComboA_01_Z_1.AM_Dasheng_ComboA_01_Z_1",
     "rate": 0.95,
     "type": "magic",
-    "skillID": 8513,
+    "skillID": 8517,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "大圣版50001破棍接：大头磕头"
+    "desc": "大圣版50001破棍接：虎怅"
   },
   {
     "nowMontage": "AM_Wukong_ComboA_z_01.AM_Wukong_ComboA_z_01",
@@ -324,12 +324,12 @@
     "desc": "如果当前使用的技能是10707，大铁球"
   },
   {
-    "nowMontage": "AM_Dasheng_ComboA_01_Z_2",
-    "rate": 1.4,
+    "nowMontage": ".AM_Dasheng_ComboA_01_Z_2",
+    "rate": 1.1,
     "skillID": 84321024,
     "InputCore": "ThumbMouseButton2",
     "Condition": "any",
-    "desc": "如果当前使用的技能是10707， 接棍子变粗砸砸砸AM_mgd_jsds_atk_jdy_03"
+    "desc": "如果当前使用的技能是10707， 砸砸砸"
   },
   {
     "nowMontage": "AM_mgd_jsds_atk_jdy_03",
@@ -438,11 +438,10 @@
     "nowMontage": "AM_Dasheng_ComboA_03_Z_1.AM_Dasheng_ComboA_03_Z_1",
     "rate": 0.6,
     "type": "magic",
-    "skillID": 8572,
-    "MagicSkillID": 11372,
+    "skillID": 8527,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "接赤发鬼"
+    "desc": "小横扫 接虫总兵"
   },
 
   {

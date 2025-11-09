@@ -1,0 +1,40 @@
+[
+  {
+    "Id": 16035,
+    "desc": "把君子牌回复神力，修改成全属性回复",
+    "EquipEffectDesc": "每秒恢复20点生命/法力/法宝/变身能量；攻击触发暴击立即恢复20点棍势"
+  },
+  {
+    "Id": 15002,
+    "EquipName": "如意金箍棒",
+    "EquipEffectDesc": "第四段棍势可永久维持，不再随时间减削，若攻击触发暴击则回复法力/精魄/棍势各20点"
+  },
+  {
+    "Id": 12001,
+    "EquipName": "凤翅紫金冠",
+    "AttrEffectId": 2001,
+    "EquipEffectId": 900302,
+    "EquipEffectDesc": "持续回复少许生命"
+  },
+  {
+    "Id": 12002,
+    "EquipName": "锁子黄金甲",
+    "AttrEffectId": 2002,
+    "EquipEffectId": 901612,
+    "EquipEffectDesc": "获得霸体强硬效果"
+  },
+  {
+    "Id": 12003,
+    "EquipName": "点翠飞龙釬",
+    "AttrEffectId": 2003,
+    "EquipEffectId": 106019,
+    "EquipEffectDesc": "生命饱满时，较大增加攻击造成的伤害"
+  },
+  {
+    "Id": 12004,
+    "EquipName": "藕丝步云履",
+    "AttrEffectId": 2004,
+    "EquipEffectId": 106008,
+    "EquipEffectDesc": "增加少许移动速度"
+  }
+]

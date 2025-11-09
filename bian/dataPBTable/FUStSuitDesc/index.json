@@ -1,0 +1,45 @@
+[
+  {
+    "ID": 20,
+    "SuitName": "试比天高",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 900711,
+        "SuitEffectDesc": "立棍切手技<EquipDetail_SuitDesc_KW>风云转</>和<EquipDetail_SuitDesc_KW>江海翻</>造成额外伤害"
+      },
+      {
+        "TriggerNum": 2,
+        "AttrEffectID": 0,
+        "SuitEffectID": 900412,
+        "SuitEffectDesc": "疾奔时，每秒可垒叠一层少许的攻击伤害增加，最高可垒叠十层；停下疾奔少时后，此效果自然消散  "
+      },
+      {
+        "TriggerNum": 3,
+        "AttrEffectID": 0,
+        "SuitEffectID": 902011,
+        "SuitEffectDesc": "使出法术后一段时间内，少许增加<EquipDetail_SuitDesc_KW>暴击率</>"
+      },
+      {
+        "TriggerNum": 4,
+        "AttrEffectID": 0,
+        "SuitEffectID": 900511,
+        "SuitEffectDesc": "根据根器天赋的解锁数量，提升所有部件的<EquipDetail_SuitDesc_KW>防御</>"
+      },
+
+      {
+        "TriggerNum": 5,
+        "AttrEffectID": 0,
+        "SuitEffectID": 902012,
+        "SuitEffectDesc": "暴击时，些微减少所有法术的回转时间"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 900421,
+      "RedQualityEffectDesc": "疾奔时，每秒获得些微棍势"
+    },
+    "LocalizationTag": 1
+  }
+]
