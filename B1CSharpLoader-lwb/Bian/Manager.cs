@@ -131,7 +131,7 @@ namespace bian
                 LoadUtils.ModifyPlayCtrlDescData();
 
                 LoadUtils.LoadAndApplySuitDesc();
-                LoadUtils.ModifyPrice();
+                LoadUtils.LoadAndApplyItemDesc();
                 LoadUtils.ModifyHP();
                 LoadUtils.ModifySoulskill();
                 LoadUtils.ModifyCommDropRuleDesc();
@@ -143,7 +143,7 @@ namespace bian
                 LoadUtils.LoadAnimRulesBySweepCheck();
                 LoadUtils.ModifyPlayerLevelDesc();
                 LoadUtils.ModifySkillsMap();
-                 LoadUtils.LoadAndApplyTalentDesc();
+                LoadUtils.LoadAndApplyTalentDesc();
                 isBuffConfigsLoaded = true;
             }
         }
@@ -793,7 +793,7 @@ namespace bian
 
                     if (type == "bossLabel")
                     {
-                        Helper.CastVigorSkillByModel((BGUPlayerCharacterCS)character, combo.bossLabel, combo.type ?? "", combo?.MagicSkillID ?? 0, combo?.resetBack ?? false,combo?.RecoverSkillID ?? 10199);
+                        Helper.CastVigorSkillByModel((BGUPlayerCharacterCS)character, combo.bossLabel, combo.type ?? "", combo?.MagicSkillID ?? 0, combo?.resetBack ?? false, combo?.RecoverSkillID ?? 10199);
                     }
                     if (type == "RushSkill")
                     {
@@ -829,14 +829,12 @@ namespace bian
             {
                 var matchItem = ActionsByInput.FirstOrDefault(item => inputCodeStr?.ToLower()?.Contains(item.code?.ToLower()) ?? false
                 );
-
-                if (matchItem != null && matchItem?.actions?.Count > 0)
+                if (matchItem != null && matchItem?.afterActions?.Count > 0)
                 {
                     var rule = new Rule();
                     inputCodeStr = null;
-                    rule?.DoAfterActions(matchItem.actions);
-                }
-                ;
+                    rule?.DoAfterActions(matchItem.afterActions);
+                };
 
 
 
@@ -903,9 +901,7 @@ namespace bian
 
                     rule?.DoAfterActions(matchedCombo.afterActions);
                 }
-                else
-
-            if (matchedCombo.bossLabel != null)
+                else if (matchedCombo.bossLabel != null)
                 {
                     CastMagicSkill(character, matchedCombo, "bossLabel");
                 }

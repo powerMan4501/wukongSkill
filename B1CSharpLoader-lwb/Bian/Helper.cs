@@ -468,12 +468,12 @@ namespace bian
             data.ResetReason = EResetReason_MagicallyChange.Normal;
             data.CastReason = ECastReason_MagicallyChange.NormalSkill;
             data.DurMagicallyChange = true;
-            data.RecoverSkillID = RecoverSkillID ?? 10199;
+            data.RecoverSkillID =  10199;
             isPlayVigorSkillByID = true;
             // 打断当前所有动画
             UGSE_AnimFuncLib.StopAllMontages(character, 0f);
             UGSE_AnimFuncLib.TickAnimationAndRefreshBone(character);
-            BGUFunctionLibraryCS.CastMagicallyChangeSkill(character, config, skillId, RecoverSkillID ?? 10199);
+            BGUFunctionLibraryCS.CastMagicallyChangeSkill(character, config, skillId,  10199);
             // MyUtils.SetCamera();
         }
 

@@ -28,7 +28,7 @@ public class bossModel : BaseModel
 public class ActionConfig
 {
     public string code { get; set; }
-    public List<RuleAction> actions { get; set; }
+    public List<RuleAction> afterActions { get; set; }
 }
 
 public class DamageExpandConfig
@@ -399,7 +399,7 @@ namespace bian
         public double? rate { get; set; }
         public int skillID { get; set; }
         public int RecoverSkillID { get; set; }
-        
+
         public SkillMapCondition Condition { get; set; }
         public string InputCore { get; set; }
         public int? conditionValue { get; set; }
@@ -1997,7 +1997,7 @@ namespace bian
         }
 
 
-    
+
 
         public class SuitInfoJson
         {
@@ -2380,30 +2380,177 @@ namespace bian
             }
         }
 
-        public static void ModifyPrice()
+
+
+
+        public class ItemConfig
         {
-            RepeatedField<ItemDesc> itemsList = GameDBRuntime.GetTBItemDesc().List;
-            if (itemsList == null || itemsList.Count == 0) return;
-            // 1158 血条上限 1159防御上限
-            foreach (var item in itemsList)
-            {
-                if (item.SellPrice > 0)
-                {
-                    item.SellPrice = item.SellPrice + 200 * 10000;
-                }
-                if (item.CarryMax > 0 && item.CarryMax < 999)
-                {
-                    if (item.ItemType == ItemType.Consume || item.Id == 1158 || item.Id == 1159)
-                    {
-                        item.CarryMax = 999;
-                    }
-
-                }
-            }
-
-
-
+            public int Id { get; set; }
+            public string? Name { get; set; }
+            public int? SortId { get; set; }
+            public string? TypeName { get; set; }
+            public int? ItemType { get; set; }
+            public int? Quality { get; set; }
+            public int? CarryMax { get; set; }
+            public string? BriefDesc { get; set; }
+            public string? Desc { get; set; }
+            public string? DropTemplete { get; set; }
+            public int? Param1 { get; set; }
+            public int? GainPerformance { get; set; }
+            public int? FillType { get; set; }
+            public int? IsLevelItem { get; set; }
+            public string? EffectDesc { get; set; }
+            public int? SellPrice { get; set; }
+            public string? Source { get; set; }
+            public int? PackageType { get; set; }
+            public int? IsShieldGain { get; set; }
+            public int? IsShowFull { get; set; }
+            public int? IsLoseFalldying { get; set; }
+            public int? LocalizationTag { get; set; }
+            public int? ImageId { get; set; }
+            public string? HudEffectDesc { get; set; }
+            public int? Param2 { get; set; }
         }
+
+        public static int LoadAndApplyItemDesc(string configDirectory = null)
+        {
+            try
+            {
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "ItemDesc");
+
+                var itemConfigs = LoadJsonConfigs<ItemConfig>(configDirectory, "ItemDesc");
+                var itemsList = GameDBRuntime.GetTBItemDesc().List;
+
+                if (itemConfigs == null || itemConfigs.Count == 0)
+                {
+                    Log.Error("Failed to load item desc configs");
+                    return 0;
+                }
+
+                if (itemsList == null)
+                {
+                    Log.Error("Failed to get item desc list from game database");
+                    return 0;
+                }
+                foreach (var item in itemsList)
+                {
+                    if (item.SellPrice > 0)
+                    {
+                        item.SellPrice = item.SellPrice + 200 * 10000;
+                    }
+                    if (item.CarryMax > 0 && item.CarryMax < 999)
+                    {
+                        if (item.ItemType == ItemType.Consume || item.Id == 1158 || item.Id == 1159)
+                        {
+                            item.CarryMax = 999;
+                        }
+                    }
+                }
+                // 去重处理
+                itemConfigs = itemConfigs.GroupBy(c => c.Id).Select(g => g.First()).ToList();
+
+                var processedCount = 0;
+                foreach (var config in itemConfigs)
+                {
+                    try
+                    {
+                        var existingItem = itemsList.FirstOrDefault(i => i.Id == config.Id);
+                        if (existingItem != null)
+                        {
+                            // 更新现有物品（只更新非空值）
+                            if (!string.IsNullOrEmpty(config.Name))
+                                existingItem.Name = config.Name;
+
+                            if (config.SortId.HasValue)
+                                existingItem.SortId = config.SortId.Value;
+
+                            if (!string.IsNullOrEmpty(config.TypeName))
+                                existingItem.TypeName = config.TypeName;
+
+                            if (config.ItemType.HasValue)
+                                existingItem.ItemType = (ItemType)config.ItemType.Value;
+
+                            if (config.Quality.HasValue)
+                                existingItem.Quality = (ItemQuality)config.Quality.Value;
+
+                            if (config.CarryMax.HasValue)
+                                existingItem.CarryMax = config.CarryMax.Value;
+
+                            if (!string.IsNullOrEmpty(config.BriefDesc))
+                                existingItem.BriefDesc = config.BriefDesc;
+
+                            if (!string.IsNullOrEmpty(config.Desc))
+                                existingItem.Desc = config.Desc;
+
+                            if (!string.IsNullOrEmpty(config.DropTemplete))
+                                existingItem.DropTemplete = config.DropTemplete;
+
+                            if (config.Param1.HasValue)
+                                existingItem.Param1 = config.Param1.Value;
+
+                            if (config.GainPerformance.HasValue)
+                                existingItem.GainPerformance = (GainPerformanceType)config.GainPerformance.Value;
+
+                            if (config.FillType.HasValue)
+                                existingItem.FillType = (FillToHUDType)config.FillType.Value;
+
+                            if (config.IsLevelItem.HasValue)
+                                existingItem.IsLevelItem = (YesNoType)config.IsLevelItem.Value;
+
+                            if (!string.IsNullOrEmpty(config.EffectDesc))
+                                existingItem.EffectDesc = config.EffectDesc;
+
+                            if (config.SellPrice.HasValue)
+                                existingItem.SellPrice = (uint)config.SellPrice.Value;
+
+                            if (!string.IsNullOrEmpty(config.Source))
+                                existingItem.Source = config.Source;
+
+                            if (config.PackageType.HasValue)
+                                existingItem.PackageType = (ItemPackageType)config.PackageType.Value;
+
+                            if (config.IsShieldGain.HasValue)
+                                existingItem.IsShieldGain = (YesNoType)config.IsShieldGain.Value;
+
+                            if (config.IsShowFull.HasValue)
+                                existingItem.IsShowFull = (YesNoType)config.IsShowFull.Value;
+
+                            if (config.IsLoseFalldying.HasValue)
+                                existingItem.IsLoseFalldying = (YesNoType)config.IsLoseFalldying.Value;
+
+                            if (config.LocalizationTag.HasValue)
+                                existingItem.LocalizationTag = config.LocalizationTag.Value;
+
+                            if (config.ImageId.HasValue)
+                                existingItem.ImageId = config.ImageId.Value;
+
+                            if (!string.IsNullOrEmpty(config.HudEffectDesc))
+                                existingItem.HudEffectDesc = config.HudEffectDesc;
+
+                            if (config.Param2.HasValue)
+                                existingItem.Param2 = config.Param2.Value;
+
+                            processedCount++;
+                            Log.Info($"Successfully updated item desc with ID: {config.Id}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process item desc config for ID {config.Id}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed item desc configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplyItemDesc: {ex.Message}");
+                return 0;
+            }
+        }
+
+        
         public static void ModifyCommDropRuleDesc()
         {
             var itemsList = BG_ProtobufDataAPI<CommDropRuleDesc>.Get().GetAll();
@@ -2468,7 +2615,7 @@ namespace bian
         }
 
 
-      
+
 
 
         public static void ModifyPlayerLevelDesc()
