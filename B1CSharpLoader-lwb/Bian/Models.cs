@@ -683,7 +683,7 @@ namespace bian
             }
             else if (skillType == "boss" && skill?.bossLabel != null)
             {
-                Helper.CastVigorSkillByModel(character, skill.bossLabel, skill.type ?? "", skill?.MagicSkillID ?? 0, skill?.resetBack ?? false);
+                Helper.CastVigorSkillByModel(character, skill.bossLabel, skill.type ?? "", skill?.MagicSkillID ?? 0, skill?.resetBack ?? false,skill?.RecoverSkillID ?? 10199);
                 return true;
             }
             else if (skillType == "rushskill")

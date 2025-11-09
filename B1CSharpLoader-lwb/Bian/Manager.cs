@@ -793,7 +793,7 @@ namespace bian
 
                     if (type == "bossLabel")
                     {
-                        Helper.CastVigorSkillByModel((BGUPlayerCharacterCS)character, combo.bossLabel, combo.type ?? "", combo?.MagicSkillID ?? 0, combo?.resetBack ?? false);
+                        Helper.CastVigorSkillByModel((BGUPlayerCharacterCS)character, combo.bossLabel, combo.type ?? "", combo?.MagicSkillID ?? 0, combo?.resetBack ?? false,combo?.RecoverSkillID ?? 10199);
                     }
                     if (type == "RushSkill")
                     {

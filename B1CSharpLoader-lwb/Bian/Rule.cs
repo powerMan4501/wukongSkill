@@ -26,6 +26,7 @@ namespace bian
 
 
 
+        public int? RecoverSkillID { get; set; }
         public int? changeTime { get; set; }
         public bool? resetBack { get; set; }
         public string? bossLabel { get; set; }
@@ -515,7 +516,7 @@ namespace bian
                 case "bossskill":
                     if (action.bossLabel != null && action.bossType != null && action?.MagicSkillID != null)
                     {
-                        Helper.CastVigorSkillByModel(character, action.bossLabel, action.bossType ?? "", action?.MagicSkillID ?? 0, action?.resetBack ?? false);
+                        Helper.CastVigorSkillByModel(character, action.bossLabel, action.bossType ?? "", action?.MagicSkillID ?? 0, action?.resetBack ?? false, action?.RecoverSkillID ?? 10199);
                     }
                     break;
                 case "magicskill":

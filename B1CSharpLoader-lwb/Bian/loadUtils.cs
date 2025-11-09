@@ -398,6 +398,8 @@ namespace bian
         public string? nowMontage { get; set; }
         public double? rate { get; set; }
         public int skillID { get; set; }
+        public int RecoverSkillID { get; set; }
+        
         public SkillMapCondition Condition { get; set; }
         public string InputCore { get; set; }
         public int? conditionValue { get; set; }

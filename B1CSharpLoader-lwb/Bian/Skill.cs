@@ -10,6 +10,7 @@ namespace bian
     {
 
         public int HitCount = 0;
+        public int? RecoverSkillID;
 
         public float PlayTimeRate { get; set; }
         public int Id { get; set; }
