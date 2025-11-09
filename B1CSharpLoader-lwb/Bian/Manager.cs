@@ -130,20 +130,20 @@ namespace bian
                 LoadUtils.ModifyIronData();
                 LoadUtils.ModifyPlayCtrlDescData();
 
-                LoadUtils.ModifySuitDesc();
+                LoadUtils.LoadAndApplySuitDesc();
                 LoadUtils.ModifyPrice();
                 LoadUtils.ModifyHP();
                 LoadUtils.ModifySoulskill();
                 LoadUtils.ModifyCommDropRuleDesc();
                 LoadUtils.ModifyWeaponBuild();
-                LoadUtils.ModifyShopDesc();
                 LoadUtils.ModifyTrans();
 
                 LoadUtils.LoadAndApplyDamageExpandDesc();
-                LoadUtils.ModifyEquipDesc();
+                LoadUtils.LoadAndApplyEquipDesc();
                 LoadUtils.LoadAnimRulesBySweepCheck();
                 LoadUtils.ModifyPlayerLevelDesc();
-                // LoadUtils.Modifyqitiandasheng();
+                LoadUtils.ModifySkillsMap();
+                 LoadUtils.LoadAndApplyTalentDesc();
                 isBuffConfigsLoaded = true;
             }
         }

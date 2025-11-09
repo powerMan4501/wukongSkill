@@ -4,6 +4,7 @@ using b1.BGW;
 using b1.ECS;
 using b1.Plugins.Calliope;
 using b1.Plugins.TressFX;
+using B1UI;
 using BtlB1;
 using BtlShare;
 using CSharpModBase;
@@ -469,7 +470,10 @@ namespace bian
             data.DurMagicallyChange = true;
             data.RecoverSkillID = 10199;
             isPlayVigorSkillByID = true;
-            BGUFunctionLibraryCS.CastMagicallyChangeSkill((AActor)MyUtils.GetControlledPawn(), config, skillId, 10199);
+            // 打断当前所有动画
+            UGSE_AnimFuncLib.StopAllMontages(character, 0f);
+            UGSE_AnimFuncLib.TickAnimationAndRefreshBone(character);
+            BGUFunctionLibraryCS.CastMagicallyChangeSkill(character, config, skillId, 10199);
             // MyUtils.SetCamera();
         }
 
@@ -1593,6 +1597,45 @@ namespace bian
             }
             BUS_EventCollectionCS.Get(actor).Evt_TriggerPhantomRush.Invoke(phantomRushDir);
         }
+        public static CommB1.PlayerDataMgr getPlayerMgr()
+        {
+            var Player = GSG.GamePlayer;
+            var PlayerMgr = GSG.GamePlayer.CreateTransaction((OPReason)2);
+            return PlayerMgr;
+        }
+        public static void gain_item(int ItemID, int ItemCount = 1)
+        {
+            var PlayerMgr = getPlayerMgr();
+            Log.Info($"bian: gain_item ItemID:{ItemID}, ItemCount:{ItemCount},{PlayerMgr?.GetType()}");
+            PlayerMgr.Bag.GainItemOne(new ItemOne
+            {
+                Id = ItemID,
+                Num = ItemCount
+            });
+        }
+        public static void addAllTaskItem()
+        {
+            int num = 1;
+            TBItemDesc tBItemDesc = GameDBRuntime.GetTBItemDesc();
+            var PlayerMgr = getPlayerMgr();
+            for (int i = 0; i < tBItemDesc.List.Count; i++)
+            {
+                ItemDesc val = tBItemDesc.List[i];
+                if ((int)val.ItemType == 5)
+                {
+                    MsgErrCode val2 = PlayerMgr.Bag.GainItemOne(new ItemOne
+                    {
+                        Id = val.Id,
+                        Num = num
+                    });
+                    if ((int)val2 > 0)
+                    {
+                        SysLogUtil.GAME_PLAYER.LogError($"GainItemOne Failed, Id:{val.Id}, Num:{1}");
+                    }
+                }
+            }
+        }
+
 
         public static void change_to_dasheng(int? time = 999)
         {
@@ -1602,12 +1645,14 @@ namespace bian
                 FUStTransQiTianDaShengConfigDesc transQiTianDaShengConfigDesc = BGW_GameDB.GetTransQiTianDaShengConfigDesc(1, Owner);
                 transQiTianDaShengConfigDesc.Duration = time ?? 999;
                 BUS_GSEventCollection obj = BUS_EventCollectionCS.Get(Owner);
-                if (obj != null)
+
+                var player = MyUtils.GetControlledPawn();
+
+                if (obj != null && player != null)
                 {
                     obj.Evt_TriggerTrans2DaSheng.Invoke();
+                    BGUFunctionLibraryCS.BGUSetAttrValue(player, EBGUAttrFloat.Pevalue, 480f);
                 }
-                BGUFunctionLibraryCS.BGUSetAttrValue((AActor)MyUtils.GetControlledPawn(), (EBGUAttrFloat)191, 480f);
-                Console.WriteLine($"change_to_dasheng 进入大圣模式");
             }
         }
     }

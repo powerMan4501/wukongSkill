@@ -491,27 +491,18 @@ namespace bian
 
                     break;
                 case "additem":
-                    if (action?.ItemID > 0 && action?.ItemCount > 0)
+                    if (action != null && action.ItemID != null && action.ItemCount != null)
                     {
                         Log.Info($"DoAction additem:{action.ItemID},ItemCount:{action?.ItemCount}");
-                        var listParams = new List<string> { action.ItemID.ToString(), action.ItemCount.ToString() };
-                        PlayerGmExecutor.TryInvokeGmCmd(GSG.GamePlayer, getPlayerDataMgr(), "AddItem", listParams);
-                        updateData();
+
+
+                        Helper.gain_item((int)action.ItemID, (int)action.ItemCount);
                     }
 
 
                     break;
-
-                case "allitem":
-                    Log.Info($"DoAction AllItem");
-                    PlayerGmExecutor.TryInvokeGmCmd(GSG.GamePlayer, getPlayerDataMgr(), "AllItem", []);
-                    updateData();
-                    break;
-
                 case "alltaskitem":
-                    PlayerGmExecutor.TryInvokeGmCmd(GSG.GamePlayer, getPlayerDataMgr(), "AllTaskItem", []);
-                    updateData();
-
+                    Helper.addAllTaskItem();
                     break;
                 case "effect":
                     if (action.EffectID > 0)

@@ -1751,6 +1751,8 @@ namespace bian
                     try
                     {
                         var targetSkill = GetOrCreateSkillDesc(skillConfig, skillList, templateSkill);
+                        targetSkill.AtkReboundingMontage = string.Empty;
+
                         CopyProperties(skillConfig, targetSkill);
                         processedCount++;
                         // Log.Info($"Successfully processed skill with ID: {skillConfig.ID}");
@@ -1993,47 +1995,359 @@ namespace bian
         }
 
 
-        // 套装只需要一套就能生效
-        public static void ModifySuitDesc()
+    
+
+        public class SuitInfoJson
         {
-            var dataList = BG_ProtobufDataAPI<FUStSuitDesc>.Get().GetAll();
-            if (dataList?.Values == null || dataList.Count == 0)
-                return;
+            public int? TriggerNum { get; set; }
+            public int? AttrEffectID { get; set; }
+            public int? SuitEffectID { get; set; }
+            public string? SuitEffectDesc { get; set; }
+        }
 
-            foreach (var itemData in dataList.Values.Where(item => item?.SuitInfo?.Count > 0))
+        public class SuitDescJson
+        {
+            public int ID { get; set; }
+            public string? SuitName { get; set; }
+            public List<SuitInfoJson>? SuitInfo { get; set; }
+            public object? RedQualityInfo { get; set; }
+            public int? LocalizationTag { get; set; }
+        }
+
+        public static int LoadAndApplySuitDesc(string configDirectory = null)
+        {
+            try
             {
-                foreach (var suitInfo in itemData.SuitInfo.Where(s => s != null))
-                {
-                    if (suitInfo.TriggerNum > 1)
-                        suitInfo.TriggerNum = 1;
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "FUStSuitDesc");
 
-                    if (suitInfo.SuitEffectID == 901612)
+                var suitConfigs = LoadJsonConfigs<SuitDescJson>(configDirectory, "SuitDesc");
+                var dataList = BG_ProtobufDataAPI<FUStSuitDesc>.Get().GetAll();
+
+                if (suitConfigs == null || suitConfigs.Count == 0)
+                {
+                    Log.Error("Failed to load suit desc configs");
+                    return 0;
+                }
+
+                if (dataList == null)
+                {
+                    Log.Error("Failed to get suit desc list from game database");
+                    return 0;
+                }
+
+                // 去重处理
+                suitConfigs = suitConfigs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
+
+                var processedCount = 0;
+                foreach (var config in suitConfigs)
+                {
+                    try
                     {
-                        suitInfo.SuitEffectDesc = "免疫投技，获得<EquipDetail_SuitDesc_KW>强硬</>效果";
+                        if (dataList.TryGetValue(config.ID, out var existingSuit))
+                        {
+                            // 更新现有套装（只更新非空值）
+                            if (!string.IsNullOrEmpty(config.SuitName))
+                                existingSuit.SuitName = config.SuitName;
+
+                            if (config.SuitInfo != null && config.SuitInfo.Count > 0)
+                            {
+                                existingSuit.SuitInfo.Clear();
+                                foreach (var info in config.SuitInfo)
+                                {
+                                    var newInfo = new FUStSuitInfo();
+                                    if (info.TriggerNum.HasValue)
+                                        newInfo.TriggerNum = info.TriggerNum.Value;
+                                    if (info.AttrEffectID.HasValue)
+                                        newInfo.AttrEffectID = info.AttrEffectID.Value;
+                                    if (info.SuitEffectID.HasValue)
+                                        newInfo.SuitEffectID = info.SuitEffectID.Value;
+                                    if (!string.IsNullOrEmpty(info.SuitEffectDesc))
+                                        newInfo.SuitEffectDesc = info.SuitEffectDesc;
+                                    existingSuit.SuitInfo.Add(newInfo);
+                                }
+                            }
+
+                            if (config.RedQualityInfo != null)
+                            {
+                                // 处理RedQualityInfo的更新
+                                // 这里需要根据实际的RedQualityInfo类型进行处理
+                            }
+
+                            if (config.LocalizationTag.HasValue)
+                                existingSuit.LocalizationTag = config.LocalizationTag.Value;
+
+                            processedCount++;
+                            Log.Info($"Successfully updated suit desc with ID: {config.ID}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process suit desc config for ID {config.ID}: {ex.Message}");
                     }
                 }
-            }
 
+                Log.Info($"Total processed suit desc configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplySuitDesc: {ex.Message}");
+                return 0;
+            }
         }
 
 
 
-        public static void ModifyEquipDesc()
+        public class EquipDescConfig
         {
-            var dataList = BG_ProtobufDataAPI<EquipDesc>.Get().GetAll();
-            if (dataList?.Values == null || dataList.Count == 0)
-                return;
+            public int Id { get; set; }
+            public int? EquipPosition { get; set; }
+            public string? EquipName { get; set; }
+            public string? SkeletalMesh { get; set; }
+            public int? ModularType { get; set; }
+            public int? ModularTypeForCharacterAI { get; set; }
+            public string? AttachSocketName { get; set; }
+            public string? AnimBlueprintClass { get; set; }
+            public List<string>? StaticMesh { get; set; }
+            public int? WeaponElement { get; set; }
+            public int? SuitId { get; set; }
+            public int? AttrEffectId { get; set; }
+            public int? EquipEffectId { get; set; }
+            public string? EquipEffectDesc { get; set; }
+            public int? DefaultCombatSkillId { get; set; }
+            public int? IsUniqueCombatSkill { get; set; }
+            public int? AudioMappingId { get; set; }
+            public int? AudioHitMappingId { get; set; }
+            public int? IsFlexible { get; set; }
+            public int? LocalizationTag { get; set; }
+            public int? AutoWear { get; set; }
+            public int? HideTail { get; set; }
+        }
 
-            foreach (var itemData in dataList.Values)
+        public static int LoadAndApplyEquipDesc(string configDirectory = null)
+        {
+            try
             {
-                if (itemData?.Id == 16035)
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "EquipDesc");
+
+                var equipConfigs = LoadJsonConfigs<EquipDescConfig>(configDirectory, "EquipDesc");
+                var equipList = GSProtobufRuntimeAPI<TBEquipDesc, EquipDesc>.Get().GetAll().List;
+
+                if (equipConfigs == null || equipConfigs.Count == 0)
                 {
-                    itemData.EquipEffectDesc = "装备后，每秒恢复20点生命/法力/法宝/变身能量；攻击触发暴击立即恢复20点棍势";
+                    Log.Error("Failed to load equip desc configs");
+                    return 0;
+                }
+
+                if (equipList == null)
+                {
+                    Log.Error("Failed to get equip desc list from game database");
+                    return 0;
+                }
+
+                // 去重处理
+                equipConfigs = equipConfigs.GroupBy(c => c.Id).Select(g => g.First()).ToList();
+
+                var processedCount = 0;
+                foreach (var config in equipConfigs)
+                {
+                    try
+                    {
+                        var existingEquip = equipList.FirstOrDefault(e => e.Id == config.Id);
+                        if (existingEquip != null)
+                        {
+                            // 更新现有装备（只更新非空值）
+                            if (config.EquipPosition.HasValue)
+                                existingEquip.EquipPosition = (EquipPosition)config.EquipPosition.Value;
+
+                            if (!string.IsNullOrEmpty(config.EquipName))
+                                existingEquip.EquipName = config.EquipName;
+
+                            if (!string.IsNullOrEmpty(config.SkeletalMesh))
+                                existingEquip.SkeletalMesh = config.SkeletalMesh;
+
+                            if (config.ModularType.HasValue)
+                                existingEquip.ModularType = (ECharacterModularType)config.ModularType.Value;
+
+                            if (config.ModularTypeForCharacterAI.HasValue)
+                                existingEquip.ModularTypeForCharacterAI = (ECharacterModularType)config.ModularTypeForCharacterAI.Value;
+
+                            if (!string.IsNullOrEmpty(config.AttachSocketName))
+                                existingEquip.AttachSocketName = config.AttachSocketName;
+
+                            if (!string.IsNullOrEmpty(config.AnimBlueprintClass))
+                                existingEquip.AnimBlueprintClass = config.AnimBlueprintClass;
+
+                            if (config.StaticMesh != null && config.StaticMesh.Count > 0)
+                            {
+                                existingEquip.StaticMesh.Clear();
+                                existingEquip.StaticMesh.AddRange(config.StaticMesh);
+                            }
+
+                            if (config.WeaponElement.HasValue)
+                                existingEquip.WeaponElement = (EBGUWeaponElement)config.WeaponElement.Value;
+
+                            if (config.SuitId.HasValue)
+                                existingEquip.SuitId = config.SuitId.Value;
+
+                            if (config.AttrEffectId.HasValue)
+                                existingEquip.AttrEffectId = config.AttrEffectId.Value;
+
+                            if (config.EquipEffectId.HasValue)
+                                existingEquip.EquipEffectId = config.EquipEffectId.Value;
+
+                            if (!string.IsNullOrEmpty(config.EquipEffectDesc))
+                                existingEquip.EquipEffectDesc = config.EquipEffectDesc;
+
+                            if (config.DefaultCombatSkillId.HasValue)
+                                existingEquip.DefaultCombatSkillId = config.DefaultCombatSkillId.Value;
+
+                            if (config.IsUniqueCombatSkill.HasValue)
+                                existingEquip.IsUniqueCombatSkill = config.IsUniqueCombatSkill.Value;
+
+                            if (config.AudioMappingId.HasValue)
+                                existingEquip.AudioMappingId = config.AudioMappingId.Value;
+
+                            if (config.AudioHitMappingId.HasValue)
+                                existingEquip.AudioHitMappingId = config.AudioHitMappingId.Value;
+
+                            if (config.IsFlexible.HasValue)
+                                existingEquip.IsFlexible = (YesNoType)config.IsFlexible.Value;
+
+                            if (config.LocalizationTag.HasValue)
+                                existingEquip.LocalizationTag = config.LocalizationTag.Value;
+
+                            if (config.AutoWear.HasValue)
+                                existingEquip.AutoWear = (YesNoType)config.AutoWear.Value;
+
+                            if (config.HideTail.HasValue)
+                                existingEquip.HideTail = (YesNoType)config.HideTail.Value;
+                        }
+
+                        processedCount++;
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process equip desc config for ID {config.Id}: {ex.Message}");
+                        Log.Error($"Stack trace: {ex.StackTrace}");
+                    }
+                }
+
+                Log.Info($"Total processed equip desc configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplyEquipDesc: {ex.Message}");
+                Log.Error($"Stack trace: {ex.StackTrace}");
+                return 0;
+            }
+        }
+        public class TalentSDescJson
+        {
+            public int Id { get; set; }
+            public string? Name { get; set; }
+            public int? TalentGroupId { get; set; }
+            public string? UnitResIDStrs { get; set; }
+            public string? PassiveSkillIDs { get; set; }
+            public string? AddBuffIDs { get; set; }
+            public List<int>? RequireTalentId { get; set; }
+            public List<int>? RequireSpellId { get; set; }
+            public int? MaxLevel { get; set; }
+            public List<TalentLevelUpCfg>? LevelUpCfg { get; set; }
+            public int? Type { get; set; }
+            public int? Rank { get; set; }
+            public int? RequirePlayerLevel { get; set; }
+            public int? IsSpellOnly { get; set; }
+            public int? LocalizationTag { get; set; }
+            public int? IsHide { get; set; }
+        }
+
+        public static void LoadAndApplyTalentDesc(string configDirectory = null)
+        {
+            configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "TalentSDesc");
+
+            var talentConfigs = LoadJsonConfigs<TalentSDescJson>(configDirectory, "TalentSDesc");
+            var talentSDescList = GSProtobufRuntimeAPI<TBTalentSDesc, TalentSDesc>.Get().GetAll();
+
+            if (talentConfigs == null || talentConfigs.Count == 0)
+            {
+                Log.Error("Failed to load talent desc configs");
+                return;
+            }
+
+            if (talentSDescList == null)
+            {
+                Log.Error("Failed to get talent desc list from game database");
+                return;
+            }
+
+            // 去重处理
+            talentConfigs = talentConfigs.GroupBy(c => c.Id).Select(g => g.First()).ToList();
+
+            foreach (var config in talentConfigs)
+            {
+                try
+                {
+                    var existingTalent = talentSDescList.List.FirstOrDefault(t => t.Id == config.Id);
+                    if (existingTalent != null)
+                    {
+                        // 更新现有天赋（只更新非空值）
+                        if (!string.IsNullOrEmpty(config.Name))
+                            existingTalent.Name = config.Name;
+
+                        if (config.TalentGroupId != null)
+                            existingTalent.TalentGroupId = (int)config.TalentGroupId;
+
+                        if (!string.IsNullOrEmpty(config.UnitResIDStrs))
+                            existingTalent.UnitResIDStrs = config.UnitResIDStrs;
+
+                        if (!string.IsNullOrEmpty(config.PassiveSkillIDs))
+                            existingTalent.PassiveSkillIDs = config.PassiveSkillIDs;
+
+                        if (!string.IsNullOrEmpty(config.AddBuffIDs))
+                            existingTalent.AddBuffIDs = config.AddBuffIDs;
+
+
+
+                        if (config.MaxLevel.HasValue)
+                            existingTalent.MaxLevel = config.MaxLevel.Value;
+
+                        if (config.LevelUpCfg != null && config.LevelUpCfg.Count > 0)
+                        {
+                            existingTalent.LevelUpCfg.Clear();
+                            existingTalent.LevelUpCfg.AddRange(config.LevelUpCfg);
+                        }
+
+                        if (config.Type.HasValue)
+                            existingTalent.Type = (TalentType)config.Type.Value;
+
+                        if (config.Rank.HasValue)
+                            existingTalent.Rank = config.Rank.Value;
+
+                        if (config.RequirePlayerLevel.HasValue)
+                            existingTalent.RequirePlayerLevel = config.RequirePlayerLevel.Value;
+
+                        if (config.IsSpellOnly.HasValue)
+                            existingTalent.IsSpellOnly = (YesNoType)config.IsSpellOnly.Value;
+
+                        if (config.LocalizationTag.HasValue)
+                            existingTalent.LocalizationTag = config.LocalizationTag.Value;
+
+                        if (config.IsHide.HasValue)
+                            existingTalent.IsHide = (YesNoType)config.IsHide.Value;
+
+                        Log.Info($"Successfully updated talent desc with ID: {config.Id}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Failed to process talent desc config for ID {config.Id}: {ex.Message}");
                 }
             }
 
+            Log.Info($"Total processed talent desc configs: {talentConfigs.Count}");
         }
-
 
         public static void ModifySoulskill()
         {
@@ -2068,6 +2382,7 @@ namespace bian
         {
             RepeatedField<ItemDesc> itemsList = GameDBRuntime.GetTBItemDesc().List;
             if (itemsList == null || itemsList.Count == 0) return;
+            // 1158 血条上限 1159防御上限
             foreach (var item in itemsList)
             {
                 if (item.SellPrice > 0)
@@ -2076,7 +2391,7 @@ namespace bian
                 }
                 if (item.CarryMax > 0 && item.CarryMax < 999)
                 {
-                    if (item.ItemType == ItemType.Consume)
+                    if (item.ItemType == ItemType.Consume || item.Id == 1158 || item.Id == 1159)
                     {
                         item.CarryMax = 999;
                     }
@@ -2151,14 +2466,8 @@ namespace bian
         }
 
 
-        public static void ModifyShopDesc()
-        {
-            var itemsList = BG_ProtobufDataAPI<ShopItemGroupDesc>.Get().GetAll();
-            Log.Info($"Loaded ShopItemGroupDesc: {itemsList?.Count}");
-            if (itemsList == null || itemsList.Count == 0) return;
+      
 
-
-        }
 
         public static void ModifyPlayerLevelDesc()
         {
@@ -2435,6 +2744,166 @@ namespace bian
             Log.Info($"Total loaded models: {allModels.Count}");
             return allModels;
         }
+
+
+
+
+
+        public class SkillMappingConfig_json
+        {
+            public int ID { get; set; }
+            public int? CanCyclicMapping { get; set; }
+            public int? ResultRull { get; set; }
+            public List<MappingConfig> MappingConfigList { get; set; } = new List<MappingConfig>();
+        }
+
+        public class MappingConfig
+        {
+            public int? SkillMappingConditionType { get; set; }
+            public List<int> IntParams { get; set; } = new List<int>();
+            public List<float> FloatParams { get; set; } = new List<float>();
+            public List<int> SkillIDs { get; set; } = new List<int>();
+            public List<string> MontagePaths { get; set; } = new List<string>();
+            public List<string> SectionNameList { get; set; } = new List<string>();
+        }
+
+        public static void ModifySkillsMap()
+        {
+            try
+            {
+                var itemsList = BGW_GameDB.GetAllSkillSMappingDesc();
+                Log.Info($"Loaded ModifySkillsMap: {itemsList?.Count}");
+                if (itemsList == null || itemsList.Count == 0) return;
+
+                string configDirectory = Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "FUStSkillSMappingDesc");
+                var mappingConfigs = LoadJsonConfigs<SkillMappingConfig_json>(configDirectory, "SkillMapping");
+
+                if (mappingConfigs == null || mappingConfigs.Count == 0)
+                {
+                    Log.Error("Failed to load skill mapping configs");
+                    return;
+                }
+
+                // 去重处理
+                mappingConfigs = mappingConfigs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
+
+                foreach (var config in mappingConfigs)
+                {
+                    try
+                    {
+                        if (itemsList.TryGetValue(config.ID, out var existingMapping))
+                        {
+                            // 只更新非空字段
+                            if (config.CanCyclicMapping.HasValue)
+                                existingMapping.CanCyclicMapping = (EGSYesNo)config.CanCyclicMapping.Value;
+
+                            if (config.ResultRull.HasValue)
+                                existingMapping.ResultRull = (ESkillMappingResultRull)config.ResultRull.Value;
+
+                            // 更新映射配置列表
+                            if (config.MappingConfigList != null && config.MappingConfigList.Count > 0)
+                            {
+                                existingMapping.MappingConfigList.Clear();
+                                foreach (var mappingConfig in config.MappingConfigList)
+                                {
+                                    var newMapping = new SkillMappingConfig();
+
+                                    if (mappingConfig.SkillMappingConditionType.HasValue)
+                                        newMapping.SkillMappingConditionType = (ESkillMappingConditionType)mappingConfig.SkillMappingConditionType.Value;
+
+                                    if (mappingConfig.IntParams != null)
+                                    {
+                                        newMapping.IntParams.Clear();
+                                        newMapping.IntParams.AddRange(mappingConfig.IntParams);
+                                    }
+
+                                    if (mappingConfig.FloatParams != null)
+                                    {
+                                        newMapping.FloatParams.Clear();
+                                        newMapping.FloatParams.AddRange(mappingConfig.FloatParams);
+                                    }
+
+                                    if (mappingConfig.SkillIDs != null)
+                                    {
+                                        newMapping.SkillIDs.Clear();
+                                        newMapping.SkillIDs.AddRange(mappingConfig.SkillIDs);
+                                    }
+
+                                    if (mappingConfig.MontagePaths != null)
+                                    {
+                                        newMapping.MontagePaths.Clear();
+                                        newMapping.MontagePaths.AddRange(mappingConfig.MontagePaths);
+                                    }
+
+                                    if (mappingConfig.SectionNameList != null)
+                                    {
+                                        newMapping.SectionNameList.Clear();
+                                        newMapping.SectionNameList.AddRange(mappingConfig.SectionNameList);
+                                    }
+                                    existingMapping.MappingConfigList.Add(newMapping);
+                                    Log.Info($"Successfully update  skillMapping: {config.ID}");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            // 创建新配置
+                            var newMapping = new FUStSkillSMappingDesc();
+                            newMapping.ID = config.ID;
+
+                            if (config.CanCyclicMapping.HasValue)
+                                newMapping.CanCyclicMapping = (EGSYesNo)config.CanCyclicMapping.Value;
+
+                            if (config.ResultRull.HasValue)
+                                newMapping.ResultRull = (ESkillMappingResultRull)config.ResultRull.Value;
+
+                            // 添加映射配置列表
+                            var newConfig = new SkillMappingConfig();
+
+                            if (config.MappingConfigList != null)
+                            {
+                                foreach (var mappingConfig in config.MappingConfigList)
+                                {
+
+                                    if (mappingConfig.SkillMappingConditionType.HasValue)
+                                        newConfig.SkillMappingConditionType = (ESkillMappingConditionType)mappingConfig.SkillMappingConditionType.Value;
+
+                                    if (mappingConfig.IntParams != null)
+                                        newConfig.IntParams.AddRange(mappingConfig.IntParams);
+
+                                    if (mappingConfig.FloatParams != null)
+                                        newConfig.FloatParams.AddRange(mappingConfig.FloatParams);
+
+                                    if (mappingConfig.SkillIDs != null)
+                                        newConfig.SkillIDs.AddRange(mappingConfig.SkillIDs);
+
+                                    if (mappingConfig.MontagePaths != null)
+                                        newConfig.MontagePaths.AddRange(mappingConfig.MontagePaths);
+
+                                    if (mappingConfig.SectionNameList != null)
+                                        newConfig.SectionNameList.AddRange(mappingConfig.SectionNameList);
+
+                                    newMapping.MappingConfigList.Add(newConfig);
+                                }
+                            }
+
+                            itemsList.Add(config.ID, newMapping);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process skill mapping config for ID {config.ID}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Successfully processed {mappingConfigs.Count} skill mapping configs");
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in ModifySkillsMap: {ex.Message}");
+            }
+        }
+
 
     }
 }

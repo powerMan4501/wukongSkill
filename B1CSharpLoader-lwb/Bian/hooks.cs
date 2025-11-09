@@ -416,7 +416,7 @@ public class Hooks
             {
                 return;
             }
-            if (BuffID != 1015)
+            if (BuffID != 1015 && BuffID != 2167 && BuffID != 604)
             {
                 Log.Info($"Evt_BuffAdd BuffID:{BuffID}");
 
@@ -555,7 +555,7 @@ public class Hooks
 
     private static bool IsComboSkill(int skillId)
     {
-        int[] comboSkills = { 10705, 10706, 10720, 10721, 50003, 50005, 50007, 50001 };
+        int[] comboSkills = { 10705, 10706, 10720, 10721, 50001, 50003, 50005, 50007 };
         return comboSkills.Contains(skillId);
     }
     private static void ProcessSkillMappingRules(ref int ID, int currentId, BGUCharacterCS character,
@@ -625,7 +625,7 @@ public class Hooks
             if (IsComboSkill(ID))
             {
 
-                BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 3000);
+                BGUFunctionLibraryCS.BGUAddBuff(character, character, 289, EBuffSourceType.GM, 6000);
             }
 
             // 处理技能映射规则
