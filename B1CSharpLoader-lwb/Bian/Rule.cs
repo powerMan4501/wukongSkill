@@ -27,10 +27,13 @@ namespace bian
 
 
         public int? RecoverSkillID { get; set; }
+        public bool? onlyFirst { get; set; }
         public int? changeTime { get; set; }
         public bool? resetBack { get; set; }
         public string? bossLabel { get; set; }
         public string? RushDir { get; set; }
+        public int? montageIndex { get; set; }
+        public string? montageValue { get; set; }
         public string? skillType { get; set; }
         public string? bossType { get; set; }
 
@@ -560,13 +563,46 @@ namespace bian
             }
 
         }
+
+
+
+        private bool CheckAnimConditions(BGUPlayerCharacterCS character, RuleAction action)
+        {
+
+            var montageList = Hooks.playMontageList;
+            if (montageList == null || montageList.Count == 0) return false;
+            var montageIndex = action.montageIndex ?? 0;
+            if (montageIndex >= montageList.Count) return false;
+            if (montageList[montageIndex] != null && montageList[montageIndex].Contains(action.montageValue))
+            {
+                return true;
+            }
+            return false;
+        }
         public void DoAfterActions(List<RuleAction> actions)
         {
             if (actions == null || actions.Count == 0) return;
             var character = Helper.GetBGUPlayerCharacterCS();
+            if (character == null) return;
+            bool hasExecutedMontageCondition = false; // 添加标志位
+
             foreach (var action in actions)
             {
-                if (character == null) continue;
+
+                // 如果已经执行过conditionByMontage且当前action也有conditionByMontage，则跳过
+                if (hasExecutedMontageCondition && action?.montageIndex != null && action?.montageValue != null)
+                    continue;
+                if (action?.montageIndex != null && action?.montageValue != null)
+                {
+                    if (!CheckAnimConditions(character, action))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        hasExecutedMontageCondition = true; // 标记已执行过conditionByMontage
+                    }
+                }
                 // 检查条件
                 var result = CheckBuffConditions(character, action);
                 if (!result || !CheckTalentConditions(character, action))

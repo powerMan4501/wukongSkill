@@ -22,44 +22,45 @@ namespace bian
             var character = Helper.GetBGUPlayerCharacterCS();
             if (character == null) return;
             var meshName = character?.Mesh?.SkeletalMesh?.GetFullName();
+            IBUC_AttrContainer readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_AttrContainer, BUC_AttrContainer>(character);
+            BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
+            if (bUS_GSEventCollection == null) return;
             if (character?.Mesh?.SkeletalMesh?.GetFullName()?.ToLower()?.IndexOf("SK_Wukong_Simple".ToLower()) > -1)
             {
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Stamina, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.StaminaMax));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Hp, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.HpMax));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Mp, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.MpMax));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.SpecialEnergy, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.SpecialEnergyMax));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.FabaoEnergy, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.FabaoEnergyMax));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.VigorEnergy, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.VigorEnergyMax));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.BlockCollapseArmorMax, ShieldMax);
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.BlockCollapseArmor, ShieldMax);
 
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.ShieldMax, ShieldMax);
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Shield, ShieldMax);
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.SkillSuperArmorMax, SkillSuperArmor);
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.SkillSuperArmor, SkillSuperArmor);
+                if (readOnlyData != null)
+                {
+                    bUS_GSEventCollection.Evt_SetAttrFloat?.Invoke(EBGUAttrFloat.Mp, readOnlyData.GetFloatValue(EBGUAttrFloat.MpMax));
+                    bUS_GSEventCollection.Evt_SetAttrFloat?.Invoke(EBGUAttrFloat.Hp, readOnlyData.GetFloatValue(EBGUAttrFloat.HpMax));
+                    bUS_GSEventCollection.Evt_SetAttrFloat?.Invoke(EBGUAttrFloat.Stamina, readOnlyData.GetFloatValue(EBGUAttrFloat.StaminaMax));
+                    bUS_GSEventCollection.Evt_SetAttrFloat?.Invoke(EBGUAttrFloat.SpecialEnergy, readOnlyData.GetFloatValue(EBGUAttrFloat.SpecialEnergyMax));
+                    bUS_GSEventCollection.Evt_SetAttrFloat?.Invoke(EBGUAttrFloat.VigorEnergy, readOnlyData.GetFloatValue(EBGUAttrFloat.VigorEnergyMax));
+                    bUS_GSEventCollection.Evt_SetAttrFloat?.Invoke(EBGUAttrFloat.FabaoEnergy, readOnlyData.GetFloatValue(EBGUAttrFloat.FabaoEnergyMax));
+                    bUS_GSEventCollection.Evt_SetAttrFloat?.Invoke(EBGUAttrFloat.BloodBottomNum, readOnlyData.GetFloatValue(EBGUAttrFloat.BloodBottomNumMax));
+                    bUS_GSEventCollection.Evt_SetAttrFloat?.Invoke(EBGUAttrFloat.BlockCollapseArmor, readOnlyData.GetFloatValue(EBGUAttrFloat.BlockCollapseArmorMax));
+                    bUS_GSEventCollection.Evt_SetAttrFloat?.Invoke(EBGUAttrFloat.Shield, readOnlyData.GetFloatValue(EBGUAttrFloat.ShieldMax));
+                    bUS_GSEventCollection.Evt_SetAttrFloat?.Invoke(EBGUAttrFloat.SkillSuperArmor, readOnlyData.GetFloatValue(EBGUAttrFloat.SkillSuperArmorMax));
+                    bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.Stamina, 100);
 
-                var maxHulu = BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.BloodBottomNumMax);
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.BloodBottomNum, maxHulu);
+                }
 
-                // var World = Helper.GetWorld();
-                // BGW_UIEventCollection bGW_UIEventCollection = BGW_UIEventCollection.Get(World);
-                // if (bGW_UIEventCollection != null)
-                // {
-                //     bGW_UIEventCollection.Evt_UI_SetShieldBarActive(ECSExtension.ToEntity(character), true);
-                // }
+
+
+                // BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.BlockCollapseArmor, ShieldMax);
+                // BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.ShieldMax, ShieldMax);
+                // BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Shield, ShieldMax);
+                // BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.SkillSuperArmorMax, SkillSuperArmor);
+                // BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.SkillSuperArmor, SkillSuperArmor);
 
             }
             else
             {
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Stamina, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.StaminaMax));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Hp, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.HpMax));
-                BGUFunctionLibraryCS.BGUSetAttrValue(character, EBGUAttrFloat.Mp, BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.MpMax));
+                bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.Mp, readOnlyData.GetFloatValue(EBGUAttrFloat.MpMax));
+                bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.Hp, readOnlyData.GetFloatValue(EBGUAttrFloat.HpMax));
+                bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.Stamina, 100);
             }
-            if (character != null)
-            {
-                Helper.SetCharacterShieldActive(character, true);
-            }
-            BGUFunctionLibraryCS.BGUAddBuff(character, character, 450, EBuffSourceType.GM, 250);
+
+            // BGUFunctionLibraryCS.BGUAddBuff(character, character, 450, EBuffSourceType.GM, 250);
 
         }
 
@@ -280,29 +281,26 @@ namespace bian
                         }
                         return;
                     }
-                    var model = Helper.ExportTamer(target);
+                    var model = Helper.ExportTamer(target) as bossModel;
                     if (model != null)
                     {
-                        if (((BaseModel)model).Label.ToLower().IndexOf("wukong") == -1)
+                        var config = Helper.getMagicConfigByModel(character, model);
+                        if (config == null || actor == null) return;
+                        UAnimInstance animInstance = actor.Mesh.GetAnimInstance();
+                        if (animInstance != null)
                         {
-                            if (manager.FindModelByLabel(((BaseModel)model).Label, "") == null)
+                            var montage = animInstance.GetCurrentActiveMontage();
+                            if (montage == null || montage.PathName != null) return;
+                            var skillIDs = BGUFunclibEditorUtility.GetSkillIDByAMPath(montage.PathName);
+                            if (skillIDs != null && skillIDs.Count > 0)
                             {
-                                manager.AddModel(model);
+                                var skillID = skillIDs[0];
+                                Helper.CastVigorSkillByConfig(character, config, skillID);
                             }
-                            UAnimInstance animInstance = actor?.Mesh?.GetAnimInstance();
-                            if (animInstance != null)
-                            {
-                                var montage = animInstance.GetCurrentActiveMontage();
-                                model.TransToModel();
-                            }
-
                         }
 
                     }
-                    else
-                    {
-                        // Log.Error($"bian: export failed!");
-                    }
+
                 }
             }
 

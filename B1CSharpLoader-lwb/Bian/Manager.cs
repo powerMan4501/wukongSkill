@@ -816,13 +816,17 @@ namespace bian
             {
                 return;
             }
-
+            if (Helper.isPlayVigorSkillByID)
+            {
+                return;
+            }
             string keyName = "";
             if (Key != null)
             {
                 keyName = Key.GetFName().ToString();
                 inputCodeStr += keyName;
             }
+
 
             Log.Info($"keyName: {keyName} ,inputCodeStr:{inputCodeStr}");
             if (ActionsByInput != null && ActionsByInput?.Count > 0)
@@ -834,7 +838,8 @@ namespace bian
                     var rule = new Rule();
                     inputCodeStr = null;
                     rule?.DoAfterActions(matchItem.afterActions);
-                };
+                }
+                ;
 
 
 

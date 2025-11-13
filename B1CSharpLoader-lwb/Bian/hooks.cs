@@ -465,6 +465,21 @@ public class Hooks
     }
 
 
+    public static List<string> playMontageList = new List<string>();
+
+    public static void InsertMontageReversed(string montagePath)
+    {
+        if (!string.IsNullOrEmpty(montagePath))
+        {
+            playMontageList.Insert(0, montagePath);
+            // 保持列表长度在合理范围内
+            if (playMontageList.Count > 5)
+            {
+                playMontageList.RemoveAt(playMontageList.Count - 1);
+            }
+        }
+    }
+
     [HarmonyPatch]
     public static class CastSkillPatch
     {
@@ -486,6 +501,7 @@ public class Hooks
 
 
             Log.Info($"Evt_CastSkillAnime Montage:{Montage.GetName()}");
+            InsertMontageReversed(currentMontage);
 
             if (currentMontage.Contains("Animation/Player/Wukong/") || currentMontage.Contains("AM_wukong_trans_from_Vigor"))
             {

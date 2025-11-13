@@ -47,7 +47,21 @@ namespace bian
         {
             return (GetControlledPawn() as BGUPlayerCharacterCS)!;
         }
+        public static UAnimMontage? GetPlayerCurrentActiveMontage(BGUCharacterCS character)
+        {
 
+            if (character == null)
+            {
+                return null;
+            }
+
+            UAnimInstance animInstance = character.Mesh.GetAnimInstance();
+            if (character == animInstance)
+            {
+                return null;
+            }
+            return animInstance.GetCurrentActiveMontage();
+        }
         public static BGP_PlayerControllerB1 GetPlayerController()
         {
             return (BGP_PlayerControllerB1)UGSE_EngineFuncLib.GetFirstLocalPlayerController(GetWorld());
@@ -354,7 +368,7 @@ namespace bian
 
                 // config = val;
 
-                var BossConf = model?.BossConf;
+                var BossConf = model.BossConf;
                 if (BossConf == null)
                 {
                     return null;
@@ -441,7 +455,109 @@ namespace bian
 
             return config;
         }
+        public static BGWDataAsset_MagicallyChangeConfig? getMagicConfigByModel(BGUPlayerCharacterCS character, bossModel model)
+        {
 
+            // !boss_vigorSkillConfigCache.TryGetValue(bossLabel, out var config))
+            // BGWDataAsset_MagicallyChangeConfig config;
+            // 改为
+            var config = new BGWDataAsset_MagicallyChangeConfig();
+
+
+            var magicChangeComp = GetCachedMagicChangeComp(character);
+            if (magicChangeComp == null)
+            {
+                return null;
+            }
+            if (model == null)
+            {
+                return null;
+            }
+
+            var BossConf = model.BossConf;
+            if (BossConf == null)
+            {
+                return null;
+            }
+            config = BGW_PreloadAssetMgr.Get(magicChangeComp).TryGetCachedResourceObj<BGWDataAsset_MagicallyChangeConfig>("BGWDataAsset_MagicallyChangeConfig'/Game/00MainHZ/Characters/Transform/VigorSkill/S2/MC_40_psd_hutoushe_01.MC_40_psd_hutoushe_01'", ELoadResourceType.SyncLoadAndCache);
+            config.ABPClass = LoadClass(BossConf.ABPClass);
+            config.SKMesh = UObject.LoadObject<USkeletalMesh>(GetWorld(), BossConf.SKMesh);
+            config.CapsuleRadius = BossConf.CapsuleRadius;
+            config.CapsuleHalfHeight = BossConf.CapsuleHalfHeight;
+            config.Override_AbnormalDispID_Attacker = BossConf.Override_AbnormalDispID_Attacker;
+            config.Override_AbnormalDispID_Victim = BossConf.Override_AbnormalDispID_Victim;
+            config.TamerAssetPath = model.TamerPath;
+            config.PhysicsAsset = UObject.LoadObject<UPhysicsAsset>(GetWorld(), BossConf.PhysicsAsset);
+            config.TFXConfig.Clear();
+            if (BossConf.TFXConfigs != null && BossConf.TFXConfigs.Count > 0)
+            {
+                for (int i = 0; i < BossConf.TFXConfigs.Count; i++)
+                {
+                    var item = default(FMagicallyChangeConfig_TFXConfig);
+                    if (BossConf.TFXConfigs[i].TFXAsset != null)
+                    {
+                        item.TFXAsset = UObject.LoadObject<UTressFXAsset>(GetWorld(), BossConf.TFXConfigs[i].TFXAsset);
+                    }
+
+                    item.ShadeSettings = default(FTressFXShadeSettings);
+                    item.ShadeSettings.FiberRadius = BossConf.TFXConfigs[i].ShadeSettings.FiberRadius;
+                    item.ShadeSettings.FiberSpacing = BossConf.TFXConfigs[i].ShadeSettings.FiberSpacing;
+                    item.ShadeSettings.HairThickness = BossConf.TFXConfigs[i].ShadeSettings.HairThickness;
+                    item.ShadeSettings.RootTangentBlending = BossConf.TFXConfigs[i].ShadeSettings.RootTangentBlending;
+                    item.ShadeSettings.ShadowThickness = BossConf.TFXConfigs[i].ShadeSettings.ShadowThickness;
+
+                    item.LodScreenSize = BossConf.TFXConfigs[i].LodScreenSize;
+                    item.bEnableSimulation = BossConf.TFXConfigs[i].EnableSimulation;
+
+                    if (BossConf.TFXConfigs[i].HairMaterial != null)
+                    {
+                        item.HairMaterial = UObject.LoadObject<UMaterialInterface>(GetWorld(), BossConf.TFXConfigs[i].HairMaterial);
+                    }
+
+                    config.TFXConfig.Add(item);
+                }
+            }
+            config.InteractBones.Clear();
+            if (BossConf.InteractBones != null && BossConf.InteractBones.Count > 0)
+            {
+                for (int i = 0; i < BossConf.InteractBones.Count; i++)
+                {
+                    var item = default(FBoneUseForDispMap);
+                    item.FirstRadius = BossConf.InteractBones[i].FirstRadius;
+                    item.NextRadius = BossConf.InteractBones[i].NextRadius;
+                    item.FirstBoneName = new FName(BossConf.InteractBones[i].FirstBoneName);
+                    item.NextBoneName = new FName(BossConf.InteractBones[i].NextBoneName);
+                }
+            }
+
+            config.Materials.Clear();
+            config.Weapons.Clear();
+            if (BossConf.Weapons != null && BossConf.Weapons.Count > 0)
+            {
+                List<FUnitWeapon> weapons = new List<FUnitWeapon>();
+                for (int i = 0; i < BossConf.Weapons.Count; i++)
+                {
+                    var item = BossConf.Weapons[i];
+                    var weapon = default(FUnitWeapon);
+                    weapon.Weapon = UObject.LoadClass<AActor>(null, item.Weapon);
+                    weapon.SocketName = new FName(item.SocketName);
+                    weapons.Add(weapon);
+                }
+                config.Weapons.SetValues(weapons);
+            }
+            if (BossConf.UnitScale > 0 && BossConf.UnitScale != 1)
+            {
+                config.UnitScale = (float)BossConf.UnitScale;
+            }
+            else
+            {
+                config.UnitScale = (float)1.0;
+
+            }
+
+
+            return config;
+        }
         public static void CastVigorSkillByModel(BGUPlayerCharacterCS character, string bossLabel, string type, int skillId, bool? resetBack = false, int? RecoverSkillID = 10199)
         {
             // 检查缓存中是否已存在该配置
@@ -468,16 +584,46 @@ namespace bian
             data.ResetReason = EResetReason_MagicallyChange.Normal;
             data.CastReason = ECastReason_MagicallyChange.NormalSkill;
             data.DurMagicallyChange = true;
-            data.RecoverSkillID =  10199;
+            data.RecoverSkillID = 10199;
             isPlayVigorSkillByID = true;
             // 打断当前所有动画
             UGSE_AnimFuncLib.StopAllMontages(character, 0f);
             UGSE_AnimFuncLib.TickAnimationAndRefreshBone(character);
-            BGUFunctionLibraryCS.CastMagicallyChangeSkill(character, config, skillId,  10199);
+            BGUFunctionLibraryCS.CastMagicallyChangeSkill(character, config, skillId, 10199);
             // MyUtils.SetCamera();
         }
 
+        public static void CastVigorSkillByConfig(BGUPlayerCharacterCS character, BGWDataAsset_MagicallyChangeConfig config, int skillId, bool? resetBack = false, int? RecoverSkillID = 10199)
+        {
+            // 检查缓存中是否已存在该配置
+            var magicChangeComp = GetCachedMagicChangeComp(character);
+            if (magicChangeComp == null)
+            {
+                return;
+            }
+            if (config == null)
+            {
+                return;
+            }
 
+            FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
+            if (fieldData == null) return;
+            BUC_MagicallyChangeData data = fieldData.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
+            if (data == null) return;
+            if (resetBack == true)
+            {
+                data.DurMagicallyChange = (bool)resetBack;  // 不变回去，需要手动变回 
+            }
+            data.ResetReason = EResetReason_MagicallyChange.Normal;
+            data.CastReason = ECastReason_MagicallyChange.NormalSkill;
+            data.DurMagicallyChange = true;
+            data.RecoverSkillID = 10199;
+            isPlayVigorSkillByID = true;
+            // 打断当前所有动画
+            UGSE_AnimFuncLib.StopAllMontages(character, 0f);
+            UGSE_AnimFuncLib.TickAnimationAndRefreshBone(character);
+            BGUFunctionLibraryCS.CastMagicallyChangeSkill(character, config, skillId, 10199);
+        }
         public static void ResetVigorSkillByID(BGUPlayerCharacterCS character)
         {
             if (character == null)
@@ -1606,12 +1752,14 @@ namespace bian
         public static void gain_item(int ItemID, int ItemCount = 1)
         {
             var PlayerMgr = getPlayerMgr();
+            if (PlayerMgr == null) return;
             Log.Info($"bian: gain_item ItemID:{ItemID}, ItemCount:{ItemCount},{PlayerMgr?.GetType()}");
             PlayerMgr.Bag.GainItemOne(new ItemOne
             {
                 Id = ItemID,
                 Num = ItemCount
             });
+            PlayerMgr.Commit();
         }
         public static void addAllTaskItem()
         {
@@ -1634,6 +1782,7 @@ namespace bian
                     }
                 }
             }
+            PlayerMgr.Commit();
         }
 
 
