@@ -42,7 +42,7 @@
     "Id": 18010,
     "EquipName": "上清宝葫芦",
     "AttrEffectId": 8010,
-    "EffectTalentId": 303161,
-    "EffectTalentDesc": "缓慢恢复些微生命"
+    "EquipEffectId": 303161,
+    "EquipEffectDesc": "缓慢恢复些微生命"
   }
 ]

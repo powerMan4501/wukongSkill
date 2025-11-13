@@ -9,6 +9,68 @@
   "XRateSmall": 2,
   "Level1Scale": 1,
   "Level2Scale": 1.2,
+    "BossConf": {
+    "CapsuleHalfHeight": 180.0,
+    "CapsuleRadius": 65.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_XueHou/Mesh/SK_LYS_XueHou.SK_LYS_XueHou",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_XueHou/ABP_LYS_XueHou.ABP_LYS_XueHou_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_XueHou/Mesh/PA_LYS_XueHou.PA_LYS_XueHou",
+    "Weapons": [
+      {
+        "Weapon": "/Game/00MainHZ/Characters/Weapon/LYS/LYS_XueHou/LYS_XueHou_Weapon.LYS_XueHou_Weapon_C",
+        "SocketName": "weapon_r"
+      }
+    ],
+    "TFXConfigs": null,
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_l",
+        "FirstRadius": 30.0,
+        "NextBoneName": "ball_l",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_r",
+        "FirstRadius": 30.0,
+        "NextBoneName": "ball_r",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Hit_Weapon_1",
+        "FirstRadius": 3.0,
+        "NextBoneName": "Hit_Weapon_3",
+        "NextRadius": 3.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "Bip",
+        "FirstRadius": 30.0,
+        "NextBoneName": "neck_01",
+        "NextRadius": 10.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "upperarm_l",
+        "FirstRadius": 15.0,
+        "NextBoneName": "hand_l",
+        "NextRadius": 15.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "ball_l",
+        "FirstRadius": 20.0,
+        "NextBoneName": "ball_r",
+        "NextRadius": 20.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 0,
+    "doneSkill": null,
+    "UnitScale": 0.9
+  },
   "TransDone": {
     "Buffers": [17272, 17273]
   },

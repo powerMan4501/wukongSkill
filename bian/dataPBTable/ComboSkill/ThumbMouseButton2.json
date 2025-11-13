@@ -464,11 +464,19 @@
   {
     "nowMontage": "AM_Dasheng_ComboA_04_Z_1.AM_Dasheng_ComboA_04_Z_1",
     "rate": 1.2,
-    "type": "magic",
-    "skillID": 8513,
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_HFM_Hu_Wind_01",
+        "bossType": "TRANS",
+        "MagicSkillID": 202840,
+        "Name": "蓄力突进大横扫"
+      }
+    ],
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "转身定，接大头磕头"
+    "desc": "转身定，接寅虎"
   },
   {
     "nowMontage": ".AM_wukong_comboc_z_01_start",
@@ -506,29 +514,76 @@
   {
     "nowMontage": "AM_Wukong_Dodge_B",
     "rate": 0.2,
-    "type": "magic",
-    "skillID": 8535,
-    "MagicSkillID": 405507,
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_mgd_ftxd",
+        "bossType": "BOSS",
+        "MagicSkillID": 25157,
+        "hasBuff": 888666006,
+        "Name": "有冰buff,核爆冰拳"
+      },
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_mgd_ftxd",
+        "bossType": "BOSS",
+        "MagicSkillID": 24234,
+        "noHasBuff": 888666006,
+        "Name": "没有冰buff,四级大范围地面火炎"
+      }
+    ],
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
     "desc": "后翻滚，鳖宝飞天大坐"
   },
   {
-    "nowMontage": "AM_Wukong_Dodge_F",
+    "nowMontage": "AM_Wukong_Dodge_L",
     "rate": 0.2,
-    "type": "magic",
-    "skillID": 8526,
-    "MagicSkillID": 300505,
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_mgd_ftxd",
+        "bossType": "BOSS",
+        "MagicSkillID": 25157,
+        "hasBuff": 888666006,
+        "Name": "有冰buff,核爆冰拳"
+      },
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_mgd_ftxd",
+        "bossType": "BOSS",
+        "MagicSkillID": 24234,
+        "noHasBuff": 888666006,
+        "Name": "没有冰buff,四级大范围地面火炎"
+      }
+    ],
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
     "desc": "前翻滚，不能以武入禅"
   },
   {
-    "nowMontage": "AM_Wukong_Dodge_L",
+    "nowMontage": "AM_Wukong_Dodge_F",
     "rate": 0.2,
-    "type": "magic",
-    "skillID": 8535,
-    "MagicSkillID": 405512,
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_mgd_ftxd",
+        "bossType": "BOSS",
+        "MagicSkillID": 25134,
+        "hasBuff": 888666006,
+        "Name": "有冰buff,法天相地-冰拳Q4"
+      },
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_mgd_ftxd",
+        "bossType": "BOSS",
+        "MagicSkillID": 25234,
+        "noHasBuff": 888666006,
+        "Name": "没有冰buff，法天相地-火Q4"
+      }
+    ],
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
     "desc": "左翻滚，鳖宝锤子砸"
@@ -536,30 +591,61 @@
   {
     "nowMontage": "AM_Wukong_Dodge_R",
     "rate": 0.2,
-    "type": "magic",
-    "skillID": 8535,
-    "MagicSkillID": 405513,
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_mgd_ftxd",
+        "bossType": "BOSS",
+        "MagicSkillID": 25134,
+        "hasBuff": 888666006,
+        "Name": "有冰buff,核爆冰拳"
+      },
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_mgd_ftxd",
+        "bossType": "BOSS",
+        "MagicSkillID": 25257,
+        "noHasBuff": 888666006,
+        "Name": "没有冰buff,核爆火拳"
+      }
+    ],
+
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
-    "desc": "右翻滚，鳖宝转圈轮砸一下"
+    "desc": "右翻滚"
   },
   {
     "nowMontage": "AM_Wukong_Dodge_B",
     "rate": 0.5,
-    "type": "magic",
-    "skillID": 8574,
-    "MagicSkillID": 10174,
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_HFM_Hu_Wind_01",
+        "bossType": "TRANS",
+        "MagicSkillID": 202803,
+        "Name": "寅虎，吼一声，然后突进上去砍一刀"
+      }
+    ],
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
-    "desc": "后滚后，立棍下接 泥塑金刚"
+    "desc": "后滚后，立棍下"
   },
 
   {
     "nowMontage": "AM_Wukong_Dodge_F",
     "rate": 0.1,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700148,
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_HFM_Hu_Wind_01",
+        "bossType": "TRANS",
+        "MagicSkillID": 202838,
+        "Name": "寅虎，飞到上空，索敌落下砍人"
+      }
+    ],
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
     "desc": "前滚后，立棍下突进飞到敌人跟前，横扫，跳起空中踢腿落地再横扫，类似700134"
@@ -567,9 +653,16 @@
   {
     "nowMontage": "AM_Wukong_Dodge_L",
     "rate": 0.1,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700154,
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_HFM_Hu_Wind_01",
+        "bossType": "TRANS",
+        "MagicSkillID": 202807,
+        "Name": "寅虎，横扫一下再横扫地爆"
+      }
+    ],
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
     "desc": "L滚后，飞起踩一下再重击劈棍"
@@ -577,9 +670,16 @@
   {
     "nowMontage": "AM_Wukong_Dodge_R",
     "rate": 0.1,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700115,
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_HFM_Hu_Wind_01",
+        "bossType": "TRANS",
+        "MagicSkillID": 202846,
+        "Name": "寅虎，蓄力较久砍出大地爆,然后地面再次爆炸"
+      }
+    ],
     "Condition": "StanceProp",
     "InputCore": "ThumbMouseButton2",
     "desc": "R滚后，大风车"
@@ -587,19 +687,32 @@
   {
     "nowMontage": "AM_Wukong_Dodge_B",
     "rate": 0.5,
-    "type": "magic",
-    "skillID": 8565,
-    "MagicSkillID": 11365,
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_LYS_XueHou",
+        "bossType": "TRANS",
+        "MagicSkillID": 17027,
+        "Name": "白色剑气连续砍"
+      }
+    ],
     "Condition": "StancePoke",
     "InputCore": "ThumbMouseButton2",
-    "desc": "B翻滚后，戳棍棍下骨悚然"
+    "desc": "B翻滚后，戳棍棍"
   },
   {
     "nowMontage": "AM_Wukong_Dodge_F",
-    "rate": 0.5,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700125,
+    "rate": 0.2,
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_LYS_XueHou",
+        "bossType": "TRANS",
+        "MagicSkillID": 17334,
+        "Name": "红色剑气连续砍"
+      }
+    ],
     "Condition": "StancePoke",
     "InputCore": "ThumbMouseButton2",
     "desc": "F翻滚后，残躯蓄力戳棍"
@@ -608,35 +721,35 @@
   {
     "nowMontage": "AM_Wukong_Dodge_L",
     "rate": 0.5,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700143,
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_LYS_XueHou",
+        "bossType": "TRANS",
+        "MagicSkillID": 301368,
+        "Name": "雪猴白色雪墙"
+      }
+    ],
     "Condition": "StancePoke",
     "InputCore": "ThumbMouseButton2",
     "desc": "L翻滚后，类似大风车"
   },
   {
     "nowMontage": "AM_Wukong_Dodge_R",
-    "rate": 0.5,
-    "type": "BOSS",
-    "bossLabel": "SK_mgd_jsds",
-    "MagicSkillID": 700120,
-    "Condition": "StancePoke",
-    "InputCore": "ThumbMouseButton2",
-    "desc": "R翻滚后，中等突刺"
-  },
-  {
-    "nowMontage": "AM_wukong_trans_from_Vigor",
-    "rate": 0.1,
+    "rate": 0.3,
     "type": "actions",
     "afterActions": [
       {
-        "Type": "skill",
-        "SkillID": 64321006
+        "type": "bossskill",
+        "bossLabel": "SK_LYS_XueHou",
+        "bossType": "TRANS",
+        "MagicSkillID": 301321,
+        "Name": "跳起+空中+红色连斩"
       }
     ],
-    "Condition": "any",
+    "Condition": "StancePoke",
     "InputCore": "ThumbMouseButton2",
-    "desc": "精魄返回接空中侧身好几次"
+    "desc": "R翻滚后，中等突刺"
   }
 ]

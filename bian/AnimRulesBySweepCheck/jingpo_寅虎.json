@@ -1,0 +1,177 @@
+[
+  {
+    "desc": "蓄力突进大横扫",
+    "montage": "AM_HFM_Hu_Wind_01_Atk_Fast_40",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [30050301],
+            "desc": "波动"
+          }
+        ]
+      }
+    ],
+    "hitEffects": [888555042],
+    "replaceEffects": true
+  },
+
+  {
+    "desc": "飞天落地斩",
+    "montage": "AM_HFM_Hu_Wind_01_Atk_Fast_38",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1016262, 30050301],
+            "desc": "巴山虎波动"
+          }
+        ]
+      }
+    ],
+    "hitEffects": [888555042],
+    "replaceEffects": true
+  },
+  {
+    "desc": "爆气冲上去砍，砍",
+    "montage": "AM_HFM_Hu_Wind_01_Atk_Fast_03",
+    "linkValue": 2.109614,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1016262, 30050301],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "巴山虎,波动"
+          }
+        ]
+      }
+    ],
+    "hitEffects": [888555042],
+    "replaceEffects": true
+  },
+
+  {
+    "desc": "爆气冲上去砍，的爆气",
+    "montage": "AM_HFM_Hu_Wind_01_Atk_Fast_03",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1016262],
+            "desc": "巴山虎"
+          }
+        ]
+      }
+    ],
+    "hitEffects": [888555042],
+    "replaceEffects": true
+  },
+  {
+    "desc": "二连斩",
+    "montage": "AM_HFM_Hu_Wind_01_Atk_Fast_07",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.9,
+    "AMSpeedRate": 1.9,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1016262],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "巴山虎"
+          }
+        ]
+      }
+    ],
+    "hitEffects": [888555042],
+    "replaceEffects": true
+  },
+
+  {
+    "desc": "其他技能",
+    "montage": "AM_HFM_Hu_Wind_01_Atk_Fast_",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "hitEffects": [888555042],
+    "replaceEffects": true
+  }
+]

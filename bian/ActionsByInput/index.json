@@ -1,7 +1,7 @@
 [
   {
     "code": "ADDI",
-    "actions": [
+    "afterActions": [
       {
         "Type": "additem",
         "ItemID": 3310,
@@ -9,10 +9,18 @@
       }
     ]
   },
+  {
+    "code": "XLY",
+    "afterActions": [
+      {
+        "Type": "xuelunyan"
+      }
+    ]
+  },
 
   {
     "code": "ASA",
-    "actions": [
+    "afterActions": [
       {
         "Type": "bullet",
         "bullets": [
@@ -28,7 +36,7 @@
 
   {
     "code": "RESET",
-    "actions": [
+    "afterActions": [
       {
         "type": "resetskillcd",
         "Name": "技能cd"
@@ -38,7 +46,7 @@
 
   {
     "code": "weak",
-    "actions": [
+    "afterActions": [
       {
         "type": "weak_monster",
         "Name": "弱化怪物"
@@ -48,7 +56,7 @@
 
   {
     "code": "zhuang",
-    "actions": [
+    "afterActions": [
       {
         "type": "strong_monster",
         "Name": "加强怪物"
@@ -57,7 +65,7 @@
   },
   {
     "code": "adda",
-    "actions": [
+    "afterActions": [
       {
         "type": "addallsummonlifetime",
         "SummonAliveTime": 999,
@@ -67,7 +75,7 @@
   },
   {
     "code": "SGSA",
-    "actions": [
+    "afterActions": [
       {
         "type": "BOSS",
         "bossLabel": "SK_HFM_ShiGanDang",
@@ -78,7 +86,7 @@
   },
   {
     "code": "SGSB",
-    "actions": [
+    "afterActions": [
       {
         "type": "BOSS",
         "bossLabel": "SK_HFM_ShiGanDang",
@@ -89,7 +97,7 @@
   },
   {
     "code": "SGSC",
-    "actions": [
+    "afterActions": [
       {
         "type": "BOSS",
         "bossLabel": "SK_HFM_ShiGanDang",
@@ -100,7 +108,7 @@
   },
   {
     "code": "zhao",
-    "actions": [
+    "afterActions": [
       {
         "Type": "summon",
         "SummonID": 1013901,
@@ -124,7 +132,7 @@
   },
   {
     "code": "you",
-    "actions": [
+    "afterActions": [
       {
         "Type": "summon",
         "SummonID": 200201,

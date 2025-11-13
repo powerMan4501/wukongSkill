@@ -3,6 +3,86 @@
   "Name": "寅虎",
   "Label": "SK_HFM_Hu_Wind_01",
   "Type": "TRANS",
+    "BossConf": {
+    "CapsuleHalfHeight": 220.0,
+    "CapsuleRadius": 80.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_Hu_Wind/Mesh/SK_HFM_Hu_Wind_01.SK_HFM_Hu_Wind_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_Hu_Wind/ABP_Hu_Wind.ABP_Hu_Wind_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_Hu_Wind/Mesh/SK_HFM_Hu_Wind_01_PhysicsAsset.SK_HFM_Hu_Wind_01_PhysicsAsset",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Bing/Hair/HAIR_neck.HAIR_neck_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.15,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Bing/Materials/M_hfm_hu_wind_hair_body.M_hfm_hu_wind_hair_body"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Bing/Hair/HAIR_facelong.HAIR_facelong_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Bing/Materials/M_hfm_hu_wind_hair_body.M_hfm_hu_wind_hair_body"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Bing/Hair/HAIR_faceshort.HAIR_faceshort_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Bing/Materials/M_hfm_hu_wind_hair_body.M_hfm_hu_wind_hair_body"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Bing/Hair/HAIR_arm.HAIR_arm_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Bing/Materials/M_hfm_hu_wind_hair_body.M_hfm_hu_wind_hair_body"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Bing/Hair/HAIR_legs.HAIR_legs_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.05,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.1,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_HuXianFeng_Bing/Materials/M_hfm_hu_wind_hair_body.M_hfm_hu_wind_hair_body"
+      }
+    ],
+    "InteractBones": null,
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100,
+    "doneSkill": null,
+    "UnitScale": 0.8
+  },
   "Asset": "/Game/00Main/Design/Units/Player/Unit_player_hfm_hu.Unit_player_hfm_hu_C",
   "XRateBig": 0.3,
   "ZRateBig": 0.1,
@@ -104,15 +184,7 @@
         1000095
       ]
     },
-    {
-      "Id": 202840,
-      "CanBreak": true,
-      "Name": "蓄力突进大横扫，很强",
-      "Key": "C+RBUTTON",
-      "Buffs": [
-        1000095
-      ]
-    },
+   
     {
       "Id": 202878,
       "CanBreak": true,

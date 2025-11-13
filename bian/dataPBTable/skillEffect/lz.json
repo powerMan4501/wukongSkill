@@ -179,5 +179,14 @@
     "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
     "EffectParamsFloat": [17400.0, 1740.0, 74000.0, 7400.0, 0.0, 0.0, 17400],
     "EffectParamsStr": ["【主角】蓄力4"]
+  },
+
+    {
+    "desc": "寅虎",
+    "ID": 888555042,
+    "EffectType": 1,
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
+    "EffectParamsFloat": [17400.0, 1740.0, 74000.0, 7400.0, 0.0, 0.0, 17400],
+    "EffectParamsStr": ["【主角】蓄力4"]
   }
 ]

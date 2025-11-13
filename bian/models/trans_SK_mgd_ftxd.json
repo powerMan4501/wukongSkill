@@ -3,6 +3,161 @@
   "Name": "猿",
   "Label": "SK_mgd_ftxd",
   "Type": "TRANS",
+   "BossConf": {
+    "CapsuleHalfHeight": 220.0,
+    "CapsuleRadius": 42.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_ftxd/Meshes/SK_mgd_ftxd.SK_mgd_ftxd",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_ftxd/ABP_mgd_ftxd.ABP_mgd_ftxd_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_ftxd/Meshes/PA_mgd_ftxd.PA_mgd_ftxd",
+    "Weapons": null,
+    "TFXConfigs": [
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_arm_base.HAIR_arm_base_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Materials/M_mgd_ftxd_main_mask.M_mgd_ftxd_main_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_arm_long_gs.HAIR_arm_long_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Materials/M_mgd_ftxd_main_mask.M_mgd_ftxd_main_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_head_base.HAIR_head_base_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Materials/M_mgd_ftxd_main_mask.M_mgd_ftxd_main_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_head_face_baseshort.HAIR_head_face_baseshort_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Materials/M_mgd_ftxd_main_mask.M_mgd_ftxd_main_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_head_face_long2_gs.HAIR_head_face_long2_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Materials/M_mgd_ftxd_main_mask.M_mgd_ftxd_main_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_head_face_long_gs.HAIR_head_face_long_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 2.5,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Materials/M_mgd_ftxd_main_mask.M_mgd_ftxd_main_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_head_long_gs.HAIR_head_long_gs_TFX",
+        "EnableSimulation": true,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Materials/M_mgd_ftxd_main_mask.M_mgd_ftxd_main_mask"
+      },
+      {
+        "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_tail.HAIR_tail_TFX",
+        "EnableSimulation": false,
+        "LodScreenSize": 1.0,
+        "ShadeSettings": {
+          "FiberRadius": 0.01,
+          "FiberSpacing": 0.1,
+          "HairThickness": 0.01,
+          "RootTangentBlending": 0.0,
+          "ShadowThickness": 0.05
+        },
+        "HairMaterial": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Materials/M_mgd_ftxd_main_mask.M_mgd_ftxd_main_mask"
+      }
+    ],
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "pelvis",
+        "FirstRadius": 30.0,
+        "NextBoneName": "neck_01",
+        "NextRadius": 35.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_r",
+        "FirstRadius": 30.0,
+        "NextBoneName": "ball_r",
+        "NextRadius": 27.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "thigh_l",
+        "FirstRadius": 30.0,
+        "NextBoneName": "ball_l",
+        "NextRadius": 27.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "upperarm_l",
+        "FirstRadius": 30.0,
+        "NextBoneName": "hand_l",
+        "NextRadius": 27.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "upperarm_r",
+        "FirstRadius": 30.0,
+        "NextBoneName": "hand_r",
+        "NextRadius": 27.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 7001,
+    "Override_AbnormalDispID_Victim": 100,
+    "doneSkill": null,
+    "UnitScale": null
+  },
   "Asset": "/Game/00Main/Design/Units/Player/Unit_player_mgd_yuan.Unit_player_mgd_yuan_C",
   "XRateBig": 0.3,
   "ZRateBig": 0.1,
