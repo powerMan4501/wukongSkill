@@ -24,8 +24,11 @@ namespace bian
     public class RuleAction
     {
 
-
-
+        public bool? IsDragFarest { get; set; }
+        public float? NewMinArmLength { get; set; }
+        public float? NewMaxArmLength { get; set; }
+        public float? NewMinSocketZ { get; set; }
+        public float? NewMaxSocketZ { get; set; }
         public int? RecoverSkillID { get; set; }
         public bool? onlyFirst { get; set; }
         public int? changeTime { get; set; }
@@ -459,6 +462,12 @@ namespace bian
                     if (eventCollection?.Evt_IronBodyStart != null)
                     {
                         eventCollection.Evt_IronBodyStart.Invoke();
+                    }
+                    break;
+                case "dragfarcamera":
+                    if (action?.NewMinArmLength != null || action?.NewMaxArmLength != null || action?.NewMinSocketZ != null || action?.NewMaxSocketZ != null)
+                    {
+                        BUS_EventCollectionCS.Get(character).Evt_DragFarCamera.Invoke(action?.IsDragFarest ?? false, action?.NewMinArmLength ?? -1, action?.NewMaxArmLength ?? -1, action?.NewMinSocketZ ?? -1, action?.NewMaxSocketZ ?? -1);
                     }
                     break;
                 case "xuelunyan":

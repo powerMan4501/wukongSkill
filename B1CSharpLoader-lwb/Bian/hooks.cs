@@ -696,4 +696,39 @@ public class Hooks
         }
     }
 
+
+
+
+    [HarmonyPatch]
+    public static class showDamUI_Patch
+    {
+        [HarmonyPatch(typeof(BUS_BeAttackedComp), "CanShowDmgNumUI")]
+        static bool Prefix(ref bool __result, AActor AttackerMasterActor, bool HasCausedDamage, in FBattleAttrSnapShot Attacker_AttrMemData, bool AttackerIsPlayer_ForDmgNumber)
+        {
+            // 检查AttackerMasterActor是否存在且TeamID为1
+
+            if (AttackerMasterActor.IsNullOrDestroyed())
+            {
+                return false;
+            }
+            if (!HasCausedDamage)
+            {
+                return false;
+            }
+            if (GSGameplayCVar.CVar_B1ShowDamageNumber.GetValueInGameThread() == 0)
+            {
+                return false;
+            }
+
+            BGUCharacterCS character = (BGUCharacterCS)AttackerMasterActor;
+            var player = Helper.GetBGUPlayerCharacterCS();
+            if (character.GetTeamIDInCS() == player.GetTeamIDInCS())
+            {
+                __result = true;
+                return false; // 不执行原方法
+            }
+            return true;
+        }
+    }
+
 }
