@@ -69,7 +69,7 @@
     "Override_AbnormalDispID_Attacker": 0,
     "Override_AbnormalDispID_Victim": 0,
     "doneSkill": null,
-    "UnitScale": 0.9
+    "UnitScale": 0.7
   },
   "TransDone": {
     "Buffers": [17272, 17273]

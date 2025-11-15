@@ -638,12 +638,12 @@
     "rate": 0.1,
     "type": "actions",
     "afterActions": [
-      {
+     {
         "type": "bossskill",
-        "bossLabel": "SK_HFM_Hu_Wind_01",
-        "bossType": "TRANS",
-        "MagicSkillID": 202838,
-        "Name": "寅虎，飞到上空，索敌落下砍人"
+        "bossLabel": "SK_LuoChaGui_01",
+        "bossType": "BOSS",
+        "MagicSkillID": 401203,
+        "desc": "鬼王 冲上去足球踢然后扇一巴掌"
       }
     ],
     "Condition": "StanceProp",
@@ -655,12 +655,12 @@
     "rate": 0.1,
     "type": "actions",
     "afterActions": [
-      {
+       {
         "type": "bossskill",
-        "bossLabel": "SK_HFM_Hu_Wind_01",
-        "bossType": "TRANS",
-        "MagicSkillID": 202807,
-        "Name": "寅虎，横扫一下再横扫地爆"
+        "bossLabel": "SK_LuoChaGui_01",
+        "bossType": "BOSS",
+        "MagicSkillID": 401208,
+        "desc": "鬼王 冲上去拍一掌"
       }
     ],
     "Condition": "StanceProp",
@@ -674,10 +674,10 @@
     "afterActions": [
       {
         "type": "bossskill",
-        "bossLabel": "SK_HFM_Hu_Wind_01",
-        "bossType": "TRANS",
-        "MagicSkillID": 202846,
-        "Name": "寅虎，蓄力较久砍出大地爆,然后地面再次爆炸"
+        "bossLabel": "SK_LuoChaGui_01",
+        "bossType": "BOSS",
+        "MagicSkillID": 401215,
+        "desc": "左右各一巴掌，然后跳起砸出鬼火"
       }
     ],
     "Condition": "StanceProp",

@@ -1,50 +1,8 @@
 [
-  {
-    "ID": 6660006,
-    "BuffTips": "金箍棒，若攻击命中敌人则回复法力和棍势各20点",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    },
-    "Duration": -1,
-    "BuffEffects": [
-      {
-        "EffectTrigger": 14,
-        "EffectType": 3,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [152, 20, 0, 0],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 14,
-        "EffectType": 87,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [7],
-        "EffectParamsFloat": [-20.0, 0.0]
-      },
-      {
-        "EffectTrigger": 14,
-        "EffectType": 87,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [8],
-        "EffectParamsFloat": [-20.0, 0.0]
-      },
-      {
-        "EffectTrigger": 14,
-        "EffectType": 134,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [0],
-        "EffectParamsFloat": [20]
-      }
-    ]
-  },
+  
   {
     "ID": 888666001,
-    "BuffTips": "主角，80%减伤，2倍速度，完美闪避范围加大，死亡自动复活,暴击/杀怪/打伤/被打伤回复棍势",
+    "BuffTips": "主角，80%减伤，2倍速度，完美闪避范围加大，死亡自动复活",
     "Duration": -1,
     "BuffEffects": [
       {
@@ -78,40 +36,8 @@
         "EffectParamsString": [],
         "EffectParams": [],
         "EffectParamsFloat": []
-      },
-
-      {
-        "EffectTrigger": 7,
-        "EffectType": 134,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [0],
-        "EffectParamsFloat": [5]
-      },
-      {
-        "EffectTrigger": 10,
-        "EffectType": 134,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [0],
-        "EffectParamsFloat": [5]
-      },
-      {
-        "EffectTrigger": 11,
-        "EffectType": 134,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [0],
-        "EffectParamsFloat": [5]
-      },
-      {
-        "EffectTrigger": 14,
-        "EffectType": 134,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [0],
-        "EffectParamsFloat": [10]
       }
+   
     ]
   },
   {

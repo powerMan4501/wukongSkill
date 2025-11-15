@@ -93,6 +93,38 @@
     "hitEffects": [888555035],
     "replaceEffects": true
   },
+   {
+    "desc": "左右各一巴掌，然后跳起砸出鬼火",
+    "montage": "AM_HYS_LuoChaGui_01_Atk_15",
+    "linkValue": 0,
+    "addRadius": 200,
+    "speedRate": 1.8,
+      "AMScaleRate": 11,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40121201],
+            "OffsetX": 400,
+            "OffsetY": 400,
+            "desc": "鬼火"
+          }
+        ]
+      }
+    ],
+    "hitEffects": [888555035],
+    "replaceEffects": true
+  },
   
   {
     "desc": "鬼王，右足球踢",
@@ -100,6 +132,7 @@
     "linkValue": 2.867692,
     "addRadius": 500,
     "speedRate": 1.8,
+      "AMScaleRate": 11,
     "CastActions": [
       {
         "Type": "buff",
@@ -131,6 +164,7 @@
     "linkValue": 5.366195,
     "addRadius": 500,
     "speedRate": 1.8,
+      "AMScaleRate": 11,
     "hitEffects": [888555025],
     "replaceEffects": true,
     "SweepActions": [
@@ -154,6 +188,7 @@
     "linkValue": 0,
     "addRadius": 500,
     "speedRate": 1.8,
+      "AMScaleRate": 11,
     "CastActions": [
       {
         "Type": "buff",

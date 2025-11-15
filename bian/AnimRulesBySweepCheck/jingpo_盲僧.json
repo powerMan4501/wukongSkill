@@ -1,0 +1,71 @@
+[
+  {
+    "desc": "突进平A",
+    "montage": ".AM_player_lys_hou_P2_R1toR2_End",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "AMScaleRate": 10,
+    "hitEffects": [888555042],
+    "replaceEffects": true,
+
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1016262],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "desc": "盲僧左右拳",
+    "montage": ".AM_lys_mangseng_02a_atk_02_B",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "AMScaleRate": 10,
+    "hitEffects": [888555042],
+    "replaceEffects": true,
+
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1016262],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "巴山虎"
+          }
+        ]
+      }
+    ]
+  }
+]

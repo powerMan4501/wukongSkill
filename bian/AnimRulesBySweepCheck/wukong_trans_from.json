@@ -1,0 +1,18 @@
+[
+  {
+    "desc": "变回",
+    "montage": "AM_wukong_trans_from_Vigor",
+    "linkValue": 0,
+    "CastActions": [
+      {
+        "type": "dragfarcamera",
+        "IsDragFarest": false,
+        "NewMinArmLength": -1,
+        "NewMaxArmLength": -1,
+        "NewMinSocketZ": -1,
+        "NewMaxSocketZ": -1,
+        "desc": "恢复镜头"
+      }
+    ]
+  }
+]

@@ -188,5 +188,12 @@
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1,
     "HitEffectsforChr": [888555032, 888555018]
+  },
+  {
+    "desc": "马猴冰剑气",
+    "ID": 1703001,
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1,
+    "HitEffectsforChr": [888555032, 910160]
   }
 ]

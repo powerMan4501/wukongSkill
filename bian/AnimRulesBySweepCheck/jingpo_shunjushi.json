@@ -138,5 +138,31 @@
         ]
       }
     ]
+  },
+
+  {
+    "desc": "隼居士，飞天冰5下",
+    "montage": ".AM_lys_baitouweng_atk_03",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.4,
+
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      },
+      {
+        "type": "dragfarcamera",
+        "IsDragFarest": true,
+        "NewMinArmLength": -1,
+        "NewMaxArmLength": -1,
+        "NewMinSocketZ": 200,
+        "NewMaxSocketZ": 1500,
+        "desc": "拉远镜头"
+      }
+    ]
   }
 ]

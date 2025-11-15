@@ -13,36 +13,36 @@
     "Id": 12001,
     "EquipName": "凤翅紫金冠",
     "AttrEffectId": 2001,
-    "EquipEffectId": 907006,
-    "EquipEffectDesc": "攻击生命少于一半的对手时，获得一定程度伤害加成"
+    "EquipEffectId": 6012001,
+    "EquipEffectDesc": "增加15%四灾抗性"
   },
   {
     "Id": 12002,
     "EquipName": "锁子黄金甲",
     "AttrEffectId": 2002,
-    "EquipEffectId": 901612,
-    "EquipEffectDesc": "获得霸体强硬效果"
+    "EquipEffectId": 6012002,
+    "EquipEffectDesc": "每6秒增加600护盾值和韧性值"
   },
   {
     "Id": 12003,
     "EquipName": "点翠飞龙釬",
     "AttrEffectId": 2003,
-    "EquipEffectId": 106019,
-    "EquipEffectDesc": "生命饱满时，较大增加攻击造成的伤害"
+    "EquipEffectId": 6012003,
+    "EquipEffectDesc": "增加15%的伤害加成和15%暴击伤害"
   },
   {
     "Id": 12004,
     "EquipName": "藕丝步云履",
     "AttrEffectId": 2004,
-    "EquipEffectId": 106008,
-    "EquipEffectDesc": "增加少许移动速度"
+    "EquipEffectId": 6012004,
+    "EquipEffectDesc": "增加50%的移动速度"
   },
 
   {
     "Id": 18010,
     "EquipName": "上清宝葫芦",
     "AttrEffectId": 8010,
-    "EquipEffectId": 303161,
-    "EquipEffectDesc": "缓慢恢复些微生命"
+    "EquipEffectId": 6018010,
+    "EquipEffectDesc": "每6秒恢复6%的生命值和葫芦中的盛酒量"
   }
 ]

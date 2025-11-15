@@ -32,7 +32,7 @@
         "TriggerNum": 5,
         "AttrEffectID": 0,
         "SuitEffectID": 902012,
-        "SuitEffectDesc": "暴击时，些微减少所有法术的回转时间"
+        "SuitEffectDesc": "暴击时，减少所有法术10秒的回转时间"
       }
     ],
     "RedQualityInfo": {

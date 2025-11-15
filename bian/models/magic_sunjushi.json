@@ -14,11 +14,7 @@
     "Id": 8471
   },
   "TransDone": {
-    "Buffers": [
-      1112,
-      1000068,
-      92245
-    ]
+    "Buffers": [1112, 1000068, 92245]
   },
   "Skills": [
     {
@@ -39,12 +35,12 @@
     {
       "Key": "XBUTTON2",
       "Id": 303016,
-      "Name": "螺旋前冲 AM_lys_baitouweng_atk_06_inCombo",
+      "Name": "螺旋前冲 AM_lys_baitouweng_atk_06_inCombo"
     },
     {
       "Key": "S+XBUTTON2",
       "Id": 303007,
-      "Name": "侧身扇扇子打 AM_lys_baitouweng_atk_07",
+      "Name": "侧身扇扇子打 AM_lys_baitouweng_atk_07"
     },
     {
       "Key": "S+RBUTTON",
@@ -75,34 +71,25 @@
       "Key": "C",
       "Id": 303026,
       "Name": "螺旋前冲 AM_lys_baitouweng_atk_06_surprise",
-      "Buffers": [
-        92211,
-        105111
-      ]
+      "Buffers": [92211, 105111]
     },
     {
       "Key": "V",
       "Id": 303031,
       "Name": "迅速后退",
-      "Buffers": [
-        105111
-      ]
+      "Buffers": [105111]
     },
     {
       "Key": "SPACE",
       "Id": 303022,
       "Name": "后退,带冰",
-      "Buffers": [
-        105111
-      ]
+      "Buffers": [105111]
     },
     {
       "Key": "E",
       "Id": 303061,
       "Name": "现身",
-      "Buffers": [
-        105111
-      ]
+      "Buffers": [105111]
     }
   ]
 }

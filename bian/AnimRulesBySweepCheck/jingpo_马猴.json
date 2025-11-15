@@ -1,0 +1,58 @@
+[
+  {
+    "desc": "马猴连续白色剑气",
+    "montage": ".AM_player_lys_hou_P2_R1toR2_End",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "AMScaleRate": 1.1,
+    "hitEffects": [888555032, 888555016],
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211, 17272, 17273],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      },
+      {
+        "type": "dragfarcamera",
+        "IsDragFarest": true,
+        "NewMinArmLength": -1,
+        "NewMaxArmLength": -1,
+        "NewMinSocketZ": -1,
+        "NewMaxSocketZ": 1000,
+        "desc": "拉远镜头"
+      }
+    ],
+    "replaceEffects": true
+  },
+  {
+    "desc": "马猴连续红色剑气",
+    "montage": ".AM_player_lys_hou_xs_P3_R2_04",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "AMScaleRate": 1.1,
+    "hitEffects": [888555034],
+    "replaceEffects": true,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211, 17272, 17273],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      },
+      {
+        "type": "dragfarcamera",
+        "IsDragFarest": true,
+        "NewMinArmLength": 0,
+        "NewMaxArmLength": 500,
+        "NewMinSocketZ": 100,
+        "NewMaxSocketZ": 1000,
+        "desc": "拉远镜头"
+      }
+    ]
+  }
+]
