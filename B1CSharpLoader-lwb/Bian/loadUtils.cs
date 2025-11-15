@@ -2292,6 +2292,18 @@ namespace bian
                 try
                 {
                     var existingTalent = talentSDescList.List.FirstOrDefault(t => t.Id == config.Id);
+                    // if (existingTalent == null)
+                    // {
+                    //     existingTalent = talentSDescList.List.FirstOrDefault(t => t.Id == 303600);
+
+                    //     if (existingTalent == null)
+                    //     {
+                    //         existingTalent = new TalentSDesc();
+                    //     }
+
+                    //     existingTalent.Id = config.Id;
+                    //     talentSDescList.List.Add(existingTalent);
+                    // }
                     if (existingTalent != null)
                     {
                         // 更新现有天赋（只更新非空值）
@@ -2341,12 +2353,14 @@ namespace bian
 
                         Log.Info($"Successfully updated talent desc with ID: {config.Id}");
                     }
+
                 }
                 catch (Exception ex)
                 {
                     Log.Error($"Failed to process talent desc config for ID {config.Id}: {ex.Message}");
                 }
             }
+
 
             Log.Info($"Total processed talent desc configs: {talentConfigs.Count}");
         }
@@ -2365,20 +2379,6 @@ namespace bian
 
         }
 
-        public static void ModifyDrop()
-        {
-            var itemsList = BG_ProtobufDataAPI<FUStUnitBattleInfoExtendDesc>.Get().GetAll();
-            if (itemsList == null || itemsList.Count == 0) return;
-            var listArr = new List<int> { 91101, 91102, 992061 };
-            //91019  金趁心,业火晶
-            foreach (var item in itemsList.Values)
-            {
-                if (item.DropRule.Count >= 0)
-                {
-                    item.DropRule.AddRange(listArr);
-                }
-            }
-        }
 
 
 
@@ -2550,7 +2550,7 @@ namespace bian
             }
         }
 
-        
+
         public static void ModifyCommDropRuleDesc()
         {
             var itemsList = BG_ProtobufDataAPI<CommDropRuleDesc>.Get().GetAll();
@@ -2806,24 +2806,22 @@ namespace bian
             return newExpand;
         }
 
-
-        public static List<ActionConfig> LoadActionConfigs(string configDirectory = null)
+        public static List<T> LoadGenericConfigs<T>(string configDirectory = null) where T : class
         {
-            configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "ActionsByInput");
-            var actionConfigs = new List<ActionConfig>();
-
+            var configs = new List<T>();
+            Log.Info($"Loading action11111111111111111111111111111111111111  from {configDirectory}");
             if (!Directory.Exists(configDirectory))
             {
-                Log.Error($"Action configs directory not found: {configDirectory}");
+                Log.Error($"{typeof(T).Name} configs directory not found: {configDirectory}");
                 try
                 {
                     Directory.CreateDirectory(configDirectory);
-                    Log.Info($"Created action configs directory: {configDirectory}");
+                    Log.Info($"Created {typeof(T).Name} configs directory: {configDirectory}");
                 }
                 catch (Exception ex)
                 {
-                    Log.Error($"Failed to create action configs directory: {ex.Message}");
-                    return actionConfigs;
+                    Log.Error($"Failed to create {typeof(T).Name} configs directory: {ex.Message}");
+                    return configs;
                 }
             }
 
@@ -2832,21 +2830,29 @@ namespace bian
                 try
                 {
                     string json = File.ReadAllText(file);
-                    var configs = JsonConvert.DeserializeObject<List<ActionConfig>>(json);
-                    if (configs != null)
+                    var fileConfigs = JsonConvert.DeserializeObject<List<T>>(json, JsonSettings);
+                    if (fileConfigs != null)
                     {
-                        actionConfigs.AddRange(configs);
+                        configs.AddRange(fileConfigs);
                     }
                 }
                 catch (Exception ex)
                 {
-                    Log.Error($"Error loading action config from {file}: {ex.Message}");
+                    Log.Error($"Error loading {typeof(T).Name} config from {file}: {ex.Message}");
                 }
             }
 
-            Log.Info($"Total loaded action configs: {actionConfigs.Count}");
-            return actionConfigs;
+            Log.Info($"Total loaded action11111111111111111111111111111111111111 configs: {configs.Count}");
+            return configs;
         }
+
+
+        public static List<ActionConfig> LoadActionConfigs(string configDirectory = null)
+        {
+            configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "ActionsByInput");
+            return LoadGenericConfigs<ActionConfig>(configDirectory);
+        }
+
 
 
 
@@ -3053,6 +3059,84 @@ namespace bian
             }
         }
 
+        public static void LoadAndApplyEquipAttrDesc(string configDirectory = null)
+        {
+            try
+            {
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "EquipAttrDesc");
+
+                // 加载JSON配置
+                var configs = LoadJsonConfigs<EquipAttrConfig>(configDirectory, "EquipAttrDesc");
+                if (configs == null || configs.Count == 0)
+                {
+                    Log.Error("Failed to load equip attr configs");
+                    return;
+                }
+
+                // 获取游戏数据
+                var equipAttrList = GSProtobufRuntimeAPI<TBEquipAttrDesc, EquipAttrDesc>.Get().GetAll().List;
+                if (equipAttrList == null)
+                {
+                    Log.Error("Failed to get equip attr list from game database");
+                    return;
+                }
+
+                // 去重处理
+                configs = configs.GroupBy(c => c.Id).Select(g => g.First()).ToList();
+
+                var processedCount = 0;
+                foreach (var config in configs)
+                {
+                    try
+                    {
+                        var existingEquip = equipAttrList.FirstOrDefault(e => e.Id == config.Id);
+                        if (existingEquip != null)
+                        {
+                            // 更新属性
+                            if (config.Attr != null && config.Attr.Count > 0)
+                            {
+                                existingEquip.Attr.Clear();
+                                foreach (var attr in config.Attr)
+                                {
+                                    var newAttr = new EffectAttrCfg
+                                    {
+                                        Type = (EBGUAttrFloat)attr.Type,
+                                        Value = (float)attr.Value
+                                    };
+                                    existingEquip.Attr.Add(newAttr);
+                                }
+                                processedCount++;
+                                Log.Info($"Successfully updated equip attr with ID: {config.Id}");
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process equip attr config for ID {config.Id}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed equip attr configs: {processedCount}");
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplyEquipAttrDesc: {ex.Message}");
+            }
+        }
+
+        // 配置类定义
+        public class EquipAttrConfig
+        {
+            public int Id { get; set; }
+            public string desc { get; set; }
+            public List<EquipAttrData> Attr { get; set; }
+        }
+
+        public class EquipAttrData
+        {
+            public int Type { get; set; }
+            public double Value { get; set; }
+        }
 
     }
 }

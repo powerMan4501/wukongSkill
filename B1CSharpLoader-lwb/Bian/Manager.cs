@@ -144,7 +144,9 @@ namespace bian
                 LoadUtils.ModifyPlayerLevelDesc();
                 LoadUtils.ModifySkillsMap();
                 LoadUtils.LoadAndApplyTalentDesc();
+                LoadUtils.LoadAndApplyEquipAttrDesc();
                 isBuffConfigsLoaded = true;
+                // Hooks.RegOnCastSkillWithAnimMontageEvent();
             }
         }
         public static List<ActionConfig> ActionsByInput;
@@ -154,6 +156,7 @@ namespace bian
 
             LoadComboConfigs();//全部连招
             ActionsByInput = LoadUtils.LoadActionConfigs();
+
             if (isBuffConfigsLoaded && !forceUpdate) { return; }
             // 加载技能映射规则
             LoadUtils.LoadAllSkillMappingRules();
@@ -827,12 +830,14 @@ namespace bian
                 inputCodeStr += keyName;
             }
 
-
-            Log.Info($"keyName: {keyName} ,inputCodeStr:{inputCodeStr}");
+            var strFinal = inputCodeStr?.ToLower();
+            Log.Info($"keyName: {keyName} ,inputCodeStr:{strFinal},ActionsByInput.Count:{ActionsByInput?.Count}");
             if (ActionsByInput != null && ActionsByInput?.Count > 0)
             {
-                var matchItem = ActionsByInput.FirstOrDefault(item => inputCodeStr?.ToLower()?.Contains(item.code?.ToLower()) ?? false
+                var matchItem = ActionsByInput.FirstOrDefault(item => strFinal?.Contains(item?.code?.ToLower()) ?? false
                 );
+
+                Log.Info($"inputCodeStr: {strFinal} ,matchItem:{matchItem?.afterActions?.Count}");
                 if (matchItem != null && matchItem?.afterActions?.Count > 0)
                 {
                     var rule = new Rule();

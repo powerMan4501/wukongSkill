@@ -257,16 +257,20 @@ public class Hooks
                 }
                 else if (item.NotifyName == new FName("BANS_GSCalcAMScale"))
                 {
-
+                    var AMScaleRate = 8f;
+                    if (config != null && config.AMScaleRate > 0)
+                    {
+                        AMScaleRate = (float)config.AMScaleRate;
+                    }
                     // 获取当前属性值
                     var currentValue = BANS_GSCalcAMScaleHelper.GetProperty(item.NotifyStateClass, "AMScaleMaxRate");
                     var AMScaleMoveOffset = BANS_GSCalcAMScaleHelper.GetProperty(item.NotifyStateClass, "AMScaleMoveOffset");
 
                     // 只有当当前值小于10时才修改为10
-                    if ((float)currentValue < 8)
+                    if ((float)currentValue < AMScaleRate||config?.AMScaleRate > 0)
                     {
                         var AMScaleItem = item.NotifyStateClass;
-                        BANS_GSCalcAMScaleHelper.SetProperty(item.NotifyStateClass, "AMScaleMaxRate", 8);
+                        BANS_GSCalcAMScaleHelper.SetProperty(item.NotifyStateClass, "AMScaleMaxRate", AMScaleRate);
                     }
                     if ((float)AMScaleMoveOffset >= -800 && (float)AMScaleMoveOffset <= -10)
                     {

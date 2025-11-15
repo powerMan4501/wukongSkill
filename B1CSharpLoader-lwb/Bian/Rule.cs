@@ -24,6 +24,7 @@ namespace bian
     public class RuleAction
     {
 
+        public bool? IsSummonerAsMaster { get; set; }
         public bool? IsDragFarest { get; set; }
         public float? NewMinArmLength { get; set; }
         public float? NewMaxArmLength { get; set; }
@@ -37,9 +38,16 @@ namespace bian
         public string? RushDir { get; set; }
         public int? montageIndex { get; set; }
         public string? montageValue { get; set; }
+        public float? attrValue { get; set; }
+        public int? attrType { get; set; }
+
         public string? skillType { get; set; }
         public string? bossType { get; set; }
-
+        public string? SummonTamerTemplatePath { get; set; }
+        public string? SummonBPTemplatePath { get; set; }
+        public string[]? DisappearMontagePathList { get; set; }
+        public string[]? BornMontagePathList { get; set; }
+        public int? UseBornSkill { get; set; }
 
         public int? magicID { get; set; }
         public int? MagicSkillID { get; set; }
@@ -431,15 +439,24 @@ namespace bian
                         Helper.CastVigorSkillByID(character, action.SkillID, action?.UnitScale ?? 1, (int?)(action?.Scale3D ?? 1));
                     }
                     break;
+                case "spaw_monster":
 
+                    if (action?.SummonTamerTemplatePath != null)
+                    {
+                        Helper.SpawnActor(action.SummonTamerTemplatePath);
+                    }
+
+                    break;
                 case "bullet":
                     HandleBulletAction(character, action, timeLength);
                     break;
-
+                case "duo_po":
+                   Helper.SyncTeamWithTarget();
+                    break;
                 case "summon":
-                    if (action.SummonID > 0)
+                    if (action?.SummonID > 0)
                     {
-                        Helper.SummonReq(action.SummonID, action.SummonCount, action.SummonAliveTime);
+                        Helper.newSummonReq(action);
                     }
                     break;
 
@@ -492,6 +509,16 @@ namespace bian
                     BPS_EventCollectionCS.GetLocal(character).Evt_ExitSkillCam.Invoke(character);
                     break;
 
+                case "add_attr":
+                    if (action?.attrValue != null && action?.attrType != null)
+                    {
+                        BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
+
+                        bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke((EBGUAttrFloat)(action.attrType ?? 151), action?.attrValue ?? 100);
+                    }
+
+
+                    break;
                 case "changeequip":
                     if (action?.actionId != null)
                     {

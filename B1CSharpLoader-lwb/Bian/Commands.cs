@@ -40,7 +40,7 @@ namespace bian
                     bUS_GSEventCollection.Evt_SetAttrFloat?.Invoke(EBGUAttrFloat.BlockCollapseArmor, readOnlyData.GetFloatValue(EBGUAttrFloat.BlockCollapseArmorMax));
                     bUS_GSEventCollection.Evt_SetAttrFloat?.Invoke(EBGUAttrFloat.Shield, readOnlyData.GetFloatValue(EBGUAttrFloat.ShieldMax));
                     bUS_GSEventCollection.Evt_SetAttrFloat?.Invoke(EBGUAttrFloat.SkillSuperArmor, readOnlyData.GetFloatValue(EBGUAttrFloat.SkillSuperArmorMax));
-                    bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.Stamina, 100);
+                    bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.Pevalue, 100);
 
                 }
 

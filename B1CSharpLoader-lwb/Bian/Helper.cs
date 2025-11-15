@@ -72,10 +72,26 @@ namespace bian
             return BUS_EventCollectionCS.Get(GetControlledPawn());
         }
 
+        public static void SyncTeamWithTarget()
+        {
+            var character = Helper.GetBGUPlayerCharacterCS();
 
+            var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
+            if (target != null)
+            {
+                var teamID = target.GetTeamIDInCS();
+                character.SetTeamIDInCS(teamID);
+                // Log.Debug($"bian: set team id-->{teamID}");
+            }
+            else
+            {
+                BUS_EventCollectionCS.Get(character).Evt_ResetTeamID.Invoke();
+                Log.Info($"bian: reset team id to default");
+            }
+        }
         public static T LoadAsset<T>(string asset) where T : UObject
         {
-            return b1.BGW.BGW_PreloadAssetMgr.Get(GetWorld()).TryGetCachedResourceObj<T>(asset, b1.BGW.ELoadResourceType.SyncLoadAndCache, b1.BGW.EAssetPriority.Default, null, -1, -1);
+            return BGW_PreloadAssetMgr.Get(GetWorld()).TryGetCachedResourceObj<T>(asset, ELoadResourceType.SyncLoadAndCache, b1.BGW.EAssetPriority.Default, null, -1, -1);
         }
 
         public static UClass LoadClass(string asset)
@@ -914,7 +930,72 @@ namespace bian
             FSummonReq inSummonReq = fSummonReq;
             BPS_EventCollectionCS.GetLocal(character).Evt_RequestSummon.Invoke(inSummonReq);
         }
+        public static void newSummonReq(RuleAction? action)
+        {
+            var character = Helper.GetBGUPlayerCharacterCS();
+            var SummonCount = action?.SummonCount ?? 1;
+            var SummonID = action?.SummonID;
+            var skillID = action?.SkillID;
+            Log.Debug($"bian: newSummonReq---->{SummonID}");
+            var SummonAliveTime = action?.SummonAliveTime ?? 10;
+            if (SummonCount < 1)
+            {
+                SummonCount = 1;
+            }
 
+            FSummonReq fSummonReq = default(FSummonReq);
+            fSummonReq.SummonType = ESummonType.Normal;
+            summonGuid = GameplayTagExtension.ConvertToCalliopeGuid(Guid.NewGuid());
+            fSummonReq.SummonGuid = (FCalliopeGuid)summonGuid;
+            fSummonReq.SummonID = (Int32)SummonID;
+            fSummonReq.SpawnConfigWrap = FSummonSpawnConfigWrap.WrapSpawnConfig_BySummonCommDesc((Int32)SummonID, character);
+            fSummonReq.SpawnConfigWrap.SummonAliveTime = SummonAliveTime;
+            fSummonReq.SpawnConfigWrap.DestroyDelayTime = 0;
+            fSummonReq.SpawnConfigWrap.SpawnBirthBuff = [888666002];
+            BGW_PreloadAssetMgr bGW_PreloadAssetMgr = BGW_PreloadAssetMgr.Get(character);
+            if (action?.SummonTamerTemplatePath != null && bGW_PreloadAssetMgr != null)
+            {
+                fSummonReq.SpawnConfigWrap.TamerTemplate =
+                bGW_PreloadAssetMgr.TryGetCachedResourceObj<UClass>(action.SummonTamerTemplatePath, ELoadResourceType.SyncLoadAndCache);
+
+                fSummonReq.SpawnConfigWrap.DisappearMontagePathList.Clear();
+                fSummonReq.SpawnConfigWrap.UseBornSkill = false;
+
+
+            }
+            if (action?.IsSummonerAsMaster != null)
+            {
+                fSummonReq.SpawnConfigWrap.IsSummonerAsMaster = (bool)action.IsSummonerAsMaster;
+            }
+            if (action?.DisappearMontagePathList != null)
+            {
+                fSummonReq.SpawnConfigWrap.DisappearMontagePathList.Clear();
+                fSummonReq.SpawnConfigWrap.DisappearMontagePathList.AddRange(action.DisappearMontagePathList);
+            }
+
+
+
+            if (skillID.HasValue && skillID.Value > 0)
+            {
+                var skillDesc = BGW_GameDB.GetSkillSDesc(skillID.Value, character);
+                if (skillDesc != null)
+                {
+                    fSummonReq.SpawnConfigWrap.BornSkillIDs = [skillID.Value];
+                    fSummonReq.SpawnConfigWrap.UseBornSkill = true;
+                }
+
+            }
+            fSummonReq.SummonCount = (Int32)SummonCount;
+            fSummonReq.Summoner = character;
+            fSummonReq.bTeleportSelf = false;
+            fSummonReq.EffectCaster = null;
+            fSummonReq.BuffOwner = null;
+
+            fSummonReq.HitLocation = BGUFuncLibActorTransformCS.BGUGetActorLocation(character);
+
+            FSummonReq inSummonReq = fSummonReq;
+            BPS_EventCollectionCS.GetLocal(character).Evt_RequestSummon.Invoke(inSummonReq);
+        }
         public static void SpawnProjectile(BGUPlayerCharacterCS character, string path, int projectileID = 0, bool forTarget = false, int bulletCount = 1, bool isRandom = false, FVector offset = default(FVector), RuleAction? action = null)
         {
             BGWDataAsset_ProjectileSpawnConfig bGWDataAsset_ProjectileSpawnConfig = BGW_PreloadAssetMgr.Get(character).TryGetCachedResourceObj<BGWDataAsset_ProjectileSpawnConfig>(path, ELoadResourceType.SyncLoadAndCache);
@@ -1804,5 +1885,10 @@ namespace bian
                 }
             }
         }
+
+
+
+
+
     }
 }
