@@ -1,5 +1,15 @@
 [
   {
+    "code": "CapsLock",
+    "afterActions": [
+      {
+        "Type": "skill",
+        "SkillID": 84321023,
+        "desc": "筋斗云空中追击三连横扫，不错"
+      }
+    ]
+  },
+  {
     "code": "ADDI",
     "afterActions": [
       {
@@ -109,7 +119,6 @@
   {
     "code": "zhao",
     "afterActions": [
-     
       {
         "Type": "summon",
         "SummonID": 1013901,
@@ -131,14 +140,97 @@
       }
     ]
   },
+
+   {
+    "code": "siss",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_03.TAMER_hfm_shanzhen_03_C",
+        "desc": "石双双"
+      }
+    ]
+  },
   {
-    "code": "you",
+    "code": "niao",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_niaozui.TAMER_hys_niaozui_C",
+        "desc": "鳖宝"
+      }
+    ]
+  },
+  {
+    "code": "hun",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_yanjianxi_01a.TAMER_gycy_yanjianxi_01a_C",
+        "desc": "幽魂"
+      },
+
+        {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_HFM_Suoyang_01a.TAMER_HFM_Suoyang_01a_C",
+        "desc": "地狼"
+      }
+    ]
+  },
+   {
+    "code": "duos",
+    "afterActions": [
+      {
+        "Type": "sync_teamid",
+        "desc": "夺舍，把锁定的目标角色变成自己的队友"
+      }
+    ]
+  },
+   {
+    "code": "luan",
+    "afterActions": [
+      {
+        "Type": "diff_teamid",
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "hui",
+    "afterActions": [
+      {
+        "Type": "reset_teamid",
+        "desc": "让周围3000的角色阵营回到原有的状态"
+      }
+    ]
+  },
+  {
+    "code": "suho",
     "afterActions": [
       {
         "Type": "summon",
         "SummonID": 200201,
         "SummonCount": 1,
         "desc": "召唤马哥"
+      },
+
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+ 
+  {
+    "code": "suyuan",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 740101,
+        "SummonCount": 1,
+        "desc": "召唤巨猿"
       },
 
       {

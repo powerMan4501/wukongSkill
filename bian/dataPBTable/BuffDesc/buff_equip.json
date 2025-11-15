@@ -1,7 +1,7 @@
 [
   {
     "ID": 66015002,
-    "BuffTips": "金箍棒，若攻击命中敌人则回复法力和棍势各20点",
+    "BuffTips": "金箍棒，若攻击命中敌人则回复属性",
     "BuffActiveCondition": {
       "ConditionType": 0,
       "ConditionParams": ""
@@ -16,6 +16,15 @@
         "EffectParams": [152, 20, 0, 0],
         "EffectParamsFloat": []
       },
+      {
+        "EffectTrigger": 14,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [190, 20, 0, 0],
+        "EffectParamsFloat": []
+      },
+
       {
         "EffectTrigger": 14,
         "EffectType": 87,
@@ -182,7 +191,7 @@
 
   {
     "ID": 66012004,
-    "BuffTips": "藕丝步云履，增加50%的移动速度",
+    "BuffTips": "藕丝步云履，增加移动速度",
     "BuffActiveCondition": {
       "ConditionType": 0,
       "ConditionParams": ""

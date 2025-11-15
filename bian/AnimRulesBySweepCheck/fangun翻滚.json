@@ -6,9 +6,34 @@
     "speedRate": 4,
     "CastActions": [
       {
-        "Type": "buff",
-        "BuffID": 304,
-        "desc": "复活点，回血回蓝回葫芦清除技能cd"
+        "Type": "add_attr",
+        "attrType": 151,
+        "attrValue": 666,
+        "desc": "回血"
+      },
+      {
+        "Type": "add_attr",
+        "attrType": 152,
+        "attrValue": 66,
+        "desc": "回蓝"
+      },
+      {
+        "Type": "add_attr",
+        "attrType": 190,
+        "attrValue": 600,
+        "desc": "回盾"
+      },
+      {
+        "Type": "add_attr",
+        "attrType": 160,
+        "attrValue": 6000,
+        "desc": "回韧性"
+      },
+      {
+        "Type": "add_attr",
+        "attrType": 171,
+        "attrValue": 6000,
+        "desc": "回韧性"
       }
     ]
   },

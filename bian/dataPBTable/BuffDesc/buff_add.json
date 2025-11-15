@@ -2,7 +2,7 @@
   
   {
     "ID": 888666001,
-    "BuffTips": "主角，80%减伤，2倍速度，完美闪避范围加大，死亡自动复活",
+    "BuffTips": "主角，2倍速度，完美闪避范围加大，死亡自动复活",
     "Duration": -1,
     "BuffEffects": [
       {
@@ -13,14 +13,7 @@
         "EffectParams": [],
         "EffectParamsFloat": [25000.0, 25000.0, 25000.0]
       },
-      {
-        "EffectTrigger": 1,
-        "EffectType": 2,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [120, 8000, 0],
-        "EffectParamsFloat": []
-      },
+      
       {
         "EffectTrigger": 1,
         "EffectType": 152,

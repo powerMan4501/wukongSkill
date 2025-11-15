@@ -7,42 +7,29 @@
   {
     "Id": 15002,
     "EquipName": "如意金箍棒",
-    "EquipEffectDesc": "第四段棍势可永久维持，不再随时间减削，若攻击命中敌人则回复法力和棍势各20点"
+    "EquipEffectDesc": "第四段棍势可永久维持，不再随时间减削，若攻击命中敌人则回复法力、护盾和棍势各20点"
   },
-  {
-    "Id": 12001,
-    "EquipName": "凤翅紫金冠",
-    "AttrEffectId": 2001,
-    "EquipEffectId": 6012001,
-    "EquipEffectDesc": "增加15%四灾抗性"
-  },
+  
   {
     "Id": 12002,
     "EquipName": "锁子黄金甲",
-    "AttrEffectId": 2002,
-    "EquipEffectId": 6012002,
-    "EquipEffectDesc": "每6秒增加600护盾值和韧性值"
+    "EquipEffectDesc": "增加护盾值和韧性值上限"
   },
   {
     "Id": 12003,
     "EquipName": "点翠飞龙釬",
-    "AttrEffectId": 2003,
-    "EquipEffectId": 6012003,
     "EquipEffectDesc": "增加15%的伤害加成和15%暴击伤害"
   },
   {
     "Id": 12004,
     "EquipName": "藕丝步云履",
-    "AttrEffectId": 2004,
-    "EquipEffectId": 6012004,
-    "EquipEffectDesc": "增加50%的移动速度"
+    "EquipEffectDesc": "增加移动速度"
   },
 
   {
     "Id": 18010,
     "EquipName": "上清宝葫芦",
-    "AttrEffectId": 8010,
-    "EquipEffectId": 6018010,
+    "EquipEffectId": 108011,
     "EquipEffectDesc": "每6秒恢复6%的生命值和葫芦中的盛酒量"
   }
 ]
