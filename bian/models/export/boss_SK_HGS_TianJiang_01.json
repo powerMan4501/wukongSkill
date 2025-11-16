@@ -29,7 +29,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147233754"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146438596"
       }
     ],
     "InteractBones": null,
@@ -39,7 +39,7 @@
     "UnitScale": null
   },
   "AttrFloat": {
-    "HpMax": 13593.0,
+    "HpMax": 16745.0,
     "MpMax": 0.0,
     "B1StunMax": 0.0,
     "StaminaDepletedLimit": 0.0,
@@ -131,14 +131,14 @@
     "EnergyMinConsumeBase": 0.0,
     "EnergyConsumeSpeedBase": 0.0,
     "EnergyIncreaseSpeedBase": 0.0,
-    "Hp": 6084.0,
+    "Hp": 16745.0,
     "Mp": 0.0,
     "Atk": 169.456,
     "Def": 0.0,
     "B1Stun": 0.0,
     "Stamina": 0.0,
     "StaminaRecover": 0.0,
-    "SkillSuperArmor": 0.0,
+    "SkillSuperArmor": 100.0,
     "CritRate": 0.0,
     "CritMultiplier": 0.0,
     "Tenacity": 1.0,
@@ -151,7 +151,7 @@
     "BlockCollapseArmor": 15000.0,
     "DingshenDefAddition": 0.0,
     "FreezeAbnormalAcc": 0.0,
-    "BurnAbnormalAcc": 0.0,
+    "BurnAbnormalAcc": 4.703012,
     "PoisonAbnormalAcc": 0.0,
     "ThunderAbnormalAcc": 0.0,
     "BlindSlot": 100.0,
@@ -196,6 +196,7 @@
   "Skills": [
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -221,6 +222,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -246,6 +248,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -271,6 +274,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -296,6 +300,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -321,6 +326,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -346,6 +352,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -371,6 +378,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -396,6 +404,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -421,6 +430,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -446,6 +456,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -471,6 +482,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -496,6 +508,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -521,6 +534,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -546,6 +560,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -571,6 +586,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -596,6 +612,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -621,6 +638,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -646,6 +664,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -671,6 +690,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -696,6 +716,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -721,6 +742,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -746,6 +768,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -771,6 +794,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -796,6 +820,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -821,6 +846,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -846,6 +872,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -871,6 +898,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -896,6 +924,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -921,6 +950,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -946,6 +976,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -971,6 +1002,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -996,6 +1028,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -1021,6 +1054,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -1046,6 +1080,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -1071,6 +1106,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -1096,6 +1132,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -1121,6 +1158,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -1146,6 +1184,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -1171,6 +1210,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -1196,6 +1236,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -1221,6 +1262,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -1246,6 +1288,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -1271,6 +1314,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -1296,6 +1340,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -1321,6 +1366,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -1346,6 +1392,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
