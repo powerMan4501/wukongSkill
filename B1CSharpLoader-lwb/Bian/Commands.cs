@@ -88,23 +88,19 @@ namespace bian
 
         public void TransUnit(ModelManager mananger)
         {
-            var character = Helper.GetBGUPlayerCharacterCS();
             Helper.GetBUS_GSEventCollection().Evt_TransBeginSpawnNewOne.Invoke(10, 0, true, EPlayerTransBeginType.SkillEffect);
         }
 
         public void SwitchPlayerTeamWithTarget(ModelManager manager)
         {
             var character = Helper.GetBGUPlayerCharacterCS();
-
             var teamID = character.GetTeamIDInCS();
-
             var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
             if (target != null)
             {
                 var targetTeamID = target.GetTeamIDInCS();
                 target.SetTeamIDInCS(teamID);
                 character.SetTeamIDInCS(targetTeamID);
-                Log.Info($"bian: change team id-->{targetTeamID}");
             }
         }
 
@@ -117,12 +113,10 @@ namespace bian
             {
                 var teamID = target.GetTeamIDInCS();
                 character.SetTeamIDInCS(teamID);
-                // Log.Debug($"bian: set team id-->{teamID}");
             }
             else
             {
                 BUS_EventCollectionCS.Get(character).Evt_ResetTeamID.Invoke();
-                Log.Info($"bian: reset team id to default");
             }
         }
 

@@ -24,6 +24,9 @@ namespace bian
     public class RuleAction
     {
 
+
+        public List<RuleAction>? summonerActions { get; set; }
+        public bool? toPlayerTeam { get; set; }
         public bool? IsSummonerAsMaster { get; set; }
         public bool? IsDragFarest { get; set; }
         public float? NewMinArmLength { get; set; }
@@ -272,6 +275,15 @@ namespace bian
             {
                 var buffTime = (action?.BuffTime > 0 || action?.BuffTime == -1) ? action.BuffTime : timeLength;
                 var target = action?.Target ?? character;
+                if (action?.ForTarget == true)
+                {
+                    target = BGUFunctionLibraryCS.BGUGetTarget(character);
+                    if (target == null)
+                    {
+                        //没有目标就抛出异常
+                        return;
+                    }
+                }
                 if (target == null)
                 {
                     // 记录错误或抛出异常
@@ -389,6 +401,16 @@ namespace bian
                 case "buff":
                     HandleBuffAction(character, action, timeLength);
                     break;
+                case "change_actor_to_target":
+                    // 周围2000的角色全部变成己方的人，并把目标对准当前锁定的目标
+
+                    Helper.ChangeEmenyTarget();
+                    break;
+
+                case "change_actor_target":
+                    // 把其他敌人的目标对准当前锁定的目标,toPlayerTeam 为true就是把周围的人变成己方的人，除了目标
+                    Helper.changeAllActorTarget(action?.toPlayerTeam ?? false);
+                    break;
 
                 case "removeBuff":
                     if (action?.BuffID != null && action?.BuffID > 0)
@@ -451,7 +473,17 @@ namespace bian
                     HandleBulletAction(character, action, timeLength);
                     break;
                 case "duo_po":
-                   Helper.SyncTeamWithTarget();
+                    Helper.SyncTeamWithTarget();
+                    break;
+                case "sync_teamid":
+                    Helper.SyncTeamWithTarget();
+                    break;
+                case "diff_teamid":
+                    Helper.diffTeamID();
+                    break;
+
+                case "reset_teamid":
+                    Helper.resetTeamID();
                     break;
                 case "summon":
                     if (action?.SummonID > 0)
@@ -473,7 +505,15 @@ namespace bian
 
                     break;
 
-
+                case "summoner_do_actions":
+                    if (action?.summonerActions != null && action?.summonerActions?.Count > 0)
+                    {
+                        foreach (var actionItem in action.summonerActions)
+                        {
+                            Helper.summonerDoActions(actionItem);
+                        }
+                    }
+                    break;
                 case "ironbody":
                     var eventCollection = BUS_EventCollectionCS.Get(character);
                     if (eventCollection?.Evt_IronBodyStart != null)
@@ -513,11 +553,8 @@ namespace bian
                     if (action?.attrValue != null && action?.attrType != null)
                     {
                         BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
-
                         bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke((EBGUAttrFloat)(action.attrType ?? 151), action?.attrValue ?? 100);
                     }
-
-
                     break;
                 case "changeequip":
                     if (action?.actionId != null)

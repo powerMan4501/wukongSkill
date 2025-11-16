@@ -72,6 +72,147 @@ namespace bian
             return BUS_EventCollectionCS.Get(GetControlledPawn());
         }
 
+        // 获取距离最近的敌人
+        public static BGUCharacterCS GetNearestEnemy(float range = 3000)
+        {
+            var player = GetBGUPlayerCharacterCS();
+            if (player == null) return null;
+
+            var enemies = getMonsterByDistance(range);
+            if (enemies == null || enemies.Count == 0) return null;
+
+            BGUCharacterCS nearestEnemy = null;
+            float minDistance = float.MaxValue;
+            var playerPos = player.GetActorLocation();
+
+            foreach (var enemy in enemies)
+            {
+                // 跳过同一队伍的角色
+                if (BGU_DataUtil.GetActorTeamID(player) == BGU_DataUtil.GetActorTeamID(enemy))
+                    continue;
+
+                var distance = FVector.Distance(playerPos, enemy.GetActorLocation());
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearestEnemy = (BGUCharacterCS?)enemy;
+                }
+            }
+
+            return nearestEnemy;
+        }
+
+
+        public static List<AActor> getAllSunmon(int num = 1)
+        {
+            var character = GetBGUPlayerCharacterCS();
+            IBGC_SummonData gameStateReadonlyData = BGU_DataUtil.GetGameStateReadonlyData<IBGC_SummonData, BGC_SummonData>(character);
+            if (gameStateReadonlyData == null || gameStateReadonlyData.GetSummonerAllServantActors(character, out var ServantActors) <= 0)
+            {
+                return new List<AActor>();
+            }
+            var finalList = num > ServantActors.Count ? ServantActors : ServantActors.Take(num).ToList();
+            return finalList.Cast<AActor>().ToList();
+        }
+
+        private static void HandleBuffAction(BGUPlayerCharacterCS character, RuleAction action, float timeLength)
+        {
+            var buffs = action?.BuffIDs?.Count > 0 ? action?.BuffIDs : action?.BuffID > 0 ? [action.BuffID] : null;
+            if (buffs?.Count > 0)
+            {
+                var buffTime = (action?.BuffTime > 0 || action?.BuffTime == -1) ? action.BuffTime : timeLength;
+                var target = action?.Target ?? character;
+                if (action?.ForTarget == true)
+                {
+                    target = BGUFunctionLibraryCS.BGUGetTarget(character);
+                    if (target == null)
+                    {
+                        //没有目标就抛出异常
+                        return;
+                    }
+                }
+                if (target == null)
+                {
+                    // 记录错误或抛出异常
+                    return;
+                }
+                foreach (var buff in buffs)
+                {
+                    BGUFunctionLibraryCS.BGUAddBuff(character, target, buff, EBuffSourceType.GM, buffTime);
+                }
+            }
+        }
+        public static void summonerDoActions(RuleAction action, int num = 1)
+        {
+            var list = getAllSunmon(num);
+            Log.Info($"summonerDoActions list:{list?.Count}");
+            if (list == null || list.Count == 0 || action == null || action.Type == null) return;
+
+            foreach (AActor item in list)
+            {
+
+                var finalActor = item as BGUCharacterCS;
+                Log.Info($"summonerDoActions finalActor:{finalActor?.PathName}");
+
+                switch (action?.Type?.ToLower())
+                {
+                    case "buff":
+                        var buffTime = action?.BuffTime ?? 1000;
+                        if (action?.BuffIDs?.Count > 0)
+                        {
+                            foreach (var buff in action.BuffIDs)
+                            {
+                                BGUFunctionLibraryCS.BGUAddBuff(item, item, buff, EBuffSourceType.GM, buffTime);
+                            }
+                        }
+
+                        break;
+                    case "skill":
+                        if (action.SkillID > 0)
+                        {
+                            BGUCharacterCS character = item as BGUCharacterCS;
+                            if (character != null)
+                            {
+                                TryCastSkill(character, action.SkillID);
+                            }
+                        }
+                        break;
+                    // case "magic":
+                    //     if (action?.SkillID > 0)
+                    //     {
+                    //         CastVigorSkillByID(finalActor, action.SkillID, action?.UnitScale ?? 1, (int?)(action?.Scale3D ?? 1));
+                    //     }
+                    //     break;
+
+                    case "bossskill":
+                        if (finalActor == null) continue;
+                        if (action.bossLabel != null && action.bossType != null && action?.MagicSkillID != null)
+                        {
+                            CastVigorSkillByModel((BGUPlayerCharacterCS)finalActor, action.bossLabel, action.bossType ?? "", action?.MagicSkillID ?? 0, action?.resetBack ?? false, action?.RecoverSkillID ?? 10199);
+                        }
+                        break;
+                    // case "magicskill":
+                    //     if (action.magicID != null)
+                    //     {
+                    //         CastVigorSkillByID(finalActor, (int)action.magicID, action?.UnitScale ?? 1, action?.MagicSkillID ?? 0, action?.Scale3D ?? 1, action?.resetBack ?? false);
+                    //     }
+                    //     break;
+                    case "add_attr":
+                        if (action?.attrValue != null && action?.attrType != null)
+                        {
+                            BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(finalActor);
+                            bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke((EBGUAttrFloat)(action.attrType ?? 151), action?.attrValue ?? 100);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+
+        }
+
+
         public static void SyncTeamWithTarget()
         {
             var character = Helper.GetBGUPlayerCharacterCS();
@@ -80,6 +221,12 @@ namespace bian
             if (target != null)
             {
                 var teamID = target.GetTeamIDInCS();
+                var lockTarget = GetNearestEnemy(3000);
+                if (lockTarget != null)
+                {
+                    BUS_EventCollectionCS.Get((AActor)(object)target).Evt_AICatchTarget.Invoke(lockTarget, (ETargetSourceType)25, false);
+
+                }
                 character.SetTeamIDInCS(teamID);
                 // Log.Debug($"bian: set team id-->{teamID}");
             }
@@ -89,6 +236,48 @@ namespace bian
                 Log.Info($"bian: reset team id to default");
             }
         }
+
+
+        public static void resetTeamID()
+        {
+            List<ABGUCharacter> allActorsOfClassList = getMonsterByDistance(3000);
+            foreach (var actor in allActorsOfClassList)
+            {
+                BUS_EventCollectionCS.Get(actor).Evt_ResetTeamID.Invoke();
+            }
+        }
+        public static bool IsPlayer(string name)
+        {
+            if (name != null && name?.ToLower()?.IndexOf("unit_player") > -1)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static void diffTeamID()
+        {
+            List<ABGUCharacter> allActorsOfClassList = getMonsterByDistance(3000);
+            int teamID = 100; // 起始团队ID
+            var player = GetBGUPlayerCharacterCS();
+
+            foreach (var actor in allActorsOfClassList)
+            {
+                // 跳过玩家角色
+
+                if (!IsPlayer(actor.PathName))
+                {
+                    // 为每个角色设置递增的团队ID
+                    var target = actor as BGUCharacterCS;
+                    // 己方除外
+                    if (target != null && target.GetTeamIDInCS() != 1)
+                    {
+                        target.SetTeamIDInCS(teamID++);
+                    }
+
+                }
+            }
+        }
+
         public static T LoadAsset<T>(string asset) where T : UObject
         {
             return BGW_PreloadAssetMgr.Get(GetWorld()).TryGetCachedResourceObj<T>(asset, ELoadResourceType.SyncLoadAndCache, b1.BGW.EAssetPriority.Default, null, -1, -1);
@@ -138,6 +327,7 @@ namespace bian
             return null;
         }
 
+     
 
         public static void ResetVigorSkill(BUS_MagicallyChangeComp magicChangeComp, int VigorSkillID)
         {
@@ -1265,6 +1455,56 @@ namespace bian
                 action();
             });
         }
+        public static void changeAllActorTarget(bool? changeToPlayerTeam)
+        {
+            var player = GetBGUPlayerCharacterCS();
+            var target = BGUFunctionLibraryCS.BGUGetTarget(player) as BGUCharacterCS;
+            if (target == null) return;
+            List<ABGUCharacter> allActorsOfClassList = getMonsterByDistance(2000);
+            if (allActorsOfClassList == null || allActorsOfClassList.Count == 0) return;
+            foreach (BGUCharacterCS item in allActorsOfClassList)
+            {
+                if (target != null && item.PathName != target.PathName && item.PathName != player.PathName)
+                {
+                    BUS_EventCollectionCS.Get((AActor)(object)item).Evt_AICatchTarget.Invoke(target, (ETargetSourceType)25, false);
+                    if (changeToPlayerTeam == true)
+                    {
+                        item.SetTeamIDInCS(player.GetTeamIDInCS());//设置怪物为玩家队伍
+                    }
+                }
+            }
+
+        }
+
+
+        // 除了目标角色其他都变成己方的人
+        public static void ChangeEmenyTarget()
+        {
+            List<ABGUCharacter> allActorsOfClassList = getMonsterByDistance(2000);
+
+            if (allActorsOfClassList == null || allActorsOfClassList.Count == 0) return;
+            var character = GetBGUPlayerCharacterCS();
+            var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
+            foreach (BGUCharacterCS item in allActorsOfClassList)
+            {
+                if (item == null || item?.GetFullName() == null)
+                {
+                    continue;
+                }
+                var teamId = BGU_DataUtil.GetActorTeamID(GetBGUPlayerCharacterCS());
+                if (BGU_DataUtil.GetActorTeamID(item) != teamId && item.PathName != target?.PathName)
+                {
+                    if (target != null)
+                    {
+                        BUS_EventCollectionCS.Get((AActor)(object)item).Evt_AICatchTarget.Invoke(target, (ETargetSourceType)25, false);
+                    }
+                    item.SetTeamIDInCS(teamId);//设置怪物为玩家队伍
+                    return;
+                }
+            }
+        }
+        /// <param name="MaxDistance">最大搜索距离，默认为6000单位</param>
+        /// <returns>返回一个包含在指定距离内所有怪物角色的列表</returns>
         public static List<ABGUCharacter> getMonsterByDistance(float MaxDistance = 6000)
         {
             var play = GetBGUPlayerCharacterCS();
@@ -1517,6 +1757,7 @@ namespace bian
         // 尝试释放技能
         private static void TryCastSkill(BGUCharacterCS character, int skillID)
         {
+            if (character == null) return;
             try
             {
                 FCastSkillInfo castSkillInfo = new FCastSkillInfo(skillID, ECastSkillSourceType.GM);
