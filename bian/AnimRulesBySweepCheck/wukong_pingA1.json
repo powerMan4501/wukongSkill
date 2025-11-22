@@ -3,7 +3,7 @@
     "montage": "Attack/ComboC/AM_Wukong_ComboC_q",
     "linkValue": 0,
     "scaleWeaponNum": 3,
-    
+
     "MoveOffset": 100,
     "CastActions": [
       {
@@ -69,50 +69,15 @@
         "BuffIDs": [66655401],
         "BuffTime": 1000,
         "desc": "棍光特效粒子"
-      }
-    ],
-    "SweepActions": [
+      },
       {
-        "Type": "bullet",
-        "bullets": [
+        "Type": "summoner_do_actions",
+        "summonerActions": [
           {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 88880003,
-            "ForTarget": true,
-            "hasBuff": 888666006,
-            "spawnBaseSocketName": "weapon_r_index_04",
-            "desc": "有冰buff,大圣平A1,发射冰剑气"
-          },
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 88880009,
-            "ForTarget": true,
-            "hasBuff": 888666007,
-            "BornDirOffsetXLeftValue": 91,
-            "BornDirOffsetXRightValue": 91,
-            "spawnBaseSocketName": "weapon_r_index_04",
-            "desc": "有火buff,大圣平A1,发射火剑气"
-          },
-          {
-            "Type": "bullet",
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 1713001,
-            "ForTarget": true,
-            "hasBuff": 888666008,
-            "spawnBaseSocketName": "weapon_r_index_04",
-            "desc": "有毒buff,大圣平A1,就发射红剑气"
-          },
-
-          {
-            "Type": "bullet",
-            "ForTarget": true,
-            "spawnBaseSocketName": "weapon_r_index_04",
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileIDs": [30142501],
-            "noHasAnyBuff": [888666006, 888666007, 888666008],
-            "desc": "没冰火毒buff,大圣平A1,电剑气"
+            "type": "skill"
           }
-        ]
+        ],
+        "desc": "让分身复制技能"
       }
     ]
   },
@@ -128,50 +93,6 @@
         "BuffIDs": [66655401],
         "BuffTime": 1000,
         "desc": "棍光特效粒子"
-      }
-    ],
-    "SweepActions": [
-      {
-        "Type": "bullet",
-        "bullets": [
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 88880003,
-            "ForTarget": true,
-            "hasBuff": 888666006,
-            "spawnBaseSocketName": "weapon_r_index_06",
-            "desc": "有冰buff,大圣平A1,发射冰剑气"
-          },
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 88880009,
-            "ForTarget": true,
-            "hasBuff": 888666007,
-            "BornDirOffsetXLeftValue": 91,
-            "BornDirOffsetXRightValue": 91,
-            "spawnBaseSocketName": "weapon_r_index_06",
-            "desc": "有火buff,大圣平A1,发射火剑气"
-          },
-          {
-            "Type": "bullet",
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 1713001,
-            "ForTarget": true,
-            "hasBuff": 888666008,
-            "spawnBaseSocketName": "weapon_r_index_06",
-            "desc": "有毒buff,大圣平A1,就发射红剑气"
-          },
-
-          {
-            "Type": "bullet",
-            "ForTarget": true,
-            "spawnBaseSocketName": "weapon_r_index_06",
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileIDs": [30142501],
-            "noHasAnyBuff": [888666006, 888666007, 888666008],
-            "desc": "没冰火毒buff,大圣平A1,电剑气"
-          }
-        ]
       }
     ]
   }

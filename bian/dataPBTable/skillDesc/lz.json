@@ -118,9 +118,9 @@
   },
 
   {
-    "desc": "4a劈棍切手接招，残躯招：空中转很多下",
+    "desc": "4a劈棍切手接招，大圣空中侧身好几下",
     "ID": 54321021,
-    "TemplatePath": "/Game/00Main/Animation/Player/MGD_JSDS/Montage/AM_mgd_jsds_atk_07.AM_mgd_jsds_atk_07"
+    "TemplatePath": "/Game/00Main/Animation/Player/Transform/Player_dasheng/Montage/Attack/AM_Dasheng_Atk_04a.AM_Dasheng_Atk_04a"
   },
 
   

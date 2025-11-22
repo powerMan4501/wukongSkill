@@ -10,6 +10,15 @@
         "BuffIDs": [66655405, 289],
         "BuffTime": 3500,
         "desc": "棍光特效粒子,接招buff"
+      },
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill"
+          }
+        ],
+        "desc": "让分身复制技能"
       }
     ],
     "SweepActions": [
@@ -64,6 +73,15 @@
         "BuffIDs": [66655405, 289],
         "BuffTime": 3000,
         "desc": "棍光特效粒子,接招buff"
+      },
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill"
+          }
+        ],
+        "desc": "让分身复制技能"
       }
     ],
     "SweepActions": [
@@ -118,6 +136,15 @@
         "BuffID": 66655404,
         "BuffTime": 2600,
         "desc": "棍光特效粒子"
+      },
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill"
+          }
+        ],
+        "desc": "让分身复制技能"
       }
     ],
     "SweepActions": [
@@ -178,6 +205,15 @@
         "BuffID": 66655404,
         "BuffTime": 2600,
         "desc": "棍光特效粒子"
+      },
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill"
+          }
+        ],
+        "desc": "让分身复制技能"
       }
     ],
     "SweepActions": [
@@ -241,6 +277,15 @@
         "BuffIDs": [289, 66655405],
         "BuffTime": 3500,
         "desc": "识破buff，接招buff，棍光粒子"
+      },
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill"
+          }
+        ],
+        "desc": "让分身复制技能"
       }
     ],
     "SweepActions": [
@@ -311,6 +356,15 @@
         "BuffID": 66655404,
         "BuffTime": 2600,
         "desc": "棍光特效粒子"
+      },
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill"
+          }
+        ],
+        "desc": "让分身复制技能"
       }
     ],
     "SweepActions": [
@@ -370,6 +424,15 @@
         "BuffIDs": [289, 66655406],
         "BuffTime": 3500,
         "desc": "识破buff，接招buff，棍光粒子"
+      },
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill"
+          }
+        ],
+        "desc": "让分身复制技能"
       }
     ]
   },
@@ -393,6 +456,15 @@
         "OffsetX": 200,
         "OffsetY": 200,
         "desc": "小黄龙雷电"
+      },
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill"
+          }
+        ],
+        "desc": "让分身复制技能"
       }
     ],
     "SweepActions": [
@@ -451,6 +523,16 @@
         "BuffIDs": [289, 66655407],
         "BuffTime": 3000,
         "desc": "识破buff，接招buff，棍光粒子"
+      },
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill",
+            "SkillID": 84321024
+          }
+        ],
+        "desc": "让分身棍子变粗砸砸砸"
       }
     ]
   },
@@ -467,6 +549,15 @@
         "BuffID": 66655406,
         "BuffTime": 3000,
         "desc": "棍光特效粒子"
+      },
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill"
+          }
+        ],
+        "desc": "让分身复制技能"
       }
     ]
   },

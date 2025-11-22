@@ -6,7 +6,19 @@
     "speedRate": 1.3,
     "hitEffects": [888555038],
     "addRadius": 6500,
-    "replaceEffects": true
+    "replaceEffects": true,
+    "CastActions": [
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill",
+            "SkillID": 84321001
+          }
+        ],
+        "desc": "让分身执行超大定海神针"
+      }
+    ]
   },
   {
     "desc": "立棍，小飞棍",
@@ -14,7 +26,19 @@
     "linkValue": 0,
     "speedRate": 1.3,
     "hitEffects": [888555034],
-    "replaceEffects": true
+    "replaceEffects": true,
+    "CastActions": [
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill",
+            "SkillID": 84321004
+          }
+        ],
+        "desc": "让分身执行立棍小飞棍"
+      }
+    ]
   },
   {
     "desc": "筋斗云三连击",
@@ -22,8 +46,20 @@
     "linkValue": 0,
     "speedRate": 1.4,
     "addRadius": 500,
-    "hitEffects": [888555039],
+    "hitEffects": [84321023],
     "replaceEffects": true,
+    "CastActions": [
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill",
+            "SkillID": 84321004
+          }
+        ],
+        "desc": "让分身执行筋斗云空中追击三连横扫"
+      }
+    ],
     "SweepActions": [
       {
         "Type": "bullet",
@@ -57,6 +93,18 @@
     "addRadius": 500,
     "hitEffects": [888555033],
     "replaceEffects": true,
+    "CastActions": [
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill",
+            "SkillID": 84321025
+          }
+        ],
+        "desc": "让分身执行棍子变粗砸一下"
+      }
+    ],
     "SweepActions": [
       {
         "Type": "bullet",
@@ -91,12 +139,24 @@
     "hitEffects": [888555032],
     "replaceEffects": true
   },
-   {
+  {
     "desc": "残躯移植的其他技能",
     "montage": "CanQu/AM_mgd_jsds_atk_",
+    "CastActions": [
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill"
+          }
+        ],
+        "desc": "让分身复制技能"
+      }
+    ],
     "linkValue": 0,
     "speedRate": 1.3,
     "addRadius": 100,
     "hitEffects": [888555040]
   }
+  
 ]

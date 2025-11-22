@@ -207,5 +207,60 @@
         "EffectParamsFloat": [5000.0, 5000.0, 5000.0]
       }
     ]
-  }
+  },
+
+   {
+      "ID": 96036,
+      "BuffTips": "拒绝的刺",
+      "BuffActiveCondition": {
+        "ConditionType": 0,
+        "ConditionParams": ""
+      },
+      "BuffLayerCounterType": 0,
+      "BuffCategory": 0,
+      "CanRemoveWhenAttackHit": 0,
+      "CanRemoveWhenAttacked": 0,
+      "Delay": 0,
+      "Duration": -1,
+      "Interval": 0,
+      "AlmostEndAheadTime": 0,
+      "MaxLayer": 1,
+      "TargetBase": 2,
+      "TargetCount": 99,
+      "TargetFilter": 4,
+      "TargetTypeFilter": 1,
+      "AffiliationTypeFilter": 0,
+      "Range": {
+        "RangeType": 4,
+        "RangeCenterType": 0,
+        "RangeParam": [
+          1275
+        ]
+      },
+      "BuffEffects": [
+        {
+          "EffectTrigger": 7,
+          "EffectType": 1,
+          "EffectTargetSelectType": 0,
+          "EffectParamsString": [],
+          "EffectParams": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "EffectParamsFloat": [
+            1500.0,
+            150.0,
+            2000.0,
+            1.0,
+            1000.0,
+            0.0
+          ]
+        }
+      ]
+    }
 ]

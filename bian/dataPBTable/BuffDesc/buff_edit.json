@@ -319,5 +319,41 @@
         "EffectParamsFloat": [0.0]
       }
     ]
+  },
+  {
+    "ID": 1099941,
+    "desc": "三上冠，去掉三尖两刃枪条件",
+    "EffectActiveCondition": {
+      "ConditionType": 2,
+      "ConditionParams": "902101"
+    },
+    "EffectType": 20,
+    "EffectCategory": 0,
+    "TargetBase": 0,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "EffectParamsInt": [],
+    "EffectParamsFloat": [],
+    "EffectParamsStr": [
+      "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan"
+    ]
+  },
+  {
+    "ID": 1099964,
+    "desc": "三上冠，去掉三尖两刃枪条件",
+    "EffectActiveCondition": {
+      "ConditionType": 2,
+      "ConditionParams": "902101"
+    },
+    "EffectType": 20,
+    "EffectCategory": 0,
+    "TargetBase": 0,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "EffectParamsStr": [
+      "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan_02.BGW_Player_Wukong_Atk_sanshanguan_02"
+    ]
   }
 ]

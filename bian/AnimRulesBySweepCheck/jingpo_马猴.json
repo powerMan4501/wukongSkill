@@ -11,7 +11,7 @@
     "CastActions": [
       {
         "Type": "buff",
-        "BuffIDs": [211, 17272, 17273],
+        "BuffIDs": [211],
         "BuffTime": 3800,
         "desc": "霸体"
       },
@@ -40,8 +40,14 @@
     "CastActions": [
       {
         "Type": "buff",
-        "BuffIDs": [211, 17272, 17273],
+        "BuffIDs": [211],
         "BuffTime": 3800,
+        "desc": "霸体"
+      },
+      {
+        "Type": "buff",
+        "BuffIDs": [17272, 17273],
+        "BuffTime": -1,
         "desc": "霸体"
       },
       {
@@ -52,6 +58,50 @@
         "NewMinSocketZ": 100,
         "NewMaxSocketZ": 1000,
         "desc": "拉远镜头"
+      }
+    ]
+  },
+
+  {
+    "desc": "马猴冰法术进入冰状态",
+    "montage": ".AM_player_lys_hou_F1_01",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "AMScaleRate": 11,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [2403471, 40042202],
+        "desc": "冰暴，冰雾气"
+      }
+    ]
+  },
+
+  {
+    "desc": "马猴处于冰状态的冰法术",
+    "montage": ".AM_player_lys_hou_F1_02",
+    "linkValue": 0,
+    "addRadius": 100,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "AMScaleRate": 11,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [2403471, 40042202],
+        "desc": "冰暴，冰雾气"
       }
     ]
   }

@@ -9,16 +9,23 @@
     "EquipName": "如意金箍棒",
     "EquipEffectDesc": "第四段棍势可永久维持，不再随时间减削，若攻击命中敌人则回复法力、护盾和棍势各20点"
   },
-  
+  {
+    "Id": 12001,
+    "EquipName": "凤翅紫金冠",
+    "EquipEffectId": 902101,
+    "EquipEffectDesc": "加强<EquipDetail_LegendDesc_KW>轻棍</>连招"
+  },
   {
     "Id": 12002,
     "EquipName": "锁子黄金甲",
-    "EquipEffectDesc": "增加护盾值和韧性值上限"
+    "EquipEffectId": 106040,
+    "EquipEffectDesc": "大大延长大圣形态的维持时间，且进一步提高该形态时的<EquipDetail_LegendDesc_KW>攻击</>"
   },
   {
     "Id": 12003,
     "EquipName": "点翠飞龙釬",
-    "EquipEffectDesc": "增加15%的伤害加成和15%暴击伤害"
+    "EquipEffectId": 106023,
+    "EquipEffectDesc": "少许加快提升棍势段数的速度"
   },
   {
     "Id": 12004,
@@ -31,5 +38,16 @@
     "EquipName": "上清宝葫芦",
     "EquipEffectId": 108011,
     "EquipEffectDesc": "每6秒恢复6%的生命值和葫芦中的盛酒量"
+  },
+  {
+    "Id": 16031,
+    "EquipName": "金棕衣",
+    "EquipEffectDesc": "一定程度增加<{0}_KW>防御</>和<{0}_KW>伤害减免</>；受到伤害时，也伤害周遭对手"
+  },
+
+  {
+    "Id": 12101,
+    "EquipName": "三山冠",
+    "EquipEffectDesc": "加强<EquipDetail_LegendDesc_KW>轻棍</>连招"
   }
 ]

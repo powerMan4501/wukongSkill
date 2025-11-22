@@ -3,9 +3,7 @@
     "code": "CapsLock",
     "afterActions": [
       {
-        "Type": "skill",
-        "SkillID": 84321023,
-        "desc": "筋斗云空中追击三连横扫，不错"
+        "Type": "xuelunyan"
       }
     ]
   },
@@ -330,23 +328,7 @@
       }
     ]
   },
-  {
-    "code": "sdo",
-    "afterActions": [
-      {
-        "Type": "summoner_do_actions",
-        "summonerActions": [
-          {
-            "type": "magic",
-            "path": "BGWDataAsset_MagicallyChangeConfig'/Game/00MainHZ/Characters/Transform/VigorSkill/S1/MC_10_gycy_yanjianxi.MC_10_gycy_yanjianxi'",
-            "MagicSkillID": 102432,
-            "desc": "大头磕头"
-          }
-        ],
-        "desc": "让分身执行一系列动作"
-      }
-    ]
-  },
+  
   {
     "code": "tian",
     "afterActions": [
