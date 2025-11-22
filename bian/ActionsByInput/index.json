@@ -208,7 +208,6 @@
   {
     "code": "huiyue",
     "afterActions": [
-   
       {
         "Type": "spaw_monster",
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/BHL/TAMER_bhl_gushoufsq_01.TAMER_bhl_gushoufsq_01_C",
@@ -277,11 +276,13 @@
     "afterActions": [
       {
         "Type": "spaw_monster",
+        "toPlayerTeam": true,
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shunushou_01b_stand.TAMER_hfm_shunushou_01b_stand_C",
         "desc": "鼠弩手"
       },
       {
         "Type": "spaw_monster",
+        "toPlayerTeam": true,
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shunushou_01b_stand.TAMER_hfm_shunushou_01b_stand_C",
         "desc": "鼠弩手"
       },
