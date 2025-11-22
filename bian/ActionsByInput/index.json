@@ -10,6 +10,28 @@
     ]
   },
   {
+    "code": "daye",
+    "afterActions": [
+      {
+        "Type": "scale_project",
+        "ProjectTileIDs": [140],
+        "scaleXYZ": [5, 5, 5],
+        "desc": "业火放大5倍"
+      }
+    ]
+  },
+  {
+    "code": "dadian",
+    "afterActions": [
+      {
+        "Type": "scale_project",
+        "ProjectTileIDs": [118, 74011107, 50058603, 30160101],
+        "scaleXYZ": [5, 5, 5],
+        "desc": "落雷金沙黄符小黄龙雷电放大5倍"
+      }
+    ]
+  },
+  {
     "code": "ADDI",
     "afterActions": [
       {
@@ -161,6 +183,7 @@
     "afterActions": [
       {
         "Type": "spaw_monster",
+        "toPlayerTeam": true,
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_niaozui.TAMER_hys_niaozui_C",
         "desc": "鳖宝"
       },
@@ -172,10 +195,33 @@
     ]
   },
   {
+    "code": "dudi",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "toPlayerTeam": true,
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_xiezijing_og.TAMER_psd_xiezijing_og_C",
+        "desc": "毒敌大王"
+      }
+    ]
+  },
+  {
+    "code": "huiyue",
+    "afterActions": [
+   
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/BHL/TAMER_bhl_gushoufsq_01.TAMER_bhl_gushoufsq_01_C",
+        "desc": "第四关·晦月魔君（BOSS）"
+      }
+    ]
+  },
+  {
     "code": "jinchi",
     "afterActions": [
       {
         "Type": "spaw_monster",
+        "toPlayerTeam": true,
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_yanjianxi_01a.TAMER_gycy_yanjianxi_01a_C",
         "desc": "金池"
       },
@@ -219,14 +265,14 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_hou_01a.TAMER_hfm_hou_01a_C",
         "desc": "第二关·百目真人（BOSS）"
       },
-       {
+      {
         "Type": "diff_teamid",
-        "TimeDelay":3000,
+        "TimeDelay": 3000,
         "desc": "让范围3000以内的角色敌友不分"
       }
     ]
   },
- {
+  {
     "code": "sns",
     "afterActions": [
       {
@@ -234,14 +280,14 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shunushou_01b_stand.TAMER_hfm_shunushou_01b_stand_C",
         "desc": "鼠弩手"
       },
-        {
+      {
         "Type": "spaw_monster",
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shunushou_01b_stand.TAMER_hfm_shunushou_01b_stand_C",
         "desc": "鼠弩手"
       },
-       {
+      {
         "Type": "diff_teamid",
-        "TimeDelay":3000,
+        "TimeDelay": 3000,
         "desc": "让范围3000以内的角色敌友不分"
       }
     ]
@@ -254,9 +300,9 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_jsds.TAMER_mgd_jsds_C",
         "desc": "jsds"
       },
-       {
+      {
         "Type": "diff_teamid",
-        "TimeDelay":3000,
+        "TimeDelay": 3000,
         "desc": "让范围3000以内的角色敌友不分"
       }
     ]
@@ -283,7 +329,23 @@
       }
     ]
   },
-
+  {
+    "code": "sdo",
+    "afterActions": [
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "magic",
+            "path": "BGWDataAsset_MagicallyChangeConfig'/Game/00MainHZ/Characters/Transform/VigorSkill/S1/MC_10_gycy_yanjianxi.MC_10_gycy_yanjianxi'",
+            "MagicSkillID": 102432,
+            "desc": "大头磕头"
+          }
+        ],
+        "desc": "让分身执行一系列动作"
+      }
+    ]
+  },
   {
     "code": "tian",
     "afterActions": [
@@ -297,7 +359,7 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/MGD/Tamer_mgd_tianbing_02.Tamer_mgd_tianbing_02_C",
         "desc": "tianbing"
       },
- {
+      {
         "Type": "spaw_monster",
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_tianbing_01_hgs.TAMER_mgd_tianbing_01_hgs_C",
         "desc": "tianbing"
@@ -307,7 +369,7 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_tianbing_01_hgs_NoGroupAI.TAMER_mgd_tianbing_01_hgs_NoGroupAI_C",
         "desc": "tianbing"
       },
-       {
+      {
         "Type": "spaw_monster",
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_sl_tianjiang_01.TAMER_sl_tianjiang_01_C",
         "desc": "tianbing"
@@ -320,11 +382,33 @@
     ]
   },
   {
+    "code": "daduo",
+    "afterActions": [
+      {
+        "Type": "change_actor_target",
+        "toPlayerTeam": true,
+        "desc": "大夺舍，把周围2000的AI角色变成己方，AI目标指向锁定的目标角色"
+      }
+    ]
+  },
+  {
     "code": "duos",
     "afterActions": [
       {
         "Type": "sync_teamid",
         "desc": "夺舍，把锁定的目标角色变成自己的队友"
+      }
+    ]
+  },
+  {
+    "code": "siwang",
+    "afterActions": [
+      {
+        "Type": "buff",
+        "Fortarget": true,
+        "BuffID": 302211,
+        "BuffTime": 1000,
+        "desc": "让敌人自杀"
       }
     ]
   },
@@ -355,7 +439,7 @@
         "SummonCount": 1,
         "desc": "召唤马哥"
       },
-       {
+      {
         "Type": "summon",
         "SummonID": 102400,
         "SummonCount": 1,
@@ -386,6 +470,37 @@
         "SummonAliveTime": 999,
         "TimeDelay": 2000,
         "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+  {
+    "code": "jingu",
+    "afterActions": [
+      {
+        "Type": "change_equip",
+        "equipId": 15002,
+        "desc": "切换武器为金箍棒"
+      }
+    ]
+  },
+  {
+    "code": "longzhang",
+    "afterActions": [
+      {
+        "Type": "change_equip",
+        "equipId": 15015,
+        "desc": "切换武器为飞龙宝杖"
+      }
+    ]
+  },
+
+  {
+    "code": "sanjian",
+    "afterActions": [
+      {
+        "Type": "change_equip",
+        "equipId": 15101,
+        "desc": "切换武器为三尖两刃枪"
       }
     ]
   }

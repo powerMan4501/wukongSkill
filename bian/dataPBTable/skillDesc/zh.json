@@ -1,0 +1,10 @@
+[
+  {
+    "ID": 591001,
+    "desc": "强制锁定目标，增加条件，让主角无法触发",
+    "EffectActiveCondition": {
+      "ConditionType": 5,
+      "ConditionParams": "100101"
+    }
+  }
+]

@@ -29,7 +29,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146438596"
+        "HairMaterial": "/Game/00MainHZ/Characters/HGS/HGS_tianbing_01/Materials/M_hgs_tianbing_01_main_hair.M_hgs_tianbing_01_main_hair"
       }
     ],
     "InteractBones": null,
@@ -39,7 +39,7 @@
     "UnitScale": null
   },
   "AttrFloat": {
-    "HpMax": 16745.0,
+    "HpMax": 7288.99951,
     "MpMax": 0.0,
     "B1StunMax": 0.0,
     "StaminaDepletedLimit": 0.0,
@@ -131,7 +131,7 @@
     "EnergyMinConsumeBase": 0.0,
     "EnergyConsumeSpeedBase": 0.0,
     "EnergyIncreaseSpeedBase": 0.0,
-    "Hp": 16745.0,
+    "Hp": 7288.99951,
     "Mp": 0.0,
     "Atk": 169.456,
     "Def": 0.0,
@@ -151,7 +151,7 @@
     "BlockCollapseArmor": 15000.0,
     "DingshenDefAddition": 0.0,
     "FreezeAbnormalAcc": 0.0,
-    "BurnAbnormalAcc": 4.703012,
+    "BurnAbnormalAcc": 0.0,
     "PoisonAbnormalAcc": 0.0,
     "ThunderAbnormalAcc": 0.0,
     "BlindSlot": 100.0,

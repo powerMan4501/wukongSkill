@@ -20,7 +20,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_ShuNuShou_01A/Materials/M_hfm_shunushou_hair_mask.M_hfm_shunushou_hair_mask"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147167114"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_ShuNuShou_01A/Hair/LegsFeet.LegsFeet_TFX",
@@ -33,7 +33,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_ShuNuShou_01A/Materials/M_hfm_shunushou_hair_mask.M_hfm_shunushou_hair_mask"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147167113"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_ShuNuShou_01A/Hair/Hands.Hands_TFX",
@@ -46,7 +46,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_ShuNuShou_01A/Materials/M_hfm_shunushou_hair_mask.M_hfm_shunushou_hair_mask"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147167112"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_ShuNuShou_01A/Hair/HeadTop.HeadTop_TFX",
@@ -59,7 +59,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_ShuNuShou_01A/Materials/M_hfm_shunushou_hair_mask.M_hfm_shunushou_hair_mask"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147167111"
       }
     ],
     "InteractBones": null,
@@ -69,7 +69,7 @@
     "UnitScale": null
   },
   "AttrFloat": {
-    "HpMax": 1997.611,
+    "HpMax": 1218.05554,
     "MpMax": 0.0,
     "B1StunMax": 0.0,
     "StaminaDepletedLimit": 0.0,
@@ -161,7 +161,7 @@
     "EnergyMinConsumeBase": 0.0,
     "EnergyConsumeSpeedBase": 0.0,
     "EnergyIncreaseSpeedBase": 0.0,
-    "Hp": 1065.611,
+    "Hp": 289.055542,
     "Mp": 0.0,
     "Atk": 98.64,
     "Def": 0.0,
@@ -181,7 +181,7 @@
     "BlockCollapseArmor": 200.0,
     "DingshenDefAddition": 0.0,
     "FreezeAbnormalAcc": 0.0,
-    "BurnAbnormalAcc": 74.65087,
+    "BurnAbnormalAcc": 73.67461,
     "PoisonAbnormalAcc": 0.0,
     "ThunderAbnormalAcc": 0.0,
     "BlindSlot": 100.0,
