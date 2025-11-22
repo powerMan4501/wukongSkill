@@ -267,7 +267,7 @@ public class Hooks
                     var AMScaleMoveOffset = BANS_GSCalcAMScaleHelper.GetProperty(item.NotifyStateClass, "AMScaleMoveOffset");
 
                     // 只有当当前值小于10时才修改为10
-                    if ((float)currentValue < AMScaleRate||config?.AMScaleRate > 0)
+                    if ((float)currentValue < AMScaleRate || config?.AMScaleRate > 0)
                     {
                         var AMScaleItem = item.NotifyStateClass;
                         BANS_GSCalcAMScaleHelper.SetProperty(item.NotifyStateClass, "AMScaleMaxRate", AMScaleRate);
@@ -733,6 +733,30 @@ public class Hooks
             }
             return true;
         }
+    }
+
+
+
+
+
+    [HarmonyPatch]
+    public static class BeAttackedTeamCheckPatch
+    {
+        [HarmonyPatch(typeof(BUS_BeAttackedComp), "OnHandleNormalDamageEffect")]
+         private static bool Prefix(BUS_BeAttackedComp __instance, AActor Attacker, in FSkillDamageConfig SkillDamageConfig, in FEffectInstReq EffectInstReq, in FBattleAttrSnapShot Attacker_AttrMemData)
+    {
+        // 获取攻击者和受击者的团队ID
+        var attackerTeamId = (Attacker as BGUCharacterCS)?.GetTeamIDInCS();
+        var victimTeamId = (__instance.GetOwner() as BGUCharacterCS)?.GetTeamIDInCS();
+        var playerTeamID = Helper.GetBGUPlayerCharacterCS().GetTeamIDInCS();
+        // 如果是同一阵营，跳过伤害计算
+        if (attackerTeamId == victimTeamId&& playerTeamID == victimTeamId)
+        {
+            return false; // 跳过原始方法的执行
+        }
+        
+        return true; // 继续执行原始方法
+    }
     }
 
 }

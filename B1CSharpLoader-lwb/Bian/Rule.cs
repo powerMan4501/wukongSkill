@@ -10,6 +10,7 @@ using BtlShare;
 using CsB1;
 using B1UI;
 using ResB1;
+using System.Runtime.InteropServices;
 namespace bian
 {
 
@@ -24,7 +25,7 @@ namespace bian
     public class RuleAction
     {
 
-
+        public int? equipId { get; set; }
         public List<RuleAction>? summonerActions { get; set; }
         public bool? toPlayerTeam { get; set; }
         public bool? IsSummonerAsMaster { get; set; }
@@ -38,6 +39,9 @@ namespace bian
         public int? changeTime { get; set; }
         public bool? resetBack { get; set; }
         public string? bossLabel { get; set; }
+        public string? path { get; set; }
+        public List<int>? scaleXYZ { get; set; }
+
         public string? RushDir { get; set; }
         public int? montageIndex { get; set; }
         public string? montageValue { get; set; }
@@ -465,7 +469,16 @@ namespace bian
 
                     if (action?.SummonTamerTemplatePath != null)
                     {
-                        Helper.SpawnActor(action.SummonTamerTemplatePath);
+                        var teamID = Helper.GetBGUPlayerCharacterCS().GetTeamIDInCS();
+                        if (action?.toPlayerTeam == true)
+                        {
+                            Helper.SpawnActor(action.SummonTamerTemplatePath, teamID);
+                        }
+                        else
+                        {
+                            Helper.SpawnActor(action.SummonTamerTemplatePath, null);
+
+                        }
                     }
 
                     break;
@@ -516,9 +529,33 @@ namespace bian
                     break;
                 case "ironbody":
                     var eventCollection = BUS_EventCollectionCS.Get(character);
-                    if (eventCollection?.Evt_IronBodyStart != null)
+                    if (eventCollection != null)
                     {
                         eventCollection.Evt_IronBodyStart.Invoke();
+                    }
+                    break;
+                case "scale_project":
+                    var ProjectTileIDs = action?.ProjectTileIDs?.Count > 0 ? action?.ProjectTileIDs : new List<int> { action?.ProjectTileID ?? 0 };
+
+                    if (ProjectTileIDs?.Count > 0)
+                    {
+                        var num = action?.UnitScale ?? 2;
+                        var scaleX = (action?.scaleXYZ != null && action.scaleXYZ.Count > 0) ? action.scaleXYZ[0] : 1;
+                        var scaleY = (action?.scaleXYZ != null && action.scaleXYZ.Count > 0) ? action.scaleXYZ[1] : 1;
+                        var scaleZ = (action?.scaleXYZ != null && action.scaleXYZ.Count > 0) ? action.scaleXYZ[2] : 1;
+
+
+                        foreach (var projectTileID in ProjectTileIDs)
+                        {
+                            var projectBase = BGUFuncLibProjectile.GetCtrProjectileByID(character, projectTileID);
+                            Log.Info($"projectBase:{projectBase?.PathName}");
+                            if (projectBase != null)
+                            {
+
+                                projectBase.SetActorScale3D(new FVector(scaleX, scaleY, scaleZ));
+
+                            }
+                        }
                     }
                     break;
                 case "dragfarcamera":
@@ -528,8 +565,7 @@ namespace bian
                     }
                     break;
                 case "xuelunyan":
-                    var command = new Commands();
-                    command.xuelunyan(manager);
+                    Helper.xuelunyan();
                     break;
                 case "maidonghuilai":
                     var commands = new Commands();
@@ -556,13 +592,22 @@ namespace bian
                         bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke((EBGUAttrFloat)(action.attrType ?? 151), action?.attrValue ?? 100);
                     }
                     break;
-                case "changeequip":
-                    if (action?.actionId != null)
+                case "change_equip":
+                    if (action?.equipId != null)
                     {
-                        EquipDesc equipDesc = GameDBRuntime.GetEquipDesc((int)action.actionId);
+                        EquipDesc equipDesc = GameDBRuntime.GetEquipDesc((int)action.equipId);
                         if (equipDesc != null)
                         {
+                            // BGUFunctionLibraryCS.ChangeEquip(character, (int)action.equipId);
                             BUS_EventCollectionCS.Get(character).Evt_BattleLogicChangeEquip.Invoke(equipDesc.EquipPosition, equipDesc.Id);
+                            // Task.Run(async delegate
+                            // {
+                            //     await Task.Delay(100);
+                            //     Utils.TryRunOnGameThread((Action)delegate
+                            //     {
+                            //         BUS_EventCollectionCS.Get(character)?.Evt_OnRefreshEquip.Invoke();
+                            //     });
+                            // });
                         }
                     }
 
@@ -581,6 +626,8 @@ namespace bian
                 case "alltaskitem":
                     Helper.addAllTaskItem();
                     break;
+
+                  
                 case "effect":
                     if (action.EffectID > 0)
                     {

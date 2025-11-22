@@ -142,9 +142,9 @@ namespace bian
                 }
             }
         }
-        public static void summonerDoActions(RuleAction action, int num = 1)
+        public static void summonerDoActions(RuleAction action)
         {
-            var list = getAllSunmon(num);
+            var list = getAllSunmon(5);
             Log.Info($"summonerDoActions list:{list?.Count}");
             if (list == null || list.Count == 0 || action == null || action.Type == null) return;
 
@@ -177,18 +177,21 @@ namespace bian
                             }
                         }
                         break;
-                    // case "magic":
-                    //     if (action?.SkillID > 0)
-                    //     {
-                    //         CastVigorSkillByID(finalActor, action.SkillID, action?.UnitScale ?? 1, (int?)(action?.Scale3D ?? 1));
-                    //     }
-                    //     break;
+                    case "magic":
+                        if (action?.MagicSkillID > 0 && action?.path != null && finalActor != null)
+                        {
+                            fenshenCastMagic(item, action.path, (int)action.MagicSkillID);
+                            // CastVigorSkillByID(finalActor, action.SkillID, action?.UnitScale ?? 1, (int?)(action?.Scale3D ?? 1));
+                        }
+                        break;
 
                     case "bossskill":
+
                         if (finalActor == null) continue;
+                        Log.Info($"summonerDoActions bossskill:{action.bossLabel}, {action.bossType}, {action.MagicSkillID}");
                         if (action.bossLabel != null && action.bossType != null && action?.MagicSkillID != null)
                         {
-                            CastVigorSkillByModel((BGUPlayerCharacterCS)finalActor, action.bossLabel, action.bossType ?? "", action?.MagicSkillID ?? 0, action?.resetBack ?? false, action?.RecoverSkillID ?? 10199);
+                            CastVigorSkillByModel(finalActor, action.bossLabel, action.bossType ?? "", action?.MagicSkillID ?? 0, action?.resetBack ?? false, action?.RecoverSkillID ?? 10199);
                         }
                         break;
                     // case "magicskill":
@@ -288,7 +291,7 @@ namespace bian
             return LoadAsset<UClass>(asset);
         }
 
-        public static AActor? SpawnActor(string classAsset)
+        public static AActor? SpawnActor(string classAsset, int? teamID)
         {
             var controlledPawn = GetControlledPawn();
             FVector actorLocation = controlledPawn.GetActorLocation();
@@ -300,7 +303,34 @@ namespace bian
             {
                 return null;
             }
-            return BGUFunctionLibraryCS.BGUSpawnActor(controlledPawn.World, uClass, start, frotator);
+            var actor = BGUFunctionLibraryCS.BGUSpawnActor(controlledPawn.World, uClass, start, frotator);
+            if (actor != null)
+            {
+                var boss = actor as BUTamerActor;
+                if (boss != null)
+                {
+                    var tamerRef = boss.CurrentRef;
+                    tamerRef.AddSpawnRuleFlag(ETamerSpawnRule.OnlySpawn);
+                    tamerRef.ResetLocationCache();
+                    tamerRef.TamerTransform = controlledPawn.GetActorTransform();
+                    if (teamID != null)
+                    {
+                        DelayExecute(1000, () =>
+                        {
+                            BGUCharacterCS monster = boss.GetMonster();
+                            if (monster != null)
+                            {
+                                monster.SetTeamIDInCS((int)teamID);
+                            }
+                        });
+
+                    }
+                }
+
+
+            }
+
+            return actor;
         }
 
         public static AActor GetActorOfClass(string classAsset)
@@ -308,7 +338,7 @@ namespace bian
             return UGameplayStatics.GetActorOfClass(GetWorld(), LoadAsset<UClass>(classAsset));
         }
 
-        public static T? FindActorCompByClass<T>(BGUPlayerCharacterCS character) where T : UActorCompBaseCS
+        public static T? FindActorCompByClass<T>(BGUCharacterCS character) where T : UActorCompBaseCS
         {
             UActorCompContainerCS acc = character.ActorCompContainerCS;
             FieldInfo field = typeof(UActorCompContainerCS).GetField("CompCSs", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -327,7 +357,7 @@ namespace bian
             return null;
         }
 
-     
+
 
         public static void ResetVigorSkill(BUS_MagicallyChangeComp magicChangeComp, int VigorSkillID)
         {
@@ -448,8 +478,8 @@ namespace bian
         }
 
         private static BUS_MagicallyChangeComp? _cachedMagicChangeComp;
-        private static BGUPlayerCharacterCS? _cachedCharacter;
-        private static BUS_MagicallyChangeComp? GetCachedMagicChangeComp(BGUPlayerCharacterCS character)
+        private static BGUCharacterCS? _cachedCharacter;
+        private static BUS_MagicallyChangeComp? GetCachedMagicChangeComp(BGUCharacterCS character)
         {
             if (_cachedCharacter != character || _cachedMagicChangeComp == null)
             {
@@ -463,19 +493,47 @@ namespace bian
 
         public static bool isPlayVigorSkillByID;
         public static int playVigorSkillID;
-        public static BGUPlayerCharacterCS playVigorCharacter;
+        public static BGUCharacterCS playVigorCharacter;
 
 
         public static void updateIsPlayVigorSkillByID(bool isPlay)
         {
             isPlayVigorSkillByID = isPlay;
         }
-        public static void CastVigorSkillByID(BGUPlayerCharacterCS character, int VigorSkillID, float UnitScale, int? MagicSkillID = 0, float? Scale3D = 1, bool resetBack = false)
+
+        public static void fenshenCastMagic(AActor Owner, string path, int skillID, int? recoverSkillID = 10199)
         {
-            var magicChangeComp = GetCachedMagicChangeComp(character);
+            BUS_GSEventCollection BE_Owner = BUS_EventCollectionCS.Get(Owner);
+
+
+            UActorComponent AddedComponent = UGSE_ActorFuncLib.AddComponentByClass(
+                   Owner,
+                   (TSubclassOf<UActorComponent>)UClass.GetClass<BUS_MagicallyChangeComp>(),
+                   false,  // bManualAttachment - 是否手动附加
+                   FTransform.Identity,  // RelativeTransform - 相对变换
+                   true   // bDeferredFinish - 是否延迟完成
+               );
+
+            BGWDataAsset_MagicallyChangeConfig bGWDataAsset_MagicallyChangeConfig = new BGWDataAsset_MagicallyChangeConfig();
+            bGWDataAsset_MagicallyChangeConfig = BGW_PreloadAssetMgr.Get(Owner).TryGetCachedResourceObj<BGWDataAsset_MagicallyChangeConfig>(path, ELoadResourceType.SyncLoadAndCache);
+
+            Log.Info($"fenshenCastMagic bGWDataAsset_MagicallyChangeConfig:{bGWDataAsset_MagicallyChangeConfig?.PathName} ,AddedComponent:{AddedComponent?.GetFName()},Owner:{Owner.PathName}");
+            if (!(bGWDataAsset_MagicallyChangeConfig == null))
+            {
+                BE_Owner?.Evt_OnCastMagicallyChangeSkill.Invoke(bGWDataAsset_MagicallyChangeConfig, skillID, recoverSkillID ?? 10199);
+            }
+        }
+        public static void CastVigorSkillByID(BGUCharacterCS character, int VigorSkillID, float UnitScale, int? MagicSkillID = 0, float? Scale3D = 1, bool resetBack = false)
+        {
+            var magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(character);
             if (magicChangeComp == null)
             {
-                return;
+                var player = GetBGUPlayerCharacterCS();
+                magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(player);
+                if (magicChangeComp == null)
+                {
+                    return;
+                }
             }
 
             var soulSkillDesc = GameDBRuntime.GetSoulSkillDesc(VigorSkillID);
@@ -484,7 +542,11 @@ namespace bian
             {
                 return;
             }
-            BGWDataAsset_MagicallyChangeConfig config = BGW_PreloadAssetMgr.Get(magicChangeComp).TryGetCachedResourceObj<BGWDataAsset_MagicallyChangeConfig>(soulSkillDesc.DAPath, ELoadResourceType.SyncLoadAndCache);
+
+            BGWDataAsset_MagicallyChangeConfig config = new BGWDataAsset_MagicallyChangeConfig();
+            config = BGW_PreloadAssetMgr.Get(character).TryGetCachedResourceObj<BGWDataAsset_MagicallyChangeConfig>(soulSkillDesc.DAPath, ELoadResourceType.SyncLoadAndCache);
+
+            // BGWDataAsset_MagicallyChangeConfig config = BGW_PreloadAssetMgr.Get(magicChangeComp).TryGetCachedResourceObj<BGWDataAsset_MagicallyChangeConfig>(soulSkillDesc.DAPath, ELoadResourceType.SyncLoadAndCache);
 
             if (config == null)
             {
@@ -512,6 +574,7 @@ namespace bian
                     character.SetActorScale3D(new FVector((float)Scale3D));
                 }
                 BGUFunctionLibraryCS.CastMagicallyChangeSkill(character, config, (int)finalId, 10199);
+
                 if (resetBack == true)
                 {
                     FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -544,7 +607,7 @@ namespace bian
             bPS_GSEventCollection.Evt_TriggerPlayerTransBegin.Invoke(EPlayerTransBeginType.SkillEffect, playerTransParam);
         }
 
-        public static BGWDataAsset_MagicallyChangeConfig? getMagicConfig(BGUPlayerCharacterCS character, string bossLabel, string type)
+        public static BGWDataAsset_MagicallyChangeConfig? getMagicConfig(BGUCharacterCS character, string bossLabel, string type)
         {
 
             // !boss_vigorSkillConfigCache.TryGetValue(bossLabel, out var config))
@@ -555,10 +618,15 @@ namespace bian
             if (true)
             {
 
-                var magicChangeComp = GetCachedMagicChangeComp(character);
+                var magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(character);
                 if (magicChangeComp == null)
                 {
-                    return null;
+                    var player = GetBGUPlayerCharacterCS();
+                    magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(player);
+                    if (magicChangeComp == null)
+                    {
+                        return null;
+                    }
                 }
 
                 var allModels = LoadUtils.allModels;
@@ -670,10 +738,15 @@ namespace bian
             var config = new BGWDataAsset_MagicallyChangeConfig();
 
 
-            var magicChangeComp = GetCachedMagicChangeComp(character);
+            var magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(character);
             if (magicChangeComp == null)
             {
-                return null;
+                var player = GetBGUPlayerCharacterCS();
+                magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(player);
+                if (magicChangeComp == null)
+                {
+                    return null;
+                }
             }
             if (model == null)
             {
@@ -764,14 +837,20 @@ namespace bian
 
             return config;
         }
-        public static void CastVigorSkillByModel(BGUPlayerCharacterCS character, string bossLabel, string type, int skillId, bool? resetBack = false, int? RecoverSkillID = 10199)
+        public static void CastVigorSkillByModel(BGUCharacterCS character, string bossLabel, string type, int skillId, bool? resetBack = false, int? RecoverSkillID = 10199)
         {
             // 检查缓存中是否已存在该配置
-            Log.Info($"bian:{bossLabel} ,type,{type} ,skillId,{skillId} ");
-            var magicChangeComp = GetCachedMagicChangeComp(character);
+
+            var magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(character);
+            Log.Info($"bian:{bossLabel} ,type,{type} ,skillId,{skillId},magicChangeComp:{magicChangeComp}");
             if (magicChangeComp == null)
             {
-                return;
+                var player = GetBGUPlayerCharacterCS();
+                magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(player);
+                if (magicChangeComp == null)
+                {
+                    return;
+                }
             }
             var config = getMagicConfig(character, bossLabel, type);
             if (config == null)
@@ -805,7 +884,12 @@ namespace bian
             var magicChangeComp = GetCachedMagicChangeComp(character);
             if (magicChangeComp == null)
             {
-                return;
+                var player = GetBGUPlayerCharacterCS();
+                magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(player);
+                if (magicChangeComp == null)
+                {
+                    return;
+                }
             }
             if (config == null)
             {
@@ -839,7 +923,12 @@ namespace bian
             var magicChangeComp = GetCachedMagicChangeComp(character);
             if (magicChangeComp == null)
             {
-                return;
+                var player = GetBGUPlayerCharacterCS();
+                magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(player);
+                if (magicChangeComp == null)
+                {
+                    return;
+                }
             }
             MethodInfo reset = typeof(BUS_MagicallyChangeComp).GetMethod("Reset", BindingFlags.NonPublic | BindingFlags.Instance);
             if (reset == null)
@@ -1997,7 +2086,178 @@ namespace bian
             }
             return null;
         }
+        public static bossModel? getActorModel(BGUCharacterCS actor)
+        {
+            // LoadUtils.ExportDataToJson<ShopItemGroupDesc>("shopdesc");
+            // LoadUtils.ExportDataToJson<FUStBuffDispDesc>("buffdisp");
+            // LoadUtils.ExportDataToJson<FUStSkillSDesc>("skill");
+            if (actor != null)
+            {
+                BUTamerActor tM = actor.GetTamerOwner() as BUTamerActor;
+                if (tM == null)
+                {
+                    return null;
+                }
 
+                var allSkillIDs = BGUFuncLibAICS.BGUGetUnitAllSkillID(actor);
+
+                var model = new bossModel();
+                model.BossConf = new BossConfig();
+
+
+                try
+                {
+                    ACharacter aCharacter = tM.GetMonster() as ACharacter;
+                    model.BossConf.CapsuleHalfHeight = aCharacter.CapsuleComponent.GetUnscaledCapsuleHalfHeight();
+                    // Log.Debug($"bian: load CapsuleHalfHeight>{model.BossConf.CapsuleHalfHeight}");
+
+                    model.BossConf.CapsuleRadius = aCharacter.CapsuleComponent.GetUnscaledCapsuleRadius();
+                    // Log.Debug($"bian: load CapsuleRadius>{model.BossConf.CapsuleRadius}");
+
+                    model.BossConf.SKMesh = aCharacter.Mesh.SkeletalMesh.PathName;
+                    // Log.Debug($"bian: load SKMesh>{model.BossConf.SKMesh}");
+
+                    model.BossConf.ABPClass = aCharacter.Mesh.AnimClass.GetDefaultObject().PathName;
+                    model.BossConf.ABPClass = model.BossConf.ABPClass.Replace("Default__", "");
+
+                    // Log.Debug($"bian: load ABPClass>{model.BossConf.ABPClass}");
+
+                    model.BossConf.PhysicsAsset = aCharacter.Mesh.SkeletalMesh.PhysicsAsset.PathName;
+                    // Log.Debug($"bian: load PhysicsAsset>{model.BossConf.PhysicsAsset}");
+
+                    if (tM.ConfigInfoComp.UnitCDesc.Weapons != null && tM.ConfigInfoComp.UnitCDesc.Weapons.Count > 0)
+                    {
+                        model.BossConf.Weapons = new List<WeaponConfig>();
+                        foreach (var item in tM.ConfigInfoComp.UnitCDesc.Weapons)
+                        {
+                            WeaponConfig weaponConfig = new WeaponConfig();
+                            weaponConfig.SocketName = item.SocketName.PlainName;
+                            weaponConfig.Weapon = item.Weapon.GetDefaultObject().GetPathName().Replace("Default__", "");
+                            model.BossConf.Weapons.Add(weaponConfig);
+                        }
+                    }
+
+                    TArrayUnsafe<UActorComponent> tfxComps = aCharacter.GetComponentsByClass(UClass.GetClass<UTressFXComponent>());
+                    TArrayUnsafe<UActorComponent> childComp = aCharacter.GetComponentsByClass(UClass.GetClass<UChildActorComponent>());
+
+                    for (int i = 0; i < childComp?.Count; i++)
+                    {
+                        UChildActorComponent uChildActorComponent = childComp[i] as UChildActorComponent;
+                        if (!uChildActorComponent.ChildActor.IsNullOrDestroyed())
+                        {
+                            TArrayUnsafe<UActorComponent> componentsByClass5 = uChildActorComponent.ChildActor.GetComponentsByClass(UClass.GetClass<UTressFXComponent>());
+                            for (int j = 0; j < componentsByClass5.Count; j++)
+                            {
+                                tfxComps.Add(componentsByClass5[j]);
+                            }
+                        }
+                    }
+
+                    // Log.Debug($"bian: find treefx component count:{tfxComps.Count}");
+
+                    if (tfxComps.Count > 0)
+                    {
+                        model.BossConf.TFXConfigs = new List<TFXConfig>();
+                        for (int i = 0; i < tfxComps.Count; i++)
+                        {
+                            var uTressFXComponent = tfxComps[i] as UTressFXComponent;
+                            // Log.Debug($"bian: load uTressFXComponent>{uTressFXComponent.PathName}");
+
+                            TFXConfig item = new TFXConfig();
+
+                            if (uTressFXComponent.Asset != null)
+                            {
+                                item.TFXAsset = uTressFXComponent.Asset.PathName;
+                            }
+
+
+                            if (uTressFXComponent.HairMaterial != null)
+                            {
+                                item.HairMaterial = uTressFXComponent.HairMaterial.PathName;
+                                // Log.Debug($"bian: load uTressFXComponent.HairMaterial>{uTressFXComponent.HairMaterial.PathName}");
+
+                                // Log.Debug($"bian: load uTressFXComponent.HairMaterial.>{uTressFXComponent.HairMaterial.PathName}");
+                            }
+
+                            item.ShadeSettings = new MockFTressFXShadeSettings();
+                            item.ShadeSettings.FiberRadius = uTressFXComponent.ShadeSettings.FiberRadius;
+                            item.ShadeSettings.FiberSpacing = uTressFXComponent.ShadeSettings.FiberSpacing;
+                            item.ShadeSettings.HairThickness = uTressFXComponent.ShadeSettings.HairThickness;
+                            item.ShadeSettings.RootTangentBlending = uTressFXComponent.ShadeSettings.RootTangentBlending;
+                            item.ShadeSettings.ShadowThickness = uTressFXComponent.ShadeSettings.ShadowThickness;
+
+                            item.LodScreenSize = uTressFXComponent.LodScreenSize;
+                            item.EnableSimulation = uTressFXComponent.EnableSimulation;
+                            model.BossConf.TFXConfigs.Add(item);
+                        }
+                    }
+
+                    if (tM.ConfigInfoComp.DispInteractBoneMap.Count > 0)
+                    {
+                        model.BossConf.InteractBones = new List<MockedInteractBone>();
+                        foreach (KeyValuePair<FName, FBoneUseForDispMap> item2 in tM.ConfigInfoComp.DispInteractBoneMap)
+                        {
+                            var interactBone = new MockedInteractBone();
+                            interactBone.FirstBoneName = item2.Value.FirstBoneName.ToString();
+                            interactBone.NextBoneName = item2.Value.NextBoneName.ToString();
+                            interactBone.FirstRadius = item2.Value.FirstRadius;
+                            interactBone.NextRadius = item2.Value.NextRadius;
+                            model.BossConf.InteractBones.Add(interactBone);
+                        }
+                    }
+
+
+                    FUStUnitCommDesc unitCommDesc = BGW_GameDB.GetUnitCommDesc(tM.ConfigInfoComp.UnitCDesc.ResID);
+                    if (unitCommDesc != null)
+                    {
+                        int defaultBattleInfoExtendID = unitCommDesc.DefaultBattleInfoExtendID;
+                        int overrideID = tM.ConfigInfoComp.UnitCDesc.OverrideID;
+                        FUStUnitBattleInfoExtendDesc unitBattleInfoExtendDesc = BGW_GameDB.GetUnitBattleInfoExtendDesc((overrideID > 0) ? overrideID : defaultBattleInfoExtendID);
+                        if (unitBattleInfoExtendDesc != null)
+                        {
+                            model.BossConf.Override_AbnormalDispID_Attacker = unitBattleInfoExtendDesc.AbnormalDispAttackerID;
+                            model.BossConf.Override_AbnormalDispID_Victim = unitBattleInfoExtendDesc.AbnormalDispVictimID;
+                        }
+                    }
+
+                    // Log.Debug("bian: start build data");
+                    model.Name = tM.GetMonster().Mesh.SkeletalMesh.GetName();
+                    model.Type = "BOSS";
+                    model.TamerPath = tM.MonsterClassPath;
+                    model.XRateBig = 0.3f;
+                    model.ZRateBig = 0.1f;
+                    model.CoolDownRate = 50;
+                    model.XRateSmall = 2;
+                    model.Level1Scale = 1;
+                    model.Level2Scale = 1;
+                    model.Label = tM.GetMonster().Mesh.SkeletalMesh.GetName();
+                    model.Skills = new List<Skill>();
+                    foreach (var ID in allSkillIDs)
+                    {
+                        var skill = new Skill();
+                        skill.Id = ID;
+                        skill.Key = "";
+                        model.Skills.Add(skill);
+                    }
+                    // Log.Debug("bian: start export data");
+                    string json = JsonConvert.SerializeObject(model, Formatting.Indented);
+                    string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                    string filePath = Path.Combine(currentDirectory, $@"CSharpLoader\Mods\bian\models\export\boss_{model.Name}.json");
+                    File.WriteAllText(filePath, json);
+                    // Log.Debug($"bian: successed export {tM.MonsterClassPath}");
+
+                    return model;
+                }
+                catch (Exception ex)
+                {
+
+                    Log.Error(ex.ToString());
+                    return null;
+                }
+
+            }
+            return null;
+        }
         public static void GetAllMertials(ACharacter actor)
         {
             var materials = actor.Mesh.GetMaterials();
@@ -2128,7 +2388,57 @@ namespace bian
         }
 
 
+        public static void xuelunyan()
+        {
 
+            var character = GetBGUPlayerCharacterCS();
+            var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
+            if (target != null && character != null)
+            {
+
+                if (target != null)
+                {
+
+                    if (target.Mesh.PathName == character.Mesh.PathName)
+                    {
+                        UAnimInstance animInstance = target.Mesh.GetAnimInstance();
+                        if (animInstance != null)
+                        {
+                            var montage = animInstance.GetCurrentActiveMontage();
+                            if (montage != null)
+                            {
+                                UAnimInstance animInstance_player = character.Mesh.GetAnimInstance();
+                                animInstance_player.Montage_Play(montage, 1.2f);
+                            }
+                        }
+                        return;
+                    }
+                    bossModel model = getActorModel(target);
+                    Log.Info($"bian: xuelunyan model:{model?.Name}");
+                    if (model != null)
+                    {
+                        var config = getMagicConfigByModel(character, model);
+                        Log.Info($"bian: xuelunyan config:{config?.GetName()}");
+                        if (config == null) return;
+                        UAnimInstance animInstance = target.Mesh.GetAnimInstance();
+                        if (animInstance != null)
+                        {
+                            var montage = animInstance.GetCurrentActiveMontage();
+                            if (montage == null || montage.PathName != null) return;
+                            var skillIDs = BGUFunclibEditorUtility.GetSkillIDByAMPath(montage.PathName);
+                            if (skillIDs != null && skillIDs.Count > 0)
+                            {
+                                var skillID = skillIDs[0];
+                                CastVigorSkillByConfig(character, config, skillID);
+                            }
+                        }
+
+                    }
+
+                }
+            }
+
+        }
 
 
     }

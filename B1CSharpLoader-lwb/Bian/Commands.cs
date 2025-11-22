@@ -57,7 +57,7 @@ namespace bian
             {
                 bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.Mp, readOnlyData.GetFloatValue(EBGUAttrFloat.MpMax));
                 bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.Hp, readOnlyData.GetFloatValue(EBGUAttrFloat.HpMax));
-                bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.Stamina, 100);
+                bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.Pevalue, 100);
             }
 
             // BGUFunctionLibraryCS.BGUAddBuff(character, character, 450, EBuffSourceType.GM, 250);
@@ -249,56 +249,7 @@ namespace bian
             }
 
         }
-        public void xuelunyan(ModelManager manager)
-        {
-            // Log.Debug("bian: trigger XueLongYan!");
-            var character = Helper.GetBGUPlayerCharacterCS();
-            var actor = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
-
-            if (actor != null && character != null)
-            {
-                var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
-                if (target != null && actor?.Mesh != null)
-                {
-
-                    if (actor?.Mesh?.GetName() == character.Mesh?.GetName())
-                    {
-                        UAnimInstance animInstance = actor.Mesh.GetAnimInstance();
-                        if (animInstance != null)
-                        {
-                            var montage = animInstance.GetCurrentActiveMontage();
-                            if (montage != null)
-                            {
-                                UAnimInstance animInstance_player = character.Mesh.GetAnimInstance();
-                                animInstance_player.Montage_Play(montage, 1.2f);
-                            }
-                        }
-                        return;
-                    }
-                    var model = Helper.ExportTamer(target) as bossModel;
-                    if (model != null)
-                    {
-                        var config = Helper.getMagicConfigByModel(character, model);
-                        if (config == null || actor == null) return;
-                        UAnimInstance animInstance = actor.Mesh.GetAnimInstance();
-                        if (animInstance != null)
-                        {
-                            var montage = animInstance.GetCurrentActiveMontage();
-                            if (montage == null || montage.PathName != null) return;
-                            var skillIDs = BGUFunclibEditorUtility.GetSkillIDByAMPath(montage.PathName);
-                            if (skillIDs != null && skillIDs.Count > 0)
-                            {
-                                var skillID = skillIDs[0];
-                                Helper.CastVigorSkillByConfig(character, config, skillID);
-                            }
-                        }
-
-                    }
-
-                }
-            }
-
-        }
+      
         public void ShowUI(ModelManager manager)
         {
             Manager.CreateUi();
