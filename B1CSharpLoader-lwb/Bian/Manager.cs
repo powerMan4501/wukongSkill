@@ -134,17 +134,16 @@ namespace bian
                 LoadUtils.LoadAndApplyItemDesc();
                 LoadUtils.ModifyHP();
                 LoadUtils.ModifySoulskill();
-                LoadUtils.ModifyCommDropRuleDesc();
-                LoadUtils.ModifyWeaponBuild();
+                // LoadUtils.ModifyCommDropRuleDesc();
                 LoadUtils.ModifyTrans();
 
                 LoadUtils.LoadAndApplyDamageExpandDesc();
                 LoadUtils.LoadAndApplyEquipDesc();
                 LoadUtils.LoadAnimRulesBySweepCheck();
-                LoadUtils.ModifyPlayerLevelDesc();
                 LoadUtils.ModifySkillsMap();
                 LoadUtils.LoadAndApplyTalentDesc();
                 LoadUtils.LoadAndApplyEquipAttrDesc();
+                LoadUtils.LoadAndApplyHuluDesc();
                 isBuffConfigsLoaded = true;
                 // Hooks.RegOnCastSkillWithAnimMontageEvent();
             }

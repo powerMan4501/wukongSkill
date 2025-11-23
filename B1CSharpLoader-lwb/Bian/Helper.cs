@@ -4,6 +4,7 @@ using b1.BGW;
 using b1.ECS;
 using b1.Plugins.Calliope;
 using b1.Plugins.TressFX;
+using b1.Protobuf.DataAPI;
 using B1UI;
 using BtlB1;
 using BtlShare;
@@ -142,19 +143,76 @@ namespace bian
                 }
             }
         }
+
+        public static int getCurrentSkillId(BGUCharacterCS character)
+        {
+            if (character == null) return 0;
+            UAnimInstance animInstance = character.Mesh.GetAnimInstance();
+            if (animInstance == null) return 0;
+            var montage = animInstance.GetCurrentActiveMontage();
+            Log.Info($"getCurrentSkillId montage:{montage?.PathName}");
+            if (montage == null || montage.PathName == null) return 0;
+
+            var skillIDs = BGUFunclibEditorUtility.GetSkillIDByAMPath(montage.PathName);
+            if (skillIDs != null && skillIDs.Count > 0)
+            {
+                var skillID = skillIDs[0];
+                return skillID;
+            }
+            return 0;
+        }
+
+        public static void addCopySkils(int skillId)
+        {
+            var listData = BG_ProtobufDataAPI<FUStSummonCopySkillDesc>.Get().GetAll();
+            var character = Helper.GetBGUPlayerCharacterCS();
+            if (listData != null && skillId > 0)
+            {
+
+                FUStSkillSDesc skillSDesc = BGW_GameDB.GetSkillSDesc(skillId, character);
+                if (!listData.ContainsKey(skillId) && skillSDesc != null)
+                {
+                    var newSkill = new FUStSummonCopySkillDesc();
+                    newSkill.ID = skillId;
+                    newSkill.SummonUnitMontagePath = skillSDesc.TemplatePath;
+                    listData.Add(skillId, newSkill);
+                }
+            }
+        }
         public static void summonerDoActions(RuleAction action)
         {
             var list = getAllSunmon(5);
-            Log.Info($"summonerDoActions list:{list?.Count}");
-            if (list == null || list.Count == 0 || action == null || action.Type == null) return;
+            var character = GetBGUPlayerCharacterCS();
 
+            var skillId = action?.SkillID > 0 ? action.SkillID : getCurrentSkillId(character);
+            Log.Info($"summonerDoActions list:{list?.Count},skillId:{skillId}");
+
+            if (list == null || list.Count == 0 || action == null || action.Type == null)
+            {
+
+                SummonReq(5009301, 1, 6, skillId);
+                return;
+            }
+            ;
+            var types = action?.Type?.ToLower();
+            if (types == null) return;
+            if (types == "skill")
+            {
+                addCopySkils(skillId);
+                DelayExecute(100, () =>
+                 {
+                     BUS_EventCollectionCS.Get(character).Evt_SummonUseSkill.Invoke(skillId);
+
+                 });
+                return;
+            }
+            Log.Info($"summonerDoActions action.Type:{action.Type},skillId:{skillId}");
             foreach (AActor item in list)
             {
 
                 var finalActor = item as BGUCharacterCS;
-                Log.Info($"summonerDoActions finalActor:{finalActor?.PathName}");
 
-                switch (action?.Type?.ToLower())
+                switch (types)
                 {
                     case "buff":
                         var buffTime = action?.BuffTime ?? 1000;
@@ -168,14 +226,9 @@ namespace bian
 
                         break;
                     case "skill":
-                        if (action.SkillID > 0)
-                        {
-                            BGUCharacterCS character = item as BGUCharacterCS;
-                            if (character != null)
-                            {
-                                TryCastSkill(character, action.SkillID);
-                            }
-                        }
+                        // BUS_EventCollectionCS.Get(character).Evt_SummonUseSkill.Invoke(skillId);
+                        // var ServantEventCollection = BUS_EventCollectionCS.Get(item);
+                        // ServantEventCollection.Evt_CallSummonUseSkill.Invoke(skillId);
                         break;
                     case "magic":
                         if (action?.MagicSkillID > 0 && action?.path != null && finalActor != null)
@@ -315,7 +368,7 @@ namespace bian
                     tamerRef.TamerTransform = controlledPawn.GetActorTransform();
                     if (teamID != null)
                     {
-                        DelayExecute(1000, () =>
+                        DelayExecute(300, () =>
                         {
                             BGUCharacterCS monster = boss.GetMonster();
                             if (monster != null)
@@ -1558,6 +1611,9 @@ namespace bian
                     BUS_EventCollectionCS.Get((AActor)(object)item).Evt_AICatchTarget.Invoke(target, (ETargetSourceType)25, false);
                     if (changeToPlayerTeam == true)
                     {
+                        //己方霸体不吃毒火冰
+                        BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666002, EBuffSourceType.GM, -1);
+
                         item.SetTeamIDInCS(player.GetTeamIDInCS());//设置怪物为玩家队伍
                     }
                 }
@@ -1771,7 +1827,7 @@ namespace bian
         {
             // var play = Helper.GetBGUPlayerCharacterCS();
             // if (play == null || play.World == null) return;
-            SummonReq(1111222003, 1, 3, skillID);
+            SummonReq(5009301, 1, 3, skillID);
             // // 检查是否需要更新缓存
             // if (DateTime.Now - _lastCacheUpdate > _cacheUpdateInterval || _cachedCharacters.Count == 0)
             // {
@@ -1853,6 +1909,8 @@ namespace bian
                 if (castSkillInfo.SkillID > 0)
                 {
                     BUS_EventCollectionCS.Get(character).Evt_UnitCastSkillTry.Invoke(castSkillInfo);
+
+
                 }
             }
             catch (Exception ex)
@@ -2420,17 +2478,14 @@ namespace bian
                         var config = getMagicConfigByModel(character, model);
                         Log.Info($"bian: xuelunyan config:{config?.GetName()}");
                         if (config == null) return;
-                        UAnimInstance animInstance = target.Mesh.GetAnimInstance();
-                        if (animInstance != null)
+                        var skillID = getCurrentSkillId(target);
+                        if (skillID > 0)
                         {
-                            var montage = animInstance.GetCurrentActiveMontage();
-                            if (montage == null || montage.PathName != null) return;
-                            var skillIDs = BGUFunclibEditorUtility.GetSkillIDByAMPath(montage.PathName);
-                            if (skillIDs != null && skillIDs.Count > 0)
-                            {
-                                var skillID = skillIDs[0];
-                                CastVigorSkillByConfig(character, config, skillID);
-                            }
+                            BGUFunctionLibraryCS.BGUAddBuff(character, character, 211, EBuffSourceType.GM, 5000);
+                            BGUFunctionLibraryCS.BGUAddBuff(character, character, 300, EBuffSourceType.GM, 5000);//镜头拉远
+
+                            CastVigorSkillByConfig(character, config, skillID);
+
                         }
 
                     }

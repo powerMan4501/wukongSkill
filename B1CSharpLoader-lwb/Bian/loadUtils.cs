@@ -2567,73 +2567,108 @@ namespace bian
                 {
                     Itemnum.Rate = 100000;
                 }
-
-
-
-                // foreach (var ItemLib in item.DropLib)
-                // {
-                //     ItemLib.Weight = 10000;
-                // }
             }
 
-
-            // var itemsList2 = BG_ProtobufDataAPI<UnitDropNumDesc>.Get().GetAll();
-            // if (itemsList2 == null || itemsList2.Count == 0) return;
-            // foreach (var item2 in itemsList2.Values)
-            // {
-            //     if (item2?.Random.Count > 0)
-            //     {
-            //         foreach (var ItemNum in item2.Random)
-            //         {
-            //             if (ItemNum.Weight < 10000)
-            //             {
-            //                 ItemNum.Weight = 10000;
-            //             }
-            //         }
-            //     }
-            // }
-
         }
-        public static void ModifyWeaponBuild()
+
+        public class HuluDescConfig
         {
-            var itemsList = GSProtobufRuntimeAPI<TBWeaponBuildDesc, WeaponBuildDesc>.Get().GetAll().List;
-            if (itemsList == null) return;
-            var listArr = new List<ItemOne> { new ItemOne { Id = 1002, Num = 10 } };
-            foreach (var item in itemsList)
-            {
-                if (item.CostItem.Count > 0)
-                {
-                    item.CostItem.Clear();
-                    item.CostItem.AddRange(listArr);
-                }
-                if (item.TransformItem.Count > 0)
-                {
-                    item.TransformItem.Clear();
-                    item.TransformItem.AddRange(listArr);
-                }
-            }
+            public int Id { get; set; }
+            public string? desc { get; set; }
+            public int? Series { get; set; }
+            public int? Level { get; set; }
+            public int? NextId { get; set; }
+            public List<int>? BuffList { get; set; }
+            public List<int>? CostItem { get; set; }
+            public List<int>? UpgradeDesc { get; set; }
+            public int? LocalizationTag { get; set; }
         }
 
-
-
-
-
-        public static void ModifyPlayerLevelDesc()
+        public static int LoadAndApplyHuluDesc(string configDirectory = null)
         {
-            var itemsList = GSProtobufRuntimeAPI<TBPlayerLevelDesc, PlayerLevelDesc>.Get().GetAll().List;
-            if (itemsList == null || itemsList.Count == 0) return;
-
-            foreach (var itemData in itemsList)
+            try
             {
-                if (itemData?.NextLevelGainTalent > 0)
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "HuluDesc");
+
+                var huluConfigs = LoadJsonConfigs<HuluDescConfig>(configDirectory, "HuluDesc");
+                var huluList = GSProtobufRuntimeAPI<TBHuluDesc, HuluDesc>.Get().GetAll().List;
+
+                if (huluConfigs == null || huluConfigs.Count == 0)
                 {
-
-                    itemData.NextLevelGainTalent = 50;
+                    Log.Error("Failed to load hulu desc configs");
+                    return 0;
                 }
+
+                if (huluList == null)
+                {
+                    Log.Error("Failed to get hulu desc list from game database");
+                    return 0;
+                }
+
+                // 去重处理
+                huluConfigs = huluConfigs.GroupBy(c => c.Id).Select(g => g.First()).ToList();
+
+                var processedCount = 0;
+                foreach (var config in huluConfigs)
+                {
+                    try
+                    {
+                        var existingHulu = huluList.FirstOrDefault(h => h.Id == config.Id);
+                        if (existingHulu != null)
+                        {
+                            // 更新现有配置（只更新非空值）
+                            if (config.Series.HasValue)
+                                existingHulu.Series = config.Series.Value;
+
+                            if (config.Level.HasValue)
+                                existingHulu.Level = config.Level.Value;
+
+                            if (config.NextId.HasValue)
+                                existingHulu.NextId = config.NextId.Value;
+
+                            if (config.BuffList != null)
+                            {
+                                existingHulu.BuffList.Clear();
+                                existingHulu.BuffList.AddRange(config.BuffList);
+                            }
+
+                            if (config.CostItem != null)
+                            {
+                                existingHulu.CostItem.Clear();
+                                existingHulu.CostItem.AddRange((IEnumerable<ItemOne>)config.CostItem);
+                            }
+
+                            if (config.UpgradeDesc != null)
+                            {
+                                existingHulu.UpgradeDesc.Clear();
+                                existingHulu.UpgradeDesc.AddRange((IEnumerable<string>)config.UpgradeDesc);
+                            }
+
+                            if (config.LocalizationTag.HasValue)
+                                existingHulu.LocalizationTag = config.LocalizationTag.Value;
+
+                            processedCount++;
+                            Log.Info($"Successfully updated hulu desc with ID: {config.Id}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process hulu desc config for ID {config.Id}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed hulu desc configs: {processedCount}");
+                return processedCount;
             }
-
-
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplyHuluDesc: {ex.Message}");
+                return 0;
+            }
         }
+
+
+
         public static void Modifyqitiandasheng()
         {
             var Owner = Helper.GetPlayerController();
@@ -3123,6 +3158,9 @@ namespace bian
                 Log.Error($"Critical error in LoadAndApplyEquipAttrDesc: {ex.Message}");
             }
         }
+
+
+
 
         // 配置类定义
         public class EquipAttrConfig
