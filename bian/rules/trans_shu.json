@@ -1,0 +1,41 @@
+{
+  "Name": "悟空的技能id",
+  "desc": "888666005:雷，888666006 冰， 888666007火， 888666008毒",
+  "Rules": [
+    {
+      "Name": "双头鼠变身",
+      "Description": "",
+      "Filters": [
+        {
+          "Type": "effect",
+          "EffectID": 1501201
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1501202
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1501203
+        },
+        {
+          "Type": "effect",
+          "EffectID": 1500901
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "TimeDelay": 0,
+          "bullets": [
+            {
+              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+              "ProjectTileIDs": [40550101],
+              "desc": "鳖宝子弹"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -34,8 +34,8 @@
     "afterActions": [
       {
         "Type": "additem",
-        "ItemID": 3310,
-        "ItemCount": 99
+        "ItemID": 4007,
+        "ItemCount": 6
       }
     ]
   },

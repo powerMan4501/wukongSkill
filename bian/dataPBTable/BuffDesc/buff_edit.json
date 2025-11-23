@@ -219,18 +219,9 @@
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
         "EffectParams": [8],
-        "EffectParamsFloat": [-40.0, 0.0]
-      },
-      {
-        "EffectTrigger": 10,
-        "EffectType": 134,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [0],
-        "EffectParamsFloat": [20]
+        "EffectParamsFloat": [-20.0, 0.0]
       }
-    ],
-    "CanBeInherited": 1
+    ]
   },
   {
     "ID": 2053,

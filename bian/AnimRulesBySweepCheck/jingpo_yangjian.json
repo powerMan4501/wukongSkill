@@ -5,7 +5,7 @@
     "linkValue": 0,
     "addRadius": 1500,
     "speedRate": 1.3,
-         "hitEffects": [888555035],
+    "hitEffects": [888555035],
     "replaceEffects": true,
     "SweepActions": [
       {
@@ -118,7 +118,7 @@
     "linkValue": 0,
     "speedRate": 1.9,
     "AMSpeedRate": 1.9,
-     "hitEffects": [888555035],
+    "hitEffects": [888555035],
     "replaceEffects": true,
     "CastActions": [
       {

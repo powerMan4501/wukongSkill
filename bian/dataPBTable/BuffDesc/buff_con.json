@@ -1,0 +1,10 @@
+[
+  {
+    "ID": 92315,
+    "BuffTips": "芝田玉膏",
+    "BuffActiveCondition": {
+      "ConditionType": 1,
+      "ConditionParams": "9999"
+    }
+  }
+]

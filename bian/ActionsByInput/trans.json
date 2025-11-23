@@ -1,0 +1,75 @@
+[
+  {
+    "code": "clong",
+    "afterActions": [
+      {
+        "type": "transskill",
+        "ResId": 19,
+        "MagicSkillID": 19043,
+        "desc": "变成小黄龙,三千阳春"
+      }
+    ]
+  },
+  {
+    "code": "chu",
+    "afterActions": [
+      {
+        "type": "transskill",
+        "ResId": 14,
+        "MagicSkillID": 14070,
+        "desc": "变成寅虎，飒沓"
+      }
+    ]
+  },
+  {
+    "code": "chou",
+    "afterActions": [
+      {
+        "type": "transskill",
+        "ResId": 17,
+        "MagicSkillID": 17015,
+        "desc": "变成马猴"
+      }
+    ]
+  },
+  {
+    "code": "cchan",
+    "afterActions": [
+      {
+        "type": "transskill",
+        "ResId": 11,
+        "MagicSkillID": 0,
+        "desc": "蝉"
+      },
+
+      {
+        "Type": "buff",
+        "BuffID": 411101,
+        "TimeDelay": 2000,
+        "desc": "不会被感知，不会被打中"
+      }
+    ]
+  },
+  {
+    "code": "clang",
+    "afterActions": [
+      {
+        "type": "transskill",
+        "ResId": 12,
+        "MagicSkillID": 12044,
+        "desc": "广智"
+      }
+    ]
+  },
+  {
+    "code": "cSHU",
+    "afterActions": [
+      {
+        "type": "transskill",
+        "ResId": 15,
+        "MagicSkillID": 250107,
+        "desc": "双头鼠"
+      }
+    ]
+  }
+]
