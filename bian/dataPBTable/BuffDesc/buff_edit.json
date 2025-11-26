@@ -346,5 +346,36 @@
     "EffectParamsStr": [
       "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan_02.BGW_Player_Wukong_Atk_sanshanguan_02"
     ]
+  },
+  {
+    "ID": 503,
+    "BuffTips": "雷音寺地牢红眼BUFF（主角艰难行走改成加血上限）",
+    "Duration": -1,
+    "MaxLayer": 1,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [51, 100, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 504,
+    "BuffTips": "雷音寺地牢红眼BUFF（主角加血上限）",
+    "Duration": -1,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [51, 100, 0],
+        "EffectParamsFloat": []
+      }
+    ]
   }
 ]

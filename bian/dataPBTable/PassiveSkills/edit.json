@@ -1,5 +1,4 @@
 [
- 
   {
     "desc": "把厉无咎减铜头时间改成加时间 修改IronBodyWindowTimeLength，原版是-0.2",
     "ID": 81,
@@ -30,5 +29,11 @@
     "ID": 86,
     "BaseValue": 1.9,
     "desc": "把厉无咎减铜头时间改成加时间 修改ChargeSkillMaxChargeTime，原版是-0.3"
+  },
+  {
+    "ID": 170,
+    "desc": "五鬼/妙仙葫芦恢复减半改成恢复加倍",
+    "BaseValue": 10000.0
   }
+  
 ]

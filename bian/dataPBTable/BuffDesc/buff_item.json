@@ -1,0 +1,88 @@
+[
+  {
+    "ID": 92315,
+    "BuffTips": "芝田玉膏，就是蜂山石髓,不消耗葫芦次数",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": "9999"
+    }
+  },
+  {
+    "ID": 92012,
+    "BuffTips": "龙膏80%生命，12%攻击",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "Duration": 6000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [151, 8000, 0, 1],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [53, 1200, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 66108014,
+    "BuffTips": "妙仙葫芦,携带效果，每8秒恢复8%的生命值和葫芦中的盛酒量",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "Duration": -1,
+    "Interval": 8000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [151, 600, 0, 1],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 2,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [186, 1, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 2813,
+    "BuffTips": "妙仙葫芦-加攻击",
+    "Duration": 20000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [103, 20, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 38,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [],
+        "EffectParamsFloat": [2000.0, 2000.0, 2000.0]
+      }
+    ]
+  }
+]

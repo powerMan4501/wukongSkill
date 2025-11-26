@@ -1,0 +1,13 @@
+[
+  {
+    "Id": 18010,
+    "desc": "上清宝葫芦专用，每6秒恢复6%生命值/葫芦次数，6%速度",
+    "Series": 1000,
+    "Level": 7,
+    "NextId": 0,
+    "BuffList": [66018010],
+    "CostItem": [],
+    "UpgradeDesc": [],
+    "LocalizationTag": 0
+  }
+]

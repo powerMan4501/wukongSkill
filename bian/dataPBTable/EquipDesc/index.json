@@ -36,8 +36,7 @@
   {
     "Id": 18010,
     "EquipName": "上清宝葫芦",
-    "EquipEffectId": 108011,
-    "EquipEffectDesc": "每6秒恢复6%的生命值和葫芦中的盛酒量"
+    "EquipEffectDesc": "饮酒后，每6秒恢复6%的生命值和葫芦中的盛酒量"
   },
   {
     "Id": 16031,
