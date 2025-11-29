@@ -85,37 +85,29 @@
   },
   {
     "ID": 66018010,
-    "BuffTips": "上清宝葫芦专用，每6秒恢复6%的生命值和葫芦中的盛酒量",
+    "BuffTips": "上清宝葫芦专用，恢复葫芦中的盛酒量，15秒内免疫死亡",
     "BuffActiveCondition": {
       "ConditionType": 0,
       "ConditionParams": ""
     },
-    "Duration": 12000,
-    "Interval": 6000,
+    "Duration": 1000,
     "BuffEffects": [
       {
-        "EffectTrigger": 2,
-        "EffectType": 3,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [151, 600, 0, 1],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 2,
+        "EffectTrigger": 1,
         "EffectType": 3,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
         "EffectParams": [186, 1, 0, 0],
         "EffectParamsFloat": []
       },
+
       {
-        "EffectTrigger": 1,
-        "EffectType": 38,
+        "EffectTrigger": 2,
+        "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [],
-        "EffectParamsFloat": [600.0, 600.0, 600.0]
+        "EffectParams": [706],
+        "EffectParamsFloat": [15000]
       }
     ]
   },
