@@ -660,6 +660,10 @@ namespace bian
 
                     }
                     break;
+
+                case "show_info":
+                    ShowPlayerInfo.InitItems();
+                    break;
                 case "rushskill":
                     Helper.doPhantomRushSkill(character, action.RushDir ?? "Forward");
 

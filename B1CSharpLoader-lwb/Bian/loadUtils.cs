@@ -2721,7 +2721,16 @@ namespace bian
                 }
             }
         }
-
+        public static void ModifyWine()
+        {
+            foreach (WineDesc item in GSProtobufRuntimeAPI<TBWineDesc, WineDesc>.Get().GetAll().List)
+            {
+                if (item.ItemListCount > 0 && item.ItemListCount < 4)
+                {
+                    item.ItemListCount = 4;
+                }
+            }
+        }
         public static List<AnimRuleBySweepCheck> allSweepCheckAnimRules;
         public static List<AnimRuleBySweepCheck> LoadAnimRulesBySweepCheck(string configDirectory = null)
         {
@@ -2922,7 +2931,6 @@ namespace bian
                     if (model != null)
                     {
                         allModels.Add(model);
-                        Log.Info($"Successfully loaded model: {model.Label} from {Path.GetFileName(filePath)}");
                     }
                 }
                 catch (Exception ex)

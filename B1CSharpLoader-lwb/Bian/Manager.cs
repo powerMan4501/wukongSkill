@@ -136,7 +136,7 @@ namespace bian
                 LoadUtils.ModifySoulskill();
                 // LoadUtils.ModifyCommDropRuleDesc();
                 LoadUtils.ModifyTrans();
-
+                LoadUtils.ModifyWine();
                 LoadUtils.LoadAndApplyDamageExpandDesc();
                 LoadUtils.LoadAndApplyEquipDesc();
                 LoadUtils.LoadAnimRulesBySweepCheck();
@@ -154,6 +154,7 @@ namespace bian
         {
 
             LoadComboConfigs();//全部连招
+            ShowPlayerInfo.InitItems();//初始化玩家信息
             ActionsByInput = LoadUtils.LoadActionConfigs();
 
             if (isBuffConfigsLoaded && !forceUpdate) { return; }

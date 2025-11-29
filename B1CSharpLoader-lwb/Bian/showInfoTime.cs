@@ -1,0 +1,177 @@
+using System;
+using System.Collections.Generic;
+using b1;
+using B1UI.GSUI;
+using BtlShare;
+using GSE.GSUI;
+using UnrealEngine.Engine;
+using UnrealEngine.Runtime;
+using UnrealEngine.Slate;
+using UnrealEngine.UMG;
+
+namespace bian;
+
+public class TimerComp : UActorCompBaseCS
+{
+    private UWorld? World = null;
+    private UCanvasPanel? MainCon = null;
+
+    private static FVector2D VecRT = new FVector2D(0.2, 0.35);  // 左边
+    private static FAnchors AnchorsRT = default(FAnchors);
+
+    static TimerComp()
+    {
+        AnchorsRT.Minimum = VecRT;
+        AnchorsRT.Maximum = VecRT;
+    }
+
+    public override void OnAttach()
+    {
+        SetCanTick(true);
+    }
+
+    public override int GetTickGroupMask()
+    {
+        return CanTick() ? 1 : 0;
+    }
+
+    private void InitBasicInfo()
+    {
+        if (!ShowPlayerInfo.IsValidUObject(MainCon))
+            return;
+
+        if (ShowPlayerInfo.BasicInfoKs == null || ShowPlayerInfo.BasicInfoVs == null)
+            return;
+
+
+        for (int i = 0; i < ShowPlayerInfo.BasicAttributes.Count; i++)
+        {
+            UCanvasPanelSlot keySlot = MainCon.AddChild(ShowPlayerInfo.BasicInfoKs[i]) as UCanvasPanelSlot;
+            if (ShowPlayerInfo.IsValidUObject(keySlot))
+            {
+                keySlot.SetAnchors(AnchorsRT);
+                keySlot.SetAlignment(VecRT);
+                keySlot.SetPosition(new FVector2D(-580.0, 20f + 60f * i));
+            }
+
+            UCanvasPanelSlot valueSlot = MainCon.AddChild(ShowPlayerInfo.BasicInfoVs[i]) as UCanvasPanelSlot;
+            if (ShowPlayerInfo.IsValidUObject(valueSlot))
+            {
+                valueSlot.SetAnchors(AnchorsRT);
+                valueSlot.SetAlignment(VecRT);
+                valueSlot.SetPosition(new FVector2D(-40.0, 20f + 60f * i));
+            }
+        }
+    }
+
+    private static readonly HashSet<EBGUAttrFloat> PercentageAttributes = new HashSet<EBGUAttrFloat>
+{
+    EBGUAttrFloat.CritRate,
+    EBGUAttrFloat.CritDmgMulDef,
+    EBGUAttrFloat.DmgDef,
+    EBGUAttrFloat.DmgAddition
+};
+    private void RenderBasicInfo(float DeltaTime)
+    {
+        if (!CheckWorldAndPawn())
+            return;
+
+        APawn controlledPawn = Helper.GetControlledPawn();
+        if (!ShowPlayerInfo.IsValidActor(controlledPawn))
+            return;
+
+        int index = 0;
+        foreach (var attribute in ShowPlayerInfo.BasicAttributes)
+        {
+            if (index >= ShowPlayerInfo.BasicInfoVs.Count)
+                break;
+
+            var value = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, attribute.Key);
+            if (attribute.Key == EBGUAttrFloat.Hp)
+            {
+                float hpMax = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.HpMax);
+                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{value} / {hpMax}");
+            }
+            else
+         if (attribute.Key == EBGUAttrFloat.Mp)
+            {
+                float MpMax = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.MpMax);
+                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{value} / {MpMax}");
+            }
+
+            else if (PercentageAttributes.Contains(attribute.Key))
+            {
+                float critRate = value / 100f;
+                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{(int)critRate}%");
+            }
+
+            else if (attribute.Key == EBGUAttrFloat.CritMultiplierBase)
+            {
+
+                float CritMultiplier = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.CritMultiplier);
+                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{(int)CritMultiplier / 100f + 130f}%");
+            }
+            else
+            {
+                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{(int)value}");
+
+            }
+
+
+            index++;
+        }
+    }
+
+    private bool CheckWorldAndPawn()
+    {
+        UWorld world = Helper.GetWorld();
+        if (!ShowPlayerInfo.IsValidUObject(world) || !ShowPlayerInfo.IsValidUObject(World))
+            return false;
+
+        APawn controlledPawn = Helper.GetControlledPawn();
+        return ShowPlayerInfo.IsValidActor(controlledPawn);
+    }
+
+    private bool InitDone()
+    {
+        return CheckWorldAndPawn() &&
+               ShowPlayerInfo.IsValidUObject(MainCon) &&
+               ShowPlayerInfo.BasicInfoVs != null &&
+               ShowPlayerInfo.BasicInfoVs.Count > 0;
+    }
+
+    public void InitWidgets()
+    {
+        World = ShowPlayerInfo.GetWorld();
+        if (!ShowPlayerInfo.IsValidUObject(World))
+            return;
+
+        if (GSUI.UIMgr.FindUIPage(World, 2) is UIBattleMainCon obj)
+        {
+            MainCon = obj.GetFieldOrProperty<UCanvasPanel>("MainCon");
+            if (ShowPlayerInfo.IsValidUObject(MainCon))
+            {
+                InitBasicInfo();
+            }
+        }
+    }
+
+    public override void OnTickWithGroup(float DeltaTime, int TickGroup)
+    {
+        try
+        {
+            if (!InitDone())
+            {
+                InitWidgets();
+            }
+            else
+            {
+                RenderBasicInfo(DeltaTime);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ticker Exp: " + ex.Message);
+        }
+    }
+}
