@@ -517,7 +517,12 @@ namespace bian
                     BUS_EventCollectionCS.Get(character)?.Evt_AddAllSummonLifeTime.Invoke((float)(action?.SummonAliveTime ?? 100f));
 
                     break;
-
+                case "use_item":
+                    if (action?.ItemID > 0)
+                    {
+                        BUS_EventCollectionCS.Get(character)?.Evt_TriggerItemSkillAction_UseItem.Invoke((int)action.ItemID);
+                    }
+                    break;
                 case "summoner_do_actions":
                     if (action?.summonerActions != null && action?.summonerActions?.Count > 0)
                     {
@@ -627,7 +632,7 @@ namespace bian
                     Helper.addAllTaskItem();
                     break;
 
-                  
+
                 case "effect":
                     if (action.EffectID > 0)
                     {
