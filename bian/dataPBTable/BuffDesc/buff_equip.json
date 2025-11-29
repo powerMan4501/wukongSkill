@@ -259,7 +259,9 @@
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
         "EffectParams": [25, 1, 0, 1, 0, 0, 0],
-        "EffectParamsFloat": [1740.0, 400.0, 4000.0, 0, 1000.0, 1000.0, 500, 400]
+        "EffectParamsFloat": [
+          1740.0, 400.0, 4000.0, 0, 1000.0, 1000.0, 500, 400
+        ]
       },
       {
         "EffectTrigger": 7,
@@ -270,6 +272,61 @@
         ],
         "EffectParams": [],
         "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 2811,
+    "BuffTips": "青田葫芦计数",
+    "MaxLayer": 3
+  },
+
+  {
+    "ID": 2708,
+    "BuffTips": "灵芝头标记Buff",
+    "BuffActiveCondition": {
+      "ConditionType": 4,
+      "ConditionParams": "0,151,1,-1,9999"
+    },
+    "Duration": -1,
+    "Interval": 1000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [151, 10, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 2031,
+    "BuffTips": "白衣衣服每秒回血",
+    "BuffActiveCondition": {
+      "ConditionType": 4,
+      "ConditionParams": "0,151,1,-1,9999"
+    },
+    "Duration": -1,
+    "Interval": 1000,
+    "MaxLayer": 1,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [151, 150, 0, 1],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 2,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [2030],
+        "EffectParamsFloat": [0.0]
       }
     ]
   }

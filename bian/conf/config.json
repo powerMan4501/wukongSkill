@@ -695,12 +695,7 @@
       "Name": "shift+w 飞雷神，传送到目标前面",
       "AlawaysCanCast": true
     },
-    {
-      "Key": "TAB",
-      "Type": "strong_monster",
-      "Name": "shift+a 把怪加强，五倍血",
-      "AlawaysCanCast": true
-    },
+ 
 
      {
       "Key": "S+D",

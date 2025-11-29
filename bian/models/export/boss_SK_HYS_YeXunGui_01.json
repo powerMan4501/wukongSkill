@@ -29,7 +29,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146980937"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147236564"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_XunShanGui_01/Hair/HAIR_huzi.HAIR_huzi_TFX",
@@ -42,7 +42,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146980936"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147236563"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_XunShanGui_01/Hair/HAIR_toufa_top.HAIR_toufa_top_TFX",
@@ -55,7 +55,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146980935"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147236562"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_XunShanGui_01/Hair/HAIR_toufa_back.HAIR_toufa_back_TFX",
@@ -68,7 +68,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146980934"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147236561"
       }
     ],
     "InteractBones": [
@@ -107,7 +107,7 @@
     "UnitScale": null
   },
   "AttrFloat": {
-    "HpMax": 77763.88,
+    "HpMax": 8603.2,
     "MpMax": 0.0,
     "B1StunMax": 0.0,
     "StaminaDepletedLimit": 0.0,
@@ -132,9 +132,9 @@
     "PevalueMax": 0.0,
     "YinAbnormalAccMax": 100.0,
     "YangAbnormalAccMax": 100.0,
-    "HpMaxMul": 40000.0,
+    "HpMaxMul": 0.0,
     "MpMaxMul": 0.0,
-    "AtkMul": 15240.0,
+    "AtkMul": 23000.0,
     "DefMul": 0.0,
     "B1StunMaxMul": 0.0,
     "StaminaDepletedLimitMul": 0.0,
@@ -152,7 +152,7 @@
     "EnergyMinConsumeMul": 0.0,
     "EnergyConsumeSpeedMul": 0.0,
     "EnergyIncreaseSpeedMul": 0.0,
-    "HpMaxBase": 5599.0,
+    "HpMaxBase": 6792.0,
     "MpMaxBase": 0.0,
     "AtkBase": 84.0,
     "DefBase": 0.0,
@@ -169,7 +169,7 @@
     "CritRateDefBase": 0.0,
     "CritDmgMulDefBase": 0.0,
     "DmgAdditionBase": 0.0,
-    "DmgDefBase": -2000.0,
+    "DmgDefBase": 0.0,
     "BlockCollapseArmorMaxBase": 0.0,
     "DingshenDefAdditionBase": 0.0,
     "FreezeAbnormalAccMaxBase": 100.0,
@@ -199,14 +199,14 @@
     "EnergyMinConsumeBase": 0.0,
     "EnergyConsumeSpeedBase": 0.0,
     "EnergyIncreaseSpeedBase": 0.0,
-    "Hp": 54362.8828,
+    "Hp": 8603.2,
     "Mp": 0.0,
-    "Atk": 212.015991,
+    "Atk": 277.199982,
     "Def": 0.0,
     "B1Stun": 0.0,
     "Stamina": 0.0,
     "StaminaRecover": 0.0,
-    "SkillSuperArmor": 0.0,
+    "SkillSuperArmor": 10000.0,
     "CritRate": 0.0,
     "CritMultiplier": 0.0,
     "Tenacity": 0.0,
@@ -215,12 +215,12 @@
     "CritRateDef": 0.0,
     "CritDmgMulDef": 0.0,
     "DmgAddition": 0.0,
-    "DmgDef": -2000.0,
+    "DmgDef": 0.0,
     "BlockCollapseArmor": 200.0,
     "DingshenDefAddition": 0.0,
     "FreezeAbnormalAcc": 0.0,
-    "BurnAbnormalAcc": 91.5580444,
-    "PoisonAbnormalAcc": 31.6230774,
+    "BurnAbnormalAcc": 0.0,
+    "PoisonAbnormalAcc": 0.0,
     "ThunderAbnormalAcc": 0.0,
     "BlindSlot": 100.0,
     "FreezeAtk": 0.0,
@@ -264,6 +264,7 @@
   "Skills": [
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -289,6 +290,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -314,6 +316,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -339,6 +342,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -364,6 +368,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -389,6 +394,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -414,6 +420,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -439,6 +446,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -464,6 +472,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -489,6 +498,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,
@@ -514,6 +524,7 @@
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
       "resetBack": null,
       "PlayTimeRate": 1.0,

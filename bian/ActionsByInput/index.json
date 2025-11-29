@@ -8,24 +8,82 @@
     ]
   },
   {
-    "code": "daye",
+    "code": "USEL",
     "afterActions": [
       {
-        "Type": "scale_project",
-        "ProjectTileIDs": [140],
-        "scaleXYZ": [5, 5, 5],
-        "desc": "业火放大5倍"
+        "Type": "use_item",
+        "ItemID": 2245,
+        "desc": "使用龙光倍力丸"
+      },
+      {
+        "Type": "use_item",
+        "ItemID": 2224,
+        "desc": "使用倍力丸"
+      },
+      {
+        "Type": "use_item",
+        "ItemID": 2227,
+        "desc": "伏虎丸"
+      },
+      {
+        "Type": "use_item",
+        "ItemID": 2253,
+        "desc": "聚珍伏虎丸"
+      }
+    ]
+  },
+    {
+    "code": "USEK",
+    "afterActions": [
+      {
+        "Type": "use_item",
+        "ItemID": 2204,
+        "desc": "温里散，抗冰"
+      },
+      {
+        "Type": "use_item",
+        "ItemID": 2205,
+        "desc": "度瘴散，抗毒"
+      },
+      {
+        "Type": "use_item",
+        "ItemID": 2206,
+        "desc": "神霄散，抗雷"
+      },
+      {
+        "Type": "use_item",
+        "ItemID": 2208,
+        "desc": "清凉散，抗火"
       }
     ]
   },
   {
-    "code": "dadian",
+    "code": "USES",
     "afterActions": [
       {
-        "Type": "scale_project",
-        "ProjectTileIDs": [118, 74011107, 50058603, 30160101],
-        "scaleXYZ": [5, 5, 5],
-        "desc": "落雷金沙黄符小黄龙雷电放大5倍"
+        "Type": "use_item",
+        "ItemID": 2210,
+        "desc": "七返火丹，重置法术冷却"
+      }
+    ]
+  },
+  {
+    "code": "USEj",
+    "afterActions": [
+      {
+        "Type": "use_item",
+        "ItemID": 2236,
+        "desc": "镜中丹，回复神力"
+      }
+    ]
+  },
+  {
+    "code": "USEx",
+    "afterActions": [
+      {
+        "Type": "use_item",
+        "ItemID": 2236,
+        "desc": "避凶药，加50%减伤和弹刀"
       }
     ]
   },
@@ -34,32 +92,8 @@
     "afterActions": [
       {
         "Type": "additem",
-        "ItemID": 4007,
-        "ItemCount": 6
-      }
-    ]
-  },
-  {
-    "code": "XLY",
-    "afterActions": [
-      {
-        "Type": "xuelunyan"
-      }
-    ]
-  },
-
-  {
-    "code": "ASA",
-    "afterActions": [
-      {
-        "Type": "bullet",
-        "bullets": [
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [30050301],
-            "desc": "波动"
-          }
-        ]
+        "ItemID": 2316,
+        "ItemCount": 1
       }
     ]
   },
@@ -93,49 +127,7 @@
       }
     ]
   },
-  {
-    "code": "adda",
-    "afterActions": [
-      {
-        "type": "addallsummonlifetime",
-        "SummonAliveTime": 999,
-        "Name": "增加召唤物存活时间"
-      }
-    ]
-  },
-  {
-    "code": "SGSA",
-    "afterActions": [
-      {
-        "type": "BOSS",
-        "bossLabel": "SK_HFM_ShiGanDang",
-        "MagicSkillID": 220512,
-        "Name": "石敢当，小跳起扑地，中范围出现地面石头，然后石头爆炸"
-      }
-    ]
-  },
-  {
-    "code": "SGSB",
-    "afterActions": [
-      {
-        "type": "BOSS",
-        "bossLabel": "SK_HFM_ShiGanDang",
-        "MagicSkillID": 220506,
-        "Name": "左脚踩地，然后慢速双手下砸引发地波"
-      }
-    ]
-  },
-  {
-    "code": "SGSC",
-    "afterActions": [
-      {
-        "type": "BOSS",
-        "bossLabel": "SK_HFM_ShiGanDang",
-        "MagicSkillID": 220508,
-        "Name": "大招，垂直打一拳砸地，然后引发大范围地爆"
-      }
-    ]
-  },
+
   {
     "code": "zhao",
     "afterActions": [
@@ -328,7 +320,7 @@
       }
     ]
   },
-  
+
   {
     "code": "tian",
     "afterActions": [

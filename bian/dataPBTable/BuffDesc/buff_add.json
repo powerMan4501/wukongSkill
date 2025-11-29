@@ -186,51 +186,5 @@
         "EffectParamsFloat": []
       }
     ]
-  },
-
-  {
-    "ID": 2031,
-    "BuffTips": "白衣衣服每秒回血",
-    "BuffActiveCondition": {
-      "ConditionType": 4,
-      "ConditionParams": "0,151,1,-1,9999"
-    },
-    "BuffLayerCounterType": 0,
-    "BuffCategory": 1,
-    "CanRemoveWhenAttackHit": 0,
-    "CanRemoveWhenAttacked": 0,
-    "Delay": 0,
-    "Duration": -1,
-    "Interval": 1000,
-    "AlmostEndAheadTime": 0,
-    "MaxLayer": 1,
-    "TargetBase": 2,
-    "TargetCount": 1,
-    "TargetFilter": 1,
-    "TargetTypeFilter": 1,
-    "AffiliationTypeFilter": 0,
-    "Range": {
-      "RangeType": 0,
-      "RangeCenterType": 0,
-      "RangeParam": []
-    },
-    "BuffEffects": [
-      {
-        "EffectTrigger": 2,
-        "EffectType": 3,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [151, 150, 0, 10],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 2,
-        "EffectType": 46,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [2030],
-        "EffectParamsFloat": [0.0]
-      }
-    ]
   }
 ]

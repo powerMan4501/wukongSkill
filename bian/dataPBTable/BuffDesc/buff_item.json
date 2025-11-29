@@ -36,7 +36,7 @@
   },
   {
     "ID": 66108014,
-    "BuffTips": "妙仙葫芦,携带效果，每8秒恢复8%的生命值和葫芦中的盛酒量",
+    "BuffTips": "妙仙葫芦,携带效果，每8秒恢复8%的法力值和葫芦中的盛酒量",
     "BuffActiveCondition": {
       "ConditionType": 0,
       "ConditionParams": ""
@@ -49,7 +49,7 @@
         "EffectType": 3,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [151, 600, 0, 1],
+        "EffectParams": [152, 800, 0, 1],
         "EffectParamsFloat": []
       },
       {
@@ -82,6 +82,64 @@
         "EffectParamsString": [],
         "EffectParams": [],
         "EffectParamsFloat": [2000.0, 2000.0, 2000.0]
+      }
+    ]
+  },
+  {
+    "ID": 92303,
+    "BuffTips": "龟泪",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [152, 600, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [92391],
+        "EffectParamsFloat": [0.0]
+      }
+    ]
+  },
+  {
+    "ID": 92316,
+    "BuffTips": "铁弹",
+    "Duration": 15000
+  },
+  {
+    "ID": 96033,
+    "BuffTips": "长生炉",
+    "Duration": 60000
+  },
+  {
+    "ID": 92247,
+    "BuffTips": "避凶药-加30%伤害减免,被攻击触发弹刀",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [120, 5000, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [45],
+        "EffectParamsFloat": []
       }
     ]
   }

@@ -12,25 +12,26 @@
   {
     "Id": 12001,
     "EquipName": "凤翅紫金冠",
-    "EquipEffectId": 902101,
-    "EquipEffectDesc": "加强<EquipDetail_LegendDesc_KW>轻棍</>连招"
+    "EquipEffectId": 901402,
+    "EquipEffectDesc": "打杀对手后，20秒内增加10%攻击力"
   },
   {
     "Id": 12002,
     "EquipName": "锁子黄金甲",
-    "EquipEffectId": 106040,
-    "EquipEffectDesc": "大大延长大圣形态的维持时间，且进一步提高该形态时的<EquipDetail_LegendDesc_KW>攻击</>"
+    "EquipEffectId": 900302,
+    "EquipEffectDesc": "每秒恢复1.5%生命"
   },
   {
     "Id": 12003,
     "EquipName": "点翠飞龙釬",
-    "EquipEffectId": 106023,
-    "EquipEffectDesc": "少许加快提升棍势段数的速度"
+    "EquipEffectId": 907011,
+    "EquipEffectDesc": "减少所有奇术1秒的冷却时间"
   },
   {
     "Id": 12004,
     "EquipName": "藕丝步云履",
-    "EquipEffectDesc": "增加移动速度"
+    "EquipEffectId": 106008,
+    "EquipEffectDesc": "增加7%的移动速度"
   },
 
   {
@@ -48,5 +49,17 @@
     "Id": 12101,
     "EquipName": "三山冠",
     "EquipEffectDesc": "加强<EquipDetail_LegendDesc_KW>轻棍</>连招"
+  },
+  {
+    "Id": 16028,
+    "EquipName": "博山炉",
+    "EquipEffectId": 106028,
+    "EquipEffectDesc": "饮尽葫芦后，获得15%伤害减免，持续60秒"
+  },
+  {
+    "Id": 17001,
+    "EquipName": "地灵伞盖",
+    "EquipEffectId": 907001,
+    "EquipEffectDesc": "每秒回复10点生命，提升酒15%的生命恢复量"
   }
 ]
