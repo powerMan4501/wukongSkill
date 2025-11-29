@@ -86,10 +86,6 @@
   {
     "ID": 66018010,
     "BuffTips": "上清宝葫芦专用，恢复葫芦中的盛酒量，15秒内免疫死亡",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    },
     "Duration": 1000,
     "BuffEffects": [
       {
@@ -102,7 +98,7 @@
       },
 
       {
-        "EffectTrigger": 2,
+        "EffectTrigger": 1,
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],

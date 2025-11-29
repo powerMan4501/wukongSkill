@@ -53,16 +53,9 @@
         "desc": "回盾"
       },
       {
-        "Type": "add_attr",
-        "attrType": 160,
-        "attrValue": 6000,
-        "desc": "回韧性"
-      },
-      {
-        "Type": "add_attr",
-        "attrType": 171,
-        "attrValue": 6000,
-        "desc": "回韧性"
+        "type": "buff",
+        "BuffID": 96035,
+        "BuffTime": 2000
       }
     ]
   },

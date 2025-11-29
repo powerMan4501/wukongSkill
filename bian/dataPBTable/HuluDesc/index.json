@@ -1,13 +1,7 @@
 [
   {
     "Id": 18010,
-    "desc": "上清宝葫芦专用，恢复葫芦次数，15秒内免疫死亡",
-    "Series": 1000,
-    "Level": 7,
-    "NextId": 0,
-    "BuffList": [66018010],
-    "CostItem": [],
-    "UpgradeDesc": [],
-    "LocalizationTag": 0
+
+    "BuffList": [66018010]
   }
 ]

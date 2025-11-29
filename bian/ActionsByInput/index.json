@@ -16,23 +16,30 @@
         "desc": "使用龙光倍力丸"
       },
       {
-        "Type": "use_item",
-        "ItemID": 2224,
-        "desc": "使用倍力丸"
-      },
-      {
-        "Type": "use_item",
-        "ItemID": 2227,
-        "desc": "伏虎丸"
-      },
+        "Type": "additem",
+        "ItemID": 2245,
+        "TimeDelay": 2000,
+        "ItemCount": 1
+      }
+    ]
+  },
+  {
+    "code": "USEh",
+    "afterActions": [
       {
         "Type": "use_item",
         "ItemID": 2253,
         "desc": "聚珍伏虎丸"
+      },
+      {
+        "Type": "additem",
+        "ItemID": 2253,
+        "TimeDelay": 2000,
+        "ItemCount": 1
       }
     ]
   },
-    {
+  {
     "code": "USEK",
     "afterActions": [
       {
@@ -41,29 +48,26 @@
         "desc": "温里散，抗冰"
       },
       {
-        "Type": "use_item",
-        "ItemID": 2205,
-        "desc": "度瘴散，抗毒"
-      },
-      {
-        "Type": "use_item",
-        "ItemID": 2206,
-        "desc": "神霄散，抗雷"
-      },
-      {
-        "Type": "use_item",
-        "ItemID": 2208,
-        "desc": "清凉散，抗火"
+        "Type": "additem",
+        "ItemID": 2204,
+        "TimeDelay": 2000,
+        "ItemCount": 1
       }
     ]
   },
   {
-    "code": "USES",
+    "code": "USEcd",
     "afterActions": [
       {
         "Type": "use_item",
         "ItemID": 2210,
         "desc": "七返火丹，重置法术冷却"
+      },
+      {
+        "Type": "additem",
+        "ItemID": 2210,
+        "TimeDelay": 2000,
+        "ItemCount": 1
       }
     ]
   },
@@ -74,6 +78,12 @@
         "Type": "use_item",
         "ItemID": 2236,
         "desc": "镜中丹，回复神力"
+      },
+      {
+        "Type": "additem",
+        "ItemID": 2236,
+        "TimeDelay": 2000,
+        "ItemCount": 1
       }
     ]
   },
@@ -82,22 +92,45 @@
     "afterActions": [
       {
         "Type": "use_item",
-        "ItemID": 2236,
+        "ItemID": 2247,
         "desc": "避凶药，加50%减伤和弹刀"
-      }
-    ]
-  },
-  {
-    "code": "ADDI",
-    "afterActions": [
+      },
       {
         "Type": "additem",
-        "ItemID": 2316,
+        "ItemID": 2247,
+        "TimeDelay": 2000,
         "ItemCount": 1
       }
     ]
   },
-
+  {
+    "code": "ADDl",
+    "afterActions": [
+      {
+        "Type": "additem",
+        "ItemID": 2245,
+        "ItemCount": 10,
+        "desc": "龙光倍力丸+10个"
+      }
+    ]
+  },
+  {
+    "code": "ADDhu",
+    "afterActions": [
+      {
+        "Type": "additem",
+        "ItemID": 2253,
+        "ItemCount": 10,
+        "desc": "聚珍伏虎丸+10个"
+      },
+      {
+        "Type": "additem",
+        "ItemID": 2227,
+        "ItemCount": 10,
+        "desc": "伏虎丸+10个"
+      }
+    ]
+  },
   {
     "code": "RESET",
     "afterActions": [
@@ -384,6 +417,18 @@
         "BuffID": 302211,
         "BuffTime": 1000,
         "desc": "让敌人自杀"
+      }
+    ]
+  },
+
+  {
+    "code": "yany",
+    "afterActions": [
+      {
+        "Type": "buff",
+        "BuffID": 411125,
+        "BuffTime": 10000,
+        "desc": "演员-岩浆01"
       }
     ]
   },

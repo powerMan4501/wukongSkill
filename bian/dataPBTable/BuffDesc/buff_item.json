@@ -142,5 +142,72 @@
         "EffectParamsFloat": []
       }
     ]
+  },
+
+  {
+    "ID": 92253,
+    "BuffTips": "聚珍伏虎丸，加15攻击15%伤害加成",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [103, 15, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [119, 1500, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 92227,
+    "BuffTips": "伏虎丸，加8点攻击, 8%伤害加成",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [103, 8, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [119, 800, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 92224,
+    "BuffTips": "倍力丸，加10%暴击率10%爆伤",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [111, 1000, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [112, 1000, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
   }
 ]

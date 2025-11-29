@@ -1,6 +1,5 @@
 {
   "IsTrans": false,
-  "TamerPath": "/Game/00Main/Design/Units/HYS/Unit_HYS_HongHaiEr_02A.Unit_HYS_HongHaiEr_02A_C",
   "BossConf": {
     "CapsuleHalfHeight": 240.0,
     "CapsuleRadius": 60.0,
@@ -20,7 +19,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146960524"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146907750"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_HongHaiEr_02A/Hair/Hair_per20_front.Hair_per20_front_TFX",
@@ -33,7 +32,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146960523"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146907749"
       }
     ],
     "InteractBones": null,
@@ -42,151 +41,7 @@
     "doneSkill": null,
     "UnitScale": null
   },
-  "AttrFloat": {
-    "HpMax": 395980.156,
-    "MpMax": 0.0,
-    "B1StunMax": 0.0,
-    "StaminaDepletedLimit": 0.0,
-    "StaminaMax": 0.0,
-    "SkillSuperArmorMax": 25000.0,
-    "TransEnergyMax": 0.0,
-    "EnergyMinConsume": 0.0,
-    "EnergyConsumeSpeed": 0.0,
-    "EnergyIncreaseSpeed": 0.0,
-    "SpecialEnergyMax": 0.0,
-    "FabaoEnergyMax": 0.0,
-    "VigorEnergyMax": 0.0,
-    "BlockCollapseArmorMax": 1500.0,
-    "FreezeAbnormalAccMax": 150.0,
-    "BurnAbnormalAccMax": 165.0,
-    "PoisonAbnormalAccMax": 165.0,
-    "ThunderAbnormalAccMax": 165.0,
-    "BlindSlotMax": 100.0,
-    "BloodBottomNumMax": 0.0,
-    "PelevelMax": 0.0,
-    "ShieldMax": 0.0,
-    "PevalueMax": 0.0,
-    "YinAbnormalAccMax": 150.0,
-    "YangAbnormalAccMax": 150.0,
-    "HpMaxMul": 40000.0,
-    "MpMaxMul": 0.0,
-    "AtkMul": 2200.0,
-    "DefMul": 0.0,
-    "B1StunMaxMul": 0.0,
-    "StaminaDepletedLimitMul": 0.0,
-    "StaminaMaxMul": 0.0,
-    "StaminaRecoverMul": 0.0,
-    "KptturnSpeedMul": 0.0,
-    "FreezeAbnormalAccMaxMul": 0.0,
-    "BurnAbnormalAccMaxMul": 1000.0,
-    "PoisonAbnormalAccMaxMul": 1000.0,
-    "ThunderAbnormalAccMaxMul": 1000.0,
-    "YinAbnormalAccMaxMul": 0.0,
-    "YangAbnormalAccMaxMul": 0.0,
-    "StaminaCostMultiperMul": 0.0,
-    "TransEnergyMaxMul": 0.0,
-    "EnergyMinConsumeMul": 0.0,
-    "EnergyConsumeSpeedMul": 0.0,
-    "EnergyIncreaseSpeedMul": 0.0,
-    "HpMaxBase": 30266.0,
-    "MpMaxBase": 0.0,
-    "AtkBase": 190.0,
-    "DefBase": 0.0,
-    "B1StunMaxBase": 10000.0,
-    "StaminaDepletedLimitBase": 0.0,
-    "StaminaMaxBase": 0.0,
-    "StaminaRecoverBase": 0.0,
-    "SkillSuperArmorMaxBase": 0.0,
-    "CritRateBase": 0.0,
-    "CritMultiplierBase": 0.0,
-    "TenacityBase": 0.0,
-    "KptturnSpeedBase": 180.0,
-    "EarPlugBase": 0.0,
-    "CritRateDefBase": 0.0,
-    "CritDmgMulDefBase": 0.0,
-    "DmgAdditionBase": 0.0,
-    "DmgDefBase": 0.0,
-    "BlockCollapseArmorMaxBase": 0.0,
-    "DingshenDefAdditionBase": -25.0,
-    "FreezeAbnormalAccMaxBase": 150.0,
-    "BurnAbnormalAccMaxBase": 150.0,
-    "PoisonAbnormalAccMaxBase": 150.0,
-    "ThunderAbnormalAccMaxBase": 150.0,
-    "FreezeAtkBase": 0.0,
-    "BurnAtkBase": 0.0,
-    "PoisonAtkBase": 0.0,
-    "ThunderAtkBase": 0.0,
-    "FreezeDefBase": 0.0,
-    "BurnDefBase": 0.0,
-    "PoisonDefBase": 0.0,
-    "ThunderDefBase": 0.0,
-    "BloodBottomNumMaxBase": 0.0,
-    "PelevelMaxBase": 0.0,
-    "ShieldMaxBase": 0.0,
-    "PevalueMaxBase": 0.0,
-    "YinAbnormalAccMaxBase": 150.0,
-    "YangAbnormalAccMaxBase": 150.0,
-    "YinAtkBase": 0.0,
-    "YangAtkBase": 0.0,
-    "YinDefBase": 0.0,
-    "YangDefBase": 0.0,
-    "StaminaCostMultiperBase": 1.0,
-    "TransEnergyMaxBase": 0.0,
-    "EnergyMinConsumeBase": 0.0,
-    "EnergyConsumeSpeedBase": 0.0,
-    "EnergyIncreaseSpeedBase": 0.0,
-    "Hp": 172747.156,
-    "Mp": 0.0,
-    "Atk": 231.8,
-    "Def": 0.0,
-    "B1Stun": 0.0,
-    "Stamina": 0.0,
-    "StaminaRecover": 0.0,
-    "SkillSuperArmor": 998.0,
-    "CritRate": 0.0,
-    "CritMultiplier": 0.0,
-    "Tenacity": 0.0,
-    "KptturnSpeed": 180.0,
-    "EarPlug": 0.0,
-    "CritRateDef": 0.0,
-    "CritDmgMulDef": 0.0,
-    "DmgAddition": 0.0,
-    "DmgDef": 0.0,
-    "BlockCollapseArmor": 1500.0,
-    "DingshenDefAddition": -25.0,
-    "FreezeAbnormalAcc": 0.0,
-    "BurnAbnormalAcc": 0.0,
-    "PoisonAbnormalAcc": 0.0,
-    "ThunderAbnormalAcc": 39.0901451,
-    "BlindSlot": 100.0,
-    "FreezeAtk": 0.0,
-    "BurnAtk": 0.0,
-    "PoisonAtk": 0.0,
-    "ThunderAtk": 0.0,
-    "FreezeDef": 0.0,
-    "BurnDef": 0.0,
-    "PoisonDef": 0.0,
-    "ThunderDef": 0.0,
-    "BloodBottomNum": 0.0,
-    "Pelevel": 0.0,
-    "CurEnergy": 0.0,
-    "SpecialEnergy": 0.0,
-    "Shield": 0.0,
-    "Pevalue": 0.0,
-    "YinAbnormalAcc": 0.0,
-    "YangAbnormalAcc": 0.0,
-    "YinAtk": 0.0,
-    "YangAtk": 0.0,
-    "YinDef": 0.0,
-    "YangDef": 0.0,
-    "ExpDropAddition": 0.0,
-    "SpiritDropAddition": 0.0,
-    "StaminaCostMultiper": 1.0,
-    "FabaoEnergy": 0.0,
-    "VigorEnergy": 0.0,
-    "CommDropAddition": 0.0,
-    "AttrFloatMax": 0.0
-  },
+  "TamerPath": "/Game/00Main/Design/Units/HYS/Unit_HYS_HongHaiEr_02A.Unit_HYS_HongHaiEr_02A_C",
   "Name": "SK_HYS_HongHaiEr_02A",
   "Label": "SK_HYS_HongHaiEr_02A",
   "Type": "BOSS",
@@ -200,7 +55,9 @@
   "Skills": [
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440501,
       "CanBreak": true,
@@ -219,11 +76,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440502,
       "CanBreak": true,
@@ -242,11 +102,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440504,
       "CanBreak": true,
@@ -265,11 +128,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440505,
       "CanBreak": true,
@@ -288,11 +154,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440506,
       "CanBreak": true,
@@ -311,11 +180,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440507,
       "CanBreak": true,
@@ -334,11 +206,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440508,
       "CanBreak": true,
@@ -357,11 +232,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440509,
       "CanBreak": true,
@@ -380,11 +258,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440510,
       "CanBreak": true,
@@ -403,11 +284,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440511,
       "CanBreak": true,
@@ -426,11 +310,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440512,
       "CanBreak": true,
@@ -449,11 +336,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440513,
       "CanBreak": true,
@@ -472,11 +362,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440515,
       "CanBreak": true,
@@ -495,11 +388,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440516,
       "CanBreak": true,
@@ -518,11 +414,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440517,
       "CanBreak": true,
@@ -541,11 +440,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440522,
       "CanBreak": true,
@@ -564,11 +466,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440524,
       "CanBreak": true,
@@ -587,11 +492,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440525,
       "CanBreak": true,
@@ -610,11 +518,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440526,
       "CanBreak": true,
@@ -633,11 +544,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440527,
       "CanBreak": true,
@@ -656,11 +570,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440531,
       "CanBreak": true,
@@ -679,11 +596,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440532,
       "CanBreak": true,
@@ -702,11 +622,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440534,
       "CanBreak": true,
@@ -725,11 +648,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440535,
       "CanBreak": true,
@@ -748,11 +674,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440536,
       "CanBreak": true,
@@ -771,11 +700,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440537,
       "CanBreak": true,
@@ -794,11 +726,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440538,
       "CanBreak": true,
@@ -817,11 +752,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440539,
       "CanBreak": true,
@@ -840,11 +778,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440541,
       "CanBreak": true,
@@ -863,11 +804,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440545,
       "CanBreak": true,
@@ -886,11 +830,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440551,
       "CanBreak": true,
@@ -909,11 +856,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440552,
       "CanBreak": true,
@@ -932,11 +882,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440553,
       "CanBreak": true,
@@ -955,11 +908,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440554,
       "CanBreak": true,
@@ -978,11 +934,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440555,
       "CanBreak": true,
@@ -1001,11 +960,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440560,
       "CanBreak": true,
@@ -1024,11 +986,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440561,
       "CanBreak": true,
@@ -1047,11 +1012,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440562,
       "CanBreak": true,
@@ -1070,11 +1038,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440563,
       "CanBreak": true,
@@ -1093,11 +1064,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440564,
       "CanBreak": true,
@@ -1116,11 +1090,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440565,
       "CanBreak": true,
@@ -1139,11 +1116,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440566,
       "CanBreak": true,
@@ -1162,11 +1142,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440567,
       "CanBreak": true,
@@ -1185,11 +1168,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440568,
       "CanBreak": true,
@@ -1208,11 +1194,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440570,
       "CanBreak": true,
@@ -1231,11 +1220,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440571,
       "CanBreak": true,
@@ -1254,11 +1246,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440573,
       "CanBreak": true,
@@ -1277,11 +1272,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440579,
       "CanBreak": true,
@@ -1300,11 +1298,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440580,
       "CanBreak": true,
@@ -1323,11 +1324,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440581,
       "CanBreak": true,
@@ -1346,11 +1350,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440583,
       "CanBreak": true,
@@ -1369,11 +1376,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440584,
       "CanBreak": true,
@@ -1392,11 +1402,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440591,
       "CanBreak": true,
@@ -1415,11 +1428,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440593,
       "CanBreak": true,
@@ -1438,11 +1454,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440596,
       "CanBreak": true,
@@ -1461,11 +1480,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440598,
       "CanBreak": true,
@@ -1484,11 +1506,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 440599,
       "CanBreak": true,
@@ -1507,7 +1532,8 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     }
   ],
   "DisableDepthOfField": false,
