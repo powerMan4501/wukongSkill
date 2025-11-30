@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using b1;
 using BtlShare;
+using CSharpModBase;
 using UnrealEngine.Engine;
 using UnrealEngine.Runtime;
 using UnrealEngine.Slate;
@@ -18,9 +20,9 @@ public class ShowPlayerInfo
 
 	public static Dictionary<EBGUAttrFloat, string> BasicAttributes = new Dictionary<EBGUAttrFloat, string>
 	{
+		{ EBGUAttrFloat.Shield,  "护盾" },
 		{ EBGUAttrFloat.Hp,  "生命" },
 		{ EBGUAttrFloat.Mp, "法力" },
-		{ EBGUAttrFloat.Shield,  "护盾" },
 		{ EBGUAttrFloat.Atk, "攻击" },
 		{ EBGUAttrFloat.Def, "防御" },
 		{ EBGUAttrFloat.DmgDef, "伤害减免" },
@@ -54,6 +56,12 @@ public class ShowPlayerInfo
 	{
 		FontObject = UObject.LoadObject<UFont>(null, "/Game/00MainHZ/UI/Fonts/B1Font_Main.B1Font_Main"),
 		Size = 32
+	};
+	// 添加特殊属性字体样式
+	public static FSlateFontInfo BoldFontInfo = new FSlateFontInfo
+	{
+		FontObject = UObject.LoadObject<UFont>(null, "/Game/00MainHZ/UI/Fonts/B1Font_Main.B1Font_Main"),
+		Size = 42
 	};
 
 	public static void SetUTextBlockContent(UTextBlock textBlock, string content)
@@ -93,9 +101,16 @@ public class ShowPlayerInfo
 		}
 	}
 
-	public static void InitItems()
+	// 添加需要特殊样式的属性集合
+	public static readonly HashSet<EBGUAttrFloat> SpecialAttributes = new HashSet<EBGUAttrFloat>
+{
+	EBGUAttrFloat.Shield,
+	EBGUAttrFloat.Atk,
+	EBGUAttrFloat.DmgDef
+};
+	public static void InitItems(bool force = false)
 	{
-		// if (BasicInfoKs.Count > 0) return;  // 添加初始化检查
+		if (BasicInfoKs.Count > 0 && !force) return;  // 添加初始化检查
 		foreach (var attribute in BasicAttributes)
 		{
 			UTextBlock keyBlock = UObject.NewObject<UTextBlock>();
@@ -106,23 +121,50 @@ public class ShowPlayerInfo
 			SetUTextBlockContent(keyBlock, attribute.Value);
 			// SetUTextBlockContent(valueBlock, "0");
 
+
 			SetUTextBlockFont(keyBlock, FontInfo);
 			SetUTextBlockFont(valueBlock, FontInfo);
 			SetUTextBlockStyle(keyBlock, 0.6f, ETextJustify.Left);
 			SetUTextBlockStyle(valueBlock, 0.6f, ETextJustify.Right);
+			// 优化后的特殊样式设置
+			if (SpecialAttributes.Contains(attribute.Key))
+			{
+				SetUTextBlockFont(keyBlock, BoldFontInfo);
+				SetUTextBlockFont(valueBlock, BoldFontInfo);
+			}
 		}
 
 		ShowInfo();
 	}
-
+	public static APawn? GetControlledPawn()
+	{
+		UWorld uWorld = GetWorld();
+		if (!IsValidUObject(uWorld))
+		{
+			return null;
+		}
+		APlayerController firstLocalPlayerController = UGSE_EngineFuncLib.GetFirstLocalPlayerController((UObject)uWorld);
+		if (!IsValidActor(firstLocalPlayerController))
+		{
+			return null;
+		}
+		return firstLocalPlayerController.GetControlledPawn();
+	}
+	public static BGUPlayerCharacterCS? GetBGUPlayerCharacterCS()
+	{
+		APawn controlledPawn = GetControlledPawn();
+		if (!IsValidActor(controlledPawn))
+		{
+			return null;
+		}
+		return controlledPawn as BGUPlayerCharacterCS;
+	}
 	public static void ShowInfo()
 	{
 		try
 		{
-			UWorld world = GetWorld();
 
-			Console.WriteLine("ShowInfo world: " + world?.GetName());
-			BGUPlayerCharacterCS bGUPlayerCharacterCS = Helper.GetBGUPlayerCharacterCS();
+			BGUPlayerCharacterCS bGUPlayerCharacterCS = GetBGUPlayerCharacterCS();
 			if (IsValidActor((AActor?)(object)bGUPlayerCharacterCS))
 			{
 				UActorCompContainerCS actorCompContainerCS = bGUPlayerCharacterCS.ActorCompContainerCS;
@@ -135,23 +177,27 @@ public class ShowPlayerInfo
 				{
 					return;
 				}
-				TimerComp timerComp = null;
-				foreach (UActorCompBaseCS item2 in list)
-				{
-					if (item2 != null && item2.GetType() == typeof(TimerComp))
-					{
-						timerComp = item2 as TimerComp;
-					}
-				}
+				// 优化：使用LINQ的FirstOrDefault来查找TimerComp
+				TimerComp timerComp = list.OfType<TimerComp>().FirstOrDefault();
 				if (timerComp == null)
 				{
+					Log.Info("TimerComp is null");
+					// 先尝试移除可能存在的无效TimerComp
+
 					TimerComp newComp = new TimerComp();
 					if (IsValidActor((AActor?)(object)bGUPlayerCharacterCS) && IsValidUObject((UObject?)(object)actorCompContainerCS))
 					{
 
+						Log.Info("TimerComp AddComp");
 						actorCompContainerCS?.AddComp(newComp);
 						actorCompContainerCS?.RecalculateCanTick();
 					}
+				}
+				else
+				{
+					Log.Info("TimerComp has value");
+					// 如果TimerComp存在但可能处于非活动状态，确保它被重新激活
+					actorCompContainerCS?.RecalculateCanTick();
 				}
 			}
 

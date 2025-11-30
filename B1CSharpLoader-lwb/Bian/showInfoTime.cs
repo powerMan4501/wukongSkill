@@ -35,34 +35,7 @@ public class TimerComp : UActorCompBaseCS
         return CanTick() ? 1 : 0;
     }
 
-    private void InitBasicInfo()
-    {
-        if (!ShowPlayerInfo.IsValidUObject(MainCon))
-            return;
 
-        if (ShowPlayerInfo.BasicInfoKs == null || ShowPlayerInfo.BasicInfoVs == null)
-            return;
-
-
-        for (int i = 0; i < ShowPlayerInfo.BasicAttributes.Count; i++)
-        {
-            UCanvasPanelSlot keySlot = MainCon.AddChild(ShowPlayerInfo.BasicInfoKs[i]) as UCanvasPanelSlot;
-            if (ShowPlayerInfo.IsValidUObject(keySlot))
-            {
-                keySlot.SetAnchors(AnchorsRT);
-                keySlot.SetAlignment(VecRT);
-                keySlot.SetPosition(new FVector2D(-580.0, 20f + 60f * i));
-            }
-
-            UCanvasPanelSlot valueSlot = MainCon.AddChild(ShowPlayerInfo.BasicInfoVs[i]) as UCanvasPanelSlot;
-            if (ShowPlayerInfo.IsValidUObject(valueSlot))
-            {
-                valueSlot.SetAnchors(AnchorsRT);
-                valueSlot.SetAlignment(VecRT);
-                valueSlot.SetPosition(new FVector2D(-40.0, 20f + 60f * i));
-            }
-        }
-    }
 
     private static readonly HashSet<EBGUAttrFloat> PercentageAttributes = new HashSet<EBGUAttrFloat>
 {
@@ -71,12 +44,15 @@ public class TimerComp : UActorCompBaseCS
     EBGUAttrFloat.DmgDef,
     EBGUAttrFloat.DmgAddition
 };
+
+
+
     private void RenderBasicInfo(float DeltaTime)
     {
         if (!CheckWorldAndPawn())
             return;
 
-        APawn controlledPawn = Helper.GetControlledPawn();
+        APawn controlledPawn = ShowPlayerInfo.GetControlledPawn();
         if (!ShowPlayerInfo.IsValidActor(controlledPawn))
             return;
 
@@ -124,11 +100,11 @@ public class TimerComp : UActorCompBaseCS
 
     private bool CheckWorldAndPawn()
     {
-        UWorld world = Helper.GetWorld();
+        UWorld world = ShowPlayerInfo.GetWorld();
         if (!ShowPlayerInfo.IsValidUObject(world) || !ShowPlayerInfo.IsValidUObject(World))
             return false;
 
-        APawn controlledPawn = Helper.GetControlledPawn();
+        APawn controlledPawn = ShowPlayerInfo.GetControlledPawn();
         return ShowPlayerInfo.IsValidActor(controlledPawn);
     }
 
@@ -136,10 +112,58 @@ public class TimerComp : UActorCompBaseCS
     {
         return CheckWorldAndPawn() &&
                ShowPlayerInfo.IsValidUObject(MainCon) &&
+               ShowPlayerInfo.IsValidUObject(World) &&
                ShowPlayerInfo.BasicInfoVs != null &&
                ShowPlayerInfo.BasicInfoVs.Count > 0;
     }
 
+
+    private void InitBasicInfo()
+    {
+        if (!ShowPlayerInfo.IsValidUObject(MainCon))
+            return;
+
+        if (ShowPlayerInfo.BasicInfoKs == null || ShowPlayerInfo.BasicInfoVs == null)
+            return;
+
+
+        for (int i = 0; i < ShowPlayerInfo.BasicAttributes.Count; i++)
+        {
+            UCanvasPanelSlot keySlot = MainCon.AddChild(ShowPlayerInfo.BasicInfoKs[i]) as UCanvasPanelSlot;
+            if (ShowPlayerInfo.IsValidUObject(keySlot))
+            {
+                keySlot.SetAnchors(AnchorsRT);
+                keySlot.SetAlignment(VecRT);
+                // if (ShowPlayerInfo.BasicAttributes.ElementAt(i).Key == EBGUAttrFloat.Shield)
+                // {
+                //     keySlot.SetPosition(new FVector2D(20.0f, -20f));  // 左下角位置
+                // }
+                // else
+                // {
+                //     keySlot.SetPosition(new FVector2D(-580.0, 20f + 60f * i));
+                // }
+                keySlot.SetPosition(new FVector2D(-580.0, 20f + 60f * i));
+            }
+
+            UCanvasPanelSlot valueSlot = MainCon.AddChild(ShowPlayerInfo.BasicInfoVs[i]) as UCanvasPanelSlot;
+            if (ShowPlayerInfo.IsValidUObject(valueSlot))
+            {
+                valueSlot.SetAnchors(AnchorsRT);
+                valueSlot.SetAlignment(VecRT);
+
+
+                // if (ShowPlayerInfo.BasicAttributes.ElementAt(i).Key == EBGUAttrFloat.Shield)
+                // {
+                //     keySlot.SetPosition(new FVector2D(20.0f, -20f));  // 左下角位置
+                // }
+                // else
+                // {
+                //     valueSlot.SetPosition(new FVector2D(-40.0, 20f + 60f * i));
+                // }
+                valueSlot.SetPosition(new FVector2D(-40.0, 20f + 60f * i));
+            }
+        }
+    }
     public void InitWidgets()
     {
         World = ShowPlayerInfo.GetWorld();
