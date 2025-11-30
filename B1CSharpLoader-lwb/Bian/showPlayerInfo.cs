@@ -181,22 +181,50 @@ public class ShowPlayerInfo
 				TimerComp timerComp = list.OfType<TimerComp>().FirstOrDefault();
 				if (timerComp == null)
 				{
-					Log.Info("TimerComp is null");
-					// 先尝试移除可能存在的无效TimerComp
 
+					BasicInfoKs.Clear();
+					BasicInfoVs.Clear();
 					TimerComp newComp = new TimerComp();
+					newComp.isInitialized = false;
+					newComp.World = null;
+					newComp.MainCon = null;
 					if (IsValidActor((AActor?)(object)bGUPlayerCharacterCS) && IsValidUObject((UObject?)(object)actorCompContainerCS))
 					{
 
-						Log.Info("TimerComp AddComp");
 						actorCompContainerCS?.AddComp(newComp);
 						actorCompContainerCS?.RecalculateCanTick();
+
+						if (timerComp != null)
+						{
+							var result = timerComp.InitDone();
+
+
+							if (!result)
+							{
+								timerComp.InitWidgets();
+							}
+							else
+							{
+								timerComp.RenderBasicInfo(1);
+							}
+						}
+
 					}
 				}
 				else
 				{
-					Log.Info("TimerComp has value");
-					// 如果TimerComp存在但可能处于非活动状态，确保它被重新激活
+
+					var result = timerComp.InitDone();
+					Log.Info($"TimerComp has value ,InitDone:{result}");
+					if (!result)
+					{
+						timerComp.InitWidgets();
+					}
+					else
+					{
+						timerComp.RenderBasicInfo(1);
+					}
+
 					actorCompContainerCS?.RecalculateCanTick();
 				}
 			}

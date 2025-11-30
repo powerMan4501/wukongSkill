@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using b1;
 using B1UI.GSUI;
 using BtlShare;
+using CSharpModBase;
 using GSE.GSUI;
 using UnrealEngine.Engine;
 using UnrealEngine.Runtime;
@@ -13,8 +14,9 @@ namespace bian;
 
 public class TimerComp : UActorCompBaseCS
 {
-    private UWorld? World = null;
-    private UCanvasPanel? MainCon = null;
+    public UWorld? World = null;
+    public UCanvasPanel? MainCon = null;
+    public bool isInitialized = false;
 
     private static FVector2D VecRT = new FVector2D(0.2, 0.35);  // 左边
     private static FAnchors AnchorsRT = default(FAnchors);
@@ -47,7 +49,7 @@ public class TimerComp : UActorCompBaseCS
 
 
 
-    private void RenderBasicInfo(float DeltaTime)
+    public void RenderBasicInfo(float DeltaTime)
     {
         if (!CheckWorldAndPawn())
             return;
@@ -108,9 +110,9 @@ public class TimerComp : UActorCompBaseCS
         return ShowPlayerInfo.IsValidActor(controlledPawn);
     }
 
-    private bool InitDone()
+    public bool InitDone()
     {
-        return CheckWorldAndPawn() &&
+        return isInitialized && CheckWorldAndPawn() &&
                ShowPlayerInfo.IsValidUObject(MainCon) &&
                ShowPlayerInfo.IsValidUObject(World) &&
                ShowPlayerInfo.BasicInfoVs != null &&
@@ -118,7 +120,7 @@ public class TimerComp : UActorCompBaseCS
     }
 
 
-    private void InitBasicInfo()
+    public void InitBasicInfo()
     {
         if (!ShowPlayerInfo.IsValidUObject(MainCon))
             return;
@@ -166,6 +168,8 @@ public class TimerComp : UActorCompBaseCS
     }
     public void InitWidgets()
     {
+        // 重置初始化状态
+        isInitialized = false;
         World = ShowPlayerInfo.GetWorld();
         if (!ShowPlayerInfo.IsValidUObject(World))
             return;
@@ -176,6 +180,7 @@ public class TimerComp : UActorCompBaseCS
             if (ShowPlayerInfo.IsValidUObject(MainCon))
             {
                 InitBasicInfo();
+                isInitialized = true;
             }
         }
     }
