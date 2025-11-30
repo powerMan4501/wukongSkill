@@ -18,7 +18,7 @@ public class TimerComp : UActorCompBaseCS
     public UCanvasPanel? MainCon = null;
     public bool isInitialized = false;
 
-    private static FVector2D VecRT = new FVector2D(0.2, 0.35);  // 左边
+    private static FVector2D VecRT = new FVector2D(0.2, 0.15);  // 左边
     private static FAnchors AnchorsRT = default(FAnchors);
 
     static TimerComp()

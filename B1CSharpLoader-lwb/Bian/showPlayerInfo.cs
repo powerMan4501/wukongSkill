@@ -182,6 +182,21 @@ public class ShowPlayerInfo
 				if (timerComp == null)
 				{
 
+					// 在清除列表之前添加移除UI组件的代码
+					foreach (var textBlock in BasicInfoKs)
+					{
+						if (IsValidUObject(textBlock))
+						{
+							textBlock.RemoveFromParent();
+						}
+					}
+					foreach (var textBlock in BasicInfoVs)
+					{
+						if (IsValidUObject(textBlock))
+						{
+							textBlock.RemoveFromParent();
+						}
+					}
 					BasicInfoKs.Clear();
 					BasicInfoVs.Clear();
 					TimerComp newComp = new TimerComp();
