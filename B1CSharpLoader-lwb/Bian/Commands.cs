@@ -59,6 +59,11 @@ namespace bian
                 bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.Mp, readOnlyData.GetFloatValue(EBGUAttrFloat.MpMax));
                 bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.Hp, readOnlyData.GetFloatValue(EBGUAttrFloat.HpMax));
                 bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.Pevalue, 100);
+                bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.SpecialEnergy, 100);
+                bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.CurEnergy, 100);
+                bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.Pelevel, 100);
+                bUS_GSEventCollection.Evt_SetAttrFloat?.Invoke(EBGUAttrFloat.Shield, 1000);
+
             }
 
             // BGUFunctionLibraryCS.BGUAddBuff(character, character, 450, EBuffSourceType.GM, 250);

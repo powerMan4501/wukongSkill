@@ -16,7 +16,7 @@ public class TimerComp : UActorCompBaseCS
 {
     public UWorld? World = null;
     public UCanvasPanel? MainCon = null;
-    public bool isInitialized = false;
+
 
     private static FVector2D VecRT = new FVector2D(0.2, 0.15);  // 左边
     private static FAnchors AnchorsRT = default(FAnchors);
@@ -65,37 +65,35 @@ public class TimerComp : UActorCompBaseCS
                 break;
 
             var value = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, attribute.Key);
-            if (attribute.Key == EBGUAttrFloat.Hp)
-            {
-                float hpMax = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.HpMax);
-                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{value} / {hpMax}");
-            }
-            else
-         if (attribute.Key == EBGUAttrFloat.Mp)
-            {
-                float MpMax = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.MpMax);
-                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{value} / {MpMax}");
-            }
 
-            else if (PercentageAttributes.Contains(attribute.Key))
-            {
-                float critRate = value / 100f;
-                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{(int)critRate}%");
-            }
-
-            else if (attribute.Key == EBGUAttrFloat.CritMultiplierBase)
+            if (attribute.Key == EBGUAttrFloat.Shield)
             {
 
+                // 护盾/伤害减免
+                float DmgDef = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.DmgDef);
+                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{(int)value},  {(int)DmgDef / 100}%");
+            }
+            else if (attribute.Key == EBGUAttrFloat.Hp)
+            {
+                // 生命/法力
+                float Mp = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.Mp);
+                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{(int)value}，  {(int)Mp}");
+            }
+
+            else if (attribute.Key == EBGUAttrFloat.Atk)
+            {
+
+                // 攻击/伤害加成
+                float DmgAddition = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.DmgAddition);
+                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{(int)value},  {(int)DmgAddition / 100}%");
+            }
+            else if (attribute.Key == EBGUAttrFloat.CritRate)
+            {
+
+                // 暴击/暴伤
                 float CritMultiplier = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.CritMultiplier);
-                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{(int)CritMultiplier / 100f + 130f}%");
+                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{(int)value / 100}%,  {(int)CritMultiplier / 100f + 130f}%");
             }
-            else
-            {
-                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{(int)value}");
-
-            }
-
-
             index++;
         }
     }
@@ -112,7 +110,7 @@ public class TimerComp : UActorCompBaseCS
 
     public bool InitDone()
     {
-        return isInitialized && CheckWorldAndPawn() &&
+        return CheckWorldAndPawn() &&
                ShowPlayerInfo.IsValidUObject(MainCon) &&
                ShowPlayerInfo.IsValidUObject(World) &&
                ShowPlayerInfo.BasicInfoVs != null &&
@@ -169,7 +167,6 @@ public class TimerComp : UActorCompBaseCS
     public void InitWidgets()
     {
         // 重置初始化状态
-        isInitialized = false;
         World = ShowPlayerInfo.GetWorld();
         if (!ShowPlayerInfo.IsValidUObject(World))
             return;
@@ -180,7 +177,6 @@ public class TimerComp : UActorCompBaseCS
             if (ShowPlayerInfo.IsValidUObject(MainCon))
             {
                 InitBasicInfo();
-                isInitialized = true;
             }
         }
     }

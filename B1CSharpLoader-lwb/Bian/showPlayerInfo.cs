@@ -20,15 +20,10 @@ public class ShowPlayerInfo
 
 	public static Dictionary<EBGUAttrFloat, string> BasicAttributes = new Dictionary<EBGUAttrFloat, string>
 	{
-		{ EBGUAttrFloat.Shield,  "护盾" },
-		{ EBGUAttrFloat.Hp,  "生命" },
-		{ EBGUAttrFloat.Mp, "法力" },
-		{ EBGUAttrFloat.Atk, "攻击" },
-		{ EBGUAttrFloat.Def, "防御" },
-		{ EBGUAttrFloat.DmgDef, "伤害减免" },
-		{ EBGUAttrFloat.DmgAddition, "伤害加成" },
-		{ EBGUAttrFloat.CritRate, "暴击率" },
-		{ EBGUAttrFloat.CritMultiplierBase, "暴击伤害" },
+		{ EBGUAttrFloat.Shield,  "护盾/伤害减免" },
+		{ EBGUAttrFloat.Atk, "攻击/伤害加成" },
+		{ EBGUAttrFloat.CritRate, "暴击/暴伤" },
+		{ EBGUAttrFloat.Hp,  "生命/法力" },
 	};
 
 	private static UWorld? world;
@@ -110,7 +105,13 @@ public class ShowPlayerInfo
 };
 	public static void InitItems(bool force = false)
 	{
-		if (BasicInfoKs.Count > 0 && !force) return;  // 添加初始化检查
+		if (BasicInfoKs.Count > 0)
+		{
+			if (!force) return;
+			ClearAllUI();
+		}
+
+
 		foreach (var attribute in BasicAttributes)
 		{
 			UTextBlock keyBlock = UObject.NewObject<UTextBlock>();
@@ -134,33 +135,6 @@ public class ShowPlayerInfo
 			}
 		}
 
-		ShowInfo();
-	}
-	public static APawn? GetControlledPawn()
-	{
-		UWorld uWorld = GetWorld();
-		if (!IsValidUObject(uWorld))
-		{
-			return null;
-		}
-		APlayerController firstLocalPlayerController = UGSE_EngineFuncLib.GetFirstLocalPlayerController((UObject)uWorld);
-		if (!IsValidActor(firstLocalPlayerController))
-		{
-			return null;
-		}
-		return firstLocalPlayerController.GetControlledPawn();
-	}
-	public static BGUPlayerCharacterCS? GetBGUPlayerCharacterCS()
-	{
-		APawn controlledPawn = GetControlledPawn();
-		if (!IsValidActor(controlledPawn))
-		{
-			return null;
-		}
-		return controlledPawn as BGUPlayerCharacterCS;
-	}
-	public static void ShowInfo()
-	{
 		try
 		{
 
@@ -182,27 +156,7 @@ public class ShowPlayerInfo
 				if (timerComp == null)
 				{
 
-					// 在清除列表之前添加移除UI组件的代码
-					foreach (var textBlock in BasicInfoKs)
-					{
-						if (IsValidUObject(textBlock))
-						{
-							textBlock.RemoveFromParent();
-						}
-					}
-					foreach (var textBlock in BasicInfoVs)
-					{
-						if (IsValidUObject(textBlock))
-						{
-							textBlock.RemoveFromParent();
-						}
-					}
-					BasicInfoKs.Clear();
-					BasicInfoVs.Clear();
 					TimerComp newComp = new TimerComp();
-					newComp.isInitialized = false;
-					newComp.World = null;
-					newComp.MainCon = null;
 					if (IsValidActor((AActor?)(object)bGUPlayerCharacterCS) && IsValidUObject((UObject?)(object)actorCompContainerCS))
 					{
 
@@ -251,4 +205,62 @@ public class ShowPlayerInfo
 			Console.WriteLine(ex.StackTrace);
 		}
 	}
+	public static APawn? GetControlledPawn()
+	{
+		UWorld uWorld = GetWorld();
+		if (!IsValidUObject(uWorld))
+		{
+			return null;
+		}
+		APlayerController firstLocalPlayerController = UGSE_EngineFuncLib.GetFirstLocalPlayerController((UObject)uWorld);
+		if (!IsValidActor(firstLocalPlayerController))
+		{
+			return null;
+		}
+		return firstLocalPlayerController.GetControlledPawn();
+	}
+	public static BGUPlayerCharacterCS? GetBGUPlayerCharacterCS()
+	{
+		APawn controlledPawn = GetControlledPawn();
+		if (!IsValidActor(controlledPawn))
+		{
+			return null;
+		}
+		return controlledPawn as BGUPlayerCharacterCS;
+	}
+
+
+	public static void ClearAllUI()
+	{
+		if (BasicInfoKs.Count > 0)
+		{
+			// 移除所有Key文本块
+			foreach (var textBlock in BasicInfoKs)
+			{
+				if (IsValidUObject(textBlock))
+				{
+					textBlock.SetText(FText.GetEmpty());
+					textBlock.RemoveFromParent();
+				}
+			}
+			// 清空列表
+			BasicInfoKs.Clear();
+		}
+
+		if (BasicInfoVs.Count > 0)
+		{
+			// 移除所有Value文本块
+			foreach (var textBlock in BasicInfoVs)
+			{
+				if (IsValidUObject(textBlock))
+				{
+					textBlock.SetText(FText.GetEmpty());
+					textBlock.RemoveFromParent();
+				}
+			}
+			BasicInfoVs.Clear();
+
+		}
+	}
+
 }
