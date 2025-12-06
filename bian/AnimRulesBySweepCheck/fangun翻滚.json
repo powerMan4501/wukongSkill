@@ -6,7 +6,7 @@
     "speedRate": 4,
     "AMSpeedRate": 4,
     "CastActions": [
-       {
+      {
         "Type": "add_attr",
         "attrType": 203,
         "attrValue": 10000,
@@ -113,13 +113,14 @@
             "desc": "有冰buff，冰剑气"
           },
           {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 43110102,
+            "ProjectTileID": 30142501,
             "noHasAnyBuff": [888666007, 888666006, 888666008],
             "SpeedLeftValue": 6000,
             "SpeedRightValue": 6000,
-            "ForTarget": true,
-            "desc": "没有冰火毒buff，靡道人剑气"
+            "AttachToSpawnBase": true,
+            "spawnBaseSocketName": "weapon_r_index_04",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "desc": "没有冰火毒buff，雷球"
           },
           {
             "Type": "bullet",

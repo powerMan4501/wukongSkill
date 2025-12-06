@@ -23,7 +23,41 @@
       }
     ]
   },
-
+  {
+    "code": "sushen",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 500601,
+        "SummonCount": 1,
+        "desc": "人参"
+      },
+      {
+        "Type": "summon",
+        "SummonID": 500602,
+        "SummonCount": 1,
+        "desc": "人参"
+      },
+      {
+        "Type": "summon",
+        "SummonID": 500604,
+        "SummonCount": 1,
+        "desc": "人参"
+      },
+      {
+        "Type": "summon",
+        "SummonID": 500605,
+        "SummonCount": 1,
+        "desc": "人参"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 999,
+        "TimeDelay": 1500,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
   {
     "code": "siss",
     "afterActions": [

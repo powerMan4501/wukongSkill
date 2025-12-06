@@ -577,7 +577,7 @@
       "AlawaysCanCast": true
     },
     {
-      "Key": "O",
+      "Key": "",
       "Type": "COMMAND",
       "Label": "ExportTargetTamer",
       "Name": "导出锁定的BOSS变身配置文件【DEBUG】",
@@ -698,7 +698,7 @@
  
 
      {
-      "Key": "S+D",
+      "Key": "",
       "Type": "refresh_data",
       "Name": "刷新mod数据",
       "AlawaysCanCast": true

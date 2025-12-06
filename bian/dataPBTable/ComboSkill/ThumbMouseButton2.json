@@ -690,10 +690,10 @@
     "afterActions": [
       {
         "type": "bossskill",
-        "bossLabel": "SK_LYS_XueHou",
-        "bossType": "TRANS",
-        "MagicSkillID": 17027,
-        "Name": "白色剑气连续砍"
+        "bossLabel": "SK_HFM_Hu_Stone_01",
+        "bossType": "BOSS",
+        "MagicSkillID": 202220,
+        "Name": "冲拳"
       }
     ],
     "Condition": "StancePoke",
@@ -707,10 +707,10 @@
     "afterActions": [
       {
         "type": "bossskill",
-        "bossLabel": "SK_LYS_XueHou",
-        "bossType": "TRANS",
-        "MagicSkillID": 17334,
-        "Name": "红色剑气连续砍"
+        "bossLabel": "SK_HFM_Hu_Stone_01",
+        "bossType": "BOSS",
+        "MagicSkillID":202204 ,
+        "Name": "突进咆哮，追击打一下"
       }
     ],
     "Condition": "StancePoke",
@@ -725,10 +725,10 @@
     "afterActions": [
       {
         "type": "bossskill",
-        "bossLabel": "SK_LYS_XueHou",
-        "bossType": "TRANS",
-        "MagicSkillID": 301368,
-        "Name": "雪猴白色雪墙"
+        "bossLabel": "SK_HFM_Hu_Stone_01",
+        "bossType": "BOSS",
+        "MagicSkillID": 202202,
+        "Name": "跳起来连续拳脚好几下，很猛"
       }
     ],
     "Condition": "StancePoke",
@@ -742,10 +742,10 @@
     "afterActions": [
       {
         "type": "bossskill",
-        "bossLabel": "SK_LYS_XueHou",
-        "bossType": "TRANS",
-        "MagicSkillID": 301321,
-        "Name": "跳起+空中+红色连斩"
+        "bossLabel": "SK_HFM_Hu_Stone_01",
+        "bossType": "BOSS",
+        "MagicSkillID": 202219,
+        "Name": "跳起来垂直砸下来"
       }
     ],
     "Condition": "StancePoke",
