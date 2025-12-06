@@ -46,11 +46,6 @@
   },
 
   {
-    "Id": 12101,
-    "EquipName": "三山冠",
-    "EquipEffectDesc": "加强<EquipDetail_LegendDesc_KW>轻棍</>连招"
-  },
-  {
     "Id": 16028,
     "EquipName": "博山炉",
     "EquipEffectId": 106028,
@@ -61,5 +56,10 @@
     "EquipName": "地灵伞盖",
     "EquipEffectId": 907001,
     "EquipEffectDesc": "每秒回复10点生命，提升酒15%的生命恢复量"
+  },
+  {
+    "Id": 16030,
+    "EquipName": "吉祥灯",
+    "EquipEffectDesc": "聚形散气时对自身触发魔音效果：增加20%攻击，持续20秒"
   }
 ]

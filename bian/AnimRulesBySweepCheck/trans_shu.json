@@ -5,6 +5,14 @@
     "linkValue": 0,
     "speedRate": 1.5,
     "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "add_attr",
+        "attrType": 187,
+        "attrValue": 100,
+        "desc": "Pelevel"
+      }
+    ],
     "SweepActions": [
       {
         "Type": "bullet",
@@ -48,6 +56,14 @@
     "linkValue": 0,
     "speedRate": 1.5,
     "AMScaleRate": 10,
+     "CastActions": [
+      {
+        "Type": "add_attr",
+        "attrType": 187,
+        "attrValue": 100,
+        "desc": "Pelevel"
+      }
+    ],
     "SweepActions": [
       {
         "Type": "bullet",

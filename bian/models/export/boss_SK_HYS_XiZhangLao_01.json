@@ -1,6 +1,5 @@
 {
   "IsTrans": false,
-  "TamerPath": "/Game/00Main/Design/Units/HYS/Unit_HYS_XiZhangLao_01.Unit_HYS_XiZhangLao_01_C",
   "BossConf": {
     "CapsuleHalfHeight": 150.0,
     "CapsuleRadius": 50.0,
@@ -25,7 +24,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_XiZhangLao/Materials/M_hys_xizhanglao_hair_mask.M_hys_xizhanglao_hair_mask"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147083732"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_XiZhangLao/Hair/HAIR_main.HAIR_main_TFX",
@@ -38,7 +37,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_XiZhangLao/Materials/M_hys_xizhanglao_hair_mask.M_hys_xizhanglao_hair_mask"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147083731"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_XiZhangLao/Hair/HAIR_tail.HAIR_tail_TFX",
@@ -51,7 +50,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_XiZhangLao/Materials/M_hys_xizhanglao_hair_mask.M_hys_xizhanglao_hair_mask"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147083730"
       }
     ],
     "InteractBones": null,
@@ -60,151 +59,7 @@
     "doneSkill": null,
     "UnitScale": null
   },
-  "AttrFloat": {
-    "HpMax": 1304.04443,
-    "MpMax": 0.0,
-    "B1StunMax": 0.0,
-    "StaminaDepletedLimit": 0.0,
-    "StaminaMax": 0.0,
-    "SkillSuperArmorMax": 10000.0,
-    "TransEnergyMax": 0.0,
-    "EnergyMinConsume": 0.0,
-    "EnergyConsumeSpeed": 0.0,
-    "EnergyIncreaseSpeed": 0.0,
-    "SpecialEnergyMax": 0.0,
-    "FabaoEnergyMax": 0.0,
-    "VigorEnergyMax": 0.0,
-    "BlockCollapseArmorMax": 10000.0,
-    "FreezeAbnormalAccMax": 100.005,
-    "BurnAbnormalAccMax": 100.009,
-    "PoisonAbnormalAccMax": 100.0,
-    "ThunderAbnormalAccMax": 100.0,
-    "BlindSlotMax": 100.0,
-    "BloodBottomNumMax": 0.0,
-    "PelevelMax": 0.0,
-    "ShieldMax": 0.0,
-    "PevalueMax": 0.0,
-    "YinAbnormalAccMax": 100.0,
-    "YangAbnormalAccMax": 100.0,
-    "HpMaxMul": 0.0,
-    "MpMaxMul": 0.0,
-    "AtkMul": 5120.0,
-    "DefMul": 0.0,
-    "B1StunMaxMul": 0.0,
-    "StaminaDepletedLimitMul": 0.0,
-    "StaminaMaxMul": 0.0,
-    "StaminaRecoverMul": 0.0,
-    "KptturnSpeedMul": 0.0,
-    "FreezeAbnormalAccMaxMul": 0.5,
-    "BurnAbnormalAccMaxMul": 0.9,
-    "PoisonAbnormalAccMaxMul": 0.0,
-    "ThunderAbnormalAccMaxMul": 0.0,
-    "YinAbnormalAccMaxMul": 0.0,
-    "YangAbnormalAccMaxMul": 0.0,
-    "StaminaCostMultiperMul": 0.0,
-    "TransEnergyMaxMul": 0.0,
-    "EnergyMinConsumeMul": 0.0,
-    "EnergyConsumeSpeedMul": 0.0,
-    "EnergyIncreaseSpeedMul": 0.0,
-    "HpMaxBase": 962.0,
-    "MpMaxBase": 0.0,
-    "AtkBase": 76.0,
-    "DefBase": 0.0,
-    "B1StunMaxBase": 10000.0,
-    "StaminaDepletedLimitBase": 0.0,
-    "StaminaMaxBase": 0.0,
-    "StaminaRecoverBase": 0.0,
-    "SkillSuperArmorMaxBase": 0.0,
-    "CritRateBase": 0.0,
-    "CritMultiplierBase": 0.0,
-    "TenacityBase": 0.0,
-    "KptturnSpeedBase": 150.0,
-    "EarPlugBase": 0.0,
-    "CritRateDefBase": 0.0,
-    "CritDmgMulDefBase": 0.0,
-    "DmgAdditionBase": 0.0,
-    "DmgDefBase": 0.0,
-    "BlockCollapseArmorMaxBase": 0.0,
-    "DingshenDefAdditionBase": 0.0,
-    "FreezeAbnormalAccMaxBase": 100.0,
-    "BurnAbnormalAccMaxBase": 100.0,
-    "PoisonAbnormalAccMaxBase": 100.0,
-    "ThunderAbnormalAccMaxBase": 100.0,
-    "FreezeAtkBase": 0.0,
-    "BurnAtkBase": 0.0,
-    "PoisonAtkBase": 0.0,
-    "ThunderAtkBase": 0.0,
-    "FreezeDefBase": -58.0,
-    "BurnDefBase": 45.0,
-    "PoisonDefBase": 0.0,
-    "ThunderDefBase": 0.0,
-    "BloodBottomNumMaxBase": 0.0,
-    "PelevelMaxBase": 0.0,
-    "ShieldMaxBase": 0.0,
-    "PevalueMaxBase": 0.0,
-    "YinAbnormalAccMaxBase": 100.0,
-    "YangAbnormalAccMaxBase": 100.0,
-    "YinAtkBase": 0.0,
-    "YangAtkBase": 0.0,
-    "YinDefBase": 0.0,
-    "YangDefBase": 0.0,
-    "StaminaCostMultiperBase": 1.0,
-    "TransEnergyMaxBase": 0.0,
-    "EnergyMinConsumeBase": 0.0,
-    "EnergyConsumeSpeedBase": 0.0,
-    "EnergyIncreaseSpeedBase": 0.0,
-    "Hp": 1304.04443,
-    "Mp": 0.0,
-    "Atk": 114.911995,
-    "Def": 0.0,
-    "B1Stun": 0.0,
-    "Stamina": 0.0,
-    "StaminaRecover": 0.0,
-    "SkillSuperArmor": 10000.0,
-    "CritRate": 0.0,
-    "CritMultiplier": 0.0,
-    "Tenacity": 0.0,
-    "KptturnSpeed": 150.0,
-    "EarPlug": 0.0,
-    "CritRateDef": 0.0,
-    "CritDmgMulDef": 0.0,
-    "DmgAddition": 0.0,
-    "DmgDef": 0.0,
-    "BlockCollapseArmor": 10000.0,
-    "DingshenDefAddition": 0.0,
-    "FreezeAbnormalAcc": 0.0,
-    "BurnAbnormalAcc": 0.0,
-    "PoisonAbnormalAcc": 0.0,
-    "ThunderAbnormalAcc": 0.0,
-    "BlindSlot": 100.0,
-    "FreezeAtk": 0.0,
-    "BurnAtk": 0.0,
-    "PoisonAtk": 0.0,
-    "ThunderAtk": 0.0,
-    "FreezeDef": -58.0,
-    "BurnDef": 45.0,
-    "PoisonDef": 0.0,
-    "ThunderDef": 0.0,
-    "BloodBottomNum": 0.0,
-    "Pelevel": 0.0,
-    "CurEnergy": 0.0,
-    "SpecialEnergy": 0.0,
-    "Shield": 0.0,
-    "Pevalue": 0.0,
-    "YinAbnormalAcc": 0.0,
-    "YangAbnormalAcc": 0.0,
-    "YinAtk": 0.0,
-    "YangAtk": 0.0,
-    "YinDef": 0.0,
-    "YangDef": 0.0,
-    "ExpDropAddition": 0.0,
-    "SpiritDropAddition": 0.0,
-    "StaminaCostMultiper": 1.0,
-    "FabaoEnergy": 0.0,
-    "VigorEnergy": 0.0,
-    "CommDropAddition": 0.0,
-    "AttrFloatMax": 0.0
-  },
+  "TamerPath": "/Game/00Main/Design/Units/HYS/Unit_HYS_XiZhangLao_01.Unit_HYS_XiZhangLao_01_C",
   "Name": "SK_HYS_XiZhangLao_01",
   "Label": "SK_HYS_XiZhangLao_01",
   "Type": "BOSS",
@@ -218,7 +73,9 @@
   "Skills": [
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401001,
       "CanBreak": true,
@@ -237,11 +94,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401002,
       "CanBreak": true,
@@ -260,11 +120,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401003,
       "CanBreak": true,
@@ -283,11 +146,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401004,
       "CanBreak": true,
@@ -306,11 +172,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401021,
       "CanBreak": true,
@@ -329,11 +198,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401031,
       "CanBreak": true,
@@ -352,11 +224,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401041,
       "CanBreak": true,
@@ -375,11 +250,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401042,
       "CanBreak": true,
@@ -398,11 +276,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401043,
       "CanBreak": true,
@@ -421,11 +302,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401051,
       "CanBreak": true,
@@ -444,11 +328,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401052,
       "CanBreak": true,
@@ -467,11 +354,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401053,
       "CanBreak": true,
@@ -490,11 +380,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401054,
       "CanBreak": true,
@@ -513,11 +406,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401061,
       "CanBreak": true,
@@ -536,11 +432,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401062,
       "CanBreak": true,
@@ -559,11 +458,14 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     },
     {
       "HitCount": 0,
+      "RecoverSkillID": null,
       "RushDir": null,
+      "resetBack": null,
       "PlayTimeRate": 1.0,
       "Id": 401090,
       "CanBreak": true,
@@ -582,7 +484,8 @@
       "RelativeLocation": null,
       "MagicSkillID": null,
       "Scale3D": null,
-      "bossLabel": null
+      "bossLabel": null,
+      "afterActions": null
     }
   ],
   "DisableDepthOfField": false,

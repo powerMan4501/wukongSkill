@@ -1,0 +1,394 @@
+[
+  {
+    "code": "zhao",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 1013901,
+        "SummonCount": 2,
+        "desc": "召唤2个精魄小火灵"
+      },
+      {
+        "Type": "summon",
+        "SummonID": 103801,
+        "SummonCount": 2,
+        "desc": "召唤2个蛇"
+      },
+
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 999,
+        "TimeDelay": 1000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+
+  {
+    "code": "siss",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_03.TAMER_hfm_shanzhen_03_C",
+        "desc": "石双双"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "niao",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "toPlayerTeam": true,
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_niaozui.TAMER_hys_niaozui_C",
+        "desc": "鳖宝"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "dudi",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "toPlayerTeam": true,
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_xiezijing_og.TAMER_psd_xiezijing_og_C",
+        "desc": "毒敌大王"
+      }
+    ]
+  },
+  {
+    "code": "huiyue",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/BHL/TAMER_bhl_gushoufsq_01.TAMER_bhl_gushoufsq_01_C",
+        "desc": "第四关·晦月魔君（BOSS）"
+      }
+    ]
+  },
+  {
+    "code": "jinchi",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "toPlayerTeam": true,
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_yanjianxi_01a.TAMER_gycy_yanjianxi_01a_C",
+        "desc": "金池"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "hxj",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_hfdw.TAMER_gycy_hfdw_C",
+        "desc": "第一关·黑风大王·人形态（BOSS）"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "dilan",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_HFM_Suoyang_01a.TAMER_HFM_Suoyang_01a_C",
+        "desc": "地狼"
+      }
+    ]
+  },
+  {
+    "code": "zhen",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_hou_01a.TAMER_hfm_hou_01a_C",
+        "desc": "第二关·百目真人（BOSS）"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "sns",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "toPlayerTeam": true,
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shunushou_01b_stand.TAMER_hfm_shunushou_01b_stand_C",
+        "desc": "鼠弩手"
+      },
+      {
+        "Type": "spaw_monster",
+        "toPlayerTeam": true,
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shunushou_01b_stand.TAMER_hfm_shunushou_01b_stand_C",
+        "desc": "鼠弩手"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "jsds",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_jsds.TAMER_mgd_jsds_C",
+        "desc": "jsds"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "guiwang",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_luochagui_01_ranger.TAMER_hys_luochagui_01_ranger_C",
+        "desc": "焦面鬼王"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_luochagui_01.TAMER_hys_luochagui_01_C",
+        "desc": "焦面鬼王"
+      },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "tian",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_tianbing_01.TAMER_mgd_tianbing_01_C",
+        "desc": "tianbing"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/MGD/Tamer_mgd_tianbing_02.Tamer_mgd_tianbing_02_C",
+        "desc": "tianbing"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_tianbing_01_hgs.TAMER_mgd_tianbing_01_hgs_C",
+        "desc": "tianbing"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_tianbing_01_hgs_NoGroupAI.TAMER_mgd_tianbing_01_hgs_NoGroupAI_C",
+        "desc": "tianbing"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_sl_tianjiang_01.TAMER_sl_tianjiang_01_C",
+        "desc": "tianbing"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "gusong",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_magu_01a.TAMER_hfm_magu_01a_C",
+        "desc": "骨耸然"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_magu_01b.TAMER_hfm_magu_01b_C",
+        "desc": "骨耸然"
+      },
+
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_huijingrenou_03.TAMER_hys_huijingrenou_03_C",
+        "desc": "地罗刹"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "huxian",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_hu_stone_01.TAMER_hfm_hu_stone_01_C",
+        "desc": "huxianfeng"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "shanhu",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_bashanhu_01.TAMER_hfm_bashanhu_01_C",
+        "desc": "huxianfeng"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "xioali",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_lys_chuilong_01a.TAMER_lys_chuilong_01a_C",
+        "desc": "huxianfeng"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "WULIANG",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_lys_mo3_chaoshengzhilu.TAMER_lys_mo3_chaoshengzhilu_C",
+        "desc": "huxianfeng"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "SHENGU",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_renshenjing_02a.TAMER_psd_renshenjing_02a_C",
+        "desc": "huxianfeng"
+      },
+
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_zhusun_03.TAMER_psd_zhusun_03_C",
+        "desc": "huxianfeng"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "HUANG",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_LYS_HuangMei_03.TAMER_LYS_HuangMei_03_C",
+        "desc": "huxianfeng"
+      },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "youhun",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_yanjianxi_01b.TAMER_gycy_yanjianxi_01b_C",
+        "desc": "huxianfeng"
+      },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "shaer",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shuwang_01a.TAMER_hfm_shuwang_01a_C",
+        "desc": "huxianfeng"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_fushu.TAMER_hfm_fushu_C",
+        "desc": "huxianfeng"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  }
+]

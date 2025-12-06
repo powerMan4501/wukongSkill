@@ -32,9 +32,9 @@
   {
     "nowMontage": "AM_Wukong_Xuli_C_attack_2",
     "rate": 0.4,
-     "type": "BOSS",
-      "bossLabel": "SK_LuoChaGui_01",
-      "MagicSkillID": 401211,
+    "type": "BOSS",
+    "bossLabel": "SK_LuoChaGui_01",
+    "MagicSkillID": 401211,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "立棍2，鬼王一拳打在地上触发范围火"
@@ -43,12 +43,12 @@
   {
     "nowMontage": "AM_Wukong_Xuli_C_attack_1",
     "rate": 0.4,
-    "type": "magic",
-    "skillID": 8587,
-    "MagicSkillID": 402502,
+    "type": "BOSS",
+    "bossLabel": "SK_HFM_ShiGanDang",
+    "MagicSkillID": 220512,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "立棍1，牯都督"
+    "desc": "立棍1，石敢当，小跳起扑地，中范围出现地面石头，然后石头爆炸"
   },
 
   {

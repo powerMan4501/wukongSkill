@@ -147,6 +147,7 @@
   {
     "ID": 92253,
     "BuffTips": "聚珍伏虎丸，加15攻击15%伤害加成",
+    "MaxLayer": 3,
     "BuffEffects": [
       {
         "EffectTrigger": 1,
@@ -169,6 +170,7 @@
   {
     "ID": 92227,
     "BuffTips": "伏虎丸，加8点攻击, 8%伤害加成",
+    "MaxLayer": 3,
     "BuffEffects": [
       {
         "EffectTrigger": 1,
@@ -191,6 +193,7 @@
   {
     "ID": 92224,
     "BuffTips": "倍力丸，加10%暴击率10%爆伤",
+    "MaxLayer": 3,
     "BuffEffects": [
       {
         "EffectTrigger": 1,
@@ -206,6 +209,21 @@
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
         "EffectParams": [112, 1000, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 96034,
+    "BuffTips": "竹灯笼,吉祥灯",
+    "Duration": 20000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [53, 2000, 0, 0],
         "EffectParamsFloat": []
       }
     ]

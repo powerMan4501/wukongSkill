@@ -14,5 +14,32 @@
         "desc": "恢复镜头"
       }
     ]
+  },
+  {
+    "desc": "吸精魄",
+    "montage": "AM_wukong_quest_bottle",
+    "linkValue": 0,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "CastActions": [
+      {
+        "Type": "add_attr",
+        "attrType": 203,
+        "attrValue": 10000,
+        "desc": "增加掉落概率"
+      },
+      {
+        "Type": "add_attr",
+        "attrType": 190,
+        "attrValue": 800,
+        "desc": "回盾"
+      },
+      {
+        "Type": "add_attr",
+        "attrType": 152,
+        "attrValue": 800,
+        "desc": "回蓝"
+      }
+    ]
   }
 ]

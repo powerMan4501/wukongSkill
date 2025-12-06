@@ -34,5 +34,87 @@
         "EffectParamsFloat": []
       }
     ]
-  }
+  },
+   {
+      "ID": 15050,
+      "BuffTips": "【鼠】变身-油雾法术场+火焰法术场=(油雾法术场)爆炸 | ※※※※15050=15080+15072[New]※※※※ | 0.球12m|99|580%|5档 | 1.播放屏幕震动",
+      "Range": {
+        "RangeType": 4,
+        "RangeCenterType": 0,
+        "RangeParam": [
+          4200
+        ]
+      },
+      "BuffEffects": [
+        {
+          "EffectTrigger": 1,
+          "EffectType": 1,
+          "EffectTargetSelectType": 0,
+          "EffectParamsString": [
+            "【主角】蓄力4"
+          ],
+          "EffectParams": [
+            25,
+            3,
+            1,
+            1,
+            2,
+            0,
+            0,
+            4
+          ],
+          "EffectParamsFloat": [
+            1740.0,
+            740.0,
+            70500.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "ID": 15051,
+      "BuffTips": "【鼠】变身-小火焰法术场+油雾法术场=(火焰法术场)爆炸 | ※※※※15051=15071+15080[New]※※※※ | 0.球1m|99|30%|1档",
+      "Range": {
+        "RangeType": 4,
+        "RangeCenterType": 0,
+        "RangeParam": [
+          3000
+        ]
+      },
+      "BuffEffects": [
+        {
+          "EffectTrigger": 1,
+          "EffectType": 1,
+          "EffectTargetSelectType": 0,
+          "EffectParamsString": [
+            "【主角】蓄力2"
+          ],
+          "EffectParams": [
+            25,
+            3,
+            1,
+            1,
+            2,
+            0,
+            0,
+            4
+          ],
+          "EffectParamsFloat": [
+            0.0,
+            400.0,
+            11000.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    }
 ]

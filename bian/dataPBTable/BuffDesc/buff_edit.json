@@ -184,10 +184,6 @@
     "Delay": 0,
     "Duration": -1,
     "Interval": 1000,
-    "MaxLayer": 1,
-    "TargetBase": 2,
-    "TargetCount": 1,
-    "TargetFilter": 1,
     "BuffEffects": [
       {
         "EffectTrigger": 2,
@@ -313,9 +309,9 @@
   },
   {
     "ID": 1099941,
-    "desc": "三上冠，去掉三尖两刃枪条件",
+    "desc": "三上冠，去掉条件",
     "EffectActiveCondition": {
-      "ConditionType": 2,
+      "ConditionType": 0,
       "ConditionParams": "902101"
     },
     "EffectType": 20,
@@ -332,9 +328,9 @@
   },
   {
     "ID": 1099964,
-    "desc": "三上冠，去掉三尖两刃枪条件",
+    "desc": "三上冠，去掉条件",
     "EffectActiveCondition": {
-      "ConditionType": 2,
+      "ConditionType": 0,
       "ConditionParams": "902101"
     },
     "EffectType": 20,
