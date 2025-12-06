@@ -2699,25 +2699,57 @@ namespace bian
         {
             var transList = BG_ProtobufDataAPI<FUStPlayerTransAttrDesc>.Get().GetAll();
             if (transList == null || transList.Count == 0) return;
+            int maxNUm = 100;
             foreach (var itemData in transList.Values)
             {
-                if (itemData.FreezeDefBase < 999)
+                if (itemData.ID == 12 || itemData.ID == 15)
                 {
-                    itemData.FreezeDefBase = 999;
+                    //    狼/鼠
+                    itemData.BurnAtkBase += 444;
+                    if (itemData.BurnDefBase < maxNUm)
+                    {
+                        itemData.BurnDefBase = maxNUm;
+                    }
                 }
-                if (itemData.BurnDefBase < 999)
+                if (itemData.ID == 16 || itemData.ID == 17)
                 {
-                    itemData.BurnDefBase = 999;
+                    //   海上僧/马猴
+                    itemData.FreezeAtkBase += 444;
+                    if (itemData.FreezeDefBase < maxNUm)
+                    {
+                        itemData.FreezeDefBase = maxNUm;
+                    }
+                }
+                if (itemData.ID == 18)
+                {
+                    //  虫
+                    itemData.PoisonAtkBase += 444;
+                    if (itemData.PoisonDefBase < maxNUm)
+                    {
+                        itemData.PoisonDefBase = maxNUm;
+                    }
                 }
 
-                if (itemData.PoisonDefBase < 999)
+                if (itemData.ID == 19 || itemData.ID == 23)
                 {
-                    itemData.PoisonDefBase = 999;
+                    //龙/马
+                    itemData.ThunderAtkBase += 444;
+                    if (itemData.ThunderDefBase < maxNUm)
+                    {
+                        itemData.ThunderDefBase = maxNUm;
+                    }
                 }
-
-                if (itemData.ThunderDefBase < 999)
+                if (itemData.ID == 13 || itemData.ID == 14 || itemData.ID == 24)
                 {
-                    itemData.ThunderDefBase = 999;
+                    //石头/寅虎/巨猿
+                    itemData.DmgAdditionBase += 444;
+                    if (itemData.ID == 24)
+                    {
+                        // 巨猿
+                        itemData.AtkBase += 40;
+                        itemData.CritRateBase += 40;
+                        itemData.CritDmgMulDefMul += 40;
+                    }
                 }
             }
         }

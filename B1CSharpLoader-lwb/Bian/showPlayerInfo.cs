@@ -24,6 +24,9 @@ public class ShowPlayerInfo
 		{ EBGUAttrFloat.Atk, "攻击/伤害加成" },
 		{ EBGUAttrFloat.CritRate, "暴击/暴伤" },
 		{ EBGUAttrFloat.Hp,  "生命/法力" },
+		{ EBGUAttrFloat.None,  "四灾抗性和攻击：" },
+		{ EBGUAttrFloat.FreezeDef,  "" },
+		{ EBGUAttrFloat.FreezeAtk,  "" },
 	};
 
 	private static UWorld? world;
@@ -231,36 +234,44 @@ public class ShowPlayerInfo
 
 
 	public static void ClearAllUI()
-	{
-		if (BasicInfoKs.Count > 0)
-		{
-			// 移除所有Key文本块
-			foreach (var textBlock in BasicInfoKs)
-			{
-				if (IsValidUObject(textBlock))
-				{
-					textBlock.SetText(FText.GetEmpty());
-					textBlock.RemoveFromParent();
-				}
-			}
-			// 清空列表
-			BasicInfoKs.Clear();
-		}
+{
 
-		if (BasicInfoVs.Count > 0)
-		{
-			// 移除所有Value文本块
-			foreach (var textBlock in BasicInfoVs)
-			{
-				if (IsValidUObject(textBlock))
-				{
-					textBlock.SetText(FText.GetEmpty());
-					textBlock.RemoveFromParent();
-				}
-			}
-			BasicInfoVs.Clear();
 
-		}
-	}
+	
+    // 先处理Key文本块
+    if (BasicInfoKs.Count > 0)
+    {
+        // 创建临时列表存储要移除的元素
+        var keysToRemove = new List<UTextBlock>(BasicInfoKs);
+        foreach (var textBlock in keysToRemove)
+        {
+            if (IsValidUObject(textBlock))
+            {
+                textBlock.SetText(FText.GetEmpty());
+                textBlock.RemoveFromParent();
+            }
+        }
+        // 在循环结束后清空列表
+        BasicInfoKs.Clear();
+    }
 
+    // 处理Value文本块
+    if (BasicInfoVs.Count > 0)
+    {
+        // 创建临时列表存储要移除的元素
+        var valuesToRemove = new List<UTextBlock>(BasicInfoVs);
+        foreach (var textBlock in valuesToRemove)
+        {
+            if (IsValidUObject(textBlock))
+            {
+                textBlock.SetText(FText.GetEmpty());
+                textBlock.RemoveFromParent();
+            }
+        }
+        // 在循环结束后清空列表
+        BasicInfoVs.Clear();
+    }
+}
+
+ 
 }
