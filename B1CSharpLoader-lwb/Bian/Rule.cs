@@ -718,7 +718,7 @@ namespace bian
             }
             return false;
         }
-        public void DoAfterActions(List<RuleAction> actions)
+        public async void  DoAfterActions(List<RuleAction> actions)
         {
             if (actions == null || actions.Count == 0) return;
             var character = Helper.GetBGUPlayerCharacterCS();
@@ -757,8 +757,10 @@ namespace bian
                         var times = intervalTimes;
                         for (int loopTimes = 0; loopTimes < times; loopTimes++)
                         {
-                            ExecuteDelayedAction(() => DoAction(action, 1000 / 1), intervalTime).ConfigureAwait(false);
+                            await Task.Delay((int)intervalTime);
+                            DoAction(action, 10000);
                         }
+                       
                     }
                     else
                     {
@@ -778,7 +780,8 @@ namespace bian
                         var times = intervalTimes;
                         for (int loopTimes = 0; loopTimes < times; loopTimes++)
                         {
-                            ExecuteDelayedAction(() => DoAction(action, 1000 / 1), intervalTime).ConfigureAwait(false);
+                            await Task.Delay((int)intervalTime);
+                            DoAction(action, 10000);
                         }
                     }
                     else
