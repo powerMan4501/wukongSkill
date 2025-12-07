@@ -27,6 +27,7 @@ namespace bian
 
         public int? equipId { get; set; }
         public List<RuleAction>? summonerActions { get; set; }
+        public List<EAbnormalStateType>? clearTypes { get; set; }
         public bool? toPlayerTeam { get; set; }
         public bool? IsSummonerAsMaster { get; set; }
         public bool? IsDragFarest { get; set; }
@@ -660,7 +661,16 @@ namespace bian
 
                     }
                     break;
-
+                case "Clear_All_Abnormal":
+                    // 设置默认清除冰、火、毒异常状态
+                    var finalClearTypes = action?.clearTypes ?? new List<EAbnormalStateType>
+                    {
+                        EAbnormalStateType.Abnormal_Freeze,
+                        EAbnormalStateType.Abnormal_Burn,
+                        EAbnormalStateType.Abnormal_Poison
+                    };
+                    Helper.ClearAllAbnormal(character, finalClearTypes);
+                    break;
                 case "show_info":
                     ShowPlayerInfo.InitItems(true);
                     break;
@@ -738,12 +748,43 @@ namespace bian
                     continue;
                 if (action?.TimeDelay > 0)
                 {
-                    ExecuteDelayedAction(() => DoAction(action, 1000 / 1), action.TimeDelay).ConfigureAwait(false);
+
+                    // 如果是多次执行就间隔执行
+                    if (action.intervalTime > 0)
+                    {
+                        var intervalTime = action.intervalTime ?? 100;
+                        var intervalTimes = action.intervalTimes ?? 2;
+                        var times = intervalTimes;
+                        for (int loopTimes = 0; loopTimes < times; loopTimes++)
+                        {
+                            ExecuteDelayedAction(() => DoAction(action, 1000 / 1), intervalTime).ConfigureAwait(false);
+                        }
+                    }
+                    else
+                    {
+                        ExecuteDelayedAction(() => DoAction(action, 1000 / 1), action.TimeDelay).ConfigureAwait(false);
+
+                    }
                     continue;
                 }
                 else
                 {
-                    DoAction(action, 1000 / 1);
+
+                    // 如果是多次执行就间隔执行
+                    if (action?.intervalTime > 0)
+                    {
+                        var intervalTime = action.intervalTime ?? 100;
+                        var intervalTimes = action.intervalTimes ?? 2;
+                        var times = intervalTimes;
+                        for (int loopTimes = 0; loopTimes < times; loopTimes++)
+                        {
+                            ExecuteDelayedAction(() => DoAction(action, 1000 / 1), intervalTime).ConfigureAwait(false);
+                        }
+                    }
+                    else
+                    {
+                        DoAction(action, 1000 / 1);
+                    }
                     continue;
                 }
             }

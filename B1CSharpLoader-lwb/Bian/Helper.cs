@@ -2445,7 +2445,21 @@ namespace bian
             }
         }
 
-
+        public static void ClearAllAbnormal(BGUPlayerCharacterCS character, List<EAbnormalStateType> clearTypes)
+        {
+            BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
+            if (!(bUS_GSEventCollection != null) || clearTypes == null || clearTypes.Count == 0)
+            {
+                return;
+            }
+            HashSet<EAbnormalStateType> hashSet = new HashSet<EAbnormalStateType>();
+            foreach (int item2 in clearTypes)
+            {
+                EAbnormalStateType item = (EAbnormalStateType)item2;
+                hashSet.Add(item);
+            }
+            bUS_GSEventCollection.Evt_ClearAbnormalState.Invoke(hashSet);
+        }
         public static void xuelunyan()
         {
 
