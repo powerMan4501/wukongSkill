@@ -20,15 +20,15 @@
       },
       {
         "Type": "add_attr",
-        "attrType": 160,
+        "attrType": 198,
         "attrValue": 6000,
-        "desc": "回韧性"
+        "desc": "ExpDropAddition"
       },
       {
         "Type": "add_attr",
-        "attrType": 171,
+        "attrType": 199,
         "attrValue": 6000,
-        "desc": "回韧性"
+        "desc": "SpiritDropAddition"
       }
     ]
   },

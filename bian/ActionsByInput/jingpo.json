@@ -1,0 +1,92 @@
+[
+  {
+    "code": "jinwa",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8595,
+        "MagicSkillID": 11395,
+        "hasBuff": 888666006,
+        "desc": "有冰buff,冰蛙"
+      },
+
+      {
+        "type": "magicskill",
+        "magicID": 8596,
+        "MagicSkillID": 11396,
+        "hasBuff": 888666007,
+        "desc": "有火buff,火蛙"
+      },
+
+      {
+        "type": "magicskill",
+        "magicID": 8597,
+        "MagicSkillID": 11397,
+        "hasBuff": 888666008,
+        "desc": "有毒buff,毒蛙"
+      },
+
+      {
+        "type": "magicskill",
+        "magicID": 8598,
+        "MagicSkillID": 11398,
+        "hasBuff": 888666005,
+        "desc": "有雷buff,雷蛙"
+      },
+
+      {
+        "type": "magicskill",
+        "magicID": 8599,
+        "MagicSkillID": 11399,
+        "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+        "desc": "石蛙"
+      }
+    ]
+  },
+  {
+    "code": "clea",
+    "afterActions": [
+      {
+        "type": "Clear_All_Abnormal",
+        "clearTypes": [1, 2, 3, 4, 5, 6],
+        "desc": "清除异常状态:0无 1冰 2火 3毒 4雷 5阴 6阳"
+      }
+    ]
+  },
+  {
+    "code": "jinDI",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8596,
+        "MagicSkillID": 416334,
+        "desc": "石蛙，大招地爆"
+      }
+    ]
+  },
+
+
+
+  {
+    "code": "jinhuo",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8596,
+        "MagicSkillID": 445040,
+        "desc": "火蛙，大招，原地喷射大量火"
+      }
+    ]
+  },
+  {
+    "code": "jinda",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8596,
+        "MagicSkillID": 445035,
+        "desc": "火蛙，大招，咆哮火"
+      }
+    ]
+  }
+]

@@ -51,7 +51,7 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [49981301, 51002002],
+            "ProjectTileIDs": [49981301, 1014101],
             "noHasAnyBuff": [888666005, 888666006, 888666007],
             "OffsetX": 700,
             "OffsetY": 700,
@@ -114,11 +114,11 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [49981301, 51002002],
+            "ProjectTileIDs": [51002002, 148],
             "noHasAnyBuff": [888666005, 888666006, 888666007],
             "OffsetX": 700,
             "OffsetY": 700,
-            "desc": "没有雷火冰buff，毒液，猪八戒"
+            "desc": "没有雷火冰buff，地刺，猪八戒"
           }
         ]
       }
@@ -177,7 +177,7 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [49981301, 1016202, 51007701],
+            "ProjectTileIDs": [50033000 ,74010403],
             "noHasAnyBuff": [888666005, 888666006, 888666007],
             "OffsetX": 700,
             "OffsetY": 700,

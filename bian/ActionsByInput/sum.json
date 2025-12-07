@@ -394,7 +394,7 @@
       {
         "Type": "spaw_monster",
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_yanjianxi_01b.TAMER_gycy_yanjianxi_01b_C",
-        "desc": "huxianfeng"
+        "desc": "huxianfeng "
       },
 
       {
@@ -418,6 +418,109 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_fushu.TAMER_hfm_fushu_C",
         "desc": "huxianfeng"
       },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+   {
+    "code": "xuewa",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_lys_xuewa_01.TAMER_lys_xuewa_01_C",
+        "desc": "第三关·浪里个浪"
+      },
+     
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+   {
+    "code": "duwa",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_wa_01.TAMER_psd_wa_01_C",
+        "desc": "第四关·波里个波（BOSS）"
+      },
+     
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+     {
+    "code": "huowa",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_wa_01.TAMER_hys_wa_01_C",
+        "desc": "第五关·波浪浪（BOSS）"
+      },
+     
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+    {
+    "code": "shiwa",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_szlc_wa_01.TAMER_szlc_wa_01_C",
+        "desc": "第六关·浪波波（BOSS）"
+      },
+     
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+
+  {
+    "code": "lingz",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath":"/Game/00Main/Design/Units/LYS/TAMER_pds_lingzhijing_03a.TAMER_pds_lingzhijing_03a_C",
+        "desc": "灵芝精"
+      },
+     
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+
+    {
+    "code": "shifu",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath":"/Game/00Main/Design/Units/HYS/TAMER_hys_hms.TAMER_hys_hms_C",
+        "desc": "石父"
+      },
+     
       {
         "Type": "diff_teamid",
         "TimeDelay": 3000,

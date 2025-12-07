@@ -6,8 +6,15 @@
     "TargetBase": 1,
     "TargetCount": 1,
     "TargetFilter": 4,
-    "EffectParamsInt": [71, 0, 3, 0, 3, 2, 0],
-    "EffectParamsFloat": [1500.0, 400.0, 10000.0, 0.0, 1500.0, 0.0, 0.0],
+    "EffectParamsInt": [10, 25, 3, 0, 3, 2, 4444401],
+    "EffectParamsFloat": [200.0, 400.0, 10000.0, 0.0, 1500.0, 0.0, 0.0],
     "EffectParamsStr": ["无"]
+  },
+
+  {
+    "ID": 1099916,
+    "EffectParamsInt": [0, 25, 2, 0, 0, 0, 4444401],
+    "EffectParamsFloat": [400.0, 140.0, 2500.0, 0.0, 0.0, 0.0, 140.0],
+    "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
   }
 ]

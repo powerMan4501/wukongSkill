@@ -14,14 +14,14 @@
         "desc": "霸体"
       }
     ],
-    "SweepActions": [
+    "bulletsActions": [
       {
         "Type": "bullet",
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
             "ProjectTileIDs": [74010207],
-         
+
             "desc": "火圈"
           }
         ]
@@ -78,6 +78,117 @@
     ],
     "hitEffects": [888555034],
     "replaceEffects": true
+  },
+
+  {
+    "desc": "雷蛙",
+    "montage": ".AM_10_gycy_wa_01_atk_41_lei_new",
+    "linkValue": 0,
+    "speedRate": 1.4,
+    "AMSpeedRate": 1.4,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "bulletsActions": [
+      {
+        "Type": "bullet",
+        "intervalTime": 300,
+        "intervalTimes": 4,
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [50051301],
+            "BornDirOffsetXLeftValue": 45,
+            "BornDirOffsetXRightValue": 45,
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "ForTarget": true,
+            "desc": "金色剑气"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [50051301],
+            "BornDirOffsetXLeftValue": 135,
+            "BornDirOffsetXRightValue": 135,
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "ForTarget": true,
+            "desc": "金色剑气"
+          },
+          {
+            "type": "dragfarcamera",
+            "IsDragFarest": true,
+            "NewMinArmLength": -1,
+            "NewMaxArmLength": -1,
+            "NewMinSocketZ": -1,
+            "NewMaxSocketZ": 1000,
+            "desc": "拉远镜头"
+          }
+        ]
+      }
+    ]
+  },
+ {
+    "desc": "火蛙,416334，喷岩浆",
+    "montage": "AM_szlc_wa_01_atk_34",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.5,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "bulletsActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74010207],
+            "desc": "火圈"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "火蛙,大招，喷岩浆",
+    "montage": "AM_hys_wa_01_atk_40",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.5,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 3800,
+        "desc": "霸体"
+      }
+    ],
+    "bulletsActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74010207],
+            "desc": "火圈"
+          }
+        ]
+      }
+    ]
   },
   {
     "desc": "精魄蛙",

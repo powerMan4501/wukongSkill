@@ -61,15 +61,6 @@
             "BulletNumInOneWave": 5,
             "spawnBaseSocketName": "weapon_r_index_07",
             "desc": "没火buff，赤发鬼的箭"
-          },
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 80000011,
-            "SpeedLeftValue": 1000,
-            "SpeedRightValue": 1000,
-            "ForTarget": true,
-            "spawnBaseSocketName": "weapon_r_index_03",
-            "desc": "激光"
           }
         ]
       }
@@ -138,15 +129,6 @@
             "BulletNumInOneWave": 5,
             "spawnBaseSocketName": "weapon_r_index_07",
             "desc": "没火buff，赤发鬼的箭"
-          },
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 80000011,
-            "SpeedLeftValue": 1000,
-            "SpeedRightValue": 1000,
-            "ForTarget": true,
-            "spawnBaseSocketName": "weapon_r_index_03",
-            "desc": "激光"
           }
         ]
       }
@@ -214,15 +196,6 @@
             "BulletNumInOneWave": 5,
             "spawnBaseSocketName": "weapon_r_index_07",
             "desc": "没火buff，赤发鬼的箭"
-          },
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 80000011,
-            "SpeedLeftValue": 1000,
-            "SpeedRightValue": 1000,
-            "ForTarget": true,
-            "spawnBaseSocketName": "weapon_r_index_03",
-            "desc": "激光"
           }
         ]
       }
@@ -289,15 +262,6 @@
             "BulletNumInOneWave": 5,
             "spawnBaseSocketName": "weapon_r_index_07",
             "desc": "没火buff，赤发鬼的箭"
-          },
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 80000011,
-            "SpeedLeftValue": 1000,
-            "SpeedRightValue": 1000,
-            "ForTarget": true,
-            "spawnBaseSocketName": "weapon_r_index_03",
-            "desc": "激光"
           }
         ]
       }
@@ -365,15 +329,6 @@
             "BulletNumInOneWave": 5,
             "spawnBaseSocketName": "weapon_r_index_07",
             "desc": "没火buff，赤发鬼的箭"
-          },
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 80000011,
-            "SpeedLeftValue": 1000,
-            "SpeedRightValue": 1000,
-            "ForTarget": true,
-            "spawnBaseSocketName": "weapon_r_index_03",
-            "desc": "激光"
           }
         ]
       },

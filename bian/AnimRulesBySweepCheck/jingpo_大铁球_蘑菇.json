@@ -79,8 +79,23 @@
     "montage": "AM_70_zhusun_03_atk_01",
     "linkValue": 0,
     "addRadius": 100,
-    "speedRate": 1.5,
-    "AMScaleRate": 10,
+    "speedRate": 2.5,
+    "AMSpeedRate": 2.5,
+    "AMScaleRate": 20,
+     "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [51007701],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "泥浆"
+          }
+        ]
+      }
+    ],
     "CastActions": [
       {
         "Type": "buff",
