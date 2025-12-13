@@ -1,6 +1,5 @@
 [
-  
-    {
+  {
     "nowMontage": ".AM_mgd_jsds_atk_12_01",
     "rate": 0.3,
     "type": "magic",
@@ -116,5 +115,19 @@
     "Condition": "StancePoke",
     "InputCore": "ThumbMouseButton2",
     "desc": "戳棍下,顺时针超大范围横扫 AM_mgd_jsds_atk_01_01_01"
+  },
+  {
+    "nowMontage": "AM_Wukong_ComboC_z_",
+    "rate": 0.2,
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "skill",
+        "skillID": 84321025,
+        "desc": "棍子变粗砸一下"
+      }
+    ],
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2"
   }
 ]

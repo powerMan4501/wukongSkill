@@ -9,7 +9,20 @@
         "Type": "buff",
         "BuffIDs": [66655401],
         "BuffTime": 800,
-        "desc": "棍光特效粒子"
+        "desc": "棍光特效粒子 "
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 150,
+            "ForTarget": true,
+            "desc": "发射飞剑"
+          }
+        ]
       }
     ]
   },
@@ -26,6 +39,19 @@
         "BuffTime": 3500,
         "desc": "棍光特效粒子"
       }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 150,
+            "ForTarget": true,
+            "desc": "发射飞剑"
+          }
+        ]
+      }
     ]
   },
 
@@ -40,6 +66,19 @@
         "BuffIDs": [66655403, 20103],
         "BuffTime": 3900,
         "desc": "棍光特效粒子"
+      }
+    ],
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 150,
+            "ForTarget": true,
+            "desc": "发射飞剑"
+          }
+        ]
       }
     ]
   },

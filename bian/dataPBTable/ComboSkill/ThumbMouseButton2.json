@@ -727,8 +727,8 @@
         "type": "bossskill",
         "bossLabel": "SK_HFM_Hu_Stone_01",
         "bossType": "BOSS",
-        "MagicSkillID": 202202,
-        "Name": "跳起来连续拳脚好几下，很猛"
+        "MagicSkillID": 202203,
+        "Name": "拔刀斩"
       }
     ],
     "Condition": "StancePoke",

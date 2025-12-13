@@ -60,5 +60,20 @@
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
     "desc": "立棍0，小骊龙连续锤击"
+  },
+  {
+    "nowMontage": "AM_mgd_jsds_atk_01",
+    "rate": 0.3,
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "skill",
+        "skillID": 84321006,
+        "desc": "捅一下，大圣空中转很多下，4a"
+      }
+    ],
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "残躯横扫一下捅一下"
   }
 ]

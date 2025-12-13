@@ -38,7 +38,6 @@
           "Type": "effect",
           "EffectID": 1902101
         }
-       
       ],
       "AfterActions": [
         {
@@ -52,11 +51,18 @@
             }
           ]
         },
+
         {
-          "Type": "buff",
-          "TimeDelay": 0,
-          "BuffID": 2017,
-          "BuffTime": 150
+          "Type": "add_attr",
+          "attrType": 187,
+          "attrValue": 10,
+          "desc": "回棍势"
+        },
+         {
+          "Type": "add_attr",
+          "attrType": 151,
+          "attrValue": 100,
+          "desc": "回血"
         }
       ]
     },

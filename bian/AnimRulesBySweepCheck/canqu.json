@@ -120,14 +120,6 @@
     "linkValue": 0,
     "scaleWeaponNum": 3,
     "speedRate": 1.5,
-    "CastActions": [
-      {
-        "Type": "buff",
-        "BuffIDs": [66655407],
-        "BuffTime": 2900,
-        "desc": "棍光特效粒子"
-      }
-    ],
     "SweepActions": [
       {
         "Type": "bullet",

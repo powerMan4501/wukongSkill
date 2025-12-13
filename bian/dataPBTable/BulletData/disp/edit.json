@@ -1,0 +1,17 @@
+[
+  {
+    "desc": "飞剑，修改击中音效",
+    "ID": 145,
+    "HitChrAudioID": 1021
+  },
+  {
+    "desc": "飞剑，修改击中音效",
+    "ID": 147,
+    "HitChrAudioID": 1021
+  },
+   {
+    "desc": "飞剑，修改击中音效",
+    "ID": 150,
+    "HitChrAudioID": 1021
+  }
+]

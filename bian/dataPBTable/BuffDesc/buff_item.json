@@ -227,5 +227,10 @@
         "EffectParamsFloat": []
       }
     ]
+  },
+  {
+    "ID": 92320,
+    "BuffTips": "清虚道果,15秒改成无限",
+    "Duration": -1
   }
 ]

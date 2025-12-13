@@ -7,7 +7,7 @@
       }
     ]
   },
- {
+  {
     "code": "Tab",
     "afterActions": [
       {
@@ -15,7 +15,7 @@
       }
     ]
   },
-  
+
   {
     "code": "USEL",
     "afterActions": [
@@ -120,6 +120,12 @@
         "ItemID": 2245,
         "ItemCount": 10,
         "desc": "龙光倍力丸+10个"
+      },
+      {
+        "Type": "additem",
+        "ItemID": 2224,
+        "ItemCount": 10,
+        "desc": "倍力丸+10个"
       }
     ]
   },
@@ -170,11 +176,6 @@
     ]
   },
 
-
-
-
- 
- 
   {
     "code": "daduo",
     "afterActions": [
