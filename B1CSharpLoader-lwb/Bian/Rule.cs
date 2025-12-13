@@ -604,16 +604,7 @@ namespace bian
                         EquipDesc equipDesc = GameDBRuntime.GetEquipDesc((int)action.equipId);
                         if (equipDesc != null)
                         {
-                            // BGUFunctionLibraryCS.ChangeEquip(character, (int)action.equipId);
-                            BUS_EventCollectionCS.Get(character).Evt_BattleLogicChangeEquip.Invoke(equipDesc.EquipPosition, equipDesc.Id);
-                            // Task.Run(async delegate
-                            // {
-                            //     await Task.Delay(100);
-                            //     Utils.TryRunOnGameThread((Action)delegate
-                            //     {
-                            //         BUS_EventCollectionCS.Get(character)?.Evt_OnRefreshEquip.Invoke();
-                            //     });
-                            // });
+                          Helper.setActorEquip((int)action.equipId);
                         }
                     }
 

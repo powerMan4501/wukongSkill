@@ -8,6 +8,8 @@ using b1.Protobuf.DataAPI;
 using B1UI;
 using BtlB1;
 using BtlShare;
+using CommB1;
+using CsB1;
 using CSharpModBase;
 using Newtonsoft.Json;
 using ResB1;
@@ -2459,6 +2461,43 @@ namespace bian
                 hashSet.Add(item);
             }
             bUS_GSEventCollection.Evt_ClearAbnormalState.Invoke(hashSet);
+        }
+
+
+
+        public static void setActorEquip(int EquipID)
+        {
+            APlayerController firstLocalPlayerController = UGSE_EngineFuncLib.GetFirstLocalPlayerController(GetWorld());
+            if (firstLocalPlayerController.IsNullOrDestroyed())
+            {
+                BGW_LogUtil.LogError("[TestState_NormalSkill_CompleteCoverage] CurPC.IsNullOrDestroyed!");
+                return;
+            }
+            BTF_EventCollectionCS bTF_EventCollectionCS = BTF_EventCollectionCS.Get(firstLocalPlayerController.PlayerState);
+            if (bTF_EventCollectionCS == null)
+            {
+                BGW_LogUtil.LogError("[TestState_NormalSkill_CompleteCoverage] BTFEventCollection == null!");
+                return;
+            }
+            ulong num = 0uL;
+            foreach (ReadOnlyRoleEquip equip in BGU_DataUtil.GetReadOnlyData<IBPC_PlayerRoleData, BPC_PlayerRoleData>(firstLocalPlayerController).RoleData.RoleCs.Bag.EquipList)
+            {
+                if (equip.EquipId == EquipID)
+                {
+                    num = equip.Uid;
+                    break;
+                }
+            }
+            if (num != 0)
+            {
+                CSMsgActorWearEquipReq actorWearEquip = new CSMsgActorWearEquipReq
+                {
+                    EquipUid = num
+                };
+                bTF_EventCollectionCS.Evt_ActorWearEquipReq(actorWearEquip, delegate
+                {
+                });
+            }
         }
         public static void xuelunyan()
         {

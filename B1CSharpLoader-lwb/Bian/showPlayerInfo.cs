@@ -20,11 +20,10 @@ public class ShowPlayerInfo
 
 	public static Dictionary<EBGUAttrFloat, string> BasicAttributes = new Dictionary<EBGUAttrFloat, string>
 	{
-		{ EBGUAttrFloat.Shield,  "护盾/伤害减免" },
-		{ EBGUAttrFloat.Atk, "攻击/伤害加成" },
-		{ EBGUAttrFloat.CritRate, "暴击/暴伤" },
-		{ EBGUAttrFloat.Hp,  "生命/法力" },
-		{ EBGUAttrFloat.None,  "四灾抗性和攻击：" },
+		{ EBGUAttrFloat.Shield,  "" },
+		{ EBGUAttrFloat.Atk, "" },
+		{ EBGUAttrFloat.CritRate, "" },
+		{ EBGUAttrFloat.Hp,  "" },
 		{ EBGUAttrFloat.FreezeDef,  "" },
 		{ EBGUAttrFloat.FreezeAtk,  "" },
 	};
