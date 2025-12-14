@@ -55,55 +55,44 @@
   {
     "ID": 2804,
     "BuffTips": "乾坤彩葫芦-加攻击",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
     "Duration": 60000,
+    "MaxLayer": 10,
     "BuffEffects": [
       {
         "EffectTrigger": 1,
         "EffectType": 2,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [119, 3000, 0, 0],
+        "EffectParams": [119, 1000, 0, 0],
         "EffectParamsFloat": []
       },
-      {
-        "EffectTrigger": 14,
-        "EffectType": 3,
+       {
+        "EffectTrigger": 1,
+        "EffectType": 2,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [186, 1, 0, 0],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 14,
-        "EffectType": 3,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [151, 100, 0, 1],
+        "EffectParams": [103, 15, 0, 0],
         "EffectParamsFloat": []
       }
     ]
   },
   {
     "ID": 66018010,
-    "BuffTips": "上清宝葫芦专用，恢复葫芦中的盛酒量，15秒内免疫死亡",
+    "BuffTips": "上清宝葫芦专用，75秒内增加10点攻击力和暴击",
     "Duration": 1000,
     "BuffEffects": [
-      {
-        "EffectTrigger": 1,
-        "EffectType": 3,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [186, 1, 0, 0],
-        "EffectParamsFloat": []
-      },
-
+     
       {
         "EffectTrigger": 1,
         "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [706],
-        "EffectParamsFloat": [15000]
+        "EffectParams": [888666029],
+        "EffectParamsFloat": [75000]
       }
     ]
   },

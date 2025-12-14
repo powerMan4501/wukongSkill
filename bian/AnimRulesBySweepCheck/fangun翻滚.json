@@ -84,7 +84,65 @@
       }
     ]
   },
+  {
+    "montage": "Attack/ComboC/AM_Wukong_ComboC_q",
+    "linkValue": 0.3333333,
+    "scaleWeaponNum": 3,
 
+    "MoveOffset": 100,
+    "CastActions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655401],
+        "BuffTime": 3000,
+        "desc": "棍光特效粒子"
+      }
+    ],
+    "SweepActions": [
+       {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 88880009,
+            "hasBuff": 888666007,
+            "ForTarget": true,
+            "spawnBaseSocketName": "weapon_r_index_02",
+            "desc": "有火buff，火焰剑气"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 88880003,
+            "hasBuff": 888666006,
+            "BornDirOffsetXLeftValue": 91,
+            "BornDirOffsetXRightValue": 91,
+            "ForTarget": true,
+            "spawnBaseSocketName": "weapon_r_index_02",
+            "desc": "有冰buff，冰剑气"
+          },
+          {
+            "ProjectTileID": 30142501,
+            "noHasAnyBuff": [888666007, 888666006, 888666008],
+            "SpeedLeftValue": 6000,
+            "SpeedRightValue": 6000,
+            "AttachToSpawnBase": true,
+            "spawnBaseSocketName": "weapon_r_index_04",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "desc": "没有冰火毒buff，雷球"
+          },
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 30131501,
+            "hasBuff": 888666008,
+            "ForTarget": true,
+            "spawnBaseSocketName": "weapon_r_index_02",
+            "desc": "有毒buff，红剑气"
+          }
+        ]
+      }
+    ]
+  },
   {
     "desc": "棍花 ",
     "montage": "AM_Wukong_ComboC_z_loop",

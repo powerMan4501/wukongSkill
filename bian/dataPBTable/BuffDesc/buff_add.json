@@ -1,5 +1,4 @@
 [
-  
   {
     "ID": 888666001,
     "BuffTips": "主角，2倍速度，完美闪避范围加大，死亡自动复活",
@@ -13,7 +12,7 @@
         "EffectParams": [],
         "EffectParamsFloat": [25000.0, 25000.0, 25000.0]
       },
-      
+
       {
         "EffectTrigger": 1,
         "EffectType": 152,
@@ -30,7 +29,6 @@
         "EffectParams": [],
         "EffectParamsFloat": []
       }
-   
     ]
   },
   {
@@ -183,6 +181,55 @@
           "EnvQuery'/Game/00Main/Design/AI/EQS/EQ_TeleportSkillPoint_Fice.EQ_TeleportSkillPoint_Fice'"
         ],
         "EffectParams": [0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 888666029,
+    "BuffTips": "加10攻击/10暴击",
+    "Duration": -1,
+    "MaxLayer": 10,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [103, 10, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [111, 1000, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+
+  {
+    "ID": 888666030,
+    "BuffTips": "加10攻击/10伤害加成",
+    "Duration": -1,
+    "MaxLayer": 10,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [103, 10, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [119, 1000, 0, 0],
         "EffectParamsFloat": []
       }
     ]

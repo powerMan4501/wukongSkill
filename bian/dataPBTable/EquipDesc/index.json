@@ -48,8 +48,7 @@
   {
     "Id": 16028,
     "EquipName": "博山炉",
-    "EquipEffectId": 106028,
-    "EquipEffectDesc": "饮尽葫芦后，获得15%伤害减免，持续60秒"
+    "EquipEffectDesc": "饮尽葫芦后，获得15%伤害减免，持续600秒"
   },
   {
     "Id": 17001,

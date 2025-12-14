@@ -98,7 +98,23 @@
         "EffectType": 3,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [152, 600, 0, 0],
+        "EffectParams": [152, 200, 0, 0],
+        "EffectParamsFloat": []
+      },
+        {
+        "EffectTrigger": 1,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [188, 200, 0, 0],
+        "EffectParamsFloat": []
+      },
+        {
+        "EffectTrigger": 1,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [189, 200, 0, 0],
         "EffectParamsFloat": []
       },
       {
@@ -119,7 +135,7 @@
   {
     "ID": 96033,
     "BuffTips": "长生炉",
-    "Duration": 60000
+    "Duration": 600000
   },
   {
     "ID": 92247,
