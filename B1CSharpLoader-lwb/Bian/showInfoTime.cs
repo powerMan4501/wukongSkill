@@ -72,7 +72,7 @@ public class TimerComp : GameStateSystemBase
                 // 生命/法力
                 float Mp = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.Mp);
                 float def = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.Def);
-                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"生命：{(int)value}， 法力：{(int)Mp}, 防御：{(int)def}");
+                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"生命：{(int)value}， 法力：{(int)Mp},  防御：{(int)def}");
             }
 
             else if (attribute.Key == EBGUAttrFloat.Atk)
@@ -106,6 +106,16 @@ public class TimerComp : GameStateSystemBase
                 float PoisonDef = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.PoisonAtk);
                 float ThunderDef = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.ThunderAtk);
                 ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"四灾攻击: 冰:{(int)FreezeDef}, 火:{(int)BurnDef},  毒:{(int)PoisonDef},  雷:{(int)ThunderDef}");
+            }
+               else if (attribute.Key == EBGUAttrFloat.CurEnergy)
+            {
+                // 抗性
+                float TransEnergyMax = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.TransEnergyMax);
+                float FabaoEnergy = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.FabaoEnergy);
+                float VigorEnergy = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.VigorEnergy);
+                float CommDropAddition = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.CommDropAddition);
+
+                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"神力:{(int)value} /{(int)TransEnergyMax},  法宝:{(int)FabaoEnergy},  精魄:{(int)VigorEnergy}, 掉宝：{(int)CommDropAddition}");
             }
             index++;
         }
