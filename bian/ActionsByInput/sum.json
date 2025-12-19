@@ -134,6 +134,13 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_hfdw.TAMER_gycy_hfdw_C",
         "desc": "第一关·黑风大王·人形态（BOSS）"
       },
+
+
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_xiong_02.TAMER_gycy_xiong_02_C",
+        "desc": "第一关·黑熊精）"
+      },
       {
         "Type": "diff_teamid",
         "TimeDelay": 3000,
@@ -519,6 +526,39 @@
         "Type": "spaw_monster",
         "SummonTamerTemplatePath":"/Game/00Main/Design/Units/HYS/TAMER_hys_hms.TAMER_hys_hms_C",
         "desc": "石父"
+      },
+     
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+   {
+    "code": "xius",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath":"/Game/00Main/Design/Units/GYCY/TAMER_wxs_baiyi_01.TAMER_wxs_baiyi_01_C",
+        "desc": "_baiyi"
+      },
+     
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "guang",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath":"/Game/00Main/Design/Units/GYCY/TAMER_gycy_lang_04.TAMER_gycy_lang_04_C",
+        "desc": ""
       },
      
       {

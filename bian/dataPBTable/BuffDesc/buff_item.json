@@ -4,7 +4,7 @@
     "BuffTips": "芝田玉膏，就是蜂山石髓,不消耗葫芦次数",
     "BuffActiveCondition": {
       "ConditionType": 0,
-      "ConditionParams": "9999"
+      "ConditionParams": ""
     }
   },
   {
@@ -101,7 +101,7 @@
         "EffectParams": [152, 200, 0, 0],
         "EffectParamsFloat": []
       },
-        {
+      {
         "EffectTrigger": 1,
         "EffectType": 3,
         "EffectTargetSelectType": 0,
@@ -109,12 +109,20 @@
         "EffectParams": [188, 200, 0, 0],
         "EffectParamsFloat": []
       },
-        {
+      {
         "EffectTrigger": 1,
         "EffectType": 3,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [189, 200, 0, 0],
+        "EffectParams": [201, 200, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [202, 200, 0, 0],
         "EffectParamsFloat": []
       },
       {
@@ -134,8 +142,9 @@
   },
   {
     "ID": 96033,
-    "BuffTips": "长生炉",
-    "Duration": 600000
+    "BuffTips": "长生炉，博山炉",
+    "Duration": 600000,
+    "MaxLayer": 10
   },
   {
     "ID": 92247,
@@ -163,7 +172,7 @@
   {
     "ID": 92253,
     "BuffTips": "聚珍伏虎丸，加15攻击15%伤害加成",
-    "MaxLayer": 3,
+    "MaxLayer": 10,
     "BuffEffects": [
       {
         "EffectTrigger": 1,
@@ -186,7 +195,7 @@
   {
     "ID": 92227,
     "BuffTips": "伏虎丸，加8点攻击, 8%伤害加成",
-    "MaxLayer": 3,
+    "MaxLayer": 10,
     "BuffEffects": [
       {
         "EffectTrigger": 1,
@@ -209,7 +218,7 @@
   {
     "ID": 92224,
     "BuffTips": "倍力丸，加10%暴击率10%爆伤",
-    "MaxLayer": 3,
+    "MaxLayer": 10,
     "BuffEffects": [
       {
         "EffectTrigger": 1,
@@ -228,6 +237,11 @@
         "EffectParamsFloat": []
       }
     ]
+  },
+  {
+    "ID": 92245,
+    "BuffTips": "龙光-加15攻击/15暴击/20爆伤",
+    "MaxLayer": 10
   },
   {
     "ID": 96034,

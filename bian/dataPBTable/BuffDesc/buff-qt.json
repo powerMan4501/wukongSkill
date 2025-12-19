@@ -1,0 +1,17 @@
+[
+  {
+    "ID": 914699,
+    "BuffTips": "对主角悟空_6级_雷（天龙棍）,改成无限时间",
+    "Duration": 800000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [120, 2000, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  }
+]

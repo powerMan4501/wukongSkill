@@ -9,6 +9,15 @@
         "BuffIDs": [66655409],
         "BuffTime": 1000,
         "desc": "棍光特效粒子"
+      },
+      {
+        "type": "dragfarcamera",
+        "IsDragFarest": true,
+        "NewMinArmLength": -1,
+        "NewMaxArmLength": -1,
+        "NewMinSocketZ": -1,
+        "NewMaxSocketZ": 1000,
+        "desc": "拉远镜头"
       }
       
     ],
@@ -77,6 +86,15 @@
         "BuffIDs": [66655409],
         "BuffTime": 1800,
         "desc": "棍光特效粒子"
+      },
+      {
+        "type": "dragfarcamera",
+        "IsDragFarest": true,
+        "NewMinArmLength": -1,
+        "NewMaxArmLength": -1,
+        "NewMinSocketZ": -1,
+        "NewMaxSocketZ": 1000,
+        "desc": "拉远镜头"
       }
     ],
     "SweepActions": [
@@ -145,6 +163,15 @@
         "BuffIDs": [66655409],
         "BuffTime": 1800,
         "desc": "棍光特效粒子"
+      },
+      {
+        "type": "dragfarcamera",
+        "IsDragFarest": true,
+        "NewMinArmLength": -1,
+        "NewMaxArmLength": -1,
+        "NewMinSocketZ": -1,
+        "NewMaxSocketZ": 1000,
+        "desc": "拉远镜头"
       }
     ],
     "SweepActions": [
@@ -211,6 +238,15 @@
         "BuffIDs": [66655409],
         "BuffTime": 1800,
         "desc": "棍光特效粒子"
+      },
+      {
+        "type": "dragfarcamera",
+        "IsDragFarest": true,
+        "NewMinArmLength": -1,
+        "NewMaxArmLength": -1,
+        "NewMinSocketZ": -1,
+        "NewMaxSocketZ": 1000,
+        "desc": "拉远镜头"
       }
     ],
     "SweepActions": [
@@ -278,6 +314,15 @@
         "BuffIDs": [66655408],
         "BuffTime": 1200,
         "desc": "棍光"
+      },
+      {
+        "type": "dragfarcamera",
+        "IsDragFarest": true,
+        "NewMinArmLength": -1,
+        "NewMaxArmLength": -1,
+        "NewMinSocketZ": -1,
+        "NewMaxSocketZ": 1000,
+        "desc": "拉远镜头"
       }
     ],
     "SweepActions": [

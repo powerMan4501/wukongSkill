@@ -281,7 +281,7 @@
     ]
   },
   {
-    "code": "jingu",
+    "code": "ZZ",
     "afterActions": [
       {
         "Type": "change_equip",
@@ -290,19 +290,10 @@
       }
     ]
   },
-  {
-    "code": "longzhang",
-    "afterActions": [
-      {
-        "Type": "change_equip",
-        "equipId": 15015,
-        "desc": "切换武器为飞龙宝杖"
-      }
-    ]
-  },
+ 
 
   {
-    "code": "sanjian",
+    "code": "CC",
     "afterActions": [
       {
         "Type": "change_equip",

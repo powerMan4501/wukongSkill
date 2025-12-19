@@ -59,7 +59,7 @@
       "ConditionType": 0,
       "ConditionParams": ""
     },
-    "Duration": 60000,
+    "Duration": 75000,
     "MaxLayer": 10,
     "BuffEffects": [
       {

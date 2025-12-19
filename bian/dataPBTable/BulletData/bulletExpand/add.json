@@ -61,7 +61,7 @@
   {
     "desc": "克隆赤发鬼的箭 1017261",
     "ID": 88880012,
-    "HitEffectsforChr": [888555019],
+    "HitEffectsforChr": [888555021],
     "HitDestructibleStrengthType": 4,
     "BulletSweepCheckGap": 5,
     "BulletSweepCheckDelayTime": 0.0,
