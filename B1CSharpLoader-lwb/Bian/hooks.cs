@@ -511,6 +511,7 @@ public class Hooks
             {
                 Helper.updateIsPlayVigorSkillByID(false);
             }
+            
 
             var allRules = GetCachedAnimRules();
             if (allRules == null || allRules.Count == 0) return;
@@ -743,20 +744,20 @@ public class Hooks
     public static class BeAttackedTeamCheckPatch
     {
         [HarmonyPatch(typeof(BUS_BeAttackedComp), "OnHandleNormalDamageEffect")]
-         private static bool Prefix(BUS_BeAttackedComp __instance, AActor Attacker, in FSkillDamageConfig SkillDamageConfig, in FEffectInstReq EffectInstReq, in FBattleAttrSnapShot Attacker_AttrMemData)
-    {
-        // 获取攻击者和受击者的团队ID
-        var attackerTeamId = (Attacker as BGUCharacterCS)?.GetTeamIDInCS();
-        var victimTeamId = (__instance.GetOwner() as BGUCharacterCS)?.GetTeamIDInCS();
-        var playerTeamID = Helper.GetBGUPlayerCharacterCS().GetTeamIDInCS();
-        // 如果是同一阵营，跳过伤害计算
-        if (attackerTeamId == victimTeamId&& playerTeamID == victimTeamId)
+        private static bool Prefix(BUS_BeAttackedComp __instance, AActor Attacker, in FSkillDamageConfig SkillDamageConfig, in FEffectInstReq EffectInstReq, in FBattleAttrSnapShot Attacker_AttrMemData)
         {
-            return false; // 跳过原始方法的执行
+            // 获取攻击者和受击者的团队ID
+            var attackerTeamId = (Attacker as BGUCharacterCS)?.GetTeamIDInCS();
+            var victimTeamId = (__instance.GetOwner() as BGUCharacterCS)?.GetTeamIDInCS();
+            var playerTeamID = Helper.GetBGUPlayerCharacterCS().GetTeamIDInCS();
+            // 如果是同一阵营，跳过伤害计算
+            if (attackerTeamId == victimTeamId && playerTeamID == victimTeamId)
+            {
+                return false; // 跳过原始方法的执行
+            }
+
+            return true; // 继续执行原始方法
         }
-        
-        return true; // 继续执行原始方法
-    }
     }
 
 }

@@ -21,11 +21,11 @@ public class ShowPlayerInfo
 	public static Dictionary<EBGUAttrFloat, string> BasicAttributes = new Dictionary<EBGUAttrFloat, string>
 	{
 		{ EBGUAttrFloat.Shield,  "" },
-		{ EBGUAttrFloat.Atk, "" },
 		{ EBGUAttrFloat.CritRate, "" },
 		{ EBGUAttrFloat.Hp,  "" },
 		{ EBGUAttrFloat.FreezeDef,  "" },
 		{ EBGUAttrFloat.FreezeAtk,  "" },
+		{ EBGUAttrFloat.FreezeAbnormalAcc,  "" },
 		{ EBGUAttrFloat.CurEnergy,  "" },
 	};
 
@@ -53,7 +53,7 @@ public class ShowPlayerInfo
 	public static FSlateFontInfo FontInfo = new FSlateFontInfo
 	{
 		FontObject = UObject.LoadObject<UFont>(null, "/Game/00MainHZ/UI/Fonts/B1Font_Main.B1Font_Main"),
-		Size = 32
+		Size = 33
 	};
 	// 添加特殊属性字体样式
 	public static FSlateFontInfo BoldFontInfo = new FSlateFontInfo
@@ -234,44 +234,44 @@ public class ShowPlayerInfo
 
 
 	public static void ClearAllUI()
-{
+	{
 
 
-	
-    // 先处理Key文本块
-    if (BasicInfoKs.Count > 0)
-    {
-        // 创建临时列表存储要移除的元素
-        var keysToRemove = new List<UTextBlock>(BasicInfoKs);
-        foreach (var textBlock in keysToRemove)
-        {
-            if (IsValidUObject(textBlock))
-            {
-                textBlock.SetText(FText.GetEmpty());
-                textBlock.RemoveFromParent();
-            }
-        }
-        // 在循环结束后清空列表
-        BasicInfoKs.Clear();
-    }
 
-    // 处理Value文本块
-    if (BasicInfoVs.Count > 0)
-    {
-        // 创建临时列表存储要移除的元素
-        var valuesToRemove = new List<UTextBlock>(BasicInfoVs);
-        foreach (var textBlock in valuesToRemove)
-        {
-            if (IsValidUObject(textBlock))
-            {
-                textBlock.SetText(FText.GetEmpty());
-                textBlock.RemoveFromParent();
-            }
-        }
-        // 在循环结束后清空列表
-        BasicInfoVs.Clear();
-    }
-}
+		// 先处理Key文本块
+		if (BasicInfoKs.Count > 0)
+		{
+			// 创建临时列表存储要移除的元素
+			var keysToRemove = new List<UTextBlock>(BasicInfoKs);
+			foreach (var textBlock in keysToRemove)
+			{
+				if (IsValidUObject(textBlock))
+				{
+					textBlock.SetText(FText.GetEmpty());
+					textBlock.RemoveFromParent();
+				}
+			}
+			// 在循环结束后清空列表
+			BasicInfoKs.Clear();
+		}
 
- 
+		// 处理Value文本块
+		if (BasicInfoVs.Count > 0)
+		{
+			// 创建临时列表存储要移除的元素
+			var valuesToRemove = new List<UTextBlock>(BasicInfoVs);
+			foreach (var textBlock in valuesToRemove)
+			{
+				if (IsValidUObject(textBlock))
+				{
+					textBlock.SetText(FText.GetEmpty());
+					textBlock.RemoveFromParent();
+				}
+			}
+			// 在循环结束后清空列表
+			BasicInfoVs.Clear();
+		}
+	}
+
+
 }

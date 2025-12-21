@@ -168,11 +168,11 @@ namespace bian
         {
             var listData = BG_ProtobufDataAPI<FUStSummonCopySkillDesc>.Get().GetAll();
             var character = Helper.GetBGUPlayerCharacterCS();
-            if (listData != null && skillId > 0)
+            if (listData != null && skillId > 0 && skillId != 10100 && skillId != 10199)
             {
 
                 FUStSkillSDesc skillSDesc = BGW_GameDB.GetSkillSDesc(skillId, character);
-                if (!listData.ContainsKey(skillId) && skillSDesc != null)
+                if (!listData.ContainsKey(skillId) && skillSDesc != null && !skillSDesc.TemplatePath.Contains("AM_Wukong_heyao_"))
                 {
                     var newSkill = new FUStSummonCopySkillDesc();
                     newSkill.ID = skillId;
@@ -622,6 +622,11 @@ namespace bian
             try
             {
                 isPlayVigorSkillByID = true;
+                DelayExecute(222, () =>
+                {
+                    BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
+                    bUS_GSEventCollection?.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.SkillSuperArmor, 10000);
+                });
                 playVigorSkillID = (int)finalId;
                 playVigorCharacter = character;
                 if (Scale3D != null && Scale3D > 0)
@@ -926,6 +931,11 @@ namespace bian
             data.DurMagicallyChange = true;
             data.RecoverSkillID = 10199;
             isPlayVigorSkillByID = true;
+             DelayExecute(222, () =>
+                       {
+                           BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
+                           bUS_GSEventCollection?.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.SkillSuperArmor, 10000);
+                       });
             // 打断当前所有动画
             UGSE_AnimFuncLib.StopAllMontages(character, 0f);
             UGSE_AnimFuncLib.TickAnimationAndRefreshBone(character);
@@ -964,6 +974,12 @@ namespace bian
             data.DurMagicallyChange = true;
             data.RecoverSkillID = 10199;
             isPlayVigorSkillByID = true;
+
+            DelayExecute(222, () =>
+                       {
+                           BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
+                           bUS_GSEventCollection?.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.SkillSuperArmor, 10000);
+                       });
             // 打断当前所有动画
             UGSE_AnimFuncLib.StopAllMontages(character, 0f);
             UGSE_AnimFuncLib.TickAnimationAndRefreshBone(character);

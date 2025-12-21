@@ -598,13 +598,21 @@ namespace bian
                         bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke((EBGUAttrFloat)(action.attrType ?? 151), action?.attrValue ?? 100);
                     }
                     break;
+
+                case "decrease_Abnormal":
+                    BUS_GSEventCollection bUS_GSEventCollection_ = BUS_EventCollectionCS.Get(character);
+                    if (bUS_GSEventCollection_ != null)
+                    {
+                        bUS_GSEventCollection_.Evt_DecreaseAbnormalAccValue.Invoke((EAbnormalStateType)(action.attrType ?? 1), action?.attrValue ?? 1000);
+                    }
+                    break;
                 case "change_equip":
                     if (action?.equipId != null)
                     {
                         EquipDesc equipDesc = GameDBRuntime.GetEquipDesc((int)action.equipId);
                         if (equipDesc != null)
                         {
-                          Helper.setActorEquip((int)action.equipId);
+                            Helper.setActorEquip((int)action.equipId);
                         }
                     }
 
@@ -709,7 +717,7 @@ namespace bian
             }
             return false;
         }
-        public async void  DoAfterActions(List<RuleAction> actions)
+        public async void DoAfterActions(List<RuleAction> actions)
         {
             if (actions == null || actions.Count == 0) return;
             var character = Helper.GetBGUPlayerCharacterCS();
@@ -751,7 +759,7 @@ namespace bian
                             await Task.Delay((int)intervalTime);
                             DoAction(action, 10000);
                         }
-                       
+
                     }
                     else
                     {
