@@ -195,45 +195,56 @@
     "desc": "立棍平A4 疯虎"
   },
 
+ 
+ 
   {
     "nowMontage": "AM_Wukong_ComboB_q4.AM_Wukong_ComboB_q4",
     "rate": 0.3,
-    "type": "magic",
-    "skillID": 8537,
-    "UnitScale": 0.5,
-    "Condition": "hasBuff",
-    "InputCore": "ThumbMouseButton2",
-    "conditionValue": 888666007,
-    "desc": "戳棍平A4，火buff接燧先锋"
-  },
-  {
-    "nowMontage": "AM_Wukong_ComboB_q4.AM_Wukong_ComboB_q4",
-    "rate": 0.3,
-    "type": "magic",
-    "skillID": 8595,
-    "Condition": "hasBuff",
-    "conditionValue": 888666007,
-    "InputCore": "ThumbMouseButton2",
-    "desc": "戳棍平A4，冰buff，冰蛙"
-  },
-  {
-    "nowMontage": "AM_Wukong_ComboB_q4.AM_Wukong_ComboB_q4",
-    "rate": 0.3,
-    "type": "magic",
-    "skillID": 8597,
-    "Condition": "hasBuff",
-    "conditionValue": 888666008,
-    "InputCore": "ThumbMouseButton2",
-    "desc": "戳棍平A4，毒buff，毒蛙"
-  },
-  {
-    "nowMontage": "AM_Wukong_ComboB_q4.AM_Wukong_ComboB_q4",
-    "rate": 0.3,
-    "type": "magic",
-    "skillID": 8599,
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8595,
+        "MagicSkillID": 11395,
+        "hasBuff": 888666006,
+        "desc": "有冰buff,冰蛙"
+      },
+
+      {
+        "type": "magicskill",
+        "magicID": 8596,
+        "MagicSkillID": 11396,
+        "hasBuff": 888666007,
+        "desc": "有火buff,火蛙"
+      },
+
+      {
+        "type": "magicskill",
+        "magicID": 8597,
+        "MagicSkillID": 11397,
+        "hasBuff": 888666008,
+        "desc": "有毒buff,毒蛙"
+      },
+
+      {
+        "type": "magicskill",
+        "magicID": 8598,
+        "MagicSkillID": 11398,
+        "hasBuff": 888666005,
+        "desc": "有雷buff,雷蛙"
+      },
+
+      {
+        "type": "magicskill",
+        "magicID": 8599,
+        "MagicSkillID": 11399,
+        "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+        "desc": "石蛙"
+      }
+    ],
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "戳棍平A4，石蛙"
+    "desc": "戳棍平A4"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05",
@@ -638,7 +649,7 @@
     "rate": 0.1,
     "type": "actions",
     "afterActions": [
-     {
+      {
         "type": "bossskill",
         "bossLabel": "SK_LuoChaGui_01",
         "bossType": "BOSS",
@@ -655,7 +666,7 @@
     "rate": 0.1,
     "type": "actions",
     "afterActions": [
-       {
+      {
         "type": "bossskill",
         "bossLabel": "SK_LuoChaGui_01",
         "bossType": "BOSS",
@@ -709,7 +720,7 @@
         "type": "bossskill",
         "bossLabel": "SK_HFM_Hu_Stone_01",
         "bossType": "BOSS",
-        "MagicSkillID":202204 ,
+        "MagicSkillID": 202204,
         "Name": "突进咆哮，追击打一下"
       }
     ],

@@ -59,12 +59,27 @@
     ]
   },
   {
-    "code": "siss",
+    "code": "susss",
     "afterActions": [
       {
         "Type": "spaw_monster",
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_03.TAMER_hfm_shanzhen_03_C",
         "desc": "石双双"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_01a.TAMER_hfm_shanzhen_01a_C",
+        "desc": "石磷磷"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_02.TAMER_hfm_shanzhen_02_C",
+        "desc": "石苍苍"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_05_bridge.TAMER_hfm_shanzhen_05_bridge_C",
+        "desc": "石苍苍2"
       },
       {
         "Type": "diff_teamid",
@@ -134,7 +149,6 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_hfdw.TAMER_gycy_hfdw_C",
         "desc": "第一关·黑风大王·人形态（BOSS）"
       },
-
 
       {
         "Type": "spaw_monster",
@@ -270,7 +284,7 @@
   },
 
   {
-    "code": "gusong",
+    "code": "sugus",
     "afterActions": [
       {
         "Type": "spaw_monster",
@@ -312,12 +326,12 @@
     ]
   },
   {
-    "code": "shanhu",
+    "code": "suhux",
     "afterActions": [
       {
         "Type": "spaw_monster",
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_bashanhu_01.TAMER_hfm_bashanhu_01_C",
-        "desc": "huxianfeng"
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_hu_01.TAMER_hfm_hu_01_C",
+        "desc": "第二关·初代“虎先锋”（BOSS）"
       },
       {
         "Type": "diff_teamid",
@@ -326,7 +340,38 @@
       }
     ]
   },
+  {
+    "code": "suhuc",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shawuliang_01a.TAMER_hfm_shawuliang_01a_C",
+        "desc": "第二关·虎伥（BOSS）"
+      },
 
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "sushu",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_bashanhu_01.TAMER_hfm_bashanhu_01_C",
+        "desc": "疯虎"
+      },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
   {
     "code": "xioali",
     "afterActions": [
@@ -433,7 +478,7 @@
     ]
   },
 
-   {
+  {
     "code": "xuewa",
     "afterActions": [
       {
@@ -441,7 +486,7 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_lys_xuewa_01.TAMER_lys_xuewa_01_C",
         "desc": "第三关·浪里个浪"
       },
-     
+
       {
         "Type": "diff_teamid",
         "TimeDelay": 3000,
@@ -449,7 +494,7 @@
       }
     ]
   },
-   {
+  {
     "code": "duwa",
     "afterActions": [
       {
@@ -457,7 +502,7 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_wa_01.TAMER_psd_wa_01_C",
         "desc": "第四关·波里个波（BOSS）"
       },
-     
+
       {
         "Type": "diff_teamid",
         "TimeDelay": 3000,
@@ -466,7 +511,7 @@
     ]
   },
 
-     {
+  {
     "code": "huowa",
     "afterActions": [
       {
@@ -474,7 +519,7 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_wa_01.TAMER_hys_wa_01_C",
         "desc": "第五关·波浪浪（BOSS）"
       },
-     
+
       {
         "Type": "diff_teamid",
         "TimeDelay": 3000,
@@ -483,7 +528,7 @@
     ]
   },
 
-    {
+  {
     "code": "shiwa",
     "afterActions": [
       {
@@ -491,7 +536,7 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_szlc_wa_01.TAMER_szlc_wa_01_C",
         "desc": "第六关·浪波波（BOSS）"
       },
-     
+
       {
         "Type": "diff_teamid",
         "TimeDelay": 3000,
@@ -499,51 +544,16 @@
       }
     ]
   },
-
 
   {
     "code": "lingz",
     "afterActions": [
       {
         "Type": "spaw_monster",
-        "SummonTamerTemplatePath":"/Game/00Main/Design/Units/LYS/TAMER_pds_lingzhijing_03a.TAMER_pds_lingzhijing_03a_C",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_pds_lingzhijing_03a.TAMER_pds_lingzhijing_03a_C",
         "desc": "灵芝精"
       },
-     
-      {
-        "Type": "diff_teamid",
-        "TimeDelay": 3000,
-        "desc": "让范围3000以内的角色敌友不分"
-      }
-    ]
-  },
 
-
-    {
-    "code": "shifu",
-    "afterActions": [
-      {
-        "Type": "spaw_monster",
-        "SummonTamerTemplatePath":"/Game/00Main/Design/Units/HYS/TAMER_hys_hms.TAMER_hys_hms_C",
-        "desc": "石父"
-      },
-     
-      {
-        "Type": "diff_teamid",
-        "TimeDelay": 3000,
-        "desc": "让范围3000以内的角色敌友不分"
-      }
-    ]
-  },
-   {
-    "code": "xius",
-    "afterActions": [
-      {
-        "Type": "spaw_monster",
-        "SummonTamerTemplatePath":"/Game/00Main/Design/Units/GYCY/TAMER_wxs_baiyi_01.TAMER_wxs_baiyi_01_C",
-        "desc": "_baiyi"
-      },
-     
       {
         "Type": "diff_teamid",
         "TimeDelay": 3000,
@@ -553,14 +563,184 @@
   },
 
   {
-    "code": "guang",
+    "code": "shifu",
     "afterActions": [
       {
         "Type": "spaw_monster",
-        "SummonTamerTemplatePath":"/Game/00Main/Design/Units/GYCY/TAMER_gycy_lang_04.TAMER_gycy_lang_04_C",
-        "desc": ""
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_hms.TAMER_hys_hms_C",
+        "desc": "石父"
       },
-     
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "suxiu",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_wxs_baiyi_01.TAMER_wxs_baiyi_01_C",
+        "desc": "_baiyi"
+      },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "suniu",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_techushi_01.TAMER_hys_techushi_01_C",
+        "desc": "牛侍长"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_techushi_03.TAMER_hys_techushi_03_C",
+        "desc": "牛力士"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/BSD/TAMER_bsd_techushi_03.TAMER_bsd_techushi_03_C",
+        "desc": "牛力士"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_yinbingniumo_01.TAMER_hys_yinbingniumo_01_C",
+        "desc": "阴兵火牛"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "sucong",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_youyan_02.TAMER_psd_youyan_02_C",
+        "desc": "第四关·百足虫（BOSS）"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_jiachongzongbing_02.TAMER_psd_jiachongzongbing_02_C",
+        "desc": "第四关·虫总兵（BOSS）"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "susun",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_lys_baitouweng_01.TAMER_lys_baitouweng_01_C",
+        "desc": "隼居士"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_bxa_01a_preenter_02.TAMER_hfm_bxa_01a_preenter_02_C",
+        "desc": "鼠司空"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_bxa_01a_preenter_03.TAMER_hfm_bxa_01a_preenter_03_C",
+        "desc": "鼠司空"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_bxa_01a_preenter_01.TAMER_hfm_bxa_01a_preenter_01_C",
+        "desc": "鼠司空"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "suhc",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_cunmin_05a_hatch.TAMER_psd_cunmin_05a_hatch_C",
+        "desc": "傀蛛士"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_cunmin_05a_zys.TAMER_psd_cunmin_05a_zys_C",
+        "desc": "傀蛛士"
+      },
+
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_cunmin_05a.TAMER_psd_cunmin_05a_C",
+        "desc": "傀蛛士"
+      },
+
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_huangchong_01_fuchong.TAMER_psd_huangchong_01_fuchong_C",
+        "desc": "蜢虫精"
+      },
+
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_huangchong_01.TAMER_psd_huangchong_01_C",
+        "desc": "蜢虫精"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "sulang",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_lang_08_NotMove.TAMER_gycy_lang_08_NotMove_C",
+        "desc": "狼弓手"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_lang_08.TAMER_gycy_lang_08_C",
+        "desc": "狼弓手"
+      },
+
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_guyao_01_stand.TAMER_hfm_guyao_01_stand_C",
+        "desc": "古灵精"
+      },
+
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_guyao_01_realstand.TAMER_hfm_guyao_01_realstand_C",
+        "desc": "古灵精"
+      },
       {
         "Type": "diff_teamid",
         "TimeDelay": 3000,

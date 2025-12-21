@@ -1,0 +1,47 @@
+[
+  {
+    "code": "jic",
+    "afterActions": [
+      {
+        "Type": "decrease_Abnormal",
+        "attrType": 1,
+        "attrValue": 1000,
+        "desc": "降低冰异常"
+      }
+    ]
+  },
+   {
+    "code": "jhuo",
+    "afterActions": [
+      {
+        "Type": "decrease_Abnormal",
+        "attrType": 2,
+        "attrValue": 1000,
+        "desc": "降低火异常"
+      }
+    ]
+  },
+   {
+    "code": "jdu",
+    "afterActions": [
+      {
+        "Type": "decrease_Abnormal",
+        "attrType": 3,
+        "attrValue": 1000,
+        "desc": "降低毒异常"
+      }
+    ]
+  },
+
+  {
+    "code": "jlei",
+    "afterActions": [
+      {
+        "Type": "decrease_Abnormal",
+        "attrType": 4,
+        "attrValue": 1000,
+        "desc": "降低雷异常"
+      }
+    ]
+  }
+]

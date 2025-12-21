@@ -19,7 +19,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146718281"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146983971"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Hair/HAIR_body_baseshort.HAIR_body_baseshort_TFX",
@@ -32,7 +32,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146718280"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146983970"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Hair/HAIR_legs_new.HAIR_legs_new_TFX",
@@ -45,7 +45,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146718279"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146983969"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Hair/HAIR_neck_gs.HAIR_neck_gs_TFX",
@@ -58,7 +58,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146718278"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146983968"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Hair/Hands.Hands_TFX",
@@ -71,7 +71,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146718277"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146983967"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Hair/HAIR_body_long_gs.HAIR_body_long_gs_TFX",
@@ -84,7 +84,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146718276"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146983966"
       }
     ],
     "InteractBones": null,

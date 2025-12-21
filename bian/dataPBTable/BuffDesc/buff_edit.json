@@ -23,7 +23,20 @@
       "ConditionParams": "888666007"
     }
   },
- 
+  {
+    "ID": 2017,
+    "BuffTips": "天龙棍蓄雷Buff",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 95,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [4, 6, 1, 1000],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
 
   {
     "ID": 2026,
@@ -285,7 +298,7 @@
       }
     ]
   },
- 
+
   {
     "ID": 503,
     "BuffTips": "雷音寺地牢红眼BUFF（主角艰难行走改成加血上限）",

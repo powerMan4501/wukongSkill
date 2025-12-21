@@ -24,7 +24,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146748216"
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS_LaoHeShang/Materials/MF_HFS_LaoHeShang_Hair.MF_HFS_LaoHeShang_Hair"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS_LaoHeShang/Hair/HAIR_upperbeard.HAIR_upperbeard_TFX",
@@ -37,7 +37,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146748215"
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Materials/M_gycy_xiong_beard.M_gycy_xiong_beard"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS_LaoHeShang/Hair/HAIR_lowerbeard.HAIR_lowerbeard_TFX",
@@ -50,7 +50,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146748214"
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Materials/M_gycy_xiong_beard.M_gycy_xiong_beard"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS_LaoHeShang/Hair/HAIR_eyebrow.HAIR_eyebrow_TFX",
@@ -63,7 +63,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146748213"
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/HeiXiongJing_02/Materials/M_gycy_xiong_beard.M_gycy_xiong_beard"
       }
     ],
     "InteractBones": [

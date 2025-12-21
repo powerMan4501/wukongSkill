@@ -1,0 +1,42 @@
+[
+  {
+    "ID": 1301102,
+    "CanTriggerScar": 0,
+    "CanTriggerFX": 0,
+    "CanTriggerFightBackCounter": 0,
+    "DamageReason": 0,
+    "DamageImmueLevel": 0,
+    "CritRateAddition": 100.0,
+    "CritDmgAddition": 100.0,
+    "IgnoreBeAttacked": 0,
+    "AddTargetCurHpRatio": 500.0,
+    "ImmobilizeHit": 500.0,
+    "PartDamage": 100.0,
+    "PevalueIncrements": 100.0,
+    "TransIncrements": 100.0,
+    "HitWeightGearType": 0,
+    "PillarFormTerminatorType": 0,
+    "BrokenFrozenImmediately": 0,
+    "desc": "石头人磕头，生命值5%的伤害"
+  },
+  {
+    "ID": 1301103,
+    "CanTriggerScar": 0,
+    "CanTriggerFX": 0,
+    "CanTriggerFightBackCounter": 0,
+    "DamageReason": 0,
+    "DamageImmueLevel": 0,
+    "CritRateAddition": 100.0,
+    "CritDmgAddition": 100.0,
+    "IgnoreBeAttacked": 0,
+    "AddTargetCurHpRatio": 500.0,
+    "ImmobilizeHit": 0.0,
+    "PartDamage": 100.0,
+    "PevalueIncrements": 100.0,
+    "TransIncrements": 100.0,
+    "HitWeightGearType": 0,
+    "PillarFormTerminatorType": 0,
+    "BrokenFrozenImmediately": 0,
+    "desc": "石头人磕头，生命值5%的伤害"
+  }
+]

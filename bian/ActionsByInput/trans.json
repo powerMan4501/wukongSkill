@@ -33,7 +33,7 @@
     ]
   },
   {
-    "code": "cchan",
+    "code": "ccan",
     "afterActions": [
       {
         "type": "transskill",
@@ -69,6 +69,61 @@
         "ResId": 15,
         "MagicSkillID": 250107,
         "desc": "双头鼠"
+      }
+    ]
+  },
+  {
+    "code": "ccong",
+    "afterActions": [
+      {
+        "type": "transskill",
+        "ResId": 18,
+        "MagicSkillID": 18071,
+        "desc": "虫"
+      }
+    ]
+  },
+   {
+    "code": "chor",
+    "afterActions": [
+      {
+        "type": "transskill",
+        "ResId": 23,
+        "MagicSkillID": 23041,
+        "desc": "马"
+      }
+    ]
+  },
+   {
+    "code": "cyao",
+    "afterActions": [
+      {
+        "type": "transskill",
+        "ResId": 16,
+        "MagicSkillID": 16071,
+        "desc": "海上僧"
+      }
+    ]
+  },
+  {
+    "code": "cyuan",
+    "afterActions": [
+      {
+        "type": "transskill",
+        "ResId": 24,
+        "MagicSkillID": 24091,
+        "desc": "yuan"
+      }
+    ]
+  },
+  {
+    "code": "cshi",
+    "afterActions": [
+      {
+        "type": "transskill",
+        "ResId": 13,
+        "MagicSkillID": 13071,
+        "desc": "石头人"
       }
     ]
   }

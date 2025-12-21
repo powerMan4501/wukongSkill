@@ -51,11 +51,11 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [49981301, 1014101],
+            "ProjectTileIDs": [1019261, 1014101],
             "noHasAnyBuff": [888666005, 888666006, 888666007],
             "OffsetX": 700,
             "OffsetY": 700,
-            "desc": "没有雷火冰buff，毒液池，猪八戒"
+            "desc": "没有雷火冰buff，灵芝爆炸，猪八戒"
           }
         ]
       }
@@ -66,7 +66,7 @@
     "desc": "1a切手，马喽10705",
     "montage": "AM_Wukong_ComboA_z_01",
     "linkValue": 0,
-    "scaleWeaponNum": 3,
+    "scaleWeaponNum": 2,
     "CastActions": [
       {
         "Type": "buff",
@@ -114,10 +114,10 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [51002002, 148],
+            "ProjectTileIDs": [1019261, 148],
             "noHasAnyBuff": [888666005, 888666006, 888666007],
-            "OffsetX": 700,
-            "OffsetY": 700,
+            "OffsetX": 750,
+            "OffsetY": 750,
             "desc": "没有雷火冰buff，地刺，猪八戒"
           }
         ]

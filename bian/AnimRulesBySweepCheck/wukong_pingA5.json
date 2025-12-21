@@ -7,10 +7,17 @@
     "CastActions": [
       {
         "Type": "buff",
-        "TimeDelay": 100,
+        "TimeDelay": 22,
         "BuffIDs": [66655401],
         "BuffTime": 1900,
         "desc": "棍光特效粒子"
+      },
+       {
+        "Type": "add_attr",
+        "attrType": 160,
+        "attrValue": 600,
+        "TimeDelay": 22,
+        "desc": "霸体值"
       }
     ],
     "SweepActions": [
@@ -45,7 +52,7 @@
     "CastActions": [
       {
         "Type": "buff",
-        "TimeDelay": 100,
+        "TimeDelay": 22,
         "BuffIDs": [66655401],
         "BuffTime": 1900,
         "desc": "棍光特效粒子"

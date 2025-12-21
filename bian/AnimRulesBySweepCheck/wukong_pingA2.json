@@ -12,13 +12,11 @@
         "desc": "棍光特效粒子"
       },
       {
-        "Type": "summoner_do_actions",
-        "summonerActions": [
-          {
-            "type": "skill"
-          }
-        ],
-        "desc": "让分身复制技能"
+        "Type": "add_attr",
+        "attrType": 160,
+        "attrValue": 600,
+        "TimeDelay": 22,
+        "desc": "霸体值"
       }
     ]
   },
@@ -34,6 +32,13 @@
         "BuffIDs": [66655402],
         "BuffTime": 1000,
         "desc": "棍光特效粒子"
+      },
+       {
+        "Type": "add_attr",
+        "attrType": 160,
+        "attrValue": 600,
+        "TimeDelay": 22,
+        "desc": "霸体值"
       }
     ]
   }

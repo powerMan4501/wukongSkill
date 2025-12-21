@@ -35,86 +35,100 @@
       }
     ]
   },
-   {
-      "ID": 15050,
-      "BuffTips": "【鼠】变身-油雾法术场+火焰法术场=(油雾法术场)爆炸 | ※※※※15050=15080+15072[New]※※※※ | 0.球12m|99|580%|5档 | 1.播放屏幕震动",
-      "Range": {
-        "RangeType": 4,
-        "RangeCenterType": 0,
-        "RangeParam": [
-          4200
-        ]
-      },
-      "BuffEffects": [
-        {
-          "EffectTrigger": 1,
-          "EffectType": 1,
-          "EffectTargetSelectType": 0,
-          "EffectParamsString": [
-            "【主角】蓄力4"
-          ],
-          "EffectParams": [
-            25,
-            3,
-            1,
-            1,
-            2,
-            0,
-            0,
-            4
-          ],
-          "EffectParamsFloat": [
-            1740.0,
-            740.0,
-            70500.0,
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ]
-        }
-      ]
+  {
+    "ID": 15050,
+    "BuffTips": "【鼠】变身-油雾法术场+火焰法术场=(油雾法术场)爆炸 | ※※※※15050=15080+15072[New]※※※※ | 0.球12m|99|580%|5档 | 1.播放屏幕震动",
+    "Range": {
+      "RangeType": 4,
+      "RangeCenterType": 0,
+      "RangeParam": [4200]
     },
-    {
-      "ID": 15051,
-      "BuffTips": "【鼠】变身-小火焰法术场+油雾法术场=(火焰法术场)爆炸 | ※※※※15051=15071+15080[New]※※※※ | 0.球1m|99|30%|1档",
-      "Range": {
-        "RangeType": 4,
-        "RangeCenterType": 0,
-        "RangeParam": [
-          3000
-        ]
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": ["【主角】蓄力4"],
+        "EffectParams": [25, 3, 1, 1, 2, 0, 0, 4],
+        "EffectParamsFloat": [1740.0, 740.0, 70500.0, 1.0, 0.0, 0.0, 0.0, 0.0]
+      }
+    ]
+  },
+  {
+    "ID": 15051,
+    "BuffTips": "【鼠】变身-小火焰法术场+油雾法术场=(火焰法术场)爆炸 | ※※※※15051=15071+15080[New]※※※※ | 0.球1m|99|30%|1档",
+    "Range": {
+      "RangeType": 4,
+      "RangeCenterType": 0,
+      "RangeParam": [3000]
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": ["【主角】蓄力2"],
+        "EffectParams": [25, 3, 1, 1, 2, 0, 0, 4],
+        "EffectParamsFloat": [0.0, 400.0, 11000.0, 1.0, 0.0, 0.0, 0.0, 0.0]
+      }
+    ]
+  },
+
+  {
+    "ID": 24071,
+    "BuffTips": "【猿】变身-冰拳法术特效 | 0.冰免，火免,锁定能量",
+    "Duration": 180000,
+
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [83, 84, 85, 86, 137],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 24072,
+    "BuffTips": "【猿】变身-炎拳法术特效 | 0.火免，冰免,锁定能量",
+    "Duration": 180000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [84, 83, 85, 86, 137],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+
+  {
+    "ID": 24082,
+    "BuffTips": "【猿】变身-铜头铁臂 | 0.【状态】添加时-添加弹刀【45】",
+    "Duration": 180000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [45, 137],
+        "EffectParamsFloat": []
       },
-      "BuffEffects": [
-        {
-          "EffectTrigger": 1,
-          "EffectType": 1,
-          "EffectTargetSelectType": 0,
-          "EffectParamsString": [
-            "【主角】蓄力2"
-          ],
-          "EffectParams": [
-            25,
-            3,
-            1,
-            1,
-            2,
-            0,
-            0,
-            4
-          ],
-          "EffectParamsFloat": [
-            0.0,
-            400.0,
-            11000.0,
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ]
-        }
-      ]
-    }
+      {
+        "EffectTrigger": 7,
+        "EffectType": 20,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [
+          "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_20_hfm_bashanhu_BulletChange.BGW_20_hfm_bashanhu_BulletChange'"
+        ],
+        "EffectParams": [],
+        "EffectParamsFloat": []
+      }
+    ]
+  }
 ]

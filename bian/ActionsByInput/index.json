@@ -33,6 +33,24 @@
     ]
   },
   {
+    "code": "USEg",
+    "afterActions": [
+      {
+        "Type": "buff",
+        "BuffID": 92234,
+        "BuffTime": 60000,
+        "desc": "坚骨药"
+      },
+      {
+        "Type": "additem",
+        "ItemID": 2234,
+        "TimeDelay": 2000,
+        "ItemCount": 1
+      }
+    ]
+  },
+
+  {
     "code": "USEh",
     "afterActions": [
       {
@@ -167,7 +185,7 @@
   },
 
   {
-    "code": "zhuang",
+    "code": "JJ",
     "afterActions": [
       {
         "type": "strong_monster",
@@ -290,7 +308,16 @@
       }
     ]
   },
- 
+    {
+    "code": "xx",
+    "afterActions": [
+      {
+        "Type": "change_equip",
+        "equipId": 15017,
+        "desc": "切换武器为天龙棍"
+      }
+    ]
+  },
 
   {
     "code": "CC",

@@ -151,3 +151,88 @@ public enum EBuffAndSkillEffectType : byte
     ResetSealingSpell = 168,
     EnumMax = 169
 }
+
+
+
+<!--被动修改的方法 -->
+public enum EModifyMethod : byte
+{
+    SkillCooldown = 0,
+    SkillEffectFloatN = 1,
+    SkillEffectIntN = 2,
+    BuffDuration = 3,
+    BuffEffectFloatN = 4,
+    BuffEffectIntN = 5,
+    BuffActiveConditionParams = 6,
+    SkillEffectActiveConditionParams = 7,
+    ChargeSkillMoveSpeed = 8,
+    ChargeSkillMaxChargeTime = 9,
+    SkillEffectTargetCount = 10,
+    SkillEffectRange = 11,
+    BuffInterval = 12,
+    BuffMaxLayer = 13,
+    SkillMinAttrCostBase1 = 14,
+    SkillMinAttrCostBase2 = 15,
+    BuffTargetCount = 16,
+    BuffRange = 17,
+    SkillIsComboSkill = 18,
+    RollSkillEnabled = 19,
+    ChargeSkillLevelConfigIndex = 20,
+    PlayerSkillCtrlAttackRange = 21,
+    ImmobilizeDuration = 30,
+    ImmobilizeTargetCount = 31,
+    ImmobilizeRange = 32,
+    ImmobilizeEffect = 33,
+    IronBodyBeginWindowTime = 34,
+    IronBodyWindowTimeLength = 35,
+    IronBodyBuff = 36,
+    SummonCommAliveTime = 37,
+    SummonCommBuffListN = 38,
+    PlayerCommDodgeStartSkillId = 39,
+    PlayerCommPreciseDodgeStartSkillId = 40,
+    SkillEffectDamageExpandN = 41,
+    PotentialEnergyConfigIndex = 42,
+    PartRuleReduceParamsN = 43,
+    ProjectileLifeTime = 44,
+    BuffDelayTime = 45,
+    AttrCopyFactor = 46,
+    LifeSavingHairDefaultCd = 47,
+    LifeSavingHairEffectN = 48,
+    LifeSavingHairBuffN = 49,
+    SupreArmorValue = 50,
+    StaminaCostMoveFast = 51,
+    PhantomRushDuration = 53,
+    PhantomRushSkillId = 54,
+    PhantomRushBeginAddBuffIdlist = 55,
+    PotentialEnergyProtectTime = 56,
+    PotentialEnergyDecreaseValue = 57,
+    PotentialEnergyLevelValue = 58,
+    EffectiveHitProjectileEffectPevalueSwitchRatio = 59,
+    EffectiveHitProjectileEffectCostAttrType = 60,
+    EffectiveHitProjectileEffectAttrSwitchRatio = 61,
+    PlayerCommFallingDamageMultiplier = 62,
+    SkillMinAttrCostRatio1 = 63,
+    SkillMinAttrCostRatio2 = 64,
+    SealingSpellSkillDuration = 65,
+    QiTianDaShengNormalModeDuration = 66
+}
+
+
+public enum EAbnormalStateType : byte
+{
+    [DisplayName("无")]
+    None,
+    [DisplayName("冰异常")]
+    Abnormal_Freeze,
+    [DisplayName("火异常")]
+    Abnormal_Burn,
+    [DisplayName("毒异常")]
+    Abnormal_Poison,
+    [DisplayName("雷异常")]
+    Abnormal_Thunder,
+    [DisplayName("阴异常")]
+    Abnormal_Yin,
+    [DisplayName("阳异常")]
+    Abnormal_Yang,
+    EnumMax
+}

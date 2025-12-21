@@ -20,6 +20,19 @@
       },
       {
         "Type": "add_attr",
+        "attrType": 160,
+        "attrValue": 600,
+        "desc": "技能霸体值"
+      },
+       {
+        "Type": "add_attr",
+        "attrType": 171,
+        "attrValue": 600,
+        "desc": "硬直抵抗"
+      },
+      
+      {
+        "Type": "add_attr",
         "attrType": 198,
         "attrValue": 6000,
         "desc": "ExpDropAddition"

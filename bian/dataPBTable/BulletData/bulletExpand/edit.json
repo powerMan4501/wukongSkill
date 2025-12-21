@@ -195,5 +195,14 @@
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1,
     "HitEffectsforChr": [888555032, 910160]
+  },
+
+  {
+    "ID": 1019261,
+    "desc": "灵芝精魄，灵芝爆炸",
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1,
+    "LifeOverEffectID": [9999],
+    "HitEffectsforChr": [1019201, 888555018]
   }
 ]
