@@ -282,8 +282,7 @@ namespace bian
                 var lockTarget = GetNearestEnemy(3000);
                 if (lockTarget != null)
                 {
-                    BUS_EventCollectionCS.Get((AActor)(object)target).Evt_AICatchTarget.Invoke(lockTarget, (ETargetSourceType)25, false);
-
+                    BUS_EventCollectionCS.Get((AActor)(object)target).Evt_AICatchTarget.Invoke(lockTarget, ETargetSourceType.Target_BirthCatchSummonerTarget, false);
                 }
                 character.SetTeamIDInCS(teamID);
                 // Log.Debug($"bian: set team id-->{teamID}");
@@ -358,31 +357,29 @@ namespace bian
             {
                 return null;
             }
-            var actor = BGUFunctionLibraryCS.BGUSpawnActor(controlledPawn.World, uClass, start, frotator);
+            var World = controlledPawn.World;
+            BUTamerActor? actor = UBGUFunctionLibrary.BGUBeginDeferredActorSpawnFromClass(controlledPawn.World, uClass, new FTransform(frotator), ESpawnActorCollisionHandlingMethod.AlwaysSpawn, null) as BUTamerActor;
+            //    var actor = BGU_UnrealWorldUtil.RequestSpawnUnit(controlledPawn.World,uClass,new FTransform(actorLocation),null);
+            // var actor = BGUFunctionLibraryCS.BGUSpawnActor(controlledPawn.World, uClass, start, frotator);
             if (actor != null)
             {
-                var boss = actor as BUTamerActor;
-                if (boss != null)
+                actor.MarkAsSpawnedTamer(null);
+                BUTamerActor? actorFinish = UBGUFunctionLibrary.BGUFinishSpawningActor(actor, controlledPawn.GetActorTransform()) as BUTamerActor;
+                if (teamID != null && actorFinish != null)
                 {
-                    var tamerRef = boss.CurrentRef;
-                    tamerRef.AddSpawnRuleFlag(ETamerSpawnRule.OnlySpawn);
-                    tamerRef.ResetLocationCache();
-                    tamerRef.TamerTransform = controlledPawn.GetActorTransform();
-                    if (teamID != null)
-                    {
-                        DelayExecute(300, () =>
-                        {
-                            BGUCharacterCS monster = boss.GetMonster();
-                            if (monster != null)
-                            {
-                                monster.SetTeamIDInCS((int)teamID);
-                            }
-                        });
+                    BGUCharacterCS monster = actorFinish.GetMonster();
+                    Log.Info($"bian: SpawnActor monster -->{monster?.GetName()}");
+                   
+                    // DelayExecute(80, () =>
+                    //  {
+                    //      BGUCharacterCS monster = actorFinish.GetMonster();
+                    //      if (monster != null)
+                    //      {
+                    //          monster.SetTeamIDInCS((int)teamID);
+                    //      }
+                    //  });
 
-                    }
                 }
-
-
             }
 
             return actor;
@@ -1626,7 +1623,7 @@ namespace bian
             {
                 if (target != null && item.PathName != target.PathName && item.PathName != player.PathName)
                 {
-                    BUS_EventCollectionCS.Get((AActor)(object)item).Evt_AICatchTarget.Invoke(target, (ETargetSourceType)25, false);
+                    BUS_EventCollectionCS.Get((AActor)(object)item).Evt_AICatchTarget.Invoke(target, ETargetSourceType.Target_BirthCatchSummonerTarget, false);
                     if (changeToPlayerTeam == true)
                     {
                         //己方霸体不吃毒火冰
@@ -1659,7 +1656,7 @@ namespace bian
                 {
                     if (target != null)
                     {
-                        BUS_EventCollectionCS.Get((AActor)(object)item).Evt_AICatchTarget.Invoke(target, (ETargetSourceType)25, false);
+                        BUS_EventCollectionCS.Get((AActor)(object)item).Evt_AICatchTarget.Invoke(target, ETargetSourceType.Target_BirthCatchSummonerTarget, false);
                     }
                     item.SetTeamIDInCS(teamId);//设置怪物为玩家队伍
                     return;

@@ -41,7 +41,6 @@ public class Hooks
         {
             if ((UObject)(object)__instance != null)
             {
-                Console.WriteLine($"AfterInitAllComp.Prefix ");
 
                 Manager.loadAllStaticData(false, 0);
             }
