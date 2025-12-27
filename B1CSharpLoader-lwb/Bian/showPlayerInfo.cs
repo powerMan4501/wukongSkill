@@ -25,7 +25,6 @@ public class ShowPlayerInfo
 		{ EBGUAttrFloat.Hp,  "" },
 		{ EBGUAttrFloat.FreezeDef,  "" },
 		{ EBGUAttrFloat.FreezeAtk,  "" },
-		{ EBGUAttrFloat.FreezeAbnormalAcc,  "" },
 		{ EBGUAttrFloat.CurEnergy,  "" },
 	};
 
