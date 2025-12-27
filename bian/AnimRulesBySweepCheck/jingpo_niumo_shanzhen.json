@@ -231,5 +231,15 @@
         ]
       }
     ]
+  },
+  {
+    "desc": "变身的石头人磕头",
+    "montage": "AM_HFM_ShanZhen_01_Atk_Fast_07",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.5,
+    "AMSpeedRate": 1.5,
+     "hitEffects": [888555043],
+    "replaceEffects": true
   }
 ]

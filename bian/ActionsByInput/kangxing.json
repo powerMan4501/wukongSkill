@@ -7,10 +7,15 @@
         "attrType": 1,
         "attrValue": 1000,
         "desc": "降低冰异常"
+      },
+      {
+        "type": "Clear_All_Abnormal",
+        "clearTypes": [1],
+        "desc": "清除异常状态:0无 1冰 2火 3毒 4雷 5阴 6阳"
       }
     ]
   },
-   {
+  {
     "code": "jhuo",
     "afterActions": [
       {
@@ -18,10 +23,15 @@
         "attrType": 2,
         "attrValue": 1000,
         "desc": "降低火异常"
+      },
+      {
+        "type": "Clear_All_Abnormal",
+        "clearTypes": [2],
+        "desc": "清除异常状态:0无 1冰 2火 3毒 4雷 5阴 6阳"
       }
     ]
   },
-   {
+  {
     "code": "jdu",
     "afterActions": [
       {
@@ -29,6 +39,11 @@
         "attrType": 3,
         "attrValue": 1000,
         "desc": "降低毒异常"
+      },
+      {
+        "type": "Clear_All_Abnormal",
+        "clearTypes": [3],
+        "desc": "清除异常状态:0无 1冰 2火 3毒 4雷 5阴 6阳"
       }
     ]
   },
@@ -41,6 +56,23 @@
         "attrType": 4,
         "attrValue": 1000,
         "desc": "降低雷异常"
+      },
+      {
+        "type": "Clear_All_Abnormal",
+        "clearTypes": [4],
+        "desc": "清除异常状态:0无 1冰 2火 3毒 4雷 5阴 6阳"
+      }
+    ]
+  },
+
+  {
+    "code": "alei",
+    "afterActions": [
+      {
+        "Type": "buff",
+        "BuffID": 2017,
+        "BuffTime": 1500,
+        "desc": "积累100%雷"
       }
     ]
   }

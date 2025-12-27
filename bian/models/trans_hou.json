@@ -9,7 +9,7 @@
   "XRateSmall": 2,
   "Level1Scale": 1,
   "Level2Scale": 1.2,
-    "BossConf": {
+  "BossConf": {
     "CapsuleHalfHeight": 180.0,
     "CapsuleRadius": 65.0,
     "SKMesh": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_XueHou/Mesh/SK_LYS_XueHou.SK_LYS_XueHou",
@@ -92,21 +92,21 @@
       "CanBreak": true,
       "Name": "突进上去砍一刀，再捅一下",
       "Key": "XBUTTON2",
-      "Buffs": [1000099]
+      "Buffs": [17015]
     },
     {
       "Id": 405805,
-      "Name": "爆气垂直砍一刀，发射垂直剑气",
+      "Name": "爆气垂直砍一刀，发射垂直火剑气",
       "Key": "S+XBUTTON2",
       "CanBreak": true,
-      "Buffs": [888666007, 17272, 17273]
+      "Buffs": [17272, 17273]
     },
     {
       "Key": "XBUTTON1",
       "Id": 301368,
       "CanBreak": true,
       "Name": "跳起+前劈+白色雪墙+爆炸",
-      "Buffs": [105111, 1000055]
+      "Buffs": [17015]
     },
     {
       "Key": "S+XBUTTON1",
@@ -126,14 +126,15 @@
       "Id": 17334,
       "Name": "邪光斩--连斩",
       "CanBreak": true,
-      "Buffs": [505]
+      "Buffs": [17015, 505]
     },
     {
       "Key": "S+LBUTTON",
       "Id": 17027,
       "CanBreak": true,
       "Name": "白+连斩",
-      "Buffs": [105111]
+      "type": "actions",
+      "Buffs": [17070]
     },
     {
       "Key": "Z",
@@ -166,7 +167,9 @@
     {
       "Key": "V",
       "Id": 17315,
-      "Name": "猴，R1 TO R2"
+      "Name": "猴，R1 TO R2",
+      "type": "actions",
+      "Buffs": [17015]
     },
     {
       "Key": "",

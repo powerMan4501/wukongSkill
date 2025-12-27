@@ -1,0 +1,88 @@
+[
+  {
+    "desc": "寅虎平A",
+    "montage": ".AM_player_hfm_hu_R1_0",
+    "linkValue": 0,
+    "speedRate": 1.5,
+    "AMSpeedRate": 1.5,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "add_attr",
+        "attrType": 187,
+        "attrValue": 10,
+        "desc": "Pelevel"
+      },
+      {
+        "Type": "add_attr",
+        "attrType": 190,
+        "attrValue": 10,
+        "desc": "回盾"
+      },
+      {
+        "Type": "add_attr",
+        "attrType": 160,
+        "attrValue": 600,
+        "TimeDelay": 22,
+        "desc": "技能霸体值"
+      }
+    ],
+     "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1016262],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "巴山虎"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "寅虎重击",
+    "montage": ".AM_player_hfm_hu_R2_",
+    "linkValue": 0,
+    "speedRate": 1.5,
+    "AMSpeedRate": 1.5,
+    "AMScaleRate": 10,
+    "CastActions": [
+      {
+        "Type": "add_attr",
+        "attrType": 187,
+        "attrValue": 10,
+        "desc": "Pelevel"
+      },
+      {
+        "Type": "add_attr",
+        "attrType": 190,
+        "attrValue": 10,
+        "desc": "回盾"
+      },
+      {
+        "Type": "add_attr",
+        "attrType": 160,
+        "attrValue": 600,
+        "TimeDelay": 22,
+        "desc": "技能霸体值"
+      }
+    ],
+     "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1016262],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "巴山虎"
+          }
+        ]
+      }
+    ]
+  }
+]

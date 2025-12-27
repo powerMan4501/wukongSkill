@@ -104,5 +104,25 @@
         "desc": "冰暴，冰雾气"
       }
     ]
+  },
+
+  {
+    "desc": "马猴爆气，火剑气",
+    "montage": ".AM_hys_yinbinghoumo_Atk_05",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.8,
+    "AMSpeedRate": 1.8,
+    "AMScaleRate": 11,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+        "ProjectTileID": 88880009,
+        "ForTarget": true,
+        "BornDirOffsetXLeftValue": 91,
+        "BornDirOffsetXRightValue": 91
+      }
+    ]
   }
 ]

@@ -308,13 +308,19 @@
       }
     ]
   },
-    {
+  {
     "code": "xx",
     "afterActions": [
       {
         "Type": "change_equip",
         "equipId": 15017,
         "desc": "切换武器为天龙棍"
+      },
+      {
+        "Type": "buff",
+        "BuffID": 2017,
+        "BuffTime": 1500,
+        "desc": "积累100%雷"
       }
     ]
   },

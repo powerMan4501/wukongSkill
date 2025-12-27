@@ -7,6 +7,12 @@
         "ResId": 19,
         "MagicSkillID": 19043,
         "desc": "变成小黄龙,三千阳春"
+      },
+      {
+        "Type": "buff",
+        "BuffID": 888665002,
+        "BuffTime": -1,
+        "TimeDelay": 4000
       }
     ]
   },
@@ -18,6 +24,12 @@
         "ResId": 14,
         "MagicSkillID": 14070,
         "desc": "变成寅虎，飒沓"
+      },
+      {
+        "Type": "buff",
+        "BuffID": 888665002,
+        "BuffTime": -1,
+        "TimeDelay": 4000
       }
     ]
   },
@@ -29,6 +41,12 @@
         "ResId": 17,
         "MagicSkillID": 17015,
         "desc": "变成马猴"
+      },
+      {
+        "Type": "buff",
+        "BuffID": 888665002,
+        "BuffTime": -1,
+        "TimeDelay": 4000
       }
     ]
   },
@@ -58,6 +76,12 @@
         "ResId": 12,
         "MagicSkillID": 12044,
         "desc": "广智"
+      },
+      {
+        "Type": "buff",
+        "BuffID": 888665002,
+        "BuffTime": -1,
+        "TimeDelay": 4000
       }
     ]
   },
@@ -69,6 +93,12 @@
         "ResId": 15,
         "MagicSkillID": 250107,
         "desc": "双头鼠"
+      },
+      {
+        "Type": "buff",
+        "BuffID": 888665002,
+        "BuffTime": -1,
+        "TimeDelay": 4000
       }
     ]
   },
@@ -80,10 +110,16 @@
         "ResId": 18,
         "MagicSkillID": 18071,
         "desc": "虫"
+      },
+      {
+        "Type": "buff",
+        "BuffID": 888665002,
+        "BuffTime": -1,
+        "TimeDelay": 4000
       }
     ]
   },
-   {
+  {
     "code": "chor",
     "afterActions": [
       {
@@ -91,10 +127,16 @@
         "ResId": 23,
         "MagicSkillID": 23041,
         "desc": "马"
+      },
+      {
+        "Type": "buff",
+        "BuffID": 888665002,
+        "BuffTime": -1,
+        "TimeDelay": 4000
       }
     ]
   },
-   {
+  {
     "code": "cyao",
     "afterActions": [
       {
@@ -102,6 +144,12 @@
         "ResId": 16,
         "MagicSkillID": 16071,
         "desc": "海上僧"
+      },
+      {
+        "Type": "buff",
+        "BuffID": 888665002,
+        "BuffTime": -1,
+        "TimeDelay": 4000
       }
     ]
   },
@@ -113,6 +161,12 @@
         "ResId": 24,
         "MagicSkillID": 24091,
         "desc": "yuan"
+      },
+      {
+        "Type": "buff",
+        "BuffID": 888665002,
+        "BuffTime": -1,
+        "TimeDelay": 4000
       }
     ]
   },
@@ -124,6 +178,12 @@
         "ResId": 13,
         "MagicSkillID": 13071,
         "desc": "石头人"
+      },
+      {
+        "Type": "buff",
+        "BuffID": 888665002,
+        "BuffTime": -1,
+        "TimeDelay": 4000
       }
     ]
   }

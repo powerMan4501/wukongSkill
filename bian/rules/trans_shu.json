@@ -21,6 +21,14 @@
         {
           "Type": "effect",
           "EffectID": 1500901
+        },
+        {
+          "Type": "effect",
+          "EffectID": 40580502
+        },
+        {
+          "Type": "effect",
+          "EffectID": 40580501
         }
       ],
       "AfterActions": [

@@ -19,7 +19,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147347092"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147223821"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_arm_long_gs.HAIR_arm_long_gs_TFX",
@@ -32,7 +32,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147347091"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147223820"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_head_base.HAIR_head_base_TFX",
@@ -45,7 +45,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147347090"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147223819"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_head_face_baseshort.HAIR_head_face_baseshort_TFX",
@@ -58,7 +58,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147347089"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147223818"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_head_face_long2_gs.HAIR_head_face_long2_gs_TFX",
@@ -71,7 +71,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147347088"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147223817"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_head_face_long_gs.HAIR_head_face_long_gs_TFX",
@@ -84,7 +84,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147347087"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147223816"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_head_long_gs.HAIR_head_long_gs_TFX",
@@ -97,7 +97,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147347086"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147223815"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/MGD/MGD_ftxd/Hair/HAIR_tail.HAIR_tail_TFX",
@@ -110,7 +110,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147347085"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147223814"
       }
     ],
     "InteractBones": [

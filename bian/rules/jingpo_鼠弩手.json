@@ -80,7 +80,7 @@
           "bullets": [
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [10030401],
+              "ProjectTileIDs": [10030401,51002002],
               "desc": "蛇毒"
             }
           ]

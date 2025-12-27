@@ -51,7 +51,7 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [1019261, 1014101],
+            "ProjectTileIDs": [1019261, 148, 51002002],
             "noHasAnyBuff": [888666005, 888666006, 888666007],
             "OffsetX": 700,
             "OffsetY": 700,
@@ -114,7 +114,7 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [1019261, 148],
+            "ProjectTileIDs": [1019261, 148, 51002002],
             "noHasAnyBuff": [888666005, 888666006, 888666007],
             "OffsetX": 750,
             "OffsetY": 750,
@@ -177,11 +177,11 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [50033000 ,74010403],
+            "ProjectTileIDs": [50033000, 74010403, 51002002],
             "noHasAnyBuff": [888666005, 888666006, 888666007],
             "OffsetX": 700,
             "OffsetY": 700,
-            "desc": "没有雷火冰buff，毒液池，泥浆，巴山虎"
+            "desc": "没有雷火冰buff，毒液池，泥浆，猪八戒"
           }
         ]
       },
@@ -567,28 +567,35 @@
     "linkValue": 0.3,
     "SweepActions": [
       {
+        "Type": "add_attr",
+        "attrType": 160,
+        "attrValue": 600,
+        "TimeDelay": 20,
+        "desc": "技能霸体值"
+      },
+      {
         "Type": "bullet",
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 1016901,
+            "ProjectTileID": 10290301,
             "hasBuff": 888666007,
             "SpeedLeftValue": 5000,
             "SpeedRightValue": 5000,
             "ForTarget": true,
-            "spawnBaseSocketName": "weapon_r_index_04",
-            "desc": "有火buff 鼠弩手弓箭"
+            "spawnBaseSocketName": "hand_r",
+            "desc": "有火buff 狼弓箭"
           },
 
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 1017961,
+            "ProjectTileID": 10380101,
             "hasBuff": 888666008,
-            "SpeedLeftValue": 5000,
-            "SpeedRightValue": 5000,
+            "SpeedLeftValue": 3000,
+            "SpeedRightValue": 3000,
             "ForTarget": true,
             "spawnBaseSocketName": "weapon_r_index_04",
-            "desc": "毒buff，蜻蜓精的箭"
+            "desc": "毒buff，蛇毒"
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
@@ -603,13 +610,22 @@
 
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 74010103,
+            "hasBuff": 888666006,
+            "SpeedLeftValue": 3000,
+            "SpeedRightValue": 3000,
+            "ForTarget": true,
+            "desc": "冰buff，巨猿扔的冰气"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
             "ProjectTileID": 88880012,
-            "noHasAnyBuff": [888666005, 888666007, 888666008],
+            "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
             "SpeedLeftValue": 5000,
             "SpeedRightValue": 5000,
             "ForTarget": true,
             "spawnBaseSocketName": "weapon_r_index_04",
-            "desc": "没火buff，赤发鬼的箭"
+            "desc": "无四灾buff，赤发鬼箭"
           }
         ]
       }

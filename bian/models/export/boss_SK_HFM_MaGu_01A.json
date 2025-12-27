@@ -10,10 +10,6 @@
       {
         "Weapon": "/Game/00MainHZ/Characters/Weapon/HFM/HFM_MaGu_01A/HFM_MaGu_01A_Dao.HFM_MaGu_01A_Dao_C",
         "SocketName": "weapon_r"
-      },
-      {
-        "Weapon": "/Game/00MainHZ/Characters/Weapon/HFM/HFM_MaGu_01A/HFM_MaGu_01A_Dun.HFM_MaGu_01A_Dun_C",
-        "SocketName": "weapon_l"
       }
     ],
     "TFXConfigs": null,

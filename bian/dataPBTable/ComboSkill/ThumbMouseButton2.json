@@ -140,10 +140,10 @@
     "nowMontage": "AM_Wukong_ComboB_q2.AM_Wukong_ComboB_q2",
     "rate": 0.3,
     "type": "magic",
-    "skillID": 8576,
+    "skillID": 8520,
     "Condition": "any",
     "InputCore": "ThumbMouseButton2",
-    "desc": "戳棍平A2巡山鬼"
+    "desc": "戳棍平A2 不空"
   },
   {
     "nowMontage": "AM_Dasheng_ComboA_03.AM_Dasheng_ComboA_03",

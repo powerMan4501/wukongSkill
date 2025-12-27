@@ -24,7 +24,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_FengXiaoGang_01/Material/M_hfm_hou_01_main_mask.M_hfm_hou_01_main_mask"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147260008"
       }
     ],
     "InteractBones": null,
