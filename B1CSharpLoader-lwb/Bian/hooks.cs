@@ -420,7 +420,7 @@ public class Hooks
             {
                 return;
             }
-            if (BuffID != 1015 && BuffID != 2167 && BuffID != 604)
+            if (BuffID != 1015 && BuffID != 2167 && BuffID != 604 && BuffID != 20986)
             {
                 Log.Info($"Evt_BuffAdd BuffID:{BuffID}");
 
@@ -511,7 +511,7 @@ public class Hooks
             {
                 Helper.updateIsPlayVigorSkillByID(false);
             }
-            
+
 
             var allRules = GetCachedAnimRules();
             if (allRules == null || allRules.Count == 0) return;

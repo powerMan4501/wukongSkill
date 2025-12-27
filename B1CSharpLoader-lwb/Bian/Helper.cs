@@ -931,11 +931,11 @@ namespace bian
             data.DurMagicallyChange = true;
             data.RecoverSkillID = 10199;
             isPlayVigorSkillByID = true;
-             DelayExecute(222, () =>
-                       {
-                           BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
-                           bUS_GSEventCollection?.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.SkillSuperArmor, 10000);
-                       });
+            DelayExecute(222, () =>
+                      {
+                          BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
+                          bUS_GSEventCollection?.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.SkillSuperArmor, 10000);
+                      });
             // 打断当前所有动画
             UGSE_AnimFuncLib.StopAllMontages(character, 0f);
             UGSE_AnimFuncLib.TickAnimationAndRefreshBone(character);
@@ -2463,10 +2463,10 @@ namespace bian
             }
         }
 
-        public static void ClearAllAbnormal(BGUPlayerCharacterCS character, List<EAbnormalStateType> clearTypes)
+        public static void ClearAllAbnormal(BGUPlayerCharacterCS character, List<int> clearTypes)
         {
             BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
-            if (!(bUS_GSEventCollection != null) || clearTypes == null || clearTypes.Count == 0)
+            if (bUS_GSEventCollection == null || clearTypes == null)
             {
                 return;
             }

@@ -599,7 +599,7 @@ namespace bian
                     }
                     break;
 
-                case "decrease_Abnormal":
+                case "decrease_abnormal":
                     BUS_GSEventCollection bUS_GSEventCollection_ = BUS_EventCollectionCS.Get(character);
                     if (bUS_GSEventCollection_ != null)
                     {
@@ -620,9 +620,6 @@ namespace bian
                 case "additem":
                     if (action != null && action.ItemID != null && action.ItemCount != null)
                     {
-                        Log.Info($"DoAction additem:{action.ItemID},ItemCount:{action?.ItemCount}");
-
-
                         Helper.gain_item((int)action.ItemID, (int)action.ItemCount);
                     }
 
@@ -660,16 +657,18 @@ namespace bian
 
                     }
                     break;
-                case "Clear_All_Abnormal":
+                case "clear_all_abnormal":
                     // 设置默认清除冰、火、毒异常状态
-                    var finalClearTypes = action?.clearTypes ?? new List<EAbnormalStateType>
-                    {
-                        EAbnormalStateType.Abnormal_Freeze,
-                        EAbnormalStateType.Abnormal_Burn,
-                        EAbnormalStateType.Abnormal_Poison
-                    };
+
+                    var finalClearTypes = action?.clearTypes?.Select(x => (int)x).ToList() ?? new List<int> {
+    (int)EAbnormalStateType.Abnormal_Burn,
+    (int)EAbnormalStateType.Abnormal_Freeze,
+    (int)EAbnormalStateType.Abnormal_Poison
+};
+
                     Helper.ClearAllAbnormal(character, finalClearTypes);
                     break;
+
                 case "show_info":
                     ShowPlayerInfo.InitItems(true);
                     break;

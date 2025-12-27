@@ -106,37 +106,63 @@ public class ShowPlayerInfo
 	EBGUAttrFloat.Atk,
 	EBGUAttrFloat.DmgDef
 };
+
+	public static TimerComp? getTimeComp()
+	{
+		BGUPlayerCharacterCS bGUPlayerCharacterCS = GetBGUPlayerCharacterCS();
+		if (bGUPlayerCharacterCS != null)
+		{
+			UActorCompContainerCS actorCompContainerCS = bGUPlayerCharacterCS.ActorCompContainerCS;
+			if (!IsValidUObject((UObject?)(object)actorCompContainerCS))
+			{
+				return null;
+			}
+			List<UActorCompBaseCS> list = actorCompContainerCS?.GetFieldOrProperty<List<UActorCompBaseCS>>("CompCSs");
+			if (list == null)
+			{
+				return null;
+			}
+			// 优化：使用LINQ的FirstOrDefault来查找TimerComp
+			TimerComp timerComp = list.OfType<TimerComp>().FirstOrDefault();
+			return timerComp;
+		}
+		return null;
+	}
 	public static void InitItems(bool force = false)
 	{
+		var timerComp = getTimeComp();
 		if (BasicInfoKs.Count > 0)
 		{
 			if (!force) return;
-			ClearAllUI();
-		}
-
-
-		foreach (var attribute in BasicAttributes)
-		{
-			UTextBlock keyBlock = UObject.NewObject<UTextBlock>();
-			UTextBlock valueBlock = UObject.NewObject<UTextBlock>();
-			BasicInfoKs.Add(keyBlock);
-			BasicInfoVs.Add(valueBlock);
-
-			SetUTextBlockContent(keyBlock, attribute.Value);
-			// SetUTextBlockContent(valueBlock, "0");
-
-
-			SetUTextBlockFont(keyBlock, FontInfo);
-			SetUTextBlockFont(valueBlock, FontInfo);
-			SetUTextBlockStyle(keyBlock, 0.6f, ETextJustify.Left);
-			SetUTextBlockStyle(valueBlock, 0.6f, ETextJustify.Right);
-			// 优化后的特殊样式设置
-			if (SpecialAttributes.Contains(attribute.Key))
+			if (timerComp == null)
 			{
-				SetUTextBlockFont(keyBlock, BoldFontInfo);
-				SetUTextBlockFont(valueBlock, BoldFontInfo);
+				ClearAllUI();
+			}
+
+		}
+		if (timerComp == null)
+		{
+			foreach (var attribute in BasicAttributes)
+			{
+				UTextBlock keyBlock = UObject.NewObject<UTextBlock>();
+				UTextBlock valueBlock = UObject.NewObject<UTextBlock>();
+				BasicInfoKs.Add(keyBlock);
+				BasicInfoVs.Add(valueBlock);
+				SetUTextBlockContent(keyBlock, attribute.Value);
+				SetUTextBlockFont(keyBlock, FontInfo);
+				SetUTextBlockFont(valueBlock, FontInfo);
+				SetUTextBlockStyle(keyBlock, 0.6f, ETextJustify.Left);
+				SetUTextBlockStyle(valueBlock, 0.6f, ETextJustify.Right);
+				// 优化后的特殊样式设置
+				if (SpecialAttributes.Contains(attribute.Key))
+				{
+					SetUTextBlockFont(keyBlock, BoldFontInfo);
+					SetUTextBlockFont(valueBlock, BoldFontInfo);
+				}
 			}
 		}
+
+
 
 		try
 		{
@@ -145,17 +171,6 @@ public class ShowPlayerInfo
 			if (IsValidActor((AActor?)(object)bGUPlayerCharacterCS))
 			{
 				UActorCompContainerCS actorCompContainerCS = bGUPlayerCharacterCS.ActorCompContainerCS;
-				if (!IsValidUObject((UObject?)(object)actorCompContainerCS))
-				{
-					return;
-				}
-				List<UActorCompBaseCS> list = actorCompContainerCS?.GetFieldOrProperty<List<UActorCompBaseCS>>("CompCSs");
-				if (list == null)
-				{
-					return;
-				}
-				// 优化：使用LINQ的FirstOrDefault来查找TimerComp
-				TimerComp timerComp = list.OfType<TimerComp>().FirstOrDefault();
 				if (timerComp == null)
 				{
 
@@ -187,7 +202,6 @@ public class ShowPlayerInfo
 				{
 
 					var result = timerComp.InitDone();
-					Log.Info($"TimerComp has value ,InitDone:{result}");
 					if (!result)
 					{
 						timerComp.InitWidgets();
