@@ -156,6 +156,7 @@
       },
       {
         "type": "dragfarcamera",
+        "TimeDelay": 100,
         "IsDragFarest": true,
         "NewMinArmLength": -1,
         "NewMaxArmLength": -1,

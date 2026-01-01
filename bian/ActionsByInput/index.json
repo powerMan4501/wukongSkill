@@ -131,6 +131,23 @@
     ]
   },
   {
+    "code": "USEdx",
+    "afterActions": [
+      {
+        "Type": "use_item",
+        "ItemID": 2213,
+        "desc": "登仙散"
+      },
+      {
+        "Type": "additem",
+        "ItemID": 2213,
+        "TimeDelay": 2000,
+        "ItemCount": 1
+      }
+    ]
+  },
+
+  {
     "code": "ADDl",
     "afterActions": [
       {
@@ -305,6 +322,12 @@
         "Type": "change_equip",
         "equipId": 15002,
         "desc": "切换武器为金箍棒"
+      },
+      {
+        "Type": "buff",
+        "BuffID": 2017,
+        "BuffTime": 1500,
+        "desc": "积累100%雷"
       }
     ]
   },
@@ -313,8 +336,8 @@
     "afterActions": [
       {
         "Type": "change_equip",
-        "equipId": 15017,
-        "desc": "切换武器为天龙棍"
+        "equipId": 15016,
+        "desc": "切换武器为混铁棍"
       },
       {
         "Type": "buff",
@@ -332,6 +355,22 @@
         "Type": "change_equip",
         "equipId": 15101,
         "desc": "切换武器为三尖两刃枪"
+      },
+      {
+        "Type": "buff",
+        "BuffID": 2017,
+        "BuffTime": 1500,
+        "desc": "积累100%雷"
+      }
+    ]
+  },
+
+  {
+    "code": "dzxy",
+    "afterActions": [
+      {
+        "Type": "change_target",
+        "desc": "斗转星移：把敌人的目标切换到距离最近的己方角色"
       }
     ]
   }

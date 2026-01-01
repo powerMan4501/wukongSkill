@@ -19,7 +19,7 @@
     "Id": 12002,
     "EquipName": "锁子黄金甲",
     "EquipEffectId": 900302,
-    "EquipEffectDesc": "每秒恢复1.5%生命"
+    "EquipEffectDesc": "每秒恢复2%的生命和体力值，若在水中，效果加倍"
   },
   {
     "Id": 12003,
@@ -60,5 +60,24 @@
     "Id": 16030,
     "EquipName": "吉祥灯",
     "EquipEffectDesc": "聚形散气时对自身触发魔音效果：增加20%攻击，持续20秒"
+  },
+  {
+    "Id": 16034,
+    "EquipName": "雷火印",
+    "AttrEffectId": 6034,
+    "EquipEffectId": 105017,
+    "EquipEffectDesc": "增加30点赋雷和赋火攻击的伤害，蓄力时引雷上身；处于<EquipDetail_SuitDesc_State>雷蛰</>状态时，所有棍法附加赋雷伤害"
+  },
+  {
+    "Id": 16039,
+    "EquipName": "满堂红",
+    "AttrEffectId": 3110406,
+    "EquipEffectDesc": "增加14点赋火攻击的伤害；在岩浆地形或安身法中，轻棍招式附带<EquipDetail_SuitDesc_State>火焚异常</>"
+  },
+  {
+    "Id": 16023,
+    "EquipName": "琥珀念珠",
+    "AttrEffectId": 101,
+    "EquipEffectDesc": "少许加快提升棍势段数的速度, 增加护盾上限, 每秒恢复20护盾值"
   }
 ]

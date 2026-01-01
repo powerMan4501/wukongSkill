@@ -51,7 +51,22 @@
       }
     ]
   },
-
+  {
+    "ID": 66106023,
+    "BuffTips": "琥珀念珠",
+    "Duration": -1,
+    "Interval": 1000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [190, 20, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
   {
     "ID": 2804,
     "BuffTips": "乾坤彩葫芦-加攻击",
@@ -70,7 +85,7 @@
         "EffectParams": [119, 1000, 0, 0],
         "EffectParamsFloat": []
       },
-       {
+      {
         "EffectTrigger": 1,
         "EffectType": 2,
         "EffectTargetSelectType": 0,
@@ -85,7 +100,6 @@
     "BuffTips": "上清宝葫芦专用，75秒内增加10点攻击力和暴击",
     "Duration": 1000,
     "BuffEffects": [
-     
       {
         "EffectTrigger": 1,
         "EffectType": 46,
@@ -282,8 +296,8 @@
     "ID": 2031,
     "BuffTips": "白衣衣服每秒回血",
     "BuffActiveCondition": {
-      "ConditionType": 4,
-      "ConditionParams": "0,151,1,-1,9999"
+      "ConditionType": 0,
+      "ConditionParams": ""
     },
     "Duration": -1,
     "Interval": 1000,
@@ -294,7 +308,15 @@
         "EffectType": 3,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [151, 150, 0, 1],
+        "EffectParams": [151, 200, 0, 1],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 2,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [158, 200, 0, 1],
         "EffectParamsFloat": []
       },
       {
@@ -304,6 +326,28 @@
         "EffectParamsString": [],
         "EffectParams": [2030],
         "EffectParamsFloat": [0.0]
+      }
+    ]
+  },
+  {
+    "ID": 2030,
+    "BuffTips": "白衣衣服每秒回血-水上额外",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [151, 200, 0, 1],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [158, 200, 0, 1],
+        "EffectParamsFloat": []
       }
     ]
   }

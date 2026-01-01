@@ -441,11 +441,11 @@
     ]
   },
   {
-    "code": "youhun",
+    "code": "suyh",
     "afterActions": [
       {
         "Type": "spaw_monster",
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_yanjianxi_01b.TAMER_gycy_yanjianxi_01b_C",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_yanjianxi_01a.TAMER_gycy_yanjianxi_01a_C",
         "desc": "huxianfeng "
       },
 
@@ -458,16 +458,27 @@
   },
 
   {
-    "code": "shaer",
+    "code": "sushae",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_fuzishu.TAMER_hfm_fuzishu_C",
+        "desc": "huxianfeng"
+      },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "sushad",
     "afterActions": [
       {
         "Type": "spaw_monster",
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shuwang_01a.TAMER_hfm_shuwang_01a_C",
-        "desc": "huxianfeng"
-      },
-      {
-        "Type": "spaw_monster",
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_fushu.TAMER_hfm_fushu_C",
         "desc": "huxianfeng"
       },
       {
@@ -477,7 +488,6 @@
       }
     ]
   },
-
   {
     "code": "xuewa",
     "afterActions": [
@@ -633,6 +643,17 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_youyan_02.TAMER_psd_youyan_02_C",
         "desc": "第四关·百足虫（BOSS）"
       },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "suZONG",
+    "afterActions": [
       {
         "Type": "spaw_monster",
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_jiachongzongbing_02.TAMER_psd_jiachongzongbing_02_C",
@@ -645,7 +666,144 @@
       }
     ]
   },
+  {
+    "code": "suNIS",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_LYS_xuansu_02.TAMER_LYS_xuansu_02_C",
+        "desc": "泥塑金刚"
+      },
 
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_LYS_xuansu_01.TAMER_LYS_xuansu_01_C",
+        "desc": "泥塑金刚"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "suHUY",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_niu_01_mountaintop.TAMER_hfm_niu_01_mountaintop_C",
+        "desc": "第一关·牯护院（BOSS）"
+      },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "suSHE",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_she_01.TAMER_gycy_she_01_C",
+        "desc": "第一关·广谋（BOSS）"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_baiyi_04.TAMER_gycy_baiyi_04_C",
+        "desc": "跳浪蛟"
+      },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "suZHI",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_lang_04.TAMER_gycy_lang_04_C",
+        "desc": "第一关·广智（BOSS）"
+      },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "suXIN",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_szlc_xiniu_01.TAMER_szlc_xiniu_01_C",
+        "desc": "第六关·金甲犀（BOSS）"
+      },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "suSUI",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_szlc_hema_01.TAMER_szlc_hema_01_C",
+        "desc": "第六关·水木兽（BOSS）"
+      },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "suDUT",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/SL/TAMER_sl_shitongling_01.TAMER_sl_shitongling_01_C",
+        "desc": "第六关·毒统领（BOSS）"
+      },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "suhou",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_lys_xuehou.TAMER_lys_xuehou_C",
+        "desc": "第三关·赤尻马猴P3（BOSS）"
+      },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
   {
     "code": "susun",
     "afterActions": [
@@ -715,7 +873,21 @@
       }
     ]
   },
-
+  {
+    "code": "suSX",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "desc": "石先锋",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_shixianfeng_02.TAMER_hys_shixianfeng_02_C"
+      },
+       {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
   {
     "code": "sulang",
     "afterActions": [

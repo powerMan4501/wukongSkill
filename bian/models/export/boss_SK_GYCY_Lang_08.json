@@ -24,7 +24,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146987347"
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS_LXZ/Materials/M_hfs_lingxuzi_01_mask_body_hair.M_hfs_lingxuzi_01_mask_body_hair"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_LingXuZi02/Hair/HAIR_tail_TFX.HAIR_tail_TFX",
@@ -37,7 +37,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146987346"
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_LingXuZi02/Materials/M_gycy_lang_08_body_hair.M_gycy_lang_08_body_hair"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_LingXuZi02/Hair/HAIR_beard1.HAIR_beard1_TFX",
@@ -50,7 +50,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146987345"
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS_LXZ/Materials/M_hfs_lingxuzi_01_mask_body_hair.M_hfs_lingxuzi_01_mask_body_hair"
       }
     ],
     "InteractBones": [

@@ -1,12 +1,5 @@
 [
-  {
-    "OriginalId": 10802,
-    "MappedId": 10702,
-    "Condition": "StancePoke",
-    "conditionValue": null,
-    "desc": "戳棍下,棍的平A2变成枪平A"
-  },
-
+ 
   {
     "OriginalId": 10802,
     "MappedId": 50012,

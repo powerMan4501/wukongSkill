@@ -1,23 +1,23 @@
 [
   {
     "ID": 20101,
-    "BuffTips": "把平a1 buff，增加到8.5秒",
-    "Duration": 8500
+    "BuffTips": "把平a1 buff，增加到3.5秒",
+    "Duration": 3500
   },
   {
     "ID": 20102,
-    "BuffTips": "把平a2 buff，增加到8.5秒",
-    "Duration": 8500
+    "BuffTips": "把平a2 buff，增加到3.5秒",
+    "Duration": 3500
   },
   {
     "ID": 20103,
-    "BuffTips": "把平a3 buff，增加到8.5秒",
-    "Duration": 8500
+    "BuffTips": "把平a3 buff，增加到3.5秒",
+    "Duration": 3500
   },
   {
     "ID": 20104,
-    "BuffTips": "把平a4 buff，增加到8.5秒",
-    "Duration": 8500
+    "BuffTips": "把平a4 buff，增加到3.5秒",
+    "Duration": 3500
   },
   {
     "ID": 21161,

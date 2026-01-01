@@ -34,6 +34,14 @@
         "EffectParamsString": [],
         "EffectParams": [4, 6, 1, 1000],
         "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 2,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [190, 1000, 0, 1],
+        "EffectParamsFloat": []
       }
     ]
   },
@@ -120,6 +128,14 @@
         ],
         "EffectParams": [],
         "EffectParamsFloat": []
+      },
+       {
+        "EffectTrigger": 7,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [888666029],
+        "EffectParamsFloat": [0]
       },
       {
         "EffectTrigger": 3,

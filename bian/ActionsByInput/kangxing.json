@@ -1,13 +1,8 @@
 [
   {
-    "code": "jic",
+    "code": "SpaceBar",
     "afterActions": [
-      {
-        "Type": "decrease_Abnormal",
-        "attrType": 1,
-        "attrValue": 1000,
-        "desc": "降低冰异常"
-      },
+     
       {
         "type": "Clear_All_Abnormal",
         "clearTypes": [1],

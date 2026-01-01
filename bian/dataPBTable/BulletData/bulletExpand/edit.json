@@ -1,5 +1,12 @@
 [
   {
+    "ID": 150,
+    "desc": "杨戬头冠，飞剑",
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1,
+    "HitEffectsforChr": [1099942,888555015]
+  },
+  {
     "desc": "鼠司空，激光",
     "ID": 1011401,
     "HitEffectsforChr": [888555005],

@@ -7,20 +7,7 @@
     "desc": "4a进尺转化，棍子变粗砸一下"
   },
 
-  {
-    "OriginalId": 10714,
-    "MappedId": 10797,
-    "Condition": "hasBuff",
-    "conditionValue": 20103,
-    "desc": "3a进尺转化，10797"
-  },
-  {
-    "OriginalId": 10714,
-    "MappedId": 54321005,
-    "Condition": "hasBuff",
-    "conditionValue": 20102,
-    "desc": "2a进尺转化，破隐一击"
-  },
+
   {
     "OriginalId": 10714,
     "MappedId": 10863,

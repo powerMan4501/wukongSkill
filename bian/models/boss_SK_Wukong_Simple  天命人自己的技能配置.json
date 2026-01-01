@@ -46,14 +46,7 @@
 
       "MagicSkillID": 202302
     },
-    {
-      "Id": 8596,
-      "Name": "火蛙,大招，喷火，把战场变成岩浆",
-      "speedRate": 1.5,
-      "Key": "",
-      "type": "magic",
-      "MagicSkillID": 416340
-    },
+
     {
       "type": "BOSS",
       "bossLabel": "SK_hys_shanzhen_01",
@@ -232,10 +225,42 @@
     },
 
     {
-      "Id": 10520,
-      "CanBreak": true,
-      "Name": "安身",
-      "Key": "C+XBUTTON2"
+      "Key": "DECIMAL",
+      "type": "actions",
+      "afterActions": [
+        {
+          "type": "magicskill",
+          "magicID": 8571,
+          "MagicSkillID": 303003,
+          "hasBuff": 888666006,
+          "desc": "有冰buff,隼居士，跳起+冰5下"
+        },
+        {
+          "type": "bossskill",
+          "bossLabel": "SK_szlc_xiniu_01",
+          "bossType": "BOSS",
+          "MagicSkillID": 470716,
+          "hasBuff": 888666005,
+          "desc": "有雷buf,大招，大范围劈雷电"
+        },
+
+        {
+          "type": "magicskill",
+          "magicID": 8535,
+          "MagicSkillID": 405507,
+          "hasBuff": 888666007,
+          "desc": "有火buff, 鳖宝 飞起坐地上"
+        },
+
+        {
+          "type": "bossskill",
+          "bossLabel": "SK_HYS_HongHaiEr_02A",
+          "bossType": "BOSS",
+          "MagicSkillID": 440534,
+          "noHasAnyBuff": [888666005, 888666006, 888666007],
+          "desc": " 夜叉王横扫"
+        }
+      ]
     },
 
     {
@@ -279,9 +304,7 @@
 
     {
       "type": "actions",
-      "afterActions": [
-        { "type": "trans_dasheng", "changeTime": 999 }
-      ],
+      "afterActions": [{ "type": "trans_dasheng", "changeTime": 999 }],
       "Key": "A+RBUTTON"
     },
     {
