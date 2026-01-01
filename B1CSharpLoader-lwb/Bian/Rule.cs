@@ -509,6 +509,9 @@ namespace bian
                 case "weak_monster":
                     Helper.WeakMonster();
                     break;
+                case "change_target":
+                    Helper.change_target();
+                    break;
                 case "strong_monster":
                     // 加强怪
                     Helper.StrongMonster();

@@ -43,6 +43,7 @@ public class TimerComp : GameStateSystemBase
 
 
 
+
     public void RenderBasicInfo(float DeltaTime)
     {
         if (!CheckWorldAndPawn())
@@ -93,7 +94,7 @@ public class TimerComp : GameStateSystemBase
                 ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"生命：{(int)value},  法力：{(int)Mp}, 防御：{(int)def}");
             }
 
-          
+
 
 
             else if (attribute.Key == EBGUAttrFloat.FreezeDef)
@@ -123,6 +124,48 @@ public class TimerComp : GameStateSystemBase
                 float CommDropAddition = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.CommDropAddition);
                 int dropAdd = (int)CommDropAddition / 100 > 100 ? 100 : (int)CommDropAddition / 100;
                 ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"神力: {(int)value},  法宝: {(int)FabaoEnergy},  精魄: {(int)VigorEnergy}, 掉宝: {dropAdd}%");
+            }
+            // else if (attribute.Key == EBGUAttrFloat.EnumMax)
+            // {
+            //     var nearPlayer = Helper.GetNearestAlly(2000);
+
+            //     if (nearPlayer != null)
+            //     {
+
+            //         // 生命/法力
+            //         float Hp = BGUFunctionLibraryCS.GetAttrValue(nearPlayer, EBGUAttrFloat.Hp);
+            //         float Atk = BGUFunctionLibraryCS.GetAttrValue(nearPlayer, EBGUAttrFloat.Atk);
+            //         float DmgDef = BGUFunctionLibraryCS.GetAttrValue(nearPlayer, EBGUAttrFloat.DmgDef);
+            //         ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"队友: 生命：{(int)Hp}, 攻击：{(int)Atk}, 减伤: {(int)DmgDef / 100}%");
+            //     }
+            //     else
+            //     {
+            //         ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], "");
+            //     }
+            // }
+
+            else if (attribute.Key == EBGUAttrFloat.None)
+            {
+                var target = BGUFunctionLibraryCS.BGUGetTarget(controlledPawn) as BGUCharacterCS;
+                var text = "目标角色";
+                if (target == null)
+                {
+                    target = Helper.GetNearestActor(4000);
+                    text = "最近角色";
+                }
+                if (target != null)
+                {
+                    // 生命/法力
+                    float Hp = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.Hp);
+                    float Atk = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.Atk);
+                    float DmgDef = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.DmgDef);
+                    var teamID = target.GetTeamIDInCS();
+                    ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{text}:生命:{(int)Hp}, 攻击:{(int)Atk}, 减伤:{(int)DmgDef / 100}%, 阵营:{teamID}");
+                }
+                else
+                {
+                    ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], "");
+                }
             }
             index++;
         }

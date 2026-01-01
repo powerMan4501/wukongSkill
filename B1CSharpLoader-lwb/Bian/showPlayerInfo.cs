@@ -26,6 +26,8 @@ public class ShowPlayerInfo
 		{ EBGUAttrFloat.FreezeDef,  "" },
 		{ EBGUAttrFloat.FreezeAtk,  "" },
 		{ EBGUAttrFloat.CurEnergy,  "" },
+		// { EBGUAttrFloat.EnumMax,  "" },
+		{ EBGUAttrFloat.None,  "" },
 	};
 
 	private static UWorld? world;

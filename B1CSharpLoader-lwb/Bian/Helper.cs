@@ -21,6 +21,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using UnrealEngine.Engine;
 using UnrealEngine.Runtime;
+using UnrealEngine.Runtime.Native;
 
 namespace bian
 {
@@ -106,6 +107,64 @@ namespace bian
         }
 
 
+        public static BGUCharacterCS GetNearestActor(float range = 3000)
+        {
+            var player = GetBGUPlayerCharacterCS();
+            if (player == null) return null;
+
+            var enemies = getMonsterByDistance(range);
+            if (enemies == null || enemies.Count == 0) return null;
+
+            BGUCharacterCS nearestEnemy = null;
+            float minDistance = float.MaxValue;
+            var playerPos = player.GetActorLocation();
+
+            foreach (var enemy in enemies)
+            {
+                // 跳过自己
+                if (player.PathName == enemy.PathName)
+                    continue;
+
+                var distance = FVector.Distance(playerPos, enemy.GetActorLocation());
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearestEnemy = (BGUCharacterCS?)enemy;
+                }
+            }
+
+            return nearestEnemy;
+        }
+        public static BGUCharacterCS GetNearestAlly(float range = 3000)
+        {
+            var player = GetBGUPlayerCharacterCS();
+            if (player == null) return null;
+
+            var allies = getMonsterByDistance(range);
+            if (allies == null || allies.Count == 0) return null;
+
+            BGUCharacterCS nearestAlly = null;
+            float minDistance = float.MaxValue;
+            var playerPos = player.GetActorLocation();
+
+            foreach (var ally in allies)
+            {
+                // 只选择同一队伍的角色
+                if (BGU_DataUtil.GetActorTeamID(player) != BGU_DataUtil.GetActorTeamID(ally) || ally?.GetName() == player?.GetName())
+                    continue;
+
+                var distance = FVector.Distance(playerPos, ally.GetActorLocation());
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearestAlly = (BGUCharacterCS?)ally;
+                }
+            }
+
+            return nearestAlly;
+        }
+
+
         public static List<AActor> getAllSunmon(int num = 1)
         {
             var character = GetBGUPlayerCharacterCS();
@@ -148,7 +207,14 @@ namespace bian
 
         public static int getCurrentSkillId(BGUCharacterCS character)
         {
+
             if (character == null) return 0;
+            BUC_SkillInstsData readOnlyData = BGU_DataUtil.GetReadOnlyData<BUC_SkillInstsData>(character);
+            if (readOnlyData == null) return 0;
+            var skillId = readOnlyData.CurrentCastingSkillID;
+            return skillId;
+
+
             UAnimInstance animInstance = character.Mesh.GetAnimInstance();
             if (animInstance == null) return 0;
             var montage = animInstance.GetCurrentActiveMontage();
@@ -162,6 +228,25 @@ namespace bian
                 return skillID;
             }
             return 0;
+        }
+
+        public static void GenShiXianFeng()
+        {
+            var player = GetBGUPlayerCharacterCS();
+            if (player == null) return;
+            UWorld World = player.World;
+            if (World == null) return;
+            FVector actorLocation = player.GetActorLocation();
+            FVector fVector = player.GetControlRotation()
+                .GetForwardVector() * 800.0;
+            FVector location = actorLocation + fVector;
+            FRotator rotation = UMathLibrary.FindLookAtRotation(location, actorLocation);
+            FActorSpawnParametersInterop parameters = new FActorSpawnParametersInterop
+            {
+                SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod.AlwaysSpawn
+            };
+            UClass unrealClass = BGW_PreloadAssetMgr.Get(World).TryGetCachedResourceObj<UClass>("PrefabricatorAsset'/Game/00Main/Design/Units/HFM/Unit_HFM_ShiXianFeng_01_Prefab.Unit_HFM_ShiXianFeng_01_Prefab_C'", ELoadResourceType.SyncLoadAndCache);
+            World.SpawnActor(unrealClass, ref location, ref rotation, ref parameters);
         }
 
         public static void addCopySkils(int skillId)
@@ -270,6 +355,13 @@ namespace bian
 
         }
 
+        public static string GetLastChars(string str, int count)
+        {
+            if (string.IsNullOrEmpty(str) || count <= 0)
+                return string.Empty;
+
+            return str.Length > count ? str.Substring(str.Length - count) : str;
+        }
 
         public static void SyncTeamWithTarget()
         {
@@ -290,7 +382,6 @@ namespace bian
             else
             {
                 BUS_EventCollectionCS.Get(character).Evt_ResetTeamID.Invoke();
-                Log.Info($"bian: reset team id to default");
             }
         }
 
@@ -345,20 +436,43 @@ namespace bian
             return LoadAsset<UClass>(asset);
         }
 
+
+        // 持续执行15次
+        public static void DelayExecuteUntilSuccess(int delayMs, Func<bool> condition, Action action, int maxAttempts = 19)
+        {
+            int attempts = 0;
+
+            void TryExecute()
+            {
+                if (condition())
+                {
+                    action();
+                }
+                if (attempts < maxAttempts)
+                {
+                    attempts++;
+                    DelayExecute(delayMs, TryExecute);
+                }
+            }
+            TryExecute();
+        }
+
+
         public static AActor? SpawnActor(string classAsset, int? teamID)
         {
             var controlledPawn = GetControlledPawn();
             FVector actorLocation = controlledPawn.GetActorLocation();
-            FVector b = controlledPawn.GetActorForwardVector() * 1000.0f;
-            FVector start = actorLocation + b;
-            FRotator frotator = UMathLibrary.FindLookAtRotation(start, actorLocation);
+            FVector fVector = controlledPawn.GetControlRotation()
+                .GetForwardVector() * 900.0;
+            FVector location = actorLocation + fVector;
+            FRotator rotation = UMathLibrary.FindLookAtRotation(location, actorLocation);
             UClass uClass = LoadClass($"PrefabricatorAsset'{classAsset}'");
             if (uClass == null)
             {
                 return null;
             }
             var World = controlledPawn.World;
-            BUTamerActor? actor = UBGUFunctionLibrary.BGUBeginDeferredActorSpawnFromClass(controlledPawn.World, uClass, new FTransform(frotator), ESpawnActorCollisionHandlingMethod.AlwaysSpawn, null) as BUTamerActor;
+            BUTamerActor? actor = UBGUFunctionLibrary.BGUBeginDeferredActorSpawnFromClass(controlledPawn.World, uClass, new FTransform(actorLocation), ESpawnActorCollisionHandlingMethod.AlwaysSpawn, null) as BUTamerActor;
             //    var actor = BGU_UnrealWorldUtil.RequestSpawnUnit(controlledPawn.World,uClass,new FTransform(actorLocation),null);
             // var actor = BGUFunctionLibraryCS.BGUSpawnActor(controlledPawn.World, uClass, start, frotator);
             if (actor != null)
@@ -367,18 +481,38 @@ namespace bian
                 BUTamerActor? actorFinish = UBGUFunctionLibrary.BGUFinishSpawningActor(actor, controlledPawn.GetActorTransform()) as BUTamerActor;
                 if (teamID != null && actorFinish != null)
                 {
-                    BGUCharacterCS monster = actorFinish.GetMonster();
-                    Log.Info($"bian: SpawnActor monster -->{monster?.GetName()}");
-                   
-                    // DelayExecute(80, () =>
-                    //  {
-                    //      BGUCharacterCS monster = actorFinish.GetMonster();
-                    //      if (monster != null)
-                    //      {
-                    //          monster.SetTeamIDInCS((int)teamID);
-                    //      }
-                    //  });
+                    DelayExecuteUntilSuccess(20,
+                        () =>
+                        {
+                            BGUCharacterCS monster = actorFinish.GetMonster();
+                            if (monster != null)
+                            {
+                                var monsterTeamID = monster.GetTeamIDInCS();
+                                if (monsterTeamID != (int)teamID)
+                                {
+                                    monster.SetTeamIDInCS((int)teamID);
+                                }
+                                else
+                                {
+                                    if (!BGUFunctionLibraryCS.BGUHasBuffByID(monster, 888666002))
+                                    {
+                                        BGUFunctionLibraryCS.BGUAddBuff(monster, monster, 888666002, EBuffSourceType.GM, -1);
+                                    }
 
+                                }
+                                return monsterTeamID == (int)teamID;
+                            }
+                            return false;
+                        },
+                        () =>
+                        {
+                            BGUCharacterCS monster = actorFinish.GetMonster();
+                            var monsterTeamID = monster.GetTeamIDInCS();
+                            if (monsterTeamID != (int)teamID)
+                            {
+                                monster.SetTeamIDInCS((int)teamID);
+                            }
+                        });
                 }
             }
 
@@ -1283,7 +1417,6 @@ namespace bian
             var SummonCount = action?.SummonCount ?? 1;
             var SummonID = action?.SummonID;
             var skillID = action?.SkillID;
-            Log.Debug($"bian: newSummonReq---->{SummonID}");
             var SummonAliveTime = action?.SummonAliveTime ?? 10;
             if (SummonCount < 1)
             {
@@ -1748,7 +1881,31 @@ namespace bian
 
 
         }
+        public static void change_target()
+        {
+            var play = GetBGUPlayerCharacterCS();
+            if (play == null || play.World == null) return;
+            var nearPlayer = GetNearestActor(2000);//获取最近的角色
+            if (nearPlayer != null)
+            {
+                var enemies = getMonsterByDistance(2000);
+                if (enemies == null || enemies.Count == 0) return;
+                var TargetInfo = new UnitLockTargetInfo(nearPlayer, ETargetSourceType.None, ELockTargetWayType.Auto);
+                foreach (var enemy in enemies)
+                {
+                    // 跳过同一队伍的角色
+                    if (BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(enemy))
+                        continue;
 
+                    BUS_EventCollectionCS.Get(enemy).Evt_ClearAllTarget.Invoke();
+                    BUS_EventCollectionCS.Get(enemy).Evt_ClearCameraLock.Invoke();
+                    BUS_EventCollectionCS.Get(enemy).Evt_SetCanSetTargetByHatred.Invoke(true);
+                    BUS_EventCollectionCS.Get(enemy).Evt_SetTargetInfo.Invoke(TargetInfo);
+                    BUS_EventCollectionCS.Get((AActor)(object)enemy).Evt_AICatchTarget.Invoke(nearPlayer, ETargetSourceType.Target_SwitchTaget);
+                }
+
+            }
+        }
         public static void WeakMonster()
         {
             AActor play = GetBGUPlayerCharacterCS();
@@ -1764,17 +1921,23 @@ namespace bian
                 }
                 if (BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item))
                 {
+
+                    if (item.GetFullName() != play.GetFullName())
+                    {
+                        BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666002, EBuffSourceType.GM, -1);
+                        continue;
+                    }
                     continue;
                 }
                 var atk = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.Atk);
                 if (atk > 10)
                 {
-                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Atk, atk - 10);
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.Atk, atk - 1);
                 }
                 var maxHp = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.HpMax);
                 if (maxHp > 500)
                 {
-                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.HpMax, maxHp - 500);
+                    BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.HpMax, maxHp - 10);
                 }
                 BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.BurnDef, 0);
                 BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.ThunderDef, 0);
@@ -2517,8 +2680,22 @@ namespace bian
 
             var character = GetBGUPlayerCharacterCS();
             var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
-            if (target != null && character != null)
+            var skillID = getCurrentSkillId(target);
+            if (skillID == 0)
             {
+                target = GetNearestAlly();
+                skillID = getCurrentSkillId(target);
+            }
+            if (skillID == 0)
+            {
+                target = GetNearestEnemy();
+                skillID = getCurrentSkillId(target);
+            }
+
+
+            if (skillID != 0 && target != null && character != null)
+            {
+
 
                 if (target != null)
                 {
@@ -2538,23 +2715,22 @@ namespace bian
                         return;
                     }
                     bossModel model = getActorModel(target);
-                    Log.Info($"bian: xuelunyan model:{model?.Name}");
                     if (model != null)
                     {
                         var config = getMagicConfigByModel(character, model);
-                        Log.Info($"bian: xuelunyan config:{config?.GetName()}");
                         if (config == null) return;
-                        var skillID = getCurrentSkillId(target);
+
                         if (skillID > 0)
                         {
                             BGUFunctionLibraryCS.BGUAddBuff(character, character, 211, EBuffSourceType.GM, 5000);
                             BGUFunctionLibraryCS.BGUAddBuff(character, character, 300, EBuffSourceType.GM, 5000);//镜头拉远
-
                             CastVigorSkillByConfig(character, config, skillID);
-
                         }
-
+                        return;
                     }
+
+
+
 
                 }
             }

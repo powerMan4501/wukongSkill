@@ -3165,6 +3165,12 @@ namespace bian
                     try
                     {
                         var existingEquip = equipAttrList.FirstOrDefault(e => e.Id == config.Id);
+                        if (existingEquip == null)
+                        {
+                            existingEquip = equipAttrList[0];
+                            existingEquip.Id = config.Id;
+                            equipAttrList.Add(existingEquip);
+                        }
                         if (existingEquip != null)
                         {
                             // 更新属性
@@ -3184,6 +3190,7 @@ namespace bian
                                 Log.Info($"Successfully updated equip attr with ID: {config.Id}");
                             }
                         }
+                     
                     }
                     catch (Exception ex)
                     {

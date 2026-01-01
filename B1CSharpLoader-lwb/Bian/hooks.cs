@@ -419,7 +419,7 @@ public class Hooks
             {
                 return;
             }
-            if (BuffID != 1015 && BuffID != 2167 && BuffID != 604 && BuffID != 20986)
+            if (BuffID != 1015 && BuffID != 2167 && BuffID != 604 && BuffID != 20986 && BuffID != 2030)
             {
                 Log.Info($"Evt_BuffAdd BuffID:{BuffID}");
 
@@ -754,6 +754,18 @@ public class Hooks
             {
                 return false; // 跳过原始方法的执行
             }
+            // int dmgID = ((EffectInstReq.TriggerSkillId <= 0) ? SkillDamageConfig.DmgReasonEffectID : EffectInstReq.TriggerSkillId);
+            // FUStSkillEffectDesc skillEffectDesc = BGW_GameDB.GetSkillEffectDesc(dmgID, Attacker);
+            //     Log.Info($"OnHandleNormalDamageEffect skillId:{skillEffectDesc?.ID}");
+            
+            // if (skillEffectDesc != null && playerTeamID == attackerTeamId)
+            // {
+            //     // 如果是玩家造成的伤害
+            //     if (skillEffectDesc.EffectParamsInt.Count < 7)
+            //     {
+            //         skillEffectDesc.EffectParamsInt[6] = 4444401;
+            //     }
+            // }
 
             return true; // 继续执行原始方法
         }
