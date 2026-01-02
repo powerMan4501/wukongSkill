@@ -1,5 +1,37 @@
 [
   {
+    "ID": 142,
+    "BuffTips": "定风珠，扣敌人50%减伤,艰难行走,巴山虎伤害",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [120, -5000, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [94],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 20,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [
+          "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_20_hfm_bashanhu_BulletChange.BGW_20_hfm_bashanhu_BulletChange'"
+        ],
+        "EffectParams": [],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
     "ID": 227,
     "BuffTips": "铜头成功后表现由0.4秒改成1.6秒",
     "Duration": 1600
@@ -129,7 +161,7 @@
         "EffectParams": [],
         "EffectParamsFloat": []
       },
-       {
+      {
         "EffectTrigger": 7,
         "EffectType": 46,
         "EffectTargetSelectType": 0,

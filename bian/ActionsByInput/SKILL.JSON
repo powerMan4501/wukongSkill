@@ -1,0 +1,61 @@
+[
+  {
+    "code": "swj",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8522,
+        "MagicSkillID": 11322,
+        "Scale3D": 0.4,
+        "desc": "无量蝠，冰"
+      }
+    ]
+  },
+  {
+    "code": "sdz",
+    "afterActions": [
+      {
+        "type": "skill",
+         "skillID": 10992,
+        "desc": "定风珠"
+      }
+    ]
+  },
+  {
+    "code": "swi",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8522,
+        "MagicSkillID": 302102,
+        "Scale3D": 0.4,
+        "desc": "喷冰爆，然后飞来飞去很久"
+      }
+    ]
+  },
+  {
+    "code": "syw",
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_mgd_yangjian_01",
+        "bossType": "BOSS",
+        "MagicSkillID": 800084,
+        "desc": "万剑归宗大招"
+      }
+    ]
+  },
+
+   {
+    "code": "syk",
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_mgd_yangjian_01",
+        "bossType": "BOSS",
+        "MagicSkillID": 800009,
+        "desc": "飞过去，用开山斧砍"
+      }
+    ]
+  }
+]

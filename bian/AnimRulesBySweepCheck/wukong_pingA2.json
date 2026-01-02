@@ -2,7 +2,7 @@
   {
     "montage": "AM_Dasheng_ComboA_02.AM_Dasheng_ComboA_02",
     "linkValue": 0,
-    "scaleWeaponNum": 3,
+    "scaleWeaponNum": 2,
     "MoveOffset": 100,
     "CastActions": [
       {
@@ -24,7 +24,7 @@
   {
     "montage": "AM_Wukong_ComboA_q2.AM_Wukong_ComboA_q2",
     "linkValue": 0,
-    "scaleWeaponNum": 5,
+    "scaleWeaponNum": 2,
     "MoveOffset": 100,
     "CastActions": [
       {

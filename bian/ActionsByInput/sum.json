@@ -24,6 +24,30 @@
     ]
   },
   {
+    "code": "SUWUK",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 5009301,
+        "SummonCount": 1,
+        "desc": "召唤大圣分身"
+      },
+      {
+        "Type": "summon",
+        "SummonID": 500601,
+        "SummonCount": 1,
+        "desc": "人参"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+
+  {
     "code": "sushen",
     "afterActions": [
       {
@@ -141,6 +165,24 @@
       }
     ]
   },
+  {
+    "code": "sutj",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "toPlayerTeam": true,
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_sl_tianjiang_01.TAMER_sl_tianjiang_01_C",
+        "desc": "天将"
+      },
+
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
   {
     "code": "hxj",
     "afterActions": [
@@ -319,6 +361,13 @@
         "desc": "huxianfeng"
       },
       {
+        "Type": "spaw_monster",
+        "toPlayerTeam": true,
+        "TimeDelay": 100,
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_sl_tianjiang_01.TAMER_sl_tianjiang_01_C",
+        "desc": "天将"
+      },
+      {
         "Type": "diff_teamid",
         "TimeDelay": 3000,
         "desc": "让范围3000以内的角色敌友不分"
@@ -332,6 +381,13 @@
         "Type": "spaw_monster",
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_hu_01.TAMER_hfm_hu_01_C",
         "desc": "第二关·初代“虎先锋”（BOSS）"
+      },
+      {
+        "Type": "spaw_monster",
+        "toPlayerTeam": true,
+        "TimeDelay": 100,
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_sl_tianjiang_01.TAMER_sl_tianjiang_01_C",
+        "desc": "天将"
       },
       {
         "Type": "diff_teamid",
@@ -348,7 +404,13 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shawuliang_01a.TAMER_hfm_shawuliang_01a_C",
         "desc": "第二关·虎伥（BOSS）"
       },
-
+      {
+        "Type": "spaw_monster",
+        "toPlayerTeam": true,
+        "TimeDelay": 100,
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_sl_tianjiang_01.TAMER_sl_tianjiang_01_C",
+        "desc": "天将"
+      },
       {
         "Type": "diff_teamid",
         "TimeDelay": 3000,
@@ -364,7 +426,13 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_bashanhu_01.TAMER_hfm_bashanhu_01_C",
         "desc": "疯虎"
       },
-
+      {
+        "Type": "spaw_monster",
+        "toPlayerTeam": true,
+        "TimeDelay": 100,
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_sl_tianjiang_01.TAMER_sl_tianjiang_01_C",
+        "desc": "天将"
+      },
       {
         "Type": "diff_teamid",
         "TimeDelay": 3000,
@@ -725,12 +793,14 @@
     ]
   },
   {
-    "code": "suZHI",
+    "code": "suWWUL",
     "afterActions": [
       {
         "Type": "spaw_monster",
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_lang_04.TAMER_gycy_lang_04_C",
-        "desc": "第一关·广智（BOSS）"
+        "toPlayerTeam": true,
+        "TimeDelay": 100,
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_lys_mo3_chaoshengzhilu.TAMER_lys_mo3_chaoshengzhilu_C",
+        "desc": "huxianfeng"
       },
 
       {
@@ -828,6 +898,13 @@
         "desc": "鼠司空"
       },
       {
+        "Type": "spaw_monster",
+        "toPlayerTeam": true,
+        "TimeDelay": 100,
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_lys_mo3_chaoshengzhilu.TAMER_lys_mo3_chaoshengzhilu_C",
+        "desc": "huxianfeng"
+      },
+      {
         "Type": "diff_teamid",
         "TimeDelay": 3000,
         "desc": "让范围3000以内的角色敌友不分"
@@ -881,7 +958,7 @@
         "desc": "石先锋",
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_shixianfeng_02.TAMER_hys_shixianfeng_02_C"
       },
-       {
+      {
         "Type": "diff_teamid",
         "TimeDelay": 3000,
         "desc": "让范围3000以内的角色敌友不分"

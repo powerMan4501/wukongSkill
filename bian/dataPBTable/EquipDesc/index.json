@@ -72,7 +72,7 @@
     "Id": 16039,
     "EquipName": "满堂红",
     "AttrEffectId": 3110406,
-    "EquipEffectDesc": "增加14点赋火攻击的伤害；在岩浆地形或安身法中，轻棍招式附带<EquipDetail_SuitDesc_State>火焚异常</>"
+    "EquipEffectDesc": "免疫熔岩, 增加30点赋火攻击的伤害；在岩浆地形或安身法中，轻棍招式附带<EquipDetail_SuitDesc_State>火焚异常</>"
   },
   {
     "Id": 16023,

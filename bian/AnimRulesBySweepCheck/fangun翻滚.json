@@ -24,13 +24,13 @@
         "attrValue": 600,
         "desc": "技能霸体值"
       },
-       {
+      {
         "Type": "add_attr",
         "attrType": 171,
         "attrValue": 600,
         "desc": "硬直抵抗"
       },
-      
+
       {
         "Type": "add_attr",
         "attrType": 198,
@@ -85,6 +85,29 @@
       }
     ]
   },
+  {
+    "desc": "定风珠",
+    "montage": "AM_wukong_dingfengzhu_02",
+    "linkValue": 0,
+    "addRadius": 5500,
+    "speedRate": 1.5,
+    "AMScaleRate": 10,
+    "AMSpeedRate": 1.5,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [30050301],
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "波动"
+          }
+        ]
+      }
+    ]
+  },
 
   {
     "desc": "翻滚，加凤穿花",
@@ -112,7 +135,7 @@
       }
     ],
     "SweepActions": [
-       {
+      {
         "Type": "bullet",
         "bullets": [
           {
