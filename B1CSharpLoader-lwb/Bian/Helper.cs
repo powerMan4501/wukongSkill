@@ -272,7 +272,6 @@ namespace bian
             var character = GetBGUPlayerCharacterCS();
 
             var skillId = action?.SkillID > 0 ? action.SkillID : getCurrentSkillId(character);
-            Log.Info($"summonerDoActions list:{list?.Count},skillId:{skillId}");
 
             if (list == null || list.Count == 0 || action == null || action.Type == null)
             {
@@ -293,7 +292,6 @@ namespace bian
                  });
                 return;
             }
-            Log.Info($"summonerDoActions action.Type:{action.Type},skillId:{skillId}");
             foreach (AActor item in list)
             {
 
@@ -312,11 +310,11 @@ namespace bian
                         }
 
                         break;
-                    case "skill":
-                        // BUS_EventCollectionCS.Get(character).Evt_SummonUseSkill.Invoke(skillId);
-                        // var ServantEventCollection = BUS_EventCollectionCS.Get(item);
-                        // ServantEventCollection.Evt_CallSummonUseSkill.Invoke(skillId);
-                        break;
+                    // case "skill":
+                    //     // BUS_EventCollectionCS.Get(character).Evt_SummonUseSkill.Invoke(skillId);
+                    //     // var ServantEventCollection = BUS_EventCollectionCS.Get(item);
+                    //     // ServantEventCollection.Evt_CallSummonUseSkill.Invoke(skillId);
+                    //     break;
                     case "magic":
                         if (action?.MagicSkillID > 0 && action?.path != null && finalActor != null)
                         {
@@ -328,7 +326,6 @@ namespace bian
                     case "bossskill":
 
                         if (finalActor == null) continue;
-                        Log.Info($"summonerDoActions bossskill:{action.bossLabel}, {action.bossType}, {action.MagicSkillID}");
                         if (action.bossLabel != null && action.bossType != null && action?.MagicSkillID != null)
                         {
                             CastVigorSkillByModel(finalActor, action.bossLabel, action.bossType ?? "", action?.MagicSkillID ?? 0, action?.resetBack ?? false, action?.RecoverSkillID ?? 10199);

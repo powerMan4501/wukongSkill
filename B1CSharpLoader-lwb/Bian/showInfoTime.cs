@@ -147,6 +147,8 @@ public class TimerComp : GameStateSystemBase
             else if (attribute.Key == EBGUAttrFloat.None)
             {
                 var target = BGUFunctionLibraryCS.BGUGetTarget(controlledPawn) as BGUCharacterCS;
+
+
                 var text = "目标角色";
                 if (target == null)
                 {
@@ -160,7 +162,13 @@ public class TimerComp : GameStateSystemBase
                     float Atk = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.Atk);
                     float DmgDef = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.DmgDef);
                     var teamID = target.GetTeamIDInCS();
-                    ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{text}:生命:{(int)Hp}, 攻击:{(int)Atk}, 减伤:{(int)DmgDef / 100}%, 阵营:{teamID}");
+                    var player = Helper.GetBGUPlayerCharacterCS();
+                    var playerTeamID = player.GetTeamIDInCS();
+                    var teamTxt = teamID == playerTeamID ? "友" : "敌";
+                    BGW_UIEventCollection.Get(target)?.Evt_UI_InitTopBarUI(ECSExtension.ToEntity(target));
+                    // 攻击/伤害加成
+                    float DmgAddition = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.DmgAddition);
+                    ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"{text}({teamTxt})生命:{(int)Hp}, 攻击:{(int)Atk}, 减伤:{(int)DmgDef / 100}%, 加伤:{(int)DmgAddition / 100}%");
                 }
                 else
                 {
