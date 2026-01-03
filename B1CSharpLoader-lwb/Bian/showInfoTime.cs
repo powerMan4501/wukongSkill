@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using b1;
 using B1UI.GSUI;
+using BtlB1;
 using BtlShare;
 using CSharpModBase;
 using GSE.GSUI;
@@ -40,6 +42,53 @@ public class TimerComp : GameStateSystemBase
     {
         return CanTick() ? 1024 : 0;
     }
+
+    // 方案2：使用自定义结构体
+    public struct SurfaceTypeInfo
+    {
+        public string Name;
+        public int BuffId;
+    }
+    Dictionary<int, string> buffDict = new Dictionary<int, string>
+                {
+                    {888666005, "雷"},
+                    {888666006, "冰"},
+                    {888666007, "火"},
+                    {888666008, "毒"}
+                };
+
+    // 方案2：使用自定义结构体
+    public interface ISurfaceTypeInfo
+    {
+        string Name { get; set; }
+        int BuffId { get; set; }
+    }
+
+    // 777666001 水环境buff 777666002雪 777666003火 777666004草地/土壤
+    Dictionary<ESceneItemSurfaceType, SurfaceTypeInfo> SurfaceTypeDict = new Dictionary<ESceneItemSurfaceType, SurfaceTypeInfo>
+{
+    {ESceneItemSurfaceType.DefaultSurface, new SurfaceTypeInfo { Name = "无", BuffId = 0}},
+    {ESceneItemSurfaceType.GrassSurface, new SurfaceTypeInfo { Name = "草地", BuffId = 777666004}},
+    {ESceneItemSurfaceType.WaterSurface, new SurfaceTypeInfo { Name = "水中", BuffId = 777666001}},
+    {ESceneItemSurfaceType.CloudSurface, new SurfaceTypeInfo { Name = "云", BuffId = 777666004}},
+    {ESceneItemSurfaceType.StoneSurface, new SurfaceTypeInfo { Name = "石头", BuffId = 777666004}},
+    {ESceneItemSurfaceType.MudSurface, new SurfaceTypeInfo { Name = "泥地", BuffId = 777666001}},
+    {ESceneItemSurfaceType.SoilSurface, new SurfaceTypeInfo { Name = "土壤", BuffId = 777666004}},
+    {ESceneItemSurfaceType.WoodSurface, new SurfaceTypeInfo { Name = "木头", BuffId = 777666004}},
+    {ESceneItemSurfaceType.HfmsoftSandSurface, new SurfaceTypeInfo { Name = "软沙", BuffId = 777666004}},
+    {ESceneItemSurfaceType.GlideSandSurface, new SurfaceTypeInfo { Name = "滑沙", BuffId = 777666004}},
+    {ESceneItemSurfaceType.SnowSurface, new SurfaceTypeInfo { Name = "雪地", BuffId = 777666002}},
+    {ESceneItemSurfaceType.IceSurface, new SurfaceTypeInfo { Name = "冰面", BuffId = 777666002}},
+    {ESceneItemSurfaceType.LavaSurface, new SurfaceTypeInfo { Name = "岩浆", BuffId = 777666003}},
+    {ESceneItemSurfaceType.YinSurface, new SurfaceTypeInfo { Name = "阴", BuffId = 777666004}},
+    {ESceneItemSurfaceType.YangSurface, new SurfaceTypeInfo { Name = "阳", BuffId = 777666004}},
+    {ESceneItemSurfaceType.BloodSurface, new SurfaceTypeInfo { Name = "血池", BuffId = 777666001}},
+    {ESceneItemSurfaceType.GlideSnow, new SurfaceTypeInfo { Name = "滑雪", BuffId = 777666002}},
+    {ESceneItemSurfaceType.GlideIce, new SurfaceTypeInfo { Name = "滑冰", BuffId = 777666002}},
+    {ESceneItemSurfaceType.BajieMud, new SurfaceTypeInfo { Name = "泥浆", BuffId = 777666001}},
+    {ESceneItemSurfaceType.CricketBody, new SurfaceTypeInfo { Name = "蟋蟀背", BuffId = 0}},
+    {ESceneItemSurfaceType.EnumMax, new SurfaceTypeInfo { Name = "最大值", BuffId = 0}}
+};
 
 
 
@@ -125,24 +174,37 @@ public class TimerComp : GameStateSystemBase
                 int dropAdd = (int)CommDropAddition / 100 > 100 ? 100 : (int)CommDropAddition / 100;
                 ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"神力: {(int)value},  法宝: {(int)FabaoEnergy},  精魄: {(int)VigorEnergy}, 掉宝: {dropAdd}%");
             }
-            // else if (attribute.Key == EBGUAttrFloat.EnumMax)
-            // {
-            //     var nearPlayer = Helper.GetNearestAlly(2000);
 
-            //     if (nearPlayer != null)
-            //     {
+            else if (attribute.Key == EBGUAttrFloat.EnumMax)
+            {
+                string currentBuff = buffDict.FirstOrDefault(kvp => BGUFunctionLibraryCS.BGUHasBuffByID(controlledPawn, kvp.Key)).Value;
+                var buffText = !string.IsNullOrEmpty(currentBuff) ? $"当前buff: {currentBuff}" : "当前buff: 无";
+                ACharacter aCharacter = GetOwner() as ACharacter;
+                if (aCharacter != null)
+                {
+                    FVector StartTrace = BGUFuncLibActorTransformCS.BGUGetActorLocation(aCharacter) + aCharacter.GetActorUpVector() * aCharacter.CapsuleComponent.GetScaledCapsuleHalfHeight();
+                    FVector fVector = aCharacter.GetActorUpVector() * -100.0 - aCharacter.GetActorUpVector() * aCharacter.CapsuleComponent.GetScaledCapsuleHalfHeight();
+                    FVector EndTrace = BGUFuncLibActorTransformCS.BGUGetActorLocation(aCharacter) + fVector;
+                    var MovementData = RequireReadOnlyData<IBUC_MovementData, BUC_MovementData>();
+                    if (MovementData != null)
+                    {
+                        var EnvironmentInteractionMgrData = RequireWritableData<BUC_EnvironmentInteractionMgrData>();
 
-            //         // 生命/法力
-            //         float Hp = BGUFunctionLibraryCS.GetAttrValue(nearPlayer, EBGUAttrFloat.Hp);
-            //         float Atk = BGUFunctionLibraryCS.GetAttrValue(nearPlayer, EBGUAttrFloat.Atk);
-            //         float DmgDef = BGUFunctionLibraryCS.GetAttrValue(nearPlayer, EBGUAttrFloat.DmgDef);
-            //         ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"队友: 生命：{(int)Hp}, 攻击：{(int)Atk}, 减伤: {(int)DmgDef / 100}%");
-            //     }
-            //     else
-            //     {
-            //         ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], "");
-            //     }
-            // }
+                        EnvironmentInteractionMgrData.bNearGround = MovementData.CanUseSurfaceTypeFromMovementComp() && BGUFuncLibActorTransformCS.BGUGetActorLocation(aCharacter).Z - MovementData.CurFloorHitPoint.Z < 0f - fVector.Z;
+                        var curItem = SurfaceTypeDict.FirstOrDefault(kvp => kvp.Key == EnvironmentInteractionMgrData.LastResultSurfaceType).Value;
+
+                        string SurfaceTypeStr = curItem.Name;
+                        var buffId = curItem.BuffId;
+                        if (buffId != 0 && !BGUFunctionLibraryCS.BGUHasBuffByID(controlledPawn, buffId))
+                        {
+                            BGUFunctionLibraryCS.BGUAddBuff(controlledPawn, controlledPawn, buffId, EBuffSourceType.GM, 2000);
+                        }
+                        buffText += $";   地形: {SurfaceTypeStr}";
+                    }
+
+                }
+                ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], buffText);
+            }
 
             else if (attribute.Key == EBGUAttrFloat.None)
             {
@@ -175,6 +237,8 @@ public class TimerComp : GameStateSystemBase
                     ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], "");
                 }
             }
+
+
             index++;
         }
     }

@@ -1970,24 +1970,18 @@ namespace bian
         {
             var play = Helper.GetBGUPlayerCharacterCS();
             FVector actorLocation = play.GetActorLocation();
-            actorLocation.X -= 200;
-            actorLocation.Y -= 200;
+            actorLocation.X -= 500;
+            actorLocation.Y -= 500;
             FRotator fRotator2 = play.GetActorRotation();
 
-            List<BGUCharacterCS> allActorsOfClassList = play.World.GetAllActorsOfClassList<BGUCharacterCS>();
+            var list = getAllSunmon(10);
 
-            foreach (BGUCharacterCS item in allActorsOfClassList)
+            foreach (BGUCharacterCS item in list)
             {
 
-                if (item.CanBeDamaged && BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(item))
+                if (item.CanBeDamaged)
                 {
-                    var fs_name = item?.GetFullName().ToLower();
-                    // 取所有的队友，排除自己
-                    if (fs_name?.IndexOf("unit_player_wukong") < 0)
-                    {
-                        item?.Teleport(actorLocation, fRotator2);
-                    }
-
+                    item.Teleport(actorLocation, fRotator2);
                 }
             }
         }

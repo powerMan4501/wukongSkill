@@ -144,6 +144,7 @@ namespace bian
                 LoadUtils.LoadAndApplyTalentDesc();
                 LoadUtils.LoadAndApplyEquipAttrDesc();
                 LoadUtils.LoadAndApplyHuluDesc();
+                LoadUtils.modiyESceneItemSurfaceType();
                 isBuffConfigsLoaded = true;
                 // Hooks.RegOnCastSkillWithAnimMontageEvent();
             }

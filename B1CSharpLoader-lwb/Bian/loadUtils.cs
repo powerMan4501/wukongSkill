@@ -3190,7 +3190,7 @@ namespace bian
                                 Log.Info($"Successfully updated equip attr with ID: {config.Id}");
                             }
                         }
-                     
+
                     }
                     catch (Exception ex)
                     {
@@ -3222,6 +3222,85 @@ namespace bian
             public int Type { get; set; }
             public double Value { get; set; }
         }
+
+        public class EnvironmentSurfaceEffectConfig
+        {
+            public int ID { get; set; }
+            public int? TargetFilter { get; set; }
+            public int? SurfaceType { get; set; }
+            public List<int>? SurfaceBuffList { get; set; }
+            public string? EnvironmentAbnormalEffectDA { get; set; }
+        }
+
+      public static void modiyESceneItemSurfaceType(string configDirectory = null)
+{
+    try
+    {
+        configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "FUStEnvironmentSurfaceEffectDesc");
+        var allList = BG_ProtobufDataAPI<FUStEnvironmentSurfaceEffectDesc>.Get().GetAll();
+
+        if (allList == null)
+        {
+            Log.Error("Failed to get environment surface effect list from game database");
+            return;
+        }
+
+        var configs = LoadJsonConfigs<EnvironmentSurfaceEffectConfig>(configDirectory, "EnvironmentSurfaceEffect");
+        if (configs == null || configs.Count == 0)
+        {
+            Log.Error("Failed to load environment surface effect configs");
+            return;
+        }
+
+        // 去重处理
+        configs = configs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
+
+        foreach (var config in configs)
+        {
+            try
+            {
+                FUStEnvironmentSurfaceEffectDesc target;
+                if (allList.TryGetValue(config.ID, out var existing))
+                {
+                    target = existing;
+                }
+                else
+                {
+                    target = new FUStEnvironmentSurfaceEffectDesc();
+                    allList.Add(config.ID, target);
+                }
+
+                // 更新非空字段
+                if (config.TargetFilter.HasValue)
+                    target.TargetFilter = config.TargetFilter.Value;
+
+                if (config.SurfaceType.HasValue)
+                    target.SurfaceType = (ESceneItemSurfaceType)config.SurfaceType.Value;
+
+                if (config.SurfaceBuffList != null)
+                {
+                    target.SurfaceBuffList.Clear();
+                    target.SurfaceBuffList.AddRange(config.SurfaceBuffList);
+                }
+
+                if (!string.IsNullOrEmpty(config.EnvironmentAbnormalEffectDA))
+                    target.EnvironmentAbnormalEffectDA = config.EnvironmentAbnormalEffectDA;
+
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Failed to process environment surface effect config for ID {config.ID}: {ex.Message}");
+            }
+        }
+
+        Log.Info($"Total processed environment surface effect configs: {configs.Count}");
+    }
+    catch (Exception ex)
+    {
+        Log.Error($"Critical error in modiyESceneItemSurfaceType: {ex.Message}");
+    }
+}
+
 
     }
 }

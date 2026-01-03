@@ -26,7 +26,7 @@ public class ShowPlayerInfo
 		{ EBGUAttrFloat.FreezeDef,  "" },
 		{ EBGUAttrFloat.FreezeAtk,  "" },
 		{ EBGUAttrFloat.CurEnergy,  "" },
-		// { EBGUAttrFloat.EnumMax,  "" },
+		{ EBGUAttrFloat.EnumMax,  "" },
 		{ EBGUAttrFloat.None,  "" },
 	};
 

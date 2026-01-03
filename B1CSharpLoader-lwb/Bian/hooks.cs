@@ -402,6 +402,11 @@ public class Hooks
             BGUFunctionLibraryCS.BGURemoveBuffImmediately(caster, buffId, EBuffEffectTriggerType.Remove);
         }
     }
+
+
+    // 在类的顶部定义数组
+    private static readonly int[] SpecialBuffIds = { 1015, 2167, 604, 20986, 2030, 777666001, 777666002, 777666003, 777666004 };
+
     [HarmonyPatch]
     public class HookBuffAdd
     {
@@ -419,10 +424,10 @@ public class Hooks
             {
                 return;
             }
-            if (BuffID != 1015 && BuffID != 2167 && BuffID != 604 && BuffID != 20986 && BuffID != 2030)
+            // 修改判断逻辑
+            if (!SpecialBuffIds.Contains(BuffID))
             {
                 Log.Info($"Evt_BuffAdd BuffID:{BuffID}");
-
             }
             // 冰火雷毒buff互斥
             List<int> buffers = [888666005, 888666006, 888666007, 888666008];
@@ -754,19 +759,26 @@ public class Hooks
             {
                 return false; // 跳过原始方法的执行
             }
-            // int dmgID = ((EffectInstReq.TriggerSkillId <= 0) ? SkillDamageConfig.DmgReasonEffectID : EffectInstReq.TriggerSkillId);
-            // FUStSkillEffectDesc skillEffectDesc = BGW_GameDB.GetSkillEffectDesc(dmgID, Attacker);
-            //     Log.Info($"OnHandleNormalDamageEffect skillId:{skillEffectDesc?.ID}");
-            
-            // if (skillEffectDesc != null && playerTeamID == attackerTeamId)
-            // {
-            //     // 如果是玩家造成的伤害
-            //     if (skillEffectDesc.EffectParamsInt.Count < 7)
-            //     {
-            //         skillEffectDesc.EffectParamsInt[6] = 4444401;
-            //     }
-            // }
+            return true; // 继续执行原始方法
+        }
+    }
 
+
+
+
+    [HarmonyPatch]
+    public static class BGUEnvironmentSurfaceEffectMgrPatch
+    {
+        [HarmonyPatch(typeof(BGUEnvironmentSurfaceEffectMgr), "DoesTargetPassFilter")]
+        private static bool Prefix(int Filter, AActor Target, ref bool __result)
+        {
+            IBUC_ActorBasicData readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_ActorBasicData, BUC_ActorBasicData>(Target);
+            if (readOnlyData != null)
+            {
+                __result = true;
+                return false;
+
+            }
             return true; // 继续执行原始方法
         }
     }

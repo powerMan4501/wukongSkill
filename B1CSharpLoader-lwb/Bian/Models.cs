@@ -916,24 +916,7 @@ namespace bian
                             return;
                         }
                     }
-                    else
-                    {
-                        // 传送主角
-                        if (originLocation != null && !character_.GetActorLocation().Equals(originLocation))
-                        {
-                            originLocation2 = character_.GetActorLocation();
-                            character_.Teleport(originLocation, character_.GetActorRotation());
-                            return;
-                        }
-
-                        if (originLocation2 != null && !character_.GetActorLocation().Equals(originLocation2))
-                        {
-                            character_.Teleport(originLocation2, character_.GetActorRotation());
-                            return;
-                        }
-                    }
-
-
+                
                     break;
                 default:
                     // Log.Error("unsupport key type");
