@@ -144,7 +144,7 @@ namespace bian
                 LoadUtils.LoadAndApplyTalentDesc();
                 LoadUtils.LoadAndApplyEquipAttrDesc();
                 LoadUtils.LoadAndApplyHuluDesc();
-                LoadUtils.modiyESceneItemSurfaceType();
+                // LoadUtils.modiyESceneItemSurfaceType();
                 isBuffConfigsLoaded = true;
                 // Hooks.RegOnCastSkillWithAnimMontageEvent();
             }
@@ -368,46 +368,6 @@ namespace bian
             }
         }
 
-        // [HarmonyPatch(typeof(BUS_GSEventCollection), "Evt_BuffAdd_Multicast_Invoke")]
-        // [HarmonyPrefix]
-        // private static void BuffAdd_Multicast(ref int BuffID, AActor Caster, AActor RootCaster, ref float Duration)
-        // {
-        //     if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]BuffAdd_Multicast"))
-        //     {
-
-        //     }
-
-        //     if (Caster == null || !IsPlayer(Caster?.PathName))
-        //     {
-        //         return;
-        //     }
-        //     // 冰火雷毒buff互斥
-        //     List<int> buffers = [888666005, 888666006, 888666007, 888666008];
-        //     if (buffers.Contains(BuffID))
-        //     {
-        //         HandleBuffMutex(Caster, BuffID, buffers);
-        //     }
-
-        //     // 棍光 buff互斥
-        //     List<int> gun_buffers = [66655401, 66655402, 66655403, 66655404, 66655405, 66655406, 66655407, 66655408, 555503209];
-        //     if (gun_buffers.Contains(BuffID))
-        //     {
-        //         HandleBuffMutex(Caster, BuffID, gun_buffers);
-        //     }
-        //     // 检查是否有对应的buff规则
-        //     if (!buffRulesMap.ContainsKey(BuffID))
-        //     {
-        //         return;
-        //     }
-        //     // 获取对应buff的所有规则
-        //     var matchingRules = buffRulesMap[BuffID];
-        //     foreach (var ruleItem in matchingRules)
-        //     {
-        //         var Duration_ = Duration > 0 ? Duration : 1000;
-        //         ruleItem.DoRule(Duration_, 1, null, ruleItem);
-        //     }
-
-        // }
 
         private static bool IsPlayer(string name)
         {

@@ -132,8 +132,11 @@ public class ShowPlayerInfo
 	public static void InitItems(bool force = false)
 	{
 		var timerComp = getTimeComp();
+		BGUPlayerCharacterCS bGUPlayerCharacterCS = GetBGUPlayerCharacterCS();
+		Hooks.ApplyBuffEffect(bGUPlayerCharacterCS);
 		if (BasicInfoKs.Count > 0)
 		{
+
 			if (!force) return;
 			if (timerComp == null)
 			{
@@ -168,7 +171,6 @@ public class ShowPlayerInfo
 		try
 		{
 
-			BGUPlayerCharacterCS bGUPlayerCharacterCS = GetBGUPlayerCharacterCS();
 			if (IsValidActor((AActor?)(object)bGUPlayerCharacterCS))
 			{
 				UActorCompContainerCS actorCompContainerCS = bGUPlayerCharacterCS.ActorCompContainerCS;

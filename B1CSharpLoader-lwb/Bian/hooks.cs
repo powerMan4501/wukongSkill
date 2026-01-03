@@ -20,6 +20,13 @@ using ResB1;
 
 namespace bian;
 
+public static class BuffElementIds
+{
+    public const int Ice = 888666006;
+    public const int Fire = 888666007;
+    public const int Poison = 888666008;
+    public const int Thunder = 888666005;
+}
 [HarmonyPatch]
 public class Hooks
 {
@@ -179,7 +186,7 @@ public class Hooks
 
     private static readonly Dictionary<string, bool> ProcessedAnimCache = new Dictionary<string, bool>();
 
-    public static void handleNotify(UAnimMontage Montage, float? MoveOffset = 1)
+    public static void handleNotify(UAnimMontage Montage, AActor player)
     {
         try
         {
@@ -241,6 +248,7 @@ public class Hooks
                         sweepCheck.SweepCheckShape[i] = sweepItem;
 
                     }
+
                     if (hitEffects.Count > 0)
                     {
                         if (config?.replaceEffects == true)
@@ -252,6 +260,54 @@ public class Hooks
                             sweepCheck.EffectIDList.Add(hitEffect);
                         }
                     }
+
+
+
+                    // 创建异常状态配置映射
+                    var abnormalStateConfigs = new Dictionary<int, EAbnormalStateType>
+                    {
+                        { BuffElementIds.Ice, EAbnormalStateType.Abnormal_Freeze },  // 冰
+                        { BuffElementIds.Fire, EAbnormalStateType.Abnormal_Burn },    // 火
+                        { BuffElementIds.Poison, EAbnormalStateType.Abnormal_Poison },  // 毒
+                        { BuffElementIds.Thunder, EAbnormalStateType.Abnormal_Thunder } // 雷
+                    };
+
+                    // 创建异常状态效果列表
+                    // var AbnormalStateEffectList = sweepCheck.AbnormalStateEffectList;
+
+                    // 为每个buff ID创建对应的配置
+                    foreach (var kvp in abnormalStateConfigs)
+                    {
+                        var abnormalCondition = new FTriggerAbnormalCondition
+                        {
+                            Conditions = new List<FDetectCondition>
+                            {
+                                new FDetectCondition
+                                {
+                                    DetectedElementType = EDetectedElementType.HasBuff,
+                                    BuffId = kvp.Key
+                                }
+                            }
+                        };
+                        var abnormalItem = new AbnormalStateAccConfig
+                        {
+                            Condition = abnormalCondition,
+                            AbnormalStateType = kvp.Value,
+                            Level = 1,
+                            AccType = EAccAbnormalValueType.IncreaseByValue
+                        };
+
+                        // 检查是否已存在相同BuffId的异常状态效果
+                        var hasExistingEffect = sweepCheck.AbnormalStateEffectList.Any(x =>
+     x.Condition.Conditions.Any(c => c.BuffId == kvp.Key));
+                        if (!hasExistingEffect)
+                        {
+                            sweepCheck.AbnormalStateEffectList.Add(abnormalItem);
+                        }
+
+                    }
+
+
 
                 }
                 else if (item.NotifyName == new FName("BANS_GSCalcAMScale"))
@@ -274,13 +330,6 @@ public class Hooks
                     if ((float)AMScaleMoveOffset >= -800 && (float)AMScaleMoveOffset <= -10)
                     {
                         var AMScaleItem = item.NotifyStateClass;
-
-                        if (MoveOffset > 1)
-                        {
-                            var finalValue = (float)AMScaleMoveOffset - (float)MoveOffset;
-                            BANS_GSCalcAMScaleHelper.SetProperty(item.NotifyStateClass, "AMScaleMoveOffset", finalValue);
-
-                        }
                     }
                 }
                 else if (item.NotifyName == new FName("BANS_GSDodgeWindow") || item.NotifyName == new FName("ComboWindow"))
@@ -406,6 +455,40 @@ public class Hooks
 
     // 在类的顶部定义数组
     private static readonly int[] SpecialBuffIds = { 1015, 2167, 604, 20986, 2030, 777666001, 777666002, 777666003, 777666004 };
+    // 冰火雷毒buff互斥
+    private static readonly List<int> buffers = [BuffElementIds.Thunder, BuffElementIds.Ice, BuffElementIds.Fire, BuffElementIds.Poison];
+
+    private static readonly Dictionary<int, (int EffectType, int AbnormalType)> BuffEffectMappings = new()
+    {
+        { BuffElementIds.Ice, (5, 1) }, // 冰
+        { BuffElementIds.Fire, (3, 2) }, // 火
+        { BuffElementIds.Poison, (7, 3) }, // 毒
+        { BuffElementIds.Thunder, (6, 4) }  // 雷
+    };
+    private static readonly int[] modiyEffects = new int[] { 1080101, 1080201, 1080301, 1080401, 1080402, 1080501, 1075101, 1075201, 1075301, 1075401, 1075402, 1075501, 1070001, 1070101, 1070201, 1070202, 1070301, 1070401, 5001101, 5001201, 5001301, 5001401, 5001402, 5001501, 5000101, 5000201, 5000301, 5000302, 5000401, 5000501, 5000601, 5000602, 5000801 };
+
+    // 创建专门的处理方法
+    public static void ApplyBuffEffect(AActor player)
+    {
+
+        if (player == null) return;
+        foreach (var effectID in modiyEffects)
+        {
+            var effectdesc = BGW_GameDB.GetSkillEffectDesc(effectID, player);
+            if (effectdesc != null)
+            {
+                foreach (var mapping in BuffEffectMappings)
+                {
+                    if (BGUFunctionLibraryCS.BGUHasBuffByID(player, mapping.Key))
+                    {
+                        effectdesc.EffectParamsInt[2] = mapping.Value.EffectType;
+                        effectdesc.EffectParamsInt[5] = mapping.Value.AbnormalType;
+                    }
+                }
+            }
+        }
+    }
+
 
     [HarmonyPatch]
     public class HookBuffAdd
@@ -429,8 +512,7 @@ public class Hooks
             {
                 Log.Info($"Evt_BuffAdd BuffID:{BuffID}");
             }
-            // 冰火雷毒buff互斥
-            List<int> buffers = [888666005, 888666006, 888666007, 888666008];
+
             if (buffers.Contains(BuffID))
             {
                 HandleBuffMutex(Caster, BuffID, buffers);
@@ -440,6 +522,7 @@ public class Hooks
             List<int> gun_buffers = [66655401, 66655402, 66655403, 66655404, 66655405, 66655406, 66655407, 66655408, 555503209];
             if (gun_buffers.Contains(BuffID))
             {
+
                 HandleBuffMutex(Caster, BuffID, gun_buffers);
             }
             var buffRulesMap = Manager.buffRulesMap;
@@ -537,7 +620,7 @@ public class Hooks
                 Manager.OnScaleWeapon((float)matchedRule.scaleWeaponNum);
             }
 
-            handleNotify(Montage, 0);
+            handleNotify(Montage, __instance.GetOwner());
         }
     }
 

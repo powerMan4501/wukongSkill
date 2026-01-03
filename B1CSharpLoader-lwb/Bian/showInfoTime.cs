@@ -51,10 +51,10 @@ public class TimerComp : GameStateSystemBase
     }
     Dictionary<int, string> buffDict = new Dictionary<int, string>
                 {
-                    {888666005, "雷"},
-                    {888666006, "冰"},
-                    {888666007, "火"},
-                    {888666008, "毒"}
+                    {BuffElementIds.Thunder, "雷"},
+                    {BuffElementIds.Ice, "冰"},
+                    {BuffElementIds.Fire, "火"},
+                    {BuffElementIds.Poison, "毒"}
                 };
 
     // 方案2：使用自定义结构体
@@ -179,30 +179,29 @@ public class TimerComp : GameStateSystemBase
             {
                 string currentBuff = buffDict.FirstOrDefault(kvp => BGUFunctionLibraryCS.BGUHasBuffByID(controlledPawn, kvp.Key)).Value;
                 var buffText = !string.IsNullOrEmpty(currentBuff) ? $"当前buff: {currentBuff}" : "当前buff: 无";
-                ACharacter aCharacter = GetOwner() as ACharacter;
-                if (aCharacter != null)
-                {
-                    FVector StartTrace = BGUFuncLibActorTransformCS.BGUGetActorLocation(aCharacter) + aCharacter.GetActorUpVector() * aCharacter.CapsuleComponent.GetScaledCapsuleHalfHeight();
-                    FVector fVector = aCharacter.GetActorUpVector() * -100.0 - aCharacter.GetActorUpVector() * aCharacter.CapsuleComponent.GetScaledCapsuleHalfHeight();
-                    FVector EndTrace = BGUFuncLibActorTransformCS.BGUGetActorLocation(aCharacter) + fVector;
-                    var MovementData = RequireReadOnlyData<IBUC_MovementData, BUC_MovementData>();
-                    if (MovementData != null)
-                    {
-                        var EnvironmentInteractionMgrData = RequireWritableData<BUC_EnvironmentInteractionMgrData>();
+                // ACharacter aCharacter = GetOwner() as ACharacter;
+                // if (aCharacter != null)
+                // {
+                //     FVector StartTrace = BGUFuncLibActorTransformCS.BGUGetActorLocation(aCharacter) + aCharacter.GetActorUpVector() * aCharacter.CapsuleComponent.GetScaledCapsuleHalfHeight();
+                //     FVector fVector = aCharacter.GetActorUpVector() * -100.0 - aCharacter.GetActorUpVector() * aCharacter.CapsuleComponent.GetScaledCapsuleHalfHeight();
+                //     FVector EndTrace = BGUFuncLibActorTransformCS.BGUGetActorLocation(aCharacter) + fVector;
+                //     var MovementData = RequireReadOnlyData<IBUC_MovementData, BUC_MovementData>();
+                //     if (MovementData != null)
+                //     {
+                //         var EnvironmentInteractionMgrData = RequireWritableData<BUC_EnvironmentInteractionMgrData>();
 
-                        EnvironmentInteractionMgrData.bNearGround = MovementData.CanUseSurfaceTypeFromMovementComp() && BGUFuncLibActorTransformCS.BGUGetActorLocation(aCharacter).Z - MovementData.CurFloorHitPoint.Z < 0f - fVector.Z;
-                        var curItem = SurfaceTypeDict.FirstOrDefault(kvp => kvp.Key == EnvironmentInteractionMgrData.LastResultSurfaceType).Value;
+                //         EnvironmentInteractionMgrData.bNearGround = MovementData.CanUseSurfaceTypeFromMovementComp() && BGUFuncLibActorTransformCS.BGUGetActorLocation(aCharacter).Z - MovementData.CurFloorHitPoint.Z < 0f - fVector.Z;
+                //         var curItem = SurfaceTypeDict.FirstOrDefault(kvp => kvp.Key == EnvironmentInteractionMgrData.LastResultSurfaceType).Value;
 
-                        string SurfaceTypeStr = curItem.Name;
-                        var buffId = curItem.BuffId;
-                        if (buffId != 0 && !BGUFunctionLibraryCS.BGUHasBuffByID(controlledPawn, buffId))
-                        {
-                            BGUFunctionLibraryCS.BGUAddBuff(controlledPawn, controlledPawn, buffId, EBuffSourceType.GM, 2000);
-                        }
-                        buffText += $";   地形: {SurfaceTypeStr}";
-                    }
-
-                }
+                //         string SurfaceTypeStr = curItem.Name;
+                //         // var buffId = curItem.BuffId;
+                //         // if (buffId != 0 && !BGUFunctionLibraryCS.BGUHasBuffByID(controlledPawn, buffId))
+                //         // {
+                //         //     BGUFunctionLibraryCS.BGUAddBuff(controlledPawn, controlledPawn, buffId, EBuffSourceType.GM, 3000);
+                //         // }
+                //         buffText += $";   地形: {SurfaceTypeStr}";
+                //     }
+                // }
                 ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], buffText);
             }
 
