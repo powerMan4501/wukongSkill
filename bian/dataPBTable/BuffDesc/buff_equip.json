@@ -350,5 +350,24 @@
         "EffectParamsFloat": []
       }
     ]
-  }
+  },
+
+     {
+      "ID": 2022,
+      "BuffTips": "下毒手加Buff的Buff,暴击改成伤害",
+      "BuffEffects": [
+        {
+          "EffectTrigger": 14,
+          "EffectType": 46,
+          "EffectTargetSelectType": 0,
+          "EffectParamsString": [],
+          "EffectParams": [
+            2023
+          ],
+          "EffectParamsFloat": [
+            0.0
+          ]
+        }
+      ]
+    }
 ]

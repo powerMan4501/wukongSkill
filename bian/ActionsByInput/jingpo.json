@@ -1,6 +1,6 @@
 [
   {
-    "code": "jinwa",
+    "code": "jwa",
     "afterActions": [
       {
         "type": "magicskill",
@@ -54,7 +54,7 @@
     ]
   },
   {
-    "code": "jinDI",
+    "code": "jDI",
     "afterActions": [
       {
         "type": "magicskill",
@@ -65,10 +65,30 @@
     ]
   },
 
-
-
   {
-    "code": "jinhuo",
+    "code": "jlei",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8598,
+        "MagicSkillID": 11398,
+        "desc": "雷蛙"
+      }
+    ]
+  },
+  {
+    "code": "jdu",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8597,
+        "MagicSkillID": 11397,
+        "desc": "有毒buff,毒蛙"
+      }
+    ]
+  },
+  {
+    "code": "jhuo",
     "afterActions": [
       {
         "type": "magicskill",
@@ -79,7 +99,18 @@
     ]
   },
   {
-    "code": "jinda",
+    "code": "jice",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8595,
+        "MagicSkillID": 11395,
+        "desc": "冰娃"
+      }
+    ]
+  },
+  {
+    "code": "jda",
     "afterActions": [
       {
         "type": "magicskill",

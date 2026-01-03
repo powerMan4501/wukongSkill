@@ -25,18 +25,41 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 18890402,
-            "hasBuff": 96040,
+            "ProjectTileID": 20230101,
+            "hasBuff": 888666007,
             "ForTarget": true,
             "spawnBaseSocketName": "weapon_r_index_04",
-            "desc": "满堂红buff,发射箭"
+            "desc": "有火buff 鼠弩手弓箭"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 88880012,
+            "hasBuff": 888666008,
+            "ForTarget": true,
+            "spawnBaseSocketName": "weapon_r_index_04",
+            "desc": "毒buff，赤发鬼的箭"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 74010103,
+            "hasBuff": 888666006,
+            "ForTarget": true,
+            "desc": "冰buff，巨猿扔的冰气"
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
             "ProjectTileID": 150,
-            "noHasAnyBuff": [96040],
+            "hasBuff": 888666005,
             "ForTarget": true,
-            "desc": "没有满堂红buff,发射飞剑"
+            "desc": "雷buff,发射飞剑"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 18890101,
+            "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+            "ForTarget": true,
+            "spawnBaseSocketName": "weapon_r_index_04",
+            "desc": "无四灾buff，天兵箭"
           }
         ]
       }
@@ -69,18 +92,41 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 18890402,
-            "hasBuff": 96040,
+            "ProjectTileID": 20230101,
+            "hasBuff": 888666007,
             "ForTarget": true,
             "spawnBaseSocketName": "weapon_r_index_04",
-            "desc": "满堂红buff,发射箭"
+            "desc": "有火buff 鼠弩手弓箭"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 88880012,
+            "hasBuff": 888666008,
+            "ForTarget": true,
+            "spawnBaseSocketName": "weapon_r_index_04",
+            "desc": "毒buff，赤发鬼的箭"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 74010103,
+            "hasBuff": 888666006,
+            "ForTarget": true,
+            "desc": "冰buff，巨猿扔的冰气"
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
             "ProjectTileID": 150,
-            "noHasAnyBuff": [96040],
+            "hasBuff": 888666005,
             "ForTarget": true,
-            "desc": "没有满堂红buff,发射飞剑"
+            "desc": "雷buff,发射飞剑"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 18890101,
+            "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+            "ForTarget": true,
+            "spawnBaseSocketName": "weapon_r_index_04",
+            "desc": "无四灾buff，天兵箭"
           }
         ]
       }
@@ -113,18 +159,41 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 18890402,
-            "hasBuff": 96040,
+            "ProjectTileID": 20230101,
+            "hasBuff": 888666007,
             "ForTarget": true,
             "spawnBaseSocketName": "weapon_r_index_04",
-            "desc": "满堂红buff,发射箭"
+            "desc": "有火buff 鼠弩手弓箭"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 88880012,
+            "hasBuff": 888666008,
+            "ForTarget": true,
+            "spawnBaseSocketName": "weapon_r_index_04",
+            "desc": "毒buff，赤发鬼的箭"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 74010103,
+            "hasBuff": 888666006,
+            "ForTarget": true,
+            "desc": "冰buff，巨猿扔的冰气"
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
             "ProjectTileID": 150,
-            "noHasAnyBuff": [96040],
+            "hasBuff": 888666005,
             "ForTarget": true,
-            "desc": "没有满堂红buff,发射飞剑"
+            "desc": "雷buff,发射飞剑"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 18890101,
+            "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+            "ForTarget": true,
+            "spawnBaseSocketName": "weapon_r_index_04",
+            "desc": "无四灾buff，天兵箭"
           }
         ]
       }
@@ -158,19 +227,28 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileID": 74011107,
-            "OffsetX": 200,
-            "OffsetY": 200,
-            "spawnBaseSocketName": "weapon_r_index_07",
-            "desc": "没火就金沙爆炸"
+            "ProjectTileIDs": [2403471, 74010101, 74011107],
+            "hasBuff": 888666006,
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "desc": "有冰buff，冰暴,冰碎片"
+          },
+
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [44011401, 140, 44010401],
+            "hasBuff": 888666007,
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "desc": "有火buff，红孩儿爆炸，业火"
           },
           {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
-            "ProjectTileID": 1016262,
-            "OffsetX": 200,
-            "OffsetY": 200,
-            "spawnBaseSocketName": "weapon_r_index_07",
-            "desc": "巴山虎"
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 50058603],
+            "noHasAnyBuff": [888666006, 888666007],
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "desc": "没有火冰buff，金沙黄符"
           }
         ]
       }

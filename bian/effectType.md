@@ -241,25 +241,25 @@ public enum EAbnormalStateType : byte
 <!-- 环境 -->
 public enum ESceneItemSurfaceType : byte
 {
-    DefaultSurface,
-    GrassSurface,
-    WaterSurface,
-    CloudSurface,
-    StoneSurface,
-    MudSurface,
-    SoilSurface,
-    WoodSurface,
-    HfmsoftSandSurface,
-    GlideSandSurface,
-    SnowSurface,
-    IceSurface,
-    LavaSurface,
-    YinSurface,
-    YangSurface,
-    BloodSurface,
-    GlideSnow,
-    GlideIce,
-    BajieMud,
-    CricketBody,
+    DefaultSurface,0
+    GrassSurface,1
+    WaterSurface,2
+    CloudSurface,3
+    StoneSurface,4
+    MudSurface,5
+    SoilSurface,6
+    WoodSurface,7
+    HfmsoftSandSurface,8
+    GlideSandSurface,9
+    SnowSurface,10
+    IceSurface,11
+    LavaSurface,12
+    YinSurface,13
+    YangSurface,14
+    BloodSurface,15
+    GlideSnow,16
+    GlideIce,17
+    BajieMud,18
+    CricketBody,19
     EnumMax
 }

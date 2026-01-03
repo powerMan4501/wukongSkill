@@ -49,10 +49,10 @@
 
   {
     "ID": 2014,
-    "BuffTips": "飞龙棍-表现，条件改成没有火buff",
+    "BuffTips": "飞龙棍-表现，去掉条件",
     "BuffActiveCondition": {
-      "ConditionType": 7,
-      "ConditionParams": "888666007"
+      "ConditionType": 0,
+      "ConditionParams": ""
     }
   },
   {

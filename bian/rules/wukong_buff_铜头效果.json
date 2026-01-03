@@ -49,12 +49,12 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-              "ProjectTileID": 1017961,
+              "ProjectTileID": 88880012,
               "hasBuff": 888666008,
               "SpeedLeftValue": 5000,
               "SpeedRightValue": 5000,
               "ForTarget": true,
-              "desc": "毒buff，蜻蜓精的箭"
+              "desc": "毒buff，赤发鬼的箭"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",

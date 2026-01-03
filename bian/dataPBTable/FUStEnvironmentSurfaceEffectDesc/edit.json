@@ -1,0 +1,104 @@
+[
+  {
+    "ID": 2001,
+    "TargetFilter": 1,
+    "SurfaceType": 9,
+    "desc": "GlideSandSurface，沙地，10005:主角滑沙表现Buff"
+  },
+  {
+    "ID": 3001,
+    "TargetFilter": 1,
+    "SurfaceType": 10,
+    "desc": "SnowSurface,雪地,888666005:雷，888666006:冰, 777666003:火, 777666004:毒;10001:主角寒冷期间更改ABPS随机待机-触发"
+  },
+  {
+    "ID": 3002,
+    "TargetFilter": 1,
+    "SurfaceType": 0,
+    "desc": "DefaultSurface"
+  },
+  {
+    "ID": 3003,
+    "TargetFilter": 1,
+    "SurfaceType": 16,
+    "desc": "GlideSnow,滑雪"
+  },
+  {
+    "ID": 3004,
+    "TargetFilter": 1,
+    "SurfaceType": 2,
+    "desc": "WaterSurface,水"
+  },
+  {
+    "ID": 4001,
+    "TargetFilter": 1,
+    "SurfaceType": 3,
+    "desc": "CloudSurface,云, 488815:佛手虫毒液地毯伤害"
+  },
+  {
+    "ID": 4002,
+    "TargetFilter": 1,
+    "SurfaceType": 18,
+    "desc": "BajieMud,八戒泥"
+  },
+  {
+    "ID": 5001,
+    "TargetFilter": 1,
+    "SurfaceType": 12,
+    "desc": "LavaSurface,岩浆,1135满堂红-安身术内攻击为火属性"
+  },
+  {
+    "ID": 5002,
+    "TargetFilter": 1,
+    "SurfaceType": 12,
+    "desc": "LavaSurface,岩浆,1135满堂红-安身术内攻击为火属性"
+  },
+  {
+    "ID": 5101,
+    "TargetFilter": 1,
+    "SurfaceType": 17,
+    "desc": "GlideIce,滑冰"
+  },
+  {
+    "ID": 8001,
+    "TargetFilter": 1,
+    "SurfaceType": 11,
+    "desc": "IceSurface,冰"
+  },
+  {
+    "ID": 8002,
+    "TargetFilter": 1,
+    "SurfaceType": 12,
+    "desc": "LavaSurface,岩浆"
+  },
+  {
+    "ID": 8003,
+    "TargetFilter": 1,
+    "SurfaceType": 12,
+    "desc": "LavaSurface,岩浆,1135满堂红-安身术内攻击为火属性"
+  },
+  {
+    "ID": 8004,
+    "TargetFilter": 1,
+    "SurfaceType": 12,
+    "desc": "LavaSurface,岩浆,1135满堂红-安身术内攻击为火属性"
+  },
+  {
+    "ID": 8005,
+    "TargetFilter": 1,
+    "SurfaceType": 17,
+    "desc": "GlideIce,滑冰"
+  },
+  {
+    "ID": 1001,
+    "TargetFilter": 1,
+    "SurfaceType": 3,
+    "desc": "CloudSurface 103108:黑熊精场景火焰"
+  },
+  {
+    "ID": 9901,
+    "TargetFilter": 1,
+    "SurfaceType": 19,
+    "desc": "158蟋蟀背上的沉默效果"
+  }
+]

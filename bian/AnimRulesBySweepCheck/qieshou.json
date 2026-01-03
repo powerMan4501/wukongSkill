@@ -43,11 +43,11 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileID": 50058603,
+            "ProjectTileIDs": [30250101, 118],
             "OffsetX": 700,
             "OffsetY": 700,
             "hasBuff": 888666005,
-            "desc": "有雷buff 10705黄符50058603"
+            "desc": "有雷buff 电圈/落雷"
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
@@ -106,11 +106,11 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileID": 50058603,
+            "ProjectTileIDs": [30250101, 118],
             "OffsetX": 700,
             "OffsetY": 700,
             "hasBuff": 888666005,
-            "desc": "有雷buff 10705黄符50058603"
+            "desc": "有雷buff 落雷电圈"
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
@@ -169,11 +169,11 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [50058603, 50058601, 74011107],
             "OffsetX": 700,
             "OffsetY": 700,
             "hasBuff": 888666005,
-            "desc": "有雷buff 黄符50058603,金沙"
+            "ProjectTileIDs": [30250101, 39010112, 152, 118],
+            "desc": "电圈/雷暴/地波"
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
@@ -239,12 +239,11 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [50058603, 50058601, 74011107],
-
             "OffsetX": 700,
             "OffsetY": 700,
             "hasBuff": 888666005,
-            "desc": "有雷buff 黄符50058603,金沙"
+            "ProjectTileIDs": [30250101, 39010112, 152, 118],
+            "desc": "电圈/雷暴/地波"
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
@@ -313,7 +312,7 @@
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
             "ProjectTileID": 1713001,
             "ForTarget": true,
-            "noHasAnyBuff": [888666006, 100086],
+            "noHasAnyBuff": [888666006, 888666007],
             "desc": "没有冰火buff,大圣平A1,就发射红剑气"
           }
         ]
@@ -619,13 +618,13 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 88880012,
+            "ProjectTileID": 18890101,
             "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
             "SpeedLeftValue": 5000,
             "SpeedRightValue": 5000,
             "ForTarget": true,
             "spawnBaseSocketName": "weapon_r_index_04",
-            "desc": "无四灾buff，赤发鬼箭"
+            "desc": "无四灾buff，天兵箭"
           }
         ]
       }
@@ -667,11 +666,11 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [51002002, 10030401],
+            "ProjectTileIDs": [1019261, 51002002],
             "hasBuff": 888666008,
             "OffsetX": 700,
             "OffsetY": 700,
-            "desc": "有毒buff，猪八戒，蛇毒"
+            "desc": "有毒buff，猪八戒灵芝爆炸"
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",

@@ -125,7 +125,17 @@
   {
     "ID": 888666005,
     "Duration": -1,
-    "BuffTips": "雷buff"
+    "BuffTips": "雷buff",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 95,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [4, 6, 1, 10000],
+        "EffectParamsFloat": []
+      }
+    ]
   },
   {
     "ID": 888666006,
@@ -135,12 +145,32 @@
   {
     "ID": 888666007,
     "Duration": -1,
-    "BuffTips": "火buff"
+    "BuffTips": "火buff,触发被动，修改平A为火攻击",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 68,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [16039, 1],
+        "EffectParamsFloat": []
+      }
+    ]
   },
   {
     "ID": 888666008,
     "Duration": -1,
-    "BuffTips": "毒buff"
+    "BuffTips": "毒buff，造成伤害积累毒异常",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 14,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [2023],
+        "EffectParamsFloat": [0.0]
+      }
+    ]
   },
 
   {
@@ -246,6 +276,67 @@
         "EffectParamsString": [],
         "EffectParams": [119, 1000, 0, 0],
         "EffectParamsFloat": []
+      }
+    ]
+  },
+
+  {
+    "ID": 777666001,
+    "Duration": -1,
+    "BuffTips": "水环境buff,给雷",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [888666005],
+        "EffectParamsFloat": [0]
+      }
+    ]
+  },
+  {
+    "ID": 777666002,
+    "Duration": -1,
+    "BuffTips": "雪环境",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [888666006],
+        "EffectParamsFloat": [0]
+      }
+    ]
+  },
+  {
+    "ID": 777666003,
+    "Duration": -1,
+    "BuffTips": "火环境",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [888666007],
+        "EffectParamsFloat": [0]
+      }
+    ]
+  },
+  {
+    "ID": 777666004,
+    "Duration": -1,
+    "BuffTips": "沙/云环境,给毒buff",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [],
+        "EffectParamsFloat": [0]
       }
     ]
   }
