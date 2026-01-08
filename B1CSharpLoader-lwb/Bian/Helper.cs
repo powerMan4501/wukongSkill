@@ -1361,7 +1361,6 @@ namespace bian
             {
                 aActor2 = BGUFunctionLibraryCS.BGUGetTarget(character);
             }
-            // Log.Debug($"bian: TriggerSkillEffect---->{EffectID}");
             GetBUS_GSEventCollection().Evt_TriggerSkillEffect.Invoke(EffectID, effectInstReq, aActor2);
         }
         public static FCalliopeGuid getGUid()

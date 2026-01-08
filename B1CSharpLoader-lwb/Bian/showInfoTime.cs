@@ -175,8 +175,9 @@ public class TimerComp : GameStateSystemBase
                 ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"神力: {(int)value},  法宝: {(int)FabaoEnergy},  精魄: {(int)VigorEnergy}, 掉宝: {dropAdd}%");
             }
 
-            else if (attribute.Key == EBGUAttrFloat.EnumMax)
+            else if (attribute.Key == EBGUAttrFloat.EnumMax&&controlledPawn != null)
             {
+               
                 string currentBuff = buffDict.FirstOrDefault(kvp => BGUFunctionLibraryCS.BGUHasBuffByID(controlledPawn, kvp.Key)).Value;
                 var buffText = !string.IsNullOrEmpty(currentBuff) ? $"当前buff: {currentBuff}" : "当前buff: 无";
                 // ACharacter aCharacter = GetOwner() as ACharacter;
@@ -211,11 +212,11 @@ public class TimerComp : GameStateSystemBase
 
 
                 var text = "目标角色";
-                if (target == null)
-                {
-                    target = Helper.GetNearestActor(4000);
-                    text = "最近角色";
-                }
+                // if (target == null)
+                // {
+                //     target = Helper.GetNearestActor(4000);
+                //     text = "最近角色";
+                // }
                 if (target != null)
                 {
                     // 生命/法力

@@ -673,7 +673,7 @@ namespace bian
                     break;
 
                 case "show_info":
-                    ShowPlayerInfo.InitItems(false);
+                    ShowPlayerInfo.InitItems(true);
                     break;
                 case "rushskill":
                     Helper.doPhantomRushSkill(character, action.RushDir ?? "Forward");

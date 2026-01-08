@@ -716,6 +716,17 @@ namespace bian
                             }
                             break;
 
+                        case "MPCParamWithCurve" when sourceValue is List<string> stringParams:
+                            var targetStrList1 = targetProp.GetValue(target) as IList;
+                            if (targetStrList1 != null)
+                            {
+                                targetStrList1.Clear();
+                                foreach (var param in stringParams)
+                                {
+                                    targetStrList1.Add(param);
+                                }
+                            }
+                            break;
 
                         case "EnterFX" when sourceValue is List<EffectConfig> effects:
                             var enterEffects = effects.Select(effect =>
@@ -3300,7 +3311,89 @@ namespace bian
                 Log.Error($"Critical error in modiyESceneItemSurfaceType: {ex.Message}");
             }
         }
-        
+
+        public class AttackHitFXMapConfig
+        {
+            public int ID { get; set; }
+            public int? UnitResID { get; set; }
+            public int? FXWeight { get; set; }
+            public int? SkillDamageType { get; set; }
+            public int? HitPerformFXEventType { get; set; }
+            public int? IsUseDispConfig { get; set; }
+            public string? HitFXPath { get; set; }
+            public string? DirectionalFXPath { get; set; }
+            public string? PromptEffectMPCPath { get; set; }
+            public string? BlurLocMPCParamName { get; set; }
+            public List<string>? MPCParamWithCurve { get; set; }
+            public double? CameraShakeGap { get; set; }
+            public string? CameraShake { get; set; }
+        }
+        public static int LoadAndApplyAttackHitFXMapDesc(string configDirectory = null)
+        {
+            try
+            {
+                configDirectory ??= Path.Combine("CSharpLoader", "Mods", "bian", "dataPBTable", "FUStAttackHitFXMapDesc");
+
+                var configs = LoadJsonConfigs<AttackHitFXMapConfig>(configDirectory, "AttackHitFXMapDesc");
+                var dataList = BG_ProtobufDataAPI<FUStAttackHitFXMapDesc>.Get().GetAll();
+
+                if (configs == null || configs.Count == 0)
+                {
+                    Log.Error("Failed to load AttackHitFXMapDesc configs");
+                    return 0;
+                }
+
+                if (dataList == null)
+                {
+                    dataList = new Dictionary<int, FUStAttackHitFXMapDesc>();
+                }
+
+                // 去重处理
+                configs = configs.GroupBy(c => c.ID).Select(g => g.First()).ToList();
+
+                const int templateId = 17; // 使用一个已存在的ID作为模板
+                if (!dataList.TryGetValue(templateId, out var template))
+                {
+                    template = new FUStAttackHitFXMapDesc();
+                    dataList.Add(templateId, template);
+                }
+
+                var processedCount = 0;
+                foreach (var config in configs)
+                {
+                    try
+                    {
+                        var target = GetOrCreateAttackHitFXMapDesc(config, dataList, template);
+                        CopyProperties(config, target);
+                        processedCount++;
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"Failed to process AttackHitFXMapDesc config for ID {config.ID}: {ex.Message}");
+                    }
+                }
+
+                Log.Info($"Total processed AttackHitFXMapDesc configs: {processedCount}");
+                return processedCount;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Critical error in LoadAndApplyAttackHitFXMapDesc: {ex.Message}");
+                return 0;
+            }
+        }
+
+        private static FUStAttackHitFXMapDesc GetOrCreateAttackHitFXMapDesc(AttackHitFXMapConfig config, Dictionary<int, FUStAttackHitFXMapDesc> dataList, FUStAttackHitFXMapDesc template)
+        {
+            if (dataList.TryGetValue(config.ID, out var existing))
+            {
+                return existing;
+            }
+
+            var newItem = (FUStAttackHitFXMapDesc)template.Clone();
+            dataList.Add(config.ID, newItem);
+            return newItem;
+        }
 
     }
 }

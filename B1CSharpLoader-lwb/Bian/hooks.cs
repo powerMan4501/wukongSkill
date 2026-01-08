@@ -15,6 +15,7 @@ using ArchiveB1;
 using B1UI.GSUI;
 using CommB1;
 using ResB1;
+using BtlB1;
 
 
 
@@ -465,28 +466,68 @@ public class Hooks
         { BuffElementIds.Poison, (7, 3) }, // 毒
         { BuffElementIds.Thunder, (6, 4) }  // 雷
     };
-    private static readonly int[] modiyEffects = new int[] { 1080101, 1080201, 1080301, 1080401, 1080402, 1080501, 1075101, 1075201, 1075301, 1075401, 1075402, 1075501, 1070001, 1070101, 1070201, 1070202, 1070301, 1070401, 5001101, 5001201, 5001301, 5001401, 5001402, 5001501, 5000101, 5000201, 5000301, 5000302, 5000401, 5000501, 5000601, 5000602, 5000801 };
+
+    // 已知 3是火，
+    public const int IceBaseValue = 5;    // 冰元素基础值
+    public const int FireBaseValue = 3;   // 火元素基础值
+    public const int PoisonBaseValue = 7; // 毒元素基础值
+    public const int ThunderBaseValue = 6; // 雷元素基础值
 
     // 创建专门的处理方法
-    public static void ApplyBuffEffect(AActor player)
+    public static void ApplyBuffEffect(AActor player, int? BuffID)
     {
 
         if (player == null) return;
-        foreach (var effectID in modiyEffects)
+
+
+        var baseValue = FireBaseValue;//火
+        if (BuffID > 0)
         {
-            var effectdesc = BGW_GameDB.GetSkillEffectDesc(effectID, player);
-            if (effectdesc != null)
+            if (BuffID == BuffElementIds.Ice)
             {
-                foreach (var mapping in BuffEffectMappings)
-                {
-                    if (BGUFunctionLibraryCS.BGUHasBuffByID(player, mapping.Key))
-                    {
-                        effectdesc.EffectParamsInt[2] = mapping.Value.EffectType;
-                        effectdesc.EffectParamsInt[5] = mapping.Value.AbnormalType;
-                    }
-                }
+                baseValue = IceBaseValue;
+            }
+            else if (BuffID == BuffElementIds.Fire)
+            {
+                baseValue = FireBaseValue;
+            }
+            else if (BuffID == BuffElementIds.Poison)
+            {
+                baseValue = PoisonBaseValue;
+            }
+            else if (BuffID == BuffElementIds.Thunder)
+            {
+                baseValue = ThunderBaseValue;
             }
         }
+        else
+        {
+            if (BGUFunctionLibraryCS.BGUHasBuffByID(player, BuffElementIds.Ice))
+            {
+                baseValue = IceBaseValue;
+            }
+            else if (BGUFunctionLibraryCS.BGUHasBuffByID(player, BuffElementIds.Fire))
+            {
+                baseValue = FireBaseValue;
+            }
+            else if (BGUFunctionLibraryCS.BGUHasBuffByID(player, BuffElementIds.Poison))
+            {
+                baseValue = PoisonBaseValue;
+            }
+            else if (BGUFunctionLibraryCS.BGUHasBuffByID(player, BuffElementIds.Thunder))
+            {
+                baseValue = ThunderBaseValue;
+            }
+        }
+
+        var passiveData = BGW_GameDB.GetPassiveSkillDescByMappingIndex(16039, 1);//火被动
+        if (passiveData != null)
+        {
+            passiveData.BaseValue = baseValue;
+            passiveData.MainID = "1080101,1080201,1080301,1080401,1080402,1080501,1075101,1075201,1075301,1075401,1075402,1075501,1070001,1070101,1070201,1070202,1070301,1070401,5001101,5001201,5001301,5001401,5001402,5001501,5000101,5000201,5000301,5000302,5000401,5000501,5000601,5000602,5000801";
+        }
+        BUS_EventCollectionCS.Get(player)?.Evt_PassiveSkillModifyParam.Invoke(16039, 1, bRecover: false, 1);
+
     }
 
 
@@ -515,6 +556,7 @@ public class Hooks
 
             if (buffers.Contains(BuffID))
             {
+                ApplyBuffEffect(Caster, BuffID);
                 HandleBuffMutex(Caster, BuffID, buffers);
             }
 
@@ -827,6 +869,17 @@ public class Hooks
 
 
 
+    public static readonly List<int> SkillEffectsIds = new List<int> {
+    1080101,1080201,1080301,1080401,1080402,1080501,
+    1075101,1075201,1075301,1075401,1075402,1075501,
+    1070001,1070101,1070201,1070202,1070301,1070401,
+    5001101,5001201,5001301,5001401,5001402,5001501,
+    5000101,5000201,5000301,5000302,5000401,5000501,
+    5000601,5000602,5000801
+};
+
+    private static readonly int[] ReflectBuffIds = { 20234, 229, 288, 294, 10133 };
+
     [HarmonyPatch]
     public static class BeAttackedTeamCheckPatch
     {
@@ -834,16 +887,95 @@ public class Hooks
         private static bool Prefix(BUS_BeAttackedComp __instance, AActor Attacker, in FSkillDamageConfig SkillDamageConfig, in FEffectInstReq EffectInstReq, in FBattleAttrSnapShot Attacker_AttrMemData)
         {
             // 获取攻击者和受击者的团队ID
-            var attackerTeamId = (Attacker as BGUCharacterCS)?.GetTeamIDInCS();
-            var victimTeamId = (__instance.GetOwner() as BGUCharacterCS)?.GetTeamIDInCS();
-            var playerTeamID = Helper.GetBGUPlayerCharacterCS().GetTeamIDInCS();
+            var attacker = Attacker as BGUCharacterCS;
+            var attackerTeamId = attacker?.GetTeamIDInCS();
+            var victim = __instance.GetOwner() as BGUCharacterCS;
+            var victimTeamId = victim?.GetTeamIDInCS();
+            var playerTeamID = Helper.GetBGUPlayerCharacterCS()?.GetTeamIDInCS();
             // 如果是同一阵营，跳过伤害计算
-            if (attackerTeamId == victimTeamId && playerTeamID == victimTeamId)
+
+            if (attackerTeamId == victimTeamId && victimTeamId == playerTeamID)
             {
                 return false; // 跳过原始方法的执行
             }
+            if (attackerTeamId == playerTeamID)
+            {
+                var buffRulesMap = Manager.buffRulesMap;
+
+                // 获取对应buff的所有规则
+                // var matchingRules = buffRulesMap[BuffID];
+                // foreach (var ruleItem in matchingRules)
+                // {
+                //     var Duration_ = Duration > 0 ? Duration : 1000;
+                //     ruleItem.DoRule(Duration_, 1, null, ruleItem);
+                // }
+                int dmgReasonEffectID = SkillDamageConfig.DmgReasonEffectID > 0 ? SkillDamageConfig.DmgReasonEffectID : EffectInstReq.ObjectID;
+                FUStSkillEffectDesc skillEffectDesc = BGW_GameDB.GetSkillEffectDesc(dmgReasonEffectID, Attacker);
+                if (skillEffectDesc != null && SkillEffectsIds.Contains(dmgReasonEffectID))
+                {
+                    var SkillDamageType = (ESkillDamageType)skillEffectDesc.EffectParamsInt[2];
+                    List<Rule>? matchingRules = null;
+
+
+
+                    switch (SkillDamageType)
+                    {
+                        case ESkillDamageType.FreezeAtk:
+                            buffRulesMap.TryGetValue(BuffElementIds.Ice, out matchingRules);
+                            break;
+                        case ESkillDamageType.PoisonAtk:
+                            buffRulesMap.TryGetValue(BuffElementIds.Poison, out matchingRules);
+                            break;
+
+                        case ESkillDamageType.BurnAtk:
+                            buffRulesMap.TryGetValue(BuffElementIds.Fire, out matchingRules);
+
+
+                            break;
+                        case ESkillDamageType.LightningAtk:
+                            buffRulesMap.TryGetValue(BuffElementIds.Thunder, out matchingRules);
+
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (matchingRules != null && matchingRules.Count > 0)
+                    {
+                        foreach (var ruleItem in matchingRules)
+                        {
+                            ruleItem.Caster = attacker;
+                            ruleItem.Target = victim;
+                            ruleItem.EffectInstReq = EffectInstReq;
+                            ruleItem.DoRule(1000, 1, null, ruleItem);
+                        }
+                    }
+
+                    return true;
+                }
+            }
+
+            if (victimTeamId == playerTeamID)
+            {
+
+                var SkillDamageConfig_ = SkillDamageConfig;
+                var EffectInstReq_ = EffectInstReq;
+                var Attacker_AttrMemData_ = Attacker_AttrMemData;
+                if (EffectInstReq_.Attacker != null)
+                {
+                    EffectInstReq_.Attacker = victim;
+                }
+                // 20234,229
+                if (Attacker != null && ReflectBuffIds.Any(id => BGUFunctionLibraryCS.BGUHasBuffByID(victim, id)))
+                {
+                    BUS_EventCollectionCS.Get(Attacker)?.Evt_TriggerNormalDamageEffect?.Invoke(victim, in SkillDamageConfig_, in EffectInstReq_, in Attacker_AttrMemData_);
+                }
+
+            }
+
             return true; // 继续执行原始方法
         }
+
     }
 
 
@@ -860,10 +992,53 @@ public class Hooks
             {
                 __result = true;
                 return false;
-
             }
             return true; // 继续执行原始方法
         }
+    }
+
+
+
+
+    [HarmonyPatch]
+    public static class BUS_AbnormalStateCompImplPatch
+    {
+        [HarmonyPatch(typeof(BUS_AbnormalStateCompImpl), "OnTriggerFrozen")]
+        private static bool Prefix(BUS_AbnormalStateCompImpl __instance)
+        {
+            var owner = __instance.GetOwner() as BGUCharacterCS;
+            if (owner == null) return true; // 如果没有owner，继续执行原始逻辑
+            bool isPlayer = owner.GetTeamIDInCS() == Helper.GetBGUPlayerCharacterCS().GetTeamIDInCS();
+            return !isPlayer; // 玩家返回false(跳过)，非玩家返回true(执行)
+        }
+
+    }
+
+
+    private static FUStAttackHitFXMapDesc CreateCustomHitFXMapDesc(ESkillDamageType damageType)
+    {
+        FUStAttackHitFXMapDesc desc = BGW_GameDB.GetAttackHitFXMapDescByID(19);
+        if (desc == null)
+        {
+            desc = new FUStAttackHitFXMapDesc();
+        }
+        // 根据不同的伤害类型设置不同的特效路径
+        switch (damageType)
+        {
+            case ESkillDamageType.FreezeAtk:
+                desc.IsUseDispConfig = EGSYesNo.Yes;
+                desc.HitFXPath = "BGWDataAsset_B1DBC'/Game/00Main/VFX/Common/Niagara/Hit/Abnormal/DBC/DBC_NG_Abnormal_Hit_Frozen.DBC_NG_Abnormal_Hit_Frozen'";
+                break;
+            case ESkillDamageType.PoisonAtk:
+                desc.IsUseDispConfig = EGSYesNo.Yes;
+                desc.HitFXPath = "BGWDataAsset_B1DBC'/Game/00Main/VFX/Common/Niagara/Hit/Abnormal/DBC/DBC_NG_Abnormal_Hit_Poisoning_Green.DBC_NG_Abnormal_Hit_Poisoning_Green'";
+                break;
+            default:
+                break;
+        }
+
+
+        return desc;
     }
 
 }
