@@ -2,7 +2,7 @@
   {
     "ID": 914699,
     "BuffTips": "对主角悟空_6级_雷（天龙棍）,改成无限时间",
-    "Duration": -1,
+    "Duration": 999000,
     "BuffEffects": [
       {
         "EffectTrigger": 1,
@@ -11,6 +11,14 @@
         "EffectParamsString": [],
         "EffectParams": [120, 2000, 0],
         "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [888666005],
+        "EffectParamsFloat": [0]
       }
     ]
   },
@@ -18,13 +26,58 @@
     "ID": 911699,
     "BuffTips": "对主角悟空_6级_冰，沉默44改成弹刀45",
     "BuffEffects": [
+     
       {
         "EffectTrigger": 1,
-        "EffectType": 7,
+        "EffectType": 46,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [45],
-        "EffectParamsFloat": []
+        "EffectParams": [888666006],
+        "EffectParamsFloat": [0]
+      }
+    ]
+  },
+  {
+    "ID": 912699,
+    "BuffTips": "对主角悟空_6级_火",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0, 3, 1, 1, 2, 1, 1, 4],
+        "EffectParamsFloat": [10000.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [888666007],
+        "EffectParamsFloat": [0]
+      }
+    ]
+  },
+  {
+    "ID": 913699,
+    "BuffTips": "对主角悟空_6级_毒（倒马毒勾）",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0, 7, 0, 1, 3, 1, 1, 4],
+        "EffectParamsFloat": [150.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      },
+       {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [888666008],
+        "EffectParamsFloat": [0]
       }
     ]
   }

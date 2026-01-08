@@ -1,0 +1,63 @@
+[
+  {
+    "ID": 1016,
+    "UnitResID": 10,
+    "FXWeight": 0,
+    "SkillDamageType": 7,
+    "HitPerformFXEventType": 2,
+    "IsUseDispConfig": 1,
+    "HitFXPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Common/Niagara/Hit/Abnormal/DBC/DBC_NG_Abnormal_Hit_Poisoning_Green.DBC_NG_Abnormal_Hit_Poisoning_Green'",
+    "DirectionalFXPath": "",
+    "PromptEffectMPCPath": "",
+    "BlurLocMPCParamName": "",
+    "MPCParamWithCurve": [],
+    "CameraShakeGap": 0.0,
+    "CameraShake": ""
+  },
+  {
+    "ID": 1017,
+    "UnitResID": 10,
+    "FXWeight": 0,
+    "SkillDamageType": 7,
+    "HitPerformFXEventType": 1,
+    "IsUseDispConfig": 1,
+    "HitFXPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Common/Niagara/Hit/Abnormal/DBC/DBC_NG_Abnormal_Hit_Poisoning_Green.DBC_NG_Abnormal_Hit_Poisoning_Green'",
+    "DirectionalFXPath": "",
+    "PromptEffectMPCPath": "",
+    "BlurLocMPCParamName": "",
+    "MPCParamWithCurve": [],
+    "CameraShakeGap": 0.0,
+    "CameraShake": ""
+  },
+
+  {
+    "ID": 1014,
+    "UnitResID": 10,
+    "FXWeight": 0,
+    "SkillDamageType": 5,
+    "HitPerformFXEventType": 2,
+    "IsUseDispConfig": 1,
+    "HitFXPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Common/Niagara/Hit/Abnormal/DBC/DBC_NG_Abnormal_Hit_Frozen.DBC_NG_Abnormal_Hit_Frozen'",
+    "DirectionalFXPath": "",
+    "PromptEffectMPCPath": "",
+    "BlurLocMPCParamName": "",
+    "MPCParamWithCurve": [],
+    "CameraShakeGap": 0.0,
+    "CameraShake": ""
+  },
+  {
+    "ID": 1015,
+    "UnitResID": 10,
+    "FXWeight": 0,
+    "SkillDamageType": 5,
+    "HitPerformFXEventType": 1,
+    "IsUseDispConfig": 1,
+    "HitFXPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Common/Niagara/Hit/Abnormal/DBC/DBC_NG_Abnormal_Hit_Frozen.DBC_NG_Abnormal_Hit_Frozen'",
+    "DirectionalFXPath": "",
+    "PromptEffectMPCPath": "",
+    "BlurLocMPCParamName": "",
+    "MPCParamWithCurve": [],
+    "CameraShakeGap": 0.0,
+    "CameraShake": ""
+  }
+]

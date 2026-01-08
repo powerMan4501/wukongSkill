@@ -160,17 +160,7 @@
   {
     "ID": 888666008,
     "Duration": -1,
-    "BuffTips": "毒buff，造成伤害积累毒异常",
-    "BuffEffects": [
-      {
-        "EffectTrigger": 14,
-        "EffectType": 46,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [2023],
-        "EffectParamsFloat": [0.0]
-      }
-    ]
+    "BuffTips": "毒buff，造成伤害积累毒异常"
   },
 
   {
@@ -282,7 +272,7 @@
 
   {
     "ID": 777666001,
-    "Duration": -1,
+    "Duration": 5000,
     "BuffTips": "水环境buff,给雷",
     "BuffEffects": [
       {
@@ -297,7 +287,7 @@
   },
   {
     "ID": 777666002,
-    "Duration": -1,
+    "Duration": 5000,
     "BuffTips": "雪环境",
     "BuffEffects": [
       {
@@ -312,7 +302,7 @@
   },
   {
     "ID": 777666003,
-    "Duration": -1,
+    "Duration": 5000,
     "BuffTips": "火环境",
     "BuffEffects": [
       {
@@ -327,7 +317,7 @@
   },
   {
     "ID": 777666004,
-    "Duration": -1,
+    "Duration": 5000,
     "BuffTips": "沙/云环境,给毒buff",
     "BuffEffects": [
       {

@@ -27,15 +27,28 @@
     "InputCore": "ThumbMouseButton2",
     "desc": "立棍下平A1，百目真人"
   },
-
+  {
+    "nowMontage": "AM_Wukong_ComboA_q1",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8520,
+    "Condition": "StancePoke",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "戳棍平A1接不空"
+  },
   {
     "nowMontage": "AM_Wukong_ComboA_q2.AM_Wukong_ComboA_q2",
     "rate": 0.3,
-    "type": "magic",
-    "skillID": 8526,
     "Condition": "StanceHeavy",
     "InputCore": "ThumbMouseButton2",
-    "desc": "劈棍平A2接不能老拳"
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8526,
+        "desc": "不能老拳"
+      }
+    ]
   },
 
   {
@@ -47,7 +60,21 @@
     "InputCore": "ThumbMouseButton2",
     "desc": "立棍平A2接疾蝠"
   },
+  {
+    "nowMontage": "AM_Wukong_ComboA_q2.AM_Wukong_ComboA_q2",
+    "rate": 0.3,
 
+    "Condition": "StancePoke",
+    "InputCore": "ThumbMouseButton2",
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8526,
+        "desc": "不能老拳"
+      }
+    ]
+  },
   {
     "nowMontage": "AM_Wukong_ComboA_q3.AM_Wukong_ComboA_q3",
     "rate": 0.3,
@@ -67,7 +94,50 @@
     "InputCore": "ThumbMouseButton2",
     "desc": "立棍平A3接虫校尉"
   },
+  {
+    "nowMontage": "AM_Wukong_ComboA_q3.AM_Wukong_ComboA_q3",
+    "rate": 0.3,
+    "Condition": "StancePoke",
+    "InputCore": "ThumbMouseButton2",
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8526,
+        "desc": "不能"
+      }
+    ]
+  },
+  {
+    "nowMontage": "AM_Wukong_ComboA_q4.AM_Wukong_ComboA_q4",
+    "rate": 0.3,
+    "Condition": "StancePoke",
+    "InputCore": "ThumbMouseButton2",
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8526,
+        "desc": "不能"
+      }
+    ]
+  },
+  {
+    "nowMontage": "AM_Wukong_ComboA_q5.AM_Wukong_ComboA_q5",
+    "rate": 0.3,
 
+    "Condition": "StancePoke",
+    "InputCore": "ThumbMouseButton2",
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8526,
+        "MagicSkillID": 300505,
+        "desc": "不能以武入禅"
+      }
+    ]
+  },
   {
     "nowMontage": "AM_Wukong_ComboA_q4.AM_Wukong_ComboA_q4",
     "rate": 0.3,

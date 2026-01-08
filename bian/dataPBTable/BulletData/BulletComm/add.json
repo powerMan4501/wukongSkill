@@ -1,5 +1,4 @@
 [
- 
   {
     "desc": "克隆马猴冰剑气",
     "ID": 88880003,
@@ -15,7 +14,6 @@
     "ProjectileLifeTime": 9
   },
 
-
   {
     "desc": "金箍棒克隆",
     "ID": 88880006,
@@ -23,8 +21,6 @@
     "ProjectileDelayDestroyTime": 2,
     "ProjectileLifeTime": 2
   },
-
- 
 
   {
     "desc": "火猴火焰剑气",
@@ -41,14 +37,13 @@
     "ProjectileDelayDestroyTime": 1,
     "ProjectileLifeTime": 9
   },
-   {
+  {
     "desc": "杨戬飞剑 88880011",
     "ID": 88880011,
     "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/MGD/MGD_yangjian_01/BP_mgd_yangjian_01_sword_99.BP_mgd_yangjian_01_sword_99_C",
     "ProjectileDelayDestroyTime": 1,
     "ProjectileLifeTime": 9
   },
-
 
   {
     "desc": "克隆赤发鬼的箭 1017261",
@@ -58,11 +53,25 @@
     "ProjectileLifeTime": 9
   },
 
-   {
+  {
     "desc": "克隆画地为牢 38003801",
     "ID": 88880013,
     "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/LYS/LYS_HuangMei_03/MF_LYS_HuangMei_03_AntiASS.MF_LYS_HuangMei_03_AntiASS_C",
     "ProjectileDelayDestroyTime": 1,
     "ProjectileLifeTime": 5
+  },
+  {
+    "desc": "克隆冰气，74010103",
+    "ID": 88880014,
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/MGD/mgd_yuan/BP_mgd_yuan_smallice.BP_mgd_yuan_smallice_C",
+    "ProjectileDelayDestroyTime": 0,
+    "ProjectileLifeTime": 0.3
+  },
+  {
+    "desc": "克隆毒液，10030401",
+    "ID": 88880015,
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/GYCY/GYCY_She_01/BP_GYCY_SheBang_Bullet_01.BP_GYCY_SheBang_Bullet_01_C",
+    "ProjectileDelayDestroyTime": 0,
+    "ProjectileLifeTime": 0.3
   }
 ]

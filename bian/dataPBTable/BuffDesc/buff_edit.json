@@ -151,16 +151,7 @@
         "EffectParams": [1, 7, 18, 45, 80],
         "EffectParamsFloat": []
       },
-      {
-        "EffectTrigger": 7,
-        "EffectType": 20,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [
-          "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_20_hfm_bashanhu_BulletChange.BGW_20_hfm_bashanhu_BulletChange'"
-        ],
-        "EffectParams": [],
-        "EffectParamsFloat": []
-      },
+      
       {
         "EffectTrigger": 7,
         "EffectType": 46,

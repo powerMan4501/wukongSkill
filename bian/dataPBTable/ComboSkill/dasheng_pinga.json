@@ -1,0 +1,207 @@
+[
+  {
+    "nowMontage": "AM_Dasheng_ComboA_01.AM_Dasheng_ComboA_01",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8526,
+    "Condition": "StanceHeavy",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "劈棍平A1接不能老拳"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_01.AM_Dasheng_ComboA_01",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8515,
+    "Condition": "StanceProp",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "立棍下平A1，百目真人"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_ComboB_q1.AM_Wukong_ComboB_q1",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8520,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "戳棍平A1接不空"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_02.AM_Dasheng_ComboA_02",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8526,
+    "Condition": "StanceHeavy",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "劈棍平A2接不能老拳"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_02.AM_Dasheng_ComboA_02",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8567,
+    "Condition": "StanceProp",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "立棍平A2接疾蝠"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_ComboB_q2.AM_Wukong_ComboB_q2",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8520,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "戳棍平A2 不空"
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_03.AM_Dasheng_ComboA_03",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8526,
+    "Condition": "StanceHeavy",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "劈棍平A3接不能老拳"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_03.AM_Dasheng_ComboA_03",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8578,
+    "Condition": "StanceProp",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "立棍平A3接虫校尉"
+  },
+
+  {
+    "nowMontage": "AM_Wukong_ComboB_q3.AM_Wukong_ComboB_q3",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8514,
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "戳棍平A3接鼠司空"
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_04.AM_Dasheng_ComboA_04",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8526,
+    "Condition": "StanceHeavy",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "劈棍平A4接不能老拳"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_04.AM_Dasheng_ComboA_04",
+    "rate": 0.3,
+    "type": "magic",
+    "skillID": 8562,
+    "UnitScale": 0.6,
+    "Condition": "StanceProp",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "立棍平A4 疯虎"
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_01.AM_Dasheng_ComboA_01",
+    "rate": 0.3,
+    "Condition": "StancePoke",
+    "InputCore": "ThumbMouseButton2",
+    "desc": "大圣模式戳棍平A1",
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8522,
+        "hasBuff": 888666006,
+        "desc": "有冰buff,无量蝠"
+      },
+      {
+        "type": "magicskill",
+        "magicID": 8520,
+        "hasBuff": 888666007,
+        "desc": "有火buff,不空"
+      },
+      {
+        "type": "magicskill",
+        "magicID": 8526,
+        "noHasAnyBuff": [888666006, 888666007],
+        "desc": "不能老拳"
+      }
+    ]
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_02.AM_Dasheng_ComboA_02",
+    "rate": 0.3,
+    "Condition": "StancePoke",
+    "InputCore": "ThumbMouseButton2",
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8571,
+        "hasBuff": 888666006,
+        "desc": "有冰buff,隼居士"
+      },
+
+      {
+        "type": "magicskill",
+        "magicID": 8526,
+        "noHasAnyBuff": [888666006],
+        "desc": "不能老拳"
+      }
+    ]
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_03.AM_Dasheng_ComboA_03",
+    "rate": 0.3,
+    "Condition": "StancePoke",
+    "InputCore": "ThumbMouseButton2",
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8526,
+        "desc": "不能老拳"
+      }
+    ]
+  },
+
+  {
+    "nowMontage": "AM_Dasheng_ComboA_04.AM_Dasheng_ComboA_04",
+    "rate": 0.3,
+    "Condition": "StancePoke",
+    "InputCore": "ThumbMouseButton2",
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8526,
+        "desc": "不能老拳"
+      }
+    ]
+  },
+  {
+    "nowMontage": "AM_Dasheng_ComboA_05.AM_Dasheng_ComboA_05",
+    "rate": 0.3,
+    "Condition": "StancePoke",
+    "InputCore": "ThumbMouseButton2",
+    "type": "actions",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8526,
+        "MagicSkillID": 300505,
+        "desc": "不能以武入禅"
+      }
+    ]
+  }
+]

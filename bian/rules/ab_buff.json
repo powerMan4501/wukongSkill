@@ -1,0 +1,41 @@
+{
+  "Name": "悟",
+  "desc": "888666005:雷，888666006冰， 888666007火， 888666008毒",
+  "Rules": [
+    {
+      "Name": "冰buff",
+      "Filters": [
+        {
+          "Type": "buff",
+          "BuffID": 888666006
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 88880014,
+          "TimeDelay": 0
+        }
+      ]
+    },
+
+    {
+      "Name": "毒buff",
+      "Filters": [
+        {
+          "Type": "buff",
+          "BuffID": 888666008
+        }
+      ],
+      "AfterActions": [
+        {
+          "Type": "bullet",
+          "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+          "ProjectTileID": 10030401,
+          "TimeDelay": 0
+        }
+      ]
+    }
+  ]
+}

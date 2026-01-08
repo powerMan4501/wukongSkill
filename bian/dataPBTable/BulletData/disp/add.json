@@ -84,5 +84,32 @@
     "SpawnPStoSpawnInterval": 0.0,
     "BulletLowestSpdCanPlayPS": 0.0,
     "HitChrAudioID": 5301
+  },
+
+  {
+    "desc": "克隆冰气，74010103",
+    "ID": 88880014,
+    "ProjectileFXUseDBC": 1,
+    "ProjectileSpawnPSPath": "",
+    "ProjectileSelfSpawnDBCPath": "",
+    "SpawnPStoSpawnInterval": 0.0,
+    "BulletLowestSpdCanPlayPS": -1.0,
+    "BulletHitItemPSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/MGD/MGD_JSDS_FTXD/DBC/DBC_JSDS_FTXD_Iceball_01_EnvHit.DBC_JSDS_FTXD_Iceball_01_EnvHit'",
+    "BulletHitUnitPSPath": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/MGD/MGD_JSDS_FTXD/DBC/DBC_JSDS_FTXD_Iceball_01_Hit.DBC_JSDS_FTXD_Iceball_01_Hit'",
+    "BulletLifeOverPSPath": "",
+    "BeHitedProjectilePlayFXPath": "",
+    "BeHitedProjectilePostAKPath": "",
+    "FXDestroyImmediatelyTag": "",
+    "HitChrAudioID": 5301
+  },
+  {
+    "desc": "克隆毒液，10030401",
+    "ID": 88880015,
+    "ProjectileFXUseDBC": 0,
+    "ProjectileSpawnPSPath": "",
+    "ProjectileSelfSpawnDBCPath": "",
+    "SpawnPStoSpawnInterval": 0.0,
+    "BulletLowestSpdCanPlayPS": 0.0,
+    "HitChrAudioID": 5301
   }
 ]
