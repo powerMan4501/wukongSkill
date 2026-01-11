@@ -878,7 +878,7 @@ public class Hooks
     5000601,5000602,5000801
 };
 
-    private static readonly int[] ReflectBuffIds = { 20234, 229, 288, 294, 10133 };
+    private static readonly int[] ReflectBuffIds = { 20234, 229, 288, 294, 10133, 96036 };
 
     [HarmonyPatch]
     public static class BeAttackedTeamCheckPatch
@@ -898,7 +898,7 @@ public class Hooks
             {
                 return false; // 跳过原始方法的执行
             }
-            if (attackerTeamId == playerTeamID)
+            if (Attacker != null && victim != null && attackerTeamId == playerTeamID)
             {
                 var buffRulesMap = Manager.buffRulesMap;
 
@@ -955,7 +955,7 @@ public class Hooks
                 }
             }
 
-            if (victimTeamId == playerTeamID)
+            if (victimTeamId == playerTeamID && Attacker != null)
             {
 
                 var SkillDamageConfig_ = SkillDamageConfig;
@@ -980,22 +980,21 @@ public class Hooks
 
 
 
-
-    [HarmonyPatch]
-    public static class BGUEnvironmentSurfaceEffectMgrPatch
-    {
-        [HarmonyPatch(typeof(BGUEnvironmentSurfaceEffectMgr), "DoesTargetPassFilter")]
-        private static bool Prefix(int Filter, AActor Target, ref bool __result)
-        {
-            IBUC_ActorBasicData readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_ActorBasicData, BUC_ActorBasicData>(Target);
-            if (readOnlyData != null)
-            {
-                __result = true;
-                return false;
-            }
-            return true; // 继续执行原始方法
-        }
-    }
+    // [HarmonyPatch]
+    // public static class BGUEnvironmentSurfaceEffectMgrPatch
+    // {
+    //     [HarmonyPatch(typeof(BGUEnvironmentSurfaceEffectMgr), "DoesTargetPassFilter")]
+    //     private static bool Prefix(int Filter, AActor Target, ref bool __result)
+    //     {
+    //         IBUC_ActorBasicData readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_ActorBasicData, BUC_ActorBasicData>(Target);
+    //         if (readOnlyData != null)
+    //         {
+    //             __result = true;
+    //             return false;
+    //         }
+    //         return true; // 继续执行原始方法
+    //     }
+    // }
 
 
 
@@ -1014,31 +1013,122 @@ public class Hooks
 
     }
 
-
-    private static FUStAttackHitFXMapDesc CreateCustomHitFXMapDesc(ESkillDamageType damageType)
+    private struct FDamageDynamicParam
     {
-        FUStAttackHitFXMapDesc desc = BGW_GameDB.GetAttackHitFXMapDescByID(19);
-        if (desc == null)
-        {
-            desc = new FUStAttackHitFXMapDesc();
-        }
-        // 根据不同的伤害类型设置不同的特效路径
-        switch (damageType)
-        {
-            case ESkillDamageType.FreezeAtk:
-                desc.IsUseDispConfig = EGSYesNo.Yes;
-                desc.HitFXPath = "BGWDataAsset_B1DBC'/Game/00Main/VFX/Common/Niagara/Hit/Abnormal/DBC/DBC_NG_Abnormal_Hit_Frozen.DBC_NG_Abnormal_Hit_Frozen'";
-                break;
-            case ESkillDamageType.PoisonAtk:
-                desc.IsUseDispConfig = EGSYesNo.Yes;
-                desc.HitFXPath = "BGWDataAsset_B1DBC'/Game/00Main/VFX/Common/Niagara/Hit/Abnormal/DBC/DBC_NG_Abnormal_Hit_Poisoning_Green.DBC_NG_Abnormal_Hit_Poisoning_Green'";
-                break;
-            default:
-                break;
-        }
+        public float HitWeight;
 
+        public int StiffLevel;
 
-        return desc;
+        public int HitPartID;
+
+        public BGWDataAsset_UnitBeAttackedConfig NowUseUBAConfig;
+
+        public EAttackerArea AttackerArea;
     }
 
+    private struct FDamageDescParam
+    {
+        public int HitVEffectID;
+
+        public int AttackStiffEffectID;
+
+        public ESkillDamageType SkillDamageType;
+
+        public float HitWeight;
+
+        public float BaseDamage;
+
+        public int SpecialHitPartID;
+
+        public float PartDamage;
+
+        public float BaseDamageRatio;
+
+        public float SkillArmorHit;
+
+        public float BlockArmorHit;
+
+        public float ImmobilizeHit;
+
+        public bool bIgnoreBeAttacked;
+
+        public float CritRateAddition;
+
+        public float CritDamageAddition;
+
+        public float HPMaxINV10000Damage_Element;
+
+        public bool bCanTriggerFX;
+
+        public bool bCanTriggerFightBackCounter;
+
+        public EAbnormalStateType ElemAtkType;
+
+        public float TargetCurHpRatio;
+
+        public int ElementDmgLevel;
+
+        public float HPMaxINV10000Damage_Abs;
+
+        public bool BreakFrozenImmediatelyFlag;
+    }
+    [HarmonyPatch(typeof(BUS_BeAttackedComp), "DoDmg_B1_V2")]
+    public class BUS_BeAttackedComp_DoDmg_B1_V2_Patch
+    {
+        private static void Postfix(
+            BUS_BeAttackedComp __instance,
+             AActor Attacker,
+        bool IsCrit,
+        float DmgNoiseMul,
+        in FDamageDynamicParam DamageDynamicParam,
+        in FDamageDescParam DamageDescParam,
+        in FSkillDamageConfig SkillDamageConfig,
+        in FBattleAttrSnapShot Attacker_AttrMemData,
+        ref float FinalDamageValue,
+        ref float FinalDmgForPart,
+        ref float FinalElementDmgValue,
+        bool bPrintLog = true)
+        {
+            // 在这里修改返回值
+            var owner = __instance.GetOwner() as BGUCharacterCS;
+            var player = Helper.GetBGUPlayerCharacterCS();
+            if (owner != null && player != null && owner.GetTeamIDInCS() == player.GetTeamIDInCS())
+            {
+                float def = BGUFunctionLibraryCS.GetAttrValue(player, EBGUAttrFloat.Def);
+                if (FinalDamageValue > 0)
+                {
+                    FinalDamageValue = FinalDamageValue > def ? FinalDamageValue - def : 1;
+                }
+            }
+        }
+    }
+
+
+
+
+    [HarmonyPatch(typeof(BUS_PlayerInputActionComp), "OnCameraLockTarget")]
+    public class OnCameraLockTarget_Patch
+    {
+        private static bool Prefix(BUS_PlayerInputActionComp __instance, UnitLockTargetInfo TargetInfo)
+        {
+
+            if (TargetInfo == null)
+            {
+                return false;
+            }
+            BGUCharacterCS lockTargetActor = TargetInfo.LockTargetActor as BGUCharacterCS;
+            var owner = __instance.GetOwner() as BGUCharacterCS;
+            var player = Helper.GetBGUPlayerCharacterCS();
+            if (owner != null && lockTargetActor != null && player != null)
+            {
+                var nowTeamID = owner.GetTeamIDInCS();
+                if (nowTeamID == player.GetTeamIDInCS() && nowTeamID == lockTargetActor.GetTeamIDInCS())
+                {
+                    return false;
+                }
+            }
+            return true;
+
+        }
+    }
 }

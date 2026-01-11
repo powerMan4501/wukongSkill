@@ -473,11 +473,11 @@ namespace bian
                         var teamID = Helper.GetBGUPlayerCharacterCS().GetTeamIDInCS();
                         if (action?.toPlayerTeam == true)
                         {
-                            Helper.SpawnActor(action.SummonTamerTemplatePath, teamID);
+                            Helper.SpawnActorByWorld(action.SummonTamerTemplatePath, teamID);
                         }
                         else
                         {
-                            Helper.SpawnActor(action.SummonTamerTemplatePath, null);
+                            Helper.SpawnActorByWorld(action.SummonTamerTemplatePath, null);
 
                         }
                     }

@@ -133,7 +133,11 @@ public class ShowPlayerInfo
 	{
 		var timerComp = getTimeComp();
 		BGUPlayerCharacterCS bGUPlayerCharacterCS = GetBGUPlayerCharacterCS();
-		Hooks.ApplyBuffEffect(bGUPlayerCharacterCS, 0);
+		if(bGUPlayerCharacterCS == null)
+		{
+			return;
+		}
+		// Hooks.ApplyBuffEffect(bGUPlayerCharacterCS, 0);
 		if (BasicInfoKs.Count > 0)
 		{
 

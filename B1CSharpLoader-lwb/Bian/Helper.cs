@@ -230,7 +230,7 @@ namespace bian
             return 0;
         }
 
-        public static void GenShiXianFeng()
+        public static void SpawnActorByWorld(string classAsset, int? teamID)
         {
             var player = GetBGUPlayerCharacterCS();
             if (player == null) return;
@@ -245,8 +245,12 @@ namespace bian
             {
                 SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod.AlwaysSpawn
             };
-            UClass unrealClass = BGW_PreloadAssetMgr.Get(World).TryGetCachedResourceObj<UClass>("PrefabricatorAsset'/Game/00Main/Design/Units/HFM/Unit_HFM_ShiXianFeng_01_Prefab.Unit_HFM_ShiXianFeng_01_Prefab_C'", ELoadResourceType.SyncLoadAndCache);
-            World.SpawnActor(unrealClass, ref location, ref rotation, ref parameters);
+            // UClass unrealClass = BGW_PreloadAssetMgr.Get(World).TryGetCachedResourceObj<UClass>("PrefabricatorAsset'/Game/00Main/Design/Units/HFM/Unit_HFM_ShiXianFeng_01_Prefab.Unit_HFM_ShiXianFeng_01_Prefab_C'", ELoadResourceType.SyncLoadAndCache);
+            UClass uClass = LoadClass($"PrefabricatorAsset'{classAsset}'");
+            if (uClass == null) return;
+            World.SpawnActor(uClass, ref location, ref rotation, ref parameters);
+
+
         }
 
         public static void addCopySkils(int skillId)
@@ -1385,7 +1389,7 @@ namespace bian
             fSummonReq.SpawnConfigWrap = FSummonSpawnConfigWrap.WrapSpawnConfig_BySummonCommDesc((Int32)SummonID, character);
             fSummonReq.SpawnConfigWrap.SummonAliveTime = SummonAliveTime;
             fSummonReq.SpawnConfigWrap.DestroyDelayTime = 0;
-            fSummonReq.SpawnConfigWrap.SpawnBirthBuff = [888666002];
+            // fSummonReq.SpawnConfigWrap.SpawnBirthBuff = [888666002];
             if (skillID.HasValue && skillID.Value > 0)
             {
                 var skillDesc = BGW_GameDB.GetSkillSDesc(skillID.Value, character);
@@ -1413,7 +1417,7 @@ namespace bian
             var SummonCount = action?.SummonCount ?? 1;
             var SummonID = action?.SummonID;
             var skillID = action?.SkillID;
-            var SummonAliveTime = action?.SummonAliveTime ?? 10;
+            var SummonAliveTime = action?.SummonAliveTime ?? 9999;
             if (SummonCount < 1)
             {
                 SummonCount = 1;
@@ -1427,18 +1431,18 @@ namespace bian
             fSummonReq.SpawnConfigWrap = FSummonSpawnConfigWrap.WrapSpawnConfig_BySummonCommDesc((Int32)SummonID, character);
             fSummonReq.SpawnConfigWrap.SummonAliveTime = SummonAliveTime;
             fSummonReq.SpawnConfigWrap.DestroyDelayTime = 0;
-            fSummonReq.SpawnConfigWrap.SpawnBirthBuff = [888666002];
-            BGW_PreloadAssetMgr bGW_PreloadAssetMgr = BGW_PreloadAssetMgr.Get(character);
-            if (action?.SummonTamerTemplatePath != null && bGW_PreloadAssetMgr != null)
-            {
-                fSummonReq.SpawnConfigWrap.TamerTemplate =
-                bGW_PreloadAssetMgr.TryGetCachedResourceObj<UClass>(action.SummonTamerTemplatePath, ELoadResourceType.SyncLoadAndCache);
+            // fSummonReq.SpawnConfigWrap.SpawnBirthBuff = [888666002];
+            // BGW_PreloadAssetMgr bGW_PreloadAssetMgr = BGW_PreloadAssetMgr.Get(character);
+            // if (action?.SummonTamerTemplatePath != null && bGW_PreloadAssetMgr != null)
+            // {
+            //     fSummonReq.SpawnConfigWrap.TamerTemplate =
+            //     bGW_PreloadAssetMgr.TryGetCachedResourceObj<UClass>(action.SummonTamerTemplatePath, ELoadResourceType.SyncLoadAndCache);
 
-                fSummonReq.SpawnConfigWrap.DisappearMontagePathList.Clear();
-                fSummonReq.SpawnConfigWrap.UseBornSkill = false;
+            //     fSummonReq.SpawnConfigWrap.DisappearMontagePathList.Clear();
+            //     fSummonReq.SpawnConfigWrap.UseBornSkill = false;
 
 
-            }
+            // }
             if (action?.IsSummonerAsMaster != null)
             {
                 fSummonReq.SpawnConfigWrap.IsSummonerAsMaster = (bool)action.IsSummonerAsMaster;
@@ -1897,6 +1901,7 @@ namespace bian
                     BUS_EventCollectionCS.Get(enemy).Evt_ClearCameraLock.Invoke();
                     BUS_EventCollectionCS.Get(enemy).Evt_SetCanSetTargetByHatred.Invoke(true);
                     BUS_EventCollectionCS.Get(enemy).Evt_SetTargetInfo.Invoke(TargetInfo);
+                    BUS_EventCollectionCS.Get(enemy)?.Evt_CameraLockTarget.Invoke(new UnitLockTargetInfo(nearPlayer, ETargetSourceType.Target_ForceCameraLock, ELockTargetWayType.Manual, "", ""));
                     BUS_EventCollectionCS.Get((AActor)(object)enemy).Evt_AICatchTarget.Invoke(nearPlayer, ETargetSourceType.Target_SwitchTaget);
                 }
 

@@ -144,7 +144,7 @@ namespace bian
                 LoadUtils.LoadAndApplyTalentDesc();
                 LoadUtils.LoadAndApplyEquipAttrDesc();
                 LoadUtils.LoadAndApplyHuluDesc();
-                LoadUtils.LoadAndApplyAttackHitFXMapDesc();
+                LoadUtils.LoadAndApplySummon();
                 isBuffConfigsLoaded = true;
                 // Hooks.RegOnCastSkillWithAnimMontageEvent();
             }
