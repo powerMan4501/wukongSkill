@@ -1,0 +1,137 @@
+[
+  {
+    "code": "suhor",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 200201,
+        "SummonCount": 1,
+        "desc": "召唤马哥"
+      },
+
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+
+  {
+    "code": "suyuan",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 740101,
+        "SummonCount": 1,
+        "desc": "召唤巨猿"
+      },
+
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+  {
+    "code": "suyH",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 433301,
+        "SummonCount": 1,
+        "desc": "召唤己方金池"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+  {
+    "code": "suTJ",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 433304,
+        "SummonCount": 1,
+        "desc": "召唤己方的天将"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+
+  {
+    "code": "suniao",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 433305,
+        "SummonCount": 1,
+        "desc": "召唤鳖宝"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+
+  {
+    "code": "susns",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 433307,
+        "SummonCount": 1,
+        "desc": "己方鼠弩手"
+      },
+      {
+        "Type": "summon",
+        "SummonID": 433306,
+        "SummonCount": 1,
+        "desc": "己方鼠弩手"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+  {
+    "code": "susss",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 433303,
+        "SummonCount": 1,
+        "desc": "己方石双双"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  }
+]

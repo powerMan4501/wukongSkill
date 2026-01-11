@@ -10,7 +10,7 @@
     "ID": 3001,
     "TargetFilter": 1,
     "SurfaceType": 10,
-    "SurfaceBuffList": [10001, 777666002],
+    "SurfaceBuffList": [10001],
     "desc": "SnowSurface,雪地,777666001水环境buff,777666002:雪环境buff，777666003:火, 777666003:火, 777666004沙;10001:主角寒冷期间更改ABPS随机待机-触发"
   },
   {
@@ -30,7 +30,7 @@
     "ID": 3004,
     "TargetFilter": 1,
     "SurfaceType": 2,
-    "SurfaceBuffList": [39004, 777666001],
+    "SurfaceBuffList": [39004],
     "desc": "WaterSurface,水"
   },
   {
@@ -51,28 +51,28 @@
     "ID": 5001,
     "TargetFilter": 1,
     "SurfaceType": 12,
-    "SurfaceBuffList": [461, 462, 463, 1135, 777666003],
+    "SurfaceBuffList": [461, 462, 463, 1135],
     "desc": "LavaSurface,岩浆,1135满堂红-安身术内攻击为火属性"
   },
   {
     "ID": 5002,
     "TargetFilter": 1,
     "SurfaceType": 12,
-    "SurfaceBuffList": [461, 464, 465, 1135, 777666003],
+    "SurfaceBuffList": [461, 464, 465, 1135],
     "desc": "LavaSurface,岩浆,1135满堂红-安身术内攻击为火属性"
   },
   {
     "ID": 5101,
     "TargetFilter": 1,
     "SurfaceType": 17,
-    "SurfaceBuffList": [10003, 777666002],
+    "SurfaceBuffList": [10003],
     "desc": "GlideIce,滑冰"
   },
   {
     "ID": 8001,
     "TargetFilter": 1,
     "SurfaceType": 11,
-    "SurfaceBuffList": [411048, 777666002],
+    "SurfaceBuffList": [411048],
     "desc": "IceSurface,冰"
   },
   {
@@ -86,21 +86,21 @@
     "ID": 8003,
     "TargetFilter": 1,
     "SurfaceType": 12,
-    "SurfaceBuffList": [461, 464, 465, 1135, 777666003],
+    "SurfaceBuffList": [461, 464, 465, 1135],
     "desc": "LavaSurface,岩浆,1135满堂红-安身术内攻击为火属性"
   },
   {
     "ID": 8004,
     "TargetFilter": 1,
     "SurfaceType": 12,
-    "SurfaceBuffList": [461, 411151, 411152, 1135, 777666003],
+    "SurfaceBuffList": [461, 411151, 411152, 1135],
     "desc": "LavaSurface,岩浆,1135满堂红-安身术内攻击为火属性"
   },
   {
     "ID": 8005,
     "TargetFilter": 1,
     "SurfaceType": 17,
-    "SurfaceBuffList": [10002, 777666002],
+    "SurfaceBuffList": [10002],
     "desc": "GlideIce,滑冰"
   },
   {

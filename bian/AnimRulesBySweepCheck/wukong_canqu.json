@@ -91,7 +91,7 @@
     "linkValue": 0,
     "speedRate": 1.3,
     "addRadius": 500,
-    "hitEffects": [888555033],
+    "hitEffects": [888555038],
     "replaceEffects": true,
     "CastActions": [
       {
@@ -103,30 +103,14 @@
           }
         ],
         "desc": "让分身执行棍子变粗砸一下"
-      }
-    ],
-    "SweepActions": [
-      {
+      },
+       {
         "Type": "bullet",
-        "bullets": [
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [30050301],
-            "noHasBuff": 888666007,
-            "OffsetX": 400,
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileID": 30160101,
+           "OffsetX": 400,
             "OffsetY": 400,
-            "desc": "没有火buff，波动"
-          },
-
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [74010207],
-            "hasBuff": 888666007,
-            "OffsetX": 400,
-            "OffsetY": 400,
-            "desc": "有火buff，火圈"
-          }
-        ]
+        "desc": "小黄龙雷电"
       }
     ]
   },

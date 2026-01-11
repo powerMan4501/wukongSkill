@@ -82,106 +82,10 @@
       }
     ]
   },
-  {
-    "code": "susss",
-    "afterActions": [
-      {
-        "Type": "spaw_monster",
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_03.TAMER_hfm_shanzhen_03_C",
-        "desc": "石双双"
-      },
-      {
-        "Type": "spaw_monster",
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_01a.TAMER_hfm_shanzhen_01a_C",
-        "desc": "石磷磷"
-      },
-      {
-        "Type": "spaw_monster",
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_02.TAMER_hfm_shanzhen_02_C",
-        "desc": "石苍苍"
-      },
-      {
-        "Type": "spaw_monster",
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_05_bridge.TAMER_hfm_shanzhen_05_bridge_C",
-        "desc": "石苍苍2"
-      },
-      {
-        "Type": "diff_teamid",
-        "TimeDelay": 3000,
-        "desc": "让范围3000以内的角色敌友不分"
-      }
-    ]
-  },
-  {
-    "code": "niao",
-    "afterActions": [
-      {
-        "Type": "spaw_monster",
-        "toPlayerTeam": true,
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_niaozui.TAMER_hys_niaozui_C",
-        "desc": "鳖宝"
-      },
-      {
-        "Type": "diff_teamid",
-        "TimeDelay": 3000,
-        "desc": "让范围3000以内的角色敌友不分"
-      }
-    ]
-  },
-  {
-    "code": "dudi",
-    "afterActions": [
-      {
-        "Type": "spaw_monster",
-        "toPlayerTeam": true,
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/PSD/TAMER_psd_xiezijing_og.TAMER_psd_xiezijing_og_C",
-        "desc": "毒敌大王"
-      }
-    ]
-  },
-  {
-    "code": "huiyue",
-    "afterActions": [
-      {
-        "Type": "spaw_monster",
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/BHL/TAMER_bhl_gushoufsq_01.TAMER_bhl_gushoufsq_01_C",
-        "desc": "第四关·晦月魔君（BOSS）"
-      }
-    ]
-  },
-  {
-    "code": "jinchi",
-    "afterActions": [
-      {
-        "Type": "spaw_monster",
-        "toPlayerTeam": true,
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_yanjianxi_01a.TAMER_gycy_yanjianxi_01a_C",
-        "desc": "金池"
-      },
-      {
-        "Type": "diff_teamid",
-        "TimeDelay": 3000,
-        "desc": "让范围3000以内的角色敌友不分"
-      }
-    ]
-  },
-  {
-    "code": "sutj",
-    "afterActions": [
-      {
-        "Type": "spaw_monster",
-        "toPlayerTeam": true,
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_sl_tianjiang_01.TAMER_sl_tianjiang_01_C",
-        "desc": "天将"
-      },
 
-      {
-        "Type": "diff_teamid",
-        "TimeDelay": 3000,
-        "desc": "让范围3000以内的角色敌友不分"
-      }
-    ]
-  },
+  
+
+ 
 
   {
     "code": "hxj",
@@ -229,28 +133,7 @@
       }
     ]
   },
-  {
-    "code": "sns",
-    "afterActions": [
-      {
-        "Type": "spaw_monster",
-        "toPlayerTeam": true,
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shunushou_01b_stand.TAMER_hfm_shunushou_01b_stand_C",
-        "desc": "鼠弩手"
-      },
-      {
-        "Type": "spaw_monster",
-        "toPlayerTeam": true,
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shunushou_01b_stand.TAMER_hfm_shunushou_01b_stand_C",
-        "desc": "鼠弩手"
-      },
-      {
-        "Type": "diff_teamid",
-        "TimeDelay": 3000,
-        "desc": "让范围3000以内的角色敌友不分"
-      }
-    ]
-  },
+ 
   {
     "code": "jsds",
     "afterActions": [
@@ -508,22 +391,7 @@
       }
     ]
   },
-  {
-    "code": "suyh",
-    "afterActions": [
-      {
-        "Type": "spaw_monster",
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_yanjianxi_01a.TAMER_gycy_yanjianxi_01a_C",
-        "desc": "huxianfeng "
-      },
 
-      {
-        "Type": "diff_teamid",
-        "TimeDelay": 3000,
-        "desc": "让范围3000以内的角色敌友不分"
-      }
-    ]
-  },
 
   {
     "code": "sushae",

@@ -1,0 +1,122 @@
+[
+  {
+    "code": "zyh",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 333301,
+        "SummonCount": 1,
+        "desc": "敌对眼见喜"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+  {
+    "code": "zTJ",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 333304,
+        "SummonCount": 1,
+        "desc": "召唤敌对的天将"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+  {
+    "code": "zsss",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 333303,
+        "SummonCount": 1,
+        "desc": "召唤敌对的石双双"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+  {
+    "code": "zyuan",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 333302,
+        "SummonCount": 1,
+        "desc": "召唤敌人巨猿"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+
+    {
+    "code": "zniao",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 33305,
+        "SummonCount": 1,
+        "desc": "敌对鳖宝"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+   {
+    "code": "zcan",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 33306,
+        "SummonCount": 1,
+        "desc": "敌对残躯"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+     {
+    "code": "zyang",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 33307,
+        "SummonCount": 1,
+        "desc": "真结局·二郎显圣真君（BOSS）"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  }
+]

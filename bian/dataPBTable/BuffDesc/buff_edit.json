@@ -129,7 +129,7 @@
 
   {
     "ID": 20234,
-    "BuffTips": "【化身】海罗刹-盾 【Buff】受击召唤疯虎子弹",
+    "BuffTips": "【化身】海罗刹-盾 【Buff】",
     "BuffActiveCondition": {
       "ConditionType": 0,
       "ConditionParams": ""

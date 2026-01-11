@@ -9,48 +9,9 @@
     "Weapons": null,
     "TFXConfigs": [
       {
-        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_ShuNuShou_01A/Hair/Head.Head_TFX",
-        "EnableSimulation": true,
-        "LodScreenSize": 2.5,
-        "ShadeSettings": {
-          "FiberRadius": 0.01,
-          "FiberSpacing": 0.1,
-          "HairThickness": 0.2,
-          "RootTangentBlending": 0.0,
-          "ShadowThickness": 0.05
-        },
-        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_ShuNuShou_01A/Materials/M_hfm_shunushou_hair_mask.M_hfm_shunushou_hair_mask"
-      },
-      {
-        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_ShuNuShou_01A/Hair/LegsFeet.LegsFeet_TFX",
-        "EnableSimulation": true,
-        "LodScreenSize": 2.5,
-        "ShadeSettings": {
-          "FiberRadius": 0.01,
-          "FiberSpacing": 0.1,
-          "HairThickness": 0.2,
-          "RootTangentBlending": 0.0,
-          "ShadowThickness": 0.05
-        },
-        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_ShuNuShou_01A/Materials/M_hfm_shunushou_hair_mask.M_hfm_shunushou_hair_mask"
-      },
-      {
-        "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_ShuNuShou_01A/Hair/Hands.Hands_TFX",
-        "EnableSimulation": true,
-        "LodScreenSize": 2.5,
-        "ShadeSettings": {
-          "FiberRadius": 0.01,
-          "FiberSpacing": 0.1,
-          "HairThickness": 0.2,
-          "RootTangentBlending": 0.0,
-          "ShadowThickness": 0.05
-        },
-        "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_ShuNuShou_01A/Materials/M_hfm_shunushou_hair_mask.M_hfm_shunushou_hair_mask"
-      },
-      {
         "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_ShuNuShou_01A/Hair/HeadTop.HeadTop_TFX",
-        "EnableSimulation": true,
-        "LodScreenSize": 2.5,
+        "EnableSimulation": false,
+        "LodScreenSize": 1.0,
         "ShadeSettings": {
           "FiberRadius": 0.01,
           "FiberSpacing": 0.1,
@@ -67,7 +28,7 @@
     "doneSkill": null,
     "UnitScale": null
   },
-  "TamerPath": "/Game/00Main/Design/Units/HFM/Unit_HFM_ShuNuShou_01b_Stand.Unit_HFM_ShuNuShou_01b_Stand_C",
+  "TamerPath": "/Game/00Main/Design/Units/HFM/Unit_HFM_ShuNuShou_01b.Unit_HFM_ShuNuShou_01b_C",
   "Name": "SK_HFM_ShuNuShou_01b",
   "Label": "SK_HFM_ShuNuShou_01b",
   "Type": "BOSS",

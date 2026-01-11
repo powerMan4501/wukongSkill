@@ -8,7 +8,7 @@
     ]
   },
   {
-    "code": "Tab",
+    "code": "Tabspace",
     "afterActions": [
       {
         "Type": "show_info"
@@ -243,17 +243,7 @@
     ]
   },
 
-  {
-    "code": "yany",
-    "afterActions": [
-      {
-        "Type": "buff",
-        "BuffID": 411125,
-        "BuffTime": 10000,
-        "desc": "演员-岩浆01"
-      }
-    ]
-  },
+
   {
     "code": "diwo",
     "afterActions": [
@@ -272,49 +262,12 @@
       }
     ]
   },
-  {
-    "code": "sho",
-    "afterActions": [
-      {
-        "Type": "summon",
-        "SummonID": 200201,
-        "SummonCount": 1,
-        "desc": "召唤马哥"
-      },
-      {
-        "Type": "summon",
-        "SummonID": 102400,
-        "SummonCount": 1,
-        "desc": "召唤金池"
-      },
-
-      {
-        "type": "addallsummonlifetime",
-        "SummonAliveTime": 999,
-        "TimeDelay": 2000,
-        "Name": "增加召唤物存活时间"
-      }
-    ]
-  },
-
-  {
-    "code": "suyuan",
-    "afterActions": [
-      {
-        "Type": "summon",
-        "SummonID": 740101,
-        "SummonCount": 1,
-        "desc": "召唤巨猿"
-      },
-
-      {
-        "type": "addallsummonlifetime",
-        "SummonAliveTime": 999,
-        "TimeDelay": 2000,
-        "Name": "增加召唤物存活时间"
-      }
-    ]
-  },
+ 
+  
+ 
+ 
+  
+ 
   {
     "code": "ZZ",
     "afterActions": [

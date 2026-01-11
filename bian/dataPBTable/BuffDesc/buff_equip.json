@@ -64,7 +64,18 @@
         "EffectParamsString": [],
         "EffectParams": [190, 20, 0, 0],
         "EffectParamsFloat": []
-      }
+      },
+      {
+          "EffectTrigger": 1,
+          "EffectType": 68,
+          "EffectTargetSelectType": 0,
+          "EffectParamsString": [],
+          "EffectParams": [
+            20302,
+            1
+          ],
+          "EffectParamsFloat": []
+        }
     ]
   },
   {
@@ -253,16 +264,6 @@
         "EffectParamsFloat": [
           1740.0, 400.0, 4000.0, 0, 1000.0, 1000.0, 500, 400
         ]
-      },
-      {
-        "EffectTrigger": 7,
-        "EffectType": 20,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [
-          "/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_jiachongwang_04.BGW_Player_Wukong_Atk_jiachongwang_04"
-        ],
-        "EffectParams": [],
-        "EffectParamsFloat": []
       }
     ]
   },
