@@ -1092,12 +1092,34 @@ public class Hooks
             // 在这里修改返回值
             var owner = __instance.GetOwner() as BGUCharacterCS;
             var player = Helper.GetBGUPlayerCharacterCS();
+            var AttackerPlayer = Attacker as BGUCharacterCS;
             if (owner != null && player != null && owner.GetTeamIDInCS() == player.GetTeamIDInCS())
             {
-                float def = BGUFunctionLibraryCS.GetAttrValue(player, EBGUAttrFloat.Def);
-                if (FinalDamageValue > 0)
+                if (FinalDamageValue > 1)
                 {
-                    FinalDamageValue = FinalDamageValue > def ? FinalDamageValue - def : 1;
+                    if (owner.PathName == player.PathName)
+                    {
+                        float def = BGUFunctionLibraryCS.GetAttrValue(player, EBGUAttrFloat.Def);
+                        FinalDamageValue = FinalDamageValue > def ? FinalDamageValue - def : 1;
+                    }
+                    else
+                    {
+                        // 这是队友
+                        FinalDamageValue = FinalDamageValue * 0.5f;
+                    }
+                }
+            }
+            else if (AttackerPlayer != null && player != null && owner != null && AttackerPlayer.GetTeamIDInCS() == player.GetTeamIDInCS())
+            {
+                // 己方造成的伤害最少为目标的体力值/500
+                float HpMax = BGUFunctionLibraryCS.GetAttrValue(owner, EBGUAttrFloat.HpMax);
+                if (FinalDamageValue < HpMax / 500)
+                {
+                    FinalDamageValue = HpMax / 500;
+                }
+                if (FinalDamageValue < 100)
+                {
+                    FinalDamageValue = 100;
                 }
             }
         }

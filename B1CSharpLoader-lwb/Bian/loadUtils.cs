@@ -2090,7 +2090,6 @@ namespace bian
                                 existingSuit.LocalizationTag = config.LocalizationTag.Value;
 
                             processedCount++;
-                            Log.Info($"Successfully updated suit desc with ID: {config.ID}");
                         }
                     }
                     catch (Exception ex)
@@ -2362,7 +2361,6 @@ namespace bian
                         if (config.IsHide.HasValue)
                             existingTalent.IsHide = (YesNoType)config.IsHide.Value;
 
-                        Log.Info($"Successfully updated talent desc with ID: {config.Id}");
                     }
 
                 }
@@ -2542,7 +2540,6 @@ namespace bian
                                 existingItem.Param2 = config.Param2.Value;
 
                             processedCount++;
-                            Log.Info($"Successfully updated item desc with ID: {config.Id}");
                         }
                     }
                     catch (Exception ex)
@@ -2659,7 +2656,6 @@ namespace bian
                                 existingHulu.LocalizationTag = config.LocalizationTag.Value;
 
                             processedCount++;
-                            Log.Info($"Successfully updated hulu desc with ID: {config.Id}");
                         }
                     }
                     catch (Exception ex)
@@ -3082,7 +3078,6 @@ namespace bian
                                         newMapping.SectionNameList.AddRange(mappingConfig.SectionNameList);
                                     }
                                     existingMapping.MappingConfigList.Add(newMapping);
-                                    Log.Info($"Successfully update  skillMapping: {config.ID}");
                                 }
                             }
                         }
@@ -3198,7 +3193,6 @@ namespace bian
                                     existingEquip.Attr.Add(newAttr);
                                 }
                                 processedCount++;
-                                Log.Info($"Successfully updated equip attr with ID: {config.Id}");
                             }
                         }
 
