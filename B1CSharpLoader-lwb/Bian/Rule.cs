@@ -473,11 +473,11 @@ namespace bian
                         var teamID = Helper.GetBGUPlayerCharacterCS().GetTeamIDInCS();
                         if (action?.toPlayerTeam == true)
                         {
-                            Helper.SpawnActorByWorld(action.SummonTamerTemplatePath, teamID);
+                            Helper.SpawnActor(action.SummonTamerTemplatePath, teamID);
                         }
                         else
                         {
-                            Helper.SpawnActorByWorld(action.SummonTamerTemplatePath, null);
+                            Helper.SpawnActor(action.SummonTamerTemplatePath, null);
 
                         }
                     }
@@ -598,7 +598,12 @@ namespace bian
                     if (action?.attrValue != null && action?.attrType != null)
                     {
                         BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
+                        if (bUS_GSEventCollection == null) return;
                         bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke((EBGUAttrFloat)(action.attrType ?? 151), action?.attrValue ?? 100);
+                        if (action?.attrType == (int)EBGUAttrFloat.SkillSuperArmor)
+                        {
+                            bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.SkillSuperArmor, false);
+                        }
                     }
                     break;
 
@@ -673,8 +678,12 @@ namespace bian
                     break;
 
                 case "show_info":
-                    ShowPlayerInfo.InitItems(true);
+                    ShowPlayerInfo.InitItems(false);
                     break;
+                case "clear_ui":
+                    ShowPlayerInfo.ClearAllUI();
+                    break;
+
                 case "rushskill":
                     Helper.doPhantomRushSkill(character, action.RushDir ?? "Forward");
 

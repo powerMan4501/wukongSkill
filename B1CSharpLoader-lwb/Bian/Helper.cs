@@ -345,7 +345,12 @@ namespace bian
                         if (action?.attrValue != null && action?.attrType != null)
                         {
                             BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(finalActor);
+                            if (bUS_GSEventCollection == null) return;
                             bUS_GSEventCollection.Evt_IncreaseAttrFloat?.Invoke((EBGUAttrFloat)(action.attrType ?? 151), action?.attrValue ?? 100);
+                            if (action?.attrType == (int)EBGUAttrFloat.SkillSuperArmor)
+                            {
+                                bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.SkillSuperArmor, false);
+                            }
                         }
                         break;
                     default:
@@ -754,9 +759,18 @@ namespace bian
             try
             {
                 isPlayVigorSkillByID = true;
-                DelayExecute(222, () =>
+                BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
+                bUS_GSEventCollection?.Evt_UnitStateTrigger.Invoke(EBUStateTrigger.EnterMagicWindow, 5000);
+
+                DelayExecute(50, () =>
                 {
-                    BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
+                    List<int> _SkillBlackList = new List<int>();
+                    List<int> _SkillWhiteList = new List<int> { (int)finalId, 10199 };
+
+                    bUS_GSEventCollection?.Evt_SetMagicWindowSkillList.Invoke(_SkillBlackList, _SkillWhiteList);
+                });
+                DelayExecute(100, () =>
+                {
                     bUS_GSEventCollection?.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.SkillSuperArmor, 10000);
                 });
                 playVigorSkillID = (int)finalId;
@@ -1374,7 +1388,7 @@ namespace bian
 
         public static void SummonReq(Int64 SummonID, Int64 SummonCount, int SummonAliveTime = 12, int? skillID = 0)
         {
-            var character = Helper.GetBGUPlayerCharacterCS();
+            var character = GetBGUPlayerCharacterCS();
 
             if (SummonCount < 1)
             {
@@ -1382,7 +1396,7 @@ namespace bian
             }
 
             FSummonReq fSummonReq = default(FSummonReq);
-            fSummonReq.SummonType = ESummonType.Normal;
+            fSummonReq.SummonType = ESummonType.MonsterSpawn;
             summonGuid = GameplayTagExtension.ConvertToCalliopeGuid(Guid.NewGuid());
             fSummonReq.SummonGuid = (FCalliopeGuid)summonGuid;
             fSummonReq.SummonID = (Int32)SummonID;
@@ -1402,9 +1416,7 @@ namespace bian
             }
             fSummonReq.SummonCount = (Int32)SummonCount;
             fSummonReq.Summoner = character;
-            fSummonReq.bTeleportSelf = false;
-            fSummonReq.EffectCaster = null;
-            fSummonReq.BuffOwner = null;
+
 
             fSummonReq.HitLocation = BGUFuncLibActorTransformCS.BGUGetActorLocation(character);
 
@@ -1417,7 +1429,7 @@ namespace bian
             var SummonCount = action?.SummonCount ?? 1;
             var SummonID = action?.SummonID;
             var skillID = action?.SkillID;
-            var SummonAliveTime = action?.SummonAliveTime ?? 9999;
+            var SummonAliveTime = action?.SummonAliveTime ?? -1f;
             if (SummonCount < 1)
             {
                 SummonCount = 1;
@@ -1431,18 +1443,6 @@ namespace bian
             fSummonReq.SpawnConfigWrap = FSummonSpawnConfigWrap.WrapSpawnConfig_BySummonCommDesc((Int32)SummonID, character);
             fSummonReq.SpawnConfigWrap.SummonAliveTime = SummonAliveTime;
             fSummonReq.SpawnConfigWrap.DestroyDelayTime = 0;
-            // fSummonReq.SpawnConfigWrap.SpawnBirthBuff = [888666002];
-            // BGW_PreloadAssetMgr bGW_PreloadAssetMgr = BGW_PreloadAssetMgr.Get(character);
-            // if (action?.SummonTamerTemplatePath != null && bGW_PreloadAssetMgr != null)
-            // {
-            //     fSummonReq.SpawnConfigWrap.TamerTemplate =
-            //     bGW_PreloadAssetMgr.TryGetCachedResourceObj<UClass>(action.SummonTamerTemplatePath, ELoadResourceType.SyncLoadAndCache);
-
-            //     fSummonReq.SpawnConfigWrap.DisappearMontagePathList.Clear();
-            //     fSummonReq.SpawnConfigWrap.UseBornSkill = false;
-
-
-            // }
             if (action?.IsSummonerAsMaster != null)
             {
                 fSummonReq.SpawnConfigWrap.IsSummonerAsMaster = (bool)action.IsSummonerAsMaster;
@@ -1467,11 +1467,11 @@ namespace bian
             }
             fSummonReq.SummonCount = (Int32)SummonCount;
             fSummonReq.Summoner = character;
-            fSummonReq.bTeleportSelf = false;
-            fSummonReq.EffectCaster = null;
-            fSummonReq.BuffOwner = null;
+            // fSummonReq.bTeleportSelf = false;
+            // fSummonReq.EffectCaster = null;
+            // fSummonReq.BuffOwner = null;
 
-            fSummonReq.HitLocation = BGUFuncLibActorTransformCS.BGUGetActorLocation(character);
+            // fSummonReq.HitLocation = BGUFuncLibActorTransformCS.BGUGetActorLocation(character);
 
             FSummonReq inSummonReq = fSummonReq;
             BPS_EventCollectionCS.GetLocal(character).Evt_RequestSummon.Invoke(inSummonReq);
@@ -1896,13 +1896,13 @@ namespace bian
                     // 跳过同一队伍的角色
                     if (BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(enemy))
                         continue;
-
-                    BUS_EventCollectionCS.Get(enemy).Evt_ClearAllTarget.Invoke();
-                    BUS_EventCollectionCS.Get(enemy).Evt_ClearCameraLock.Invoke();
-                    BUS_EventCollectionCS.Get(enemy).Evt_SetCanSetTargetByHatred.Invoke(true);
-                    BUS_EventCollectionCS.Get(enemy).Evt_SetTargetInfo.Invoke(TargetInfo);
-                    BUS_EventCollectionCS.Get(enemy)?.Evt_CameraLockTarget.Invoke(new UnitLockTargetInfo(nearPlayer, ETargetSourceType.Target_ForceCameraLock, ELockTargetWayType.Manual, "", ""));
-                    BUS_EventCollectionCS.Get((AActor)(object)enemy).Evt_AICatchTarget.Invoke(nearPlayer, ETargetSourceType.Target_SwitchTaget);
+                    var busEvent = BUS_EventCollectionCS.Get(enemy);
+                    busEvent?.Evt_ClearAllTarget.Invoke();
+                    busEvent?.Evt_ClearCameraLock.Invoke();
+                    busEvent?.Evt_SetCanSetTargetByHatred.Invoke(true);
+                    busEvent?.Evt_SetTargetInfo.Invoke(TargetInfo);
+                    busEvent?.Evt_CameraLockTarget.Invoke(new UnitLockTargetInfo(nearPlayer, ETargetSourceType.Target_ForceCameraLock, ELockTargetWayType.Manual, "", ""));
+                    busEvent?.Evt_AICatchTarget.Invoke(nearPlayer, ETargetSourceType.CameraLockUpdate, true);
                 }
 
             }

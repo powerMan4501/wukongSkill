@@ -108,127 +108,84 @@ public class ShowPlayerInfo
 	EBGUAttrFloat.DmgDef
 };
 
-	public static TimerComp? getTimeComp()
-	{
-		BGUPlayerCharacterCS bGUPlayerCharacterCS = GetBGUPlayerCharacterCS();
-		if (bGUPlayerCharacterCS != null)
-		{
-			UActorCompContainerCS actorCompContainerCS = bGUPlayerCharacterCS.ActorCompContainerCS;
-			if (!IsValidUObject((UObject?)(object)actorCompContainerCS))
-			{
-				return null;
-			}
-			List<UActorCompBaseCS> list = actorCompContainerCS?.GetFieldOrProperty<List<UActorCompBaseCS>>("CompCSs");
-			if (list == null)
-			{
-				return null;
-			}
-			// 优化：使用LINQ的FirstOrDefault来查找TimerComp
-			TimerComp timerComp = list.OfType<TimerComp>().FirstOrDefault();
-			return timerComp;
-		}
-		return null;
-	}
+
+	private static Timer? updateTimer;
+
 	public static void InitItems(bool force = false)
 	{
-		var timerComp = getTimeComp();
 		BGUPlayerCharacterCS bGUPlayerCharacterCS = GetBGUPlayerCharacterCS();
-		if(bGUPlayerCharacterCS == null)
+		if (bGUPlayerCharacterCS == null)
 		{
 			return;
 		}
-		// Hooks.ApplyBuffEffect(bGUPlayerCharacterCS, 0);
 		if (BasicInfoKs.Count > 0)
 		{
+			ClearAllUI();
 
 			if (!force) return;
-			if (timerComp == null)
-			{
-				ClearAllUI();
-			}
-
 		}
-		if (timerComp == null)
+
+		foreach (var attribute in BasicAttributes)
 		{
-			foreach (var attribute in BasicAttributes)
+			UTextBlock keyBlock = UObject.NewObject<UTextBlock>();
+			UTextBlock valueBlock = UObject.NewObject<UTextBlock>();
+			BasicInfoKs.Add(keyBlock);
+			BasicInfoVs.Add(valueBlock);
+			SetUTextBlockContent(keyBlock, attribute.Value);
+			SetUTextBlockFont(keyBlock, FontInfo);
+			SetUTextBlockFont(valueBlock, FontInfo);
+			SetUTextBlockStyle(keyBlock, 0.6f, ETextJustify.Left);
+			SetUTextBlockStyle(valueBlock, 0.6f, ETextJustify.Right);
+			// 优化后的特殊样式设置
+			if (SpecialAttributes.Contains(attribute.Key))
 			{
-				UTextBlock keyBlock = UObject.NewObject<UTextBlock>();
-				UTextBlock valueBlock = UObject.NewObject<UTextBlock>();
-				BasicInfoKs.Add(keyBlock);
-				BasicInfoVs.Add(valueBlock);
-				SetUTextBlockContent(keyBlock, attribute.Value);
-				SetUTextBlockFont(keyBlock, FontInfo);
-				SetUTextBlockFont(valueBlock, FontInfo);
-				SetUTextBlockStyle(keyBlock, 0.6f, ETextJustify.Left);
-				SetUTextBlockStyle(valueBlock, 0.6f, ETextJustify.Right);
-				// 优化后的特殊样式设置
-				if (SpecialAttributes.Contains(attribute.Key))
-				{
-					SetUTextBlockFont(keyBlock, BoldFontInfo);
-					SetUTextBlockFont(valueBlock, BoldFontInfo);
-				}
+				SetUTextBlockFont(keyBlock, BoldFontInfo);
+				SetUTextBlockFont(valueBlock, BoldFontInfo);
 			}
 		}
 
+		var timerComp = new TimerComp();
 
+		if (!timerComp.InitDone())
+		{
+			timerComp.InitWidgets();
+		}
+		else
+		{
+			timerComp.RenderBasicInfo();
+		}
+		// 启动定时器
+		StartUpdateTimer(timerComp);
 
-		try
+	}
+	private static void StartUpdateTimer(TimerComp timerComp)
+	{
+
+		// 如果已有定时器在运行，先停止它
+		if (updateTimer != null)
+		{
+			updateTimer.Dispose();
+			updateTimer = null;
+		}
+
+		// 创建新的定时器，每0.5秒执行一次
+		updateTimer = new Timer(_ =>
 		{
 
-			if (IsValidActor((AActor?)(object)bGUPlayerCharacterCS))
+			if (timerComp != null)
 			{
-				UActorCompContainerCS actorCompContainerCS = bGUPlayerCharacterCS.ActorCompContainerCS;
-				if (timerComp == null)
+				if (!timerComp.InitDone())
 				{
-
-					TimerComp newComp = new TimerComp();
-					if (IsValidActor((AActor?)(object)bGUPlayerCharacterCS) && IsValidUObject((UObject?)(object)actorCompContainerCS))
-					{
-
-						actorCompContainerCS?.AddComp(newComp);
-						actorCompContainerCS?.RecalculateCanTick();
-
-						if (timerComp != null)
-						{
-							var result = timerComp.InitDone();
-
-
-							if (!result)
-							{
-								timerComp.InitWidgets();
-							}
-							else
-							{
-								timerComp.RenderBasicInfo(1);
-							}
-						}
-
-					}
+					timerComp.InitWidgets();
 				}
 				else
 				{
-
-					var result = timerComp.InitDone();
-					if (!result)
-					{
-						timerComp.InitWidgets();
-					}
-					else
-					{
-						timerComp.RenderBasicInfo(1);
-					}
-
-					actorCompContainerCS?.RecalculateCanTick();
+					timerComp.RenderBasicInfo();
 				}
 			}
-
-		}
-		catch (Exception ex)
-		{
-			Console.WriteLine("ShowInfo error: " + ex.Message);
-			Console.WriteLine(ex.StackTrace);
-		}
+		}, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
 	}
+
 	public static APawn? GetControlledPawn()
 	{
 		UWorld uWorld = GetWorld();
@@ -256,9 +213,14 @@ public class ShowPlayerInfo
 
 	public static void ClearAllUI()
 	{
-
-
-
+		// 清理定时器
+		if (updateTimer != null)
+		{
+			updateTimer.Dispose();
+			updateTimer = null;
+		}
+		var timerComp = new TimerComp();
+		timerComp.DestroyMainCon();
 		// 先处理Key文本块
 		if (BasicInfoKs.Count > 0)
 		{
@@ -275,7 +237,6 @@ public class ShowPlayerInfo
 			// 在循环结束后清空列表
 			BasicInfoKs.Clear();
 		}
-
 		// 处理Value文本块
 		if (BasicInfoVs.Count > 0)
 		{
@@ -293,6 +254,4 @@ public class ShowPlayerInfo
 			BasicInfoVs.Clear();
 		}
 	}
-
-
 }

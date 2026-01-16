@@ -980,21 +980,21 @@ public class Hooks
 
 
 
-    // [HarmonyPatch]
-    // public static class BGUEnvironmentSurfaceEffectMgrPatch
-    // {
-    //     [HarmonyPatch(typeof(BGUEnvironmentSurfaceEffectMgr), "DoesTargetPassFilter")]
-    //     private static bool Prefix(int Filter, AActor Target, ref bool __result)
-    //     {
-    //         IBUC_ActorBasicData readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_ActorBasicData, BUC_ActorBasicData>(Target);
-    //         if (readOnlyData != null)
-    //         {
-    //             __result = true;
-    //             return false;
-    //         }
-    //         return true; // 继续执行原始方法
-    //     }
-    // }
+    [HarmonyPatch]
+    public static class BGUEnvironmentSurfaceEffectMgrPatch
+    {
+        [HarmonyPatch(typeof(BGUEnvironmentSurfaceEffectMgr), "DoesTargetPassFilter")]
+        private static bool Prefix(int Filter, AActor Target, ref bool __result)
+        {
+            IBUC_ActorBasicData readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_ActorBasicData, BUC_ActorBasicData>(Target);
+            if (readOnlyData != null)
+            {
+                __result = true;
+                return false;
+            }
+            return true; // 继续执行原始方法
+        }
+    }
 
 
 

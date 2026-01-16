@@ -683,7 +683,7 @@ namespace bian
             }
             else if (skillType == "boss" && skill?.bossLabel != null)
             {
-                Helper.CastVigorSkillByModel(character, skill.bossLabel, skill.type ?? "", skill?.MagicSkillID ?? 0, skill?.resetBack ?? false,skill?.RecoverSkillID ?? 10199);
+                Helper.CastVigorSkillByModel(character, skill.bossLabel, skill.type ?? "", skill?.MagicSkillID ?? 0, skill?.resetBack ?? false, skill?.RecoverSkillID ?? 10199);
                 return true;
             }
             else if (skillType == "rushskill")
@@ -899,13 +899,13 @@ namespace bian
                     // 计算目标位置
                     var targetPosition = currentPosition + forwardVector * 900;
 
-                    Helper.FenshenTeleport();
+                    // Helper.FenshenTeleport();
 
 
-                    if (keyItem.ForTarget == true)
+                    if (keyItem?.ForTarget == true)
                     {
                         var target = BGUFunctionLibraryCS.BGUGetTarget(character_) as BGUCharacterCS;
-                        if (target != null)
+                        if (target != null && character_ != null)
                         {
 
                             originLocation = character_.GetActorLocation();
@@ -916,7 +916,7 @@ namespace bian
                             return;
                         }
                     }
-                
+
                     break;
                 default:
                     // Log.Error("unsupport key type");
