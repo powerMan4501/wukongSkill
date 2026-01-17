@@ -42,6 +42,11 @@
         "attrType": 199,
         "attrValue": 6000,
         "desc": "SpiritDropAddition"
+      },
+      {
+        "Type": "buff",
+        "BuffID": 888666001,
+        "BuffTime": -1
       }
     ]
   },
@@ -69,6 +74,11 @@
         "type": "buff",
         "BuffID": 96035,
         "BuffTime": 2000
+      },
+      {
+        "Type": "buff",
+        "BuffID": 888666001,
+        "BuffTime": -1
       }
     ]
   },

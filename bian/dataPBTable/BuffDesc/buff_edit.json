@@ -86,6 +86,20 @@
       "ConditionParams": ""
     }
   },
+  {
+    "ID": 2029,
+    "BuffTips": "莲火杖表现Buff，赋予火buff",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [888666007],
+        "EffectParamsFloat": [0]
+      }
+    ]
+  },
 
   {
     "ID": 2824,
@@ -151,7 +165,7 @@
         "EffectParams": [1, 7, 18, 45, 80],
         "EffectParamsFloat": []
       },
-      
+
       {
         "EffectTrigger": 7,
         "EffectType": 46,

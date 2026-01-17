@@ -243,7 +243,6 @@
     ]
   },
 
-
   {
     "code": "diwo",
     "afterActions": [
@@ -262,12 +261,7 @@
       }
     ]
   },
- 
-  
- 
- 
-  
- 
+
   {
     "code": "ZZ",
     "afterActions": [
@@ -324,6 +318,15 @@
       {
         "Type": "change_target",
         "desc": "斗转星移：把敌人的目标切换到距离最近的己方角色"
+      }
+    ]
+  },
+  {
+    "code": "clea",
+    "afterActions": [
+      {
+        "Type": "clear_ui",
+        "desc": "清除展示"
       }
     ]
   }

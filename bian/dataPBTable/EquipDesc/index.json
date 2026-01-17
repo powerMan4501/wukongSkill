@@ -19,7 +19,7 @@
     "Id": 12002,
     "EquipName": "锁子黄金甲",
     "EquipEffectId": 900302,
-    "EquipEffectDesc": "每秒恢复2%的生命和体力值，若在水中，效果加倍"
+    "EquipEffectDesc": "每秒恢复2%的生命和法力值"
   },
   {
     "Id": 12003,
@@ -37,12 +37,12 @@
   {
     "Id": 18010,
     "EquipName": "上清宝葫芦",
-    "EquipEffectDesc": "饮酒后，立即恢复葫芦中的盛酒量，15秒内免疫死亡"
+    "EquipEffectDesc": "饮酒后，增加20%攻击力和移动速度"
   },
   {
     "Id": 16031,
     "EquipName": "金棕衣",
-    "EquipEffectDesc": "一定程度增加<{0}_KW>防御</>和<{0}_KW>伤害减免</>；受到伤害时，也伤害周遭对手"
+    "EquipEffectDesc": "一定程度增加<{0}_KW>防御</>和<{0}_KW>伤害减免</>；受到伤害时，立即反弹伤害攻击者，并伤害周遭对手"
   },
 
   {
@@ -78,6 +78,13 @@
     "Id": 16023,
     "EquipName": "琥珀念珠",
     "AttrEffectId": 101,
-    "EquipEffectDesc": "少许加快提升棍势段数的速度, 增加护盾上限, 每秒恢复20护盾值"
+    "EquipEffectDesc": "少许加快提升棍势段数的速度, 增加护盾上限"
+  },
+  {
+    "Id": 16020,
+    "EquipName": "阳燧珠",
+    "AttrEffectId": 6020,
+    "EquipEffectId": 105011,
+    "EquipEffectDesc": "使出三、四段蓄力劈棍，可在地面造成熔岩爆裂效果, 增加30点火焚耐性和火焚伤害"
   }
 ]

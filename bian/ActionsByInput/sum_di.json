@@ -39,7 +39,7 @@
       {
         "Type": "summon",
         "SummonID": 333303,
-        "SummonCount": 1,
+        "SummonCount": 3,
         "desc": "召唤敌对的石双双"
       },
       {
@@ -68,12 +68,12 @@
     ]
   },
 
-    {
+  {
     "code": "zniao",
     "afterActions": [
       {
         "Type": "summon",
-        "SummonID": 33305,
+        "SummonID": 333305,
         "SummonCount": 1,
         "desc": "敌对鳖宝"
       },
@@ -85,7 +85,7 @@
       }
     ]
   },
-   {
+  {
     "code": "zcan",
     "afterActions": [
       {
@@ -93,6 +93,25 @@
         "SummonID": 33306,
         "SummonCount": 1,
         "desc": "敌对残躯"
+      },
+      
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+{
+    "code": "zjsds",
+    "afterActions": [
+     
+      {
+        "Type": "summon",
+        "SummonID": 233306,
+        "SummonCount": 1,
+        "desc": "敌对残躯 二阶段"
       },
       {
         "type": "addallsummonlifetime",
@@ -102,12 +121,31 @@
       }
     ]
   },
-     {
-    "code": "zyang",
+  {
+    "code": "zySHI",
     "afterActions": [
       {
         "Type": "summon",
         "SummonID": 33307,
+        "SummonCount": 1,
+        "desc": "真结局·二郎显圣真君（BOSS）"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "TimeDelay": 2000,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  },
+
+  
+  {
+    "code": "zyang",
+    "afterActions": [
+      {
+        "Type": "summon",
+        "SummonID": 233307,
         "SummonCount": 1,
         "desc": "真结局·二郎显圣真君（BOSS）"
       },

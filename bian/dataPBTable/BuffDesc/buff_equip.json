@@ -24,23 +24,6 @@
         "EffectParams": [190, 20, 0, 0],
         "EffectParamsFloat": []
       },
-
-      {
-        "EffectTrigger": 14,
-        "EffectType": 87,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [7],
-        "EffectParamsFloat": [-20.0, 0.0]
-      },
-      {
-        "EffectTrigger": 14,
-        "EffectType": 87,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [8],
-        "EffectParamsFloat": [-20.0, 0.0]
-      },
       {
         "EffectTrigger": 14,
         "EffectType": 134,
@@ -51,33 +34,7 @@
       }
     ]
   },
-  {
-    "ID": 66106023,
-    "BuffTips": "琥珀念珠",
-    "Duration": -1,
-    "Interval": 1000,
-    "BuffEffects": [
-      {
-        "EffectTrigger": 2,
-        "EffectType": 3,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [190, 20, 0, 0],
-        "EffectParamsFloat": []
-      },
-      {
-          "EffectTrigger": 1,
-          "EffectType": 68,
-          "EffectTargetSelectType": 0,
-          "EffectParamsString": [],
-          "EffectParams": [
-            20302,
-            1
-          ],
-          "EffectParamsFloat": []
-        }
-    ]
-  },
+  
   {
     "ID": 2804,
     "BuffTips": "乾坤彩葫芦-加攻击",
@@ -122,134 +79,7 @@
     ]
   },
 
-  {
-    "ID": 66012001,
-    "BuffTips": "凤翅紫金冠，增加15%四灾抗性",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    },
-    "Duration": -1,
-    "BuffEffects": [
-      {
-        "EffectTrigger": 1,
-        "EffectType": 2,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [132, 15, 0, 0],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 1,
-        "EffectType": 2,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [133, 15, 0, 0],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 1,
-        "EffectType": 2,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [134, 15, 0, 0],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 1,
-        "EffectType": 2,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [135, 15, 0, 0],
-        "EffectParamsFloat": []
-      }
-    ]
-  },
-
-  {
-    "ID": 66012002,
-    "BuffTips": "锁子黄金甲，每6秒增加600护盾值和韧性值",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    },
-    "Duration": -1,
-    "Interval": 6000,
-    "BuffEffects": [
-      {
-        "EffectTrigger": 2,
-        "EffectType": 2,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [190, 600, 0, 1],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 2,
-        "EffectType": 2,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [160, 600, 0, 1],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 2,
-        "EffectType": 2,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [171, 600, 0, 1],
-        "EffectParamsFloat": []
-      }
-    ]
-  },
-
-  {
-    "ID": 66012003,
-    "BuffTips": "点翠飞龙釬，增加15%的伤害加成和15%暴击伤害",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    },
-    "Duration": -1,
-    "BuffEffects": [
-      {
-        "EffectTrigger": 1,
-        "EffectType": 2,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [111, 1500, 0, 0],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 1,
-        "EffectType": 2,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [112, 1500, 0, 0],
-        "EffectParamsFloat": []
-      }
-    ]
-  },
-
-  {
-    "ID": 66012004,
-    "BuffTips": "藕丝步云履，增加移动速度",
-    "BuffActiveCondition": {
-      "ConditionType": 0,
-      "ConditionParams": ""
-    },
-    "Duration": -1,
-    "BuffEffects": [
-      {
-        "EffectTrigger": 1,
-        "EffectType": 38,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [],
-        "EffectParamsFloat": [5000.0, 5000.0, 5000.0]
-      }
-    ]
-  },
+ 
 
   {
     "ID": 96036,
@@ -317,16 +147,8 @@
         "EffectType": 3,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [158, 200, 0, 1],
+        "EffectParams": [152, 200, 0, 1],
         "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 2,
-        "EffectType": 46,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [2030],
-        "EffectParamsFloat": [0.0]
       }
     ]
   },
@@ -347,28 +169,9 @@
         "EffectType": 3,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [158, 200, 0, 1],
+        "EffectParams": [152, 200, 0, 1],
         "EffectParamsFloat": []
       }
     ]
-  },
-
-     {
-      "ID": 2022,
-      "BuffTips": "下毒手加Buff的Buff,暴击改成伤害",
-      "BuffEffects": [
-        {
-          "EffectTrigger": 14,
-          "EffectType": 46,
-          "EffectTargetSelectType": 0,
-          "EffectParamsString": [],
-          "EffectParams": [
-            2023
-          ],
-          "EffectParamsFloat": [
-            0.0
-          ]
-        }
-      ]
-    }
+  }
 ]

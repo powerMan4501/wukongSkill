@@ -1,0 +1,22 @@
+[
+  {
+    "code": "start",
+    "afterActions": [
+      {
+        "Type": "set_mod_stop",
+        "isModStop": false,
+        "desc": "开启mod功能"
+      }
+    ]
+  },
+   {
+    "code": "stop",
+    "afterActions": [
+      {
+        "Type": "set_mod_stop",
+        "isModStop": true,
+        "desc": "关闭mod功能"
+      }
+    ]
+  }
+]

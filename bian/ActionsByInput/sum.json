@@ -82,11 +82,7 @@
       }
     ]
   },
-
-  
-
  
-
   {
     "code": "hxj",
     "afterActions": [
@@ -134,21 +130,7 @@
     ]
   },
  
-  {
-    "code": "jsds",
-    "afterActions": [
-      {
-        "Type": "spaw_monster",
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_jsds.TAMER_mgd_jsds_C",
-        "desc": "jsds"
-      },
-      {
-        "Type": "diff_teamid",
-        "TimeDelay": 3000,
-        "desc": "让范围3000以内的角色敌友不分"
-      }
-    ]
-  },
+
 
   {
     "code": "guiwang",
