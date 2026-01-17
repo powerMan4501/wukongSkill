@@ -1189,13 +1189,7 @@ namespace bian
                 }
 
                 Log.Info($"Total processed buff configs: {processedCount}");
-                // 100101
-                // GameDBRuntime，
-                var talentSDesc = GameDBRuntime.GetTalentSDesc(100101);
-                talentSDesc.AddBuffIDs = string.Join(",", new List<int> { 888666001 });
-
-
-
+            
                 return processedCount;
             }
             catch (Exception ex)

@@ -37,6 +37,7 @@ namespace bian
         public float? NewMaxSocketZ { get; set; }
         public int? RecoverSkillID { get; set; }
         public bool? onlyFirst { get; set; }
+        public bool? isModStop { get; set; }
         public int? changeTime { get; set; }
         public bool? resetBack { get; set; }
         public string? bossLabel { get; set; }
@@ -400,7 +401,6 @@ namespace bian
         {
             var character = Helper.GetBGUPlayerCharacterCS();
             if (character == null) return;
-            Log.Info($"DoAction type:{action.Type},desc:{action?.desc}");
             switch (action?.Type?.ToLower())
             {
                 case "buff":
@@ -410,6 +410,9 @@ namespace bian
                     // 周围2000的角色全部变成己方的人，并把目标对准当前锁定的目标
 
                     Helper.ChangeEmenyTarget();
+                    break;
+                case "set_mod_stop":
+                    Helper.set_mod_stop(action.isModStop.HasValue ? action.isModStop.Value : false);
                     break;
 
                 case "change_actor_target":

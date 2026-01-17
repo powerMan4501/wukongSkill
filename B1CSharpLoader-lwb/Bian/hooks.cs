@@ -7,15 +7,12 @@ using UnrealEngine.Engine;
 using CSharpModBase;
 using System.Collections.Generic;
 using System.Linq;
-using System.IO;
-using Newtonsoft.Json;
 using BtlShare;
 using b1.EventDelDefine;
 using ArchiveB1;
 using B1UI.GSUI;
 using CommB1;
 using ResB1;
-using BtlB1;
 
 
 
@@ -47,6 +44,10 @@ public class Hooks
         [HarmonyPatch]
         private static void Prefix(ref BGGGameStateCS __instance)
         {
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return;
+            }
             if ((UObject)(object)__instance != null)
             {
 
@@ -93,7 +94,10 @@ public class Hooks
         [HarmonyPatch]
         private static void Prefix(FUStGSNotifyParam NotifyParam, float TotalDuration)
         {
-
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return;
+            }
             if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner.GetName().IndexOf("Unit_Player") > -1)
             {
                 var allRules = GetCachedAnimRules();
@@ -140,7 +144,10 @@ public class Hooks
         [HarmonyPatch]
         private static void Prefix(FUStGSNotifyParam NotifyParam)
         {
-
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return;
+            }
             if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner.GetName().IndexOf("Unit_Player") > -1)
             {
                 var allRules = GetCachedAnimRules();
@@ -189,6 +196,10 @@ public class Hooks
 
     public static void handleNotify(UAnimMontage Montage, AActor player)
     {
+        if (!!Helper.is_bian_mod_stop)
+        {
+            return;
+        }
         try
         {
             if (Montage == null || Montage?.PathName == null)
@@ -402,10 +413,11 @@ public class Hooks
         [HarmonyPrefix]
         private static void Prefix(int EffectID, FEffectInstReq EffectInstReq, AActor InnerTarget, bool bWithRPCEvent)
         {
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return;
+            }
             var Caster = EffectInstReq.Attacker;
-
-
-
             if (Caster == null || (!IsPlayer(Caster.PathName) && !Caster.PathName.Contains("TAMER_player_tornado")))
             {
                 return;
@@ -453,7 +465,8 @@ public class Hooks
         }
     }
 
-
+    // 调息触发
+    private static readonly int[] tiaoxiBuffIds = { 1008, 1011,  306, 404 };
     // 在类的顶部定义数组
     private static readonly int[] SpecialBuffIds = { 1015, 2167, 604, 20986, 2030, 777666001, 777666002, 777666003, 777666004 };
     // 冰火雷毒buff互斥
@@ -542,17 +555,25 @@ public class Hooks
         [HarmonyPatch]
         private static void Prefix(ref int BuffID, AActor Caster, AActor RootCaster, ref float Duration)
         {
-
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return;
+            }
 
             if (Caster == null || !IsPlayer(Caster?.PathName))
             {
                 return;
+            }
+             if (tiaoxiBuffIds.Contains(BuffID))
+            {
+                ShowPlayerInfo.ClearAllUI();
             }
             // 修改判断逻辑
             if (!SpecialBuffIds.Contains(BuffID))
             {
                 Log.Info($"Evt_BuffAdd BuffID:{BuffID}");
             }
+           
 
             if (buffers.Contains(BuffID))
             {
@@ -620,6 +641,10 @@ public class Hooks
         [HarmonyPrefix]
         static void Prefix(BUS_MovementSystem __instance, UAnimMontage Montage, ref float PlayTimeRate, float MontagePosOffset, FName StartSectionName, EMontageBindReason Reason)
         {
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return;
+            }
 
             if (__instance == null || Montage == null) return;
             if (__instance?.GetOwner() == null) return;
@@ -749,7 +774,10 @@ public class Hooks
         [HarmonyPrefix]
         static void Prefix(ref int ID, List<int> RuleIDList, EMontageBindReason Reason, bool bNeedCheckSkillCanCast, ECastSkillSourceType SourceType)
         {
-
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return;
+            }
 
             // 获取角色姿态信息
             if (!TryGetCharacterStance(out bool isChuogun, out bool isLigun, out bool isPigun))
@@ -789,23 +817,34 @@ public class Hooks
         [HarmonyPatch(typeof(DSShop), "CalBuyStat")]
         static bool Prefix(ref DSShop.ECheckBuyStat __result)
         {
-            __result = DSShop.ECheckBuyStat.CanBuy;
-            return false; // 跳过原始方法的执行
+            if (!Helper.is_bian_mod_stop)
+            {
+                __result = DSShop.ECheckBuyStat.CanBuy;
+                return false; // 跳过原始方法的执行
+            }
+            return true;
         }
 
-        [HarmonyPatch(typeof(DSShop), "CanBuyMinValue")]
-        [HarmonyPrefix]
-        static bool Prefix(ref int __result)
-        {
-            __result = 99;
-            return false; // 跳过原始方法的执行
-        }
+        // [HarmonyPatch(typeof(DSShop), "CanBuyMinValue")]
+        // [HarmonyPrefix]
+        // static bool Prefix(ref int __result)
+        // {
+        //     if (!Helper.is_bian_mod_stop)
+        //     {
+        //         __result = 99;
+        //     }
+        //     return false; // 跳过原始方法的执行
+        // }
 
 
         [HarmonyPatch(typeof(DSShop), "GetIsCanSell")]
         [HarmonyPrefix]
         static bool Prefix(ref bool __result)
         {
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return true;
+            }
             __result = true;
             return false; // 跳过原始方法的执行
         }
@@ -820,12 +859,20 @@ public class Hooks
         [HarmonyPatch(typeof(PlayerShop), "RefreshShopGoods")]
         static void Prefix(ShopItemDesc ShopItemDesc, int TargetShopId, ref int AddGoodsNum)
         {
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return;
+            }
             AddGoodsNum = 99;
         }
 
         [HarmonyPatch(typeof(PlayerShop), "BuyShopItem")]
         public static void Prefix(ref int ShopId, ref int GoodsId, ref int BuyNum, ref bool CheckLimit)
         {
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return;
+            }
             CheckLimit = false;
         }
     }
@@ -840,7 +887,10 @@ public class Hooks
         static bool Prefix(ref bool __result, AActor AttackerMasterActor, bool HasCausedDamage, in FBattleAttrSnapShot Attacker_AttrMemData, bool AttackerIsPlayer_ForDmgNumber)
         {
             // 检查AttackerMasterActor是否存在且TeamID为1
-
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return true;
+            }
             if (AttackerMasterActor.IsNullOrDestroyed())
             {
                 return false;
@@ -886,6 +936,11 @@ public class Hooks
         [HarmonyPatch(typeof(BUS_BeAttackedComp), "OnHandleNormalDamageEffect")]
         private static bool Prefix(BUS_BeAttackedComp __instance, AActor Attacker, in FSkillDamageConfig SkillDamageConfig, in FEffectInstReq EffectInstReq, in FBattleAttrSnapShot Attacker_AttrMemData)
         {
+
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return true;
+            }
             // 获取攻击者和受击者的团队ID
             var attacker = Attacker as BGUCharacterCS;
             var attackerTeamId = attacker?.GetTeamIDInCS();
@@ -902,13 +957,6 @@ public class Hooks
             {
                 var buffRulesMap = Manager.buffRulesMap;
 
-                // 获取对应buff的所有规则
-                // var matchingRules = buffRulesMap[BuffID];
-                // foreach (var ruleItem in matchingRules)
-                // {
-                //     var Duration_ = Duration > 0 ? Duration : 1000;
-                //     ruleItem.DoRule(Duration_, 1, null, ruleItem);
-                // }
                 int dmgReasonEffectID = SkillDamageConfig.DmgReasonEffectID > 0 ? SkillDamageConfig.DmgReasonEffectID : EffectInstReq.ObjectID;
                 FUStSkillEffectDesc skillEffectDesc = BGW_GameDB.GetSkillEffectDesc(dmgReasonEffectID, Attacker);
                 if (skillEffectDesc != null && SkillEffectsIds.Contains(dmgReasonEffectID))
@@ -986,6 +1034,10 @@ public class Hooks
         [HarmonyPatch(typeof(BGUEnvironmentSurfaceEffectMgr), "DoesTargetPassFilter")]
         private static bool Prefix(int Filter, AActor Target, ref bool __result)
         {
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return true;
+            }
             IBUC_ActorBasicData readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_ActorBasicData, BUC_ActorBasicData>(Target);
             if (readOnlyData != null)
             {
@@ -1005,6 +1057,10 @@ public class Hooks
         [HarmonyPatch(typeof(BUS_AbnormalStateCompImpl), "OnTriggerFrozen")]
         private static bool Prefix(BUS_AbnormalStateCompImpl __instance)
         {
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return true;
+            }
             var owner = __instance.GetOwner() as BGUCharacterCS;
             if (owner == null) return true; // 如果没有owner，继续执行原始逻辑
             bool isPlayer = owner.GetTeamIDInCS() == Helper.GetBGUPlayerCharacterCS().GetTeamIDInCS();
@@ -1089,6 +1145,10 @@ public class Hooks
         ref float FinalElementDmgValue,
         bool bPrintLog = true)
         {
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return;
+            }
             // 在这里修改返回值
             var owner = __instance.GetOwner() as BGUCharacterCS;
             var player = Helper.GetBGUPlayerCharacterCS();
@@ -1134,6 +1194,10 @@ public class Hooks
         private static bool Prefix(BUS_PlayerInputActionComp __instance, UnitLockTargetInfo TargetInfo)
         {
 
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return true;
+            }
             if (TargetInfo == null)
             {
                 return false;

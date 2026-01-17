@@ -15,7 +15,6 @@ namespace bian;
 
 public class ShowPlayerInfo
 {
-	public static List<UTextBlock> BasicInfoKs = new List<UTextBlock>();
 	public static List<UTextBlock> BasicInfoVs = new List<UTextBlock>();
 
 	public static Dictionary<EBGUAttrFloat, string> BasicAttributes = new Dictionary<EBGUAttrFloat, string>
@@ -118,18 +117,19 @@ public class ShowPlayerInfo
 		{
 			return;
 		}
-		if (BasicInfoKs.Count > 0)
+
+		var timerComp = new TimerComp();
+		if (BasicInfoVs.Count > 0 && timerComp?.MainCon != null && timerComp?.MainCon?.GetChildrenCount() > 1)
 		{
 			ClearAllUI();
 
 			if (!force) return;
 		}
-
+		
 		foreach (var attribute in BasicAttributes)
 		{
 			UTextBlock keyBlock = UObject.NewObject<UTextBlock>();
 			UTextBlock valueBlock = UObject.NewObject<UTextBlock>();
-			BasicInfoKs.Add(keyBlock);
 			BasicInfoVs.Add(valueBlock);
 			SetUTextBlockContent(keyBlock, attribute.Value);
 			SetUTextBlockFont(keyBlock, FontInfo);
@@ -144,7 +144,7 @@ public class ShowPlayerInfo
 			}
 		}
 
-		var timerComp = new TimerComp();
+
 
 		if (!timerComp.InitDone())
 		{
@@ -168,7 +168,7 @@ public class ShowPlayerInfo
 			updateTimer = null;
 		}
 
-		// 创建新的定时器，每0.5秒执行一次
+		// 创建新的定时器，每1秒执行一次
 		updateTimer = new Timer(_ =>
 		{
 
@@ -221,22 +221,7 @@ public class ShowPlayerInfo
 		}
 		var timerComp = new TimerComp();
 		timerComp.DestroyMainCon();
-		// 先处理Key文本块
-		if (BasicInfoKs.Count > 0)
-		{
-			// 创建临时列表存储要移除的元素
-			var keysToRemove = new List<UTextBlock>(BasicInfoKs);
-			foreach (var textBlock in keysToRemove)
-			{
-				if (IsValidUObject(textBlock))
-				{
-					textBlock.SetText(FText.GetEmpty());
-					textBlock.RemoveFromParent();
-				}
-			}
-			// 在循环结束后清空列表
-			BasicInfoKs.Clear();
-		}
+
 		// 处理Value文本块
 		if (BasicInfoVs.Count > 0)
 		{

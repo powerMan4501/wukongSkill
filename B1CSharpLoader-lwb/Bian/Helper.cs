@@ -27,10 +27,16 @@ namespace bian
 {
     public class Helper
     {
-        private static ModelManager manager;
-
+        public static bool is_bian_mod_stop = false;
         private static UWorld? world;
         public static FCalliopeGuid? summonGuid;
+
+
+        public static bool set_mod_stop(Boolean value)
+        {
+            is_bian_mod_stop = value;
+            return is_bian_mod_stop;
+        }
 
         public static UWorld? GetWorld()
         {

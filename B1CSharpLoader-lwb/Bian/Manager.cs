@@ -153,6 +153,10 @@ namespace bian
         public static string inputCodeStr;
         public static void loadAllStaticData(bool forceUpdate = false, int delayTime = 1000)
         {
+            if (!!Helper.is_bian_mod_stop)
+            {
+                return;
+            }
 
             LoadComboConfigs();//全部连招
             ActionsByInput = LoadUtils.LoadActionConfigs();
@@ -471,21 +475,7 @@ namespace bian
 
         //     Hooks.handleNotify(Montage, 0);
         // }
-        public static UAnimMontage? GetPlayerCurrentActiveMontage(BGUCharacterCS character)
-        {
-
-            if (character == null)
-            {
-                return null;
-            }
-
-            UAnimInstance animInstance = character.Mesh.GetAnimInstance();
-            if (character == animInstance)
-            {
-                return null;
-            }
-            return animInstance.GetCurrentActiveMontage();
-        }
+      
 
         public static bool IsSkillMappingRuleMatch(SkillMappingRule rule, BGUCharacterCS character, bool isChuogun, bool isLigun, bool isPigun, BGUCharacterCS target = null)
         {
@@ -645,72 +635,6 @@ namespace bian
 
 
 
-        private static int GetBufferIdForSkill(int skillId)
-        {
-            var bufferMappings = new Dictionary<int, int>
-            {
-                {10801, 888666021},
-                {10802, 888666022},
-                {10803, 888666023},
-                {10804, 888666024},
-                {10805, 888666025}
-            };
-
-            // 清理之前的buff
-            if (bufferMappings.ContainsValue(skillId))
-            {
-                var character = Helper.GetBGUPlayerCharacterCS();
-                var buffToRemove = bufferMappings.FirstOrDefault(x => x.Value == skillId).Key;
-                if (buffToRemove > 0)
-                {
-                    BGUFunctionLibraryCS.BGURemoveBuffImmediately(character, buffToRemove, EBuffEffectTriggerType.Remove);
-                }
-            }
-
-            return bufferMappings.ContainsKey(skillId) ? bufferMappings[skillId] : 0;
-        }
-
-
-
-        private static bool IsComboSkill(int skillId)
-        {
-            int[] comboSkills = { 10705, 10706, 10720, 10721, 50003, 50005, 50007, 50001 };
-            return comboSkills.Contains(skillId);
-        }
-
-        private static void ProcessSkillMappingRules(ref int ID, int currentId, BGUCharacterCS character,
-            bool isChuogun, bool isLigun, bool isPigun)
-        {
-            var mapArr = AllSkillMappingRules.Where(r => r.OriginalId == currentId).ToList();
-            if (!mapArr.Any()) return;
-
-            var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
-
-            // 优先处理可重复规则
-            var repeatableRules = mapArr.Where(r => r.canRepeat.HasValue && r.canRepeat.Value).ToList();
-            var matchItem = repeatableRules.FirstOrDefault(r =>
-                IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
-
-            if (matchItem != null)
-            {
-                ID = matchItem.MappedId;
-                currentId = matchItem.MappedId;
-            }
-
-            // 处理不可重复规则
-            var nonRepeatableRules = AllSkillMappingRules
-                .Where(r => r.OriginalId == currentId && (!r.canRepeat.HasValue || !r.canRepeat.Value))
-                .ToList();
-
-            var matchItem_ = nonRepeatableRules.FirstOrDefault(r =>
-                IsSkillMappingRuleMatch(r, character, isChuogun, isLigun, isPigun, target));
-
-            if (matchItem_ != null)
-            {
-                ID = matchItem_.MappedId;
-            }
-        }
-
 
         private static void LoadComboConfigs()
         {
@@ -775,6 +699,10 @@ namespace bian
         [HarmonyPrefix]
         private static void OnAnyKeyTriggerEvent(FKey Key)
         {
+             if (!!Helper.is_bian_mod_stop)
+            {
+                return;
+            }
             if (keyToComboConfigsMap.Count == 0)
             {
                 return;

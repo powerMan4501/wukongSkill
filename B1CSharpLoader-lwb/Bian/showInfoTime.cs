@@ -21,28 +21,12 @@ public class TimerComp
 
 
     private static FVector2D VecRT = new FVector2D(0.25, 0.14);  // 第一位是距离左边屏幕的距离，第二位是距离顶部屏幕的距离
-private static FAnchors AnchorsRT = new FAnchors
-{
-    Minimum = new FVector2D(0.25, 0.14),
-    Maximum = new FVector2D(0.25, 0.14)
-};
+    private static FAnchors AnchorsRT = new FAnchors
+    {
+        Minimum = new FVector2D(0.25, 0.14),
+        Maximum = new FVector2D(0.25, 0.14)
+    };
 
-
-
-    // public override void OnEndPlay(EEndPlayReason EndPlayReason)
-    // {
-    //     DestroyMainCon();
-    //     base.OnEndPlay(EndPlayReason);
-    // }
-    // public override void OnAttach()
-    // {
-    //     SetCanTick(true);
-    // }
-
-    // public override int GetTickGroupMask()
-    // {
-    //     return CanTick() ? 1024 : 0;
-    // }
 
 
     public struct SurfaceTypeInfo
@@ -96,7 +80,7 @@ private static FAnchors AnchorsRT = new FAnchors
 
     public void RenderBasicInfo()
     {
-      
+
         if (!CheckWorldAndPawn())
             return;
 
@@ -121,13 +105,6 @@ private static FAnchors AnchorsRT = new FAnchors
                 float Atk = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.Atk);
                 ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"护盾: {(int)Shield}, 攻击: {(int)Atk}, 减伤: {(int)DmgDef / 100}%");
             }
-            //   else if (attribute.Key == EBGUAttrFloat.Atk)
-            // {
-
-            //     // 攻击/伤害加成
-            //     float DmgAddition = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.DmgAddition);
-            //     ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"攻击: {(int)value},  加伤: {(int)DmgAddition / 100}%");
-            // }
             else if (attribute.Key == EBGUAttrFloat.CritRate)
             {
                 // 暴击/暴伤
@@ -180,31 +157,35 @@ private static FAnchors AnchorsRT = new FAnchors
             else if (attribute.Key == EBGUAttrFloat.EnumMax && controlledPawn != null)
             {
 
+
+
                 string currentBuff = buffDict.FirstOrDefault(kvp => BGUFunctionLibraryCS.BGUHasBuffByID(controlledPawn, kvp.Key)).Value;
                 var buffText = !string.IsNullOrEmpty(currentBuff) ? $"当前buff: {currentBuff}" : "当前buff: 无";
-                // ACharacter aCharacter = GetOwner() as ACharacter;
-                // if (aCharacter != null)
-                // {
-                //     FVector StartTrace = BGUFuncLibActorTransformCS.BGUGetActorLocation(aCharacter) + aCharacter.GetActorUpVector() * aCharacter.CapsuleComponent.GetScaledCapsuleHalfHeight();
-                //     FVector fVector = aCharacter.GetActorUpVector() * -100.0 - aCharacter.GetActorUpVector() * aCharacter.CapsuleComponent.GetScaledCapsuleHalfHeight();
-                //     FVector EndTrace = BGUFuncLibActorTransformCS.BGUGetActorLocation(aCharacter) + fVector;
-                //     var MovementData = RequireReadOnlyData<IBUC_MovementData, BUC_MovementData>();
-                //     if (MovementData != null)
-                //     {
-                //         var EnvironmentInteractionMgrData = RequireWritableData<BUC_EnvironmentInteractionMgrData>();
+                var aCharacter = controlledPawn;
+                if (aCharacter != null)
+                {
 
-                //         EnvironmentInteractionMgrData.bNearGround = MovementData.CanUseSurfaceTypeFromMovementComp() && BGUFuncLibActorTransformCS.BGUGetActorLocation(aCharacter).Z - MovementData.CurFloorHitPoint.Z < 0f - fVector.Z;
-                //         var curItem = SurfaceTypeDict.FirstOrDefault(kvp => kvp.Key == EnvironmentInteractionMgrData.LastResultSurfaceType).Value;
+                    var MovementData = BGU_DataUtil.GetReadOnlyData<IBUC_MovementData, BUC_MovementData>(controlledPawn);
+                    if (MovementData != null)
+                    {
+                        var EnvironmentInteractionMgrData = BGU_DataUtil.GetReadOnlyData<BUC_EnvironmentInteractionMgrData>(controlledPawn);
+                        if (EnvironmentInteractionMgrData != null)
+                        {
+                            EnvironmentInteractionMgrData.bNearGround = MovementData.CanUseSurfaceTypeFromMovementComp();
+                            var curItem = SurfaceTypeDict.FirstOrDefault(kvp => kvp.Key == EnvironmentInteractionMgrData.LastResultSurfaceType).Value;
+                            string SurfaceTypeStr = curItem.Name;
+                            var buffId = curItem.BuffId;
+                            if (buffId != 0 && !BGUFunctionLibraryCS.BGUHasBuffByID(controlledPawn, buffId))
+                            {
+                                BGUFunctionLibraryCS.BGUAddBuff(controlledPawn, controlledPawn, buffId, EBuffSourceType.GM, 3000);
+                            }
+                            buffText += $";   地形: {SurfaceTypeStr}";
+                        }
 
-                //         string SurfaceTypeStr = curItem.Name;
-                //         var buffId = curItem.BuffId;
-                //         if (buffId != 0 && !BGUFunctionLibraryCS.BGUHasBuffByID(controlledPawn, buffId))
-                //         {
-                //             BGUFunctionLibraryCS.BGUAddBuff(controlledPawn, controlledPawn, buffId, EBuffSourceType.GM, 3000);
-                //         }
-                //         buffText += $";   地形: {SurfaceTypeStr}";
-                //     }
-                // }
+                    }
+                }
+                float Pevalue = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.Pevalue);
+                buffText += $";  棍势: {(int)Pevalue}";
                 ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], buffText);
             }
 
@@ -258,10 +239,12 @@ private static FAnchors AnchorsRT = new FAnchors
     public bool InitDone()
     {
         return CheckWorldAndPawn() &&
-               ShowPlayerInfo.IsValidUObject(MainCon) &&
-               ShowPlayerInfo.IsValidUObject(World) &&
-               ShowPlayerInfo.BasicInfoVs != null &&
-               ShowPlayerInfo.BasicInfoVs.Count > 0;
+                ShowPlayerInfo.IsValidUObject(World) &&
+                ShowPlayerInfo.IsValidUObject(MainCon) &&
+                MainCon?.GetChildrenCount() > 1 &&
+
+                ShowPlayerInfo.BasicInfoVs != null &&
+                ShowPlayerInfo.BasicInfoVs.Count > 0;
     }
 
 
@@ -270,22 +253,24 @@ private static FAnchors AnchorsRT = new FAnchors
         if (!ShowPlayerInfo.IsValidUObject(MainCon))
             return;
 
-        if (ShowPlayerInfo.BasicInfoKs == null || ShowPlayerInfo.BasicInfoVs == null)
+        if (ShowPlayerInfo.BasicInfoVs == null || MainCon == null)
             return;
 
 
         for (int i = 0; i < ShowPlayerInfo.BasicAttributes.Count; i++)
         {
-            UCanvasPanelSlot keySlot = MainCon.AddChild(ShowPlayerInfo.BasicInfoKs[i]) as UCanvasPanelSlot;
-            if (ShowPlayerInfo.IsValidUObject(keySlot))
-            {
-                keySlot.SetAnchors(AnchorsRT);
-                keySlot.SetAlignment(VecRT);
+            // UCanvasPanelSlot keySlot = MainCon.AddChild(ShowPlayerInfo.BasicInfoKs[i]) as UCanvasPanelSlot;
+            // if (keySlot == null) return;
+            // if (ShowPlayerInfo.IsValidUObject(keySlot))
+            // {
+            //     keySlot.SetAnchors(AnchorsRT);
+            //     keySlot.SetAlignment(VecRT);
 
-                keySlot.SetPosition(new FVector2D(-580.0, 20f + 60f * i));
-            }
+            //     keySlot.SetPosition(new FVector2D(-580.0, 20f + 60f * i));
+            // }
 
             UCanvasPanelSlot valueSlot = MainCon.AddChild(ShowPlayerInfo.BasicInfoVs[i]) as UCanvasPanelSlot;
+            if (valueSlot == null) return;
             if (ShowPlayerInfo.IsValidUObject(valueSlot))
             {
                 valueSlot.SetAnchors(AnchorsRT);
@@ -311,23 +296,7 @@ private static FAnchors AnchorsRT = new FAnchors
         }
     }
 
-    // public override void OnTickWithGroup(float DeltaTime, int TickGroup)
-    // {
-    //     try
-    //     {
-    //         if (!InitDone())
-    //         {
-    //             InitWidgets();
-    //         }
-    //         else
-    //         {
-    //             RenderBasicInfo(DeltaTime);
-    //         }
-    //     }
-    //     catch (Exception ex)
-    //     {
-    //         Console.WriteLine("Ticker Exp: " + ex.Message);
-    //     }
+
     // }
 
 
@@ -340,16 +309,17 @@ private static FAnchors AnchorsRT = new FAnchors
         try
         {
             // 安全移除已知的子控件
-            if (ShowPlayerInfo.BasicInfoKs != null && ShowPlayerInfo.BasicInfoVs != null)
-            {
-                for (int i = 0; i < ShowPlayerInfo.BasicAttributes.Count; i++)
-                {
-                    if (ShowPlayerInfo.IsValidUObject(ShowPlayerInfo.BasicInfoKs[i]))
-                        MainCon.RemoveChild(ShowPlayerInfo.BasicInfoKs[i]);
-                    if (ShowPlayerInfo.IsValidUObject(ShowPlayerInfo.BasicInfoVs[i]))
-                        MainCon.RemoveChild(ShowPlayerInfo.BasicInfoVs[i]);
-                }
-            }
+            MainCon.ClearChildren();
+            // if (ShowPlayerInfo.BasicInfoKs != null && ShowPlayerInfo.BasicInfoVs != null)
+            // {
+            //     for (int i = 0; i < ShowPlayerInfo.BasicAttributes.Count; i++)
+            //     {
+            //         if (ShowPlayerInfo.IsValidUObject(ShowPlayerInfo.BasicInfoKs[i]))
+            //             MainCon.RemoveChild(ShowPlayerInfo.BasicInfoKs[i]);
+            //         if (ShowPlayerInfo.IsValidUObject(ShowPlayerInfo.BasicInfoVs[i]))
+            //             MainCon.RemoveChild(ShowPlayerInfo.BasicInfoVs[i]);
+            //     }
+            // }
             // 清空引用
             MainCon = null;
         }
