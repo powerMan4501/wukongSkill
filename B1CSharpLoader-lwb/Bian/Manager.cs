@@ -229,10 +229,10 @@ namespace bian
 
         public static void RegisterManager()
         {
-            Manager.GetModelManager().InitConfig();
-            Manager.GetModelManager().BindEvents();
+            GetModelManager().InitConfig();
+            GetModelManager().BindEvents();
 
-
+            ShowPlayerInfo.ClearAllUI();
             loadAllStaticData(true, 0);
             // 在这里可以将buffDispConfigs插入到游戏中的数据
             if (harmony == null)
@@ -475,7 +475,7 @@ namespace bian
 
         //     Hooks.handleNotify(Montage, 0);
         // }
-      
+
 
         public static bool IsSkillMappingRuleMatch(SkillMappingRule rule, BGUCharacterCS character, bool isChuogun, bool isLigun, bool isPigun, BGUCharacterCS target = null)
         {
@@ -699,7 +699,7 @@ namespace bian
         [HarmonyPrefix]
         private static void OnAnyKeyTriggerEvent(FKey Key)
         {
-             if (!!Helper.is_bian_mod_stop)
+            if (!!Helper.is_bian_mod_stop)
             {
                 return;
             }

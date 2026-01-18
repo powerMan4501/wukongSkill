@@ -125,27 +125,19 @@ public class ShowPlayerInfo
 
 			if (!force) return;
 		}
-		
+
 		foreach (var attribute in BasicAttributes)
 		{
-			UTextBlock keyBlock = UObject.NewObject<UTextBlock>();
 			UTextBlock valueBlock = UObject.NewObject<UTextBlock>();
 			BasicInfoVs.Add(valueBlock);
-			SetUTextBlockContent(keyBlock, attribute.Value);
-			SetUTextBlockFont(keyBlock, FontInfo);
 			SetUTextBlockFont(valueBlock, FontInfo);
-			SetUTextBlockStyle(keyBlock, 0.6f, ETextJustify.Left);
 			SetUTextBlockStyle(valueBlock, 0.6f, ETextJustify.Right);
 			// 优化后的特殊样式设置
 			if (SpecialAttributes.Contains(attribute.Key))
 			{
-				SetUTextBlockFont(keyBlock, BoldFontInfo);
 				SetUTextBlockFont(valueBlock, BoldFontInfo);
 			}
 		}
-
-
-
 		if (!timerComp.InitDone())
 		{
 			timerComp.InitWidgets();
@@ -239,4 +231,15 @@ public class ShowPlayerInfo
 			BasicInfoVs.Clear();
 		}
 	}
+	~ShowPlayerInfo()
+	{
+		ClearAllUI();
+	}
+
+	public void Dispose()
+	{
+		ClearAllUI();
+		GC.SuppressFinalize(this);
+	}
+
 }

@@ -19,15 +19,12 @@ public class TimerComp
     public UWorld? World = null;
     public UCanvasPanel? MainCon = null;
 
-
     private static FVector2D VecRT = new FVector2D(0.25, 0.14);  // 第一位是距离左边屏幕的距离，第二位是距离顶部屏幕的距离
     private static FAnchors AnchorsRT = new FAnchors
     {
         Minimum = new FVector2D(0.25, 0.14),
         Maximum = new FVector2D(0.25, 0.14)
     };
-
-
 
     public struct SurfaceTypeInfo
     {
@@ -75,9 +72,6 @@ public class TimerComp
     {ESceneItemSurfaceType.EnumMax, new SurfaceTypeInfo { Name = "最大值", BuffId = 0}}
 };
 
-
-
-
     public void RenderBasicInfo()
     {
 
@@ -121,10 +115,6 @@ public class TimerComp
                 float def = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.Def);
                 ShowPlayerInfo.UpdateUTextBlockContentIfChanged(ShowPlayerInfo.BasicInfoVs[index], $"生命：{(int)value},  法力：{(int)Mp}, 防御：{(int)def}");
             }
-
-
-
-
             else if (attribute.Key == EBGUAttrFloat.FreezeDef)
             {
                 // 抗性
@@ -156,9 +146,6 @@ public class TimerComp
 
             else if (attribute.Key == EBGUAttrFloat.EnumMax && controlledPawn != null)
             {
-
-
-
                 string currentBuff = buffDict.FirstOrDefault(kvp => BGUFunctionLibraryCS.BGUHasBuffByID(controlledPawn, kvp.Key)).Value;
                 var buffText = !string.IsNullOrEmpty(currentBuff) ? $"当前buff: {currentBuff}" : "当前buff: 无";
                 var aCharacter = controlledPawn;
@@ -174,11 +161,11 @@ public class TimerComp
                             EnvironmentInteractionMgrData.bNearGround = MovementData.CanUseSurfaceTypeFromMovementComp();
                             var curItem = SurfaceTypeDict.FirstOrDefault(kvp => kvp.Key == EnvironmentInteractionMgrData.LastResultSurfaceType).Value;
                             string SurfaceTypeStr = curItem.Name;
-                            var buffId = curItem.BuffId;
-                            if (buffId != 0 && !BGUFunctionLibraryCS.BGUHasBuffByID(controlledPawn, buffId))
-                            {
-                                BGUFunctionLibraryCS.BGUAddBuff(controlledPawn, controlledPawn, buffId, EBuffSourceType.GM, 3000);
-                            }
+                            // var buffId = curItem.BuffId;
+                            // if (buffId != 0 && !BGUFunctionLibraryCS.BGUHasBuffByID(controlledPawn, buffId))
+                            // {
+                            //     BGUFunctionLibraryCS.BGUAddBuff(controlledPawn, controlledPawn, buffId, EBuffSourceType.GM, 3000);
+                            // }
                             buffText += $";   地形: {SurfaceTypeStr}";
                         }
 
@@ -247,57 +234,32 @@ public class TimerComp
                 ShowPlayerInfo.BasicInfoVs.Count > 0;
     }
 
-
-    public void InitBasicInfo()
-    {
-        if (!ShowPlayerInfo.IsValidUObject(MainCon))
-            return;
-
-        if (ShowPlayerInfo.BasicInfoVs == null || MainCon == null)
-            return;
-
-
-        for (int i = 0; i < ShowPlayerInfo.BasicAttributes.Count; i++)
-        {
-            // UCanvasPanelSlot keySlot = MainCon.AddChild(ShowPlayerInfo.BasicInfoKs[i]) as UCanvasPanelSlot;
-            // if (keySlot == null) return;
-            // if (ShowPlayerInfo.IsValidUObject(keySlot))
-            // {
-            //     keySlot.SetAnchors(AnchorsRT);
-            //     keySlot.SetAlignment(VecRT);
-
-            //     keySlot.SetPosition(new FVector2D(-580.0, 20f + 60f * i));
-            // }
-
-            UCanvasPanelSlot valueSlot = MainCon.AddChild(ShowPlayerInfo.BasicInfoVs[i]) as UCanvasPanelSlot;
-            if (valueSlot == null) return;
-            if (ShowPlayerInfo.IsValidUObject(valueSlot))
-            {
-                valueSlot.SetAnchors(AnchorsRT);
-                valueSlot.SetAlignment(VecRT);
-                valueSlot.SetPosition(new FVector2D(-40.0, 20f + 60f * i));
-            }
-        }
-    }
     public void InitWidgets()
     {
         // 重置初始化状态
         World = ShowPlayerInfo.GetWorld();
         if (!ShowPlayerInfo.IsValidUObject(World))
             return;
-
         if (GSUI.UIMgr.FindUIPage(World, 2) is UIBattleMainCon obj)
         {
             MainCon = obj.GetFieldOrProperty<UCanvasPanel>("MainCon");
-            if (ShowPlayerInfo.IsValidUObject(MainCon))
+            if (!ShowPlayerInfo.IsValidUObject(MainCon))
+                return;
+            if (ShowPlayerInfo.BasicInfoVs == null || MainCon == null)
+                return;
+            for (int i = 0; i < ShowPlayerInfo.BasicAttributes.Count; i++)
             {
-                InitBasicInfo();
+                UCanvasPanelSlot valueSlot = MainCon.AddChild(ShowPlayerInfo.BasicInfoVs[i]) as UCanvasPanelSlot;
+                if (valueSlot == null) return;
+                if (ShowPlayerInfo.IsValidUObject(valueSlot))
+                {
+                    valueSlot.SetAnchors(AnchorsRT);
+                    valueSlot.SetAlignment(VecRT);
+                    valueSlot.SetPosition(new FVector2D(-40.0, 20f + 60f * i));
+                }
             }
         }
     }
-
-
-    // }
 
 
 
@@ -308,18 +270,22 @@ public class TimerComp
 
         try
         {
-            // 安全移除已知的子控件
-            MainCon.ClearChildren();
-            // if (ShowPlayerInfo.BasicInfoKs != null && ShowPlayerInfo.BasicInfoVs != null)
-            // {
-            //     for (int i = 0; i < ShowPlayerInfo.BasicAttributes.Count; i++)
-            //     {
-            //         if (ShowPlayerInfo.IsValidUObject(ShowPlayerInfo.BasicInfoKs[i]))
-            //             MainCon.RemoveChild(ShowPlayerInfo.BasicInfoKs[i]);
-            //         if (ShowPlayerInfo.IsValidUObject(ShowPlayerInfo.BasicInfoVs[i]))
-            //             MainCon.RemoveChild(ShowPlayerInfo.BasicInfoVs[i]);
-            //     }
-            // }
+
+            if (ShowPlayerInfo.BasicInfoVs != null && ShowPlayerInfo.BasicInfoVs != null)
+            {
+                var valuesToRemove = new List<UTextBlock>(ShowPlayerInfo.BasicInfoVs);
+                foreach (var textBlock in valuesToRemove)
+                {
+                    if (ShowPlayerInfo.IsValidUObject(textBlock))
+                    {
+                        textBlock.SetText(FText.GetEmpty());
+                        textBlock.RemoveFromParent();
+                        // 安全移除已知的子控件
+                        MainCon.RemoveChild(textBlock);
+                    }
+                }
+
+            }
             // 清空引用
             MainCon = null;
         }
