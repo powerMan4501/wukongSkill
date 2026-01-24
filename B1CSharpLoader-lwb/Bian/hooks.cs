@@ -466,7 +466,7 @@ public class Hooks
     }
 
     // 调息触发
-    private static readonly int[] tiaoxiBuffIds = { 1008, 1011,  306, 404 };
+    private static readonly int[] tiaoxiBuffIds = { 1008, 1011, 306, 404 };
     // 在类的顶部定义数组
     private static readonly int[] SpecialBuffIds = { 1015, 2167, 604, 20986, 2030, 777666001, 777666002, 777666003, 777666004 };
     // 冰火雷毒buff互斥
@@ -564,16 +564,16 @@ public class Hooks
             {
                 return;
             }
-             if (tiaoxiBuffIds.Contains(BuffID))
-            {
-                ShowPlayerInfo.ClearAllUI();
-            }
+            //  if (tiaoxiBuffIds.Contains(BuffID))
+            // {
+            //     ShowPlayerInfo.ClearAllUI();
+            // }
             // 修改判断逻辑
             if (!SpecialBuffIds.Contains(BuffID))
             {
                 Log.Info($"Evt_BuffAdd BuffID:{BuffID}");
             }
-           
+
 
             if (buffers.Contains(BuffID))
             {
@@ -1215,6 +1215,45 @@ public class Hooks
             }
             return true;
 
+        }
+    }
+
+
+
+
+
+
+    [HarmonyPatch(typeof(BUS_AttrComp), "OnIncreaseFloatValue")]
+    public static class BPS_PlayerTagSystemPatch
+    {
+        private static void Prefix(BUS_AttrComp __instance)
+        {
+            var owner = __instance.GetOwner() as BGUCharacterCS;
+            if (owner != null)
+            {
+                var player = Helper.GetBGUPlayerCharacterCS();
+                if (player != null && player.PathName == owner.PathName)
+                {
+                    ShowPlayerInfo.RenderBasicInfo();
+                }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(BUS_AttrComp), "SetFloatValue")]
+    public static class SetFloatValuePatch
+    {
+        private static void Prefix(BUS_AttrComp __instance)
+        {
+            var owner = __instance.GetOwner() as BGUCharacterCS;
+            if (owner != null)
+            {
+                var player = Helper.GetBGUPlayerCharacterCS();
+                if (player != null && player.PathName == owner.PathName)
+                {
+                    ShowPlayerInfo.RenderBasicInfo();
+                }
+            }
         }
     }
 }

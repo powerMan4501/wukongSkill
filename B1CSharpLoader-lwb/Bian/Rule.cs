@@ -401,6 +401,8 @@ namespace bian
         {
             var character = Helper.GetBGUPlayerCharacterCS();
             if (character == null) return;
+
+            Log.Info($"DoAction {action?.Type} {action?.desc}");
             switch (action?.Type?.ToLower())
             {
                 case "buff":

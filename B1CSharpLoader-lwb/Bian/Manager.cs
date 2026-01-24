@@ -11,6 +11,7 @@ using System;
 using BtlShare;
 using ArchiveB1;
 using UnrealEngine.InputCore;
+using System.Runtime.InteropServices;
 
 
 
@@ -226,12 +227,24 @@ namespace bian
 
 
 
+        [DllImport("kernel32.dll", SetLastError = true)]
+        private static extern bool SetConsoleOutputCP(uint wCodePageID);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        private static extern bool SetConsoleCP(uint wCodePageID);
+
+        public static void EnableCNInConsole()
+        {
+            SetConsoleCP(65001u);
+            SetConsoleOutputCP(65001u);
+            Log.Info("EnableCNInConsole 开启中文输出");
+        }
 
         public static void RegisterManager()
         {
             GetModelManager().InitConfig();
             GetModelManager().BindEvents();
-
+            EnableCNInConsole();
             ShowPlayerInfo.ClearAllUI();
             loadAllStaticData(true, 0);
             // 在这里可以将buffDispConfigs插入到游戏中的数据
