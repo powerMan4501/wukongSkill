@@ -81,19 +81,5 @@
         "desc": "清除展示"
       }
     ]
-  },
-  {
-    "desc": "传送调息",
-    "montage": ".AM_wukong_teleport_end",
-    "linkValue": 0,
-    "speedRate": 1.4,
-    "AMSpeedRate": 1.4,
-    "CastActions": [
-      {
-        "Type": "set_mod_stop",
-        "isModStop": false,
-        "desc": "开启mod功能"
-      }
-    ]
   }
 ]

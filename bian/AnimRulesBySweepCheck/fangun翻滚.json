@@ -125,7 +125,8 @@
     "linkValue": 0,
     "CastActions": [
       {
-        "Type": "show_info"
+        "Type": "show_info",
+        "desc": "AM_Wukong_Dodge show_info"
       }
     ]
   },

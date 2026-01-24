@@ -1,10 +1,11 @@
 [
   {
     "desc": "小骊龙跳跃砸击",
-    "montage": "AM_lys_chuilong_01a_attack_04",
+    "montage": ".AM_lys_chuilong_01a_attack_04",
     "linkValue": 2.932471,
     "addRadius": 500,
-    "speedRate": 1.4,
+    "speedRate": 1.3,
+    "AMSpeedRate": 1.3,
     "hitEffects": [888555036],
     "replaceEffects": true,
     "SweepActions": [
@@ -26,7 +27,8 @@
     "desc": "小骊龙,连续锤很多下",
     "montage": "AM_lys_chuilong_01a_attack_05_",
     "linkValue": 0,
-    "speedRate": 1.4,
+    "speedRate": 1.3,
+    "AMSpeedRate": 1.3,
     "addRadius": 1000,
     "SweepActions": [
       {
@@ -50,6 +52,64 @@
     "montage": "AM_lys_chuilong_01a_attack",
     "linkValue": 0,
     "addRadius": 500,
-    "speedRate": 1.3
+    "speedRate": 1.3,
+    "AMSpeedRate": 1.3,
+    "hitEffects": [39019112],
+    "replaceEffects": true,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [30250101],
+            "desc": "电圈"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "desc": "小骊龙,锤子互击三次释放三次小范围雷电",
+    "montage": "AM_lys_chuilong_01a_attack_09",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.3,
+    "AMSpeedRate": 1.3,
+    "hitEffects": [39019112],
+    "replaceEffects": true,
+    "SweepActions": [
+      {
+        "Type": "bullet",
+        "bullets": [
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [30250101],
+            "desc": "电圈"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "desc": "小骊龙,左右各慢速挥舞一次锤子，放一个小电球",
+    "montage": "AM_lys_chuilong_01a_attack_11",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.3,
+    "AMSpeedRate": 1.3,
+    "hitEffects": [39019112],
+    "replaceEffects": true
+  },
+  {
+    "desc": "小骊龙,左右各慢速挥舞一次锤子，放一个小电球",
+    "montage": "AM_lys_chuilong_01a_attack_03",
+    "linkValue": 0,
+    "addRadius": 500,
+    "speedRate": 1.3,
+    "AMSpeedRate": 1.3,
+    "hitEffects": [39019112],
+    "replaceEffects": true
   }
 ]

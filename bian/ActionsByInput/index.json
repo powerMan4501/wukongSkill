@@ -8,10 +8,11 @@
     ]
   },
   {
-    "code": "Tabspace",
+    "code": "Tab",
     "afterActions": [
       {
-        "Type": "show_info"
+        "Type": "clear_ui",
+        "desc": "清除展示"
       }
     ]
   },
@@ -164,6 +165,29 @@
       }
     ]
   },
+  {
+    "code": "ADDak",
+    "afterActions": [
+      {
+        "Type": "additem",
+        "ItemID": 5099,
+        "ItemCount": 1,
+        "desc": "获得AK"
+      }
+    ]
+  },
+  {
+    "code": "ADDjinwu",
+    "afterActions": [
+      {
+        "Type": "additem",
+        "ItemID": 16017,
+        "ItemCount": 1,
+        "desc": "获得金乌"
+      }
+    ]
+  },
+
   {
     "code": "ADDhu",
     "afterActions": [

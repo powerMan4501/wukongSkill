@@ -119,5 +119,17 @@
         "desc": "火蛙，大招，咆哮火"
       }
     ]
+  },
+   {
+    "code": "jxll",
+    "afterActions": [
+      {
+        "type": "bossskill",
+        "bossLabel": "SK_lys_chuilong_01a",
+        "bossType": "BOSS",
+        "MagicSkillID": 302509,
+        "desc": "锤子互击三次释放三次小范围雷电"
+      }
+    ]
   }
 ]
