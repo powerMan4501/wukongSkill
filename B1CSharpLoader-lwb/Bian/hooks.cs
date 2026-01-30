@@ -57,11 +57,6 @@ public class Hooks
     }
 
 
-
-
-
-
-
     // 获取缓存的动画规则，如果不存在则加载并缓存
     public static List<AnimRuleBySweepCheck> GetCachedAnimRules()
     {
@@ -98,38 +93,57 @@ public class Hooks
             {
                 return;
             }
-            if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner.GetName().IndexOf("Unit_Player") > -1)
+
+            var player = Helper.GetBGUPlayerCharacterCS();
+            if (player == null) return;
+            if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner?.PathName == player.PathName)
             {
-                var allRules = GetCachedAnimRules();
-                if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
-                var nowMontage = NotifyParam.Animation.PathName;
-                var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
-                Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()} ,linkValue:{linkValue}");
-                if (allRules?.Count > 0)
+                var owner = NotifyParam.owner as BGUCharacterCS;
+                if (owner == null) return;
+                if (player.PathName == owner.PathName)
                 {
-                    var matchedRule = allRules.FirstOrDefault(rule =>
-                        !string.IsNullOrEmpty(nowMontage) &&
-                        nowMontage.Contains(rule.montage) &&
-                        (rule?.linkValue == 0 || rule?.linkValue.ToString() == linkValue.ToString()));
-                    if (matchedRule != null && matchedRule?.SweepActions?.Count > 0)
+                    var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
+                    Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()} ,linkValue:{linkValue}");
+
+                    var rulesMap = LoadSkill.TemplatePathConfigs;
+                    if (rulesMap == null) return;
+                    var currentMontage = NotifyParam.Animation.PathName;
+                    //                     var matchedConfig = rulesMap?.Values.FirstOrDefault(config =>
+                    //   BGW_GameDB.GetSkillSDesc(config.skillID, NotifyParam.owner)?.TemplatePath?.Contains(NotifyParam.Animation.PathName) ?? false);
+                    var str = $"AnimMontage'{NotifyParam.Animation.PathName}'";
+                    var matchedItem = rulesMap.FirstOrDefault(item => item.Key.Contains(currentMontage));
+                    if (matchedItem.Equals(default(KeyValuePair<string, LoadSkill.ActionsBySkillConfig>)))
                     {
 
-                        var rule = new Rule();
-                        var method = typeof(Rule).GetMethod("DoAfterActions");
-                        Log.Info($"do rule {matchedRule.montage}");
-                        if (method == null)
-                        {
-                            Log.Info($"do rule no method");
-                            return;
-                        }
+                        var allRules = GetCachedAnimRules();
+                        if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
+                        var nowMontage = NotifyParam.Animation.PathName;
+                        var matchedRule = allRules.FirstOrDefault(rule =>
+                                    !string.IsNullOrEmpty(nowMontage) &&
+                                    nowMontage.Contains(rule.montage) &&
+                                    (rule?.linkValue == 0 || rule?.linkValue.ToString() == linkValue.ToString()));
 
-                        rule?.DoAfterActions(matchedRule.SweepActions);
+                        if (matchedRule != null && matchedRule?.SweepActions?.Count > 0)
+                        {
+                            var rule_ = new Rule();
+                            rule_?.DoAfterActions(matchedRule.SweepActions);
+                        }
+                        return;
                     }
+                    var matchedConfig = matchedItem.Value;
+                    // if (!rulesMap.TryGetValue(str, out var matchedConfig)) return;
+                    if (matchedConfig == null || matchedConfig.sweep_actions == null || matchedConfig.sweep_actions.Count == 0) return;
+                    var matchItem = matchedConfig.sweep_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
+                    if (matchItem == null || matchItem.actions == null || matchItem.actions.Count == 0) return;
+                    var rule = new Rule();
+                    rule?.DoAfterActions(matchItem.actions);
+                    return;
+
                 }
+
             }
         }
     }
-
 
 
 
@@ -190,11 +204,109 @@ public class Hooks
         }
     }
 
+    public static void logNotifyTrack(UAnimMontage Montage)
+    {
 
 
+
+        TArrayUnsafe<FAnimNotifyEvent> AnimNotifyEventList = new TArrayUnsafe<FAnimNotifyEvent>();
+        UGSE_AnimFuncLib.GetAllNotifyEvent(Montage, AnimNotifyEventList);
+        if (!(AnimNotifyEventList != null && AnimNotifyEventList.Count > 0))
+        {
+            return;
+        }
+
+        if (AnimNotifyEventList?.Count > 0)
+        {
+            var itemFirst = AnimNotifyEventList.FirstOrDefault(item =>
+            item.NotifyStateClass is BANS_GSAddBuffByID);
+            var itemNew = new FAnimNotifyEvent();
+
+
+            // 复制所有属性
+            itemNew.LinkedMontage = itemFirst.LinkedMontage;
+            itemNew.SlotIndex = itemFirst.SlotIndex;
+            itemNew.SegmentIndex = itemFirst.SegmentIndex;
+            itemNew.LinkMethod = itemFirst.LinkMethod;
+            itemNew.CachedLinkMethod = itemFirst.CachedLinkMethod;
+            itemNew.SegmentBeginTime = itemFirst.SegmentBeginTime;
+            itemNew.SegmentLength = itemFirst.SegmentLength;
+            itemNew.LinkValue = 0.1f;
+            itemNew.LinkedSequence = itemFirst.LinkedSequence;
+            itemNew.TriggerTimeOffset = 0;
+            itemNew.EndTriggerTimeOffset = 0;
+            // var NotifyStateClass = UClass.GetClass<BANS_GSAddBuffByID>();
+            UObject NotifyStateClass = UObject.NewObject<BANS_GSAddBuffByID>(
+                      Montage,
+                      FName.None,
+                      EObjectFlags.Transactional,
+                      null,
+                      copyTransientsFromClassDefaults: false,
+                      (IntPtr)0
+                  );
+            if (NotifyStateClass is BANS_GSAddBuffByID bANS_GSAddBuffByID2)
+            {
+                bANS_GSAddBuffByID2.BuffID = 119;
+                itemNew.NotifyStateClass = bANS_GSAddBuffByID2;
+            }
+
+
+
+            itemNew.Duration = 0.15f;
+            itemNew.ConvertedFromBranchingPoint = itemFirst.ConvertedFromBranchingPoint;
+            itemNew.MontageTickType = itemFirst.MontageTickType;
+            itemNew.NotifyTriggerChance = itemFirst.NotifyTriggerChance;
+            itemNew.NotifyFilterType = itemFirst.NotifyFilterType;
+            itemNew.NotifyFilterLOD = itemFirst.NotifyFilterLOD;
+            itemNew.TriggerOnDedicatedServer = itemFirst.TriggerOnDedicatedServer;
+            itemNew.TriggerOnFollower = itemFirst.TriggerOnFollower;
+            itemNew.NotifyColor = itemFirst.NotifyColor;
+            itemNew.Guid = itemFirst.Guid;
+
+            bool notifyExists = AnimNotifyEventList.Any(existing =>
+       existing.NotifyStateClass is BANS_GSAddBuffByID existingBuff &&
+       itemNew.NotifyStateClass is BANS_GSAddBuffByID newBuff &&
+       existingBuff.BuffID == newBuff.BuffID);
+
+            // 设置新的TrackIndex为最大值+1
+            itemNew.TrackIndex = itemFirst.TrackIndex;
+            itemNew.NotifyName = new FName("BANS_GSAddBuffByID");
+            if (!notifyExists)
+            {
+                Helper.LogInfoOnce($"添加通知: {itemNew.TrackIndex}");
+                AnimNotifyEventList.Add(itemNew);
+            }
+
+        }
+
+    }
+
+    public static BANS_GSAddBuffByID? CreateAndConfigureBuffByID(UAnimMontage AnimMontage, int BuffID, Dictionary<float, float> dictionary)
+    {
+        UObject uObject = UObject.NewObject<BANS_GSAddBuffByID>(
+            AnimMontage,
+            FName.None,
+            EObjectFlags.Transactional,
+            null,
+            copyTransientsFromClassDefaults: false,
+            (IntPtr)0
+        );
+
+        if (uObject is BANS_GSAddBuffByID bANS_GSAddBuffByID2)
+        {
+            bANS_GSAddBuffByID2.BuffID = BuffID;
+            bANS_GSAddBuffByID2.BuffLayer = 1;
+            bANS_GSAddBuffByID2.UseBuffDescDuration = false;
+
+            Helper.LogInfoOnce($"添加通知:{BuffID}");
+            UBGUFunctionLibrary.AddBuffNotifyStates(AnimMontage, uObject, BuffID, dictionary);
+            return bANS_GSAddBuffByID2;
+        }
+        return null;
+    }
     private static readonly Dictionary<string, bool> ProcessedAnimCache = new Dictionary<string, bool>();
 
-    public static void handleNotify(UAnimMontage Montage, AActor player)
+    public static void handleNotify(UAnimMontage Montage, AActor player, LoadSkill.MontageConfig config)
     {
         if (!!Helper.is_bian_mod_stop)
         {
@@ -206,7 +318,7 @@ public class Hooks
             {
                 return;
             }
-
+            // logNotifyTrack(Montage);
             if (ProcessedAnimCache.ContainsKey(Montage.PathName))
             {
                 return;
@@ -218,16 +330,29 @@ public class Hooks
                 return;
             }
 
-            var allRules = GetCachedAnimRules();
-            if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
-            // 查找匹配的JSON数据
-            var strPathName = Montage.PathName.ToString();
-            var addRadius = 100;
+            // CreateAndConfigureBuffByID(Montage, 295, new Dictionary<float, float> { { 0.1f, 0.2f } });
 
-            // 替换原有的硬编码判断逻辑
-            var config = allRules.FirstOrDefault(c => strPathName.Contains(c.montage));
+            if (config == null)
+            {
+
+                return;
+            }
+            ;
+            var addRadius = 100;
             var hitEffects = new List<int>();
             float am_speed = 0;
+            if (config.hitEffects != null && config.hitEffects.Count > 0)
+            {
+                hitEffects.AddRange(config.hitEffects);
+            }
+            if (config.AMSpeedRate != null && config.AMSpeedRate > 0)
+            {
+                am_speed = (float)config.AMSpeedRate;
+            }
+            if (config.addRadius != null && config.addRadius > 0)
+            {
+                addRadius = (int)config.addRadius;
+            }
             if (config != null)
             {
                 addRadius = config.addRadius ?? 100;
@@ -241,6 +366,7 @@ public class Hooks
                     am_speed = (float)config.AMSpeedRate;
                 }
             }
+            Log.Info($"修改Notify，给异常 handleNotify: {Montage.PathName}，Count：{ AnimNotifyEventList.Count} ,addRadius:{addRadius} ,hitEffects:{hitEffects.Count} ,am_speed:{am_speed} ");
             // 查找相同类型的通知作为模板
             foreach (FAnimNotifyEvent item in AnimNotifyEventList)
             {
@@ -396,7 +522,11 @@ public class Hooks
 
     private static bool IsPlayer(string name)
     {
-        if (name != null && name?.ToLower()?.IndexOf("unit_player") > -1)
+        if (name == null) return false;
+
+        var player = Helper.GetBGUPlayerCharacterCS();
+        if (player == null) return false;
+        if (name == player.PathName)
         {
             return true;
         }
@@ -422,17 +552,31 @@ public class Hooks
             {
                 return;
             }
-            Log.Info($"Evt_TriggerSkillEffect EffectID:{EffectID}");
-            var Target = InnerTarget;
-            var effectRulesMap = Manager.effectRulesMap;
 
+
+            Helper.LogInfoOnce($"Evt_TriggerSkillEffect EffectID:{EffectID}");
+            var Target = InnerTarget;
+
+            var effectRulesMap_new = LoadSkill.EffectRules;
+            if (!(effectRulesMap_new == null || !effectRulesMap_new.ContainsKey(EffectID)))
+            {
+                var matchingRules_new = effectRulesMap_new.FirstOrDefault(rule => rule.Key == EffectID);
+                if (matchingRules_new.Value.Count > 0)
+                {
+                    var rule = new Rule();
+                    rule.DoAfterActions(matchingRules_new.Value);
+                    return;
+                }
+            }
+
+
+            var effectRulesMap = Manager.effectRulesMap;
             // 检查是否有对应的效果规则
             if (!effectRulesMap.ContainsKey(EffectID))
             {
 
                 return;
             }
-
             var currentTime = DateTime.Now;
             // 检查该效果ID是否在0.2秒内已经触发过
             if (_lastTriggerTimes.TryGetValue(EffectID, out var lastTime))
@@ -571,7 +715,8 @@ public class Hooks
             // 修改判断逻辑
             if (!SpecialBuffIds.Contains(BuffID))
             {
-                Log.Info($"Evt_BuffAdd BuffID:{BuffID}");
+
+                Helper.LogInfoOnce($"Evt_BuffAdd BuffID:{BuffID}");
             }
 
 
@@ -588,14 +733,28 @@ public class Hooks
 
                 HandleBuffMutex(Caster, BuffID, gun_buffers);
             }
-            var buffRulesMap = Manager.buffRulesMap;
+
+
             // 检查是否有对应的buff规则
-            if (!buffRulesMap.ContainsKey(BuffID))
+            var buffRulesMap_new = LoadSkill.BuffRules;
+            if (buffRulesMap_new != null && buffRulesMap_new.ContainsKey(BuffID))
+            {
+                var matchingRules_new = buffRulesMap_new[BuffID];
+                if (matchingRules_new != null && matchingRules_new.Count > 0)
+                {
+                    var rule = new Rule();
+                    rule.DoAfterActions(matchingRules_new);
+                    return;
+                }
+            }
+            var buffRulesMap_ = Manager.buffRulesMap;
+            // 检查是否有对应的buff规则
+            if (!buffRulesMap_.ContainsKey(BuffID))
             {
                 return;
             }
             // 获取对应buff的所有规则
-            var matchingRules = buffRulesMap[BuffID];
+            var matchingRules = buffRulesMap_[BuffID];
             foreach (var ruleItem in matchingRules)
             {
                 var Duration_ = Duration > 0 ? Duration : 1000;
@@ -658,40 +817,62 @@ public class Hooks
 
 
 
-            Log.Info($"Evt_CastSkillAnime Montage:{Montage.GetName()}");
+            Helper.LogInfoOnce($"Evt_CastSkillAnime Montage:{Montage.GetName()}");
             InsertMontageReversed(currentMontage);
 
             if (currentMontage.Contains("Animation/Player/Wukong/") || currentMontage.Contains("AM_wukong_trans_from_Vigor"))
             {
                 Helper.updateIsPlayVigorSkillByID(false);
             }
+            var rulesMap = LoadSkill.TemplatePathConfigs;
+            if (rulesMap == null) return;
+            var str = $"AnimMontage'{currentMontage}'";
 
+            var config = getNewConfig(currentMontage) ?? getOldConfig(currentMontage);
 
-            var allRules = GetCachedAnimRules();
-            if (allRules == null || allRules.Count == 0) return;
-
-            var matchedRule = allRules.FirstOrDefault(rule =>
-                     !string.IsNullOrEmpty(currentMontage) &&
-                     currentMontage.Contains(rule.montage));
-
-            if (matchedRule?.CastActions?.Count > 0)
+            if (config == null)
             {
-                var rule = new Rule();
-                rule.DoAfterActions(matchedRule.CastActions);
+                config = new LoadSkill.MontageConfig();
+            }
+            PlayTimeRate = config.speedRate != null ? (float)config.speedRate : PlayTimeRate;
+
+            if (config.scaleWeaponNum != null)
+            {
+                Manager.OnScaleWeapon((float)config.scaleWeaponNum);
             }
 
-            PlayTimeRate = matchedRule?.speedRate != null ? (float)matchedRule.speedRate : PlayTimeRate;
-
-            if (matchedRule?.scaleWeaponNum != null)
-            {
-                Manager.OnScaleWeapon((float)matchedRule.scaleWeaponNum);
-            }
-
-            handleNotify(Montage, __instance.GetOwner());
+            handleNotify(Montage, __instance.GetOwner(), config);
         }
     }
+    public static LoadSkill.MontageConfig? getOldConfig(string PathName)
+    {
+        var allRules = GetCachedAnimRules();
+        if (allRules == null || allRules.Count == 0) return null;
+        var strPathName = PathName.ToString();
 
+        // // 替换原有的硬编码判断逻辑
+        var configRules = allRules.FirstOrDefault(c => strPathName.Contains(c.montage));
+        if (configRules == null) return null;
+        var config = new LoadSkill.MontageConfig();
+        config.hitEffects = configRules.hitEffects;
+        config.addRadius = configRules.addRadius;
+        config.AMSpeedRate = configRules.AMSpeedRate;
+        config.replaceEffects = configRules.replaceEffects;
+        return config;
+    }
+    public static LoadSkill.MontageConfig? getNewConfig(string PathName)
+    {
 
+        var rulesMap = LoadSkill.TemplatePathConfigs;
+        if (rulesMap == null) return null;
+        var str = $"AnimMontage'{PathName}'";
+        if (!rulesMap.TryGetValue(str, out var matchedRule)) return null;
+        if (matchedRule == null || matchedRule.montage_config == null)
+        {
+            return null;
+        }
+        return matchedRule.montage_config;
+    }
 
     private static bool TryGetCharacterStance(out bool isChuogun, out bool isLigun, out bool isPigun)
     {
@@ -1256,4 +1437,112 @@ public class Hooks
             }
         }
     }
+
+
+
+
+
+    [HarmonyPatch(typeof(BUS_SkillInstsCompSvr), "CastSkillOKAddBuff")]
+    public static class CastSkillOKAddBuffPatch
+    {
+        private static void Prefix(BUS_SkillInstsCompSvr __instance, int SkillID)
+        {
+            var owner = __instance.GetOwner() as BGUCharacterCS;
+            if (owner != null)
+            {
+                var player = Helper.GetBGUPlayerCharacterCS();
+                if (player != null && player.PathName == owner.PathName)
+                {
+
+                    var rulesMap = LoadSkill.ActionsBySkillConfigs;
+                    if (rulesMap != null && rulesMap.ContainsKey(SkillID))
+                    {
+                        if (!rulesMap.TryGetValue(SkillID, out var matchItem)) return;
+                        if (matchItem != null && matchItem?.cast_actions?.Count > 0)
+                        {
+                            Log.Info($"技能CastSkillOK：matchItem:{matchItem?.cast_actions?.Count}");
+                            var rule = new Rule();
+                            rule?.DoAfterActions(matchItem.cast_actions);
+                        }
+                    }
+                    Log.Info($"释放技能开始 CastSkillOK：{SkillID}");
+                }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(BUS_SkillInstsCompSvr), "OnSkillCostDmg")]
+    public static class BUS_SkillInstsCompSvrPatch
+    {
+        private static void Prefix(BUS_SkillInstsCompSvr __instance, AActor Victim, int SkillID, int FinalDmg, bool bIsCrit)
+        {
+            var owner = __instance.GetOwner() as BGUCharacterCS;
+            if (owner != null)
+            {
+                var player = Helper.GetBGUPlayerCharacterCS();
+                if (player != null && player.PathName == owner.PathName)
+                {
+                    var rulesMap = LoadSkill.ActionsBySkillConfigs;
+                    Log.Info($"技能造成伤害OnSkillCostDmg：rulesMap:{rulesMap?.Count}");
+                    if (rulesMap != null && rulesMap.ContainsKey(SkillID))
+                    {
+                        if (!rulesMap.TryGetValue(SkillID, out var matchItem)) return;
+                        if (matchItem != null && matchItem?.dmg_actions?.Count > 0)
+                        {
+                            Log.Info($"技能造成伤害OnSkillCostDmg：matchItem:{matchItem?.dmg_actions?.Count}");
+                            var rule = new Rule();
+                            rule?.DoAfterActions(matchItem.dmg_actions);
+                        }
+                    }
+                    Log.Info($"技能造成伤害OnSkillCostDmg：SkillID:{SkillID},FinalDmg:{FinalDmg}");
+                }
+            }
+        }
+    }
+
+
+    [HarmonyPatch(typeof(BUS_SkillInstsCompSvr), "OnSkillEnded")]
+    public static class OnSkillEndedrPatch
+    {
+        private static bool Prefix(BUS_SkillInstsCompSvr __instance, int SkillID)
+        {
+            var owner = __instance.GetOwner() as BGUCharacterCS;
+            if (owner == null) return true;
+            var player = Helper.GetBGUPlayerCharacterCS();
+            if (player == null) return true;
+            if (player.PathName != owner.PathName) return true;
+
+            // if (Helper.isPlayVigorSkillByID)
+            // {
+            //     Helper.ResetVigorSkillByID(player);
+            // }
+            var rulesMap = LoadSkill.ActionsBySkillConfigs;
+            Log.Info($"技能OnSkillEnded：SkillID:{SkillID}，rulesMap.Count：{rulesMap.Count}");
+            if (rulesMap == null || rulesMap.Count == 0) return true;
+            if (!rulesMap.TryGetValue(SkillID, out var matchItem)) return true;
+
+            if (matchItem == null || matchItem.end_actions?.Count == 0) return true;
+            var rule = new Rule();
+            if (rule == null) return true;
+            rule.DoAfterActions(matchItem.end_actions);
+            return true;
+        }
+    }
+    // [HarmonyPatch(typeof(BUAVigorEnergy), "GetCostValue")]
+    // public static class BUAVigorEnergyPatch
+    // {
+    //     private static void Postfix(BUAVigorEnergy __instance, ref (int, float) __result)
+    //     {
+    //         // 获取原始返回值
+    //         float originalValue = __result.Item2;
+    //         Helper.LogInfoOnce($"修改消耗消耗消耗消耗消耗消耗消耗值GetCostValue: {originalValue}");
+    //         if ((float)originalValue > 2f)
+    //         {
+    //             // 修改返回值
+    //             __result = (__result.Item1, 2f);
+    //         }
+    //     }
+    // }
+
+
 }

@@ -219,21 +219,29 @@ namespace bian
             if (readOnlyData == null) return 0;
             var skillId = readOnlyData.CurrentCastingSkillID;
             return skillId;
+        }
+        private static Dictionary<string, double> _lastLogTime = new Dictionary<string, double>();
+        private const double LOG_COOLDOWN = 3000; // 3秒
 
-
-            UAnimInstance animInstance = character.Mesh.GetAnimInstance();
-            if (animInstance == null) return 0;
-            var montage = animInstance.GetCurrentActiveMontage();
-            Log.Info($"getCurrentSkillId montage:{montage?.PathName}");
-            if (montage == null || montage.PathName == null) return 0;
-
-            var skillIDs = BGUFunclibEditorUtility.GetSkillIDByAMPath(montage.PathName);
-            if (skillIDs != null && skillIDs.Count > 0)
+        public static void LogInfoOnce(string message)
+        {
+            double currentTime = DateTimeToTimestamp();
+            if (_lastLogTime.TryGetValue(message, out double lastTime))
             {
-                var skillID = skillIDs[0];
-                return skillID;
+                if (currentTime - lastTime < LOG_COOLDOWN)
+                {
+                    return; // 在冷却期内，不打印日志
+                }
             }
-            return 0;
+            _lastLogTime[message] = currentTime;
+            Log.Info(message);
+        }
+
+        public static void doActionBySkillId(BGUCharacterCS character)
+        {
+
+            var skillId = getCurrentSkillId(character);
+            LogInfoOnce($"skillId:{skillId}");
         }
 
         public static void SpawnActorByWorld(string classAsset, int? teamID)
@@ -286,7 +294,7 @@ namespace bian
             if (list == null || list.Count == 0 || action == null || action.Type == null)
             {
 
-                SummonReq(5009301, 1, 6, skillId);
+                SummonReq(1001103, 1, 6, skillId);
                 return;
             }
             ;
@@ -555,7 +563,22 @@ namespace bian
             return null;
         }
 
+        public static void OnMagicallyChangeFadeOut()
+        {
+            var character = Helper.GetBGUPlayerCharacterCS();
+            if (character == null) return;
+            var magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(character);
+            if (magicChangeComp == null) return;
+            MethodInfo reset = typeof(BUS_MagicallyChangeComp).GetMethod("Reset", BindingFlags.NonPublic | BindingFlags.Instance);
+            if (reset == null) return;
+            FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
+            if (fieldData == null) return;
+            BUC_MagicallyChangeData data = fieldData?.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
+            if (data == null) return;
+            data.RecoverSkillID = 10199;
+            reset.Invoke(magicChangeComp, [EResetReason_MagicallyChange.Normal]);
 
+        }
 
         public static void ResetVigorSkill(BUS_MagicallyChangeComp magicChangeComp, int VigorSkillID)
         {
@@ -2006,7 +2029,7 @@ namespace bian
         {
             // var play = Helper.GetBGUPlayerCharacterCS();
             // if (play == null || play.World == null) return;
-            SummonReq(5009301, 1, 3, skillID);
+            SummonReq(1001103, 1, 3, skillID);
             // // 检查是否需要更新缓存
             // if (DateTime.Now - _lastCacheUpdate > _cacheUpdateInterval || _cachedCharacters.Count == 0)
             // {

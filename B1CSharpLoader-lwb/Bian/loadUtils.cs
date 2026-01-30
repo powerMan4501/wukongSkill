@@ -1189,7 +1189,7 @@ namespace bian
                 }
 
                 Log.Info($"Total processed buff configs: {processedCount}");
-            
+
                 return processedCount;
             }
             catch (Exception ex)
@@ -3382,7 +3382,18 @@ namespace bian
             dataList.Add(config.ID, newItem);
             return newItem;
         }
-
+        public static void modifySuperSkillArmor()
+        {
+            var dataList = BG_ProtobufDataAPI<FUStSuperArmorLevelDesc>.Get().GetAll();
+            foreach (var data in dataList.Values)
+            {
+                if (data != null && data.SuperArmorLevelName != null && data.SuperArmorLevelName.Contains("主角") && data.SuperArmorValue > 0 && data.SuperArmorValue < 500)
+                {
+                    data.SuperArmorValue = (float)data.SuperArmorValue + 10;
+                    Log.Info($"Modified SuperArmorValue for {data.SuperArmorLevelName}: {data.SuperArmorValue}");
+                }
+            }
+        }
     }
 }
 

@@ -274,7 +274,8 @@ public class ShowPlayerInfo
 						Maximum = new FVector2D(0.25, 0.14)
 					});
 					valueSlot.SetAlignment(new FVector2D(0.25, 0.14));
-					valueSlot.SetPosition(new FVector2D(-40.0, 20f + 65f * i));
+					valueSlot.SetPosition(new FVector2D(40, 20f + 65f * i));
+					// valueSlot.SetPosition(new FVector2D(-40.0, 20f + 65f * i));
 				}
 			}
 			RenderBasicInfo();
@@ -296,9 +297,16 @@ public class ShowPlayerInfo
 		// StartUpdateTimer(timerComp);
 
 	}
+	private static DateTime lastRenderTime = DateTime.MinValue;
 
 	public static void RenderBasicInfo()
 	{
+		// 检查距离上次执行时间
+		if ((DateTime.Now - lastRenderTime).TotalSeconds < 0.2)
+		{
+			return;
+		}
+		lastRenderTime = DateTime.Now;
 		APawn controlledPawn = GetControlledPawn();
 		if (!IsValidActor(controlledPawn) || BasicInfoVs.Count == 0) return;
 

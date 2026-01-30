@@ -510,7 +510,9 @@ namespace bian
                         Helper.newSummonReq(action);
                     }
                     break;
-
+                case "out_magic":
+                    Helper.OnMagicallyChangeFadeOut();
+                    break;
                 case "weak_monster":
                     Helper.WeakMonster();
                     break;
