@@ -1,0 +1,28 @@
+[
+  {
+    "skillID": 10127,
+    "desc": "虫总兵",
+    "montage_config": {
+      "speedRate": 1.2,
+      "AMSpeedRate": 1.2,
+      "addRadius": 3500
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [30050301],
+                "desc": "金沙波动"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

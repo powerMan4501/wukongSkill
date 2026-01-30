@@ -19,7 +19,7 @@
           "RootTangentBlending": 1.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147300577"
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_BaiYi/Materials/M_gycy_baiyi_hair_mask.M_gycy_baiyi_hair_mask"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HFS/GYCY_BaiYi/Hair/HAIR_back_gs.HAIR_back_gs_TFX",
@@ -32,7 +32,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147300576"
+        "HairMaterial": "/Game/00MainHZ/Characters/HFS/GYCY_BaiYi/Materials/M_gycy_baiyi_hair_mask.M_gycy_baiyi_hair_mask"
       }
     ],
     "InteractBones": [

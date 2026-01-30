@@ -1,0 +1,734 @@
+[
+  {
+    "skillID": 10801,
+    "desc": "马喽Q1",
+    "montage_config": {
+      "speedRate": 1.1,
+      "AMSpeedRate": 1.1,
+      "scaleWeaponNum": 2.5
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655401],
+        "BuffTime": 1000,
+        "desc": "棍光特效粒子"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0.2848513,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 88880003,
+                "ForTarget": true,
+                "hasBuff": 888666006,
+                "desc": "有冰buff,平A1,发射雪球"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 40100101,
+                "ForTarget": true,
+                "hasBuff": 888666007,
+                "BornDirOffsetXLeftValue": 91,
+                "BornDirOffsetXRightValue": 91,
+                "desc": "有火buff,平A1,发射火球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 10380101,
+                "ForTarget": true,
+                "hasBuff": 888666008,
+                "desc": "有毒buff,平A1,就发射红剑气"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30240401,
+                "ForTarget": true,
+                "hasBuff": 888666005,
+                "desc": "有雷buff,平A1,就发射雷球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 1026203,
+
+                "ForTarget": true,
+                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+                "desc": "雷蛙蝌蚪"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 10802,
+    "desc": "马喽Q1",
+    "montage_config": {
+      "speedRate": 1.1,
+      "AMSpeedRate": 1.1,
+      "scaleWeaponNum": 2.5
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655402],
+        "BuffTime": 1000,
+        "desc": "棍光特效粒子"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0.662868,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 88880003,
+                "ForTarget": true,
+                "hasBuff": 888666006,
+                "desc": "有冰buff,平A1,发射雪球"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 40100101,
+                "ForTarget": true,
+                "hasBuff": 888666007,
+                "BornDirOffsetXLeftValue": 91,
+                "BornDirOffsetXRightValue": 91,
+                "desc": "有火buff,平A1,发射火球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 10380101,
+                "ForTarget": true,
+                "hasBuff": 888666008,
+                "desc": "有毒buff,平A1,就发射红剑气"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30240401,
+                "ForTarget": true,
+                "hasBuff": 888666005,
+                "desc": "有雷buff,平A1,就发射雷球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 1026203,
+                "BornDirOffsetXLeftValue": 91,
+                "BornDirOffsetXRightValue": 91,
+                "ForTarget": true,
+                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+                "desc": "雷蛙蝌蚪"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 10803,
+    "desc": "马喽Q1",
+    "montage_config": {
+      "speedRate": 1.1,
+      "AMSpeedRate": 1.1,
+      "scaleWeaponNum": 2.5
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655401],
+        "BuffTime": 1000,
+        "desc": "棍光特效粒子"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 88880003,
+                "ForTarget": true,
+                "hasBuff": 888666006,
+                "desc": "有冰buff,平A1,发射雪球"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 40100101,
+                "ForTarget": true,
+                "hasBuff": 888666007,
+                "BornDirOffsetXLeftValue": 91,
+                "BornDirOffsetXRightValue": 91,
+                "desc": "有火buff,平A1,发射火球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 10380101,
+                "ForTarget": true,
+                "hasBuff": 888666008,
+                "desc": "有毒buff,平A1,就发射红剑气"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30240401,
+                "ForTarget": true,
+                "hasBuff": 888666005,
+                "desc": "有雷buff,平A1,就发射雷球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 1026203,
+                "ForTarget": true,
+                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+                "desc": "雷蛙蝌蚪"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 10804,
+    "desc": "马喽Q1",
+    "montage_config": {
+      "speedRate": 1.1,
+      "AMSpeedRate": 1.1,
+      "scaleWeaponNum": 2.5
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655402],
+        "BuffTime": 1000,
+        "desc": "棍光特效粒子"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 88880003,
+                "ForTarget": true,
+                "hasBuff": 888666006,
+                "desc": "有冰buff,平A1,发射雪球"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 40100101,
+                "ForTarget": true,
+                "hasBuff": 888666007,
+                "BornDirOffsetXLeftValue": 91,
+                "BornDirOffsetXRightValue": 91,
+                "desc": "有火buff,平A1,发射火球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 10380101,
+                "ForTarget": true,
+                "hasBuff": 888666008,
+                "desc": "有毒buff,平A1,就发射红剑气"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30240401,
+                "ForTarget": true,
+                "hasBuff": 888666005,
+                "desc": "有雷buff,平A1,就发射雷球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 1026203,
+
+                "ForTarget": true,
+                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+                "desc": "雷蛙蝌蚪"
+              }
+            ]
+          }
+        ]
+      }
+     
+    ]
+  },
+
+  {
+    "skillID": 50015,
+    "desc": "马喽Q1",
+    "montage_config": {
+      "speedRate": 1.1,
+      "AMSpeedRate": 1.1,
+      "scaleWeaponNum": 2.5
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655402],
+        "BuffTime": 1000,
+        "desc": "棍光特效粒子"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0.8666667,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [44011401, 40550101, 1013702],
+                "hasBuff": 888666007,
+                "OffsetX": 500,
+                "OffsetY": 500,
+                "desc": "有火buff，红孩儿砸地，鳖宝子弹, 燧先锋岩浆"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [2403471, 74010101, 152],
+                "OffsetX": 500,
+                "OffsetY": 500,
+                "hasBuff": 888666006,
+                "desc": "有冰buff 冰暴,冰碎片,冰地波"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [39010112, 38001601, 38001803],
+                "hasBuff": 888666005,
+                "OffsetX": 500,
+                "OffsetY": 500,
+                "desc": "雷buff，黄眉雷击"
+              },
+
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [1019261, 51007701, 51002002],
+                "hasBuff": 888666008,
+                "OffsetX": 500,
+                "OffsetY": 500,
+                "desc": "毒buff，灵芝爆炸，泥浆，猪八戒"
+              },
+                 {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [74011107, 50058603],
+                    "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+                "OffsetX": 400,
+                "OffsetY": 400,
+                "desc": "默认，金沙黄符"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 50011,
+    "desc": "大圣模式Q1",
+    "montage_config": {
+      "speedRate": 1.1,
+      "AMSpeedRate": 1.1,
+      "scaleWeaponNum": 2.5
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655401],
+        "BuffTime": 1000,
+        "desc": "棍光特效粒子"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30300401,
+                "ForTarget": true,
+                "hasBuff": 888666006,
+                "desc": "有冰buff,平A1,雪球"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 40100101,
+                "ForTarget": true,
+                "hasBuff": 888666007,
+                "BornDirOffsetXLeftValue": 91,
+                "BornDirOffsetXRightValue": 91,
+                "desc": "有火buff,平A1,发射火球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 10380101,
+                "ForTarget": true,
+                "hasBuff": 888666008,
+                "desc": "有毒buff,平A1,就发射红剑气"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30240401,
+                "ForTarget": true,
+                "hasBuff": 888666005,
+                "desc": "有雷buff,平A1,就发射雷球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 1026203,
+                "ForTarget": true,
+                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+                "desc": "雷蛙蝌蚪"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 50012,
+    "desc": "马喽Q2",
+    "montage_config": {
+      "speedRate": 1.1,
+      "AMSpeedRate": 1.1,
+      "scaleWeaponNum": 2.5
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655402],
+        "BuffTime": 1000,
+        "desc": "棍光特效粒子"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30300401,
+                "ForTarget": true,
+                "hasBuff": 888666006,
+                "desc": "有冰buff,平A1,发射雪球"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 40100101,
+                "ForTarget": true,
+                "hasBuff": 888666007,
+                "BornDirOffsetXLeftValue": 91,
+                "BornDirOffsetXRightValue": 91,
+                "desc": "有火buff,平A1,发射火球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 10380101,
+                "ForTarget": true,
+                "hasBuff": 888666008,
+                "desc": "有毒buff,平A1,就发射红剑气"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30240401,
+                "ForTarget": true,
+                "hasBuff": 888666005,
+                "desc": "有雷buff,平A1,就发射雷球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 1026203,
+                "ForTarget": true,
+                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+                "desc": "雷蛙蝌蚪"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 50013,
+    "desc": "马喽Q1",
+    "montage_config": {
+      "speedRate": 1.1,
+      "AMSpeedRate": 1.1,
+      "scaleWeaponNum": 2.5
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655401],
+        "BuffTime": 1000,
+        "desc": "棍光特效粒子"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30300401,
+                "ForTarget": true,
+                "hasBuff": 888666006,
+                "desc": "有冰buff,平A1,发射雪球"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 40100101,
+                "ForTarget": true,
+                "hasBuff": 888666007,
+                "BornDirOffsetXLeftValue": 91,
+                "BornDirOffsetXRightValue": 91,
+                "desc": "有火buff,平A1,发射火球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 10380101,
+                "ForTarget": true,
+                "hasBuff": 888666008,
+                "desc": "有毒buff,平A1,就发射红剑气"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30240401,
+                "ForTarget": true,
+                "hasBuff": 888666005,
+                "desc": "有雷buff,平A1,就发射雷球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 1026203,
+
+                "ForTarget": true,
+                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+                "desc": "雷蛙蝌蚪"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 50014,
+    "desc": "马喽Q1",
+    "montage_config": {
+      "speedRate": 1.1,
+      "AMSpeedRate": 1.1,
+      "scaleWeaponNum": 2.5
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655402],
+        "BuffTime": 1000,
+        "desc": "棍光特效粒子"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30300401,
+                "ForTarget": true,
+                "hasBuff": 888666006,
+                "desc": "有冰buff,平A1,发射雪球"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 40100101,
+                "ForTarget": true,
+                "hasBuff": 888666007,
+                "BornDirOffsetXLeftValue": 91,
+                "BornDirOffsetXRightValue": 91,
+                "desc": "有火buff,平A1,发射火球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 10380101,
+                "ForTarget": true,
+                "hasBuff": 888666008,
+                "desc": "有毒buff,平A1,就发射红剑气"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30240401,
+                "ForTarget": true,
+                "hasBuff": 888666005,
+                "desc": "有雷buff,平A1,就发射雷球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 1026203,
+
+                "ForTarget": true,
+                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+                "desc": "雷蛙蝌蚪"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 10305,
+    "desc": "翻滚",
+    "montage_config": {
+      "speedRate": 1.1,
+      "AMSpeedRate": 1.1
+    },
+    "cast_actions": [
+      {
+        "Type": "show_info",
+        "desc": "AM_Wukong_Dodge show_info"
+      }
+    ]
+  },
+  {
+    "skillID": 10530,
+    "montage_config": {
+      "speedRate": 1.5,
+      "AMSpeedRate": 1.5
+    },
+    "cast_actions": [
+      {
+        "Type": "add_attr",
+        "attrType": 203,
+        "attrValue": 10000,
+        "desc": "增加掉落概率"
+      },
+      {
+        "Type": "add_attr",
+        "attrType": 190,
+        "attrValue": 600,
+        "desc": "回盾"
+      },
+      {
+        "Type": "add_attr",
+        "attrType": 171,
+        "attrValue": 600,
+        "desc": "硬直抵抗"
+      },
+
+      {
+        "Type": "add_attr",
+        "attrType": 198,
+        "attrValue": 6000,
+        "desc": "ExpDropAddition"
+      },
+      {
+        "Type": "add_attr",
+        "attrType": 199,
+        "attrValue": 6000,
+        "desc": "SpiritDropAddition"
+      }
+    ]
+  },
+
+  {
+    "skillID": 10909,
+    "desc": "传送开始",
+    "montage_config": {
+      "speedRate": 1.5,
+      "AMSpeedRate": 1.5
+    },
+    "cast_actions": [
+      {
+        "Type": "clear_ui",
+        "desc": "清除展示"
+      }
+    ]
+  },
+  {
+    "skillID": 10913,
+    "desc": "使用物品",
+    "montage_config": {
+      "speedRate": 1.5,
+      "AMSpeedRate": 1.5
+    },
+    "cast_actions": [
+      {
+        "Type": "add_attr",
+        "attrType": 190,
+        "attrValue": 600,
+        "desc": "回盾"
+      },
+      {
+        "Type": "add_attr",
+        "attrType": 203,
+        "attrValue": 10000,
+        "desc": "增加掉落概率"
+      },
+      {
+        "type": "buff",
+        "BuffID": 96035,
+        "BuffTime": 2000
+      }
+    ]
+  }
+]

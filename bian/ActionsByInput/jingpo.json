@@ -120,7 +120,7 @@
       }
     ]
   },
-   {
+  {
     "code": "jxll",
     "afterActions": [
       {
@@ -129,6 +129,19 @@
         "bossType": "BOSS",
         "MagicSkillID": 302509,
         "desc": "锤子互击三次释放三次小范围雷电"
+      }
+    ]
+  },
+
+  {
+    "code": "jwl",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8522,
+        "MagicSkillID": 11322,
+        "Scale3D": 0.4,
+        "desc": "无量蝠，冰"
       }
     ]
   }

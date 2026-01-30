@@ -565,13 +565,7 @@
     "montage": "wukong_combob_z_01_loop",
     "linkValue": 0.3,
     "SweepActions": [
-      {
-        "Type": "add_attr",
-        "attrType": 160,
-        "attrValue": 600,
-        "TimeDelay": 20,
-        "desc": "技能霸体值"
-      },
+     
       {
         "Type": "bullet",
         "bullets": [

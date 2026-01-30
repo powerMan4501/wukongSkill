@@ -10,13 +10,6 @@
         "BuffIDs": [66655401],
         "BuffTime": 1000,
         "desc": "棍光特效粒子"
-      },
-      {
-        "Type": "add_attr",
-        "attrType": 160,
-        "attrValue": 600,
-        "TimeDelay": 22,
-        "desc": "霸体值"
       }
     ]
   },
@@ -32,13 +25,6 @@
         "BuffIDs": [66655402],
         "BuffTime": 1000,
         "desc": "棍光特效粒子"
-      },
-       {
-        "Type": "add_attr",
-        "attrType": 160,
-        "attrValue": 600,
-        "TimeDelay": 22,
-        "desc": "霸体值"
       }
     ]
   }

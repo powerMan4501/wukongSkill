@@ -1,0 +1,272 @@
+[
+  {
+    "skillID": 11313,
+    "desc": "大头磕头",
+    "montage_config": {
+      "speedRate": 1.2,
+      "AMSpeedRate": 1.2,
+      "addRadius": 1500
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0.7,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [74011107, 30050301],
+                "noHasBuff": 888666007,
+                "OffsetX": 400,
+                "OffsetY": 400,
+                "desc": "没有火buff，金沙波动"
+              },
+
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [74011107, 74010207],
+                "hasBuff": 888666007,
+                "OffsetX": 400,
+                "OffsetY": 400,
+                "desc": "有火buff，金沙，火圈"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cast_actions": [
+      {
+        "Type": "summon",
+        "SummonID": 433301,
+        "SummonCount": 1,
+        "skillID": 11313,
+        "SummonAliveTime": 3,
+        "desc": "召唤大头磕头"
+      },
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill",
+            "SkillID": 11313
+          }
+        ],
+        "desc": "让分身复制技能"
+      }
+    ]
+  },
+  {
+    "skillID": 102433,
+    "desc": "如来神掌",
+    "montage_config": {
+      "speedRate": 1.5,
+      "AMSpeedRate": 1.5,
+      "addRadius": 3500,
+      "hitEffects": [888555036],
+      "replaceEffects": true
+    },
+    "cast_actions": [
+      {
+        "Type": "summon",
+        "SummonID": 433301,
+        "SummonCount": 1,
+        "skillID": 102433,
+        "SummonAliveTime": 3,
+        "desc": "召唤大头"
+      },
+      {
+        "Type": "summoner_do_actions",
+        "summonerActions": [
+          {
+            "type": "skill",
+            "SkillID": 102433
+          }
+        ],
+        "desc": "让分身复制技能"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 1.866667,
+        "actions": [
+          { "Type": "out_magic", "TimeDelay": 600, "desc": "退出精魄" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 102422,
+    "desc": "踩地面一次",
+    "montage_config": {
+      "speedRate": 1.5,
+      "AMSpeedRate": 1.5,
+      "addRadius": 500
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [74011107, 30050301],
+                "OffsetX": 400,
+                "OffsetY": 400,
+                "desc": "没有火buff，金沙波动"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 102421,
+    "desc": "摸地面一次",
+    "montage_config": {
+      "speedRate": 1.5,
+      "AMSpeedRate": 1.5,
+      "addRadius": 500
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [30050301],
+                "OffsetX": 400,
+                "OffsetY": 400,
+                "desc": "没有火buff，金沙波动"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 102321,
+    "desc": "摸地面一次",
+    "montage_config": {
+      "speedRate": 1.5,
+      "AMSpeedRate": 1.5,
+      "addRadius": 500
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [30050301],
+                "OffsetX": 400,
+                "OffsetY": 400,
+                "desc": "没有火buff，金沙波动"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 102425,
+    "desc": "左右各摸地面一次",
+    "montage_config": {
+      "speedRate": 1.5,
+      "AMSpeedRate": 1.5,
+      "addRadius": 500
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [30050301],
+                "OffsetX": 400,
+                "OffsetY": 400,
+                "desc": "没有火buff，金沙波动"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 102426,
+    "desc": "原地拍地一次",
+    "montage_config": {
+      "speedRate": 1.2,
+      "AMSpeedRate": 1.2,
+      "addRadius": 1500
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0.7,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [30050301],
+                "noHasBuff": 888666007,
+                "OffsetX": 400,
+                "OffsetY": 400,
+                "desc": "没有火buff，波动"
+              },
+
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [74010207],
+                "hasBuff": 888666007,
+                "OffsetX": 400,
+                "OffsetY": 400,
+                "desc": "有火buff火圈"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 102438,
+    "desc": "狂奔前进摸地2次",
+    "montage_config": {
+      "speedRate": 1.5,
+      "AMSpeedRate": 1.5,
+      "addRadius": 500
+    }
+  },
+  {
+    "skillID": 102439,
+    "desc": "狂奔上去拍手",
+    "montage_config": {
+      "speedRate": 1.5,
+      "AMSpeedRate": 1.5,
+      "addRadius": 500
+    }
+  }
+]

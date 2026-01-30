@@ -1,100 +1,8 @@
 [
-  {
-    "desc": "喝药",
-    "montage": "AM_Wukong_heyao",
-    "linkValue": 0,
-    "speedRate": 4,
-    "AMSpeedRate": 4,
-    "CastActions": [
-      {
-        "Type": "add_attr",
-        "attrType": 203,
-        "attrValue": 10000,
-        "desc": "增加掉落概率"
-      },
-      {
-        "Type": "add_attr",
-        "attrType": 190,
-        "attrValue": 600,
-        "desc": "回盾"
-      },
-      {
-        "Type": "add_attr",
-        "attrType": 160,
-        "attrValue": 600,
-        "desc": "技能霸体值"
-      },
-      {
-        "Type": "add_attr",
-        "attrType": 171,
-        "attrValue": 600,
-        "desc": "硬直抵抗"
-      },
 
-      {
-        "Type": "add_attr",
-        "attrType": 198,
-        "attrValue": 6000,
-        "desc": "ExpDropAddition"
-      },
-      {
-        "Type": "add_attr",
-        "attrType": 199,
-        "attrValue": 6000,
-        "desc": "SpiritDropAddition"
-      },
-      {
-        "Type": "buff",
-        "BuffID": 888666001,
-        "BuffTime": -1
-      }
-    ]
-  },
 
-  {
-    "desc": "使用物品",
-    "montage": ".AM_Wukong_UseItem_01",
-    "linkValue": 0,
-    "speedRate": 2,
-    "AMSpeedRate": 2,
-    "CastActions": [
-      {
-        "Type": "add_attr",
-        "attrType": 190,
-        "attrValue": 600,
-        "desc": "回盾"
-      },
-      {
-        "Type": "add_attr",
-        "attrType": 203,
-        "attrValue": 10000,
-        "desc": "增加掉落概率"
-      },
-      {
-        "type": "buff",
-        "BuffID": 96035,
-        "BuffTime": 2000
-      },
-      {
-        "Type": "buff",
-        "BuffID": 888666001,
-        "BuffTime": -1
-      }
-    ]
-  },
-  {
-    "desc": "后撤召唤子弹",
-    "montage": "AM_Wukong_JXSQ_Enter_B",
-    "linkValue": 0,
-    "CastActions": [
-      {
-        "Type": "bullet",
-        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-        "ProjectTileID": 131,
-        "ForTarget": true
-      }
-    ]
-  },
+  
+
   {
     "desc": "定风珠",
     "montage": "AM_wukong_dingfengzhu_02",
@@ -119,17 +27,7 @@
     ]
   },
 
-  {
-    "desc": "翻滚，展示信息",
-    "montage": "AM_Wukong_Dodge",
-    "linkValue": 0,
-    "CastActions": [
-      {
-        "Type": "show_info",
-        "desc": "AM_Wukong_Dodge show_info"
-      }
-    ]
-  },
+  
   {
     "montage": "Attack/ComboC/AM_Wukong_ComboC_q",
     "linkValue": 0.3333333,

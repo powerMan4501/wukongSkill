@@ -1,9 +1,37 @@
 [
   {
+    "OriginalId": 10801,
+    "MappedId": 50011,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "棍的平A转成大圣平A"
+  },
+  {
+    "OriginalId": 10802,
+    "MappedId": 50012,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "棍的平A转成大圣平A"
+  },
+  {
+    "OriginalId": 10803,
+    "MappedId": 50013,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "棍的平A转成大圣平A"
+  },
+  {
+    "OriginalId": 10804,
+    "MappedId": 50014,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "棍的平A转成大圣平A"
+  },
+  {
     "OriginalId": 10805,
     "MappedId": 50015,
     "Condition": "any",
     "conditionValue": 0,
-    "desc": "有金箍棒，棍的平A转成大圣平A"
+    "desc": "棍的平A转成大圣平A"
   }
 ]

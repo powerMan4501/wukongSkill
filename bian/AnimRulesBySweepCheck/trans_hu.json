@@ -18,13 +18,6 @@
         "attrType": 190,
         "attrValue": 10,
         "desc": "回盾"
-      },
-      {
-        "Type": "add_attr",
-        "attrType": 160,
-        "attrValue": 600,
-        "TimeDelay": 22,
-        "desc": "技能霸体值"
       }
     ],
      "SweepActions": [
@@ -61,13 +54,6 @@
         "attrType": 190,
         "attrValue": 10,
         "desc": "回盾"
-      },
-      {
-        "Type": "add_attr",
-        "attrType": 160,
-        "attrValue": 600,
-        "TimeDelay": 22,
-        "desc": "技能霸体值"
       }
     ],
      "SweepActions": [

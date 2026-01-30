@@ -10,13 +10,6 @@
         "BuffIDs": [66655401],
         "BuffTime": 800,
         "desc": "棍光特效粒子 "
-      },
-      {
-        "Type": "add_attr",
-        "attrType": 160,
-        "attrValue": 600,
-        "TimeDelay": 22,
-        "desc": "霸体值"
       }
     ],
     "SweepActions": [
@@ -77,13 +70,6 @@
         "BuffIDs": [66655402, 20102],
         "BuffTime": 3500,
         "desc": "棍光特效粒子"
-      },
-      {
-        "Type": "add_attr",
-        "attrType": 160,
-        "attrValue": 600,
-        "TimeDelay": 22,
-        "desc": "霸体值"
       }
     ],
     "SweepActions": [
@@ -144,13 +130,6 @@
         "BuffIDs": [66655403, 20103],
         "BuffTime": 3900,
         "desc": "棍光特效粒子"
-      },
-      {
-        "Type": "add_attr",
-        "attrType": 160,
-        "attrValue": 600,
-        "TimeDelay": 22,
-        "desc": "霸体值"
       }
     ],
     "SweepActions": [
@@ -212,13 +191,6 @@
         "BuffIDs": [66655402, 20104],
         "BuffTime": 3900,
         "desc": "棍光特效粒子"
-      },
-      {
-        "Type": "add_attr",
-        "attrType": 160,
-        "attrValue": 600,
-        "TimeDelay": 22,
-        "desc": "霸体值"
       }
     ],
     "SweepActions": [

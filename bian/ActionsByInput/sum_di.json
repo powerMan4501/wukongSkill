@@ -37,10 +37,24 @@
     "code": "zsss",
     "afterActions": [
       {
-        "Type": "summon",
-        "SummonID": 333303,
-        "SummonCount": 3,
-        "desc": "召唤敌对的石双双"
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_03.TAMER_hfm_shanzhen_03_C",
+        "desc": "石双双"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_05_bridge.TAMER_hfm_shanzhen_05_bridge_C",
+        "desc": "石苍苍2"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_02.TAMER_hfm_shanzhen_02_C",
+        "desc": "石苍苍"
+      },
+      {
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_01a.TAMER_hfm_shanzhen_01a_C",
+        "desc": "石磷磷"
       },
       {
         "type": "addallsummonlifetime",
@@ -94,7 +108,7 @@
         "SummonCount": 1,
         "desc": "敌对残躯"
       },
-      
+
       {
         "type": "addallsummonlifetime",
         "SummonAliveTime": 9999,
@@ -103,10 +117,9 @@
       }
     ]
   },
-{
+  {
     "code": "zjsds",
     "afterActions": [
-     
       {
         "Type": "summon",
         "SummonID": 233306,
@@ -139,7 +152,6 @@
     ]
   },
 
-  
   {
     "code": "zyang",
     "afterActions": [
