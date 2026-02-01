@@ -84,7 +84,7 @@
   },
 
   {
-    "code": "hxj",
+    "code": "suhfdw",
     "afterActions": [
       {
         "Type": "spaw_monster",
@@ -92,6 +92,18 @@
         "desc": "第一关·黑风大王·人形态（BOSS）"
       },
 
+      
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+  {
+    "code": "suhxj",
+    "afterActions": [
+    
       {
         "Type": "spaw_monster",
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_xiong_02.TAMER_gycy_xiong_02_C",

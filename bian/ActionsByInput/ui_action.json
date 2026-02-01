@@ -1,0 +1,85 @@
+[
+  {
+    "code": "osho",
+    "afterActions": [
+      {
+        "Type": "show_shop",
+        "desc": "打开默认商店"
+      }
+    ]
+  },
+
+  {
+    "code": "ohuo",
+    "afterActions": [
+      {
+        "Type": "show_fuhuo_ui",
+        "desc": "打开复活UI"
+      }
+    ]
+  },
+  {
+    "code": "ODUI",
+    "afterActions": [
+      {
+        "Type": "show_fuhuo_ui",
+        "desc": "打开队友ui"
+      }
+    ]
+  },
+  {
+    "code": "CDUI",
+    "afterActions": [
+      {
+        "Type": "close_duiyou",
+        "desc": "关闭队友ui"
+      }
+    ]
+  },
+  {
+    "code": "ditu",
+    "afterActions": [
+      {
+        "Type": "qiehuan_map",
+        "desc": "小地图"
+      }
+    ]
+  },
+  {
+    "code": "olog",
+    "afterActions": [
+      {
+        "Type": "log_info",
+        "desc": "显示信息"
+      }
+    ]
+  },
+  {
+    "code": "gcon",
+    "afterActions": [
+      {
+        "Type": "gc_one",
+        "desc": "gc一次"
+      }
+    ]
+  },
+
+  {
+    "code": "exit",
+    "afterActions": [
+      {
+        "Type": "enter_main",
+        "desc": "清理所有资源"
+      }
+    ]
+  },
+  {
+    "code": "json",
+    "afterActions": [
+      {
+        "Type": "export_json",
+        "desc": "退出游戏"
+      }
+    ]
+  }
+]

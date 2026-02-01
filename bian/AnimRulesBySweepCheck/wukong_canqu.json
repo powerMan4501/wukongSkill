@@ -122,25 +122,6 @@
     "addRadius": 100,
     "hitEffects": [888555032],
     "replaceEffects": true
-  },
-  {
-    "desc": "残躯移植的其他技能",
-    "montage": "CanQu/AM_mgd_jsds_atk_",
-    "CastActions": [
-      {
-        "Type": "summoner_do_actions",
-        "summonerActions": [
-          {
-            "type": "skill"
-          }
-        ],
-        "desc": "让分身复制技能"
-      }
-    ],
-    "linkValue": 0,
-    "speedRate": 1.3,
-    "addRadius": 100,
-    "hitEffects": [888555040]
   }
   
 ]

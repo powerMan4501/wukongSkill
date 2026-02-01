@@ -39,7 +39,7 @@
       {
         "type": "transskill",
         "ResId": 17,
-        "MagicSkillID": 301355,
+        "MagicSkillID": 17072,
         "desc": "变成马猴"
       },
       {
@@ -47,12 +47,6 @@
         "BuffID": 888665002,
         "BuffTime": -1,
         "TimeDelay": 4000
-      },
-      {
-        "type": "addallsummonlifetime",
-        "SummonAliveTime": 999,
-        "TimeDelay": 5000,
-        "Name": "增加召唤物存活时间"
       }
     ]
   },

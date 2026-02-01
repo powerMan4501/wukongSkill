@@ -7,6 +7,37 @@
       "ConditionParams": ""
     }
   },
+
+  {
+    "ID": 92322,
+    "BuffTips": "双冠血-触发",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    }
+  },
+  {
+    "ID": 92324,
+    "BuffTips": "双冠血-加移速和暴击率",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 38,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [],
+        "EffectParamsFloat": [2000.0, 2000.0, 2000.0]
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [111, 2000, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
   {
     "ID": 92012,
     "BuffTips": "龙膏80%生命，12%攻击",

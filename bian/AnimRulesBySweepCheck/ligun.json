@@ -18,7 +18,7 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [152, 30250101, 2403471, 39010112],
+            "ProjectTileIDs": [152, 30250101,39010112],
             "OffsetX": 500,
             "OffsetY": 500,
             "desc": "没火buff,地波, 电圈,冰暴，青背龙雷暴"

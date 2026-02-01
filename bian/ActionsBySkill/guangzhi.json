@@ -1,0 +1,94 @@
+[
+  {
+    "skillID": 12031,
+    "desc": "广智右键",
+    "montage_config": {
+      "speedRate": 1.2,
+      "AMSpeedRate": 1.2
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [44010401, 44011401, 40550101],
+            "desc": "没冰buff，炸炸炸 红孩儿砸地，鳖宝子弹"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 12043,
+    "desc": "广智砸地",
+    "montage_config": {
+      "speedRate": 1.2,
+      "AMSpeedRate": 1.2
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [44011401, 58111003],
+            "OffsetX": 100,
+            "OffsetY": 100,
+            "desc": " 红孩儿砸地，岩浆"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 12044,
+    "desc": "广智飞天砸地",
+    "montage_config": {
+      "speedRate": 1.2,
+      "AMSpeedRate": 1.2
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 2.1,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [44011401, 40550101],
+            "OffsetX": 100,
+            "OffsetY": 100,
+            "desc": " 红孩儿砸地，鳖宝子弹"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 101103,
+    "desc": "广智扔武器",
+    "montage_config": {
+      "speedRate": 2.5,
+      "AMSpeedRate": 2.5
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 44051502,
+             "BornDirOffsetXLeftValue": 90,
+            "BornDirOffsetXRightValue": 90,
+            "ForTarget": true,
+            "desc": "发射 飞轮"
+          }
+        ]
+      }
+    ]
+  }
+]

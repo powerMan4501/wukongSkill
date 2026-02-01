@@ -1,7 +1,9 @@
 [
-    {
+  {
     "desc": "悟空蓄力4",
     "montage": "AM_Wukong_xuli_attack_4",
+    "speedRate": 1.8,
+    "AMSpeedRate": 1.8,
     "addRadius": 2500,
     "linkValue": 2.266667,
     "CastActions": [
@@ -218,6 +220,8 @@
     "desc": "大圣蓄力3",
     "montage": "_xuli_attack_4",
     "addRadius": 2500,
+    "speedRate": 1.8,
+    "AMSpeedRate": 1.8,
     "linkValue": 2.264524,
     "CastActions": [
       {

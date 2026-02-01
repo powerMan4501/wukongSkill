@@ -1,0 +1,44 @@
+[
+  {
+    "skillID": 17071,
+    "desc": "马猴法术",
+    "montage_config": {
+      "speedRate": 1.2,
+      "AMSpeedRate": 1.2
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471, 152],
+            "desc": "冰暴,冰地波"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 17072,
+    "desc": "马猴法术",
+    "montage_config": {
+      "speedRate": 1.2,
+      "AMSpeedRate": 1.2
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471, 152],
+            "desc": "冰暴,冰地波"
+          }
+        ]
+      }
+    ]
+  }
+]

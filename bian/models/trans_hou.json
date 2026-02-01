@@ -110,6 +110,14 @@
     },
     {
       "Key": "S+XBUTTON1",
+      "Id": 17072,
+      "Name": "马猴冰法术",
+      "CanBreak": true,
+      "Buffs": [92251]
+    },
+
+    {
+      "Key": "",
       "Id": 301311,
       "Name": "影分身+红色+连斩",
       "CanBreak": true,
@@ -166,7 +174,7 @@
     },
     {
       "Key": "V",
-      "Id": 17315,
+      "Id": 17071,
       "Name": "猴，R1 TO R2",
       "type": "actions",
       "Buffs": [17015]

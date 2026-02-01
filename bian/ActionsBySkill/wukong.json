@@ -378,24 +378,24 @@
             "bullets": [
               {
                 "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-                "ProjectTileID": 30300401,
+                "ProjectTileID": 88880003,
                 "ForTarget": true,
                 "hasBuff": 888666006,
-                "desc": "有冰buff,平A1,雪球"
+                "desc": "有冰buff,平A1,冰剑气"
               },
               {
                 "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-                "ProjectTileID": 40100101,
+                "ProjectTileID": 88880009,
                 "ForTarget": true,
                 "hasBuff": 888666007,
                 "BornDirOffsetXLeftValue": 91,
                 "BornDirOffsetXRightValue": 91,
-                "desc": "有火buff,平A1,发射火球"
+                "desc": "有火buff,平A1,火焰剑气"
               },
               {
                 "Type": "bullet",
                 "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-                "ProjectTileID": 10380101,
+                "ProjectTileID": 30131501,
                 "ForTarget": true,
                 "hasBuff": 888666008,
                 "desc": "有毒buff,平A1,就发射红剑气"
@@ -448,24 +448,24 @@
             "bullets": [
               {
                 "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-                "ProjectTileID": 30300401,
+                "ProjectTileID": 88880003,
                 "ForTarget": true,
                 "hasBuff": 888666006,
-                "desc": "有冰buff,平A1,发射雪球"
+                "desc": "有冰buff,平A1,冰剑气"
               },
               {
                 "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-                "ProjectTileID": 40100101,
+                "ProjectTileID": 88880009,
                 "ForTarget": true,
                 "hasBuff": 888666007,
                 "BornDirOffsetXLeftValue": 91,
                 "BornDirOffsetXRightValue": 91,
-                "desc": "有火buff,平A1,发射火球"
+                "desc": "有火buff,平A1,火焰剑气"
               },
               {
                 "Type": "bullet",
                 "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-                "ProjectTileID": 10380101,
+                "ProjectTileID": 30131501,
                 "ForTarget": true,
                 "hasBuff": 888666008,
                 "desc": "有毒buff,平A1,就发射红剑气"
@@ -641,13 +641,7 @@
     "montage_config": {
       "speedRate": 1.1,
       "AMSpeedRate": 1.1
-    },
-    "cast_actions": [
-      {
-        "Type": "show_info",
-        "desc": "AM_Wukong_Dodge show_info"
-      }
-    ]
+    }
   },
   {
     "skillID": 10530,

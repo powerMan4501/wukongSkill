@@ -218,5 +218,12 @@
     "BulletCanThroughBlockage": 1,
     "LifeOverEffectID": [9999],
     "HitEffectsforChr": [1019201, 888555018]
+  },
+  {
+    "ID": 50051301,
+    "desc": "横向黄雷剑气",
+    "HitEffectsforChr": [888555005],
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
   }
 ]

@@ -18,5 +18,14 @@
         "desc": "关闭mod功能"
       }
     ]
+  },
+  {
+    "code": "reload",
+    "afterActions": [
+      {
+        "Type": "refresh_data",
+        "desc": "刷新数据"
+      }
+    ]
   }
 ]

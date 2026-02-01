@@ -39,21 +39,8 @@
     "cast_actions": [
       {
         "Type": "summon",
-        "SummonID": 433301,
-        "SummonCount": 1,
-        "skillID": 11313,
-        "SummonAliveTime": 3,
-        "desc": "召唤大头磕头"
-      },
-      {
-        "Type": "summoner_do_actions",
-        "summonerActions": [
-          {
-            "type": "skill",
-            "SkillID": 11313
-          }
-        ],
-        "desc": "让分身复制技能"
+        "SummonID": 220203,
+        "desc": "召唤石头人磕头"
       }
     ]
   },
@@ -72,19 +59,9 @@
         "Type": "summon",
         "SummonID": 433301,
         "SummonCount": 1,
+        "SummonAliveTime": 0,
         "skillID": 102433,
-        "SummonAliveTime": 3,
-        "desc": "召唤大头"
-      },
-      {
-        "Type": "summoner_do_actions",
-        "summonerActions": [
-          {
-            "type": "skill",
-            "SkillID": 102433
-          }
-        ],
-        "desc": "让分身复制技能"
+        "desc": "召唤己方金池如来神掌"
       }
     ],
     "sweep_actions": [
