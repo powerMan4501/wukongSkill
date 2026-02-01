@@ -436,6 +436,38 @@ namespace bian
                     }
                     break;
 
+
+
+                case "show_shop":
+                    Helper.show_shop();
+                    break;
+
+                case "show_fuhuo_ui":
+                    Helper.fuhuo_ui();
+                    break;
+
+                case "show_duiyou":
+                    Helper.show_duiyou();
+                    break;
+
+                case "close_duiyou":
+                    Helper.close_duiyou();
+                    break;
+
+                case "enter_main":
+                    Helper.enter_main();
+                    break;
+
+                case "gc_one":
+                    Helper.gc_one();
+                    break;
+                case "log_info":
+                    Helper.LogProjInfo();
+                    break;
+
+                case "qiehuan_map":
+                    Helper.SwitchMap();
+                    break;
                 case "skill":
                     if (action.SkillID > 0)
                     {
@@ -681,6 +713,7 @@ namespace bian
     (int)EAbnormalStateType.Abnormal_Poison
 };
 
+
                     Helper.ClearAllAbnormal(character, finalClearTypes);
                     break;
 
@@ -690,7 +723,9 @@ namespace bian
                 case "clear_ui":
                     ShowPlayerInfo.ClearAllUI();
                     break;
-
+                case "export_json":
+                    Helper.export_json();
+                    break;
                 case "rushskill":
                     Helper.doPhantomRushSkill(character, action.RushDir ?? "Forward");
 

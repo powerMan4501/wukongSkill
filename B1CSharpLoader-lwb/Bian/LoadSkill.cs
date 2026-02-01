@@ -12,6 +12,7 @@ using BtlShare;
 using UnrealEngine.Runtime;
 using System;
 using System.Linq;
+using b1.Protobuf.DataAPI;
 
 
 namespace bian;
@@ -88,7 +89,6 @@ public class LoadSkill
         TemplatePathConfigs.Clear();
         BuffRules.Clear();
         EffectRules.Clear();
-        var player = Helper.GetControlledPawn();
         foreach (string file in Directory.GetFiles(configDirectory, "*.json"))
         {
 
@@ -99,7 +99,7 @@ public class LoadSkill
                 foreach (var config in configs)
                 {
                     // 添加到TemplatePathConfigs字典
-                    FUStSkillSDesc skillSDesc = BGW_GameDB.GetSkillSDesc(config.skillID, player);
+                    FUStSkillSDesc skillSDesc = BG_ProtobufDataAPI<FUStSkillSDesc>.Get().FindByID(config.skillID);
                     if (skillSDesc == null) return;
                     var templatePath = skillSDesc.TemplatePath;
                     if (!TemplatePathConfigs.ContainsKey(templatePath))

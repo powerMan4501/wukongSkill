@@ -529,7 +529,12 @@ namespace bian
                             data = skillData as Dictionary<int, T>;
                         }
                         break;
-
+                    case "sumdata":
+                        if (BGW_GameDB.GetAllSummonCommDesc() is Dictionary<int, FUStSummonCommDesc> sumData)
+                        {
+                            data = sumData as Dictionary<int, T>;
+                        }
+                        break;
 
                         // 可以继续添加其他类型的支持
                 }
@@ -1585,6 +1590,10 @@ namespace bian
                     // Log.Info("Charge skill list is null, creating a new one");
                 }
 
+                foreach (var skill in chargeSkillList.Values)
+                {
+                    skill.LoopCanMove = EGSYesNo.Yes;
+                }
                 if (chargeSkillConfigs == null || chargeSkillConfigs.Count == 0)
                 {
                     // Log.Error("Failed to load charge skill configs");

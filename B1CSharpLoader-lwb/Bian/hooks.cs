@@ -169,24 +169,6 @@ public class Hooks
                 var nowMontage = NotifyParam.Animation.PathName;
                 var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
                 var fname = NotifyParam.Animation.GetFName();
-
-                // string linkValueFileName = $"{NotifyParam.Animation.GetFName()}_BANS_GSSpawnBullets_linkValue_{linkValue}.txt";
-                // string linkValueExportPath = Path.Combine("CSharpLoader", "Mods", "bian", "linkValueData");
-                // string linkValueFullPath = Path.Combine(linkValueExportPath, linkValueFileName);
-                // // 确保目录存在
-                // if (!Directory.Exists(linkValueExportPath))
-                // {
-                //     Directory.CreateDirectory(linkValueExportPath);
-                // }
-
-                // // 只在文件不存在时写入linkValue数据
-                // if (!File.Exists(linkValueFullPath))
-                // {
-                //     string linkValueData = linkValue.ToString();
-                //     File.WriteAllText(linkValueFullPath, linkValueData);
-                // }
-
-
                 Console.WriteLine($"BANS_GSSpawnBullets.NotifyParam: {NotifyParam.Animation.GetFName()} ,linkValue:{linkValue} ");
                 if (allRules.Count > 0)
                 {
@@ -269,7 +251,7 @@ public class Hooks
        existingBuff.BuffID == newBuff.BuffID);
 
             // 设置新的TrackIndex为最大值+1
-            itemNew.TrackIndex = itemFirst.TrackIndex;
+            // itemNew.TrackIndex = itemFirst.TrackIndex;
             itemNew.NotifyName = new FName("BANS_GSAddBuffByID");
             if (!notifyExists)
             {
@@ -281,28 +263,37 @@ public class Hooks
 
     }
 
-    public static BANS_GSAddBuffByID? CreateAndConfigureBuffByID(UAnimMontage AnimMontage, int BuffID, Dictionary<float, float> dictionary)
+    public static void CreateAndConfigureBuffByID(UAnimMontage AnimMontage, int BuffID, float StartTime)
     {
-        UObject uObject = UObject.NewObject<BANS_GSAddBuffByID>(
-            AnimMontage,
-            FName.None,
-            EObjectFlags.Transactional,
-            null,
-            copyTransientsFromClassDefaults: false,
-            (IntPtr)0
-        );
 
-        if (uObject is BANS_GSAddBuffByID bANS_GSAddBuffByID2)
+        var notifyClass = UClass.GetClass<BANS_GSAddBuffByID>();
+
+        UAnimNotify uObject = UGSE_AnimFuncLib.AddAnimationNotifyEvent(AnimMontage, new FName("BANS_GSAddBuffByID"), StartTime, notifyClass);
+
+        if (uObject != null)
         {
-            bANS_GSAddBuffByID2.BuffID = BuffID;
-            bANS_GSAddBuffByID2.BuffLayer = 1;
-            bANS_GSAddBuffByID2.UseBuffDescDuration = false;
-
-            Helper.LogInfoOnce($"添加通知:{BuffID}");
-            UBGUFunctionLibrary.AddBuffNotifyStates(AnimMontage, uObject, BuffID, dictionary);
-            return bANS_GSAddBuffByID2;
+            Helper.LogInfoOnce($"添加通知 uObject:{uObject.GetFullName()}");
         }
-        return null;
+        // UObject uObject = UObject.NewObject<BANS_GSAddBuffByID>(
+        //     AnimMontage,
+        //     FName.None,
+        //     EObjectFlags.Transactional,
+        //     null,
+        //     copyTransientsFromClassDefaults: false,
+        //     (IntPtr)0
+        // );
+
+        // if (uObject is BANS_GSAddBuffByID bANS_GSAddBuffByID2)
+        // {
+        //     bANS_GSAddBuffByID2.BuffID = BuffID;
+        //     bANS_GSAddBuffByID2.BuffLayer = 1;
+        //     bANS_GSAddBuffByID2.UseBuffDescDuration = false;
+
+        //     Helper.LogInfoOnce($"添加通知:{BuffID}");
+        //     UBGUFunctionLibrary.AddBuffNotifyStates(AnimMontage, uObject, BuffID, dictionary);
+        //     return bANS_GSAddBuffByID2;
+        // }
+        // return null;
     }
     private static readonly Dictionary<string, bool> ProcessedAnimCache = new Dictionary<string, bool>();
 
@@ -318,11 +309,12 @@ public class Hooks
             {
                 return;
             }
-            // logNotifyTrack(Montage);
+
             if (ProcessedAnimCache.ContainsKey(Montage.PathName))
             {
                 return;
             }
+            // logNotifyTrack(Montage);
             TArrayUnsafe<FAnimNotifyEvent> AnimNotifyEventList = new TArrayUnsafe<FAnimNotifyEvent>();
             UGSE_AnimFuncLib.GetAllNotifyEvent(Montage, AnimNotifyEventList);
             if (!(AnimNotifyEventList != null && AnimNotifyEventList.Count > 0))
@@ -330,7 +322,7 @@ public class Hooks
                 return;
             }
 
-            // CreateAndConfigureBuffByID(Montage, 295, new Dictionary<float, float> { { 0.1f, 0.2f } });
+            // CreateAndConfigureBuffByID(Montage, 295, 0.1f);
 
             if (config == null)
             {
@@ -366,7 +358,7 @@ public class Hooks
                     am_speed = (float)config.AMSpeedRate;
                 }
             }
-            Log.Info($"修改Notify，给异常 handleNotify: {Montage.PathName}，Count：{ AnimNotifyEventList.Count} ,addRadius:{addRadius} ,hitEffects:{hitEffects.Count} ,am_speed:{am_speed} ");
+            Log.Info($"修改Notify，给异常 handleNotify: {Montage.PathName}，Count：{AnimNotifyEventList.Count} ,addRadius:{addRadius} ,hitEffects:{hitEffects.Count} ,am_speed:{am_speed} ");
             // 查找相同类型的通知作为模板
             foreach (FAnimNotifyEvent item in AnimNotifyEventList)
             {
@@ -637,7 +629,7 @@ public class Hooks
         if (player == null) return;
 
 
-        var baseValue = FireBaseValue;//火
+        var baseValue = 1;//默认无效果
         if (BuffID > 0)
         {
             if (BuffID == BuffElementIds.Ice)
@@ -674,6 +666,10 @@ public class Hooks
             else if (BGUFunctionLibraryCS.BGUHasBuffByID(player, BuffElementIds.Thunder))
             {
                 baseValue = ThunderBaseValue;
+            }
+            else
+            {
+                baseValue = 1;
             }
         }
 
@@ -722,7 +718,7 @@ public class Hooks
 
             if (buffers.Contains(BuffID))
             {
-                ApplyBuffEffect(Caster, BuffID);
+                // ApplyBuffEffect(Caster, BuffID);
                 HandleBuffMutex(Caster, BuffID, buffers);
             }
 
@@ -826,7 +822,6 @@ public class Hooks
             }
             var rulesMap = LoadSkill.TemplatePathConfigs;
             if (rulesMap == null) return;
-            var str = $"AnimMontage'{currentMontage}'";
 
             var config = getNewConfig(currentMontage) ?? getOldConfig(currentMontage);
 
@@ -1134,55 +1129,52 @@ public class Hooks
             {
                 return false; // 跳过原始方法的执行
             }
-            if (Attacker != null && victim != null && attackerTeamId == playerTeamID)
-            {
-                var buffRulesMap = Manager.buffRulesMap;
+            // if (Attacker != null && victim != null && attackerTeamId == playerTeamID)
+            // {
+            //     var buffRulesMap = Manager.buffRulesMap;
 
-                int dmgReasonEffectID = SkillDamageConfig.DmgReasonEffectID > 0 ? SkillDamageConfig.DmgReasonEffectID : EffectInstReq.ObjectID;
-                FUStSkillEffectDesc skillEffectDesc = BGW_GameDB.GetSkillEffectDesc(dmgReasonEffectID, Attacker);
-                if (skillEffectDesc != null && SkillEffectsIds.Contains(dmgReasonEffectID))
-                {
-                    var SkillDamageType = (ESkillDamageType)skillEffectDesc.EffectParamsInt[2];
-                    List<Rule>? matchingRules = null;
+            //     int dmgReasonEffectID = SkillDamageConfig.DmgReasonEffectID > 0 ? SkillDamageConfig.DmgReasonEffectID : EffectInstReq.ObjectID;
+            //     FUStSkillEffectDesc skillEffectDesc = BGW_GameDB.GetSkillEffectDesc(dmgReasonEffectID, Attacker);
+            //     if (skillEffectDesc != null && SkillEffectsIds.Contains(dmgReasonEffectID))
+            //     {
+            //         var SkillDamageType = (ESkillDamageType)skillEffectDesc.EffectParamsInt[2];
+            //         List<Rule>? matchingRules = null;
+            //         switch (SkillDamageType)
+            //         {
+            //             case ESkillDamageType.FreezeAtk:
+            //                 buffRulesMap.TryGetValue(BuffElementIds.Ice, out matchingRules);
+            //                 break;
+            //             case ESkillDamageType.PoisonAtk:
+            //                 buffRulesMap.TryGetValue(BuffElementIds.Poison, out matchingRules);
+            //                 break;
 
-
-
-                    switch (SkillDamageType)
-                    {
-                        case ESkillDamageType.FreezeAtk:
-                            buffRulesMap.TryGetValue(BuffElementIds.Ice, out matchingRules);
-                            break;
-                        case ESkillDamageType.PoisonAtk:
-                            buffRulesMap.TryGetValue(BuffElementIds.Poison, out matchingRules);
-                            break;
-
-                        case ESkillDamageType.BurnAtk:
-                            buffRulesMap.TryGetValue(BuffElementIds.Fire, out matchingRules);
+            //             case ESkillDamageType.BurnAtk:
+            //                 buffRulesMap.TryGetValue(BuffElementIds.Fire, out matchingRules);
 
 
-                            break;
-                        case ESkillDamageType.LightningAtk:
-                            buffRulesMap.TryGetValue(BuffElementIds.Thunder, out matchingRules);
+            //                 break;
+            //             case ESkillDamageType.LightningAtk:
+            //                 buffRulesMap.TryGetValue(BuffElementIds.Thunder, out matchingRules);
 
-                            break;
-                        default:
-                            break;
-                    }
+            //                 break;
+            //             default:
+            //                 break;
+            //         }
 
-                    if (matchingRules != null && matchingRules.Count > 0)
-                    {
-                        foreach (var ruleItem in matchingRules)
-                        {
-                            ruleItem.Caster = attacker;
-                            ruleItem.Target = victim;
-                            ruleItem.EffectInstReq = EffectInstReq;
-                            ruleItem.DoRule(1000, 1, null, ruleItem);
-                        }
-                    }
+            //         if (matchingRules != null && matchingRules.Count > 0)
+            //         {
+            //             foreach (var ruleItem in matchingRules)
+            //             {
+            //                 ruleItem.Caster = attacker;
+            //                 ruleItem.Target = victim;
+            //                 ruleItem.EffectInstReq = EffectInstReq;
+            //                 ruleItem.DoRule(1000, 1, null, ruleItem);
+            //             }
+            //         }
 
-                    return true;
-                }
-            }
+            //         return true;
+            //     }
+            // }
 
             if (victimTeamId == playerTeamID && Attacker != null)
             {
@@ -1407,7 +1399,7 @@ public class Hooks
     [HarmonyPatch(typeof(BUS_AttrComp), "OnIncreaseFloatValue")]
     public static class BPS_PlayerTagSystemPatch
     {
-        private static void Prefix(BUS_AttrComp __instance)
+        private static void Prefix(BUS_AttrComp __instance, ref EBGUAttrFloat AttrID, ref float IncreaseValue)
         {
             var owner = __instance.GetOwner() as BGUCharacterCS;
             if (owner != null)
@@ -1416,6 +1408,13 @@ public class Hooks
                 if (player != null && player.PathName == owner.PathName)
                 {
                     ShowPlayerInfo.RenderBasicInfo();
+                    if (AttrID == EBGUAttrFloat.CurEnergy || AttrID == EBGUAttrFloat.FabaoEnergy || AttrID == EBGUAttrFloat.VigorEnergy)
+                    {
+                        if (IncreaseValue < 0)
+                        {
+                            IncreaseValue = 1;
+                        }
+                    }
                 }
             }
         }
@@ -1458,9 +1457,9 @@ public class Hooks
                     if (rulesMap != null && rulesMap.ContainsKey(SkillID))
                     {
                         if (!rulesMap.TryGetValue(SkillID, out var matchItem)) return;
-                        if (matchItem != null && matchItem?.cast_actions?.Count > 0)
+                        if (matchItem != null && matchItem.cast_actions?.Count > 0)
                         {
-                            Log.Info($"技能CastSkillOK：matchItem:{matchItem?.cast_actions?.Count}");
+                            Log.Info($"技能CastSkillOK：matchItem:{matchItem.cast_actions.Count}");
                             var rule = new Rule();
                             rule?.DoAfterActions(matchItem.cast_actions);
                         }
@@ -1483,17 +1482,24 @@ public class Hooks
                 if (player != null && player.PathName == owner.PathName)
                 {
                     var rulesMap = LoadSkill.ActionsBySkillConfigs;
-                    Log.Info($"技能造成伤害OnSkillCostDmg：rulesMap:{rulesMap?.Count}");
                     if (rulesMap != null && rulesMap.ContainsKey(SkillID))
                     {
                         if (!rulesMap.TryGetValue(SkillID, out var matchItem)) return;
                         if (matchItem != null && matchItem?.dmg_actions?.Count > 0)
                         {
-                            Log.Info($"技能造成伤害OnSkillCostDmg：matchItem:{matchItem?.dmg_actions?.Count}");
                             var rule = new Rule();
                             rule?.DoAfterActions(matchItem.dmg_actions);
                         }
+
                     }
+                    BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(player);
+                    if (bUS_GSEventCollection == null) return;
+                    var num = (int)FinalDmg / 10;
+                    if (num < 1) return;
+                    bUS_GSEventCollection.Evt_IncreaseAttrFloat.Invoke(EBGUAttrFloat.Shield, num);
+                    bUS_GSEventCollection.Evt_IncreaseAttrFloat.Invoke(EBGUAttrFloat.Hp, num);
+                    bUS_GSEventCollection.Evt_IncreaseAttrFloat.Invoke(EBGUAttrFloat.Mp, num);
+                    bUS_GSEventCollection.Evt_IncreaseAttrFloat.Invoke(EBGUAttrFloat.Stamina, num);
                     Log.Info($"技能造成伤害OnSkillCostDmg：SkillID:{SkillID},FinalDmg:{FinalDmg}");
                 }
             }
@@ -1517,7 +1523,6 @@ public class Hooks
             //     Helper.ResetVigorSkillByID(player);
             // }
             var rulesMap = LoadSkill.ActionsBySkillConfigs;
-            Log.Info($"技能OnSkillEnded：SkillID:{SkillID}，rulesMap.Count：{rulesMap.Count}");
             if (rulesMap == null || rulesMap.Count == 0) return true;
             if (!rulesMap.TryGetValue(SkillID, out var matchItem)) return true;
 
@@ -1545,4 +1550,50 @@ public class Hooks
     // }
 
 
+    [HarmonyPatch(typeof(BANS_GSAddBuffByID), "GSNotifyBeginCS_Implementation")]
+    public static class BANS_GSAddBuffByID_Patch
+    {
+        [HarmonyPrefix]
+        public static void Prefix_GSNotifyBeginCS_Implementation(
+            BANS_GSAddBuffByID __instance,
+            FUStGSNotifyParam NotifyParam,
+            float TotalDuration)
+        {
+            // 获取当前实例的 BuffID
+            int buffId = __instance.BuffID;
+
+            Helper.LogInfoOnce($"添加buff的通知 BANS_GSAddBuffByID_Patch buffId: {buffId}, LinkValue:{NotifyParam.AnimNotifyEvent_LinkValue}");
+
+        }
+    }
+
+
+
+    [HarmonyPatch(typeof(BUS_ProjectileBeAttackedComp), "OnProjectileBeHitted")]
+    public static class BUS_ProjectileBeAttackedComp_Patch
+    {
+        [HarmonyPrefix]
+        public static bool Prefix_GSNotifyBeginCS_Implementation(
+            BUS_ProjectileBeAttackedComp __instance,
+            AActor AttackerActor,
+            List<int> HitEffectID)
+        {
+
+
+            BGUProjectileBaseActor bGUProjectileBaseActor = __instance.GetOwner() as BGUProjectileBaseActor;
+            if (bGUProjectileBaseActor.IsNullOrDestroyed() || bGUProjectileBaseActor.IsDead())
+            {
+                return false;
+            }
+
+            AActor caster = BGU_DataUtil.GetReadOnlyData<BUC_MasterData>(bGUProjectileBaseActor)?.GetMasterActor();
+            int projectileID = bGUProjectileBaseActor.GetProjectileID();
+            if (caster != null && AttackerActor != null && caster.PathName == AttackerActor.PathName)
+            {
+                Helper.LogInfoOnce($"打中自己的子弹 OnProjectileBeHitted: {projectileID}");
+                return false;
+            }
+            return true;
+        }
+    }
 }

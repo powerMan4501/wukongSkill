@@ -270,31 +270,16 @@ public class ShowPlayerInfo
 				{
 					valueSlot.SetAnchors(new FAnchors
 					{
-						Minimum = new FVector2D(0.25, 0.14),
-						Maximum = new FVector2D(0.25, 0.14)
+						Minimum = new FVector2D(0.25, 0.1),
+						Maximum = new FVector2D(0.25, 0.1)
 					});
 					valueSlot.SetAlignment(new FVector2D(0.25, 0.14));
-					valueSlot.SetPosition(new FVector2D(40, 20f + 65f * i));
-					// valueSlot.SetPosition(new FVector2D(-40.0, 20f + 65f * i));
+					valueSlot.SetPosition(new FVector2D(40, 65f * i));
 				}
 			}
 			RenderBasicInfo();
 		}
-		// if (timerComp != null)
-		// {
-		// 	if (!timerComp.InitDone())
-		// 	{
-		// 		timerComp.InitWidgets();
-		// 	}
-		// 	else
-		// 	{
-		// 		timerComp.RenderBasicInfo();
-		// 	}
-		// }
 
-
-		// 启动定时器
-		// StartUpdateTimer(timerComp);
 
 	}
 	private static DateTime lastRenderTime = DateTime.MinValue;
@@ -309,7 +294,6 @@ public class ShowPlayerInfo
 		lastRenderTime = DateTime.Now;
 		APawn controlledPawn = GetControlledPawn();
 		if (!IsValidActor(controlledPawn) || BasicInfoVs.Count == 0) return;
-
 		int index = 0;
 		foreach (var attribute in BasicAttributes)
 		{
@@ -332,7 +316,7 @@ public class ShowPlayerInfo
 				float SkillSuperArmor = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.SkillSuperArmor);
 				// 攻击/伤害加成
 				float DmgAddition = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.DmgAddition);
-				UpdateUTextBlockContentIfChanged(BasicInfoVs[index], $"暴击：{(int)value / 100}%, 暴伤：{(int)CritMultiplier / 100f + 130f}%, 加伤: {(int)DmgAddition / 100}%, 技能霸体: {(int)SkillSuperArmor}");
+				UpdateUTextBlockContentIfChanged(BasicInfoVs[index], $"暴击: {(int)value / 100}%, 暴伤: {(int)CritMultiplier / 100f + 130f}%, 加伤: {(int)DmgAddition / 100}%, 技能霸体: {(int)SkillSuperArmor}");
 			}
 			else if (attribute.Key == EBGUAttrFloat.Hp)
 			{
@@ -425,7 +409,20 @@ public class ShowPlayerInfo
 					BGW_UIEventCollection.Get(target)?.Evt_UI_InitTopBarUI(ECSExtension.ToEntity(target));
 					// 攻击/伤害加成
 					float DmgAddition = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.DmgAddition);
-					UpdateUTextBlockContentIfChanged(BasicInfoVs[index], $"{text}({teamTxt})生命:{(int)Hp}, 攻击:{(int)Atk}, 减伤:{(int)DmgDef / 100}%, 加伤:{(int)DmgAddition / 100}%");
+
+
+					float FreezeDef = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.FreezeDef);
+					float BurnDef = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.BurnDef);
+					float PoisonDef = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.PoisonDef);
+					float ThunderDef = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.ThunderDef);
+
+
+
+					float FreezeATK = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.FreezeAtk);
+					float BurnATK = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.BurnAtk);
+					float PoisonATK = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.PoisonAtk);
+					float ThunderATK = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.ThunderAtk);
+					UpdateUTextBlockContentIfChanged(BasicInfoVs[index], $"{text}({teamTxt})生命:{(int)Hp}, 攻击:{(int)Atk}, 减伤:{(int)DmgDef / 100}%, 加伤:{(int)DmgAddition / 100}% \n 四灾抗性: 冰:{(int)FreezeDef}, 火:{(int)BurnDef},  毒:{(int)PoisonDef},  雷:{(int)ThunderDef} \n 四灾攻击: 冰:{(int)FreezeATK}, 火:{(int)BurnATK},  毒:{(int)PoisonATK},  雷:{(int)ThunderATK}");
 				}
 				else
 				{

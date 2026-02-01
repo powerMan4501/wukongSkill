@@ -6,11 +6,13 @@ using b1.Plugins.Calliope;
 using b1.Plugins.TressFX;
 using b1.Protobuf.DataAPI;
 using B1UI;
+using B1UI.GSUI;
 using BtlB1;
 using BtlShare;
 using CommB1;
 using CsB1;
 using CSharpModBase;
+using GSE.GSUI;
 using Newtonsoft.Json;
 using ResB1;
 using System;
@@ -2155,7 +2157,7 @@ namespace bian
         {
             // LoadUtils.ExportDataToJson<ShopItemGroupDesc>("shopdesc");
             // LoadUtils.ExportDataToJson<FUStBuffDispDesc>("buffdisp");
-            // LoadUtils.ExportDataToJson<FUStSkillSDesc>("skill");
+            // LoadUtils.ExportDataToJson<FUStSummonCommDesc>("FUStSummonCommDesc");
             if (actor != null)
             {
                 BUTamerActor tM = actor.GetTamerOwner() as BUTamerActor;
@@ -2561,6 +2563,10 @@ namespace bian
                 }
             });
         }
+        public static void export_json()
+        {
+            LoadUtils.ExportDataToJson<FUStSummonCommDesc>("sumData");
+        }
         public static void doPhantomRushSkill(BGUCharacterCS actor, string direction)
         {
             ESkillDirection phantomRushDir = ESkillDirection.None;
@@ -2663,8 +2669,102 @@ namespace bian
             bUS_GSEventCollection.Evt_ClearAbnormalState.Invoke(hashSet);
         }
 
+        public static void show_shop()
+        {
+            // 打开默认商店
+            GenARoleMain.SetShowTabScene(ERoleScene.Role, "ShowShop");
+            if (!GSG.IsPlayerReady())
+            {
+                return;
+            }
+            var world = GetWorld();
+            GSUIPage gSUIPage = GSG.GSPageOP.FindUIPage(25);
+            if (gSUIPage == null || world == null || !gSUIPage.IsActiveShowing())
+            {
+                int result = 1000;
+                var ShopID = GSB1UIUtil.GetCurShopID(world);
+                if (ShopID > 0)
+                {
+                    GenAShop.SetShopId(ShopID, "OpenShop");
+                }
+                // 打开默认商店
+                foreach (InteractionFuncDesc item in GameDBRuntime.GetTBInteractionFuncDesc().List)
+                {
+                    if (item.MenuBtnActionType == EMenuBtnActionType.ShopBuy)
+                    {
+                        GSB1UIUtil.OpenShop(item.Id, world, result);
+                        return;
+                    }
+                }
+            }
+        }
+        public static void fuhuo_ui()
+        {
+            // 打开复活点UI
+            if (!GSG.IsPlayerReady())
+            {
+                return;
+            }
+            GenAGPage.ShowPage(7, "ActiveShrineUI");
+        }
+        public static void gc_one()
+        {
+            UObject.CollectGarbage();
+            GC.Collect();
+        }
 
 
+        public static void show_duiyou()
+        {
+            // 展示队友信息UI
+            var world = GetWorld();
+            if (world == null) return;
+            GenAGPage.ShowPage(4, "ActiveTeamPlayerUI", ChangeReason.UiInit);
+
+            BGS_EventCollectionCS.Get(world)?.Evt_BGS_GMInitTeam.Invoke();
+        }
+
+        public static void close_duiyou()
+        {
+            // 关闭队友信息UI
+            GenAGPage.FadeOutPage(4, "ActiveTeamPlayerUI", ChangeReason.UiInit);
+        }
+
+        public static void enter_main()
+        {
+            // 展示队友信息UI
+            var world = GetWorld();
+            if (world == null) return;
+            BGW_EventCollection.Get(world).Evt_EnterMainMenu();
+        }
+
+        // 打印投影UI（血条、玩家名字等）相关数据
+        public static int LogProjInfo()
+        {
+            foreach (object @object in UObject.GetObjects<BUI_BattleInfoCS>())
+            {
+                BUI_BattleInfoCS bUI_BattleInfoCS = @object as BUI_BattleInfoCS;
+                if (!bUI_BattleInfoCS.IsNullOrDestroyed())
+                {
+                    BGW_LogUtil.LogError(bUI_BattleInfoCS.LogProjStat() ?? "");
+                }
+            }
+            return 0;
+        }
+
+        // 切换小地图
+        public static int SwitchMap()
+        {
+            if (GSG.GSPageOP.FindUIPage(88) != null)
+            {
+                GenAGPage.FadeOutPage(88, "SwitchMap");
+            }
+            else
+            {
+                GenAGPage.ShowPage(88, "SwitchMap");
+            }
+            return 0;
+        }
         public static void setActorEquip(int EquipID)
         {
             APlayerController firstLocalPlayerController = UGSE_EngineFuncLib.GetFirstLocalPlayerController(GetWorld());

@@ -247,8 +247,8 @@ namespace bian
             GetModelManager().InitConfig();
             GetModelManager().BindEvents();
             EnableCNInConsole();
-            ShowPlayerInfo.ClearAllUI();
-            loadAllStaticData(true, 0);
+  
+            loadAllStaticData(false, 0);
             // 在这里可以将buffDispConfigs插入到游戏中的数据
             if (harmony == null)
             {
@@ -740,7 +740,6 @@ namespace bian
                 var matchItem = ActionsByInput.FirstOrDefault(item => strFinal?.Contains(item?.code?.ToLower()) ?? false
                 );
 
-                Log.Info($"inputCodeStr: {strFinal} ,matchItem:{matchItem?.afterActions?.Count}");
                 if (matchItem != null && matchItem?.afterActions?.Count > 0)
                 {
                     var rule = new Rule();
