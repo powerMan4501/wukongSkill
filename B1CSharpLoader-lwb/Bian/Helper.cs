@@ -22,6 +22,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using UnrealEngine.Engine;
+using UnrealEngine.Plugins.Niagara;
 using UnrealEngine.Runtime;
 using UnrealEngine.Runtime.Native;
 
@@ -2678,7 +2679,7 @@ namespace bian
                 return;
             }
             var world = GetWorld();
-            GSUIPage gSUIPage = GSG.GSPageOP.FindUIPage(25);
+            GSUIPage gSUIPage = GSG.GSPageOP.FindUIPage((int)(EUIPageID.Shop));
             if (gSUIPage == null || world == null || !gSUIPage.IsActiveShowing())
             {
                 int result = 1000;
@@ -2713,7 +2714,60 @@ namespace bian
             GC.Collect();
         }
 
+        public static void projectileScale(int ProjectileID, FVector? fVector)
+        {
+            var Character = Helper.GetBGUPlayerCharacterCS();
+            var bGUProjectileBaseActor = BGUFuncLibProjectile.GetCtrProjectileByID(Character, ProjectileID) as BGUProjectileBaseActor;
+            if (bGUProjectileBaseActor == null)
+            {
+                return;
+            }
 
+            // 获取原始缩放值
+            var scaleBase = bGUProjectileBaseActor.GetActorScale3D();
+            if (scaleBase == null)
+            {
+                return;
+            }
+
+            // 应用新的缩放到Actor
+            FTransform newTransform = BGUFuncLibActorTransformCS.BGUGetActorTransform(bGUProjectileBaseActor);
+            if (fVector == null)
+            {
+                fVector = new FVector(5f, 5f, 1);
+            }
+            newTransform.SetScale3D((FVector)(scaleBase * fVector));
+            BGUFuncLibActorTransformCS.BGUSetActorTransform(bGUProjectileBaseActor, newTransform, bSweep: false, bTeleport: false);
+            BUC_ProjectileBasicData readOnlyData = BGU_DataUtil.GetReadOnlyData<BUC_ProjectileBasicData>(bGUProjectileBaseActor);
+            // 根据碰撞体类型更新碰撞体大小
+            UPrimitiveComponent collisionComponent = null;
+            switch (readOnlyData.CheckShapeType)
+            {
+                case EProjectileCheckShapeType.BoxShape:
+                    collisionComponent = bGUProjectileBaseActor.GetBoxCollisionComp();
+                    break;
+                case EProjectileCheckShapeType.CapsuleShape:
+                    collisionComponent = bGUProjectileBaseActor.GetCapsuleCollisionComp();
+                    break;
+                case EProjectileCheckShapeType.SphereShape:
+                    collisionComponent = bGUProjectileBaseActor.GetSphereCollisionComp();
+                    break;
+                case EProjectileCheckShapeType.CustomShape:
+                    collisionComponent = bGUProjectileBaseActor.GetCustomCollisionComp();
+                    break;
+            }
+
+            // 更新碰撞体缩放
+            if (collisionComponent != null)
+            {
+                var originalScale = collisionComponent.RelativeScale3D;
+                if (ProjectileID == 146)
+                {
+                    fVector = new FVector(5f, 5f, 5f);
+                }
+                collisionComponent.SetRelativeScale3D((FVector)(originalScale * fVector));
+            }
+        }
         public static void show_duiyou()
         {
             // 展示队友信息UI
@@ -2755,15 +2809,82 @@ namespace bian
         // 切换小地图
         public static int SwitchMap()
         {
-            if (GSG.GSPageOP.FindUIPage(88) != null)
+            var pageID = (int)(EUIPageID.DebugMap);
+            if (GSG.GSPageOP.FindUIPage(pageID) != null)
             {
-                GenAGPage.FadeOutPage(88, "SwitchMap");
+                GenAGPage.FadeOutPage(pageID, "SwitchMap");
             }
             else
             {
-                GenAGPage.ShowPage(88, "SwitchMap");
+                GenAGPage.ShowPage(pageID, "SwitchMap");
             }
             return 0;
+        }
+
+        public static void AttackFeedbackPerform(string hitFXPath, AActor Victim, int SkillEffectID, FEffectInstReq EffectInstReq)
+        {
+            if (hitFXPath == null) return;
+            var bGUCharacterCS = GetBGUPlayerCharacterCS();
+            if (bGUCharacterCS == null) return;
+            // UObject uObject = BGW_PreloadAssetMgr.Get(bGUCharacterCS).TryGetCachedResourceObj<UObject>(hitFXPath, ELoadResourceType.AsyncLoadAndCache, EAssetPriority.Low);
+
+            // Log.Info($"AttackFeedbackPerform uObject:{uObject?.GetFullName()}");
+            // UParticleSystem? uParticleSystem = null;
+            // UNiagaraSystem? uNiagaraSystem = null;
+            // if (uObject != null)
+            // {
+            //     uParticleSystem = uObject as UParticleSystem;
+            //     if (uParticleSystem == null)
+            //     {
+            //         uNiagaraSystem = uObject as UNiagaraSystem;
+            //     }
+            // }
+            BGUCharacterCS bGUCharacterCS2 = Victim as BGUCharacterCS;
+            if (bGUCharacterCS2 == null)
+            {
+                return;
+            }
+            FUStSkillEffectDesc skillEffectDesc = BGW_GameDB.GetSkillEffectDesc(SkillEffectID, bGUCharacterCS);
+            if (skillEffectDesc == null)
+            {
+                return;
+            }
+
+            var World = bGUCharacterCS2.World;
+            if (World == null) return;
+            FTransform fTransform = new FTransform(EffectInstReq.HitPointNormalDir, EffectInstReq.HitLocation);
+            if (skillEffectDesc.FXTransUseConfig == EGSYesNo.Yes)
+            {
+                FRotator rotation = MathLib.Conv_VectorToRotator(new FVector(skillEffectDesc.PlayFXLocalDirY, skillEffectDesc.PlayFXLocalDirZ, skillEffectDesc.PlayFXLocalDirX));
+                FRotator rotation2 = BGUFuncLibActorTransformCS.BGUGetActorTransform(bGUCharacterCS2).TransformRotation(rotation);
+                FVector socketLocation = bGUCharacterCS2.Mesh.GetSocketLocation(new FName(skillEffectDesc.PlayFXSocketName));
+                FVector fVector = (UGSE_EngineFuncLib.GetFirstLocalPlayerController(World).PlayerCameraManager.GetCameraLocation() - BGUFuncLibActorTransformCS.BGUGetActorLocation(Victim)).GetSafeNormal() * skillEffectDesc.FXCameraOffset;
+                socketLocation += fVector;
+                fTransform = new FTransform(rotation2, socketLocation);
+            }
+
+            FTransform spawnTransform = fTransform;
+            int resID = 15;
+            BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(bGUCharacterCS);
+            bUS_GSEventCollection.Evt_RequestSpawnFXByDispConfig.Invoke(hitFXPath, out var _, null, NeedSetSpawnTransform: true, spawnTransform, resID);
+
+
+
+            // FRotator rotation = MathLib.Conv_VectorToRotator(new FVector(skillEffectDesc.PlayFXLocalDirY, skillEffectDesc.PlayFXLocalDirZ, skillEffectDesc.PlayFXLocalDirX));
+            // FRotator rotation2 = BGUFuncLibActorTransformCS.BGUGetActorTransform(bGUCharacterCS2).TransformRotation(rotation);
+            // FVector socketLocation = bGUCharacterCS2.Mesh.GetSocketLocation(new FName(skillEffectDesc.PlayFXSocketName));
+            // FVector fVector = (GetPlayerController().PlayerCameraManager.GetCameraLocation() - BGUFuncLibActorTransformCS.BGUGetActorLocation(Victim)).GetSafeNormal() * skillEffectDesc.FXCameraOffset;
+            // socketLocation += fVector;
+            // var fTransform = new FTransform(rotation2, socketLocation);
+            // if (uParticleSystem != null)
+            // {
+            //     UGameplayStaticsEx.SpawnEmitterAtLocation(Victim, uParticleSystem, ref fTransform);
+            // }
+            // else if (uNiagaraSystem != null)
+            // {
+            //     UNiagaraFunctionLibrary.SpawnSystemAtLocation(Victim, uNiagaraSystem, fTransform.GetLocation(), fTransform.Rotator(), fTransform.GetScale3D(), bAutoDestroy: true, bAutoActivate: true, ENCPoolMethod.AutoRelease, bPreCullCheck: false);
+            // }
+
         }
         public static void setActorEquip(int EquipID)
         {

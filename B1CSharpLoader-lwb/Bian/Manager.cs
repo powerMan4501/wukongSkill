@@ -247,7 +247,7 @@ namespace bian
             GetModelManager().InitConfig();
             GetModelManager().BindEvents();
             EnableCNInConsole();
-  
+
             loadAllStaticData(false, 0);
             // 在这里可以将buffDispConfigs插入到游戏中的数据
             if (harmony == null)
@@ -306,32 +306,38 @@ namespace bian
         }
 
 
+        public static Dictionary<int, FVector> scaleProjectileID = new Dictionary<int, FVector>
+{
+    {140, new FVector(5f, 5f, 5f)},
+    {1085601, new FVector(2f, 10f, 10f)},
+    {1085602, new FVector(2f, 10f, 10f)},
+    {1085603, new FVector(2f, 10f, 10f)},
+    {1085699, new FVector(2f, 10f, 10f)},
+    {1090201, new FVector(5f, 5f, 5f)},
+    {1090202, new FVector(5f, 5f, 5f)},
+    {146, new FVector(1f, 1f, 1f)},
+    {148, new FVector(5f, 5f, 5f)},
+    {118, new FVector(5f, 5f, 5f)},
+    {117, new FVector(5f, 5f, 5f)}
+};
 
-        // [HarmonyPatch(typeof(GSDel_RequestSpawnAProjectile), "Invoke")]
-        // [HarmonyPrefix]
-        // private static void GSDel_RequestSpawnAProjectileInvoke(ref FGSProjectileSpawnInfo ProjectileSpawnInfo)
-        // {
-        //     if (Manager.GetModelManager().Config.CanLogDebug("[PATCH]RequestSpawnAProjectile"))
-        //     {
-
-        //         if (IsPlayer(ProjectileSpawnInfo.Spawner.PathName))
-        //         {
-        //             if (ProjectileSpawnInfo.ProjectileID == 44051501)
-        //             {
-        //                 // 夜叉王飞轮往前增加700
-        //                 var playerLocation = ProjectileSpawnInfo.Spawner.GetActorLocation();
-        //                 var xyz = ProjectileSpawnInfo.Spawner.GetActorForwardVector();
-        //                 var forwardVector = ProjectileSpawnInfo.Spawner.GetActorForwardVector();
-        //                 forwardVector.Y *= 700;
-        //                 forwardVector.X *= 700;
-        //                 ProjectileSpawnInfo.SpawnPosition = playerLocation + forwardVector;
-        //             }
-
-        //         }
-
-        //     }
-
-        // }
+        [HarmonyPatch(typeof(GSDel_RequestSpawnAProjectile), "Invoke")]
+        [HarmonyPrefix]
+        private static void GSDel_RequestSpawnAProjectileInvoke(ref FGSProjectileSpawnInfo ProjectileSpawnInfo)
+        {
+            if (IsPlayer(ProjectileSpawnInfo.Spawner.PathName))
+            {
+                var id = ProjectileSpawnInfo.ProjectileID;
+                if (scaleProjectileID.ContainsKey(id))
+                {
+                    var scale = scaleProjectileID[id];
+                    Helper.DelayExecute(40, () =>
+                    {
+                        Helper.projectileScale(id, scale);
+                    });
+                }
+            }
+        }
 
         private static bool isBuffLoaded = false; // 添加静态标志变量
 

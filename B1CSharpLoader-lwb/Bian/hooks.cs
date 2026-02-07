@@ -156,20 +156,70 @@ public class Hooks
         }
 
         [HarmonyPatch]
-        private static void Prefix(FUStGSNotifyParam NotifyParam)
+        private static void Prefix(BANS_GSSpawnBullets __instance, FUStGSNotifyParam NotifyParam)
         {
             if (!!Helper.is_bian_mod_stop)
             {
                 return;
             }
-            if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner.GetName().IndexOf("Unit_Player") > -1)
+            var player = Helper.GetBGUPlayerCharacterCS();
+            if (player == null) return;
+            var PathName = NotifyParam.Animation.PathName;
+            Helper.LogInfoOnce($"BANS_GSSpawnBullets发射子弹BulletID:{__instance.BulletID}");
+            var BulletID = __instance.BulletID;
+            if (BGUFunctionLibraryCS.BGUHasBuffByID(player, BuffElementIds.Fire) && BulletID == 1703001)
             {
+                var BornDirOffset = __instance.BornDirOffset;
+                BornDirOffset.BornDirOffsetX.LeftValue += 90;
+                BornDirOffset.BornDirOffsetX.RightValue += 90;
+                __instance.BornDirOffset = BornDirOffset;
+                __instance.BulletID = 88880009;//火剑气
+            }
+            else if (BGUFunctionLibraryCS.BGUHasBuffByID(player, BuffElementIds.Ice) && BulletID == 88880009)
+            {
+                __instance.BulletID = 1703001;//冰剑气
+            }
+
+            if (NotifyParam.Animation != null && PathName.Contains("AM_player_lys_hou"))
+            {
+
+                // 修改子弹速度
+                var newSpeed = new FSpawnBulletSpeed();
+                newSpeed.Spd.LeftValue = 6000;
+                newSpeed.Spd.RightValue = 6000;
+                __instance.BulletFlySpd = newSpeed;
+                // R1toR2
+                // if (PathName.Contains("AM_player_lys_hou_F1_02") || PathName.Contains("R1toR2"))
+                // {
+                //     var targetBase = __instance.TargetBase;
+                //     var spawnBase = __instance.SpawnBase;
+                //     var BornDirBaseInfo = __instance.BornDirBaseInfo;
+
+                //     targetBase.BaseType = ProjectileBaseType.CurTarget_ProjectileSpawner;
+                //     targetBase.UseSocket = true;
+                //     targetBase.SocketName = (FName)"CAMERA_LOCK";
+                //     spawnBase.BaseType = ProjectileBaseType.ProjectileSpawner;
+                //     BornDirBaseInfo.BornDirType = ProjectileBornDirType.LookAtTargetPos;
+                //     // 爆气砍就对准目标发射
+                //     __instance.TargetBase = targetBase;
+                //     __instance.SpawnBase = spawnBase;
+                //     __instance.BornDirBaseInfo = BornDirBaseInfo;
+                // }
+
+                __instance.BulletWave = 2;
+            }
+            if (NotifyParam.Animation != null && NotifyParam.owner != null && player.PathName == NotifyParam.owner.PathName)
+            {
+
+
+                var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
+                Console.WriteLine($"BANS_GSSpawnBullets.NotifyParam: PathName：{NotifyParam.owner.PathName}，GetName：{NotifyParam.owner.GetName()} ,linkValue:{linkValue} ");
+
                 var allRules = GetCachedAnimRules();
                 if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
                 var nowMontage = NotifyParam.Animation.PathName;
-                var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
                 var fname = NotifyParam.Animation.GetFName();
-                Console.WriteLine($"BANS_GSSpawnBullets.NotifyParam: {NotifyParam.Animation.GetFName()} ,linkValue:{linkValue} ");
+
                 if (allRules.Count > 0)
                 {
                     var matchedRule = allRules.FirstOrDefault(rule =>
@@ -546,7 +596,7 @@ public class Hooks
             }
 
 
-            Helper.LogInfoOnce($"Evt_TriggerSkillEffect EffectID:{EffectID}");
+            Helper.LogInfoOnce($"Evt_TriggerSkillEffect EffectID:{EffectID},ObjectID:{EffectInstReq.ObjectID}");
             var Target = InnerTarget;
 
             var effectRulesMap_new = LoadSkill.EffectRules;
@@ -556,6 +606,12 @@ public class Hooks
                 if (matchingRules_new.Value.Count > 0)
                 {
                     var rule = new Rule();
+                    foreach (var ruleItem in matchingRules_new.Value)
+                    {
+                        ruleItem.Caster = Caster;
+                        ruleItem.Target = Target;
+                        ruleItem.EffectInstReq = EffectInstReq;
+                    }
                     rule.DoAfterActions(matchingRules_new.Value);
                     return;
                 }
@@ -1104,7 +1160,7 @@ public class Hooks
     5000601,5000602,5000801
 };
 
-    private static readonly int[] ReflectBuffIds = { 20234, 229, 288, 294, 10133, 96036 };
+    private static readonly int[] ReflectBuffIds = { 20234, 229, 288, 294, 10133, 96036, 24082 };
 
     [HarmonyPatch]
     public static class BeAttackedTeamCheckPatch
@@ -1129,52 +1185,77 @@ public class Hooks
             {
                 return false; // 跳过原始方法的执行
             }
-            // if (Attacker != null && victim != null && attackerTeamId == playerTeamID)
-            // {
-            //     var buffRulesMap = Manager.buffRulesMap;
+            if (Attacker != null && victim != null && attackerTeamId == playerTeamID)
+            {
 
-            //     int dmgReasonEffectID = SkillDamageConfig.DmgReasonEffectID > 0 ? SkillDamageConfig.DmgReasonEffectID : EffectInstReq.ObjectID;
-            //     FUStSkillEffectDesc skillEffectDesc = BGW_GameDB.GetSkillEffectDesc(dmgReasonEffectID, Attacker);
-            //     if (skillEffectDesc != null && SkillEffectsIds.Contains(dmgReasonEffectID))
-            //     {
-            //         var SkillDamageType = (ESkillDamageType)skillEffectDesc.EffectParamsInt[2];
-            //         List<Rule>? matchingRules = null;
-            //         switch (SkillDamageType)
-            //         {
-            //             case ESkillDamageType.FreezeAtk:
-            //                 buffRulesMap.TryGetValue(BuffElementIds.Ice, out matchingRules);
-            //                 break;
-            //             case ESkillDamageType.PoisonAtk:
-            //                 buffRulesMap.TryGetValue(BuffElementIds.Poison, out matchingRules);
-            //                 break;
-
-            //             case ESkillDamageType.BurnAtk:
-            //                 buffRulesMap.TryGetValue(BuffElementIds.Fire, out matchingRules);
+                int dmgReasonEffectID = SkillDamageConfig.DmgReasonEffectID > 0 ? SkillDamageConfig.DmgReasonEffectID : EffectInstReq.ObjectID;
+                FUStSkillEffectDesc skillEffectDesc = BGW_GameDB.GetSkillEffectDesc(dmgReasonEffectID, Attacker);
 
 
-            //                 break;
-            //             case ESkillDamageType.LightningAtk:
-            //                 buffRulesMap.TryGetValue(BuffElementIds.Thunder, out matchingRules);
+                if (skillEffectDesc != null)
+                {
+                    if (BGUFunctionLibraryCS.BGUHasBuffByID(Attacker, BuffElementIds.Fire))
+                    {
+                        Helper.AttackFeedbackPerform("BGWDataAsset_B1DBC'/Game/00Main/VFX/Common/Niagara/Hit/Abnormal/DBC/DBC_NG_Abnormal_Hit_Fire.DBC_NG_Abnormal_Hit_Fire'", victim, dmgReasonEffectID, EffectInstReq);
+                    }
+                    else if (BGUFunctionLibraryCS.BGUHasBuffByID(Attacker, BuffElementIds.Ice))
+                    {
+                        Helper.AttackFeedbackPerform("BGWDataAsset_B1DBC'/Game/00Main/VFX/Common/Niagara/Hit/Abnormal/DBC/DBC_NG_Abnormal_Hit_Frozen.DBC_NG_Abnormal_Hit_Frozen'", victim, dmgReasonEffectID, EffectInstReq);
+                    }
+                    else if (BGUFunctionLibraryCS.BGUHasBuffByID(Attacker, BuffElementIds.Thunder))
+                    {
+                        Helper.AttackFeedbackPerform("BGWDataAsset_B1DBC'/Game/00Main/VFX/Common/Niagara/Hit/Abnormal/DBC/DBC_NG_Abnormal_Hit_Lightning_Blue.DBC_NG_Abnormal_Hit_Lightning_Blue'", victim, dmgReasonEffectID, EffectInstReq);
+                    }
+                    else if (BGUFunctionLibraryCS.BGUHasBuffByID(Attacker, BuffElementIds.Poison))
+                    {
+                        Helper.AttackFeedbackPerform("BGWDataAsset_B1DBC'/Game/00Main/VFX/Common/Niagara/Hit/Abnormal/DBC/DBC_NG_Abnormal_Hit_Poisoning_Green.DBC_NG_Abnormal_Hit_Poisoning_Green'", victim, dmgReasonEffectID, EffectInstReq);
+                    }
+                }
 
-            //                 break;
-            //             default:
-            //                 break;
-            //         }
+                // Helper.AttackFeedbackPerform()
+                // var buffRulesMap = Manager.buffRulesMap;
 
-            //         if (matchingRules != null && matchingRules.Count > 0)
-            //         {
-            //             foreach (var ruleItem in matchingRules)
-            //             {
-            //                 ruleItem.Caster = attacker;
-            //                 ruleItem.Target = victim;
-            //                 ruleItem.EffectInstReq = EffectInstReq;
-            //                 ruleItem.DoRule(1000, 1, null, ruleItem);
-            //             }
-            //         }
 
-            //         return true;
-            //     }
-            // }
+                // if (skillEffectDesc != null && SkillEffectsIds.Contains(dmgReasonEffectID))
+                // {
+                //     var SkillDamageType = (ESkillDamageType)skillEffectDesc.EffectParamsInt[2];
+                //     List<Rule>? matchingRules = null;
+                //     switch (SkillDamageType)
+                //     {
+                //         case ESkillDamageType.FreezeAtk:
+                //             buffRulesMap.TryGetValue(BuffElementIds.Ice, out matchingRules);
+                //             break;
+                //         case ESkillDamageType.PoisonAtk:
+                //             buffRulesMap.TryGetValue(BuffElementIds.Poison, out matchingRules);
+                //             break;
+
+                //         case ESkillDamageType.BurnAtk:
+                //             buffRulesMap.TryGetValue(BuffElementIds.Fire, out matchingRules);
+
+
+                //             break;
+                //         case ESkillDamageType.LightningAtk:
+                //             buffRulesMap.TryGetValue(BuffElementIds.Thunder, out matchingRules);
+
+                //             break;
+                //         default:
+                //             break;
+                //     }
+
+                //     if (matchingRules != null && matchingRules.Count > 0)
+                //     {
+                //         foreach (var ruleItem in matchingRules)
+                //         {
+                //             ruleItem.Caster = attacker;
+                //             ruleItem.Target = victim;
+                //             ruleItem.EffectInstReq = EffectInstReq;
+                //             ruleItem.DoRule(1000, 1, null, ruleItem);
+                //         }
+                //     }
+
+                //     return true;
+                // }
+            }
 
             if (victimTeamId == playerTeamID && Attacker != null)
             {

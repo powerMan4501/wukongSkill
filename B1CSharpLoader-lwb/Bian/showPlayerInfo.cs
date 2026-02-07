@@ -156,13 +156,14 @@ public class ShowPlayerInfo
 
 
 	private static Timer? updateTimer;
+	private static int BattleMainConID = (int)EUIPageID.BattleMainCon;
 
 
 	public static bool hasValueTextBlock()
 	{
 
 		UWorld World = GetWorld();
-		if (World != null && GSUI.UIMgr.FindUIPage(World, 2) is UIBattleMainCon obj)
+		if (World != null && GSUI.UIMgr.FindUIPage(World, BattleMainConID) is UIBattleMainCon obj)
 		{
 			UCanvasPanel MainCon = obj.GetFieldOrProperty<UCanvasPanel>("MainCon");
 			if (!IsValidUObject(MainCon))
@@ -186,7 +187,7 @@ public class ShowPlayerInfo
 	{
 
 		UWorld World = GetWorld();
-		if (World != null && GSUI.UIMgr.FindUIPage(World, 2) is UIBattleMainCon obj)
+		if (World != null && GSUI.UIMgr.FindUIPage(World, BattleMainConID) is UIBattleMainCon obj)
 		{
 			UCanvasPanel MainCon = obj.GetFieldOrProperty<UCanvasPanel>("MainCon");
 			if (!IsValidUObject(MainCon))
@@ -256,7 +257,7 @@ public class ShowPlayerInfo
 
 		var World = GetWorld();
 		if (!IsValidUObject(World)) return;
-		if (GSUI.UIMgr.FindUIPage(World, 2) is UIBattleMainCon obj)
+		if (GSUI.UIMgr.FindUIPage(World, BattleMainConID) is UIBattleMainCon obj)
 		{
 			var MainCon = obj.GetFieldOrProperty<UCanvasPanel>("MainCon");
 			if (!IsValidUObject(MainCon))
@@ -406,6 +407,7 @@ public class ShowPlayerInfo
 					var player = Helper.GetBGUPlayerCharacterCS();
 					var playerTeamID = player.GetTeamIDInCS();
 					var teamTxt = teamID == playerTeamID ? "友" : "敌";
+					var distanceNum = player.GetDistanceTo(target);
 					BGW_UIEventCollection.Get(target)?.Evt_UI_InitTopBarUI(ECSExtension.ToEntity(target));
 					// 攻击/伤害加成
 					float DmgAddition = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.DmgAddition);
@@ -422,7 +424,10 @@ public class ShowPlayerInfo
 					float BurnATK = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.BurnAtk);
 					float PoisonATK = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.PoisonAtk);
 					float ThunderATK = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.ThunderAtk);
-					UpdateUTextBlockContentIfChanged(BasicInfoVs[index], $"{text}({teamTxt})生命:{(int)Hp}, 攻击:{(int)Atk}, 减伤:{(int)DmgDef / 100}%, 加伤:{(int)DmgAddition / 100}% \n 四灾抗性: 冰:{(int)FreezeDef}, 火:{(int)BurnDef},  毒:{(int)PoisonDef},  雷:{(int)ThunderDef} \n 四灾攻击: 冰:{(int)FreezeATK}, 火:{(int)BurnATK},  毒:{(int)PoisonATK},  雷:{(int)ThunderATK}");
+
+					var DmgDefTxt = DmgDef > 0 ? $", 减伤:{(int)DmgDef / 100}%, " : "";
+					var DmgAdditionTxt = DmgAddition > 0 ? $", 加伤:{(int)DmgAddition / 100}%, " : "";
+					UpdateUTextBlockContentIfChanged(BasicInfoVs[index], $"{text}({teamTxt})(距离: {(int)distanceNum})生命:{(int)Hp}, 攻击:{(int)Atk} {DmgDefTxt} {DmgAdditionTxt} \n 四灾抗性: 冰:{(int)FreezeDef}, 火:{(int)BurnDef},  毒:{(int)PoisonDef},  雷:{(int)ThunderDef} \n 四灾攻击: 冰:{(int)FreezeATK}, 火:{(int)BurnATK},  毒:{(int)PoisonATK},  雷:{(int)ThunderATK}");
 				}
 				else
 				{
@@ -491,7 +496,7 @@ public class ShowPlayerInfo
 		}
 		var World = GetWorld();
 		if (!IsValidUObject(World)) return;
-		if (World != null && GSUI.UIMgr.FindUIPage(World, 2) is UIBattleMainCon obj)
+		if (World != null && GSUI.UIMgr.FindUIPage(World, BattleMainConID) is UIBattleMainCon obj)
 		{
 			UCanvasPanel MainCon = obj.GetFieldOrProperty<UCanvasPanel>("MainCon");
 			var children = MainCon.GetAllChildren();

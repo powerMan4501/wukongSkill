@@ -7,10 +7,8 @@ using UnrealEngine.Runtime;
 using UnrealEngine.Engine;
 using System.Linq;
 using BtlShare;
-using CsB1;
 using B1UI;
 using ResB1;
-using System.Runtime.InteropServices;
 namespace bian
 {
 
@@ -345,14 +343,16 @@ namespace bian
                     }
                 }
             }
-
+            Log.Info($"执行 {action?.desc},Bullet:{action?.Bullet}，action.EffectInstReq：{action?.EffectInstReq?.ObjectID}");
             if (action.Bullet != null)
             {
+                 
                 var projectTileIds = action.ProjectTileIDs?.Count > 0 ? action.ProjectTileIDs : [action.ProjectTileID];
                 if (projectTileIds?.Count > 0)
                 {
                     foreach (var projectTileId in projectTileIds)
                     {
+                       
                         Helper.SpawnProjectile(character, action.Bullet, projectTileId, action.ForTarget,
                             action.BulletCount, action.IsRandom,
                             new FVector(action.OffsetX, action.OffsetY, action.OffsetZ), action);
@@ -402,7 +402,7 @@ namespace bian
             var character = Helper.GetBGUPlayerCharacterCS();
             if (character == null) return;
 
-            Log.Info($"DoAction {action?.Type} {action?.desc}");
+            Log.Info($"执行DoAction: {action?.Type} {action?.desc},EffectInstReq:{action?.EffectInstReq?.ObjectID}");
             switch (action?.Type?.ToLower())
             {
                 case "buff":
@@ -725,6 +725,19 @@ namespace bian
                     break;
                 case "export_json":
                     Helper.export_json();
+                    break;
+
+
+                case "attack_feedback":
+                    var EffectID = action?.EffectID;
+                    var hitFXPath = action?.path;
+                    var Target = action?.Target;
+                    var EffectInstReq = action?.EffectInstReq;
+                    if (EffectID != null && hitFXPath != null && Target != null && EffectInstReq != null)
+                    {
+                        Helper.AttackFeedbackPerform(hitFXPath, Target, (int)EffectID, (FEffectInstReq)EffectInstReq);
+
+                    }
                     break;
                 case "rushskill":
                     Helper.doPhantomRushSkill(character, action.RushDir ?? "Forward");
