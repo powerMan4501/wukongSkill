@@ -92,7 +92,6 @@
         "desc": "第一关·黑风大王·人形态（BOSS）"
       },
 
-      
       {
         "Type": "diff_teamid",
         "TimeDelay": 3000,
@@ -103,7 +102,6 @@
   {
     "code": "suhxj",
     "afterActions": [
-    
       {
         "Type": "spaw_monster",
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_xiong_02.TAMER_gycy_xiong_02_C",
@@ -1098,7 +1096,7 @@
       }
     ]
   },
-   {
+  {
     "code": "suHHER",
     "afterActions": [
       {
@@ -1123,6 +1121,75 @@
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HYS/TAMER_hys_honghaier_02a.TAMER_hys_honghaier_02a_C"
       },
 
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "suGUI",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "desc": "赤发鬼",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_lys_chifagui_01a_sit.TAMER_lys_chifagui_01a_sit_C"
+      },
+      {
+        "Type": "spaw_monster",
+        "desc": "赤发鬼",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_lys_chifagui_01a.TAMER_lys_chifagui_01a_C"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "sukong",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "desc": "第三关·不空（BOSS）",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_LYS_LaoSeng_01.TAMER_LYS_LaoSeng_01_C"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "sujin",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "desc": "第三关·不净（BOSS）",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_seng_04.TAMER_gycy_seng_04_C"
+      },
+      {
+        "Type": "diff_teamid",
+        "TimeDelay": 3000,
+        "desc": "让范围3000以内的角色敌友不分"
+      }
+    ]
+  },
+
+  {
+    "code": "suwhi",
+    "afterActions": [
+      {
+        "Type": "spaw_monster",
+        "desc": "第三关·不白P2（BOSS）",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_LYS_SengMian_01_MagaVer.TAMER_LYS_SengMian_01_MagaVer_C"
+      },
       {
         "Type": "diff_teamid",
         "TimeDelay": 3000,

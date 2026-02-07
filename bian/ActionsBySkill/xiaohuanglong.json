@@ -1,17 +1,17 @@
 [
   {
-    "skillID": 17071,
-    "desc": "马猴法术",
+    "skillID": 19041,
+    "desc": "变成小黄龙,三千阳春",
     "montage_config": {
-      "speedRate": 1.8,
-      "AMSpeedRate": 1.8
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
     },
     "cast_actions": [
       {
         "Type": "buff",
-        "BuffIDs": [888666006],
+        "BuffIDs": [888666005],
         "BuffTime": -1,
-        "desc": "添加冰buff"
+        "desc": "添加雷buff"
       }
     ],
     "sweep_actions": [
@@ -21,26 +21,26 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [2403471, 152],
-            "desc": "冰暴,冰地波"
+            "ProjectTileIDs": [154, 30250101, 39010112],
+            "desc": "兽棍红雷,电圈,青背龙雷暴"
           }
         ]
       }
     ]
   },
   {
-    "skillID": 17072,
-    "desc": "马猴冰爆气",
+    "skillID": 19042,
+    "desc": "变成小黄龙,三千阳春",
     "montage_config": {
-      "speedRate": 1.8,
-      "AMSpeedRate": 1.8
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
     },
     "cast_actions": [
       {
         "Type": "buff",
-        "BuffIDs": [888666006],
+        "BuffIDs": [888666005],
         "BuffTime": -1,
-        "desc": "添加冰buff"
+        "desc": "添加雷buff"
       }
     ],
     "sweep_actions": [
@@ -50,59 +50,26 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [2403471, 152],
-            "desc": "冰暴,冰地波"
+            "ProjectTileIDs": [154, 30250101, 39010112],
+            "desc": "兽棍红雷,电圈,青背龙雷暴"
           }
         ]
       }
     ]
   },
-
   {
-    "skillID": 405805,
-    "desc": "马猴火焰爆气",
+    "skillID": 19043,
+    "desc": "变成小黄龙,三千阳春",
     "montage_config": {
-      "speedRate": 2.2,
-      "AMSpeedRate": 2.2,
-      "addRadius": 500
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
     },
     "cast_actions": [
       {
         "Type": "buff",
-        "BuffIDs": [888666007],
-        "BuffTime": 3000,
-        "desc": "添加火buff"
-      }
-    ],
-    "sweep_actions": [
-      {
-        "linkValue": 0,
-        "actions": [
-          {
-            "Type": "bullet",
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [74010207],
-            "desc": "火圈"
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "skillID": 301505,
-    "desc": "马猴红爆气",
-    "montage_config": {
-      "speedRate": 2.2,
-      "AMSpeedRate": 2.2,
-      "addRadius": 500
-    },
-    "cast_actions": [
-      {
-        "Type": "buff",
-        "BuffIDs": [888666008],
+        "BuffIDs": [888666005],
         "BuffTime": -1,
-        "desc": "添加毒buff"
+        "desc": "添加雷buff"
       }
     ],
     "sweep_actions": [
@@ -112,8 +79,8 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [51007701],
-            "desc": "泥浆"
+            "ProjectTileIDs": [154, 30250101, 39010112],
+            "desc": "兽棍红雷,电圈,青背龙雷暴"
           }
         ]
       }
@@ -121,14 +88,20 @@
   },
 
   {
-    "skillID": 301504,
-    "desc": "马猴扔雪球",
+    "skillID": 301605,
+    "desc": "震刀",
     "montage_config": {
-      "speedRate": 2.2,
-      "AMSpeedRate": 2.2,
-      "addRadius": 500
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
     },
-
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [92247],
+        "BuffTime": 2000,
+        "desc": "弹刀"
+      }
+    ],
     "sweep_actions": [
       {
         "linkValue": 0,
@@ -136,10 +109,8 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [51002002],
-            "OffsetX": 200,
-            "OffsetY": 200,
-            "desc": "猪八戒"
+            "ProjectTileIDs": [118],
+            "desc": "落雷"
           }
         ]
       }

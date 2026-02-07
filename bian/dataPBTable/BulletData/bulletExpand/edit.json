@@ -1,5 +1,12 @@
 [
   {
+    "ID": 146,
+    "desc": "飞龙棍",
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1,
+    "HitEffectsforChr": [39019112]
+  },
+  {
     "ID": 150,
     "desc": "杨戬头冠，飞剑",
     "HitDestructibleStrengthType": 4,
@@ -223,6 +230,26 @@
     "ID": 50051301,
     "desc": "横向黄雷剑气",
     "HitEffectsforChr": [888555005],
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
+  },
+  {
+    "ID": 30130201,
+    "desc": "马猴扔雪球",
+    "HitEffectsforChr": [888555032, 910160],
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
+  },
+
+  {
+    "ID": 1602101,
+    "desc": "海上僧雪球",
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
+  },
+  {
+    "ID": 1604101,
+    "desc": "海上僧雪球",
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1
   }

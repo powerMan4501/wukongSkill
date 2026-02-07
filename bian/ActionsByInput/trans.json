@@ -39,7 +39,7 @@
       {
         "type": "transskill",
         "ResId": 17,
-        "MagicSkillID": 17072,
+        "MagicSkillID": 17333,
         "desc": "变成马猴"
       },
       {
@@ -176,7 +176,7 @@
       {
         "type": "transskill",
         "ResId": 13,
-        "MagicSkillID": 13071,
+        "MagicSkillID": 13012,
         "desc": "石头人"
       },
       {

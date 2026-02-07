@@ -87,6 +87,15 @@
         "EffectParamsString": [],
         "EffectParams": [83, 84, 85, 86, 137],
         "EffectParamsFloat": []
+      },
+
+         {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [888666006],
+        "EffectParamsFloat": [0]
       }
     ]
   },
@@ -102,6 +111,14 @@
         "EffectParamsString": [],
         "EffectParams": [84, 83, 85, 86, 137],
         "EffectParamsFloat": []
+      },
+        {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [888666007],
+        "EffectParamsFloat": [0]
       }
     ]
   },
@@ -118,17 +135,57 @@
         "EffectParamsString": [],
         "EffectParams": [45, 137],
         "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 7,
-        "EffectType": 20,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [
-          "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_20_hfm_bashanhu_BulletChange.BGW_20_hfm_bashanhu_BulletChange'"
-        ],
-        "EffectParams": [],
-        "EffectParamsFloat": []
       }
     ]
-  }
+  },
+
+  {
+    "ID": 17079,
+    "BuffTips": "【猴】变身-移除爆气 | 0.【BUFF】添加时-检测棍势清零时-移除【17070】【17071】 | 1.【BUFF】添加时-添加【17099】强制退出变身",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [1],
+        "EffectParamsFloat": [200.0]
+      }
+    ]
+  },
+
+
+  {
+      "ID": 14071,
+      "BuffTips": "【虎】变身-风状态检测 | 0.棍势清零时移除风状态【14070】和风状态检测【14071】",
+      "BuffEffects": [
+        {
+        "EffectTrigger": 1,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [1],
+        "EffectParamsFloat": [200.0]
+      }
+      ]
+    },
+      {
+      "ID": 14074,
+      "BuffTips": "【虎】变身-风状态 | 0.【属性】每1s-扣减变身能量：8",
+      "BuffEffects": [
+        {
+          "EffectTrigger": 1,
+          "EffectType": 3,
+          "EffectTargetSelectType": 0,
+          "EffectParamsString": [],
+          "EffectParams": [
+            188,
+            8,
+            0,
+            0
+          ],
+          "EffectParamsFloat": []
+        }
+      ]
+    }
 ]

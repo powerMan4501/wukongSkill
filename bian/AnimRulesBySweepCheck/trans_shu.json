@@ -48,35 +48,5 @@
         ]
       }
     ]
-  },
-
-  {
-    "desc": "广智",
-    "montage": ".AM_player_gycy_lang_R",
-    "linkValue": 0,
-    "speedRate": 1.5,
-    "AMScaleRate": 10,
-     "CastActions": [
-      {
-        "Type": "add_attr",
-        "attrType": 187,
-        "attrValue": 100,
-        "desc": "Pelevel"
-      }
-    ],
-    "SweepActions": [
-      {
-        "Type": "bullet",
-        "bullets": [
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [140],
-            "OffsetX": 500,
-            "OffsetY": 500,
-            "desc": "业火"
-          }
-        ]
-      }
-    ]
   }
 ]

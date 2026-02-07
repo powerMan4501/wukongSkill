@@ -46,7 +46,7 @@
       ]
     },
     {
-      "Key": "S+XBUTTON2",
+      "Key": "S+XBUTTON1",
       "Id": 16041,
       "CanBreak": false,
       "Name": "扔大雪球，太慢",
@@ -61,7 +61,7 @@
       "Name": "旋转触手"
     },
     {
-      "Key": "Z",
+      "Key": "S+XBUTTON2",
       "Id": 16073,
       "Name": "旋风冰爆墩地--大范围",
       "AnimPath": "AM_player_lys_yao_Fashu_02_V3"

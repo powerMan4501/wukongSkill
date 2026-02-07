@@ -34,10 +34,10 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 74010103,
+            "ProjectTileID": 150,
             "hasBuff": 888666006,
             "ForTarget": true,
-            "desc": "冰buff，巨猿扔的冰气"
+            "desc": "冰buff，发射飞剑"
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
@@ -94,7 +94,7 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 74010103,
+            "ProjectTileID": 150,
             "hasBuff": 888666006,
             "ForTarget": true,
             "desc": "冰buff，巨猿扔的冰气"
@@ -154,7 +154,7 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 74010103,
+            "ProjectTileID": 150,
             "hasBuff": 888666006,
             "ForTarget": true,
             "desc": "冰buff，巨猿扔的冰气"

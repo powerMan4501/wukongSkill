@@ -82,6 +82,15 @@
       "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/MGD/mgd_yuan/Physics/mgd_yuan_bigballfarspawn.mgd_yuan_bigballfarspawn'"
     ]
   },
+
+  {
+    "desc": "飞棍伤害 400%+400点伤害",
+    "ID": 1085301,
+    "EffectType": 1,
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
+    "EffectParamsFloat": [4000.0, 400.0, 40000.0, 4000.0, 0.0, 0.0, 400],
+    "EffectParamsStr": ["【主角】蓄力1"]
+  },
   {
     "desc": "100%+100点伤害",
     "ID": 888555031,

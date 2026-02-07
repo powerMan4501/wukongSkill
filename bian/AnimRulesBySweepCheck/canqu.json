@@ -1,5 +1,4 @@
 [
-
   {
     "desc": "残躯版Q5",
     "montage": "AM_mgd_jsds_atk_02_02_short",
@@ -64,8 +63,8 @@
         "Type": "bullet",
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
         "ProjectTileID": 30160101,
-        "OffsetX": 200,
-        "OffsetY": 200,
+        "AttachToSpawnBase": true,
+        "spawnBaseSocketName": "weapon_r",
         "desc": "小黄龙雷电"
       }
     ],
@@ -171,7 +170,7 @@
         "BuffTime": 2900,
         "desc": "棍光特效粒子"
       },
-       {
+      {
         "Type": "summoner_do_actions",
         "summonerActions": [
           {
@@ -542,5 +541,4 @@
     "hitEffects": [888555034],
     "replaceEffects": true
   }
-  
 ]

@@ -208,10 +208,10 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 11012601,
+            "ProjectTileID": 40580501,
             "ForTarget": true,
             "hasBuff": 888666007,
-            "desc": "火buff就发射火焰剑气",
+            "desc": "火buff就发射火焰剑气 11012601 40580501",
             "BornDirOffsetXLeftValue": 45,
             "BornDirOffsetXRightValue": 45,
             "spawnBaseSocketName": "weapon_r_index_03",

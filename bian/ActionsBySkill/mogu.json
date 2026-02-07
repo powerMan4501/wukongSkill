@@ -1,0 +1,11 @@
+[
+  {
+    "skillID": 10141,
+    "desc": "蘑菇女精魄技能",
+    "montage_config": {
+      "speedRate": 2.2,
+      "AMSpeedRate": 2.2,
+      "addRadius": 500
+    }
+  }
+]

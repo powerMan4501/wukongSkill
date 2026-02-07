@@ -1,0 +1,31 @@
+[
+  {
+    "skillID": 23071,
+    "desc": "马哥法术，雷电",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666005],
+        "BuffTime": -1,
+        "desc": "添加雷buff"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [30250101, 118],
+            "desc": "电圈/落雷"
+          }
+        ]
+      }
+    ]
+  }
+]

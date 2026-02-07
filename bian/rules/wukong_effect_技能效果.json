@@ -120,54 +120,6 @@
     },
 
     {
-      "Name": "飞棍",
-      "Description": "",
-      "Filters": [
-        {
-          "Type": "effect",
-          "EffectID": 1085301
-        }
-      ],
-      "AfterActions": [
-        {
-          "Type": "bullet",
-          "TimeDelay": 0,
-          "bullets": [
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [2403472, 44010401],
-              "hasBuff": 888666007,
-              "desc": "有火buff，巨猿四级火圈，炸炸炸"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [40042202, 2403471, 74010101, 152],
-              "hasBuff": 888666006,
-              "desc": "有冰buff，马猴冰，冰暴,冰碎片,冰地波"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [34013020, 39010112, 30250101],
-              "hasBuff": 888666005,
-              "desc": "有雷buff，亢金龙电炸地板，青背龙雷暴,电圈"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [51002002,74011107, 30050301],
-              "hasBuff": 888666008,
-              "desc": "有毒buff，猪八戒,金沙波动"
-            },
-            {
-              "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [74011107,74010403,74011201],
-              "noHasAnyBuff": [888666005,888666006,888666007,888666008 ],
-              "desc": "没有buff，金沙,石头爆炸,巨猿震动波"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "Name": "射箭",
       "Description": "",
       "Filters": [

@@ -97,19 +97,6 @@
         {
           "Type": "effect",
           "EffectID": 1903901
-        },
-
-        {
-          "Type": "effect",
-          "EffectID": 1904101
-        },
-        {
-          "Type": "effect",
-          "EffectID": 1904201
-        },
-        {
-          "Type": "effect",
-          "EffectID": 1904301
         }
       ],
       "AfterActions": [

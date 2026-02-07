@@ -81,39 +81,39 @@
   },
   "Skills": [
     {
-      "Key": "A+XBUTTON2",
-      "Id": 301505,
-      "CanBreak": true,
-      "Name": "举刀+砍+竖血色剑气",
-      "Buffs": [505, 17272, 17273]
-    },
-    {
       "Id": 301502,
       "CanBreak": true,
       "Name": "突进上去砍一刀，再捅一下",
-      "Key": "XBUTTON2",
+      "Key": "S+XBUTTON2",
       "Buffs": [17015]
     },
     {
       "Id": 405805,
       "Name": "爆气垂直砍一刀，发射垂直火剑气",
-      "Key": "S+XBUTTON2",
+      "Key": "XBUTTON2",
       "CanBreak": true,
       "Buffs": [17272, 17273]
     },
     {
       "Key": "XBUTTON1",
-      "Id": 301368,
-      "CanBreak": true,
-      "Name": "跳起+前劈+白色雪墙+爆炸",
-      "Buffs": [17015]
-    },
-    {
-      "Key": "S+XBUTTON1",
       "Id": 17072,
       "Name": "马猴冰法术",
       "CanBreak": true,
       "Buffs": [92251]
+    },
+    {
+      "Key": "S+XBUTTON1",
+      "Id": 301505,
+      "CanBreak": true,
+      "Name": "举刀+红爆气",
+      "Buffs": [505, 17272, 17273]
+    },
+    {
+      "Key": "A+C",
+      "Id": 301368,
+      "CanBreak": true,
+      "Name": "跳起+前劈+白色雪墙+爆炸",
+      "Buffs": [17015]
     },
 
     {
@@ -260,7 +260,7 @@
       "Id": 301551,
       "CanBreak": true,
       "Name": "摆姿势",
-      "Key": "A+C",
+      "Key": "",
       "Buffs": [1000054, 1000099]
     },
     {

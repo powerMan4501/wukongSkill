@@ -1,0 +1,63 @@
+[
+  {
+    "OriginalId": 17031,
+    "MappedId": 17331,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "马猴常态Q1改成红刀Q1"
+  },
+
+  {
+    "OriginalId": 17032,
+    "MappedId": 17332,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "马猴常态Q2改成红刀Q2"
+  },
+
+  {
+    "OriginalId": 17033,
+    "MappedId": 17333,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "马猴常态Q3改成红刀Q3"
+  },
+
+  {
+    "OriginalId": 17034,
+    "MappedId": 17334,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "马猴常态Q4改成红刀Q4"
+  },
+
+  {
+    "OriginalId": 17011,
+    "MappedId": 17041,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "马猴常态左键改成冰砍"
+  },
+  {
+    "OriginalId": 17012,
+    "MappedId": 17042,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "马猴常态左键改成冰砍"
+  },
+
+  {
+    "OriginalId": 17013,
+    "MappedId": 17043,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "马猴常态左键改成冰砍"
+  },
+  {
+    "OriginalId": 17014,
+    "MappedId": 17044,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "马猴常态左键改成冰砍"
+  }
+]
