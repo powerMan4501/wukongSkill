@@ -3,7 +3,7 @@
   "Name": "寅虎",
   "Label": "SK_HFM_Hu_Wind_01",
   "Type": "TRANS",
-    "BossConf": {
+  "BossConf": {
     "CapsuleHalfHeight": 220.0,
     "CapsuleRadius": 80.0,
     "SKMesh": "/Game/00MainHZ/Characters/Enemy/HFM/HFM_Hu_Wind/Mesh/SK_HFM_Hu_Wind_01.SK_HFM_Hu_Wind_01",
@@ -90,10 +90,7 @@
   "Level1Scale": 1,
   "Level2Scale": 2.2,
   "TransDone": {
-    "Buffers": [
-      1000068,
-      1000095
-    ]
+    "Buffers": [1000068, 1000095]
   },
   "EnterSkill": {
     "Id": 10414,
@@ -110,113 +107,166 @@
     {
       "Id": 202815,
       "CanBreak": true,
-      "Name": "平A,左往右斜着砍",
+      "Name": "平A,左往右斜着砍 AM_HFM_Hu_Wind_01_Atk_Fast_15.AM_HFM_Hu_Wind_01_Atk_Fast_15",
       "Step": 1,
       "Key": "S+LBUTTON",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202816,
       "CanBreak": true,
-      "Name": "平A,右往左斜着砍",
+      "Name": "平A,右往左斜着砍 AM_HFM_Hu_Wind_01_Atk_Fast_16.AM_HFM_Hu_Wind_01_Atk_Fast_16",
       "Step": 2,
       "Key": "S+LBUTTON",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202817,
       "CanBreak": true,
-      "Name": "平A,突进二连横扫",
+      "Name": "平A,突进二连横扫 AM_HFM_Hu_Wind_01_Atk_Fast_17.AM_HFM_Hu_Wind_01_Atk_Fast_17",
       "Step": 3,
       "Key": "S+LBUTTON",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202818,
       "CanBreak": true,
-      "Name": "平A,慢速斜着扫",
+      "Name": "平A,慢速斜着扫 AM_HFM_Hu_Wind_01_Atk_Fast_18.AM_HFM_Hu_Wind_01_Atk_Fast_18",
       "Step": 4,
       "Key": "S+LBUTTON",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202819,
       "CanBreak": true,
-      "Name": "平A,小跳砍",
+      "Name": "平A,小跳砍 AM_HFM_Hu_Wind_01_Atk_Fast_19.AM_HFM_Hu_Wind_01_Atk_Fast_19",
       "Step": 5,
       "Key": "S+LBUTTON",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202838,
       "CanBreak": true,
-      "Name": "飞到上空，索敌落下砍人",
+      "Name": "飞到上空，索敌落下砍人 AM_HFM_Hu_Wind_01_Atk_Fast_38.AM_HFM_Hu_Wind_01_Atk_Fast_38",
       "Key": "A+LBUTTON",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202837,
       "CanBreak": true,
-      "Name": "慢速横扫一下，再横扫一下地爆",
+      "Name": "慢速横扫一下，再横扫一下地爆 AM_HFM_Hu_Wind_01_Atk_Fast_37.AM_HFM_Hu_Wind_01_Atk_Fast_37",
       "Key": "C+LBUTTON",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Key": "S+RBUTTON",
       "Id": 202840,
       "Name": "凤鸣",
-      "AnimPath": "AM_HFM_Hu_Wind_01_Atk_Fast_40",
-      "Buffs": [
-        1000095
-      ]
+      "AnimPath": "AM_HFM_Hu_Wind_01_Atk_Fast_40.AM_HFM_Hu_Wind_01_Atk_Fast_40",
+      "Buffs": [1000095]
     },
-   
+
     {
       "Id": 202878,
       "CanBreak": true,
-      "Name": "慢速横扫一下，再横扫一下地爆",
+      "Name": "慢速横扫一下，再横扫一下地爆 AM_HFM_Hu_Wind_01_Atk_Fast_78.AM_HFM_Hu_Wind_01_Atk_Fast_78",
       "Key": "A+RBUTTON",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202807,
       "CanBreak": true,
-      "Name": "狼星碎：横扫一下再横扫地爆",
+      "Name": "狼星碎：横扫一下再横扫地爆 AM_HFM_Hu_Wind_01_Atk_Fast_07.AM_HFM_Hu_Wind_01_Atk_Fast_07",
       "Key": "C+XBUTTON1",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
-      "Id": 14050,
-      "CanBreak": true,
-      "Name": "变身技能,架刀，AM_player_hfm_hu_L2_Start",
-      "Key": "XBUTTON1"
+      "Key": "XBUTTON1",
+      "type": "actions",
+      "afterActions": [
+        {
+          "Type": "skill",
+          "skillIndex": 0,
+          "skillValues": [14010, 14011, 14012, 14013, 14014, 14015, 14016],
+          "SkillID": 202815,
+          "desc": "任意平A 接 左往右斜着砍 AM_HFM_Hu_Wind_01_Atk_Fast_15"
+        },
+        {
+          "Type": "skill",
+          "skillIndex": 0,
+          "skillValues": [202815],
+          "SkillID": 202816,
+          "desc": "平A,右往左斜着砍  AM_HFM_Hu_Wind_01_Atk_Fast_16"
+        },
+
+        {
+          "Type": "skill",
+          "skillIndex": 0,
+          "skillValues": [202816],
+          "SkillID": 202817,
+          "desc": "平A,突进二连横扫 AM_HFM_Hu_Wind_01_Atk_Fast_17 "
+        },
+
+        {
+          "Type": "skill",
+          "skillIndex": 0,
+          "skillValues": [202817],
+          "SkillID": 202818,
+          "desc": "平A,慢速斜着扫 AM_HFM_Hu_Wind_01_Atk_Fast_18 "
+        },
+        {
+          "Type": "skill",
+          "skillIndex": 0,
+          "skillValues": [202818],
+          "SkillID": 202819,
+          "desc": "平A,小跳砍 AM_HFM_Hu_Wind_01_Atk_Fast_19 "
+        },
+        {
+          "Type": "skill",
+          "skillIndex": 0,
+          "skillValues": [202819],
+          "SkillID": 202838,
+          "desc": "飞到上空，索敌落下砍人 AM_HFM_Hu_Wind_01_Atk_Fast_38 "
+        },
+        {
+          "Type": "skill",
+          "skillIndex": 0,
+          "skillValues": [202838],
+          "SkillID": 202837,
+          "desc": "慢速横扫一下，再横扫一下地爆 AM_HFM_Hu_Wind_01_Atk_Fast_37 "
+        },
+
+        {
+          "Type": "skill",
+          "skillIndex": 0,
+          "skillValues": [202837],
+          "SkillID": 202840,
+          "desc": " 接 凤鸣 AM_HFM_Hu_Wind_01_Atk_Fast_40 "
+        },
+
+        {
+          "Type": "skill",
+          "skillIndex": 0,
+          "skillValues": [202878],
+          "SkillID": 202878,
+          "desc": "接 慢速横扫一下，再横扫一下地爆 AM_HFM_Hu_Wind_01_Atk_Fast_78 "
+        },
+
+        {
+          "Type": "skill",
+          "skillIndex": 0,
+          "skillValues": [202807],
+          "SkillID": 202807,
+          "desc": "接 狼星碎：横扫一下再横扫地爆 AM_HFM_Hu_Wind_01_Atk_Fast_07 "
+        }
+      ]
     },
     {
       "Id": 202876,
       "CanBreak": true,
       "Name": "蓄力较快，砍出近距离大地爆",
       "Key": "S+XBUTTON1",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202803,
@@ -229,36 +279,28 @@
       "CanBreak": true,
       "Name": "虎啸跃身斩：吼一声，然后突进上去砍一刀",
       "Key": "C+XBUTTON2",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202838,
       "CanBreak": true,
       "Name": "飞到上空，索敌落下砍人",
       "Key": "XBUTTON2",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202873,
       "CanBreak": true,
       "Name": "虎啸跃身斩：吼一声，然后突进上去砍一刀",
       "Key": "S+XBUTTON2",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202802,
       "CanBreak": true,
       "Name": "砍几刀，可接：快速跑上去砍几刀",
       "Key": "A+XBUTTON2",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202821,
@@ -271,90 +313,70 @@
       "CanBreak": true,
       "Name": "隐身上去砍",
       "Key": "Z",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202875,
       "CanBreak": true,
       "Name": "远程：蓄力砍出一道中近距离的长条地面地面",
       "Key": "X",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202870,
       "CanBreak": true,
       "Name": "格挡",
       "Key": "",
-      "Buffs": [
-        1000104
-      ]
+      "Buffs": [1000104]
     },
     {
       "Id": 202810,
       "CanBreak": true,
       "Name": "横扫几下，最后一下把人打上天",
       "Key": "C",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 14043,
       "CanBreak": true,
       "Name": "变身技能14043:AM_player_hfm_hu_R2_04_Rise",
       "Key": "C+Z",
-      "Buffs": [
-        1000104
-      ]
+      "Buffs": [1000104]
     },
     {
       "Key": "A+Z",
       "Id": 14070,
       "Name": "飒沓",
       "AnimPath": "AM_player_hfm_hu_F1",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202804,
       "CanBreak": true,
       "Name": "快速跑上去砍几刀",
       "Key": "S+Z",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202807,
       "CanBreak": true,
       "Name": "狼星碎：横扫一下再横扫地爆",
       "Key": "A+C",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202846,
       "CanBreak": true,
       "Name": "蓄力较久砍出大地爆,然后地面再次爆炸",
       "Key": "A+V",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202806,
       "CanBreak": true,
       "Name": "蓄力砍出大地爆",
       "Key": "A+X",
-      "Buffs": [
-        1000095
-      ]
+      "Buffs": [1000095]
     },
     {
       "Id": 202805,

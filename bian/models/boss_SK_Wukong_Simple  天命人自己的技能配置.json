@@ -29,7 +29,24 @@
       "Key": "S+SPACE",
       "CanBreak": false
     },
-
+    {
+      "Key": "XBUTTON1",
+      "type": "actions",
+      "afterActions": [
+        {
+          "Type": "skill",
+          "skillIndex": 0,
+          "skillValues": [10843, 10850, 10851, 10852],
+          "SkillID": 50001,
+          "desc": "棍花接大圣破棍式50001"
+        }
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "type": "actions",
+      "afterActions": []
+    },
     {
       "Id": 10505,
       "Name": "铜头铁臂",

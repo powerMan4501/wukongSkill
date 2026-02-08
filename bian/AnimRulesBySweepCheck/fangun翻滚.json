@@ -64,8 +64,7 @@
             "noHasAnyBuff": [888666007, 888666006, 888666008],
             "SpeedLeftValue": 6000,
             "SpeedRightValue": 6000,
-            "AttachToSpawnBase": true,
-            "spawnBaseSocketName": "weapon_r_index_04",
+            "ForTarget": true,
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
             "desc": "没有冰火毒buff，雷球"
           },

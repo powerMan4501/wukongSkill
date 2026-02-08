@@ -1,5 +1,79 @@
 [
   {
+    "nowMontage": "AM_wukong_trans_from_Vigor",
+    "rate": 0.1,
+    "type": "actions",
+    "afterActions": [
+      {
+        "Type": "skill",
+        "montageIndex": 2,
+        "montageValue": "AM_Dasheng_ComboA_0",
+        "SkillID": 10713,
+        "desc": "如果进入化身技之前释放的是montageValue的技能，则释放技能SkillID:大圣平A进退寸"
+      },
+      {
+        "Type": "skill",
+        "montageIndex": 2,
+        "montageValue": ".AM_wukong_combob_z_01",
+        "SkillID": 10714,
+        "desc": "退寸接进尺"
+      },
+      {
+        "Type": "skill",
+        "montageIndex": 2,
+        "montageValue": ".AM_wukong_combob_z_02",
+        "SkillID": 10713,
+        "desc": "进尺接退寸"
+      },
+
+      {
+        "Type": "skill",
+        "montageIndex": 2,
+        "montageValue": ".AM_Wukong_ComboA_z_01",
+        "SkillID": 50002,
+        "desc": "马喽10705接大圣10707"
+      },
+
+      {
+        "Type": "skill",
+        "montageIndex": 2,
+        "montageValue": ".AM_Dasheng_ComboA_01_Z_2",
+        "SkillID": 64321006,
+        "desc": "大圣10707 接 空中侧身好几下"
+      },
+      {
+        "Type": "skill",
+        "montageIndex": 2,
+        "montageValue": "AM_Dasheng_ComboA_01_Z_2",
+        "SkillID": 10863,
+        "desc": "大圣切手1斩棍接立棍3"
+      },
+      {
+        "Type": "skill",
+        "montageIndex": 2,
+        "montageValue": "AM_Dasheng_ComboA_02_Z_2",
+        "SkillID": 84321025,
+        "desc": "大圣切手2斩棍接变粗砸一下"
+      },
+      {
+        "Type": "skill",
+        "montageIndex": 2,
+        "montageValue": "AM_Dasheng_ComboA_03_Z_2",
+        "SkillID": 50007,
+        "desc": "大圣切手3江海翻接转身定"
+      },
+      {
+        "Type": "skill",
+        "montageIndex": 2,
+        "montageValue": "AM_Dasheng_ComboA_04_Z_1",
+        "SkillID": 84321024,
+        "desc": "大圣切手4转身定接砸砸砸"
+      }
+    ],
+    "Condition": "any",
+    "InputCore": "ThumbMouseButton2"
+  },
+  {
     "nowMontage": "AM_Wukong_PreciseDodge_F_01",
     "rate": 0.1,
     "skillID": 10992,
@@ -87,11 +161,7 @@
     "InputCore": "ThumbMouseButton2",
     "desc": "左jxsq接绣花针"
   },
-  
 
-
- 
- 
   {
     "nowMontage": "AM_Wukong_ComboB_q4.AM_Wukong_ComboB_q4",
     "rate": 0.3,
@@ -526,7 +596,7 @@
     "rate": 0.1,
     "type": "actions",
     "afterActions": [
-       {
+      {
         "type": "bossskill",
         "bossLabel": "SK_LYS_HuangMei_03",
         "bossType": "BOSS",

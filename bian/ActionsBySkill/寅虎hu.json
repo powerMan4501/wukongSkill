@@ -1,0 +1,740 @@
+[
+  {
+    "skillID": 14010,
+    "desc": "Q1 rise",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14011,
+    "desc": "Q1",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 14012,
+    "desc": "Q2",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 14013,
+    "desc": "Q3",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 14014,
+    "desc": "Q4",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 14015,
+    "desc": "Q5",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 14016,
+    "desc": "Q6",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14020,
+    "desc": "Q1_lv2 rise",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 14021,
+    "desc": "Q1_lv2",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 14022,
+    "desc": "Q2_lv2",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 14023,
+    "desc": "Q3_lv2",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 14024,
+    "desc": "Q4_lv2",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 14025,
+    "desc": "Q5_lv2",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 14026,
+    "desc": "Q6_lv2",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14070,
+    "desc": "飒沓",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14030,
+    "desc": "_R2_Start",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14031,
+    "desc": "_R2_Start_01",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14032,
+    "desc": "_R2_Start_03",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14033,
+    "desc": "_R2_Start_04",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14034,
+    "desc": "_R2_Start_0to1",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14035,
+    "desc": "_R2_End_01",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14036,
+    "desc": "R2_End_02",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 14037,
+    "desc": "R2_End_03",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14040,
+    "desc": "R2_01_rise",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14041,
+    "desc": "R2_02_rise",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14042,
+    "desc": "R2_03_rise",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 14043,
+    "desc": "R2_04_rise",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+
+
+  {
+    "skillID": 14050,
+    "desc": "L2_start",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+
+   {
+    "skillID": 14051,
+    "desc": "L2_start_01",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+
+  {
+    "skillID": 14052,
+    "desc": "L2_start_02",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+   {
+    "skillID": 14053,
+    "desc": "L2_start_03",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+   {
+    "skillID": 14057,
+    "desc": "L2_end",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14058,
+    "desc": "L2_broken",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+   {
+    "skillID": 14060,
+    "desc": "dodge",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  }
+]

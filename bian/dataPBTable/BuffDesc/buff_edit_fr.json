@@ -187,5 +187,39 @@
     "ID": 740173,
     "BuffTips": "巨猿jxsq期间禁止被选为目标",
     "BuffEffects": []
+  },
+  {
+    "ID": 24001,
+    "BuffTips": "【猿】变身-基础BUFF（属性免疫配置在Unit中） | 0.【变身音乐】",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 140,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [
+          "AkAudioEvent'/Game/00Main/Audio/Music/MSC_bianshen_714/EVT_music_bianshen_yuan/EVT_music_bianshen_yuan_play.EVT_music_bianshen_yuan_play'",
+          "AkAudioEvent'/Game/00Main/Audio/Music/MSC_bianshen_714/EVT_music_bianshen_yuan/EVT_music_bianshen_yuan_stop.EVT_music_bianshen_yuan_stop'"
+        ],
+        "EffectParams": [],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [119, -1600, 0],
+        "EffectParamsFloat": []
+      },
+
+      {
+        "EffectTrigger": 14,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [134, 20, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
   }
 ]

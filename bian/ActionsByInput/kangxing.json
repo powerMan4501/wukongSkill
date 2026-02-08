@@ -8,22 +8,7 @@
       }
     ]
   },
-  {
-    "code": "jhuo",
-    "afterActions": [
-      {
-        "Type": "decrease_Abnormal",
-        "attrType": 2,
-        "attrValue": 1000,
-        "desc": "降低火异常"
-      },
-      {
-        "type": "Clear_All_Abnormal",
-        "clearTypes": [2],
-        "desc": "清除异常状态:0无 1冰 2火 3毒 4雷 5阴 6阳"
-      }
-    ]
-  },
+  
   {
     "code": "jdu",
     "afterActions": [
