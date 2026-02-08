@@ -44,5 +44,13 @@
     "EffectParamsInt": [10, 25, 6, 0, 4, 4, 4444404],
     "EffectParamsFloat": [5000.0, 500.0, 36000.0, 0.0, 0.0, 0.0, 0.0],
     "EffectParamsStr": ["【主角】蓄力4"]
+  },
+
+    {
+    "desc": "飞龙棍",
+    "ID": 30000146,
+    "EffectParamsInt": [10, 25, 6, 0, 4, 4, 4444404],
+    "EffectParamsFloat": [400.0, 400.0, 40000.0, 0.0, 0.0, 0.0, 400.0],
+    "EffectParamsStr": ["【主角】蓄力4"]
   }
 ]

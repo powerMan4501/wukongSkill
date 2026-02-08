@@ -35,17 +35,243 @@
       "afterActions": [
         {
           "Type": "skill",
-          "skillIndex": 0,
-          "skillValues": [10843, 10850, 10851, 10852],
+          "skillIndexs": [0],
+          "skillValues": [10700, 10701, 10714],
+          "SkillID": 10713,
+          "desc": "枪Q1/进尺接退寸"
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [10713],
+          "SkillID": 10714,
+          "desc": "退寸进尺"
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [
+            10800, 10801, 50010, 50011, 10843, 10850, 10851, 10852
+          ],
           "SkillID": 50001,
-          "desc": "棍花接大圣破棍式50001"
+          "desc": "q1/棍花接大圣破棍式50001"
+        },
+
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [50001],
+          "SkillID": 50002,
+          "desc": "大圣斩棍"
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [50012],
+          "SkillID": 50003,
+          "desc": "Q2接切手2"
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [50003],
+          "SkillID": 50004,
+          "desc": ""
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [50013],
+          "SkillID": 50005,
+          "desc": "Q3接切手3"
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [50005],
+          "SkillID": 50006,
+          "desc": ""
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [50014],
+          "SkillID": 50007,
+          "desc": "Q4接切手4转身定"
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [50007],
+          "SkillID": 10863,
+          "desc": "转身定接立棍310863"
+        },
+
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [50015],
+          "SkillID": 64321006,
+          "desc": "Q5接空中侧身好几下"
+        },
+
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [64321006],
+          "SkillID": 84321024,
+          "desc": "空中侧身好几下接 砸砸砸"
+        },
+
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [84321024],
+          "SkillID": 84321030,
+          "desc": "砸砸砸 筋斗云大风车"
         }
       ]
     },
     {
       "Key": "XBUTTON2",
       "type": "actions",
-      "afterActions": []
+      "afterActions": [
+        {
+          "type": "magicskill",
+          "magicID": 8570,
+          "Scale3D": 0.9,
+          "skillIndexs": [0],
+          "skillValues": [10713],
+          "desc": "退寸接地狼"
+        },
+        {
+          "type": "magicskill",
+          "magicID": 8130,
+          "Scale3D": 0.8,
+          "skillIndexs": [0],
+          "skillValues": [10714],
+          "desc": "进尺接尾后针"
+        },
+        {
+          "type": "magicskill",
+          "magicID": 8520,
+          "skillIndexs": [0],
+          "skillValues": [10711, 10712],
+          "desc": "搅阵接不空"
+        },
+        {
+          "type": "magicskill",
+          "magicID": 8526,
+          "Scale3D": 0.9,
+          "skillIndexs": [0],
+          "skillValues": [10800, 10801, 50010, 50011],
+          "desc": "平A1接不能老拳"
+        },
+        {
+          "type": "magicskill",
+          "magicID": 8517,
+          "skillIndexs": [0],
+          "skillValues": [10705, 50001],
+          "desc": "平A1切手接虎伥"
+        },
+
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [50002, 10707],
+          "SkillID": 84321024,
+          "desc": "斩棍接 砸砸砸"
+        },
+
+        {
+          "Type": "bossskill",
+          "bossLabel": "SK_HYS_HongHaiEr_02A",
+          "bossType": "BOSS",
+          "MagicSkillID": 440515,
+          "skillIndexs": [0],
+          "skillValues": [84321024],
+          "desc": "砸砸砸 接夜叉王地刺 "
+        },
+
+        {
+          "Type": "bossskill",
+          "bossLabel": "SK_LYS_HuangMei_03",
+          "bossType": "BOSS",
+          "MagicSkillID": 380023,
+          "skillIndexs": [0],
+          "skillValues": [84321030],
+          "desc": "筋斗云大风车 接黄眉身体爆发大量雷电，伤害高 "
+        },
+        {
+          "type": "magicskill",
+          "magicID": 8526,
+          "Scale3D": 0.9,
+          "skillIndexs": [0],
+          "skillValues": [10802, 50012],
+          "desc": "平A2接不能老拳"
+        },
+
+        
+        {
+          "type": "magicskill",
+          "magicID": 8526,
+          "Scale3D": 0.9,
+          "skillIndexs": [0],
+          "skillValues": [10803, 50013],
+          "desc": "平A3接不能老拳"
+        },
+
+        {
+          "type": "magicskill",
+          "magicID": 8526,
+          "Scale3D": 0.9,
+          "skillIndexs": [0],
+          "skillValues": [10804, 50014],
+          "desc": "平A4接不能老拳"
+        },
+
+        {
+          "type": "magicskill",
+          "magicID": 8526,
+          "MagicSkillID": 300505,
+          "Scale3D": 0.9,
+          "skillIndexs": [0],
+          "skillValues": [10805, 50015],
+          "desc": "平A5接不能以武入禅"
+        },
+
+        {
+          "type": "magicskill",
+          "magicID": 8520,
+          "skillIndexs": [0],
+          "skillValues": [10700, 10701],
+          "desc": "枪平A1接 不空"
+        },
+
+        {
+          "type": "magicskill",
+          "magicID": 8578,
+          "skillIndexs": [0],
+          "skillValues": [10702],
+          "desc": "枪平A2接 虫校尉"
+        },
+
+        {
+          "type": "magicskill",
+          "magicID": 8514,
+          "skillIndexs": [0],
+          "skillValues": [10703],
+          "desc": "枪平A3接 鼠司空"
+        },
+
+        {
+          "type": "magicskill",
+          "magicID": 8599,
+          "skillIndexs": [0],
+          "skillValues": [10704],
+          "desc": "石蛙"
+        }
+      ]
     },
     {
       "Id": 10505,

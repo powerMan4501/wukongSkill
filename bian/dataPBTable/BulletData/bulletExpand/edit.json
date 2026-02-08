@@ -4,7 +4,7 @@
     "desc": "飞龙棍",
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1,
-    "HitEffectsforChr": [39019112]
+    "HitEffectsforChr": [30000146]
   },
   {
     "ID": 150,
