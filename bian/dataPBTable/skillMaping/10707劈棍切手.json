@@ -1,6 +1,27 @@
 [ 
   {
+    "OriginalId": 10705,
+    "MappedId": 50001,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "无条件,转50001"
+  },
+  {
+    "OriginalId": 10706,
+    "MappedId": 50001,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "无条件,转50001"
+  },
+  {
     "OriginalId": 10707,
+    "MappedId": 50002,
+    "Condition": "any",
+    "conditionValue": null,
+    "desc": "无条件,转50002"
+  },
+   {
+    "OriginalId": 10708,
     "MappedId": 50002,
     "Condition": "any",
     "conditionValue": null,

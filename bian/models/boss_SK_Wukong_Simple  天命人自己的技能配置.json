@@ -36,7 +36,7 @@
         {
           "Type": "skill",
           "skillIndexs": [0],
-          "skillValues": [10700, 10701, 10714],
+          "skillValues": [10700, 10701,10702, 10703, 10704, 10714],
           "SkillID": 10713,
           "desc": "枪Q1/进尺接退寸"
         },
@@ -51,7 +51,7 @@
           "Type": "skill",
           "skillIndexs": [0],
           "skillValues": [
-            10800, 10801, 50010, 50011, 10843, 10850, 10851, 10852
+            10800, 10801, 50010, 50011, 10843, 10850, 10851, 10852, 10720, 10721
           ],
           "SkillID": 50001,
           "desc": "q1/棍花接大圣破棍式50001"
@@ -60,7 +60,7 @@
         {
           "Type": "skill",
           "skillIndexs": [0],
-          "skillValues": [50001],
+          "skillValues": [50001, 10723],
           "SkillID": 50002,
           "desc": "大圣斩棍"
         },
@@ -90,7 +90,16 @@
           "skillIndexs": [0],
           "skillValues": [50005],
           "SkillID": 50006,
-          "desc": ""
+          "desc": "小横扫接大圣江海翻"
+        },
+
+           {
+          "type": "skill",
+          "magicID": 8527,
+          "skillID": 84321013,
+          "skillIndexs": [0],
+          "skillValues": [50006, 10724, 10725, 50010724],
+          "desc": "切手3，江海翻，接捅一下，大圣空中转很多下，4a"
         },
         {
           "Type": "skill",
@@ -136,6 +145,13 @@
       "Key": "XBUTTON2",
       "type": "actions",
       "afterActions": [
+        {
+          "type": "magicskill",
+          "magicID": 8532,
+          "skillIndexs": [0],
+          "skillValues": [10720, 10721, 10723],
+          "desc": "风云转接大铁球"
+        },
         {
           "type": "magicskill",
           "magicID": 8570,
@@ -211,7 +227,21 @@
           "desc": "平A2接不能老拳"
         },
 
-        
+        {
+          "type": "magicskill",
+          "magicID": 8562,
+          "skillIndexs": [0],
+          "skillValues": [50003],
+          "desc": "切手2，横扫一下捅一下，疯虎"
+        },
+        {
+          "type": "magicskill",
+          "magicID": 8535,
+          "MagicSkillID": 405502,
+          "skillIndexs": [0],
+          "skillValues": [50004],
+          "desc": "切手2斩棍，接鳖宝锤"
+        },
         {
           "type": "magicskill",
           "magicID": 8526,
@@ -220,7 +250,22 @@
           "skillValues": [10803, 50013],
           "desc": "平A3接不能老拳"
         },
+        {
+          "type": "magicskill",
+          "magicID": 8527,
+          "skillIndexs": [0],
+          "skillValues": [50005],
+          "desc": "切手3，小横扫，接虫总兵"
+        },
 
+        {
+          "type": "skill",
+          "magicID": 8527,
+          "skillID": 10992,
+          "skillIndexs": [0],
+          "skillValues": [50006, 10724, 10725, 50010724],
+          "desc": "切手3，江海翻，接定风珠"
+        },
         {
           "type": "magicskill",
           "magicID": 8526,
@@ -229,7 +274,15 @@
           "skillValues": [10804, 50014],
           "desc": "平A4接不能老拳"
         },
-
+        {
+          "Type": "bossskill",
+          "bossLabel": "SK_HFM_Hu_Wind_01",
+          "bossType": "TRANS",
+          "MagicSkillID": 202840,
+          "skillIndexs": [0],
+          "skillValues": [50007],
+          "desc": "转身定接 寅虎蓄力突进大横扫"
+        },
         {
           "type": "magicskill",
           "magicID": 8526,
