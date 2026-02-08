@@ -112,33 +112,35 @@ public class Hooks
                     //   BGW_GameDB.GetSkillSDesc(config.skillID, NotifyParam.owner)?.TemplatePath?.Contains(NotifyParam.Animation.PathName) ?? false);
                     var str = $"AnimMontage'{NotifyParam.Animation.PathName}'";
                     var matchedItem = rulesMap.FirstOrDefault(item => item.Key.Contains(currentMontage));
-                    if (matchedItem.Equals(default(KeyValuePair<string, LoadSkill.ActionsBySkillConfig>)))
+                    if (!matchedItem.Equals(default(KeyValuePair<string, LoadSkill.ActionsBySkillConfig>)))
                     {
-
-                        var allRules = GetCachedAnimRules();
-                        if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
-                        var nowMontage = NotifyParam.Animation.PathName;
-                        var matchedRule = allRules.FirstOrDefault(rule =>
-                                    !string.IsNullOrEmpty(nowMontage) &&
-                                    nowMontage.Contains(rule.montage) &&
-                                    (rule?.linkValue == 0 || rule?.linkValue.ToString() == linkValue.ToString()));
-
-                        if (matchedRule != null && matchedRule?.SweepActions?.Count > 0)
+                        var matchedConfig = matchedItem.Value;
+                        if (matchedConfig != null && matchedConfig.sweep_actions != null && matchedConfig.sweep_actions.Count > 0)
                         {
-                            var rule_ = new Rule();
-                            rule_?.DoAfterActions(matchedRule.SweepActions);
+                            var matchItem = matchedConfig.sweep_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
+                            if (matchItem != null && matchItem.actions != null && matchItem.actions.Count > 0)
+                            {
+                                var rule = new Rule();
+                                rule?.DoAfterActions(matchItem.actions);
+                                return;
+                            }
                         }
-                        return;
                     }
-                    var matchedConfig = matchedItem.Value;
-                    // if (!rulesMap.TryGetValue(str, out var matchedConfig)) return;
-                    if (matchedConfig == null || matchedConfig.sweep_actions == null || matchedConfig.sweep_actions.Count == 0) return;
-                    var matchItem = matchedConfig.sweep_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
-                    if (matchItem == null || matchItem.actions == null || matchItem.actions.Count == 0) return;
-                    var rule = new Rule();
-                    rule?.DoAfterActions(matchItem.actions);
-                    return;
 
+                    var allRules = GetCachedAnimRules();
+                    if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
+                    var nowMontage = NotifyParam.Animation.PathName;
+                    var matchedRule = allRules.FirstOrDefault(rule =>
+                                !string.IsNullOrEmpty(nowMontage) &&
+                                nowMontage.Contains(rule.montage) &&
+                                (rule?.linkValue == 0 || rule?.linkValue.ToString() == linkValue.ToString()));
+
+                    if (matchedRule != null && matchedRule?.SweepActions?.Count > 0)
+                    {
+                        var rule_ = new Rule();
+                        rule_?.DoAfterActions(matchedRule.SweepActions);
+                    }
+                    return;
                 }
 
             }
@@ -214,7 +216,26 @@ public class Hooks
 
                 var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
                 Console.WriteLine($"BANS_GSSpawnBullets.NotifyParam: PathName：{NotifyParam.owner.PathName}，GetName：{NotifyParam.owner.GetName()} ,linkValue:{linkValue} ");
+                var rulesMap = LoadSkill.TemplatePathConfigs;
+                if (rulesMap == null) return;
+                var currentMontage = NotifyParam.Animation.PathName;
 
+                var matchedItem = rulesMap.FirstOrDefault(item => item.Key.Contains(currentMontage));
+                if (!matchedItem.Equals(default(KeyValuePair<string, LoadSkill.ActionsBySkillConfig>)))
+                {
+                    var matchedConfig = matchedItem.Value;
+                    if (matchedConfig != null && matchedConfig.bullet_actions != null && matchedConfig.bullet_actions.Count > 0)
+                    {
+                        var matchItem = matchedConfig.bullet_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
+                        if (matchItem != null && matchItem.actions != null && matchItem.actions.Count > 0)
+                        {
+                            var rule = new Rule();
+                            rule?.DoAfterActions(matchItem.actions);
+                            return;
+                        }
+                    }
+
+                }
                 var allRules = GetCachedAnimRules();
                 if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
                 var nowMontage = NotifyParam.Animation.PathName;
@@ -831,6 +852,7 @@ public class Hooks
 
 
     public static List<string> playMontageList = new List<string>();
+    public static List<int> playSkillList = new List<int>();
 
     public static void InsertMontageReversed(string montagePath)
     {
@@ -844,7 +866,18 @@ public class Hooks
             }
         }
     }
-
+    public static void InsertSkillID(int SkillID)
+    {
+        if (SkillID > 0)
+        {
+            playSkillList.Insert(0, SkillID);
+            // 保持列表长度在合理范围内
+            if (playSkillList.Count > 5)
+            {
+                playSkillList.RemoveAt(playMontageList.Count - 1);
+            }
+        }
+    }
     [HarmonyPatch]
     public static class CastSkillPatch
     {
@@ -869,7 +902,7 @@ public class Hooks
 
 
 
-            Helper.LogInfoOnce($"Evt_CastSkillAnime Montage:{Montage.GetName()}");
+            Helper.LogInfoOnce($"释放技能Evt_CastSkillAnime Montage:{Montage.GetName()}，PathName：{currentMontage}");
             InsertMontageReversed(currentMontage);
 
             if (currentMontage.Contains("Animation/Player/Wukong/") || currentMontage.Contains("AM_wukong_trans_from_Vigor"))
@@ -1185,12 +1218,15 @@ public class Hooks
             {
                 return false; // 跳过原始方法的执行
             }
+
+
+            int dmgReasonEffectID = SkillDamageConfig.DmgReasonEffectID > 0 ? SkillDamageConfig.DmgReasonEffectID : EffectInstReq.ObjectID;
+            Log.Info($"开始进行伤害效果结算 OnHandleNormalDamageEffect dmgReasonEffectID: {dmgReasonEffectID}");
+
             if (Attacker != null && victim != null && attackerTeamId == playerTeamID)
             {
 
-                int dmgReasonEffectID = SkillDamageConfig.DmgReasonEffectID > 0 ? SkillDamageConfig.DmgReasonEffectID : EffectInstReq.ObjectID;
                 FUStSkillEffectDesc skillEffectDesc = BGW_GameDB.GetSkillEffectDesc(dmgReasonEffectID, Attacker);
-
 
                 if (skillEffectDesc != null)
                 {
@@ -1409,6 +1445,12 @@ public class Hooks
             var AttackerPlayer = Attacker as BGUCharacterCS;
             if (owner != null && player != null && owner.GetTeamIDInCS() == player.GetTeamIDInCS())
             {
+                var maxHp = BGUFunctionLibraryCS.GetAttrValue(player, EBGUAttrFloat.HpMax) / 2;
+                if (maxHp > 100 && FinalDamageValue >= maxHp)
+                {
+                    // 防止被秒杀
+                    FinalDamageValue = maxHp - 1;
+                }
                 if (FinalDamageValue > 1)
                 {
                     if (owner.PathName == player.PathName)
@@ -1533,14 +1575,13 @@ public class Hooks
                 var player = Helper.GetBGUPlayerCharacterCS();
                 if (player != null && player.PathName == owner.PathName)
                 {
-
+                    InsertSkillID(SkillID);
                     var rulesMap = LoadSkill.ActionsBySkillConfigs;
                     if (rulesMap != null && rulesMap.ContainsKey(SkillID))
                     {
                         if (!rulesMap.TryGetValue(SkillID, out var matchItem)) return;
                         if (matchItem != null && matchItem.cast_actions?.Count > 0)
                         {
-                            Log.Info($"技能CastSkillOK：matchItem:{matchItem.cast_actions.Count}");
                             var rule = new Rule();
                             rule?.DoAfterActions(matchItem.cast_actions);
                         }

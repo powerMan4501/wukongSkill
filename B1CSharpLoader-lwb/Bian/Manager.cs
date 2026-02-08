@@ -740,7 +740,7 @@ namespace bian
             }
 
             var strFinal = inputCodeStr?.ToLower();
-            Log.Info($"keyName: {keyName} ,inputCodeStr:{strFinal},ActionsByInput.Count:{ActionsByInput?.Count}");
+            Log.Info($"OnAnyKeyTriggerEvent keyName: {keyName} ,inputCodeStr:{strFinal},ActionsByInput.Count:{ActionsByInput?.Count}");
             if (ActionsByInput != null && ActionsByInput?.Count > 0)
             {
                 var matchItem = ActionsByInput.FirstOrDefault(item => strFinal?.Contains(item?.code?.ToLower()) ?? false
@@ -767,7 +767,8 @@ namespace bian
             }
 
             var character = Helper.GetBGUPlayerCharacterCS();
-            if (character == null) return;
+            Helper.LogInfoOnce($"OnAnyKeyTriggerEvent character.name:{character?.GetName()}");
+            if (character == null || !character.PathName.Contains("Unit_Player_Wukong")) return;
 
             UAnimInstance animInstance = character.Mesh.GetAnimInstance();
             var currMontage = animInstance?.GetCurrentActiveMontage();

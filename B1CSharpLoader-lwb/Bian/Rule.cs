@@ -59,6 +59,9 @@ namespace bian
         public int? magicID { get; set; }
         public int? MagicSkillID { get; set; }
         public int? ResId { get; set; }
+        public int? skillIndex { get; set; }
+        public List<int>? skillValues { get; set; }
+
 
         public string Type { get; set; }
         public List<RuleAction>? bullets { get; set; }
@@ -346,13 +349,13 @@ namespace bian
             Log.Info($"执行 {action?.desc},Bullet:{action?.Bullet}，action.EffectInstReq：{action?.EffectInstReq?.ObjectID}");
             if (action.Bullet != null)
             {
-                 
+
                 var projectTileIds = action.ProjectTileIDs?.Count > 0 ? action.ProjectTileIDs : [action.ProjectTileID];
                 if (projectTileIds?.Count > 0)
                 {
                     foreach (var projectTileId in projectTileIds)
                     {
-                       
+
                         Helper.SpawnProjectile(character, action.Bullet, projectTileId, action.ForTarget,
                             action.BulletCount, action.IsRandom,
                             new FVector(action.OffsetX, action.OffsetY, action.OffsetZ), action);
@@ -783,19 +786,34 @@ namespace bian
             }
             return false;
         }
+
+
+        private bool CheckSkillConditions(BGUPlayerCharacterCS character, RuleAction action)
+        {
+
+            var playSkillList = Hooks.playSkillList;
+            if (playSkillList == null || playSkillList.Count == 0) return false;
+            var montageIndex = action.skillIndex ?? 0;
+            if (montageIndex >= playSkillList.Count) return false;
+            if (action?.skillValues?.Count > 0 && action.skillValues.Contains(playSkillList[montageIndex]))
+            {
+                return true;
+            }
+            return false;
+        }
         public async void DoAfterActions(List<RuleAction> actions)
         {
             if (actions == null || actions.Count == 0) return;
             var character = Helper.GetBGUPlayerCharacterCS();
             if (character == null) return;
             bool hasExecutedMontageCondition = false; // 添加标志位
+            bool hasExecuteSkillCondition = false; // 添加标志位
 
             foreach (var action in actions)
             {
 
                 // 如果已经执行过conditionByMontage且当前action也有conditionByMontage，则跳过
-                if (hasExecutedMontageCondition && action?.montageIndex != null && action?.montageValue != null)
-                    continue;
+                if (hasExecutedMontageCondition && action?.montageIndex != null && action?.montageValue != null) continue;
                 if (action?.montageIndex != null && action?.montageValue != null)
                 {
                     if (!CheckAnimConditions(character, action))
@@ -805,6 +823,20 @@ namespace bian
                     else
                     {
                         hasExecutedMontageCondition = true; // 标记已执行过conditionByMontage
+                    }
+                }
+
+
+                if (hasExecuteSkillCondition && action?.skillIndex != null && action?.skillValues != null) continue;
+                if (action?.skillIndex != null && action?.skillValues != null)
+                {
+                    if (!CheckSkillConditions(character, action))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        hasExecuteSkillCondition = true; // 标记已执行过
                     }
                 }
                 // 检查条件

@@ -29,7 +29,7 @@ public class LoadSkill
         public List<RuleAction>? dmg_actions { get; set; }
         public List<RuleAction>? end_actions { get; set; }
 
-        public List<RuleAction>? bullet_actions { get; set; }
+        public List<sweepActionsConfig>? bullet_actions { get; set; }
         public List<EffectActions>? effect_actions { get; set; }
         public List<BuffAction>? buff_actions { get; set; }
     }
