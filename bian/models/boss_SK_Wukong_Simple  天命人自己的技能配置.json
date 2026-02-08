@@ -36,16 +36,81 @@
         {
           "Type": "skill",
           "skillIndexs": [0],
-          "skillValues": [10700, 10701,10702, 10703, 10704, 10714],
+          "skillValues": [
+            10830, 10831, 10832, 10833, 10834, 50020, 50021, 50022, 50023, 50024
+          ],
+          "SkillID": 84321025,
+          "desc": "侧键1，劈棍, 棍子变粗砸一下"
+        },
+
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [84321025],
+          "SkillID": 84321024,
+          "desc": " 棍子变粗砸一下 接 砸砸砸"
+        },
+
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [10860, 10861, 10862, 10863, 10864],
+          "SkillID": 84321028,
+          "desc": "侧键1，立棍, 连续几个横扫"
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [84321028],
+          "SkillID": 50006,
+          "desc": "侧键1，连续几个横扫 接江海翻"
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [84321026],
+          "SkillID": 84321027,
+          "desc": "侧键1，立棍, 上筋斗云撞一下，然后落地二连横扫"
+        },
+
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [
+            10881, 10882, 10883, 7, 10885, 10886, 10887, 10888, 10889, 10890
+          ],
+          "SkillID": 84321033,
+          "desc": "侧键1，戳棍蓄力, 大范围横扫"
+        },
+
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [84321033],
+          "SkillID": 84321006,
+          "desc": "大范围横扫接 逆时针横扫"
+        },
+
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [84321006],
+          "SkillID": 84321023,
+          "desc": "逆时针横扫 jie 筋斗云空中追击三连横扫"
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [10700, 10701, 10702, 10703, 10704, 10714],
           "SkillID": 10713,
-          "desc": "枪Q1/进尺接退寸"
+          "desc": "侧键1，枪平A/进尺接退寸"
         },
         {
           "Type": "skill",
           "skillIndexs": [0],
           "skillValues": [10713],
           "SkillID": 10714,
-          "desc": "退寸进尺"
+          "desc": "侧键1，退寸接进尺"
         },
         {
           "Type": "skill",
@@ -54,36 +119,58 @@
             10800, 10801, 50010, 50011, 10843, 10850, 10851, 10852, 10720, 10721
           ],
           "SkillID": 50001,
-          "desc": "q1/棍花接大圣破棍式50001"
+          "desc": "侧键1，q1/棍花/风云转接大圣破棍式50001"
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [10723],
+          "SkillID": 50010724,
+          "desc": "风云转落地end，接夜叉江海翻"
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [50001, 10705, 10706],
+          "SkillID": 50002,
+          "desc": "破棍接大圣斩棍"
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [50002],
+          "SkillID": 84321024,
+          "desc": "斩棍接  砸砸砸"
         },
 
         {
           "Type": "skill",
           "skillIndexs": [0],
-          "skillValues": [50001, 10723],
-          "SkillID": 50002,
-          "desc": "大圣斩棍"
-        },
-        {
-          "Type": "skill",
-          "skillIndexs": [0],
-          "skillValues": [50012],
+          "skillValues": [50012, 10802],
           "SkillID": 50003,
-          "desc": "Q2接切手2"
+          "desc": "Q2接切手2，横扫一下捅一下"
         },
         {
           "Type": "skill",
           "skillIndexs": [0],
           "skillValues": [50003],
           "SkillID": 50004,
-          "desc": ""
+          "desc": "横扫一下捅一下，接斩棍"
+        },
+
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [50004],
+          "SkillID": 84321023,
+          "desc": "斩棍接筋斗云空中追击三连横扫"
         },
         {
           "Type": "skill",
           "skillIndexs": [0],
           "skillValues": [50013],
           "SkillID": 50005,
-          "desc": "Q3接切手3"
+          "desc": "Q3接切手3，小横扫"
         },
         {
           "Type": "skill",
@@ -93,7 +180,7 @@
           "desc": "小横扫接大圣江海翻"
         },
 
-           {
+        {
           "type": "skill",
           "magicID": 8527,
           "skillID": 84321013,
@@ -138,6 +225,13 @@
           "skillValues": [84321024],
           "SkillID": 84321030,
           "desc": "砸砸砸 筋斗云大风车"
+        },
+        {
+          "Type": "skill",
+          "SkillID": 84321028,
+          "skillIndexs": [0],
+          "skillValues": [54321005, 10096, 10098],
+          "desc": "破隐一击,连续几个横扫"
         }
       ]
     },
@@ -145,6 +239,13 @@
       "Key": "XBUTTON2",
       "type": "actions",
       "afterActions": [
+        {
+          "type": "magicskill",
+          "magicID": 8513,
+          "skillIndexs": [0],
+          "skillValues": [54321005, 10096, 10098],
+          "desc": "破隐一击接大头磕头"
+        },
         {
           "type": "magicskill",
           "magicID": 8532,
