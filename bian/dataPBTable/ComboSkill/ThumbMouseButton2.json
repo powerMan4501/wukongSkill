@@ -523,15 +523,15 @@
   },
   {
     "nowMontage": "AM_Wukong_Dodge_B",
-    "rate": 0.5,
+    "rate": 0.1,
     "type": "actions",
     "afterActions": [
-      {
+       {
         "type": "bossskill",
-        "bossLabel": "SK_HFM_Hu_Wind_01",
-        "bossType": "TRANS",
-        "MagicSkillID": 202803,
-        "Name": "寅虎，吼一声，然后突进上去砍一刀"
+        "bossLabel": "SK_LYS_HuangMei_03",
+        "bossType": "BOSS",
+        "MagicSkillID": 380013,
+        "desc": "复战黄眉 举起锤子，然后锤子带雷光往前垂直劈下来"
       }
     ],
     "Condition": "StanceProp",
@@ -580,10 +580,10 @@
     "afterActions": [
       {
         "type": "bossskill",
-        "bossLabel": "SK_LuoChaGui_01",
+        "bossLabel": "SK_LYS_HuangMei_03",
         "bossType": "BOSS",
-        "MagicSkillID": 401215,
-        "desc": "左右各一巴掌，然后跳起砸出鬼火"
+        "MagicSkillID": 380023,
+        "desc": "复战黄眉 身体爆发大量雷电，伤害高"
       }
     ],
     "Condition": "StanceProp",

@@ -1,0 +1,219 @@
+[
+  {
+    "skillID": 401203,
+    "desc": "足球踢 ",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8,
+      "addRadius": 500,
+      "hitEffects": [888555025],
+      "replaceEffects": true
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 2.867692,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [1016262, 40121201],
+                "OffsetX": 300,
+                "OffsetY": 300,
+                "desc": "鬼王，右足球踢"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "linkValue": 5.366195,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [1016262, 40121201],
+                "OffsetX": 300,
+                "OffsetY": 300,
+                "desc": "鬼王，足球踢之后，左手一巴掌"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 401208,
+    "desc": "鬼王，冲上去熊抱 ",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8,
+      "addRadius": 500,
+      "hitEffects": [888555025],
+      "replaceEffects": true
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [1016262, 40121201],
+                "OffsetX": 300,
+                "OffsetY": 300,
+                "desc": "巴山虎"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 401215,
+    "desc": "左右各一巴掌，然后跳起砸出鬼火 ",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8,
+      "addRadius": 500,
+      "hitEffects": [888555025],
+      "replaceEffects": true
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [40121201],
+                "OffsetX": 300,
+                "OffsetY": 300,
+                "desc": "鬼火"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 401211,
+    "desc": "一拳打在地上触发范围火 ",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8,
+      "addRadius": 500,
+      "hitEffects": [888555035],
+      "replaceEffects": true
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [40121201, 30050301],
+                "OffsetX": 300,
+                "OffsetY": 300,
+                "desc": "鬼火波动"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+
+  {
+    "skillID": 401201,
+    "desc": "左右脚各踩一次 ",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8,
+      "addRadius": 500,
+      "hitEffects": [888555033],
+      "replaceEffects": true
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [40121201, 30050301],
+                "OffsetX": 300,
+                "OffsetY": 300,
+                "desc": "鬼火波动"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+
+   {
+    "skillID": 401202,
+    "desc": "脚踩一次",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8,
+      "addRadius": 500,
+      "hitEffects": [888555034],
+      "replaceEffects": true
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [40121201, 30050301],
+                "OffsetX": 300,
+                "OffsetY": 300,
+                "desc": "鬼火波动"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+
+   {
+    "skillID": 401228,
+    "desc": "超级鬼火",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8,
+      "addRadius": 500,
+      "hitEffects": [888555034],
+      "replaceEffects": true
+    }
+  }
+]

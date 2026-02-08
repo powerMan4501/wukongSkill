@@ -10,11 +10,26 @@
   {
     "desc": "小骊龙，范围伤害",
     "ID": 30250901,
-    "EffectParamsInt": [40, 25, 6, 0, 2, 4, 0],
+    "Range": {
+      "RangeType": 8,
+      "RangeCenterType": 0,
+      "RangeParam": [0, 12000, 180]
+    },
+    "EffectParamsInt": [40, 25, 6, 0, 2, 4, 4444404],
     "EffectParamsFloat": [200.0, 200.0, 22000.0, 2000.0, 0.0, 0.0, 200],
     "EffectParamsStr": ["【主角】蓄力2"]
   },
-
+  {
+    "ID": 30250902,
+    "Range": {
+      "RangeType": 8,
+      "RangeCenterType": 0,
+      "RangeParam": [1200, 4500, 180]
+    },
+    "EffectParamsInt": [10, 25, 1, 0,  4, 4, 4444404],
+    "EffectParamsFloat": [400.0, 400.0, 40000.0, 0.0, 0.0, 0.0, 0.0],
+    "EffectParamsStr": ["【主角】蓄力2"]
+  },
   {
     "desc": "小骊龙，范围伤害",
     "ID": 30250904,

@@ -89,7 +89,7 @@
         "EffectParamsFloat": []
       },
 
-         {
+      {
         "EffectTrigger": 1,
         "EffectType": 46,
         "EffectTargetSelectType": 0,
@@ -112,7 +112,7 @@
         "EffectParams": [84, 83, 85, 86, 137],
         "EffectParamsFloat": []
       },
-        {
+      {
         "EffectTrigger": 1,
         "EffectType": 46,
         "EffectTargetSelectType": 0,
@@ -154,12 +154,11 @@
     ]
   },
 
-
   {
-      "ID": 14071,
-      "BuffTips": "【虎】变身-风状态检测 | 0.棍势清零时移除风状态【14070】和风状态检测【14071】",
-      "BuffEffects": [
-        {
+    "ID": 14071,
+    "BuffTips": "【虎】变身-风状态检测 | 0.棍势清零时移除风状态【14070】和风状态检测【14071】",
+    "BuffEffects": [
+      {
         "EffectTrigger": 1,
         "EffectType": 134,
         "EffectTargetSelectType": 0,
@@ -167,25 +166,26 @@
         "EffectParams": [1],
         "EffectParamsFloat": [200.0]
       }
-      ]
-    },
+    ]
+  },
+  {
+    "ID": 14074,
+    "BuffTips": "【虎】变身-风状态 | 0.【属性】每1s-扣减变身能量：8",
+    "BuffEffects": [
       {
-      "ID": 14074,
-      "BuffTips": "【虎】变身-风状态 | 0.【属性】每1s-扣减变身能量：8",
-      "BuffEffects": [
-        {
-          "EffectTrigger": 1,
-          "EffectType": 3,
-          "EffectTargetSelectType": 0,
-          "EffectParamsString": [],
-          "EffectParams": [
-            188,
-            8,
-            0,
-            0
-          ],
-          "EffectParamsFloat": []
-        }
-      ]
-    }
+        "EffectTrigger": 1,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [188, 8, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+
+  {
+    "ID": 740173,
+    "BuffTips": "巨猿jxsq期间禁止被选为目标",
+    "BuffEffects": []
+  }
 ]

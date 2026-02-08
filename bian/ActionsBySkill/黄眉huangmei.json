@@ -1,0 +1,85 @@
+[
+  {
+    "skillID": 380018,
+    "desc": "举起锤子，画地为牢，召唤雷球打击敌人",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8
+    }
+  },
+  {
+    "skillID": 380013,
+    "desc": "举起锤子，然后锤子带雷光往前垂直劈下来",
+    "montage_config": {
+      "speedRate": 2,
+      "AMSpeedRate": 2
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 4000,
+        "desc": "霸体"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [30250101, 39010112],
+            "desc": "电圈,青背龙雷暴"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 380023,
+    "desc": "身体爆发大量雷电，伤害高 ",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [211],
+        "BuffTime": 4000,
+        "desc": "霸体"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [30250101, 118],
+            "OffsetX": 100,
+            "OffsetY": 100,
+            "desc": "电圈/落雷"
+          },
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 30240401,
+            "ForTarget": true,
+            "desc": "发射雷球"
+          }
+        ]
+      }
+    ],
+    "end_actions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [38001305],
+        "desc": "地板雷电"
+      }
+    ]
+  }
+]
