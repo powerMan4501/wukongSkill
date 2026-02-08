@@ -1,18 +1,5 @@
 [
-  {
-    "nowMontage": "AM_Wukong_ComboC_z_",
-    "rate": 0.2,
-    "type": "actions",
-    "afterActions": [
-      {
-        "type": "skill",
-        "skillID": 50001,
-        "desc": "棍花接破棍"
-      }
-    ],
-    "Condition": "any",
-    "InputCore": "ThumbMouseButton"
-  },
+  
   {
     "nowMontage": "AM_wukong_trans_from_Vigor",
     "rate": 0.1,
