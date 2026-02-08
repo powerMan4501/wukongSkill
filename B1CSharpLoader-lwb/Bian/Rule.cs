@@ -59,7 +59,7 @@ namespace bian
         public int? magicID { get; set; }
         public int? MagicSkillID { get; set; }
         public int? ResId { get; set; }
-        public int? skillIndex { get; set; }
+        public List<int>? skillIndexs { get; set; }
         public List<int>? skillValues { get; set; }
 
 
@@ -793,11 +793,15 @@ namespace bian
 
             var playSkillList = Hooks.playSkillList;
             if (playSkillList == null || playSkillList.Count == 0) return false;
-            var montageIndex = action.skillIndex ?? 0;
-            if (montageIndex >= playSkillList.Count) return false;
-            if (action?.skillValues?.Count > 0 && action.skillValues.Contains(playSkillList[montageIndex]))
+
+            // 支持多个索引的检查
+            if (action?.skillIndexs?.Count > 0 && action?.skillValues?.Count > 0)
             {
-                return true;
+                // 检查是否有任何一个索引匹配
+                return action.skillIndexs.Any(index =>
+                    index < playSkillList.Count &&
+                    action.skillValues.Contains(playSkillList[index])
+                );
             }
             return false;
         }
@@ -827,8 +831,8 @@ namespace bian
                 }
 
 
-                if (hasExecuteSkillCondition && action?.skillIndex != null && action?.skillValues != null) continue;
-                if (action?.skillIndex != null && action?.skillValues != null)
+                if (hasExecuteSkillCondition && action?.skillIndexs != null && action?.skillValues != null) continue;
+                if (action?.skillIndexs != null && action?.skillValues != null)
                 {
                     if (!CheckSkillConditions(character, action))
                     {

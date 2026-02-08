@@ -1562,8 +1562,12 @@ public class Hooks
 
 
 
-
-
+ 
+    public static List<int> igoreSkillIds = new List<int>{
+     10100,10199,10412,10413,10414,10415,10416,
+     10417,10418,10419,10423,10424,10425,10462,10463,10464,10465,
+     10466,10467,10468,10469
+ };
     [HarmonyPatch(typeof(BUS_SkillInstsCompSvr), "CastSkillOKAddBuff")]
     public static class CastSkillOKAddBuffPatch
     {
@@ -1575,7 +1579,13 @@ public class Hooks
                 var player = Helper.GetBGUPlayerCharacterCS();
                 if (player != null && player.PathName == owner.PathName)
                 {
-                    InsertSkillID(SkillID);
+                    var meshName = owner.Mesh?.SkeletalMesh?.GetFullName();
+                    if (meshName != null && meshName.Contains("SK_Wukong_Simple") && !igoreSkillIds.Contains(SkillID))
+                    {
+                        InsertSkillID(SkillID);
+
+                    }
+
                     var rulesMap = LoadSkill.ActionsBySkillConfigs;
                     if (rulesMap != null && rulesMap.ContainsKey(SkillID))
                     {
@@ -1586,7 +1596,8 @@ public class Hooks
                             rule?.DoAfterActions(matchItem.cast_actions);
                         }
                     }
-                    Log.Info($"释放技能开始 CastSkillOK：{SkillID}");
+                    // playSkillList
+                    Log.Info($"释放技能开始 CastSkillOK：{SkillID}，技能序列：[{string.Join(", ", playSkillList)}]");
                 }
             }
         }
