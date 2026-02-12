@@ -148,6 +148,8 @@ namespace bian
                 LoadUtils.LoadAndApplySummon();
                 LoadSkill.LoadActionsBySkill();
                 LoadUtils.modifySuperSkillArmor();
+                // LoadUtils.ModifyUnitCommDesc();
+
                 isBuffConfigsLoaded = true;
                 // Hooks.RegOnCastSkillWithAnimMontageEvent();
             }

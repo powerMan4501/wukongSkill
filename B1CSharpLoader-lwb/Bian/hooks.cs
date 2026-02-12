@@ -13,6 +13,7 @@ using ArchiveB1;
 using B1UI.GSUI;
 using CommB1;
 using ResB1;
+using b1.BGW;
 
 
 
@@ -96,7 +97,9 @@ public class Hooks
 
             var player = Helper.GetBGUPlayerCharacterCS();
             if (player == null) return;
-            if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner?.PathName == player.PathName)
+            Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()}，owner：{NotifyParam.owner?.PathName}，player:{player.PathName}");
+
+            if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner.PathName.Contains("Unit_Player_"))
             {
                 var owner = NotifyParam.owner as BGUCharacterCS;
                 if (owner == null) return;
@@ -120,6 +123,7 @@ public class Hooks
                             var matchItem = matchedConfig.sweep_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
                             if (matchItem != null && matchItem.actions != null && matchItem.actions.Count > 0)
                             {
+                                Log.Info($"匹配成功 BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.PathName}，linkValue:{linkValue}，actions:{matchItem.actions[0].desc}");
                                 var rule = new Rule();
                                 rule?.DoAfterActions(matchItem.actions);
                                 return;
@@ -217,7 +221,12 @@ public class Hooks
                 var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
                 Console.WriteLine($"BANS_GSSpawnBullets.NotifyParam: PathName：{NotifyParam.owner.PathName}，GetName：{NotifyParam.owner.GetName()} ,linkValue:{linkValue} ");
                 var rulesMap = LoadSkill.TemplatePathConfigs;
-                if (rulesMap == null) return;
+                if (rulesMap == null || rulesMap.Count == 0)
+                {
+                    LoadSkill.LoadActionsBySkill();
+                    return;
+                }
+                ;
                 var currentMontage = NotifyParam.Animation.PathName;
 
                 var matchedItem = rulesMap.FirstOrDefault(item => item.Key.Contains(currentMontage));
@@ -617,7 +626,7 @@ public class Hooks
             }
 
 
-            Helper.LogInfoOnce($"Evt_TriggerSkillEffect EffectID:{EffectID},ObjectID:{EffectInstReq.ObjectID}");
+            Helper.LogInfoOnce($"添加效果 Evt_TriggerSkillEffect EffectID:{EffectID},ObjectID:{EffectInstReq.ObjectID}");
             var Target = InnerTarget;
 
             var effectRulesMap_new = LoadSkill.EffectRules;
@@ -1221,7 +1230,7 @@ public class Hooks
 
 
             int dmgReasonEffectID = SkillDamageConfig.DmgReasonEffectID > 0 ? SkillDamageConfig.DmgReasonEffectID : EffectInstReq.ObjectID;
-            Log.Info($"开始进行伤害效果结算 OnHandleNormalDamageEffect dmgReasonEffectID: {dmgReasonEffectID}");
+            // Log.Info($"开始进行伤害效果结算 OnHandleNormalDamageEffect dmgReasonEffectID: {dmgReasonEffectID}");
 
             if (Attacker != null && victim != null && attackerTeamId == playerTeamID)
             {
@@ -1469,13 +1478,14 @@ public class Hooks
             {
                 // 己方造成的伤害最少为目标的体力值/500
                 float HpMax = BGUFunctionLibraryCS.GetAttrValue(owner, EBGUAttrFloat.HpMax);
-                if (FinalDamageValue < HpMax / 500)
+                var num = (int)HpMax / 500;
+                if (FinalDamageValue < num)
                 {
-                    FinalDamageValue = HpMax / 500;
+                    FinalDamageValue = num;
                 }
-                if (FinalDamageValue < 100)
+                if (FinalDamageValue < 20)
                 {
-                    FinalDamageValue = 100;
+                    FinalDamageValue = 20;
                 }
             }
         }
@@ -1562,7 +1572,7 @@ public class Hooks
 
 
 
- 
+
     public static List<int> igoreSkillIds = new List<int>{
      10100,10199,10412,10413,10414,10415,10416,
      10417,10418,10419,10423,10424,10425,10462,10463,10464,10465,
@@ -1596,7 +1606,6 @@ public class Hooks
                             rule?.DoAfterActions(matchItem.cast_actions);
                         }
                     }
-                    // playSkillList
                     Log.Info($"释放技能开始 CastSkillOK：{SkillID}，技能序列：[{string.Join(", ", playSkillList)}]");
                 }
             }
@@ -1726,6 +1735,154 @@ public class Hooks
                 Helper.LogInfoOnce($"打中自己的子弹 OnProjectileBeHitted: {projectileID}");
                 return false;
             }
+            return true;
+        }
+    }
+
+    [HarmonyPatch]
+    public static class BrightnessSettingPatch
+    {
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BGW_SettingMgrV2), "SetLocalSetteting")]
+        static bool Prefix(UISettingConfigType ConfigType, ref string NewValue)
+        {
+            if (ConfigType == UISettingConfigType.ScreenBrightness)
+            {
+                float brightnessValue = float.Parse(NewValue);
+                Log.Info($"修改亮度值SetLocalSetteting NewValue: {NewValue}");
+                if (brightnessValue < 20f)
+                {
+                    NewValue = "20";
+                }
+            }
+            return true; // 继续执行原始方法
+        }
+    }
+
+    // [HarmonyPatch(typeof(BUS_MovementSystem), "OnSetAMSectionSpeedRate")]
+    // class BUS_MovementSystem_OnSetAMSectionSpeedRate_Patch
+    // {
+    //     static void Prefix(BUS_MovementSystem __instance,
+    //         int NotifyStateID,
+    //         ref float SpeedRate,
+    //         float DurationTime = 0f)
+    //     {
+    //         Helper.LogInfoOnce($"玩家移动速度OnSetAMSectionSpeedRate: {NotifyStateID}, SpeedRate: {SpeedRate}, DurationTime: {DurationTime}");
+    //         // 将速度改为原来的3倍
+    //         // SpeedRate *= 3f;
+    //     }
+    // }
+
+    // [HarmonyPatch(typeof(BUS_MovementSystem), "MoveForward")]
+    // class MoveForward_Patch
+    // {
+    //     static void Prefix(BUS_MovementSystem __instance,
+
+    //         ref float Value)
+    //     {
+    //         Value += 10000;
+
+    //         BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(__instance.GetOwner());
+    //         if (bUS_GSEventCollection != null)
+    //         {
+    //             Helper.LogInfoOnce($"玩家前进 MoveForward: {Value} ");
+    //             bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.MoveSlowly, IsRemove: true);
+    //             bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.LockStateWalking, IsRemove: true);
+
+    //         }
+    //         // 将速度改为原来的3倍
+    //         // SpeedRate *= 3f;
+    //     }
+    // }
+
+    // [HarmonyPatch(typeof(BUS_MovementSystem), "CheckCanRun")]
+    // public class CheckCanRunPatch
+    // {
+    //     [HarmonyPostfix]
+    //     static void Postfix(ref bool __result)
+    //     {
+    //         __result = true;
+    //     }
+    // }
+
+
+    [HarmonyPatch(typeof(BUS_ProjectileAudioCompl), "DoPlayAudio")]
+    public static class BUS_ProjectileAudioCompl_DoPlayAudio_Patch
+    {
+        static bool Prefix(BUS_ProjectileAudioCompl __instance, UAkEventConfig InAkEventConfig)
+        {
+
+            var name = InAkEventConfig.AkEvent?.GetFullName();
+
+            if (name != null && name.Contains("EVT_player_wk_bang_SanJianLiangRen_wjgz"))
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+    }
+
+
+    // [HarmonyPatch(typeof(BUS_PlayerInputActionComp), "OnInputCastSkill")]
+    // class BUS_PlayerInputActionComp_OnInputCastSkill_Patch
+    // {
+    //     static bool Prefix(BUS_PlayerInputActionComp __instance,
+    //         EInputActionType InputActionType,
+    //         bool IsRelease,
+    //         int SkillID,
+    //         int DescID,
+    //         int ItemID = -1)
+    //     {
+    //         Helper.LogInfoOnce($"玩家输入技能OnInputCastSkill InputActionType: {InputActionType}, IsRelease：{IsRelease}, SkillID：{SkillID}, DescID：{DescID}, ItemID：{ItemID}");
+
+    //         // 其他情况保持原逻辑
+    //         return true;
+    //     }
+
+    // }
+
+
+
+
+
+    [HarmonyPatch]
+    class BUEffectSpawnProjectilePatch
+    {
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BUEffectSpawnProjectile), "ApplyBySkill_Implement")]
+        static bool ApplyBySkill_Implement(int EffectID, AActor Caster, AActor Target, in FEffectInstReq EffectInstReq)
+        {
+
+            if (EffectID == 0) return true;
+
+
+            FUStSkillEffectDesc skillEffectDesc = BGW_GameDB.GetSkillEffectDesc(EffectID, Target);
+
+
+            if (skillEffectDesc == null)
+            {
+                return true;
+            }
+
+            // EffectParamsStr0：do_actions
+            // EffectParamsStr1：skill
+            // EffectParamsStr2：conditions
+            // EffectParamsStr3：path/config
+            if (skillEffectDesc.EffectParamsStr.Count > 2)
+            {
+                string actionKey = skillEffectDesc.EffectParamsStr[0];
+                string actionType = skillEffectDesc.EffectParamsStr[1];
+
+                Log.Info($"拦截 BUEffectSpawnProjectile ApplyBySkill_Implement: {EffectID},actionKey:{actionKey}，actionType：{actionType}");
+                if (actionKey.Contains("do_actions"))
+                {
+                    Helper.SpawnProjectileByEffect(skillEffectDesc,Caster,Target,EffectInstReq);
+                }
+                return false;
+            }
+
             return true;
         }
     }

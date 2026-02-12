@@ -305,6 +305,7 @@ namespace bian
 
         private void HandleBulletAction(BGUPlayerCharacterCS character, RuleAction action, float timeLength)
         {
+            Log.Info($"执行BulletAction:{action?.Bullet}");
             if (action?.buffs?.Count > 0)
             {
                 var buffTime = timeLength;
@@ -346,7 +347,7 @@ namespace bian
                     }
                 }
             }
-            Log.Info($"执行 {action?.desc},Bullet:{action?.Bullet}，action.EffectInstReq：{action?.EffectInstReq?.ObjectID}");
+            Log.Info($"执行desc：{action?.desc},Bullet:{action?.Bullet}，action.EffectInstReq：{action?.EffectInstReq?.ObjectID}");
             if (action.Bullet != null)
             {
 
@@ -405,7 +406,7 @@ namespace bian
             var character = Helper.GetBGUPlayerCharacterCS();
             if (character == null) return;
 
-            Log.Info($"执行DoAction: {action?.Type} {action?.desc},EffectInstReq:{action?.EffectInstReq?.ObjectID}");
+            Log.Info($"执行DoAction Type: {action?.Type}，desc：{action?.desc},EffectInstReq:{action?.EffectInstReq?.ObjectID}");
             switch (action?.Type?.ToLower())
             {
                 case "buff":
@@ -557,6 +558,14 @@ namespace bian
                 case "strong_monster":
                     // 加强怪
                     Helper.StrongMonster();
+                    break;
+                case "show_sweepcheck_shape":
+                    BUS_EventCollectionCS.Get(character)?.Evt_ShowSweepCheckShape.Invoke();
+                    break;
+
+                case "change_move_speed":
+                    BUC_SpeedCtrlData unPersistentReadOnlyData = BGU_DataUtil.GetUnPersistentReadOnlyData<BUC_SpeedCtrlData>(character);
+                    unPersistentReadOnlyData.SetSpeedInfoBase(5400f, 4550f, 1600f);
                     break;
                 case "addallsummonlifetime":
 

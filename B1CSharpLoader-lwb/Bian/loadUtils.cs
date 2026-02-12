@@ -2763,6 +2763,54 @@ namespace bian
                 }
             }
         }
+
+
+
+        public static void ModifyUnitCommDesc()
+        {
+
+            var transList = BG_ProtobufDataAPI<FUStUnitCommDesc>.Get().GetAll();
+            if (transList == null || transList.Count == 0) return;
+               foreach (var itemData in transList.Values)
+            {
+               if(itemData.FootHeightThreshold < 100)
+                {
+                    itemData.WalkFootSpeedThreshold = 100;
+                }
+
+                if(itemData.SprintFootSpeedThreshold < 1000)
+                {
+                    itemData.WalkFootSpeedThreshold = 1000;
+                }
+                 if(itemData.RunFootSpeedThreshold < 800)
+                {
+                    itemData.WalkFootSpeedThreshold = 800;
+                }
+                if(itemData.WalkFootSpeedThreshold < 60)
+                {
+                    itemData.WalkFootSpeedThreshold = 60;
+                }
+
+
+
+
+                 if(itemData.MoveSpeedFast < 3000)
+                {
+                    itemData.WalkFootSpeedThreshold = 3000;
+                }
+
+                if(itemData.MoveSpeedNormal < 1800)
+                {
+                    itemData.WalkFootSpeedThreshold = 1800;
+                }
+                 if(itemData.MoveSpeedSlow < 200)
+                {
+                    itemData.WalkFootSpeedThreshold = 200;
+                }
+            }
+        }
+
+
         public static void ModifyWine()
         {
             foreach (WineDesc item in GSProtobufRuntimeAPI<TBWineDesc, WineDesc>.Get().GetAll().List)
