@@ -1514,15 +1514,13 @@ namespace bian
             return BGW_PreloadAssetMgr.Get(character).TryGetCachedResourceObj<BGWDataAsset_ProjectileSpawnConfig>(path, ELoadResourceType.SyncLoadAndCache);
 
         }
-        public static void SpawnProjectile(BGUPlayerCharacterCS character, string path, int projectileID = 0, bool forTarget = false, int bulletCount = 1, bool isRandom = false, FVector offset = default(FVector), RuleAction? action = null)
+        public static void SpawnProjectile(AActor character, string path, int projectileID = 0, bool forTarget = false, int bulletCount = 1, bool isRandom = false, FVector offset = default(FVector), RuleAction? action = null)
         {
             BGWDataAsset_ProjectileSpawnConfig bGWDataAsset_ProjectileSpawnConfig = getBGWDataAsset_ProjectileSpawnConfig(path, character);
             if (bGWDataAsset_ProjectileSpawnConfig == null)
             {
-                Log.Warn($"找不到子弹 SpawnProjectile: projectile not found! {path}");
                 return;
             }
-            Log.Info($"执行发射子弹 SpawnProjectile:  {path}");
             AActor aActor = character;
             AActor target = BGUFunctionLibraryCS.BGUGetTarget(character);
             if (action?.Caster != null)
@@ -1535,7 +1533,6 @@ namespace bian
             }
             string targetString = "BGW_90_hfm_leiwa_Atk_41_Lv6_change";
             bool isShotBull = path.Contains(targetString);
-            //发射类的子弹不执行这个
             if (forTarget && target != null && !isShotBull)
             {
                 aActor = target;
@@ -1589,7 +1586,6 @@ namespace bian
 
                 if (action?.targetBaseSocketName != null)
                 {
-
                     targetBase.SocketName = (FName)(action.targetBaseSocketName);
                 }
                 if (action?.spawnBaseSocketName != null)
@@ -1597,7 +1593,7 @@ namespace bian
                     spawnBase.UseSocket = true;
                     spawnBase.SocketName = (FName)(action?.spawnBaseSocketName);
                 }
-
+                offsetInfo.PosOffsetType = ProjectilePosOffsetType.Normal;
                 if (isRandom)
                 {
                     offsetInfo.PosOffsetType = ProjectilePosOffsetType.RandomOffset;
@@ -1641,6 +1637,9 @@ namespace bian
                 if (offset.X > 0 || offset.Y > 0 || offset.Z > 0)
                 {
 
+                    Log.Info($"offset.X:{offset.X} offset.Y:{offset.Y} offset.Z:{offset.Z}");
+                    // var fVector = new FVector(offset.X, offset.Y, offset.Z);
+                    // offsetInfo.PosOffset = fVector;
                     if (attackTarget && target != null)
                     {
                         offsetInfo.PosOffset.X = offsetInfo.PosOffset.X;
@@ -1696,10 +1695,10 @@ namespace bian
                     fEffectInstReq = (FEffectInstReq)action.EffectInstReq;
                     spawnBase.BaseType = ProjectileBaseType.UseEffectPosition;
                 }
-                ProjectileSpawnNSInfo.InitSpawnInfo(spawnBase, offsetInfo, none_target, bGWDataAsset_ProjectileSpawnConfig.SpawnBase_NoneTarget, bGWDataAsset_ProjectileSpawnConfig.SpawnPosOffsetInfo_NoneTarget, character, aActor, aActor, null, in fEffectInstReq);
+                ProjectileSpawnNSInfo.InitSpawnInfo(spawnBase, offsetInfo, none_target, bGWDataAsset_ProjectileSpawnConfig.SpawnBase_NoneTarget, bGWDataAsset_ProjectileSpawnConfig.SpawnPosOffsetInfo_NoneTarget, character, aActor, character, null, in fEffectInstReq);
                 ProjectileSpawnNSInfo.AttachToSpawnBase = bGWDataAsset_ProjectileSpawnConfig.AttachToSpawnBase;
                 ProjectileSpawnNSInfo.AttachRule_Rot = bGWDataAsset_ProjectileSpawnConfig.AttachRule_Rot;
-                ProjectileSpawnNSInfo.InitTargetInfo(targetBase, bGWDataAsset_ProjectileSpawnConfig.TargetPosOffsetInfo, bGWDataAsset_ProjectileSpawnConfig.bEnableTargetBase_NoneTarget, bGWDataAsset_ProjectileSpawnConfig.TargetBase_NoneTarget, bGWDataAsset_ProjectileSpawnConfig.TargetPosOffsetInfo_NoneTarget, character, aActor, aActor, null, in fEffectInstReq);
+                ProjectileSpawnNSInfo.InitTargetInfo(targetBase, bGWDataAsset_ProjectileSpawnConfig.TargetPosOffsetInfo, bGWDataAsset_ProjectileSpawnConfig.bEnableTargetBase_NoneTarget, bGWDataAsset_ProjectileSpawnConfig.TargetBase_NoneTarget, bGWDataAsset_ProjectileSpawnConfig.TargetPosOffsetInfo_NoneTarget, character, aActor, character, null, in fEffectInstReq);
                 ProjectileSpawnNSInfo.BornDirBaseInfo = bGWDataAsset_ProjectileSpawnConfig.BornDirBaseInfo;
                 if (forTarget && target != null && isShotBull)
                 {
@@ -1764,7 +1763,7 @@ namespace bian
                 ProjectileSpawnNSInfo.SpawnWaveCounter = 0;
                 ProjectileSpawnNSInfo.bEnableMultiTargetMode = bGWDataAsset_ProjectileSpawnConfig.bEnableMultiTargetMode;
                 ProjectileSpawnNSInfo.MutilTargetRule = bGWDataAsset_ProjectileSpawnConfig.MutilTargetRule;
-                Log.Info($"调取发射子弹 ProjectileSpawnNSInfo.Evt_OnNotifyStateSpawnProjectileObj ProjectileID: {ProjectileSpawnNSInfo.ProjectileID}");
+                Log.Info($"执行发射子弹 ProjectileSpawnNSInfo.Evt_OnNotifyStateSpawnProjectileObj ProjectileID: {ProjectileSpawnNSInfo.ProjectileID}，Caster：{character.GetName()},action.EffectInstReq:{action?.EffectInstReq.HasValue}");
                 bUS_GSEventCollection.Evt_OnNotifyStateSpawnProjectileObj.Invoke(ref ProjectileSpawnNSInfo);
             }
         }
@@ -1845,203 +1844,61 @@ namespace bian
 
 
 
+
+        // 改进后
         public static void SpawnProjectileByEffect(FUStSkillEffectDesc skillEffectDesc, AActor Caster, AActor Target, FEffectInstReq EffectInstReq)
         {
-
             if (skillEffectDesc.EffectParamsStr.Count < 2) return;
+            if (!skillEffectDesc.EffectParamsStr[1].Contains("bullet")) return;
 
-
-            string actionKey = skillEffectDesc.EffectParamsStr[0];
-            string actionType = skillEffectDesc.EffectParamsStr[1];
-
-            if (!actionType.Contains("bullet"))
+            // 检查条件
+            if (skillEffectDesc.EffectParamsStr[2].Contains("conditions:"))
             {
-                return;
-            }
-            var effectParamsStr2 = skillEffectDesc.EffectParamsStr[2];
-            // "hasAnyBuff:888666005,888666006,888666007,888666008"
-            if (effectParamsStr2.Contains("conditions:"))
-            {
-                string conditions = effectParamsStr2.Replace("conditions:", "");
+                string conditions = skillEffectDesc.EffectParamsStr[2].Replace("conditions:", "");
                 if (!CheckConditions(Caster, conditions)) return;
             }
 
-
-
             string path = skillEffectDesc.EffectParamsStr[3];
-            BGWDataAsset_ProjectileSpawnConfig bGWDataAsset_ProjectileSpawnConfig = getBGWDataAsset_ProjectileSpawnConfig(path, Caster);
-            if (bGWDataAsset_ProjectileSpawnConfig == null)
-            {
-                return;
-            }
-            int ProjectileID = skillEffectDesc.EffectParamsInt[0];//ProjectileID
-            int BulletNum = skillEffectDesc.EffectParamsInt[1];//BulletNum
-            bool forTarget = skillEffectDesc.EffectParamsInt[2] == 1;//forTarget
+            Log.Info($"使用技能效果发射子弹 SpawnProjectileByEffectpath:{path}");
+            // 从EffectParams获取参数
+            int projectileID = skillEffectDesc.EffectParamsInt[0];
+            int bulletCount = skillEffectDesc.EffectParamsInt[1];
+            bool forTarget = skillEffectDesc.EffectParamsInt[2] == 1;
+            bool isRandom = skillEffectDesc.EffectParamsInt[3] == 3;
             int PosOffsetType = skillEffectDesc.EffectParamsInt[3];//ProjectilePosOffsetType:0 None,1 Normal,2 RangeOffset,3 RandomOffset
             int ProjectileFlySpd = skillEffectDesc.EffectParamsInt[4]; //ProjectileFlySpd
             int ProjectileRotSpd = skillEffectDesc.EffectParamsInt[5];//ProjectileRotSpd
+                                                                      // 获取位置偏移
+            float posX = skillEffectDesc.EffectParamsFloat[0];
+            float posY = skillEffectDesc.EffectParamsFloat[1];
+            float posZ = skillEffectDesc.EffectParamsFloat[2];
 
-            float PosOffsetX = skillEffectDesc.EffectParamsFloat[0];//offsetX
-            float PosOffsetY = skillEffectDesc.EffectParamsFloat[1];//offsetY
-            float PosOffsetZ = skillEffectDesc.EffectParamsFloat[2];//offsetZ
+
             float BornOffsetX = skillEffectDesc.EffectParamsFloat[3];//BornOffsetX
             float BornOffsetY = skillEffectDesc.EffectParamsFloat[4];//BornOffsetY
             float BornOffsetZ = skillEffectDesc.EffectParamsFloat[5];//BornOffsetZ
+            var offset = new FVector(posX, posY, posZ);
 
-            // 第三个参数 EffectParamsStr[3] "getIDByBuffs:888666005-118,888666006-140,888666007-148,888666008-152"
-            // if (skillEffectDesc.EffectParamsStr.Count > 3)
-            // {
-            //     var effectParamsStr4 = skillEffectDesc.EffectParamsStr[4];
-            //     if (effectParamsStr4.Contains("getIDByBuffs:"))
-            //     {
-            //         string buffString = effectParamsStr4.Replace("getIDByBuffs:", "");
-            //         string[] buffPairs = buffString.Split(',');
-            //         foreach (string pair in buffPairs)
-            //         {
-            //             string[] parts = pair.Split('-');
-            //             if (parts.Length == 2)
-            //             {
-            //                 int buffID = int.Parse(parts[0]);
-            //                 if (BGUFunctionLibraryCS.BGUHasBuffByID(Caster, buffID))
-            //                 {
-            //                     ProjectileID = int.Parse(parts[1]);
-            //                     break;
-            //                 }
-            //             }
-            //         }
-            //     }
-            // }
-            AActor aActor = Caster;
-
-            if (aActor == null)
+            // 创建RuleAction来传递EffectInstReq
+            var action = new RuleAction
             {
-                return;
-            }
-            ACharacter aCharacter = aActor as ACharacter;
-            if (aCharacter == null)
-            {
-                aCharacter = BGU_DataUtil.GetReadOnlyData<BUC_MasterData>(aActor).GetMasterActor() as ACharacter;
-            }
-            if (aCharacter == null)
-            {
-                return;
-            }
-
-            BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(aCharacter);
-            if (bUS_GSEventCollection != null)
-            {
-                FGSProjecttileObjSpawnNSInfo ProjectileSpawnNSInfo = new FGSProjecttileObjSpawnNSInfo
-                {
-                    ProjectileType = EProjectileType.Bullet,
-                    BuffIDList = bGWDataAsset_ProjectileSpawnConfig.BuffIDList.ToList(),
-                    ProjectileID = ProjectileID,
-                    SpawnWave = bGWDataAsset_ProjectileSpawnConfig.ProjectileWave,
-                    SpawnNumPerWave = BulletNum
-                };
+                Caster = Caster,
+                Target = Target,
+                EffectInstReq = EffectInstReq,
+                BornDirOffsetXLeftValue = (int)BornOffsetX,
+                BornDirOffsetXRightValue = (int)BornOffsetX,
+                BornDirOffsetYLeftValue = (int)BornOffsetY,
+                BornDirOffsetYRightValue = (int)BornOffsetY,
+                BornDirOffsetZLeftValue = (int)BornOffsetZ,
+                BornDirOffsetZRightValue = (int)BornOffsetZ,
+                SpeedLeftValue = ProjectileFlySpd,
+                SpeedRightValue = ProjectileFlySpd,
 
 
+            };
 
-                var spawnPosOffsetInfo = bGWDataAsset_ProjectileSpawnConfig.SpawnPosOffsetInfo;
-                var bornDirOffset = bGWDataAsset_ProjectileSpawnConfig.BornDirOffset;
-                var targetBase = bGWDataAsset_ProjectileSpawnConfig.TargetBase;
-                var spawnBase = bGWDataAsset_ProjectileSpawnConfig.SpawnBase;
-
-                string targetString = "BGW_90_hfm_leiwa_Atk_41_Lv6_change";
-                bool isShotBull = path.Contains(targetString);
-                bool isRandom = PosOffsetType == 3;
-
-                var fVector = new FVector(PosOffsetX, PosOffsetY, PosOffsetZ);
-
-                spawnPosOffsetInfo.PosOffsetType = (ProjectilePosOffsetType)PosOffsetType;
-                spawnPosOffsetInfo.PosOffset = fVector;
-                bornDirOffset.BornDirOffsetX.LeftValue = BornOffsetX;
-                bornDirOffset.BornDirOffsetX.RightValue = BornOffsetX;
-                bornDirOffset.BornDirOffsetY.LeftValue = BornOffsetY;
-                bornDirOffset.BornDirOffsetY.RightValue = BornOffsetY;
-                bornDirOffset.BornDirOffsetZ.LeftValue = BornOffsetZ;
-                bornDirOffset.BornDirOffsetZ.RightValue = BornOffsetZ;
-                if (isRandom)
-                {
-                    spawnPosOffsetInfo.PosOffset = new FVector(500, 500, 125.0);
-                    spawnPosOffsetInfo.VerticalOffset_World = 120f;
-                    spawnPosOffsetInfo.RangeOffsetInfo.CircleRadius = 800;
-                    bornDirOffset.BornDirOffsetX.LeftValue = -40f;
-                    bornDirOffset.BornDirOffsetX.RightValue = 40f;
-                    bornDirOffset.BornDirOffsetY.LeftValue = -40f;
-                    bornDirOffset.BornDirOffsetY.RightValue = 40f;
-                    bornDirOffset.BornDirOffsetZ.LeftValue = 0f;
-                    bornDirOffset.BornDirOffsetZ.RightValue = 200f;
-                }
-
-                if (forTarget && isShotBull)
-                {
-                    targetBase.BaseType = ProjectileBaseType.CurTarget_ProjectileSpawner;
-                    targetBase.UseSocket = true;
-                    targetBase.SocketName = (FName)"CAMERA_LOCK";
-                    spawnBase.BaseType = ProjectileBaseType.ProjectileSpawner;
-                }
-                else
-                {
-                    spawnBase.BaseType = ProjectileBaseType.UseEffectPosition;
-                }
-
-                if (ProjectileFlySpd != null)
-                {
-                    ProjectileSpawnNSInfo.ProjectileFlySpd.Spd.LeftValue = ProjectileFlySpd;
-                    ProjectileSpawnNSInfo.ProjectileFlySpd.Spd.RightValue = ProjectileFlySpd;
-                }
-                if (ProjectileRotSpd != null)
-                {
-                    ProjectileSpawnNSInfo.ProjectileRotSpd.Spd.LeftValue = ProjectileRotSpd;
-                    ProjectileSpawnNSInfo.ProjectileRotSpd.Spd.RightValue = ProjectileRotSpd;
-                }
-
-                bGWDataAsset_ProjectileSpawnConfig.SpawnPosOffsetInfo = spawnPosOffsetInfo;
-                bGWDataAsset_ProjectileSpawnConfig.TargetBase = targetBase;
-                bGWDataAsset_ProjectileSpawnConfig.SpawnBase = spawnBase;
-                bGWDataAsset_ProjectileSpawnConfig.BornDirOffset = bornDirOffset;
-
-
-                if (forTarget && isShotBull)
-                {
-                    ProjectileSpawnNSInfo.BornDirBaseInfo.BornDirType = ProjectileBornDirType.LookAtTargetPos;
-                }
-                if (forTarget && !isShotBull)
-                {
-                    var targetActor = BGUFunctionLibraryCS.BGUGetTarget(Caster) as ACharacter;
-                    if (targetActor != null)
-                    {
-                        aCharacter = targetActor;
-                    }
-                }
-                ProjectileSpawnNSInfo.InitSpawnInfo(bGWDataAsset_ProjectileSpawnConfig.SpawnBase, bGWDataAsset_ProjectileSpawnConfig.SpawnPosOffsetInfo, bGWDataAsset_ProjectileSpawnConfig.bEnableSpawnBase_NoneTarget, bGWDataAsset_ProjectileSpawnConfig.SpawnBase_NoneTarget, bGWDataAsset_ProjectileSpawnConfig.SpawnPosOffsetInfo_NoneTarget, Caster, aCharacter, Target, null, in EffectInstReq);
-                ProjectileSpawnNSInfo.AttachToSpawnBase = bGWDataAsset_ProjectileSpawnConfig.AttachToSpawnBase;
-                ProjectileSpawnNSInfo.AttachRule_Rot = bGWDataAsset_ProjectileSpawnConfig.AttachRule_Rot;
-                ProjectileSpawnNSInfo.InitTargetInfo(bGWDataAsset_ProjectileSpawnConfig.TargetBase, bGWDataAsset_ProjectileSpawnConfig.TargetPosOffsetInfo, bGWDataAsset_ProjectileSpawnConfig.bEnableTargetBase_NoneTarget, bGWDataAsset_ProjectileSpawnConfig.TargetBase_NoneTarget, bGWDataAsset_ProjectileSpawnConfig.TargetPosOffsetInfo_NoneTarget, Caster, aCharacter, Target, null, in EffectInstReq);
-                ProjectileSpawnNSInfo.BornDirBaseInfo = bGWDataAsset_ProjectileSpawnConfig.BornDirBaseInfo;
-                switch (ProjectileSpawnNSInfo.BornDirBaseInfo.BornDirType)
-                {
-                    case ProjectileBornDirType.UseEffectNormal:
-                        ProjectileSpawnNSInfo.BornDirBaseInfo.HitPointNormalDir = EffectInstReq.HitPointNormalDir;
-                        break;
-                    case ProjectileBornDirType.UseEffectCasterRot:
-                        ProjectileSpawnNSInfo.BornDirBaseInfo.ExtraRotBaseActor = Caster;
-                        break;
-                }
-
-                ProjectileSpawnNSInfo.BornDirOffset = bGWDataAsset_ProjectileSpawnConfig.BornDirOffset;
-                ProjectileSpawnNSInfo.ProjectileFlySpd = bGWDataAsset_ProjectileSpawnConfig.BulletFlySpd;
-                ProjectileSpawnNSInfo.ProjectileRotSpd = bGWDataAsset_ProjectileSpawnConfig.BulletRotSpd;
-                ProjectileSpawnNSInfo.MontageID = -1;
-                ProjectileSpawnNSInfo.ANSTotalTime = 0;
-                ProjectileSpawnNSInfo.SpawnWaveDuration = (ProjectileSpawnNSInfo.SpawnWaveDuration = ((ProjectileSpawnNSInfo.SpawnWave > 1) ? (ProjectileSpawnNSInfo.ANSTotalTime / (float)(ProjectileSpawnNSInfo.SpawnWave - 1)) : 0f));
-                ProjectileSpawnNSInfo.SpawnCounter = 0;
-                ProjectileSpawnNSInfo.SpawnWaveCounter = 0;
-                ProjectileSpawnNSInfo.bEnableMultiTargetMode = bGWDataAsset_ProjectileSpawnConfig.bEnableMultiTargetMode;
-                ProjectileSpawnNSInfo.MutilTargetRule = bGWDataAsset_ProjectileSpawnConfig.MutilTargetRule;
-                bUS_GSEventCollection.Evt_OnNotifyStateSpawnProjectileObj.Invoke(ref ProjectileSpawnNSInfo);
-            }
-
+            // 调用SpawnProjectile
+            SpawnProjectile(GetBGUPlayerCharacterCS(), path, projectileID, forTarget, bulletCount, isRandom, offset, action);
         }
         public static double DateTimeToTimestamp()
         {

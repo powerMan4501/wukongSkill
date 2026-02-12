@@ -171,7 +171,6 @@ public class Hooks
             var player = Helper.GetBGUPlayerCharacterCS();
             if (player == null) return;
             var PathName = NotifyParam.Animation.PathName;
-            Helper.LogInfoOnce($"BANS_GSSpawnBullets发射子弹BulletID:{__instance.BulletID}");
             var BulletID = __instance.BulletID;
             if (BGUFunctionLibraryCS.BGUHasBuffByID(player, BuffElementIds.Fire) && BulletID == 1703001)
             {
@@ -1750,9 +1749,9 @@ public class Hooks
             {
                 float brightnessValue = float.Parse(NewValue);
                 Log.Info($"修改亮度值SetLocalSetteting NewValue: {NewValue}");
-                if (brightnessValue < 20f)
+                if (brightnessValue < 40f)
                 {
-                    NewValue = "20";
+                    NewValue = "40";
                 }
             }
             return true; // 继续执行原始方法
@@ -1875,10 +1874,9 @@ public class Hooks
                 string actionKey = skillEffectDesc.EffectParamsStr[0];
                 string actionType = skillEffectDesc.EffectParamsStr[1];
 
-                Log.Info($"拦截 BUEffectSpawnProjectile ApplyBySkill_Implement: {EffectID},actionKey:{actionKey}，actionType：{actionType}");
                 if (actionKey.Contains("do_actions"))
                 {
-                    Helper.SpawnProjectileByEffect(skillEffectDesc,Caster,Target,EffectInstReq);
+                    Helper.SpawnProjectileByEffect(skillEffectDesc, Caster, Target, EffectInstReq);
                 }
                 return false;
             }
