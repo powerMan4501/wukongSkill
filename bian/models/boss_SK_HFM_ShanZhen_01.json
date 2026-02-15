@@ -15,7 +15,7 @@
   },
   "Name": "SK_HFM_ShanZhen_01",
   "Label": "SK_HFM_ShanZhen_01",
-  "Type": "BOSS",
+  "Type": "TRANS",
   "CoolDownRate": 50,
   "XRateBig": 0.3,
   "ZRateBig": 0.1,
@@ -31,24 +31,14 @@
   "XRate": -400.0,
   "ZRate": 100.0,
   "Skills": [
+   
     {
-      "Id": 200701,
+      "Id": 580165,
       "CanBreak": true,
-      "Name": "踢踢踢平A",
-      "Key": "LBUTTON"
-    },
-    {
-      "Id": 200708,
-      "CanBreak": true,
-      "Name": "后砸",
+      "Name": "多次磕头",
       "Key": "S+LBUTTON"
     },
-    {
-      "Id": 200702,
-      "CanBreak": true,
-      "Name": "身体左右撞击",
-      "Key": "RBUTTON"
-    },
+   
     {
       "Key": "S+RBUTTON",
       "Id": 13071,
@@ -67,18 +57,16 @@
     {
       "Key": "S+XBUTTON2",
       "Id": 13012,
-      "Step": 1,
       "Name": "向前跑一下--砸地面",
-      "CanBreak": false,
+      "CanBreak": true,
       "Buffers": [
         1000095
       ]
     },
     {
-      "Key": "S+XBUTTON2",
+      "Key": "",
       "Id": 13013,
       "Name": "翻个跟头--砸地面",
-      "Step": 2,
       "CanBreak": false,
       "Buffers": [
         1000095
@@ -91,9 +79,9 @@
       "Key": "XBUTTON1"
     },
     {
-      "Id": 200794,
+      "Id": 220211,
       "CanBreak": true,
-      "Name": "召唤石头人，并跳起来砸",
+      "Name": "喷射石头",
       "Key": "S+XBUTTON1"
     },
     {

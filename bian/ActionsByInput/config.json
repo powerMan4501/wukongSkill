@@ -9,7 +9,7 @@
       }
     ]
   },
-   {
+  {
     "code": "stop",
     "afterActions": [
       {
@@ -25,6 +25,16 @@
       {
         "Type": "refresh_data",
         "desc": "刷新数据"
+      }
+    ]
+  },
+
+  {
+    "code": "jin",
+    "afterActions": [
+      {
+        "Type": "qian_jin",
+        "desc": "前进"
       }
     ]
   }

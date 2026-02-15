@@ -252,5 +252,46 @@
     "desc": "海上僧雪球",
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1
+  },
+
+  {
+    "ID": 44051002,
+    "desc": "地刺",
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 0
+  },
+  {
+    "ID": 44051003,
+    "desc": "地刺",
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 0
+  },
+
+  {
+    "ID": 44051004,
+    "desc": "地刺",
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 0
+  },
+
+  {
+    "ID": 44051005,
+    "desc": "地刺",
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 0
+  },
+
+  {
+    "ID": 44051006,
+    "desc": "地刺",
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 0
+  },
+
+  {
+    "ID": 44051007,
+    "desc": "地刺",
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 0
   }
 ]

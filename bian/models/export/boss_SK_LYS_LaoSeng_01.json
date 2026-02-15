@@ -19,7 +19,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147116378"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147388028"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_LaoSeng/Hair/HAIR_beardlow_gs.HAIR_beardlow_gs_TFX",
@@ -32,7 +32,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147116377"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147388027"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/LYS/LYS_LaoSeng/Hair/HAIR_eyebrow.HAIR_eyebrow_TFX",
@@ -45,7 +45,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147116376"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2147388026"
       }
     ],
     "InteractBones": null,

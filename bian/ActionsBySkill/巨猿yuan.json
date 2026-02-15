@@ -801,7 +801,7 @@
       "speedRate": 1.4,
       "AMSpeedRate": 1.4
     },
-      "sweep_actions": [
+    "sweep_actions": [
       {
         "linkValue": 0,
         "actions": [
@@ -851,7 +851,7 @@
       "speedRate": 1.4,
       "AMSpeedRate": 1.4
     },
-      "sweep_actions": [
+    "sweep_actions": [
       {
         "linkValue": 0,
         "actions": [
@@ -901,7 +901,7 @@
       "speedRate": 1.4,
       "AMSpeedRate": 1.4
     },
-      "sweep_actions": [
+    "sweep_actions": [
       {
         "linkValue": 0,
         "actions": [
@@ -951,7 +951,7 @@
       "speedRate": 1.4,
       "AMSpeedRate": 1.4
     },
-      "sweep_actions": [
+    "sweep_actions": [
       {
         "linkValue": 0,
         "actions": [
@@ -1001,7 +1001,7 @@
       "speedRate": 1.4,
       "AMSpeedRate": 1.4
     },
-      "sweep_actions": [
+    "sweep_actions": [
       {
         "linkValue": 0,
         "actions": [
@@ -1055,7 +1055,7 @@
       {
         "linkValue": 0,
         "actions": [
-           {
+          {
             "Type": "add_attr",
             "attrType": 191,
             "attrValue": 100,
@@ -2230,40 +2230,27 @@
     "montage_config": {
       "speedRate": 1.3,
       "AMSpeedRate": 1.3,
-      "addRadius": 500
+      "addRadius": 2900
     },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [25072],
+        "BuffTime": 3000,
+        "desc": "添加火拳buff"
+      }
+    ],
     "sweep_actions": [
       {
         "linkValue": 0,
         "actions": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [44010401],
-            "hasBuff": 888666007,
+            "ProjectTileIDs": [44010401, 140, 58111003],
             "OffsetX": 200,
             "OffsetY": 200,
             "Type": "bullet",
-            "desc": "有火buff，炸炸炸"
-          },
-
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [2403471],
-            "hasBuff": 888666006,
-            "OffsetX": 200,
-            "OffsetY": 200,
-            "Type": "bullet",
-            "desc": "有冰buff，冰暴"
-          },
-
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [74011107],
-            "noHasAnyBuff": [888666006, 888666007],
-            "OffsetX": 200,
-            "OffsetY": 200,
-            "Type": "bullet",
-            "desc": "没有冰火buff，金沙"
+            "desc": "炸炸炸,业火，岩浆"
           }
         ]
       }
@@ -2275,15 +2262,23 @@
     "montage_config": {
       "speedRate": 1.3,
       "AMSpeedRate": 1.3,
-      "addRadius": 500
+      "addRadius": 2900
     },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [25072],
+        "BuffTime": 3000,
+        "desc": "添加火拳buff"
+      }
+    ],
     "sweep_actions": [
       {
         "linkValue": 0,
         "actions": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [44010401],
+            "ProjectTileIDs": [44010401, 140, 58111003],
             "hasBuff": 888666007,
             "OffsetX": 200,
             "OffsetY": 200,
@@ -2573,6 +2568,203 @@
             "OffsetY": 200,
             "Type": "bullet",
             "desc": "没有冰火buff，金沙"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 25157,
+    "desc": "核爆冰拳",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 2900
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [25071],
+        "BuffTime": 3000,
+        "desc": "添加冰拳buff"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471, 74010101, 152],
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "冰暴,冰碎片,冰地波"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 25134,
+    "desc": "核爆冰拳",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 2900
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [25071],
+        "BuffTime": 3000,
+        "desc": "添加冰拳buff"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471, 74010101, 152],
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "冰暴,冰碎片,冰地波"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 740155,
+    "desc": "跳砸冰暴",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9,
+      "addRadius": 2900
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [25071],
+        "BuffTime": 2200,
+        "desc": "添加冰拳buff"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          { "Type": "out_magic", "TimeDelay": 1300, "desc": "退出精魄" },
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471, 74010101, 152],
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "冰暴,冰碎片,冰地波"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 25234,
+    "desc": "法天相地,火砸地",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 2900
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [25072],
+        "BuffTime": 3000,
+        "desc": "添加火拳buff"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403372, 44010401, 58111003],
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "火圈,炸炸炸,石先锋岩浆"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 740122,
+    "desc": "往前跳砸一次火圈,火砸地",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9,
+      "addRadius": 2900
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [25072],
+        "BuffTime": 2300,
+        "desc": "添加火拳buff"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          { "Type": "out_magic", "TimeDelay": 1300, "desc": "退出精魄" },
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403372, 44010401, 58111003],
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "火圈,炸炸炸,石先锋岩浆"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 25257,
+    "desc": "法天相地,核爆火拳",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 2900
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [25072],
+        "BuffTime": 3000,
+        "desc": "添加火拳buff"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403372, 44010401, 58111003],
+            "OffsetX": 200,
+            "OffsetY": 200,
+            "desc": "火圈,炸炸炸,石先锋岩浆"
           }
         ]
       }

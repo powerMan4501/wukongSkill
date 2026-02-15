@@ -23,16 +23,66 @@
   "Level2Scale": 1.0,
   "Skills": [
     {
-      "type": "RushSkill",
-      "RushDir": "Backward",
-      "Name": "后撤 JXSQ",
       "Key": "S+SPACE",
-      "CanBreak": false
+      "type": "actions",
+      "afterActions": [
+        {
+          "type": "RushSkill",
+          "RushDir": "Backward",
+          "desc": "后撤JXSQ"
+        }
+      ]
     },
     {
       "Key": "XBUTTON1",
       "type": "actions",
       "afterActions": [
+        {
+          "montageIndex": 0,
+          "montageValue": ".AM_Wukong_Dodge_F_",
+          "type": "RushSkill",
+          "RushDir": "Forward",
+          "desc": "前翻滚接jxsq"
+        },
+
+        {
+          "montageIndex": 0,
+          "montageValue": ".AM_Wukong_Dodge_R_",
+          "type": "RushSkill",
+          "RushDir": "Right",
+          "desc": "右翻滚接jxsq"
+        },
+
+        {
+          "montageIndex": 0,
+          "montageValue": ".AM_Wukong_Dodge_B_",
+          "type": "RushSkill",
+          "RushDir": "Backward",
+          "desc": "后翻滚接jxsq"
+        },
+
+        {
+          "montageIndex": 0,
+          "montageValue": ".AM_Wukong_Dodge_L_",
+          "type": "RushSkill",
+          "RushDir": "Left",
+          "desc": "左翻滚接jxsq"
+        },
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [10517, 10518, 10519],
+          "SkillID": 10096,
+          "desc": "侧键1，定身，接破隐一击"
+        },
+        {
+          "type": "RushSkill",
+          "RushDir": "Backward",
+          "skillIndexs": [0],
+          "skillValues": [10311, 50054],
+          "SkillID": 84321025,
+          "desc": "侧键1，完美闪避，接jxsq"
+        },
         {
           "Type": "skill",
           "skillIndexs": [0],
@@ -239,6 +289,46 @@
       "Key": "XBUTTON2",
       "type": "actions",
       "afterActions": [
+        {
+          "montageIndex": 0,
+          "montageValue": ".AM_Wukong_Dodge_F_",
+          "type": "bossskill",
+          "bossLabel": "SK_mgd_ftxd",
+          "bossType": "BOSS",
+          "MagicSkillID": 25157,
+          "Name": "前翻滚,核爆冰拳"
+        },
+
+        {
+          "montageIndex": 0,
+          "montageValue": ".AM_Wukong_Dodge_R_",
+          "type": "bossskill",
+          "bossLabel": "SK_mgd_ftxd",
+          "bossType": "BOSS",
+          "MagicSkillID": 740122,
+          "Name": "右翻滚 往前跳砸一次火圈"
+        },
+
+        {
+          "montageIndex": 0,
+          "montageValue": ".AM_Wukong_Dodge_B_",
+          "type": "bossskill",
+          "bossLabel": "SK_mgd_ftxd",
+          "bossType": "BOSS",
+          "MagicSkillID": 25257,
+          "Name": "后翻滚没有冰buff,核爆火拳"
+        },
+
+        {
+          "montageIndex": 0,
+          "montageValue": ".AM_Wukong_Dodge_L_",
+          "type": "bossskill",
+          "bossLabel": "SK_mgd_ftxd",
+          "bossType": "BOSS",
+          "MagicSkillID": 740155,
+          "Name": "左翻滚,砸冰暴"
+        },
+
         {
           "type": "magicskill",
           "magicID": 8513,

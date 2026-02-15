@@ -60,15 +60,15 @@
         "SummonID": 433301,
         "SummonCount": 1,
         "SummonAliveTime": 0,
-        "skillID": 102433,
-        "desc": "召唤己方金池如来神掌"
+        "skillID": 102363,
+        "desc": "召唤己方金池，使用蓄力比较久的如来神掌"
       }
     ],
     "sweep_actions": [
       {
         "linkValue": 1.866667,
         "actions": [
-          { "Type": "out_magic", "TimeDelay": 600, "desc": "退出精魄" }
+          { "Type": "out_magic", "TimeDelay": 1300, "desc": "退出精魄" }
         ]
       }
     ]

@@ -353,5 +353,51 @@
         "desc": "清除展示"
       }
     ]
+  },
+  {
+    "code": "swee",
+    "afterActions": [
+      {
+        "Type": "show_sweepcheck_shape",
+
+        "desc": "展示判定范围"
+      }
+    ]
+  },
+  {
+    "code": "seed",
+    "afterActions": [
+      {
+        "Type": "change_move_speed",
+
+        "desc": "移动速度change_move_speed"
+      }
+    ]
+  },
+
+  {
+    "code": "SKCA",
+    "afterActions": [
+      {
+        "Type": "enterskillcam",
+        "actionId": 199900,
+        "desc": "进入镜头组 199900"
+      },
+
+      {
+        "Type": "exitskillcam",
+        "TimeDelay": 4000,
+        "desc": "退出镜头组"
+      }
+    ]
+  },
+  {
+    "code": "exall",
+    "afterActions": [
+      {
+        "Type": "export_actor",
+        "desc": "导出角色class"
+      }
+    ]
   }
 ]

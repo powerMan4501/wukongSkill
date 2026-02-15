@@ -196,7 +196,7 @@
         },
         {
           "Type": "removeBuff",
-          "BuffIDs": [24072],
+          "BuffIDs": [24072,25072],
           "desc": "移除火拳"
         }
       ]
@@ -213,7 +213,7 @@
 
         {
           "Type": "removeBuff",
-          "BuffIDs": [24071],
+          "BuffIDs": [24071,25071],
           "desc": "移除冰拳"
         }
       ]

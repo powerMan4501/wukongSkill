@@ -1,10 +1,33 @@
 [
   {
+    "OriginalId": 50011,
+    "MappedId": 10096,
+    "Condition": "hasBuff",
+    "conditionValue": 117,
+    "desc": "完美闪避后，按左键破隐一击"
+  },
+  {
+    "OriginalId": 10801,
+    "MappedId": 10096,
+    "Condition": "hasBuff",
+    "conditionValue": 117,
+    "desc": "完美闪避后，按左键破隐一击"
+  },
+  {
     "OriginalId": 10801,
     "MappedId": 50011,
     "Condition": "any",
     "conditionValue": 0,
     "desc": "棍的平A转成大圣平A"
+  },
+
+  
+  {
+    "OriginalId": 10701,
+    "MappedId": 10096,
+    "Condition": "hasBuff",
+    "conditionValue": 117,
+    "desc": "完美闪避后，按左键破隐一击"
   },
   {
     "OriginalId": 10802,

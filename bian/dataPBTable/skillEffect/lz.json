@@ -3,10 +3,13 @@
     "desc": "黄符落雷",
     "ID": 888555005,
     "EffectType": 20,
-    "EffectParamsInt": [],
-    "EffectParamsFloat": [],
+    "EffectParamsInt": [50058603, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0, 0, 0, 0, 0, 0],
     "EffectParamsStr": [
-      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PSD/PSD_BaiYanMoJun_01/DataAsset/BGW_PSD_BaiYanMoJun_01_Bullet_8603.BGW_PSD_BaiYanMoJun_01_Bullet_8603'"
+      "do_actions",
+      "bullet",
+      "无",
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
     ]
   },
 
@@ -76,13 +79,23 @@
     "desc": "完美闪避子弹消失专用，金沙爆炸",
     "ID": 888555023,
     "EffectType": 20,
-    "EffectParamsInt": [],
-    "EffectParamsFloat": [],
+    "EffectParamsInt": [74011107, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0, 0, 0, 0, 0, 0],
     "EffectParamsStr": [
-      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/MGD/mgd_yuan/Physics/mgd_yuan_bigballfarspawn.mgd_yuan_bigballfarspawn'"
+      "do_actions",
+      "bullet",
+      "无",
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
     ]
   },
-
+  {
+    "desc": "金沙爆炸 伤害",
+    "ID": 74019202,
+    "EffectType": 1,
+    "EffectParamsInt": [10, 25, 2, 0, 0, 0, 4444404],
+    "EffectParamsFloat": [2000.0, 200.0, 22500.0, 0.0, 0.0, 0.0, 200.0],
+    "EffectParamsStr": ["【怪物】打断轻棍终结"]
+  },
   {
     "desc": "飞棍伤害 400%+400点伤害",
     "ID": 1085301,
@@ -173,7 +186,7 @@
     "EffectParamsFloat": [7400.0, 740.0, 74000.0, 7400.0, 0.0, 0.0, 7400],
     "EffectParamsStr": ["【主角】蓄力4"]
   },
-    {
+  {
     "desc": "泥塑金刚",
     "ID": 888555041,
     "EffectType": 1,
@@ -181,7 +194,7 @@
     "EffectParamsFloat": [7400.0, 740.0, 74000.0, 7400.0, 0.0, 0.0, 7400],
     "EffectParamsStr": ["【主角】蓄力4"]
   },
-    {
+  {
     "desc": "尾后针",
     "ID": 888555042,
     "EffectType": 1,
@@ -190,7 +203,7 @@
     "EffectParamsStr": ["【主角】蓄力4"]
   },
 
-    {
+  {
     "desc": "寅虎",
     "ID": 888555042,
     "EffectType": 1,
@@ -205,5 +218,13 @@
     "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
     "EffectParamsFloat": [17400.0, 740.0, 74000.0, 7400.0, 0.0, 0.0, 17400],
     "EffectParamsStr": ["【主角】蓄力4"]
+  },
+  {
+    "desc": "筋斗云三连击打",
+    "ID": 888555044,
+    "EffectType": 1,
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
+    "EffectParamsFloat": [17400.0, 740.0, 74000.0, 7400.0, 0.0, 0.0, 17400],
+    "EffectParamsStr": ["【主角】蓄力1"]
   }
 ]
