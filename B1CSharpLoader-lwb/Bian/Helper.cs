@@ -214,13 +214,13 @@ namespace bian
             }
         }
 
-        public static int getCurrentSkillId(BGUCharacterCS character)
+        public static int getCurrentSkillId(BGUCharacterCS? character)
         {
 
             if (character == null) return 0;
-            BUC_SkillInstsData readOnlyData = BGU_DataUtil.GetReadOnlyData<BUC_SkillInstsData>(character);
-            if (readOnlyData == null) return 0;
-            var skillId = readOnlyData.CurrentCastingSkillID;
+            // BUC_SkillInstsData readOnlyData = BGU_DataUtil.GetReadOnlyData<BUC_SkillInstsData>(character);
+            // if (readOnlyData == null) return 0;
+            var skillId = BGUFuncLibSkillCS.BGUGetLastSkillID(character);
             return skillId;
         }
         private static Dictionary<string, double> _lastLogTime = new Dictionary<string, double>();
@@ -480,6 +480,46 @@ namespace bian
             TryExecute();
         }
 
+
+
+        public static void GMSpawnMonster(string path)
+        {
+            try
+            {
+                // if (ParamStringList.Count == 0)
+                // {
+                //     return 0;
+                // }
+                // List<string> list = new List<string>();
+                // list.Add("/Game/00Main/Design/Units/GYCY/TAMER_gycy_lang_03.TAMER_gycy_lang_03_C");
+                // list.Add("/Game/00Main/Design/Units/GYCY/TAMER_gycy_lang_04.TAMER_gycy_lang_04_C");
+                // list.Add("/Game/00Main/Design/Units/HYS/TAMER_hys_hms.TAMER_hys_hms_C");
+                // list.Add("/Game/00Main/Design/Units/LYS/TAMER_LYS_SengMian_01.TAMER_LYS_SengMian_01_C");
+                // int.TryParse(ParamStringList[0], out var result);
+                UClass uClass = UObject.LoadClass<AActor>(null, path);
+                ACharacter playerCharacter = UGameplayStatics.GetPlayerCharacter(GetWorld(), 0);
+                if (playerCharacter != null)
+                {
+                    FTransform actorTransform = playerCharacter.GetActorTransform();
+                    actorTransform.SetLocation(playerCharacter.GetActorLocation() + playerCharacter.GetActorForwardVector() * 1500.0);
+                    actorTransform.SetRotation((-playerCharacter.GetActorForwardVector()).Rotation().Quaternion());
+                    BUTamerActor bUTamerActor = UBGUFunctionLibrary.BGUBeginDeferredActorSpawnFromClass(playerCharacter.World, uClass, actorTransform, ESpawnActorCollisionHandlingMethod.AlwaysSpawn, null) as BUTamerActor;
+                    if (bUTamerActor != null)
+                    {
+                        bUTamerActor.MarkAsSpawnedTamer(null);
+                        UBGUFunctionLibrary.BGUFinishSpawningActor(bUTamerActor, actorTransform);
+                    }
+                    else
+                    {
+                        Log.Info($"生成失败：{path}");
+                    }
+                }
+            }
+            catch (Exception arg)
+            {
+                Log.Info($"生成失败：{path}");
+            }
+        }
 
         public static AActor? SpawnActor(string classAsset, int? teamID)
         {
@@ -2054,28 +2094,33 @@ namespace bian
 
 
         }
+
+        // 把附近的敌人的目标全部转为锁定的目标
         public static void change_target()
         {
             var play = GetBGUPlayerCharacterCS();
             if (play == null || play.World == null) return;
-            var nearPlayer = GetNearestActor(2000);//获取最近的角色
-            if (nearPlayer != null)
+            var target = BGUFunctionLibraryCS.BGUGetTarget(play) as BGUCharacterCS;
+            if (target != null)
             {
                 var enemies = getMonsterByDistance(2000);
                 if (enemies == null || enemies.Count == 0) return;
-                var TargetInfo = new UnitLockTargetInfo(nearPlayer, ETargetSourceType.None, ELockTargetWayType.Auto);
+                // var TargetInfo = new UnitLockTargetInfo(nearPlayer, ETargetSourceType.None, ELockTargetWayType.Auto);
                 foreach (var enemy in enemies)
                 {
                     // 跳过同一队伍的角色
-                    if (BGU_DataUtil.GetActorTeamID(play) == BGU_DataUtil.GetActorTeamID(enemy))
+                    if (BGU_DataUtil.GetActorTeamID(enemy) == 1)
                         continue;
-                    var busEvent = BUS_EventCollectionCS.Get(enemy);
-                    busEvent?.Evt_ClearAllTarget.Invoke();
-                    busEvent?.Evt_ClearCameraLock.Invoke();
-                    busEvent?.Evt_SetCanSetTargetByHatred.Invoke(true);
-                    busEvent?.Evt_SetTargetInfo.Invoke(TargetInfo);
-                    busEvent?.Evt_CameraLockTarget.Invoke(new UnitLockTargetInfo(nearPlayer, ETargetSourceType.Target_ForceCameraLock, ELockTargetWayType.Manual, "", ""));
-                    busEvent?.Evt_AICatchTarget.Invoke(nearPlayer, ETargetSourceType.CameraLockUpdate, true);
+
+
+                    BGUFunctionLibraryCS.BGUSetTargetInfo(false, (AActor)(object)enemy, new UnitLockTargetInfo((AActor)(object)target, ETargetSourceType.Target_ByTaunter, ELockTargetWayType.Manual, "", ""));
+                    // var busEvent = BUS_EventCollectionCS.Get(enemy);
+                    // busEvent?.Evt_ClearAllTarget.Invoke();
+                    // busEvent?.Evt_ClearCameraLock.Invoke();
+                    // busEvent?.Evt_SetCanSetTargetByHatred.Invoke(true);
+                    // busEvent?.Evt_SetTargetInfo.Invoke(TargetInfo);
+                    // busEvent?.Evt_CameraLockTarget.Invoke(new UnitLockTargetInfo(nearPlayer, ETargetSourceType.Target_ForceCameraLock, ELockTargetWayType.Manual, "", ""));
+                    // busEvent?.Evt_AICatchTarget.Invoke(nearPlayer, ETargetSourceType.CameraLockUpdate, true);
                 }
 
             }
@@ -2294,6 +2339,41 @@ namespace bian
         {
             return character.Mesh.SkeletalMesh.GetFullName().ToLower().IndexOf("SK_Wukong_Simple".ToLower()) > -1;
         }
+
+
+        public static void ExportAllActors()
+        {
+            // 获取所有Actor并导出为JSON
+            ABGUCharacter[] allActorsOfClass = UGameplayStatics.GetAllActorsOfClass<ABGUCharacter>(GetWorld());
+            var actorDataList = new List<object>();
+
+            foreach (AActor actor in allActorsOfClass)
+            {
+                if (actor.PathName != null)
+                {
+                    actorDataList.Add(new
+                    {
+                        PathName = actor.PathName,
+                        ClassPathName = actor.GetClass().PathName,
+                        Location = actor.GetActorLocation(),
+                        Rotation = actor.GetActorRotation(),
+                        Scale = actor.GetActorScale3D()
+                    });
+                }
+            }
+
+            // 创建导出目录
+            string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string exportPath = Path.Combine(currentDirectory, @"CSharpLoader\Mods\bian\ActorsOfClass");
+            Directory.CreateDirectory(exportPath);
+
+            string json = JsonConvert.SerializeObject(actorDataList, Formatting.Indented);
+
+            string filePath = Path.Combine(exportPath, $"export_{DateTime.Now:yyyyMMdd_HHmmss}.json");
+            File.WriteAllText(filePath, json);
+        }
+
+
 
         public static ITransable? ExportTamer(BGUCharacterCS actor)
         {
@@ -3115,14 +3195,29 @@ namespace bian
                         return;
                     }
 
-
-
-
                 }
             }
 
         }
 
+        public static void MoveActor(float distance = 900f)
+        {
+            AActor Owner = Helper.GetBGUPlayerCharacterCS();
+            if (Owner == null)
+            {
+                return;
+            }
 
+            // 获取当前位置
+            FVector currentLocation = Owner.GetActorLocation();
+
+            // 计算目标位置
+            FVector forwardVector = Owner.GetActorForwardVector();
+            FVector targetLocation = currentLocation + (forwardVector * distance);
+
+            // 使用 Teleport 方法移动到目标位置
+            Owner.Teleport(targetLocation, Owner.GetActorRotation());
+
+        }
     }
 }

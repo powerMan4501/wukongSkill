@@ -310,8 +310,8 @@ namespace bian
 
         public static Dictionary<int, FVector> scaleProjectileID = new Dictionary<int, FVector>
 {
-    {140, new FVector(5f, 5f, 5f)},
-    {74011198, new FVector(2f, 2f, 2f)},//金沙爆炸
+    {140, new FVector(5f, 5f, 1f)},
+    {74011198, new FVector(2f, 2f, 1f)},//金沙爆炸
     
     {1085601, new FVector(2f, 10f, 10f)},
     {1085602, new FVector(2f, 10f, 10f)},
@@ -320,7 +320,9 @@ namespace bian
     {1090201, new FVector(5f, 5f, 5f)},
     {1090202, new FVector(5f, 5f, 5f)},
     {146, new FVector(1f, 1f, 1f)},
-    {148, new FVector(5f, 5f, 5f)},
+    {148, new FVector(2f, 1f, 1f)},
+    {131, new FVector(5f, 5f, 5f)},
+    {151, new FVector(4f, 1f, 1f)},
     {118, new FVector(5f, 5f, 5f)},
     {117, new FVector(5f, 5f, 5f)}
 };

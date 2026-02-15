@@ -156,6 +156,9 @@ namespace bian
         public float? Scale3D { get; set; }
         public float? UnitScale { get; set; }
         public int? actionId { get; set; }
+        public float? value { get; set; }
+
+        public BuffActiveCondition? activeCondition { get; set; }
 
 
 
@@ -253,6 +256,18 @@ namespace bian
             if (action.noHasAnyBuff?.Count > 0 && action.noHasAnyBuff.Any(buff => BGUFunctionLibraryCS.BGUHasBuffByID(character, buff)))
                 return false;
 
+
+            if (action.activeCondition != null && action.activeCondition.ConditionType != null && action.activeCondition.ConditionParams != null)
+            {
+                if (!BGUFunctionLibraryCS.BGUCheckBuffEffectActiveCondition(0, bIsBuff: false, character,
+    (EGSBuffAndSkillEffectActiveCondition)(action.activeCondition.ConditionType ?? 0),
+    action.activeCondition.ConditionParams.Split(','), null))
+                {
+                    return false;
+                }
+
+            }
+
             return true;
         }
 
@@ -298,7 +313,11 @@ namespace bian
                 }
                 foreach (var buff in buffs)
                 {
-                    BGUFunctionLibraryCS.BGUAddBuff(character, target, buff, EBuffSourceType.GM, buffTime);
+                    if (!BGUFunctionLibraryCS.BGUHasBuffByID(target, buff))
+                    {
+                        BGUFunctionLibraryCS.BGUAddBuff(character, target, buff, EBuffSourceType.GM, buffTime);
+                    }
+
                 }
             }
         }
@@ -511,16 +530,17 @@ namespace bian
 
                     if (action?.SummonTamerTemplatePath != null)
                     {
-                        var teamID = Helper.GetBGUPlayerCharacterCS().GetTeamIDInCS();
-                        if (action?.toPlayerTeam == true)
-                        {
-                            Helper.SpawnActor(action.SummonTamerTemplatePath, teamID);
-                        }
-                        else
-                        {
-                            Helper.SpawnActor(action.SummonTamerTemplatePath, null);
+                        Helper.GMSpawnMonster(action.SummonTamerTemplatePath);
+                        // var teamID = Helper.GetBGUPlayerCharacterCS().GetTeamIDInCS();
+                        // if (action?.toPlayerTeam == true)
+                        // {
+                        //     Helper.SpawnActor(action.SummonTamerTemplatePath, teamID);
+                        // }
+                        // else
+                        // {
+                        //     Helper.SpawnActor(action.SummonTamerTemplatePath, null);
 
-                        }
+                        // }
                     }
 
                     break;
@@ -563,9 +583,16 @@ namespace bian
                     BUS_EventCollectionCS.Get(character)?.Evt_ShowSweepCheckShape.Invoke();
                     break;
 
+                case "qian_jin":
+                    var value = action?.value != null ? action.value : 900f;
+                    Helper.MoveActor((float)value);
+                    break;
+
                 case "change_move_speed":
                     BUC_SpeedCtrlData unPersistentReadOnlyData = BGU_DataUtil.GetUnPersistentReadOnlyData<BUC_SpeedCtrlData>(character);
                     unPersistentReadOnlyData.SetSpeedInfoBase(5400f, 4550f, 1600f);
+                    var BGS = Helper.GetBUS_GSEventCollection();
+                    BGS.Evt_SetMoveSpeedAddValue.Invoke(1000);
                     break;
                 case "addallsummonlifetime":
 
@@ -626,6 +653,10 @@ namespace bian
                     break;
                 case "xuelunyan":
                     Helper.xuelunyan();
+                    break;
+
+                case "export_actor":
+                    Helper.ExportAllActors();
                     break;
                 case "maidonghuilai":
                     var commands = new Commands();
@@ -814,51 +845,59 @@ namespace bian
             }
             return false;
         }
+
+
+
+        private bool CheckAllConditions(BGUPlayerCharacterCS character, RuleAction action)
+        {
+            // 检查动画条件
+            if (action?.montageIndex != null && action?.montageValue != null)
+            {
+                if (!CheckAnimConditions(character, action))
+                    return false;
+            }
+
+            // 检查技能条件
+            if (action?.skillIndexs != null && action?.skillValues != null)
+            {
+                if (!CheckSkillConditions(character, action))
+                    return false;
+            }
+
+            // 检查buff条件
+            if (action?.hasBuff > 0 || action?.noHasBuff > 0 ||
+                action?.hasAnyBuff?.Count > 0 || action?.noHasAnyBuff?.Count > 0)
+            {
+                if (!CheckBuffConditions(character, action))
+                    return false;
+            }
+
+
+
+            // 检查天赋条件
+            if (action?.talentCondition != null || action?.noTalentCondition != null)
+            {
+                if (!CheckTalentConditions(character, action))
+                    return false;
+            }
+
+            return true;
+        }
+
+
+
         public async void DoAfterActions(List<RuleAction> actions)
         {
             if (actions == null || actions.Count == 0) return;
             var character = Helper.GetBGUPlayerCharacterCS();
             if (character == null) return;
-            bool hasExecutedMontageCondition = false; // 添加标志位
-            bool hasExecuteSkillCondition = false; // 添加标志位
-
             foreach (var action in actions)
             {
-
-                // 如果已经执行过conditionByMontage且当前action也有conditionByMontage，则跳过
-                if (hasExecutedMontageCondition && action?.montageIndex != null && action?.montageValue != null) continue;
-                if (action?.montageIndex != null && action?.montageValue != null)
-                {
-                    if (!CheckAnimConditions(character, action))
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        hasExecutedMontageCondition = true; // 标记已执行过conditionByMontage
-                    }
-                }
-
-
-                if (hasExecuteSkillCondition && action?.skillIndexs != null && action?.skillValues != null) continue;
-                if (action?.skillIndexs != null && action?.skillValues != null)
-                {
-                    if (!CheckSkillConditions(character, action))
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        hasExecuteSkillCondition = true; // 标记已执行过
-                    }
-                }
-                // 检查条件
-                var result = CheckBuffConditions(character, action);
-                if (!result || !CheckTalentConditions(character, action))
+                // 使用统一的条件检查方法
+                if (!CheckAllConditions(character, action))
                     continue;
                 if (action?.TimeDelay > 0)
                 {
-
                     // 如果是多次执行就间隔执行
                     if (action.intervalTime > 0)
                     {

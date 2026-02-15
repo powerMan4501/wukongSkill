@@ -205,7 +205,14 @@ namespace bian
                     Helper.ExportTamer(item as BGUCharacterCS);
                 }
             }
+
+
+            Helper.ExportAllActors();
+
+
+
         }
+
 
         public void JingDouYun(ModelManager manager)
         {
@@ -240,22 +247,16 @@ namespace bian
                             {
                                 model.TransToModel();
                             }
-                            else
-                            {
-                                // Log.Error($"bian: 72bian only for wukong!");
-                            }
+
                         }
 
                     }
-                    else
-                    {
-                        // Log.Error($"bian: export failed!");
-                    }
+
                 }
             }
 
         }
-      
+
         public void ShowUI(ModelManager manager)
         {
             Manager.CreateUi();

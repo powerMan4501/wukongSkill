@@ -99,7 +99,7 @@ public class Hooks
             if (player == null) return;
             Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()}，owner：{NotifyParam.owner?.PathName}，player:{player.PathName}");
 
-            if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner.PathName.Contains("Unit_Player_"))
+            if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner.PathName.ToLower().Contains("unit_player"))
             {
                 var owner = NotifyParam.owner as BGUCharacterCS;
                 if (owner == null) return;
@@ -107,29 +107,50 @@ public class Hooks
                 {
                     var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
                     Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()} ,linkValue:{linkValue}");
+                    int skillID = BGU_DataUtil.GetUnPersistentReadOnlyData<BUC_AnimNotifyAndStateData>(owner).FindBindingSkillID(NotifyParam.FromInstanceID);
 
-                    var rulesMap = LoadSkill.TemplatePathConfigs;
-                    if (rulesMap == null) return;
-                    var currentMontage = NotifyParam.Animation.PathName;
-                    //                     var matchedConfig = rulesMap?.Values.FirstOrDefault(config =>
-                    //   BGW_GameDB.GetSkillSDesc(config.skillID, NotifyParam.owner)?.TemplatePath?.Contains(NotifyParam.Animation.PathName) ?? false);
-                    var str = $"AnimMontage'{NotifyParam.Animation.PathName}'";
-                    var matchedItem = rulesMap.FirstOrDefault(item => item.Key.Contains(currentMontage));
-                    if (!matchedItem.Equals(default(KeyValuePair<string, LoadSkill.ActionsBySkillConfig>)))
+                    var skillMaps = LoadSkill.ActionsBySkillConfigs;
+
+
+                    if (skillMaps == null || skillMaps.Count == 0) return;
+                    if (skillMaps.TryGetValue(skillID, out var matchOne))
                     {
-                        var matchedConfig = matchedItem.Value;
-                        if (matchedConfig != null && matchedConfig.sweep_actions != null && matchedConfig.sweep_actions.Count > 0)
+                        if (matchOne != null && matchOne.sweep_actions?.Count > 0)
                         {
-                            var matchItem = matchedConfig.sweep_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
-                            if (matchItem != null && matchItem.actions != null && matchItem.actions.Count > 0)
+                            var sweepItems = matchOne.sweep_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
+                            if (sweepItems != null && sweepItems.actions != null && sweepItems.actions.Count > 0)
                             {
-                                Log.Info($"匹配成功 BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.PathName}，linkValue:{linkValue}，actions:{matchItem.actions[0].desc}");
+                                Log.Info($"匹配成功 BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.PathName}，linkValue:{linkValue}，actions:{sweepItems.actions[0].desc}");
                                 var rule = new Rule();
-                                rule?.DoAfterActions(matchItem.actions);
-                                return;
+                                rule?.DoAfterActions(sweepItems.actions);
                             }
                         }
+
                     }
+
+
+                    // var rulesMap = LoadSkill.TemplatePathConfigs;
+
+                    // if (rulesMap == null) return;
+                    // var currentMontage = NotifyParam.Animation.GetName();
+                    // //                     var matchedConfig = rulesMap?.Values.FirstOrDefault(config =>
+                    // //   BGW_GameDB.GetSkillSDesc(config.skillID, NotifyParam.owner)?.TemplatePath?.Contains(NotifyParam.Animation.PathName) ?? false);
+                    // var matchedItem = rulesMap.FirstOrDefault(item => item.Key.Contains(currentMontage));
+                    // if (!matchedItem.Equals(default(KeyValuePair<string, LoadSkill.ActionsBySkillConfig>)))
+                    // {
+                    //     var matchedConfig = matchedItem.Value;
+                    //     if (matchedConfig != null && matchedConfig.sweep_actions != null && matchedConfig.sweep_actions.Count > 0)
+                    //     {
+                    //         var matchItem = matchedConfig.sweep_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
+                    //         if (matchItem != null && matchItem.actions != null && matchItem.actions.Count > 0)
+                    //         {
+                    //             Log.Info($"匹配成功 BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.PathName}，linkValue:{linkValue}，actions:{matchItem.actions[0].desc}");
+                    //             var rule = new Rule();
+                    //             rule?.DoAfterActions(matchItem.actions);
+                    //             return;
+                    //         }
+                    //     }
+                    // }
 
                     var allRules = GetCachedAnimRules();
                     if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
@@ -337,6 +358,7 @@ public class Hooks
                 Helper.LogInfoOnce($"添加通知: {itemNew.TrackIndex}");
                 AnimNotifyEventList.Add(itemNew);
             }
+            // UGSE_AnimFuncLib.CheckoutLoadedAssetAndSave(Montage);
 
         }
 
@@ -376,7 +398,7 @@ public class Hooks
     }
     private static readonly Dictionary<string, bool> ProcessedAnimCache = new Dictionary<string, bool>();
 
-    public static void handleNotify(UAnimMontage Montage, AActor player, LoadSkill.MontageConfig config)
+    public static void handleNotify(UAnimMontage Montage, AActor? player, LoadSkill.MontageConfig config)
     {
         if (!!Helper.is_bian_mod_stop)
         {
@@ -566,16 +588,16 @@ public class Hooks
                     }
 
                 }
-                else if (BANS_GSAttackWarnningHelper.IsAttackWarning(item.NotifyStateClass))
-                {
-                    // 获取 hitLevel 属性
-                    var hitLevel = BANS_GSAttackWarnningHelper.GetProperty(item.NotifyStateClass, "HitLevel");
-                    // 在这里可以处理 hitLevel 属性
-                    if ((int)hitLevel < 5)
-                    {
-                        BANS_GSAttackWarnningHelper.SetProperty(item.NotifyStateClass, "HitLevel", 5);
-                    }
-                }
+                // else if (BANS_GSAttackWarnningHelper.IsAttackWarning(item.NotifyStateClass))
+                // {
+                //     // 获取 hitLevel 属性
+                //     var hitLevel = BANS_GSAttackWarnningHelper.GetProperty(item.NotifyStateClass, "HitLevel");
+                //     // 在这里可以处理 hitLevel 属性
+                //     if ((int)hitLevel < 5)
+                //     {
+                //         BANS_GSAttackWarnningHelper.SetProperty(item.NotifyStateClass, "HitLevel", 5);
+                //     }
+                // }
 
             }
             // 标记该动画蒙太奇已处理
@@ -889,9 +911,9 @@ public class Hooks
     [HarmonyPatch]
     public static class CastSkillPatch
     {
-        [HarmonyPatch(typeof(BUS_MovementSystem), "OnSkillWithAnimMontage")]
+        [HarmonyPatch(typeof(GSDel_CastSkillWithAnimMontage), "Invoke")]
         [HarmonyPrefix]
-        static void Prefix(BUS_MovementSystem __instance, UAnimMontage Montage, ref float PlayTimeRate, float MontagePosOffset, FName StartSectionName, EMontageBindReason Reason)
+        static void Prefix(GSDel_CastSkillWithAnimMontage __instance, UAnimMontage Montage, ref float PlayTimeRate, float MontagePosOffset, FName StartSectionName, EMontageBindReason Reason)
         {
             if (!!Helper.is_bian_mod_stop)
             {
@@ -899,12 +921,12 @@ public class Hooks
             }
 
             if (__instance == null || Montage == null) return;
-            if (__instance?.GetOwner() == null) return;
-            if (__instance.GetOwner()?.PathName == null) return;
-            if (!IsPlayer(__instance.GetOwner().PathName))
-            {
-                return;
-            }
+            // if (__instance?.GetOwner() == null) return;
+            // if (__instance.GetOwner()?.PathName == null) return;
+            // if (!IsPlayer(__instance.GetOwner().PathName))
+            // {
+            //     return;
+            // }
             var currentMontage = Montage.PathName;
             if (currentMontage == null) return;
 
@@ -933,7 +955,7 @@ public class Hooks
                 Manager.OnScaleWeapon((float)config.scaleWeaponNum);
             }
 
-            handleNotify(Montage, __instance.GetOwner(), config);
+            handleNotify(Montage, null, config);
         }
     }
     public static LoadSkill.MontageConfig? getOldConfig(string PathName)
@@ -1552,24 +1574,22 @@ public class Hooks
         }
     }
 
-    [HarmonyPatch(typeof(BUS_AttrComp), "SetFloatValue")]
-    public static class SetFloatValuePatch
-    {
-        private static void Prefix(BUS_AttrComp __instance)
-        {
-            var owner = __instance.GetOwner() as BGUCharacterCS;
-            if (owner != null)
-            {
-                var player = Helper.GetBGUPlayerCharacterCS();
-                if (player != null && player.PathName == owner.PathName)
-                {
-                    ShowPlayerInfo.RenderBasicInfo();
-                }
-            }
-        }
-    }
-
-
+    // [HarmonyPatch(typeof(BUS_AttrComp), "SetFloatValue")]
+    // public static class SetFloatValuePatch
+    // {
+    //     private static void Prefix(BUS_AttrComp __instance)
+    //     {
+    //         var owner = __instance.GetOwner() as BGUCharacterCS;
+    //         if (owner != null)
+    //         {
+    //             var player = Helper.GetBGUPlayerCharacterCS();
+    //             if (player != null && player.PathName == owner.PathName)
+    //             {
+    //                 ShowPlayerInfo.RenderBasicInfo();
+    //             }
+    //         }
+    //     }
+    // }
 
 
     public static List<int> igoreSkillIds = new List<int>{
@@ -1591,8 +1611,11 @@ public class Hooks
                     var meshName = owner.Mesh?.SkeletalMesh?.GetFullName();
                     if (meshName != null && meshName.Contains("SK_Wukong_Simple") && !igoreSkillIds.Contains(SkillID))
                     {
-                        InsertSkillID(SkillID);
 
+                        Helper.DelayExecute(20, () =>
+                        {
+                            InsertSkillID(SkillID);
+                        });
                     }
 
                     var rulesMap = LoadSkill.ActionsBySkillConfigs;
@@ -1605,7 +1628,7 @@ public class Hooks
                             rule?.DoAfterActions(matchItem.cast_actions);
                         }
                     }
-                    Log.Info($"释放技能开始 CastSkillOK：{SkillID}，技能序列：[{string.Join(", ", playSkillList)}]");
+                    // Log.Info($"释放技能开始 CastSkillOK：{SkillID}，技能序列：[{string.Join(", ", playSkillList)}]");
                 }
             }
         }
@@ -1641,7 +1664,7 @@ public class Hooks
                     bUS_GSEventCollection.Evt_IncreaseAttrFloat.Invoke(EBGUAttrFloat.Hp, num);
                     bUS_GSEventCollection.Evt_IncreaseAttrFloat.Invoke(EBGUAttrFloat.Mp, num);
                     bUS_GSEventCollection.Evt_IncreaseAttrFloat.Invoke(EBGUAttrFloat.Stamina, num);
-                    Log.Info($"技能造成伤害OnSkillCostDmg：SkillID:{SkillID},FinalDmg:{FinalDmg}");
+                    // Log.Info($"技能造成伤害OnSkillCostDmg：SkillID:{SkillID},FinalDmg:{FinalDmg}");
                 }
             }
         }
@@ -1655,6 +1678,7 @@ public class Hooks
         {
             var owner = __instance.GetOwner() as BGUCharacterCS;
             if (owner == null) return true;
+
             var player = Helper.GetBGUPlayerCharacterCS();
             if (player == null) return true;
             if (player.PathName != owner.PathName) return true;
@@ -1772,27 +1796,26 @@ public class Hooks
     //     }
     // }
 
-    // [HarmonyPatch(typeof(BUS_MovementSystem), "MoveForward")]
-    // class MoveForward_Patch
-    // {
-    //     static void Prefix(BUS_MovementSystem __instance,
+    [HarmonyPatch(typeof(BUS_MovementSystem), "MoveForward")]
+    class MoveForward_Patch
+    {
+        static void Prefix(BUS_MovementSystem __instance,
 
-    //         ref float Value)
-    //     {
-    //         Value += 10000;
+            ref float Value)
+        {
+            BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(__instance.GetOwner());
+            if (bUS_GSEventCollection != null)
+            {
+                Helper.LogInfoOnce($"玩家前进 MoveForward: {Value} ");
+                bUS_GSEventCollection.Evt_SetMoveSpeedAddValue.Invoke(1000);
+                bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.MoveSlowly, IsRemove: true);
+                bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.LockStateWalking, IsRemove: true);
 
-    //         BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(__instance.GetOwner());
-    //         if (bUS_GSEventCollection != null)
-    //         {
-    //             Helper.LogInfoOnce($"玩家前进 MoveForward: {Value} ");
-    //             bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.MoveSlowly, IsRemove: true);
-    //             bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.LockStateWalking, IsRemove: true);
-
-    //         }
-    //         // 将速度改为原来的3倍
-    //         // SpeedRate *= 3f;
-    //     }
-    // }
+            }
+            // 将速度改为原来的3倍
+            // SpeedRate *= 3f;
+        }
+    }
 
     // [HarmonyPatch(typeof(BUS_MovementSystem), "CheckCanRun")]
     // public class CheckCanRunPatch
@@ -1884,4 +1907,22 @@ public class Hooks
             return true;
         }
     }
+
+
+
+
+    // [HarmonyPatch(typeof(BUC_SpeedCtrlData))]
+    // public class SpeedCtrlDataPatch
+    // {
+    //     [HarmonyPrefix]
+    //     [HarmonyPatch(nameof(BUC_SpeedCtrlData.GetFinalSpeedCtrlRate))]
+    //     static bool GetFinalSpeedCtrlRatePrefix(ref float __result)
+    //     {
+    //         __result = __result + 1;
+    //         return false; // 跳过原始方法
+    //     }
+    // }
+
+
+
 }
