@@ -1,6 +1,4 @@
 [
-  
-
   {
     "desc": "1a切手，马喽10705",
     "montage": "AM_Wukong_ComboA_z_01",
@@ -12,15 +10,6 @@
         "BuffIDs": [66655405, 289],
         "BuffTime": 3000,
         "desc": "棍光特效粒子,接招buff"
-      },
-      {
-        "Type": "summoner_do_actions",
-        "summonerActions": [
-          {
-            "type": "skill"
-          }
-        ],
-        "desc": "让分身复制技能"
       }
     ],
     "SweepActions": [
@@ -75,15 +64,6 @@
         "BuffID": 66655404,
         "BuffTime": 2600,
         "desc": "棍光特效粒子"
-      },
-      {
-        "Type": "summoner_do_actions",
-        "summonerActions": [
-          {
-            "type": "skill"
-          }
-        ],
-        "desc": "让分身复制技能"
       }
     ],
     "SweepActions": [
@@ -144,15 +124,6 @@
         "BuffID": 66655404,
         "BuffTime": 2600,
         "desc": "棍光特效粒子"
-      },
-      {
-        "Type": "summoner_do_actions",
-        "summonerActions": [
-          {
-            "type": "skill"
-          }
-        ],
-        "desc": "让分身复制技能"
       }
     ],
     "SweepActions": [
@@ -215,15 +186,6 @@
         "BuffIDs": [289, 66655405],
         "BuffTime": 3500,
         "desc": "识破buff，接招buff，棍光粒子"
-      },
-      {
-        "Type": "summoner_do_actions",
-        "summonerActions": [
-          {
-            "type": "skill"
-          }
-        ],
-        "desc": "让分身复制技能"
       }
     ],
     "SweepActions": [
@@ -294,15 +256,6 @@
         "BuffID": 66655404,
         "BuffTime": 2600,
         "desc": "棍光特效粒子"
-      },
-      {
-        "Type": "summoner_do_actions",
-        "summonerActions": [
-          {
-            "type": "skill"
-          }
-        ],
-        "desc": "让分身复制技能"
       }
     ],
     "SweepActions": [
@@ -362,15 +315,6 @@
         "BuffIDs": [289, 66655406],
         "BuffTime": 3500,
         "desc": "识破buff，接招buff，棍光粒子"
-      },
-      {
-        "Type": "summoner_do_actions",
-        "summonerActions": [
-          {
-            "type": "skill"
-          }
-        ],
-        "desc": "让分身复制技能"
       }
     ]
   },
@@ -391,18 +335,9 @@
         "Type": "bullet",
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
         "ProjectTileID": 30160101,
-        "AttachToSpawnBase": true,
-        "spawnBaseSocketName": "weapon_r",
+        "OffsetX": 700,
+        "OffsetY": 700,
         "desc": "小黄龙雷电"
-      },
-      {
-        "Type": "summoner_do_actions",
-        "summonerActions": [
-          {
-            "type": "skill"
-          }
-        ],
-        "desc": "让分身复制技能"
       }
     ],
     "SweepActions": [
@@ -461,16 +396,6 @@
         "BuffIDs": [289, 66655407],
         "BuffTime": 3000,
         "desc": "识破buff，接招buff，棍光粒子"
-      },
-      {
-        "Type": "summoner_do_actions",
-        "summonerActions": [
-          {
-            "type": "skill",
-            "SkillID": 84321024
-          }
-        ],
-        "desc": "让分身棍子变粗砸砸砸"
       }
     ]
   },
@@ -487,15 +412,6 @@
         "BuffID": 66655406,
         "BuffTime": 3000,
         "desc": "棍光特效粒子"
-      },
-      {
-        "Type": "summoner_do_actions",
-        "summonerActions": [
-          {
-            "type": "skill"
-          }
-        ],
-        "desc": "让分身复制技能"
       }
     ]
   },
@@ -675,8 +591,8 @@
         "Type": "bullet",
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
         "ProjectTileID": 30160101,
-        "AttachToSpawnBase": true,
-        "spawnBaseSocketName": "weapon_r",
+        "OffsetX": 700,
+        "OffsetY": 700,
         "desc": "小黄龙雷电"
       }
     ],

@@ -54,5 +54,13 @@
     "EffectParamsInt": [10, 25, 1, 0, 0, 4444404],
     "EffectParamsFloat": [1000.0, 1200.0, 120140.0, 0.0, 0.0, 0.0, 1300.0],
     "EffectParamsStr": ["【主角】蓄力3"]
+  },
+
+  {
+    "ID": 70018902,
+    "desc": "JSXQ子弹击中效果",
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
+    "EffectParamsFloat": [200.0, 200.0, 22500.0, 0.0, 0.0, 0.0, 200.0],
+    "EffectParamsStr": ["【怪物】打断轻棍终结"]
   }
 ]

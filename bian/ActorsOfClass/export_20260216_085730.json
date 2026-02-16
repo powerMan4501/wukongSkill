@@ -1,0 +1,86 @@
+[
+  {
+    "PathName": "/Game/00Main/Maps/LYS/LYS_PersistentLevel.LYS_PersistentLevel:PersistentLevel.1730232257712-3b2936244ea76b3e9a2f79895fc26ecc-BRT_lys_bingha_C_0@_0",
+    "ClassPathName": "/Game/00Main/Design/Units/LYS/UNIT_lys_xuewa_01.UNIT_lys_xuewa_01_C",
+    "Location": {
+      "mX": -100387.3073380581,
+      "mY": -278753.24217341869,
+      "mZ": -31138.60546875,
+      "X": -100387.305,
+      "Y": -278753.25,
+      "Z": -31138.6055
+    },
+    "Rotation": {
+      "mPitch": 0.0,
+      "mYaw": 100.32288360595706,
+      "mRoll": 0.0,
+      "Pitch": 0.0,
+      "Yaw": 100.322884,
+      "Roll": 0.0
+    },
+    "Scale": {
+      "mX": 1.0,
+      "mY": 1.0,
+      "mZ": 1.0,
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    }
+  },
+  {
+    "PathName": "/Game/00Main/Maps/LYS/LYS_PersistentLevel.LYS_PersistentLevel:PersistentLevel.UGuid___LYS___LittleFox@_0",
+    "ClassPathName": "/Game/00Main/Design/Units/GYCY/Unit_emptyunit.Unit_emptyunit_C",
+    "Location": {
+      "mX": -111932.25912889364,
+      "mY": -274663.81694391987,
+      "mZ": -30964.754021244979,
+      "X": -111932.258,
+      "Y": -274663.8,
+      "Z": -30964.7539
+    },
+    "Rotation": {
+      "mPitch": 2.3869639581479447,
+      "mYaw": -75.552533520132329,
+      "mRoll": -2.1696843401014134,
+      "Pitch": 2.38696384,
+      "Yaw": -75.552536,
+      "Roll": -2.16968441
+    },
+    "Scale": {
+      "mX": 1.0,
+      "mY": 1.0,
+      "mZ": 1.0,
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    }
+  },
+  {
+    "PathName": "/Game/00Main/Maps/LYS/LYS_PersistentLevel.LYS_PersistentLevel:PersistentLevel.Unit_Player_Wukong_C_2147308882",
+    "ClassPathName": "/Game/00Main/Design/Units/Player/Unit_Player_Wukong.Unit_Player_Wukong_C",
+    "Location": {
+      "mX": -100560.99254625659,
+      "mY": -277730.90688896639,
+      "mZ": -31276.455405456294,
+      "X": -100560.992,
+      "Y": -277730.9,
+      "Z": -31276.4551
+    },
+    "Rotation": {
+      "mPitch": 0.0,
+      "mYaw": -81.839813232421861,
+      "mRoll": 0.0,
+      "Pitch": 0.0,
+      "Yaw": -81.83981,
+      "Roll": 0.0
+    },
+    "Scale": {
+      "mX": 1.0,
+      "mY": 1.0,
+      "mZ": 1.0,
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    }
+  }
+]

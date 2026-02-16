@@ -293,5 +293,20 @@
     "desc": "地刺",
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 0
+  },
+  {
+    "ID": 1026203,
+    "desc": "雷蛙蝌蚪，2级雷",
+    "HitEffectsforChr": [1026212, 910420],
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
+  },
+  {
+    "ID": 30240401,
+    "desc": "小雷球",
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1,
+    "BulletSweepCheckDelayTime": 0.0,
+    "BulletSweepCheckGap": 5
   }
 ]

@@ -1,0 +1,251 @@
+{
+  "IsTrans": false,
+  "BossConf": {
+    "CapsuleHalfHeight": 260.0,
+    "CapsuleRadius": 130.0,
+    "SKMesh": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Wa_01/Meshes/new/SK_GYCY_Wa_01.SK_GYCY_Wa_01",
+    "ABPClass": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Wa_01/ABP_gycy_wa_03.ABP_gycy_wa_03_C",
+    "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Wa_01/Meshes/new/PA_GYCY_Wa_03.PA_GYCY_Wa_03",
+    "Weapons": null,
+    "TFXConfigs": null,
+    "InteractBones": [
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "foretwist_r",
+        "FirstRadius": 30.0,
+        "NextBoneName": "hand_r",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "foretwist_l",
+        "FirstRadius": 30.0,
+        "NextBoneName": "hand_l",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "foot_l",
+        "FirstRadius": 30.0,
+        "NextBoneName": "Bip001-L-Toe1Nub",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "foot_r",
+        "FirstRadius": 30.0,
+        "NextBoneName": "Bip001-R-Toe1Nub",
+        "NextRadius": 30.0
+      },
+      {
+        "WeaponIndex": 0,
+        "FirstBoneName": "water_01",
+        "FirstRadius": 30.0,
+        "NextBoneName": "Water_02",
+        "NextRadius": 30.0
+      }
+    ],
+    "Override_AbnormalDispID_Attacker": 0,
+    "Override_AbnormalDispID_Victim": 100,
+    "doneSkill": null,
+    "UnitScale": null
+  },
+  "TamerPath": "/Game/00Main/Design/Units/LYS/UNIT_lys_xuewa_01.UNIT_lys_xuewa_01_C",
+  "Name": "magic_xue_wa",
+  "Label": "magic_xue_wa",
+  "Type": "MAGIC",
+  "CoolDownRate": 50,
+  "PlayTimeRate": 1.0,
+  "XRateBig": 0.3,
+  "ZRateBig": 0.1,
+  "XRateSmall": 2.0,
+  "Level1Scale": 1.0,
+  "Level2Scale": 1.0,
+  "EnterSkill": {
+    "Id": 8595
+  },
+  "Skills": [
+    {
+      "Id": 305101,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_02.AM_lys_wa_01_Atk_02'",
+      "Key": "LBUTTON"
+    },
+    {
+      "Id": 305102,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_03.AM_lys_wa_01_Atk_03'",
+      "Key": "S+LBUTTON"
+    },
+    {
+      "Id": 305103,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_05.AM_lys_wa_01_Atk_05'",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 305104,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_06.AM_lys_wa_01_Atk_06'",
+      "Key": "S+RBUTTON"
+    },
+    {
+      "Id": 305105,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_07.AM_lys_wa_01_Atk_07'",
+      "Key": "SPACE"
+    },
+    {
+      "Id": 305106,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_11.AM_lys_wa_01_Atk_11'",
+      "Key": "S+SPACE"
+    },
+    {
+      "Id": 305107,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_64_b.AM_lys_wa_01_Atk_64_b'",
+      "Key": "XBUTTON1"
+    },
+    {
+      "Id": 305108,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_04.AM_lys_wa_01_Atk_04'",
+      "Key": "S+XBUTTON1"
+    },
+    {
+      "Id": 305109,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_64_f.AM_lys_wa_01_Atk_64_f'",
+      "Key": "XBUTTON2"
+    },
+    {
+      "Id": 305110,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_13.AM_lys_wa_01_Atk_13'",
+      "Key": "S+XBUTTON2"
+    },
+    {
+      "Id": 305111,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_12.AM_lys_wa_01_Atk_12'",
+      "Key": ""
+    },
+    {
+      "Id": 305112,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_03a.AM_lys_wa_01_Atk_03a'",
+      "Key": ""
+    },
+    {
+      "Id": 305113,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_atk_31.AM_lys_wa_01_atk_31'",
+      "Key": ""
+    },
+    {
+      "Id": 305114,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_atk_42.AM_lys_wa_01_atk_42'",
+      "Key": ""
+    },
+    {
+      "Id": 305121,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_01.AM_lys_wa_01_Atk_01'",
+      "Key": ""
+    },
+    {
+      "Id": 305122,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_10.AM_lys_wa_01_Atk_10'",
+      "Key": ""
+    },
+    {
+      "Id": 305123,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_14.AM_lys_wa_01_Atk_14'",
+      "Key": ""
+    },
+    {
+      "Id": 305124,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Enter_01.AM_lys_wa_01_Enter_01'",
+      "Key": ""
+    },
+    {
+      "Id": 305125,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_08.AM_lys_wa_01_Atk_08'",
+      "Key": ""
+    },
+    {
+      "Id": 305126,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_atk_41.AM_lys_wa_01_atk_41'",
+      "Key": ""
+    },
+    {
+      "Id": 305127,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_atk_40.AM_lys_wa_01_atk_40'",
+      "Key": ""
+    },
+    {
+      "Id": 305128,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_CT.AM_lys_wa_01_CT'",
+      "Key": ""
+    },
+    {
+      "Id": 305130,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_zhuatou_01.AM_lys_wa_01_zhuatou_01'",
+      "Key": ""
+    },
+    {
+      "Id": 305131,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_CT_frozen.AM_lys_wa_01_CT_frozen'",
+      "Key": ""
+    },
+    {
+      "Id": 305151,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_turn_L_01.AM_lys_wa_01_turn_L_01'",
+      "Key": ""
+    },
+    {
+      "Id": 305152,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_turn_L_02.AM_lys_wa_01_turn_L_02'",
+      "Key": ""
+    },
+    {
+      "Id": 305153,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_turn_R_01.AM_lys_wa_01_turn_R_01'",
+      "Key": ""
+    },
+    {
+      "Id": 305154,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_turn_R_02.AM_lys_wa_01_turn_R_02'",
+      "Key": ""
+    },
+    {
+      "Id": 305155,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Bwalk_Lt_01.AM_lys_wa_01_Bwalk_Lt_01'",
+      "Key": ""
+    },
+    {
+      "Id": 305156,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Bwalk_Rt_01.AM_lys_wa_01_Bwalk_Rt_01'",
+      "Key": ""
+    },
+    {
+      "Id": 305157,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Bwalk_Lt_02.AM_lys_wa_01_Bwalk_Lt_02'",
+      "Key": ""
+    },
+    {
+      "Id": 305158,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Bwalk_Rt_02.AM_lys_wa_01_Bwalk_Rt_02'",
+      "Key": ""
+    },
+    {
+      "Id": 305159,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Jump_B.AM_lys_wa_01_Jump_B'",
+      "Key": ""
+    },
+    {
+      "Id": 305161,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_atk_33_f.AM_lys_wa_01_atk_33_f'",
+      "Key": ""
+    },
+    {
+      "Id": 305162,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_atk_33_b.AM_lys_wa_01_atk_33_b'",
+      "Key": ""
+    }
+  ],
+  "DisableDepthOfField": false,
+  "TransDone": null,
+  "XRate": 0.0,
+  "ZRate": 0.0,
+  "skillSpeedRate": 0.0,
+  "Author": "神秘人物",
+  "skillMaps": null
+}

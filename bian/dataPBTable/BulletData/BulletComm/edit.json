@@ -35,5 +35,18 @@
     "desc": "蛇毒",
     "ID": 10030401,
     "ProjectileLifeTime": 8
+  },
+
+  {
+    "desc": "雷蛙 蝌蚪",
+    "ID": 1026203,
+    "ProjectileLifeTime": 8,
+    "ProjectileDelayDestroyTime": 0
+  },
+  {
+    "desc": "小雷球",
+    "ID": 30240401,
+    "ProjectileLifeTime": 8,
+    "ProjectileDelayDestroyTime": 0
   }
 ]

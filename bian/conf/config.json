@@ -167,8 +167,8 @@
     {
       "Key": "F6",
       "Type": "MAGIC",
-      "Label": "SK_GYCY_Wa_01",
-      "Name": "变身为【青蛙，波波浪浪，石蛙 火蛙】"
+      "Label": "magic_xue_wa",
+      "Name": "变身为冰蛙"
     },
     {
       "Key": "S+F6",

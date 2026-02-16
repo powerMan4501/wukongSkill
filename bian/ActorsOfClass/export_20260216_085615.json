@@ -1,0 +1,58 @@
+[
+  {
+    "PathName": "/Game/00Main/Maps/BossRush/HFM_DustDragon/HFM_DustDragon_PersistentLevel.HFM_DustDragon_PersistentLevel:PersistentLevel.1730232555869-3b2936244ea76b3e9a2f79895fc26ecc-BRT_hfm_dustdragon_xll_C_0@_0",
+    "ClassPathName": "/Game/00Main/Design/Units/LYS/Unit_LYS_ChuiLong_01A.Unit_LYS_ChuiLong_01A_C",
+    "Location": {
+      "mX": -54843.190619316272,
+      "mY": -50812.001291486755,
+      "mZ": 38.556793212890625,
+      "X": -54843.19,
+      "Y": -50812.0,
+      "Z": 38.5567932
+    },
+    "Rotation": {
+      "mPitch": 0.0,
+      "mYaw": -20.677246093750004,
+      "mRoll": 0.0,
+      "Pitch": 0.0,
+      "Yaw": -20.6772461,
+      "Roll": 0.0
+    },
+    "Scale": {
+      "mX": 1.0,
+      "mY": 1.0,
+      "mZ": 1.0,
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    }
+  },
+  {
+    "PathName": "/Game/00Main/Maps/BossRush/HFM_DustDragon/HFM_DustDragon_PersistentLevel.HFM_DustDragon_PersistentLevel:PersistentLevel.Unit_Player_Wukong_C_2147330173",
+    "ClassPathName": "/Game/00Main/Design/Units/Player/Unit_Player_Wukong.Unit_Player_Wukong_C",
+    "Location": {
+      "mX": -52295.721643419565,
+      "mY": -51743.896427008047,
+      "mZ": -192.18957497450873,
+      "X": -52295.7227,
+      "Y": -51743.8945,
+      "Z": -192.189575
+    },
+    "Rotation": {
+      "mPitch": 0.0,
+      "mYaw": 158.26461791992188,
+      "mRoll": 0.0,
+      "Pitch": 0.0,
+      "Yaw": 158.264618,
+      "Roll": 0.0
+    },
+    "Scale": {
+      "mX": 1.0,
+      "mY": 1.0,
+      "mZ": 1.0,
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    }
+  }
+]

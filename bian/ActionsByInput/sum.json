@@ -418,7 +418,7 @@
     "afterActions": [
       {
         "Type": "spaw_monster",
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/TAMER_lys_xuewa_01.TAMER_lys_xuewa_01_C",
+        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/LYS/UNIT_lys_xuewa_01.UNIT_lys_xuewa_01_C",
         "desc": "第三关·浪里个浪"
       },
 
@@ -619,6 +619,10 @@
         "Type": "spaw_monster",
         "SummonTamerTemplatePath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_niu_01_mountaintop.TAMER_hfm_niu_01_mountaintop_C",
         "desc": "第一关·牯护院（BOSS）"
+      },{
+        "Type": "spaw_monster",
+        "SummonTamerTemplatePath": "/Game/00Main/Maps/2024NianHui/Monster/TAMER_hys_niumo1.TAMER_hys_niumo1_C",
+        "desc": "测试 牛魔"
       },
 
       {

@@ -1,0 +1,114 @@
+[
+  {
+    "PathName": "/Game/00Main/Maps/HFM02/HFM02_PersistentLevel.HFM02_PersistentLevel:PersistentLevel.1730232412711-3b2936244ea76b3e9a2f79895fc26ecc-BRT_hfm02_sgd_C_0@_0",
+    "ClassPathName": "/Game/00Main/Design/Units/HFM/Unit_HFM_ShiGanDang_01.Unit_HFM_ShiGanDang_01_C",
+    "Location": {
+      "mX": -120378.11772670144,
+      "mY": -5427.7327286821219,
+      "mZ": 5363.20166015625,
+      "X": -120378.117,
+      "Y": -5427.733,
+      "Z": 5363.20166
+    },
+    "Rotation": {
+      "mPitch": 0.0,
+      "mYaw": -119.99999907043558,
+      "mRoll": 0.0,
+      "Pitch": 0.0,
+      "Yaw": -120.0,
+      "Roll": 0.0
+    },
+    "Scale": {
+      "mX": 1.0,
+      "mY": 1.0,
+      "mZ": 1.0,
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    }
+  },
+  {
+    "PathName": "/Game/00Main/Maps/HFM02/HFM02_PersistentLevel.HFM02_PersistentLevel:PersistentLevel.1716478755082-DESKTOP-GSDCSVP-CAFC5EF5494DE2A134CD24AE3ACB383C-TAMER_hfm_shanzhen_01a_C_1@_0",
+    "ClassPathName": "/Game/00Main/Design/Units/HFM/Unit_HFM_ShanZhen_01a.Unit_HFM_ShanZhen_01a_C",
+    "Location": {
+      "mX": -89265.993173977928,
+      "mY": -42355.976899999841,
+      "mZ": 4539.0528829756022,
+      "X": -89265.99,
+      "Y": -42355.9766,
+      "Z": 4539.05273
+    },
+    "Rotation": {
+      "mPitch": 0.0,
+      "mYaw": 48.236318086213458,
+      "mRoll": 0.0,
+      "Pitch": 0.0,
+      "Yaw": 48.2363167,
+      "Roll": 0.0
+    },
+    "Scale": {
+      "mX": 1.0,
+      "mY": 1.0,
+      "mZ": 1.0,
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    }
+  },
+  {
+    "PathName": "/Game/00Main/Maps/HFM02/HFM02_PersistentLevel.HFM02_PersistentLevel:PersistentLevel.UGuid___HFM___YSCheng@_0",
+    "ClassPathName": "/Game/00Main/Design/Units/LYS/Unit_lys_yaoseng_03a_zaobi.Unit_lys_yaoseng_03a_zaobi_C",
+    "Location": {
+      "mX": -63245.38803,
+      "mY": -2697.010934,
+      "mZ": -7108.143731,
+      "X": -63245.3867,
+      "Y": -2697.011,
+      "Z": -7108.14355
+    },
+    "Rotation": {
+      "mPitch": 0.0,
+      "mYaw": -107.23581300000001,
+      "mRoll": 0.0,
+      "Pitch": 0.0,
+      "Yaw": -107.235809,
+      "Roll": 0.0
+    },
+    "Scale": {
+      "mX": 1.0,
+      "mY": 1.0,
+      "mZ": 1.0,
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    }
+  },
+  {
+    "PathName": "/Game/00Main/Maps/HFM02/HFM02_PersistentLevel.HFM02_PersistentLevel:PersistentLevel.Unit_Player_Wukong_C_2147343860",
+    "ClassPathName": "/Game/00Main/Design/Units/Player/Unit_Player_Wukong.Unit_Player_Wukong_C",
+    "Location": {
+      "mX": -121562.95927371114,
+      "mY": -8672.67317557425,
+      "mZ": 5161.5257194860933,
+      "X": -121562.961,
+      "Y": -8672.673,
+      "Z": 5161.526
+    },
+    "Rotation": {
+      "mPitch": 0.0,
+      "mYaw": -19.999996185302738,
+      "mRoll": 0.0,
+      "Pitch": 0.0,
+      "Yaw": -19.9999962,
+      "Roll": 0.0
+    },
+    "Scale": {
+      "mX": 1.0,
+      "mY": 1.0,
+      "mZ": 1.0,
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    }
+  }
+]

@@ -99,7 +99,7 @@
     ]
   },
   {
-    "code": "jice",
+    "code": "jice  大招  AM_lys_wa_01_atk_40",
     "afterActions": [
       {
         "type": "magicskill",
