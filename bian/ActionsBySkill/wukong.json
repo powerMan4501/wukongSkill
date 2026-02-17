@@ -650,21 +650,7 @@
     ]
   },
 
-  {
-    "skillID": 10305,
-    "desc": "翻滚",
-    "montage_config": {
-      "speedRate": 1.1,
-      "AMSpeedRate": 1.1
-    },
-    "cast_actions": [
-      {
-        "Type": "spaw_monster",
-        "SummonTamerTemplatePath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_youhun.TAMER_gycy_youhun_C",
-        "desc": "游魂"
-      }
-    ]
-  },
+
   {
     "skillID": 10530,
     "montage_config": {
@@ -936,11 +922,11 @@
               },
               {
                 "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [2403471, 1017761],
+                "ProjectTileIDs": [30510601, 30512704],
                 "hasBuff": 888666006,
                 "OffsetX": 700,
                 "OffsetY": 700,
-                "desc": "有冰buff 10705冰暴,雅香客冰雾气"
+                "desc": "有冰buff 10705小冰气,冰蛙小冰暴"
               },
               {
                 "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",

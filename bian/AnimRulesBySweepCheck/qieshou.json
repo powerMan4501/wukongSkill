@@ -557,11 +557,11 @@
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [30139802, 152, 2403471],
+            "ProjectTileIDs": [30139802, 30510103, 30512703,30510602],
             "OffsetX": 100,
             "OffsetY": 100,
             "hasBuff": 888666006,
-            "desc": "有冰buff 地面一圈冰刺，开山斧地波，巨猿4级冰暴，冰暴4"
+            "desc": "有冰buff 地面一圈冰刺，冰蛙冰刺，冰波动，冰地板"
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",

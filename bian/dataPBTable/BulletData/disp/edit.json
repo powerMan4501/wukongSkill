@@ -13,5 +13,10 @@
     "desc": "飞剑，修改击中音效",
     "ID": 150,
     "HitChrAudioID": 1021
+  },
+   {
+    "desc": "兽棍红雷，修改击中音效",
+    "ID": 154,
+    "HitChrAudioID": 5301
   }
 ]

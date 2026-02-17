@@ -13,5 +13,94 @@
     "EffectParamsInt": [31, 21, 6, 0, 4, 4, 4444401],
     "EffectParamsFloat": [0.0, 140.0, 13500.0, 0.0, 0.0, 0.0, 140.0],
     "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
+  },
+
+  {
+    "ID": 18401,
+    "BuffTips": "&&----敌人----&& | 【虫】变身-虫爆持续伤害-引爆1只虫卵 | 0.伤害：360%",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": ["【主角】轻棍连招/0段蓄力"],
+        "EffectParams": [21, 7, 1, 1, 3, 0, 0, 4],
+        "EffectParamsFloat": [100.0, 100.0, 18500.0, 100.0, 0.0, 110.0, 110.0, 100.0]
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 95,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [3, 1, 0, 50],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 18402,
+    "BuffTips": "&&----敌人----&& | 【虫】变身-虫爆持续伤害-引爆2只虫卵 | 0.伤害：720%",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": ["【主角】轻棍终结"],
+        "EffectParams": [22, 7, 1, 1, 3, 0, 0, 4],
+        "EffectParamsFloat": [200.0, 200.0, 46500.0, 0.0, 200.0, 200.0, 280.0, 200.0]
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 95,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [3, 2, 0, 100],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 18403,
+    "BuffTips": "&&----敌人----&& | 【虫】变身-虫爆持续伤害-引爆3只虫卵 | 0.伤害：1080%",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": ["【主角】蓄力2"],
+        "EffectParams": [22, 7, 1, 1, 3, 0, 0, 4],
+        "EffectParamsFloat": [300.0, 300.0, 92500.0, 0.0, 300.0, 300.0, 560.0, 300.0]
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 95,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [3, 2, 0, 150],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 18404,
+    "BuffTips": "&&----敌人----&& | 【虫】变身-虫爆持续伤害-引爆4只虫卵 | 0.伤害：1890%",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": ["【主角】蓄力3"],
+        "EffectParams": [25, 7, 1, 1, 3, 0, 0, 4],
+        "EffectParamsFloat": [400.0, 400.0, 185000.0, 0.0, 400.0, 400.0, 1900.0, 400.0]
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 95,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [3, 3, 0, 999],
+        "EffectParamsFloat": []
+      }
+    ]
   }
 ]

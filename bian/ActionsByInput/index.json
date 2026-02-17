@@ -399,5 +399,17 @@
         "desc": "导出角色class"
       }
     ]
+  },
+  {
+    "code": "out",
+    "afterActions": [
+      { "Type": "out_magic", "desc": "退出精魄" }
+    ]
+  },
+  {
+    "code": "AACK",
+    "afterActions": [
+      { "Type": "auto_attack", "desc": "开启/关闭自动攻击" }
+    ]
   }
 ]

@@ -51,8 +51,8 @@
     "UnitScale": null
   },
   "TamerPath": "/Game/00Main/Design/Units/LYS/UNIT_lys_xuewa_01.UNIT_lys_xuewa_01_C",
-  "Name": "magic_xue_wa",
-  "Label": "magic_xue_wa",
+  "Name": "SK_GYCY_Wa_01",
+  "Label": "SK_GYCY_Wa_01",
   "Type": "MAGIC",
   "CoolDownRate": 50,
   "PlayTimeRate": 1.0,
@@ -67,126 +67,151 @@
   "Skills": [
     {
       "Id": 305101,
+      "Name": "慢速平A左手一巴掌",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_02.AM_lys_wa_01_Atk_02'",
-      "Key": "LBUTTON"
-    },
-    {
-      "Id": 305102,
-      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_03.AM_lys_wa_01_Atk_03'",
-      "Key": "S+LBUTTON"
-    },
-    {
-      "Id": 305103,
-      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_05.AM_lys_wa_01_Atk_05'",
-      "Key": "RBUTTON"
-    },
-    {
-      "Id": 305104,
-      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_06.AM_lys_wa_01_Atk_06'",
-      "Key": "S+RBUTTON"
-    },
-    {
-      "Id": 305105,
-      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_07.AM_lys_wa_01_Atk_07'",
-      "Key": "SPACE"
-    },
-    {
-      "Id": 305106,
-      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_11.AM_lys_wa_01_Atk_11'",
-      "Key": "S+SPACE"
-    },
-    {
-      "Id": 305107,
-      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_64_b.AM_lys_wa_01_Atk_64_b'",
-      "Key": "XBUTTON1"
-    },
-    {
-      "Id": 305108,
-      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_04.AM_lys_wa_01_Atk_04'",
-      "Key": "S+XBUTTON1"
-    },
-    {
-      "Id": 305109,
-      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_64_f.AM_lys_wa_01_Atk_64_f'",
-      "Key": "XBUTTON2"
-    },
-    {
-      "Id": 305110,
-      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_13.AM_lys_wa_01_Atk_13'",
-      "Key": "S+XBUTTON2"
-    },
-    {
-      "Id": 305111,
-      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_12.AM_lys_wa_01_Atk_12'",
       "Key": ""
     },
     {
+      "Id": 305102,
+      "Name": "慢速后退两步，然后肚子撞人",
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_03.AM_lys_wa_01_Atk_03'",
+      "Key": ""
+    },
+    {
+      "Id": 305103,
+      "Name": "索敌冲上去扇一巴掌",
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_05.AM_lys_wa_01_Atk_05'",
+      "Key": ""
+    },
+    {
+      "Id": 305104,
+      "Name": "慢速平A右手一巴掌",
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_06.AM_lys_wa_01_Atk_06'",
+      "Key": ""
+    },
+    {
+      "Id": 305105,
+      "Name": "慢速小转向，平A一巴掌",
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_07.AM_lys_wa_01_Atk_07'",
+      "Key": ""
+    },
+    {
+      "Id": 305106,
+      "Name": "后腿瞪人",
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_11.AM_lys_wa_01_Atk_11'",
+      "Key": ""
+    },
+    {
+      "Id": 305107,
+      "Name": "远程，后腿往侧面扔雪石头",
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_64_b.AM_lys_wa_01_Atk_64_b'",
+      "Key": "A+X"
+    },
+    {
+      "Id": 305108,
+      "Name": "后腿瞪人",
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_04.AM_lys_wa_01_Atk_04'",
+      "Key": ""
+    },
+    {
+      "Id": 305109,
+      "Name": "远程，后腿扔雪石头",
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_64_f.AM_lys_wa_01_Atk_64_f'",
+      "Key": ""
+    },
+    {
+      "Id": 305110,
+      "Name": "往前跳跃扑",
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_13.AM_lys_wa_01_Atk_13'",
+      "Key": "RBUTTON"
+    },
+    {
+      "Id": 305111,
+      "Name": "一边往前，一边喷冰气",
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_12.AM_lys_wa_01_Atk_12'",
+      "Key": "XBUTTON2"
+    },
+    {
       "Id": 305112,
+      "Name": "慢速后退两步，然后肚子撞人",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_03a.AM_lys_wa_01_Atk_03a'",
       "Key": ""
     },
     {
       "Id": 305113,
+      "Name": "舌头捅人",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_atk_31.AM_lys_wa_01_atk_31'",
       "Key": ""
     },
     {
       "Id": 305114,
+      "Name": "舌头横扫",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_atk_42.AM_lys_wa_01_atk_42'",
       "Key": ""
     },
     {
       "Id": 305121,
+      "Name": "大招，拍两巴掌，然后砸出大范围冰暴冰刺",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_01.AM_lys_wa_01_Atk_01'",
-      "Key": ""
+      "Key": "Z"
     },
     {
       "Id": 305122,
+      "Name": "往右跳到一旁，然后拍出一排冰刺",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_10.AM_lys_wa_01_Atk_10'",
-      "Key": ""
+      "Key": "SPACE"
     },
     {
       "Id": 305123,
+      "Name": "往左跳到一旁，然后拍出一排冰刺",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_14.AM_lys_wa_01_Atk_14'",
-      "Key": ""
+      "Key": "S+SPACE"
     },
     {
       "Id": 305124,
+      "Name": "大招，大范围冰暴",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Enter_01.AM_lys_wa_01_Enter_01'",
-      "Key": ""
+      "Key": "X"
     },
     {
       "Id": 305125,
+      "Name": "舌头横扫，每次横扫都叼石头砸人",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_Atk_08.AM_lys_wa_01_Atk_08'",
-      "Key": ""
+      "Key": "LBUTTON"
     },
     {
       "Id": 305126,
+      "Name": "往后跳，然后精魄技能，喷冰",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_atk_41.AM_lys_wa_01_atk_41'",
       "Key": ""
     },
     {
       "Id": 305127,
+      "Name": "大招，召唤好几个冰刺在周围",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_atk_40.AM_lys_wa_01_atk_40'",
-      "Key": ""
+      "Key": "C"
     },
     {
       "Id": 305128,
+      "Name": "原地跳砸 冰地波",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_CT.AM_lys_wa_01_CT'",
-      "Key": ""
+      "Key": "XBUTTON1"
     },
     {
       "Id": 305130,
+      "Name": "投技，把对手吃下去",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_zhuatou_01.AM_lys_wa_01_zhuatou_01'",
       "Key": ""
     },
     {
       "Id": 305131,
+      "Name": "原地跳砸 冰暴",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_CT_frozen.AM_lys_wa_01_CT_frozen'",
-      "Key": ""
+      "Key": "V"
     },
     {
       "Id": 305151,
+      "Name": "移动",
       "AnimPath": "AnimMontage'/Game/00Main/Animation/GYCY/GYCY_wa_03/xuewa/AM_lys_wa_01_turn_L_01.AM_lys_wa_01_turn_L_01'",
       "Key": ""
     },

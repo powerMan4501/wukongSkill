@@ -60,7 +60,7 @@
   {
     "desc": "红孩儿砸地",
     "ID": 44011401,
-    "HitEffectsforChr": [888555021, 888555017],
+    "HitEffectsforChr": [44019902, 888555017],
     "HitDestructibleStrengthType": 4
   },
 
@@ -70,7 +70,13 @@
     "HitEffectsforChr": [51002001, 910360],
     "HitDestructibleStrengthType": 4
   },
-
+  {
+    "ID": 44010401,
+    "desc": "炸炸炸",
+    "HitEffectsforChr": [44019902, 888555017],
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 0
+  },
   {
     "desc": "金沙",
     "ID": 74011107,

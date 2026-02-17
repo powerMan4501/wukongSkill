@@ -221,5 +221,20 @@
         "EffectParamsFloat": []
       }
     ]
+  },
+
+  {
+    "ID": 18030,
+    "BuffTips": "【虫】变身-武器淬毒（持续30s；与棍势无关）-添加【18040】  ",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [18040],
+        "EffectParamsFloat": [0.0]
+      }
+    ]
   }
 ]

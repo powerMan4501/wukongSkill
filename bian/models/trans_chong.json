@@ -15,34 +15,155 @@
   },
   "Skills": [
     {
-      "Key": "E",
-      "Id": 18014,
-      "Name": "自己打自己 右侧",
-      "AnimPath": "AM_player_psd_chong_R1_04"
-    },
-    {
-      "Key": "Q",
-      "Id": 18031,
-      "Name": "自己打自己 左侧",
-      "AnimPath": "AM_player_psd_chong_R2_end"
-    },
-    {
       "Key": "Z",
-      "Id": 18043,
-      "Name": "左侧毒斩",
-      "AnimPath": "AM_player_psd_chong_R1_03_p_max"
+      "AnimPath": "AM_player_psd_chong_R1_04",
+      "type": "actions",
+      "afterActions": [
+        {
+          "Type": "skill",
+          "SkillID": 18014
+        },
+        {
+          "Type": "range_buff",
+          "BuffID": 18400,
+          "value": 5000,
+          "desc": "给周围5000的敌人积累虫卵"
+        },
+        {
+          "Type": "buff",
+          "BuffID": 18030,
+          "BuffTime": -1,
+          "desc": "淬毒"
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [888666008],
+          "BuffTime": -1,
+          "desc": "添加毒buff"
+        }
+      ]
     },
     {
       "Key": "X",
-      "Id": 18071,
-      "Name": "向前 BUFF?",
-      "AnimPath": "AM_player_psd_chong_fashu"
+      "Name": "自己打自己 左侧",
+      "AnimPath": "AM_player_psd_chong_R2_end",
+      "type": "actions",
+      "afterActions": [
+        {
+          "Type": "skill",
+          "SkillID": 18031
+        },
+        {
+          "Type": "range_buff",
+          "BuffID": 18400,
+          "value": 5000,
+          "desc": "给周围5000的敌人积累虫卵"
+        },
+        {
+          "Type": "buff",
+          "BuffID": 18030,
+          "BuffTime": -1,
+          "desc": "淬毒"
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [888666008],
+          "BuffTime": -1,
+          "desc": "添加毒buff"
+        }
+      ]
     },
     {
       "Key": "C",
+      "Name": "左侧毒斩",
+      "type": "actions",
+      "afterActions": [
+        {
+          "Type": "skill",
+          "AnimPath": "AM_player_psd_chong_R1_03_p_max",
+          "SkillID": 18043
+        },
+        {
+          "Type": "range_buff",
+          "BuffID": 18400,
+          "value": 5000,
+          "desc": "给周围5000的敌人积累虫卵"
+        },
+        {
+          "Type": "buff",
+          "BuffID": 18030,
+          "BuffTime": -1,
+          "desc": "淬毒"
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [888666008],
+          "BuffTime": -1,
+          "desc": "添加毒buff"
+        }
+      ]
+    },
+    {
+      "Key": "XBUTTON1",
+      "Id": 18071,
+      "Name": "引爆虫卵 18400",
+      "AnimPath": "AM_player_psd_chong_fashu",
+      "type": "actions",
+      "afterActions": [
+        {
+          "Type": "skill",
+          "AnimPath": "AM_player_psd_chong_R1_03_p_max",
+          "SkillID": 18071
+        },
+        {
+          "Type": "range_buff",
+          "BuffID": 18400,
+          "value": 5000,
+          "desc": "给周围5000的敌人积累虫卵"
+        },
+        {
+          "Type": "buff",
+          "BuffID": 18030,
+          "BuffTime": -1,
+          "desc": "淬毒"
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [888666008],
+          "BuffTime": -1,
+          "desc": "添加毒buff"
+        }
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
       "Id": 18044,
       "Name": "右侧毒斩",
-      "AnimPath": "AM_player_psd_chong_R1_04_p_max"
+      "afterActions": [
+        {
+          "Type": "skill",
+          "AnimPath": "AM_player_psd_chong_R1_04_p_max",
+          "SkillID": 18044
+        },
+        {
+          "Type": "range_buff",
+          "BuffID": 18400,
+          "value": 5000,
+          "desc": "给周围5000的敌人积累虫卵"
+        },
+        {
+          "Type": "buff",
+          "BuffID": 18030,
+          "BuffTime": -1,
+          "desc": "淬毒"
+        },
+        {
+          "Type": "buff",
+          "BuffIDs": [888666008],
+          "BuffTime": -1,
+          "desc": "添加毒buff"
+        }
+      ]
     }
   ]
 }

@@ -1,5 +1,27 @@
 [
   {
+    "desc": "王灵官 红雷",
+    "ID": 888555001,
+    "EffectType": 20,
+    "EffectParamsInt": [47120302, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0, 0, 0, 0, 0, 0],
+    "EffectParamsStr": [
+      "do_actions",
+      "bullet_ids:47120302",
+      "无",
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+    ]
+  },
+
+  {
+    "ID": 47120307,
+    "desc": "王灵官 红雷伤害",
+    "CanCutVictim": 0,
+    "EffectParamsInt": [10, 23, 6, 0, 4, 4, 4444402],
+    "EffectParamsFloat": [100.0, 100.0, 10000.0, 100.0, 0.0, 0.0, 100.0],
+    "EffectParamsStr": ["【怪物】打断蓄力2"]
+  },
+  {
     "desc": "黄符落雷",
     "ID": 888555005,
     "EffectType": 20,

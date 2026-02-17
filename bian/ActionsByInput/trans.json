@@ -103,12 +103,12 @@
     ]
   },
   {
-    "code": "ccong",
+    "code": "cdao",
     "afterActions": [
       {
         "type": "transskill",
         "ResId": 18,
-        "MagicSkillID": 18071,
+        "MagicSkillID": 18043,
         "desc": "虫"
       },
       {
