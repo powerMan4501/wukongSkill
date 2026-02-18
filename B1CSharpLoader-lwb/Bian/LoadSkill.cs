@@ -23,6 +23,8 @@ public class LoadSkill
     {
         public int skillID { get; set; }
         public string? TemplatePath { get; set; }
+        public string? montage { get; set; }
+
         public MontageConfig? montage_config { get; set; }
         public List<RuleAction>? cast_actions { get; set; }
         public List<sweepActionsConfig>? sweep_actions { get; set; }
@@ -99,10 +101,12 @@ public class LoadSkill
                 foreach (var config in configs)
                 {
                     // 添加到TemplatePathConfigs字典
-                    FUStSkillSDesc skillSDesc = BG_ProtobufDataAPI<FUStSkillSDesc>.Get().FindByID(config.skillID);
-                    if (skillSDesc == null) return;
-                    var templatePath = skillSDesc.TemplatePath;
-                    if (!TemplatePathConfigs.ContainsKey(templatePath))
+
+                    var templatePath = config.montage ?? BG_ProtobufDataAPI<FUStSkillSDesc>.Get()
+       .FindByID(config.skillID)?.TemplatePath;
+
+
+                    if (!string.IsNullOrEmpty(templatePath) && !TemplatePathConfigs.ContainsKey(templatePath))
                     {
                         TemplatePathConfigs.Add(templatePath, config);
                     }

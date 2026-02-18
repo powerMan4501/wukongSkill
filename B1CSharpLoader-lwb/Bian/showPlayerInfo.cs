@@ -275,7 +275,7 @@ public class ShowPlayerInfo
 						Maximum = new FVector2D(0.25, 0.1)
 					});
 					valueSlot.SetAlignment(new FVector2D(0.25, 0.14));
-					valueSlot.SetPosition(new FVector2D(40, 65f * i));
+					valueSlot.SetPosition(new FVector2D(80, 65f * i));
 				}
 			}
 			RenderBasicInfo();
@@ -383,6 +383,14 @@ public class ShowPlayerInfo
 				}
 				float Pevalue = BGUFunctionLibraryCS.GetAttrValue(controlledPawn, EBGUAttrFloat.Pevalue);
 				buffText += $";  棍势: {(int)Pevalue}";
+				if (Helper.auto_attack)
+				{
+					buffText += $"\n 已开启自动雷击 \n ";
+				}
+				else
+				{
+					buffText += $"\n 已关闭自动雷击 \n ";
+				}
 				UpdateUTextBlockContentIfChanged(BasicInfoVs[index], buffText);
 			}
 
@@ -391,11 +399,11 @@ public class ShowPlayerInfo
 				var target = BGUFunctionLibraryCS.BGUGetTarget(controlledPawn) as BGUCharacterCS;
 
 
-				var text = "目标角色:";
+				var text = "\n 目标角色:";
 				if (target == null)
 				{
 					target = Helper.GetNearestActor(4000);
-					text = "最近角色:";
+					text = "\n 最近角色:";
 				}
 				if (target != null)
 				{
@@ -425,13 +433,26 @@ public class ShowPlayerInfo
 					float PoisonATK = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.PoisonAtk);
 					float ThunderATK = BGUFunctionLibraryCS.GetAttrValue(target, EBGUAttrFloat.ThunderAtk);
 
-					var DmgDefTxt = DmgDef > 0 ? $", 减伤:{(int)DmgDef / 100}%, " : "";
-					var DmgAdditionTxt = DmgAddition > 0 ? $", 加伤:{(int)DmgAddition / 100}%, " : "";
-					UpdateUTextBlockContentIfChanged(BasicInfoVs[index], $"{text}({teamTxt})(距离: {(int)distanceNum})生命:{(int)Hp}, 攻击:{(int)Atk} {DmgDefTxt} {DmgAdditionTxt} \n 四灾抗性: 冰:{(int)FreezeDef}, 火:{(int)BurnDef},  毒:{(int)PoisonDef},  雷:{(int)ThunderDef} \n 四灾攻击: 冰:{(int)FreezeATK}, 火:{(int)BurnATK},  毒:{(int)PoisonATK},  雷:{(int)ThunderATK}");
+					var DmgDefTxt = DmgDef != 0 ? $", 减伤:{(int)DmgDef / 100}%, " : "";
+					var DmgAdditionTxt = DmgAddition != 0 ? $", 加伤:{(int)DmgAddition / 100}%, " : "";
+					// 18400
+					BUC_BuffData readOnlyData = BGU_DataUtil.GetReadOnlyData<BUC_BuffData>(target);
+
+					var finaltxt = $"{text}({teamTxt})生命:{(int)Hp}, 攻击:{(int)Atk} {DmgDefTxt} {DmgAdditionTxt} \n 四灾抗性: 冰:{(int)FreezeDef}, 火:{(int)BurnDef},  毒:{(int)PoisonDef},  雷:{(int)ThunderDef} \n 四灾攻击: 冰:{(int)FreezeATK}, 火:{(int)BurnATK},  毒:{(int)PoisonATK},  雷:{(int)ThunderATK}";
+					if (readOnlyData != null)
+					{
+						int buffLayer = readOnlyData.GetBuffLayer(18400);
+						if (buffLayer > 0)
+						{
+							finaltxt += $"\n {buffLayer}层虫卵";
+						}
+					}
+
+					UpdateUTextBlockContentIfChanged(BasicInfoVs[index], finaltxt);
 				}
 				else
 				{
-					UpdateUTextBlockContentIfChanged(BasicInfoVs[index], "目标角色: 无");
+					UpdateUTextBlockContentIfChanged(BasicInfoVs[index], "\n 目标角色: 无");
 				}
 			}
 			index++;

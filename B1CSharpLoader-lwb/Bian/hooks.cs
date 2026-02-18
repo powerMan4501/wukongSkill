@@ -14,6 +14,8 @@ using B1UI.GSUI;
 using CommB1;
 using ResB1;
 using b1.BGW;
+using BtlB1;
+using System.Security.Cryptography.X509Certificates;
 
 
 
@@ -106,14 +108,14 @@ public class Hooks
                 if (player.PathName == owner.PathName)
                 {
                     var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
-                    Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()} ,linkValue:{linkValue}");
-                    int skillID = BGU_DataUtil.GetUnPersistentReadOnlyData<BUC_AnimNotifyAndStateData>(owner).FindBindingSkillID(NotifyParam.FromInstanceID);
 
+                    int skillID = BGU_DataUtil.GetUnPersistentReadOnlyData<BUC_AnimNotifyAndStateData>(owner).FindBindingSkillID(NotifyParam.FromInstanceID);
+                    Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()} ,skillID：{skillID}，linkValue:{linkValue}");
                     var skillMaps = LoadSkill.ActionsBySkillConfigs;
 
 
                     if (skillMaps == null || skillMaps.Count == 0) return;
-                    if (skillMaps.TryGetValue(skillID, out var matchOne))
+                    if (skillID != -1 && skillMaps.TryGetValue(skillID, out var matchOne))
                     {
                         if (matchOne != null && matchOne.sweep_actions?.Count > 0)
                         {
@@ -127,30 +129,34 @@ public class Hooks
                         }
 
                     }
+                    else
+                    {
+                        var rulesMap = LoadSkill.TemplatePathConfigs;
+
+                        if (rulesMap == null) return;
+                        var currentMontage = NotifyParam.Animation.GetName();
+                        //                     var matchedConfig = rulesMap?.Values.FirstOrDefault(config =>
+                        //   BGW_GameDB.GetSkillSDesc(config.skillID, NotifyParam.owner)?.TemplatePath?.Contains(NotifyParam.Animation.PathName) ?? false);
+                        var matchedItem = rulesMap.FirstOrDefault(item => item.Key.Contains(currentMontage));
+                        if (!matchedItem.Equals(default(KeyValuePair<string, LoadSkill.ActionsBySkillConfig>)))
+                        {
+                            var matchedConfig = matchedItem.Value;
+                            if (matchedConfig != null && matchedConfig.sweep_actions != null && matchedConfig.sweep_actions.Count > 0)
+                            {
+                                var matchItem = matchedConfig.sweep_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
+                                if (matchItem != null && matchItem.actions != null && matchItem.actions.Count > 0)
+                                {
+                                    Log.Info($"匹配成功 BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.PathName}，linkValue:{linkValue}，actions:{matchItem.actions[0].desc}");
+                                    var rule = new Rule();
+                                    rule?.DoAfterActions(matchItem.actions);
+                                    return;
+                                }
+                            }
+                        }
+                    }
 
 
-                    // var rulesMap = LoadSkill.TemplatePathConfigs;
 
-                    // if (rulesMap == null) return;
-                    // var currentMontage = NotifyParam.Animation.GetName();
-                    // //                     var matchedConfig = rulesMap?.Values.FirstOrDefault(config =>
-                    // //   BGW_GameDB.GetSkillSDesc(config.skillID, NotifyParam.owner)?.TemplatePath?.Contains(NotifyParam.Animation.PathName) ?? false);
-                    // var matchedItem = rulesMap.FirstOrDefault(item => item.Key.Contains(currentMontage));
-                    // if (!matchedItem.Equals(default(KeyValuePair<string, LoadSkill.ActionsBySkillConfig>)))
-                    // {
-                    //     var matchedConfig = matchedItem.Value;
-                    //     if (matchedConfig != null && matchedConfig.sweep_actions != null && matchedConfig.sweep_actions.Count > 0)
-                    //     {
-                    //         var matchItem = matchedConfig.sweep_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
-                    //         if (matchItem != null && matchItem.actions != null && matchItem.actions.Count > 0)
-                    //         {
-                    //             Log.Info($"匹配成功 BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.PathName}，linkValue:{linkValue}，actions:{matchItem.actions[0].desc}");
-                    //             var rule = new Rule();
-                    //             rule?.DoAfterActions(matchItem.actions);
-                    //             return;
-                    //         }
-                    //     }
-                    // }
 
                     var allRules = GetCachedAnimRules();
                     if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
@@ -239,7 +245,7 @@ public class Hooks
 
 
                 var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
-                Console.WriteLine($"BANS_GSSpawnBullets.NotifyParam: PathName：{NotifyParam.owner.PathName}，GetName：{NotifyParam.owner.GetName()} ,linkValue:{linkValue} ");
+                Console.WriteLine($"BANS_GSSpawnBullets.NotifyParam:GetName：{NotifyParam.owner.GetName()} ,linkValue:{linkValue},BulletID:{BulletID}");
                 var rulesMap = LoadSkill.TemplatePathConfigs;
                 if (rulesMap == null || rulesMap.Count == 0)
                 {
@@ -932,7 +938,6 @@ public class Hooks
 
 
 
-            Helper.LogInfoOnce($"释放技能Evt_CastSkillAnime Montage:{Montage.GetName()}，PathName：{currentMontage}");
             InsertMontageReversed(currentMontage);
 
             if (currentMontage.Contains("Animation/Player/Wukong/") || currentMontage.Contains("AM_wukong_trans_from_Vigor"))
@@ -1553,6 +1558,8 @@ public class Hooks
     [HarmonyPatch(typeof(BUS_AttrComp), "OnIncreaseFloatValue")]
     public static class BPS_PlayerTagSystemPatch
     {
+        private static readonly Dictionary<int, DateTime> _lastTriggerTimes = new Dictionary<int, DateTime>();
+
         private static void Prefix(BUS_AttrComp __instance, ref EBGUAttrFloat AttrID, ref float IncreaseValue)
         {
             var owner = __instance.GetOwner() as BGUCharacterCS;
@@ -1561,6 +1568,28 @@ public class Hooks
                 var player = Helper.GetBGUPlayerCharacterCS();
                 if (player != null && player.PathName == owner.PathName)
                 {
+
+                    var currentTime = DateTime.Now;
+                    // 检查该效果ID是否在1.5秒内已经触发过
+                    if (_lastTriggerTimes.TryGetValue(888555001, out var lastTime))
+                    {
+                        if ((currentTime - lastTime).TotalMilliseconds >= 1500)
+                        {
+                            Helper.autoAttack(888555001, 4000);
+                            // 更新最后触发时间
+                            _lastTriggerTimes[888555001] = currentTime;
+                        }
+                    }
+                    else
+                    {
+                        // 首次触发
+                        Helper.autoAttack(888555001, 4000);
+                        _lastTriggerTimes[888555001] = currentTime;
+                    }
+
+
+
+
                     ShowPlayerInfo.RenderBasicInfo();
                     if (AttrID == EBGUAttrFloat.CurEnergy || AttrID == EBGUAttrFloat.FabaoEnergy || AttrID == EBGUAttrFloat.VigorEnergy)
                     {
@@ -1628,6 +1657,28 @@ public class Hooks
                             rule?.DoAfterActions(matchItem.cast_actions);
                         }
                     }
+
+
+
+
+                    var allRules = GetCachedAnimRules();
+                    if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
+                    FUStSkillSDesc skillSDesc = BGW_GameDB.GetSkillSDesc(SkillID, player);
+                    if (skillSDesc != null)
+                    {
+                        var nowMontage = skillSDesc.TemplatePath;
+                        var matchedRule = allRules.FirstOrDefault(rule =>
+                                    !string.IsNullOrEmpty(nowMontage) &&
+                                    nowMontage.Contains(rule.montage));
+
+                        if (matchedRule != null && matchedRule?.CastActions?.Count > 0)
+                        {
+                            var rule_ = new Rule();
+                            rule_?.DoAfterActions(matchedRule.CastActions);
+                        }
+                    }
+
+                    // CastActions
                     // Log.Info($"释放技能开始 CastSkillOK：{SkillID}，技能序列：[{string.Join(", ", playSkillList)}]");
                 }
             }
@@ -1654,8 +1705,14 @@ public class Hooks
                             var rule = new Rule();
                             rule?.DoAfterActions(matchItem.dmg_actions);
                         }
+                    }
+                    //积累虫卵
+                    if (owner.PathName.Contains("player_psd_chong_C"))
+                    {
+                        BGUFunctionLibraryCS.BGUAddBuff(player, Victim, 18400, EBuffSourceType.GM, 30 * 1000);
 
                     }
+
                     BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(player);
                     if (bUS_GSEventCollection == null) return;
                     var num = (int)FinalDmg / 10;
@@ -1799,14 +1856,34 @@ public class Hooks
     [HarmonyPatch(typeof(BUS_MovementSystem), "MoveForward")]
     class MoveForward_Patch
     {
+
+        private static readonly Dictionary<int, DateTime> _lastTriggerTimes = new Dictionary<int, DateTime>();
+
         static void Prefix(BUS_MovementSystem __instance,
 
             ref float Value)
         {
+            var player = __instance.GetOwner();
             BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(__instance.GetOwner());
             if (bUS_GSEventCollection != null)
             {
                 Helper.LogInfoOnce($"玩家前进 MoveForward: {Value} ");
+                // var currentTime = DateTime.Now;
+                // // 检查该效果ID是否在0.2秒内已经触发过
+                // if (_lastTriggerTimes.TryGetValue(888555001, out var lastTime))
+                // {
+                //     if ((currentTime - lastTime).TotalMilliseconds < 1500)
+                //     {
+                //         return; // 距离上次触发不足1秒，跳过本次触发
+                //     }
+                // }
+                // // 更新最后触发时间
+                // _lastTriggerTimes[888555001] = currentTime;
+                // Helper.TriggerRangeEffect(888555001, 4000);
+                // if (BGUFunctionLibraryCS.BGUHasBuffByID(player, BuffElementIds.Thunder))
+                // {
+                //     Helper.TriggerRangeEffect(888555001, 4000);
+                // }
                 bUS_GSEventCollection.Evt_SetMoveSpeedAddValue.Invoke(1000);
                 bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.MoveSlowly, IsRemove: true);
                 bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.LockStateWalking, IsRemove: true);
@@ -1831,14 +1908,24 @@ public class Hooks
     [HarmonyPatch(typeof(BUS_ProjectileAudioCompl), "DoPlayAudio")]
     public static class BUS_ProjectileAudioCompl_DoPlayAudio_Patch
     {
-        static bool Prefix(BUS_ProjectileAudioCompl __instance, UAkEventConfig InAkEventConfig)
+        static bool Prefix(BUS_ProjectileAudioCompl __instance, ref UAkEventConfig InAkEventConfig)
         {
 
-            var name = InAkEventConfig.AkEvent?.GetFullName();
-
-            if (name != null && name.Contains("EVT_player_wk_bang_SanJianLiangRen_wjgz"))
+            var PATH = InAkEventConfig.AkEvent?.PathName;
+            Helper.LogInfoOnce($"子弹播放声音 DoPlayAudio: pathname: \n {PATH}");
+            if (PATH != null)
             {
-                return false;
+                if (PATH.Contains("EVT_player_wk_bang_SanJianLiangRen_wjgz") || PATH.Contains("EVT_player_wk_tianfu_daosuanda"))
+                {
+                    return false;
+                }
+                if (PATH.Contains("EVT_player_wk_tianfu_daosuanda"))
+                {
+                    return false;
+                }
+
+                // 
+
             }
             return true;
         }
@@ -1874,12 +1961,12 @@ public class Hooks
     {
         [HarmonyPrefix]
         [HarmonyPatch(typeof(BUEffectSpawnProjectile), "ApplyBySkill_Implement")]
-        static bool ApplyBySkill_Implement(int EffectID, AActor Caster, AActor Target, in FEffectInstReq EffectInstReq)
+        public static bool ApplyBySkill_Implement(int EffectID, AActor Caster, AActor Target, in FEffectInstReq EffectInstReq)
         {
 
             if (EffectID == 0) return true;
 
-
+            Log.Info($"拦截技能，ApplyBySkill_Implement EffectID: {EffectID}, Caster: {Caster?.GetName()}, Target: {Target?.GetName()}");
             FUStSkillEffectDesc skillEffectDesc = BGW_GameDB.GetSkillEffectDesc(EffectID, Target);
 
 
@@ -1906,23 +1993,292 @@ public class Hooks
 
             return true;
         }
+
+    }
+
+    [HarmonyPatch]
+    public class ApplyByBuff_Implement_ImplementPatch
+    {
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BUEffectSpawnProjectile), "ApplyByBuff_Implement")]
+        public static bool ApplyByBuff_Implement(BuffInstData BuffInst, AActor Target, int EffectIdx, in FEffectInstReq EffectInstReq, bool bIsPeriodical)
+        {
+
+            if (BuffInst == null)
+            {
+                return false;
+            }
+            int buffID = BuffInst.BuffID;
+
+            FUStBuffDesc originalBuffDesc = BGW_GameDB.GetOriginalBuffDesc(buffID);
+            IBUC_PassiveSkillData readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_PassiveSkillData, BUC_PassiveSkillData>(EntitySharedRefFuncLib.Actor(BuffInst.RootCasterRef));
+            if (originalBuffDesc == null) return true;
+            var DescRuntime = new BuffDescRuntime(buffID, readOnlyData, originalBuffDesc);
+
+            string actionKey = DescRuntime.GetStringEffectParam(EffectIdx, 0);
+            if (!actionKey.Contains("do_actions"))
+            {
+                return true;
+            }
+            string ParamsStr1 = DescRuntime.GetStringEffectParam(EffectIdx, 1);
+
+            string path = DescRuntime.GetStringEffectParam(EffectIdx, 3);
+            Log.Info($"拦截buff，ApplyByBuff_Implement actionKey: {actionKey},ParamsStr1：{ParamsStr1}，path:{path}");
+            int projectileID = DescRuntime.GetIntEffectParam(EffectIdx, 0);
+            int bulletCount = DescRuntime.GetIntEffectParam(EffectIdx, 1);
+            bool forTarget = DescRuntime.GetIntEffectParam(EffectIdx, 2) == 1;
+            bool isRandom = DescRuntime.GetIntEffectParam(EffectIdx, 3) == 3;
+            int PosOffsetType = DescRuntime.GetIntEffectParam(EffectIdx, 3);
+            int ProjectileFlySpd = DescRuntime.GetIntEffectParam(EffectIdx, 4);
+            int ProjectileRotSpd = DescRuntime.GetIntEffectParam(EffectIdx, 5);
+
+
+            var projectileIDs = new[] { projectileID };
+            if (ParamsStr1.Contains("bullet_ids:"))
+            {
+                string projectileString = ParamsStr1.Replace("bullet_ids:", "");
+                projectileIDs = projectileString.Split(',').Select(int.Parse).ToArray();
+
+            }
+
+            float posX = DescRuntime.GetFloatEffectParam(EffectIdx, 0);
+            float posY = DescRuntime.GetFloatEffectParam(EffectIdx, 1);
+            float posZ = DescRuntime.GetFloatEffectParam(EffectIdx, 2);
+            float BornOffsetX = DescRuntime.GetFloatEffectParam(EffectIdx, 3);
+            float BornOffsetY = DescRuntime.GetFloatEffectParam(EffectIdx, 4);
+            float BornOffsetZ = DescRuntime.GetFloatEffectParam(EffectIdx, 5);
+            var offset = new FVector(posX, posY, posZ);
+            AActor aActor = BuffInst.CasterRef.Actor();
+            var action = new RuleAction
+            {
+                Caster = aActor,
+                Target = Target,
+                EffectInstReq = EffectInstReq,
+                BornDirOffsetXLeftValue = (int)BornOffsetX,
+                BornDirOffsetXRightValue = (int)BornOffsetX,
+                BornDirOffsetYLeftValue = (int)BornOffsetY,
+                BornDirOffsetYRightValue = (int)BornOffsetY,
+                BornDirOffsetZLeftValue = (int)BornOffsetZ,
+                BornDirOffsetZRightValue = (int)BornOffsetZ,
+                SpeedLeftValue = ProjectileFlySpd,
+                SpeedRightValue = ProjectileFlySpd,
+            };
+            // 调用SpawnProjectile
+            foreach (var ID in projectileIDs)
+            {
+                Helper.SpawnProjectile(Helper.GetBGUPlayerCharacterCS(), path, ID, forTarget, bulletCount, isRandom, offset, action);
+
+            }
+            return false;
+        }
     }
 
 
-
-
-    // [HarmonyPatch(typeof(BUC_SpeedCtrlData))]
-    // public class SpeedCtrlDataPatch
+    // [HarmonyPatch]
+    // public class BUS_PlayerTransCompPatch
     // {
-    //     [HarmonyPrefix]
-    //     [HarmonyPatch(nameof(BUC_SpeedCtrlData.GetFinalSpeedCtrlRate))]
-    //     static bool GetFinalSpeedCtrlRatePrefix(ref float __result)
-    //     {
-    //         __result = __result + 1;
-    //         return false; // 跳过原始方法
-    //     }
-    // }
 
+
+    //     public static APawn? SpawnAndPossessTransUnit(UClass CharacterClass, FTransform bornTransform, BGUFuncLibPlayer.SpawnControlledPawnBlendParam SpawnControlledPawnBlendParam, int ToReplaceUnitResID)
+    //     {
+
+    //         APawn PlayerPawn = null;
+    //         var Owner = Helper.GetBGUPlayerCharacterCS();
+    //         EPlayerTransEndType unitTransType = EPlayerTransEndType.None;
+
+    //         var BGWEventCollection = BGW_EventCollection.Get(Owner);
+    //         var BUSEventCollection = BUS_EventCollectionCS.Get(Owner);
+    //         BGWEventCollection.Evt_BGW_UnitTrans(Owner, unitTransType);
+    //         BUSEventCollection.Evt_NotifyUnitTrans_BeforePosses.Invoke(unitTransType);
+    //         APawn instigator = Owner.Instigator;
+    //         ABGPPlayerController PC = ((instigator != null) ? (instigator.GetController() as ABGPPlayerController) : null);
+    //         if (PC == null)
+    //         {
+    //             return null;
+    //         }
+    //         BGUFuncLibPlayer.SpwanAndPossesPlayerContrlledPawn(PC, CharacterClass, bornTransform, delegate (APawn Pawn)
+    //         {
+    //             PlayerPawn = Pawn;
+    //             BPS_EventCollectionCS.Get(PC)?.Evt_PlayerActorSpawn.Invoke();
+    //             BPS_EventCollectionCS.Get(PC)?.Evt_BPS_SwitchPlayerTransState.Invoke(Owner, ToReplaceUnitResID);
+    //         }, SpawnControlledPawnBlendParam);
+    //         if (!SpawnControlledPawnBlendParam.EnableBlendViewTarget)
+    //         {
+    //             PC.SetViewTargetWithBlend(Owner);
+    //         }
+    //         return PlayerPawn;
+    //     }
+
+
+    //     public static void AdjustTransUnitTransform(ABGUCharacter ToReplaceUnitInst, FTransform BornTransform, float Scale)
+    //     {
+
+    //         var OwnerAsCharacterCS = Helper.GetBGUPlayerCharacterCS();
+    //         if (OwnerAsCharacterCS == null) return;
+    //         FVector location = BornTransform.GetLocation();
+    //         FRotator rotation = BornTransform.GetRotation().Rotator();
+    //         float scaledCapsuleHalfHeight = OwnerAsCharacterCS.CapsuleComponent.GetScaledCapsuleHalfHeight();
+    //         location.Z -= scaledCapsuleHalfHeight;
+    //         float scaledCapsuleHalfHeight2 = ToReplaceUnitInst.CapsuleComponent.GetScaledCapsuleHalfHeight();
+    //         location.Z += scaledCapsuleHalfHeight2;
+    //         Scale = ((Scale == 0f) ? 1f : Scale);
+    //         FTransform newTransform = new FTransform(rotation, location, new FVector(Scale));
+    //         BGUFuncLibActorTransformCS.BGUSetActorTransform(ToReplaceUnitInst, newTransform, bSweep: false, bTeleport: false);
+    //     }
+
+
+
+    //     public static void TransferData(int ToReplaceUnitBornSkillID, ABGUCharacter ToReplaceUnitInst)
+    //     {
+
+    //         var Owner = Helper.GetBGUPlayerCharacterCS();
+
+    //         BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(ToReplaceUnitInst);
+    //         IBUC_BattleStateData readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_BattleStateData, BUC_BattleStateData>(Owner);
+
+
+    //         var BGSEventCollection = BGS_EventCollectionCS.Get(Owner);
+    //         var BUSEventCollection = BUS_EventCollectionCS.Get(Owner);
+    //         if (readOnlyData != null && readOnlyData.IsUnitInBattle())
+    //         {
+    //             BGSEventCollection.Evt_BGS_OnBattlePlayerTransited.Invoke(Owner, ToReplaceUnitInst);
+    //         }
+    //         bool flag = true;
+    //         BGUCharacterCS bGUCharacterCS = ToReplaceUnitInst as BGUCharacterCS;
+    //         if (bGUCharacterCS != null)
+    //         {
+    //             int resID = bGUCharacterCS.GetResID();
+    //             int commLogicCfgValue = GameDBRuntime.GetCommLogicCfgValue(CommCfgType.FtxdDefaultResid);
+    //             if (resID == commLogicCfgValue)
+    //             {
+    //                 flag = false;
+    //             }
+    //         }
+
+    //         BUS_BGUDataCompBase componentByClass = ToReplaceUnitInst.GetComponentByClass<BUS_BGUDataCompBase>();
+    //         if (componentByClass != null && componentByClass.DataInitTemplate != null)
+    //         {
+    //             List<ECSDataInitTemplate> dataInitTemplate = componentByClass.DataInitTemplate;
+    //             if (dataInitTemplate != null)
+    //             {
+    //                 foreach (ECSDataInitTemplate item in dataInitTemplate)
+    //                 {
+    //                     (item as IPlayerDataInitTemplate)?.PostTrans(Owner);
+    //                 }
+    //             }
+    //         }
+    //         bUS_GSEventCollection.Evt_PostTransBindData.Invoke(Owner);
+    //         BUSEventCollection.Evt_NotifyTransitToUnit.Invoke(ToReplaceUnitInst);
+    //         bUS_GSEventCollection.Evt_NotifyTransitFromUnit.Invoke(Owner);
+    //         bUS_GSEventCollection.Evt_SwitchPlayerTransStateFinish.Invoke();
+    //         BGSEventCollection.Evt_BGS_OnUnitTransited.Invoke(Owner, ToReplaceUnitInst);
+    //         if (ToReplaceUnitBornSkillID > 0)
+    //         {
+    //             bUS_GSEventCollection.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(ToReplaceUnitBornSkillID, ECastSkillSourceType.PlayerTrans));
+    //         }
+    //     }
+
+
+
+    //     public static void DestroyOldUnit()
+    //     {
+    //         var Owner = Helper.GetBGUPlayerCharacterCS();
+    //         int actorResID = BGU_DataUtil.GetActorResID(Owner);
+    //         FUStUnitTransCommDesc unitTransCommDesc = BGW_GameDB.GetUnitTransCommDesc(actorResID);
+    //         if (unitTransCommDesc != null && (actorResID == 21 || actorResID == 11))
+    //         {
+    //             BGW_PreloadAssetMgr.Get(Owner).TryRecyclingCachedResourceObj(unitTransCommDesc.BPPath);
+    //         }
+    //         var BUSEventCollection = BUS_EventCollectionCS.Get(Owner);
+    //         BUSEventCollection.Evt_SetBoolProperty.Invoke(EPropType.Actor_ActorHiddenInGame, Value: true);
+    //         BUSEventCollection.Evt_SetBoolProperty.Invoke(EPropType.Mesh_PauseAnims, Value: true);
+    //         BUSEventCollection.Evt_SetCollisionResponseProperty.Invoke(EPropType.Capsule_CollisionResponseToChannels, new Dictionary<ECollisionChannel, ECollisionResponseType> {
+    //     {
+    //         ECollisionChannel.ECC_Pawn,
+    //         ECollisionResponseType.ECR_Ignore
+    //     } });
+    //         BUSEventCollection.Evt_BuffAllRemove.Invoke(EBuffEffectTriggerType.None, WithTriggerRemmoveEffect: false);
+    //         BUSEventCollection.Evt_UnitDead.Invoke(null, EDeadReason.PlayerTrans);
+    //     }
+
+    //     private static MethodBase TargetMethod()
+    //     {
+    //         return AccessTools.Method("b1.BUS_PlayerTransComp:TriggerTransit", (Type[])null, (Type[])null);
+    //     }
+
+    //     [HarmonyPatch]
+    //     private static void Prefix(int ToReplaceUnitResID, int ToReplaceUnitBornSkillID, bool EnableBlendViewTarget, bool bSeqTransBack)
+    //     {
+    //         try
+    //         {
+    //             var Owner = Helper.GetBGUPlayerCharacterCS();
+    //             if (Owner == null) return;
+
+    //             FUStUnitTransCommDesc unitTransCommDesc = BGW_GameDB.GetUnitTransCommDesc(BGU_DataUtil.GetActorResID(Owner));
+    //             if (unitTransCommDesc == null)
+    //             {
+    //                 return;
+    //             }
+
+    //             FUStUnitTransCommDesc unitTransCommDesc2 = BGW_GameDB.GetUnitTransCommDesc(ToReplaceUnitResID);
+    //             if (unitTransCommDesc2 == null)
+    //             {
+    //                 return;
+    //             }
+    //             if (unitTransCommDesc2.BPPath.Contains("Unit_Player_TianJiang_01.Unit_Player_TianJiang_01_C"))
+    //             {
+    //                 unitTransCommDesc2.BPPath = "/Game/00Main/Design/Units/Online/SZLC/TAMER_sl_tianjiang_01.TAMER_sl_tianjiang_01_C";
+    //             }
+    //             UClass uClass = BGW_PreloadAssetMgr.Get(Owner)?.TryGetCachedResourceObj<UClass>(unitTransCommDesc2.BPPath, ELoadResourceType.SyncLoadAndCache);
+    //             if (uClass == null)
+    //             {
+    //                 return;
+    //             }
+    //             if (!uClass.IsChildOf<BGUCharacterCS>())
+    //             {
+    //                 BGUFuncLibPlayer.SpawnControlledPawnBlendParam spawnControlledPawnBlendParam = new BGUFuncLibPlayer.SpawnControlledPawnBlendParam
+    //                 {
+    //                     NeedBlend = false,
+    //                     PossessBlendFunc = unitTransCommDesc2.PossessBlendFunc,
+    //                     EnableBlendViewTarget = false,
+    //                     PossessBlendExp = unitTransCommDesc2.PossessBlendExp,
+    //                     PossessBlendTime = unitTransCommDesc2.PossessBlendTime
+    //                 };
+    //                 string locationOffsetStr = ((!unitTransCommDesc2.UnitSpawnLocationOffset.Equals("")) ? unitTransCommDesc2.UnitSpawnLocationOffset : unitTransCommDesc.NewUnitSpawnLocationOffset);
+    //                 FTransform bornTransform = BGUFuncLibActorTransformCS.BGUGetActorTransform(Owner);
+
+    //                 ABGUCharacter aBGUCharacter = SpawnAndPossessTransUnit(uClass, bornTransform, spawnControlledPawnBlendParam, ToReplaceUnitResID) as ABGUCharacter;
+
+
+    //                 if (!(aBGUCharacter == null))
+    //                 {
+    //                     float scale = ((unitTransCommDesc2.UnitSpawnScale != 0f) ? unitTransCommDesc2.UnitSpawnScale : unitTransCommDesc.NewUnitSpawnScale);
+    //                     AdjustTransUnitTransform(aBGUCharacter, bornTransform, scale);
+    //                     int toReplaceUnitBornSkillID = ((unitTransCommDesc2.UnitBornSkillID != 0) ? unitTransCommDesc2.UnitBornSkillID : unitTransCommDesc.NewUnitBornSkillID);
+    //                     if (ToReplaceUnitBornSkillID > 0)
+    //                     {
+    //                         toReplaceUnitBornSkillID = ToReplaceUnitBornSkillID;
+
+    //                     }
+
+    //                     TransferData(toReplaceUnitBornSkillID, aBGUCharacter);
+    //                     DestroyOldUnit();
+
+    //                 }
+    //             }
+
+    //             Helper.LogInfoOnce($"玩家转换TriggerTransit:uClass：{uClass?.GetName()}， uClass.IsChildOf<BGUCharacterCS>(): {uClass.IsChildOf<BGUCharacterCS>()}");
+    //         }
+    //         catch (Exception ex)
+    //         {
+    //             Helper.LogInfoOnce($"BUS_PlayerTransCompPatch error: {ex.Message}");
+    //         }
+
+
+    //     }
+
+    // }
 
 
 }

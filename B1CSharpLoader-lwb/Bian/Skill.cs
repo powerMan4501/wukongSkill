@@ -6,6 +6,14 @@ using UnrealEngine.Runtime;
 
 namespace bian
 {
+
+    public class exportSkill
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public string? AnimPath { get; set; }
+        public string? Key { get; set; }
+    }
     public class Skill
     {
 

@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using UnrealEngine.Engine;
 using UnrealEngine.Plugins.Niagara;
@@ -31,6 +32,7 @@ namespace bian
     public class Helper
     {
         public static bool is_bian_mod_stop = false;
+        public static bool auto_attack = false;
         private static UWorld? world;
         public static FCalliopeGuid? summonGuid;
 
@@ -39,6 +41,13 @@ namespace bian
         {
             is_bian_mod_stop = value;
             return is_bian_mod_stop;
+        }
+
+        public static bool tooggleAutoAttack()
+        {
+
+            auto_attack = !auto_attack;
+            return auto_attack;
         }
 
         public static UWorld? GetWorld()
@@ -501,7 +510,7 @@ namespace bian
                 if (playerCharacter != null)
                 {
                     FTransform actorTransform = playerCharacter.GetActorTransform();
-                    actorTransform.SetLocation(playerCharacter.GetActorLocation() + playerCharacter.GetActorForwardVector() * 1500.0);
+                    actorTransform.SetLocation(playerCharacter.GetActorLocation() + playerCharacter.GetActorForwardVector() * 800.0);
                     actorTransform.SetRotation((-playerCharacter.GetActorForwardVector()).Rotation().Quaternion());
                     BUTamerActor bUTamerActor = UBGUFunctionLibrary.BGUBeginDeferredActorSpawnFromClass(playerCharacter.World, uClass, actorTransform, ESpawnActorCollisionHandlingMethod.AlwaysSpawn, null) as BUTamerActor;
                     if (bUTamerActor != null)
@@ -615,10 +624,14 @@ namespace bian
             MethodInfo reset = typeof(BUS_MagicallyChangeComp).GetMethod("Reset", BindingFlags.NonPublic | BindingFlags.Instance);
             if (reset == null) return;
             FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
-            if (fieldData == null) return;
-            BUC_MagicallyChangeData data = fieldData?.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
-            if (data == null) return;
-            data.RecoverSkillID = 10199;
+            if (fieldData != null)
+            {
+                BUC_MagicallyChangeData data = fieldData?.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
+                if (data != null)
+                {
+                    data.RecoverSkillID = 10199;
+                }
+            }
             reset.Invoke(magicChangeComp, [EResetReason_MagicallyChange.Normal]);
 
         }
@@ -1453,6 +1466,61 @@ namespace bian
             }
             GetBUS_GSEventCollection().Evt_TriggerSkillEffect.Invoke(EffectID, effectInstReq, aActor2);
         }
+        private static Dictionary<string, DateTime> _throttleLastExecuteTime = new Dictionary<string, DateTime>();
+
+        public static bool Throttle(string key, int intervalMs)
+        {
+            DateTime currentTime = DateTime.Now;
+            if (_throttleLastExecuteTime.TryGetValue(key, out DateTime lastTime))
+            {
+                if ((currentTime - lastTime).TotalMilliseconds < intervalMs)
+                {
+                    return false;
+                }
+            }
+            _throttleLastExecuteTime[key] = currentTime;
+            return true;
+        }
+        public static void autoAttack(int EffectID, float radius)
+        {
+            if (!auto_attack)
+            {
+                return;
+            }
+            TriggerRangeEffect(EffectID, radius);
+        }
+        public static void TriggerRangeEffect(int EffectID, float radius)
+        {
+
+            var character = GetBGUPlayerCharacterCS();
+            if (character == null) return;
+            List<ABGUCharacter> allActorsOfClassList = getMonsterByDistance(radius);
+            if (allActorsOfClassList == null || allActorsOfClassList.Count == 0) return;
+            FEffectInstReq fEffectInstReq = new FEffectInstReq(character);
+            fEffectInstReq.Attacker = character;
+            fEffectInstReq.HitActionDir = EHitActionDir.Default;
+            foreach (var actor in allActorsOfClassList)
+            {
+                fEffectInstReq.HitLocation = BGUFuncLibActorTransformCS.BGUGetActorLocation(actor);
+                fEffectInstReq.HitPointNormalDir = BGUFuncLibActorTransformCS.BGUGetActorRotation(actor);
+                FEffectInstReq effectInstReq = fEffectInstReq;
+                GetBUS_GSEventCollection().Evt_TriggerSkillEffect.Invoke(EffectID, effectInstReq, actor);
+            }
+        }
+
+        public static void TriggerRangeBuff(int buffID, float radius)
+        {
+
+            var character = GetBGUPlayerCharacterCS();
+            if (character == null) return;
+            List<ABGUCharacter> allActorsOfClassList = getMonsterByDistance(radius);
+            if (allActorsOfClassList == null || allActorsOfClassList.Count == 0) return;
+
+            foreach (var actor in allActorsOfClassList)
+            {
+                BGUFunctionLibraryCS.BGUAddBuff(character, actor, buffID, EBuffSourceType.Default, 0);
+            }
+        }
         public static FCalliopeGuid getGUid()
         {
             return (FCalliopeGuid)summonGuid;
@@ -1803,7 +1871,6 @@ namespace bian
                 ProjectileSpawnNSInfo.SpawnWaveCounter = 0;
                 ProjectileSpawnNSInfo.bEnableMultiTargetMode = bGWDataAsset_ProjectileSpawnConfig.bEnableMultiTargetMode;
                 ProjectileSpawnNSInfo.MutilTargetRule = bGWDataAsset_ProjectileSpawnConfig.MutilTargetRule;
-                Log.Info($"执行发射子弹 ProjectileSpawnNSInfo.Evt_OnNotifyStateSpawnProjectileObj ProjectileID: {ProjectileSpawnNSInfo.ProjectileID}，Caster：{character.GetName()},action.EffectInstReq:{action?.EffectInstReq.HasValue}");
                 bUS_GSEventCollection.Evt_OnNotifyStateSpawnProjectileObj.Invoke(ref ProjectileSpawnNSInfo);
             }
         }
@@ -1899,7 +1966,6 @@ namespace bian
             }
 
             string path = skillEffectDesc.EffectParamsStr[3];
-            Log.Info($"使用技能效果发射子弹 SpawnProjectileByEffectpath:{path}");
             // 从EffectParams获取参数
             int projectileID = skillEffectDesc.EffectParamsInt[0];
             int bulletCount = skillEffectDesc.EffectParamsInt[1];
@@ -1936,9 +2002,21 @@ namespace bian
 
 
             };
+            var projectileIDs = new[] { projectileID };
 
+            if (skillEffectDesc.EffectParamsStr[1].Contains("bullet_ids:"))
+            {
+                // "bullet_ids:141,142,1888"
+                string projectileString = skillEffectDesc.EffectParamsStr[1].Replace("bullet_ids:", "");
+                projectileIDs = projectileString.Split(',').Select(int.Parse).ToArray();
+
+            }
             // 调用SpawnProjectile
-            SpawnProjectile(GetBGUPlayerCharacterCS(), path, projectileID, forTarget, bulletCount, isRandom, offset, action);
+            foreach (var ID in projectileIDs)
+            {
+                SpawnProjectile(GetBGUPlayerCharacterCS(), path, ID, forTarget, bulletCount, isRandom, offset, action);
+
+            }
         }
         public static double DateTimeToTimestamp()
         {
@@ -2016,6 +2094,18 @@ namespace bian
             var play = GetBGUPlayerCharacterCS();
             UBGUSelectUtil.SphereOverlapBGUCharacters(play, BGUFuncLibActorTransformCS.BGUGetActorLocation(play), MaxDistance, out var OutArray);
             return OutArray;
+        }
+
+        public static void trans_back()
+        {
+            var play = GetBGUPlayerCharacterCS();
+            BUS_EventCollectionCS.Get(play).Evt_TransBackSpawnNewOne.Invoke(0, 0, false, EPlayerTransEndType.SkillEffect);
+        }
+
+         public static void trans_new_one()
+        {
+            var play = GetBGUPlayerCharacterCS();
+            BUS_EventCollectionCS.Get(play).Evt_TransBackSpawnNewOne.Invoke(0, 0, false, EPlayerTransEndType.SkillEffect);
         }
         public static void StrongMonster()
         {
@@ -2173,6 +2263,10 @@ namespace bian
                 BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueDamage, true);
                 BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.CommonDamageImmue, true);
                 BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.StrongDamageImmue, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.Camouflage, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.CantBeAutoLockTarget, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.CantBeBaseTarget, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.Imperceptible, true);
             }
         }
         public static bool isSameTeam(BGUPlayerCharacterCS monster)
@@ -2548,6 +2642,7 @@ namespace bian
                     {
                         var skill = new Skill();
                         skill.Id = ID;
+                        skill.AnimPath = BG_ProtobufDataAPI<FUStSkillSDesc>.Get().FindByID(ID)?.TemplatePath;
                         skill.Key = "";
                         model.Skills.Add(skill);
                     }
@@ -2719,6 +2814,7 @@ namespace bian
                     foreach (var ID in allSkillIDs)
                     {
                         var skill = new Skill();
+                        skill.AnimPath = BG_ProtobufDataAPI<FUStSkillSDesc>.Get().FindByID(ID)?.TemplatePath;
                         skill.Id = ID;
                         skill.Key = "";
                         model.Skills.Add(skill);

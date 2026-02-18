@@ -324,7 +324,6 @@ namespace bian
 
         private void HandleBulletAction(BGUPlayerCharacterCS character, RuleAction action, float timeLength)
         {
-            Log.Info($"执行BulletAction:{action?.Bullet}");
             if (action?.buffs?.Count > 0)
             {
                 var buffTime = timeLength;
@@ -599,6 +598,10 @@ namespace bian
                     BUS_EventCollectionCS.Get(character)?.Evt_AddAllSummonLifeTime.Invoke((float)(action?.SummonAliveTime ?? 100f));
 
                     break;
+
+                case "trans_back":
+                    Helper.trans_back();
+                    break;
                 case "use_item":
                     if (action?.ItemID > 0)
                     {
@@ -719,12 +722,30 @@ namespace bian
                     Helper.addAllTaskItem();
                     break;
 
-
+                case "auto_attack":
+                    Helper.tooggleAutoAttack();
+                    break;
                 case "effect":
                     if (action.EffectID > 0)
                     {
                         var type = action.ForTarget ? EANTriggerEffectTargetType.LastAttacker : EANTriggerEffectTargetType.Owner;
                         Helper.TriggerEffect(character, action.EffectID, type);
+                    }
+                    break;
+
+                case "range_effect":
+                    if (action.EffectID > 0)
+                    {
+                        var radius = action.value > 0 ? action.value : 1000;
+                        Helper.TriggerRangeEffect(action.EffectID, (float)radius);
+                    }
+                    break;
+
+                case "range_buff":
+                    if (action.BuffID > 0)
+                    {
+                        var radius = action.value > 0 ? action.value : 1000;
+                        Helper.TriggerRangeBuff(action.BuffID, (float)radius);
                     }
                     break;
 
