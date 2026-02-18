@@ -1,0 +1,390 @@
+[
+  {
+    "skillID": 50025,
+    "desc": "劈棍蓄力",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+
+  {
+    "skillID": 50026,
+    "desc": "劈棍蓄力",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+
+  {
+    "skillID": 50027,
+    "desc": "劈棍蓄力",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+
+  {
+    "skillID": 50028,
+    "desc": "劈棍蓄力",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+
+  {
+    "skillID": 50029,
+    "desc": "劈棍蓄力",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10811,
+    "montage": "AM_Wukong_xuli_loop",
+    "desc": "劈棍蓄力",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10812,
+    "desc": "劈棍蓄力",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10813,
+    "desc": "劈棍蓄力",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10814,
+    "desc": "劈棍蓄力",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10815,
+    "desc": "劈棍蓄力",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10721,
+    "montage": "AM_wukong_comboc_z_01_loop",
+    "desc": "风云转 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 88880003,
+                "ForTarget": true,
+                "hasBuff": 888666006,
+                "spawnBaseSocketName": "foot_r",
+                "desc": "有冰buff,平A1,发射雪球"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 40100101,
+                "ForTarget": true,
+                "hasBuff": 888666007,
+                "spawnBaseSocketName": "foot_r",
+                "desc": "有火buff,平A1,发射火球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 10380101,
+                "ForTarget": true,
+                "hasBuff": 888666008,
+                "spawnBaseSocketName": "foot_r",
+                "BornDirOffsetXLeftValue": 91,
+                "BornDirOffsetXRightValue": 91,
+                "desc": "有毒buff,平A1,就发射红剑气"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30240401,
+                "ForTarget": true,
+                "hasBuff": 888666005,
+                "spawnBaseSocketName": "foot_r",
+                "desc": "有雷buff,平A1,就发射雷球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 1026203,
+                "spawnBaseSocketName": "foot_r",
+                "ForTarget": true,
+                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+                "desc": "雷蛙蝌蚪"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 10811,
+    "montage": "AM_Wukong_Xuli_C_loop",
+
+    "desc": "立棍0蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10812,
+    "desc": "立棍1蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10813,
+    "desc": "立棍2蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10814,
+    "desc": "立棍3蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10815,
+    "desc": "立棍4蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10865,
+    "desc": "立棍蓄力 loop1",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10866,
+    "desc": "立棍蓄力 loop2",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10867,
+    "desc": "立棍蓄力 loop3",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10835,
+    "desc": "劈棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10836,
+    "desc": "劈棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10837,
+    "desc": "劈棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10838,
+    "desc": "劈棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10839,
+    "desc": "劈棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 18040,
+    "desc": "劈棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10870,
+    "montage": "AM_Wukong_xuli_B_loop_",
+    "desc": "戳棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10871,
+    "desc": "戳棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10872,
+    "desc": "戳棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10873,
+    "desc": "戳棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10874,
+    "desc": "戳棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+  {
+    "skillID": 10875,
+    "montage": "AM_wukong_qiang_xuli_b_loop_",
+    "desc": "戳棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+
+  {
+    "skillID": 10876,
+    "desc": "戳棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+
+  {
+    "skillID": 10877,
+    "desc": "戳棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+
+  {
+    "skillID": 10878,
+    "desc": "戳棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+
+  {
+    "skillID": 10879,
+    "desc": "戳棍蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+
+  {
+    "skillID": 24030,
+    "desc": "巨猿蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+
+  {
+    "skillID": 24031,
+    "desc": "巨猿蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+
+  {
+    "skillID": 24032,
+    "desc": "巨猿蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  },
+
+  {
+    "skillID": 24033,
+    "desc": "巨猿蓄力 loop",
+    "montage_config": {
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9
+    }
+  }
+]

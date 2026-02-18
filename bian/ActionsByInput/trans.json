@@ -51,12 +51,12 @@
     ]
   },
   {
-    "code": "ccan",
+    "code": "can",
     "afterActions": [
       {
         "type": "transskill",
         "ResId": 11,
-        "MagicSkillID": 0,
+        "MagicSkillID": 11002,
         "desc": "蝉"
       },
 
@@ -125,7 +125,7 @@
       {
         "type": "transskill",
         "ResId": 23,
-        "MagicSkillID": 23041,
+        "MagicSkillID": 23021,
         "desc": "马"
       },
       {
@@ -184,6 +184,19 @@
         "BuffID": 888665002,
         "BuffTime": -1,
         "TimeDelay": 4000
+      }
+    ]
+  },
+
+ 
+
+  {
+    "code": "cack",
+    "afterActions": [
+      {
+        "type": "trans_back",
+ 
+        "desc": "取消变身"
       }
     ]
   }

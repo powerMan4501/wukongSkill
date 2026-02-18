@@ -9,15 +9,7 @@
   "XRateSmall": 2,
   "Level1Scale": 1,
   "Level2Scale": 2.2,
-  "TransDone": {
-    "Buffers": [
-      1000062,
-      1000068,
-      92245,
-      16050,
-      16071
-    ]
-  },
+
   "EnterSkill": {
     "Id": 10416,
     "AnimPath": "AM_wukong_trans_to_lys_yao"

@@ -15,13 +15,13 @@
   },
   "Skills": [
     {
-      "Key": "Z",
+      "Key": "",
       "AnimPath": "AM_player_psd_chong_R1_04",
       "type": "actions",
       "afterActions": [
         {
           "Type": "skill",
-          "SkillID": 18014
+          "SkillID": 18041
         },
         {
           "Type": "range_buff",
@@ -29,12 +29,7 @@
           "value": 5000,
           "desc": "给周围5000的敌人积累虫卵"
         },
-        {
-          "Type": "buff",
-          "BuffID": 18030,
-          "BuffTime": -1,
-          "desc": "淬毒"
-        },
+
         {
           "Type": "buff",
           "BuffIDs": [888666008],
@@ -44,14 +39,14 @@
       ]
     },
     {
-      "Key": "X",
+      "Key": "",
       "Name": "自己打自己 左侧",
       "AnimPath": "AM_player_psd_chong_R2_end",
       "type": "actions",
       "afterActions": [
         {
           "Type": "skill",
-          "SkillID": 18031
+          "SkillID": 18042
         },
         {
           "Type": "range_buff",
@@ -59,12 +54,7 @@
           "value": 5000,
           "desc": "给周围5000的敌人积累虫卵"
         },
-        {
-          "Type": "buff",
-          "BuffID": 18030,
-          "BuffTime": -1,
-          "desc": "淬毒"
-        },
+
         {
           "Type": "buff",
           "BuffIDs": [888666008],
@@ -74,7 +64,7 @@
       ]
     },
     {
-      "Key": "C",
+      "Key": "",
       "Name": "左侧毒斩",
       "type": "actions",
       "afterActions": [
@@ -89,12 +79,7 @@
           "value": 5000,
           "desc": "给周围5000的敌人积累虫卵"
         },
-        {
-          "Type": "buff",
-          "BuffID": 18030,
-          "BuffTime": -1,
-          "desc": "淬毒"
-        },
+
         {
           "Type": "buff",
           "BuffIDs": [888666008],
@@ -105,7 +90,6 @@
     },
     {
       "Key": "XBUTTON1",
-      "Id": 18071,
       "Name": "引爆虫卵 18400",
       "AnimPath": "AM_player_psd_chong_fashu",
       "type": "actions",
@@ -164,6 +148,107 @@
           "desc": "添加毒buff"
         }
       ]
+    },
+
+    {
+      "Id": 500901,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500902,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500903,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500904,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500905,
+      "Name": "慢速自虐，然后喷出大量毒液",
+      "Key": "Z"
+    },
+    {
+      "Id": 500906,
+      "Name": "废招",
+      "Key": ""
+    },
+    {
+      "Id": 500907,
+      "Name": "废招",
+      "Key": ""
+    },
+    {
+      "Id": 500908,
+      "Name": "释放大量毒液",
+      "Key": "X"
+    },
+    {
+      "Id": 500909,
+      "Name": "释放大量毒液",
+      "Key": "C"
+    },
+    {
+      "Id": 500911,
+      "Name": "很长的垃圾招",
+      "Key": ""
+    },
+    {
+      "Id": 500912,
+      "Name": "垃圾招",
+      "Key": ""
+    },
+    {
+      "Id": 500913,
+      "Name": "垃圾招",
+      "Key": ""
+    },
+    {
+      "Id": 500914,
+      "Name": "小横扫，再垂直砸出一小滩毒液",
+      "Key": "V"
+    },
+    {
+      "Id": 500915,
+      "Name": "慢速自虐，然后喷出大量毒液",
+      "Key": ""
+    },
+    {
+      "Id": 500918,
+      "Name": "垃圾",
+      "Key": ""
+    },
+    {
+      "Id": 500919,
+      "Name": "垃圾",
+      "Key": ""
+    },
+    {
+      "Id": 500991,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500992,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500993,
+      "Name": "未命名",
+      "Key": ""
+    },
+    {
+      "Id": 500994,
+      "Name": "未命名",
+      "Key": ""
     }
   ]
 }

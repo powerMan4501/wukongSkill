@@ -290,77 +290,6 @@
   },
 
   {
-    "skillID": 50015,
-    "desc": "马喽Q1",
-    "montage_config": {
-      "speedRate": 1.1,
-      "AMSpeedRate": 1.1,
-      "scaleWeaponNum": 2.5
-    },
-    "cast_actions": [
-      {
-        "Type": "buff",
-        "BuffIDs": [66655402],
-        "BuffTime": 1000,
-        "desc": "棍光特效粒子"
-      }
-    ],
-    "sweep_actions": [
-      {
-        "linkValue": 0.8666667,
-        "actions": [
-          {
-            "Type": "bullet",
-            "bullets": [
-              {
-                "Type": "bullet",
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [44011401, 40550101, 1013702],
-                "hasBuff": 888666007,
-                "OffsetX": 500,
-                "OffsetY": 500,
-                "desc": "有火buff，红孩儿砸地，鳖宝子弹, 燧先锋岩浆"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [2403471, 74010101, 152],
-                "OffsetX": 500,
-                "OffsetY": 500,
-                "hasBuff": 888666006,
-                "desc": "有冰buff 冰暴,冰碎片,冰地波"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [39010112, 38001601, 38001803],
-                "hasBuff": 888666005,
-                "OffsetX": 500,
-                "OffsetY": 500,
-                "desc": "雷buff，黄眉雷击"
-              },
-
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [1019261, 51007701, 51002002],
-                "hasBuff": 888666008,
-                "OffsetX": 500,
-                "OffsetY": 500,
-                "desc": "毒buff，灵芝爆炸，泥浆，猪八戒"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [74011107, 50058603],
-                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
-                "OffsetX": 400,
-                "OffsetY": 400,
-                "desc": "默认，金沙黄符"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
     "skillID": 50011,
     "desc": "大圣模式Q1",
     "montage_config": {
@@ -650,7 +579,79 @@
     ]
   },
 
+  {
+    "skillID": 50015,
+    "desc": "马喽Q1",
+    "montage_config": {
+      "speedRate": 1.1,
+      "AMSpeedRate": 1.1,
+      "scaleWeaponNum": 2.5
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [66655402],
+        "BuffTime": 1000,
+        "desc": "棍光特效粒子"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0.8666667,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [44011401, 40550101, 1013702],
+                "hasBuff": 888666007,
+                "OffsetX": 500,
+                "OffsetY": 500,
+                "desc": "有火buff，红孩儿砸地，鳖宝子弹, 燧先锋岩浆"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [2403471, 74010101, 152],
+                "OffsetX": 500,
+                "OffsetY": 500,
+                "hasBuff": 888666006,
+                "desc": "有冰buff 冰暴,冰碎片,冰地波"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [39010112, 38001601, 38001803],
+                "hasBuff": 888666005,
+                "OffsetX": 500,
+                "OffsetY": 500,
+                "desc": "雷buff，黄眉雷击"
+              },
 
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [1019261, 51007701, 51002002],
+                "hasBuff": 888666008,
+                "OffsetX": 500,
+                "OffsetY": 500,
+                "desc": "毒buff，灵芝爆炸，泥浆，猪八戒"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [74011107, 50058603],
+                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+                "OffsetX": 400,
+                "OffsetY": 400,
+                "desc": "默认，金沙黄符"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  
   {
     "skillID": 10530,
     "montage_config": {
@@ -730,232 +731,6 @@
         "type": "buff",
         "BuffID": 96035,
         "BuffTime": 2000
-      }
-    ]
-  },
-
-  {
-    "skillID": 50201,
-    "desc": "飞棍 1085301",
-    "montage_config": {
-      "speedRate": 1.5,
-      "AMSpeedRate": 1.5
-    },
-    "effect_actions": [
-      {
-        "ID": 1085301,
-        "actions": [
-          {
-            "Type": "bullet",
-            "TimeDelay": 0,
-            "bullets": [
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [44010401],
-                "hasBuff": 888666007,
-                "desc": "有火buff，炸炸炸"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [2403471],
-                "hasBuff": 888666006,
-                "desc": "有冰buff，冰暴"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [39010112],
-                "hasBuff": 888666005,
-                "desc": "有雷buff，青背龙雷暴"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [51002002, 74011107],
-                "hasBuff": 888666008,
-                "desc": "有毒buff，猪八戒,金沙波动"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [74011107, 74010403],
-                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
-                "desc": "没有buff，金沙,石头爆炸"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "skillID": 84321023,
-    "desc": "筋斗云三连击打",
-    "montage_config": {
-      "speedRate": 1.3,
-      "AMSpeedRate": 1.3,
-      "hitEffects": [888555044],
-      "addRadius": 500,
-      "replaceEffects": true
-    },
-    "sweep_actions": [
-      {
-        "ID": 888555044,
-        "actions": [
-          {
-            "Type": "bullet",
-            "TimeDelay": 0,
-            "bullets": [
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [44010401],
-                "hasBuff": 888666007,
-                "desc": "有火buff，炸炸炸"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [2403471],
-                "hasBuff": 888666006,
-                "desc": "有冰buff，冰暴"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [39010112],
-                "hasBuff": 888666005,
-                "desc": "有雷buff，青背龙雷暴"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [51002002, 74011107],
-                "hasBuff": 888666008,
-                "desc": "有毒buff，猪八戒,金沙"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [74011107, 74010403],
-                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
-                "desc": "没有buff，金沙,石头爆炸"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "skillID": 50001,
-    "desc": "1a切手，大圣版10705",
-    "montage_config": {
-      "speedRate": 1.3,
-      "AMSpeedRate": 1.3,
-      "scaleWeaponNum": 3
-    },
-    "sweep_actions": [
-      {
-        "linkValue": 0,
-        "desc": "执行 50001 版 10705的子弹",
-        "actions": [
-          {
-            "Type": "bullet",
-            "bullets": [
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [140, 44011401],
-                "hasBuff": 888666007,
-                "OffsetX": 700,
-                "OffsetY": 700,
-                "desc": "有火buff 10705红孩儿砸地"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [2403471, 1017761],
-                "hasBuff": 888666006,
-                "OffsetX": 700,
-                "OffsetY": 700,
-                "desc": "有冰buff 10705冰暴,雅香客冰雾气"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [30250101, 118],
-                "OffsetX": 700,
-                "OffsetY": 700,
-                "hasBuff": 888666005,
-                "desc": "有雷buff 电圈/落雷"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [1019261, 148, 51002002],
-                "noHasAnyBuff": [888666005, 888666006, 888666007],
-                "OffsetX": 700,
-                "OffsetY": 700,
-                "desc": "没有雷火冰buff，灵芝爆炸，猪八戒"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "skillID": 10705,
-    "desc": "1a切手，大圣版10705",
-    "montage_config": {
-      "speedRate": 1.3,
-      "AMSpeedRate": 1.3,
-      "scaleWeaponNum": 3
-    },
-    "sweep_actions": [
-      {
-        "linkValue": 0,
-        "actions": [
-          {
-            "Type": "bullet",
-            "desc": "执行10705的子弹",
-            "bullets": [
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [140, 44011401],
-                "hasBuff": 888666007,
-                "OffsetX": 700,
-                "OffsetY": 700,
-                "desc": "有火buff 10705红孩儿砸地"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [30510601, 30512704],
-                "hasBuff": 888666006,
-                "OffsetX": 700,
-                "OffsetY": 700,
-                "desc": "有冰buff 10705小冰气,冰蛙小冰暴"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [30250101, 118],
-                "OffsetX": 700,
-                "OffsetY": 700,
-                "hasBuff": 888666005,
-                "desc": "有雷buff 电圈/落雷"
-              },
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [1019261, 51002002],
-                "hasBuff": 888666008,
-                "OffsetX": 700,
-                "OffsetY": 700,
-                "desc": "没有雷火冰buff，灵芝爆炸，猪八戒"
-              },
-
-              {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [151],
-                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
-                "OffsetX": 700,
-                "OffsetY": 700,
-                "desc": "没有 buff ，磐锤"
-              }
-            ]
-          }
-        ]
       }
     ]
   }

@@ -1,0 +1,57 @@
+[
+    {
+    "OriginalId": 18011,
+    "MappedId": 18041,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "虫变身常态，转成淬毒平A"
+  },
+ {
+    "OriginalId": 18012,
+    "MappedId": 18042,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "虫变身常态，转成淬毒平A"
+  }, {
+    "OriginalId": 18013,
+    "MappedId": 18043,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "虫变身常态，转成淬毒平A"
+  }, {
+    "OriginalId": 18014,
+    "MappedId": 18044,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "虫变身常态，转成淬毒平A"
+  },
+
+
+
+  {
+    "OriginalId": 18021,
+    "MappedId": 18041,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "虫变身常态，转成淬毒平A"
+  },
+ {
+    "OriginalId": 18022,
+    "MappedId": 18042,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "虫变身常态，转成淬毒平A"
+  }, {
+    "OriginalId": 18023,
+    "MappedId": 18043,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "虫变身常态，转成淬毒平A"
+  }, {
+    "OriginalId": 18024,
+    "MappedId": 18044,
+    "Condition": "any",
+    "conditionValue": 0,
+    "desc": "虫变身常态，转成淬毒平A"
+  }
+]

@@ -14,6 +14,42 @@
   },
 
   {
+    "ID": 888555002,
+    "desc": "积累虫卵",
+    "EffectType": 46,
+    "EffectParamsInt": [18400],
+    "EffectParamsFloat": [0.0],
+    "EffectParamsStr": []
+  },
+
+  {
+    "desc": "小火球",
+    "ID": 888555003,
+    "EffectType": 20,
+    "EffectParamsInt": [40100301, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0, 0, 0, 0, 0, 0],
+    "EffectParamsStr": [
+      "do_actions",
+      "bullet_ids:40100301",
+      "无",
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+    ]
+  },
+  {
+    "desc": "大一点的火球",
+    "ID": 888555004,
+    "EffectType": 20,
+    "EffectParamsInt": [40100201, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0, 0, 0, 0, 0, 0],
+    "EffectParamsStr": [
+      "do_actions",
+      "bullet_ids:40100201",
+      "无",
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+    ]
+  },
+
+  {
     "ID": 47120307,
     "desc": "王灵官 红雷伤害",
     "CanCutVictim": 0,
@@ -248,5 +284,18 @@
     "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
     "EffectParamsFloat": [17400.0, 740.0, 74000.0, 7400.0, 0.0, 0.0, 17400],
     "EffectParamsStr": ["【主角】蓄力1"]
+  },
+  {
+    "desc": "毒液池",
+    "ID": 888556000,
+    "EffectType": 20,
+    "EffectParamsInt": [49981301, 1, 0, 0, 0, 0],
+    "EffectParamsFloat": [0, 0, 0, 0, 0, 0],
+    "EffectParamsStr": [
+      "do_actions",
+      "bullet_ids:49981301",
+      "无",
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+    ]
   }
 ]

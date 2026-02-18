@@ -27,12 +27,20 @@
     "ID": 44051007,
     "MoveClampToLand": 1
   },
-   {
+  {
     "ID": 151,
     "MoveClampToLand": 1
   },
   {
     "ID": 148,
+    "MoveClampToLand": 1
+  },
+  {
+    "ID": 74010206,
+    "MoveClampToLand": 1
+  },
+   {
+    "ID": 74011208,
     "MoveClampToLand": 1
   }
 ]

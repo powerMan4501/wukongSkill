@@ -1,0 +1,158 @@
+[
+  {
+    "skillID": 18041,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 10380101,
+            "spawnBaseSocketName": "weapon_r",
+            "ForTarget": true,
+            "desc": "发射蛇毒"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 18042,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 10380101,
+            "spawnBaseSocketName": "weapon_r",
+            "ForTarget": true,
+            "desc": "发射蛇毒"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 18043,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 10380101,
+            "spawnBaseSocketName": "weapon_r",
+            "ForTarget": true,
+            "desc": "发射蛇毒"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 18044,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 10380101,
+            "spawnBaseSocketName": "weapon_r",
+            "ForTarget": true,
+            "desc": "发射蛇毒"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 18071,
+    "desc": "引爆虫卵",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666008],
+        "BuffTime": -1,
+        "desc": "添加毒buff"
+      }
+    ],
+    "effect_actions": [
+      {
+        "ID": 1801101,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [10380101],
+            "desc": "蛇毒"
+          }
+        ]
+      },
+      {
+        "ID": 1801201,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [10380101],
+            "desc": "蛇毒"
+          }
+        ]
+      },
+      {
+        "ID": 1801301,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [10380101],
+            "desc": "蛇毒"
+          }
+        ]
+      },
+      {
+        "ID": 1801401,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [10380101],
+            "desc": "蛇毒"
+          }
+        ]
+      }
+    ]
+  }
+]

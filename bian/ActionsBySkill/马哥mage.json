@@ -1,0 +1,406 @@
+[
+  {
+    "skillID": 23011,
+    "desc": "马哥红鞭，q1",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666007],
+        "BuffTime": -1,
+        "desc": "添加火buff"
+      }
+    ],
+    "effect_actions": [
+      {
+        "ID": 2301101,
+        "actions": [
+          {
+            "Type": "bullet",
+            "TimeDelay": 0,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40100301],
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 23012,
+    "desc": "马哥红鞭，q2",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666007],
+        "BuffTime": -1,
+        "desc": "添加火buff"
+      }
+    ],
+    "effect_actions": [
+      {
+        "ID": 2301201,
+        "actions": [
+          {
+            "Type": "bullet",
+            "TimeDelay": 0,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40100301],
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 23013,
+    "desc": "马哥红鞭，q3",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666007],
+        "BuffTime": -1,
+        "desc": "添加火buff"
+      }
+    ],
+    "effect_actions": [
+      {
+        "ID": 2301301,
+        "actions": [
+          {
+            "Type": "bullet",
+            "TimeDelay": 0,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40100301],
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 23014,
+    "desc": "马哥红鞭，q4",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666007],
+        "BuffTime": -1,
+        "desc": "添加火buff"
+      }
+    ],
+    "effect_actions": [
+      {
+        "ID": 2301401,
+        "actions": [
+          {
+            "Type": "bullet",
+            "TimeDelay": 0,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40100301],
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 23031,
+    "desc": "马哥右键红鞭，q1",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666007],
+        "BuffTime": -1,
+        "desc": "添加火buff"
+      }
+    ],
+    "effect_actions": [
+      {
+        "ID": 2303101,
+        "actions": [
+          {
+            "Type": "bullet",
+            "TimeDelay": 0,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40100201],
+            "desc": "大一点的火球"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 23032,
+    "desc": "马哥右键红鞭，q2",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666007],
+        "BuffTime": -1,
+        "desc": "添加火buff"
+      }
+    ],
+    "effect_actions": [
+      {
+        "ID": 2303201,
+        "actions": [
+          {
+            "Type": "bullet",
+            "TimeDelay": 0,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40100201],
+            "desc": "大一点的火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 23033,
+    "desc": "马哥右键红鞭，q3",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666007],
+        "BuffTime": -1,
+        "desc": "添加火buff"
+      }
+    ],
+    "effect_actions": [
+      {
+        "ID": 2303301,
+        "actions": [
+          {
+            "Type": "bullet",
+            "TimeDelay": 0,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40100201],
+            "desc": "大一点的火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 23034,
+    "desc": "马哥右键红鞭，q4",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666007],
+        "BuffTime": -1,
+        "desc": "添加火buff"
+      }
+    ],
+    "effect_actions": [
+      {
+        "ID": 2303401,
+        "actions": [
+          {
+            "Type": "bullet",
+            "TimeDelay": 0,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40100201],
+            "desc": "大一点的火球"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 23021,
+    "desc": "马哥雷鞭，q1",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666005],
+        "BuffTime": -1,
+        "desc": "添加雷buff"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "OffsetX": 600,
+            "OffsetY": 600,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [118],
+            "desc": "落雷"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 23022,
+    "desc": "马哥雷鞭，q2",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666005],
+        "BuffTime": -1,
+        "desc": "添加雷buff"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "OffsetX": 600,
+            "OffsetY": 600,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [118],
+            "desc": "落雷"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 23023,
+    "desc": "马哥雷鞭，q3",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "hitEffects": [888555003],
+      "replaceEffects": true
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666005],
+        "BuffTime": -1,
+        "desc": "添加雷buff"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "OffsetX": 600,
+            "OffsetY": 600,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [118],
+            "desc": "落雷"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 23024,
+    "desc": "马哥雷鞭，q4",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "hitEffects": [888555003],
+      "replaceEffects": true
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666005],
+        "BuffTime": -1,
+        "desc": "添加雷buff"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "OffsetX": 600,
+            "OffsetY": 600,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [118],
+            "desc": "落雷"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 23071,
+    "desc": "马哥法术，雷电",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666005],
+        "BuffTime": -1,
+        "desc": "添加雷buff"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [30250101, 118],
+            "desc": "电圈/落雷"
+          }
+        ]
+      }
+    ]
+  }
+]
