@@ -48,5 +48,13 @@
     "ID": 30240401,
     "ProjectileLifeTime": 8,
     "ProjectileDelayDestroyTime": 0
+  },
+
+  {
+    "ID": 30169901,
+    "desc": "电离子",
+    "ProjectileLifeTime": 30,
+    "BeHitedTriggerEffectIDs": [1026212],
+    "BirthBuff": []
   }
 ]

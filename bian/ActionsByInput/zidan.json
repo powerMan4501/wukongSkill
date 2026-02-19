@@ -9,5 +9,54 @@
         "desc": "夜叉王地刺"
       }
     ]
+  },
+
+  {
+    "code": "zda",
+    "afterActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [30180703],
+        "desc": "30180703"
+      }
+    ]
+  },
+
+  
+  {
+    "code": "zds",
+    "afterActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [30180601],
+        "desc": "30180601"
+      }
+    ]
+  },
+
+   {
+    "code": "zdd",
+    "afterActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [30180603],
+        "desc": "30180603"
+      }
+    ]
+  },
+
+   {
+    "code": "zdg",
+    "afterActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileIDs": [30180701],
+        "desc": "30180701"
+      }
+    ]
   }
 ]

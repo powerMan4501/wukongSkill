@@ -290,11 +290,41 @@
       "type": "actions",
       "afterActions": [
         {
+          "skillIndexs": [0],
+          "skillValues": [10860, 10861, 10862, 10863, 10864],
+          "type": "transskill",
+          "ResId": 12,
+          "MagicSkillID": 12044,
+          "desc": "侧键2，立棍,接广智"
+        },
+
+        {
+          "skillIndexs": [0],
+          "skillValues": [
+            10830, 10831, 10832, 10833, 10834, 50020, 50021, 50022, 50023, 50024
+          ],
+          "type": "transskill",
+          "ResId": 17,
+          "MagicSkillID": 17333,
+          "desc": "变成马猴"
+        },
+
+        {
+          "skillIndexs": [0],
+          "skillValues": [
+            10880, 10881, 10882, 10883, 10884, 10885, 10886, 10887, 10888,
+            10889, 10890
+          ],
+          "type": "transskill",
+          "ResId": 19,
+          "MagicSkillID": 19043,
+          "desc": "变成小黄龙"
+        },
+        {
           "montageIndex": 0,
           "montageValue": ".AM_Wukong_Dodge_F_",
-          "type": "bossskill",
-          "bossLabel": "SK_mgd_ftxd",
-          "bossType": "BOSS",
+          "type": "transskill",
+          "ResId": 24,
           "MagicSkillID": 25157,
           "Name": "前翻滚,核爆冰拳"
         },
@@ -302,31 +332,28 @@
         {
           "montageIndex": 0,
           "montageValue": ".AM_Wukong_Dodge_R_",
-          "type": "bossskill",
-          "bossLabel": "SK_mgd_ftxd",
-          "bossType": "BOSS",
-          "MagicSkillID": 740122,
-          "Name": "右翻滚 往前跳砸一次火圈"
+          "type": "transskill",
+          "ResId": 23,
+          "MagicSkillID": 23021,
+          "desc": "右翻滚变马"
         },
 
         {
           "montageIndex": 0,
           "montageValue": ".AM_Wukong_Dodge_B_",
-          "type": "bossskill",
-          "bossLabel": "SK_mgd_ftxd",
-          "bossType": "BOSS",
-          "MagicSkillID": 25257,
-          "Name": "后翻滚没有冰buff,核爆火拳"
+          "type": "transskill",
+          "ResId": 16,
+          "MagicSkillID": 16021,
+          "desc": "后翻滚，海上僧"
         },
 
         {
           "montageIndex": 0,
           "montageValue": ".AM_Wukong_Dodge_L_",
-          "type": "bossskill",
-          "bossLabel": "SK_mgd_ftxd",
-          "bossType": "BOSS",
-          "MagicSkillID": 740155,
-          "Name": "左翻滚,砸冰暴"
+          "type": "transskill",
+          "ResId": 14,
+          "MagicSkillID": 202838,
+          "desc": "左翻滚 变成寅虎，飞到空中砍人"
         },
 
         {
@@ -383,11 +410,13 @@
         },
 
         {
-          "Type": "skill",
+          "Type": "bossskill",
+          "bossLabel": "SK_LuoChaGui_01",
+          "bossType": "BOSS",
+          "MagicSkillID": 401211,
           "skillIndexs": [0],
           "skillValues": [50002, 10707],
-          "SkillID": 84321024,
-          "desc": "斩棍接 砸砸砸"
+          "desc": "XBUTTON2 斩棍接鬼王一拳打在地上触发范围火"
         },
 
         {

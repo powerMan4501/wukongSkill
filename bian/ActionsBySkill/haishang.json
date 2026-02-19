@@ -83,8 +83,8 @@
             "Type": "bullet",
             "TimeDelay": 0,
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [2403471],
-            "desc": "冰暴,冰地波"
+            "ProjectTileIDs": [30512704],
+            "desc": "小冰暴"
           }
         ]
       }
@@ -106,8 +106,8 @@
             "Type": "bullet",
             "TimeDelay": 0,
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [2403471, 152],
-            "desc": "冰暴,冰地波"
+            "ProjectTileIDs": [2403471],
+            "desc": "冰暴"
           }
         ]
       }

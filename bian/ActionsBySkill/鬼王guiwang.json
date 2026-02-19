@@ -116,10 +116,11 @@
       "speedRate": 1.8,
       "AMSpeedRate": 1.8,
       "addRadius": 500,
-      "hitEffects": [888555035],
+      "hitEffects": [888555037],
       "replaceEffects": true
     },
     "sweep_actions": [
+     
       {
         "linkValue": 0,
         "actions": [
@@ -134,12 +135,12 @@
                 "desc": "鬼火波动"
               }
             ]
-          }
+          },
+           { "Type": "out_magic", "TimeDelay": 800, "desc": "退出精魄" }
         ]
       }
     ]
   },
-
 
   {
     "skillID": 401201,
@@ -172,8 +173,7 @@
     ]
   },
 
-
-   {
+  {
     "skillID": 401202,
     "desc": "脚踩一次",
     "montage_config": {
@@ -204,8 +204,7 @@
     ]
   },
 
-
-   {
+  {
     "skillID": 401228,
     "desc": "超级鬼火",
     "montage_config": {

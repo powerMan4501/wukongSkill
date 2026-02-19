@@ -84,22 +84,26 @@
       "Id": 301502,
       "CanBreak": true,
       "Name": "突进上去砍一刀，再捅一下",
-      "Key": "S+XBUTTON2",
-      "Buffs": [17015]
+      "Key": ""
     },
     {
       "Id": 405805,
       "Name": "爆气垂直砍一刀，发射垂直火剑气",
-      "Key": "XBUTTON2",
+      "Key": "S+XBUTTON2",
       "CanBreak": true,
       "Buffs": [17272, 17273]
     },
     {
-      "Key": "XBUTTON1",
+      "Key": "XBUTTON2",
       "Id": 17072,
       "Name": "马猴冰法术",
-      "CanBreak": true,
-      "Buffs": [92251]
+      "CanBreak": true
+    },
+     {
+      "Key": "XBUTTON1",
+      "Id": 17333,
+      "Name": "马猴切手技",
+      "CanBreak": true
     },
     {
       "Key": "S+XBUTTON1",
