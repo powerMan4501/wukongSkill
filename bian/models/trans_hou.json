@@ -99,11 +99,22 @@
       "Name": "马猴冰法术",
       "CanBreak": true
     },
-     {
+    {
       "Key": "XBUTTON1",
-      "Id": 17333,
-      "Name": "马猴切手技",
-      "CanBreak": true
+      "type": "actions",
+      "afterActions": [
+        {
+          "Type": "skill",
+          "SkillID": 17333,
+          "Name": "马猴切手技"
+        },
+        {
+          "Type": "buff",
+          "BuffID": 17015,
+          "BuffTime": 1000,
+          "Name": "识破buff"
+        }
+      ]
     },
     {
       "Key": "S+XBUTTON1",
