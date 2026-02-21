@@ -1853,46 +1853,28 @@ public class Hooks
     //     }
     // }
 
-    [HarmonyPatch(typeof(BUS_MovementSystem), "MoveForward")]
-    class MoveForward_Patch
-    {
+    // [HarmonyPatch(typeof(BUS_MovementSystem), "MoveForward")]
+    // class MoveForward_Patch
+    // {
 
-        private static readonly Dictionary<int, DateTime> _lastTriggerTimes = new Dictionary<int, DateTime>();
+    //     private static readonly Dictionary<int, DateTime> _lastTriggerTimes = new Dictionary<int, DateTime>();
 
-        static void Prefix(BUS_MovementSystem __instance,
+    //     static void Prefix(BUS_MovementSystem __instance,
 
-            ref float Value)
-        {
-            var player = __instance.GetOwner();
-            BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(__instance.GetOwner());
-            if (bUS_GSEventCollection != null)
-            {
-                Helper.LogInfoOnce($"玩家前进 MoveForward: {Value} ");
-                // var currentTime = DateTime.Now;
-                // // 检查该效果ID是否在0.2秒内已经触发过
-                // if (_lastTriggerTimes.TryGetValue(888555001, out var lastTime))
-                // {
-                //     if ((currentTime - lastTime).TotalMilliseconds < 1500)
-                //     {
-                //         return; // 距离上次触发不足1秒，跳过本次触发
-                //     }
-                // }
-                // // 更新最后触发时间
-                // _lastTriggerTimes[888555001] = currentTime;
-                // Helper.TriggerRangeEffect(888555001, 4000);
-                // if (BGUFunctionLibraryCS.BGUHasBuffByID(player, BuffElementIds.Thunder))
-                // {
-                //     Helper.TriggerRangeEffect(888555001, 4000);
-                // }
-                bUS_GSEventCollection.Evt_SetMoveSpeedAddValue.Invoke(1000);
-                bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.MoveSlowly, IsRemove: true);
-                bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.LockStateWalking, IsRemove: true);
+    //         ref float Value)
+    //     {
+    //         var player = __instance.GetOwner();
+    //         BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(__instance.GetOwner());
+    //         if (bUS_GSEventCollection != null)
+    //         {
+    //             Helper.LogInfoOnce($"玩家前进 MoveForward: {Value} ");
+    //             bUS_GSEventCollection.Evt_SetMoveSpeedAddValue.Invoke(1000);
+    //             bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.MoveSlowly, IsRemove: true);
+    //             bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.LockStateWalking, IsRemove: true);
 
-            }
-            // 将速度改为原来的3倍
-            // SpeedRate *= 3f;
-        }
-    }
+    //         }
+    //     }
+    // }
 
     // [HarmonyPatch(typeof(BUS_MovementSystem), "CheckCanRun")]
     // public class CheckCanRunPatch
@@ -1957,7 +1939,7 @@ public class Hooks
 
 
     [HarmonyPatch]
-    class BUEffectSpawnProjectilePatch
+    public class BUEffectSpawnProjectilePatch
     {
         [HarmonyPrefix]
         [HarmonyPatch(typeof(BUEffectSpawnProjectile), "ApplyBySkill_Implement")]
@@ -2075,132 +2057,211 @@ public class Hooks
     }
 
 
+
+    [HarmonyPatch]
+    public class BUEffectNormalDamagePatch
+    {
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BUEffectNormalDamage), "ApplyBySkill_Implement")]
+
+        public static void ApplyBySkill_Implement(int EffectID, AActor Caster, AActor Target, in FEffectInstReq EffectInstReq)
+        {
+            if (EffectID == 0) return;
+
+            FUStSkillEffectDesc skillEffectDesc = BGW_GameDB.GetSkillEffectDesc(EffectID, Target);
+            if (skillEffectDesc == null)
+            {
+                return;
+            }
+
+            if (skillEffectDesc.EffectParamsStr.Count > 2)
+            {
+                string actionKey = skillEffectDesc.EffectParamsStr[0];
+
+
+                if (actionKey.Contains("do_actions"))
+                {
+                    if (skillEffectDesc.EffectParamsStr.Count < 2) return;
+                    if (!skillEffectDesc.EffectParamsStr[1].Contains("bullet")) return;
+
+                    // 检查条件
+                    if (skillEffectDesc.EffectParamsStr[2].Contains("conditions:"))
+                    {
+                        string conditions = skillEffectDesc.EffectParamsStr[2].Replace("conditions:", "");
+                        if (!Helper.CheckConditions(Caster, conditions)) return;
+                        string path = skillEffectDesc.EffectParamsStr[3];
+                        // 从EffectParams获取参数
+                        int projectileID = 0;
+                        int bulletCount = 1;
+                        bool forTarget = false;
+                        bool isRandom = false;
+                        // 获取位置偏移
+                        float posX = 0;
+                        float posY = 0;
+                        float posZ = 0;
+
+
+
+                        var offset = new FVector(posX, posY, posZ);
+
+                        // 创建RuleAction来传递EffectInstReq
+                        var action = new RuleAction
+                        {
+                            Caster = Caster,
+                            Target = Target,
+                            EffectInstReq = EffectInstReq,
+
+                        };
+
+                        var projectileIDs = new[] { projectileID };
+
+                        if (skillEffectDesc.EffectParamsStr[1].Contains("bullet_ids:"))
+                        {
+
+                            string projectileString = skillEffectDesc.EffectParamsStr[1].Replace("bullet_ids:", "");
+                            projectileIDs = projectileString.Split(',').Select(int.Parse).ToArray();
+
+                        }
+                        // 调用SpawnProjectile
+                        foreach (var ID in projectileIDs)
+                        {
+                            Helper.SpawnProjectile(Helper.GetBGUPlayerCharacterCS(), path, ID, forTarget, bulletCount, isRandom, offset, action);
+
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+    }
     // [HarmonyPatch]
     // public class BUS_PlayerTransCompPatch
     // {
 
 
-    //     public static APawn? SpawnAndPossessTransUnit(UClass CharacterClass, FTransform bornTransform, BGUFuncLibPlayer.SpawnControlledPawnBlendParam SpawnControlledPawnBlendParam, int ToReplaceUnitResID)
+    // public static APawn? SpawnAndPossessTransUnit(UClass CharacterClass, FTransform bornTransform, BGUFuncLibPlayer.SpawnControlledPawnBlendParam SpawnControlledPawnBlendParam, int ToReplaceUnitResID)
+    // {
+
+    //     APawn PlayerPawn = null;
+    //     var Owner = Helper.GetBGUPlayerCharacterCS();
+    //     EPlayerTransEndType unitTransType = EPlayerTransEndType.None;
+
+    //     var BGWEventCollection = BGW_EventCollection.Get(Owner);
+    //     var BUSEventCollection = BUS_EventCollectionCS.Get(Owner);
+    //     BGWEventCollection.Evt_BGW_UnitTrans(Owner, unitTransType);
+    //     BUSEventCollection.Evt_NotifyUnitTrans_BeforePosses.Invoke(unitTransType);
+    //     APawn instigator = Owner.Instigator;
+    //     ABGPPlayerController PC = ((instigator != null) ? (instigator.GetController() as ABGPPlayerController) : null);
+    //     if (PC == null)
     //     {
+    //         return null;
+    //     }
+    //     BGUFuncLibPlayer.SpwanAndPossesPlayerContrlledPawn(PC, CharacterClass, bornTransform, delegate (APawn Pawn)
+    //     {
+    //         PlayerPawn = Pawn;
+    //         BPS_EventCollectionCS.Get(PC)?.Evt_PlayerActorSpawn.Invoke();
+    //         BPS_EventCollectionCS.Get(PC)?.Evt_BPS_SwitchPlayerTransState.Invoke(Owner, ToReplaceUnitResID);
+    //     }, SpawnControlledPawnBlendParam);
+    //     if (!SpawnControlledPawnBlendParam.EnableBlendViewTarget)
+    //     {
+    //         PC.SetViewTargetWithBlend(Owner);
+    //     }
+    //     return PlayerPawn;
+    // }
 
-    //         APawn PlayerPawn = null;
-    //         var Owner = Helper.GetBGUPlayerCharacterCS();
-    //         EPlayerTransEndType unitTransType = EPlayerTransEndType.None;
 
-    //         var BGWEventCollection = BGW_EventCollection.Get(Owner);
-    //         var BUSEventCollection = BUS_EventCollectionCS.Get(Owner);
-    //         BGWEventCollection.Evt_BGW_UnitTrans(Owner, unitTransType);
-    //         BUSEventCollection.Evt_NotifyUnitTrans_BeforePosses.Invoke(unitTransType);
-    //         APawn instigator = Owner.Instigator;
-    //         ABGPPlayerController PC = ((instigator != null) ? (instigator.GetController() as ABGPPlayerController) : null);
-    //         if (PC == null)
+    // public static void AdjustTransUnitTransform(ABGUCharacter ToReplaceUnitInst, FTransform BornTransform, float Scale)
+    // {
+
+    //     var OwnerAsCharacterCS = Helper.GetBGUPlayerCharacterCS();
+    //     if (OwnerAsCharacterCS == null) return;
+    //     FVector location = BornTransform.GetLocation();
+    //     FRotator rotation = BornTransform.GetRotation().Rotator();
+    //     float scaledCapsuleHalfHeight = OwnerAsCharacterCS.CapsuleComponent.GetScaledCapsuleHalfHeight();
+    //     location.Z -= scaledCapsuleHalfHeight;
+    //     float scaledCapsuleHalfHeight2 = ToReplaceUnitInst.CapsuleComponent.GetScaledCapsuleHalfHeight();
+    //     location.Z += scaledCapsuleHalfHeight2;
+    //     Scale = ((Scale == 0f) ? 1f : Scale);
+    //     FTransform newTransform = new FTransform(rotation, location, new FVector(Scale));
+    //     BGUFuncLibActorTransformCS.BGUSetActorTransform(ToReplaceUnitInst, newTransform, bSweep: false, bTeleport: false);
+    // }
+
+
+
+    // public static void TransferData(int ToReplaceUnitBornSkillID, ABGUCharacter ToReplaceUnitInst)
+    // {
+
+    //     var Owner = Helper.GetBGUPlayerCharacterCS();
+
+    //     BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(ToReplaceUnitInst);
+    //     IBUC_BattleStateData readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_BattleStateData, BUC_BattleStateData>(Owner);
+
+
+    //     var BGSEventCollection = BGS_EventCollectionCS.Get(Owner);
+    //     var BUSEventCollection = BUS_EventCollectionCS.Get(Owner);
+    //     if (readOnlyData != null && readOnlyData.IsUnitInBattle())
+    //     {
+    //         BGSEventCollection.Evt_BGS_OnBattlePlayerTransited.Invoke(Owner, ToReplaceUnitInst);
+    //     }
+    //     bool flag = true;
+    //     BGUCharacterCS bGUCharacterCS = ToReplaceUnitInst as BGUCharacterCS;
+    //     if (bGUCharacterCS != null)
+    //     {
+    //         int resID = bGUCharacterCS.GetResID();
+    //         int commLogicCfgValue = GameDBRuntime.GetCommLogicCfgValue(CommCfgType.FtxdDefaultResid);
+    //         if (resID == commLogicCfgValue)
     //         {
-    //             return null;
+    //             flag = false;
     //         }
-    //         BGUFuncLibPlayer.SpwanAndPossesPlayerContrlledPawn(PC, CharacterClass, bornTransform, delegate (APawn Pawn)
-    //         {
-    //             PlayerPawn = Pawn;
-    //             BPS_EventCollectionCS.Get(PC)?.Evt_PlayerActorSpawn.Invoke();
-    //             BPS_EventCollectionCS.Get(PC)?.Evt_BPS_SwitchPlayerTransState.Invoke(Owner, ToReplaceUnitResID);
-    //         }, SpawnControlledPawnBlendParam);
-    //         if (!SpawnControlledPawnBlendParam.EnableBlendViewTarget)
-    //         {
-    //             PC.SetViewTargetWithBlend(Owner);
-    //         }
-    //         return PlayerPawn;
     //     }
 
-
-    //     public static void AdjustTransUnitTransform(ABGUCharacter ToReplaceUnitInst, FTransform BornTransform, float Scale)
+    //     BUS_BGUDataCompBase componentByClass = ToReplaceUnitInst.GetComponentByClass<BUS_BGUDataCompBase>();
+    //     if (componentByClass != null && componentByClass.DataInitTemplate != null)
     //     {
-
-    //         var OwnerAsCharacterCS = Helper.GetBGUPlayerCharacterCS();
-    //         if (OwnerAsCharacterCS == null) return;
-    //         FVector location = BornTransform.GetLocation();
-    //         FRotator rotation = BornTransform.GetRotation().Rotator();
-    //         float scaledCapsuleHalfHeight = OwnerAsCharacterCS.CapsuleComponent.GetScaledCapsuleHalfHeight();
-    //         location.Z -= scaledCapsuleHalfHeight;
-    //         float scaledCapsuleHalfHeight2 = ToReplaceUnitInst.CapsuleComponent.GetScaledCapsuleHalfHeight();
-    //         location.Z += scaledCapsuleHalfHeight2;
-    //         Scale = ((Scale == 0f) ? 1f : Scale);
-    //         FTransform newTransform = new FTransform(rotation, location, new FVector(Scale));
-    //         BGUFuncLibActorTransformCS.BGUSetActorTransform(ToReplaceUnitInst, newTransform, bSweep: false, bTeleport: false);
-    //     }
-
-
-
-    //     public static void TransferData(int ToReplaceUnitBornSkillID, ABGUCharacter ToReplaceUnitInst)
-    //     {
-
-    //         var Owner = Helper.GetBGUPlayerCharacterCS();
-
-    //         BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(ToReplaceUnitInst);
-    //         IBUC_BattleStateData readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_BattleStateData, BUC_BattleStateData>(Owner);
-
-
-    //         var BGSEventCollection = BGS_EventCollectionCS.Get(Owner);
-    //         var BUSEventCollection = BUS_EventCollectionCS.Get(Owner);
-    //         if (readOnlyData != null && readOnlyData.IsUnitInBattle())
+    //         List<ECSDataInitTemplate> dataInitTemplate = componentByClass.DataInitTemplate;
+    //         if (dataInitTemplate != null)
     //         {
-    //             BGSEventCollection.Evt_BGS_OnBattlePlayerTransited.Invoke(Owner, ToReplaceUnitInst);
-    //         }
-    //         bool flag = true;
-    //         BGUCharacterCS bGUCharacterCS = ToReplaceUnitInst as BGUCharacterCS;
-    //         if (bGUCharacterCS != null)
-    //         {
-    //             int resID = bGUCharacterCS.GetResID();
-    //             int commLogicCfgValue = GameDBRuntime.GetCommLogicCfgValue(CommCfgType.FtxdDefaultResid);
-    //             if (resID == commLogicCfgValue)
+    //             foreach (ECSDataInitTemplate item in dataInitTemplate)
     //             {
-    //                 flag = false;
+    //                 (item as IPlayerDataInitTemplate)?.PostTrans(Owner);
     //             }
     //         }
-
-    //         BUS_BGUDataCompBase componentByClass = ToReplaceUnitInst.GetComponentByClass<BUS_BGUDataCompBase>();
-    //         if (componentByClass != null && componentByClass.DataInitTemplate != null)
-    //         {
-    //             List<ECSDataInitTemplate> dataInitTemplate = componentByClass.DataInitTemplate;
-    //             if (dataInitTemplate != null)
-    //             {
-    //                 foreach (ECSDataInitTemplate item in dataInitTemplate)
-    //                 {
-    //                     (item as IPlayerDataInitTemplate)?.PostTrans(Owner);
-    //                 }
-    //             }
-    //         }
-    //         bUS_GSEventCollection.Evt_PostTransBindData.Invoke(Owner);
-    //         BUSEventCollection.Evt_NotifyTransitToUnit.Invoke(ToReplaceUnitInst);
-    //         bUS_GSEventCollection.Evt_NotifyTransitFromUnit.Invoke(Owner);
-    //         bUS_GSEventCollection.Evt_SwitchPlayerTransStateFinish.Invoke();
-    //         BGSEventCollection.Evt_BGS_OnUnitTransited.Invoke(Owner, ToReplaceUnitInst);
-    //         if (ToReplaceUnitBornSkillID > 0)
-    //         {
-    //             bUS_GSEventCollection.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(ToReplaceUnitBornSkillID, ECastSkillSourceType.PlayerTrans));
-    //         }
     //     }
-
-
-
-    //     public static void DestroyOldUnit()
+    //     bUS_GSEventCollection.Evt_PostTransBindData.Invoke(Owner);
+    //     BUSEventCollection.Evt_NotifyTransitToUnit.Invoke(ToReplaceUnitInst);
+    //     bUS_GSEventCollection.Evt_NotifyTransitFromUnit.Invoke(Owner);
+    //     bUS_GSEventCollection.Evt_SwitchPlayerTransStateFinish.Invoke();
+    //     BGSEventCollection.Evt_BGS_OnUnitTransited.Invoke(Owner, ToReplaceUnitInst);
+    //     if (ToReplaceUnitBornSkillID > 0)
     //     {
-    //         var Owner = Helper.GetBGUPlayerCharacterCS();
-    //         int actorResID = BGU_DataUtil.GetActorResID(Owner);
-    //         FUStUnitTransCommDesc unitTransCommDesc = BGW_GameDB.GetUnitTransCommDesc(actorResID);
-    //         if (unitTransCommDesc != null && (actorResID == 21 || actorResID == 11))
-    //         {
-    //             BGW_PreloadAssetMgr.Get(Owner).TryRecyclingCachedResourceObj(unitTransCommDesc.BPPath);
-    //         }
-    //         var BUSEventCollection = BUS_EventCollectionCS.Get(Owner);
-    //         BUSEventCollection.Evt_SetBoolProperty.Invoke(EPropType.Actor_ActorHiddenInGame, Value: true);
-    //         BUSEventCollection.Evt_SetBoolProperty.Invoke(EPropType.Mesh_PauseAnims, Value: true);
-    //         BUSEventCollection.Evt_SetCollisionResponseProperty.Invoke(EPropType.Capsule_CollisionResponseToChannels, new Dictionary<ECollisionChannel, ECollisionResponseType> {
-    //     {
-    //         ECollisionChannel.ECC_Pawn,
-    //         ECollisionResponseType.ECR_Ignore
-    //     } });
-    //         BUSEventCollection.Evt_BuffAllRemove.Invoke(EBuffEffectTriggerType.None, WithTriggerRemmoveEffect: false);
-    //         BUSEventCollection.Evt_UnitDead.Invoke(null, EDeadReason.PlayerTrans);
+    //         bUS_GSEventCollection.Evt_UnitCastSkillTry.Invoke(new FCastSkillInfo(ToReplaceUnitBornSkillID, ECastSkillSourceType.PlayerTrans));
     //     }
+    // }
+
+
+
+    // public static void DestroyOldUnit()
+    // {
+    //     var Owner = Helper.GetBGUPlayerCharacterCS();
+    //     int actorResID = BGU_DataUtil.GetActorResID(Owner);
+    //     FUStUnitTransCommDesc unitTransCommDesc = BGW_GameDB.GetUnitTransCommDesc(actorResID);
+    //     if (unitTransCommDesc != null && (actorResID == 21 || actorResID == 11))
+    //     {
+    //         BGW_PreloadAssetMgr.Get(Owner).TryRecyclingCachedResourceObj(unitTransCommDesc.BPPath);
+    //     }
+    //     var BUSEventCollection = BUS_EventCollectionCS.Get(Owner);
+    //     BUSEventCollection.Evt_SetBoolProperty.Invoke(EPropType.Actor_ActorHiddenInGame, Value: true);
+    //     BUSEventCollection.Evt_SetBoolProperty.Invoke(EPropType.Mesh_PauseAnims, Value: true);
+    //     BUSEventCollection.Evt_SetCollisionResponseProperty.Invoke(EPropType.Capsule_CollisionResponseToChannels, new Dictionary<ECollisionChannel, ECollisionResponseType> {
+    // {
+    //     ECollisionChannel.ECC_Pawn,
+    //     ECollisionResponseType.ECR_Ignore
+    // } });
+    //     BUSEventCollection.Evt_BuffAllRemove.Invoke(EBuffEffectTriggerType.None, WithTriggerRemmoveEffect: false);
+    //     BUSEventCollection.Evt_UnitDead.Invoke(null, EDeadReason.PlayerTrans);
+    // }
 
     //     private static MethodBase TargetMethod()
     //     {
@@ -2208,77 +2269,118 @@ public class Hooks
     //     }
 
     //     [HarmonyPatch]
-    //     private static void Prefix(int ToReplaceUnitResID, int ToReplaceUnitBornSkillID, bool EnableBlendViewTarget, bool bSeqTransBack)
+    //     private static bool Prefix(int ToReplaceUnitResID, int ToReplaceUnitBornSkillID, bool EnableBlendViewTarget, bool bSeqTransBack)
     //     {
     //         try
     //         {
-    //             var Owner = Helper.GetBGUPlayerCharacterCS();
-    //             if (Owner == null) return;
 
-    //             FUStUnitTransCommDesc unitTransCommDesc = BGW_GameDB.GetUnitTransCommDesc(BGU_DataUtil.GetActorResID(Owner));
-    //             if (unitTransCommDesc == null)
-    //             {
-    //                 return;
-    //             }
+
+    //             var Owner = Helper.GetBGUPlayerCharacterCS();
+    //             if (Owner == null) return true;
+
+    //             // FUStUnitTransCommDesc unitTransCommDesc = BGW_GameDB.GetUnitTransCommDesc(BGU_DataUtil.GetActorResID(Owner));
+    //             // if (unitTransCommDesc == null)
+    //             // {
+    //             //     return true;
+    //             // }
 
     //             FUStUnitTransCommDesc unitTransCommDesc2 = BGW_GameDB.GetUnitTransCommDesc(ToReplaceUnitResID);
+    //             Helper.LogInfoOnce($"玩家转换TriggerTransit:Prefix unitTransCommDesc2：{unitTransCommDesc2?.BPPath}");
     //             if (unitTransCommDesc2 == null)
     //             {
-    //                 return;
+    //                 return true;
     //             }
-    //             if (unitTransCommDesc2.BPPath.Contains("Unit_Player_TianJiang_01.Unit_Player_TianJiang_01_C"))
-    //             {
-    //                 unitTransCommDesc2.BPPath = "/Game/00Main/Design/Units/Online/SZLC/TAMER_sl_tianjiang_01.TAMER_sl_tianjiang_01_C";
-    //             }
-    //             UClass uClass = BGW_PreloadAssetMgr.Get(Owner)?.TryGetCachedResourceObj<UClass>(unitTransCommDesc2.BPPath, ELoadResourceType.SyncLoadAndCache);
-    //             if (uClass == null)
-    //             {
-    //                 return;
-    //             }
-    //             if (!uClass.IsChildOf<BGUCharacterCS>())
-    //             {
-    //                 BGUFuncLibPlayer.SpawnControlledPawnBlendParam spawnControlledPawnBlendParam = new BGUFuncLibPlayer.SpawnControlledPawnBlendParam
-    //                 {
-    //                     NeedBlend = false,
-    //                     PossessBlendFunc = unitTransCommDesc2.PossessBlendFunc,
-    //                     EnableBlendViewTarget = false,
-    //                     PossessBlendExp = unitTransCommDesc2.PossessBlendExp,
-    //                     PossessBlendTime = unitTransCommDesc2.PossessBlendTime
-    //                 };
-    //                 string locationOffsetStr = ((!unitTransCommDesc2.UnitSpawnLocationOffset.Equals("")) ? unitTransCommDesc2.UnitSpawnLocationOffset : unitTransCommDesc.NewUnitSpawnLocationOffset);
-    //                 FTransform bornTransform = BGUFuncLibActorTransformCS.BGUGetActorTransform(Owner);
+    //             // if (unitTransCommDesc2.BPPath.Contains("Unit_player_hfm_shi.Unit_player_hfm_shi_C"))
+    //             // {
+    //             //     var BPPath = "/Game/00Main/Design/Units/PSD/TAMER_psd_xiezijing_og.TAMER_psd_xiezijing_og_C";
+    //             //     var world = Helper.GetWorld();
+    //             //     UClass? uClass = null;
+    //             //     if (BGUFunctionLibraryManaged.CreateTamerFromBPPath(world, BPPath, out var tamerObject, out var tamerClass))
+    //             //     {
+    //             //         uClass = tamerClass;
+    //             //         // 成功创建
+    //             //         // 可以使用 tamerObject 和 tamerClass
+    //             //         Helper.LogInfoOnce($"玩家转换TriggerTransit:tamerObject：{tamerObject?.GetName()}，uClass：{uClass?.GetName()}， uClass.IsChildOf<BGUCharacterCS>(): {uClass.IsChildOf<BGUCharacterCS>()}");
 
-    //                 ABGUCharacter aBGUCharacter = SpawnAndPossessTransUnit(uClass, bornTransform, spawnControlledPawnBlendParam, ToReplaceUnitResID) as ABGUCharacter;
+    //             //     }
+    //             //     else
+    //             //     {
+    //             //         Helper.LogInfoOnce($"玩家转换TriggerTransit:没有成功生成 tamerObject");
+
+    //             //     }
+    //             //     if (uClass == null)
+    //             //     {
+    //             //         return true;
+    //             //     }
+    //             //     Helper.LogInfoOnce($"玩家转换TriggerTransit:uClass：{uClass?.GetName()}， uClass.IsChildOf<BGUCharacterCS>(): {uClass.IsChildOf<BGUCharacterCS>()}");
+
+    //             // }
+
+    //             // if (!uClass.IsChildOf<BGUCharacterCS>())
+    //             // {
 
 
-    //                 if (!(aBGUCharacter == null))
-    //                 {
-    //                     float scale = ((unitTransCommDesc2.UnitSpawnScale != 0f) ? unitTransCommDesc2.UnitSpawnScale : unitTransCommDesc.NewUnitSpawnScale);
-    //                     AdjustTransUnitTransform(aBGUCharacter, bornTransform, scale);
-    //                     int toReplaceUnitBornSkillID = ((unitTransCommDesc2.UnitBornSkillID != 0) ? unitTransCommDesc2.UnitBornSkillID : unitTransCommDesc.NewUnitBornSkillID);
-    //                     if (ToReplaceUnitBornSkillID > 0)
-    //                     {
-    //                         toReplaceUnitBornSkillID = ToReplaceUnitBornSkillID;
+    //             //     // BGUFuncLibPlayer.SpawnControlledPawnBlendParam spawnControlledPawnBlendParam = new BGUFuncLibPlayer.SpawnControlledPawnBlendParam
+    //             //     // {
+    //             //     //     NeedBlend = false,
+    //             //     //     PossessBlendFunc = unitTransCommDesc2.PossessBlendFunc,
+    //             //     //     EnableBlendViewTarget = false,
+    //             //     //     PossessBlendExp = unitTransCommDesc2.PossessBlendExp,
+    //             //     //     PossessBlendTime = unitTransCommDesc2.PossessBlendTime
+    //             //     // };
+    //             //     // string locationOffsetStr = ((!unitTransCommDesc2.UnitSpawnLocationOffset.Equals("")) ? unitTransCommDesc2.UnitSpawnLocationOffset : unitTransCommDesc.NewUnitSpawnLocationOffset);
+    //             //     // FTransform bornTransform = BGUFuncLibActorTransformCS.BGUGetActorTransform(Owner);
 
-    //                     }
+    //             //     // ABGUCharacter aBGUCharacter = SpawnAndPossessTransUnit(uClass, bornTransform, spawnControlledPawnBlendParam, ToReplaceUnitResID) as ABGUCharacter;
 
-    //                     TransferData(toReplaceUnitBornSkillID, aBGUCharacter);
-    //                     DestroyOldUnit();
 
-    //                 }
-    //             }
+    //             //     // if (!(aBGUCharacter == null))
+    //             //     // {
+    //             //     //     float scale = ((unitTransCommDesc2.UnitSpawnScale != 0f) ? unitTransCommDesc2.UnitSpawnScale : unitTransCommDesc.NewUnitSpawnScale);
+    //             //     //     AdjustTransUnitTransform(aBGUCharacter, bornTransform, scale);
+    //             //     //     int toReplaceUnitBornSkillID = ((unitTransCommDesc2.UnitBornSkillID != 0) ? unitTransCommDesc2.UnitBornSkillID : unitTransCommDesc.NewUnitBornSkillID);
+    //             //     //     if (ToReplaceUnitBornSkillID > 0)
+    //             //     //     {
+    //             //     //         toReplaceUnitBornSkillID = ToReplaceUnitBornSkillID;
 
-    //             Helper.LogInfoOnce($"玩家转换TriggerTransit:uClass：{uClass?.GetName()}， uClass.IsChildOf<BGUCharacterCS>(): {uClass.IsChildOf<BGUCharacterCS>()}");
+    //             //     //     }
+
+    //             //     //     TransferData(toReplaceUnitBornSkillID, aBGUCharacter);
+    //             //     //     DestroyOldUnit();
+
+    //             //     // }
+    //             // }
+    //             return true;
+
     //         }
     //         catch (Exception ex)
     //         {
     //             Helper.LogInfoOnce($"BUS_PlayerTransCompPatch error: {ex.Message}");
     //         }
-
+    //         return true;
 
     //     }
 
     // }
 
+    [HarmonyPatch]
+    public class BUS_PlayerTransComp_Patch
+    {
+        private static MethodBase TargetMethod()
+        {
+            return AccessTools.Method("b1.BUS_PlayerTransComp:TransferData", (Type[])null, (Type[])null);
+        }
 
+        private static void Postfix()
+        {
+            var player = Helper.GetBGUPlayerCharacterCS();
+            if (player != null)
+            {
+                Helper.DelayExecute(222, () =>
+                {
+                    BGUFunctionLibraryCS.BGUAddBuff(player, player, 888665002, EBuffSourceType.GM, 0);
+                });
+            }
+        }
+    }
 }

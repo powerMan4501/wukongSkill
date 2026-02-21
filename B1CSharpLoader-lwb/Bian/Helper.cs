@@ -1874,7 +1874,7 @@ namespace bian
                 bUS_GSEventCollection.Evt_OnNotifyStateSpawnProjectileObj.Invoke(ref ProjectileSpawnNSInfo);
             }
         }
-        private static bool CheckConditions(AActor caster, string conditions)
+        public static bool CheckConditions(AActor caster, string conditions)
         {
             // conditions:hasAnyBuff:1001,1002,1003;no_hasAnyBuff:2001,2002;hasAnyTalent:3001,3002;no_hasAnyTalent:4001;last_skill_id:5001;stance:StancePoke
 
@@ -2102,7 +2102,7 @@ namespace bian
             BUS_EventCollectionCS.Get(play).Evt_TransBackSpawnNewOne.Invoke(0, 0, false, EPlayerTransEndType.SkillEffect);
         }
 
-         public static void trans_new_one()
+        public static void trans_new_one()
         {
             var play = GetBGUPlayerCharacterCS();
             BUS_EventCollectionCS.Get(play).Evt_TransBackSpawnNewOne.Invoke(0, 0, false, EPlayerTransEndType.SkillEffect);
@@ -2146,6 +2146,7 @@ namespace bian
                     var maxHp = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.HpMax);
                     if (maxHp < 10000 * 150)
                     {
+                        BGUFunctionLibraryCS.BGUSetAttrValue(item, EBGUAttrFloat.HpMax, maxHp + 500);
                         BGUFunctionLibraryCS.BGUAddBuff(item, item, 888666003, EBuffSourceType.GM, -1);
                     }
                     var atk = BGUFunctionLibraryCS.GetAttrValue(item, EBGUAttrFloat.Atk) + 20;
