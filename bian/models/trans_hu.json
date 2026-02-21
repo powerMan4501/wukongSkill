@@ -89,9 +89,6 @@
   "XRateSmall": 2,
   "Level1Scale": 1,
   "Level2Scale": 2.2,
-  "TransDone": {
-    "Buffers": [1000068, 1000095]
-  },
   "EnterSkill": {
     "Id": 10414,
     "AnimPath": "AM_wukong_trans_to_hfm_hu",
@@ -187,7 +184,21 @@
       "Key": "C+XBUTTON2",
       "Buffs": [1000095]
     },
+   
     {
+      "Id": 202873,
+      "CanBreak": true,
+      "Name": "虎啸跃身斩：吼一声，然后突进上去砍一刀",
+      "Key": "S+XBUTTON2"
+    },
+    {
+      "Id": 202802,
+      "CanBreak": true,
+      "Name": "砍几刀，可接：快速跑上去砍几刀",
+      "Key": "A+XBUTTON2",
+      "Buffs": [1000095]
+    },
+     {
       "Key": "XBUTTON1",
       "type": "actions",
       "afterActions": [
@@ -205,19 +216,6 @@
       ]
     },
     {
-      "Id": 202873,
-      "CanBreak": true,
-      "Name": "虎啸跃身斩：吼一声，然后突进上去砍一刀",
-      "Key": "S+XBUTTON2"
-    },
-    {
-      "Id": 202802,
-      "CanBreak": true,
-      "Name": "砍几刀，可接：快速跑上去砍几刀",
-      "Key": "A+XBUTTON2",
-      "Buffs": [1000095]
-    },
-    {
       "Key": "XBUTTON2",
       "type": "actions",
       "afterActions": [
@@ -225,18 +223,8 @@
           "Type": "skill",
           "skillIndex": [0],
           "skillValues": [202870],
-          "SkillID": 202838,
-          "Name": "格挡接飞天落地砍"
-        },
-
-        {
-          "Type": "skill",
-          "skillIndex": [0],
-          "skillValues": [
-            202838, 14010, 14011, 14012, 14013, 14014, 14015, 14016
-          ],
-          "SkillID": 202815,
-          "desc": "任意平A/飞天落地砍接平A 接 左往右斜着砍 AM_HFM_Hu_Wind_01_Atk_Fast_15"
+          "SkillID": 14111,
+          "Name": "飒沓平A"
         }
       ]
     },

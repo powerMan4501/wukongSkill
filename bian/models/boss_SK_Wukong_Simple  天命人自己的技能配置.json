@@ -297,9 +297,9 @@
             50036, 50037, 50038, 50039
           ],
           "type": "transskill",
-          "ResId": 18,
-          "MagicSkillID": 18043,
-          "desc": "空中打击，接虫变身"
+          "ResId": 14,
+          "MagicSkillID": 202838,
+          "desc": "空中打击，接寅虎"
         },
         {
           "skillIndexs": [0],
@@ -363,9 +363,9 @@
           "montageIndex": 0,
           "montageValue": ".AM_Wukong_Dodge_L_",
           "type": "transskill",
-          "ResId": 14,
-          "MagicSkillID": 202838,
-          "desc": "左翻滚 变成寅虎，飞到空中砍人"
+          "ResId": 13,
+          "MagicSkillID": 200707,
+          "desc": "左翻滚 接石头人磕头"
         },
 
         {

@@ -79,7 +79,7 @@
     "BulletCanThroughBlockage": 0
   },
   {
-    "desc": "金沙",
+    "desc": "金沙爆炸",
     "ID": 74011107,
     "HitEffectsforChr": [74019202, 910460],
     "HitDestructibleStrengthType": 4
@@ -315,5 +315,20 @@
     "BulletCanThroughBlockage": 1,
     "BulletSweepCheckDelayTime": 0.0,
     "BulletSweepCheckGap": 5
+  },
+
+
+  {
+    "ID": 74011112,
+    "desc": "巨猿三连扔/第二扔 火球",
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
+  },
+
+   {
+    "ID": 74011102,
+    "desc": "巨猿三连扔/第三扔 金沙爆炸",
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
   }
 ]

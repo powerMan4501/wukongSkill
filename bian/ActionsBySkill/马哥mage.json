@@ -4,7 +4,8 @@
     "desc": "马哥红鞭，q1",
     "montage_config": {
       "speedRate": 1.4,
-      "AMSpeedRate": 1.4
+      "AMSpeedRate": 1.4,
+      "addRadius": 100
     },
     "cast_actions": [
       {
@@ -35,7 +36,8 @@
     "desc": "马哥红鞭，q2",
     "montage_config": {
       "speedRate": 1.4,
-      "AMSpeedRate": 1.4
+      "AMSpeedRate": 1.4,
+      "addRadius": 100
     },
     "cast_actions": [
       {
@@ -66,7 +68,8 @@
     "desc": "马哥红鞭，q3",
     "montage_config": {
       "speedRate": 1.4,
-      "AMSpeedRate": 1.4
+      "AMSpeedRate": 1.4,
+      "addRadius": 100
     },
     "cast_actions": [
       {
@@ -97,7 +100,8 @@
     "desc": "马哥红鞭，q4",
     "montage_config": {
       "speedRate": 1.4,
-      "AMSpeedRate": 1.4
+      "AMSpeedRate": 1.4,
+      "addRadius": 100
     },
     "cast_actions": [
       {
@@ -127,7 +131,8 @@
     "desc": "马哥右键红鞭，q1",
     "montage_config": {
       "speedRate": 1.4,
-      "AMSpeedRate": 1.4
+      "AMSpeedRate": 1.4,
+      "addRadius": 100
     },
     "cast_actions": [
       {
@@ -157,7 +162,8 @@
     "desc": "马哥右键红鞭，q2",
     "montage_config": {
       "speedRate": 1.4,
-      "AMSpeedRate": 1.4
+      "AMSpeedRate": 1.4,
+      "addRadius": 100
     },
     "cast_actions": [
       {
@@ -188,7 +194,8 @@
     "desc": "马哥右键红鞭，q3",
     "montage_config": {
       "speedRate": 1.4,
-      "AMSpeedRate": 1.4
+      "AMSpeedRate": 1.4,
+      "addRadius": 100
     },
     "cast_actions": [
       {
@@ -219,7 +226,8 @@
     "desc": "马哥右键红鞭，q4",
     "montage_config": {
       "speedRate": 1.4,
-      "AMSpeedRate": 1.4
+      "AMSpeedRate": 1.4,
+      "addRadius": 100
     },
     "cast_actions": [
       {
@@ -249,7 +257,8 @@
     "desc": "马哥雷鞭，q1",
     "montage_config": {
       "speedRate": 1.4,
-      "AMSpeedRate": 1.4
+      "AMSpeedRate": 1.4,
+      "addRadius": 100
     },
     "cast_actions": [
       {
@@ -280,7 +289,8 @@
     "desc": "马哥雷鞭，q2",
     "montage_config": {
       "speedRate": 1.4,
-      "AMSpeedRate": 1.4
+      "AMSpeedRate": 1.4,
+      "addRadius": 100
     },
     "cast_actions": [
       {
@@ -313,6 +323,7 @@
     "montage_config": {
       "speedRate": 1.4,
       "AMSpeedRate": 1.4,
+      "addRadius": 100,
       "hitEffects": [888555003],
       "replaceEffects": true
     },
@@ -346,6 +357,7 @@
     "montage_config": {
       "speedRate": 1.4,
       "AMSpeedRate": 1.4,
+      "addRadius": 100,
       "hitEffects": [888555003],
       "replaceEffects": true
     },
@@ -379,7 +391,8 @@
     "desc": "马哥法术，雷电",
     "montage_config": {
       "speedRate": 1.4,
-      "AMSpeedRate": 1.4
+      "AMSpeedRate": 1.4,
+      "addRadius": 100
     },
     "cast_actions": [
       {

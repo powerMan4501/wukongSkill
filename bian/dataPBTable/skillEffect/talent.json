@@ -7,10 +7,16 @@
     "TargetCount": 1,
     "TargetFilter": 4,
     "EffectParamsInt": [10, 25, 3, 0, 3, 2, 4444401],
-    "EffectParamsFloat": [500.0, 400.0, 10000.0, 0.0, 1500.0, 0.0, 0.0],
+    "EffectParamsFloat": [200.0, 200.0, 10000.0, 0.0, 1500.0, 0.0, 0.0],
     "EffectParamsStr": ["无"]
   },
-
+  {
+    "ID": 1099944,
+    "desc": "磐锤伤害",
+    "EffectParamsInt": [71, 21, 0, 0, 0, 0, 4444404],
+    "EffectParamsFloat": [400.0, 400.0, 15000.0, 0.0, 0.0, 0.0, 400.0],
+    "EffectParamsStr": ["【主角】蓄力1"]
+  },
   {
     "ID": 1099916,
     "desc": "进尺万剑归宗，飞剑伤害",

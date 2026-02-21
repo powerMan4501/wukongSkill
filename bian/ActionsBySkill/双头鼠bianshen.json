@@ -1,0 +1,277 @@
+[
+  {
+    "skillID": 15010,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 40100101,
+            "ForTarget": true,
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 15011,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 40100101,
+            "ForTarget": true,
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 15012,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 40100101,
+            "ForTarget": true,
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 15013,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 40100101,
+            "ForTarget": true,
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 15030,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 40100101,
+            "ForTarget": true,
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 15031,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 40100101,
+            "ForTarget": true,
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 15032,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 40100101,
+            "ForTarget": true,
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 15033,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 40100101,
+            "ForTarget": true,
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 15039,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 40100101,
+            "ForTarget": true,
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 15040,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 40100101,
+            "ForTarget": true,
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 15041,
+    "desc": "平A",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 40100101,
+            "ForTarget": true,
+            "desc": "火球"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 15033,
+    "montage": "AM_player_lys_shu_R2_loop_",
+    "desc": "喷火 loop",
+    "montage_config": {
+      "addRadius": 100
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileIDs": [40100101, 40550101],
+            "ForTarget": true,
+            "desc": "火球,鳖宝子弹"
+          }
+        ]
+      }
+    ]
+  }
+]

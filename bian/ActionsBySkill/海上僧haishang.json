@@ -1,7 +1,55 @@
 [
   {
+    "skillID": 16011,
+    "desc": "海上僧平A",
+    "montage": ".AM_player_lys_yao_R1_0",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 30020202,
+            "ForTarget": true,
+            "desc": "雪球，击中爆炸"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 16032,
+    "desc": "海上僧右键平A",
+    "montage": ".AM_player_lys_yao_R2_0",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 30020202,
+            "ForTarget": true,
+            "desc": "雪球，击中爆炸"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "skillID": 16071,
     "desc": "海上僧冰法术",
+    "montage": ".AM_player_lys_yao_Fashu_",
     "montage_config": {
       "speedRate": 1.8,
       "AMSpeedRate": 1.8

@@ -15,7 +15,6 @@
     "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
   },
 
- 
   {
     "ID": 1801100,
     "desc": "虫变身，移除淬毒buff的效果，改成添加buff",
@@ -23,5 +22,52 @@
     "EffectParamsInt": [18030],
     "EffectParamsFloat": [0.0],
     "EffectParamsStr": []
+  },
+  {
+    "ID": 1503101,
+    "desc": "双头鼠喷火伤害",
+    "EffectParamsInt": [10, 25, 3, 0, 4, 2],
+    "EffectParamsFloat": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
+  },
+  {
+    "ID": 1503102,
+    "desc": "双头鼠喷火消耗神力",
+    "EffectParamsFloat": [0.1]
+  },
+  {
+    "ID": 1503103,
+    "desc": "双头鼠喷火消耗棍势改成增加棍势",
+    "EffectParamsInt": [0],
+    "EffectParamsFloat": [1.0]
+  },
+  {
+    "ID": 1503111,
+    "desc": "双头鼠喷火伤害",
+    "EffectParamsInt": [10, 25, 3, 0, 4, 2, 4444401],
+    "EffectParamsFloat": [100.0, 100.0, 9000.0, 0.0, 0.0, 0.0, 50.0],
+    "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
+  },
+  {
+    "ID": 1503121,
+    "desc": "双头鼠喷火伤害",
+    "EffectParamsInt": [10, 25, 3, 0, 4, 2, 4444401],
+    "EffectParamsFloat": [200.0, 200.0, 13050.0, 0.0, 0.0, 0.0, 80.0],
+    "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
+  },
+  {
+    "ID": 1503131,
+    "desc": "双头鼠喷火伤害",
+    "EffectParamsInt": [10, 25, 3, 0, 4, 2, 4444401],
+    "EffectParamsFloat": [300.0, 300.0, 15300.0, 0.0, 0.0, 0.0, 90.0],
+    "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
+  },
+
+  {
+    "ID": 44060701,
+    "desc": "巨猿元气弹",
+    "EffectParamsInt": [10, 25, 2, 0, 0, 0, 4444404],
+    "EffectParamsFloat": [400.0, 400.0, 43800.0, 0.0, 0.0, 0.0, 400.0],
+    "EffectParamsStr": ["【怪物】打断轻棍终结"]
   }
 ]

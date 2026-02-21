@@ -8,14 +8,14 @@
     "SweepActions": [
       {
         "Type": "bullet",
+        "TimeDelay": 80,
         "bullets": [
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 1016201,
-            "ForTarget": true,
-            "SpeedLeftValue": 16000,
-            "SpeedRightValue": 16000,
-            "desc": "发射巴山虎"
+            "ProjectTileIDs": [1016201, 44072201],
+            "SpeedLeftValue": 9000,
+            "SpeedRightValue": 9000,
+            "desc": "发射巴山虎,剑气"
           }
         ]
       }

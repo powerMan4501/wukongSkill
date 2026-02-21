@@ -16,46 +16,35 @@
     "afterActions": [
       {
         "Type": "bullet",
-        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-        "ProjectTileIDs": [30180703],
-        "desc": "30180703"
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+        "ProjectTileID": 10380101,
+        "ForTarget": true,
+        "desc": "发射蛇毒"
       }
     ]
   },
 
-  
   {
     "code": "zds",
     "afterActions": [
-      {
+       {
         "Type": "bullet",
-        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-        "ProjectTileIDs": [30180601],
-        "desc": "30180601"
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+        "ProjectTileID": 40120301,
+        "ForTarget": true,
+        "desc": "发射鬼火"
       }
     ]
   },
-
-   {
-    "code": "zdd",
+  {
+    "code": "zdw",
     "afterActions": [
-      {
+       {
         "Type": "bullet",
-        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-        "ProjectTileIDs": [30180603],
-        "desc": "30180603"
-      }
-    ]
-  },
-
-   {
-    "code": "zdg",
-    "afterActions": [
-      {
-        "Type": "bullet",
-        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-        "ProjectTileIDs": [30180701],
-        "desc": "30180701"
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+        "ProjectTileID": 40121801,
+        "ForTarget": true,
+        "desc": "发射鬼火"
       }
     ]
   }

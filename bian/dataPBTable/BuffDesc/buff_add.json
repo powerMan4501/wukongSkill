@@ -33,7 +33,7 @@
   },
   {
     "ID": 888665002,
-    "BuffTips": "变身专属，50%减伤，2倍速度, 造成伤害回血",
+    "BuffTips": "变身专属，3.5倍速度, 受击恢复棍势",
     "Duration": -1,
     "BuffEffects": [
       {
@@ -42,24 +42,24 @@
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
         "EffectParams": [],
-        "EffectParamsFloat": [25000.0, 25000.0, 25000.0]
+        "EffectParamsFloat": [35000.0, 35000.0, 35000.0]
       },
 
       {
-        "EffectTrigger": 1,
-        "EffectType": 2,
+        "EffectTrigger": 7,
+        "EffectType": 134,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [120, 5000, 0],
-        "EffectParamsFloat": []
+        "EffectParams": [0],
+        "EffectParamsFloat": [10.0]
       },
-      {
-        "EffectTrigger": 14,
-        "EffectType": 3,
+       {
+        "EffectTrigger": 12,
+        "EffectType": 134,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [151, 100, 0, 0],
-        "EffectParamsFloat": []
+        "EffectParams": [0],
+        "EffectParamsFloat": [2.0]
       }
     ]
   },

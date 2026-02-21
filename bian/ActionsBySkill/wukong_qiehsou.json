@@ -210,8 +210,10 @@
               },
 
               {
-                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [151],
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30131501,
+                "SpeedLeftValue": 15000,
+                "SpeedRightValue": 15000,
                 "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
                 "OffsetX": 700,
                 "OffsetY": 700,
@@ -341,11 +343,20 @@
               },
               {
                 "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-                "ProjectTileIDs": [50033000, 74010403, 51002002],
-                "noHasAnyBuff": [888666005, 888666006, 888666007],
+                "ProjectTileIDs": [50033000, 74010403, 74011107],
+                "hasBuff": 888666008,
                 "OffsetX": 700,
                 "OffsetY": 700,
-                "desc": "没有雷火冰buff，毒液池，泥浆，猪八戒"
+                "desc": "毒buff，毒液池，泥浆，金沙爆炸"
+              },
+
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [144, 151, 74010403],
+                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+                "OffsetX": 700,
+                "OffsetY": 700,
+                "desc": "没有buff，尖刺，磐锤，石头爆炸"
               }
             ]
           },

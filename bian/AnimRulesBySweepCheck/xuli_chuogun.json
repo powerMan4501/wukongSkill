@@ -50,14 +50,13 @@
           },
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 30142501,
+            "ProjectTileID": 74011102,
             "hasBuff": 888666005,
             "SpeedLeftValue": 5000,
             "SpeedRightValue": 5000,
             "ForTarget": true,
-            "BulletNumInOneWave": 5,
             "spawnBaseSocketName": "weapon_r_index_07",
-            "desc": "雷buff，雷球"
+            "desc": "雷buff，巨猿扔的元气弹"
           },
 
           {

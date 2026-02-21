@@ -23,11 +23,7 @@
   "Level1Scale": 1.0,
   "Level2Scale": 1.0,
   "DisableDepthOfField": false,
-  "TransDone": {
-    "Buffers": [
-      96009
-    ]
-  },
+
   "XRate": -400.0,
   "ZRate": 100.0,
   "Skills": [
@@ -42,11 +38,8 @@
     {
       "Key": "S+RBUTTON",
       "Id": 13071,
-      "Name": "挑起砸地面---大范围",
-      "CanBreak": false,
-      "Buffers": [
-        1000095
-      ]
+      "Name": "法术，跳起磕头",
+      "CanBreak": false
     },
     {
       "Id": 200703,
@@ -56,7 +49,7 @@
     },
     {
       "Key": "S+XBUTTON2",
-      "Id": 13012,
+      "Id": 13032,
       "Name": "向前跑一下--砸地面",
       "CanBreak": true,
       "Buffers": [

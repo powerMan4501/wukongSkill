@@ -580,8 +580,6 @@
     ]
   },
 
-
-
   {
     "skillID": 14050,
     "desc": "L2_start",
@@ -604,8 +602,7 @@
     ]
   },
 
-
-   {
+  {
     "skillID": 14051,
     "desc": "L2_start_01",
     "montage_config": {
@@ -626,7 +623,6 @@
       }
     ]
   },
-
 
   {
     "skillID": 14052,
@@ -650,7 +646,7 @@
     ]
   },
 
-   {
+  {
     "skillID": 14053,
     "desc": "L2_start_03",
     "montage_config": {
@@ -672,7 +668,7 @@
     ]
   },
 
-   {
+  {
     "skillID": 14057,
     "desc": "L2_end",
     "montage_config": {
@@ -716,7 +712,7 @@
     ]
   },
 
-   {
+  {
     "skillID": 14060,
     "desc": "dodge",
     "montage_config": {
@@ -732,6 +728,62 @@
             "attrType": 191,
             "attrValue": 10,
             "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14080,
+    "montage": ".AM_player_hfm_hu_R1_Lv3_0",
+    "desc": "Q1",
+    "montage_config": {
+      "speedRate": 1.5,
+      "AMSpeedRate": 1.5,
+      "addRadius": 500
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 14111,
+    "montage": ".AM_player_hfm_hu_Fast_R1_0",
+    "desc": "Q1",
+    "montage_config": {
+      "speedRate": 1.5,
+      "AMSpeedRate": 1.5,
+      "addRadius": 500
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "add_attr",
+            "attrType": 191,
+            "attrValue": 10,
+            "desc": "回棍势"
+          },
+           {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1016262],
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "desc": "巴山虎"
           }
         ]
       }
