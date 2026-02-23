@@ -63,29 +63,7 @@
     ]
   },
 
-  {
-    "desc": "岩浆石头人，跳起来磕头",
-    "montage": "AM_hys_shanzhen_01_atk_fast_07",
-    "linkValue": 0,
-    "addRadius": 100,
-    "speedRate": 1.5,
-    "SweepActions": [
-      {
-        "Type": "bullet",
-        "bullets": [
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [58111003, 74010207],
-            "OffsetX": 200,
-            "OffsetY": 200,
-            "desc": "石先锋岩浆"
-          }
-        ]
-      }
-    ],
-    "hitEffects": [888555034],
-    "replaceEffects": true
-  },
+
   {
     "desc": "岩浆石头人，冲撞最后一击",
     "montage": "AM_hys_shanzhen_01_atk_fast_03",

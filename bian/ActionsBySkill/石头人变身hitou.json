@@ -1,5 +1,36 @@
 [
   {
+    "skillID": 580107,
+    "desc": "岩浆石头人 跳起来砸",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 900
+    },
+    "sweep_actions": [
+
+      {
+        "linkValue": 3.487771,
+        "actions": [
+          { "Type": "out_magic", "TimeDelay": 800, "desc": "退出精魄" }
+        ]
+      },
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1013702, 58111003, 40550101],
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "desc": "石先锋岩浆,岩浆,鳖宝子弹"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "skillID": 13071,
     "desc": "石头人法术，磕头",
     "montage_config": {

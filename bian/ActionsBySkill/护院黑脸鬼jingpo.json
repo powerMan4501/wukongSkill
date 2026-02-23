@@ -1,0 +1,301 @@
+[
+  {
+    "skillID": 10135,
+    "desc": "鳖宝精魄技能",
+    "montage_config": {
+      "speedRate": 1.5,
+      "AMSpeedRate": 1.5,
+      "addRadius": 800
+    },
+    "effect_actions": [
+      {
+        "ID": 1013502,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40550101, 44011401],
+            "desc": "鳖宝子弹，红孩儿砸地"
+          }
+        ]
+      },
+
+      {
+        "ID": 1013501,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [140],
+            "desc": "业火"
+          }
+        ]
+      },
+      {
+        "ID": 1013503,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [140],
+            "desc": "业火"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 405507,
+    "desc": "鳖宝飞起坐地上",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 800
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "OffsetX": 600,
+            "OffsetY": 600,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [58111003, 44010401],
+            "desc": "石先锋岩浆,炸炸炸"
+          },
+          { "Type": "out_magic", "TimeDelay": 1100, "desc": "退出精魄" }
+        ]
+      }
+    ],
+    "effect_actions": [
+      {
+        "ID": 40250102,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40550101],
+            "desc": "鳖宝子弹"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 405513,
+    "desc": "锤子砸",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 200
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 1.719286,
+        "actions": [
+          {
+            "Type": "bullet",
+            "OffsetX": 400,
+            "OffsetY": 400,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [44011401, 140],
+            "desc": "红孩儿砸地,业火"
+          }
+        ]
+      }
+    ]
+  },
+   {
+    "skillID": 405512,
+    "desc": "举起锤子 砸下去",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3,
+      "addRadius": 200
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "OffsetX": 400,
+            "OffsetY": 400,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [44011401, 140],
+            "desc": "红孩儿砸地,业火"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 405504,
+    "desc": "举起锤子 砸下去",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3,
+      "addRadius": 200
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "OffsetX": 400,
+            "OffsetY": 400,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [44011401, 140],
+            "desc": "红孩儿砸地,业火"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 10187,
+    "desc": "牯都督",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 200
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666007],
+        "BuffTime": -1,
+        "desc": "添加火buff"
+      }
+    ],
+    "effect_actions": [
+      {
+        "ID": 1018701,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40100201],
+            "desc": "大一点的火球"
+          }
+        ]
+      },
+      {
+        "ID": 1018702,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40550101, 58111003],
+            "desc": "鳖宝子弹,岩浆"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 402501,
+    "desc": "快速往前跑两步再垂直劈下岩浆",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 800
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "OffsetX": 600,
+            "OffsetY": 600,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [58111003, 44011401],
+            "desc": "岩浆,红孩儿砸地"
+          },
+          { "Type": "out_magic", "TimeDelay": 1100, "desc": "退出精魄" }
+        ]
+      }
+    ],
+    "effect_actions": [
+      {
+        "ID": 40250102,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [40550101],
+            "desc": "鳖宝子弹"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 402504,
+    "desc": "连劈两下再跳起劈下",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 200
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 2.333007,
+        "actions": [
+          { "Type": "out_magic", "TimeDelay": 500, "desc": "退出精魄" }
+        ]
+      },
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [58111003, 44011401, 40550101],
+            "desc": "岩浆,红孩儿砸地，鳖宝子弹"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 10186,
+    "desc": "黑脸鬼",
+    "montage_config": {
+      "speedRate": 1.8,
+      "AMSpeedRate": 1.8,
+      "addRadius": 200
+    },
+    "cast_actions": [
+      {
+        "Type": "buff",
+        "BuffIDs": [888666007],
+        "BuffTime": -1,
+        "desc": "添加火buff"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 2.366667,
+        "actions": [
+          {
+            "Type": "bullet",
+            "OffsetX": 300,
+            "OffsetY": 300,
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [140, 44011401, 40550101],
+            "desc": "业火,红孩儿砸地，鳖宝子弹"
+          }
+        ]
+      }
+    ]
+  }
+]

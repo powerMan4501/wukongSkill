@@ -193,5 +193,49 @@
         "desc": "360连续大横扫好几次"
       }
     ]
+  },
+  {
+    "code": "dudu",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8587,
+        "MagicSkillID": 402504,
+        "desc": "都督连劈两下再跳起劈下"
+      }
+    ]
+  },
+  {
+    "code": "duw",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8587,
+        "MagicSkillID": 402501,
+        "desc": "快速往前跑两步再垂直劈下岩浆"
+      }
+    ]
+  },
+  {
+    "code": "jniao",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8535,
+        "MagicSkillID": 405507,
+        "desc": "鳖宝 飞起坐地上"
+      }
+    ]
+  },
+  {
+    "code": "jncui",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8535,
+        "MagicSkillID": 405512,
+        "desc": "鳖宝 锤子砸，一点索敌"
+      }
+    ]
   }
 ]

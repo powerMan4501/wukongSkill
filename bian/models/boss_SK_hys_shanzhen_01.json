@@ -110,7 +110,7 @@
     {
       "Id": 580107,
       "CanBreak": true,
-      "Name": "跳起来磕头",
+      "Name": "岩浆，跳起来磕头",
       "Key": "XBUTTON1",
       "Step": 1,
       "Buffs": [

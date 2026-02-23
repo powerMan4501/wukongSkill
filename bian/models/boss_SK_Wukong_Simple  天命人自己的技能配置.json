@@ -127,7 +127,9 @@
           "Type": "skill",
           "skillIndexs": [0],
           "skillValues": [
-            10881, 10882, 10883, 7, 10885, 10886, 10887, 10888, 10889, 10890
+            10881, 10882, 10883, 10884, 10885,
+
+            10886, 10887, 10888, 10889, 10890
           ],
           "SkillID": 84321033,
           "desc": "侧键1，戳棍蓄力, 大范围横扫"
@@ -303,7 +305,7 @@
         },
         {
           "skillIndexs": [0],
-          "skillValues": [10860, 10861, 10862, 10863, 10864],
+          "skillValues": [10862, 10863, 10864],
           "type": "transskill",
           "ResId": 12,
           "MagicSkillID": 12044,
@@ -312,9 +314,7 @@
 
         {
           "skillIndexs": [0],
-          "skillValues": [
-            10830, 10831, 10832, 10833, 10834, 50020, 50021, 50022, 50023, 50024
-          ],
+          "skillValues": [10832, 10833, 10834, 50021, 50022, 50023, 50024],
           "type": "transskill",
           "ResId": 17,
           "MagicSkillID": 17333,
@@ -323,14 +323,69 @@
 
         {
           "skillIndexs": [0],
+          "skillValues": [10811, 10812],
+          "type": "bossskill",
+          "bossLabel": "SK_hys_shanzhen_01",
+          "bossType": "BOSS",
+          "MagicSkillID": 580107,
+          "desc": "侧键2 立棍0/1蓄力start 岩浆石头人跳起来磕头"
+        },
+        {
+          "skillIndexs": [0],
           "skillValues": [
-            10880, 10881, 10882, 10883, 10884, 10885, 10886, 10887, 10888,
-            10889, 10890
+            10835, 10836,
+
+            10870, 10871,
+
+            10875, 10876
+          ],
+          "type": "bossskill",
+          "bossLabel": "SK_HYS_HongHaiEr_02A",
+          "bossType": "BOSS",
+          "MagicSkillID": 440534,
+          "desc": "侧键2 0/1蓄力start 夜叉王横扫"
+        },
+        {
+          "skillIndexs": [0],
+          "skillValues": [10830, 10831, 50020],
+          "type": "bossskill",
+          "bossLabel": "SK_LuoChaGui_01",
+          "bossType": "BOSS",
+          "MagicSkillID": 401211,
+          "desc": "侧键2，劈棍0/1蓄力 鬼王一拳打在地上触发范围火"
+        },
+        {
+          "skillIndexs": [0],
+          "skillValues": [10860, 10861],
+          "type": "magicskill",
+          "magicID": 8535,
+          "MagicSkillID": 405504,
+          "desc": "侧键2，立棍0/1蓄力 鳖宝 斜着砸下去，一点索敌，带火"
+        },
+
+        {
+          "skillIndexs": [0],
+          "skillValues": [
+            10881, 10882,
+
+            10886, 10887
+          ],
+          "type": "magicskill",
+          "magicID": 8535,
+          "MagicSkillID": 405507,
+          "desc": "侧键2，戳棍0/1蓄力 鳖宝 飞起坐地上"
+        },
+        {
+          "skillIndexs": [0],
+          "skillValues": [
+            10872, 10873, 10874, 10883, 10884, 10885,
+
+            10877, 10878, 10879, 10888, 10889, 10890
           ],
           "type": "transskill",
           "ResId": 19,
           "MagicSkillID": 19043,
-          "desc": "变成小黄龙"
+          "desc": "侧键2，戳棍2/3/4蓄力,变成小黄龙"
         },
         {
           "montageIndex": 0,
@@ -384,11 +439,11 @@
         },
         {
           "type": "magicskill",
-          "magicID": 8570,
+          "magicID": 8587,
           "Scale3D": 0.9,
           "skillIndexs": [0],
           "skillValues": [10713],
-          "desc": "退寸接地狼"
+          "desc": "退寸牯都督"
         },
         {
           "type": "magicskill",
@@ -422,13 +477,12 @@
         },
 
         {
-          "Type": "bossskill",
-          "bossLabel": "SK_LuoChaGui_01",
-          "bossType": "BOSS",
-          "MagicSkillID": 401211,
+          "type": "magicskill",
+          "magicID": 8587,
+          "MagicSkillID": 402501,
           "skillIndexs": [0],
           "skillValues": [50002, 10707],
-          "desc": "XBUTTON2 斩棍接鬼王一拳打在地上触发范围火"
+          "desc": "XBUTTON2 快速往前跑两步再垂直劈下岩浆"
         },
 
         {
@@ -442,13 +496,12 @@
         },
 
         {
-          "Type": "bossskill",
-          "bossLabel": "SK_LYS_HuangMei_03",
-          "bossType": "BOSS",
-          "MagicSkillID": 380023,
+          "type": "magicskill",
+          "magicID": 8511,
+          "MagicSkillID": 100301,
           "skillIndexs": [0],
           "skillValues": [84321030],
-          "desc": "筋斗云大风车 接黄眉身体爆发大量雷电，伤害高 "
+          "desc": "筋斗云大风车 接广谋开局技能，丢出很多光球 "
         },
         {
           "type": "magicskill",
@@ -527,10 +580,11 @@
 
         {
           "type": "magicskill",
-          "magicID": 8520,
+          "magicID": 8587,
+          "MagicSkillID": 402504,
           "skillIndexs": [0],
           "skillValues": [10700, 10701],
-          "desc": "枪平A1接 不空"
+          "desc": "枪平A1接  都督连劈两下再跳起劈下"
         },
 
         {
@@ -957,6 +1011,18 @@
     },
 
     {
+      "Key": "NUMPAD5",
+      "type": "actions",
+      "afterActions": [
+        {
+          "type": "magicskill",
+          "magicID": 8513,
+          "resetBack": false,
+          "Name": "大头磕头"
+        }
+      ]
+    },
+    {
       "Id": 8534,
       "type": "magic",
       "CanBreak": false,
@@ -966,28 +1032,19 @@
       "Description": "",
       "Key": "NUMPAD6"
     },
-
     {
-      "Id": 8513,
-      "type": "magic",
-      "CanBreak": false,
-      "Name": "大头磕头",
-      "needBack": true,
-      "Description": "",
-      "backTime": 1700,
-      "Key": "NUMPAD5"
-    },
+      "Key": "NUMPAD7",
+      "type": "actions",
+      "afterActions": [
+        {
+          "type": "magicskill",
+          "magicID": 8513,
+          "MagicSkillID": 102433,
 
-    {
-      "Id": 8513,
-      "type": "magic",
-      "CanBreak": false,
-      "Name": "大头排云掌",
-      "needBack": true,
-      "backTime": 2500,
-      "MagicSkillID": 102433,
-      "Description": "",
-      "Key": "NUMPAD7"
+          "resetBack": false,
+          "Name": "大头磕头"
+        }
+      ]
     },
 
     {

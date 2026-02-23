@@ -397,26 +397,10 @@
     },
 
     {
-      "Name": "鳖宝锤子/飞天大坐/夜叉王地刺/鼠弩手",
+      "Name": "鼠弩手",
       "Description": "",
       "Filters": [
-        {
-          "Type": "effect",
-          "EffectID": 40551201
-        },
-        {
-          "Type": "effect",
-          "EffectID": 40551202
-        },
-
-        {
-          "Type": "effect",
-          "EffectID": 40551301
-        },
-        {
-          "Type": "effect",
-          "EffectID": 40550701
-        },
+      
         {
           "Type": "effect",
           "EffectID": 1016901

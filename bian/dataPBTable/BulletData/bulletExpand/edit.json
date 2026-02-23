@@ -317,7 +317,6 @@
     "BulletSweepCheckGap": 5
   },
 
-
   {
     "ID": 74011112,
     "desc": "巨猿三连扔/第二扔 火球",
@@ -325,9 +324,17 @@
     "BulletCanThroughBlockage": 1
   },
 
-   {
+  {
     "ID": 74011102,
     "desc": "巨猿三连扔/第三扔 金沙爆炸",
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
+  },
+  {
+    "ID": 20010102,
+    "desc": "寅虎刀气",
+    "LifeOverEffectID": [9999],
+    "HitEffectsforChr": [1016262],
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1
   }

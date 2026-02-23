@@ -13,7 +13,7 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 40100101,
+            "ProjectTileIDs": [40100101],
             "ForTarget": true,
             "desc": "火球"
           }
@@ -36,7 +36,7 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 40100101,
+            "ProjectTileIDs": [40100101],
             "ForTarget": true,
             "desc": "火球"
           }
@@ -59,7 +59,7 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 40100101,
+            "ProjectTileIDs": [40100101],
             "ForTarget": true,
             "desc": "火球"
           }
@@ -82,7 +82,7 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 40100101,
+            "ProjectTileIDs": [40100101],
             "ForTarget": true,
             "desc": "火球"
           }
@@ -105,7 +105,7 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 40100101,
+            "ProjectTileIDs": [40100101],
             "ForTarget": true,
             "desc": "火球"
           }
@@ -128,7 +128,7 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 40100101,
+            "ProjectTileIDs": [40100101],
             "ForTarget": true,
             "desc": "火球"
           }
@@ -151,7 +151,7 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 40100101,
+            "ProjectTileIDs": [40100101],
             "ForTarget": true,
             "desc": "火球"
           }
@@ -174,7 +174,7 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 40100101,
+            "ProjectTileIDs": [40100101],
             "ForTarget": true,
             "desc": "火球"
           }
@@ -197,7 +197,7 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 40100101,
+            "ProjectTileIDs": [40100101],
             "ForTarget": true,
             "desc": "火球"
           }
@@ -220,7 +220,7 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 40100101,
+            "ProjectTileIDs": [40100101],
             "ForTarget": true,
             "desc": "火球"
           }
@@ -243,7 +243,7 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 40100101,
+            "ProjectTileIDs": [40100101],
             "ForTarget": true,
             "desc": "火球"
           }
@@ -257,7 +257,9 @@
     "montage": "AM_player_lys_shu_R2_loop_",
     "desc": "喷火 loop",
     "montage_config": {
-      "addRadius": 100
+      "addRadius": 100,
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
     },
     "sweep_actions": [
       {
@@ -266,7 +268,7 @@
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileIDs": [40100101, 40550101],
+            "ProjectTileIDs": [40100201, 40550101],
             "ForTarget": true,
             "desc": "火球,鳖宝子弹"
           }

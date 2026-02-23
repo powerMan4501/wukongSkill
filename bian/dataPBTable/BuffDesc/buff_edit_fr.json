@@ -36,12 +36,27 @@
     ]
   },
   {
+    "ID": 15030,
+    "BuffTips": "【鼠】变身-蓄力逻辑Buff | 0.【棍势】每0.1s-(-)10点棍势  改成加1棍势",
+    "Interval": 1000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0],
+        "EffectParamsFloat": [1.0]
+      }
+    ]
+  },
+  {
     "ID": 15050,
     "BuffTips": "【鼠】变身-油雾法术场+火焰法术场=(油雾法术场)爆炸 | ※※※※15050=15080+15072[New]※※※※ | 0.球12m|99|580%|5档 | 1.播放屏幕震动",
     "Range": {
       "RangeType": 4,
       "RangeCenterType": 0,
-      "RangeParam": [4200]
+      "RangeParam": [4000]
     },
     "BuffEffects": [
       {
@@ -50,7 +65,9 @@
         "EffectTargetSelectType": 0,
         "EffectParamsString": ["【主角】蓄力4"],
         "EffectParams": [25, 3, 1, 1, 2, 0, 0, 4],
-        "EffectParamsFloat": [1740.0, 740.0, 70500.0, 1.0, 0.0, 0.0, 0.0, 0.0]
+        "EffectParamsFloat": [
+          740.0, 740.0, 70500.0, 1.0, 500.0, 500.0, 500.0, 500.0
+        ]
       }
     ]
   },
@@ -69,7 +86,9 @@
         "EffectTargetSelectType": 0,
         "EffectParamsString": ["【主角】蓄力2"],
         "EffectParams": [25, 3, 1, 1, 2, 0, 0, 4],
-        "EffectParamsFloat": [0.0, 400.0, 11000.0, 1.0, 0.0, 0.0, 0.0, 0.0]
+        "EffectParamsFloat": [
+          400.0, 400.0, 11000.0, 1.0, 400.0, 400.0, 400.0, 400.0
+        ]
       }
     ]
   },
@@ -246,7 +265,7 @@
         "EffectParamsFloat": []
       },
 
-        {
+      {
         "desc": "毒液池",
         "EffectTrigger": 1,
         "EffectType": 20,
@@ -285,7 +304,7 @@
         "EffectParamsFloat": []
       },
 
-       {
+      {
         "desc": "毒液池",
         "EffectTrigger": 1,
         "EffectType": 20,
@@ -363,7 +382,7 @@
         "EffectParamsFloat": []
       },
 
-    {
+      {
         "desc": "大范围毒气",
         "EffectTrigger": 1,
         "EffectType": 20,

@@ -1,0 +1,14 @@
+[
+  {
+    "ID": 10030101,
+    "desc": "广谋开局扔的光球，增加蛇毒",
+    "EffectParamsInt": [10, 25, 0, 0, 0, 0, 4444401],
+    "EffectParamsFloat": [100.0, 100.0, 15900.0, 0.0, 0.0, 0.0, 100.0],
+    "EffectParamsStr": [
+      "do_actions",
+      "bullet_ids:10030401",
+      "无",
+      "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+    ]
+  }
+]
