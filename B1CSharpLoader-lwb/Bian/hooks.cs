@@ -99,7 +99,7 @@ public class Hooks
 
             var player = Helper.GetBGUPlayerCharacterCS();
             if (player == null) return;
-            Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()}，owner：{NotifyParam.owner?.PathName}，player:{player.PathName}");
+            Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()}，owner：{NotifyParam.owner?.GetFName()}");
 
             if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner.PathName.ToLower().Contains("unit_player"))
             {
@@ -122,7 +122,6 @@ public class Hooks
                             var sweepItems = matchOne.sweep_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
                             if (sweepItems != null && sweepItems.actions != null && sweepItems.actions.Count > 0)
                             {
-                                Log.Info($"匹配成功 BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.PathName}，linkValue:{linkValue}，actions:{sweepItems.actions[0].desc}");
                                 var rule = new Rule();
                                 rule?.DoAfterActions(sweepItems.actions);
                             }
@@ -906,6 +905,7 @@ public class Hooks
     {
         if (SkillID > 0)
         {
+
             playSkillList.Insert(0, SkillID);
             // 保持列表长度在合理范围内
             if (playSkillList.Count > 5)
@@ -1637,11 +1637,34 @@ public class Hooks
                 var player = Helper.GetBGUPlayerCharacterCS();
                 if (player != null && player.PathName == owner.PathName)
                 {
-                    var meshName = owner.Mesh?.SkeletalMesh?.GetFullName();
-                    if (meshName != null && meshName.Contains("SK_Wukong_Simple") && !igoreSkillIds.Contains(SkillID))
+                    if (SkillID == 10199)
                     {
+                        InsertSkillID(Helper.enterSkillID);
+                        if (Helper.noResetCombo)
+                        {
+                            Helper.DelayExecute(800, () =>
+                            {
+                                Helper.updateNoResetCombo(false);
+                            });
+                        }
 
-                        Helper.DelayExecute(20, () =>
+
+                        // BUC_RollData RollData = BGU_DataUtil.GetUnPersistentReadOnlyData<BUC_RollData>(player);
+                        // var enterRollData = Helper.enterRollData;
+                        // if (RollData != null && enterRollData != null)
+                        // {
+                        //     RollData.DodgeStartSkillID = Helper.enterSkillID;
+                        //     RollData.CurStateIndex = enterRollData.CurStateIndex;
+                        //     RollData.RollCombo.Clear();
+                        //     RollData.RollCombo.AddRange(enterRollData.RollCombo);
+                        //     RollData.RollComboLoopStartIdx = enterRollData.RollComboLoopStartIdx;
+                        //     RollData.bCastRollingSkill = true;
+                        //     Log.Info($"从精魄技能变回来：DodgeStartSkillID：{RollData.DodgeStartSkillID}，CurStateIndex:{RollData?.CurStateIndex}, RollCombo:{string.Join(",", RollData?.RollCombo)}, RollComboLoopStartIdx:{RollData?.RollComboLoopStartIdx}, bCastRollingSkill:{RollData?.bCastRollingSkill}");
+                        // }
+                    }
+                    if (!igoreSkillIds.Contains(SkillID))
+                    {
+                        Helper.DelayExecute(10, () =>
                         {
                             InsertSkillID(SkillID);
                         });
@@ -1894,7 +1917,7 @@ public class Hooks
         {
 
             var PATH = InAkEventConfig.AkEvent?.PathName;
-            Helper.LogInfoOnce($"子弹播放声音 DoPlayAudio: pathname: \n {PATH}");
+            // Helper.LogInfoOnce($"子弹播放声音 DoPlayAudio: pathname: \n {PATH}");
             if (PATH != null)
             {
                 if (PATH.Contains("EVT_player_wk_bang_SanJianLiangRen_wjgz") || PATH.Contains("EVT_player_wk_tianfu_daosuanda"))
@@ -1915,24 +1938,6 @@ public class Hooks
 
     }
 
-
-    // [HarmonyPatch(typeof(BUS_PlayerInputActionComp), "OnInputCastSkill")]
-    // class BUS_PlayerInputActionComp_OnInputCastSkill_Patch
-    // {
-    //     static bool Prefix(BUS_PlayerInputActionComp __instance,
-    //         EInputActionType InputActionType,
-    //         bool IsRelease,
-    //         int SkillID,
-    //         int DescID,
-    //         int ItemID = -1)
-    //     {
-    //         Helper.LogInfoOnce($"玩家输入技能OnInputCastSkill InputActionType: {InputActionType}, IsRelease：{IsRelease}, SkillID：{SkillID}, DescID：{DescID}, ItemID：{ItemID}");
-
-    //         // 其他情况保持原逻辑
-    //         return true;
-    //     }
-
-    // }
 
 
 
@@ -2382,5 +2387,112 @@ public class Hooks
                 });
             }
         }
+    }
+
+
+    public static readonly List<int> LightAttackCombo = new List<int>{
+            50011, 50012, 50013, 50014, 50015,
+    };
+    public static readonly List<int> rightAttackCombo = new List<int>{
+            50001, 50002, 50003, 50004, 50005,50006,50007,50008
+    };
+    [HarmonyPatch]
+    public static class BUS_PlayerInputActionCompPatch
+    {
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BUS_PlayerInputActionComp), "OnInputCastSkill")]
+        static bool Prefix(BUS_PlayerInputActionComp __instance, EInputActionType InputActionType, bool IsRelease, ref int SkillID, int DescID, int ItemID)
+        {
+            var ower = __instance?.GetOwner();
+            if (Helper.isPlayVigorSkillByID)
+            {
+                return false;
+            }
+
+            return true; // 继续执行原始方法
+        }
+    }
+
+
+    [HarmonyPatch]
+    public static class OnComboGraphResetPatch
+    {
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BUS_PlayerInputActionComp), "OnComboGraphReset")]
+        static bool Prefix(BUS_PlayerInputActionComp __instance)
+        {
+            var ower = __instance?.GetOwner();
+            Log.Warn($"玩家连招重置 OnComboGraphReset：{Helper.noResetCombo}");
+            if (Helper.noResetCombo)
+            {
+                return false;
+            }
+            if (ower == null)
+            {
+                return true;
+            }
+            return true; // 继续执行原始方法
+        }
+
+    }
+
+
+    [HarmonyPatch]
+    public static class OnClearKeyCachePatch
+    {
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BUS_PlayerInputActionComp), "OnClearKeyCache")]
+        static bool Prefix()
+        {
+            Log.Warn($"玩家连招重置 OnClearKeyCache：{Helper.noResetCombo}");
+            if (Helper.noResetCombo)
+            {
+                return false;
+            }
+            return true; // 继续执行原始方法
+        }
+
+    }
+
+
+
+    [HarmonyPatch]
+    public static class OnTriggerVigorSkillPatch
+    {
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BUS_MagicallyChangeComp), "ClearVigorSkillData")]
+        static bool Prefix()
+        {
+            Log.Warn($"玩家连招重置 ClearVigorSkillData：{Helper.noResetCombo}");
+            if (Helper.noResetCombo)
+            {
+                return false;
+            }
+            return true; // 继续执行原始方法
+        }
+
+    }
+
+    [HarmonyPatch]
+    public static class OnVigorSkillResetPatch
+    {
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BUS_MagicallyChangeComp), "Reset")]
+        static bool Prefix()
+        {
+            if (Helper.noResetCombo)
+            {
+                Helper.DelayExecute(800, () =>
+                {
+                    Helper.updateNoResetCombo(false);
+                });
+            }
+            if (Helper.isPlayVigorSkillByID)
+            {
+                Helper.updateIsPlayVigorSkillByID(false);
+            }
+            return true; // 继续执行原始方法
+        }
+
     }
 }

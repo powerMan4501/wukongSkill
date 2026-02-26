@@ -1074,7 +1074,6 @@ namespace bian
                     {
                         if (skill?.type == "actions")
                         {
-                            Log.Info($"bian: actions {skill.type}");
                             if (skill?.afterActions != null && skill?.afterActions?.Count > 0)
                             {
                                 var rule = new Rule();

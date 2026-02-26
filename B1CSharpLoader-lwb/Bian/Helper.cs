@@ -20,10 +20,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using UnrealEngine.Engine;
-using UnrealEngine.Plugins.Niagara;
 using UnrealEngine.Runtime;
 using UnrealEngine.Runtime.Native;
 
@@ -33,6 +31,8 @@ namespace bian
     {
         public static bool is_bian_mod_stop = false;
         public static bool auto_attack = false;
+        public static int enterSkillID = 0;
+        public static BUC_RollData enterRollData = new BUC_RollData();
         private static UWorld? world;
         public static FCalliopeGuid? summonGuid;
 
@@ -769,6 +769,7 @@ namespace bian
         private static readonly Dictionary<string, BGWDataAsset_MagicallyChangeConfig> boss_vigorSkillConfigCache = new Dictionary<string, BGWDataAsset_MagicallyChangeConfig>();
 
         public static bool isPlayVigorSkillByID;
+        public static bool noResetCombo = false;
         public static int playVigorSkillID;
         public static BGUCharacterCS playVigorCharacter;
 
@@ -777,7 +778,10 @@ namespace bian
         {
             isPlayVigorSkillByID = isPlay;
         }
-
+        public static void updateNoResetCombo(bool isReset)
+        {
+            noResetCombo = isReset;
+        }
         public static void fenshenCastMagic(AActor Owner, string path, int skillID, int? recoverSkillID = 10199)
         {
             BUS_GSEventCollection BE_Owner = BUS_EventCollectionCS.Get(Owner);
@@ -844,20 +848,51 @@ namespace bian
             try
             {
                 isPlayVigorSkillByID = true;
-                BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
-                bUS_GSEventCollection?.Evt_UnitStateTrigger.Invoke(EBUStateTrigger.EnterMagicWindow, 5000);
+                noResetCombo = true;
+                // BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
+                // bUS_GSEventCollection?.Evt_UnitStateTrigger.Invoke(EBUStateTrigger.EnterMagicWindow, 5000);
+                BGUFunctionLibraryCS.BGUTriggerUnitState(character, EBUStateTrigger.AttackStateBegin, 5000);
+                BGUFunctionLibraryCS.BGUTriggerUnitState(character, EBUStateTrigger.EnterVigorKeyCache, 5000);
+                int currentLastSkillID = BGUFuncLibSkillCS.BGUGetLastSkillID(character);
+                // BUC_RollData RollData = BGU_DataUtil.GetUnPersistentReadOnlyData<BUC_RollData>(character);
 
-                DelayExecute(50, () =>
-                {
-                    List<int> _SkillBlackList = new List<int>();
-                    List<int> _SkillWhiteList = new List<int> { (int)finalId, 10199 };
+                enterSkillID = currentLastSkillID;
+                // if (RollData != null)
+                // {
+                //     enterRollData.DodgeStartSkillID = enterSkillID;
+                //     enterRollData.CurStateIndex = RollData.CurStateIndex;
+                //     enterRollData.RollCombo.Clear();
+                //     enterRollData.RollCombo.AddRange(RollData.RollCombo);
+                //     enterRollData.RollCombo.Add((int)finalId);
+                //     enterRollData.RollComboLoopStartIdx = RollData.RollComboLoopStartIdx;
+                //     enterRollData.bCastRollingSkill = RollData.bCastRollingSkill;
+                // }
 
-                    bUS_GSEventCollection?.Evt_SetMagicWindowSkillList.Invoke(_SkillBlackList, _SkillWhiteList);
-                });
-                DelayExecute(100, () =>
-                {
-                    bUS_GSEventCollection?.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.SkillSuperArmor, 10000);
-                });
+                // Log.Info($"释放精魄技能时的连招信息 CastVigorSkillByID：CurStateIndex:{RollData?.CurStateIndex}, RollCombo:{string.Join(",", RollData?.RollCombo)}, RollComboLoopStartIdx:{RollData?.RollComboLoopStartIdx}, bCastRollingSkill:{RollData?.bCastRollingSkill}");
+
+                // DelayExecute(10, () =>
+                // {
+
+                //     // if (RollData.RollCombo.Contains((int)finalId))
+                //     // {
+                //     //     RollData.RollComboLoopStartIdx = RollData.RollCombo.FindIndex((int r) => r == finalId);
+                //     // }
+                //     // else
+                //     // {
+                //     //     int currentLastSkillID = BGUFuncLibSkillCS.BGUGetLastSkillID(character);
+                //     //     int skillID = RollData.RollCombo[RollData.CurStateIndex];
+                //     // }
+                //     // List<int> _SkillBlackList = new List<int>();
+                //     // List<int> _SkillWhiteList = new List<int> { (int)finalId, 10199 };
+                //     // <BUC_RollData>
+
+                //     // bUS_GSEventCollection?.Evt_SetMagicWindowSkillList.Invoke(_SkillBlackList, _SkillWhiteList);
+                // });
+
+                // DelayExecute(100, () =>
+                // {
+                //     bUS_GSEventCollection?.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.SkillSuperArmor, 10000);
+                // });
                 playVigorSkillID = (int)finalId;
                 playVigorCharacter = character;
                 if (Scale3D != null && Scale3D > 0)
@@ -1162,11 +1197,28 @@ namespace bian
             data.DurMagicallyChange = true;
             data.RecoverSkillID = 10199;
             isPlayVigorSkillByID = true;
+            noResetCombo = true;
+            int currentLastSkillID = BGUFuncLibSkillCS.BGUGetLastSkillID(character);
+            enterSkillID = currentLastSkillID;
+            // BUC_RollData RollData = BGU_DataUtil.GetUnPersistentReadOnlyData<BUC_RollData>(character);
+            // if (RollData != null)
+            // {
+            //     enterRollData.DodgeStartSkillID = enterSkillID;
+            //     enterRollData.CurStateIndex = RollData.CurStateIndex;
+            //     enterRollData.RollCombo.Clear();
+            //     enterRollData.RollCombo.AddRange(RollData.RollCombo);
+            //     enterRollData.RollCombo.Add((int)skillId);
+            //     enterRollData.RollComboLoopStartIdx = RollData.RollComboLoopStartIdx;
+            //     enterRollData.bCastRollingSkill = RollData.bCastRollingSkill;
+            // }
+            // Log.Info($"释放精魄技能时的连招信息 CastVigorSkillByModel：CurStateIndex:{RollData?.CurStateIndex}, RollCombo:{string.Join(",", RollData?.RollCombo)}, RollComboLoopStartIdx:{RollData.RollComboLoopStartIdx}, bCastRollingSkill:{RollData.bCastRollingSkill}");
+            BGUFunctionLibraryCS.BGUTriggerUnitState(character, EBUStateTrigger.AttackStateBegin, 5000);
+            BGUFunctionLibraryCS.BGUTriggerUnitState(character, EBUStateTrigger.EnterVigorKeyCache, 5000);
             DelayExecute(222, () =>
-                      {
-                          BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
-                          bUS_GSEventCollection?.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.SkillSuperArmor, 10000);
-                      });
+            {
+                BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
+                bUS_GSEventCollection?.Evt_IncreaseAttrFloat?.Invoke(EBGUAttrFloat.SkillSuperArmor, 10000);
+            });
             // 打断当前所有动画
             UGSE_AnimFuncLib.StopAllMontages(character, 0f);
             UGSE_AnimFuncLib.TickAnimationAndRefreshBone(character);
@@ -1198,14 +1250,21 @@ namespace bian
             if (data == null) return;
             if (resetBack == true)
             {
-                data.DurMagicallyChange = (bool)resetBack;  // 不变回去，需要手动变回 
+                DelayExecute(333, () =>
+                {
+                    BUC_MagicallyChangeData magic_data = fieldData.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
+                    if (magic_data != null)
+                    {
+                        magic_data.DurMagicallyChange = (bool)resetBack;  // 不变回去，需要手动变回 
+                    }
+                });
             }
             data.ResetReason = EResetReason_MagicallyChange.Normal;
             data.CastReason = ECastReason_MagicallyChange.NormalSkill;
             data.DurMagicallyChange = true;
             data.RecoverSkillID = 10199;
             isPlayVigorSkillByID = true;
-
+            noResetCombo = true;
             DelayExecute(222, () =>
                        {
                            BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(character);
