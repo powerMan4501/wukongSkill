@@ -212,12 +212,12 @@
               {
                 "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
                 "ProjectTileID": 30131501,
-                "SpeedLeftValue": 15000,
-                "SpeedRightValue": 15000,
+                "SpeedLeftValue": 8000,
+                "SpeedRightValue": 8000,
                 "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
                 "OffsetX": 700,
                 "OffsetY": 700,
-                "desc": "没有 buff ，磐锤"
+                "desc": "没有 buff ，剑气"
               }
             ]
           }

@@ -23,30 +23,7 @@
       }
     ]
   },
-  {
-    "desc": "小骊龙,连续锤很多下",
-    "montage": "AM_lys_chuilong_01a_attack_05_",
-    "linkValue": 0,
-    "speedRate": 1.3,
-    "AMSpeedRate": 1.3,
-    "addRadius": 1000,
-    "SweepActions": [
-      {
-        "Type": "bullet",
-        "bullets": [
-          {
-            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [30250101],
-            "OffsetX": 300,
-            "OffsetY": 300,
-            "desc": "小骊龙电圈，巴山虎"
-          }
-        ]
-      }
-    ],
-    "hitEffects": [888555033],
-    "replaceEffects": true
-  },
+ 
   {
     "desc": "小骊龙,锤子互砸一次，释放范围雷电",
     "montage": "AM_lys_chuilong_01a_attack",

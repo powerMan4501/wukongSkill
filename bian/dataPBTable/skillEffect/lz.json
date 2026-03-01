@@ -98,6 +98,17 @@
     "EffectParamsStr": []
   },
   {
+    "ID": 888554017,
+    "desc": "岩浆石头人磕头火伤害",
+    "EffectType": 1,
+    "TargetBase": 1,
+    "TargetCount": 1,
+    "TargetFilter": 4,
+    "EffectParamsInt": [10, 25, 3, 0, 3, 2, 4444404],
+    "EffectParamsFloat": [500.0, 500.0, 50000.0, 0.0, 1500.0, 0.0, 500.0],
+    "EffectParamsStr": ["无"]
+  },
+  {
     "desc": "积累100%毒异常",
     "ID": 888555018,
     "EffectType": 95,

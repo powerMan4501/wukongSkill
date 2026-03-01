@@ -38,6 +38,27 @@
       "type": "actions",
       "afterActions": [
         {
+          "skillIndexs": [0],
+          "skillValues": [
+            10842, 10843, 10844, 10845, 10846, 10847, 10848, 10849, 10850,
+            10851, 10852
+          ],
+          "Type": "skill",
+          "SkillID": 50015,
+          "desc": "空中打击，接Q5"
+        },
+        {
+          "skillIndexs": [0],
+          "skillValues": [
+            10601, 10602, 10605, 10606, 10607, 10608, 10609, 10610, 10611,
+            10612, 10613, 10614, 50030, 50031, 50032, 50033, 50034, 50035,
+            50036, 50037, 50038, 50039
+          ],
+          "Type": "skill",
+          "SkillID": 50013,
+          "desc": "空中打击，接Q3"
+        },
+        {
           "montageIndex": 0,
           "montageValue": ".AM_Wukong_Dodge_F_",
           "type": "RushSkill",
@@ -191,10 +212,16 @@
           "Type": "skill",
           "skillIndexs": [0],
           "skillValues": [50002],
-          "SkillID": 84321024,
-          "desc": "斩棍接  砸砸砸"
+          "SkillID": 64321006,
+          "desc": "斩棍接 空中侧身好几下"
         },
-
+        {
+          "Type": "skill",
+          "skillIndexs": [0],
+          "skillValues": [64321006],
+          "SkillID": 84321024,
+          "desc": "空中侧身好几下接 砸砸砸"
+        },
         {
           "Type": "skill",
           "skillIndexs": [0],
@@ -259,16 +286,8 @@
           "Type": "skill",
           "skillIndexs": [0],
           "skillValues": [50015],
-          "SkillID": 64321006,
-          "desc": "Q5接空中侧身好几下"
-        },
-
-        {
-          "Type": "skill",
-          "skillIndexs": [0],
-          "skillValues": [64321006],
-          "SkillID": 84321024,
-          "desc": "空中侧身好几下接 砸砸砸"
+          "SkillID": 50002,
+          "desc": "Q5接空中斩棍"
         },
 
         {
@@ -298,52 +317,63 @@
             10612, 10613, 10614, 50030, 50031, 50032, 50033, 50034, 50035,
             50036, 50037, 50038, 50039
           ],
-          "type": "transskill",
-          "ResId": 14,
-          "MagicSkillID": 202838,
-          "desc": "空中打击，接寅虎"
+          "type": "bossskill",
+          "bossLabel": "SK_lys_chuilong_01a",
+          "bossType": "BOSS",
+          "MagicSkillID": 302556,
+          "desc": "空中打击，接小骊龙, 连续锤很多下"
         },
         {
           "skillIndexs": [0],
           "skillValues": [10862, 10863, 10864],
-          "type": "transskill",
-          "ResId": 12,
-          "MagicSkillID": 12044,
-          "desc": "侧键2，立棍,接广智"
+         "type": "magicskill",
+          "magicID": 8530,
+          "MagicSkillID": 499915,
+          "Scale3D": 0.9,
+          "desc": "侧键2，立棍, 蝎子精 各种尾巴攻击很不错"
         },
 
         {
           "skillIndexs": [0],
           "skillValues": [10832, 10833, 10834, 50021, 50022, 50023, 50024],
-          "type": "transskill",
-          "ResId": 17,
-          "MagicSkillID": 17333,
-          "desc": "变成马猴"
+          "type": "magicskill",
+          "magicID": 8526,
+          "MagicSkillID": 300506,
+          "Scale3D": 0.9,
+          "desc": "不能，连续几个排云掌"
         },
 
         {
           "skillIndexs": [0],
-          "skillValues": [10811, 10812],
+          "skillValues": [10811, 10812, 10813, 10814, 10815],
           "type": "bossskill",
           "bossLabel": "SK_hys_shanzhen_01",
           "bossType": "BOSS",
           "MagicSkillID": 580107,
-          "desc": "侧键2 立棍0/1蓄力start 岩浆石头人跳起来磕头"
+          "desc": "侧键2 立棍蓄力start 岩浆石头人跳起来磕头"
         },
+
         {
           "skillIndexs": [0],
-          "skillValues": [
-            10835, 10836,
-
-            10870, 10871,
-
-            10875, 10876
-          ],
+          "skillValues": [10835, 10836, 10837, 10838, 10839],
           "type": "bossskill",
           "bossLabel": "SK_HYS_HongHaiEr_02A",
           "bossType": "BOSS",
           "MagicSkillID": 440534,
-          "desc": "侧键2 0/1蓄力start 夜叉王横扫"
+          "desc": "侧键2 劈棍蓄力start 夜叉王横扫"
+        },
+        {
+          "skillIndexs": [0],
+          "skillValues": [
+            10870, 10871, 10872, 10873, 10874,
+
+            10875, 10876, 10877, 10878, 10879
+          ],
+          "type": "bossskill",
+          "bossLabel": "SK_hys_shanzhen_01",
+          "bossType": "BOSS",
+          "MagicSkillID": 580103,
+          "desc": "侧键2 戳棍蓄力start 石头人冲撞"
         },
         {
           "skillIndexs": [0],
@@ -378,9 +408,9 @@
         {
           "skillIndexs": [0],
           "skillValues": [
-            10872, 10873, 10874, 10883, 10884, 10885,
+            10883, 10884, 10885,
 
-            10877, 10878, 10879, 10888, 10889, 10890
+            10888, 10889, 10890
           ],
           "type": "transskill",
           "ResId": 19,
@@ -390,37 +420,42 @@
         {
           "montageIndex": 0,
           "montageValue": ".AM_Wukong_Dodge_F_",
-          "type": "transskill",
-          "ResId": 24,
-          "MagicSkillID": 25157,
-          "Name": "前翻滚,核爆冰拳"
+
+          "type": "bossskill",
+          "bossLabel": "SK_HFM_Hu_Stone_01",
+          "bossType": "BOSS",
+          "MagicSkillID": 202203,
+          "Name": "前翻滚,拔刀斩 "
         },
 
         {
           "montageIndex": 0,
           "montageValue": ".AM_Wukong_Dodge_R_",
-          "type": "transskill",
-          "ResId": 23,
-          "MagicSkillID": 23021,
-          "desc": "右翻滚变马"
+          "type": "bossskill",
+          "bossLabel": "SK_HFM_Hu_Stone_01",
+          "bossType": "BOSS",
+          "MagicSkillID": 202219,
+          "desc": "右翻滚,跳起来垂直砸下来"
         },
 
         {
           "montageIndex": 0,
           "montageValue": ".AM_Wukong_Dodge_B_",
-          "type": "transskill",
-          "ResId": 16,
-          "MagicSkillID": 16021,
-          "desc": "后翻滚，海上僧"
+          "type": "bossskill",
+          "bossLabel": "SK_HFM_Hu_Stone_01",
+          "bossType": "BOSS",
+          "MagicSkillID": 202244,
+          "desc": "后翻滚，肘击"
         },
 
         {
           "montageIndex": 0,
           "montageValue": ".AM_Wukong_Dodge_L_",
-          "type": "transskill",
-          "ResId": 13,
-          "MagicSkillID": 200707,
-          "desc": "左翻滚 接石头人磕头"
+          "type": "bossskill",
+          "bossLabel": "SK_HFM_Hu_Stone_01",
+          "bossType": "BOSS",
+          "MagicSkillID": 202204,
+          "desc": "左翻滚 突进咆哮"
         },
 
         {
@@ -702,17 +737,6 @@
       "MagicSkillID": 700158,
       "Name": "释放定海神针",
       "Key": ""
-    },
-
-    {
-      "Id": 8527,
-      "type": "magic",
-      "CanBreak": false,
-      "Name": "虫总兵",
-      "needBack": true,
-      "backTime": 1100,
-      "Description": "",
-      "Key": "S+XBUTTON1"
     },
 
     {

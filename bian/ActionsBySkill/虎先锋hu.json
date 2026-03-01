@@ -1,0 +1,141 @@
+[
+  {
+    "skillID": 202204,
+    "desc": "突进咆哮，砸拳",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 500,
+      "hitEffects": [888555034],
+      "replaceEffects": true
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 2.086923,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+            "ProjectTileID": 1016262,
+            "desc": "巴山虎"
+          },
+          { "Type": "out_magic", "TimeDelay": 800, "desc": "退出精魄" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 202219,
+    "desc": "跳起来垂直砸下来",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 500,
+      "hitEffects": [888555035],
+      "replaceEffects": true
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3.BGW_50_hys_lingzhijing_03a_SpawnBullet_Lv3",
+            "ProjectTileID": 1016262,
+            "desc": "巴山虎"
+          },
+          { "Type": "out_magic", "TimeDelay": 800, "desc": "退出精魄" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 202203,
+    "desc": "拔刀斩",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 500,
+      "hitEffects": [888555035],
+      "replaceEffects": true
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 1.724545,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 20010102,
+            "SpeedLeftValue": 9000,
+            "SpeedRightValue": 9000,
+            "BornDirOffsetXLeftValue": 65,
+            "BornDirOffsetXRightValue": 65,
+            "ForTarget": true,
+            "spawnBaseSocketName": "weapon_r",
+            "desc": "寅虎刀气"
+          },
+          { "Type": "out_magic", "TimeDelay": 800, "desc": "退出精魄" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 202220,
+    "desc": "冲拳，中距离追击一拳",
+    "montage_config": {
+      "addRadius": 500,
+      "hitEffects": [888555035],
+      "replaceEffects": true
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 1016261,
+            "ForTarget": true,
+            "SpeedLeftValue": 16000,
+            "SpeedRightValue": 16000,
+            "desc": "向目标发射巴山虎"
+          },
+          { "Type": "out_magic", "TimeDelay": 800, "desc": "退出精魄" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "skillID": 202244,
+    "desc": "肘击",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 500,
+      "hitEffects": [888555035],
+      "replaceEffects": true
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 1016261,
+            "ForTarget": true,
+            "SpeedLeftValue": 16000,
+            "SpeedRightValue": 16000,
+            "desc": "向目标发射巴山虎"
+          },
+          { "Type": "out_magic", "TimeDelay": 800, "desc": "退出精魄" }
+        ]
+      }
+    ]
+  }
+]

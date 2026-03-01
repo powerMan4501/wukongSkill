@@ -1,17 +1,54 @@
 [
   {
+    "skillID": 580103,
+    "desc": "岩浆石头人 冲撞",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 100,
+      "hitEffects": [1021303, 888555017],
+      "replaceEffects": true
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 2.352835,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1013702, 58111003],
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "desc": "石先锋岩浆,岩浆"
+          },
+          { "Type": "out_magic", "TimeDelay": 800, "desc": "退出精魄" }
+        ]
+      }
+    ]
+  },
+
+  {
     "skillID": 580107,
     "desc": "岩浆石头人 跳起来砸",
     "montage_config": {
       "speedRate": 1.4,
       "AMSpeedRate": 1.4,
-      "addRadius": 900
+      "addRadius": 500,
+      "hitEffects": [888554017, 888555017],
+      "replaceEffects": true
     },
     "sweep_actions": [
-
       {
         "linkValue": 3.487771,
         "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [1013702, 58111003, 40550101],
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "desc": "石先锋岩浆,岩浆,鳖宝子弹"
+          },
           { "Type": "out_magic", "TimeDelay": 800, "desc": "退出精魄" }
         ]
       },

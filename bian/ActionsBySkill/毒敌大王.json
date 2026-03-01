@@ -1,0 +1,33 @@
+[
+  {
+    "skillID": 499915,
+    "desc": "各种尾巴攻击很不错",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3,
+      "addRadius": 100,
+      "hitEffects": [888555034, 888555018],
+      "replaceEffects": true
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "desc": "毒爆49981301",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [49981301],
+                "OffsetX": 300,
+                "OffsetY": 300,
+                "desc": "毒爆"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

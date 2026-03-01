@@ -62,20 +62,7 @@
       }
     ]
   },
-  {
-    "desc": "蝎子打打打",
-    "montage": "AM_psd_xiezijing_og_atk_15",
-    "linkValue": 0,
-    "SweepActions": [
-      {
-        "Type": "bullet",
-        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-        "ProjectTileIDs": [49981301, 1016202],
-        "OffsetX": 400,
-        "OffsetY": 400
-      }
-    ]
-  },
+
   {
     "desc": "蝎子托马斯",
     "montage": "AM_psd_xiezijing_og_atk_11",

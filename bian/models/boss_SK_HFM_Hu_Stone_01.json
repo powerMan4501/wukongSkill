@@ -147,7 +147,8 @@
       }
     ],
     "Override_AbnormalDispID_Attacker": 0,
-    "Override_AbnormalDispID_Victim": 100
+    "Override_AbnormalDispID_Victim": 100,
+     "UnitScale": 0.7
   },
   "Name": "SK_HFM_Hu_Stone_01",
   "Label": "SK_HFM_Hu_Stone_01",
