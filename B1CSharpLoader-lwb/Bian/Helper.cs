@@ -517,6 +517,7 @@ namespace bian
                     {
                         bUTamerActor.MarkAsSpawnedTamer(null);
                         UBGUFunctionLibrary.BGUFinishSpawningActor(bUTamerActor, actorTransform);
+                        BGUFuncLibAICS.SearchTargetSP(bUTamerActor);
                     }
                     else
                     {
@@ -617,22 +618,28 @@ namespace bian
 
         public static void OnMagicallyChangeFadeOut()
         {
-            var character = Helper.GetBGUPlayerCharacterCS();
+            var character = GetBGUPlayerCharacterCS();
+
             if (character == null) return;
-            var magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(character);
-            if (magicChangeComp == null) return;
-            MethodInfo reset = typeof(BUS_MagicallyChangeComp).GetMethod("Reset", BindingFlags.NonPublic | BindingFlags.Instance);
-            if (reset == null) return;
-            FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
-            if (fieldData != null)
-            {
-                BUC_MagicallyChangeData data = fieldData?.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
-                if (data != null)
-                {
-                    data.RecoverSkillID = 10199;
-                }
-            }
-            reset.Invoke(magicChangeComp, [EResetReason_MagicallyChange.Normal]);
+
+            BUS_GSEventCollection BE_Owner = BUS_EventCollectionCS.Get(character);
+            if (BE_Owner == null) return;
+            BE_Owner.Evt_OnMagicallyChangeRecover.Invoke(10199);
+            // if (character == null || !isPlayVigorSkillByID) return;
+            // var magicChangeComp = FindActorCompByClass<BUS_MagicallyChangeComp>(character);
+            // if (magicChangeComp == null) return;
+            // MethodInfo reset = typeof(BUS_MagicallyChangeComp).GetMethod("Reset", BindingFlags.NonPublic | BindingFlags.Instance);
+            // if (reset == null) return;
+            // FieldInfo fieldData = typeof(BUS_MagicallyChangeComp).GetField("MagicallyChangeData", BindingFlags.NonPublic | BindingFlags.Instance);
+            // if (fieldData != null)
+            // {
+            //     BUC_MagicallyChangeData data = fieldData?.GetValue(magicChangeComp) as BUC_MagicallyChangeData;
+            //     if (data != null)
+            //     {
+            //         data.RecoverSkillID = 10199;
+            //     }
+            // }
+            // reset.Invoke(magicChangeComp, [EResetReason_MagicallyChange.Normal]);
 
         }
 
@@ -1902,16 +1909,14 @@ namespace bian
                 {
                     ProjectileSpawnNSInfo.ProjectileFlySpd.Spd.LeftValue = 10000;
                     ProjectileSpawnNSInfo.ProjectileFlySpd.Spd.RightValue = 10000;
-
-
-                    if (action?.SpeedLeftValue > 0)
-                    {
-                        ProjectileSpawnNSInfo.ProjectileFlySpd.Spd.LeftValue = action.SpeedLeftValue;
-                    }
-                    if (action?.SpeedRightValue > 0)
-                    {
-                        ProjectileSpawnNSInfo.ProjectileFlySpd.Spd.RightValue = action.SpeedRightValue;
-                    }
+                }
+                if (action?.SpeedLeftValue > 0)
+                {
+                    ProjectileSpawnNSInfo.ProjectileFlySpd.Spd.LeftValue = action.SpeedLeftValue;
+                }
+                if (action?.SpeedRightValue > 0)
+                {
+                    ProjectileSpawnNSInfo.ProjectileFlySpd.Spd.RightValue = action.SpeedRightValue;
                 }
                 if (action?.BulletNumInOneWave > 0)
                 {

@@ -13,9 +13,6 @@ using ArchiveB1;
 using B1UI.GSUI;
 using CommB1;
 using ResB1;
-using b1.BGW;
-using BtlB1;
-using System.Security.Cryptography.X509Certificates;
 
 
 
@@ -99,7 +96,6 @@ public class Hooks
 
             var player = Helper.GetBGUPlayerCharacterCS();
             if (player == null) return;
-            Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()}，owner：{NotifyParam.owner?.GetFName()}");
 
             if (NotifyParam.Animation != null && NotifyParam.owner != null && NotifyParam.owner.PathName.ToLower().Contains("unit_player"))
             {
@@ -110,7 +106,7 @@ public class Hooks
                     var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
 
                     int skillID = BGU_DataUtil.GetUnPersistentReadOnlyData<BUC_AnimNotifyAndStateData>(owner).FindBindingSkillID(NotifyParam.FromInstanceID);
-                    Console.WriteLine($"BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()} ,skillID：{skillID}，linkValue:{linkValue}");
+                    Console.WriteLine($"伤害判定 碰撞通知 BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.GetFName()} ,skillID：{skillID}，linkValue:{linkValue}");
                     var skillMaps = LoadSkill.ActionsBySkillConfigs;
 
 
@@ -119,7 +115,9 @@ public class Hooks
                     {
                         if (matchOne != null && matchOne.sweep_actions?.Count > 0)
                         {
-                            var sweepItems = matchOne.sweep_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
+                            var sweepItems = matchOne.sweep_actions.FirstOrDefault(item => item.linkValue > 0 && item.linkValue.ToString() == linkValue.ToString())
+                      ?? matchOne.sweep_actions.FirstOrDefault(item => item.linkValue == 0);
+
                             if (sweepItems != null && sweepItems.actions != null && sweepItems.actions.Count > 0)
                             {
                                 var rule = new Rule();
@@ -145,7 +143,6 @@ public class Hooks
                                 var matchItem = matchedConfig.sweep_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
                                 if (matchItem != null && matchItem.actions != null && matchItem.actions.Count > 0)
                                 {
-                                    Log.Info($"匹配成功 BANS_GSSweepCheck.NotifyParam: {NotifyParam.Animation.PathName}，linkValue:{linkValue}，actions:{matchItem.actions[0].desc}");
                                     var rule = new Rule();
                                     rule?.DoAfterActions(matchItem.actions);
                                     return;
@@ -244,7 +241,6 @@ public class Hooks
 
 
                 var linkValue = NotifyParam.AnimNotifyEvent_LinkValue;
-                Console.WriteLine($"BANS_GSSpawnBullets.NotifyParam:GetName：{NotifyParam.owner.GetName()} ,linkValue:{linkValue},BulletID:{BulletID}");
                 var rulesMap = LoadSkill.TemplatePathConfigs;
                 if (rulesMap == null || rulesMap.Count == 0)
                 {
@@ -252,24 +248,46 @@ public class Hooks
                     return;
                 }
                 ;
-                var currentMontage = NotifyParam.Animation.PathName;
+                var owner = NotifyParam.owner as BGUCharacterCS;
+                if (owner == null) return;
 
-                var matchedItem = rulesMap.FirstOrDefault(item => item.Key.Contains(currentMontage));
-                if (!matchedItem.Equals(default(KeyValuePair<string, LoadSkill.ActionsBySkillConfig>)))
+                int skillID = BGU_DataUtil.GetUnPersistentReadOnlyData<BUC_AnimNotifyAndStateData>(owner).FindBindingSkillID(NotifyParam.FromInstanceID);
+                Console.WriteLine($"发射子弹的通知 BANS_GSSpawnBullets.NotifyParam: {NotifyParam.owner.GetName()} ,linkValue:{linkValue},BulletID:{BulletID}");
+                var skillMaps = LoadSkill.ActionsBySkillConfigs;
+
+
+                if (skillMaps == null || skillMaps.Count == 0) return;
+                if (skillMaps.TryGetValue(skillID, out var matchOne))
                 {
-                    var matchedConfig = matchedItem.Value;
-                    if (matchedConfig != null && matchedConfig.bullet_actions != null && matchedConfig.bullet_actions.Count > 0)
+                    if (matchOne != null && matchOne.bullet_actions?.Count > 0)
                     {
-                        var matchItem = matchedConfig.bullet_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
-                        if (matchItem != null && matchItem.actions != null && matchItem.actions.Count > 0)
+                        var sweepItems = matchOne.bullet_actions.FirstOrDefault(item => item.linkValue > 0 && item.linkValue.ToString() == linkValue.ToString())
+                  ?? matchOne.bullet_actions.FirstOrDefault(item => item.linkValue == 0);
+
+                        if (sweepItems != null && sweepItems.actions != null && sweepItems.actions.Count > 0)
                         {
                             var rule = new Rule();
-                            rule?.DoAfterActions(matchItem.actions);
-                            return;
+                            rule?.DoAfterActions(sweepItems.actions);
                         }
                     }
-
                 }
+                // var currentMontage = NotifyParam.Animation.PathName;
+
+                // var matchedItem = rulesMap.FirstOrDefault(item => item.Key.Contains(currentMontage));
+                // if (!matchedItem.Equals(default(KeyValuePair<string, LoadSkill.ActionsBySkillConfig>)))
+                // {
+                //     var matchedConfig = matchedItem.Value;
+                //     if (matchedConfig != null && matchedConfig.bullet_actions != null && matchedConfig.bullet_actions.Count > 0)
+                //     {
+                //         var matchItem = matchedConfig.bullet_actions.FirstOrDefault(item => (item.linkValue == 0 || item.linkValue.ToString() == linkValue.ToString()));
+                //         if (matchItem != null && matchItem.actions != null && matchItem.actions.Count > 0)
+                //         {
+                //             var rule = new Rule();
+                //             rule?.DoAfterActions(matchItem.actions);
+                //             return;
+                //         }
+                //     }
+                // }
                 var allRules = GetCachedAnimRules();
                 if (allRules == null || allRules.Count == 0) return; // 如果获取规则失败，则直接返回
                 var nowMontage = NotifyParam.Animation.PathName;
@@ -1229,6 +1247,7 @@ public class Hooks
 };
 
     private static readonly int[] ReflectBuffIds = { 20234, 229, 288, 294, 10133, 96036, 24082 };
+    private static readonly int[] wudiSkill = {10803, 50013 };
 
     [HarmonyPatch]
     public static class BeAttackedTeamCheckPatch
@@ -1248,6 +1267,12 @@ public class Hooks
             var victimTeamId = victim?.GetTeamIDInCS();
             var playerTeamID = Helper.GetBGUPlayerCharacterCS()?.GetTeamIDInCS();
             // 如果是同一阵营，跳过伤害计算
+            var skillId = BGUFuncLibSkillCS.BGUGetCastingSkillID(victim);
+
+            if (wudiSkill.Contains(skillId))
+            {
+                return false;
+            }
 
             if (attackerTeamId == victimTeamId && victimTeamId == playerTeamID)
             {
@@ -1484,14 +1509,14 @@ public class Hooks
                 if (maxHp > 100 && FinalDamageValue >= maxHp)
                 {
                     // 防止被秒杀
-                    FinalDamageValue = maxHp - 1;
+                    FinalDamageValue = maxHp - 100;
                 }
                 if (FinalDamageValue > 1)
                 {
                     if (owner.PathName == player.PathName)
                     {
-                        float def = BGUFunctionLibraryCS.GetAttrValue(player, EBGUAttrFloat.Def);
-                        FinalDamageValue = FinalDamageValue > def ? FinalDamageValue - def : 1;
+                        // float def = BGUFunctionLibraryCS.GetAttrValue(player, EBGUAttrFloat.Def);
+                        // FinalDamageValue = FinalDamageValue > def ? FinalDamageValue - def : 1;
                     }
                     else
                     {
@@ -1640,13 +1665,13 @@ public class Hooks
                     if (SkillID == 10199)
                     {
                         InsertSkillID(Helper.enterSkillID);
-                        if (Helper.noResetCombo)
-                        {
-                            Helper.DelayExecute(800, () =>
-                            {
-                                Helper.updateNoResetCombo(false);
-                            });
-                        }
+                        // if (Helper.noResetCombo)
+                        // {
+                        //     Helper.DelayExecute(1200, () =>
+                        //     {
+                        //         Helper.updateNoResetCombo(false);
+                        //     });
+                        // }
 
 
                         // BUC_RollData RollData = BGU_DataUtil.GetUnPersistentReadOnlyData<BUC_RollData>(player);
@@ -2482,7 +2507,7 @@ public class Hooks
         {
             if (Helper.noResetCombo)
             {
-                Helper.DelayExecute(800, () =>
+                Helper.DelayExecute(1200, () =>
                 {
                     Helper.updateNoResetCombo(false);
                 });
@@ -2494,5 +2519,27 @@ public class Hooks
             return true; // 继续执行原始方法
         }
 
+    }
+
+
+
+    [HarmonyPatch]
+    public static class GetAccValueFroOppositeDecreasePatch
+    {
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BGU_AbnormalStateHandlerBase), "GetAccValueFroOppositeDecrease")]
+        static bool Prefix(
+            BGU_AbnormalStateHandlerBase __instance,
+            EAccAbnormalValueType AccType,
+            EBGUAttrFloat CurOppositeAttrType,
+            float _IncreaseValue,
+            out float RemainingIncreaseValue,
+            out float __result)
+        {
+            // 直接设置返回值为0
+            __result = 0f;
+            RemainingIncreaseValue = _IncreaseValue;
+            return false;
+        }
     }
 }

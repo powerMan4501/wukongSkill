@@ -1897,10 +1897,10 @@ namespace bian
 
                     {
                         var num = (int)itemData.QualityType;
-                        var hpNum = (int)num * 2 * 1000;
+                        var hpNum = (int)num * 10 * 10000;
                         if (num > 6)
                         {
-                            hpNum = (int)num * 1 * 1000;
+                            hpNum = (int)num * 5 * 10000;
                         }
                         if (itemData.DefaultFreezeDefValue > 100)
                         {
@@ -1921,7 +1921,7 @@ namespace bian
                             itemData.DefaultThunderDefValue = 50;
                         }
 
-                        itemData.HPFixedDM = Math.Min(itemData.HPFixedDM + hpNum, 40 * 10000);
+                        itemData.HPFixedDM = Math.Min(itemData.HPFixedDM + hpNum, 80 * 10000);
 
                     }
                 }

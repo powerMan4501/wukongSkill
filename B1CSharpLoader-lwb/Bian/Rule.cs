@@ -23,6 +23,7 @@ namespace bian
     public class RuleAction
     {
 
+        public int? distance { get; set; }
         public int? equipId { get; set; }
         public List<RuleAction>? summonerActions { get; set; }
         public List<EAbnormalStateType>? clearTypes { get; set; }
@@ -38,6 +39,8 @@ namespace bian
         public bool? isModStop { get; set; }
         public int? changeTime { get; set; }
         public bool? resetBack { get; set; }
+        public bool? isDefault { get; set; }
+
         public string? bossLabel { get; set; }
         public string? path { get; set; }
         public List<int>? scaleXYZ { get; set; }
@@ -224,7 +227,7 @@ namespace bian
         public AActor? Caster { get; set; } // 临时存储施法者
         public AActor? Target { get; set; } // 临时存储目标
         public FEffectInstReq? EffectInstReq { get; set; } // 临时存储目标
-
+        private static readonly Random random = new Random(); // 添加静态Random实例
 
         public Rule()
         {
@@ -902,6 +905,21 @@ namespace bian
                     return false;
             }
 
+            if (action?.distance != null && action?.distance > 0)
+            {
+                var target = BGUFunctionLibraryCS.BGUGetTarget(character) as BGUCharacterCS;
+                if (target == null)
+                {
+                    return false;
+                }
+                var distanceNum = character.GetDistanceTo(target);
+                if (distanceNum < action.distance)
+                {
+                    return false;
+                }
+                return true;
+
+            }
             return true;
         }
 
@@ -912,11 +930,13 @@ namespace bian
             if (actions == null || actions.Count == 0) return;
             var character = Helper.GetBGUPlayerCharacterCS();
             if (character == null) return;
+            bool hasValidAction = false;
             foreach (var action in actions)
             {
                 // 使用统一的条件检查方法
-                if (!CheckAllConditions(character, action))
+                if (action.isDefault == true || !CheckAllConditions(character, action))
                     continue;
+                hasValidAction = true;
                 if (action?.TimeDelay > 0)
                 {
                     // 如果是多次执行就间隔执行
@@ -960,6 +980,19 @@ namespace bian
                     }
                     continue;
                 }
+            }
+
+            // 如果没有任何符合条件的action，查找并执行default类型的action
+            if (!hasValidAction)
+            {
+                var defaultActions = actions.Where(a => a.isDefault == true).ToList();
+                if (defaultActions.Count > 0)
+                {
+                    var randomIndex = random.Next(defaultActions.Count); // 使用静态Random实例
+                    var defaultAction = defaultActions[randomIndex];
+                    DoAction(defaultAction, 1000);
+                }
+
             }
 
         }
