@@ -1247,7 +1247,7 @@ public class Hooks
 };
 
     private static readonly int[] ReflectBuffIds = { 20234, 229, 288, 294, 10133, 96036, 24082 };
-    private static readonly int[] wudiSkill = {10803, 50013 };
+    private static readonly int[] wudiSkill = { 10803, 50013 };
 
     [HarmonyPatch]
     public static class BeAttackedTeamCheckPatch
@@ -1478,34 +1478,94 @@ public class Hooks
 
         public bool BreakFrozenImmediatelyFlag;
     }
-    [HarmonyPatch(typeof(BUS_BeAttackedComp), "DoDmg_B1_V2")]
-    public class BUS_BeAttackedComp_DoDmg_B1_V2_Patch
+    // [HarmonyPatch(typeof(BUS_BeAttackedComp), "DoDmg_B1_V2")]
+    // public class BUS_BeAttackedComp_DoDmg_B1_V2_Patch
+    // {
+    //     private static void Postfix(
+    //         BUS_BeAttackedComp __instance,
+    //          AActor Attacker,
+    //     bool IsCrit,
+    //     float DmgNoiseMul,
+    //     in FDamageDynamicParam DamageDynamicParam,
+    //     in FDamageDescParam DamageDescParam,
+    //     in FSkillDamageConfig SkillDamageConfig,
+    //     in FBattleAttrSnapShot Attacker_AttrMemData,
+    //     ref float FinalDamageValue,
+    //     ref float FinalDmgForPart,
+    //     ref float FinalElementDmgValue,
+    //     bool bPrintLog = true)
+    //     {
+    //         if (!!Helper.is_bian_mod_stop)
+    //         {
+    //             return;
+    //         }
+    //         // 在这里修改返回值
+    //         var owner = __instance.GetOwner() as BGUCharacterCS;
+    //         var player = Helper.GetBGUPlayerCharacterCS();
+    //         var AttackerPlayer = Attacker as BGUCharacterCS;
+    //         if (owner != null && player != null && owner.GetTeamIDInCS() == player.GetTeamIDInCS())
+    //         {
+    //             var maxHp = BGUFunctionLibraryCS.GetAttrValue(player, EBGUAttrFloat.HpMax) / 4;
+    //             if (maxHp > 100 && FinalDamageValue >= maxHp)
+    //             {
+    //                 // 防止被秒杀
+    //                 FinalDamageValue = maxHp - 100;
+    //             }
+    //             if (FinalDamageValue > 1)
+    //             {
+    //                 if (owner.PathName == player.PathName)
+    //                 {
+    //                     // float def = BGUFunctionLibraryCS.GetAttrValue(player, EBGUAttrFloat.Def);
+    //                     // FinalDamageValue = FinalDamageValue > def ? FinalDamageValue - def : 1;
+    //                 }
+    //                 else
+    //                 {
+    //                     // 这是队友
+    //                     FinalDamageValue = FinalDamageValue * 0.5f;
+    //                 }
+    //             }
+    //         }
+    //         else if (AttackerPlayer != null && player != null && owner != null && AttackerPlayer.GetTeamIDInCS() == player.GetTeamIDInCS())
+    //         {
+    //             // 己方造成的伤害最少为目标的体力值/500
+    //             float HpMax = BGUFunctionLibraryCS.GetAttrValue(owner, EBGUAttrFloat.HpMax);
+    //             var num = (int)HpMax / 500;
+    //             if (FinalDamageValue < num)
+    //             {
+    //                 FinalDamageValue = num;
+    //             }
+    //             if (FinalDamageValue < 20)
+    //             {
+    //                 FinalDamageValue = 20;
+    //             }
+    //         }
+    //     }
+    // }
+    [HarmonyPatch(typeof(BUS_BeAttackedComp), "CalcDmgValueOnly")]
+    class Patch_CalcDmgValueOnly
     {
-        private static void Postfix(
-            BUS_BeAttackedComp __instance,
-             AActor Attacker,
-        bool IsCrit,
-        float DmgNoiseMul,
-        in FDamageDynamicParam DamageDynamicParam,
-        in FDamageDescParam DamageDescParam,
-        in FSkillDamageConfig SkillDamageConfig,
-        in FBattleAttrSnapShot Attacker_AttrMemData,
-        ref float FinalDamageValue,
-        ref float FinalDmgForPart,
-        ref float FinalElementDmgValue,
-        bool bPrintLog = true)
+        static void Postfix(
+                      BUS_BeAttackedComp __instance,
+            AActor Attacker,
+            bool IsCrit,
+            float DmgNoiseMul,
+            in FDamageDynamicParam DamageDynamicParam,
+            in FDamageDescParam DamageDescParam,
+            in FSkillDamageConfig SkillDamageConfig,
+            in FBattleAttrSnapShot Attacker_AttrMemData,
+            ref float FinalDamageValue,
+            ref float FinalDmgForPart,
+            ref float FinalDmgForShield,
+            ref float FinalElementDmgValue,
+            ref float FinalNonElementDmgValue,
+            bool bPrintLog = true)
         {
-            if (!!Helper.is_bian_mod_stop)
-            {
-                return;
-            }
-            // 在这里修改返回值
             var owner = __instance.GetOwner() as BGUCharacterCS;
             var player = Helper.GetBGUPlayerCharacterCS();
             var AttackerPlayer = Attacker as BGUCharacterCS;
             if (owner != null && player != null && owner.GetTeamIDInCS() == player.GetTeamIDInCS())
             {
-                var maxHp = BGUFunctionLibraryCS.GetAttrValue(player, EBGUAttrFloat.HpMax) / 2;
+                var maxHp = BGUFunctionLibraryCS.GetAttrValue(player, EBGUAttrFloat.HpMax) / 4;
                 if (maxHp > 100 && FinalDamageValue >= maxHp)
                 {
                     // 防止被秒杀
@@ -1513,16 +1573,11 @@ public class Hooks
                 }
                 if (FinalDamageValue > 1)
                 {
-                    if (owner.PathName == player.PathName)
-                    {
-                        // float def = BGUFunctionLibraryCS.GetAttrValue(player, EBGUAttrFloat.Def);
-                        // FinalDamageValue = FinalDamageValue > def ? FinalDamageValue - def : 1;
-                    }
-                    else
-                    {
-                        // 这是队友
+                    if (owner.PathName != player.PathName)
+                    {   // 这是队友
                         FinalDamageValue = FinalDamageValue * 0.5f;
                     }
+
                 }
             }
             else if (AttackerPlayer != null && player != null && owner != null && AttackerPlayer.GetTeamIDInCS() == player.GetTeamIDInCS())
@@ -1585,7 +1640,7 @@ public class Hooks
     {
         private static readonly Dictionary<int, DateTime> _lastTriggerTimes = new Dictionary<int, DateTime>();
 
-        private static void Prefix(BUS_AttrComp __instance, ref EBGUAttrFloat AttrID, ref float IncreaseValue)
+        private static void Postfix(BUS_AttrComp __instance, ref EBGUAttrFloat AttrID, ref float IncreaseValue)
         {
             var owner = __instance.GetOwner() as BGUCharacterCS;
             if (owner != null)
@@ -1611,9 +1666,6 @@ public class Hooks
                         Helper.autoAttack(888555001, 4000);
                         _lastTriggerTimes[888555001] = currentTime;
                     }
-
-
-
 
                     ShowPlayerInfo.RenderBasicInfo();
                     if (AttrID == EBGUAttrFloat.CurEnergy || AttrID == EBGUAttrFloat.FabaoEnergy || AttrID == EBGUAttrFloat.VigorEnergy)

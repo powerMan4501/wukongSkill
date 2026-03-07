@@ -438,9 +438,16 @@ namespace bian
 
                     Helper.ChangeEmenyTarget();
                     break;
+
+
                 case "set_mod_stop":
                     Helper.set_mod_stop(action.isModStop.HasValue ? action.isModStop.Value : false);
                     break;
+
+                case "awake_actor":
+                    Helper.awake_actor();
+                    break;
+
 
                 case "change_actor_target":
                     // 把其他敌人的目标对准当前锁定的目标,toPlayerTeam 为true就是把周围的人变成己方的人，除了目标

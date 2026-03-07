@@ -288,7 +288,7 @@ public class ShowPlayerInfo
 	public static void RenderBasicInfo()
 	{
 		// 检查距离上次执行时间
-		if ((DateTime.Now - lastRenderTime).TotalSeconds < 0.2)
+		if ((DateTime.Now - lastRenderTime).TotalSeconds < 0.1)
 		{
 			return;
 		}

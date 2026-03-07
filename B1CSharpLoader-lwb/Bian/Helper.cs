@@ -43,6 +43,17 @@ namespace bian
             return is_bian_mod_stop;
         }
 
+        public static void awake_actor()
+        {
+
+            var enemies = getMonsterByDistance(4000);
+            if (enemies == null || enemies.Count == 0) return;
+            foreach (var enemy in enemies)
+            {
+                BGUFuncLibAICS.SearchTargetSP(enemy);
+            }
+
+        }
         public static bool tooggleAutoAttack()
         {
 
@@ -2232,9 +2243,14 @@ namespace bian
                     BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmuePoisonAcc, true);
                     BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueThunderAcc, true);
                     BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueFreezeAcc, true);
-                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueDamage, true);
                     BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.CommonDamageImmue, true);
                     BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.StrongDamageImmue, true);
+
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueDamage, true);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueStiff, true);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueImmobilizing, true);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.CantBeSweepChecked, true);
+                    BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.CantBeLock, true);
 
                     Task.Run(async delegate
                     {
@@ -2325,13 +2341,18 @@ namespace bian
                 BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmuePoisonAcc, true);
                 BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueThunderAcc, true);
                 BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueFreezeAcc, true);
-                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueDamage, true);
                 BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.CommonDamageImmue, true);
                 BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.StrongDamageImmue, true);
                 BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.Camouflage, true);
                 BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.CantBeAutoLockTarget, true);
                 BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.CantBeBaseTarget, true);
                 BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.Imperceptible, true);
+
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueDamage, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueStiff, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.ImmueImmobilizing, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.CantBeSweepChecked, true);
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(item, EBGUSimpleState.CantBeLock, true);
             }
         }
         public static bool isSameTeam(BGUPlayerCharacterCS monster)
