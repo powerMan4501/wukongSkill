@@ -308,5 +308,26 @@
       "无",
       "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
     ]
+  },
+
+  {
+    "ID": 1072104,
+    "EffectParamsInt": [31, 21, 2, 1, 0, 0, 4444404],
+    "EffectParamsFloat": [100.0, 100.0, 10000.0, 0.0, 0.0, 0.0, 180.0],
+    "EffectParamsStr": ["【主角】轻棍连招/0段蓄力"]
+  },
+  {
+    "ID": 70012401,
+    "desc": "残躯安身法",
+    "EffectParamsInt": [10, 25, 3, 0, 4, 2, 4444401],
+    "EffectParamsFloat": [200.0, 200.0, 22500.0, 0.0, 0.0, 0.0, 120.0],
+    "EffectParamsStr": ["【怪物】打断轻棍终结"]
+  },
+  {
+    "ID": 70012402,
+    "EffectParamsInt": [10, 25, 3, 0, 4, 2, 4444401],
+    "EffectParamsFloat": [200.0, 200.0, 22500.0, 0.0, 0.0, 0.0, 120.0],
+    "EffectParamsStr": ["【怪物】打断蓄力3"],
+    "Guard": "Guard"
   }
 ]

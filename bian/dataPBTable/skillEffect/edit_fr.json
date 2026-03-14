@@ -69,5 +69,13 @@
     "EffectParamsInt": [10, 25, 2, 0, 0, 0, 4444404],
     "EffectParamsFloat": [400.0, 400.0, 43800.0, 0.0, 0.0, 0.0, 400.0],
     "EffectParamsStr": ["【怪物】打断轻棍终结"]
+  },
+
+  {
+    "ID": 2403003,
+    "desc": "巨猿蓄力 积累棍势",
+    "EffectType": 134,
+    "EffectParamsInt": [1],
+    "EffectParamsFloat": [15]
   }
 ]

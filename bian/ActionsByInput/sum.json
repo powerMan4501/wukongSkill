@@ -1036,7 +1036,7 @@
   },
 
   {
-    "code": "suqbl",
+    "code": "suql",
     "afterActions": [
       {
         "Type": "spaw_monster",

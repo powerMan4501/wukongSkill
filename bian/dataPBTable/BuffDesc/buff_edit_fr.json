@@ -397,5 +397,106 @@
         ]
       }
     ]
+  },
+
+  {
+    "ID": 20177,
+    "BuffTips": "【化身】鸦香客-冰池-对友 | 0.【状态】添加时-添加【84】火免疫 | 1.【过滤Buff】免除熔岩效果【461】【463】【465】",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [84],
+        "EffectParamsFloat": []
+      },
+
+      {
+        "EffectTrigger": 1,
+        "EffectType": 128,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [461, 463, 465],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+
+  {
+    "ID": 20377,
+    "BuffTips": "【化身】鸦香客-冰池-对敌-Lv3 | 0.【异常】每0.2s-增加4点冰异常（20-3）",
+    "Interval": 2000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 95,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [1, 1, 0, 4],
+        "EffectParamsFloat": []
+      },
+      {
+        "desc": "冰刺",
+        "EffectTrigger": 2,
+        "EffectType": 20,
+        "EffectTargetSelectType": 0,
+        "EffectParams": [30123102, 1, 0, 0, 0, 0],
+        "EffectParamsFloat": [0, 0, 0, 0, 0, 0],
+        "EffectParamsString": [
+          "do_actions",
+          "bullet_ids:30123102",
+          "无",
+          "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        ]
+      }
+    ]
+  },
+  {
+    "ID": 24001,
+    "BuffTips": "【猿】变身-基础BUFF（属性免疫配置在Unit中） | 0.【变身音乐】",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 140,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [
+          "AkAudioEvent'/Game/00Main/Audio/Music/MSC_bianshen_714/EVT_music_bianshen_yuan/EVT_music_bianshen_yuan_play.EVT_music_bianshen_yuan_play'",
+          "AkAudioEvent'/Game/00Main/Audio/Music/MSC_bianshen_714/EVT_music_bianshen_yuan/EVT_music_bianshen_yuan_stop.EVT_music_bianshen_yuan_stop'"
+        ],
+        "EffectParams": [],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+
+  {
+    "ID": 16473,
+    "BuffTips": "&&----敌人----&& | 【妖】变身-3级雪域冰异常 | 0.3级|每秒+4（每秒自然消退3，实际每秒+1）",
+    "Interval": 2000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 95,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [1, 1, 0, 4],
+        "EffectParamsFloat": []
+      },
+      {
+        "desc": "冰刺",
+        "EffectTrigger": 2,
+        "EffectType": 20,
+        "EffectTargetSelectType": 0,
+        "EffectParams": [30123102, 1, 0, 0, 0, 0],
+        "EffectParamsFloat": [0, 0, 0, 0, 0, 0],
+        "EffectParamsString": [
+          "do_actions",
+          "bullet_ids:30123102",
+          "无",
+          "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        ]
+      }
+    ]
   }
 ]

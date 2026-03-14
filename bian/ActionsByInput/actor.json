@@ -1,0 +1,11 @@
+[
+  {
+    "code": "awa",
+    "afterActions": [
+      {
+        "Type": "awake_actor",
+        "desc": "唤醒范围3000的角色"
+      }
+    ]
+  }
+]

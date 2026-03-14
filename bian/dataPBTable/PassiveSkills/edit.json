@@ -31,7 +31,6 @@
     "desc": "把厉无咎减铜头时间改成加时间 修改ChargeSkillMaxChargeTime，原版是-0.3"
   },
 
-
   {
     "ID": 125,
     "PassiveSkillID": 20212,
@@ -104,5 +103,10 @@
     "desc": "切手技无敌时间由66改成366",
     "PassiveSkillID": 20201,
     "BaseValue": 366.0
+  },
+  {
+    "ID": 169,
+    "desc": "神铁碎片 增加大圣模式1倍时间，改成5倍",
+    "BaseValue": 50000.0
   }
 ]

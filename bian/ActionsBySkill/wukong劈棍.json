@@ -515,7 +515,7 @@
     ],
     "sweep_actions": [
       {
-        "linkValue": 0,
+        "linkValue": 2.264524,
         "actions": [
           {
             "Type": "bullet",

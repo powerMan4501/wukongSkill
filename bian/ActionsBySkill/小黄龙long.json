@@ -156,6 +156,24 @@
             ]
           }
         ]
+      },
+      {
+        "linkValue": 0.8,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+                "ProjectTileIDs": [118],
+                "OffsetX": 300,
+                "OffsetY": 300,
+                "desc": "落雷"
+              }
+            ]
+          },
+          { "Type": "out_magic", "TimeDelay": 500, "desc": "退出精魄" }
+        ]
       }
     ]
   },

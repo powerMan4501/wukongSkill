@@ -96,7 +96,7 @@
       ]
     },
     {
-      "Name": "火蛙喷火，夜叉王刀砍，泥塑金刚",
+      "Name": "火蛙喷火，夜叉王刀砍，泥塑金刚,残躯安身法",
       "Description": "",
       "Filters": [
         {
@@ -106,6 +106,10 @@
         {
           "Type": "effect",
           "EffectID": 888555041
+        },
+        {
+          "Type": "effect",
+          "EffectID": 70012402
         }
       ],
       "AfterActions": [
@@ -161,15 +165,15 @@
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [2403471],
+              "ProjectTileIDs": [30512704],
               "hasBuff": 888666006,
-              "desc": "有冰buff，巨猿冰暴"
+              "desc": "有冰buff，小冰暴"
             },
             {
               "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-              "ProjectTileIDs": [50058603],
+              "ProjectTileIDs": [22104092],
               "noHasAnyBuff": [888666006, 888666007],
-              "desc": "有雷buff，黄符"
+              "desc": "有雷buff，金色雷球爆炸"
             }
           ]
         }
@@ -340,8 +344,6 @@
       ]
     },
 
-    
-
     {
       "Name": "虫总兵精魄技能效果，大头如来神掌，石蛙,大头地爆",
       "Description": "巴山虎",
@@ -400,7 +402,6 @@
       "Name": "鼠弩手",
       "Description": "",
       "Filters": [
-      
         {
           "Type": "effect",
           "EffectID": 1016901

@@ -111,5 +111,14 @@
     "SpawnPStoSpawnInterval": 0.0,
     "BulletLowestSpdCanPlayPS": 0.0,
     "HitChrAudioID": 5301
+  },
+  {
+    "ID": 88880016,
+    "desc": "克隆小火球，40100101",
+    "ProjectileFXUseDBC": 0,
+    "ProjectileSpawnPSPath": "",
+    "ProjectileSelfSpawnDBCPath": "",
+    "SpawnPStoSpawnInterval": 0.0,
+    "BulletLowestSpdCanPlayPS": 0.0
   }
 ]

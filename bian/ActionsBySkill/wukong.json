@@ -307,7 +307,7 @@
     ],
     "sweep_actions": [
       {
-        "linkValue": 0,
+        "linkValue": 0.21539,
         "actions": [
           {
             "Type": "bullet",
@@ -379,7 +379,7 @@
     ],
     "sweep_actions": [
       {
-        "linkValue": 0,
+        "linkValue": 0.1666667,
         "actions": [
           {
             "Type": "bullet",
@@ -429,6 +429,65 @@
             ]
           }
         ]
+      },
+      {
+        "linkValue": 0.6333333,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 88880003,
+                "ForTarget": true,
+                "hasBuff": 888666006,
+                "BornDirOffsetXLeftValue": 130,
+                "BornDirOffsetXRightValue": 130,
+                "spawnBaseSocketName": "weapon_r",
+                "desc": "有冰buff,平A1,冰剑气"
+              },
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 88880009,
+                "hasBuff": 888666007,
+                "ForTarget": true,
+                "BornDirOffsetXLeftValue": 40,
+                "BornDirOffsetXRightValue": 40,
+                "SpeedLeftValue": 9000,
+                "SpeedRightValue": 9000,
+                "spawnBaseSocketName": "weapon_r",
+                "desc": "有火buff,平A1,火焰剑气"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30131501,
+                "ForTarget": true,
+                "hasBuff": 888666008,
+                "BornDirOffsetXLeftValue": 40,
+                "BornDirOffsetXRightValue": 40,
+                "spawnBaseSocketName": "weapon_r",
+                "desc": "有毒buff,平A1,就发射红剑气"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 30240401,
+                "ForTarget": true,
+                "hasBuff": 888666005,
+                "desc": "有雷buff,平A1,就发射雷球"
+              },
+              {
+                "Type": "bullet",
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 1026203,
+                "ForTarget": true,
+                "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
+                "desc": "雷蛙蝌蚪"
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -439,7 +498,7 @@
     "montage_config": {
       "speedRate": 1.1,
       "AMSpeedRate": 1.1,
-      "scaleWeaponNum": 2.5
+      "scaleWeaponNum": 4
     },
     "cast_actions": [
       {
@@ -651,7 +710,6 @@
     ]
   },
 
-  
   {
     "skillID": 10530,
     "montage_config": {
@@ -733,5 +791,13 @@
         "BuffTime": 2000
       }
     ]
+  },
+
+  {
+    "skillID": 10305,
+    "desc": "翻滚",
+    "montage_config": {
+      "addRadius": 900
+    }
   }
 ]

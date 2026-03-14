@@ -53,7 +53,7 @@
         "EffectParams": [0],
         "EffectParamsFloat": [10.0]
       },
-       {
+      {
         "EffectTrigger": 12,
         "EffectType": 134,
         "EffectTargetSelectType": 0,
@@ -272,16 +272,37 @@
 
   {
     "ID": 777666001,
-    "Duration": 5000,
-    "BuffTips": "水环境buff,给雷",
+    "Duration": 1000,
+    "BuffTips": "金箍棒砸的地裂 buff",
     "BuffEffects": [
       {
+        "desc": "没冰buff 火圈",
         "EffectTrigger": 1,
-        "EffectType": 46,
+        "EffectType": 20,
         "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [888666005],
-        "EffectParamsFloat": [0]
+        "EffectParams": [2403472, 1, 0, 0, 0, 0],
+        "EffectParamsFloat": [0, 0, 0, 0, 0, 0],
+        "EffectParamsString": [
+          "do_actions",
+          "bullet_ids:2403472",
+          "ConditionType:7;ConditionParams:888666006",
+          "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        ]
+      },
+
+      {
+        "desc": "有冰buff 地波",
+        "EffectTrigger": 1,
+        "EffectType": 20,
+        "EffectTargetSelectType": 0,
+        "EffectParams": [152, 1, 0, 0, 0, 0],
+        "EffectParamsFloat": [0, 0, 0, 0, 0, 0],
+        "EffectParamsString": [
+          "do_actions",
+          "bullet_ids:152",
+          "ConditionType:3;ConditionParams:888666006",
+          "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        ]
       }
     ]
   },

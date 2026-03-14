@@ -1,0 +1,26 @@
+[
+  {
+    "skillID": 440508,
+    "desc": "3连中距离横扫",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4,
+      "addRadius": 500,
+      "hitEffects": [888555034],
+      "replaceEffects": true
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [44051001, 44051004],
+            "desc": "夜叉王地刺"
+          }
+        ]
+      }
+    ]
+  }
+]

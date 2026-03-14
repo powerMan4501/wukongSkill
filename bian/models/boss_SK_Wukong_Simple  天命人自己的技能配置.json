@@ -187,6 +187,7 @@
         },
         {
           "Type": "skill",
+          "isDefault": true,
           "skillIndexs": [0],
           "skillValues": [
             10800, 10801, 50010, 50011, 10843, 10850, 10851, 10852, 10720, 10721
@@ -312,6 +313,40 @@
       "afterActions": [
         {
           "skillIndexs": [0],
+          "skillValues": [64321006],
+          "type": "bossskill",
+          "bossLabel": "SK_mgd_ftxd",
+          "bossType": "TRANS",
+          "MagicSkillID": 24044,
+          "desc": "空中侧身好几下接 巨猿，常态4豆重击"
+        },
+        {
+          "type": "bossskill",
+          "isDefault": true,
+          "bossLabel": "SK_HYS_HongHaiEr_02A",
+          "bossType": "BOSS",
+          "MagicSkillID": 440508,
+          "desc": "侧键2，夜叉王, 3连中距离横扫"
+        },
+        {
+          "type": "bossskill",
+          "bossLabel": "SK_HYS_HongHaiEr_02A",
+          "bossType": "BOSS",
+          "distance": 700,
+          "MagicSkillID": 440534,
+          "desc": "侧键2，夜叉王, 无前摇斜上横扫一下"
+        },
+
+        {
+          "type": "bossskill",
+          "bossLabel": "SK_LYS_KJLWoman",
+          "bossType": "BOSS",
+          "distance": 2800,
+          "MagicSkillID": 340116,
+          "desc": "侧键2，飞到空中释放4道索敌雷丝"
+        },
+        {
+          "skillIndexs": [0],
           "skillValues": [
             10601, 10602, 10605, 10606, 10607, 10608, 10609, 10610, 10611,
             10612, 10613, 10614, 50030, 50031, 50032, 50033, 50034, 50035,
@@ -326,7 +361,7 @@
         {
           "skillIndexs": [0],
           "skillValues": [10862, 10863, 10864],
-         "type": "magicskill",
+          "type": "magicskill",
           "magicID": 8530,
           "MagicSkillID": 499915,
           "Scale3D": 0.9,
@@ -357,10 +392,10 @@
           "skillIndexs": [0],
           "skillValues": [10835, 10836, 10837, 10838, 10839],
           "type": "bossskill",
-          "bossLabel": "SK_HYS_HongHaiEr_02A",
+          "bossLabel": "SK_HYS_Niumo",
           "bossType": "BOSS",
-          "MagicSkillID": 440534,
-          "desc": "侧键2 劈棍蓄力start 夜叉王横扫"
+          "MagicSkillID": 402004,
+          "desc": "侧键2 劈棍蓄力start 飞天索敌砸击"
         },
         {
           "skillIndexs": [0],
@@ -412,10 +447,10 @@
 
             10888, 10889, 10890
           ],
-          "type": "transskill",
-          "ResId": 19,
-          "MagicSkillID": 19043,
-          "desc": "侧键2，戳棍2/3/4蓄力,变成小黄龙"
+          "type": "magicskill",
+          "magicID": 8525,
+          "MagicSkillID": 301210,
+          "desc": "侧键2，戳棍2/3/4蓄力,往后飞退，再飞上去索敌砸出冰暴"
         },
         {
           "montageIndex": 0,
@@ -504,22 +539,35 @@
           "desc": "平A1接不能老拳"
         },
         {
-          "type": "magicskill",
-          "magicID": 8517,
+          "type": "bossskill",
+          "bossLabel": "SK_HFM_Hu_Stone_01",
+          "bossType": "BOSS",
+          "MagicSkillID": 202220,
           "skillIndexs": [0],
           "skillValues": [10705, 50001],
-          "desc": "平A1切手接虎伥"
+          "desc": "平A1切手接 虎先锋冲拳"
         },
 
         {
-          "type": "magicskill",
-          "magicID": 8587,
-          "MagicSkillID": 402501,
+          "Type": "bossskill",
+          "bossLabel": "SK_mgd_ftxd",
+          "bossType": "TRANS",
+          "hasBuff": 888666006,
+          "MagicSkillID": 25157,
           "skillIndexs": [0],
           "skillValues": [50002, 10707],
-          "desc": "XBUTTON2 快速往前跑两步再垂直劈下岩浆"
+          "desc": "XBUTTON2 有冰buff,核爆冰拳"
         },
-
+        {
+          "Type": "bossskill",
+          "bossLabel": "SK_mgd_ftxd",
+          "bossType": "TRANS",
+          "noHasBuff": 888666006,
+          "MagicSkillID": 24234,
+          "skillIndexs": [0],
+          "skillValues": [50002, 10707],
+          "desc": "XBUTTON2 没有冰buff,四级大范围地面火炎"
+        },
         {
           "Type": "bossskill",
           "bossLabel": "SK_HYS_HongHaiEr_02A",
@@ -549,18 +597,17 @@
 
         {
           "type": "magicskill",
-          "magicID": 8562,
+          "magicID": 8517,
           "skillIndexs": [0],
           "skillValues": [50003],
-          "desc": "切手2，横扫一下捅一下，疯虎"
+          "desc": "切手2，横扫一下捅一下，虎伥精魄技"
         },
         {
           "type": "magicskill",
-          "magicID": 8535,
-          "MagicSkillID": 405502,
+          "magicID": 8567,
           "skillIndexs": [0],
           "skillValues": [50004],
-          "desc": "切手2斩棍，接鳖宝锤"
+          "desc": "切手2斩棍，接疾蝠"
         },
         {
           "type": "magicskill",
@@ -586,6 +633,7 @@
           "skillValues": [50006, 10724, 10725, 50010724],
           "desc": "切手3，江海翻，接定风珠"
         },
+
         {
           "type": "magicskill",
           "magicID": 8526,
@@ -614,36 +662,42 @@
         },
 
         {
-          "type": "magicskill",
-          "magicID": 8587,
-          "MagicSkillID": 402504,
+          "type": "bossskill",
+          "bossLabel": "SK_mgd_ftxd",
+          "bossType": "TRANS",
+          "MagicSkillID": 24016,
           "skillIndexs": [0],
           "skillValues": [10700, 10701],
-          "desc": "枪平A1接  都督连劈两下再跳起劈下"
+          "desc": "枪平A1接  巨猿左手肘击"
         },
 
         {
-          "type": "magicskill",
-          "magicID": 8578,
+          "type": "bossskill",
+          "bossLabel": "SK_mgd_ftxd",
+          "bossType": "TRANS",
+          "MagicSkillID": 24017,
           "skillIndexs": [0],
           "skillValues": [10702],
-          "desc": "枪平A2接 虫校尉"
+          "desc": "枪平A2接 巨猿右手肘击"
         },
 
         {
           "type": "magicskill",
-          "magicID": 8514,
+          "UnitScale": 0.6,
+          "magicID": 8562,
           "skillIndexs": [0],
           "skillValues": [10703],
-          "desc": "枪平A3接 鼠司空"
+          "desc": "枪平A3接 疯虎"
         },
 
         {
-          "type": "magicskill",
-          "magicID": 8599,
+          "type": "bossskill",
+          "bossLabel": "SK_mgd_ftxd",
+          "bossType": "TRANS",
+          "MagicSkillID": 24043,
           "skillIndexs": [0],
           "skillValues": [10704],
-          "desc": "石蛙"
+          "desc": "常态3豆重击"
         }
       ]
     },
@@ -682,14 +736,47 @@
     },
 
     {
-      "type": "BOSS",
-      "bossLabel": "SK_HYS_HongHaiEr_01A",
-      "MagicSkillID": 440171,
-      "Name": "大招，打铁花",
       "Key": "S+XBUTTON2",
-      "CanBreak": true
+      "type": "actions",
+      "afterActions": [
+        {
+          "type": "magicskill",
+          "isDefault": true,
+          "magicID": 8527,
+          "Scale3D": 0.9,
+          "desc": "虫总兵"
+        },
+        {
+          "skillIndexs": [0],
+          "skillValues": [50013, 10803],
+          "type": "bossskill",
+          "bossLabel": "SK_LYS_Dage",
+          "bossType": "BOSS",
+          "MagicSkillID": 19015,
+          "desc": "Q3，接小黄龙切手技"
+        }
+      ]
     },
 
+    {
+      "Key": "S+XBUTTON1",
+      "type": "actions",
+      "afterActions": [
+        {
+          "Type": "skill",
+          "SkillID": 50001,
+          "isDefault": true,
+          "desc": "大圣10705"
+        },
+        {
+          "skillIndexs": [0],
+          "skillValues": [50001, 10705, 10706],
+          "Type": "skill",
+          "SkillID": 50013,
+          "desc": "50001，接Q3"
+        }
+      ]
+    },
     {
       "type": "BOSS",
       "bossLabel": "SK_HFM_HFDS_01a",
@@ -739,19 +826,6 @@
       "Key": ""
     },
 
-    {
-      "type": "actions",
-      "afterActions": [
-        {
-          "type": "magicskill",
-          "magicID": 8527,
-          "Scale3D": 0.9,
-          "resetBack": true,
-          "desc": "虫总兵"
-        }
-      ],
-      "Key": "S+XBUTTON1"
-    },
     {
       "type": "BOSS",
       "bossLabel": "SK_HFM_ShiGanDang",

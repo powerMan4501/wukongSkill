@@ -24,7 +24,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_yinbingniumo_01/Materials/M_hys_yinbingniumo_01_main_mask.M_hys_yinbingniumo_01_main_mask"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146633869"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_yinbingniumo_01/Hair/HAIR_beard_short_gs.HAIR_beard_short_gs_TFX",
@@ -37,7 +37,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_yinbingniumo_01/Materials/M_hys_yinbingniumo_01_main_mask.M_hys_yinbingniumo_01_main_mask"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146633868"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_yinbingniumo_01/Hair/HAIR_beard_baseshort.HAIR_beard_baseshort_TFX",
@@ -50,7 +50,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_yinbingniumo_01/Materials/M_hys_yinbingniumo_01_main_mask.M_hys_yinbingniumo_01_main_mask"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146633867"
       },
       {
         "TFXAsset": "/Game/00MainHZ/Characters/HYS/HYS_yinbingniumo_01/Hair/HAIR_tail_gs.HAIR_tail_gs_TFX",
@@ -63,7 +63,7 @@
           "RootTangentBlending": 0.0,
           "ShadowThickness": 0.05
         },
-        "HairMaterial": "/Game/00MainHZ/Characters/HYS/HYS_yinbingniumo_01/Materials/M_hys_yinbingniumo_01_main_mask.M_hys_yinbingniumo_01_main_mask"
+        "HairMaterial": "/Engine/Transient.MaterialInstanceDynamic_2146633866"
       }
     ],
     "InteractBones": null,
@@ -94,7 +94,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_Atk_Fast_01.AM_hys_yinbingniumo_01_Atk_Fast_01'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -120,7 +120,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_Atk_Fast_02.AM_hys_yinbingniumo_01_Atk_Fast_02'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -146,7 +146,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_Atk_Fast_03.AM_hys_yinbingniumo_01_Atk_Fast_03'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -172,7 +172,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_Atk_Fast_04.AM_hys_yinbingniumo_01_Atk_Fast_04'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -198,7 +198,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_Atk_Fast_05.AM_hys_yinbingniumo_01_Atk_Fast_05'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -224,7 +224,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_Atk_Fast_07.AM_hys_yinbingniumo_01_Atk_Fast_07'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -250,7 +250,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_Atk_Fast_08.AM_hys_yinbingniumo_01_Atk_Fast_08'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -276,7 +276,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_Atk_Fast_09.AM_hys_yinbingniumo_01_Atk_Fast_09'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -302,7 +302,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_atk10_start.AM_hys_yinbingniumo_01_atk10_start'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -328,7 +328,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_atk10_end.AM_hys_yinbingniumo_01_atk10_end'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -354,7 +354,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_Turn_L_03.AM_hys_yinbingniumo_01_Turn_L_03'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -380,7 +380,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_Turn_L_04.AM_hys_yinbingniumo_01_Turn_L_04'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -406,7 +406,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_Turn_R_03.AM_hys_yinbingniumo_01_Turn_R_03'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -432,7 +432,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_Turn_R_04.AM_hys_yinbingniumo_01_Turn_R_04'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -458,7 +458,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_Enter_F_01.AM_hys_yinbingniumo_01_Enter_F_01'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -484,7 +484,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_Enter_B_01.AM_hys_yinbingniumo_01_Enter_B_01'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,
@@ -510,7 +510,7 @@
       "CanBreak": true,
       "Name": "未命名",
       "Description": "空",
-      "AnimPath": null,
+      "AnimPath": "AnimMontage'/Game/00Main/Animation/HYS/HYS_yinbingniumo_01/Montage/AM_hys_yinbingniumo_01_JumpB_GoHome.AM_hys_yinbingniumo_01_JumpB_GoHome'",
       "Buffers": null,
       "Buffs": null,
       "Bullets": null,

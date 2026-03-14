@@ -8,6 +8,12 @@
     "BulletSweepCheckDelayTime": 0.55
   },
   {
+    "ID": 148,
+    "desc": "地刺",
+    "HitDestructibleStrengthType": 4,
+    "HitEffectsforChr": [1072104]
+  },
+  {
     "ID": 150,
     "desc": "杨戬头冠，飞剑",
     "HitDestructibleStrengthType": 4,
@@ -337,5 +343,18 @@
     "HitEffectsforChr": [1016262],
     "HitDestructibleStrengthType": 4,
     "BulletCanThroughBlockage": 1
+  },
+  {
+    "ID": 74010208,
+    "desc": "金箍棒砸的地裂",
+    "HitEffectsforChr": [888555034],
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
+  },
+  {
+    "ID": 22104092,
+    "desc": "金色雷球爆炸",
+    "HitEffectsforChr": [74019202, 910460],
+    "HitDestructibleStrengthType": 4
   }
 ]

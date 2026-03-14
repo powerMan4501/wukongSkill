@@ -1,0 +1,38 @@
+[
+  {
+    "skillID": 402004,
+    "desc": "飞天索敌砸击",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3,
+      "addRadius": 500
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [58111003, 2403372, 44010401],
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "hasBuff": 888666007,
+            "desc": "有火buff，地面岩浆,地火，炸炸炸"
+          },
+
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [74011107, 30050301],
+            "noHasAnyBuff": [888666007],
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "Type": "bullet",
+            "desc": "没有火buff，金沙波动"
+          },
+          { "Type": "out_magic", "TimeDelay": 700, "desc": "退出精魄" }
+        ]
+      }
+    ]
+  }
+]

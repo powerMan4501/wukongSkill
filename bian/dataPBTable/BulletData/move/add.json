@@ -67,7 +67,7 @@
     "MoveClampToLand": 1,
     "MoveAlignToLand": 0
   },
-    {
+  {
     "desc": "克隆冰气，74010103",
     "ID": 88880014,
     "ProjectileMoveModeType": 1,
@@ -76,9 +76,18 @@
     "MoveClampToLand": 0,
     "MoveAlignToLand": 0
   },
-     {
+  {
     "desc": "克隆毒液，10030401",
     "ID": 88880015,
+    "ProjectileMoveModeType": 1,
+    "ProjectileSpdType": 1,
+    "ProjectileFlyTime": 0.0,
+    "MoveClampToLand": 0,
+    "MoveAlignToLand": 0
+  },
+  {
+    "ID": 88880016,
+    "desc": "克隆小火球，40100101",
     "ProjectileMoveModeType": 1,
     "ProjectileSpdType": 1,
     "ProjectileFlyTime": 0.0,

@@ -73,5 +73,12 @@
     "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/GYCY/GYCY_She_01/BP_GYCY_SheBang_Bullet_01.BP_GYCY_SheBang_Bullet_01_C",
     "ProjectileDelayDestroyTime": 0,
     "ProjectileLifeTime": 0.3
+  },
+  {
+    "ID": 88880016,
+    "desc": "克隆小火球，地面激光",
+    "ProjectileBPTemplatePath": "/Game/00Main/Design/Bullets/PSD/PSD_BaiYanMoJun_01/Phase2/BP_PSD_BaiYanMoJun_01_P2_Bullet1026_n.BP_PSD_BaiYanMoJun_01_P2_Bullet1026_n_C",
+    "ProjectileDelayDestroyTime": 2,
+    "ProjectileLifeTime": 0.5
   }
 ]

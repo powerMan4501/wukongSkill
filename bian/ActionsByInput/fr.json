@@ -1,0 +1,12 @@
+[
+  {
+    "code": "yin",
+    "afterActions": [
+      {
+        "Type": "buff",
+        "BuffID": 24001,
+        "BuffTime": 2000
+      }
+    ]
+  }
+]

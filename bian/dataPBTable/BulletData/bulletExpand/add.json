@@ -125,5 +125,13 @@
     "LaserMaxLength": 0.0,
     "LaserLengthSpeed": 0.0,
     "LaserLengthSpeedCurvePath": ""
+  },
+  {
+    "ID": 88880016,
+    "desc": "克隆小火球，40100101",
+    "HitEffectsforChr": [44019902, 888555017],
+    "BulletSweepCheckDelayTime": 0.0,
+    "HitDestructibleStrengthType": 4,
+    "BulletCanThroughBlockage": 1
   }
 ]

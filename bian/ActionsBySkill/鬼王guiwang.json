@@ -72,7 +72,8 @@
                 "desc": "巴山虎"
               }
             ]
-          }
+          },
+          { "Type": "out_magic", "TimeDelay": 800, "desc": "退出精魄" }
         ]
       }
     ]
@@ -120,7 +121,6 @@
       "replaceEffects": true
     },
     "sweep_actions": [
-     
       {
         "linkValue": 0,
         "actions": [
@@ -136,7 +136,7 @@
               }
             ]
           },
-           { "Type": "out_magic", "TimeDelay": 800, "desc": "退出精魄" }
+          { "Type": "out_magic", "TimeDelay": 800, "desc": "退出精魄" }
         ]
       }
     ]

@@ -52,7 +52,7 @@
                 "OffsetY": 500,
                 "desc": "有冰buff，冰暴"
               },
-              {
+               {
                 "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
                 "ProjectTileID": 1016201,
                 "ForTarget": true,
@@ -79,7 +79,7 @@
       "replaceEffects": true
     },
     "sweep_actions": [
-       {
+      {
         "linkValue": 4.032067,
         "actions": [
           {

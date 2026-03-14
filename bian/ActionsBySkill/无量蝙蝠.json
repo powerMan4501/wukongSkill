@@ -17,5 +17,70 @@
         "desc": "拉远镜头"
       }
     ]
+  },
+
+  {
+    "skillID": 302102,
+    "desc": "无量蝠 喷冰",
+    "montage_config": {
+      "speedRate": 1.4,
+      "AMSpeedRate": 1.4
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 7.858504,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [2403471, 152],
+            "desc": "冰暴,冰地波"
+          },
+          { "Type": "out_magic", "desc": "退出精魄" }
+        ]
+      },
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bullets": [
+              {
+                "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+                "ProjectTileID": 74010103,
+                "SpeedLeftValue": 4000,
+                "SpeedRightValue": 4000,
+                "ForTarget": true,
+                "desc": "巨猿扔的冰气"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "skillID": 11367,
+    "desc": "疾蝠 ",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "bullet_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 74011102,
+            "ForTarget": true,
+            "SpeedLeftValue": 12000,
+            "SpeedRightValue": 12000,
+            "desc": "发射巨猿元气弹"
+          }
+        ]
+      }
+    ]
   }
 ]

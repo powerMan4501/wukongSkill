@@ -32,6 +32,108 @@
     ]
   },
   {
+    "ID": 180,
+    "BuffTips": "安身术主角增益Buff",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0],
+        "EffectParamsFloat": [5.0]
+      },
+      {
+        "EffectTrigger": 2,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [152, 1000, 0, 1],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [11],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 97,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [1],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [58, 3000, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [59, 5000, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 1400140,
+    "BuffTips": "业火火焰伤害Buff",
+    "Duration": -1,
+    "Interval": 1000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": ["【主角】轻棍连招/0段蓄力"],
+        "EffectParams": [25, 3, 1, 1, 2, 0, 0, 4],
+        "EffectParamsFloat": [
+          150.0, 150.0, 18500.0, 150.0, 0.0, 150.0, 150.0, 150.0
+        ]
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 95,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [2, 1, 0, 50],
+        "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 181,
+    "BuffTips": "安身术持续火焰伤害Buff",
+    "Duration": -1,
+    "Interval": 1000,
+    "BuffEffects": [
+      {
+        "desc": "地面激光",
+        "EffectTrigger": 2,
+        "EffectType": 20,
+        "EffectTargetSelectType": 0,
+        "EffectParams": [88880016, 1, 0, 0, 0, 0],
+        "EffectParamsFloat": [0, 0, 0, 0, 0, 0],
+        "EffectParamsString": [
+          "do_actions",
+          "bullet_ids:88880016",
+          "无",
+          "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        ]
+      }
+    ]
+  },
+  {
     "ID": 227,
     "BuffTips": "铜头成功后表现由0.4秒改成1.6秒",
     "Duration": 1600
@@ -181,38 +283,6 @@
         "EffectParamsString": [],
         "EffectParams": [20634],
         "EffectParamsFloat": [0.0]
-      }
-    ]
-  },
-  {
-    "ID": 700102,
-    "BuffTips": "僵尸大圣安身术棍势Buff，回血回蓝",
-    "Duration": -1,
-    "Interval": 100,
-    "BuffEffects": [
-      {
-        "EffectTrigger": 2,
-        "EffectType": 134,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [1],
-        "EffectParamsFloat": [3.0]
-      },
-      {
-        "EffectTrigger": 2,
-        "EffectType": 3,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [152, 50, 0, 0],
-        "EffectParamsFloat": []
-      },
-      {
-        "EffectTrigger": 2,
-        "EffectType": 3,
-        "EffectTargetSelectType": 0,
-        "EffectParamsString": [],
-        "EffectParams": [151, 10, 0, 0],
-        "EffectParamsFloat": []
       }
     ]
   },
@@ -380,6 +450,36 @@
         "EffectParamsString": [],
         "EffectParams": [51, 100, 0],
         "EffectParamsFloat": []
+      }
+    ]
+  },
+  {
+    "ID": 700101,
+    "BuffTips": "僵尸大圣安身术火Buff",
+    "Duration": -1,
+    "Interval": 1000,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 95,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [2, 1, 1, 10000],
+        "EffectParamsFloat": []
+      },
+      {
+        "desc": "火球",
+        "EffectTrigger": 1,
+        "EffectType": 20,
+        "EffectTargetSelectType": 0,
+        "EffectParams": [40100101, 1, 0, 0, 0, 0],
+        "EffectParamsFloat": [0, 0, 0, 0, 0, 0],
+        "EffectParamsString": [
+          "do_actions",
+          "bullet_ids:40100101",
+          "无",
+          "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        ]
       }
     ]
   }

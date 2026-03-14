@@ -132,7 +132,7 @@
             "ProjectTileID": 44051502,
             "ForTarget": true,
             "noHasAnyBuff": [888666005, 888666006, 888666007, 888666008],
-            "spawnBaseSocketName": "weapon_r",
+            "spawnBaseSocketName": "hand_r",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
             "desc": "夜叉王 飞轮"
           }
@@ -211,11 +211,10 @@
             "ForTarget": true,
             "hasBuff": 888666007,
             "desc": "火buff就发射火焰剑气 11012601 40580501",
-            "BornDirOffsetXLeftValue": 45,
-            "BornDirOffsetXRightValue": 45,
-            "spawnBaseSocketName": "weapon_r_index_03",
-            "SpeedLeftValue": 6000,
-            "SpeedRightValue": 6000
+            "BornDirOffsetXLeftValue": 135,
+            "BornDirOffsetXRightValue": 135,
+            "spawnBaseSocketName": "weapon_r",
+            "BulletCount": 2
           },
           {
             "Type": "bullet",
@@ -226,7 +225,21 @@
             "desc": "冰buff就发射冰剑气",
             "BornDirOffsetXLeftValue": 45,
             "BornDirOffsetXRightValue": 45,
-            "spawnBaseSocketName": "weapon_r_index_03",
+            "spawnBaseSocketName": "weapon_r",
+            "BulletCount": 2
+          },
+
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 30131502,
+            "ForTarget": true,
+            "hasBuff": 888666008,
+            "desc": "毒buff就发射红剑气",
+            "BulletCount": 2,
+            "BornDirOffsetXLeftValue": 135,
+            "BornDirOffsetXRightValue": 135,
+            "spawnBaseSocketName": "weapon_r",
             "SpeedLeftValue": 6000,
             "SpeedRightValue": 6000
           },
@@ -235,26 +248,24 @@
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
             "ProjectTileID": 50051301,
             "ForTarget": true,
-            "noHasAnyBuff": [888666007, 888666006, 888666008],
-            "desc": "没有冰火毒buff就发射雷剑气",
+            "hasBuff": 888666005,
+            "desc": "雷buff就发射雷剑气",
+            "BulletCount": 2,
             "BornDirOffsetXLeftValue": 45,
             "BornDirOffsetXRightValue": 45,
-            "spawnBaseSocketName": "weapon_r_index_03",
-            "SpeedLeftValue": 6000,
-            "SpeedRightValue": 6000
+            "spawnBaseSocketName": "weapon_r"
           },
           {
             "Type": "bullet",
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-            "ProjectTileID": 30131502,
+            "ProjectTileID": 44051502,
             "ForTarget": true,
-            "hasBuff": 888666008,
-            "desc": "毒buff就发射红剑气",
+            "noHasAnyBuff": [888666005, 888666007, 888666006, 888666008],
+            "desc": "没有buff就发射 夜叉王飞轮",
+            "BulletCount": 2,
             "BornDirOffsetXLeftValue": 135,
             "BornDirOffsetXRightValue": 135,
-            "spawnBaseSocketName": "weapon_r_index_03",
-            "SpeedLeftValue": 6000,
-            "SpeedRightValue": 6000
+            "spawnBaseSocketName": "weapon_r"
           }
         ]
       }

@@ -1,0 +1,24 @@
+[
+  {
+    "skillID": 301210,
+    "desc": "往后飞退，再飞上去索敌砸出冰暴",
+    "montage_config": {
+      "speedRate": 1.2,
+      "AMSpeedRate": 1.2,
+      "addRadius": 200
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [30139802, 2403471,152],
+            "desc": "一圈冰刺,冰暴,冰地波"
+          }
+        ]
+      }
+    ]
+  }
+]

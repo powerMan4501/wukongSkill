@@ -1,0 +1,78 @@
+[
+  {
+    "ID": 246,
+    "BuffTips": "劈棍-提升棍势值Buff",
+    "Duration": -1,
+    "Interval": 100,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [1],
+        "EffectParamsFloat": [14]
+      }
+    ]
+  },
+
+  {
+    "ID": 285,
+    "BuffTips": "撑棍-提升棍势值Buff",
+    "Duration": -1,
+    "Interval": 100,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [1],
+        "EffectParamsFloat": [14]
+      }
+    ]
+  },
+  {
+    "ID": 286,
+    "BuffTips": "捅棍-提升棍势值Buff",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [1],
+        "EffectParamsFloat": [14]
+      }
+    ]
+  },
+  {
+    "ID": 50016,
+    "BuffTips": "大圣立棍-提升棍势值Buff",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [1],
+        "EffectParamsFloat": [14]
+      }
+    ]
+  },
+
+  {
+    "ID": 50091,
+    "BuffTips": "大圣蓄力劈棍-提升棍势值Buff",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [1],
+        "EffectParamsFloat": [16]
+      }
+    ]
+  }
+]

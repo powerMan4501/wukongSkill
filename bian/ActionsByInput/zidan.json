@@ -5,7 +5,7 @@
       {
         "Type": "bullet",
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-        "ProjectTileIDs": [44051002, 44051003, 44051005, 44051006, 44051007],
+        "ProjectTileIDs": [44051001, 44051003],
         "desc": "夜叉王地刺"
       }
     ]
@@ -55,10 +55,68 @@
     "afterActions": [
       {
         "Type": "bullet",
-        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-        "ProjectTileID": 40121801,
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileID": 88880016,
         "ForTarget": true,
-        "desc": "发射鬼火"
+        "desc": "88880016"
+      }
+    ]
+  },
+  {
+    "code": "wkans",
+    "afterActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileID": 100119902,
+        "desc": "安身法"
+      }
+    ]
+  },
+
+  {
+    "code": "dsans",
+    "afterActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileID": 70014201,
+        "desc": "残躯大圣安身法"
+      }
+    ]
+  },
+
+  {
+    "code": "zice",
+    "afterActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileID": 1017761,
+        "desc": "雅香客冰雾气"
+      }
+    ]
+  },
+  {
+    "code": "zlei",
+    "afterActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileID": 2304001,
+        "desc": "雷震"
+      }
+    ]
+  },
+
+  {
+    "code": "zhai",
+    "afterActions": [
+      {
+        "Type": "bullet",
+        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+        "ProjectTileID": 1607301,
+        "desc": "海上僧冰领域"
       }
     ]
   }

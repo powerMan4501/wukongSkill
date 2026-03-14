@@ -1,5 +1,9 @@
 [
   {
+    "ID": 140,
+    "ProjectileLifeTime": 60
+  },
+  {
     "desc": "飞剑视觉，增加时间",
     "ID": 145,
     "ProjectileLifeTime": 9.2
@@ -8,16 +12,6 @@
     "desc": "真正飞剑，增加时间",
     "ID": 147,
     "ProjectileLifeTime": 8.3
-  },
-  {
-    "desc": "分身安身法改成残躯的",
-    "ID": 1052001,
-    "ProjectileBPTemplatePath": "/Game/00Main/Design/MagicFields/MGD/MGD_JSDS/BP_mgd_jsds_anshenshu_02.BP_mgd_jsds_anshenshu_02_C"
-  },
-  {
-    "desc": "马喽安身法改成残躯的",
-    "ID": 1052003,
-    "ProjectileBPTemplatePath": "/Game/00Main/Design/MagicFields/MGD/MGD_JSDS/BP_mgd_jsds_anshenshu_02.BP_mgd_jsds_anshenshu_02_C"
   },
 
   {
@@ -56,5 +50,24 @@
     "ProjectileLifeTime": 30,
     "BeHitedTriggerEffectIDs": [1026212],
     "BirthBuff": []
+  },
+
+  {
+    "ID": 74010208,
+    "desc": "金箍棒砸的地裂",
+    "BirthBuff": [777666001]
+  },
+  {
+    "ID": 1016202,
+    "desc": "疯虎元气弹,限制同时只有一个",
+    "ProjectileNumLimit": 1
+  },
+  {
+    "ID": 100119902,
+    "ProjectileLifeTime": 600
+  },
+  {
+    "ID": 2304001,
+    "ProjectileLifeTime": 600
   }
 ]

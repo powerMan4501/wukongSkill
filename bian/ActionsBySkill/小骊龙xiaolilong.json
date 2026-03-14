@@ -81,5 +81,30 @@
         ]
       }
     ]
+  },
+
+  {
+    "skillID": 302504,
+    "desc": "跳起+捶地",
+    "montage_config": {
+      "speedRate": 1.5,
+      "AMSpeedRate": 1.5,
+      "addRadius": 500
+    },
+    "sweep_actions": [
+      {
+        "linkValue": 2.934382,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [39010112],
+            "OffsetX": 500,
+            "OffsetY": 500,
+            "desc": "电圈"
+          }
+        ]
+      }
+    ]
   }
 ]

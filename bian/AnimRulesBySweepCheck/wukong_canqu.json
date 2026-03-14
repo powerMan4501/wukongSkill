@@ -1,13 +1,5 @@
 [
-  {
-    "desc": "超大定海神针",
-    "montage": "AM_DingHaiShenZhen_Big",
-    "linkValue": 0,
-    "speedRate": 1.3,
-    "hitEffects": [888555038],
-    "addRadius": 6500,
-    "replaceEffects": true
-  },
+ 
   {
     "desc": "立棍，小飞棍",
     "montage": "AM_JSDSLiGunXZA",
@@ -23,7 +15,7 @@
     "linkValue": 0,
     "speedRate": 1.3,
     "addRadius": 500,
-    "hitEffects": [888555038],
+    "hitEffects": [888555034],
     "replaceEffects": true,
     "CastActions": [
       {
