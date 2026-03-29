@@ -13,6 +13,7 @@ using ArchiveB1;
 using B1UI.GSUI;
 using CommB1;
 using ResB1;
+using BtlB1;
 
 
 
@@ -450,29 +451,15 @@ public class Hooks
 
             if (config == null)
             {
-
                 return;
             }
             ;
             var addRadius = 100;
             var hitEffects = new List<int>();
             float am_speed = 0;
-            if (config.hitEffects != null && config.hitEffects.Count > 0)
-            {
-                hitEffects.AddRange(config.hitEffects);
-            }
-            if (config.AMSpeedRate != null && config.AMSpeedRate > 0)
-            {
-                am_speed = (float)config.AMSpeedRate;
-            }
-            if (config.addRadius != null && config.addRadius > 0)
-            {
-                addRadius = (int)config.addRadius;
-            }
             if (config != null)
             {
                 addRadius = config.addRadius ?? 100;
-
                 if (config.hitEffects != null && config.hitEffects.Count > 0)
                 {
                     hitEffects.AddRange(config.hitEffects);
@@ -481,8 +468,11 @@ public class Hooks
                 {
                     am_speed = (float)config.AMSpeedRate;
                 }
+                if (config.addRadius != null && config.addRadius > 0)
+                {
+                    addRadius = (int)config.addRadius;
+                }
             }
-            Log.Info($"修改Notify，给异常 handleNotify: {Montage.PathName}，Count：{AnimNotifyEventList.Count} ,addRadius:{addRadius} ,hitEffects:{hitEffects.Count} ,am_speed:{am_speed} ");
             // 查找相同类型的通知作为模板
             foreach (FAnimNotifyEvent item in AnimNotifyEventList)
             {
@@ -581,10 +571,7 @@ public class Hooks
                         var AMScaleItem = item.NotifyStateClass;
                         BANS_GSCalcAMScaleHelper.SetProperty(item.NotifyStateClass, "AMScaleMaxRate", AMScaleRate);
                     }
-                    if ((float)AMScaleMoveOffset >= -800 && (float)AMScaleMoveOffset <= -10)
-                    {
-                        var AMScaleItem = item.NotifyStateClass;
-                    }
+
                 }
                 else if (item.NotifyName == new FName("BANS_GSDodgeWindow") || item.NotifyName == new FName("ComboWindow"))
                 {
@@ -1247,7 +1234,7 @@ public class Hooks
 };
 
     private static readonly int[] ReflectBuffIds = { 20234, 229, 288, 294, 10133, 96036, 24082 };
-    private static readonly int[] wudiSkill = { 10803, 50013 };
+    private static readonly int[] wudiSkill = { 10803, 50003, 50005, 50007, 50013, 202220, 202244 };
 
     [HarmonyPatch]
     public static class BeAttackedTeamCheckPatch
@@ -1267,12 +1254,12 @@ public class Hooks
             var victimTeamId = victim?.GetTeamIDInCS();
             var playerTeamID = Helper.GetBGUPlayerCharacterCS()?.GetTeamIDInCS();
             // 如果是同一阵营，跳过伤害计算
-            var skillId = BGUFuncLibSkillCS.BGUGetCastingSkillID(victim);
+            // var skillId = BGUFuncLibSkillCS.BGUGetCastingSkillID(victim);
 
-            if (wudiSkill.Contains(skillId))
-            {
-                return false;
-            }
+            // if (wudiSkill.Contains(skillId))
+            // {
+            //     return false;
+            // }
 
             if (attackerTeamId == victimTeamId && victimTeamId == playerTeamID)
             {
@@ -1565,6 +1552,21 @@ public class Hooks
             var AttackerPlayer = Attacker as BGUCharacterCS;
             if (owner != null && player != null && owner.GetTeamIDInCS() == player.GetTeamIDInCS())
             {
+
+                var skillId = BGUFuncLibSkillCS.BGUGetCastingSkillID(owner);
+
+                if (wudiSkill.Contains(skillId))
+                {
+                    FinalDamageValue = 0f;
+                    FinalDmgForPart = -1f;
+                    FinalDmgForShield = 0f;
+                    FinalElementDmgValue = 0f;
+                    FinalNonElementDmgValue = 0f;
+                    BUS_GSEventCollection bUS_GSEventCollection = BUS_EventCollectionCS.Get(owner);
+                    if (bUS_GSEventCollection == null) return;
+                    bUS_GSEventCollection.Evt_UnitSetSimpleState.Invoke(EBGUSimpleState.ImmueStiff, false);
+                    return;
+                }
                 var maxHp = BGUFunctionLibraryCS.GetAttrValue(player, EBGUAttrFloat.HpMax) / 4;
                 if (maxHp > 100 && FinalDamageValue >= maxHp)
                 {
@@ -1640,7 +1642,7 @@ public class Hooks
     {
         private static readonly Dictionary<int, DateTime> _lastTriggerTimes = new Dictionary<int, DateTime>();
 
-        private static void Postfix(BUS_AttrComp __instance, ref EBGUAttrFloat AttrID, ref float IncreaseValue)
+        private static void Prefix(BUS_AttrComp __instance, ref EBGUAttrFloat AttrID, ref float IncreaseValue)
         {
             var owner = __instance.GetOwner() as BGUCharacterCS;
             if (owner != null)
@@ -1703,6 +1705,19 @@ public class Hooks
      10417,10418,10419,10423,10424,10425,10462,10463,10464,10465,
      10466,10467,10468,10469
  };
+    public static List<int> chargeSkill = new List<int>{
+     10811, 10812, 10813, 10814, 10815,
+
+     10835, 10836, 10837, 10838, 10839,
+
+    50025,50026,50027,50028,50029,
+
+    10870, 10871, 10872, 10873, 10874,
+
+    10875, 10876, 10877, 10878, 10879
+
+ };
+
     [HarmonyPatch(typeof(BUS_SkillInstsCompSvr), "CastSkillOKAddBuff")]
     public static class CastSkillOKAddBuffPatch
     {
@@ -1714,6 +1729,11 @@ public class Hooks
                 var player = Helper.GetBGUPlayerCharacterCS();
                 if (player != null && player.PathName == owner.PathName)
                 {
+                    if (chargeSkill.Contains(SkillID) && BGUFunctionLibraryCS.BGUHasBuffByID(owner, 1129))
+                    {
+                        Helper.charge_skill_end();
+                        return;
+                    }
                     if (SkillID == 10199)
                     {
                         InsertSkillID(Helper.enterSkillID);
@@ -2050,6 +2070,39 @@ public class Hooks
 
                 if (actionKey.Contains("do_actions"))
                 {
+
+                    string ParamsStr2 = skillEffectDesc.EffectParamsStr[2];
+                    BuffActiveCondition activeCondition = null;
+                    if (!string.IsNullOrEmpty(ParamsStr2) && ParamsStr2.Contains("ConditionType:") && ParamsStr2.Contains("ConditionParams:"))
+                    {
+                        var parts = ParamsStr2.Split(';');
+                        activeCondition = new BuffActiveCondition();
+
+                        foreach (var part in parts)
+                        {
+                            if (part.StartsWith("ConditionType:"))
+                            {
+                                activeCondition.ConditionType = int.Parse(part.Split(':')[1]);
+                            }
+                            else if (part.StartsWith("ConditionParams:"))
+                            {
+                                activeCondition.ConditionParams = part.Split(':')[1];
+                            }
+                        }
+                    }
+
+                    var character = Helper.GetBGUPlayerCharacterCS();
+                    // 条件判断
+                    if (activeCondition != null && activeCondition.ConditionType != null && activeCondition.ConditionParams != null)
+                    {
+                        if (!BGUFunctionLibraryCS.BGUCheckBuffEffectActiveCondition(0, bIsBuff: false, character,
+                            (EGSBuffAndSkillEffectActiveCondition)(activeCondition.ConditionType ?? 0),
+                            activeCondition.ConditionParams.Split(','), null))
+                        {
+                            return false;
+                        }
+                    }
+
                     Helper.SpawnProjectileByEffect(skillEffectDesc, Caster, Target, EffectInstReq);
                 }
                 return false;
@@ -2074,6 +2127,7 @@ public class Hooks
                 return false;
             }
             int buffID = BuffInst.BuffID;
+            Log.Info($"拦截子弹buff，ApplyByBuff_Implement buffID: {buffID}");
 
             FUStBuffDesc originalBuffDesc = BGW_GameDB.GetOriginalBuffDesc(buffID);
             IBUC_PassiveSkillData readOnlyData = BGU_DataUtil.GetReadOnlyData<IBUC_PassiveSkillData, BUC_PassiveSkillData>(EntitySharedRefFuncLib.Actor(BuffInst.RootCasterRef));
@@ -2086,6 +2140,40 @@ public class Hooks
                 return true;
             }
             string ParamsStr1 = DescRuntime.GetStringEffectParam(EffectIdx, 1);
+            string ParamsStr2 = DescRuntime.GetStringEffectParam(EffectIdx, 2);//"ConditionType:1;ConditionParams:12347,14822"
+
+            Log.Info($"拦截buff，ApplyByBuff_Implement buffID: {buffID},ParamsStr1：{ParamsStr1}，ParamsStr2:{ParamsStr2}");
+            // 解析条件字符串
+            BuffActiveCondition activeCondition = null;
+            if (!string.IsNullOrEmpty(ParamsStr2) && ParamsStr2.Contains("ConditionType:") && ParamsStr2.Contains("ConditionParams:"))
+            {
+                var parts = ParamsStr2.Split(';');
+                activeCondition = new BuffActiveCondition();
+
+                foreach (var part in parts)
+                {
+                    if (part.StartsWith("ConditionType:"))
+                    {
+                        activeCondition.ConditionType = int.Parse(part.Split(':')[1]);
+                    }
+                    else if (part.StartsWith("ConditionParams:"))
+                    {
+                        activeCondition.ConditionParams = part.Split(':')[1];
+                    }
+                }
+            }
+
+            var character = Helper.GetBGUPlayerCharacterCS();
+            // 条件判断
+            if (activeCondition != null && activeCondition.ConditionType != null && activeCondition.ConditionParams != null)
+            {
+                if (!BGUFunctionLibraryCS.BGUCheckBuffEffectActiveCondition(0, bIsBuff: true, character,
+                    (EGSBuffAndSkillEffectActiveCondition)(activeCondition.ConditionType ?? 0),
+                    activeCondition.ConditionParams.Split(','), null))
+                {
+                    return false;
+                }
+            }
 
             string path = DescRuntime.GetStringEffectParam(EffectIdx, 3);
             Log.Info($"拦截buff，ApplyByBuff_Implement actionKey: {actionKey},ParamsStr1：{ParamsStr1}，path:{path}");
@@ -2131,7 +2219,7 @@ public class Hooks
             // 调用SpawnProjectile
             foreach (var ID in projectileIDs)
             {
-                Helper.SpawnProjectile(Helper.GetBGUPlayerCharacterCS(), path, ID, forTarget, bulletCount, isRandom, offset, action);
+                Helper.SpawnProjectile(character, path, ID, forTarget, bulletCount, isRandom, offset, action);
 
             }
             return false;
@@ -2594,4 +2682,251 @@ public class Hooks
             return false;
         }
     }
+
+
+    public static Dictionary<int, FVector> scaleProjectileID = new Dictionary<int, FVector>
+{
+    {140, new FVector(2f, 2f, 1f)},
+    {74011107, new FVector(2f, 2f, 2f)},//金沙爆炸
+    
+    {1085601, new FVector(2f, 4f, 4f)},
+    {1085602, new FVector(2f, 4f, 4f)},
+    {1085603, new FVector(2f, 4f, 4f)},
+    {1085699, new FVector(2f, 4f, 4f)},
+    {1090201, new FVector(2f, 2f, 2f)},
+    {1090202, new FVector(2f, 2f, 2f)},
+
+    {70018902, new FVector(5f, 5f, 5f)},//jsxq 子弹
+    {47120302, new FVector(2f, 2f, 2f)},//王灵官红雷
+
+
+    
+    {146, new FVector(1f, 1f, 1f)},
+    {148, new FVector(2f, 1f, 1f)},
+    {131, new FVector(2f, 2f, 2f)},
+    {151, new FVector(2f, 2f, 1f)},
+    {118, new FVector(2f, 2f, 1f)},
+    {117, new FVector(2f, 2f, 2f)},
+    {74010208, new FVector(5f, 5f, 2f)},//金箍棒砸地的地裂
+
+    
+};
+    [HarmonyPatch]
+    public class BUS_ProjectileBasicComp_Patch
+    {
+        private static MethodBase TargetMethod()
+        {
+            return AccessTools.Method("b1.BUS_ProjectileBasicComp:OnBulletSpawnFinished", (Type[])null, (Type[])null);
+        }
+
+        private static void Postfix(UActorCompBaseCS __instance, ref FProjectileSpawnEventInfo ProjectileSpawnEventInfo)
+        {
+            var ower = __instance?.GetOwner();
+
+            if (ower != null)
+            {
+                if (ower.PathName.Contains("BP_mgd_yuan_anshenInner_C"))
+                {
+                    ower.SetActorRelativeScale3D(new FVector(2f, 2f, 1f));
+                }
+                // else if (ower.PathName.Contains("player_wukong_lava_C"))
+                // {
+                //     ower.SetActorRelativeScale3D(new FVector(6f, 6f, 3f));
+                // }
+                else if (ower.PathName.Contains("BP_Player_Wukong_Atk_yechawang_C"))
+                {
+                    ower.SetActorRelativeScale3D(new FVector(2f, 2f, 1f));
+                }
+                else if (ower.PathName.Contains("BP_Player_Wukong_Bullet_01_C"))
+                {
+                    ower.SetActorRelativeScale3D(new FVector(2f, 2f, 2f));
+                }
+                else if (ower.PathName.Contains("BP_50_hys_lingzhijing_03a_Bullet_Lv6_C"))
+                {
+                    ower.SetActorRelativeScale3D(new FVector(2f, 2f, 1f));
+                }
+                else if (ower.PathName.Contains("BP_mgd_jsds_jxsq_bullet_02_C"))
+                {
+                    ower.SetActorRelativeScale3D(new FVector(5f, 5f, 5f));
+                }
+                else if (ower.PathName.Contains("BP_mgd_yuan_iceblast_bigballnear_C"))
+                {
+                    ower.SetActorRelativeScale3D(new FVector(2f, 2f, 2f));
+                }
+                else if (ower.PathName.Contains("BP_Player_Wukong_Atk_Panchui_C"))
+                {
+                    ower.SetActorRelativeScale3D(new FVector(2f, 2f, 1f));
+                }
+                else if (ower.PathName.Contains("BP_player_wukong_precisedodge_bullet_C"))
+                {
+                    ower.SetActorRelativeScale3D(new FVector(2f, 2f, 2f));
+                }
+                else if (ower.PathName.Contains("BP_player_wukong_precisedodge_bullet2_C"))
+                {
+                    ower.SetActorRelativeScale3D(new FVector(2f, 2f, 2f));
+                }
+
+                else if (ower.PathName.Contains("BP_20_hfm_bashanhu_01_Bullet_AOE_C"))
+                {
+                    ower.SetActorRelativeScale3D(new FVector(2f, 2f, 2f));
+                }
+                else if (ower.PathName.Contains("BP_HYS_HongHaiEr_02A_DaoZhen10_Bull_C"))
+                {
+                    ower.SetActorRelativeScale3D(new FVector(4f, 4f, 1f));
+                }
+                else if (ower.PathName.Contains("BP_hfm_wa_01_bullet_leiqiu_baozha_01_C"))
+                {
+                    ower.SetActorRelativeScale3D(new FVector(2f, 2f, 2f));
+                }
+                else if (ower.PathName.Contains("BP_szlc_wanglingguan_01_plym_boom_C"))
+                {
+                    ower.SetActorRelativeScale3D(new FVector(3f, 3f, 3f));
+                }
+                else if (ower.PathName.Contains("BP_Player_Wukong_AnShenShu_01_DISP_MF_C"))
+                {
+                    // 马喽安身术
+                    ower.SetActorRelativeScale3D(new FVector(8f, 8f, 8f));
+                }
+                // else if (ower.PathName.Contains("BP_mgd_jsds_anshenshu_0"))
+                // {
+                //     ower.SetActorRelativeScale3D(new FVector(3f, 3f, 1f));
+                // }
+                else if (ower.PathName.Contains("BP_player_lys_yao_MF_v"))
+                {
+                    // 海上僧变身释放的雪区域
+                    ower.SetActorRelativeScale3D(new FVector(4f, 4f, 1f));
+                }
+
+                else if (ower.PathName.Contains("BP_hys_wa_01_MF_9904_C_"))
+                {
+                    // 火蛙的火地板
+                    ower.SetActorRelativeScale3D(new FVector(4f, 4f, 2f));
+                }
+
+
+                else if (ower.PathName.Contains(".BP_30_lys_yaxiangke_MF_Lv"))
+                {
+                    // 雅香客
+                    ower.SetActorRelativeScale3D(new FVector(4f, 4f, 4f));
+                }
+
+                else if (ower.PathName.Contains("BP_player_hys_ma_R2_pre_MF_C"))
+                {
+                    // 马哥的雷阵
+                    ower.SetActorRelativeScale3D(new FVector(4f, 4f, 4f));
+                }
+                else if (ower.PathName.Contains("MF_lys_xuewa_icepick_ring_C"))
+                {
+                    // 冰蛙冰刺
+                    ower.SetActorRelativeScale3D(new FVector(2f, 2f, 1f));
+                }
+                else if (ower.PathName.Contains("BP_LYS_Dage_leiguangbo_C"))
+                {
+                    // 小黄龙雷电
+                    ower.SetActorRelativeScale3D(new FVector(2f, 2f, 2f));
+                }else if (ower.PathName.Contains("BP_player_wukong_atk_shougun_lightning_C"))
+                {
+                    // 兽棍红雷
+                    ower.SetActorRelativeScale3D(new FVector(2f, 2f, 2f));
+                }
+
+
+                Log.Info($"发射子弹完毕 ower：{ower.PathName}");
+            }
+        }
+    }
+
+
+
+
+    [HarmonyPatch]
+    public static class BUS_MFOverlapCompImplPatch
+    {
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BUS_MFOverlapCompImpl), "OnMagicFieldInit")]
+        static bool Prefix(BUS_MFOverlapCompImpl __instance, FGSProjectileSpawnInfo ProjectileSpawnInfo, AActor MasterActor)
+        {
+            var owner = __instance.GetOwner();
+            if (owner != null)
+            {
+                // 获取ProjectileBasicData
+                BUC_ProjectileBasicData projectileBasicData = BGU_DataUtil.GetUnPersistentReadOnlyData<BUC_ProjectileBasicData>(owner);
+                if (projectileBasicData != null)
+                {
+                    // 获取ProjectileID
+                    int projectileID = projectileBasicData.ProjectileID;
+                    Log.Info($"魔法区域初始化 OnMagicFieldInit ID：{projectileID}");
+                    // 获取MFOverlapData
+                    BUC_MFOverlapData mfOverlapData = BGU_DataUtil.GetUnPersistentReadOnlyData<BUC_MFOverlapData>(owner);
+                    if ((projectileID == 100119902 || projectileID == 70012401 || projectileID == 70014201) && mfOverlapData != null)
+                    {
+                        // 添加伤害效果Buff（BuffID: 181）
+                        if (!mfOverlapData.FieldBuffList.Any(buff =>
+                            buff.BuffID == 181 &&
+                            buff.TargetTeamFilter == 4 &&
+                            buff.TargetTypeFilter == 1))
+                        {
+                            mfOverlapData.FieldBuffList.Add(new FFieldBuffInfo
+                            {
+                                BuffID = 181,  // 伤害效果
+                                bIgnoreTypeFilter = false,
+                                TargetTeamFilter = 4,  // 4表示敌人
+                                TargetTypeFilter = 1   // 1表示角色
+                            });
+                        }
+                        // 添加恢复效果Buff（BuffID: 180）
+                        // if (!mfOverlapData.FieldBuffList.Any(buff =>
+                        //     buff.BuffID == 180 &&
+                        //     buff.TargetTeamFilter == 2 &&
+                        //     buff.TargetTypeFilter == 1))
+                        // {
+                        //     mfOverlapData.FieldBuffList.Add(new FFieldBuffInfo
+                        //     {
+                        //         BuffID = 180,  // 恢复效果
+                        //         bIgnoreTypeFilter = false,
+                        //         TargetTeamFilter = 2,  // 2表示队友
+                        //         TargetTypeFilter = 1   // 1表示角色
+                        //     });
+                        // }
+                    }
+                    else if ((projectileID == 140 || projectileID == 58111003 || projectileID == 44509904) && mfOverlapData != null)
+                    {
+                        if (!mfOverlapData.FieldBuffList.Any(buff =>
+                                                    buff.BuffID == 1400140))
+                        {
+                            mfOverlapData.FieldBuffList.Add(new FFieldBuffInfo
+                            {
+                                BuffID = 1400140,  // 业火伤害效果
+                                bIgnoreTypeFilter = false,
+                                TargetTeamFilter = 4,  // 4表示敌人
+                                TargetTypeFilter = 1   // 1表示角色
+                            });
+                        }
+                    }
+                    else if ((projectileID == 30510103 || projectileID == 30139802 || projectileID == 30510602) && mfOverlapData != null)
+                    {
+                        // 冰蛙 一圈冰刺
+                        if (!mfOverlapData.FieldBuffList.Any(buff =>
+                                                    buff.BuffID == 16473))
+                        {
+                            mfOverlapData.FieldBuffList.Add(new FFieldBuffInfo
+                            {
+                                BuffID = 16473,  // 冰刺
+                                bIgnoreTypeFilter = false,
+                                TargetTeamFilter = 4,  // 4表示敌人
+                                TargetTypeFilter = 1   // 1表示角色
+                            });
+                        }
+                    }
+
+
+                }
+            }
+
+            return true; // 继续执行原始方法
+        }
+
+    }
+
+
 }

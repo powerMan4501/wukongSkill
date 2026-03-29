@@ -330,26 +330,29 @@ namespace bian
     {131, new FVector(2f, 2f, 2f)},
     {151, new FVector(2f, 2f, 1f)},
     {118, new FVector(2f, 2f, 1f)},
-    {117, new FVector(2f, 2f, 2f)}
+    {117, new FVector(2f, 2f, 2f)},
+    {74010208, new FVector(5f, 5f, 2f)},//金箍棒砸地的地裂
+
+    
 };
 
-        [HarmonyPatch(typeof(GSDel_RequestSpawnAProjectile), "Invoke")]
-        [HarmonyPrefix]
-        private static void GSDel_RequestSpawnAProjectileInvoke(ref FGSProjectileSpawnInfo ProjectileSpawnInfo)
-        {
-            if (IsPlayer(ProjectileSpawnInfo.Spawner.PathName))
-            {
-                var id = ProjectileSpawnInfo.ProjectileID;
-                if (scaleProjectileID.ContainsKey(id))
-                {
-                    var scale = scaleProjectileID[id];
-                    Helper.DelayExecute(40, () =>
-                    {
-                        Helper.projectileScale(id, scale);
-                    });
-                }
-            }
-        }
+        // [HarmonyPatch(typeof(GSDel_RequestSpawnAProjectile), "Invoke")]
+        // [HarmonyPrefix]
+        // private static void GSDel_RequestSpawnAProjectileInvoke(ref FGSProjectileSpawnInfo ProjectileSpawnInfo)
+        // {
+        //     if (IsPlayer(ProjectileSpawnInfo.Spawner.PathName))
+        //     {
+        //         var id = ProjectileSpawnInfo.ProjectileID;
+        //         if (scaleProjectileID.ContainsKey(id))
+        //         {
+        //             var scale = scaleProjectileID[id];
+        //             Helper.DelayExecute(40, () =>
+        //             {
+        //                 Helper.projectileScale(id, scale);
+        //             });
+        //         }
+        //     }
+        // }
 
         private static bool isBuffLoaded = false; // 添加静态标志变量
 

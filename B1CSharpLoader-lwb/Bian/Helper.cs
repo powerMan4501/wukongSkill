@@ -3037,7 +3037,18 @@ namespace bian
             PlayerMgr.Commit();
         }
 
-
+        public static void charge_skill_end()
+        {
+            DelayExecute(10, () =>
+              {
+                  var BUSEventCollection = BUS_EventCollectionCS.Get(GetControlledPawn());
+                  if (BUSEventCollection != null)
+                  {
+                      BUSEventCollection.Evt_TriggerChargeSkillNextStageEvent.Invoke(EChargeSkillEndEventType.ChargeEnd);
+                      BUSEventCollection.Evt_ComboGraphReset.Invoke();
+                  }
+              });
+        }
         public static void change_to_dasheng(int? time = 999)
         {
             var Owner = GetControlledPawn();

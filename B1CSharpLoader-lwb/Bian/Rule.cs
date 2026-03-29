@@ -24,6 +24,7 @@ namespace bian
     {
 
         public int? distance { get; set; }
+        public bool? noResetCombo { get; set; }
         public int? equipId { get; set; }
         public List<RuleAction>? summonerActions { get; set; }
         public List<EAbnormalStateType>? clearTypes { get; set; }
@@ -428,6 +429,21 @@ namespace bian
             if (character == null) return;
 
             Log.Info($"执行DoAction Type: {action?.Type}，desc：{action?.desc},EffectInstReq:{action?.EffectInstReq?.ObjectID}");
+            if (action?.noResetCombo == true)
+            {
+
+                Helper.updateNoResetCombo(true);
+                var returnTime = action?.returnTime ?? 1200;
+                Helper.DelayExecute(returnTime, () =>
+                {
+                    Helper.updateNoResetCombo(false);
+                });
+
+            }
+            else if (action?.noResetCombo == false)
+            {
+                Helper.updateNoResetCombo(false);
+            }
             switch (action?.Type?.ToLower())
             {
                 case "buff":
@@ -527,6 +543,7 @@ namespace bian
                             character.FollowCamera.RelativeLocation = new FVector(0.0, 0.0, 0.0),
                             (int)(action?.returnTime ?? 1000)).ConfigureAwait(false);
                     }
+
                     break;
 
                 case "magic":
@@ -730,6 +747,9 @@ namespace bian
                     break;
                 case "alltaskitem":
                     Helper.addAllTaskItem();
+                    break;
+                case "charge_skill_end":
+                    Helper.charge_skill_end();
                     break;
 
                 case "auto_attack":
