@@ -128,26 +128,5 @@
         ]
       }
     ]
-  },
-
-  {
-    "desc": "大头，如来神掌",
-    "montage": "AM_GYCY_YanJianXi_01_Atk_Fast_33",
-    "linkValue": 1.866667,
-    "addRadius": 2500,
-    "speedRate": 1.8,
-    "hitEffects": [888555036],
-    "replaceEffects": true,
-    "SweepActions": [
-      {
-        "Type": "bullet",
-        "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
-        "ProjectTileID": 1016261,
-        "ForTarget": true,
-        "SpeedLeftValue": 16000,
-        "SpeedRightValue": 16000,
-        "desc": "向目标发射巴山虎"
-      }
-    ]
   }
 ]

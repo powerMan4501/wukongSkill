@@ -350,5 +350,20 @@
         "EffectParamsFloat": [0]
       }
     ]
+  },
+  {
+    "ID": 10110,
+    "BuffTips": "主角风云转 ComboC z 01无敌Buff",
+    "Duration": 1200,
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [116, 17, 57, 59, 99, 1],
+        "EffectParamsFloat": []
+      }
+    ]
   }
 ]

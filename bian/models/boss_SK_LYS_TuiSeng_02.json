@@ -10,9 +10,6 @@
   "XRateSmall": 2,
   "Level1Scale": 1,
   "Level2Scale": 2.2,
-  "TransDone": {
-    "Buffers": [96009]
-  },
   "EnterSkill": {
     "Id": 8126
   },

@@ -237,5 +237,39 @@
         "desc": "鳖宝 锤子砸，一点索敌"
       }
     ]
+  },
+  {
+    "code": "jsun",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8571,
+        "MagicSkillID": 303013,
+        "desc": "隼居士 飞天冰5下"
+      }
+    ]
+  },
+  {
+    "code": "jchi",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8572,
+        "MagicSkillID": 302609,
+        "desc": "赤发鬼"
+      }
+    ]
+  },
+
+   {
+    "code": "jwhi",
+    "afterActions": [
+      {
+        "type": "magicskill",
+        "magicID": 8525,
+        "MagicSkillID": 301204,
+        "desc": "不白"
+      }
+    ]
   }
 ]

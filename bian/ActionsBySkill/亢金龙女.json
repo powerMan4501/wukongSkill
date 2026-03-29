@@ -1,0 +1,33 @@
+[
+  {
+    "skillID": 340115,
+    "desc": "释放3道索敌雷丝",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "cast_actions": [
+      {
+        "type": "followcamera",
+        "XRate": -900,
+        "ZRate": 300,
+        "returnTime": 4000,
+        "desc": "拉远镜头"
+      }
+    ],
+    "bullet_actions": [
+      {
+        "linkValue": 0,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 34011020,
+            "ForTarget": true,
+            "desc": "发射电矛"
+          }
+        ]
+      }
+    ]
+  }
+]

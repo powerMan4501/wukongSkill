@@ -170,6 +170,14 @@
         "BuffIDs": [888666007],
         "BuffTime": -1,
         "desc": "添加火buff"
+      },
+      {
+        "type": "followcamera",
+        "XRate": -500,
+        "YRate": -150,
+        "ZRate": 150,
+        "returnTime": 2500,
+        "desc": "拉远镜头"
       }
     ],
     "effect_actions": [

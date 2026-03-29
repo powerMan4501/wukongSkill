@@ -3,8 +3,9 @@
     "skillID": 10830,
     "desc": "劈棍0",
     "montage_config": {
-      "speedRate": 1.5,
-      "AMSpeedRate": 1.5
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9,
+      "addRadius": 100
     },
     "cast_actions": [
       {
@@ -66,8 +67,9 @@
     "skillID": 10831,
     "desc": "劈棍1",
     "montage_config": {
-      "speedRate": 1.5,
-      "AMSpeedRate": 1.5
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9,
+      "addRadius": 100
     },
     "cast_actions": [
       {
@@ -129,8 +131,9 @@
     "skillID": 10832,
     "desc": "劈棍2",
     "montage_config": {
-      "speedRate": 1.5,
-      "AMSpeedRate": 1.5
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9,
+      "addRadius": 500
     },
     "cast_actions": [
       {
@@ -192,8 +195,10 @@
     "skillID": 10833,
     "desc": "劈棍3",
     "montage_config": {
-      "speedRate": 1.5,
-      "AMSpeedRate": 1.5
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9,
+      "addRadius": 500,
+      "AMScaleRate": 30
     },
     "cast_actions": [
       {
@@ -252,10 +257,12 @@
 
   {
     "skillID": 10834,
-    "desc": "劈棍3",
+    "desc": "劈棍4",
     "montage_config": {
-      "speedRate": 1.5,
-      "AMSpeedRate": 1.5
+      "speedRate": 2.9,
+      "AMSpeedRate": 2.9,
+      "addRadius": 1500,
+      "AMScaleRate": 30
     },
     "cast_actions": [
       {
@@ -316,8 +323,10 @@
     "skillID": 50020,
     "desc": "劈棍2",
     "montage_config": {
-      "speedRate": 1.5,
-      "AMSpeedRate": 1.5
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9,
+      "addRadius": 500,
+      "AMScaleRate": 30
     },
     "cast_actions": [
       {
@@ -378,8 +387,10 @@
     "skillID": 50021,
     "desc": "劈棍2",
     "montage_config": {
-      "speedRate": 1.5,
-      "AMSpeedRate": 1.5
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9,
+      "addRadius": 500,
+      "AMScaleRate": 30
     },
     "cast_actions": [
       {
@@ -441,8 +452,10 @@
     "skillID": 50022,
     "desc": "劈棍3",
     "montage_config": {
-      "speedRate": 1.5,
-      "AMSpeedRate": 1.5
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9,
+      "addRadius": 500,
+      "AMScaleRate": 30
     },
     "cast_actions": [
       {
@@ -502,8 +515,10 @@
     "skillID": 50023,
     "desc": "劈棍4",
     "montage_config": {
-      "speedRate": 1.5,
-      "AMSpeedRate": 1.5
+      "speedRate": 2.9,
+      "AMSpeedRate": 2.9,
+      "addRadius": 1500,
+      "AMScaleRate": 30
     },
     "cast_actions": [
       {
@@ -564,8 +579,10 @@
     "skillID": 50024,
     "desc": "劈棍5",
     "montage_config": {
-      "speedRate": 1.5,
-      "AMSpeedRate": 1.5
+      "speedRate": 1.9,
+      "AMSpeedRate": 1.9,
+      "addRadius": 200,
+      "AMScaleRate": 30
     },
     "cast_actions": [
       {

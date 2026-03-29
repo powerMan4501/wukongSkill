@@ -1,5 +1,4 @@
 [
- 
   {
     "desc": "立棍，小飞棍",
     "montage": "AM_JSDSLiGunXZA",
@@ -8,7 +7,7 @@
     "hitEffects": [888555034],
     "replaceEffects": true
   },
-  
+
   {
     "desc": "超大范围横扫",
     "montage": "AM_TianXian_ATK_01_01_01",
@@ -22,8 +21,7 @@
         "Type": "bullet",
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
         "ProjectTileID": 30160101,
-        "OffsetX": 700,
-        "OffsetY": 700,
+        "AttachToSpawnBase": true,
         "desc": "小黄龙雷电"
       }
     ]

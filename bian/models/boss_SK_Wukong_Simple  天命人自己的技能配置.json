@@ -39,6 +39,34 @@
       "afterActions": [
         {
           "skillIndexs": [0],
+          "skillValues": [10811, 10812, 10813, 10814, 10815],
+          "Type": "skill",
+          "SkillID": 10797,
+          "desc": "侧键1 立棍蓄力start 挑起"
+        },
+
+        {
+          "skillIndexs": [0],
+          "skillValues": [
+            10835, 10836, 10837, 10838, 10839,
+
+            50025, 50026, 50027, 50028, 50029
+          ],
+          "Type": "skill",
+          "SkillID": 10852,
+          "desc": "侧键1 劈棍蓄力start 棍花重击"
+        },
+        {
+          "skillIndexs": [0],
+          "skillValues": [
+            10870, 10871, 10872, 10873, 10874, 10875, 10876, 10877, 10878, 10879
+          ],
+          "Type": "skill",
+          "SkillID": 10096,
+          "desc": "侧键1 戳棍蓄力start 破隐一击"
+        },
+        {
+          "skillIndexs": [0],
           "skillValues": [
             10842, 10843, 10844, 10845, 10846, 10847, 10848, 10849, 10850,
             10851, 10852
@@ -117,7 +145,7 @@
         {
           "Type": "skill",
           "skillIndexs": [0],
-          "skillValues": [84321025],
+          "skillValues": [84321025, 10797],
           "SkillID": 84321024,
           "desc": " 棍子变粗砸一下 接 砸砸砸"
         },
@@ -148,9 +176,7 @@
           "Type": "skill",
           "skillIndexs": [0],
           "skillValues": [
-            10881, 10882, 10883, 10884, 10885,
-
-            10886, 10887, 10888, 10889, 10890
+            10881, 10882, 10883, 10884, 10885, 10886, 10887, 10888, 10889, 10890
           ],
           "SkillID": 84321033,
           "desc": "侧键1，戳棍蓄力, 大范围横扫"
@@ -302,7 +328,7 @@
           "Type": "skill",
           "SkillID": 84321028,
           "skillIndexs": [0],
-          "skillValues": [54321005, 10096, 10098],
+          "skillValues": [54321005, 10096, 10098, 10992],
           "desc": "破隐一击,连续几个横扫"
         }
       ]
@@ -342,8 +368,8 @@
           "bossLabel": "SK_LYS_KJLWoman",
           "bossType": "BOSS",
           "distance": 2800,
-          "MagicSkillID": 340116,
-          "desc": "侧键2，飞到空中释放4道索敌雷丝"
+          "MagicSkillID": 340115,
+          "desc": "侧键2，释放3道索敌雷丝"
         },
         {
           "skillIndexs": [0],
@@ -363,9 +389,9 @@
           "skillValues": [10862, 10863, 10864],
           "type": "magicskill",
           "magicID": 8530,
-          "MagicSkillID": 499915,
+          "MagicSkillID": 499911,
           "Scale3D": 0.9,
-          "desc": "侧键2，立棍, 蝎子精 各种尾巴攻击很不错"
+          "desc": "侧键2，立棍, 蝎子精 托马斯旋转攻击好几圈"
         },
 
         {
@@ -390,7 +416,11 @@
 
         {
           "skillIndexs": [0],
-          "skillValues": [10835, 10836, 10837, 10838, 10839],
+          "skillValues": [
+            10835, 10836, 10837, 10838, 10839,
+
+            50025, 50026, 50027, 50028, 50029
+          ],
           "type": "bossskill",
           "bossLabel": "SK_HYS_Niumo",
           "bossType": "BOSS",
@@ -404,11 +434,10 @@
 
             10875, 10876, 10877, 10878, 10879
           ],
-          "type": "bossskill",
-          "bossLabel": "SK_hys_shanzhen_01",
-          "bossType": "BOSS",
-          "MagicSkillID": 580103,
-          "desc": "侧键2 戳棍蓄力start 石头人冲撞"
+          "type": "magicskill",
+          "magicID": 8569,
+          "MagicSkillID": 202301,
+          "desc": "侧键2 戳棍蓄力start 鼠弩手射箭"
         },
         {
           "skillIndexs": [0],
@@ -442,20 +471,15 @@
         },
         {
           "skillIndexs": [0],
-          "skillValues": [
-            10883, 10884, 10885,
-
-            10888, 10889, 10890
-          ],
+          "skillValues": [10883, 10884, 10885, 10888, 10889, 10890],
           "type": "magicskill",
           "magicID": 8525,
-          "MagicSkillID": 301210,
-          "desc": "侧键2，戳棍2/3/4蓄力,往后飞退，再飞上去索敌砸出冰暴"
+          "MagicSkillID": 301204,
+          "desc": "侧键2，戳棍2/3/4蓄力, 飞上去索敌砸出冰暴"
         },
         {
           "montageIndex": 0,
           "montageValue": ".AM_Wukong_Dodge_F_",
-
           "type": "bossskill",
           "bossLabel": "SK_HFM_Hu_Stone_01",
           "bossType": "BOSS",
@@ -549,24 +573,22 @@
         },
 
         {
-          "Type": "bossskill",
-          "bossLabel": "SK_mgd_ftxd",
-          "bossType": "TRANS",
+          "type": "magicskill",
+          "magicID": 8522,
+          "MagicSkillID": 11322,
+          "Scale3D": 0.5,
           "hasBuff": 888666006,
-          "MagicSkillID": 25157,
           "skillIndexs": [0],
           "skillValues": [50002, 10707],
-          "desc": "XBUTTON2 有冰buff,核爆冰拳"
+          "desc": "XBUTTON2 有冰buff,无量蝠，冰"
         },
         {
-          "Type": "bossskill",
-          "bossLabel": "SK_mgd_ftxd",
-          "bossType": "TRANS",
+          "type": "magicskill",
+          "magicID": 8567,
           "noHasBuff": 888666006,
-          "MagicSkillID": 24234,
           "skillIndexs": [0],
           "skillValues": [50002, 10707],
-          "desc": "XBUTTON2 没有冰buff,四级大范围地面火炎"
+          "desc": "XBUTTON2 没有冰buff,接疾蝠"
         },
         {
           "Type": "bossskill",
@@ -911,9 +933,8 @@
         {
           "type": "magicskill",
           "magicID": 8571,
-          "MagicSkillID": 303003,
           "hasBuff": 888666006,
-          "desc": "有冰buff,隼居士，跳起+冰5下"
+          "desc": "有冰buff,隼居士，精魄技能"
         },
         {
           "type": "bossskill",
@@ -1029,16 +1050,7 @@
       "CanBreak": false,
       "backTime": 3200
     },
-    {
-      "Id": 8599,
-      "Name": "石蛙",
-      "speedRate": 1.5,
-      "MagicSkillID": 11399,
-      "Key": "S+RBUTTON",
-      "type": "magic",
-      "CanBreak": false,
-      "backTime": 3200
-    },
+
     {
       "Id": 8597,
       "Name": "毒蛙",
@@ -1140,7 +1152,7 @@
           "MagicSkillID": 102433,
 
           "resetBack": false,
-          "Name": "大头磕头"
+          "Name": "大头如来神掌"
         }
       ]
     },

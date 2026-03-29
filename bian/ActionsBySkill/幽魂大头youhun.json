@@ -48,32 +48,73 @@
     "skillID": 102433,
     "desc": "如来神掌",
     "montage_config": {
-      "speedRate": 1.5,
-      "AMSpeedRate": 1.5,
+      "speedRate": 1.1,
       "addRadius": 3500,
       "hitEffects": [888555036],
       "replaceEffects": true
     },
     "cast_actions": [
       {
-        "Type": "summon",
-        "SummonID": 433301,
-        "SummonCount": 1,
-        "SummonAliveTime": 0,
-        "skillID": 102363,
-        "desc": "召唤己方金池，使用蓄力比较久的如来神掌"
+        "type": "followcamera",
+        "XRate": -700,
+        "ZRate": 300,
+        "returnTime": 2400,
+        "desc": "拉远镜头"
       }
     ],
     "sweep_actions": [
       {
         "linkValue": 1.866667,
         "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 1016261,
+            "ForTarget": true,
+            "SpeedLeftValue": 16000,
+            "SpeedRightValue": 16000,
+            "desc": "向目标发射巴山虎"
+          },
           { "Type": "out_magic", "TimeDelay": 1300, "desc": "退出精魄" }
         ]
       }
     ]
   },
-
+ {
+    "skillID": 102363,
+    "desc": "蓄力比较久的如来神掌",
+    "montage_config": {
+      "speedRate": 1.3,
+      "AMSpeedRate": 1.3
+    },
+    "cast_actions": [
+      {
+        "type": "followcamera",
+        "XRate": -700,
+        "YRate": -150,
+        "ZRate": 450,
+        "returnTime": 3500,
+        "desc": "拉远镜头"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "linkValue": 1.866667,
+        "actions": [
+          {
+            "Type": "bullet",
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'",
+            "ProjectTileID": 1016261,
+            "ForTarget": true,
+            "SpeedLeftValue": 16000,
+            "SpeedRightValue": 16000,
+            "desc": "向目标发射巴山虎"
+          },
+          { "Type": "out_magic", "TimeDelay": 1300, "desc": "退出精魄" }
+        ]
+      }
+    ]
+  },
   {
     "skillID": 102422,
     "desc": "踩地面一次",

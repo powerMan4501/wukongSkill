@@ -20,6 +20,12 @@
     "BulletCanThroughBlockage": 1,
     "HitEffectsforChr": [1099942, 888555015]
   },
+   {
+    "desc": "兽棍红雷",
+    "ID": 154,
+    "HitEffectsforChr": [74019202, 888555015],
+    "HitDestructibleStrengthType": 4
+  },
   {
     "ID": 18890402,
     "desc": "天兵，箭支",
@@ -87,7 +93,7 @@
   {
     "desc": "金沙爆炸",
     "ID": 74011107,
-    "HitEffectsforChr": [74019202, 910460],
+    "HitEffectsforChr": [74019202, 888555015],
     "HitDestructibleStrengthType": 4
   },
   {
@@ -354,7 +360,18 @@
   {
     "ID": 22104092,
     "desc": "金色雷球爆炸",
-    "HitEffectsforChr": [74019202, 910460],
+    "HitEffectsforChr": [74019202, 888555015],
     "HitDestructibleStrengthType": 4
+  },
+
+  {
+    "ID": 2302002,
+
+    "HitEffectsforChr": [2302002, 910460]
+  },
+  {
+    "ID": 30160101,
+    "desc": "小黄龙雷电",
+    "HitEffectsforChr": [30161605, 888555015]
   }
 ]

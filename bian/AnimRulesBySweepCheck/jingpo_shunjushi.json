@@ -155,13 +155,10 @@
         "desc": "霸体"
       },
       {
-        "type": "dragfarcamera",
-        "TimeDelay": 100,
-        "IsDragFarest": true,
-        "NewMinArmLength": -1,
-        "NewMaxArmLength": -1,
-        "NewMinSocketZ": 200,
-        "NewMaxSocketZ": 1500,
+        "type": "followcamera",
+        "XRate": -900,
+        "ZRate": 100,
+        "returnTime": 5000,
         "desc": "拉远镜头"
       }
     ]

@@ -3,17 +3,15 @@
     "skillID": 11322,
     "desc": "无量蝠 精魄技能",
     "montage_config": {
-      "speedRate": 1.1
+      "speedRate": 1.2
     },
 
     "cast_actions": [
       {
-        "type": "dragfarcamera",
-        "IsDragFarest": true,
-        "NewMinArmLength": -1,
-        "NewMaxArmLength": -1,
-        "NewMinSocketZ": -1,
-        "NewMaxSocketZ": 1000,
+        "type": "followcamera",
+        "XRate": -900,
+        "ZRate": 300,
+        "returnTime": 2000,
         "desc": "拉远镜头"
       }
     ]

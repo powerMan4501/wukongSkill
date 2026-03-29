@@ -95,8 +95,8 @@
         "EffectTrigger": 2,
         "EffectType": 1,
         "EffectTargetSelectType": 0,
-        "EffectParamsString": ["【主角】轻棍连招/0段蓄力"],
-        "EffectParams": [25, 3, 1, 1, 2, 0, 0, 4],
+        "EffectParamsString": ["【主角】蓄力2"],
+        "EffectParams": [21, 3, 1, 1, 2, 0, 0, 4],
         "EffectParamsFloat": [
           150.0, 150.0, 18500.0, 150.0, 0.0, 150.0, 150.0, 150.0
         ]
@@ -480,6 +480,20 @@
           "无",
           "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
         ]
+      }
+    ]
+  },
+  {
+    "ID": 1045,
+    "BuffTips": "天地倾，根据棍势值FixFunction",
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [53, 0, 0, 5],
+        "EffectParamsFloat": [-15.0]
       }
     ]
   }

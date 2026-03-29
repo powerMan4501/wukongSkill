@@ -36,10 +36,10 @@
     "skillID": 302556,
     "desc": "连续锤很多下",
     "montage_config": {
-      "speedRate": 1.25,
-      "AMSpeedRate": 1.25,
+      "speedRate": 1.45,
+      "AMSpeedRate": 1.45,
       "addRadius": 100,
-      "hitEffects": [888555034],
+      "hitEffects": [30161605],
       "replaceEffects": true
     },
     "sweep_actions": [

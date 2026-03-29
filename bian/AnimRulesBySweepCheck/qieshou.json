@@ -1,6 +1,4 @@
 [
- 
-
   {
     "desc": "戳棍1a切手,搅阵",
     "montage": "wukong_combob_z_01_loop",
@@ -144,16 +142,21 @@
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
             "ProjectTileIDs": [30139802, 30510103, 30510602],
-            "OffsetX": 100,
-            "OffsetY": 100,
             "hasBuff": 888666006,
             "desc": "有冰buff 地面一圈冰刺，冰蛙冰刺，冰地板"
           },
+
           {
             "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
-            "ProjectTileIDs": [44051001],
-            "noHasBuff": 888666006,
-            "desc": "没有冰buff 夜叉王地刺"
+            "ProjectTileIDs": [44509904,2403472],
+            "hasBuff": 888666007,
+            "desc": "有火buff 火蛙岩浆地板,巨猿火圈"
+          },
+          {
+            "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
+            "ProjectTileIDs": [44051001, 44051002],
+            "noHasAnyBuff": [888666006, 888666007],
+            "desc": "没有冰火buff 夜叉王地刺"
           }
         ]
       }
@@ -173,10 +176,9 @@
       },
       {
         "Type": "bullet",
+        "AttachToSpawnBase": true,
         "Bullet": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'",
         "ProjectTileID": 30160101,
-        "OffsetX": 700,
-        "OffsetY": 700,
         "desc": "小黄龙雷电"
       }
     ],

@@ -161,8 +161,8 @@
     "desc": "金沙爆炸 伤害",
     "ID": 74019202,
     "EffectType": 1,
-    "EffectParamsInt": [10, 25, 2, 0, 0, 0, 4444404],
-    "EffectParamsFloat": [2000.0, 200.0, 22500.0, 0.0, 0.0, 0.0, 200.0],
+    "EffectParamsInt": [10, 25, 6, 0, 1, 4, 4444404],
+    "EffectParamsFloat": [2000.0, 400.0, 52500.0, 0.0, 0.0, 0.0, 200.0],
     "EffectParamsStr": ["【怪物】打断轻棍终结"]
   },
   {
@@ -329,5 +329,12 @@
     "EffectParamsFloat": [200.0, 200.0, 22500.0, 0.0, 0.0, 0.0, 120.0],
     "EffectParamsStr": ["【怪物】打断蓄力3"],
     "Guard": "Guard"
+  },
+  {
+    "ID": 5000602,
+    "desc": "大圣江海翻",
+    "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
+    "EffectParamsFloat": [450.0, 1450.0, 45000.0, 0.0, 0.0, 0.0, 1450.0],
+    "EffectParamsStr": ["【主角】蓄力4"]
   }
 ]

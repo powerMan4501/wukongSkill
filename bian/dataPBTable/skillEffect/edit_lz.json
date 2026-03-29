@@ -62,5 +62,27 @@
     "EffectParamsInt": [10, 25, 1, 0, 0, 0, 4444404],
     "EffectParamsFloat": [200.0, 200.0, 22500.0, 0.0, 0.0, 0.0, 200.0],
     "EffectParamsStr": ["【怪物】打断轻棍终结"]
+  },
+  {
+    "ID": 1072151,
+    "desc": "风云转体力消耗改成1",
+    "EffectParamsInt": [3],
+    "EffectParamsFloat": [1.0, 0.0],
+    "EffectParamsStr": []
+  },
+  {
+    "ID": 1071151,
+    "EffectParamsInt": [3],
+    "EffectParamsFloat": [1.0, 0.0]
+  },
+  {
+    "ID": 1071152,
+    "EffectParamsInt": [3],
+    "EffectParamsFloat": [1.0, 0.0]
+  },
+  {
+    "ID": 1071351,
+    "EffectParamsInt": [3],
+    "EffectParamsFloat": [1.0, 0.0]
   }
 ]
