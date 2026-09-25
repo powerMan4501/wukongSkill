@@ -1,0 +1,230 @@
+[
+  {
+    "Animation": "_sprint",
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "火buff，火箭",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileID": 1016901,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "雷buff，雷蛙蝌蚪",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileID": 22104102,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "毒buff，毒箭",
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileID": 42010201,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰buff，冰气",
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileID": 74010103,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_Wukong_TTTB_Counter",
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "火buff，火箭",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileID": 1016901,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "雷buff，雷蛙蝌蚪",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileID": 22104102,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "毒buff，毒箭",
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileID": 42010201,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰buff，三山冠飞剑",
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileID": 74010103,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_Wukong_heyao",
+    "cast_actions": [
+      {
+        "Type": "Buff",
+        "Delay": 500,
+        "name": "铁弹92316，蓝桥风月92009,避凶药92247,不老藤92308,参势丸92252, 虎舍利92309",
+        "Values": [
+          92316,
+          92009,
+          92247,
+          92308,
+          92252,
+          92309
+        ]
+      },
+     
+      {
+        "Type": "bullet",
+        "name": "火，火圈",
+        "Delay": 500,
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [
+            74010202
+          ],
+          "SpawnOffsetX": 10,
+          "SpawnOffsetY": 10,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "电圈",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [
+            30250102
+          ],
+          "SpawnOffsetX": 10,
+          "SpawnOffsetY": 10,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰,龙卷风",
+        "Delay": 500,
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [
+            47055603
+          ],
+          "SpawnOffsetX": 500,
+          "SpawnOffsetY": 500,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "毒,红波动",
+        "Delay": 500,
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [
+            30203000,
+            20060105,
+            1019261
+          ],
+          "SpawnOffsetX": 10,
+          "SpawnOffsetY": 10,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_wukong_comboa_q1_dingshen",
+    "name": "定身追击",
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.4666667,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "spawnBaseSocketName": "weapon_r_index_07",
+              "AttachToSpawnBase": true,
+              "ProjectileID": 22104092,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_Wukong_JXSQ_Enter",
+    "name": "jxsq",
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "jxsq，召唤残躯jxsq子弹",
+        "bulletConfig": {
+          "ProjectileIDs": [
+            70018902
+          ],
+          "SpawnOffsetX": 10,
+          "SpawnOffsetY": 10,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  }
+]

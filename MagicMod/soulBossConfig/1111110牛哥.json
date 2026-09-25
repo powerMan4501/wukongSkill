@@ -1,0 +1,60 @@
+[
+  {
+    "ID": 1111111,
+    "BuffId": 20820,
+    "TamerPath": "/Game/00Main/Design/Units/LYS/Unit_WuDuLong_03A.Unit_WuDuLong_03A_C",
+    "BossConf": {
+      "CapsuleHalfHeight": 240.0,
+      "CapsuleRadius": 110.0,
+      "SKMesh": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_WuDuLong_03A/Mesh/SK_LYS_WuDuLong_03A.SK_LYS_WuDuLong_03A",
+      "ABPClass": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_WuDuLong_03A/ABP_LYS_WuDuLong_03A.ABP_LYS_WuDuLong_03A_C",
+      "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_WuDuLong_03A/Mesh/SK_LYS_WuDuLong_03A_PhysicsAsset.SK_LYS_WuDuLong_03A_PhysicsAsset",
+      "Weapons": [
+        {
+          "Weapon": "/Game/00MainHZ/Characters/Weapon/LYS/LYS_WuDuLong_03A/LYS_WuDuLong_03A_Weapon.LYS_WuDuLong_03A_Weapon_C",
+          "SocketName": "weapon_r"
+        }
+      ],
+      "TFXConfigs": null,
+      "InteractBones": [
+        {
+          "WeaponIndex": 0,
+          "FirstBoneName": "pelvis",
+          "FirstRadius": 50.0,
+          "NextBoneName": "neck_01",
+          "NextRadius": 30.0
+        },
+        {
+          "WeaponIndex": 0,
+          "FirstBoneName": "lowerarm_l",
+          "FirstRadius": 30.0,
+          "NextBoneName": "index_03_l",
+          "NextRadius": 30.0
+        },
+        {
+          "WeaponIndex": 0,
+          "FirstBoneName": "Hit_1",
+          "FirstRadius": 20.0,
+          "NextBoneName": "Hit_4",
+          "NextRadius": 30.0
+        },
+        {
+          "WeaponIndex": 0,
+          "FirstBoneName": "calf_l",
+          "FirstRadius": 30.0,
+          "NextBoneName": "foot_l",
+          "NextRadius": 40.0
+        },
+        {
+          "WeaponIndex": 0,
+          "FirstBoneName": "calf_r",
+          "FirstRadius": 30.0,
+          "NextBoneName": "foot_r",
+          "NextRadius": 40.0
+        }
+      ],
+      "Override_AbnormalDispID_Attacker": 0,
+      "Override_AbnormalDispID_Victim": 100
+    }
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Animation": "_electric.AM_player_hys_ma_",
+    "name": "马哥 雷暴，黄眉条形地板雷38001305",
+    "addRadius": 500,
+    "cast_actions": [
+      {
+        "Type": "Buff",
+        "Values": [17015],
+        "Duration": 1000,
+        "name": "加识破buff:17015，无敌，被打触发识破"
+      }
+    ],
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [39010112],
+          "SpawnOffsetX": 900,
+          "SpawnOffsetY": 900,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "Animation": "AM_40_psd_Tree_hfs",
+    "name": "变树木",
+    "addRadius": 2000,
+    "cast_actions": [
+      {
+        "Type": "summon",
+        "SummonID": 412302,
+        "SummonCount": 4,
+        "desc": "召唤树木分身"
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_50_hys_Stone",
+    "name": "变石头",
+    "addRadius": 2000,
+    "cast_actions": [
+      {
+        "Type": "summon",
+        "SummonID": 1013901,
+        "SummonCount": 4,
+        "desc": "召唤喷火蛇"
+      },
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "Delay": 500,
+        "Name": "增加召唤物存活时间"
+      }
+    ]
+  }
+]

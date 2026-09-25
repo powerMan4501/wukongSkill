@@ -1,0 +1,97 @@
+[
+  {
+    "Name": "Boss",
+    "Tab": "MONSTER",
+    "Source": "boss",
+    "ItemActions": [
+      { "Type": "SpawnActor" }
+    ]
+  },
+  {
+    "Name": "变身",
+    "Tab": "TRANS",
+    "Source": "trans",
+    "ItemActions": [
+      { "Type": "Trans" }
+    ]
+  },
+  {
+    "Name": "珍玩",
+    "Tab": "ROLE",
+    "Source": "items",
+    "Ranges": [
+      
+      { "Start": 15002, "Count": 1 },
+      { "Start": 15101, "Count": 1 },
+      { "Start": 12001, "Count": 4 },
+      { "Start": 16001, "Count": 1010 },
+      { "Start": 10501, "Count": 101 }
+    ],
+    "ItemActions": [
+      { "Type": "AddItem", "Count": 1 }
+    ]
+  },
+  {
+    "Name": "丹药",
+    "Tab": "BATTLE",
+    "Source": "items",
+    "Ranges": [
+      { "Start": 2204, "Count": 51 }
+    ],
+    "ItemActions": [
+      { "Type": "AddItem", "Count": 10 }
+    ]
+  },
+  {
+    "Name": "材料",
+    "Tab": "PERFORM",
+    "Source": "items",
+    "Ranges": [
+      { "Start": 1996, "Count": 1967 }
+    ],
+    "ItemActions": [
+      { "Type": "AddItem", "Count": 99 }
+    ]
+  },
+  {
+    "Name": "道具",
+    "Tab": "CHECK",
+    "Source": "items",
+    "Ranges": [
+      { "Start": 3963, "Count": 2056 }
+    ],
+    "ItemActions": [
+      { "Type": "AddItem", "Count": 1 }
+    ]
+  },
+  {
+    "Name": "常用",
+    "Tab": "MONSTER",
+    "Items": [
+      {
+        "name": "筋斗云",
+        "actions": [
+          { "Type": "JingDouYun" }
+        ]
+      },
+      {
+        "name": "秒杀范围内怪物",
+        "actions": [
+          { "Type": "kill" }
+        ]
+      },
+      {
+        "name": "变回悟空",
+        "actions": [
+          { "Type": "trans_back" }
+        ]
+      },
+      {
+        "name": "灵光点",
+        "actions": [
+          { "Type": "AddItem", "Value": 1006, "Count": 1 }
+        ]
+      }
+    ]
+  }
+]

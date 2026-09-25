@@ -1,0 +1,36 @@
+[
+  {
+    "ID": 2111108,
+    "name": "红孩儿",
+    "UseTamerPossess": true,
+    "PossessAssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_honghaier_01a.TAMER_hys_honghaier_01a_C",
+    "PossessScale": 1.0,
+    "CameraSocket": "pelvis",
+    "UseGeneralDodge": true,
+
+    "LightAttackCombo": [
+      { "SkillId": 440101, "LockTime": 2000 },
+      { "SkillId": 440102, "LockTime": 2000 },
+      { "SkillId": 440103, "LockTime": 2000 },
+      { "SkillId": 440104, "LockTime": 2000 },
+      { "SkillId": 440134, "LockTime": 2000 },
+      { "SkillId": 440161, "LockTime": 2000 },
+      { "SkillId": 440162, "LockTime": 2000 },
+      { "SkillId": 440163, "LockTime": 2000 },
+      { "SkillId": 440173, "LockTime": 2000 },
+      { "SkillId": 440178, "LockTime": 2000 }
+    ],
+    "HeavyAttackCombo": [
+      { "SkillId": 440172, "LockTime": 3000 }
+    ],
+    "Spell1Combo": [
+      { "SkillId": 440106, "LockTime": 2000 }
+    ],
+    "Spell2Combo": [
+      { "SkillId": 440171, "LockTime": 4000 }
+    ],
+    "Spell3Combo": [
+      { "SkillId": 440110, "LockTime": 20000 }
+    ]
+  }
+]

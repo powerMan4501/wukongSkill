@@ -1,0 +1,67 @@
+[
+  {
+    "Animation": "AM_10_gycy_wa_01_atk_41_lei_new",
+    "name": "金色雷电",
+    "bullet_actions": [
+      {
+        "ID": 1026202,
+        "actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [22104092, 50051301],
+              "ProjectileNumInOneWave": 2,
+              "type": "shot",
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanjianliangren_02.BGW_Player_Wukong_Atk_sanjianliangren_02'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_10_gycy_wa_01_atk_41_huo_new",
+    "name": "金色雷电",
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [40220101],
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanjianliangren_02.BGW_Player_Wukong_Atk_sanjianliangren_02'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_10_gycy_wa_01_atk_41_shi_new",
+    "name": "石蛙，疯虎巴山虎",
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [21020501],
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanjianliangren_02.BGW_Player_Wukong_Atk_sanjianliangren_02'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_10_gycy_wa_01_atk_41_du_new",
+    "name": "毒蛙，蛇毒",
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [10380101],
+          "SpawnOffsetX": 400,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanjianliangren_02.BGW_Player_Wukong_Atk_sanjianliangren_02'"
+        }
+      }
+    ]
+  }
+]

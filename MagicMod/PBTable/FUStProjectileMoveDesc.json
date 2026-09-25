@@ -1,0 +1,16 @@
+[
+  {
+    "ID": 70015801,
+    "name":"金箍棒贴地",
+    "ProjectileMoveModeType": 1,
+    "ProjectileSpdType": 1,
+    "ProjectileFlyTime": 0.0,
+    "ProjectileMoveModeIntParam": [],
+    "ProjectileMoveModeFloatParam": [],
+    "ProjectileMoveModeYoNParam": [],
+    "ProjectileMoveModeStrParam": [],
+    "MoveClampToLand": 1,
+    "MoveAlignToLand": 0,
+    "Guard": "Guard"
+  }
+]

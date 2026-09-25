@@ -1,0 +1,615 @@
+[
+  {
+    "ID": 10835,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli/AM_Wukong_xuli_loop.AM_Wukong_xuli_loop'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 0,
+    "ChargeMoveSpeedRate": 1,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 249,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 246,
+        "BeginTimeInBeginStage": 0.7,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 2017,
+        "BeginTimeInBeginStage": 0.9,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_xuli.CLC_xuli'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10836,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli/AM_Wukong_xuli_loop.AM_Wukong_xuli_loop'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 0,
+    "ChargeMoveSpeedRate": 1,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 249,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 246,
+        "BeginTimeInBeginStage": 0.7,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 2017,
+        "BeginTimeInBeginStage": 0.9,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_xuli.CLC_xuli'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10837,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli/AM_Wukong_xuli_loop.AM_Wukong_xuli_loop'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 0,
+    "ChargeMoveSpeedRate": 1,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 249,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 246,
+        "BeginTimeInBeginStage": 0.7,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 2017,
+        "BeginTimeInBeginStage": 0.9,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_xuli.CLC_xuli'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10838,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli/AM_Wukong_xuli_loop.AM_Wukong_xuli_loop'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 0,
+    "ChargeMoveSpeedRate": 1,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 249,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 246,
+        "BeginTimeInBeginStage": 0.7,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 2017,
+        "BeginTimeInBeginStage": 0.9,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_xuli.CLC_xuli'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10839,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli/AM_Wukong_xuli_loop.AM_Wukong_xuli_loop'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 0,
+    "ChargeMoveSpeedRate": 1,
+    "MaxChargeTime": 0.1,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 249,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 246,
+        "BeginTimeInBeginStage": 0.7,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 2017,
+        "BeginTimeInBeginStage": 0.9,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_xuli.CLC_xuli'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10840,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli/AM_Wukong_xuli_loop.AM_Wukong_xuli_loop'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 0,
+    "ChargeMoveSpeedRate": 1,
+    "MaxChargeTime": 0.1,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 249,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 246,
+        "BeginTimeInBeginStage": 0.7,
+        "EndTimeInEndStage": 0.0
+      },
+      {
+        "BuffID": 2017,
+        "BeginTimeInBeginStage": 0.9,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_xuli_wugong.CLC_xuli_wugong'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10720,
+    "LoopTemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboC/AM_wukong_comboc_z_01_loop_weak.AM_wukong_comboc_z_01_loop_weak",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 2,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 271,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.4
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10721,
+    "LoopTemplatePath": "/Game/00Main/Animation/Player/Wukong/AM/Attack/ComboC/AM_wukong_comboc_z_01_loop.AM_wukong_comboc_z_01_loop",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 2,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 271,
+        "BeginTimeInBeginStage": 0.0,
+        "EndTimeInEndStage": 0.4
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "",
+    "ChargeLevelConfigIndex": 0
+  },
+
+  {
+    "ID": 10870,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli_B/AM_Wukong_xuli_B_loop_0.AM_Wukong_xuli_B_loop_0'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 2,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 286,
+        "BeginTimeInBeginStage": 1.0,
+        "EndTimeInEndStage": 0.0
+      },
+
+      {
+        "BuffID": 2017,
+        "BeginTimeInBeginStage": 1.4,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_Xuli_B.CLC_Xuli_B'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10871,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli_B/AM_Wukong_xuli_B_loop_0.AM_Wukong_xuli_B_loop_0'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 2,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 286,
+        "BeginTimeInBeginStage": 1.0,
+        "EndTimeInEndStage": 0.0
+      },
+
+      {
+        "BuffID": 2017,
+        "BeginTimeInBeginStage": 1.4,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_Xuli_B.CLC_Xuli_B'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10872,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli_B/AM_Wukong_xuli_B_loop_0.AM_Wukong_xuli_B_loop_0'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 2,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 286,
+        "BeginTimeInBeginStage": 1.0,
+        "EndTimeInEndStage": 0.0
+      },
+
+      {
+        "BuffID": 2017,
+        "BeginTimeInBeginStage": 1.4,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_Xuli_B.CLC_Xuli_B'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10873,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli_B/AM_Wukong_xuli_B_loop_0.AM_Wukong_xuli_B_loop_0'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 2,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 286,
+        "BeginTimeInBeginStage": 1.0,
+        "EndTimeInEndStage": 0.0
+      },
+
+      {
+        "BuffID": 2017,
+        "BeginTimeInBeginStage": 1.4,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_Xuli_B.CLC_Xuli_B'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10874,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli_B/AM_Wukong_xuli_B_loop_0.AM_Wukong_xuli_B_loop_0'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 2,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 286,
+        "BeginTimeInBeginStage": 1.0,
+        "EndTimeInEndStage": 0.0
+      },
+
+      {
+        "BuffID": 2017,
+        "BeginTimeInBeginStage": 1.4,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_Xuli_B.CLC_Xuli_B'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10875,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli_B_Qiang/AM_wukong_qiang_xuli_b_loop_0.AM_wukong_qiang_xuli_b_loop_0'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 2,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 286,
+        "BeginTimeInBeginStage": 1.0,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_Xuli_B.CLC_Xuli_B'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10876,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli_B_Qiang/AM_wukong_qiang_xuli_b_loop_0.AM_wukong_qiang_xuli_b_loop_0'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 2,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 286,
+        "BeginTimeInBeginStage": 1.0,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_Xuli_B.CLC_Xuli_B'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10877,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli_B_Qiang/AM_wukong_qiang_xuli_b_loop_0.AM_wukong_qiang_xuli_b_loop_0'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 2,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 286,
+        "BeginTimeInBeginStage": 1.0,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_Xuli_B.CLC_Xuli_B'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10878,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli_B_Qiang/AM_wukong_qiang_xuli_b_loop_0.AM_wukong_qiang_xuli_b_loop_0'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 2,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 286,
+        "BeginTimeInBeginStage": 1.0,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_Xuli_B.CLC_Xuli_B'",
+    "ChargeLevelConfigIndex": 0
+  },
+  {
+    "ID": 10879,
+    "LoopTemplatePath": "AnimMontage'/Game/00Main/Animation/Player/Wukong/AM/Attack/Xuli_B_Qiang/AM_wukong_qiang_xuli_b_loop_0.AM_wukong_qiang_xuli_b_loop_0'",
+    "LoopCanMove": 1,
+    "LoopCanRotate": 1,
+    "ChargeMoveSpeedRate": 2,
+    "MaxChargeTime": -1.0,
+    "TriggerNextStageWhenOnLand": 0,
+    "TriggerNextStageUseFSM": 1,
+    "NextStageSkillID": 0,
+    "EndSkillID": 0,
+    "AutoEndWhenLockTarget": 0,
+    "ChargeSkillBuffInfoList": [
+      {
+        "BuffID": 286,
+        "BeginTimeInBeginStage": 1.0,
+        "EndTimeInEndStage": 0.0
+      }
+    ],
+    "ChargeSkillSuperArmorInfo": {
+      "HasSuperArmor": 0,
+      "BeginTimeInBeginStage": 0.0,
+      "EndTimeInEndStage": 0.0,
+      "SkillSuperArmorValue": 0.0,
+      "SSABreakAssignedAnim": ""
+    },
+    "ChargeLevelConfigPath": "BGWDataAsset_ChargeLevelConfig'/Game/00Main/DataAsset/Player/Wukong/CLC_Xuli_B.CLC_Xuli_B'",
+    "ChargeLevelConfigIndex": 0
+  }
+]

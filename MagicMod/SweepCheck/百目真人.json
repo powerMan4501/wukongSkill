@@ -1,0 +1,32 @@
+[
+  {
+    "Animation": ".AM_20_hfm_hou_01_atk_05_Lv",
+    "name": "跳过前摇",
+    "addRadius": 1000,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 2100,
+        "name": "跳到指定的秒数"
+      }
+    ],
+
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 2.666667,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "红波动",
+            "bulletConfig": {
+              "ProjectileIDs": [30203000, 20060105, 1019261],
+              "SpawnOffsetX": 300,
+              "SpawnOffsetY": 300,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

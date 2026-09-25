@@ -1,0 +1,42 @@
+[
+  {
+    "ID": 220530,
+    "BuffTips": "石敢当终结技 Actually给石先锋大量伤害，9900000改成900",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 100,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 1,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0],
+        "EffectParamsFloat": [0.0, 0.0, 900.0, 0.0, 0.0, 0.0, 0.0]
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  }
+]

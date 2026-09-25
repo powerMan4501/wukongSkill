@@ -1,0 +1,86 @@
+[
+  {
+    "pathName": "BP_mgd_yuan_anshenInner_C",
+    "config": { "Scale3D": { "X": 2, "Y": 2, "Z": 1 } }
+  },
+  {
+    "pathName": "BP_Player_Wukong_Atk_yechawang_C",
+    "config": { "Scale3D": { "X": 2, "Y": 2, "Z": 1 } }
+  },
+  {
+    "pathName": "BP_Player_Wukong_Bullet_01_C",
+    "config": { "Scale3D": { "X": 2, "Y": 2, "Z": 2 } }
+  },
+  {
+    "pathName": "BP_50_hys_lingzhijing_03a_Bullet_Lv6_C",
+    "config": { "Scale3D": { "X": 2, "Y": 2, "Z": 1 } }
+  },
+  {
+    "pathName": "BP_mgd_jsds_jxsq_bullet_02_C",
+    "config": { "Scale3D": { "X": 5, "Y": 5, "Z": 5 } }
+  },
+  {
+    "pathName": "BP_mgd_yuan_iceblast_bigballnear_C",
+    "config": { "Scale3D": { "X": 1.5, "Y": 1.5, "Z": 1.5 } }
+  },
+  {
+    "pathName": "BP_Player_Wukong_Atk_Panchui_C",
+    "config": { "Scale3D": { "X": 2, "Y": 2, "Z": 1 } }
+  },
+  {
+    "pathName": "BP_player_wukong_precisedodge_bullet_C",
+    "config": { "Scale3D": { "X": 2, "Y": 2, "Z": 2 } }
+  },
+  {
+    "pathName": "BP_player_wukong_precisedodge_bullet2_C",
+    "config": { "Scale3D": { "X": 2, "Y": 2, "Z": 2 } }
+  },
+  {
+    "pathName": "BP_20_hfm_bashanhu_01_Bullet_AOE_C",
+    "config": { "Scale3D": { "X": 2, "Y": 2, "Z": 2 } }
+  },
+  {
+    "pathName": "BP_HYS_HongHaiEr_02A_DaoZhen10_Bull_C",
+    "config": { "Scale3D": { "X": 4, "Y": 4, "Z": 1 } }
+  },
+  {
+    "pathName": "BP_hfm_wa_01_bullet_leiqiu_baozha_01_C",
+    "config": { "Scale3D": { "X": 2, "Y": 2, "Z": 2 } }
+  },
+  {
+    "pathName": "BP_szlc_wanglingguan_01_plym_boom_C",
+    "config": { "Scale3D": { "X": 2, "Y": 2, "Z": 3 } }
+  },
+  {
+    "pathName": "BP_Player_Wukong_AnShenShu_01_DISP_MF_C",
+    "config": {
+      "Scale3D": { "X": 6, "Y": 6, "Z": 6 },
+      "FieldBuffList": [181, 910220]
+    }
+  },
+  {
+    "pathName": "BP_player_lys_yao_MF_v",
+    "config": { "Scale3D": { "X": 4, "Y": 4, "Z": 1 } }
+  },
+  {
+    "pathName": "BP_hys_wa_01_MF_9904_C_",
+    "config": { "Scale3D": { "X": 4, "Y": 4, "Z": 2 } }
+  },
+  {
+    "pathName": ".BP_30_lys_yaxiangke_MF_Lv",
+    "config": { "Scale3D": { "X": 4, "Y": 4, "Z": 4 } }
+  },
+  {
+    "pathName": "BP_player_hys_ma_R2_pre_MF_C",
+    "config": { "Scale3D": { "X": 4, "Y": 4, "Z": 1 } }
+  },
+  {
+    "pathName": "MF_lys_xuewa_icepick_ring_C",
+    "config": { "Scale3D": { "X": 2, "Y": 2, "Z": 1 } }
+  },
+
+  {
+    "pathName": "BP_player_wukong_atk_shougun_lightning_C",
+    "config": { "Scale3D": { "X": 2, "Y": 2, "Z": 2 } }
+  }
+]

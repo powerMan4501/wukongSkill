@@ -1,0 +1,88 @@
+[
+  {
+    "Animation": "AM_hys_yinbinghoumo_Atk_05",
+    "name": "马猴 火焰爆气",
+    "addRadius": 900,
+    "cast_actions": [
+      {
+        "Type": "Buff",
+        "Values": [17015],
+        "Duration": 5500,
+        "name": "加识破buff:17015，无敌，被打触发识破"
+      }
+    ]
+  },
+
+  {
+    "Animation": ".AM_LYS_XueHou_Atk_05",
+    "name": "马猴红色爆气",
+    "addRadius": 900,
+    "cast_actions": [
+      {
+        "Type": "Buff",
+        "Values": [17015],
+        "Duration": 5500,
+        "name": "加识破buff:17015，无敌，被打触发识破"
+      }
+    ]
+  },
+  {
+    "Animation": ".AM_player_lys_hou_F1_01",
+    "name": "马猴爆气 ",
+    "addRadius": 900,
+    "cast_actions": [
+      {
+        "Type": "Buff",
+        "Values": [17015],
+        "Duration": 1000,
+        "name": "加识破buff:17015，无敌，被打触发识破"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.733333,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [2403471, 152],
+              "SpawnOffsetX": 10,
+              "SpawnOffsetY": 10,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": ".AM_player_lys_hou_F1_02",
+    "name": "马猴爆气",
+    "addRadius": 900,
+    "cast_actions": [
+      {
+        "Type": "Buff",
+        "Values": [17015],
+        "Duration": 1000,
+        "name": "加识破buff:17015，无敌，被打触发识破"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.733333,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [2403471, 152],
+              "SpawnOffsetX": 10,
+              "SpawnOffsetY": 10,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

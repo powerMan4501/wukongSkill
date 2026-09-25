@@ -1,0 +1,60 @@
+[
+  {
+    "ID": 1111104,
+    "BuffId": 20820,
+    "TamerPath": "/Game/00Main/Design/Units/LYS/Unit_LYS_ChuiLong_01A.Unit_LYS_ChuiLong_01A_C",
+    "BossConf": {
+      "CapsuleHalfHeight": 286.415131,
+      "CapsuleRadius": 46.66614,
+      "SKMesh": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_chuilong_01a_new/Mesh/SK_lys_chuilong_01a.SK_lys_chuilong_01a",
+      "ABPClass": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_chuilong_01a_new/ABP_lys_chuilong_01a.ABP_lys_chuilong_01a_C",
+      "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/LYS/LYS_chuilong_01a_new/Mesh/PA_lys_chuilong_01a.PA_lys_chuilong_01a",
+      "Weapons": null,
+      "TFXConfigs": [
+        {
+          "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_chuilong_01/Hair/HAIR_main.HAIR_main_TFX",
+          "EnableSimulation": true,
+          "LodScreenSize": 2.0,
+          "ShadeSettings": {
+            "FiberRadius": 0.02,
+            "FiberSpacing": 0.1,
+            "HairThickness": 0.5,
+            "RootTangentBlending": 0.0,
+            "ShadowThickness": 0.05
+          },
+          "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_chuilong_01/Materials/M_hfm_chuilong_01_main_hair.M_hfm_chuilong_01_main_hair"
+        },
+        {
+          "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_chuilong_01/Hair/HAIR_small_gs.HAIR_small_gs_TFX",
+          "EnableSimulation": true,
+          "LodScreenSize": 1.5,
+          "ShadeSettings": {
+            "FiberRadius": 0.02,
+            "FiberSpacing": 0.1,
+            "HairThickness": 0.5,
+            "RootTangentBlending": 0.0,
+            "ShadowThickness": 0.05
+          },
+          "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_chuilong_01/Materials/M_hfm_chuilong_01_main_hair.M_hfm_chuilong_01_main_hair"
+        },
+        {
+          "TFXAsset": "/Game/00MainHZ/Characters/HFM/HFM_chuilong_01/Hair/HAIR_tail_gs.HAIR_tail_gs_TFX",
+          "EnableSimulation": true,
+          "LodScreenSize": 1.5,
+          "ShadeSettings": {
+            "FiberRadius": 0.02,
+            "FiberSpacing": 0.1,
+            "HairThickness": 0.5,
+            "RootTangentBlending": 0.0,
+            "ShadowThickness": 0.05
+          },
+          "HairMaterial": "/Game/00MainHZ/Characters/HFM/HFM_chuilong_01/Materials/M_hfm_chuilong_01_main_hair.M_hfm_chuilong_01_main_hair"
+        }
+      ],
+      "InteractBones": null,
+      "Override_AbnormalDispID_Attacker": 0,
+      "Override_AbnormalDispID_Victim": 100,
+      "UnitScale": 0.7
+    }
+  }
+]

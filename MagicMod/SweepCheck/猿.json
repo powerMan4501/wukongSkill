@@ -1,0 +1,325 @@
+[
+  {
+    "Animation": "AM_player_mgd_yuan_R2_",
+    "name": "巨猿",
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "金沙波动",
+        "bulletConfig": {
+          "ProjectileIDs": [74011107, 30050301],
+          "SpawnOffsetX": 400,
+          "SpawnOffsetY": 400,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ],
+    "bullet_actions": [
+      {
+        "ID": 2403171,
+        "name": "冰lv1",
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "冰碎片",
+            "bulletConfig": {
+              "ProjectileIDs": [74010101],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+      {
+        "ID": 2403271,
+        "name": "冰lv2",
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "冰碎片",
+            "bulletConfig": {
+              "ProjectileIDs": [74010101],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+      {
+        "ID": 2403371,
+        "name": "冰lv3",
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "冰碎片",
+            "bulletConfig": {
+              "ProjectileIDs": [74010101],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+      {
+        "ID": 2403471,
+        "name": "冰lv4",
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "冰碎片，地波",
+            "bulletConfig": {
+              "ProjectileIDs": [74010101, 152],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+
+      {
+        "ID": 2403172,
+        "name": "火lv1",
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "炸炸炸",
+            "bulletConfig": {
+              "ProjectileIDs": [1013702],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+
+      {
+        "ID": 2403272,
+        "name": "火lv2",
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "炸炸炸",
+            "bulletConfig": {
+              "ProjectileIDs": [1013702],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+      {
+        "ID": 2403372,
+        "name": "火lv3",
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "炸炸炸",
+            "bulletConfig": {
+              "ProjectileIDs": [1013702],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+      {
+        "ID": 2403472,
+        "name": "火lv4",
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "炸炸炸，boss火圈",
+            "bulletConfig": {
+              "ProjectileIDs": [1013702, 74010202],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_player_mgd_yuan_R1_",
+    "name": "",
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "火buff，火球",
+        "Condition": {
+          "Type": "hasAnyBuff",
+          "params": "24072,25072"
+        },
+        "bulletConfig": {
+          "ProjectileID": 40220101,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      },
+
+      {
+        "Type": "bullet",
+        "name": "冰buff，巨猿扔的冰气",
+        "Condition": {
+          "Type": "hasAnyBuff",
+          "params": "24071,25071"
+        },
+        "bulletConfig": {
+          "ProjectileID": 74010103,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰buff，石双双毒气",
+        "Condition": {
+          "Type": "noHasAnyBuff",
+          "params": "24071,24072,25071,25072"
+        },
+        "bulletConfig": {
+          "ProjectileID": 22030101,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_player_ftxd_R1_0",
+    "name": "",
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "火buff，火球",
+        "Condition": {
+          "Type": "hasAnyBuff",
+          "params": "24072"
+        },
+        "bulletConfig": {
+          "ProjectileID": 40220101,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      },
+
+      {
+        "Type": "bullet",
+        "name": "冰buff，巨猿扔的冰气",
+        "Condition": {
+          "Type": "hasAnyBuff",
+          "params": "24071"
+        },
+        "bulletConfig": {
+          "ProjectileID": 74010103,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_player_ftxd_R2_04_Ice",
+    "name": "法天相地，4豆冰砸",
+    "addRadius": 1000,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [74010101, 2403471, 152],
+          "SpawnOffsetX": 200,
+          "SpawnOffsetY": 200,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_player_ftxd_R2_03_Ice",
+    "addRadius": 1000,
+    "name": "法天相地，3豆冰砸",
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [74010101, 2403371, 152],
+          "SpawnOffsetX": 200,
+          "SpawnOffsetY": 200,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_player_ftxd_R2_04_Fire",
+    "name": "法天相地，4豆火砸",
+    "addRadius": 1000,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [74010202, 44011401, 40550101],
+          "SpawnOffsetX": 200,
+          "SpawnOffsetY": 200,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_player_ftxd_F2_to_R2_04_Fire",
+    "name": "法天相地，4豆火砸",
+    "addRadius": 1000,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [74010202, 44011401, 40550101],
+          "SpawnOffsetX": 200,
+          "SpawnOffsetY": 200,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_player_ftxd_R2_03_Fire",
+    "name": "法天相地，3豆火砸",
+    "addRadius": 1000,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [74010202, 44011401],
+          "SpawnOffsetX": 200,
+          "SpawnOffsetY": 200,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_player_mgd_yuan_R1_to_R2",
+    "name": "肘击，发射巨猿元气弹",
+    "addRadius": 1000,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileID": 74011102,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_player_mgd_yuan_JXSQ",
+    "name": "jxsq攻击，",
+    "addRadius": 1000,
+    "cast_actions": [
+      {
+        "Type": "Buff",
+        "name": "无敌",
+        "Values": [218],
+        "Duration": 1000
+      }
+    ]
+  }
+]

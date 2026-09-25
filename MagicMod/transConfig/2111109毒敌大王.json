@@ -1,0 +1,49 @@
+[
+  {
+    "ID": 2111109,
+    "name": "毒敌大王",
+    "UseTamerPossess": true,
+    "PossessAssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_xiezijing_og.TAMER_psd_xiezijing_og_C",
+    "PossessScale": 1.0,
+    "CameraSocket": "RootComponent",
+    "UseGeneralDodge": true,
+    "MoveMMState": "FreeWalk",
+
+    "LightAttackCombo": [
+      { "SkillId": 499902, "LockTime": 2000 },
+      { "SkillId": 499903, "LockTime": 2000 },
+      { "SkillId": 499904, "LockTime": 2000 },
+      { "SkillId": 499905, "LockTime": 2000 },
+      { "SkillId": 499906, "LockTime": 2000 },
+      { "SkillId": 499907, "LockTime": 2000 },
+      { "SkillId": 499908, "LockTime": 2000 }
+    ],
+    "HeavyAttackCombo": [
+      { "SkillId": 499909, "LockTime": 2000 },
+      { "SkillId": 499910, "LockTime": 2000 },
+      { "SkillId": 499911, "LockTime": 2000 },
+      { "SkillId": 499912, "LockTime": 2000 },
+      { "SkillId": 499913, "LockTime": 2000 },
+      { "SkillId": 499914, "LockTime": 2000 },
+      { "SkillId": 499915, "LockTime": 2000 },
+      { "SkillId": 499955, "LockTime": 2000 },
+      { "SkillId": 499961, "LockTime": 2000 },
+      { "SkillId": 499963, "LockTime": 2000 },
+      { "SkillId": 499964, "LockTime": 2000 },
+      { "SkillId": 499969, "LockTime": 2000 },
+      { "SkillId": 499970, "LockTime": 2000 },
+      { "SkillId": 499971, "LockTime": 2000 },
+      { "SkillId": 499972, "LockTime": 2000 },
+      { "SkillId": 499973, "LockTime": 2000 },
+      { "SkillId": 499975, "LockTime": 2000 },
+      { "SkillId": 499980, "LockTime": 2000 },
+      { "SkillId": 499981, "LockTime": 2000 },
+      { "SkillId": 499982, "LockTime": 2000 },
+      { "SkillId": 499986, "LockTime": 2000 },
+      { "SkillId": 499990, "LockTime": 2000 },
+      { "SkillId": 499994, "LockTime": 2000 },
+      { "SkillId": 499997, "LockTime": 2000 },
+      { "SkillId": 499998, "LockTime": 2000 }
+    ]
+  }
+]

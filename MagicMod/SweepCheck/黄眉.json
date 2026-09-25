@@ -1,0 +1,34 @@
+[
+  {
+    "Animation": "AM_LYS_HuangMei_03_Atk_13",
+    "name": "地板雷",
+    "addRadius": 2000,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 5700,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "Actions": [
+      {
+        "Type": "out_magic",
+        "name": "退出精魄",
+        "Delay": 800
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_LYS_HuangMei_03_Atk_22",
+    "name": "身体爆发雷电",
+    "addRadius": 2000,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 2700,
+        "name": "跳到指定的秒数"
+      }
+    ]
+  }
+]

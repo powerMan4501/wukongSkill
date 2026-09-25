@@ -1,0 +1,434 @@
+[
+  {
+    "ID": 3,
+    "SuitName": "浪里白条",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 900311,
+        "SuitEffectDesc": "若在水中，大大减少气力消耗"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 900321,
+      "RedQualityEffectDesc": "若在水中，较大增加轻棍终结式的伤害"
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 4,
+    "SuitName": "日行千里",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 900411,
+        "SuitEffectDesc": "增加95%疾奔速度"
+      },
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 900412,
+        "SuitEffectDesc": "疾奔时，每秒可垒叠一层少许的攻击伤害增加，最高可垒叠十层；停下疾奔少时后，此效果自然消散  "
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 900421,
+      "RedQualityEffectDesc": "疾奔时，每秒获得些微棍势"
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 5,
+    "SuitName": "心灵福至",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 900511,
+        "SuitEffectDesc": "根据根器天赋的解锁数量，提升所有部件的<EquipDetail_SuitDesc_KW>防御</>"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 0,
+      "RedQualityEffectDesc": ""
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 6,
+    "SuitName": "走石飞砂",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 900611,
+        "SuitEffectDesc": "<EquipDetail_SuitDesc_KW>假身</>和<EquipDetail_SuitDesc_KW>毛猴</>身披黄风，获得一定程度伤害减免"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 900621,
+      "RedQualityEffectDesc": "四段蓄力重棍打中对手后，在天命人身边化生一个维持时间较短的<EquipDetail_SuitDesc_KW>毛猴</>"
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 7,
+    "SuitName": "离火入魔",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 900711,
+        "SuitEffectDesc": "立棍切手技<EquipDetail_SuitDesc_KW>风云转</>和<EquipDetail_SuitDesc_KW>江海翻</>造成额外伤害"
+      },
+      {
+        "TriggerNum": 2,
+        "AttrEffectID": 705,
+        "SuitEffectID": 0,
+        "SuitEffectDesc": "解放心中的怒火，较大增加造成和受到的伤害"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 0,
+      "RedQualityEffectDesc": ""
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 8,
+    "SuitName": "龙血玄黄",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 900811,
+        "SuitEffectDesc": "大大减少<EquipDetail_SuitDesc_State>雷蛰</>状态的维持时间；少许增加赋雷攻击伤害"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 900821,
+      "RedQualityEffectDesc": "进一步增加所有赋雷攻击伤害"
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 9,
+    "SuitName": "乘风乱舞",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 900911,
+        "SuitEffectDesc": "<EquipDetail_SuitDesc_KW>化气</>时自身和<EquipDetail_SuitDesc_KW>假身</>缠绕黑风，持续伤害周遭对手"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 900921,
+      "RedQualityEffectDesc": "少许增加聚形散气的初始法力消耗；化气还原后，<EquipDetail_SuitDesc_KW>假身</>还将持续存在较长时间"
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 10,
+    "SuitName": "借假修真",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901011,
+        "SuitEffectDesc": "释放<EquipDetail_SuitDesc_KW>化身技</>或<EquipDetail_SuitDesc_KW>法宝</>一定时间内，一定程度增加攻击"
+      },
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901012,
+        "SuitEffectDesc": "暴击和打杀对手时，获得些微<EquipDetail_SuitDesc_KW>元气</>"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 0,
+      "RedQualityEffectDesc": ""
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 12,
+    "SuitName": "举步生风",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901211,
+        "SuitEffectDesc": "<EquipDetail_SuitDesc_KW>闪身</>时，额外获得一定棍势"
+      },
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901212,
+        "SuitEffectDesc": "<EquipDetail_SuitDesc_KW>闪身</>可些微减少所有法术的回转时间"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 901221,
+      "RedQualityEffectDesc": "较大缩短翻滚的无敌时间；<EquipDetail_SuitDesc_KW>闪身</>时，进一步减少所有法术的回转时间"
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 13,
+    "SuitName": "泥塑金装",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901311,
+        "SuitEffectDesc": "变身、化身还原时身染黑泥，一定时间内获得一定程度<EquipDetail_SuitDesc_KW>伤害减免</>"
+      },
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901312,
+        "SuitEffectDesc": "身染黑泥时，增加<EquipDetail_SuitDesc_KW>神力</>的恢复速度，此时翻滚和闪身额外恢复些微<EquipDetail_SuitDesc_KW>神力</>"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 0,
+      "RedQualityEffectDesc": ""
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 14,
+    "SuitName": "花下死",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901411,
+        "SuitEffectDesc": "大大减少<EquipDetail_SuitDesc_State>毒伤</>状态受到的持续伤害"
+      },
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901412,
+        "SuitEffectDesc": "身处<EquipDetail_SuitDesc_State>毒伤</>状态时，较大增加攻击"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 0,
+      "RedQualityEffectDesc": ""
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 15,
+    "SuitName": "锱铢必较",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901511,
+        "SuitEffectDesc": "打杀对手后，少许增加获得的<EquipDetail_SuitDesc_KW>灵蕴</>"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 0,
+      "RedQualityEffectDesc": ""
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 16,
+    "SuitName": "百折不挠",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901611,
+        "SuitEffectDesc": "受到伤害后短时间内，少许增加<EquipDetail_SuitDesc_KW>防御</>"
+      },
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901612,
+        "SuitEffectDesc": "生命过半时，获得<EquipDetail_SuitDesc_KW>强硬</>效果"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 0,
+      "RedQualityEffectDesc": ""
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 17,
+    "SuitName": "炼魔荡怪",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901711,
+        "SuitEffectDesc": "粉碎对手定身时，造成额外伤害"
+      },
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901712,
+        "SuitEffectDesc": "粉碎对手定身时，大大减少<EquipDetail_SuitDesc_KW>定身法</>的回转时间"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 0,
+      "RedQualityEffectDesc": ""
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 18,
+    "SuitName": "铜心铁胆",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901811,
+        "SuitEffectDesc": "<EquipDetail_SuitDesc_KW>铜头铁臂</>转震对手时，大大增加天赋<EquipDetail_SuitDesc_KW>知机</>获得的棍势"
+      },
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901812,
+        "SuitEffectDesc": "<EquipDetail_SuitDesc_KW>铜头铁臂</>转震对手时，一定程度减少此法的回转时间"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 0,
+      "RedQualityEffectDesc": ""
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 19,
+    "SuitName": "毒魔狠怪",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901911,
+        "SuitEffectDesc": "取用丹药时，获得一定棍势"
+      },
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 901912,
+        "SuitEffectDesc": "一定程度增加所有丹药效果的维持时间"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 0,
+      "RedQualityEffectDesc": ""
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 20,
+    "SuitName": "试比天高",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 902011,
+        "SuitEffectDesc": "使出法术后一段时间内，少许增加<EquipDetail_SuitDesc_KW>暴击率</>"
+      },
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 902012,
+        "SuitEffectDesc": "暴击时，些微减少所有法术的回转时间"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 0,
+      "RedQualityEffectDesc": ""
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 21,
+    "SuitName": "",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 6099,
+        "SuitEffectID": 0,
+        "SuitEffectDesc": ""
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 0,
+      "RedQualityEffectDesc": ""
+    },
+    "LocalizationTag": 0
+  },
+  {
+    "ID": 22,
+    "SuitName": "四时吉庆",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 902211,
+        "SuitEffectDesc": "大大减少跳跃的<EquipDetail_SuitDesc_KW>气力消耗</>"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 0,
+      "RedQualityEffectDesc": ""
+    },
+    "LocalizationTag": 1
+  },
+  {
+    "ID": 23,
+    "SuitName": "四时吉庆",
+    "SuitInfo": [
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 902211,
+        "SuitEffectDesc": "大大减少跳跃的<EquipDetail_SuitDesc_KW>气力消耗</>"
+      },
+      {
+        "TriggerNum": 1,
+        "AttrEffectID": 0,
+        "SuitEffectID": 902312,
+        "SuitEffectDesc": "<EquipDetail_SuitDesc_KW>安身术</>阵势内会持续点放花炮"
+      }
+    ],
+    "RedQualityInfo": {
+      "AttrEffectID": 0,
+      "TalentID": 0,
+      "RedQualityEffectDesc": ""
+    },
+    "LocalizationTag": 1
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "Animation": ".AM_player_psd_chong_R1_0",
+    "name": "平A 发射毒液",
+    "Actions": [
+      {
+        "Type": "bullet",
+
+        "bulletConfig": {
+          "ProjectileID": 1018401,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_player_psd_chong_fashu",
+    "name": "引爆虫卵前，积累虫卵",
+    "cast_actions": [
+      {
+        "Type": "Buff",
+        "Values": [17015],
+        "Duration": 1000,
+        "name": "加识破buff:17015，无敌，被打触发识破"
+      },
+      {
+        "Type": "range_buff",
+        "Values": [18400],
+        "range": 5000,
+        "Duration": 20000
+      }
+    ]
+  }
+]

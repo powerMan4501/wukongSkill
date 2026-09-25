@@ -1,0 +1,33 @@
+[
+  {
+    "Animation": "AM_20_hfm_shawuliang_01_atk_08_Lv6",
+    "name": "虎伥快刀，发射横向阴剑气",
+    "addRadius": 900,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileID": 44072201,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanjianliangren_02.BGW_Player_Wukong_Atk_sanjianliangren_02'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_20_hfm_fuzishu_atk_17_Lv6",
+    "name": "沙二郎砸地，石敢当沙子波动",
+      "addRadius": 1500,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileID": 22050601,
+          "SpawnOffsetX": 100,
+          "SpawnOffsetY": 100,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  }
+]

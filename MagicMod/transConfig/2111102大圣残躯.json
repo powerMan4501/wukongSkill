@@ -1,0 +1,31 @@
+[
+  {
+    "ID": 2111102,
+    "name": "大圣残躯",
+    "UseTamerPossess": true,
+    "PossessAssetPath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_jsds_p2.TAMER_mgd_jsds_p2_C",
+    "PossessScale": 0.7,
+    "CameraSocket": "pelvis",
+    "UseGeneralDodge": false,
+
+    "LightAttackCombo": [
+      { "SkillId": 700102, "LockTime": 1000 },
+      { "SkillId": 700103, "LockTime": 1300 }
+    ],
+    "HeavyAttackCombo": [
+      { "SkillId": 700115, "LockTime": 4500 }
+    ],
+    "DodgeCombo": [
+      { "SkillId": 700178, "LockTime": 500 }
+    ],
+    "Spell1Combo": [
+      { "SkillId": 700192, "LockTime": 1500 }
+    ],
+    "Spell2Combo": [
+      { "SkillId": 700193, "LockTime": 1000 }
+    ],
+    "Spell3Combo": [
+      { "SkillId": 700132, "LockTime": 10000 }
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "Animation": ".AM_20_hfm_bashanhu_01_atk_06_Lv6",
+    "name": "发射巴山虎",
+    "addRadius": 900,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileID": 1016261,
+          "SpawnOffsetX": 800,
+          "SpawnOffsetY": 800,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      }
+    ]
+  }
+]

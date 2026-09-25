@@ -1,0 +1,24 @@
+[
+  {
+    "Animation": "AM_20_hfm_roubianfu_atk_",
+    "name": "巨猿",
+    "bullet_actions": [
+      {
+        "ID": 1016761,
+        "name": "疾蝠",
+        "actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "SpawnOffsetX": 300,
+              "SpawnOffsetY": 300,
+              "ProjectileIDs": [1016201],
+              "type": "shot",
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

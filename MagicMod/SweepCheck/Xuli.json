@@ -1,0 +1,476 @@
+[
+  {
+    "Animation": "AM_wukong_trans_to_dasheng",
+    "addRadius": 1000,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 2.833333,
+        "Actions": [
+          {
+            "Type": "Buff",
+            "name": "时缓",
+            "Values": [20420],
+            "Duration": 1000
+          },
+          {
+            "Type": "bullet",
+            "name": "火，巨猿火圈，炸炸炸",
+            "Condition": {
+              "Type": "bullet_fire"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [2403472, 44010401],
+              "SpawnOffsetX": 700,
+              "SpawnOffsetY": 700,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "冰,巨猿lv4冰暴，冰碎片",
+            "Condition": {
+              "Type": "bullet_ice"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [2403471, 74010101],
+              "SpawnOffsetX": 700,
+              "SpawnOffsetY": 700,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "bullet",
+            "name": "毒,红波动",
+            "Condition": {
+              "Type": "bullet_poison"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [30203000, 20060105, 1019261],
+              "SpawnOffsetX": 700,
+              "SpawnOffsetY": 700,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "bullet",
+            "name": "雷,金沙，雷暴",
+            "Condition": {
+              "Type": "bullet_thunder"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [74011107, 39010112],
+              "SpawnOffsetX": 700,
+              "SpawnOffsetY": 700,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_dasheng_xuli_attack_5",
+    "addRadius": 1000,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 2.733333,
+        "Actions": [
+          {
+            "Type": "Buff",
+            "name": "时缓",
+            "Values": [20420],
+            "Duration": 1000
+          },
+          {
+            "Type": "bullet",
+            "name": "火，巨猿火圈，炸炸炸",
+            "Condition": {
+              "Type": "bullet_fire"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [2403472, 44010401],
+              "SpawnOffsetX": 700,
+              "SpawnOffsetY": 700,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "冰,巨猿lv4冰暴，冰碎片",
+            "Condition": {
+              "Type": "bullet_ice"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [2403471, 74010101],
+              "SpawnOffsetX": 700,
+              "SpawnOffsetY": 700,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "bullet",
+            "name": "毒,红波动",
+            "Condition": {
+              "Type": "bullet_poison"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [30203000, 20060105, 1019261],
+              "SpawnOffsetX": 700,
+              "SpawnOffsetY": 700,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "bullet",
+            "name": "雷,金沙，雷暴",
+            "Condition": {
+              "Type": "bullet_thunder"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [74011107, 39010112],
+              "SpawnOffsetX": 700,
+              "SpawnOffsetY": 700,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_dasheng_xuli_attack_4",
+    "addRadius": 1000,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [74010202, 44011401, 70015801],
+          "SpawnOffsetX": 500,
+          "SpawnOffsetY": 500,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰,巨猿lv4冰暴，冰碎片",
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [2403471, 74010101],
+          "SpawnOffsetX": 700,
+          "SpawnOffsetY": 700,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "毒,红波动",
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [30203000, 20060105, 1019261],
+          "SpawnOffsetX": 700,
+          "SpawnOffsetY": 700,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "雷,金沙，雷暴",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [74011107, 39010112],
+          "SpawnOffsetX": 700,
+          "SpawnOffsetY": 700,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_dasheng_xuli_attack_3",
+    "addRadius": 1000,
+    "Actions": [
+      {
+        "Type": "Buff",
+        "Value": 20420,
+        "name": "时缓",
+        "Duration": 1000
+      },
+      {
+        "Type": "bullet",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [58111003, 74010202, 44011401],
+          "SpawnOffsetX": 500,
+          "SpawnOffsetY": 500,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_dasheng_xuli_attack_2",
+    "addRadius": 1000,
+    "Actions": [
+      {
+        "Type": "Buff",
+        "Value": 20420,
+        "name": "时缓",
+        "Duration": 1000
+      },
+      {
+        "Type": "bullet",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [58111003, 44011401],
+          "SpawnOffsetX": 500,
+          "SpawnOffsetY": 500,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_Wukong_xuli_attack_4",
+    "addRadius": 1000,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [74010202, 44011401, 70015801],
+          "SpawnOffsetX": 500,
+          "SpawnOffsetY": 500,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰,巨猿lv4冰暴",
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [2403471],
+          "SpawnOffsetX": 500,
+          "SpawnOffsetY": 500,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "毒,红波动",
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [30203000, 20060105, 1019261],
+          "SpawnOffsetX": 700,
+          "SpawnOffsetY": 700,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "雷,金沙，雷暴",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [74011107, 39010112],
+          "SpawnOffsetX": 700,
+          "SpawnOffsetY": 700,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_Wukong_xuli_attack_3",
+    "Actions": [
+      {
+        "Type": "Buff",
+        "Value": 20420,
+        "name": "时缓",
+        "Duration": 1000
+      },
+      {
+        "Type": "bullet",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [58111003, 74010202, 44011401],
+          "SpawnOffsetX": 500,
+          "SpawnOffsetY": 500,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_Wukong_xuli_attack",
+    "Actions": [
+      {
+        "Type": "bullet",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [44011401, 140],
+          "SpawnOffsetX": 500,
+          "SpawnOffsetY": 500,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_Wukong_xuli_B_attack",
+    "Actions": [
+      {
+        "Type": "bullet",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileID": 1016901,
+          "ProjectileNumInOneWave": 6,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_wukong_qiang_xuli_b_attack",
+    "Actions": [
+      {
+        "Type": "bullet",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileID": 1016901,
+          "ProjectileNumInOneWave": 6,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_Wukong_Xuli_C_attack_0",
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.4313362,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [118, 30250101],
+              "SpawnOffsetX": 500,
+              "SpawnOffsetY": 500,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_Wukong_Xuli_C_attack_1",
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.6022756,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [118, 30250101],
+              "SpawnOffsetX": 500,
+              "SpawnOffsetY": 500,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_Wukong_Xuli_C_attack_2",
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.6009328,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [118, 30250101],
+              "SpawnOffsetX": 500,
+              "SpawnOffsetY": 500,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_Wukong_Xuli_C_attack_3",
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.6366079,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [118, 39010112, 30250101],
+              "SpawnOffsetX": 500,
+              "SpawnOffsetY": 500,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_Wukong_Xuli_C_attack_4",
+    "addRadius": 1000,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.5666667,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [118, 39010112, 30250101],
+              "SpawnOffsetX": 500,
+              "SpawnOffsetY": 500,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

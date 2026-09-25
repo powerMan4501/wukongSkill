@@ -1,0 +1,123 @@
+[
+  {
+    "Animation": "AM_player_lys_shu_R1_0",
+    "name": "双头鼠, 平A",
+    "addRadius": 500,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "火buff，火球",
+        "bulletConfig": {
+          "ProjectileID": 40220101,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_player_gycy_lang_R1_0",
+    "name": "广智, 平A",
+    "addRadius": 500,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "火buff，火球",
+        "bulletConfig": {
+          "ProjectileID": 40220101,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_player_gycy_lang_R2_0",
+    "name": "广智,右键，鳖宝子弹",
+    "addRadius": 1500,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileID": 40550101,
+          "SpawnOffsetX": 10,
+          "SpawnOffsetY": 10,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": ".AM_player_gycy_lang_R2_F_Fire",
+    "name": "广智,前+右键，涌出岩浆",
+    "addRadius": 1500,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileID": 58111003,
+          "SpawnOffsetX": 200,
+          "SpawnOffsetY": 200,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": ".AM_player_gycy_lang_R2_F_Fire",
+    "name": "广智,前+右键，涌出岩浆",
+    "addRadius": 1500,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileID": 58111003,
+          "SpawnOffsetX": 100,
+          "SpawnOffsetY": 100,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": ".AM_player_gycy_lang_R2_B_Fire",
+    "name": "广智,飞天+右键，地火",
+    "addRadius": 1500,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 2.1,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [74010202, 44011401],
+              "SpawnOffsetX": 100,
+              "SpawnOffsetY": 100,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": ".AM_player_gycy_lang_R2_S_Fire",
+    "name": "广智,转圈圈，发射火剑气",
+    "addRadius": 1000,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileID": 11012601,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+        }
+      }
+    ]
+  }
+]

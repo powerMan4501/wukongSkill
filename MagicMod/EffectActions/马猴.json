@@ -1,0 +1,31 @@
+[
+  {
+    "id": 40580501,
+    "name": "火爆气",
+    "actions": [
+      {
+        "Type": "bullet",
+        "name": "红孩儿砸地",
+        "bulletConfig": {
+          "ProjectileIDs": [44011401],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "id": 40580502,
+    "name": "火爆气",
+    "actions": [
+      {
+        "Type": "bullet",
+        "name": "鳖宝子弹",
+        "bulletConfig": {
+          "ProjectileIDs": [40550101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  }
+]

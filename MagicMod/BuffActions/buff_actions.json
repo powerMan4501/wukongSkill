@@ -1,0 +1,28 @@
+[
+  {
+    "id": 231,
+    "name": "铜头铁臂，发射子弹：地刺",
+    "actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileID": 44051002,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+   {
+    "id": 25082,
+    "name": "铜头铁臂，发射子弹：地刺",
+    "actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileID": 44051002,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  }
+]

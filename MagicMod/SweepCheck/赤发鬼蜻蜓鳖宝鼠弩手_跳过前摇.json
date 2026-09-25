@@ -1,0 +1,104 @@
+[
+  {
+    "Animation": ".AM_30_lys_chifagui_01a_enter_F_02",
+    "name": "跳过前摇",
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 1600,
+        "name": "跳到指定的秒数"
+      }
+    ]
+  },
+  {
+    "Animation": ".AM_40_psd_chong_03_atk_0",
+    "name": "蜻蜓精跳过前摇",
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 800,
+        "name": "跳到指定的秒数"
+      }
+    ]
+  },
+  {
+    "Animation": ".AM_50_hys_niaozui_atk_",
+    "name": "鳖宝跳过前摇",
+    "addRadius": 800,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 2200,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 3.666667,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [44011401, 40550101, 2403272],
+              "SpawnOffsetX": 300,
+              "SpawnOffsetY": 300,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "Buff",
+            "name": "时缓",
+            "Value": 20420,
+            "Duration": 1000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": ".AM_20_hfm_shunushou_01b_atk_08_",
+    "name": "鼠弩手跳过前摇",
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 1900,
+        "name": "跳到指定的秒数"
+      }
+    ]
+  },
+  {
+    "Animation": ".AM_50_hys_huijin_b_atk_0",
+    "name": "黑脸鬼跳过前摇",
+     "addRadius": 800,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 1300,
+        "name": "跳到指定的秒数"
+      }
+    ],
+
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 2.366667,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [58111003],
+              "SpawnOffsetX": 300,
+              "SpawnOffsetY": 300,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "Buff",
+            "name": "时缓",
+            "Value": 20420,
+            "Duration": 1000
+          }
+        ]
+      }
+    ]
+  }
+]

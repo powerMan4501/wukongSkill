@@ -1,0 +1,46 @@
+[
+  {
+    "ID": 2111110,
+    "name": "猪八戒",
+    "UseTamerPossess": true,
+    "PossessAssetPath": "/Game/00Main/Design/Units/PSD/TAMER_PSD_ZhuBaJie_01B.TAMER_PSD_ZhuBaJie_01B_C",
+    "PossessScale": 1.0,
+    "CameraSocket": "pelvis",
+    "UseGeneralDodge": true,
+    "MoveMMState": "FreeWalk",
+
+    "LightAttackCombo": [
+      { "SkillId": 500340, "LockTime": 1000 },
+      { "SkillId": 500314, "LockTime": 1000 },
+      { "SkillId": 500333, "LockTime": 1000 },
+      { "SkillId": 500334, "LockTime": 1000 },
+      { "SkillId": 500339, "LockTime": 1000 },
+      { "SkillId": 500335, "LockTime": 1000 },
+      { "SkillId": 500362, "LockTime": 1000 },
+      { "SkillId": 500363, "LockTime": 1000 },
+      { "SkillId": 500364, "LockTime": 1000 }
+    ],
+    "HeavyAttackCombo": [
+      { "SkillId": 500332, "LockTime": 2000 },
+      { "SkillId": 500336, "LockTime": 2000 },
+      { "SkillId": 500337, "LockTime": 2000 },
+      { "SkillId": 500343, "LockTime": 2000 },
+      { "SkillId": 500344, "LockTime": 2000 },
+      { "SkillId": 500345, "LockTime": 2000 },
+      { "SkillId": 500348, "LockTime": 2000 },
+      { "SkillId": 500305, "LockTime": 2000 },
+      { "SkillId": 500306, "LockTime": 2000 },
+      { "SkillId": 500368, "LockTime": 2000 },
+      { "SkillId": 500375, "LockTime": 2000 }
+    ],
+    "Spell1Combo": [
+      { "SkillId": 500391, "LockTime": 1500 }
+    ],
+    "Spell2Combo": [
+      { "SkillId": 500382, "LockTime": 3000 }
+    ],
+    "Spell3Combo": [
+      { "SkillId": 500349, "LockTime": 4000 }
+    ]
+  }
+]

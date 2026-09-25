@@ -1,0 +1,86 @@
+[
+  {
+    "Animation": "AM_player_hfm_hu_Wind_R1_01",
+    "name": "剑气",
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.4,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileID": 20010102,
+              "BornDirOffsetX": 135,
+              "type": "shot",
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_player_hfm_hu_R2_End_01",
+    "name": "剑气",
+    "addRadius": 800,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.733333,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileID": 20010101,
+              "type": "shot",
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_player_hfm_hu_R2_End_02",
+    "name": "剑气",
+    "addRadius": 1800,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 1.433333,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileID": 20010101,
+              "type": "shot",
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_player_hfm_hu_R2_End_03",
+    "name": "蓄力3",
+    "addRadius": 1800,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 1.766667,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "巴山虎",
+            "bulletConfig": {
+              "ProjectileIDs": [1016262],
+              "SpawnOffsetX": 500,
+              "SpawnOffsetY": 500,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
