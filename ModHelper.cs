@@ -986,36 +986,170 @@ namespace MagicMod
                 const int configID = 1;
                 int duration = time ?? 999;
 
-                // 1) 修改全局原始配置（BG_ProtobufDataAPI 中的 FUStTransQiTianDaShengConfigDesc）
+                // 1) Duration：Tick 每帧都会从 desc 重新读取，所以改这里才有效
                 FUStTransQiTianDaShengConfigDesc originalDesc = BGW_GameDB.GetOriginalTransQiTianDaShengConfigDesc(configID);
                 if (originalDesc != null)
                 {
                     originalDesc.Duration = duration;
-                    originalDesc.RelatedTalentIDList.Clear();
                 }
 
                 // 2) 同步修改角色 PassiveSkillData 中的缓存配置
-                //    GetAndCachedDesc 在缓存缺失时会基于（已修改的）原始配置深拷贝生成，随后再覆盖一次以确保一致
                 if (Owner.PassiveSkillData is BUC_PassiveSkillData writablePassiveData)
                 {
                     writablePassiveData.GetAndCachedDesc<FUStTransQiTianDaShengConfigDesc>(configID, out var cachedDesc, out _);
                     if (cachedDesc != null)
                     {
                         cachedDesc.Duration = duration;
-                        cachedDesc.RelatedTalentIDList.Clear();
-                        Log.Info($"执行变身大圣 Duration:{cachedDesc.Duration}");
                     }
                 }
 
-                Log.Info("执行变身大圣");
-                BUS_GSEventCollection obj = BUS_EventCollectionCS.Get(Owner);
-                if (obj != null)
+                // 3) 关键：变身门槛存在 BUC_QiTianDaShengData 里，且只在组件首次 Tick 时从 desc 拷贝一次，
+                //    之后改 desc 的 RelatedTalentIDList / RelatedEquipIDList 完全无效，必须直接改这份数据。
+                //    判定（CheckCanKeepDaShengMode）要求：
+                //      RelatedEquipIDList 全部在 EquipData.SelfEquipMap 里 && RelatedTalentIDList 全部在 TalenList 里
+                //    注意：列表 Count==0 时对应 flag 保持 false（不是 true），所以 Clear() 只会让变身永远失败。
+                BUC_QiTianDaShengData daShengData = BGU_DataUtil.GetReadOnlyData<IBUC_QiTianDaShengData, BUC_QiTianDaShengData>(Owner) as BUC_QiTianDaShengData;
+                if (daShengData == null)
                 {
-                    obj.Evt_TriggerTrans2DaSheng.Invoke();
-                    // BGUFunctionLibraryCS.BGUSetAttrValue(Owner, EBGUAttrFloat.Pevalue, 480f);
+                    Log.Info("执行变身大圣失败：拿不到 BUC_QiTianDaShengData");
+                    return;
                 }
+
+                BUC_EquipData equipData = BGU_DataUtil.GetReadOnlyData<IBUC_EquipData, BUC_EquipData>(Owner) as BUC_EquipData;
+                BPC_RoleBaseData roleBaseData = Owner.PlayerState != null
+                    ? BGU_DataUtil.GetReadOnlyData<IBPC_RoleBaseData, BPC_RoleBaseData>(Owner.PlayerState) as BPC_RoleBaseData
+                    : null;
+
+                // 3.0 兜底：需求列表为空时，判定里的 flag 恒为 false，拿玩家已学的第一个天赋顶上
+                if (daShengData.RelatedTalentIDList.Count == 0 && roleBaseData?.TalenList != null)
+                {
+                    foreach (var kv in roleBaseData.TalenList)
+                    {
+                        daShengData.RelatedTalentIDList.Add(kv.Key);
+                        break;
+                    }
+                }
+
+                // 3.1 天赋：把需求收缩成"已学天赋里的第一个"，再把缺失的补进 TalenList。
+                //     这些字段都是 public，直接改即可（不需要反射）；收缩到 1 个是为了
+                //     即使之后天赋被移除/重置，CheckCanKeepDaShengMode 也不会立刻失败
+                var talentList = roleBaseData?.TalenList;
+                if (daShengData.RelatedTalentIDList.Count > 0 && talentList != null)
+                {
+                    foreach (int talentId in daShengData.RelatedTalentIDList)
+                    {
+                        if (!talentList.ContainsKey(talentId))
+                        {
+                            talentList.Add(talentId, 1);
+                        }
+                    }
+                    int firstTalent = daShengData.RelatedTalentIDList[0];
+                    daShengData.RelatedTalentIDList = new List<int> { firstTalent };
+                }
+
+
+                // 3.2 装备：需求收缩到 1 件（优先武器），只要这一件穿着就永远满足判定，
+                //     换防具/葫芦/法宝都不会再被打回
+                if (equipData?.SelfEquipMap != null && equipData.SelfEquipMap.Count > 0)
+                {
+                    int keepEquipId = 0;
+                    if (equipData.SelfEquipMap.TryGetValue(EquipPosition.Weapon, out int weaponId) && weaponId != 0)
+                    {
+                        keepEquipId = weaponId;
+                    }
+                    else
+                    {
+                        foreach (var kv in equipData.SelfEquipMap)
+                        {
+                            if (kv.Value != 0)
+                            {
+                                keepEquipId = kv.Value;
+                                break;
+                            }
+                        }
+                    }
+                    if (keepEquipId != 0)
+                    {
+                        daShengData.RelatedEquipIDList = new List<int> { keepEquipId };
+                    }
+                }
+                daShengData.HasValidDescInfo = daShengData.RelatedEquipIDList.Count > 0 || daShengData.RelatedTalentIDList.Count > 0;
+
+                // 3.3 解除"禁止变身"：SimpleStates 是**引用计数**数组（Set +1 / Remove -1），
+                //     多个来源叠加时只 Remove 一次清不掉，这里直接把计数清零
+                daShengData.bIsBanTrans2DaSheng = false;
+                BUC_SimpleStateData simpleStateData = BGU_DataUtil.GetReadOnlyData<BUC_SimpleStateData>(Owner);
+                try
+                {
+                    if (simpleStateData != null)
+                    {
+                        simpleStateData.SimpleStates[(int)EBGUSimpleState.BanTrans2DaSheng] = 0;
+                    }
+                }
+                catch { }
+                BGUFunctionLibraryCS.BGUSetUnitSimpleState(Owner, EBGUSimpleState.BanTrans2DaSheng, false);
+
+                // 4) Evt_TriggerTrans2DaSheng 只在 DaShengStage == PreStage 时才生效，
+                //    必须先切到 PreStage 再触发（原版流程：Tick 进 PreStage → 变身动画的 BANS_TriggerTrans2DaSheng 触发）
+                daShengData.DaShengStage = EDaShengStage.PreStage;
+                daShengData.DaShengDurationTimer = 0f;
+                daShengData.DaShengDurationTotalTime = duration;
+
+                Log.Info($"执行变身大圣 Duration:{duration}");
+                BUS_GSEventCollection obj = BUS_EventCollectionCS.Get(Owner);
+                if (obj == null)
+                {
+                    return;
+                }
+
+                obj.Evt_TriggerTrans2DaSheng.Invoke();
+
+                // 进入 DaShengMode 的瞬间系统会加一次 BanTrans2DaSheng，必须在同一帧清掉，
+                // 否则下一帧 BUS_QiTianDaShengComp 的 Tick 开头就会 Reset2LittleMonkey
+                try
+                {
+                    if (simpleStateData != null)
+                    {
+                        simpleStateData.SimpleStates[(int)EBGUSimpleState.BanTrans2DaSheng] = 0;
+                    }
+                }
+                catch { }
+
+                // 大圣形态的外观 / 技能组靠 DaSheng_SustainTriggerBuffIDList 驱动，补一次确保挂上
+                foreach (int daShengBuffId in daShengData.DaSheng_SustainTriggerBuffIDList)
+                {
+                    try
+                    {
+                        BGUFunctionLibraryCS.BGUAddBuff(Owner, Owner, daShengBuffId, EBuffSourceType.Trans2DaSheng, -1f);
+                    }
+                    catch { }
+                }
+
+                // 头 6 秒每 30ms 在游戏线程压一次 Ban 状态，防止个别帧被重新加上打断变身
+                TimerPool.TimerHandle? banGuard = null;
+                int guardCount = 0;
+                banGuard = TimerPool.Repeat(30, () =>
+                {
+                    guardCount++;
+                    Utils.TryRunOnGameThread(() =>
+                    {
+                        try
+                        {
+                            if (simpleStateData != null && simpleStateData.SimpleStates[(int)EBGUSimpleState.BanTrans2DaSheng] > 0)
+                            {
+                                simpleStateData.SimpleStates[(int)EBGUSimpleState.BanTrans2DaSheng] = 0;
+                            }
+                        }
+                        catch { }
+                    });
+                    if (guardCount >= 200)
+                    {
+                        TimerPool.Stop(banGuard);
+                    }
+                });
             }
         }
+
         public static void weak_def(AActor Victim, EBGUAttrFloat type)
         {
 
