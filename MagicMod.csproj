@@ -1,0 +1,96 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CSharpModBase\CSharpModBase.csproj">
+    </ProjectReference>
+  </ItemGroup>
+
+
+	<ItemGroup>
+		<Reference Include="BtlSvr.Main">
+			<HintPath>..\GameDll\BtlSvr.Main.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="b1.Native">
+			<HintPath>..\GameDll\b1.Native.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="b1.NativePlugins">
+			<HintPath>..\GameDll\b1.NativePlugins.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="GSE.Core">
+			<HintPath>..\GameDll\GSE.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Diana.Common">
+			<HintPath>..\GameDll\Diana.Common.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Google.Protobuf">
+			<HintPath>..\GameDll\Google.Protobuf.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="GSE.ProtobufDB">
+			<HintPath>..\GameDll\GSE.ProtobufDB.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Protobuf.RunTime">
+			<HintPath>..\GameDll\Protobuf.RunTime.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="System.Memory">
+			<HintPath>..\GameDll\System.Memory.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="System.Windows.Forms" />
+		<Reference Include="UnrealEngine.Runtime">
+			<HintPath>..\GameDll\UnrealEngine.Runtime.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="UnrealEngine">
+			<HintPath>..\GameDll\UnrealEngine.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="UnrealEngine">
+			<HintPath>..\GameDll\B1UI_GSE.Script.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <!-- 构建后自动部署：把产物 dll/pdb 复制到游戏里唯一生效的 Mod 目录。
+       只单向「工程 → 游戏目录」复制 dll/pdb，绝不反向覆盖 JSON 配置
+       （JSON 配置以游戏目录为准，备份请手动回拷到 new_csloader\CSharpLoader\Mods\MagicMod）。 -->
+  <PropertyGroup>
+    <GameMagicModDir>F:\game\steam\steamapps\common\BlackMythWukong\b1\Binaries\Win64\CSharpLoader\Mods\MagicMod</GameMagicModDir>
+  </PropertyGroup>
+
+  <Target Name="DeployMagicModToGame" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)"
+          DestinationFolder="$(GameMagicModDir)"
+          Condition="Exists('$(GameMagicModDir)')"
+          ContinueOnError="WarnAndContinue" />
+    <Copy SourceFiles="@(IntermediateAssemblyPdb);@(_DebugSymbolsIntermediatePath)"
+          DestinationFolder="$(GameMagicModDir)"
+          Condition="Exists('$(GameMagicModDir)')"
+          ContinueOnError="true" />
+    <Message Importance="high"
+             Text="[MagicMod] 已自动部署 $(TargetFileName) → $(GameMagicModDir)"
+             Condition="Exists('$(GameMagicModDir)')" />
+    <Warning Text="[MagicMod] 游戏 Mod 目录不存在，跳过部署：$(GameMagicModDir)（可能没装游戏或路径变了）"
+             Condition="!Exists('$(GameMagicModDir)')" />
+  </Target>
+
+</Project>
