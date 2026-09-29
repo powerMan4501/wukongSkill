@@ -1,0 +1,49 @@
+[
+  {
+    "ID": 1111112,
+    "BuffId": 20820,
+    "TamerPath": "/Game/00Main/Design/Units/MGD/Unit_mgd_jsds.Unit_mgd_jsds_C",
+    "BossConf": {
+      "CapsuleHalfHeight": 190.0,
+      "CapsuleRadius": 80.0,
+      "SKMesh": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_JSDS/Meshes/SK_mgd_jsds.SK_mgd_jsds",
+      "ABPClass": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_JSDS/ABP_MGD_JSDS.ABP_MGD_JSDS_C",
+      "HideMeshKeywords": [],
+      "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_JSDS/Meshes/PA_mgd_jsds_01.PA_mgd_jsds_01",
+      "Weapons": null,
+      "TFXConfigs": null,
+      "InteractBones": [
+        {
+          "WeaponIndex": 0,
+          "FirstBoneName": "pelvis",
+          "FirstRadius": 30.0,
+          "NextBoneName": "neck_01",
+          "NextRadius": 35.0
+        },
+        {
+          "WeaponIndex": 0,
+          "FirstBoneName": "weapon_Index_05",
+          "FirstRadius": 8.0,
+          "NextBoneName": "weapon_Index_10",
+          "NextRadius": 8.0
+        },
+        {
+          "WeaponIndex": 0,
+          "FirstBoneName": "thigh_r",
+          "FirstRadius": 20.0,
+          "NextBoneName": "foot_r",
+          "NextRadius": 17.0
+        },
+        {
+          "WeaponIndex": 0,
+          "FirstBoneName": "thigh_l",
+          "FirstRadius": 20.0,
+          "NextBoneName": "foot_l",
+          "NextRadius": 17.0
+        }
+      ],
+      "Override_AbnormalDispID_Attacker": 7001,
+      "Override_AbnormalDispID_Victim": 100
+    }
+  }
+]

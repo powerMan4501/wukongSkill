@@ -236,7 +236,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_magu_01a.TAMER_hfm_magu_01a_C",
-    "BossName": "盾牌-骨悚然",
+    "BossName": "骨悚然",
     "BossID": 134,
     "Level": 13,
     "GameLevel": 2,
@@ -244,7 +244,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_magu_01b.TAMER_hfm_magu_01b_C",
-    "BossName": "盾牌-骨悚然",
+    "BossName": "骨悚然",
     "BossID": 135,
     "Level": 13,
     "GameLevel": 2,
@@ -252,7 +252,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_huijingrenou_03.TAMER_hys_huijingrenou_03_C",
-    "BossName": "盾牌-地罗刹",
+    "BossName": "地罗刹",
     "BossID": 156,
     "Level": 49,
     "GameLevel": 5,
@@ -260,7 +260,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_huijingtitan_01.TAMER_hys_huijingtitan_01_C",
-    "BossName": "盾牌-海罗刹",
+    "BossName": "海罗刹",
     "BossID": 157,
     "Level": 49,
     "GameLevel": 5,
@@ -324,7 +324,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_shanzhen_01.TAMER_hys_shanzhen_01_C",
-    "BossName": "霸体-火烈烈",
+    "BossName": "火烈烈",
     "BossID": 170,
     "Level": 49,
     "GameLevel": 2,
@@ -332,7 +332,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_shanzhen_03.TAMER_hys_shanzhen_03_C",
-    "BossName": "霸体-火烈烈2",
+    "BossName": "火烈烈2",
     "BossID": 172,
     "Level": 49,
     "GameLevel": 2,

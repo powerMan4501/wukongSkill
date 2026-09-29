@@ -1,16 +1,20 @@
 [
   {
     "Animation": "AM_10_gycy_wa_01_atk_41_lei_new",
-    "name": "金色雷电",
+    "name": "雷蛙 蝌蚪",
     "bullet_actions": [
       {
         "ID": 1026202,
         "actions": [
           {
             "Type": "bullet",
+            "duration": 1500,
+            "interval": 150,
             "bulletConfig": {
-              "ProjectileIDs": [22104092, 50051301],
-              "ProjectileNumInOneWave": 2,
+              "ProjectileIDs": [1026203],
+              "SpawnOffsetX": 100,
+              "SpawnOffsetY": 100,
+              "spawnBaseSocketName": "Hit_Tongue_1_atk41",
               "type": "shot",
               "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanjianliangren_02.BGW_Player_Wukong_Atk_sanjianliangren_02'"
             }
@@ -21,13 +25,16 @@
   },
   {
     "Animation": "AM_10_gycy_wa_01_atk_41_huo_new",
-    "name": "金色雷电",
+    "name": "火蛙火球",
     "Actions": [
       {
         "Type": "bullet",
         "bulletConfig": {
           "ProjectileIDs": [40220101],
           "type": "shot",
+          "SpawnOffsetX": 100,
+          "SpawnOffsetY": 100,
+          "spawnBaseSocketName": "Hit_Tongue_1_atk41",
           "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanjianliangren_02.BGW_Player_Wukong_Atk_sanjianliangren_02'"
         }
       }
@@ -57,10 +64,23 @@
         "Type": "bullet",
         "bulletConfig": {
           "ProjectileIDs": [10380101],
-          "SpawnOffsetX": 400,
+          "SpawnOffsetX": 100,
+          "SpawnOffsetY": 100,
+          "spawnBaseSocketName": "Hit_Tongue_1_atk41",
           "type": "shot",
           "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanjianliangren_02.BGW_Player_Wukong_Atk_sanjianliangren_02'"
         }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_lys_wa_01_atk_14.AM_lys_wa_01_atk_14",
+    "name": "冰蛙，平A",
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 1000,
+        "name": "跳到指定的秒数"
       }
     ]
   }

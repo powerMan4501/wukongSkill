@@ -1,0 +1,47 @@
+{
+  "SKMesh": "/Game/00MainHZ/Characters/Enemy/GYCY/GYCY_Wa_01/Meshes/new/SK_GYCY_Wa_01.SK_GYCY_Wa_01",
+  "Bindings": [
+    {
+      "Key": "LBUTTON",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 305123,
+          "name": "往左跳到一旁，然后拍出一排冰刺"
+        }
+      ]
+    },
+    {
+      "Key": "RBUTTON",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 305127,
+          "name": "大招，召唤好几个冰刺在周围"
+        }
+      ]
+    },
+    {
+      "Key": "XBUTTON1",
+      "Actions": [{ "Type": "Skill", "Value": 305128, "name": "冰地波" }]
+    },
+
+    {
+      "Key": "XBUTTON2",
+      "Actions": [
+        { "Type": "Skill", "Value": 305124, "name": "大招，大范围冰暴" }
+      ]
+    },
+    {
+      "Key": "SPACE",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 305130,
+          "name": "投技，吃下去：AM_lys_wa_01_zhuatou_01",
+          "grabConfig": { "hideGuest": true, "waitMs": 8000, "clearLock": true }
+        }
+      ]
+    }
+  ]
+}

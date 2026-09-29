@@ -21,9 +21,11 @@
     "Animation": "AM_10_gycy_yanjianxi_atk_24_",
     "name": "幽魂,精魄磕头",
     "addRadius": 900,
-    "sweep_actions": [
+
+    "position_actions": [
       {
-        "NotifyBeginTime": 0.7,
+        "Position": 0.8,
+        "Tolerance": 0.03,
         "Actions": [
           {
             "Type": "bullet",

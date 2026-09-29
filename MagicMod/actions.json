@@ -1,6 +1,15 @@
 {
   "Bindings": [
     {
+      "Key": "F5",
+      "Actions": [
+        {
+          "Type": "ProbeHair",
+          "name": "毛发资产探测（排查残躯秃头）"
+        }
+      ]
+    },
+    {
       "Key": "F1",
       "Actions": [
         {

@@ -1,18 +1,682 @@
 [
   {
+    "Name": "常用",
+    "Tab": "MONSTER",
+    "Items": [
+      {
+        "name": "一键获取全部丹药",
+        "actions": [
+          { "Type": "AddItemRange", "Values": [2204, 2254], "Count": 1 }
+        ]
+      },
+      {
+        "name": "筋斗云",
+        "actions": [{ "Type": "JingDouYun" }]
+      },
+      {
+        "name": "秒杀范围内怪物",
+        "actions": [{ "Type": "kill" }]
+      },
+      {
+        "name": "变回悟空",
+        "actions": [{ "Type": "trans_back" }]
+      },
+      {
+        "name": "灵光点",
+        "actions": [{ "Type": "AddItem", "Value": 1006, "Count": 1 }]
+      }
+    ]
+  },
+  {
+    "Name": "召唤己方",
+    "Tab": "TRANS",
+    "Items": [
+      {
+        "name": "鳖宝",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HYS/TAMER_hys_niaozui.TAMER_hys_niaozui_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 1,
+            "SummonBuffIds": [211, 132]
+          }
+        ]
+      },
+      {
+        "name": "天将",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/Online/SZLC/TAMER_sl_tianjiang_01.TAMER_sl_tianjiang_01_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 1,
+            "SummonBuffIds": [211, 132]
+          }
+        ]
+      },
+      {
+        "name": "石双双",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_03.TAMER_hfm_shanzhen_03_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 1,
+            "SummonBuffIds": [211, 132]
+          }
+        ]
+      },
+      {
+        "name": "蝎太子",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/PSD/TAMER_psd_xiefuma.TAMER_psd_xiefuma_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 1,
+            "SummonBuffIds": [211, 132]
+          }
+        ]
+      },
+      {
+        "name": "鼠弩手",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shunushou_01b.TAMER_hfm_shunushou_01b_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 1,
+            "SummonBuffIds": [211, 132]
+          }
+        ]
+      },
+      {
+        "name": "狼弓手",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_lang_08.TAMER_gycy_lang_08_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 1,
+            "SummonBuffIds": [211, 132]
+          }
+        ]
+      },
+      {
+        "name": "焦面鬼王",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HYS/TAMER_hys_luochagui_01.TAMER_hys_luochagui_01_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 1,
+            "SummonBuffIds": [211, 132]
+          }
+        ]
+      },
+      {
+        "name": "隼居士",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/LYS/TAMER_lys_baitouweng_01.TAMER_lys_baitouweng_01_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 1,
+            "SummonBuffIds": [211, 132]
+          }
+        ]
+      },
+      {
+        "name": "骨悚然",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HFM/TAMER_hfm_magu_01a.TAMER_hfm_magu_01a_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 1,
+            "SummonBuffIds": [211, 132]
+          }
+        ]
+      },
+      {
+        "name": "地罗刹",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HYS/TAMER_hys_huijingrenou_03.TAMER_hys_huijingrenou_03_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 1,
+            "SummonBuffIds": [211, 132]
+          }
+        ]
+      },
+      {
+        "name": "海罗刹",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HYS/TAMER_hys_huijingtitan_01.TAMER_hys_huijingtitan_01_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 1,
+            "SummonBuffIds": [211, 132]
+          }
+        ]
+      },
+      {
+        "name": "火烈烈",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HYS/TAMER_hys_shanzhen_01.TAMER_hys_shanzhen_01_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 1,
+            "SummonBuffIds": [211, 132]
+          }
+        ]
+      },
+      {
+        "name": "毛猴",
+        "actions": [
+          {
+            "Type": "summon",
+            "SummonID": 1001101,
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 1,
+            "SummonBuffIds": [211, 132]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "召唤敌方",
+    "Tab": "ROLE",
+    "Items": [
+      {
+        "name": "鳖宝",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HYS/TAMER_hys_niaozui.TAMER_hys_niaozui_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 2
+          }
+        ]
+      },
+      {
+        "name": "天将",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/Online/SZLC/TAMER_sl_tianjiang_01.TAMER_sl_tianjiang_01_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 2
+          }
+        ]
+      },
+      {
+        "name": "石双双",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_03.TAMER_hfm_shanzhen_03_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 2
+          }
+        ]
+      },
+      {
+        "name": "蝎太子",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/PSD/TAMER_psd_xiefuma.TAMER_psd_xiefuma_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 2
+          }
+        ]
+      },
+      {
+        "name": "鼠弩手",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shunushou_01b.TAMER_hfm_shunushou_01b_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 2
+          }
+        ]
+      },
+      {
+        "name": "狼弓手",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_lang_08.TAMER_gycy_lang_08_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 2
+          }
+        ]
+      },
+      {
+        "name": "焦面鬼王",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HYS/TAMER_hys_luochagui_01.TAMER_hys_luochagui_01_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 2
+          }
+        ]
+      },
+      {
+        "name": "隼居士",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/LYS/TAMER_lys_baitouweng_01.TAMER_lys_baitouweng_01_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 2
+          }
+        ]
+      },
+      {
+        "name": "骨悚然",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HFM/TAMER_hfm_magu_01a.TAMER_hfm_magu_01a_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 2
+          }
+        ]
+      },
+      {
+        "name": "地罗刹",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HYS/TAMER_hys_huijingrenou_03.TAMER_hys_huijingrenou_03_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 2
+          }
+        ]
+      },
+      {
+        "name": "海罗刹",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HYS/TAMER_hys_huijingtitan_01.TAMER_hys_huijingtitan_01_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 2
+          }
+        ]
+      },
+      {
+        "name": "火烈烈",
+        "actions": [
+          {
+            "Type": "summon",
+            "path": "/Game/00Main/Design/Units/HYS/TAMER_hys_shanzhen_01.TAMER_hys_shanzhen_01_C",
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 2
+          }
+        ]
+      },
+      {
+        "name": "毛猴",
+        "actions": [
+          {
+            "Type": "summon",
+            "SummonID": 1001101,
+            "SummonCount": 1,
+            "SummonAliveTime": -1,
+            "SummonTeamId": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
     "Name": "Boss",
     "Tab": "MONSTER",
     "Source": "boss",
-    "ItemActions": [
-      { "Type": "SpawnActor" }
-    ]
+    "ItemActions": [{ "Type": "SpawnActor" }]
   },
   {
     "Name": "变身",
     "Tab": "TRANS",
     "Source": "trans",
-    "ItemActions": [
-      { "Type": "Trans" }
+    "ItemActions": [{ "Type": "Trans" }]
+  },
+  {
+    "Name": "精魄",
+    "Tab": "TRANS",
+    "Items": [
+      {
+        "name": "退出精魄",
+        "actions": [{ "Type": "out_magic" }]
+      },
+      {
+        "name": "退出精魄并恢复自动变回",
+        "actions": [
+          { "Type": "setMagicBack", "value": 1 },
+          { "Type": "out_magic", "Delay": 100 }
+        ]
+      },
+      {
+        "name": "幽魂·大头磕头",
+        "actions": [
+          { "Type": "Magic", "Value": 8513, "magicSkill": 11313 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "幽魂·如来神掌",
+        "actions": [
+          { "Type": "Magic", "Value": 8513, "magicSkill": 102433 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "幽魂·四联地爆",
+        "actions": [
+          { "Type": "Magic", "Value": 8513, "magicSkill": 102432 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "鼠司空",
+        "actions": [
+          { "Type": "Magic", "Value": 8514, "magicSkill": 11314 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "百目真人",
+        "actions": [
+          { "Type": "Magic", "Value": 8515, "magicSkill": 11315 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "虎伥·快刀",
+        "actions": [
+          { "Type": "Magic", "Value": 8517, "magicSkill": 11317 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "不空",
+        "actions": [
+          { "Type": "Magic", "Value": 8520, "magicSkill": 11320 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "蝙蝠·无量飞天",
+        "actions": [
+          { "Type": "Magic", "Value": 8522, "magicSkill": 11322 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "不能·投技",
+        "actions": [
+          { "Type": "Magic", "Value": 8526, "magicSkill": 300507 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "不能·排云掌",
+        "actions": [
+          { "Type": "Magic", "Value": 8526, "magicSkill": 300508 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "不能·跳起砸地爆",
+        "actions": [
+          { "Type": "Magic", "Value": 8526, "magicSkill": 300513 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "不能·肘击",
+        "actions": [
+          { "Type": "Magic", "Value": 8526, "magicSkill": 300515 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "不能·蓄力很久一拳",
+        "actions": [
+          { "Type": "Magic", "Value": 8526, "magicSkill": 300516 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "尾后针",
+        "actions": [
+          { "Type": "Magic", "Value": 8530, "magicSkill": 10130 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "盾",
+        "actions": [
+          { "Type": "Magic", "Value": 8534, "magicSkill": 11334 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "鳖宝·飞天大坐",
+        "actions": [
+          { "Type": "Magic", "Value": 8535, "magicSkill": 405507 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "沙二郎",
+        "actions": [
+          { "Type": "Magic", "Value": 8563, "magicSkill": 11363 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "疾蝠",
+        "actions": [
+          { "Type": "Magic", "Value": 8567, "magicSkill": 11367 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "赤发鬼",
+        "actions": [
+          { "Type": "Magic", "Value": 8572, "magicSkill": 11372 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "虫校尉",
+        "actions": [
+          { "Type": "Magic", "Value": 8578, "magicSkill": 10178 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "蜻蜓",
+        "actions": [
+          { "Type": "Magic", "Value": 8579, "magicSkill": 11379 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "牯都督·冲撞",
+        "actions": [
+          { "Type": "Magic", "Value": 8587, "magicSkill": 10187 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "火蛙",
+        "actions": [
+          { "Type": "Magic", "Value": 8596, "magicSkill": 11396 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "毒蛙",
+        "actions": [
+          { "Type": "Magic", "Value": 8597, "magicSkill": 11397 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "冰蛙",
+        "actions": [
+          { "Type": "Magic", "Value": 8595, "magicSkill": 11395 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+
+      {
+        "name": "雷蛙",
+        "actions": [
+          { "Type": "Magic", "Value": 8598, "magicSkill": 11398 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "石蛙",
+        "actions": [
+          { "Type": "Magic", "Value": 8599, "magicSkill": 11399 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "夜叉王·开局横扫",
+        "actions": [
+          { "Type": "Magic", "Value": 1111101, "magicSkill": 440596 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "夜叉王·爆气地刺",
+        "actions": [
+          { "Type": "Magic", "Value": 1111101, "magicSkill": 440507 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "夜叉王·瞬发地刺",
+        "actions": [
+          { "Type": "Magic", "Value": 1111101, "magicSkill": 440515 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "夜叉王·长平A跳起地刺",
+        "actions": [
+          { "Type": "Magic", "Value": 1111101, "magicSkill": 440516 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "夜叉王·短平A跳起地刺",
+        "actions": [
+          { "Type": "Magic", "Value": 1111101, "magicSkill": 440517 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "夜叉王·脚踩地刺",
+        "actions": [
+          { "Type": "Magic", "Value": 1111101, "magicSkill": 440555 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "焦面鬼王·熊抱",
+        "actions": [
+          { "Type": "Magic", "Value": 1111103, "magicSkill": 401208 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "小骊龙·跳砸",
+        "actions": [
+          { "Type": "Magic", "Value": 1111104, "magicSkill": 302514 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "杨戬·激光横扫",
+        "actions": [
+          { "Type": "Magic", "Value": 1111105, "magicSkill": 800041 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "鬼王·脚踩",
+        "actions": [
+          { "Type": "Magic", "Value": 1111107, "magicSkill": 401202 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "天将·召唤雷电",
+        "actions": [
+          { "Type": "Magic", "Value": 1111108, "magicSkill": 413431 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+      {
+        "name": "黄眉·地板雷",
+        "actions": [
+          { "Type": "Magic", "Value": 1111109, "magicSkill": 380013 },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      },
+
+      {
+        "name": "残躯大安身法",
+        "actions": [
+          {
+            "Type": "Magic",
+            "Value": 1111112,
+            "magicSkill": 700142
+          },
+          { "Type": "setMagicBack", "value": 0, "Delay": 200, "name": "不变回" }
+        ]
+      }
     ]
   },
   {
@@ -20,78 +684,33 @@
     "Tab": "ROLE",
     "Source": "items",
     "Ranges": [
-      
       { "Start": 15002, "Count": 1 },
       { "Start": 15101, "Count": 1 },
       { "Start": 12001, "Count": 4 },
       { "Start": 16001, "Count": 1010 },
       { "Start": 10501, "Count": 101 }
     ],
-    "ItemActions": [
-      { "Type": "AddItem", "Count": 1 }
-    ]
+    "ItemActions": [{ "Type": "AddItem", "Count": 1 }]
   },
   {
     "Name": "丹药",
     "Tab": "BATTLE",
     "Source": "items",
-    "Ranges": [
-      { "Start": 2204, "Count": 51 }
-    ],
-    "ItemActions": [
-      { "Type": "AddItem", "Count": 10 }
-    ]
+    "Ranges": [{ "Start": 2204, "Count": 51 }],
+    "ItemActions": [{ "Type": "AddItem", "Count": 10 }]
   },
   {
     "Name": "材料",
     "Tab": "PERFORM",
     "Source": "items",
-    "Ranges": [
-      { "Start": 1996, "Count": 1967 }
-    ],
-    "ItemActions": [
-      { "Type": "AddItem", "Count": 99 }
-    ]
+    "Ranges": [{ "Start": 1996, "Count": 1967 }],
+    "ItemActions": [{ "Type": "AddItem", "Count": 99 }]
   },
   {
     "Name": "道具",
     "Tab": "CHECK",
     "Source": "items",
-    "Ranges": [
-      { "Start": 3963, "Count": 2056 }
-    ],
-    "ItemActions": [
-      { "Type": "AddItem", "Count": 1 }
-    ]
-  },
-  {
-    "Name": "常用",
-    "Tab": "MONSTER",
-    "Items": [
-      {
-        "name": "筋斗云",
-        "actions": [
-          { "Type": "JingDouYun" }
-        ]
-      },
-      {
-        "name": "秒杀范围内怪物",
-        "actions": [
-          { "Type": "kill" }
-        ]
-      },
-      {
-        "name": "变回悟空",
-        "actions": [
-          { "Type": "trans_back" }
-        ]
-      },
-      {
-        "name": "灵光点",
-        "actions": [
-          { "Type": "AddItem", "Value": 1006, "Count": 1 }
-        ]
-      }
-    ]
+    "Ranges": [{ "Start": 3963, "Count": 2056 }],
+    "ItemActions": [{ "Type": "AddItem", "Count": 1 }]
   }
 ]

@@ -248,6 +248,14 @@
   {
     "Animation": "AM_Wukong_xuli_attack_4",
     "addRadius": 1000,
+    "cast_actions": [
+      {
+        "Type": "WeaponScale",
+        "WeaponScale": { "X": 1.5, "Y": 1.5, "Z": 1.5 },
+        "WeaponScaleHoldMs": 2700,
+        "WeaponScaleRestoreMs": 500
+      }
+    ],
     "Actions": [
       {
         "Type": "bullet",
@@ -304,6 +312,14 @@
   },
   {
     "Animation": "AM_Wukong_xuli_attack_3",
+    "cast_actions": [
+      {
+        "Type": "WeaponScale",
+        "WeaponScale": { "X": 1.5, "Y": 1.5, "Z": 1.5 },
+        "WeaponScaleHoldMs": 1900,
+        "WeaponScaleRestoreMs": 500
+      }
+    ],
     "Actions": [
       {
         "Type": "Buff",
@@ -327,7 +343,66 @@
   },
 
   {
-    "Animation": "AM_Wukong_xuli_attack",
+    "Animation": "AM_Wukong_xuli_attack_2",
+    "cast_actions": [
+      {
+        "Type": "WeaponScale",
+        "WeaponScale": { "X": 1.5, "Y": 1.5, "Z": 1.5 },
+        "WeaponScaleHoldMs": 1600,
+        "WeaponScaleRestoreMs": 500
+      }
+    ],
+    "Actions": [
+      {
+        "Type": "bullet",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [44011401, 140],
+          "SpawnOffsetX": 500,
+          "SpawnOffsetY": 500,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+   {
+    "Animation": "AM_Wukong_xuli_attack_1",
+    "cast_actions": [
+      {
+        "Type": "WeaponScale",
+        "WeaponScale": { "X": 1.5, "Y": 1.5, "Z": 1.5 },
+        "WeaponScaleHoldMs": 1300,
+        "WeaponScaleRestoreMs": 500
+      }
+    ],
+    "Actions": [
+      {
+        "Type": "bullet",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [44011401, 140],
+          "SpawnOffsetX": 500,
+          "SpawnOffsetY": 500,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+    {
+    "Animation": "AM_Wukong_xuli_attack_0",
+    "cast_actions": [
+      {
+        "Type": "WeaponScale",
+        "WeaponScale": { "X": 1.5, "Y": 1.5, "Z": 1.5 },
+        "WeaponScaleHoldMs": 1200,
+        "WeaponScaleRestoreMs": 500
+      }
+    ],
     "Actions": [
       {
         "Type": "bullet",

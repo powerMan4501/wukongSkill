@@ -741,7 +741,7 @@
         "EffectType": 2,
         "EffectTargetSelectType": 0,
         "EffectParamsString": [],
-        "EffectParams": [51, 50000, 0, 0],
+        "EffectParams": [51, 10000, 0, 0],
         "EffectParamsFloat": []
       },
       {

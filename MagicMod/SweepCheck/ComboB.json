@@ -2,6 +2,7 @@
   {
     "Animation": "AM_Wukong_ComboB_q4",
     "name": "枪Q4",
+
     "sweep_actions": [
       {
         "NotifyBeginTime": 1.008773,
@@ -25,6 +26,7 @@
   {
     "Animation": "AM_wukong_combob_z_02",
     "name": "进尺",
+
     "sweep_actions": [
       {
         "NotifyBeginTime": 0.9333333,
@@ -83,7 +85,50 @@
     ]
   },
   {
+    "Animation": "AM_Wukong_JXSQ_Atk",
+    "cast_actions": [
+      {
+        "Type": "WeaponScale",
+        "WeaponScale": { "X": 1.5, "Y": 1.5, "Z": 1.5 },
+        "WeaponScaleHoldMs": 5600,
+        "WeaponScaleRestoreMs": 500
+      }
+    ]
+  },
+  {
+    "Animation": "AM_Wukong_ComboA_",
+    "cast_actions": [
+      {
+        "Type": "BoneGlow",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "BoneName": "weapon_r",
+        "FXList": [
+          {
+            "path": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/MGD/MGD_tianjiang/DBC/DBC_MGD_tianjian_weapon_Lightning.DBC_MGD_tianjian_weapon_Lightning'"
+          }
+        ],
+        "Duration": 5000
+      },
+      {
+        "Type": "BoneGlow",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "BoneName": "weapon_r",
+        "FXList": [
+          {
+            "path": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/Equip/KJL/DBC_Equip_Weapon_KJL_Loop.DBC_Equip_Weapon_KJL_Loop'"
+          }
+        ],
+        "Duration": 5000
+      }
+    ]
+  },
+  {
     "Animation": "AM_Wukong_ComboB_q",
+
     "name": "枪Q1~q4，发射火箭 火buff:92204,96040,2028,毒buff:92205,雷buff:92206,冰buff:92208",
     "Actions": [
       {

@@ -2,6 +2,7 @@
   {
     "Animation": "AM_Wukong_ComboA_z_01",
     "name": "10705切手，bullet_fire",
+
     "Actions": [
       {
         "Type": "bullet",
@@ -261,6 +262,17 @@
   {
     "Animation": "AM_Dasheng_ComboA_01_Z_2",
     "name": "大圣10707",
+
+    "cast_actions": [
+      {
+        "Type": "CalcAMScale",
+        "Params": {
+          "TotalDuration": "0.5",
+          "MaxRate": "30",
+          "MoveOffset": "5000"
+        }
+      }
+    ],
     "Actions": [
       {
         "Type": "Buff",
@@ -270,12 +282,12 @@
       },
       {
         "Type": "bullet",
-        "name": "火，lv1火圈，红孩儿砸地，涌出岩浆",
+        "name": "火，lv1火圈，红孩儿砸地",
         "Condition": {
           "Type": "bullet_fire"
         },
         "bulletConfig": {
-          "ProjectileIDs": [2403172,44011401, 58111003],
+          "ProjectileIDs": [2403172, 44011401],
           "SpawnOffsetX": 500,
           "SpawnOffsetY": 500,
           "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
@@ -302,7 +314,7 @@
           "Type": "bullet_poison"
         },
         "bulletConfig": {
-          "ProjectileIDs": [30203000,20060105,1019261],
+          "ProjectileIDs": [30203000, 20060105, 1019261],
           "SpawnOffsetX": 500,
           "SpawnOffsetY": 500,
           "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
@@ -315,7 +327,7 @@
           "Type": "bullet_thunder"
         },
         "bulletConfig": {
-          "ProjectileIDs": [118, 39010112,30250101],
+          "ProjectileIDs": [118, 39010112, 30250101],
           "SpawnOffsetX": 500,
           "SpawnOffsetY": 500,
           "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
@@ -326,7 +338,17 @@
   {
     "Animation": "AM_Dasheng_ComboA_02_Z_2",
     "name": "大圣10707",
-     "Actions": [
+    "cast_actions": [
+      {
+        "Type": "CalcAMScale",
+        "Params": {
+          "TotalDuration": "0.5",
+          "MaxRate": "30",
+          "MoveOffset": "5000"
+        }
+      }
+    ],
+    "Actions": [
       {
         "Type": "Buff",
         "name": "时缓",
@@ -335,12 +357,12 @@
       },
       {
         "Type": "bullet",
-        "name": "火，lv1火圈，炸炸炸",
+        "name": "火，lv1火圈，红孩儿砸地",
         "Condition": {
           "Type": "bullet_fire"
         },
         "bulletConfig": {
-          "ProjectileIDs": [2403172,44011401, 40550101],
+          "ProjectileIDs": [2403172, 44011401],
           "SpawnOffsetX": 500,
           "SpawnOffsetY": 500,
           "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
@@ -367,20 +389,20 @@
           "Type": "bullet_poison"
         },
         "bulletConfig": {
-          "ProjectileIDs": [30203000,20060105,1019261],
+          "ProjectileIDs": [30203000, 20060105, 1019261],
           "SpawnOffsetX": 500,
           "SpawnOffsetY": 500,
           "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
         }
       },
-     {
+      {
         "Type": "bullet",
         "name": "雷,,落雷，雷暴,电圈",
         "Condition": {
           "Type": "bullet_thunder"
         },
         "bulletConfig": {
-          "ProjectileIDs": [118, 39010112,30250101],
+          "ProjectileIDs": [118, 39010112, 30250101],
           "SpawnOffsetX": 500,
           "SpawnOffsetY": 500,
           "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
@@ -391,7 +413,17 @@
   {
     "Animation": "AM_Wukong_ComboA_z_02",
     "name": "马喽10707",
-     "Actions": [
+    "cast_actions": [
+      {
+        "Type": "CalcAMScale",
+        "Params": {
+          "TotalDuration": "0.5",
+          "MaxRate": "30",
+          "MoveOffset": "5000"
+        }
+      }
+    ],
+    "Actions": [
       {
         "Type": "Buff",
         "name": "时缓",
@@ -405,7 +437,7 @@
           "Type": "bullet_fire"
         },
         "bulletConfig": {
-          "ProjectileIDs": [2403172,44011401, 40550101],
+          "ProjectileIDs": [2403172, 44011401,140],
           "SpawnOffsetX": 500,
           "SpawnOffsetY": 500,
           "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
@@ -432,20 +464,20 @@
           "Type": "bullet_poison"
         },
         "bulletConfig": {
-          "ProjectileIDs": [30203000,20060105,1019261],
+          "ProjectileIDs": [30203000, 20060105, 1019261],
           "SpawnOffsetX": 500,
           "SpawnOffsetY": 500,
           "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
         }
       },
-     {
+      {
         "Type": "bullet",
         "name": "雷,,落雷，雷暴,电圈",
         "Condition": {
           "Type": "bullet_thunder"
         },
         "bulletConfig": {
-          "ProjectileIDs": [118, 39010112,30250101],
+          "ProjectileIDs": [118, 39010112, 30250101],
           "SpawnOffsetX": 500,
           "SpawnOffsetY": 500,
           "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
