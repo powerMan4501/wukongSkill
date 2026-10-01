@@ -18,53 +18,6 @@ public class ConditionConfig
 namespace MagicMod
 {
     /// <summary>
-    /// 单个发光特效配置项（供 BoneGlow 的 FXList 使用，可叠加多个形成"棍光组合"）。
-    /// path:    资源路径（形如 "/Game/.../NG_xxx.NG_xxx"），为空则按骨骼挑默认发光；
-    /// scale:   缩放，默认 1；
-    /// offset:  位置偏移 [x,y,z]（相对骨骼，厘米），默认 [0,0,0]；
-    /// rotation:旋转 [pitch,yaw,roll]（度），默认 [0,0,0]；
-    /// duration:该特效持续毫秒（0 或省略则继承动作的 Duration，默认永久）。
-    /// </summary>
-    /// <summary>自定义 Niagara 变量（name 支持 "User.XXX" 写法）</summary>
-    public class FXVar
-    {
-        public string name { get; set; }
-        /// <summary>float / int / bool / color</summary>
-        public string type { get; set; }
-        /// <summary>float、int、bool 取 [0]；color 取 [r,g,b] 或 [r,g,b,a]</summary>
-        public float[] value { get; set; }
-    }
-
-    public class FXItem
-    {
-        public string path { get; set; }
-        public float? scale { get; set; }
-        public float[] offset { get; set; }
-        public float[] rotation { get; set; }
-        public int? duration { get; set; }
-        /// <summary>Niagara 颜色变量 [r,g,b]（0~1，可 &gt;1 做 HDR 高亮）。会广播到常见颜色变量名</summary>
-        public float[] color { get; set; }
-        /// <summary>Niagara 强度/亮度变量值（广播到常见强度变量名）</summary>
-        public float? intensity { get; set; }
-        /// <summary>武器火焰类特效：User.ColorChannel（int，颜色通道/枚举，如 0=橙红 1=? 2=?）</summary>
-        public int? channel { get; set; }
-        /// <summary>武器火焰类特效：User.FireScale（火焰大小）</summary>
-        public float? fireScale { get; set; }
-        /// <summary>武器火焰类特效：User.ParticleCount（粒子密度）</summary>
-        public int? count { get; set; }
-        /// <summary>DispFX：非等比缩放 [x,y,z]（沿棍长拉长/压扁，让光铺满整根棍）。优先于 scale。</summary>
-        public float[] scale3 { get; set; }
-        /// <summary>调试用：自动轮换 User.ColorChannel（填扫描上限，如 4 表示 0..3 每 1.5 秒切换），便于一次找出想要的颜色</summary>
-        public int? scanChannel { get; set; }
-        /// <summary>任意 Niagara 变量（优先级最高，覆盖上面的便捷字段）</summary>
-        public List<FXVar> vars { get; set; }
-        /// <summary>DispFX：挂点骨骼 / 插槽名（默认 weapon_r）。Niagara/Cascade 直挂时生效。</summary>
-        public string attach { get; set; }
-        /// <summary>DispFX：强制指定本条是否为 DBC（true/false）。不填则按路径里是否含 BGWDataAsset_B1DBC 自动判断。</summary>
-        public bool? dbc { get; set; }
-    }
-
-    /// <summary>
     /// 动作类型枚举
     /// </summary>
     public enum ActionType
@@ -94,6 +47,11 @@ namespace MagicMod
         ResetData,
         /// <summary>传送到锁定目标附近（带碰撞检测）</summary>
         TeleportTarget,
+        /// <summary>
+        /// 把锁定的目标拉到自己正前方指定距离处（Value / Params.Distance，默认 500），并让它背对自己。
+        /// Params.Facing：away=背对自己(默认) / face=面对自己 / keep=保持原朝向；Params.GroundSnap：是否贴合地面(默认 true)
+        /// </summary>
+        TeleportTargetToFront,
         /// <summary>计算并设置 AMScale 缩放率</summary>
         CalcAMScale,
         range_buff,
@@ -132,14 +90,6 @@ namespace MagicMod
         /// <summary>还原材质自发光（恢复原始材质）</summary>
         MaterialGlowStop,
         /// <summary>
-        /// 指定骨骼/插槽发光：BoneName=骨骼名（如 weapon_r / hand_l / hand_r），
-        /// path=Niagara/Cascade 资源路径（可空，空则用默认发光），Duration=毫秒(-1永久)，
-        /// FXScale=缩放。详见 BoneGlow。
-        /// </summary>
-        BoneGlow,
-        /// <summary>关闭指定骨骼发光：BoneName=骨骼名（如 weapon_r）。</summary>
-        BoneGlowStop,
-        /// <summary>
         /// 毛发资产探测（排查换皮/变身后秃头）：打印 SKMesh 材质槽、候选 TressFX 资产是否存在、
         /// 以及当前角色身上的 Mesh/TressFX 组件。结果只打日志（[HairProbe] 前缀），用于确认某 Boss
         /// 毛发资源路径或缺失原因。
@@ -153,41 +103,6 @@ namespace MagicMod
         /// 本动作把它重新设为可见。可选 path=关键字（逗号分隔，默认 head_born_static）。
         /// </summary>
         ShowHair,
-        /// <summary>
-        /// 播一条 DBC 表现（BGWDataAsset_B1DBC）。等价于"给 BuffDispDesc 的 EnterFX 填 DBC 路径"，
-        /// 但不用改配表：直接调 Evt_RequestSpawnFXByDispConfig。
-        /// path = DBC 资源路径（形如 BGWDataAsset_B1DBC'/Game/....DBC_Xxx.DBC_Xxx'），Duration = 毫秒后自动销毁。
-        /// </summary>
-        SpawnDBC,
-        /// <summary>销毁本角色身上由 SpawnDBC 播出的全部 DBC 表现。</summary>
-        DBCStop,
-        /// <summary>
-        /// 打印指定 BuffID 的 BuffDispDesc（EnterFX / LeaveFX / MaterialSetting / TickingCurveParam 全量），
-        /// 用来查"真正的棍光"用的是哪条 DBC / Niagara / 材质配置。Values = [BuffID...]。
-        /// </summary>
-        DumpBuffDisp,
-        /// <summary>
-        /// 扫一段 BuffID，找出"表现配置里出现过关键字"的 buff（DispDesc + LayerDispDesc 都查）。
-        /// Value=起始ID，Count=数量，path=关键字（如 "XuLi" 可捞出所有蓄力棍光相关的 buff）。只打命中的。
-        /// </summary>
-        ScanBuffDisp,
-        /// <summary>
-        /// 自包含"表现播放"（复刻 BUS_BuffDispComp.PlayAddBuffDisp，不依赖任何 buff 配表）。
-        /// FXList = EnterFX（DBC 路径 或 Niagara/Cascade 路径，attach=挂点骨骼默认 weapon_r）；
-        /// MatSetting = BGWDataAsset_BuffSetCurveValueToMeshConfig 路径数组（游戏自己的武器发光通道）；
-        /// Duration = 毫秒后自动结束。
-        /// </summary>
-        DispFX,
-        /// <summary>结束 DispFX：播 LeaveFX、销毁特效、还原材质。</summary>
-        DispFXStop,
-        /// <summary>
-        /// 把一套表现绑到动画上：动画开始播 → 亮起，结束/打断 → 熄灭（走 Evt_PlayMontageCallback）。
-        /// path = 动画路径关键字，如 "xuli"（蓄力，三系通吃）、"AM_Wukong_ComboA" 等；
-        /// FXList / MatSetting 与 DispFX 相同。
-        /// </summary>
-        BindMontageFX,
-        /// <summary>解绑 BindMontageFX 并熄灭（热重载前调用，避免回调残留）。</summary>
-        BindMontageFXStop,
         /// <summary>
         /// 运行时整体放大玩家角色（Actor 缩放）：平A 期间放大，出招后还原成原始大小。
         /// 命中判定随 Actor 缩放一起变大（游戏侧 Radius * GetActorScale3D().X），无需额外调判定。
@@ -219,7 +134,7 @@ namespace MagicMod
         public int? Value { get; set; }
         public List<int>? Values { get; set; }
 
-        /// <summary>持续时间（毫秒），仅 Buff / BoneGlow 有效，-1 表示永久；JSON 键 "Duration"（大写，避免与下方的 duration 重复执行字段冲突）</summary>
+        /// <summary>持续时间（毫秒），仅 Buff 有效，-1 表示永久；JSON 键 "Duration"（大写，避免与下方的 duration 重复执行字段冲突）</summary>
         [JsonProperty("Duration")]
         public int? Duration { get; set; } = 10000;
 
@@ -294,23 +209,8 @@ namespace MagicMod
 
         public string?  path { get; set; }
 
-        /// <summary>指定骨骼发光：骨骼 / 插槽名（如 "weapon_r" / "hand_l" / "hand_r"）。BoneGlow / BoneGlowStop 动作使用。</summary>
+        /// <summary>骨骼 / 插槽名（如 "weapon_r" / "hand_l" / "hand_r"）。MaterialGlow 使用。</summary>
         public string? BoneName { get; set; }
-
-        /// <summary>指定骨骼发光：特效缩放（BoneGlow 单特效写法使用，默认 1）。</summary>
-        public float? FXScale { get; set; }
-
-        /// <summary>指定骨骼发光：多个发光特效组成的"棍光组合"（数组，逐项叠加）。BoneGlow 动作使用，优先级高于 path/FXScale。</summary>
-        public List<FXItem> FXList { get; set; }
-
-        /// <summary>指定骨骼发光：内置预设组合名（rich=多光 / fire=火+金 / gold=金）。BoneGlow 动作使用，优先级高于 FXList。</summary>
-        public string FXPreset { get; set; }
-
-        /// <summary>骨骼发光：Niagara 颜色 [r,g,b]（作用于 FXList 中未单独指定 color 的项）</summary>
-        public float[] FXColor { get; set; }
-
-        /// <summary>骨骼发光：Niagara 强度/亮度（作用于 FXList 中未单独指定 intensity 的项）</summary>
-        public float? FXIntensity { get; set; }
 
         /// <summary>材质自发光：材质槽名关键字（默认 "weapon"；"" 表示所有材质槽）</summary>
         public string MatSlot { get; set; }
@@ -345,12 +245,6 @@ namespace MagicMod
 
         /// <summary>棍光：是否持续重应用（防武器系统重建材质后失效），默认 true。</summary>
         public bool? MatKeepAlive { get; set; }
-
-        /// <summary>DispFX：材质曲线配置资源路径数组（BGWDataAsset_BuffSetCurveValueToMeshConfig），游戏自己的武器发光通道。</summary>
-        public List<string> MatSetting { get; set; }
-
-        /// <summary>DispFX：传给材质曲线的总时长（秒），默认 1。</summary>
-        public float? MatDuration { get; set; }
 
         /// <summary>角色缩放：VectorConfig 缩放倍率 {X,Y,Z}，默认 {3,1,1}（建议等比如 {3,3,3}，避免胶囊变形）。
         /// 走 Actor 缩放（SetActorScale3D），命中判定会同步放大。WeaponScale 动作使用。</summary>
@@ -503,24 +397,6 @@ namespace MagicMod
     }
 
     /// <summary>
-    /// position_actions 中的单个位置动作组：动画播放到 Position（秒）时触发动作
-    /// </summary>
-    public class PositionActionGroup
-    {
-        /// <summary>触发位置（秒），播放头到达该秒数时触发</summary>
-        public float Position { get; set; }
-
-        /// <summary>容差（秒），默认 0.03。播放头到达 Position-Tolerance 即算命中</summary>
-        public float? Tolerance { get; set; }
-
-        /// <summary>配置名称（可选，仅用于日志）</summary>
-        public string? name { get; set; }
-
-        /// <summary>该位置触发的动作列表</summary>
-        public List<ActionConfig> Actions { get; set; } = new List<ActionConfig>();
-    }
-
-    /// <summary>
     /// 子弹生成动作组：ProjectileID + 动作列表（子弹生成事件时按动画 + ProjectileID 匹配触发）
     /// </summary>
     public class BulletActionGroup
@@ -552,9 +428,6 @@ namespace MagicMod
 
         /// <summary>[新格式] 多时间点动作组，每个元素含独立的 NotifyBeginTime 和 Actions</summary>
         public List<SweepActionGroup> sweep_actions { get; set; }
-
-        /// <summary>[可选] 按播放位置触发的动作组：动画播到第 N 秒时触发，不依赖 AnimNotify</summary>
-        public List<PositionActionGroup> position_actions { get; set; }
 
         /// <summary>[可选] 技能释放时执行的动作（通过 SkillSDesc.TemplatePath 匹配 Animation 关键字）</summary>
         public List<ActionConfig> cast_actions { get; set; }
@@ -813,9 +686,7 @@ namespace MagicMod
         /// <summary>附身镜头混合指数</summary>
         public float? PossessBlendExp { get; set; }
 
-        // ===== 原生变身模式（NativeTransSystem）=====
-        // 与 UseTamerPossess（傀儡附身）互斥：UseTamerPossess=true 仍走 CustomTransSystem，
-        // false 时由 NativeTransSystem 走游戏自己的 PlayerTrans 系统。
+        // ===== 变身模式说明（原生变身系统已移除，仅保留傀儡附身配置结构）=====
         //
         // Direct 模式：注入 FUStUnitTransCommDesc 后直接变身到 BPPath 指向的单位。
         //   注意：游戏大量系统要求被操控单位是 BGUPlayerCharacterCS 子类（如

@@ -84,16 +84,14 @@ public static class MyUtils
 	{
 
 		APawn controlledPawn = GetControlledPawn();
-		FVector actorLocation = ((AActor)controlledPawn).GetActorLocation();
-		FVector val = ((AActor)controlledPawn).GetActorForwardVector() * 700.0;
-		FVector val2 = actorLocation + val;
-		FRotator val3 = UMathLibrary.FindLookAtRotation(val2, actorLocation);
 		UClass val4 = LoadClass("PrefabricatorAsset'" + classAsset + "'");
 		if ((UObject)(object)val4 == (UObject)null)
 		{
 			return null;
 		}
-		return BGUFunctionLibraryCS.BGUSpawnActor(((AActor)controlledPawn).World, (TSubclassOf<AActor>)val4, val2, val3);
+		// 出生点统一走 ModUtils：主角正前方 800，脚底在地面之上 300（从空中落地），背对主角
+		ModUtils.SummonSpawnInfo spawn = ModUtils.CalcSummonSpawnInfo((AActor)controlledPawn);
+		return BGUFunctionLibraryCS.BGUSpawnActor(((AActor)controlledPawn).World, (TSubclassOf<AActor>)val4, spawn.CenterLocation, spawn.Rotation);
 	}
 
 	public static AActor GetActorOfClass(string classAsset)

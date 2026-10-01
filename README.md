@@ -231,8 +231,11 @@ MagicMod 是一个黑神话悟空 CSharpLoader Mod，所有功能都通过 `Mods
 - `path` / `SpawnTeamId`：SpawnActor 生成物
 
 **`ActionType` 取值**：`Buff` `Skill` `Magic` `Trans` `UI` `kill` `showInfo` `clearInfo` `AddItem` `AddItemRange`
-`JingDouYun` `bullet` `Rushskill` `LoadData` `ResetData` `TeleportTarget` `CalcAMScale` `range_buff` `out_magic`
+`JingDouYun` `bullet` `Rushskill` `LoadData` `ResetData` `TeleportTarget` `TeleportTargetToFront` `CalcAMScale` `range_buff` `out_magic`
 `gian_item` `Montage_SetPosition` `change_to_dasheng` `trans_back` `DumpTrans` `BossPanel` `summon` `SpawnActor` `addallsummonlifetime` `montage` `setMagicBack`
+
+- `TeleportTargetToFront`：把锁定目标拉到自己正前方（距离取 `Value` 或 `Params.Distance`，默认 500），并让它**背对自己**；
+  `Params.Facing` = `away`(默认,背对自己) / `face`(面对自己) / `keep`(保持原朝向)，`Params.GroundSnap` = 是否向下射线贴合地面（默认 true）
 
 示例（鼠标侧键变身夜叉王，另一键变回）：
 ```json

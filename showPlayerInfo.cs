@@ -475,11 +475,11 @@ public class ShowPlayerInfo
 		AActor? targetActor = BGUFunctionLibraryCS.BGUGetTarget(player);
 		var text = "\n 目标角色:";
 
-		if (targetActor == null || !IsValidActor(targetActor))
-		{
-			targetActor = GetNearestActor(player, 4000);
-			text = "\n 最近角色:";
-		}
+		// if (targetActor == null || !IsValidActor(targetActor))
+		// {
+		// 	targetActor = GetNearestActor(player, 4000);
+		// 	text = "\n 最近角色:";
+		// }
 		if (targetActor == null || !IsValidActor(targetActor))
 		{
 			UpdateUTextBlockContentIfChanged(BasicInfoVs[index], "\n 目标角色: 无");

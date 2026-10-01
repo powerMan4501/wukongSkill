@@ -1,7 +1,9 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using b1;
 using b1.BGW;
@@ -27,6 +29,16 @@ namespace MagicMod
         // 记录 Skill 和 Magic 动作的上次执行时间，用于节流控制
         private static readonly Dictionary<ActionType, long> _lastExecuteTime = new Dictionary<ActionType, long>();
         private const long ThrottleIntervalMs = 300; // 0.3秒节流间隔
+
+        /// <summary>
+        /// 递归深度闸门：DoActions 执行的动作（Skill / Magic / bullet / Trans 等）会再次触发游戏事件
+        /// （SweepCheckBegin / OnTriggerSkillEffect / OnRequestSmartCastSkill / OnNotifyStateSpawnProjectileObj），
+        /// 而这些事件又会回到 DoActions。配置一旦成环（典型如夜叉王 440506020：Montage_SetPosition
+        /// 把动画拉回 2.3s 重放 → 再次触发同一效果），就是无界递归。
+        /// 这里按线程统计嵌套层数，超过上限直接放弃本次执行并打日志，避免卡死/爆栈。
+        /// </summary>
+        private const int MaxActionDepth = 3;
+        private static readonly ThreadLocal<int> _actionDepth = new ThreadLocal<int>(() => 0);
 
         // 骨骼绑定配置缓存
         private static List<MeshActionConfig> _meshBindings = new List<MeshActionConfig>();
@@ -81,12 +93,6 @@ namespace MagicMod
                         Log.Info($"[MagicMod]   Animation='{sc.Animation}' bullet_actions ProjectileID={ba.ID} -> {ba.actions.Count} 个动作");
                     }
                 }
-                if (sc.position_actions != null && sc.position_actions.Count > 0)
-                {
-                    int totalActions = 0;
-                    foreach (var g in sc.position_actions) totalActions += g?.Actions?.Count ?? 0;
-                    Log.Info($"[MagicMod]   Animation='{sc.Animation}' (按播放位置触发) -> {sc.position_actions.Count} 个位置点, 共 {totalActions} 个动作");
-                }
                 if (sc.sweep_actions != null && sc.sweep_actions.Count > 0)
                 {
                     int totalActions = 0;
@@ -103,11 +109,6 @@ namespace MagicMod
                 }
             }
 
-            // 播放位置监听：只有在真配了 position_actions 时才允许启用；
-            // 定时器本身由 Evt_PlayMontageCallback 的 OnStarted 触发，播完即停，不做常驻巡查
-            MontagePositionWatcher.Stop();
-            MontagePositionWatcher.InvalidateCache();
-            MontagePositionWatcher.SetEnabled(MontagePositionWatcher.HasPositionConfig(_sweepCheckBindings));
         }
 
         /// <summary>
@@ -652,17 +653,41 @@ namespace MagicMod
 
         /// <summary>
         /// 获取当前角色的元素属性（通过天赋ID映射表一次遍历即可确定）
+        ///
+        /// 带短窗口缓存：一次挥棍里 4 个 cast_actions 会各判一次条件，
+        /// 每次都整表遍历（约 30 次 BGUHasTalentByID）纯属浪费。
+        /// 同一角色在极短窗口内复用结果；窗口只覆盖"同一次挥棍"，
+        /// 因此换武器/换天赋后仍会立刻重新判定，不会出现元素错乱。
         /// </summary>
+        private const int ElemCacheWindowMs = 50;
+        private static BGUPlayerCharacterCS _elemCacheChar;
+        private static string _elemCacheValue = "";
+        private static int _elemCacheMs = 0;
+
         public static string getCurrentElemt(BGUPlayerCharacterCS character)
         {
+            // net472 没有 Environment.TickCount64，用 TickCount（int 毫秒）
+            int now = Environment.TickCount;
+            if (ReferenceEquals(_elemCacheChar, character)
+                && (now - _elemCacheMs) < ElemCacheWindowMs)
+            {
+                return _elemCacheValue;
+            }
+
+            string result = "";
             foreach (var kvp in _talentElementMap)
             {
                 if (BGUFunctionLibraryCS.BGUHasTalentByID(character, kvp.Key))
                 {
-                    return kvp.Value;
+                    result = kvp.Value;
+                    break;
                 }
             }
-            return "";
+
+            _elemCacheChar = character;
+            _elemCacheValue = result;
+            _elemCacheMs = now;
+            return result;
         }
         public static string getCurrentElemtText()
         {
@@ -778,19 +803,34 @@ namespace MagicMod
         {
             if (character == null || actions == null || actions.Count == 0) return;
 
-            HashSet<ActionType> executedTypes = new HashSet<ActionType>();
-
-            // 兜底动作（"default": true）不参与首轮执行
-            List<ActionConfig> normalActions = actions.Where(a => a == null || a.Default != true).ToList();
-            List<ActionConfig> fallbackActions = actions.Where(a => a != null && a.Default == true).ToList();
-
-            int executed = RunActionList(character, normalActions, executedTypes, effectInstReq);
-
-            // 没有任何一个普通动作执行成功（条件不满足等），且有兜底动作 → 执行兜底
-            if (executed == 0 && fallbackActions.Count > 0)
+            // 递归深度闸门：超过上限说明配置成环了，直接放弃本次执行
+            if (_actionDepth.Value >= MaxActionDepth)
             {
-                Log.Info($"[MagicMod] 无动作满足条件，执行 {fallbackActions.Count} 个兜底动作");
-                RunActionList(character, fallbackActions, executedTypes, effectInstReq);
+                Log.Warn($"[MagicMod] DoActions 递归深度达到上限 {MaxActionDepth}，本次忽略（疑似配置成环，请检查 Skill/Magic/bullet 动作是否回指自身）");
+                return;
+            }
+
+            _actionDepth.Value++;
+            try
+            {
+                HashSet<ActionType> executedTypes = new HashSet<ActionType>();
+
+                // 兜底动作（"default": true）不参与首轮执行
+                List<ActionConfig> normalActions = actions.Where(a => a == null || a.Default != true).ToList();
+                List<ActionConfig> fallbackActions = actions.Where(a => a != null && a.Default == true).ToList();
+
+                int executed = RunActionList(character, normalActions, executedTypes, effectInstReq);
+
+                // 没有任何一个普通动作执行成功（条件不满足等），且有兜底动作 → 执行兜底
+                if (executed == 0 && fallbackActions.Count > 0)
+                {
+                    Log.Info($"[MagicMod] 无动作满足条件，执行 {fallbackActions.Count} 个兜底动作");
+                    RunActionList(character, fallbackActions, executedTypes, effectInstReq);
+                }
+            }
+            finally
+            {
+                _actionDepth.Value--;
             }
         }
 
@@ -811,7 +851,8 @@ namespace MagicMod
                 if (delay > 0)
                 {
                     // 延迟执行，传递 executedTypes 以便在实际执行时进行去重
-                    ExecuteDelayed(character, action, executedTypes, effectInstReq).ConfigureAwait(false);
+                    // 显式丢弃 Task（原写法把 ConfigureAwait 的结果直接丢掉，异常无人观测、也无法取消）
+                    _ = ExecuteDelayed(character, action, executedTypes, effectInstReq);
                     executed++;
                 }
                 else
@@ -857,7 +898,24 @@ namespace MagicMod
             // 重复执行：duration(总时长ms) + interval(间隔ms) → 次数 = duration / interval（至少 1 次）
             if (action.RepeatDuration > 0 && action.RepeatInterval > 0)
             {
+                // 注意：JSON 里 Buff 时长 "Duration" 与重复总时长 "duration" 只差大小写，
+                // Newtonsoft 大小写不敏感，两者会绑到同一个 RepeatDuration 上
+                // （如 actions.json 的 "Duration": 999999 会被当成重复总时长）。
+                // 因此这里必须钳制次数与间隔，避免 interval 很小时产生海量循环。
+                const int MaxRepeatCount = 512;
+                const int MinRepeatIntervalMs = 16; // 约一帧，避免每毫秒级刷爆游戏线程
+
                 int count = Math.Max(1, (int)(action.RepeatDuration / action.RepeatInterval));
+                if (count > MaxRepeatCount)
+                {
+                    Log.Warn($"[MagicMod] 动作 Type={action.Type} 重复次数 {count} 超过上限 {MaxRepeatCount}，已钳制（duration={action.RepeatDuration}, interval={action.RepeatInterval}）");
+                    count = MaxRepeatCount;
+                }
+                if (action.RepeatInterval < MinRepeatIntervalMs)
+                {
+                    Log.Warn($"[MagicMod] 动作 Type={action.Type} 重复间隔 {action.RepeatInterval}ms 过小，已按 {MinRepeatIntervalMs}ms 处理");
+                    count = Math.Min(count, MaxRepeatCount);
+                }
                 // 第 1 次立即执行（跳过节流，保证请求的次数完整）
                 ExecuteActionCore(character, action, effectInstReq, true);
                 if (count > 1)
@@ -1032,25 +1090,17 @@ namespace MagicMod
                         break;
 
                     case ActionType.trans_back:
-                        // 原生变身（NativeTransSystem）已停用，不再调用 EndTrans。
-                        // 傀儡附身（CustomTransSystem）激活时由 ModHelper.TransBack 内部 EndTrans 处理。
-                        // if (NativeTransSystem.IsActive)
-                        //     NativeTransSystem.EndTrans();
-                        // else
                         ModHelper.TransBack();
                         break;
 
                     case ActionType.DumpTrans:
-                        // 原生变身（NativeTransSystem）已停用，不再调用 DumpAvailableTransUnits
-                        // NativeTransSystem.DumpAvailableTransUnits();
-                        Log.Warn("[MagicMod] DumpTrans 已停用（原生变身 NativeTransSystem 不再启用）");
+                        Log.Warn("[MagicMod] DumpTrans 已停用（原生变身系统已移除）");
                         break;
 
 
                     case ActionType.Trans:
                         // 原生变身状态（单位已换成基底/目标单位，网检查会失败）或确认是悟空时才允许变身
-                        // NativeTransSystem 已停用，去掉 IsActive 判断，仅保留悟空检查
-                        if (ModHelper.IsWuKong(character)) // || NativeTransSystem.IsActive
+                        if (ModHelper.IsWuKong(character))
                         {
                             DoTransAction(character, action);
                         }
@@ -1132,6 +1182,9 @@ namespace MagicMod
                     case ActionType.TeleportTarget:
                         DoTeleportTargetAction(action);
                         break;
+                    case ActionType.TeleportTargetToFront:
+                        DoTeleportTargetToFrontAction(action);
+                        break;
                     case ActionType.CalcAMScale:
                         DoCalcAMScaleAction(action);
                         break;
@@ -1156,24 +1209,6 @@ namespace MagicMod
                     case ActionType.MaterialGlowStop:
                         MaterialGlow.Stop(character);
                         break;
-                    case ActionType.BoneGlow:
-                        {
-                            string bone = action.BoneName ?? "weapon_r";
-                            if (!string.IsNullOrEmpty(action.FXPreset))
-                                BoneGlow.StartPreset(character, bone, action.FXPreset, action.Duration ?? -1);
-                            else if (action.FXList != null && action.FXList.Count > 0)
-                                BoneGlow.Start(character, bone, action.FXList, action.Duration ?? -1,
-                                    action.FXColor, action.FXIntensity);
-                            else
-                                BoneGlow.Start(character, bone, action.path, action.Duration ?? -1, action.FXScale ?? 1f);
-                        }
-                        break;
-                    case ActionType.BoneGlowStop:
-                        if (string.IsNullOrEmpty(action.BoneName))
-                            BoneGlow.StopAll(character);   // 不填 BoneName = 清除该角色全部棍光
-                        else
-                            BoneGlow.Stop(character, action.BoneName);
-                        break;
                     case ActionType.ProbeHair:
                         ProbeHairAssets(character);
                         break;
@@ -1182,33 +1217,6 @@ namespace MagicMod
                         break;
                     case ActionType.WeaponScale:
                         WeaponScale.Scale(character, action.WeaponScale, action.WeaponScaleHoldMs ?? 600, action.WeaponScaleRestoreMs ?? 0);
-                        break;
-                    case ActionType.SpawnDBC:
-                        DbcFx.Spawn(character, action.path ?? "", false, action.Duration ?? 0f);
-                        break;
-                    case ActionType.DBCStop:
-                        DbcFx.Stop(character);
-                        break;
-                    case ActionType.DumpBuffDisp:
-                        {
-                            var ids = action.Values ?? new List<int> { action.Value.GetValueOrDefault() };
-                            DbcFx.DumpBuffDisp(character, ids);
-                        }
-                        break;
-                    case ActionType.ScanBuffDisp:
-                        DbcFx.ScanBuffDisp(character, action.Value ?? 1, action.Count ?? 3000, action.path ?? "");
-                        break;
-                    case ActionType.DispFX:
-                        BuffDispLite.Play(character, BuildDispConfig(action));
-                        break;
-                    case ActionType.DispFXStop:
-                        BuffDispLite.Stop(character);
-                        break;
-                    case ActionType.BindMontageFX:
-                        MontageFxBinder.Bind(character, action.path, BuildDispConfig(action));
-                        break;
-                    case ActionType.BindMontageFXStop:
-                        MontageFxBinder.UnbindAll();
                         break;
                     default:
                         Log.Warn($"[MagicMod] 未知的 ActionType: {action.Type}");
@@ -1222,41 +1230,6 @@ namespace MagicMod
             return true;
         }
 
-        /// <summary>把动作的 FXList / MatSetting 组装成一套"表现"配置（DispFX 与 BindMontageFX 共用）。</summary>
-        private static BuffDispLiteConfig BuildDispConfig(ActionConfig action)
-        {
-            var cfg = new BuffDispLiteConfig
-            {
-                MaterialDuration = action.MatDuration ?? 1f,
-                Duration = action.Duration ?? 0f,
-                MaterialSetting = action.MatSetting ?? new List<string>(),
-            };
-            if (action.FXList != null)
-            {
-                foreach (var it in action.FXList)
-                {
-                    if (it == null) continue;
-                    cfg.EnterFX.Add(new DispFxItem
-                    {
-                        path = it.path ?? "",
-                        attach = string.IsNullOrEmpty(it.attach) ? "weapon_r" : it.attach,
-                        scale = it.scale ?? 1f,
-                        duration = it.duration ?? 0,
-                        dbc = it.dbc,
-                        color = it.color,
-                        intensity = it.intensity,
-                        vars = it.vars,
-                        scale3 = it.scale3,
-                        channel = it.channel,
-                        fireScale = it.fireScale,
-                        count = it.count,
-                        scanChannel = it.scanChannel,
-                    });
-                }
-            }
-            return cfg;
-        }
-
         /// <summary>
         /// 重复执行循环：第 1 次已在 DoAction 立即执行，这里从 i=1 开始补齐剩余次数。
         /// 间隔基于游戏世界时间（WaitForGameTime，随时缓/暂停同步），每次在游戏线程执行本动作；
@@ -1264,9 +1237,11 @@ namespace MagicMod
         /// </summary>
         private static async Task RepeatActionLoop(BGUPlayerCharacterCS character, ActionConfig action, FEffectInstReq? effectInstReq, int count)
         {
+            // 间隔下限兜底（约一帧）：防止 interval 配得过小导致每毫秒往游戏线程灌一次任务
+            float intervalSec = Math.Max(16, action.RepeatInterval ?? 16) / 1000f;
             for (int i = 1; i < count; i++)
             {
-                await WaitForGameTime((action.RepeatInterval ?? 0) / 1000f);
+                await WaitForGameTime(intervalSec);
                 Utils.TryRunOnGameThread(() =>
                 {
                     try
@@ -1375,9 +1350,9 @@ namespace MagicMod
 
                     if (character != null && !character.IsNullOrDestroyed())
                     {
-                        var spawnLoc = character.GetActorLocation() + character.GetActorForwardVector() * 800f;
-                        var spawnRot = character.GetActorRotation();
-                        var boss = BGUFunctionLibraryCS.BGUSpawnActor(world, unitCls, spawnLoc, spawnRot);
+                        // 出生点统一：主角正前方 800，脚底在地面之上（避免陷进地里），背对主角
+                        var spawn = ModUtils.CalcSummonSpawnInfo(character);
+                        var boss = BGUFunctionLibraryCS.BGUSpawnActor(world, unitCls, spawn.CenterLocation, spawn.Rotation);
                         if (boss == null) Log.Info("[HairProbe]   生成 boss 失败");
                         else
                         {
@@ -2554,21 +2529,17 @@ namespace MagicMod
             // 查找 transConfig 自定义配置，命中则确保变身描述已注入游戏配表
             TransConfig? transConfig = GetTransConfig(ResId);
 
-            // 傀儡附身（CustomTransSystem）已停用：不再调用 CustomTransSystem.StartTrans（代码保留，仅停用调用）。
             // 命中自定义配置且开启 UseTamerPossess 时不再生成 boss 傀儡附身。
             if (transConfig != null && transConfig.UseTamerPossess)
             {
                 Log.Warn($"[MagicMod] 傀儡附身已停用 TransID={ResId} ({transConfig.name ?? "无名称"})");
-                // CustomTransSystem.StartTrans(transConfig);
                 return;
             }
 
-            // 原生变身模式已停用：不再调用 NativeTransSystem.StartTrans（代码保留，仅停用调用）。
-            // 命中自定义配置但未开启 UseTamerPossess 时也不再变身（两种变身均已停用）。
+            // 命中自定义配置但未开启 UseTamerPossess 时也不再变身（傀儡附身已停用，原生变身系统已移除）。
             if (transConfig != null)
             {
-                Log.Warn($"[MagicMod] 变身已停用 TransID={ResId} ({transConfig.name ?? "无名称"})：傀儡附身(CustomTransSystem)与原生变身(NativeTransSystem)均已停用");
-                // NativeTransSystem.StartTrans(transConfig);
+                Log.Warn($"[MagicMod] 变身已停用 TransID={ResId} ({transConfig.name ?? "无名称"})");
                 return;
             }
 
@@ -2727,6 +2698,27 @@ namespace MagicMod
         }
 
         /// <summary>
+        /// TeleportTargetToFront 动作：把锁定的目标拉到自己正前方，并让它背对自己
+        /// </summary>
+        private static void DoTeleportTargetToFrontAction(ActionConfig action)
+        {
+            float distance = 500f;
+            string facing = "away";
+            bool groundSnap = true;
+
+            if (action.Value.HasValue) distance = action.Value.Value;
+
+            if (action.Params != null)
+            {
+                if (action.Params.TryGetValue("Distance", out var dObj) && float.TryParse(dObj?.ToString(), out var dVal)) distance = dVal;
+                if (action.Params.TryGetValue("Facing", out var fObj) && fObj != null) facing = fObj.ToString() ?? "away";
+                if (action.Params.TryGetValue("GroundSnap", out var gObj) && bool.TryParse(gObj?.ToString(), out var gVal)) groundSnap = gVal;
+            }
+
+            ModHelper.TeleportTargetToFront(distance, facing, groundSnap);
+        }
+
+        /// <summary>
         /// CalcAMScale 动作：计算并设置 AMScale 缩放率
         /// </summary>
         private static void DoCalcAMScaleAction(ActionConfig action)
@@ -2808,6 +2800,12 @@ namespace MagicMod
 
             float targetTime = WorldTimeHelper.GetTimeSeconds(worldAddress) + seconds;
 
+            // 墙钟兜底：TimeSeconds 受全局 TimeDilation 影响，暂停 / 时缓 / 过场时会被冻结，
+            // 此时 targetTime 永远达不到，任务会永久挂起并一直持有 character 等 UObject 引用
+            // （每次触发泄漏一个 Task，每 8ms 唤醒一次）。这里加一个墙钟上限保证一定会退出。
+            int wallClockLimitMs = Math.Max(1000, (int)(seconds * 1000f * 3));
+            Stopwatch wallClock = Stopwatch.StartNew();
+
             // 轮询间隔 8ms：兼顾精度与 CPU 占用；实际经过时长由 TimeDilation 决定
             const int pollIntervalMs = 8;
             while (true)
@@ -2815,6 +2813,11 @@ namespace MagicMod
                 // 世界被切换/销毁时提前结束，避免访问无效内存
                 if (EngineLoop.WorldTime.WorldAddress != worldAddress) break;
                 if (WorldTimeHelper.GetTimeSeconds(worldAddress) >= targetTime) break;
+                if (wallClock.ElapsedMilliseconds >= wallClockLimitMs)
+                {
+                    Log.Warn($"[MagicMod] WaitForGameTime 超过墙钟上限 {wallClockLimitMs}ms 仍未等到游戏时间 {seconds}s（可能处于暂停/时缓），提前退出");
+                    break;
+                }
                 await Task.Delay(pollIntervalMs);
             }
         }

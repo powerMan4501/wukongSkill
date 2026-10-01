@@ -196,13 +196,168 @@ namespace MagicMod
             }
         }
 
-        public static void processIfBossCantSpawnNormaly(BUTamerActor boss, FVector bossBornLocation)
+        /// <summary>召唤物默认出生距离：主角正前方（厘米）</summary>
+        public const float SummonForwardDistance = 800f;
+
+        /// <summary>
+        /// 召唤物默认出生抬高高度（厘米）：脚底离地高度。
+        /// 生成物先出现在空中、再靠重力落到地面，这样高个子怪的脚是踩在地上的，而不是陷进地里。
+        /// </summary>
+        public const float SummonDropHeight = 300f;
+
+        /// <summary>预估的召唤物胶囊体半高（厘米）。真正出怪后由 Tamer 的 CapsuleHalfHeight 修正。</summary>
+        public const float SummonDefaultCapsuleHalfHeight = 150f;
+
+        /// <summary>召唤物出生信息</summary>
+        public struct SummonSpawnInfo
+        {
+            /// <summary>生成物中心点（= 脚底 + 胶囊体半高），直接作为 Spawn 的 Location</summary>
+            public FVector CenterLocation;
+
+            /// <summary>脚底位置（地面之上 DropHeight），用于 TamerTransform / 落地校正</summary>
+            public FVector FeetLocation;
+
+            /// <summary>与主角同向 —— 生成物背对主角</summary>
+            public FRotator Rotation;
+
+            /// <summary>落点处的地面 Z</summary>
+            public float GroundZ;
+        }
+
+        /// <summary>取角色胶囊体半高（厘米），取不到时返回保守默认值。</summary>
+        public static float GetCapsuleHalfHeight(AActor? actor, float fallback = SummonDefaultCapsuleHalfHeight)
+        {
+            try
+            {
+                if (actor != null && !actor.IsNullOrDestroyed() && actor is ACharacter character
+                    && character.CapsuleComponent != null && !character.CapsuleComponent.IsNullOrDestroyed())
+                {
+                    float h = character.CapsuleComponent.GetScaledCapsuleHalfHeight();
+                    if (h > 0f) return h;
+                }
+            }
+            catch { }
+            return fallback;
+        }
+
+        /// <summary>向下射线取指定 XY 处的地面 Z；射线打不到时返回 false。</summary>
+        public static bool TryGetGroundZ(AActor? reference, FVector pos, out float groundZ, float up = 800f, float down = 5000f)
+        {
+            groundZ = pos.Z;
+            try
+            {
+                if (reference == null || reference.IsNullOrDestroyed()) return false;
+                FHitResultSimple groundHit;
+                int groundResult = UBGUSelectUtil.LineTraceSimple(
+                    reference,
+                    new FVector(pos.X, pos.Y, pos.Z + up),
+                    new FVector(pos.X, pos.Y, pos.Z - down),
+                    ETraceTypeQuery.TraceTypeQuery1, false, out groundHit, null);
+                if (groundResult > 0)
+                {
+                    groundZ = groundHit.HitLocation.Z;
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Warn($"[MagicMod] 地面射线失败: {e.Message}");
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 计算召唤物出生点：
+        /// 1) 主角正前方 distance（厘米）处，只取水平朝向（抬头/低头不影响落点）；
+        /// 2) 朝向与主角一致 → 生成物背对主角；
+        /// 3) 脚底位于地面之上 dropHeight、中心点再抬高胶囊体半高 ——
+        ///    再高的怪也是从空中落到地面，不会陷进地里。
+        /// </summary>
+        /// <param name="origin">参照角色（主角）</param>
+        /// <param name="distance">正前方距离（厘米）</param>
+        /// <param name="dropHeight">脚底离地高度（厘米）</param>
+        /// <param name="capsuleHalfHeight">生成物半高，用于把中心点抬到脚底之上；&lt;=0 时按默认值预估</param>
+        /// <param name="overrideXY">指定落点的 XY（例如"对着锁定目标生成"），为 null 时取主角正前方</param>
+        public static SummonSpawnInfo CalcSummonSpawnInfo(AActor origin, float distance = SummonForwardDistance,
+            float dropHeight = SummonDropHeight, float capsuleHalfHeight = 0f, FVector? overrideXY = null)
+        {
+            SummonSpawnInfo info = new SummonSpawnInfo();
+            FVector selfPos = origin.GetActorLocation();
+
+            // 只取水平分量：抬头/低头不改变落点
+            FVector forward = origin.GetActorForwardVector();
+            forward.Z = 0f;
+            if (forward.Size() < 0.001f) forward = new FVector(1f, 0f, 0f);
+            forward = forward.GetSafeNormal();
+
+            FVector feet = selfPos + forward * distance;
+            if (overrideXY.HasValue)
+            {
+                feet.X = overrideXY.Value.X;
+                feet.Y = overrideXY.Value.Y;
+            }
+
+            // 地面高度：优先向下射线；射线打不到就退回主角脚底高度
+            float groundZ = selfPos.Z - GetCapsuleHalfHeight(origin);
+            if (TryGetGroundZ(origin, feet, out float tracedGroundZ)) groundZ = tracedGroundZ;
+
+            if (capsuleHalfHeight <= 0f) capsuleHalfHeight = SummonDefaultCapsuleHalfHeight;
+
+            feet.Z = groundZ + dropHeight;
+
+            // 与主角同向 = 背对主角
+            FRotator rotation = MathLib.Conv_VectorToRotator(forward);
+            rotation.Pitch = 0f;
+            rotation.Roll = 0f;
+
+            info.GroundZ = groundZ;
+            info.FeetLocation = feet;
+            info.CenterLocation = feet + new FVector(0f, 0f, capsuleHalfHeight);
+            info.Rotation = rotation;
+            return info;
+        }
+
+        /// <summary>
+        /// 落地校正：单位的脚陷进地面时（生成物个子高、地面射线偏差等）把它抬到地面之上。
+        /// 正常站在地面上或正在空中下落时不处理。
+        /// </summary>
+        public static bool RescueSunkUnit(AActor? unit, float extraHeight = 20f)
+        {
+            try
+            {
+                if (unit == null || unit.IsNullOrDestroyed()) return false;
+                FVector pos = unit.GetActorLocation();
+                if (!TryGetGroundZ(unit, pos, out float groundZ)) return false;
+                float halfHeight = GetCapsuleHalfHeight(unit);
+                if (pos.Z - halfHeight >= groundZ - 5f) return false; // 没陷进去
+
+                pos.Z = groundZ + halfHeight + extraHeight;
+                unit.BGUSetActorLocation(pos, bSweep: false, bTeleport: true);
+                Log.Info($"[MagicMod] 生成物陷进地面，已抬到地面之上: {unit.GetName()}");
+                return true;
+            }
+            catch (Exception e)
+            {
+                Log.Warn($"[MagicMod] 落地校正失败: {e.Message}");
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 强制指定 Tamer 的出生 Transform。bossBornLocation 传"脚底"位置，
+        /// 内部会补上 CapsuleHalfHeight 抬高到中心点，保证出怪时脚踩在地面（或空中）而不是陷进地里。
+        /// </summary>
+        public static void processIfBossCantSpawnNormaly(BUTamerActor boss, FVector bossBornLocation, FRotator? rotation = null)
         {
             var player = GetControlledPawn();
-            var playerTransformScale = player.GetActorTransform().Scale3D;
-            FTransform actorTransform = player.GetActorTransform();
-            actorTransform.Scale3D = playerTransformScale;
+            bool hasPlayer = player != null && !player.IsNullOrDestroyed();
+            FTransform actorTransform = hasPlayer ? player!.GetActorTransform() : new FTransform();
+            actorTransform.Scale3D = hasPlayer ? player!.GetActorTransform().Scale3D : new FVector(1f, 1f, 1f);
             actorTransform.Translation = bossBornLocation + boss.CurrentRef.CapsuleHalfHeight;
+            if (rotation.HasValue)
+            {
+                actorTransform.SetRotation(rotation.Value.Quaternion());
+            }
             FTamerRef currentRef = boss.CurrentRef;
             currentRef.AddSpawnRuleFlag(ETamerSpawnRule.OnlySpawn);
             currentRef.ResetLocationCache();
@@ -236,20 +391,17 @@ namespace MagicMod
                 ACharacter playerCharacter = UGameplayStatics.GetPlayerCharacter(GetWorld(), 0);
                 if (playerCharacter != null)
                 {
-                    FTransform actorTransform = playerCharacter.GetActorTransform();
-
-                    var Target = BGUFunctionLibraryCS.BGUGetTarget(playerCharacter);
-
-                    if (Target == null)
-                    {
-                        Target = playerCharacter;
-                    }
                     var world = GetWorld();
                     if (world == null) return;
-                    var BossBornLocation = Target.GetActorLocation() + Target.GetActorForwardVector() * 1800.0;
-                    FRotator BossBornRotation = Target.GetActorRotation();
-                    actorTransform.SetLocation(Target.GetActorLocation() + playerCharacter.GetActorForwardVector() * 1800.0);
-                    actorTransform.SetRotation((Target.GetActorForwardVector()).Rotation().Quaternion());
+
+                    // 出生点：主角正前方 800，脚底在地面之上 300（靠重力落地），朝向与主角一致 → 背对主角
+                    SummonSpawnInfo spawn = CalcSummonSpawnInfo(playerCharacter);
+
+                    FTransform actorTransform = playerCharacter.GetActorTransform();
+                    var BossBornLocation = spawn.CenterLocation;
+                    FRotator BossBornRotation = spawn.Rotation;
+                    actorTransform.SetLocation(BossBornLocation);
+                    actorTransform.SetRotation(BossBornRotation.Quaternion());
                     BUTamerActor? bUTamerActor = BGUFunctionLibraryCS.BGUSpawnActor(world, uClass, BossBornLocation, BossBornRotation) as BUTamerActor;
 
                     // BUTamerActor bUTamerActor = UBGUFunctionLibrary.BGUBeginDeferredActorSpawnFromClass(playerCharacter.World, uClass, actorTransform, ESpawnActorCollisionHandlingMethod.AlwaysSpawn, null) as BUTamerActor;
@@ -257,7 +409,8 @@ namespace MagicMod
                     {
                         bUTamerActor.CurrentRef.AddSpawnRuleFlag(ETamerSpawnRule.OnlySpawn);
                         bUTamerActor.MarkAsSpawnedTamer(null);
-                        processIfBossCantSpawnNormaly(bUTamerActor, BossBornLocation + new FVector(1000.0, 0.0, 100.0));
+                        // 传脚底位置：内部会补上 CapsuleHalfHeight 抬到中心点，高个子怪也不会陷进地面
+                        processIfBossCantSpawnNormaly(bUTamerActor, spawn.FeetLocation, BossBornRotation);
 
                         UBGUFunctionLibrary.BGUFinishSpawningActor(bUTamerActor, actorTransform);
 
@@ -298,7 +451,13 @@ namespace MagicMod
             return LoadAsset<UClass>(asset);
         }
 
-        public static AActor? SpawnActor(string classAsset, bool isBoss = false, int teamId = 0)
+        /// <summary>
+        /// 生成 actor / Boss。
+        /// isBoss=true 走 GM 生成（Tamer 单位），否则按 PrefabricatorAsset 生成普通 actor。
+        /// atTarget=true 时落点用锁定目标的 XY（默认 false：生成在主角正前方）。
+        /// SpawnTeamId：&gt;0 时出怪后设置该阵营并登记进两阵营互殴池。
+        /// </summary>
+        public static AActor? SpawnActor(string classAsset, bool isBoss = false, int teamId = 0, bool atTarget = false)
         {
 
             if (isBoss)
@@ -312,32 +471,41 @@ namespace MagicMod
                 return null;
             }
 
-            FVector actorLocation = controlledPawn.GetActorLocation() + controlledPawn.GetActorForwardVector() * 1500.0;
-            var Target = BGUFunctionLibraryCS.BGUGetTarget(controlledPawn);
-
-            FVector fVector = controlledPawn.GetControlRotation()
-                .GetForwardVector() * 700.0;
             var World = GetWorld();
             if (World == null) return null;
-            FVector location = actorLocation + fVector;
-            if (Target != null)
-            {
-                location = Target.GetActorLocation();
-                Log.Info($"对着目标({Target.GetName()})生成角色SpawnActor");
-            }
+
             // FRotator rotation = UMathLibrary.FindLookAtRotation(location, actorLocation);
             UClass uClass = LoadClass($"PrefabricatorAsset'{classAsset}'");
             if (uClass == null)
             {
                 return null;
             }
-            BUTamerActor? actor = UBGUFunctionLibrary.BGUBeginDeferredActorSpawnFromClass(World, uClass, new FTransform(location), ESpawnActorCollisionHandlingMethod.AlwaysSpawn, null) as BUTamerActor;
+
+            // 出生点：主角正前方 800，脚底在地面之上 300（从空中落地），朝向与主角一致 → 背对主角
+            var Target = atTarget ? BGUFunctionLibraryCS.BGUGetTarget(controlledPawn) : null;
+            SummonSpawnInfo spawn = CalcSummonSpawnInfo(controlledPawn, overrideXY:
+                (Target != null && !Target.IsNullOrDestroyed()) ? Target.GetActorLocation() : (FVector?)null);
+            if (Target != null && !Target.IsNullOrDestroyed())
+            {
+                Log.Info($"对着目标({Target.GetName()})生成角色SpawnActor");
+            }
+
+            FTransform spawnTransform = controlledPawn.GetActorTransform();
+            spawnTransform.SetLocation(spawn.CenterLocation);
+            spawnTransform.SetRotation(spawn.Rotation.Quaternion());
+
+            BUTamerActor? actor = UBGUFunctionLibrary.BGUBeginDeferredActorSpawnFromClass(World, uClass, spawnTransform, ESpawnActorCollisionHandlingMethod.AlwaysSpawn, null) as BUTamerActor;
             //    var actor = BGU_UnrealWorldUtil.RequestSpawnUnit(controlledPawn.World,uClass,new FTransform(actorLocation),null);
             // var actor = BGUFunctionLibraryCS.BGUSpawnActor(controlledPawn.World, uClass, start, frotator);
             if (actor != null)
             {
                 actor.MarkAsSpawnedTamer(null);
-                BUTamerActor? actorFinish = UBGUFunctionLibrary.BGUFinishSpawningActor(actor, controlledPawn.GetActorTransform()) as BUTamerActor;
+                BUTamerActor? actorFinish = UBGUFunctionLibrary.BGUFinishSpawningActor(actor, spawnTransform) as BUTamerActor;
+                // 出怪位置按脚底校正（内部补 CapsuleHalfHeight），高个子怪也不会陷进地面
+                if (actorFinish != null)
+                {
+                    processIfBossCantSpawnNormaly(actorFinish, spawn.FeetLocation, spawn.Rotation);
+                }
                 Task.Run(async () =>
             {
                 await Task.Delay(2000);

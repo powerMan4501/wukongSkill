@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Reflection;
 using System.Collections.Generic;
 using b1;
@@ -25,7 +25,7 @@ namespace MagicMod
         /// <summary>
         /// GetCharacter 缓存有效期（毫秒）。
         /// 这是本 Mod 调用最频繁的方法：SweepCheckBegin / BuffBegin / OnTriggerSkillEffect /
-        /// OnTriggerNormalDamageEffect / OnSkillCostDmg 以及 MontagePositionWatcher（10ms 一次）
+        /// OnTriggerNormalDamageEffect / OnSkillCostDmg
         /// 全部以它为入口，战斗中原地每秒可达上千次，而每次都要走
         /// GCHelper.FindRef(GWorld) → GetFirstLocalPlayerController → GetControlledPawn 三次跨边界查询。
         /// 缓存后同一帧内的重复查询直接复用；TTL 取 100ms（约 6 帧），
@@ -439,6 +439,10 @@ namespace MagicMod
                 if (player == null) return false;
 
                 if (teamId > 0) monster.SetTeamIDInCS(teamId);
+
+                // 生成物的脚陷进地面时（高个子怪常见）抬回地面之上，正在空中下落时不动
+                ModUtils.RescueSunkUnit(monster);
+
                 int finalTeamId = teamId > 0 ? teamId : monster.GetTeamIDInCS();
                 RegisterTeamBattleUnit(monster, finalTeamId, player.GetTeamIDInCS());
                 Log.Info($"[MagicMod] SpawnActor 生成物已登记互殴池 TeamID={finalTeamId}（玩家阵营={player.GetTeamIDInCS()}）");
@@ -733,18 +737,6 @@ namespace MagicMod
             if (Montage == null || animationPath == "")
             {
                 return;
-            }
-
-            // 事件驱动"播放位置监听"：Montage 开始才起定时器，结束立刻停表（没 Montage 时零开销）
-            if (State == EMontageCallbackState.OnStarted)
-            {
-                MontagePositionWatcher.OnMontageStarted(animationPath);
-            }
-            else if (State == EMontageCallbackState.OnCompleted
-                  || State == EMontageCallbackState.OnInterrupted
-                  || State == EMontageCallbackState.OnPlayFailed)
-            {
-                MontagePositionWatcher.OnMontageEnded(animationPath);
             }
 
             // TArrayUnsafe 的底层是 Marshal.AllocHGlobal 的非托管数组，只有 Dispose 才会释放；
@@ -1188,11 +1180,6 @@ namespace MagicMod
 
         public static void TransBack()
         {
-            // 傀儡附身已停用：不再调用 CustomTransSystem.EndTrans（代码保留，仅停用调用）
-            // if (CustomTransSystem.IsActive) { CustomTransSystem.EndTrans(); return; }
-
-            // 原生变身模式已停用：不再调用 NativeTransSystem.EndTrans（代码保留，仅停用调用）
-            // if (NativeTransSystem.IsActive) { NativeTransSystem.EndTrans(); return; }
 
             var character = GetCharacter();
             if (character == null) return;
@@ -1361,14 +1348,10 @@ namespace MagicMod
             {
                 case EInputActionType.LightAttack:
                     // 傀儡附身已停用：不再走连招链，保留原有行为（变身状态下重定向到目标角色技能）
-                    // if (CustomTransSystem.IsActive) { if (!IsRelease) CustomTransSystem.OnInput(InputActionType, SkillID); }
-                    // else if (!IsRelease) ActionExecutor.TryDoTransInputSkill(character, InputActionType);
                     if (!IsRelease) ActionExecutor.TryDoTransInputSkill(character, InputActionType);
                     break;
                 case EInputActionType.HeavyAttack:
                     // 傀儡附身已停用：不再走连招链，保留原有行为（变身状态下重定向到目标角色技能）
-                    // if (CustomTransSystem.IsActive) { if (!IsRelease) CustomTransSystem.OnInput(InputActionType, SkillID); }
-                    // else if (!IsRelease) ActionExecutor.TryDoTransInputSkill(character, InputActionType);
                     if (!IsRelease) ActionExecutor.TryDoTransInputSkill(character, InputActionType);
                     break;
                 case EInputActionType.SpinMode:
@@ -1378,19 +1361,14 @@ namespace MagicMod
                     }
                 case EInputActionType.Dodge:
                     // 傀儡附身已停用：不再走连招链，保留原有行为（变身状态下重定向到目标角色技能）
-                    // if (CustomTransSystem.IsActive) { if (!IsRelease) CustomTransSystem.OnInput(InputActionType, SkillID); }
-                    // else if (!IsRelease) ActionExecutor.TryDoTransInputSkill(character, InputActionType);
                     if (!IsRelease) ActionExecutor.TryDoTransInputSkill(character, InputActionType);
                     break;
                 case EInputActionType.UseVigorSkill:
                     // 傀儡附身已停用：不再走连招链
-                    // if (CustomTransSystem.IsActive) { if (!IsRelease) CustomTransSystem.OnInput(InputActionType, SkillID); }
-                    // else
                     ActionExecutor.DoMeshActions(character);
                     break;
                 case EInputActionType.CastItemSkill:
                     // 傀儡附身已停用：不再走连招链
-                    // if (CustomTransSystem.IsActive) { if (!IsRelease) CustomTransSystem.OnInput(InputActionType, SkillID); }
                     break;
                 case EInputActionType.UseSkillByType:
                     {
@@ -1402,7 +1380,6 @@ namespace MagicMod
                         }
 
                         // 傀儡附身已停用：法术键不再走连招链，继续走原生法术逻辑
-                        // if (CustomTransSystem.IsActive) { if (!IsRelease) CustomTransSystem.OnInput(InputActionType, SkillID); break; }
 
                         // 定身
                         if (SkillID == 10518)
@@ -1656,6 +1633,112 @@ namespace MagicMod
             character.BGUSetActorLocation(destPos, bSweep: true, bTeleport: true);
             character.BGUSetActorRotation(faceRot, bTeleportPhysics: false);
             Log.Info($"TeleportNearTarget: 传送到目标附近, 距离目标={offsetDistance}, 原距离={distance:F0}");
+        }
+
+        /// <summary>
+        /// 取角色胶囊体半高（用于落地时把单位抬到地面之上），取不到时给一个保守值。
+        /// </summary>
+        private static float GetCapsuleHalfHeightForGround(AActor actor)
+        {
+            try
+            {
+                var ch = actor as ACharacter;
+                if (ch != null && !ch.IsNullOrDestroyed() && ch.CapsuleComponent != null && !ch.CapsuleComponent.IsNullOrDestroyed())
+                {
+                    float h = ch.CapsuleComponent.GetScaledCapsuleHalfHeight();
+                    if (h > 0f) return h;
+                }
+            }
+            catch { }
+            return 100f;
+        }
+
+        /// <summary>
+        /// 把当前锁定的目标拉到自己正前方指定距离处，并默认让它背对自己（方便从背后偷袭 / 放投技）。
+        /// </summary>
+        /// <param name="distance">正前方距离（厘米），默认 500</param>
+        /// <param name="facing">落位后的朝向：away=背对自己(默认) / face=面对自己 / keep=保持原朝向</param>
+        /// <param name="groundSnap">是否向下射线贴合地面（防止传进地下或悬空），默认 true</param>
+        /// <returns>是否成功传送</returns>
+        public static bool TeleportTargetToFront(float distance = 500f, string? facing = "away", bool groundSnap = true)
+        {
+            var character = GetCharacter();
+            if (character == null) return false;
+
+            // 锁定目标：优先取锁定信息里的目标，取不到再退回 BGUGetTarget
+            AActor? target = null;
+            try
+            {
+                UnitLockTargetInfo targetInfo = BGUFunctionLibraryCS.BGUGetTargetInfo(character);
+                target = targetInfo.LockTargetActor;
+            }
+            catch (Exception e)
+            {
+                Log.Warn($"[TeleportTargetToFront] 读取锁定信息失败: {e.Message}");
+            }
+            if (target == null || target.IsNullOrDestroyed())
+            {
+                target = BGUFunctionLibraryCS.BGUGetTarget(character);
+            }
+            if (target == null || target.IsNullOrDestroyed())
+            {
+                Log.Info("[TeleportTargetToFront] 没有锁定目标，跳过");
+                return false;
+            }
+
+            FVector selfPos = BGUFuncLibActorTransformCS.BGUGetActorLocation(character);
+
+            // 自己的朝向（只取水平分量，避免上下抬头影响落点）
+            FVector forward = character.GetActorForwardVector();
+            forward.Z = 0f;
+            if (forward.Size() < 0.001f) forward = new FVector(1f, 0f, 0f);
+            forward = forward.GetSafeNormal();
+
+            FVector destPos = selfPos + forward * distance;
+
+            // 1. 向下射线贴合地面
+            if (groundSnap)
+            {
+                FVector traceTop = new FVector(destPos.X, destPos.Y, destPos.Z + 500f);
+                FVector traceBottom = new FVector(destPos.X, destPos.Y, destPos.Z - 5000f);
+                FHitResultSimple groundHit;
+                int groundResult = UBGUSelectUtil.LineTraceSimple(
+                    character, traceTop, traceBottom,
+                    ETraceTypeQuery.TraceTypeQuery1, false, out groundHit, null);
+                if (groundResult > 0)
+                {
+                    destPos.Z = groundHit.HitLocation.Z + GetCapsuleHalfHeightForGround(target);
+                }
+            }
+
+            // 2. 水平路径被墙挡住时，退到碰撞点前方
+            FHitResultSimple wallHit;
+            int wallResult = UBGUSelectUtil.LineTraceSimple(
+                character, selfPos, destPos,
+                ETraceTypeQuery.TraceTypeQuery1, false, out wallHit, null);
+            if (wallResult > 0)
+            {
+                destPos = wallHit.HitLocation - forward * 50f;
+                Log.Info("[TeleportTargetToFront] 前方被阻挡，退到碰撞点前方");
+            }
+
+            // 3. 落位（bTeleport：不做插值/不触发扫掠速度）
+            target.BGUSetActorLocation(destPos, bSweep: true, bTeleport: true);
+
+            // 4. 朝向：默认背对自己 —— 目标朝向 = 自己面朝的方向，于是它的后背朝着自己
+            string mode = string.IsNullOrEmpty(facing) ? "away" : facing!.Trim().ToLowerInvariant();
+            if (mode != "keep")
+            {
+                FVector faceDir = (mode == "face") ? -forward : forward;
+                FRotator rot = BGUFuncLibActorTransformCS.BGUGetActorRotation(target);
+                rot.Pitch = 0f;
+                rot.Roll = 0f;
+                rot.Yaw = MathLib.Conv_VectorToRotator(faceDir).Yaw;
+                target.BGUSetActorRotation(rot, bTeleportPhysics: false);
+            }
+
+            Log.Info($"[TeleportTargetToFront] 目标 {target.GetName()} 已拉到身前 {distance:F0}，朝向={mode}");
+            return true;
         }
 
         /// <summary>

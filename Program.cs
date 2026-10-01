@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 using b1;
 using CSharpModBase;
 using CSharpModBase.Input;
-using HarmonyLib;
 using Newtonsoft.Json;
 
 namespace MagicMod
@@ -22,10 +21,6 @@ namespace MagicMod
 
         private MagicModConfig? _config;
         private readonly List<HotKeyItem> _registeredHotKeys = new List<HotKeyItem>();
-
-        // 傀儡附身移动驱动用的 Harmony 实例（Init 中 PatchAll，DeInit 中 UnpatchAll）
-        private const string HarmonyId = "magicmod.customtrans";
-        private static Harmony? _harmony;
 
         // 按键名称到 Key 枚举的映射
         private static readonly Dictionary<string, Key> KeyMap = new Dictionary<string, Key>(StringComparer.OrdinalIgnoreCase)
@@ -134,24 +129,6 @@ namespace MagicMod
             // 抓投目标形态自动替换：让非玩家单位也能播针对玩家的抓投同步动画
             GrabSyncGuestFix.Init();
 
-            // 应用 Harmony 补丁：傀儡附身状态下用 TickInputForMoving Postfix 驱动 boss 移动
-            try
-            {
-                if (_harmony == null)
-                {
-                    _harmony = new Harmony(HarmonyId);
-                    // 傀儡附身（CustomTransSystem）已停用：不再安装逐帧 Harmony 补丁
-                    // （TickInputForMovingPatch / InputActionTriggerPatch 两个补丁仅服务于傀儡附身）
-                    // _harmony.PatchAll();
-                    Log.Info($"[MagicMod] Harmony 补丁已跳过：傀儡附身(CustomTransSystem)停用 ({HarmonyId})");
-                }
-            }
-            catch (Exception e)
-            {
-                Log.Error($"[MagicMod] Harmony 补丁应用失败: {e.Message}");
-            }
-
-
             Log.Info($"[MagicMod] 初始化完成，共 {_config.Bindings.Count} 个按键绑定（其中 actions 文件夹 {actionFolderBindings.Count} 个），{_config.MeshBindings.Count} 个骨骼绑定，{sweepCheckBindings.Count} 个 SweepCheck 绑定，{projectileBindings.Count} 个 Projectile 绑定，{buffActionBindings.Count} 个 BuffActions 绑定，{effectActionBindings.Count} 个 EffectActions 绑定，{soulConfigList.Count} 个 SoulBossConfig 配置，{transConfigList.Count} 个 TransConfig 变身配置");
         }
 
@@ -167,10 +144,6 @@ namespace MagicMod
             ModHelper.InvalidateCharacterCache();
             ModHelper.UnRegPlayerTransEvent();
             ModHelper.UnSweepCheckBeginEvent();
-            // 停掉动画播放位置监听，避免重载后定时器残留
-            MontagePositionWatcher.Stop();
-            // 顺带清掉 路径→规则 缓存，避免重载后沿用旧配置
-            MontagePositionWatcher.InvalidateCache();
             // 停掉两阵营互殴 tick，避免重载后定时器残留
             ModHelper.StopTeamBattleTick();
 
@@ -189,59 +162,19 @@ namespace MagicMod
                     try { MaterialGlow.Stop(); }
                     catch (Exception e) { Log.Error($"[MagicMod] 清理棍光失败: {e.Message}"); }
 
-                    // 3) 骨骼发光：延时关闭 / 扫描定时器 + 销毁特效组件
-                    try { BoneGlow.ClearTimers(); BoneGlow.StopAll(); }
-                    catch (Exception e) { Log.Error($"[MagicMod] 清理骨骼发光失败: {e.Message}"); }
-
-                    // 4) 角色整体缩放（原"武器拉长"）：还原 Actor 缩放，避免重载后角色一直保持放大
+                    // 3) 角色整体缩放（原"武器拉长"）：还原 Actor 缩放，避免重载后角色一直保持放大
                     try { WeaponScale.ResetAll(); }
                     catch (Exception e) { Log.Error($"[MagicMod] 还原角色缩放失败: {e.Message}"); }
 
-                    // 5) 原生变身：兜底停掉 40ms 守护轮询并收尾（入口当前已停用，这里只为防残留）
-                    try { if (NativeTransSystem.IsActive) NativeTransSystem.DeInit(); }
-                    catch (Exception e) { Log.Error($"[MagicMod] 清理原生变身失败: {e.Message}"); }
-
-                    // 6) 动画绑定表现（BindMontageFX）：解绑回调 + 结束表现
-                    try { MontageFxBinder.UnbindAll(); }
-                    catch (Exception e) { Log.Error($"[MagicMod] 解绑动画表现失败: {e.Message}"); }
-
-                    // 7) 棍影（StaffTrail）：解绑 Montage 回调 + 销毁残留组件
-                    try { StaffTrailHelper.UnbindAll(); }
-                    catch (Exception e) { Log.Error($"[MagicMod] 解绑棍影失败: {e.Message}"); }
-
-                    // 8) DispFX 会话：Session 直接持有 AActor，不清理会永久 root 住
-                    try { BuffDispLite.StopAll(); }
-                    catch (Exception e) { Log.Error($"[MagicMod] 清理 DispFX 表现失败: {e.Message}"); }
-
-                    // 9) DBC 表现：销毁当前角色身上的残留 DBC
-                    try
-                    {
-                        var chr = ModHelper.GetCharacter(true) ?? ModUtils.GetControlledPawn() as BGUCharacterCS;
-                        if (chr != null) DbcFx.Stop(chr); // Stop 内部会自己判断已销毁
-                    }
-                    catch (Exception e) { Log.Error($"[MagicMod] 清理 DBC 表现失败: {e.Message}"); }
-
-                    // 10) 最后统一停掉 TimerPool 里所有在跑的定时器（一次性 / 周期性）
+                    // 4) 最后统一停掉 TimerPool 里所有在跑的定时器（一次性 / 周期性）
                     try { TimerPool.ClearAll(); }
                     catch (Exception e) { Log.Error($"[MagicMod] 清理定时器池失败: {e.Message}"); }
                 });
             }
             catch (Exception e) { Log.Error($"[MagicMod] 投递常驻定时器清理失败: {e.Message}"); }
-            // 傀儡附身已停用：不再调用 CustomTransSystem.EndTrans（代码保留，仅停用调用）
-            // try { if (CustomTransSystem.IsActive) CustomTransSystem.EndTrans(); }
-            // catch (Exception e) { Log.Error($"[MagicMod] 结束傀儡附身失败: {e.Message}"); }
-            // 原生变身已停用：不再调用 NativeTransSystem.DeInit（代码保留，仅停用调用）
-            // try { NativeTransSystem.DeInit(); }
-            // catch (Exception e) { Log.Error($"[MagicMod] 结束原生变身失败: {e.Message}"); }
             // 停止抓投形态替换并还原被投者，避免重载后被投单位残留替换后的模型
             try { GrabSyncGuestFix.DeInit(); }
             catch (Exception e) { Log.Error($"[MagicMod] 停止抓投形态替换失败: {e.Message}"); }
-            // 卸载 Harmony 补丁，避免重载后重复 patch
-            try
-            {
-                if (_harmony != null) { _harmony.UnpatchAll(HarmonyId); _harmony = null; Log.Info($"[MagicMod] Harmony 补丁已卸载 ({HarmonyId})"); }
-            }
-            catch (Exception e) { Log.Error($"[MagicMod] Harmony 卸载失败: {e.Message}"); }
             Log.Info($"[MagicMod] 已清理 {count} 个快捷键绑定");
         }
 
@@ -305,15 +238,6 @@ namespace MagicMod
                 var toRun = scoped.Count > 0
                     ? scoped
                     : matched.Where(b => string.IsNullOrEmpty(b.SKMesh)).ToList();
-
-                // 原生变身已停用：不再走 NativeTransSystem 变回（代码保留，仅停用调用）。
-                // 傀儡附身期间受控 Pawn 仍是玩家本人，trans_back 由下方 DoActions → ModHelper.TransBack → CustomTransSystem.EndTrans 处理。
-                // if (NativeTransSystem.IsActive && toRun.Any(b => b.Actions != null && b.Actions.Any(a => a.Type == ActionType.trans_back)))
-                // {
-                //     Log.Info("[MagicMod] 变身中触发 trans_back，直接变回");
-                //     NativeTransSystem.EndTrans();
-                //     return;
-                // }
 
                 foreach (var binding in toRun)
                 {

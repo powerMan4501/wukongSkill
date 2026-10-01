@@ -8,7 +8,7 @@ namespace MagicMod
     /// <summary>
     /// 定时器池：统一托管本 Mod 里所有 System.Threading.Timer。
     ///
-    /// 背景（之前踩的坑）：BoneGlow / MaterialGlow / DbcFx / StaffTrailHelper 各自维护了一个
+    /// 背景（之前踩的坑）：MaterialGlow / WeaponScale 这类模块各自维护过一份
     /// static List&lt;Timer&gt;，只 Add 不 Remove 也不 Dispose。一次性 Timer 触发完就废了，
     /// 但因为还挂在静态列表里，它回调闭包捕获的 UObject（Niagara 组件 / AActor）就一直被
     /// root 住，UE GC 永远回收不掉 —— 表现为玩十几分钟越玩越卡直到卡死。
@@ -16,6 +16,9 @@ namespace MagicMod
     /// 这里统一处理：一次性 Timer 触发后立刻 Dispose 并从池中移除（引用随之释放，
     /// 闭包里的 UObject 才能被回收）；周期性 Timer 通过句柄显式停止。
     /// 池本身只保留"还在跑"的 Timer。
+    ///
+    /// 当前使用者：`MaterialGlow`（到点自动熄灭）、`WeaponScale`（保持时长 / 回弹过渡）、
+    /// `ModHelper`（Buff 禁用守卫的 30ms 轮询）；`Program.DeInit` 里统一 `ClearAll()`。
     /// </summary>
     public static class TimerPool
     {
