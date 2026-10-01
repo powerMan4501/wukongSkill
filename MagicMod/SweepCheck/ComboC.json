@@ -7,12 +7,10 @@
       {
         "Type": "bullet",
         "name": "江海翻 小黄龙雷电",
-
         "bulletConfig": {
           "ProjectileID": 30160101,
           "AttachToSpawnBase": true,
           "ProjectileNumInOneWave": 2,
-
           "spawnBaseSocketName": "hand_l",
           "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
         }

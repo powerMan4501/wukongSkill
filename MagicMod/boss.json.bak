@@ -1,7 +1,7 @@
 [
   {
     "AssetPath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_jsds_p2.TAMER_mgd_jsds_p2_C",
-    "BossName": "大圣残躯p2",
+    "BossName": "第六关·大圣残躯p2（BOSS）",
     "BossID": 60,
     "Level": 73,
     "GameLevel": 6,
@@ -10,7 +10,7 @@
 
   {
     "AssetPath": "/Game/00Main/Design/Units/Player/VigorSkill/TAMER_vigorskill_hys_huolingsha_02.TAMER_vigorskill_hys_huolingsha_02_C",
-    "BossName": "火灵童子",
+    "BossName": "远程-火灵童子7",
     "BossID": 254,
     "type": "杂鱼",
     "GameLevel": 5,
@@ -19,7 +19,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_lang_08_NotMove.TAMER_gycy_lang_08_NotMove_C",
-    "BossName": "狼弓手",
+    "BossName": "远程-狼弓手",
     "BossID": 113,
     "Level": 1,
     "GameLevel": 1,
@@ -27,7 +27,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_lang_08.TAMER_gycy_lang_08_C",
-    "BossName": "狼弓手",
+    "BossName": "远程-狼弓手",
     "BossID": 114,
     "Level": 1,
     "GameLevel": 1,
@@ -35,7 +35,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_guyao_01_realstand.TAMER_hfm_guyao_01_realstand_C",
-    "BossName": "古灵精",
+    "BossName": "远程-古灵精",
     "BossID": 129,
     "Level": 13,
     "GameLevel": 2,
@@ -43,7 +43,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_guyao_01_stand.TAMER_hfm_guyao_01_stand_C",
-    "BossName": "古灵精",
+    "BossName": "远程-古灵精",
     "BossID": 130,
     "Level": 13,
     "GameLevel": 2,
@@ -51,7 +51,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_hjbow_01a_daremove.TAMER_hfm_hjbow_01a_daremove_C",
-    "BossName": "阴兵",
+    "BossName": "远程-阴兵",
     "GameLevel": 5,
     "BossID": 131,
     "Level": 25,
@@ -59,7 +59,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_hjbow_01a.TAMER_hfm_hjbow_01a_C",
-    "BossName": "阴兵",
+    "BossName": "远程-阴兵",
     "BossID": 132,
     "GameLevel": 5,
     "Level": 25,
@@ -67,7 +67,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shunushou_01b_stand.TAMER_hfm_shunushou_01b_stand_C",
-    "BossName": "鼠弩手",
+    "BossName": "远程-鼠弩手",
     "BossID": 147,
     "Level": 25,
     "GameLevel": 2,
@@ -75,7 +75,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_huolingsha_02_NoPreenter.TAMER_hys_huolingsha_02_NoPreenter_C",
-    "BossName": "火灵童子1",
+    "BossName": "远程-火灵童子1",
     "BossID": 158,
     "Level": 49,
     "GameLevel": 5,
@@ -83,7 +83,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_huolingsha_02.TAMER_hys_huolingsha_02_C",
-    "BossName": "火灵童子2",
+    "BossName": "远程-火灵童子2",
     "BossID": 159,
     "Level": 49,
     "GameLevel": 5,
@@ -92,7 +92,7 @@
 
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_xizhanglao_01_nomove.TAMER_hys_xizhanglao_01_nomove_C",
-    "BossName": "火长老",
+    "BossName": "远程-火长老",
     "BossID": 177,
     "Level": 49,
     "GameLevel": 5,
@@ -100,7 +100,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_xizhanglao_01.TAMER_hys_xizhanglao_01_C",
-    "BossName": "火长老",
+    "BossName": "远程-火长老",
     "BossID": 178,
     "Level": 49,
     "GameLevel": 5,
@@ -108,7 +108,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_diyongjinlian_01.TAMER_lys_diyongjinlian_01_C",
-    "BossName": "地莲精",
+    "BossName": "远程-地莲精",
     "BossID": 186,
     "Level": 25,
     "GameLevel": 3,
@@ -116,7 +116,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_xizhanglao_01_weak.TAMER_lys_xizhanglao_01_weak_C",
-    "BossName": "雷长老",
+    "BossName": "远程-雷长老",
     "BossID": 202,
     "Level": 25,
     "GameLevel": 3,
@@ -124,7 +124,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_xizhanglao_01.TAMER_lys_xizhanglao_01_C",
-    "BossName": "雷长老2",
+    "BossName": "远程-雷长老2",
     "BossID": 203,
     "Level": 25,
     "GameLevel": 3,
@@ -132,7 +132,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_tianbing_03_01.TAMER_mgd_tianbing_03_01_C",
-    "BossName": "豺天兵",
+    "BossName": "远程-豺天兵·标准",
     "BossID": 212,
     "Level": 61,
     "GameLevel": 6,
@@ -140,7 +140,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_chong_03_daremove.TAMER_psd_chong_03_daremove_C",
-    "BossName": "蜻蜓精",
+    "BossName": "远程-蜻蜓精",
     "BossID": 217,
     "Level": 37,
     "GameLevel": 4,
@@ -148,7 +148,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_chong_03.TAMER_psd_chong_03_C",
-    "BossName": "蜻蜓精2",
+    "BossName": "远程-蜻蜓精2",
     "BossID": 218,
     "Level": 37,
     "GameLevel": 4,
@@ -156,7 +156,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_daoshi_01_zys.TAMER_psd_daoshi_01_zys_C",
-    "BossName": "拂尘道士",
+    "BossName": "远程-拂尘道士",
     "BossID": 224,
     "Level": 37,
     "GameLevel": 4,
@@ -164,7 +164,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_daoshi_01.TAMER_psd_daoshi_01_C",
-    "BossName": "拂尘道士2",
+    "BossName": "远程-拂尘道士2",
     "BossID": 225,
     "Level": 37,
     "GameLevel": 4,
@@ -172,7 +172,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shunushou_01b.TAMER_hfm_shunushou_01b_C",
-    "BossName": "鼠弩手",
+    "BossName": "远程-鼠弩手",
     "BossID": 148,
     "Level": 13,
     "GameLevel": 2,
@@ -180,7 +180,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_guishiwei_01a_DontMove.TAMER_gycy_guishiwei_01a_DontMove_C",
-    "BossName": "鬼侍卫",
+    "BossName": "远程-鬼侍卫",
     "BossID": 103,
     "Level": 25,
     "GameLevel": 3,
@@ -188,7 +188,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_guishiwei_01a.TAMER_gycy_guishiwei_01a_C",
-    "BossName": "鬼侍卫2",
+    "BossName": "远程-鬼侍卫2",
     "BossID": 104,
     "Level": 25,
     "GameLevel": 3,
@@ -196,7 +196,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_bxa_01a_preenter_01.TAMER_hfm_bxa_01a_preenter_01_C",
-    "BossName": "鼠司空",
+    "BossName": "远程-鼠司空",
     "BossID": 123,
     "Level": 13,
     "GameLevel": 2,
@@ -204,7 +204,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_bxa_01a_preenter_03.TAMER_hfm_bxa_01a_preenter_03_C",
-    "BossName": "鼠司空2",
+    "BossName": "远程-鼠司空2",
     "BossID": 125,
     "Level": 13,
     "GameLevel": 2,
@@ -212,7 +212,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_bxa_01a_preenter_02.TAMER_hfm_bxa_01a_preenter_02_C",
-    "BossName": "鼠司空3",
+    "BossName": "远程-鼠司空3",
     "BossID": 124,
     "Level": 13,
     "GameLevel": 2,
@@ -220,7 +220,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_baitouweng_01.TAMER_lys_baitouweng_01_C",
-    "BossName": "隼居士",
+    "BossName": "远程-隼居士",
     "BossID": 183,
     "Level": 25,
     "GameLevel": 3,
@@ -268,7 +268,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_baijiangcan_01.TAMER_psd_baijiangcan_01_C",
-    "BossName": "琴螂幼虫",
+    "BossName": "霸体-琴螂幼虫",
     "BossID": 214,
     "Level": 37,
     "GameLevel": 4,
@@ -276,7 +276,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_01a.TAMER_hfm_shanzhen_01a_C",
-    "BossName": "石磷磷",
+    "BossName": "霸体-石磷磷",
     "BossID": 138,
     "Level": 13,
     "GameLevel": 2,
@@ -284,7 +284,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_02.TAMER_hfm_shanzhen_02_C",
-    "BossName": "石苍苍",
+    "BossName": "霸体-石苍苍",
     "BossID": 139,
     "Level": 13,
     "GameLevel": 2,
@@ -292,7 +292,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_05_bridge.TAMER_hfm_shanzhen_05_bridge_C",
-    "BossName": "石苍苍2",
+    "BossName": "霸体-石苍苍2",
     "BossID": 141,
     "Level": 13,
     "GameLevel": 2,
@@ -300,7 +300,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shanzhen_03.TAMER_hfm_shanzhen_03_C",
-    "BossName": "石双双",
+    "BossName": "霸体-石双双",
     "BossID": 140,
     "Level": 13,
     "GameLevel": 2,
@@ -308,7 +308,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_xunshangui_01a.TAMER_hfm_xunshangui_01a_C",
-    "BossName": "巡山鬼",
+    "BossName": "霸体-巡山鬼",
     "BossID": 150,
     "Level": 25,
     "GameLevel": 3,
@@ -316,7 +316,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_renshenjing_01a.TAMER_psd_renshenjing_01a_C",
-    "BossName": "小人参精",
+    "BossName": "霸体-小人参精",
     "BossID": 235,
     "Level": 37,
     "GameLevel": 2,
@@ -340,7 +340,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_cunmin_05a_hatch.TAMER_psd_cunmin_05a_hatch_C",
-    "BossName": "傀蛛士",
+    "BossName": "霸体-傀蛛士",
     "BossID": 221,
     "Level": 37,
     "GameLevel": 4,
@@ -349,7 +349,7 @@
 
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_huangchong_01_fuchong.TAMER_psd_huangchong_01_fuchong_C",
-    "BossName": "蜢虫精",
+    "BossName": "霸体-蜢虫精",
     "BossID": 231,
     "Level": 37,
     "GameLevel": 4,
@@ -357,7 +357,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_huangchong_01.TAMER_psd_huangchong_01_C",
-    "BossName": "蜢虫精2",
+    "BossName": "霸体-蜢虫精2",
     "BossID": 232,
     "Level": 37,
     "GameLevel": 4,
@@ -365,7 +365,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_techushi_01.TAMER_hys_techushi_01_C",
-    "BossName": "牛侍长",
+    "BossName": "霸体-牛侍长",
     "BossID": 173,
     "Level": 49,
     "GameLevel": 5,
@@ -373,7 +373,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_techushi_03.TAMER_hys_techushi_03_C",
-    "BossName": "牛力士",
+    "BossName": "霸体-牛力士",
     "BossID": 175,
     "Level": 49,
     "GameLevel": 5,
@@ -381,7 +381,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/Online/BSD/TAMER_bsd_techushi_03.TAMER_bsd_techushi_03_C",
-    "BossName": "牛力士2",
+    "BossName": "霸体-牛力士2",
     "BossID": 249,
     "Level": 49,
     "GameLevel": 5,
@@ -389,7 +389,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/Online/SL/Soldier/TAMER_sl_lys_hongpaoshu.TAMER_sl_lys_hongpaoshu_C",
-    "BossName": "红袍鼠禁卫2",
+    "BossName": "霸体-红袍鼠禁卫2",
     "BossID": 251,
     "Level": 25,
     "GameLevel": 2,
@@ -397,7 +397,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_hongpaoshu.TAMER_lys_hongpaoshu_C",
-    "BossName": "红袍鼠禁卫",
+    "BossName": "霸体-红袍鼠禁卫",
     "BossID": 193,
     "Level": 25,
     "GameLevel": 2,
@@ -405,7 +405,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_tufei_01.TAMER_gycy_tufei_01_C",
-    "BossName": "戒刀僧",
+    "BossName": "霸体-戒刀僧",
     "BossID": 120,
     "Level": 25,
     "GameLevel": 3,
@@ -413,7 +413,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_she_03.TAMER_gycy_she_03_C",
-    "BossName": "有血肉的蛇妖",
+    "BossName": "霸体-有血肉的蛇妖",
     "BossID": 271,
     "Level": 25,
     "GameLevel": 4,
@@ -421,7 +421,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_lang_02.TAMER_gycy_lang_02_C",
-    "BossName": "狼刺客",
+    "BossName": "霸体-狼刺客",
     "BossID": 273,
     "Level": 1,
     "GameLevel": 1,
@@ -429,7 +429,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_sl_tianjiang_01_NoGroupAI.TAMER_sl_tianjiang_01_NoGroupAI_C",
-    "BossName": "天将",
+    "BossName": "霸体-天将",
     "BossID": 252,
     "Level": 61,
     "GameLevel": 6,
@@ -437,7 +437,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_sl_tianjiang_01.TAMER_sl_tianjiang_01_C",
-    "BossName": "天将",
+    "BossName": "霸体-天将",
     "BossID": 253,
     "Level": 61,
     "GameLevel": 6,
@@ -445,7 +445,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shuangtoushu_01a.TAMER_hfm_shuangtoushu_01a_C",
-    "BossName": "自爆双头鼠",
+    "BossName": "霸体-自爆双头鼠",
     "BossID": 146,
     "Level": 13,
     "GameLevel": 2,
@@ -453,7 +453,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_LYS_mangseng_02a.TAMER_LYS_mangseng_02a_C",
-    "BossName": "盲僧",
+    "BossName": "霸体-盲僧",
     "BossID": 195,
     "Level": 25,
     "GameLevel": 3,
@@ -461,7 +461,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_numujinggang.TAMER_lys_numujinggang_C",
-    "BossName": "泥塑金刚·火",
+    "BossName": "霸体-泥塑金刚·火",
     "BossID": 199,
     "Level": 25,
     "GameLevel": 3,
@@ -469,7 +469,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/FTT/TAMER_ftt_shibing_01.TAMER_ftt_shibing_01_C",
-    "BossName": "夜叉奴",
+    "BossName": "霸体-夜叉奴",
     "BossID": 102,
     "Level": 25,
     "GameLevel": 3,
@@ -477,7 +477,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_seng_02.TAMER_gycy_seng_02_C",
-    "BossName": "双刀僧",
+    "BossName": "霸体-双刀僧",
     "BossID": 116,
     "Level": 25,
     "GameLevel": 3,
@@ -485,7 +485,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_fsys.TAMER_lys_fsys_C",
-    "BossName": "海上僧",
+    "BossName": "霸体-海上僧",
     "BossID": 154,
     "Level": 25,
     "GameLevel": 3,
@@ -493,7 +493,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/Online/SL/TAMER_szlc_shujing_01.TAMER_szlc_shujing_01_C",
-    "BossName": "青冉冉",
+    "BossName": "霸体-青冉冉",
     "BossID": 285,
     "Level": 37,
     "GameLevel": 4,
@@ -501,7 +501,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_baijiangcan_03.TAMER_psd_baijiangcan_03_C",
-    "BossName": "琴螂幼虫·大",
+    "BossName": "霸体-琴螂幼虫·大",
     "BossID": 215,
     "Level": 37,
     "GameLevel": 4,
@@ -509,7 +509,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_chong_01.TAMER_psd_chong_01_C",
-    "BossName": "虫校尉",
+    "BossName": "霸体-虫校尉",
     "BossID": 216,
     "Level": 37,
     "GameLevel": 4,
@@ -517,7 +517,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_hutoushe_01.TAMER_psd_hutoushe_01_C",
-    "BossName": "蛇捕头",
+    "BossName": "霸体-蛇捕头",
     "BossID": 233,
     "Level": 37,
     "GameLevel": 4,
@@ -525,7 +525,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_xiezijing_02a.TAMER_psd_xiezijing_02a_C",
-    "BossName": "蝎太子3",
+    "BossName": "霸体-蝎太子3",
     "BossID": 246,
     "Level": 37,
     "GameLevel": 4,
@@ -533,7 +533,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_yinbinghoumo.TAMER_hys_yinbinghoumo_C",
-    "BossName": "赤尻马猴",
+    "BossName": "霸体-赤尻马猴",
     "BossID": 180,
     "Level": 49,
     "GameLevel": 3,
@@ -541,7 +541,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_yinbingniumo_01.TAMER_hys_yinbingniumo_01_C",
-    "BossName": "阴兵火牛",
+    "BossName": "霸体-阴兵火牛",
     "BossID": 181,
     "Level": 49,
     "GameLevel": 4,
@@ -549,7 +549,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_zhusun_01_navmeshtest.TAMER_psd_zhusun_01_navmeshtest_C",
-    "BossName": "小菌君",
+    "BossName": "霸体-小菌君",
     "BossID": 247,
     "Level": 37,
     "GameLevel": 4,
@@ -557,7 +557,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_szlc_hema_02.TAMER_szlc_hema_02_C",
-    "BossName": "河马",
+    "BossName": "霸体-河马",
     "BossID": 256,
     "Level": 61,
     "GameLevel": 6,
@@ -565,7 +565,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_niu_02.TAMER_hys_niu_02_C",
-    "BossName": "火焰牯都督",
+    "BossName": "霸体-火焰牯都督",
     "BossID": 167,
     "Level": 49,
     "GameLevel": 6,
@@ -573,7 +573,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_niaozui.TAMER_hys_niaozui_C",
-    "BossName": "鳖宝",
+    "BossName": "霸体-鳖宝",
     "BossID": 166,
     "Level": 49,
     "GameLevel": 6,
@@ -581,7 +581,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_xiefuma.TAMER_psd_xiefuma_C",
-    "BossName": "蝎太子",
+    "BossName": "霸体-蝎太子",
     "BossID": 335,
     "Level": 37,
     "GameLevel": 4,
@@ -589,7 +589,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_xiezijing_01a.TAMER_psd_xiezijing_01a_C",
-    "BossName": "蝎太子2",
+    "BossName": "霸体-蝎太子2",
     "BossID": 245,
     "Level": 37,
     "GameLevel": 4,
@@ -597,7 +597,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_mamian_01a.TAMER_hfm_mamian_01a_C",
-    "BossName": "马天霸·boss",
+    "BossName": "霸体-马天霸（火焰山土地召唤的黑泥形态）",
     "BossID": 10,
     "Level": 49,
     "GameLevel": 5,
@@ -605,7 +605,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_luochagui_01_ranger.TAMER_hys_luochagui_01_ranger_C",
-    "BossName": "焦面鬼王",
+    "BossName": "巨大-焦面鬼王",
     "BossID": 164,
     "Level": 37,
     "GameLevel": 3,
@@ -613,7 +613,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_luochagui_01.TAMER_hys_luochagui_01_C",
-    "BossName": "焦面鬼王2",
+    "BossName": "巨大-焦面鬼王2",
     "BossID": 165,
     "Level": 37,
     "GameLevel": 3,
@@ -810,7 +810,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/MGD/Tamer_mgd_tianbing_02.Tamer_mgd_tianbing_02_C",
-    "BossName": "犬天兵",
+    "BossName": "犬天兵·标准",
     "BossID": 211,
     "Level": 61,
     "GameLevel": 6,
@@ -867,7 +867,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_tianbing_01_hgs.TAMER_mgd_tianbing_01_hgs_C",
-    "BossName": "鹰天兵",
+    "BossName": "鹰天兵·标准",
     "BossID": 209,
     "Level": 61,
     "GameLevel": 6,
@@ -1044,7 +1044,7 @@
 
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_niu_01_mountaintop.TAMER_hfm_niu_01_mountaintop_C",
-    "BossName": "牯护院（BOSS）",
+    "BossName": "第一关·牯护院（BOSS）",
     "BossID": 272,
     "Level": 1,
     "GameLevel": 1,
@@ -1052,7 +1052,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_wa_01.TAMER_gycy_wa_01_C",
-    "BossName": "波里个浪（BOSS）",
+    "BossName": "第一关·波里个浪（BOSS）",
     "BossID": 270,
     "Level": 1,
     "GameLevel": 1,
@@ -1060,7 +1060,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_she_01.TAMER_gycy_she_01_C",
-    "BossName": "广谋（BOSS）",
+    "BossName": "第一关·广谋（BOSS）",
     "BossID": 260,
     "Level": 1,
     "GameLevel": 1,
@@ -1068,7 +1068,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_lang_04.TAMER_gycy_lang_04_C",
-    "BossName": "广智（BOSS）",
+    "BossName": "第一关·广智（BOSS）",
     "BossID": 6,
     "Level": 1,
     "GameLevel": 1,
@@ -1076,7 +1076,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_wxs_baiyi_01.TAMER_wxs_baiyi_01_C",
-    "BossName": "白衣秀士（BOSS）",
+    "BossName": "第一关·白衣秀士（BOSS）",
     "BossID": 37,
     "Level": 1,
     "GameLevel": 1,
@@ -1084,7 +1084,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_baiyi_she.TAMER_gycy_baiyi_she_C",
-    "BossName": "白衣秀士·蛇（BOSS）",
+    "BossName": "第一关·白衣秀士·蛇（BOSS）",
     "BossID": 4,
     "Level": 1,
     "GameLevel": 1,
@@ -1092,7 +1092,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_dbl_01.TAMER_gycy_dbl_01_C",
-    "BossName": "灵虚子（BOSS）",
+    "BossName": "第一关·灵虚子（BOSS）",
     "BossID": 5,
     "Level": 1,
     "GameLevel": 1,
@@ -1100,7 +1100,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_yanjianxi_01b.TAMER_gycy_yanjianxi_01b_C",
-    "BossName": "幽魂（BOSS）",
+    "BossName": "第一关·幽魂（BOSS）",
     "BossID": 257,
     "Level": 1,
     "GameLevel": 1,
@@ -1108,7 +1108,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_wudulong_02a.TAMER_lys_wudulong_02a_C",
-    "BossName": "赤冉龙（BOSS）",
+    "BossName": "第一关·赤冉龙（BOSS）",
     "BossID": 54,
     "Level": 5,
     "GameLevel": 1,
@@ -1116,7 +1116,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_hfdw.TAMER_gycy_hfdw_C",
-    "BossName": "黑风大王·人形态（BOSS）",
+    "BossName": "第一关·黑风大王·人形态（BOSS）",
     "BossID": 39,
     "Level": 1,
     "GameLevel": 1,
@@ -1124,7 +1124,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_xiong_02.TAMER_gycy_xiong_02_C",
-    "BossName": "黑熊精（BOSS）",
+    "BossName": "第一关·黑熊精（BOSS）",
     "BossID": 40,
     "Level": 5,
     "GameLevel": 1,
@@ -1132,7 +1132,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_yanjianxi_01a.TAMER_gycy_yanjianxi_01a_C",
-    "BossName": "金池长老（BOSS）",
+    "BossName": "第一关·金池长老（BOSS）",
     "BossID": 41,
     "Level": 3,
     "GameLevel": 1,
@@ -1140,7 +1140,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_wa_01.TAMER_hfm_wa_01_C",
-    "BossName": "浪里个波（BOSS）",
+    "BossName": "第二关·浪里个波（BOSS）",
     "BossID": 11,
     "Level": 13,
     "GameLevel": 2,
@@ -1148,7 +1148,7 @@
   },
    {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shigandang_01.TAMER_hfm_shigandang_01_C",
-    "BossName": "石敢当（BOSS）",
+    "BossName": "第二关·石敢当（BOSS）",
     "BossID": 221,
     "Level": 13,
     "GameLevel": 2,
@@ -1156,7 +1156,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_HFM_Suoyang_01a.TAMER_HFM_Suoyang_01a_C",
-    "BossName": "地狼（BOSS）",
+    "BossName": "第二关·地狼（BOSS）",
     "BossID": 47,
     "Level": 13,
     "GameLevel": 2,
@@ -1164,7 +1164,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_fushu.TAMER_hfm_fushu_C",
-    "BossName": "沙国王（BOSS）",
+    "BossName": "第二关·沙国王（BOSS）",
     "BossID": 7,
     "Level": 13,
     "GameLevel": 2,
@@ -1172,7 +1172,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_fuzishu.TAMER_hfm_fuzishu_C",
-    "BossName": "沙二郎（BOSS）",
+    "BossName": "第二关·沙二郎（BOSS）",
     "BossID": 8,
     "Level": 13,
     "GameLevel": 2,
@@ -1180,7 +1180,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shuwang_01a.TAMER_hfm_shuwang_01a_C",
-    "BossName": "沙大郎（BOSS）",
+    "BossName": "第二关·沙大郎（BOSS）",
     "BossID": 46,
     "Level": 13,
     "GameLevel": 2,
@@ -1188,7 +1188,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_hou_01a.TAMER_hfm_hou_01a_C",
-    "BossName": "百目真人（BOSS）",
+    "BossName": "第二关·百目真人（BOSS）",
     "BossID": 44,
     "Level": 13,
     "GameLevel": 2,
@@ -1196,7 +1196,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_shawuliang_01a.TAMER_hfm_shawuliang_01a_C",
-    "BossName": "虎伥（BOSS）",
+    "BossName": "第二关·虎伥（BOSS）",
     "BossID": 78,
     "Level": 13,
     "GameLevel": 2,
@@ -1204,7 +1204,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_bashanhu_01.TAMER_hfm_bashanhu_01_C",
-    "BossName": "疯虎（BOSS）",
+    "BossName": "第二关·疯虎（BOSS）",
     "BossID": 74,
     "Level": 13,
     "GameLevel": 2,
@@ -1212,7 +1212,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_hu_stone_01.TAMER_hfm_hu_stone_01_C",
-    "BossName": "“虎先锋”（BOSS）",
+    "BossName": "第二关·“虎先锋”（BOSS）",
     "BossID": 259,
     "Level": 13,
     "GameLevel": 2,
@@ -1220,7 +1220,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_hu_01.TAMER_hfm_hu_01_C",
-    "BossName": "初代“虎先锋”（BOSS）",
+    "BossName": "第二关·初代“虎先锋”（BOSS）",
     "BossID": 75,
     "Level": 13,
     "GameLevel": 2,
@@ -1228,7 +1228,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_chuilong_01a.TAMER_lys_chuilong_01a_C",
-    "BossName": "小郦龙（BOSS）",
+    "BossName": "第二关·小郦龙（BOSS）",
     "BossID": 49,
     "Level": 13,
     "GameLevel": 2,
@@ -1236,7 +1236,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_hfds_01a.TAMER_hfm_hfds_01a_C",
-    "BossName": "黄风大圣（BOSS）",
+    "BossName": "第二关·黄风大圣（BOSS）",
     "BossID": 42,
     "Level": 13,
     "GameLevel": 2,
@@ -1244,7 +1244,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_xuewa_01.TAMER_lys_xuewa_01_C",
-    "BossName": "浪里个浪",
+    "BossName": "第三关·浪里个浪",
     "BossID": 109,
     "Level": 25,
     "GameLevel": 3,
@@ -1252,7 +1252,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_LYS_Mo2.TAMER_LYS_Mo2_C",
-    "BossName": "魔将·劫波（BOSS）",
+    "BossName": "第三关·魔将·劫波（BOSS）",
     "BossID": 30,
     "Level": 25,
     "GameLevel": 3,
@@ -1260,7 +1260,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_mo4.TAMER_lys_mo4_C",
-    "BossName": "魔将·莲眼（BOSS）",
+    "BossName": "第三关·魔将·莲眼（BOSS）",
     "BossID": 31,
     "Level": 25,
     "GameLevel": 3,
@@ -1268,7 +1268,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_mo1.TAMER_lys_mo1_C",
-    "BossName": "魔将·妙音（BOSS）",
+    "BossName": "第三关·魔将·妙音（BOSS）",
     "BossID": 53,
     "Level": 25,
     "GameLevel": 3,
@@ -1276,7 +1276,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_xuehou_ass.TAMER_lys_xuehou_ass_C",
-    "BossName": "赤尻马猴P2（BOSS）",
+    "BossName": "第三关·赤尻马猴P2（BOSS）",
     "BossID": 56,
     "Level": 25,
     "GameLevel": 3,
@@ -1284,7 +1284,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_xuehou.TAMER_lys_xuehou_C",
-    "BossName": "赤尻马猴P3（BOSS）",
+    "BossName": "第三关·赤尻马猴P3（BOSS）",
     "BossID": 58,
     "Level": 25,
     "GameLevel": 3,
@@ -1292,7 +1292,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_kjldragon.TAMER_lys_kjldragon_C",
-    "BossName": "亢金龙（BOSS）",
+    "BossName": "第三关·亢金龙（BOSS）",
     "BossID": 51,
     "Level": 25,
     "GameLevel": 3,
@@ -1300,7 +1300,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_kjlwoman.TAMER_lys_kjlwoman_C",
-    "BossName": "亢金星君（BOSS）",
+    "BossName": "第三关·亢金星君（BOSS）",
     "BossID": 52,
     "Level": 25,
     "GameLevel": 3,
@@ -1308,7 +1308,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_mo3_chaoshengzhilu.TAMER_lys_mo3_chaoshengzhilu_C",
-    "BossName": "无量蝠（BOSS）",
+    "BossName": "第三关·无量蝠（BOSS）",
     "BossID": 83,
     "Level": 25,
     "GameLevel": 3,
@@ -1316,7 +1316,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_LYS_LaoSeng_01.TAMER_LYS_LaoSeng_01_C",
-    "BossName": "不空（BOSS）",
+    "BossName": "第三关·不空（BOSS）",
     "BossID": 82,
     "Level": 25,
     "GameLevel": 3,
@@ -1324,7 +1324,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_seng_04.TAMER_gycy_seng_04_C",
-    "BossName": "不净（BOSS）",
+    "BossName": "第三关·不净（BOSS）",
     "BossID": 73,
     "Level": 25,
     "GameLevel": 3,
@@ -1332,7 +1332,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_LYS_SengMian_01_MagaVer.TAMER_LYS_SengMian_01_MagaVer_C",
-    "BossName": "不白P2（BOSS）",
+    "BossName": "第三关·不白P2（BOSS）",
     "BossID": 33,
     "Level": 25,
     "GameLevel": 3,
@@ -1340,7 +1340,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_renshenjing_02a.TAMER_psd_renshenjing_02a_C",
-    "BossName": "老人参精（BOSS）",
+    "BossName": "第三关·老人参精（BOSS）",
     "BossID": 92,
     "Level": 25,
     "GameLevel": 3,
@@ -1348,7 +1348,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_fsys_elite.TAMER_lys_fsys_elite_C",
-    "BossName": "海上僧（BOSS）",
+    "BossName": "第三关·海上僧（BOSS）",
     "BossID": 80,
     "Level": 25,
     "GameLevel": 3,
@@ -1356,7 +1356,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/NPC/TAMER_hfm_shuangtoushu_npc.TAMER_hfm_shuangtoushu_npc_C",
-    "BossName": "鼠督卫（BOSS）",
+    "BossName": "第三关·鼠督卫（BOSS）",
     "BossID": 94,
     "Level": 25,
     "GameLevel": 3,
@@ -1364,7 +1364,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_LYS_RuYiLong_01.TAMER_LYS_RuYiLong_01_C",
-    "BossName": "辰龙（BOSS）",
+    "BossName": "第三关·辰龙（BOSS）",
     "BossID": 32,
     "Level": 25,
     "GameLevel": 3,
@@ -1372,7 +1372,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HFM/TAMER_hfm_hu_wind_01.TAMER_hfm_hu_wind_01_C",
-    "BossName": "寅虎（BOSS）",
+    "BossName": "第三关·寅虎（BOSS）",
     "BossID": 45,
     "Level": 25,
     "GameLevel": 3,
@@ -1380,7 +1380,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_wudulong_03a.TAMER_lys_wudulong_03a_C",
-    "BossName": "青背龙（BOSS）",
+    "BossName": "第三关·青背龙（BOSS）",
     "BossID": 55,
     "Level": 25,
     "GameLevel": 3,
@@ -1388,7 +1388,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_LYS_HuangMei_03.TAMER_LYS_HuangMei_03_C",
-    "BossName": "迷你黄眉-最终阶段（BOSS）",
+    "BossName": "第三关·迷你黄眉-最终阶段（BOSS）",
     "BossID": 29,
     "Level": 25,
     "GameLevel": 3,
@@ -1396,7 +1396,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_wa_01.TAMER_psd_wa_01_C",
-    "BossName": "波里个波（BOSS）",
+    "BossName": "第四关·波里个波（BOSS）",
     "BossID": 35,
     "Level": 37,
     "GameLevel": 4,
@@ -1404,7 +1404,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_zhizhujing_02.TAMER_psd_zhizhujing_02_C",
-    "BossName": "二姐（BOSS）",
+    "BossName": "第四关·二姐（BOSS）",
     "BossID": 68,
     "Level": 37,
     "GameLevel": 4,
@@ -1412,7 +1412,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_youyan_02.TAMER_psd_youyan_02_C",
-    "BossName": "百足虫（BOSS）",
+    "BossName": "第四关·百足虫（BOSS）",
     "BossID": 67,
     "Level": 37,
     "GameLevel": 4,
@@ -1420,7 +1420,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_jiachongzongbing_02.TAMER_psd_jiachongzongbing_02_C",
-    "BossName": "虫总兵（BOSS）",
+    "BossName": "第四关·虫总兵（BOSS）",
     "BossID": 65,
     "Level": 37,
     "GameLevel": 4,
@@ -1428,7 +1428,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_wulong_foronline.TAMER_psd_wulong_foronline_C",
-    "BossName": "蜈蚣精（BOSS）",
+    "BossName": "第四关·蜈蚣精（BOSS）",
     "BossID": 93,
     "Level": 49,
     "GameLevel": 4,
@@ -1436,7 +1436,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_PSD_ZhuBaJie_01B.TAMER_PSD_ZhuBaJie_01B_C",
-    "BossName": "猪八戒一阶段（BOSS）",
+    "BossName": "第四关·猪八戒一阶段（BOSS）",
     "BossID": 69,
     "Level": 37,
     "GameLevel": 4,
@@ -1444,7 +1444,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_zhubajie_02a.TAMER_psd_zhubajie_02a_C",
-    "BossName": "猪八戒二阶段p2（BOSS）",
+    "BossName": "第四关·猪八戒二阶段p2（BOSS）",
     "BossID": 70,
     "Level": 37,
     "GameLevel": 4,
@@ -1452,7 +1452,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_wulong.TAMER_psd_wulong_C",
-    "BossName": "黑手道人P1（BOSS）",
+    "BossName": "第四关·黑手道人P1（BOSS）",
     "BossID": 101,
     "Level": 37,
     "GameLevel": 4,
@@ -1460,7 +1460,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_wxs_wulong.TAMER_wxs_wulong_C",
-    "BossName": "黑手道人P2（BOSS）",
+    "BossName": "第四关·黑手道人P2（BOSS）",
     "BossID": 72,
     "Level": 37,
     "GameLevel": 4,
@@ -1468,7 +1468,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_baijiangcan_02.TAMER_psd_baijiangcan_02_C",
-    "BossName": "琴螂仙（BOSS）",
+    "BossName": "第四关·琴螂仙（BOSS）",
     "BossID": 88,
     "Level": 37,
     "GameLevel": 4,
@@ -1476,7 +1476,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_daoshi_04.TAMER_psd_daoshi_04_C",
-    "BossName": "靡道人（BOSS）",
+    "BossName": "第四关·靡道人（BOSS）",
     "BossID": 89,
     "Level": 37,
     "GameLevel": 4,
@@ -1484,7 +1484,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_zhusun_03.TAMER_psd_zhusun_03_C",
-    "BossName": "蘑女（BOSS）",
+    "BossName": "第四关·蘑女（BOSS）",
     "BossID": 279,
     "Level": 37,
     "GameLevel": 4,
@@ -1492,7 +1492,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_duchongsishi_02.TAMER_psd_duchongsishi_02_C",
-    "BossName": "靡道人·虫（BOSS）",
+    "BossName": "第四关·靡道人·虫（BOSS）",
     "BossID": 91,
     "Level": 37,
     "GameLevel": 4,
@@ -1500,7 +1500,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/Online/BHL/TAMER_bhl_gushoufsq_01.TAMER_bhl_gushoufsq_01_C",
-    "BossName": "晦月魔君（BOSS）",
+    "BossName": "第四关·晦月魔君（BOSS）",
     "BossID": 97,
     "Level": 37,
     "GameLevel": 4,
@@ -1508,7 +1508,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_zizhuer_01.TAMER_psd_zizhuer_01_C",
-    "BossName": "紫珠儿（BOSS）",
+    "BossName": "第四关·紫珠儿（BOSS）",
     "BossID": 36,
     "Level": 37,
     "GameLevel": 4,
@@ -1516,7 +1516,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_lys_dage.TAMER_lys_dage_C",
-    "BossName": "小黄龙（BOSS）",
+    "BossName": "第四关·小黄龙（BOSS）",
     "BossID": 50,
     "Level": 37,
     "GameLevel": 4,
@@ -1524,7 +1524,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/PSD/TAMER_psd_xiezijing_og.TAMER_psd_xiezijing_og_C",
-    "BossName": "毒敌大王（BOSS）",
+    "BossName": "第四关·毒敌大王（BOSS）",
     "BossID": 66,
     "Level": 37,
     "GameLevel": 4,
@@ -1532,7 +1532,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/Online/SL/TAMER_szlc_baiyanmojun_01.TAMER_szlc_baiyanmojun_01_C",
-    "BossName": "百眼魔君（BOSS）",
+    "BossName": "第四关·百眼魔君（BOSS）",
     "BossID": 266,
     "Level": 37,
     "GameLevel": 4,
@@ -1540,7 +1540,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_kuairufeng_01.TAMER_hys_kuairufeng_01_C",
-    "BossName": "快如风（BOSS）",
+    "BossName": "第五关·快如风（BOSS）",
     "BossID": 243,
     "Level": 49,
     "GameLevel": 5,
@@ -1548,7 +1548,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_yunliwu.TAMER_hys_yunliwu_C",
-    "BossName": "云里雾（BOSS）",
+    "BossName": "第五关·云里雾（BOSS）",
     "BossID": 24,
     "Level": 49,
     "GameLevel": 5,
@@ -1556,7 +1556,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_wuliyun.TAMER_hys_wuliyun_C",
-    "BossName": "雾里云（BOSS）",
+    "BossName": "第五关·雾里云（BOSS）",
     "BossID": 21,
     "Level": 49,
     "GameLevel": 5,
@@ -1564,7 +1564,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_xiangongxing.TAMER_hys_xiangongxing_C",
-    "BossName": "掀烘兴（BOSS）",
+    "BossName": "第五关·掀烘兴（BOSS）",
     "BossID": 22,
     "Level": 49,
     "GameLevel": 5,
@@ -1572,7 +1572,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_xinggongxian.TAMER_hys_xinggongxian_C",
-    "BossName": "兴烘掀（BOSS）",
+    "BossName": "第五关·兴烘掀（BOSS）",
     "BossID": 23,
     "Level": 49,
     "GameLevel": 5,
@@ -1580,7 +1580,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/NPC/TAMER_npc_JDS_follow.TAMER_npc_JDS_follow_C",
-    "BossName": "皓斧力士（BOSS）",
+    "BossName": "第五关·皓斧力士（BOSS）",
     "BossID": 286,
     "Level": 49,
     "GameLevel": 5,
@@ -1588,7 +1588,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_hms.TAMER_hys_hms_C",
-    "BossName": "石父（BOSS）",
+    "BossName": "第五关·石父（BOSS）",
     "BossID": 81,
     "Level": 49,
     "GameLevel": 5,
@@ -1596,7 +1596,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/LYS/TAMER_pds_lingzhijing_03a.TAMER_pds_lingzhijing_03a_C",
-    "BossName": "九叶灵芝精（BOSS）",
+    "BossName": "第五关·九叶灵芝精（BOSS）",
     "BossID": 87,
     "Level": 49,
     "GameLevel": 5,
@@ -1604,7 +1604,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_shixianfeng_02.TAMER_hys_shixianfeng_02_C",
-    "BossName": "燧先锋（BOSS）",
+    "BossName": "第五关·燧先锋（BOSS）",
     "BossID": 264,
     "Level": 49,
     "GameLevel": 5,
@@ -1612,7 +1612,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_HFM_ShiTongLing_02a.TAMER_HFM_ShiTongLing_02a_C",
-    "BossName": "燧统领（BOSS）",
+    "BossName": "第五关·燧统领（BOSS）",
     "BossID": 265,
     "Level": 49,
     "GameLevel": 5,
@@ -1620,7 +1620,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_zhanche_01a.TAMER_hys_zhanche_01a_C",
-    "BossName": "褐铁战车（BOSS）",
+    "BossName": "第五关·褐铁战车（BOSS）",
     "BossID": 25,
     "Level": 49,
     "GameLevel": 5,
@@ -1628,7 +1628,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_zhanche_01b.TAMER_hys_zhanche_01b_C",
-    "BossName": "灰铜战车（BOSS）",
+    "BossName": "第五关·灰铜战车（BOSS）",
     "BossID": 26,
     "Level": 49,
     "GameLevel": 5,
@@ -1636,7 +1636,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_zhanche_01c.TAMER_hys_zhanche_01c_C",
-    "BossName": "红银战车（BOSS）",
+    "BossName": "第五关·红银战车（BOSS）",
     "BossID": 27,
     "Level": 49,
     "GameLevel": 5,
@@ -1644,7 +1644,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_zhanche_01d.TAMER_hys_zhanche_01d_C",
-    "BossName": "赤金战车（BOSS）",
+    "BossName": "第五关·赤金战车（BOSS）",
     "BossID": 269,
     "Level": 49,
     "GameLevel": 5,
@@ -1652,7 +1652,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_wa_01.TAMER_hys_wa_01_C",
-    "BossName": "波浪浪（BOSS）",
+    "BossName": "第五关·波浪浪（BOSS）",
     "BossID": 20,
     "Level": 49,
     "GameLevel": 5,
@@ -1660,7 +1660,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_honghaier_01a.TAMER_hys_honghaier_01a_C",
-    "BossName": "红孩儿（BOSS）",
+    "BossName": "第五关·红孩儿（BOSS）",
     "BossID": 48,
     "Level": 49,
     "GameLevel": 5,
@@ -1668,7 +1668,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/HYS/TAMER_hys_honghaier_02a.TAMER_hys_honghaier_02a_C",
-    "BossName": "夜叉王（BOSS）",
+    "BossName": "第五关·夜叉王（BOSS）",
     "BossID": 17,
     "Level": 49,
     "GameLevel": 5,
@@ -1676,7 +1676,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/GYCY/TAMER_gycy_baiyi_04.TAMER_gycy_baiyi_04_C",
-    "BossName": "跳浪蛟（BOSS）",
+    "BossName": "第六关·跳浪蛟（BOSS）",
     "BossID": 2,
     "Level": 61,
     "GameLevel": 6,
@@ -1684,7 +1684,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_yuan_summon.TAMER_mgd_yuan_summon_C",
-    "BossName": "石猿·冰（BOSS）",
+    "BossName": "第六关·石猿·冰（BOSS）",
     "BossID": 63,
     "Level": 61,
     "GameLevel": 6,
@@ -1692,7 +1692,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_yuan.TAMER_mgd_yuan_C",
-    "BossName": "大圣石猿（BOSS）",
+    "BossName": "第六关·大圣石猿（BOSS）",
     "BossID": 64,
     "Level": 61,
     "GameLevel": 6,
@@ -1700,7 +1700,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_szlc_tanglang01.TAMER_szlc_tanglang01_C",
-    "BossName": "碧臂螂（BOSS）",
+    "BossName": "第六关·碧臂螂（BOSS）",
     "BossID": 98,
     "Level": 61,
     "GameLevel": 6,
@@ -1708,7 +1708,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_szlc_xiniu_01.TAMER_szlc_xiniu_01_C",
-    "BossName": "金甲犀（BOSS）",
+    "BossName": "第六关·金甲犀（BOSS）",
     "BossID": 99,
     "Level": 61,
     "GameLevel": 6,
@@ -1716,7 +1716,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_szlc_wanglingguan_01.TAMER_szlc_wanglingguan_01_C",
-    "BossName": "王灵官（BOSS）",
+    "BossName": "第六关·王灵官（BOSS）",
     "BossID": 280,
     "Level": 61,
     "GameLevel": 6,
@@ -1724,7 +1724,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_szlc_wa_01.TAMER_szlc_wa_01_C",
-    "BossName": "浪波波（BOSS）",
+    "BossName": "第六关·浪波波（BOSS）",
     "BossID": 287,
     "Level": 61,
     "GameLevel": 6,
@@ -1732,7 +1732,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/Online/SZLC/TAMER_szlc_hema_01.TAMER_szlc_hema_01_C",
-    "BossName": "水木兽（BOSS）",
+    "BossName": "第六关·水木兽（BOSS）",
     "BossID": 288,
     "Level": 61,
     "GameLevel": 6,
@@ -1740,7 +1740,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/Online/SL/TAMER_sl_shitongling_01.TAMER_sl_shitongling_01_C",
-    "BossName": "毒统领（BOSS）",
+    "BossName": "第六关·毒统领（BOSS）",
     "BossID": 289,
     "Level": 61,
     "GameLevel": 6,
@@ -1748,7 +1748,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_jsds_p2.TAMER_mgd_jsds_p2_C",
-    "BossName": "大圣残躯p2（BOSS）",
+    "BossName": "第六关·大圣残躯p2（BOSS）",
     "BossID": 60,
     "Level": 73,
     "GameLevel": 6,
@@ -1756,7 +1756,7 @@
   },
   {
     "AssetPath": "/Game/00Main/Design/Units/MGD/TAMER_mgd_jsds.TAMER_mgd_jsds_C",
-    "BossName": "大圣残躯（BOSS）",
+    "BossName": "第六关·大圣残躯（BOSS）",
     "BossID": 61,
     "Level": 61,
     "GameLevel": 6,

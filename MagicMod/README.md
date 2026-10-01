@@ -4,7 +4,7 @@ MagicMod 是一个黑神话悟空 CSharpLoader Mod：**JSON 配置驱动 + 事�
 
 本文档覆盖全部配置：按键绑定、事件触发通道、**棍光**、**角色放大/缩放**、变身与幻化、召唤生成、面板与配表注入、排错。
 
-> 最近一次整理对应 `MagicMod.dll`（含 `grabConfig` 投技、棍光三件套、`WeaponScale`、`CalcAMScale`、 DispFX/BindMontageFX 等）。文档与游戏目录里的 DLL 保持一致。
+> 最近一次整理对应 `MagicMod.dll`（含 `grabConfig` 投技、`MaterialGlow` 棍光、`WeaponScale`、`CalcAMScale` 等）。
 
 ---
 
@@ -30,7 +30,7 @@ csproj 自带 `AfterBuild` target（`DeployMagicModToGame`），构建成功会*
 
 ### 0.3 配置热更新
 
-- 改 JSON：重启游戏最稳妥；CSharpManager 支持 Mod 热重载，重载前会清理常驻资源（`DeInit` 里会解绑BindMontageFX、熄灭 BoneGlow/棍光、还原抓投形态等）。
+- 改 JSON：重启游戏最稳妥；CSharpManager 支持 Mod 热重载，重载前会清理常驻资源（`DeInit` 里会熄灭棍光、还原角色缩放、还原抓投形态、清空定时器池等）。
 - 修改 `unitNameOverride.json` 必须重启游戏。
 - 配表注入类（`PBTable/`）需要在游戏内执行一次 `LoadData` / `ResetData` 动作。
 
@@ -40,14 +40,11 @@ csproj 自带 `AfterBuild` target（`DeployMagicModToGame`），构建成功会*
 |------|------|------|
 | `[MagicMod]` | 全局 | 加载/初始化、动作执行、去重/节流、配表注入 |
 | `[棍光]` | `MaterialGlow` | 材质自发光：点亮槽数、档位、强度、颜色、10s 定时熄灭 |
-| `[BoneGlow]` | `BoneGlow` | 骨骼特效：挂载/销毁/县城效加载失败 |
-| `[DispFX]` | `BuffDispLite` | DBC / Niagara / 材质曲线三类表现 |
-| `[DBC]` | `DbcFx` | DBC 表现生成与销毁 |
 | `[WeaponScale]` | `WeaponScale` | 武器/主网格缩放、回弹 |
 | `[GrabSync]` | `GrabSyncGuestFix` | 投技期间隐藏/缩放/加 Buff/镜头锁定 |
 | `[ShowPlayerInfo]` | `showPlayerInfo` | 单位名解析与 `unitNameOverride.json` 自动占位 |
 | `[HairProbe]` | `ProbeHair` | 毛发资产探测（排查秃头） |
-| `[CustomTrans]` / `[NativeTrans]` | 变身系统 | **两个变身系统当前均已停用**，见第 5 节 |
+| `[CustomTrans]` / `[NativeTrans]` | 变身系统 | **两个变身系统均已停用**（`CustomTransSystem` 代码已移除），见第 5 节 |
 
 ---
 
@@ -115,12 +112,12 @@ CSharpLoader/Mods/MagicMod/
 | `Type` | 动作类型，见 2.5 |
 | `Value` / `Values` | BuffID / SkillID / MagicID / TransID / 物品ID（`AddItemRange` 用 `[起始,结束]`） |
 | `name` | 备注，仅用于日志 |
-| `Duration` | **大写 D**：持续毫秒。`-1`=直到主动 Stop；**默认值是 10000**（棍光/DispFX/WeaponScale 等都会继承它，想常亮请显式填 `-1`） |
+| `Duration` | **大写 D**：持续毫秒。`-1`=直到主动 Stop；**默认值是 10000**（棍光/WeaponScale 等都会继承它，想常亮请显式填 `-1`） |
 | `Delay` | 延迟毫秒后执行（基于游戏世界时间，随时缓一起变慢） |
 | `duration` + `interval` | **小写**：重复执行。`duration=2500, interval=250` → 共 10 次 |
 | `Default` | `true` = 兜底动作：同组里其它动作一个都没执行成功时才执行它 |
 | `Condition` | 条件门控，见 2.4 |
-| `Count` | `AddItem` 数量 / `ScanBuffDisp` 扫描条数 |
+| `Count` | `AddItem` 数量等 |
 | `range` | 范围类动作半径（默认 1000） |
 | `magicSkill` / `magicBackSkill` | Magic 动作的幻化技能 / 还原技能 |
 | `path` | 资源路径（蓝图 / Montage / Niagara / DBC / 配表资源） |
@@ -130,7 +127,7 @@ CSharpLoader/Mods/MagicMod/
 | `SpawnTeamId` | `SpawnActor` 生成物阵营（`1`=己方，其它=敌方） |
 | `Params` | 任意键值字典（`CalcAMScale` 专用，见 4.2） |
 | `grabConfig` | 投技附加配置（隐藏/缩放/Buff/镜头），见 6.2 |
-| 表现类字段 | `BoneName` `FXScale` `FXList` `FXPreset` `FXColor` `FXIntensity` `MatSlot` `MatColor` `MatColorName` `MatPreset` `MatParams` `MatVectors` `MatIntensity` `MatMode` `MatKeepAlive` `MatSetting` `MatDuration` → 见第 3 节 |
+| 棍光类字段 | `BoneName` `MatSlot` `MatColor` `MatColorName` `MatPreset` `MatParams` `MatVectors` `MatIntensity` `MatMode` `MatKeepAlive` → 见第 3 节 |
 | 缩放类字段 | `WeaponScale` `WeaponScaleHoldMs` `WeaponScaleRestoreMs` → 见第 4 节 |
 
 ### 2.4 Condition（条件门控）
@@ -164,11 +161,11 @@ CSharpLoader/Mods/MagicMod/
 
 **召唤/生成**：`summon` `addallsummonlifetime` `SpawnActor` `grab` `grabscan`
 
-**棍光/表现**：`MaterialGlow` `MaterialGlowStop` `BoneGlow` `BoneGlowStop` `DispFX` `DispFXStop` `BindMontageFX` `BindMontageFXStop` `SpawnDBC` `DBCStop`（详见第 3 节）
+**棍光**：`MaterialGlow` `MaterialGlowStop`（详见第 3 节）
 
 **缩放**：`WeaponScale` `CalcAMScale`（详见第 4 节）
 
-**界面/调试**：`UI` `showInfo` `clearInfo` `BossPanel` `LoadData` `ResetData` `DumpBuffDisp` `ScanBuffDisp` `ProbeHair` `ShowHair` `montage` `Montage_SetPosition`
+**界面/调试**：`UI` `showInfo` `clearInfo` `BossPanel` `LoadData` `ResetData` `ProbeHair` `ShowHair` `montage` `Montage_SetPosition`
 
 > `DumpTrans` 已停用（原生变身不再启用），调用只打一条 warn。
 
@@ -176,15 +173,14 @@ CSharpLoader/Mods/MagicMod/
 
 ## 3. 棍光（武器发光）
 
-棍光有**三条独立通路**，可以叠加使用，互不冲突：
+棍光目前只有**一条通路**：`MaterialGlow`（材质级自发光）。
+旧的 `BoneGlow`（骨骼挂 Niagara）与 `DispFX`（复刻 `BUS_BuffDispComp`：DBC + Niagara + 材质曲线）已从代码移除，配置里残留这些 `Type` 只会打一条"未知的 ActionType"警告。
 
 | 通路 | 本质 | 优点 | 适用 |
 |------|------|------|------|
 | `MaterialGlow` | 运行时给**武器 FX 材质**建动态材质实例，改自发光/流光参数 | 最像大佬的棍光 pak（材质级），可任意改颜色/亮度/参数 | 想要"棍身自己发光" |
-| `BoneGlow` | 在指定**骨骼/插槽**上挂 Niagara（或 Cascade）粒子 | 立即可见的火焰/金光粒子，可叠多层组合 | 想要"外面包一层火焰/电光" |
-| `DispFX` | 复刻游戏 `BUS_BuffDispComp`：DBC（粒子+音效+震屏+材质）+ Niagara + 材质曲线 | 走游戏原生表现通道，最"官方"的一套 | 想要和游戏 buff 表现完全一致的棍光 |
 
-### 3.1 MaterialGlow / MaterialGlowStop（材质自发光，推荐）
+### 3.1 MaterialGlow / MaterialGlowStop（材质自发光）
 
 **原理**（来自棍光 pak + 反编译）：
 棍身发光不是粒子，而是武器上一层**材质** `M_wukong_weapon_fx`（Additive 混合，层栈 `ML_Emissive_JGB / ML_Emissive_JGB_Inst / ML_Emissive_Fresnel`，层间混合靠 BlendParameter `Lerp`，必须=1 否则永远不亮）。
@@ -228,127 +224,14 @@ CSharpLoader/Mods/MagicMod/
 
 **亮不起来怎么办**：先发一次 `{"Type":"MaterialGlow","MatSlot":"probe"}`，日志 `[棍光]` 会列出所有 Mesh / 材质槽名，把其中一个槽名填进 `MatSlot` 再试。
 
-### 3.2 BoneGlow / BoneGlowStop（骨骼挂 Niagara）
-
-在同一骨骼上**叠加多个发光特效**形成"棍光组合"（`FXList` 逐项叠加）。
-
-| 字段 | 说明 |
-|------|------|
-| `BoneName` | 骨骼/插槽名，默认 `weapon_r`（`hand_l`/`hand_r` 可挂手上） |
-| `FXPreset` | 内置组合：`rich`(默认多光，**武器骨骼不填 path 时自动用它**) / `fire`(火+金) / `gold`(金) |
-| `FXList` | 自定义组合；优先级高于单特效写法 |
-| `FXColor` / `FXIntensity` | 作用于 `FXList` 中未单独指定 `color`/`intensity` 的项 |
-| `path` + `FXScale` | 兼容旧的单特效写法 |
-| `Duration` | 毫秒，`-1`=常亮 |
-
-`FXList` 每一项（`FXItem`）：
-
-| 字段 | 说明 |
-|------|------|
-| `path` | Niagara/Cascade 资源路径，形如 `/Game/.../NG_xxx.NG_xxx` |
-| `scale` | 等比缩放，默认 1 |
-| `scale3` | 非等比缩放 `[x,y,z]`（沿棍长拉长、横向压扁，让光**铺满整根棍**而不是糊在末端）；优先于 `scale` |
-| `offset` / `rotation` | 相对骨骼的位置偏移 `[x,y,z]`（厘米）/ 旋转 `[pitch,yaw,roll]`（度） |
-| `color` | Niagara 颜色 `[r,g,b]`（广播到常见颜色变量名） |
-| `intensity` | 强度/亮度（广播到常见强度变量名） |
-| `channel` | 武器火焰类：`User.ColorChannel`（int，颜色通道枚举） |
-| `fireScale` / `count` | 武器火焰类：`User.FireScale` / `User.ParticleCount` |
-| `scanChannel` | 调试：自动轮换 `User.ColorChannel`（填上限，如 `4` → 0..3 每 1.5 秒切换），一次试出想要的颜色 |
-| `vars` | 任意 Niagara 变量，优先级最高：`[{"name":"User.ColorChannel","type":"int","value":[2]}]` |
-| `duration` | 该条特效自身持续毫秒；0=继承动作 `Duration` |
-
-已确认可用的游戏内资源：
-
-```
-/Game/00Main/VFX/Characters/sunwukong/Niagara/Buff/Attack/NG_WuKong_Buff_Attack_Start.NG_WuKong_Buff_Attack_Start
-/Game/00Main/VFX/Characters/sunwukong/Niagara/Equip/Langyagun02/Niagara/NG_wukong_langyagun02_gp.NG_wukong_langyagun02_gp
-/Game/00Main/VFX/Characters/sunwukong/Niagara/Equip/Yehuo/NG_Equip_Weapon_Yehuo_Fire_Loop.NG_Equip_Weapon_Yehuo_Fire_Loop
-```
-
-```json
-{ "Type": "BoneGlow", "BoneName": "weapon_r" }                                  // 默认 rich 组合
-{ "Type": "BoneGlow", "BoneName": "weapon_r", "FXPreset": "fire", "Duration": 5000 }
-{
-  "Type": "BoneGlow",
-  "BoneName": "weapon_r",
-  "FXList": [
-    { "path": "/Game/.../NG_Equip_Weapon_Yehuo_Fire_Loop.NG_Equip_Weapon_Yehuo_Fire_Loop",
-      "scale3": [1.6, 1.2, 1.2], "channel": 0, "fireScale": 0.8, "color": [1, 0.8, 0.3] },
-    { "path": "/Game/.../NG_WuKong_Buff_Attack_Start.NG_WuKong_Buff_Attack_Start", "scale": 1.2 }
-  ],
-  "Duration": 5000
-}
-{ "Type": "BoneGlowStop", "BoneName": "weapon_r" }   // 关指定骨骼；不填 BoneName = 清掉全部
-```
-
-### 3.3 DispFX / DispFXStop（复刻游戏表现：DBC + Niagara + 材质曲线）
-
-一条 `DispFX` 同时复刻游戏的三条通路：
-
-1. `FXList` 里是 **DBC**（路径含 `BGWDataAsset_B1DBC`）→ `Evt_RequestSpawnFXByDispConfig`（粒子+音效+材质+震屏一整套）；
-2. `FXList` 里是 **Niagara/Cascade** → 按 `attach` 挂骨骼插槽（走 BoneGlow 的完整参数版，颜色/强度/任意变量都能传）；
-3. `MatSetting` → `Evt_BeginForSetCurveValueToMesh`，游戏自己"材质随时间变化"的通道（能按 WeaponIndex/材质索引精确打到武器）。
-
-| 字段 | 说明 |
-|------|------|
-| `FXList` | 表现列表（字段同 3.2 的 `FXItem`，外加 `attach` 挂点骨骼，默认 `weapon_r`；`dbc` 可强制判定是否为 DBC） |
-| `MatSetting` | `BGWDataAsset_BuffSetCurveValueToMeshConfig` 资源路径数组 |
-| `MatDuration` | 传给材质曲线的总时长（秒），默认 1 |
-| `Duration` | 毫秒；0=常驻直到 `DispFXStop` 或下一次 `DispFX` |
-
-```json
-{
-  "Type": "DispFX",
-  "FXList": [
-    { "path": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/XuliBaofa/DBC_XuLi_Baofa_2.DBC_XuLi_Baofa_2'" },
-    { "path": "/Game/00Main/VFX/Characters/sunwukong/Niagara/Equip/Yehuo/NG_Equip_Weapon_Yehuo_Fire_Loop.NG_Equip_Weapon_Yehuo_Fire_Loop",
-      "attach": "weapon_r", "scale": 1.2, "fireScale": 0.8 }
-  ],
-  "MatSetting": [ "BGWDataAsset_BuffSetCurveValueToMeshConfig'/Game/....DA_Xxx.DA_Xxx'" ],
-  "Duration": 5000
-}
-{ "Type": "DispFXStop" }
-```
-
-### 3.4 BindMontageFX / BindMontageFXStop（绑到动画：动画开始亮、结束/打断熄灭）
-
-**做"蓄力/出招时自动亮"最省事的写法**：字段与 `DispFX` 完全相同，只是多一个 `path`（动画路径**关键字**，不区分大小写，如 `xuli` 三系蓄力通吃、`AM_Wukong_ComboA`）。内部走 `Evt_PlayMontageCallback`。
-
-```json
-{
-  "Type": "BindMontageFX",
-  "path": "xuli",
-  "FXList": [
-    { "path": "/Game/00Main/VFX/Characters/sunwukong/Niagara/Equip/Yehuo/NG_Equip_Weapon_Yehuo_Fire_Loop.NG_Equip_Weapon_Yehuo_Fire_Loop",
-      "attach": "weapon_r", "scale": 1.2 }
-  ],
-  "MatSetting": [ "BGWDataAsset_BuffSetCurveValueToMeshConfig'/Game/....DA_Xxx.DA_Xxx'" ],
-  "Duration": 0
-}
-{ "Type": "BindMontageFXStop" }   // 热重载前建议配一条，避免回调残留
-```
-
-> 注意：`BindMontageFX` 用的是 DispFX 通路（DBC/Niagara/材质曲线），**不包括 `MaterialGlow` 的材质参数**。想让动画期间同时唤起材质棍光，请搭配 `SweepCheck` 的 `cast_actions` 里再挂一个 `MaterialGlow`（见 3.6）。
-
-### 3.5 SpawnDBC / DBCStop（单条 DBC）
-
-等价于"给 BuffDispDesc 的 EnterFX 填 DBC 路径"，但不用改配表。
-
-```json
-{ "Type": "SpawnDBC", "path": "BGWDataAsset_B1DBC'/Game/....DBC_Xxx.DBC_Xxx'", "Duration": 3000 }
-{ "Type": "DBCStop" }
-```
-
-### 3.6 排查辅助动作
+### 3.2 排查辅助动作
 
 | 动作 | 用途 |
 |------|------|
-| `DumpBuffDisp` | 打印指定 BuffID 的 `BuffDispDesc`（EnterFX/LeaveFX/MaterialSetting/TickingCurveParam 全量），`Values=[BuffID...]`，用来查"游戏里真正的棍光"用的是哪条 DBC/材质配置 |
-| `ScanBuffDisp` | 扫一段 BuffID 找关键字：`Value`=起始ID，`Count`=数量，`path`=关键字（如 `"XuLi"` 捞出所有蓄力棍光相关 buff）；只打命中的 |
 | `ProbeHair` | 毛发资产探测（排查换皮/变身秃头）：打印材质槽、候选 TressFX 资产是否存在、当前身上的 Mesh/TressFX 组件 |
 | `ShowHair` | 恢复"毛发部件"可见（`SM_Wukong_head_born_static` 材质槽是 `Hair03_MTL/Hair04_MTL`，它就是毛；可选 `path`=关键字，默认 `head_born_static`） |
 
-### 3.7 棍光配方示例（蓄力自动亮、出招后熄灭）
+### 3.3 棍光配方示例（蓄力自动亮、出招后熄灭）
 
 写在 `SweepCheck/*.json` 里：
 
@@ -468,7 +351,7 @@ CSharpLoader/Mods/MagicMod/
 
 ## 5. 变身 / 幻化（当前状态）
 
-> ⚠️ **现状（务必先看）**：`CustomTransSystem`（傀儡附身 `UseTamerPossess: true`）与 `NativeTransSystem`（原生 Direct / Reskin）**均已停用**——代码保留但调用被注释。`transConfig/*.json` 仍然会被加载（供画板展示、**普攻输入重定向**仍生效），但触发 `Trans` 命中 `transConfig` 时只打一条 `[MagicMod] 变身已停用` 的 warn 并返回。
+> ⚠️ **现状（务必先看）**：`CustomTransSystem`（傀儡附身 `UseTamerPossess: true`）**代码已移除**；`NativeTransSystem`（原生 Direct / Reskin）也已停用。`transConfig/*.json` 仍然会被加载（供画板展示、**普攻输入重定向**仍生效），但触发 `Trans` 命中 `transConfig` 时只打一条 `[MagicMod] 变身已停用` 的 warn 并返回。
 
 实际可用的路径：
 
@@ -532,9 +415,9 @@ CSharpLoader/Mods/MagicMod/
 模式 `TransMode`(`Direct`/`Reskin`) `BaseResId` `MagicId` `MagicSkillId` `MagicBackSkillId` `AttachPlayerComps` `ExtraComps` `AttachCamera` `CameraArmLength`(>0 直接采用) `CameraDistanceMul`(默认 3.0) `CameraRelativeLocation`(`{X,Y,Z}`，写进 `DefaultArmLocation` 才不会被每帧覆盖) `CameraHeightOffset` `CameraOffsetX/Y` `DisableAI` `TransBackEndType` `TransBackOnDeath` `TransBackRespawnPlayer`；
 法术槽 `MagicSkillList`(`{Type, SpellID}`，`Type` 可取 `ShenFa/HaoMao/QiShu/BianShen/TiShu/QingGun/ZhongGun/YuGun/Ride/Base/Advanced`) `TransBackSkillId` `DrinkSkillId` `TransBackBeHit` `ReSetTransId` `DeadDontTransback` `ReadArchiveTrans` `ShowSettingUiOnly` `TransType`；
 连招链 `LightAttackCombo` / `HeavyAttackCombo` / `DodgeCombo` / `Spell1Combo` / `Spell2Combo` / `Spell3Combo`，每步 `{ "SkillId": 440596, "LockTime": 500 }`；
-傀儡附身 `UseTamerPossess` `PossessAssetPath` `PossessScale` `CameraSocket`(默认 pelvis) `UseGeneralDodge` `MoveMMState`(默认 `LockRun`)。
+傀儡附身 `UseTamerPossess` `PossessAssetPath` `PossessScale` `CameraSocket`(默认 pelvis) `UseGeneralDodge` `MoveMMState`(默认 `LockRun`)（**代码已移除，仅存档**）。
 
-> 注：本机 `b1cs.ini` 强制 `EnableJit=0`（开启 JIT 会导致游戏亮度被锁 0），所以依赖 Harmony 补丁的傀儡附身逐帧驱动本来就跑不起来；这也是它被停用的原因之一。
+> 注：本机 `b1cs.ini` 强制 `EnableJit=0`（开启 JIT 会导致游戏亮度被锁 0），依赖 Harmony 补丁的傀儡附身逐帧驱动本来就跑不起来；`CustomTransSystem` 及其两个 Harmony 补丁现已整体移除。
 
 ---
 
@@ -548,7 +431,6 @@ CSharpLoader/Mods/MagicMod/
 |----------|--------|
 | `cast_actions` | **技能释放时**（按 `SkillSDesc.TemplatePath` 匹配 `Animation` 关键字）——最适合挂 `WeaponScale`、`CalcAMScale`、`MaterialGlow` |
 | `sweep_actions` | 按 `NotifyBeginTime`（秒）分组触发，可多组；省略则匹配所有时间 |
-| `position_actions` | 按播放位置（秒）触发，不依赖 AnimNotify，`Position` + `Tolerance`(默认 0.03) + `name` |
 | `bullet_actions` | 子弹生成时按 `ID`(ProjectileID) 匹配 |
 | `Actions` + `NotifyBeginTime` | 旧格式单时间点（仍兼容） |
 | `addRadius` | 判定半径追加（如 1000） |
@@ -624,8 +506,8 @@ Boss 列表：`AssetPath`(TAMER 路径) `BossName` `BossID` `Level` `GameLevel` 
 | 只放出一个技能就没了 | `Skill`/`Magic` 有 300ms 节流；同组同 Type 只执行第一个满足条件的 |
 | 棍光亮不起来 | 先 `{"Type":"MaterialGlow","MatSlot":"probe"}`，按日志把真实槽名填进 `MatSlot`；确认 `MatMode=weaponfx`（默认）；层混合参数 `Lerp` 必须为 1 |
 | 棍光几秒后自己熄灭 | `Duration` 默认 **10000**，常亮请显式填 `-1` 或再配一条 Stop |
-| 棍光只糊在棍子末端 | `BoneGlow`/`DispFX` 的 `FXList` 项加 `scale3`（非等比缩放，沿棍长拉长） |
-| Niagara 改了颜色没效果 | 该模板的颜色变量名可能不在广播列表里，用 `vars` 精确指定（如 `User.ColorChannel`），或用 `scanChannel` 自动轮换试 |
+| 棍光只糊在棍子末端 | 用 `MatParams` 调发光段落：`MaskPosition` / `MaskContrast` / `CenterPoint`（见 3.1） |
+| 棍光颜色不对 | 只有 `C_Color` / `D_Color` 支持改色：用 `MatColorName`（预设）或 `MatColor` / `MatVectors` 的 `{"C_Color":[r,g,b]}` |
 | 放大后打不到人 / 判定没变大 | 只有 `WeaponScale`（缩放 `CharacterMesh0`）能让判定跟着放大；`CalcAMScale` 只管位移缩放 |
 | 放大后身体也跟着变大 | `WeaponScale` 的必然副作用（身体挂在同一主网格上）；想只伸长武器改用 `bulletConfig.SpawnOffset` |
 | 武器放大后回弹很跳 | 配 `WeaponScaleRestoreMs`（如 500）让它平滑缩回 |

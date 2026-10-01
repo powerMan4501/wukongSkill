@@ -99,30 +99,30 @@
     "Animation": "AM_Wukong_ComboA_",
     "cast_actions": [
       {
-        "Type": "BoneGlow",
-        "Condition": {
-          "Type": "bullet_fire"
-        },
-        "BoneName": "weapon_r",
-        "FXList": [
-          {
-            "path": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/MGD/MGD_tianjiang/DBC/DBC_MGD_tianjian_weapon_Lightning.DBC_MGD_tianjian_weapon_Lightning'"
-          }
-        ],
-        "Duration": 5000
+        "Type": "Buff",
+        "Value": 2029,
+        "Duration": 5000,
+        "Condition": { "Type": "bullet_fire" }
       },
       {
-        "Type": "BoneGlow",
-        "Condition": {
-          "Type": "bullet_thunder"
-        },
-        "BoneName": "weapon_r",
-        "FXList": [
-          {
-            "path": "BGWDataAsset_B1DBC'/Game/00Main/VFX/Characters/sunwukong/DBC/Equip/KJL/DBC_Equip_Weapon_KJL_Loop.DBC_Equip_Weapon_KJL_Loop'"
-          }
-        ],
-        "Duration": 5000
+        "Type": "Buff",
+        "Value": 1029,
+        "Duration": 5000,
+        "Condition": { "Type": "bullet_thunder" }
+      },
+      {
+        "Type": "Buff",
+        "name": "冰：玩家冰累积 Lv1（= DBC_Player_ICE_Accum_Lv1）",
+        "Value": 112905,
+        "Duration": 5000,
+        "Condition": { "Type": "bullet_ice" }
+      },
+      {
+        "Type": "Buff",
+        "name": "毒：中毒体表粒子（= NG_Buff_Poisoning_01）",
+        "Value": 100902,
+        "Duration": 5000,
+        "Condition": { "Type": "bullet_poison" }
       }
     ]
   },

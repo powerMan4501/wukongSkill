@@ -2,7 +2,7 @@
   {
     "Animation": "AM_Wukong_ComboA_z_01",
     "name": "10705切手，bullet_fire",
-
+    "cast_actions": [{ "Type": "TeleportTargetToFront", "Value": 100 }],
     "Actions": [
       {
         "Type": "bullet",
@@ -60,6 +60,7 @@
   {
     "Animation": "AM_Dasheng_ComboA_01_Z_1",
     "name": "大圣10705切手",
+    "cast_actions": [{ "Type": "TeleportTargetToFront", "Value": 100 }],
     "Actions": [
       {
         "Type": "bullet",
@@ -123,8 +124,7 @@
         "Type": "CalcAMScale",
         "Params": {
           "TotalDuration": "0.5",
-          "MaxRate": "30",
-          "MoveOffset": "5000"
+          "MaxRate": "30"
         }
       }
     ],
@@ -262,14 +262,12 @@
   {
     "Animation": "AM_Dasheng_ComboA_01_Z_2",
     "name": "大圣10707",
-
     "cast_actions": [
       {
         "Type": "CalcAMScale",
         "Params": {
           "TotalDuration": "0.5",
-          "MaxRate": "30",
-          "MoveOffset": "5000"
+          "MaxRate": "30"
         }
       }
     ],
@@ -343,8 +341,7 @@
         "Type": "CalcAMScale",
         "Params": {
           "TotalDuration": "0.5",
-          "MaxRate": "30",
-          "MoveOffset": "5000"
+          "MaxRate": "30"
         }
       }
     ],
@@ -418,8 +415,7 @@
         "Type": "CalcAMScale",
         "Params": {
           "TotalDuration": "0.5",
-          "MaxRate": "30",
-          "MoveOffset": "5000"
+          "MaxRate": "30"
         }
       }
     ],
@@ -437,7 +433,7 @@
           "Type": "bullet_fire"
         },
         "bulletConfig": {
-          "ProjectileIDs": [2403172, 44011401,140],
+          "ProjectileIDs": [2403172, 44011401, 140],
           "SpawnOffsetX": 500,
           "SpawnOffsetY": 500,
           "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
