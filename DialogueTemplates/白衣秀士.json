@@ -1,0 +1,96 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "朽木不可雕也",
+    "DialogueId": 310080001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/BaiYiXiuShi/voice/dialoguel/EVT_enm_gycy_baiyi_voice_dialogue_001",
+    "AkEventName": "EVT_enm_gycy_baiyi_voice_dialogue_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "别以为过了我……",
+    "DialogueId": 310280001,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "就能见得大道……",
+    "DialogueId": 310280002,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "单有匹夫之勇，必非大哥说的那个人",
+    "DialogueId": 310280003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/BaiYiXiuShi/voice/dialoguel/EVT_enm_gycy_baiyi_voice_dialogue_002",
+    "AkEventName": "EVT_enm_gycy_baiyi_voice_dialogue_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "水虽至柔，可覆万物，你感受到了吗？",
+    "DialogueId": 310280004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/BaiYiXiuShi/voice/dialoguel/SFX_ENM_GYCY_BaiYi_02_Voice_duobu",
+    "AkEventName": "SFX_ENM_GYCY_BaiYi_02_Voice_duobu"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "善若不失，恶则不长，小生劝你再思量思量",
+    "DialogueId": 310280005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/BaiYiXiuShi/voice/dialoguel/EVT_enm_gycy_baiyi_voice_dialogue_001",
+    "AkEventName": "EVT_enm_gycy_baiyi_voice_dialogue_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "祸福无门，唯人所召，你还不明白吗？",
+    "DialogueId": 310280006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/BaiYiXiuShi/voice/dialoguel/EVT_enm_gycy_baiyi_voice_dialogue_001",
+    "AkEventName": "EVT_enm_gycy_baiyi_voice_dialogue_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "一张",
+    "DialogueId": 310280007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/BaiYiXiuShi/voice/dialoguel/EVT_enm_gycy_baiyi_voice_dialogue_006",
+    "AkEventName": "EVT_enm_gycy_baiyi_voice_dialogue_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "一弛！",
+    "DialogueId": 310280008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/BaiYiXiuShi/voice/dialoguel/EVT_enm_gycy_baiyi_voice_dialogue_006",
+    "AkEventName": "EVT_enm_gycy_baiyi_voice_dialogue_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "逆天者",
+    "DialogueId": 310280009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/BaiYiXiuShi/voice/dialoguel/EVT_enm_gycy_baiyi_voice_dialogue_001",
+    "AkEventName": "EVT_enm_gycy_baiyi_voice_dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "亡！",
+    "DialogueId": 310280010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/BaiYiXiuShi/voice/dialoguel/EVT_enm_gycy_baiyi_voice_dialogue_001",
+    "AkEventName": "EVT_enm_gycy_baiyi_voice_dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "区区鼠辈！",
+    "DialogueId": 310280011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/BaiYiXiuShi/voice/dialoguel/EVT_enm_gycy_baiyi_voice_dialogue_001",
+    "AkEventName": "EVT_enm_gycy_baiyi_voice_dialogue_008"
+  }
+]

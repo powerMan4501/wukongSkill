@@ -1,0 +1,114 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "来取我性命？",
+    "DialogueId": 354030001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_jiachongzongbing_02/voice/new/EVT_enm_psd_jiachongzongbing_02_voice_dialogue_001",
+    "AkEventName": "EVT_enm_psd_jiachongzongbing_02_voice_dialogue_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "好！",
+    "DialogueId": 354030002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_jiachongzongbing_02/voice/new/EVT_enm_psd_jiachongzongbing_02_voice_dialogue_001",
+    "AkEventName": "EVT_enm_psd_jiachongzongbing_02_voice_dialogue_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你，来打败我！",
+    "DialogueId": 354030003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_jiachongzongbing_02/voice/new/EVT_enm_psd_jiachongzongbing_02_voice_dialogue_001",
+    "AkEventName": "EVT_enm_psd_jiachongzongbing_02_voice_dialogue_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "又来了？",
+    "DialogueId": 354030004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_jiachongzongbing_02/voice/new/EVT_enm_psd_jiachongzongbing_02_voice_dialogue_003",
+    "AkEventName": "EVT_enm_psd_jiachongzongbing_02_voice_dialogue_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "正好解闷！",
+    "DialogueId": 354030005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_jiachongzongbing_02/voice/new/EVT_enm_psd_jiachongzongbing_02_voice_dialogue_003",
+    "AkEventName": "EVT_enm_psd_jiachongzongbing_02_voice_dialogue_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这么想杀我？",
+    "DialogueId": 354030006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_jiachongzongbing_02/voice/new/EVT_enm_psd_jiachongzongbing_02_voice_dialogue_001",
+    "AkEventName": "EVT_enm_psd_jiachongzongbing_02_voice_dialogue_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "来罢！",
+    "DialogueId": 354030007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_jiachongzongbing_02/voice/new/EVT_enm_psd_jiachongzongbing_02_voice_dialogue_001",
+    "AkEventName": "EVT_enm_psd_jiachongzongbing_02_voice_dialogue_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不活了，出不去！",
+    "DialogueId": 354030008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_jiachongzongbing_02/voice/new/EVT_enm_psd_jiachongzongbing_02_voice_dialogue_005",
+    "AkEventName": "EVT_enm_psd_jiachongzongbing_02_voice_dialogue_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "孤独，暗无天日，打死我罢",
+    "DialogueId": 354030009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_jiachongzongbing_02/voice/new/EVT_enm_psd_jiachongzongbing_02_voice_dialogue_006",
+    "AkEventName": "EVT_enm_psd_jiachongzongbing_02_voice_dialogue_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "此洞无法逃脱，求你，杀了我",
+    "DialogueId": 354030010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_jiachongzongbing_02/voice/new/EVT_enm_psd_jiachongzongbing_02_voice_dialogue_001",
+    "AkEventName": "EVT_enm_psd_jiachongzongbing_02_voice_dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "别愣着，速速上前，了结我罢",
+    "DialogueId": 354030011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_jiachongzongbing_02/voice/new/EVT_enm_psd_jiachongzongbing_02_voice_dialogue_001",
+    "AkEventName": "EVT_enm_psd_jiachongzongbing_02_voice_dialogue_008"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "终于，摆脱了……",
+    "DialogueId": 354030012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_jiachongzongbing_02/voice/new/EVT_enm_psd_jiachongzongbing_02_voice_dialogue_009",
+    "AkEventName": "EVT_enm_psd_jiachongzongbing_02_voice_dialogue_009"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "死了，真好啊",
+    "DialogueId": 354030013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_jiachongzongbing_02/voice/new/EVT_enm_psd_jiachongzongbing_02_voice_dialogue_010",
+    "AkEventName": "EVT_enm_psd_jiachongzongbing_02_voice_dialogue_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "活着，真无趣啊",
+    "DialogueId": 354030014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_jiachongzongbing_02/voice/new/EVT_enm_psd_jiachongzongbing_02_voice_dialogue_001",
+    "AkEventName": "EVT_enm_psd_jiachongzongbing_02_voice_dialogue_011"
+  }
+]

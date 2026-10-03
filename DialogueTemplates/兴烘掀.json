@@ -1,0 +1,250 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "你这毛怪，后头那路烫脚得很，且等着罢",
+    "DialogueId": 344020001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "腾！",
+    "DialogueId": 344020002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_002",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "落！",
+    "DialogueId": 344020003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_002",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看锅！",
+    "DialogueId": 344020004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_002",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "升！",
+    "DialogueId": 344020005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "坠！",
+    "DialogueId": 344020006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "敲碎！",
+    "DialogueId": 344020007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "下油锅！",
+    "DialogueId": 344020008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_004",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "铁锅炖！",
+    "DialogueId": 344020009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "油锅狱！",
+    "DialogueId": 344020010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "蛮皮欠教训！",
+    "DialogueId": 344020011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_007",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "撞死可不管！",
+    "DialogueId": 344020012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_008"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "用力，弄他！",
+    "DialogueId": 344020013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_009",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_009"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "婆娘，小心",
+    "DialogueId": 344020014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_010",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "快了快了",
+    "DialogueId": 344020015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_011",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_011"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "容易容易",
+    "DialogueId": 344020016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_012",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_012"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "婆娘歇着！",
+    "DialogueId": 344020017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_013",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_013"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "得令！",
+    "DialogueId": 344020018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_014",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_014"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "那我宰了他！",
+    "DialogueId": 344020019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_015",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_015"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "遵命！",
+    "DialogueId": 344020020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_017",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_017"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "放着我来！",
+    "DialogueId": 344020021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_018",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_018"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "歇够了罢！",
+    "DialogueId": 344020022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_019",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_019"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "头功让你！",
+    "DialogueId": 344020023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_020",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_020"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "累了累了",
+    "DialogueId": 344020024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_021",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_021"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "丑归丑，力气大",
+    "DialogueId": 344020025,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_022",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_022"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我打不过！",
+    "DialogueId": 344020026,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_023",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_023"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "保我元阳！",
+    "DialogueId": 344020027,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_024",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_024"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "贼婆娘，合！",
+    "DialogueId": 344020028,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_025",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_025"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "皮痒了！",
+    "DialogueId": 344020029,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_026",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_026"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "惹我家婆娘，就得死！",
+    "DialogueId": 344020030,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_029",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_029"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "还好死得快，没让那畜生听见",
+    "DialogueId": 344020031,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_XingGongXian_01/EVT_enm_hys_xinggongxian_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hys_xinggongxian_01_voice_dialogue_030"
+  }
+]

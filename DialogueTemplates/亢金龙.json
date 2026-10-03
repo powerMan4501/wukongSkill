@@ -1,0 +1,210 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "这般想救他，谁又来救你？",
+    "DialogueId": 334010001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "去了又来，可是开窍了？",
+    "DialogueId": 334010002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "曜爪",
+    "DialogueId": 334010003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_003",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "震而为雷",
+    "DialogueId": 334010004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_004",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "敢领天命，难道就不敢尝尝极乐的滋味？",
+    "DialogueId": 334010005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_005",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "只要放下公心，便能参悟妙法，试试又有何妨？",
+    "DialogueId": 334010006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "若非师父要留你，合该把你杀了！",
+    "DialogueId": 334010007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_007_b",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_007_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "旋雷",
+    "DialogueId": 334010008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_008",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_008"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "归顺……",
+    "DialogueId": 334010009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_009",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_009"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你越是不肯，我越要让你，拜伏雷音！",
+    "DialogueId": 334010010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_010",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "随心所欲，就是这般让人，浑身颤栗！",
+    "DialogueId": 334010011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_011",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_011"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "真是块石头，枉费我许多口舌",
+    "DialogueId": 334010012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_012",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_012"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "既是听不进好话，那就送你回塔里再造罢",
+    "DialogueId": 334010013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_012_b",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_012_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "八方云涌，乾元雷动！",
+    "DialogueId": 334010014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_012_c",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_012_c"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "雷激",
+    "DialogueId": 334010015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_013",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_013"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "苦即是爱，",
+    "DialogueId": 334010016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_014",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_014"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "神戈",
+    "DialogueId": 334010017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_015",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_015"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "早些跟了师父，何须吃这苦头？",
+    "DialogueId": 334010018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_016",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_016"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "为了天，舍了命，值吗？",
+    "DialogueId": 334010019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_017"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "流金！",
+    "DialogueId": 334010103,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_003_b",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_003_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "击之成电",
+    "DialogueId": 334010104,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_004_b",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_004_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "舞电！",
+    "DialogueId": 334010108,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_008_b",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_008_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "本心罢！",
+    "DialogueId": 334010109,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_009_b",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_009_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "电光！",
+    "DialogueId": 334010115,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_013_b",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_013_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "爱即是苦",
+    "DialogueId": 334010116,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_014_b",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_014_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "电扫！",
+    "DialogueId": 334010117,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_kjlwoman/voice/EVT_enm_lys_kjlwoman_voice_dialogue_015_b",
+    "AkEventName": "EVT_enm_lys_kjlwoman_voice_dialogue_015_b"
+  }
+]

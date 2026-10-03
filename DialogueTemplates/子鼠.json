@@ -1,0 +1,58 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "爹，爹爹！",
+    "DialogueId": 320260001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/Voice/EVT_enm_hfm_zishu_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_zishu_voice_dialogue_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "爹，疼",
+    "DialogueId": 320260002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/Voice/EVT_enm_hfm_zishu_voice_dialogue_002",
+    "AkEventName": "EVT_enm_hfm_zishu_voice_dialogue_002_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "别打我，别打我",
+    "DialogueId": 320260003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/Voice/EVT_enm_hfm_zishu_voice_dialogue_003",
+    "AkEventName": "EVT_enm_hfm_zishu_voice_dialogue_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "头，我的头，爹爹救我",
+    "DialogueId": 320260004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/Voice/EVT_enm_hfm_zishu_voice_dialogue_004",
+    "AkEventName": "EVT_enm_hfm_zishu_voice_dialogue_004_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "爹爹，小心，会碎",
+    "DialogueId": 320260005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/Voice/EVT_enm_hfm_zishu_voice_dialogue_005",
+    "AkEventName": "EVT_enm_hfm_zishu_voice_dialogue_005_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "爹，你来！",
+    "DialogueId": 320260006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/zishu_voice/EVT_enm_hfm_zishu_voice_dialogue_006",
+    "AkEventName": "EVT_enm_hfm_zishu_voice_dialogue_006_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "别伤我爹爹！",
+    "DialogueId": 320260007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/zishu_voice/EVT_enm_hfm_zishu_voice_dialogue_007",
+    "AkEventName": "EVT_enm_hfm_zishu_voice_dialogue_007_01"
+  }
+]

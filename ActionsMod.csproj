@@ -1,0 +1,90 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>ActionsMod</AssemblyName>
+    <RootNamespace>ActionsMod</RootNamespace>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CSharpModBase\CSharpModBase.csproj">
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BtlSvr.Main">
+      <HintPath>..\GameDll\BtlSvr.Main.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="b1.Native">
+      <HintPath>..\GameDll\b1.Native.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="b1.NativePlugins">
+      <HintPath>..\GameDll\b1.NativePlugins.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GSE.Core">
+      <HintPath>..\GameDll\GSE.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Diana.Common">
+      <HintPath>..\GameDll\Diana.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>..\GameDll\Google.Protobuf.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GSE.ProtobufDB">
+      <HintPath>..\GameDll\GSE.ProtobufDB.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Protobuf.RunTime">
+      <HintPath>..\GameDll\Protobuf.RunTime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>..\GameDll\System.Memory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="UnrealEngine.Runtime">
+      <HintPath>..\GameDll\UnrealEngine.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnrealEngine">
+      <HintPath>..\GameDll\UnrealEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnrealEngine">
+      <HintPath>..\GameDll\B1UI_GSE.Script.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <!-- 构建后自动部署：把产物 dll/pdb 复制到游戏里独立的 ActionsMod Mod 目录。
+       与 MagicMod / PlayerInfo 完全分离（独立文件夹 CSharpLoader\Mods\ActionsMod\），互不覆盖。 -->
+  <PropertyGroup>
+    <GameActionsModDir>F:\game\steam\steamapps\common\BlackMythWukong\b1\Binaries\Win64\CSharpLoader\Mods\ActionsMod</GameActionsModDir>
+  </PropertyGroup>
+
+  <Target Name="DeployActionsModToGame" AfterTargets="Build">
+    <MakeDir Directories="$(GameActionsModDir)" Condition="!Exists('$(GameActionsModDir)')" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameActionsModDir)" />
+    <Copy SourceFiles="@(IntermediateAssemblyPdb);@(_DebugSymbolsIntermediatePath)" DestinationFolder="$(GameActionsModDir)" />
+    <!-- BtlSvr.Main 是服务端程序集，客户端 AppDomain 不会在 mod 重写阶段加载它；本 mod 代码已避免对其类型
+         写参数默认值（否则 CSharpLoader 用 Mono.Cecil 重写时会解析不到它而整体加载失败）。这里仍随 mod 部署一份作兜底。 -->
+    <Copy SourceFiles="$(ProjectDir)..\GameDll\BtlSvr.Main.dll" DestinationFolder="$(GameActionsModDir)" Condition="Exists('$(ProjectDir)..\GameDll\BtlSvr.Main.dll')" />
+    <Message Importance="high" Text="[ActionsMod] 已自动部署 $(TargetFileName) → $(GameActionsModDir)" />
+  </Target>
+
+</Project>

@@ -1,0 +1,18 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "样子都没看清，就死了",
+    "DialogueId": 342010001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_chong_03/EVT_enm_psd_chong_03_voice_dialogue_kill",
+    "AkEventName": "EVT_enm_psd_chong_03_voice_dialogue_kill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "从哪来，回哪去",
+    "DialogueId": 342010002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_chong_03/EVT_enm_psd_chong_03_voice_dialogue_kill",
+    "AkEventName": "EVT_enm_psd_chong_03_voice_dialogue_kill_02"
+  }
+]

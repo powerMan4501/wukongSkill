@@ -1,0 +1,23 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "为图复兴…死不足惜",
+    "DialogueId": 320150004,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不甘心，不甘心呐",
+    "DialogueId": 320150005,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "为什么……无法安眠",
+    "DialogueId": 320150006,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  }
+]

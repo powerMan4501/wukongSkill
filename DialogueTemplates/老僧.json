@@ -1,0 +1,114 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "你究竟是何方妖魔，要来戏弄老衲！",
+    "DialogueId": 330280001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_laoseng_01/voice/EVT_enm_lys_laoseng_01_voice_dialogue_012",
+    "AkEventName": "EVT_enm_lys_laoseng_01_voice_dialogue_012"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "该死的，活不了",
+    "DialogueId": 330280002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_laoseng_01/voice/EVT_enm_lys_laoseng_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_laoseng_01_voice_dialogue_013"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "度一切苦厄！",
+    "DialogueId": 330280003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_laoseng_01/voice/EVT_enm_lys_laoseng_01_voice_dialogue_014",
+    "AkEventName": "EVT_enm_lys_laoseng_01_voice_dialogue_014"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "从哪来回哪去！",
+    "DialogueId": 330280004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_laoseng_01/voice/EVT_enm_lys_laoseng_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_laoseng_01_voice_dialogue_015"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "妖孽，当杀！",
+    "DialogueId": 330280005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_laoseng_01/voice/EVT_enm_lys_laoseng_01_voice_dialogue_016",
+    "AkEventName": "EVT_enm_lys_laoseng_01_voice_dialogue_016"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "冤魂，莫近！",
+    "DialogueId": 330280006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_laoseng_01/voice/EVT_enm_lys_laoseng_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_laoseng_01_voice_dialogue_017"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "旧情，可笑！",
+    "DialogueId": 330280007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_laoseng_01/voice/EVT_enm_lys_laoseng_01_voice_dialogue_018",
+    "AkEventName": "EVT_enm_lys_laoseng_01_voice_dialogue_018"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "因缘，可悲！",
+    "DialogueId": 330280008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_laoseng_01/voice/EVT_enm_lys_laoseng_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_laoseng_01_voice_dialogue_019"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "鬼迷心窍，一如老衲年轻之时",
+    "DialogueId": 330280009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_laoseng_01/voice/EVT_enm_lys_laoseng_01_voice_dialogue_020",
+    "AkEventName": "EVT_enm_lys_laoseng_01_voice_dialogue_020"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "既出家，便无回头路",
+    "DialogueId": 330280010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_laoseng_01/voice/EVT_enm_lys_laoseng_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_laoseng_01_voice_dialogue_021"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "下一世，再相会……",
+    "DialogueId": 330280011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_laoseng_01/voice/EVT_enm_lys_laoseng_01_voice_dialogue_022",
+    "AkEventName": "EVT_enm_lys_laoseng_01_voice_dialogue_022"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "舍得离开，才是真爱",
+    "DialogueId": 330280012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_laoseng_01/voice/EVT_enm_lys_laoseng_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_laoseng_01_voice_dialogue_023"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "魂归地府，魄丧冥幽！",
+    "DialogueId": 330280013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_laoseng_01/voice/EVT_enm_lys_laoseng_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_lys_laoseng_voice_dialogue_rush_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "万劫千生，了却来因！",
+    "DialogueId": 330280014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_laoseng_01/voice/EVT_enm_lys_laoseng_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_lys_laoseng_voice_dialogue_rush_002"
+  }
+]

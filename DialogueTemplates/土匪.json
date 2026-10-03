@@ -1,0 +1,37 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "瞎了眼的狼崽子，走开",
+    "DialogueId": 3101001,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "别挡了老子的光",
+    "DialogueId": 3101002,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不知死的孽畜，敢来调笑老子？",
+    "DialogueId": 3101003,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "小畜生，你们那大王爷爷说话可算数？",
+    "DialogueId": 3101004,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "老子可不想一直待在这儿",
+    "DialogueId": 3101005,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  }
+]

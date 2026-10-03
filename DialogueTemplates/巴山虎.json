@@ -1,0 +1,162 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "送上门的吃食，岂能放走！",
+    "DialogueId": 321020001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_01",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "一心求死，如何成大事？",
+    "DialogueId": 321020002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_02",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我还没输！",
+    "DialogueId": 321020003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_03",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我是伤了，不是死了！",
+    "DialogueId": 321020004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_04",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你怎得会这招！",
+    "DialogueId": 321020005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_05",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "爹的本事，独没传我！",
+    "DialogueId": 321020006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_06",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_06"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "踩断猴尾！",
+    "DialogueId": 321020007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_07",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_07"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "踏碎吞掉！",
+    "DialogueId": 321020008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_08",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_08"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "尝尝猴脑！",
+    "DialogueId": 321020009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_09",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_09"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "砸烂再吃！",
+    "DialogueId": 321020010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_10",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_10"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "崩！",
+    "DialogueId": 321020011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_11",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_11"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "溃！",
+    "DialogueId": 321020012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_12",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_12"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "哪里走！",
+    "DialogueId": 321020013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_13",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_13"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "挖心……裂肺！",
+    "DialogueId": 321020014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_13",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_13"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "命留下！",
+    "DialogueId": 321020015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_14",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_14"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "撕了你……慢慢吃！",
+    "DialogueId": 321020016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_14",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_14"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "打不过，也不能……跪下",
+    "DialogueId": 321020017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_15",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_15"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "爹的仇，还没报……",
+    "DialogueId": 321020018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_01",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_16"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "正缺个作伥的，就你了",
+    "DialogueId": 321020019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_17",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_17"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "宰了你，再宰了那贼鼠！",
+    "DialogueId": 321020020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/hfm_bashanhu_01/voice/EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_01",
+    "AkEventName": "EVT_enm_hfm_bashanhu_01_voice_dialogue_skill_18"
+  }
+]

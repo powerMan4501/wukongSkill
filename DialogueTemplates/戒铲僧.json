@@ -1,0 +1,66 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "想出家，先学会躺下！",
+    "DialogueId": 310210001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/Seng_04/voice/EVT_enm_gycy_seng_04_voice_dialogue_001",
+    "AkEventName": "EVT_enm_gycy_seng_04_voice_dialogue_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "如此执着，洒家帮你破一破",
+    "DialogueId": 310210002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/Seng_04/voice/EVT_enm_gycy_seng_04_voice_dialogue_001",
+    "AkEventName": "EVT_enm_gycy_seng_04_voice_dialogue_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "戒定！",
+    "DialogueId": 310210003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/Seng_04/voice/EVT_enm_gycy_seng_04_voice_dialogue_003",
+    "AkEventName": "EVT_enm_gycy_seng_04_voice_dialogue_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "生慧！",
+    "DialogueId": 310210004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/Seng_04/voice/EVT_enm_gycy_seng_04_voice_dialogue_001",
+    "AkEventName": "EVT_enm_gycy_seng_04_voice_dialogue_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "正念！",
+    "DialogueId": 310210005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/Seng_04/voice/EVT_enm_gycy_seng_04_voice_dialogue_005",
+    "AkEventName": "EVT_enm_gycy_seng_04_voice_dialogue_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不动！",
+    "DialogueId": 310210006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/Seng_04/voice/EVT_enm_gycy_seng_04_voice_dialogue_001",
+    "AkEventName": "EVT_enm_gycy_seng_04_voice_dialogue_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "杀人不见血，怪哉……",
+    "DialogueId": 310210007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/Seng_04/voice/EVT_enm_gycy_seng_04_voice_dialogue_007",
+    "AkEventName": "EVT_enm_gycy_seng_04_voice_dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "洒家这便报与师父，开荤！",
+    "DialogueId": 310210008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/Seng_04/voice/EVT_enm_gycy_seng_04_voice_dialogue_001",
+    "AkEventName": "EVT_enm_gycy_seng_04_voice_dialogue_008"
+  }
+]

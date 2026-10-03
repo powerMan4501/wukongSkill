@@ -1,0 +1,122 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "诸行无常，诸相迷障",
+    "DialogueId": 339000100,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_43",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_43"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "拿起屠刀，魔亦成佛！",
+    "DialogueId": 339000101,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_43",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_43"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "以彼之身，施彼之道",
+    "DialogueId": 339000102,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_44",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_44"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "因果循环，报应不爽",
+    "DialogueId": 339000103,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_44",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_44"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "佛者，觉也",
+    "DialogueId": 339000104,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_45",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_45"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你有觉心，定能成佛",
+    "DialogueId": 339000105,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_45",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_45"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我有弟子三千，信众无数",
+    "DialogueId": 339000106,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_46",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_46"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "皆为你准备，任你杀戮",
+    "DialogueId": 339000107,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_46",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_46"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "六道众生谁无杀心？",
+    "DialogueId": 339000108,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_47",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_47"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "何况天也杀人，地也杀人！",
+    "DialogueId": 339000109,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_47",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_47"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "十方诸佛皆无心，你已与十方诸佛无异",
+    "DialogueId": 339000110,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_48",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_48"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "老说什么放下放下",
+    "DialogueId": 339000111,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_49",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_49"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你放得下手里的屠刀，放得下心中的偶像吗？",
+    "DialogueId": 339000112,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_49",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_49"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你恶业深重，从一地狱历一地狱",
+    "DialogueId": 339000113,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_50",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_50"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "最后的涅槃便由我来助你罢",
+    "DialogueId": 339000114,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_50",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_50"
+  }
+]

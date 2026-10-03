@@ -1,0 +1,130 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "凉快去！",
+    "DialogueId": 320280001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "接住了！",
+    "DialogueId": 320280002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "冲天！",
+    "DialogueId": 320280003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "势崩！",
+    "DialogueId": 320280004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "扫尘",
+    "DialogueId": 320280005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_003",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "飘零",
+    "DialogueId": 320280006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "乘风",
+    "DialogueId": 320280007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_005",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "胡旋舞",
+    "DialogueId": 320280008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_005",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "狼星碎",
+    "DialogueId": 320280009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "叶隐",
+    "DialogueId": 320280010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_007",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "朔风如刀",
+    "DialogueId": 320280011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_007",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "决云中断",
+    "DialogueId": 320280012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_008"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "风鸣！",
+    "DialogueId": 320280013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_009",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_009"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "云裂！",
+    "DialogueId": 320280014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "得寸进尺",
+    "DialogueId": 320280015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_011",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_011"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "旁门左道",
+    "DialogueId": 320280016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_012"
+  }
+]

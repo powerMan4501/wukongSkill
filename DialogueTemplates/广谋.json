@@ -1,0 +1,128 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "人间多少欢场，结局不都一样",
+    "DialogueId": 310030001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/She_01/voice/dialogue/DIA_GYCY_She_01_007",
+    "AkEventName": "DIA_GYCY_She_01_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "万般皆苦，只可自渡",
+    "DialogueId": 310030002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/She_01/voice/dialogue/DIA_GYCY_She_01_006",
+    "AkEventName": "DIA_GYCY_She_01_008"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "施主如此执于外物",
+    "DialogueId": 310030003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/She_01/voice/dialogue/DIA_GYCY_She_01_006",
+    "AkEventName": "DIA_GYCY_She_01_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "与我那师父又有何分别",
+    "DialogueId": 310030004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/She_01/voice/dialogue/DIA_GYCY_She_01_006",
+    "AkEventName": "DIA_GYCY_She_01_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "有所求，必有所失",
+    "DialogueId": 310030005,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "DIA_HFS_She_01_009"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "怎么，犹豫了？",
+    "DialogueId": 310030006,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "DIA_HFS_She_01_009"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "烧了，没了",
+    "DialogueId": 310030007,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "DIA_HFS_She_01_011"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "面目都变了，还怕什么？",
+    "DialogueId": 310030008,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "DIA_HFS_She_01_011"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "孩儿们，速来退敌！",
+    "DialogueId": 310030009,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "DIA_HFS_She_01_012"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "孩儿们，奉茶！",
+    "DialogueId": 310030010,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "DIA_HFS_She_01_013"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "风起！",
+    "DialogueId": 310030011,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "DIA_HFS_She_01_014"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "散叶！",
+    "DialogueId": 310030012,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "DIA_HFS_She_01_015"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "师兄居然输给了你？",
+    "DialogueId": 310030013,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "DIA_HFS_She_01_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "怪哉怪哉",
+    "DialogueId": 310030014,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "DIA_HFS_She_01_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "师兄被你弄死了？",
+    "DialogueId": 310030015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/She_01/voice/dialogue/EVT_enm_gycy_she_01_voice_dialogue_01",
+    "AkEventName": "EVT_enm_gycy_she_01_voice_dialogue_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "好，真好啊",
+    "DialogueId": 310030016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/She_01/voice/dialogue/EVT_enm_gycy_she_01_voice_dialogue_01",
+    "AkEventName": "EVT_enm_gycy_she_01_voice_dialogue_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "用师兄的刀度我，也算死得其所",
+    "DialogueId": 310030017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/She_01/voice/dialogue/EVT_enm_gycy_she_01_voice_dialogue_01",
+    "AkEventName": "EVT_enm_gycy_she_01_voice_dialogue_02"
+  }
+]

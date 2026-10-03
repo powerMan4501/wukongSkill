@@ -1,0 +1,98 @@
+{
+  "_readme": [
+    "【素材库模板，不会被 Mod 加载】本文件只用来复制粘贴。",
+    "前置条件：先用某个按键绑一次 RegEvents（默认 F1）订阅事件，下列目录里的配置才会生效。",
+    "对照 README「三、7) 事件驱动动作」把对应片段另存到相应目录的 json 里即可：",
+    "  SweepCheck/xxx.json      —— 出招时喊话（Animation 匹配 TemplatePath / cast_actions）",
+    "  BuffActions/xxx.json     —— 拿到某个 Buff 时响一下",
+    "  InputCast/xxx.json       —— 某个输入/技能改成「先放技能 + 再喊话」",
+    "  Immobilize/xxx.json      —— 定身时配音效",
+    "  SkillCostDmg/xxx.json    —— 造成伤害时配音效（可在 AttrPercent 之外只加声音）"
+  ],
+
+  "SweepCheck_示例": [
+    {
+      "Animation": "AM_Wukong_ComboA_z_01",
+      "name": "出重棍时喊一声（cast_actions = 技能释放瞬间触发）",
+      "cast_actions": [
+        {
+          "Type": "SayLine",
+          "name": "自己的声音 + 自定义字幕",
+          "Speaker": "天命人",
+          "Text": "着！",
+          "VoiceResId": -1,
+          "SubtitleDurationMs": 1500
+        }
+      ]
+    },
+    {
+      "Animation": "AM_40_psd_xiezijing_01a_atk_",
+      "name": "蝎太子出招播原版台词（不用依赖锁定目标）",
+      "cast_actions": [
+        {
+          "Type": "SpeakDialogue",
+          "name": "台词 ID → 自动反查语音 + 出字幕",
+          "DialogueId": 349990003,
+          "SubtitleDurationMs": 2500
+        }
+      ]
+    },
+    {
+      "Animation": "AM_xxx_big_skill",
+      "name": "大招：音效 + 台词字幕同时来",
+      "cast_actions": [
+        { "Type": "PlaySound", "AkEventName": "EVT_xxx_big_01", "Bank": "Xxx_vo", "SoundMode": "location" },
+        { "Type": "Subtitle", "Text": "看招！", "Speaker": "蝎太子", "SubtitleDurationMs": 2000 }
+      ]
+    }
+  ],
+
+  "BuffActions_示例": [
+    {
+      "id": 11447,
+      "name": "拿到 11447 Buff 时响一声",
+      "actions": [
+        { "Type": "PlaySound", "AkEventName": "EVT_xxx_buff_start", "Bank": "Xxx_vo", "SoundMode": "dummy" }
+      ]
+    }
+  ],
+
+  "InputCast_示例": [
+    {
+      "name": "重击改放 10705 并配音效字幕",
+      "InputActionType": "HeavyAttack",
+      "IsRelease": false,
+      "actions": [
+        { "Type": "Skill", "Value": 10705 },
+        {
+          "Type": "SayLine",
+          "Speaker": "天命人",
+          "Text": "吃我一棍！",
+          "VoiceResId": -1,
+          "SubtitleDurationMs": 1800
+        }
+      ]
+    }
+  ],
+
+  "Immobilize_示例": [
+    {
+      "name": "定身时播唱歌TEXT音效（ConfigIDs 留空 = 任意定身）",
+      "ConfigIDs": [],
+      "actions": [
+        { "Type": "PlaySound", "AkEventName": "EVT_magic_immobilize_start", "Bank": "Wukong_magic", "SoundMode": "actor" }
+      ]
+    }
+  ],
+
+  "SkillCostDmg_示例": [
+    {
+      "name": "造成伤害时随机喊一声（可与 add_attr 回血回蓝写在同一条规则里）",
+      "SkillID": null,
+      "MinDmg": null,
+      "actions": [
+        { "Type": "SayLine", "Text": "哈！", "VoiceResId": -1, "SubtitleDurationMs": 0 }
+      ]
+    }
+  ]
+}

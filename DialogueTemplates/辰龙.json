@@ -1,0 +1,186 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "你这猢狲好似弼马温，专欺老年人！",
+    "DialogueId": 330140001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_029",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_029"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "就不能让老夫安生一会儿吗？",
+    "DialogueId": 330140002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_030",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_030"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "飞龙在天！",
+    "DialogueId": 330140003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_031",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_031"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "老了，老了……",
+    "DialogueId": 330140004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_031",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_031"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "雷霆万钧！",
+    "DialogueId": 330140005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_032",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_032"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不似当年啊……",
+    "DialogueId": 330140006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_032",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_032"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "腿脚舒展，容光焕发！",
+    "DialogueId": 330140007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_033",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_033"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我只是老了，不是不能打了！",
+    "DialogueId": 330140008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_034",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_034"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "筋信骨强，宝刀不老！",
+    "DialogueId": 330140009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_035",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_035"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "怎这般疲倦，容老夫喘口气",
+    "DialogueId": 330140010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_036",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_036"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你这猢狲丝毫不知敬老尊贤！",
+    "DialogueId": 330140011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_037",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_037"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "把老夫看扁了！",
+    "DialogueId": 330140012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_038",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_038"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "神仙可不比妖怪",
+    "DialogueId": 330140013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_039",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_039"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "潜龙在渊！",
+    "DialogueId": 330140014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_040",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_040"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "蛟龙得水！",
+    "DialogueId": 330140015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_041",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_041"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这招若是从前，你必死无疑……",
+    "DialogueId": 330140016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_043",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_043"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "老夫这身骨头可受不起",
+    "DialogueId": 330140017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_044",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_044"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "吓死老夫",
+    "DialogueId": 330140018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_045",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_045"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "还敢近前？",
+    "DialogueId": 330140019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_046",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_046"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "老夫聊发，少年狂！",
+    "DialogueId": 330140020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_047",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_047"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "成何体统，成何体统",
+    "DialogueId": 330140021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_048",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_048"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "衰翁虽老，不减少年豪气",
+    "DialogueId": 330140022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_049",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_049"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "年轻，还是太年轻喽",
+    "DialogueId": 330140023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_shenlong_01a/EVT_enm_lys_shenlong_01a_voice_dialogue_050",
+    "AkEventName": "EVT_enm_lys_shenlong_01a_voice_dialogue_050"
+  }
+]

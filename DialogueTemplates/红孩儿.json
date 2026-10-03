@@ -1,0 +1,250 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "泼猢狲，近前来啊！",
+    "DialogueId": 344010001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_01",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "火尖枪可不晓得吃素！",
+    "DialogueId": 344010002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_01",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "心不乱",
+    "DialogueId": 344010003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_04",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "枪不乱",
+    "DialogueId": 344010004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_04",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "火连环！",
+    "DialogueId": 344010005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_04",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你那根破棍",
+    "DialogueId": 344010006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_01",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "转得出",
+    "DialogueId": 344010007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_01",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这火吗！",
+    "DialogueId": 344010008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_01",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_penhuo_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "舞",
+    "DialogueId": 344010009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_huiqi",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_huiqi"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "舞",
+    "DialogueId": 344010010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_huiqi",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_huiqi"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "舞起来！",
+    "DialogueId": 344010011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_huiqi",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_huiqi"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "三",
+    "DialogueId": 344010012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_huiqi",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_huiqi_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "昧",
+    "DialogueId": 344010013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_huiqi",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_huiqi_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "火！",
+    "DialogueId": 344010014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_huiqi",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_huiqi_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "泼猢狲，不达时务",
+    "DialogueId": 344010015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_a",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "炼精化气！",
+    "DialogueId": 344010016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_a",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "好耍子！好耍子！",
+    "DialogueId": 344010017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_a",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "刚才的能耐呢？",
+    "DialogueId": 344010018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_a",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "合！",
+    "DialogueId": 344010019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_03",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "既要救人，那便见见真章",
+    "DialogueId": 344010020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_b",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "南海留不住我，就凭你",
+    "DialogueId": 344010021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_b",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "躲啊！像狗！",
+    "DialogueId": 344010022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_b",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "聚！",
+    "DialogueId": 344010023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_03",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenshen_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "刚才的能耐呢？",
+    "DialogueId": 344010024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenghuolun",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenghuolun"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "让它陪你玩玩！",
+    "DialogueId": 344010025,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenghuolun",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenghuolun"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "咄！",
+    "DialogueId": 344010026,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenghuolun",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenghuolun"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这就吓破了胆？",
+    "DialogueId": 344010027,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenghuolun",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenghuolun_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "还有呢！",
+    "DialogueId": 344010028,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenghuolun",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenghuolun_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看枪！",
+    "DialogueId": 344010029,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_fenghuolun",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_fenghuolun_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "骨头硬，正好用三昧真火煎了",
+    "DialogueId": 344010030,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_kill",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_kill"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这般不经打，白白演了场戏",
+    "DialogueId": 344010031,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_01a/EVT_enm_hys_honghaier_01a_voice_dialogue_kill",
+    "AkEventName": "EVT_enm_hys_honghaier_01a_voice_dialogue_kill_02"
+  }
+]

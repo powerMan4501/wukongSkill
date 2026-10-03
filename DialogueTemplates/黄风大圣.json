@@ -1,0 +1,394 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "我已无救，何必回头",
+    "DialogueId": 320110001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/ENM_HFM_HFDS_01a_Voice_Dialogue_Kill_Gamer",
+    "AkEventName": "ENM_HFM_HFDS_01a_Voice_Dialogue_Kill_Gamer_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "师父，你的孽徒又赢了猴子，你睁开眼看啊！",
+    "DialogueId": 320110002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/ENM_HFM_HFDS_01a_Voice_Dialogue_Kill_Gamer",
+    "AkEventName": "ENM_HFM_HFDS_01a_Voice_Dialogue_Kill_Gamer_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "播土",
+    "DialogueId": 320110003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/ENM_HFM_HFDS_01a_Voice_Dialogue_Sand",
+    "AkEventName": "ENM_HFM_HFDS_01a_Voice_Dialogue_Sand_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "黄沙",
+    "DialogueId": 320110004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/ENM_HFM_HFDS_01a_Voice_Dialogue_Sand",
+    "AkEventName": "ENM_HFM_HFDS_01a_Voice_Dialogue_Sand_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "风起",
+    "DialogueId": 320110005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/ENM_HFM_HFDS_01a_Voice_Dialogue_Sand",
+    "AkEventName": "ENM_HFM_HFDS_01a_Voice_Dialogue_Sand_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "三昧神风",
+    "DialogueId": 320110006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_dialogue_26",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_dialogue_06"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "久未用也！",
+    "DialogueId": 320110007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_dialogue_26",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_dialogue_06"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "神风一起，三界谁人可敌！",
+    "DialogueId": 320110008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_dialogue_26",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_dialogue_07"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "扳翻不倒的好汉，我一个都没见过",
+    "DialogueId": 320110009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_dialogue_26",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_dialogue_15"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "有风有沙，喝个够罢！",
+    "DialogueId": 320110010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_dialogue_26",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_dialogue_18"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "欺师灭祖，老东西们自然不肯放过我，来罢！",
+    "DialogueId": 320110011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/ENM_HFM_HFDS_01a_Voice_Dialogue_Sand_End",
+    "AkEventName": "ENM_HFM_HFDS_01a_Voice_Dialogue_Sand_End"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我黄风大圣不弄虚头，见见手段罢！",
+    "DialogueId": 320110012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/ENM_HFM_HFDS_01a_Voice_Dialogue_Sand_End_B",
+    "AkEventName": "ENM_HFM_HFDS_01a_Voice_Dialogue_Sand_End_B"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "定风丹……何处得来！",
+    "DialogueId": 320110013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_dialogue_26",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_dialogue_21"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "镇得了我的风，镇不住我的钢叉！",
+    "DialogueId": 320110014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/ENM_HFM_HFDS_01a_Voice_Dialogue_Dingfengdan",
+    "AkEventName": "ENM_HFM_HFDS_01a_Voice_Dialogue_Dingfengdan_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你我合力，再战一场",
+    "DialogueId": 320110015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_007",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不想它这般辣手，真是带累了你",
+    "DialogueId": 320110016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_001",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_008"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这业虫浑身坚甲，比铁还硬",
+    "DialogueId": 320110017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_009",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_009"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看定前螯，发狠地打",
+    "DialogueId": 320110018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_001",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "瞧那沙尘，它要来了",
+    "DialogueId": 320110019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_011",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_011"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "躲开，快躲开！",
+    "DialogueId": 320110020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_012",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_012"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这脓包又躲了，我把它敲出来",
+    "DialogueId": 320110021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_013",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_013"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "只要有这鼓在，它就跑不了",
+    "DialogueId": 320110022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_001",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_014"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我来助风",
+    "DialogueId": 320110023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_015",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_015"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大风，起兮",
+    "DialogueId": 320110024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_001",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_016"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "也算厉害……",
+    "DialogueId": 320110025,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_017",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_017"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "佛宝助你，佛法灭你",
+    "DialogueId": 320110026,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_018",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_018"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "小猴子，就是现在！",
+    "DialogueId": 320110027,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_019",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_019"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "休要放呆，动起手来！",
+    "DialogueId": 320110028,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_001",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_020"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "果然，信人莫若信己……",
+    "DialogueId": 320110029,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_021",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_021"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这般看来，还是得智取",
+    "DialogueId": 320110030,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_022",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_022"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "傲然赴死，不如忍耻偷生",
+    "DialogueId": 320110031,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_023",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_023"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "一个骷髅的病鬼，命倒挺硬",
+    "DialogueId": 320110032,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_dialogue_26",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_dialogue_26"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "还敢回来？何苦回来！",
+    "DialogueId": 320110033,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_dialogue_27",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_dialogue_27"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "顺风，骋势！",
+    "DialogueId": 320110034,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_rush_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_rush_dialogue_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "沙涌，绝路！",
+    "DialogueId": 320110035,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_rush_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_rush_dialogue_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "佛兵现，天地暗！",
+    "DialogueId": 320110036,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_rush_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_rush_dialogue_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "木已成舟，何必自救！",
+    "DialogueId": 320110037,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_rush_dialogue_004",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_rush_dialogue_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "此时彼时，恍若隔世！",
+    "DialogueId": 320110038,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_rush_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_rush_dialogue_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "师父，可曾记得它！",
+    "DialogueId": 320110039,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_rush_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_rush_dialogue_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "与我斗风，班门弄斧！",
+    "DialogueId": 320110040,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_rush_dialogue_007",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_rush_dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "笑话，你错用了手段！",
+    "DialogueId": 320110041,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_rush_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_rush_dialogue_008"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这才叫风！",
+    "DialogueId": 320110042,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_rush_dialogue_009",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_rush_dialogue_009"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "有眼无珠！",
+    "DialogueId": 320110043,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_hfm_hfds_01a_voice_rush_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_hfds_01a_voice_rush_dialogue_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "扬尘",
+    "DialogueId": 320110103,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/ENM_HFM_HFDS_01a_Voice_Dialogue_Sand",
+    "AkEventName": "ENM_HFM_HFDS_01a_Voice_Dialogue_Sand_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "旋罢",
+    "DialogueId": 320110104,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/ENM_HFM_HFDS_01a_Voice_Dialogue_Sand",
+    "AkEventName": "ENM_HFM_HFDS_01a_Voice_Dialogue_Sand_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "命休",
+    "DialogueId": 320110105,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/ENM_HFM_HFDS_01a_Voice_Dialogue_Sand",
+    "AkEventName": "ENM_HFM_HFDS_01a_Voice_Dialogue_Sand_06"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "独剩那双前螯，十分怕疼",
+    "DialogueId": 320110117,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_009",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_009"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不过，没了那东西，谁还怕你！",
+    "DialogueId": 320110125,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_017",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_017"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天生万物，皆是蝼蚁",
+    "DialogueId": 320110126,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HFDS_01a/Voice/EVT_enm_shlg_hfds_01a_voice_dialogue_018",
+    "AkEventName": "EVT_enm_shlg_hfds_01a_voice_dialogue_018"
+  }
+]

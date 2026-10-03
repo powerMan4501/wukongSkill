@@ -1,0 +1,1242 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "兄弟，你何苦非要作个妖怪？",
+    "DialogueId": 380000001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "猢狲，你那些跳圈做戏的把式，全使出来罢",
+    "DialogueId": 380000002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_002",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你的招，太老了",
+    "DialogueId": 380000003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_003",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "多年不见，还是这套",
+    "DialogueId": 380000004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "输赢太快，可就没趣了",
+    "DialogueId": 380000005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "成佛做祖，怎不知足？",
+    "DialogueId": 380000006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_006",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天地同寿，还嫌不够？",
+    "DialogueId": 380000007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "逆天而行，便是绝路",
+    "DialogueId": 380000008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_008"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "就这？",
+    "DialogueId": 380000009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_009",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_009"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "差一点",
+    "DialogueId": 380000010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我是真心实意，讨厌你的伪善",
+    "DialogueId": 380000011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_011"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我说谁是妖怪，谁就是妖怪",
+    "DialogueId": 380000012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_012",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_012"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "早日认罪，换我建功！",
+    "DialogueId": 380000013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_013"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "替天行道，斩草除根！",
+    "DialogueId": 380000014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_014"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "老天一再给你机会",
+    "DialogueId": 380000015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_015",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_015"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "现下投降，犹时未晚",
+    "DialogueId": 380000016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_016"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你私自走脱，罪名不轻",
+    "DialogueId": 380000017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_017"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "休猖狂！",
+    "DialogueId": 380000018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_018",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_018"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "金光覆映！",
+    "DialogueId": 380000019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_019",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_019"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "一气两仪！",
+    "DialogueId": 380000020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_038",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_038"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "破",
+    "DialogueId": 380000021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_021",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_021"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你这骨头，正好喂狗",
+    "DialogueId": 380000022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_022"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "去，咬定那猴子",
+    "DialogueId": 380000023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_023"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "哮天，拖住他！",
+    "DialogueId": 380000024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_024",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_024"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我身后有十万天威",
+    "DialogueId": 380000025,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_025"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "醒醒罢，孙悟空！",
+    "DialogueId": 380000026,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_026"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "孙悟空，你既不服管，那就伏诛罢",
+    "DialogueId": 380000027,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_027",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_027"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "清源妙道，显圣威灵！",
+    "DialogueId": 380000028,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_028"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "世路崎岖，你能走到这里，我很感动",
+    "DialogueId": 380000100,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_029"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "他们都说，你来不了了……",
+    "DialogueId": 380000101,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_030",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_030"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "屡战屡败，还敢再来，",
+    "DialogueId": 380000102,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_031"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "过不了我，过了他亦没结果",
+    "DialogueId": 380000103,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_032"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "仔细看，别输太快",
+    "DialogueId": 380000104,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_033",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_033"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "担山赶日",
+    "DialogueId": 380000105,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_034"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "欲学前人，当坚苦志",
+    "DialogueId": 380000106,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_035"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "原以为你会是个好对手",
+    "DialogueId": 380000107,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_036"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "留心，我下手可不留情",
+    "DialogueId": 380000108,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_037"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你啊，和他比差远了",
+    "DialogueId": 380000109,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_038",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_038"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "命由人造，与天何干",
+    "DialogueId": 380000110,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_039",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_039"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "有之为利，无之为用",
+    "DialogueId": 380000111,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_040",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_040"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不中要害，便是穷忙",
+    "DialogueId": 380000112,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_041"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "可惜！",
+    "DialogueId": 380000113,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_042"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不够",
+    "DialogueId": 380000114,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_043",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_043"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "慢了",
+    "DialogueId": 380000115,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_045"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看准",
+    "DialogueId": 380000116,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_046",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_046"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "打开生死路，你让我好生羡慕",
+    "DialogueId": 380000117,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_048"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "是真难灭，是假易除",
+    "DialogueId": 380000118,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_049",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_049"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "等了多年，让我打个痛快！",
+    "DialogueId": 380000119,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_050"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "多用神通，藏私无用！",
+    "DialogueId": 380000120,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_051",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_051"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "流星赶月",
+    "DialogueId": 380000121,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_052"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "前程前程",
+    "DialogueId": 380000122,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_053"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "迷处识迷",
+    "DialogueId": 380000123,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_054",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_054"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天地不仁，天命不公",
+    "DialogueId": 380000124,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_055"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不知为何，一见到你，我就想起来很多事情",
+    "DialogueId": 380000125,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_056",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_056"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "刚才，我一直在想",
+    "DialogueId": 380000126,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_057"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "龙游浅水，虎落平阳",
+    "DialogueId": 380000127,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_058",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_058"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你想接他衣钵？",
+    "DialogueId": 380000128,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_091",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_091"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你也想做英雄？",
+    "DialogueId": 380000129,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_060"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这般身慢，那天命，也该休了",
+    "DialogueId": 380000130,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_061",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_061"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "神通不够，再不上前，如何超过他！",
+    "DialogueId": 380000131,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_021",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_021"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "既寻到此地，让我见见，你的真本事",
+    "DialogueId": 380000132,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_063",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_063"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "好！好！好！",
+    "DialogueId": 380000133,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_064"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "再来！",
+    "DialogueId": 380000134,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_065",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_065"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "别得意",
+    "DialogueId": 380000135,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_066"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不错",
+    "DialogueId": 380000136,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_068",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_068"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "风起影动！",
+    "DialogueId": 380000137,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_069"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "念起觉迟！",
+    "DialogueId": 380000138,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_070"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "去，试他真假！",
+    "DialogueId": 380000139,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_071",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_071"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "好狗儿，上！",
+    "DialogueId": 380000140,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_072"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "哮天安在",
+    "DialogueId": 380000141,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_073"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "听吾神旨",
+    "DialogueId": 380000142,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_074",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_074"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "人心一念，天地皆知",
+    "DialogueId": 380000143,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_075"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "度雾穿云，飞洒天星",
+    "DialogueId": 380000144,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_076"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "长空万里，荡剑山河",
+    "DialogueId": 380000145,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_077",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_077"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "藏巧于拙，用晦而明",
+    "DialogueId": 380000146,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_078"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "威震山岳，胸怀星斗",
+    "DialogueId": 380000147,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_079",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_079"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "云山渺渺，阻障重重",
+    "DialogueId": 380000148,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_080"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天上那些庸才，不如我者多，胜似我者少",
+    "DialogueId": 380000149,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_081"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "从前他在时，就只有他，值得一战",
+    "DialogueId": 380000150,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_081"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "从前种种，譬如昨日死",
+    "DialogueId": 380000151,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_082"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "小猴子，让我看看你能走多远",
+    "DialogueId": 380000152,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_082"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "昔年修道时，师父常说",
+    "DialogueId": 380000153,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_083"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "如今我终于明白，束缚自己的唯有自己",
+    "DialogueId": 380000154,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_083"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "身覆雷霆，内有霹雳",
+    "DialogueId": 380000155,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_084"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "躲不过这刀，还不如再来过",
+    "DialogueId": 380000156,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_086"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天发杀机，移星易宿",
+    "DialogueId": 380000157,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_087"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "剑横九野，疾过天星",
+    "DialogueId": 380000158,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_088",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_088"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "今日替他，教教后人",
+    "DialogueId": 380000159,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_089"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "开！",
+    "DialogueId": 380000160,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_128",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_128"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "小猴子，你果然有几分他的影子",
+    "DialogueId": 380000161,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_128",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_128"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "既已如此，我便不再留情，得罪了！",
+    "DialogueId": 380000162,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_128",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_128"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你这猴子真令我欢喜",
+    "DialogueId": 380000163,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_129",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_129"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "当年，他被押去斩妖台",
+    "DialogueId": 380000164,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_129",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_129"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "如今，他却用自己换了你来",
+    "DialogueId": 380000165,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_129",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_129"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "让我试试，你与他到底有何不同！",
+    "DialogueId": 380000166,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_129",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_129"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你因天命而来，可你不要忘了",
+    "DialogueId": 380000167,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_131",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_131"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "他，最不信天命！",
+    "DialogueId": 380000168,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_131",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_131"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "齐天齐天，畜生弄喧！",
+    "DialogueId": 380000169,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_095"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "谁也没胆子捅破这天",
+    "DialogueId": 380000170,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_095"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "承受他的意志有多难熬，我比你更懂",
+    "DialogueId": 380000171,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_096",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_096"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "现在，好好歇一下罢",
+    "DialogueId": 380000172,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_097",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_097"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你，终究不是他",
+    "DialogueId": 380000173,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_098"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "刀砍斧剁，枪刺剑刳，毫发无伤",
+    "DialogueId": 380000174,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_129",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_129"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "借身还魂？",
+    "DialogueId": 380000175,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_140",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_140"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "好哇，那就畅快赌斗一番罢！",
+    "DialogueId": 380000176,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_140",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_140"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "齐天大圣……不是谁都能做的！",
+    "DialogueId": 380000177,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_141"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "纵然化成这般模样，终归不是他",
+    "DialogueId": 380000178,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_142",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_142"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "法天象地？",
+    "DialogueId": 380000179,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_143"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "差得远了",
+    "DialogueId": 380000180,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_143"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "弄刀玩火的小妖，不配在我眼前跳",
+    "DialogueId": 380000181,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_144",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_144"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "熊罴许的长生，看来是假的",
+    "DialogueId": 380000182,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_145"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "六丁六甲，见了真君，还不退下？",
+    "DialogueId": 380000183,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_146",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_146"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我那三尖两刃枪有些钝了，正好帮我磨琢一番",
+    "DialogueId": 380000184,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_147"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "什么邪魔外道，敢在东土放肆",
+    "DialogueId": 380000185,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_148",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_148"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "黄眉可真是……什么都收得下",
+    "DialogueId": 380000186,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_149"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这下打回原形了？",
+    "DialogueId": 380000187,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_150",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_150"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "他是石头里蹦出来的，你也蹦个试试？",
+    "DialogueId": 380000188,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_151"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "偷油老鼠，丢人现眼",
+    "DialogueId": 380000189,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_152",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_152"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "与妖结党，必失人心",
+    "DialogueId": 380000190,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_153"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "淮渎龙神？",
+    "DialogueId": 380000191,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_154",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_154"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "当年切磋，可是我手下败将！",
+    "DialogueId": 380000192,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_154",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_154"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "他们四个，终究是没能逃过天命啊",
+    "DialogueId": 380000193,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_155"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "连眷族也杀，你比那猴子还恶",
+    "DialogueId": 380000194,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_156",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_156"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你得谢我，没有对花果山赶尽杀绝",
+    "DialogueId": 380000195,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_157"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你救不了他，也救不了牛魔王",
+    "DialogueId": 380000196,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_158",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_158"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "变作这副模样，是也想做个弼马温？",
+    "DialogueId": 380000197,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_159"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "真本事斗不过，拿这种东西来恶心我？",
+    "DialogueId": 380000198,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_160",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_160"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "毒魔恶怪，脏了梅山的雪！",
+    "DialogueId": 380000199,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_161"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "真假何如！",
+    "DialogueId": 380000200,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_voice_dialogue_rush_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "堂堂正正！",
+    "DialogueId": 380000201,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_voice_dialogue_rush_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "虚不如实！",
+    "DialogueId": 380000202,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_voice_dialogue_rush_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "开弓之箭",
+    "DialogueId": 380000203,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_voice_dialogue_rush_004",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_voice_dialogue_rush_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "莫想回头",
+    "DialogueId": 380000204,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_voice_dialogue_rush_004",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_voice_dialogue_rush_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "箭在弦上",
+    "DialogueId": 380000205,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_voice_dialogue_rush_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不得不发",
+    "DialogueId": 380000206,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_voice_dialogue_rush_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "还好，我等到了",
+    "DialogueId": 380000301,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_030",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_030"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你，很好",
+    "DialogueId": 380000302,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_031"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你这般不识抬举，算不算背恩忘情",
+    "DialogueId": 380000315,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_015",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_015"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "做条忠犬，总好过做只死猴子",
+    "DialogueId": 380000316,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_016"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "如今抗旨不从，罪加一等！",
+    "DialogueId": 380000317,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_017"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你身后有什么？",
+    "DialogueId": 380000325,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_025"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "逍遥为王？痴心妄想！",
+    "DialogueId": 380000326,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_026"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "风卷残云",
+    "DialogueId": 380003121,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_052"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "多少冤魂",
+    "DialogueId": 380003122,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_053"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "下次还受骗吗？",
+    "DialogueId": 380003123,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_054",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_054"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你一路走来，看明白了吗？",
+    "DialogueId": 380003124,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_055"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你我一战，是不是他的本意",
+    "DialogueId": 380003126,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_057"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "今生，你可要慎重",
+    "DialogueId": 380003127,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_058",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_058"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这条路，太苦了……",
+    "DialogueId": 380003128,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_091",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_091"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "能脱身牢笼，便是大英雄……",
+    "DialogueId": 380003129,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_060"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "寓清于浊，以屈为伸",
+    "DialogueId": 380003146,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_078"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "剑锁青霄，怒起雷霆",
+    "DialogueId": 380003147,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_079",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_079"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "此番相见，是喜呀",
+    "DialogueId": 380003148,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_080"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "从后种种，譬如今日生",
+    "DialogueId": 380003151,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_082"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "无关楗不可开，无绳约不可解",
+    "DialogueId": 380003153,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/MGD/EVT_enm_mgd_yangjian_01/EVT_enm_mgd_yangjian_01_dialogue_001",
+    "AkEventName": "EVT_enm_mgd_yangjian_01_dialogue_083"
+  }
+]

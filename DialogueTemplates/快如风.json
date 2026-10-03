@@ -1,0 +1,393 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "添点儿风，让火烧得更旺些！",
+    "DialogueId": 340190001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_08",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_08"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "吸！吸！吸个饱！",
+    "DialogueId": 340190002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_15",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_15"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "毛烧没了才好吃！",
+    "DialogueId": 340190003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_69",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_69"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "风扬火散！",
+    "DialogueId": 340190004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_16",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_16"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "耍够了，不跟你啰嗦！",
+    "DialogueId": 340190005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_17",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_17"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看路看路！",
+    "DialogueId": 340190006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_18",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_18"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "哎呦哎呦！动不了了！",
+    "DialogueId": 340190007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_19",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_19"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不长眼的东西，烧那猴子！",
+    "DialogueId": 340190008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_21",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_21"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看好了！是自己人！别公报私仇！",
+    "DialogueId": 340190009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_64",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_64"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看着点儿，别挡老子的路！",
+    "DialogueId": 340190010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_10",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_10"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "真是废物，死了还挡路",
+    "DialogueId": 340190011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_24",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_24"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "头发，我的头发……",
+    "DialogueId": 340190012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_13",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_13"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你的头也不比棍子硬啊",
+    "DialogueId": 340190013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_14",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_14"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "身子吃掉，头挂起来",
+    "DialogueId": 340190014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_kill_03",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_kill_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这猴子我也留个头耍耍",
+    "DialogueId": 340190015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_kill_04",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_kill_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "火再多些儿，风再大些儿！",
+    "DialogueId": 340190016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_27",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_27"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "烧个枯干，烧个味美！",
+    "DialogueId": 340190017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_25",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_25"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "烧成灰扬了，省的给大王添乱",
+    "DialogueId": 340190018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_26",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_26_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你这厮惫懒！让我送死？",
+    "DialogueId": 340190019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_34",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_34"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "莫停莫停，放跑了这猢狲你我都得玩完！",
+    "DialogueId": 340190020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_35",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_35"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "炸！爆！",
+    "DialogueId": 340190021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_36",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_36"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "轰风！",
+    "DialogueId": 340190022,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看看你的头经得起吹么！",
+    "DialogueId": 340190023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_38",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_38"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "来呐！西北风教你喝个够！",
+    "DialogueId": 340190024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_39",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_39"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "吹啊吹啊，躲罢跑罢！",
+    "DialogueId": 340190025,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_40",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_40"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "火趁风威！",
+    "DialogueId": 340190026,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_41",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_41"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "吃饱喝足，教你受个痛快！",
+    "DialogueId": 340190027,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_42",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_42"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "让爷爷我咬一口尝尝！",
+    "DialogueId": 340190028,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_43",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_43"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "瘦猴一个，挡不住我的头！",
+    "DialogueId": 340190029,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_44",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_44"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "接着滚，不要停，耍他个团团转！",
+    "DialogueId": 340190030,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_65",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_65"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "飘啊飘，摇啊摇，小猢狲，打不着",
+    "DialogueId": 340190031,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_66",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_66"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "好兄弟，加把劲，烧死他，功劳都算你的",
+    "DialogueId": 340190032,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_67",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_67"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "燎到我了，眼瞎的东西！",
+    "DialogueId": 340190033,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_45",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_45"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "猴子不济事，倒是要被你给烧死了！",
+    "DialogueId": 340190034,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_46",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_46"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "拼什么拼，你的头都要飞了",
+    "DialogueId": 340190035,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_49",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_49"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "撞个正着！哎呦呦哟呦！",
+    "DialogueId": 340190036,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_50",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_50_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "头硬！比不过比不过！",
+    "DialogueId": 340190037,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_51",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_51"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "何物克我？",
+    "DialogueId": 340190038,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_52",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_52"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "甚么法宝，这等利害？",
+    "DialogueId": 340190039,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_53",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_53"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "祸事！得上去！",
+    "DialogueId": 340190040,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_54",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_54"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "该杀的猴子！摔疼了！",
+    "DialogueId": 340190041,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_55",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_55"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "头大命短，死了还害我",
+    "DialogueId": 340190042,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_56",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_56"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "甚么冤家路窄，碍老子的事！",
+    "DialogueId": 340190043,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_57",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_57"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "身上着火的滋味儿如何？",
+    "DialogueId": 340190044,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_58",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_58"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "把你也烧死跟这小娘儿作伴！",
+    "DialogueId": 340190045,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_59",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_59"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你那葫芦里装的什么药？",
+    "DialogueId": 340190046,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_60",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_60"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "横竖一条命，有本事不要喝",
+    "DialogueId": 340190047,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_61",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_61"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "自在，自在！接着冲，接着撞！",
+    "DialogueId": 340190048,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_62",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_62"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "泼猢狲，要么烧死，要么撞死，都是你自找的！",
+    "DialogueId": 340190049,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_kuairufeng_01/voice/EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_63",
+    "AkEventName": "EVT_enm_hys_kuairufeng_01_voice_dialogue_skill_63"
+  }
+]

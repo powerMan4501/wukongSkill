@@ -1,0 +1,146 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "如此完美的身躯，竟被你损毁了",
+    "DialogueId": 350010001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "爽……爽！",
+    "DialogueId": 350010002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_02",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我已今非昔比，绝不会输！",
+    "DialogueId": 350010003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_02",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "将在外，主令有所不受",
+    "DialogueId": 350010004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_03",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我这样也是为了完成郎君的吩咐",
+    "DialogueId": 350010005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_03",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "成了成了！",
+    "DialogueId": 350010006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_04",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你也该进卵里练一练",
+    "DialogueId": 350010007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_05",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "若非以身试毒，岂能探明那老蜈蚣搞的这些个歪门邪道",
+    "DialogueId": 350010008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_12",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_12"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "郎君失算，你不是他要等的人",
+    "DialogueId": 350010009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_19",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_19"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "来年我回了梅山，会多烧些纸的",
+    "DialogueId": 350010010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_20",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_20"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "谁的刀快，谁就有理！",
+    "DialogueId": 350010011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_13",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_13"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "白刀子进，红刀子出！",
+    "DialogueId": 350010012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_14",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_14"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "抽刀断水！",
+    "DialogueId": 350010013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_15",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_15"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "一刀两段！",
+    "DialogueId": 350010014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_16",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_16"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "斩断头",
+    "DialogueId": 350010015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_17",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_17"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "分心！",
+    "DialogueId": 350010016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_17",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_17"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "削铁如泥",
+    "DialogueId": 350010017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_18",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_18"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "满堂红！",
+    "DialogueId": 350010018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_wulong/voice/EVT_enm_psd_wulong_voice_dialogue_18",
+    "AkEventName": "EVT_enm_psd_wulong_voice_dialogue_18"
+  }
+]

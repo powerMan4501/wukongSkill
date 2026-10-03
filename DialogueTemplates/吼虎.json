@@ -1,0 +1,106 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "我好言相劝，为何偏是不听？",
+    "DialogueId": 320010001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_01/EVT_enm_shlg_hu_01_voice_dialogue_010",
+    "AkEventName": "EVT_enm_shlg_hu_01_voice_dialogue_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "刚杀了一个，怎么又来一个？",
+    "DialogueId": 320010002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_01/EVT_enm_shlg_hu_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_shlg_hu_01_voice_dialogue_011"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "刀走，偏锋！",
+    "DialogueId": 320010003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_01/EVT_enm_shlg_hu_01_voice_dialogue_012",
+    "AkEventName": "EVT_enm_shlg_hu_01_voice_dialogue_012"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "横刀，立马！",
+    "DialogueId": 320010004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_01/EVT_enm_shlg_hu_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_shlg_hu_01_voice_dialogue_013"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "有吾在此，休想闯关！",
+    "DialogueId": 320010005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_01/EVT_enm_shlg_hu_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_shlg_hu_01_voice_dialogue_014"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "再打连你骨头都震碎！",
+    "DialogueId": 320010006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_01/EVT_enm_shlg_hu_01_voice_dialogue_015",
+    "AkEventName": "EVT_enm_shlg_hu_01_voice_dialogue_015"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "猴和尚，手疼握不住棍了罢！",
+    "DialogueId": 320010007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_01/EVT_enm_shlg_hu_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_shlg_hu_01_voice_dialogue_016"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "倒是有些儿眼色",
+    "DialogueId": 320010008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_01/EVT_enm_shlg_hu_01_voice_dialogue_017",
+    "AkEventName": "EVT_enm_shlg_hu_01_voice_dialogue_017"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "怕了便回去罢！",
+    "DialogueId": 320010009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_01/EVT_enm_shlg_hu_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_shlg_hu_01_voice_dialogue_018"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你是哪里来的猴和尚，如何习得此术！",
+    "DialogueId": 320010010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_01/EVT_enm_shlg_hu_01_voice_dialogue_019",
+    "AkEventName": "EVT_enm_shlg_hu_01_voice_dialogue_019"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "此乃我独门法术，谁教你的？",
+    "DialogueId": 320010011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_01/EVT_enm_shlg_hu_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_shlg_hu_01_voice_dialogue_020"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "想见大王，先过了我这关",
+    "DialogueId": 320010012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_01/EVT_enm_shlg_hu_01_voice_dialogue_021",
+    "AkEventName": "EVT_enm_shlg_hu_01_voice_dialogue_021"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大王也该饿了，正好送去充饥",
+    "DialogueId": 320010013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_01/EVT_enm_shlg_hu_01_voice_dialogue_001",
+    "AkEventName": "EVT_enm_shlg_hu_01_voice_dialogue_022"
+  }
+]

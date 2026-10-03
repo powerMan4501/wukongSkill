@@ -1,0 +1,162 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "若有新招，尽管试来",
+    "DialogueId": 320170001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_021",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_021"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "年纪不大，顽固不化，再来何用？",
+    "DialogueId": 320170002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/HuanWuZhe_01a/EVT_enm_lys_huanwuzhe_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_022"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "使些儿戏之法，猢狲猢狲，可没骂错",
+    "DialogueId": 320170003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_023",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_023"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不入流的把戏，还敢再使？",
+    "DialogueId": 320170004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_024",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_024"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看我不破，那就活该你破",
+    "DialogueId": 320170005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_025",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_025"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "以子之棍，攻我之环？",
+    "DialogueId": 320170006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/HuanWuZhe_01a/EVT_enm_lys_huanwuzhe_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_026"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "难！",
+    "DialogueId": 320170007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/HuanWuZhe_01a/EVT_enm_lys_huanwuzhe_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_026"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你这顽劣，再捅一个试试？",
+    "DialogueId": 320170008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_027",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_027"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你有棍子，我有脑子",
+    "DialogueId": 320170009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_028",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_028"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "撑起来算什么，落得稳才是本事",
+    "DialogueId": 320170010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_029",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_029"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不能硬取，那就智取！",
+    "DialogueId": 320170011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_030",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_030"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "以多欺少，还论什么胜败",
+    "DialogueId": 320170012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_031",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_031"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "善而不智，便是无用",
+    "DialogueId": 320170013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_032_a",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_032_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "勇而无谋，便是蠢拙",
+    "DialogueId": 320170014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_032_a",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_032_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "想赢？",
+    "DialogueId": 320170015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_032_b",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_032_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "就得让我猜不透你",
+    "DialogueId": 320170016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_032_b",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_032_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "渐入佳境？",
+    "DialogueId": 320170017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_033",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_033"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "那就再添几分火候",
+    "DialogueId": 320170018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_033",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_033"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "守旧不变，如何走远？",
+    "DialogueId": 320170019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_huanwuzhe/EVT_enm_lys_huanwuzhe_voice_dialogue_034",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_034"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大哥让我盯着黄眉，我偏要试你，倒是试对了",
+    "DialogueId": 320170020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/HuanWuZhe_01a/EVT_enm_lys_huanwuzhe_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_huanwuzhe_voice_dialogue_035"
+  }
+]

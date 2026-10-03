@@ -1,0 +1,96 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "三星洞里清修，哪比得上这儿做人肉包子",
+    "DialogueId": 320060001,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "SFX_ENM_HFM_Hou_01_Voice_Dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你的血，一定很新鲜罢",
+    "DialogueId": 320060002,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "SFX_ENM_HFM_Hou_01_Voice_Dialogue_008"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "人逢喜事精神爽！",
+    "DialogueId": 320060003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hou_01/Voice/EVT_enm_hfm_hou_01a_voice_dialogue_01",
+    "AkEventName": "EVT_enm_hfm_hou_01a_voice_dialogue_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "精神焕发！",
+    "DialogueId": 320060004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hou_01/Voice/EVT_enm_hfm_hou_01a_voice_dialogue_01",
+    "AkEventName": "EVT_enm_hfm_hou_01a_voice_dialogue_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "术、流、静、动",
+    "DialogueId": 320060005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hou_01/Voice/EVT_enm_hfm_hou_01a_voice_dialogue_03",
+    "AkEventName": "EVT_enm_hfm_hou_01a_voice_dialogue_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不学！",
+    "DialogueId": 320060006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hou_01/Voice/EVT_enm_hfm_hou_01a_voice_dialogue_03",
+    "AkEventName": "EVT_enm_hfm_hou_01a_voice_dialogue_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不能停，不能行，不能定，不能明",
+    "DialogueId": 320060007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hou_01/Voice/EVT_enm_hfm_hou_01a_voice_dialogue_01",
+    "AkEventName": "EVT_enm_hfm_hou_01a_voice_dialogue_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "狂！",
+    "DialogueId": 320060008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hou_01/Voice/EVT_enm_hfm_hou_01a_voice_dialogue_01",
+    "AkEventName": "EVT_enm_hfm_hou_01a_voice_dialogue_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "日出东方一点油，手执金鞭倒骑牛",
+    "DialogueId": 320060009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hou_01/Voice/EVT_enm_hfm_hou_01a_voice_dialogue_05",
+    "AkEventName": "EVT_enm_hfm_hou_01a_voice_dialogue_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "三声喝断长江水，止住红门血不流！",
+    "DialogueId": 320060010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hou_01/Voice/EVT_enm_hfm_hou_01a_voice_dialogue_05",
+    "AkEventName": "EVT_enm_hfm_hou_01a_voice_dialogue_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "血凝……",
+    "DialogueId": 320060011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hou_01/Voice/EVT_enm_hfm_hou_01a_voice_dialogue_01",
+    "AkEventName": "EVT_enm_hfm_hou_01a_voice_dialogue_06"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "血散！",
+    "DialogueId": 320060012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hou_01/Voice/EVT_enm_hfm_hou_01a_voice_dialogue_01",
+    "AkEventName": "EVT_enm_hfm_hou_01a_voice_dialogue_06"
+  }
+]

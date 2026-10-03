@@ -1,0 +1,93 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "大哥，山门口那边好像传来些响动",
+    "DialogueId": 3101401,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大哥，刚刚好像有只苍蝇过去了",
+    "DialogueId": 3101402,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大哥，大王说的稀客，莫非就是当年……",
+    "DialogueId": 3101403,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大闹天宫的齐天大圣？",
+    "DialogueId": 3101404,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大王平日里常是欢喜，与小的们讲经谈道",
+    "DialogueId": 3101405,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "却不知缘何近来烦忧？",
+    "DialogueId": 3101406,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "兄弟啊，你看这水多绿",
+    "DialogueId": 3101407,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "让我想起咱们曾经……",
+    "DialogueId": 3101408,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我听说那黑风大王爷爷有南海相帮",
+    "DialogueId": 3101409,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你想那南海是何人居处？",
+    "DialogueId": 3101410,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这森林好生奇怪",
+    "DialogueId": 3101411,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不单有那怨气极重的大和尚走来走去",
+    "DialogueId": 3101412,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "还有一个持火刀的老狼，也不算我们一波的",
+    "DialogueId": 3101413,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  }
+]

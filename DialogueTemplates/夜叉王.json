@@ -1,0 +1,391 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "入地",
+    "DialogueId": 344050001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "莲生",
+    "DialogueId": 344050002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua_01_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "没刃",
+    "DialogueId": 344050003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "花开",
+    "DialogueId": 344050004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua_02_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "地",
+    "DialogueId": 344050005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_01",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "裂",
+    "DialogueId": 344050006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_01",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "山",
+    "DialogueId": 344050007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_01",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "崩",
+    "DialogueId": 344050008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_01",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "无鞘",
+    "DialogueId": 344050009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_02",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "无痕",
+    "DialogueId": 344050010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_02",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "无命",
+    "DialogueId": 344050011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_02",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "斩",
+    "DialogueId": 344050012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_01",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "盈",
+    "DialogueId": 344050013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_01",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "空",
+    "DialogueId": 344050014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_01",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天命人……",
+    "DialogueId": 344050015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_04",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "别说笑了！",
+    "DialogueId": 344050016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_04",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "难道我族人的天命，就是灭门绝户吗！",
+    "DialogueId": 344050017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_04",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "石头里蹦出来的东西",
+    "DialogueId": 344050018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_04",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "焉知我之痛！",
+    "DialogueId": 344050019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_04",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "可悲",
+    "DialogueId": 344050020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_05",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "可悲啊",
+    "DialogueId": 344050021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_05",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我本无意与你为敌",
+    "DialogueId": 344050022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_05",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "但你对他们的手段一无所知",
+    "DialogueId": 344050023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_05",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "过了火焰山，还有灵山，你过得了吗！",
+    "DialogueId": 344050024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_05",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_zhuatou_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "诸佛说此色非命，然则如何命在身",
+    "DialogueId": 344050025,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_wander_01",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_wander_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "此骨与肉何处来，如何此生住母胎",
+    "DialogueId": 344050026,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_wander",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_wander_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不过是个贱种罢了",
+    "DialogueId": 344050027,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_kill_01",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_kill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "杀你，是救你",
+    "DialogueId": 344050028,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_kill",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_kill_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "千刃莲台",
+    "DialogueId": 344050029,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "青胜于蓝",
+    "DialogueId": 344050030,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "观音所传",
+    "DialogueId": 344050031,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "长！",
+    "DialogueId": 344050032,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_lianhua_03_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "老东西",
+    "DialogueId": 344050033,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_shngshn_01",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_shngshn_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你瞧好了",
+    "DialogueId": 344050034,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_shngshn_01",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_shngshn_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这便是你等来的……",
+    "DialogueId": 344050035,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_shngshn_01",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_shngshn_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "废物！",
+    "DialogueId": 344050036,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_shngshn_01",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_shngshn_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "想挡我的路",
+    "DialogueId": 344050037,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_shngshn_03",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_shngshn_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不知天高……",
+    "DialogueId": 344050038,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_shngshn_03",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_shngshn_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "地厚！",
+    "DialogueId": 344050039,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_shngshn_03",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_shngshn_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你可知，圣婴是什么意思！",
+    "DialogueId": 344050040,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_wander_03",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_wander_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "孙悟空做不成的事，我来做！",
+    "DialogueId": 344050041,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_wander_04",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_wander_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "孙悟空不敢杀的人，我尽杀之！",
+    "DialogueId": 344050042,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_wander_05",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_wander_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "壁立千仞，我亦登之",
+    "DialogueId": 344050043,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你若拦阻，我必杀之",
+    "DialogueId": 344050044,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不知天高地厚！",
+    "DialogueId": 344050045,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "斑",
+    "DialogueId": 344050046,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_02",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "腥",
+    "DialogueId": 344050047,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_02",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "见",
+    "DialogueId": 344050048,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_02",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "血",
+    "DialogueId": 344050049,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_honghaier_02a/EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_02",
+    "AkEventName": "EVT_enm_hys_honghaier_02a_voice_dialogue_pikan_02"
+  }
+]

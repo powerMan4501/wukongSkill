@@ -1,0 +1,26 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "你狗日的真不识俊，偏要跟我试试身手！",
+    "DialogueId": 325030001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_ShanZhen_01/VOICE/EVT_enm_hfm_shanzhen_01_voice_dialogue_013",
+    "AkEventName": "EVT_enm_hfm_shanzhen_01_voice_dialogue_013"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "算你识俊，麻利滚！",
+    "DialogueId": 325030002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_ShanZhen_01/VOICE/EVT_enm_hfm_shanzhen_01_voice_dialogue_014",
+    "AkEventName": "EVT_enm_hfm_shanzhen_01_voice_dialogue_014"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "敬酒不吃吃罚酒",
+    "DialogueId": 325030003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_ShanZhen_01/VOICE/EVT_enm_hfm_shanzhen_01_voice_dialogue_015",
+    "AkEventName": "EVT_enm_hfm_shanzhen_01_voice_dialogue_015"
+  }
+]

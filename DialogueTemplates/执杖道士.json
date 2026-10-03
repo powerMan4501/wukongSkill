@@ -1,0 +1,18 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "魄……丧……倾",
+    "DialogueId": 354040001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_daoshi_03/EVT_enm_psd_daoshi_03_voice_dialogue_kill",
+    "AkEventName": "EVT_enm_psd_daoshi_03_voice_dialogue_kill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "如……律……令",
+    "DialogueId": 354040002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_daoshi_03/EVT_enm_psd_daoshi_03_voice_dialogue_kill",
+    "AkEventName": "EVT_enm_psd_daoshi_03_voice_dialogue_kill_02"
+  }
+]

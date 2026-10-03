@@ -1,0 +1,177 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "想取我的宝贝，你还不配！",
+    "DialogueId": 310310001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_029"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "老友，这把火，你看到了吗？",
+    "DialogueId": 310310002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_029"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "哪有什么天命，不过都是贪心",
+    "DialogueId": 310310003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_030"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "想成佛，哪那么容易",
+    "DialogueId": 310370001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_026"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天命人，不过如此",
+    "DialogueId": 310370002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_027"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你是哪寺里和尚，敢来我这里索取？",
+    "DialogueId": 310370003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_028"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "还有什么手段，都使出来看看！",
+    "DialogueId": 310370004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_022"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你们这些猴子，来了就是烧杀掳掠",
+    "DialogueId": 310370005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_023"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "比我又高到哪里去了？",
+    "DialogueId": 310370006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_023"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "难道你不想长生吗？",
+    "DialogueId": 310370007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_024"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不如留在此处，大王我也赐你个名号",
+    "DialogueId": 310370008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_025"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不通遁迹之法，也敢击吾仙洞！",
+    "DialogueId": 310370009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_015"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "吾乃观音座下守山大神，休得放肆！",
+    "DialogueId": 310370010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_016"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "黑风之名，岂是浪得！",
+    "DialogueId": 310370011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_017"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你的铜头铁脑呢？",
+    "DialogueId": 310370012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_018"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "可惜了我这香炉！",
+    "DialogueId": 310370013,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "中！",
+    "DialogueId": 310370014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_020"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "好好的禅院，全被你毁了！",
+    "DialogueId": 310370015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/Dialogue/Chinese/GYCY/GYCY_HFDW/DIA_GYCY_HFDW_027",
+    "AkEventName": "DIA_GYCY_HFDW_021"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "活着不好么，偏来寻死！",
+    "DialogueId": 310370016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/HFDW/voice_A/EVT_enm_gycy_hfdw_voice_dialogue_01",
+    "AkEventName": "EVT_enm_gycy_hfdw_voice_dialogue_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "何不等我进了膳来，再与你斗？",
+    "DialogueId": 310370017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/HFDW/voice_A/EVT_enm_gycy_hfdw_voice_dialogue_01",
+    "AkEventName": "EVT_enm_gycy_hfdw_voice_dialogue_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "学人玩火，难不成你想再烧一回禅院！",
+    "DialogueId": 310370018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/HFDW/voice_A/EVT_enm_gycy_hfdw_voice_dialogue_03",
+    "AkEventName": "EVT_enm_gycy_hfdw_voice_dialogue_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "广智！命你为师父守钟，你怎败了！",
+    "DialogueId": 310370019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/HFDW/voice_A/EVT_enm_gycy_hfdw_voice_dialogue_01",
+    "AkEventName": "EVT_enm_gycy_hfdw_voice_dialogue_04"
+  }
+]

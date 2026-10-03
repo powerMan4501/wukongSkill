@@ -1,0 +1,9 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "山有顶，路有头，你的命，也一样",
+    "DialogueId": 330010001,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  }
+]

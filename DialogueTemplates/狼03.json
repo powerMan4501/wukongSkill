@@ -1,0 +1,86 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "识相点，看在大王的份上不与你计较",
+    "DialogueId": 3100201,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "呦，今日有何收获？",
+    "DialogueId": 3100202,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我家大王爷爷神通广大，岂能出尔反尔",
+    "DialogueId": 3100203,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "放心稳便",
+    "DialogueId": 3100204,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大哥，这话可不敢让大王爷爷听见",
+    "DialogueId": 3100205,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "咱可是好不容易找了这么个山头落脚",
+    "DialogueId": 3100206,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大哥，咱们跋山涉水来到此地",
+    "DialogueId": 3100207,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "诵经念咒真的有用吗？",
+    "DialogueId": 3100208,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我也在那边见过",
+    "DialogueId": 3100209,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "那老狼虽与我等样貌相近，但行事作风全然不同",
+    "DialogueId": 3100210,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "守着一口钟从不离开",
+    "DialogueId": 3100211,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我还听到他念叨什么师父……",
+    "DialogueId": 3100212,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  }
+]

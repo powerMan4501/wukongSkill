@@ -1,0 +1,9 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "安心睡觉去也",
+    "DialogueId": 320150003,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  }
+]

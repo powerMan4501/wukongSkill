@@ -1,0 +1,34 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "佛法无边，不度无缘",
+    "DialogueId": 310110001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/Lang_04/voice/ENM_GYCY_Lang04_Voice_Dialogue_01",
+    "AkEventName": "ENM_GYCY_Lang04_Voice_Dialogue_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "是我多虑了，只是长得像了点",
+    "DialogueId": 310110002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/Lang_04/voice/ENM_GYCY_Lang04_Voice_Dialogue_01",
+    "AkEventName": "ENM_GYCY_Lang04_Voice_Dialogue_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你……莫非就是大王说的那个……",
+    "DialogueId": 310110003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/Lang_04/voice/ENM_GYCY_Lang04_Voice_Dialogue_04",
+    "AkEventName": "ENM_GYCY_Lang04_Voice_Dialogue_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天……命……人",
+    "DialogueId": 310110004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/Lang_04/voice/ENM_GYCY_Lang04_Voice_Dialogue_04",
+    "AkEventName": "ENM_GYCY_Lang04_Voice_Dialogue_04"
+  }
+]

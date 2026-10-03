@@ -1,0 +1,506 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "大胆！你们这些忘恩负义的东西，竟敢欺师灭祖！",
+    "DialogueId": 350050001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "没有我，何来今日！",
+    "DialogueId": 350050002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "区区女流，妄想伤我？",
+    "DialogueId": 350050003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_03",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你也如她们一般不知死活，贫道岂能不成全？",
+    "DialogueId": 350050004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你们的母亲糊涂，你们也糊涂么？",
+    "DialogueId": 350050005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_05",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你等如此对我，师妹九泉之下岂能含笑？",
+    "DialogueId": 350050006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_06"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "定是那泼猴毁谤，才使你等昏头，快快与我一同了结他！",
+    "DialogueId": 350050007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_07",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_07"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "道观毁了，师妹没了，而今我一无所有，更有何惧！",
+    "DialogueId": 350050008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_08",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_08"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "覆巢之下，安有完卵！",
+    "DialogueId": 350050009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_09"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "师妹，莫怪我，是他们逼我的！",
+    "DialogueId": 350050010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_10",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_10"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你们想与她陪葬，我便成全你们！",
+    "DialogueId": 350050011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_11"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我苦心经营，只待有朝一日上天垂怜，谁知全不中用",
+    "DialogueId": 350050012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_12",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_12"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这通天之路你们不愿走，我一个人走便是！",
+    "DialogueId": 350050013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_13",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_13"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "既是孝顺，那便送你们与师妹团聚！",
+    "DialogueId": 350050014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_14",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_14"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "还有你，坏我好事，休想活命！",
+    "DialogueId": 350050015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_14",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_14"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "东天封压此地多年，你等为何还看不出师伯我的苦心！",
+    "DialogueId": 350050016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_15"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "都是你，搅了我的大局！",
+    "DialogueId": 350050017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_15"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "村畜生一个，找死！",
+    "DialogueId": 350050018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_16",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_16_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "铜头铁臂？",
+    "DialogueId": 350050019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_17",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_17"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "穿心！",
+    "DialogueId": 350050020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_17",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_17"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天命反复无常，凭什么受罚的是我",
+    "DialogueId": 350050021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_18",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_18"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看你求死心切，那便送你一程！",
+    "DialogueId": 350050022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_19"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "哪里走！",
+    "DialogueId": 350050023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_20",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_20"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "想逃？",
+    "DialogueId": 350050024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_21",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_21"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "有破绽！",
+    "DialogueId": 350050025,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_22"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "强梁者不得其死！",
+    "DialogueId": 350050026,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_23",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_23"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "近前来，再接道爷一剑！",
+    "DialogueId": 350050027,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_24"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天网恢恢，疏而不失",
+    "DialogueId": 350050028,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_25",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_25"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "百眼千目，和光同尘",
+    "DialogueId": 350050029,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_25",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_25"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你我之天命，今日一起破了罢！",
+    "DialogueId": 350050030,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_25",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_25"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天地不仁，以万物为刍狗",
+    "DialogueId": 350050031,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_26"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "圣人不仁，以百姓为刍狗！",
+    "DialogueId": 350050032,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_26"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "哪怕做刍狗，我也要咬他两口！",
+    "DialogueId": 350050033,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_26"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "开眼！",
+    "DialogueId": 350050034,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_27",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_27"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "森森黄雾，艳艳金光，气朦胧，遮日月！",
+    "DialogueId": 350050035,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_27",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_27"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "要你进退无能！",
+    "DialogueId": 350050036,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_27",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_27"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "就算真的孙悟空来了又如何",
+    "DialogueId": 350050037,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_28"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "还不是照样困这里面乖乖等死！",
+    "DialogueId": 350050038,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_28"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "挫锐",
+    "DialogueId": 350050039,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_29",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_29"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "都是出家人，何言素手！",
+    "DialogueId": 350050040,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_30",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_30"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "村鲁和尚，见阎王！",
+    "DialogueId": 350050041,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_31",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_31_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天，乃道！",
+    "DialogueId": 350050042,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_32",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_32"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "山野清贫道士，给你备了些茶果！",
+    "DialogueId": 350050043,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_33",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_33"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不欲以静，天下自定！",
+    "DialogueId": 350050044,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_34",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_34"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "菩萨！菩萨饶命！",
+    "DialogueId": 350050045,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_35",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_35"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "没了那只公鸡和他老母，你赢不了！",
+    "DialogueId": 350050046,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_35",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_35"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "绣花针！",
+    "DialogueId": 350050047,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_36"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "原来那根应已法力尽失，你从何处又寻来一件？",
+    "DialogueId": 350050048,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_36"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不虫不人的恶心东西，凭这就想赢我？",
+    "DialogueId": 350050049,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_37",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_37"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "那丑徒弟原来死在了你手上，死得好！",
+    "DialogueId": 350050050,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_38"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "放心，千花谷中，我也给你留了位子",
+    "DialogueId": 350050051,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_39",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_39"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "有太真护我，来多少天命人，都照杀不误",
+    "DialogueId": 350050052,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_40"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "君子不器，大道不疑！",
+    "DialogueId": 350050053,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_rush_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "寄身锋刃，谈何修道，来罢！",
+    "DialogueId": 350050054,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_rush_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "金光之下，不容作假！",
+    "DialogueId": 350050055,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_rush_003",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_rush_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "作个假身，自欺欺人！",
+    "DialogueId": 350050056,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_rush_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "她们的债，就由你来偿罢！",
+    "DialogueId": 350050103,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_03",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "杀了我，你就能反了这天么！",
+    "DialogueId": 350050109,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_09"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "花拳绣腿罢了！",
+    "DialogueId": 350050119,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_17",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_17"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "裂！",
+    "DialogueId": 350050123,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_20",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_20"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "爆！",
+    "DialogueId": 350050124,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_21",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_21"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "碎！",
+    "DialogueId": 350050125,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_01",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_22"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "解纷！",
+    "DialogueId": 350050139,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/PSD_baiyanmojun_01/voice/dialogue/EVT_enm_psd_baiyanmojun_voice_dialogue_29",
+    "AkEventName": "EVT_enm_psd_baiyanmojun_voice_dialogue_29"
+  }
+]
