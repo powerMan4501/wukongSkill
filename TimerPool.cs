@@ -17,8 +17,7 @@ namespace MagicMod
     /// 闭包里的 UObject 才能被回收）；周期性 Timer 通过句柄显式停止。
     /// 池本身只保留"还在跑"的 Timer。
     ///
-    /// 当前使用者：`MaterialGlow`（到点自动熄灭）、`WeaponScale`（保持时长 / 回弹过渡）、
-    /// `ModHelper`（Buff 禁用守卫的 30ms 轮询）；`Program.DeInit` 里统一 `ClearAll()`。
+    /// 当前使用者：`ModHelper`（Buff 禁用守卫的 30ms 轮询）；`Program.DeInit` 里统一 `ClearAll()`。
     /// </summary>
     public static class TimerPool
     {

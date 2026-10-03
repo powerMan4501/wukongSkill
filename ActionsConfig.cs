@@ -83,13 +83,6 @@ namespace MagicMod
         /// </summary>
         grab,
         /// <summary>
-        /// 材质自发光：运行时创建动态材质实例(MID)，让武器/身体材质本身发光，不挂任何特效资源。
-        /// MatSlot=材质槽关键字(默认 weapon)、MatColor=[r,g,b]、MatColorName=预设色、MatIntensity=强度、MatMode=emissive/fresnel/both
-        /// </summary>
-        MaterialGlow,
-        /// <summary>还原材质自发光（恢复原始材质）</summary>
-        MaterialGlowStop,
-        /// <summary>
         /// 毛发资产探测（排查换皮/变身后秃头）：打印 SKMesh 材质槽、候选 TressFX 资产是否存在、
         /// 以及当前角色身上的 Mesh/TressFX 组件。结果只打日志（[HairProbe] 前缀），用于确认某 Boss
         /// 毛发资源路径或缺失原因。
@@ -103,13 +96,12 @@ namespace MagicMod
         /// 本动作把它重新设为可见。可选 path=关键字（逗号分隔，默认 head_born_static）。
         /// </summary>
         ShowHair,
-        /// <summary>
-        /// 运行时整体放大玩家角色（Actor 缩放）：平A 期间放大，出招后还原成原始大小。
-        /// 命中判定随 Actor 缩放一起变大（游戏侧 Radius * GetActorScale3D().X），无需额外调判定。
-        /// WeaponScale=VectorConfig 缩放向量（默认 {3,1,1}；建议等比如 {3,3,3}，非等比会让胶囊变形），
-        /// WeaponScaleHoldMs=保持毫秒（默认 600），WeaponScaleRestoreMs=回弹毫秒（0=瞬间还原）。
-        /// </summary>
-        WeaponScale
+        /// <summary>注册事件绑定：订阅变身事件 + SweepCheck/输入/伤害等回调（ModHelper.RegPlayerTransEvent + RegSweepCheckBeginEvent）</summary>
+        RegEvents,
+        /// <summary>加载所有 JSON 配表数据（从 PBTable 目录），等价于 LoadDataManager.LoadAllJsonData()</summary>
+        LoadAllData,
+        /// <summary>解绑事件：退订变身事件 + SweepCheck/输入/伤害等回调（ModHelper.UnRegPlayerTransEvent + UnSweepCheckBeginEvent）</summary>
+        UnRegEvents
     }
 
 
@@ -209,54 +201,9 @@ namespace MagicMod
 
         public string?  path { get; set; }
 
-        /// <summary>骨骼 / 插槽名（如 "weapon_r" / "hand_l" / "hand_r"）。MaterialGlow 使用。</summary>
+        /// <summary>骨骼 / 插槽名（如 "weapon_r" / "hand_l" / "hand_r"）。</summary>
         public string? BoneName { get; set; }
 
-        /// <summary>材质自发光：材质槽名关键字（默认 "weapon"；"" 表示所有材质槽）</summary>
-        public string MatSlot { get; set; }
-
-        /// <summary>材质自发光：颜色 [r,g,b]，取值 0~1</summary>
-        public float[] MatColor { get; set; }
-
-        /// <summary>材质自发光：预设颜色名 fire/gold/ice/blue/purple/green/cyan/white/red（MatColor 为空时生效）</summary>
-        public string MatColorName { get; set; }
-
-        /// <summary>
-        /// 棍光亮度档 / 配色：staff(=棍光,默认) · soft(淡) · strong(爆亮)；
-        /// 也可填配色名 fire/gold/ice/purple/green...（= staff 亮度 + 该配色）。
-        /// </summary>
-        public string MatPreset { get; set; }
-
-        /// <summary>自定义标量参数（最高优先级），如 {"D_Brightness_intensity":60, "MaskPosition":0.3}</summary>
-        public Dictionary<string, float> MatParams { get; set; }
-
-        /// <summary>自定义颜色参数（最高优先级），如 {"C_Color":[1,0.3,0.1]}</summary>
-        public Dictionary<string, float[]> MatVectors { get; set; }
-
-        /// <summary>材质自发光：强度总控（默认 5 = 棍光 mod 原味亮度）</summary>
-        public float? MatIntensity { get; set; }
-
-        /// <summary>
-        /// 材质自发光 / 棍光模式：
-        /// weaponfx(默认,武器 FX 流光层) · emissive(通用自发光) · fresnel(菲涅尔边缘光) ·
-        /// both(全部下发) · direct(不换材质，直接改现有动态材质实例)
-        /// </summary>
-        public string MatMode { get; set; }
-
-        /// <summary>棍光：是否持续重应用（防武器系统重建材质后失效），默认 true。</summary>
-        public bool? MatKeepAlive { get; set; }
-
-        /// <summary>角色缩放：VectorConfig 缩放倍率 {X,Y,Z}，默认 {3,1,1}（建议等比如 {3,3,3}，避免胶囊变形）。
-        /// 走 Actor 缩放（SetActorScale3D），命中判定会同步放大。WeaponScale 动作使用。</summary>
-        public VectorConfig? WeaponScale { get; set; }
-
-        /// <summary>角色缩放：保持放大的毫秒数，到时还原成原始大小；默认 600。
-        /// &lt;=0 表示一直保持，直到下次本动作或热重载时还原。WeaponScale 动作使用。</summary>
-        public int? WeaponScaleHoldMs { get; set; }
-
-        /// <summary>武器缩放：还原的过渡毫秒数（0/不填 = 瞬间还原，保持原有手感）。
-        /// 填 500 表示 WeaponScaleHoldMs 到期后再用 500ms 缓缓缩回原始大小（先快后慢 easing）。WeaponScale 动作使用。</summary>
-        public int? WeaponScaleRestoreMs { get; set; }
 
 
     }

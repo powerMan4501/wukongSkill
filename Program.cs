@@ -74,20 +74,17 @@ namespace MagicMod
         public void Init()
         {
             EnableCNInConsole();
-            Log.Info($"[MagicMod] {Name} v{Version} Init");
 
             // 加载配置
             _config = LoadConfig();
             if (_config == null)
             {
-                Log.Warn("[MagicMod] 配置加载失败，使用默认配置");
                 _config = CreateDefaultConfig();
             }
 
             // 高频日志开关（actions.json 根级 "verbose": true）。默认关闭：
             // 这些回调每秒触发几十次，无条件打日志会持续占用游戏线程
             ModLog.Verbose = _config.Verbose;
-            Log.Info($"[MagicMod] 高频日志(verbose): {(ModLog.Verbose ? "开" : "关")}");
 
             // 合并 actions 文件夹里的多文件按键绑定（按骨骼分发）
             var actionFolderBindings = LoadActionFolderBindings();
@@ -154,19 +151,11 @@ namespace MagicMod
             {
                 UnrealEngine.Runtime.FThreading.RunOnGameThreadAsync(() =>
                 {
-                    // 1) 玩家信息面板：500ms 刷新定时器 + 面板 UI
-                    try { ShowPlayerInfo.ClearAllUI(); }
+                    // 1) 玩家信息面板：退订属性事件 + 停定时器 + 移除面板 UI
+                    try { NewShowInfo.ClearAllUI(); }
                     catch (Exception e) { Log.Error($"[MagicMod] 清理玩家信息面板失败: {e.Message}"); }
 
-                    // 2) 棍光：300ms 持续重应用定时器 + 还原材质
-                    try { MaterialGlow.Stop(); }
-                    catch (Exception e) { Log.Error($"[MagicMod] 清理棍光失败: {e.Message}"); }
-
-                    // 3) 角色整体缩放（原"武器拉长"）：还原 Actor 缩放，避免重载后角色一直保持放大
-                    try { WeaponScale.ResetAll(); }
-                    catch (Exception e) { Log.Error($"[MagicMod] 还原角色缩放失败: {e.Message}"); }
-
-                    // 4) 最后统一停掉 TimerPool 里所有在跑的定时器（一次性 / 周期性）
+                    // 2) 最后统一停掉 TimerPool 里所有在跑的定时器（一次性 / 周期性）
                     try { TimerPool.ClearAll(); }
                     catch (Exception e) { Log.Error($"[MagicMod] 清理定时器池失败: {e.Message}"); }
                 });

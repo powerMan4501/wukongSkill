@@ -638,8 +638,8 @@ namespace MagicMod
                 BUS_EventCollectionCS.Get(character).Evt_PlayMontageCallback -= new Del_PlayMontageCallback(OnPlayMontageCallback);
                 BUS_EventCollectionCS.Get(character).Evt_PlayMontageCallback += new Del_PlayMontageCallback(OnPlayMontageCallback);
 
-                BUS_EventCollectionCS.Get(character).Evt_SweepCheckInPreciseDodgeRange -= new Del_SweepCheckInPreciseDodgeRange(SweepCheckInPreciseDodgeRange);
-                BUS_EventCollectionCS.Get(character).Evt_SweepCheckInPreciseDodgeRange += new Del_SweepCheckInPreciseDodgeRange(SweepCheckInPreciseDodgeRange);
+                // BUS_EventCollectionCS.Get(character).Evt_SweepCheckInPreciseDodgeRange -= new Del_SweepCheckInPreciseDodgeRange(SweepCheckInPreciseDodgeRange);
+                // BUS_EventCollectionCS.Get(character).Evt_SweepCheckInPreciseDodgeRange += new Del_SweepCheckInPreciseDodgeRange(SweepCheckInPreciseDodgeRange);
             }
             catch (Exception e)
             {
@@ -667,7 +667,7 @@ namespace MagicMod
 
                 BUS_EventCollectionCS.Get(character).Evt_TriggerNormalDamageEffect -= new Del_TriggerNormalDamageEffect(OnTriggerNormalDamageEffect);
                 BUS_EventCollectionCS.Get(character).Evt_PlayMontageCallback -= new Del_PlayMontageCallback(OnPlayMontageCallback);
-                BUS_EventCollectionCS.Get(character).Evt_SweepCheckInPreciseDodgeRange -= new Del_SweepCheckInPreciseDodgeRange(SweepCheckInPreciseDodgeRange);
+                // BUS_EventCollectionCS.Get(character).Evt_SweepCheckInPreciseDodgeRange -= new Del_SweepCheckInPreciseDodgeRange(SweepCheckInPreciseDodgeRange);
 
 
 
@@ -1343,7 +1343,6 @@ namespace MagicMod
 
             var character = GetCharacter();
             if (character == null) return;
-            Log.Info($"执行技能释放 OnInputCastSkill:{InputActionType}, {SkillID}");
             switch (InputActionType)
             {
                 case EInputActionType.LightAttack:
@@ -1384,11 +1383,7 @@ namespace MagicMod
                         // 定身
                         if (SkillID == 10518)
                         {
-                            var SkillInstsData = BGU_DataUtil.GetReadOnlyData<IBUC_SkillInstsData, BUC_SkillInstsData>(character);
-                            var CDTimePercent = BGUFuncLibSkillCS.GetSkillCDTimePercent(character, SkillID, in SkillInstsData);
-                            Log.Info($"定身术 10517是否在冷却中：{!isFinishCoolDown(10517, character)}");
-                            Log.Info($"定身术 10518是否在冷却中：{!isFinishCoolDown(10518, character)},CDTimePercent:{CDTimePercent}");
-                            Log.Info($"定身术 10519 是否在冷却中：{!isFinishCoolDown(10519, character)}");
+                            // 定身术冷却日志已移除：下方 if 只对 10518 做一次冷却查询，日志那几次纯属浪费 GameDB 查询
                             if (!isFinishCoolDown(SkillID, character))
                             {
                                 BUS_EventCollectionCS.Get(character)?.Evt_RequestSmartCastSkill.Invoke(
@@ -1401,7 +1396,7 @@ namespace MagicMod
                         {
 
 
-                            Log.Info($"铜头 {SkillID} 是否在冷却中：{!isFinishCoolDown(SkillID, character)}");
+
 
                             if (!isFinishCoolDown(SkillID, character))
                             {
@@ -1423,7 +1418,7 @@ namespace MagicMod
                         if (SkillID == 10095)
                         {
 
-                            Log.Info($"聚形散气 {SkillID} 是否在冷却中：{!isFinishCoolDown(SkillID, character)}");
+
 
                             if (!isFinishCoolDown(SkillID, character))
                             {
@@ -1455,7 +1450,7 @@ namespace MagicMod
                         if (SkillID == 18071)
                         {
                             // 虫变身 法术
-                            Log.Info($"聚形散气 {SkillID} 是否在冷却中：{!isFinishCoolDown(SkillID, character)}");
+
 
                             if (!isFinishCoolDown(SkillID, character))
                             {
@@ -1467,7 +1462,7 @@ namespace MagicMod
                         if (SkillID == 17071)
                         {
                             // 猴 法术
-                            Log.Info($"聚形散气 {SkillID} 是否在冷却中：{!isFinishCoolDown(SkillID, character)}");
+
 
                             if (!isFinishCoolDown(SkillID, character) || BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.Pevalue) < 100)
                             {
@@ -1479,7 +1474,7 @@ namespace MagicMod
                         if (SkillID == 17072)
                         {
                             // 猴 法术
-                            Log.Info($"聚形散气 {SkillID} 是否在冷却中：{!isFinishCoolDown(SkillID, character)}");
+
 
                             if (!isFinishCoolDown(SkillID, character) || BGUFunctionLibraryCS.GetAttrValue(character, EBGUAttrFloat.Pevalue) < 100)
                             {
@@ -1490,7 +1485,7 @@ namespace MagicMod
                         if (SkillID == 13071)
                         {
                             // 石头 法术
-                            Log.Info($"聚形散气 {SkillID} 是否在冷却中：{!isFinishCoolDown(SkillID, character)}");
+
 
                             if (!isFinishCoolDown(SkillID, character))
                             {
@@ -1502,7 +1497,7 @@ namespace MagicMod
                         if (SkillID == 23071)
                         {
                             // 马哥 法术
-                            Log.Info($"聚形散气 {SkillID} 是否在冷却中：{!isFinishCoolDown(SkillID, character)}");
+
 
                             if (!isFinishCoolDown(SkillID, character))
                             {
@@ -1547,7 +1542,7 @@ namespace MagicMod
                         if (SkillID == 24071)
                         {
                             // 巨猿进入冰 法术  24072火法术
-                            Log.Info($"聚形散气 {SkillID} 是否在冷却中：{!isFinishCoolDown(SkillID, character)}");
+
 
                             if (!isFinishCoolDown(SkillID, character))
                             {
@@ -1559,7 +1554,7 @@ namespace MagicMod
                         if (SkillID == 24072)
                         {
                             // 巨猿进入冰 法术  24072火法术
-                            Log.Info($"聚形散气 {SkillID} 是否在冷却中：{!isFinishCoolDown(SkillID, character)}");
+
 
                             if (!isFinishCoolDown(SkillID, character))
                             {
@@ -1816,7 +1811,7 @@ namespace MagicMod
             FUStSkillSDesc SkillSDesc = BGW_GameDB.GetSkillSDesc(SkillID, character);
             if (SkillSDesc == null) return;
             var pathName = SkillSDesc.TemplatePath;
-            Log.Info($"执行释放cast_actions OnRequestSmartCastSkill: {SkillID}, TemplatePath: {pathName}，_sweepCheckBindings数量：{ActionExecutor._sweepCheckBindings?.Count} ");
+            if (ModLog.Verbose) ModLog.Info($"执行释放cast_actions OnRequestSmartCastSkill: {SkillID}, TemplatePath: {pathName}，_sweepCheckBindings数量：{ActionExecutor._sweepCheckBindings?.Count} ");
             ActionExecutor.DoCastActions(character, pathName);
 
 
@@ -1869,11 +1864,9 @@ namespace MagicMod
             if (ModLog.Verbose) ModLog.Info($"执行碰撞检查 SweepCheckBegin Animation:{pathName},NotifyBeginTime:{NotifyBeginTime}");
 
             // 注：这里不再手动放大 SweepCheck 的碰撞体 ——
-            // 1) 判定体尺寸只认 Actor 缩放（Radius * Owner.GetActorScale3D().X），
-            //    WeaponScale 现在走 SetActorScale3D，判定会自动跟着放大；
-            // 2) 而且在这里改也无效：游戏组件 BeginPlay 就订阅了本事件，FUStCheckShape 是 struct，
-            //    派发时就被值拷贝进 FSweepCheckCombineInfo（b.EnableCombineSweepCheckShape 默认 1），
-            //    我们的修改改不到那份拷贝。
+            // 游戏组件 BeginPlay 就订阅了本事件，FUStCheckShape 是 struct，
+            // 派发时就被值拷贝进 FSweepCheckCombineInfo（b.EnableCombineSweepCheckShape 默认 1），
+            // 我们的修改改不到那份拷贝。
 
             ActionExecutor.DoSweepCheckActions(character, pathName, NotifyBeginTime);
         }
@@ -2098,21 +2091,16 @@ namespace MagicMod
                 bool offsetChanged = false;
 
                 var xyz = aActor.GetActorForwardVector();
-                // 武器拉长时，让弹体生成偏移也随同一倍率外推，使“攻击/碰撞距离”随棍子一起拉长
-                var wsScale = WeaponScale.GetActiveScale(aActor as BGUPlayerCharacterCS);
-                float wsX = wsScale?.X ?? 1f;
-                float wsY = wsScale?.Y ?? 1f;
-                float wsZ = wsScale?.Z ?? 1f;
                 if (ProjectileSpawnConfig?.SpawnOffsetX != null)
                 {
-                    var offsetX = (float)ProjectileSpawnConfig.SpawnOffsetX * wsX;
+                    var offsetX = (float)ProjectileSpawnConfig.SpawnOffsetX;
                     finalSpawnPosOffsetInfo.PosOffset.X = offsetX * xyz.X;
                     offsetChanged = true;
                 }
                 if (ProjectileSpawnConfig?.SpawnOffsetY != null)
                 {
 
-                    var offsetY = (float)ProjectileSpawnConfig.SpawnOffsetY * wsY;
+                    var offsetY = (float)ProjectileSpawnConfig.SpawnOffsetY;
                     finalSpawnPosOffsetInfo.PosOffset.Y = offsetY * xyz.Y;
 
                     offsetChanged = true;
@@ -2121,7 +2109,7 @@ namespace MagicMod
                 {
 
 
-                    var offsetZ = (float)ProjectileSpawnConfig.SpawnOffsetZ * wsZ;
+                    var offsetZ = (float)ProjectileSpawnConfig.SpawnOffsetZ;
                     finalSpawnPosOffsetInfo.PosOffset.Z = offsetZ * xyz.Z;
                     offsetChanged = true;
                 }

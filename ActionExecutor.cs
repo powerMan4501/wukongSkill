@@ -418,7 +418,8 @@ namespace MagicMod
             if (character == null || id <= 0 || cache == null || cache.Count == 0) return;
             if (!cache.TryGetValue(id, out var binding) || binding.actions == null || binding.actions.Count == 0) return;
 
-            Log.Info($"[MagicMod] {tag} 匹配 ID={id} ({binding.name ?? "无名称"})，执行 {binding.actions.Count} 个动作");
+            // 高频：OnTriggerSkillEffect / BuffBegin 每秒几十次。用 if 包裹而非 ModLog.Trace，
+            // 关闭时连字符串插值都不执行（Trace 只是不打日志，插值照样分配字符串）
             DoActions(character, binding.actions, effectInstReq);
         }
 
@@ -453,7 +454,8 @@ namespace MagicMod
                 if (string.IsNullOrEmpty(binding.pathName) || binding.config == null) continue;
                 if (pathName.IndexOf(binding.pathName, StringComparison.OrdinalIgnoreCase) < 0) continue;
 
-                Log.Info($"[MagicMod] Projectile 匹配 PathName='{binding.pathName}', Actor='{pathName}'");
+                // 高频：每个弹体/法术场生成都会走这里（配置里有 280 个 bullet 动作）
+                if (ModLog.Verbose) ModLog.Info($"[MagicMod] Projectile 匹配 PathName='{binding.pathName}', Actor='{pathName}'");
 
                 if (binding.config.Scale3D != null)
                 {
@@ -515,7 +517,7 @@ namespace MagicMod
                     if (group == null || group.ID != projectileId) continue;
                     if (group.actions == null || group.actions.Count == 0) continue;
 
-                    Log.Info($"[MagicMod] BulletSpawn 匹配 Animation='{binding.Animation}', ProjectileID={projectileId}，执行 {group.actions.Count} 个动作");
+                    if (ModLog.Verbose) ModLog.Info($"[MagicMod] BulletSpawn 匹配 Animation='{binding.Animation}', ProjectileID={projectileId}，执行 {group.actions.Count} 个动作");
                     DoActions(character, group.actions);
                 }
             }
@@ -535,7 +537,7 @@ namespace MagicMod
                 if (binding.cast_actions == null || binding.cast_actions.Count == 0) continue;
                 if (templatePath.IndexOf(binding.Animation, StringComparison.OrdinalIgnoreCase) < 0) continue;
 
-                Log.Info($"[MagicMod] CastSkill 匹配 Animation='{binding.Animation}', TemplatePath='{templatePath}'，执行 {binding.cast_actions.Count} 个 cast_actions");
+                if (ModLog.Verbose) ModLog.Info($"[MagicMod] CastSkill 匹配 Animation='{binding.Animation}', TemplatePath='{templatePath}'，执行 {binding.cast_actions.Count} 个 cast_actions");
                 DoActions(character, binding.cast_actions);
             }
         }
@@ -564,7 +566,7 @@ namespace MagicMod
                         // NotifyBeginTime 为 null 表示匹配所有时间
                         if (group.NotifyBeginTime.HasValue && notifyBeginTime.ToString() != group.NotifyBeginTime.Value.ToString()) continue;
 
-                        Log.Info($"[MagicMod] SweepCheck 匹配 Animation='{binding.Animation}', Time={notifyBeginTime}, Group.NotifyBeginTime={group.NotifyBeginTime?.ToString() ?? "null"}，执行 {group.Actions.Count} 个动作");
+                        if (ModLog.Verbose) ModLog.Info($"[MagicMod] SweepCheck 匹配 Animation='{binding.Animation}', Time={notifyBeginTime}, Group.NotifyBeginTime={group.NotifyBeginTime?.ToString() ?? "null"}，执行 {group.Actions.Count} 个动作");
                         DoActions(character, group.Actions);
                     }
                     continue; // 新格式已处理，跳过旧格式逻辑
@@ -573,7 +575,7 @@ namespace MagicMod
                 // 旧格式：顶层 NotifyBeginTime + Actions
                 if (binding.NotifyBeginTime.HasValue && notifyBeginTime.ToString() != binding.NotifyBeginTime.Value.ToString()) continue;
 
-                Log.Info($"[MagicMod] SweepCheck 匹配 Animation='{binding.Animation}', Time={notifyBeginTime}，执行 {binding.Actions.Count} 个动作");
+                if (ModLog.Verbose) ModLog.Info($"[MagicMod] SweepCheck 匹配 Animation='{binding.Animation}', Time={notifyBeginTime}，执行 {binding.Actions.Count} 个动作");
                 DoActions(character, binding.Actions);
                 break; // 旧格式首次匹配后停止
             }
@@ -864,7 +866,7 @@ namespace MagicMod
                         bool needDedup = action.Type != ActionType.bullet;
                         if (needDedup && executedTypes.Contains(action.Type))
                         {
-                            Log.Info($"[MagicMod] 跳过重复动作 Type={action.Type}，同类型只执行第一个满足条件的");
+                            if (ModLog.Verbose) ModLog.Info($"[MagicMod] 跳过重复动作 Type={action.Type}，同类型只执行第一个满足条件的");
                             continue;
                         }
                         if (DoAction(character, action, effectInstReq))
@@ -941,7 +943,7 @@ namespace MagicMod
                 long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
                 if (_lastExecuteTime.TryGetValue(action.Type, out long lastTime) && (currentTime - lastTime) < ThrottleIntervalMs)
                 {
-                    Log.Info($"[MagicMod] 动作节流中 Type={action.Type}，距上次执行不足0.5秒");
+                    if (ModLog.Verbose) ModLog.Info($"[MagicMod] 动作节流中 Type={action.Type}，距上次执行不足0.5秒");
                     return false;
                 }
                 _lastExecuteTime[action.Type] = currentTime;
@@ -1146,20 +1148,18 @@ namespace MagicMod
                         }
                         break;
                     case ActionType.clearInfo:
-                        ShowPlayerInfo.ClearAllUI();
+                        NewShowInfo.ClearAllUI();
                         break;
                     case ActionType.showInfo:
-                        ModHelper.RegPlayerTransEvent();
-                        ModHelper.RegSweepCheckBeginEvent();
-                        LoadDataManager.LoadAllJsonData();
-                        if (ShowPlayerInfo.hasValueTextBlock())
+                      
+                        if (NewShowInfo.hasValueTextBlock())
                         {
-                            ShowPlayerInfo.ClearAllUI();
+                            NewShowInfo.ClearAllUI();
                         }
                         else
                         {
-                            ShowPlayerInfo.InitItems(false);
-                            ShowPlayerInfo.StartUpdateTimer();
+                            NewShowInfo.InitItems(false);
+                            NewShowInfo.StartUpdateTimer();
                         }
 
 
@@ -1188,35 +1188,23 @@ namespace MagicMod
                     case ActionType.CalcAMScale:
                         DoCalcAMScaleAction(action);
                         break;
-                    case ActionType.MaterialGlow:
-                        {
-                            MaterialGlow.Start(character, new MaterialGlowConfig
-                            {
-                                BoneName = string.IsNullOrEmpty(action.BoneName) ? "weapon_r" : action.BoneName,
-                                MatSlot = action.MatSlot ?? "",
-                                Color = (action.MatColor != null && action.MatColor.Length >= 3) ? action.MatColor : null,
-                                ColorName = action.MatColorName ?? "",
-                                Intensity = action.MatIntensity ?? 5f,
-                                Mode = string.IsNullOrEmpty(action.MatMode) ? "weaponfx" : action.MatMode,
-                                Preset = string.IsNullOrEmpty(action.MatPreset) ? "staff" : action.MatPreset,
-                                Scalars = action.MatParams,
-                                Vectors = action.MatVectors,
-                                KeepAlive = action.MatKeepAlive ?? true,
-                                DurationMs = action.Duration ?? 0f,
-                            });
-                        }
-                        break;
-                    case ActionType.MaterialGlowStop:
-                        MaterialGlow.Stop(character);
-                        break;
+
                     case ActionType.ProbeHair:
                         ProbeHairAssets(character);
                         break;
                     case ActionType.ShowHair:
                         RestoreHairMesh(character, action);
                         break;
-                    case ActionType.WeaponScale:
-                        WeaponScale.Scale(character, action.WeaponScale, action.WeaponScaleHoldMs ?? 600, action.WeaponScaleRestoreMs ?? 0);
+                    case ActionType.RegEvents:
+                        ModHelper.RegPlayerTransEvent();
+                        ModHelper.RegSweepCheckBeginEvent();
+                        break;
+                    case ActionType.LoadAllData:
+                        LoadDataManager.LoadAllJsonData();
+                        break;
+                    case ActionType.UnRegEvents:
+                        ModHelper.UnRegPlayerTransEvent();
+                        ModHelper.UnSweepCheckBeginEvent();
                         break;
                     default:
                         Log.Warn($"[MagicMod] 未知的 ActionType: {action.Type}");
@@ -2071,7 +2059,7 @@ namespace MagicMod
 
             BUS_EventCollectionCS.Get(character)?.Evt_RequestSmartCastSkill.Invoke(
                 skillId, null, EMontageBindReason.NormalSkill, false);
-            Log.Info($"[MagicMod] 释放技能 ID={skillId}");
+            if (ModLog.Verbose) ModLog.Info($"[MagicMod] 释放技能 ID={skillId}");
         }
 
         /// <summary>
@@ -2766,7 +2754,7 @@ namespace MagicMod
                         bool needDedup = action.Type != ActionType.bullet;
                         if (needDedup && executedTypes.Contains(action.Type))
                         {
-                            Log.Info($"[MagicMod] 延迟动作跳过 Type={action.Type}，同类型已执行过");
+                            if (ModLog.Verbose) ModLog.Info($"[MagicMod] 延迟动作跳过 Type={action.Type}，同类型已执行过");
                             return;
                         }
                         if (DoAction(player, action, effectInstReq))
