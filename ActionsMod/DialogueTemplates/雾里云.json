@@ -1,0 +1,281 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "闷棍！",
+    "DialogueId": 340060001,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_10_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "头烂！",
+    "DialogueId": 340060002,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_10_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "猢狲，惫懒，乱跳！",
+    "DialogueId": 340060003,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_12_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我打，我打，找死！",
+    "DialogueId": 340060004,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_12_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "臊味",
+    "DialogueId": 340060005,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_14_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "在这！",
+    "DialogueId": 340060006,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_14_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "想逃",
+    "DialogueId": 340060007,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_14_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "做梦！",
+    "DialogueId": 340060008,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_14_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "够了！",
+    "DialogueId": 340060009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_16",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_16"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "够了！",
+    "DialogueId": 340060010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_16",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_16"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "杀！",
+    "DialogueId": 340060011,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_16_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "瞎子",
+    "DialogueId": 340060012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_16_b",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_16_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "也能",
+    "DialogueId": 340060013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_16_b",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_16_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "夺命！",
+    "DialogueId": 340060014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_16_b",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_16_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "来喽！",
+    "DialogueId": 340060015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_01",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看",
+    "DialogueId": 340060016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_02",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看看",
+    "DialogueId": 340060017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_02",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "就看看！",
+    "DialogueId": 340060018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_02",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "倒海！",
+    "DialogueId": 340060019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_03",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "捉猴，捉猴，猴呢！",
+    "DialogueId": 340060020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_04_a",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_04_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你走，我来！",
+    "DialogueId": 340060021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_04_b",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_04_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "准备！点火！",
+    "DialogueId": 340060022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_05_a",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_05_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "胡说，有用，有用！",
+    "DialogueId": 340060023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_05_b",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_05_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "一下！",
+    "DialogueId": 340060024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_06_a",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_06_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "两下！",
+    "DialogueId": 340060025,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_06_a",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_06_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "滚蛋！",
+    "DialogueId": 340060026,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_06_b",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_06_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "打哪！打哪！",
+    "DialogueId": 340060027,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_07_b",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_07_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "三头，废物！",
+    "DialogueId": 340060028,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_07_b",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_07_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你敢，打我！",
+    "DialogueId": 340060029,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_07_b",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_07_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "眼睛，眼睛，瞎了！",
+    "DialogueId": 340060030,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_08",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_08"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不是，猴子，是我！",
+    "DialogueId": 340060031,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_09",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_09"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "兄弟，没了？",
+    "DialogueId": 340060032,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_death_04",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_death_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不好！不好！",
+    "DialogueId": 340060033,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_death_05",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_death_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "兄弟，来了，陪你……",
+    "DialogueId": 340060034,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_death_06",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_death_06"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大王，有赏，嘿嘿……",
+    "DialogueId": 340060035,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_death_08",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_death_08"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "后来，先到",
+    "DialogueId": 340060036,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_wuliyun/EVT_enm_hys_wuliyun_voice_dialogue_skill_07_a",
+    "AkEventName": "EVT_enm_hys_wuliyun_voice_dialogue_skill_07_a"
+  }
+]

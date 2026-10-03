@@ -1,0 +1,55 @@
+﻿{
+  "SKMesh": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_JSDS/Meshes/SK_mgd_jsds.SK_mgd_jsds",
+  "Bindings": [
+    {
+      "Key": "XBUTTON1",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 700146,
+          "name": "飞起，召唤分身一起重击劈棍"
+        }
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 700153,
+          "name": "突进飞到敌人跟前，棍子变粗大砸"
+        }
+      ]
+    },
+    {
+      "Key": "LBUTTON",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 700103,
+          "name": "顺时针横扫一下"
+        }
+      ]
+    },
+    {
+      "Key": "RBUTTON",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 700115,
+          "name": "大风车"
+        }
+      ]
+    },
+    {
+      "Key": "SPACE",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 700162,
+          "name": "后闪避"
+        }
+      ]
+    }
+  ]
+}

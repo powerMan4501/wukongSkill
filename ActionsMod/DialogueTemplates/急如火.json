@@ -1,0 +1,218 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "没了身子，自由自在",
+    "DialogueId": 340010001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_01",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "没牙没烦恼",
+    "DialogueId": 340010002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_20",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_20"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "身子都没了，讲甚么仇不仇",
+    "DialogueId": 340010003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_76",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_76"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "终于……停下来了……",
+    "DialogueId": 340010004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_11",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_11"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "小娘儿还没烧死，玩火的倒先死了",
+    "DialogueId": 340010005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_12",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_12"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这点能耐，逞什么英雄？",
+    "DialogueId": 340010006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_kill_01",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_kill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "小娘儿勾魂，我哥俩索命",
+    "DialogueId": 340010007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_kill_02",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_kill_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "火焰山没火怎行！",
+    "DialogueId": 340010008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_77",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_77"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大王的命令是全烧死！",
+    "DialogueId": 340010009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_78",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_78"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这猴子最怕火，烧死他！",
+    "DialogueId": 340010010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_79",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_79"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "没了风，火一样旺！",
+    "DialogueId": 340010011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_27",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_27"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "躲躲躲！烧了毛！",
+    "DialogueId": 340010012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_28",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_28"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "火火火，烧烧烧！",
+    "DialogueId": 340010013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_29",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_29"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "兄弟歇会儿，你同他比试比试",
+    "DialogueId": 340010014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_30",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_30"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "实是滚不动了，筋疲力软哩",
+    "DialogueId": 340010015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_31",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_31"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "没了身子怎这般易累",
+    "DialogueId": 340010016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_32",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_32"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "打死一个吹风的，再累死我这辛苦的",
+    "DialogueId": 340010017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_33",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_33"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "休想差使老子！你也别闲着！",
+    "DialogueId": 340010018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_64",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_64"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "风凉话说够了没！误了事咱可担待不起！",
+    "DialogueId": 340010019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_65",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_65"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "呸！功劳哪回不是被你小子抢走？",
+    "DialogueId": 340010020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_66",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_66"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "有眼不看路，活该",
+    "DialogueId": 340010021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_67",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_67"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "烧死一个算一个！",
+    "DialogueId": 340010022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_68",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_68"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这猢狲！好重的棍！",
+    "DialogueId": 340010023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_71",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_71"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "头疼，头疼！轻些打，都轻些打呦！",
+    "DialogueId": 340010024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_72",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_72"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "那就拼个你死我活罢！",
+    "DialogueId": 340010025,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_73",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_73"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "没了身子，也会死……",
+    "DialogueId": 340010026,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_74",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_74"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "冤家……路窄……",
+    "DialogueId": 340010027,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_jiruhuo/voice/EVT_enm_hys_jiruhuo_voice_dialogue_skill_75",
+    "AkEventName": "EVT_enm_hys_jiruhuo_voice_dialogue_skill_75"
+  }
+]

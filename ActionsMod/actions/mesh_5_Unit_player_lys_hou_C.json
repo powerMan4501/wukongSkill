@@ -1,0 +1,38 @@
+﻿{
+  "Bindings": [
+    {
+      "Key": "XBUTTON1",
+      "UnitName": "Unit_player_lys_hou_C",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Condition": {
+            "Type": "noHasAnyBuff",
+            "params": "17272,17273"
+          },
+          "Value": 301505,
+          "name": "马猴，红爆气，火焰爆气405805"
+        },
+        {
+          "Type": "Buff",
+          "Condition": {
+            "Type": "noHasAnyBuff",
+            "params": "17272,17273"
+          },
+          "name": "变成悬塑马猴",
+          "Values": [17272, 17273],
+          "Duration": 60000
+        },
+        {
+          "Type": "Skill",
+          "Condition": {
+            "Type": "hasAnyBuff",
+            "params": "17272,17273"
+          },
+          "Value": 405805,
+          "name": "马猴，火焰爆气405805"
+        }
+      ]
+    }
+  ]
+}

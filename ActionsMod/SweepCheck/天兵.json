@@ -1,0 +1,23 @@
+[
+  {
+    "Animation": "AM_mgd_tianbing_03_atk_04",
+    "name": "箭雨",
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 700,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "bullet_actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [18890701],
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'"
+        }
+      }
+    ]
+  }
+]

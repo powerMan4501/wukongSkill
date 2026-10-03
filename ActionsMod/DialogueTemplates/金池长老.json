@@ -1,0 +1,70 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "这般不经烧，你不是东土来的老爷",
+    "DialogueId": 310230001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/YanJianXi/voice/DIA_HFS_YanJianXi_Summon",
+    "AkEventName": "DIA_HFS_YanJianXi_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "什么锦襕袈裟，都一把火烧了才清净",
+    "DialogueId": 310230002,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "DIA_GYCY_YanJianXi_008"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "徒儿们，教他欲走无门！",
+    "DialogueId": 310230003,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "DIA_GYCY_YanJianXi_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "拿了袈裟，死也瞑目，去罢！",
+    "DialogueId": 310230004,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "DIA_GYCY_YanJianXi_011"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "欺我老朽，可恨之极！",
+    "DialogueId": 310230005,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "DIA_GYCY_YanJianXi_012"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "广智？",
+    "DialogueId": 310230006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/YanJianXi/voice/EVT_enm_gycy_yanjianxi_voice_dialogue_01",
+    "AkEventName": "EVT_enm_gycy_yanjianxi_voice_dialogue_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我儿，你也回来了？",
+    "DialogueId": 310230007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/YanJianXi/voice/EVT_enm_gycy_yanjianxi_voice_dialogue_01",
+    "AkEventName": "EVT_enm_gycy_yanjianxi_voice_dialogue_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "好徒儿，那唐僧师徒烧死没有？",
+    "DialogueId": 310230008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/YanJianXi/voice/EVT_enm_gycy_yanjianxi_voice_dialogue_01",
+    "AkEventName": "EVT_enm_gycy_yanjianxi_voice_dialogue_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "袈裟呢！",
+    "DialogueId": 310230009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/GYCY/YanJianXi/voice/EVT_enm_gycy_yanjianxi_voice_dialogue_01",
+    "AkEventName": "EVT_enm_gycy_yanjianxi_voice_dialogue_02"
+  }
+]

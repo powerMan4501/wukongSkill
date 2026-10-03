@@ -1,0 +1,90 @@
+[
+  {
+    "Animation": "AM_HYS_LuoChaGui_01_Atk_08",
+    "name": "冲上去熊抱",
+    "addRadius": 2000,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "巴山虎",
+        "bulletConfig": {
+          "ProjectileIDs": [1016262],
+          "OffsetX": 300,
+          "OffsetY": 300,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "out_magic",
+        "name": "退出精魄",
+        "Delay": 800
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_HYS_LuoChaGui_01_Atk_03",
+    "name": "足球踢",
+    "addRadius": 1000,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 1500,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 2.867692,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "巴山虎",
+            "Delay": 100,
+            "bulletConfig": {
+              "ProjectileIDs": [1016262],
+              "OffsetX": 300,
+              "OffsetY": 300,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 800
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_HYS_LuoChaGui_01_Atk_02",
+    "name": "原地脚踩一次",
+    "addRadius": 2000,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 1500,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "波动",
+        "bulletConfig": {
+          "ProjectileIDs": [30050301],
+          "OffsetX": 300,
+          "OffsetY": 300,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "out_magic",
+        "name": "退出精魄",
+        "Delay": 800
+      }
+    ]
+  }
+]

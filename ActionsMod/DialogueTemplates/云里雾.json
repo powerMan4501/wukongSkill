@@ -1,0 +1,204 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "眼睛瞎，胆子小",
+    "DialogueId": 340050001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_10",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_10"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "瞎子捉猴，笑断我头",
+    "DialogueId": 340050002,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_10_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "吃我老痰一口！",
+    "DialogueId": 340050003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_12",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_12"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这是待客之道！",
+    "DialogueId": 340050004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/voice/EVT_enm_hys_yunliwu_voice_dialogue_skill_12_b",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_12_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "管教你雾里看花",
+    "DialogueId": 340050005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_14",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_14"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "有来无去！",
+    "DialogueId": 340050006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_14",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_14"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大王高",
+    "DialogueId": 340050007,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_14_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大王妙",
+    "DialogueId": 340050008,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_14_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大王要你命难逃！",
+    "DialogueId": 340050009,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_14_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "睁开眼好好瞧瞧！",
+    "DialogueId": 340050010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_16",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_16"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "兄弟死得好！",
+    "DialogueId": 340050011,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_16_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "散花！",
+    "DialogueId": 340050012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_18",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_18"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "让你耍个够！",
+    "DialogueId": 340050013,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_18_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "给你变个戏法瞧瞧！",
+    "DialogueId": 340050014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_01",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "给他看看咱们的配合！",
+    "DialogueId": 340050015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_02_a",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_02_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "别抢我的风头！",
+    "DialogueId": 340050016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_02_b",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_02_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "排山",
+    "DialogueId": 340050017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_03",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我盯着呢！",
+    "DialogueId": 340050018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_04",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "火你个头，没用！",
+    "DialogueId": 340050019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_05",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "三下四下五下",
+    "DialogueId": 340050020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_06",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_06"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "跟你一伙，可真是蹭蹬！",
+    "DialogueId": 340050021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_07_c",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_07_c"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天灵灵，地灵灵，亮！",
+    "DialogueId": 340050022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_skill_08",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_skill_08"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这夯货果然比我先走一步",
+    "DialogueId": 340050023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_death_01",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_death_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "单打独斗？正合我意！",
+    "DialogueId": 340050024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_death_02",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_death_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "竟然……有点想那瞎子……",
+    "DialogueId": 340050025,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_death_03",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_death_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "可算安静下来了",
+    "DialogueId": 340050026,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_yunliwu/EVT_enm_hys_yunliwu_voice_dialogue_death_07",
+    "AkEventName": "EVT_enm_hys_yunliwu_voice_dialogue_death_07"
+  }
+]

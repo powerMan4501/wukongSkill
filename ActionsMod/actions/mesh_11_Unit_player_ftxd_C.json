@@ -1,0 +1,37 @@
+﻿{
+    "Bindings":  [
+                     {
+                         "Key":  "XBUTTON1",
+                         "UnitName":  "Unit_player_ftxd_C",
+                         "Actions":  [
+                                         {
+                                             "Type":  "Skill",
+                                             "Value":  25134,
+                                             "Condition":  {
+                                                               "Type":  "hasAnyBuff",
+                                                               "params":  "24071"
+                                                           },
+                                             "name":  "巨猿，冰buff， 核爆冰拳"
+                                         },
+                                         {
+                                             "Type":  "Skill",
+                                             "Value":  25257,
+                                             "Condition":  {
+                                                               "Type":  "hasAnyBuff",
+                                                               "params":  "24072"
+                                                           },
+                                             "name":  "法相巨猿，核爆火拳"
+                                         },
+                                         {
+                                             "Type":  "Skill",
+                                             "Value":  24311,
+                                             "Condition":  {
+                                                               "Type":  "noHasAnyBuff",
+                                                               "params":  "24071,24072"
+                                                           },
+                                             "name":  "jxsq 攻击"
+                                         }
+                                     ]
+                     }
+                 ]
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "别疑神疑鬼的，有大师兄在这里把守",
+    "DialogueId": 3101601,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "哪个不识相会来找死啊？",
+    "DialogueId": 3101602,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "只要是面生的，一概不放过",
+    "DialogueId": 3101603,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "苍蝇再好不过，那竹林深处自有它的对头",
+    "DialogueId": 3101604,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "胡说！",
+    "DialogueId": 3101605,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "那猴子早就下落不明了！",
+    "DialogueId": 3101606,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "少碎嘴",
+    "DialogueId": 3101607,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大王差吾等巡山，吾等尽心竭力便是",
+    "DialogueId": 3101608,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "管那么多作甚",
+    "DialogueId": 3101609,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  }
+]

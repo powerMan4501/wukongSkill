@@ -1,0 +1,30 @@
+[
+  {
+    "name": "定身时发射杨戬激光（原 MagicMod OnCastImmobilize 写死部分）",
+    "ConfigIDs": [],
+    "actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "spawnBaseSocketName": "hand_l",
+          "ProjectileIDs": [80000011],
+          "path": "/Game/00Main/Design/Bullets/MGD/MGD_yangjian_01/DA/SP_mgd_yangjian_01_biglaser_01.SP_mgd_yangjian_01_biglaser_01",
+          "penetrateDamageProjectileID": {
+            "ProjectileID": 1016901,
+            "BulletFlySpd": 20000,
+            "HitActions": [
+              {
+                "Type": "bullet",
+                "name": "火 , 鳖宝子弹",
+                "bulletConfig": {
+                  "ProjectileIDs": [40550101],
+                  "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "ID": 33330001,
+    "name": "模板",
+    "BulletIsForMerge": 0,
+    "BulletIsMergeChild": 0,
+    "BulletMergeTag": "",
+    "LifeOverEffectID": [9999],
+    "HitChrEffectsforSelf": [],
+    "HitProjectileEffectsforSelf": [],
+    "HitItemEffectsforSelf": [],
+    "HitEffectsforChr": [],
+    "HitEffectsforProjectile": [],
+    "HitDestructibleStrengthType": 4,
+    "HitDestructibleDirectionType": 0,
+    "DelayTriggerEffects": [],
+    "HitDestructibleEffectsforSelf": [],
+    "BulletSweepCheckGap": 0.1,
+    "BulletSweepCheckDelayTime": 0.0,
+    "BulletIsOnlyHitTarget": 0,
+    "BulletCanThroughBlockage": 1,
+    "IsLaserType": 0,
+    "LaserMaxLength": 0.0,
+    "LaserLengthSpeed": 0.0,
+    "LaserLengthSpeedCurvePath": "",
+    "Guard": "Guard"
+  }
+]

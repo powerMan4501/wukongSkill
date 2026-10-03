@@ -1,0 +1,15 @@
+﻿{
+  "Bindings": [
+    {
+      "Key": "XBUTTON1",
+      "UnitName": "Unit_player_hfm_hu_C",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 14121,
+          "name": "寅虎风砍"
+        }
+      ]
+    }
+  ]
+}

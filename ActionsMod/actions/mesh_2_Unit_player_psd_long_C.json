@@ -1,0 +1,15 @@
+﻿{
+  "Bindings": [
+    {
+      "Key": "XBUTTON1",
+      "UnitName": "Unit_player_psd_long_C",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 19015,
+          "name": "小黄龙切手技能"
+        }
+      ]
+    }
+  ]
+}

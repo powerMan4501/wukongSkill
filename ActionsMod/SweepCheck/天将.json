@@ -1,0 +1,18 @@
+[
+  {
+    "Animation": "AM_HGS_TianJiang_01_Atk_Fast_18",
+    "name": "电圈",
+    "addRadius": 4000,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [30250101],
+          "SpawnOffsetX": 1,
+          "SpawnOffsetY": 1,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  }
+]

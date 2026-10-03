@@ -1,0 +1,387 @@
+[
+  {
+    "name": "杨戬",
+    "file": "杨戬.json",
+    "total": 155,
+    "withEvent": 155,
+    "withPath": 155
+  },
+  {
+    "name": "黄眉",
+    "file": "黄眉.json",
+    "total": 120,
+    "withEvent": 118,
+    "withPath": 113
+  },
+  {
+    "name": "百眼魔君",
+    "file": "百眼魔君.json",
+    "total": 63,
+    "withEvent": 63,
+    "withPath": 63
+  },
+  {
+    "name": "夜叉王",
+    "file": "夜叉王.json",
+    "total": 49,
+    "withEvent": 46,
+    "withPath": 46
+  },
+  {
+    "name": "快如风",
+    "file": "快如风.json",
+    "total": 49,
+    "withEvent": 48,
+    "withPath": 48
+  },
+  {
+    "name": "黄风大圣",
+    "file": "黄风大圣.json",
+    "total": 49,
+    "withEvent": 49,
+    "withPath": 49
+  },
+  {
+    "name": "雾里云",
+    "file": "雾里云.json",
+    "total": 36,
+    "withEvent": 36,
+    "withPath": 27
+  },
+  {
+    "name": "毒敌大王",
+    "file": "毒敌大王.json",
+    "total": 35,
+    "withEvent": 35,
+    "withPath": 35
+  },
+  {
+    "name": "父鼠",
+    "file": "父鼠.json",
+    "total": 34,
+    "withEvent": 34,
+    "withPath": 27
+  },
+  {
+    "name": "火焰山土地公",
+    "file": "火焰山土地公.json",
+    "total": 32,
+    "withEvent": 30,
+    "withPath": 26
+  },
+  {
+    "name": "青面獠牙兽",
+    "file": "青面獠牙兽.json",
+    "total": 32,
+    "withEvent": 32,
+    "withPath": 26
+  },
+  {
+    "name": "兴烘掀",
+    "file": "兴烘掀.json",
+    "total": 31,
+    "withEvent": 31,
+    "withPath": 31
+  },
+  {
+    "name": "红孩儿",
+    "file": "红孩儿.json",
+    "total": 31,
+    "withEvent": 31,
+    "withPath": 31
+  },
+  {
+    "name": "掀烘兴",
+    "file": "掀烘兴.json",
+    "total": 28,
+    "withEvent": 28,
+    "withPath": 28
+  },
+  {
+    "name": "急如火",
+    "file": "急如火.json",
+    "total": 27,
+    "withEvent": 27,
+    "withPath": 27
+  },
+  {
+    "name": "云里雾",
+    "file": "云里雾.json",
+    "total": 26,
+    "withEvent": 26,
+    "withPath": 20
+  },
+  {
+    "name": "亢金龙",
+    "file": "亢金龙.json",
+    "total": 26,
+    "withEvent": 26,
+    "withPath": 26
+  },
+  {
+    "name": "辰龙",
+    "file": "辰龙.json",
+    "total": 23,
+    "withEvent": 23,
+    "withPath": 23
+  },
+  {
+    "name": "僧面",
+    "file": "僧面.json",
+    "total": 22,
+    "withEvent": 22,
+    "withPath": 22
+  },
+  {
+    "name": "黑风大王",
+    "file": "黑风大王.json",
+    "total": 22,
+    "withEvent": 21,
+    "withPath": 21
+  },
+  {
+    "name": "虎先锋",
+    "file": "虎先锋.json",
+    "total": 21,
+    "withEvent": 21,
+    "withPath": 17
+  },
+  {
+    "name": "巴山虎",
+    "file": "巴山虎.json",
+    "total": 20,
+    "withEvent": 20,
+    "withPath": 20
+  },
+  {
+    "name": "杨显",
+    "file": "杨显.json",
+    "total": 20,
+    "withEvent": 20,
+    "withPath": 20
+  },
+  {
+    "name": "吴龙",
+    "file": "吴龙.json",
+    "total": 18,
+    "withEvent": 18,
+    "withPath": 18
+  },
+  {
+    "name": "黄袍猪",
+    "file": "黄袍猪.json",
+    "total": 18,
+    "withEvent": 18,
+    "withPath": 18
+  },
+  {
+    "name": "广谋",
+    "file": "广谋.json",
+    "total": 17,
+    "withEvent": 17,
+    "withPath": 7
+  },
+  {
+    "name": "寅虎",
+    "file": "寅虎.json",
+    "total": 16,
+    "withEvent": 16,
+    "withPath": 16
+  },
+  {
+    "name": "腿僧",
+    "file": "腿僧.json",
+    "total": 15,
+    "withEvent": 15,
+    "withPath": 14
+  },
+  {
+    "name": "黄眉悬塑",
+    "file": "黄眉悬塑.json",
+    "total": 15,
+    "withEvent": 15,
+    "withPath": 15
+  },
+  {
+    "name": "甲虫总兵",
+    "file": "甲虫总兵.json",
+    "total": 14,
+    "withEvent": 14,
+    "withPath": 14
+  },
+  {
+    "name": "老僧",
+    "file": "老僧.json",
+    "total": 14,
+    "withEvent": 14,
+    "withPath": 14
+  },
+  {
+    "name": "吼虎",
+    "file": "吼虎.json",
+    "total": 13,
+    "withEvent": 13,
+    "withPath": 13
+  },
+  {
+    "name": "狼05",
+    "file": "狼05.json",
+    "total": 13,
+    "withEvent": 0,
+    "withPath": 0
+  },
+  {
+    "name": "千眼猴",
+    "file": "千眼猴.json",
+    "total": 12,
+    "withEvent": 12,
+    "withPath": 10
+  },
+  {
+    "name": "狼03",
+    "file": "狼03.json",
+    "total": 12,
+    "withEvent": 0,
+    "withPath": 0
+  },
+  {
+    "name": "白衣秀士",
+    "file": "白衣秀士.json",
+    "total": 12,
+    "withEvent": 10,
+    "withPath": 10
+  },
+  {
+    "name": "空心道人",
+    "file": "空心道人.json",
+    "total": 11,
+    "withEvent": 11,
+    "withPath": 11
+  },
+  {
+    "name": "狼07",
+    "file": "狼07.json",
+    "total": 9,
+    "withEvent": 0,
+    "withPath": 0
+  },
+  {
+    "name": "金池长老",
+    "file": "金池长老.json",
+    "total": 9,
+    "withEvent": 9,
+    "withPath": 5
+  },
+  {
+    "name": "戒铲僧",
+    "file": "戒铲僧.json",
+    "total": 8,
+    "withEvent": 8,
+    "withPath": 8
+  },
+  {
+    "name": "子鼠",
+    "file": "子鼠.json",
+    "total": 7,
+    "withEvent": 7,
+    "withPath": 7
+  },
+  {
+    "name": "伥鬼",
+    "file": "伥鬼.json",
+    "total": 6,
+    "withEvent": 6,
+    "withPath": 6
+  },
+  {
+    "name": "土匪",
+    "file": "土匪.json",
+    "total": 5,
+    "withEvent": 0,
+    "withPath": 0
+  },
+  {
+    "name": "大圣",
+    "file": "大圣.json",
+    "total": 4,
+    "withEvent": 4,
+    "withPath": 4
+  },
+  {
+    "name": "广智",
+    "file": "广智.json",
+    "total": 4,
+    "withEvent": 4,
+    "withPath": 4
+  },
+  {
+    "name": "蜢虫精",
+    "file": "蜢虫精.json",
+    "total": 4,
+    "withEvent": 0,
+    "withPath": 0
+  },
+  {
+    "name": "敌人双头鼠",
+    "file": "敌人双头鼠.json",
+    "total": 3,
+    "withEvent": 0,
+    "withPath": 0
+  },
+  {
+    "name": "石中人",
+    "file": "石中人.json",
+    "total": 3,
+    "withEvent": 3,
+    "withPath": 3
+  },
+  {
+    "name": "执杖道士",
+    "file": "执杖道士.json",
+    "total": 2,
+    "withEvent": 2,
+    "withPath": 2
+  },
+  {
+    "name": "拂尘道士",
+    "file": "拂尘道士.json",
+    "total": 2,
+    "withEvent": 2,
+    "withPath": 2
+  },
+  {
+    "name": "蜻蜓精",
+    "file": "蜻蜓精.json",
+    "total": 2,
+    "withEvent": 2,
+    "withPath": 2
+  },
+  {
+    "name": "广场双头鼠",
+    "file": "广场双头鼠.json",
+    "total": 1,
+    "withEvent": 0,
+    "withPath": 0
+  },
+  {
+    "name": "水塘双头鼠",
+    "file": "水塘双头鼠.json",
+    "total": 1,
+    "withEvent": 0,
+    "withPath": 0
+  },
+  {
+    "name": "红袍鼠",
+    "file": "红袍鼠.json",
+    "total": 1,
+    "withEvent": 0,
+    "withPath": 0
+  },
+  {
+    "name": "靠墙双头鼠",
+    "file": "靠墙双头鼠.json",
+    "total": 1,
+    "withEvent": 0,
+    "withPath": 0
+  }
+]

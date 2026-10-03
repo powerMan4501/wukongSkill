@@ -1,0 +1,104 @@
+[
+  {
+    "Animation": "AM_GYCY_YanJianXi_01_Atk_Fast_33",
+    "name": "幽魂如来神掌",
+    "addRadius": 4000,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 2.033333,
+        "Actions": [
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 900
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_10_gycy_yanjianxi_atk_24_",
+    "name": "幽魂,精魄磕头",
+    "addRadius": 900,
+    "cast_actions": [{ "Type": "TeleportTargetToFront", "Value": 100 }],
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.7,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "金沙，波动",
+            "bulletConfig": {
+              "ProjectileIDs": [74011107, 30050301],
+              "SpawnOffsetX": 200,
+              "SpawnOffsetY": 200,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_GYCY_YanJianXi_01_Atk_Fast_32",
+    "name": "幽魂四连地爆",
+    "addRadius": 3000,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 1000,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "波动",
+        "bulletConfig": {
+          "ProjectileIDs": [30050301],
+          "SpawnOffsetX": 200,
+          "SpawnOffsetY": 200,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_GYCY_YanJianXi_01_Atk_Fast_39",
+    "name": "幽魂冲上去双掌拍合",
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 950,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 2.541722,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileID": 1016262,
+              "SpawnOffsetX": 500,
+              "SpawnOffsetY": 500,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+      {
+        "NotifyBeginTime": 2.674843,
+        "Actions": [
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 500
+          }
+        ]
+      }
+    ]
+  }
+]

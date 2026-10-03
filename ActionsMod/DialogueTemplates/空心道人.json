@@ -1,0 +1,90 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "怪蟒翻身",
+    "DialogueId": 343110001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/EVT_enm_psd_daoshi_04/EVT_enm_psd_daoshi_04_voice_dialogue_atk_03_01",
+    "AkEventName": "EVT_enm_psd_daoshi_04_voice_dialogue_atk_03_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "白蛇吐信",
+    "DialogueId": 343110002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/EVT_enm_psd_daoshi_04/EVT_enm_psd_daoshi_04_voice_dialogue_atk_04_01",
+    "AkEventName": "EVT_enm_psd_daoshi_04_voice_dialogue_atk_04_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "拨草寻蛇",
+    "DialogueId": 343110003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/EVT_enm_psd_daoshi_04/EVT_enm_psd_daoshi_04_voice_dialogue_atk_07_01",
+    "AkEventName": "EVT_enm_psd_daoshi_04_voice_dialogue_atk_07_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "摘星换斗",
+    "DialogueId": 343110004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/EVT_enm_psd_daoshi_04/EVT_enm_psd_daoshi_04_voice_dialogue_atk_09_01",
+    "AkEventName": "EVT_enm_psd_daoshi_04_voice_dialogue_atk_09_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "野马跳涧",
+    "DialogueId": 343110005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/EVT_enm_psd_daoshi_04/EVT_enm_psd_daoshi_04_voice_dialogue_atk_11_01",
+    "AkEventName": "EVT_enm_psd_daoshi_04_voice_dialogue_atk_11_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "云开雾散",
+    "DialogueId": 343110006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/EVT_enm_psd_daoshi_04/EVT_enm_psd_daoshi_04_voice_dialogue_atk_13_01",
+    "AkEventName": "EVT_enm_psd_daoshi_04_voice_dialogue_atk_13_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "小居士，多谢！多谢了！",
+    "DialogueId": 343110007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/EVT_enm_psd_daoshi_04/EVT_enm_psd_daoshi_04_voice_dialogue_kill_01",
+    "AkEventName": "EVT_enm_psd_daoshi_04_voice_dialogue_kill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你啊，轻信寡言，死的不冤",
+    "DialogueId": 343110008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/EVT_enm_psd_daoshi_04/EVT_enm_psd_daoshi_04_voice_dialogue_kill_02",
+    "AkEventName": "EVT_enm_psd_daoshi_04_voice_dialogue_kill_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "小居士，你这是作甚，我可绝无害你之心啊",
+    "DialogueId": 343110009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/EVT_enm_psd_daoshi_04/EVT_enm_psd_daoshi_04_voice_dialogue_youzou",
+    "AkEventName": "EVT_enm_psd_daoshi_04_voice_dialogue_youzou_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "如此这般，岂不是将自己也困住了？",
+    "DialogueId": 343110010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/EVT_enm_psd_daoshi_04/EVT_enm_psd_daoshi_04_voice_dialogue_youzou",
+    "AkEventName": "EVT_enm_psd_daoshi_04_voice_dialogue_youzou_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "旁门法术不入眼，不妨早些出来，与我学点利害的",
+    "DialogueId": 343110011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/EVT_enm_psd_daoshi_04/EVT_enm_psd_daoshi_04_voice_dialogue_youzou",
+    "AkEventName": "EVT_enm_psd_daoshi_04_voice_dialogue_youzou_03"
+  }
+]

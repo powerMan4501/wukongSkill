@@ -1,0 +1,71 @@
+[
+  {
+    "name": "10417 法术键：先允许自动变回再强制变回（原 MagicMod 写死分支）",
+    "InputActionType": "UseSkillByType",
+    "SkillIDs": [10417],
+    "IsRelease": false,
+    "actions": [{ "Type": "setMagicBack", "Value": 1 }, { "Type": "out_magic" }]
+  },
+  {
+    "name": "10518 定身：冷却中改放 50007",
+    "InputActionType": "UseSkillByType",
+    "SkillIDs": [10518],
+    "IsRelease": false,
+    "actions": [
+      {
+        "Type": "Skill",
+        "Value": 50007,
+        "Condition": { "Type": "skillCDNotReady", "Params": "10518" }
+      }
+    ]
+  },
+  {
+    "name": "10505 铜头：冷却中改幻影突进（Rushskill 自带重置 10095 冷却）",
+    "InputActionType": "UseSkillByType",
+    "SkillIDs": [10505],
+    "IsRelease": false,
+    "actions": [
+      {
+        "Type": "Rushskill",
+        "RushDir": "Forward",
+        "Condition": { "Type": "skillCDNotReady", "Params": "10505" }
+      }
+    ]
+  },
+  {
+    "name": "10095 聚形散气：冷却中改放 10505",
+    "InputActionType": "UseSkillByType",
+    "SkillIDs": [10095],
+    "IsRelease": false,
+    "actions": [
+      {
+        "Type": "Skill",
+        "Value": 10505,
+        "Condition": { "Type": "skillCDNotReady", "Params": "10095" }
+      }
+    ]
+  },
+  {
+    "name": "10516/50093 分身术：冷却中触发替死并改放 10520",
+    "InputActionType": "UseSkillByType",
+    "SkillIDs": [10516, 50093],
+    "IsRelease": false,
+    "actions": [
+      {
+        "Type": "ext_lifesaving",
+        "Condition": { "Type": "skillCDNotReady", "Params": "10516,50093" }
+      },
+      {
+        "Type": "Skill",
+        "Value": 10520,
+        "Condition": { "Type": "skillCDNotReady", "Params": "10516,50093" }
+      }
+    ]
+  },
+  {
+    "name": "连段起手技能附带 289 Buff（原 MagicMod OnRequestSmartCastSkill 写死部分）",
+    "SkillIDs": [10705, 10706, 10723, 50001, 50003, 50005],
+    "IsRelease": false,
+    "actions": [{ "Type": "Buff", "Value": 289, "Duration": 5000 }]
+  }
+]

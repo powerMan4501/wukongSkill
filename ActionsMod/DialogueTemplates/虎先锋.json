@@ -1,0 +1,166 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "打不过，就得跪下",
+    "DialogueId": 320220001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_atk_fast_03",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_016"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "猴头留着下酒，剩下的送给大王",
+    "DialogueId": 320220002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_atk_fast_03",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_017"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "耍你的！",
+    "DialogueId": 320220003,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_001_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "在这里，夯货！",
+    "DialogueId": 320220004,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_002_a"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "想跑？",
+    "DialogueId": 320220005,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_003_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "给老子，磕头！",
+    "DialogueId": 320220006,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_004_b"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "飒！",
+    "DialogueId": 320220007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_atk_fast_03",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "霸！",
+    "DialogueId": 320220008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_atk_fast_03",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "欻！",
+    "DialogueId": 320220009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_atk_fast_03",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "势！",
+    "DialogueId": 320220010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_atk_fast_03",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_008"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "搅！",
+    "DialogueId": 320220011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_atk_fast_03",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_009"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "弄些个不入眼的把戏，出来！",
+    "DialogueId": 320220012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_atk_fast_03",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "躲不过，就此绝命罢！",
+    "DialogueId": 320220013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_atk_fast_03",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_011"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "雕虫小技",
+    "DialogueId": 320220014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_atk_fast_03",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_012"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "头还挺硬……",
+    "DialogueId": 320220015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_atk_fast_03",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_013"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "画虎类犬",
+    "DialogueId": 320220016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_atk_fast_03",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_014"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "学艺不精！",
+    "DialogueId": 320220017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_atk_fast_03",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_015"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "剒！",
+    "DialogueId": 320220018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_rush_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "截！",
+    "DialogueId": 320220019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_rush_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "劲！",
+    "DialogueId": 320220020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_rush_003",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_rush_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "劈！",
+    "DialogueId": 320220021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Stone_01/Voice/EVT_enm_hfm_hu_stone_01_voice_dialogue/EVT_enm_hfm_hu_stone_01_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_hfm_hu_stone_01_voice_dialogue_rush_004"
+  }
+]

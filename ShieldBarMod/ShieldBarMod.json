@@ -1,0 +1,301 @@
+{
+  "ToggleKey": "F3",
+  "BarHeight": 10.0,
+  "Opacity": 0.7,
+  "FillColor": "ffffff",
+  "TrackColor": "000000",
+  "HideWhenZero": false,
+  "DefaultShield": 2000.0,
+  "TrackOpacity": 0.5,
+  "OffsetY": 2.0,
+  "ScreenAnchor": false,
+  "ScreenX": 415.0,
+  "ScreenY": 212.0,
+  "ScreenWidth": 750.0,
+  "ScreenHeight": 10.0,
+  "ScreenFromBottom": true,
+  "HpBarMaxLength": 0.0,
+  "MpBarMaxLength": 0.0,
+  "StBarMaxLength": 0.0,
+  "ShowSelfInfo": {
+    "Shield": {
+      "ScreenX": 920.0,
+      "ScreenY": 120.0,
+      "FontSize": 34.0,
+      "Color": "8ecbff",
+      "Label": "护盾 "
+    },
+    "DmgDef": {
+      "ScreenX": 620.0,
+      "ScreenY": 120.0,
+      "FontSize": 32.0,
+      "Color": "ffffff",
+      "Label": "伤害减免 ",
+      "Suffix": "%",
+      "DivideBy": 100.0
+    },
+    "DmgAddition": {
+      "ScreenX": 320.0,
+      "ScreenY": 120.0,
+      "FontSize": 32.0,
+      "Color": "ff9a4a",
+      "Label": "伤害加成 ",
+      "Suffix": "%",
+      "DivideBy": 100.0
+    },
+    "Atk": {
+      "ScreenX": 920.0,
+      "ScreenY": 166.0,
+      "FontSize": 34.0,
+      "Color": "ffffff",
+      "Label": "攻击 "
+    },
+    "CritRate": {
+      "ScreenX": 620.0,
+      "ScreenY": 166.0,
+      "FontSize": 32.0,
+      "Color": "ffd24a",
+      "Label": "暴击 ",
+      "Suffix": "%",
+      "DivideBy": 100.0
+    },
+    "CritMultiplier": {
+      "ScreenX": 320.0,
+      "ScreenY": 166.0,
+      "FontSize": 32.0,
+      "Color": "ffd24a",
+      "Label": "暴击伤害 ",
+      "Suffix": "%",
+      "DivideBy": 100.0,
+      "Offset": 130.0
+    },
+    "Hp": {
+      "ScreenX": 920.0,
+      "ScreenY": 212.0,
+      "FontSize": 32.0,
+      "Color": "ff5a5a",
+      "Label": "生命 "
+    },
+    "Mp": {
+      "ScreenX": 620.0,
+      "ScreenY": 212.0,
+      "FontSize": 32.0,
+      "Color": "6ab0ff",
+      "Label": "法力 "
+    },
+    "Def": {
+      "ScreenX": 320.0,
+      "ScreenY": 212.0,
+      "FontSize": 32.0,
+      "Color": "ffffff",
+      "Label": "防御 "
+    },
+    "Pevalue": {
+      "ScreenX": 20.0,
+      "ScreenY": 212.0,
+      "FontSize": 32.0,
+      "Color": "ffffff",
+      "Label": "棍势 "
+    },
+    "CurEnergy": {
+      "ScreenX": 920.0,
+      "ScreenY": 258.0,
+      "FontSize": 32.0,
+      "Color": "ffffff",
+      "Label": "神力 "
+    },
+    "FabaoEnergy": {
+      "ScreenX": 620.0,
+      "ScreenY": 258.0,
+      "FontSize": 32.0,
+      "Color": "ffffff",
+      "Label": "法宝 "
+    },
+    "VigorEnergy": {
+      "ScreenX": 320.0,
+      "ScreenY": 258.0,
+      "FontSize": 32.0,
+      "Color": "ffffff",
+      "Label": "精魄 "
+    },
+    "CommDropAddition": {
+      "ScreenX": 20.0,
+      "ScreenY": 258.0,
+      "FontSize": 32.0,
+      "Color": "c08cff",
+      "Label": "掉宝 ",
+      "Suffix": "%",
+      "DivideBy": 100.0
+    },
+    "FreezeDef": {
+      "ScreenX": 920.0,
+      "ScreenY": 304.0,
+      "FontSize": 32.0,
+      "Color": "8ecbff",
+      "Label": "冰抗 ",
+      "HideIfZero": false
+    },
+    "BurnDef": {
+      "ScreenX": 620.0,
+      "ScreenY": 304.0,
+      "FontSize": 32.0,
+      "Color": "ff8c4a",
+      "Label": "火抗 ",
+      "HideIfZero": false
+    },
+    "PoisonDef": {
+      "ScreenX": 320.0,
+      "ScreenY": 304.0,
+      "FontSize": 32.0,
+      "Color": "a6e05a",
+      "Label": "毒抗 ",
+      "HideIfZero": false
+    },
+    "ThunderDef": {
+      "ScreenX": 20.0,
+      "ScreenY": 304.0,
+      "FontSize": 32.0,
+      "Color": "ffe066",
+      "Label": "雷抗 ",
+      "HideIfZero": false
+    },
+    "FreezeAtk": {
+      "ScreenX": 920.0,
+      "ScreenY": 350.0,
+      "FontSize": 32.0,
+      "Color": "8ecbff",
+      "Label": "冰攻 ",
+      "HideIfZero": false
+    },
+    "BurnAtk": {
+      "ScreenX": 620.0,
+      "ScreenY": 350.0,
+      "FontSize": 32.0,
+      "Color": "ff8c4a",
+      "Label": "火攻 ",
+      "HideIfZero": false
+    },
+    "PoisonAtk": {
+      "ScreenX": 320.0,
+      "ScreenY": 350.0,
+      "FontSize": 32.0,
+      "Color": "a6e05a",
+      "Label": "毒攻 ",
+      "HideIfZero": false
+    },
+    "ThunderAtk": {
+      "ScreenX": 20.0,
+      "ScreenY": 350.0,
+      "FontSize": 32.0,
+      "Color": "ffe066",
+      "Label": "雷攻 ",
+      "HideIfZero": false
+    }
+  },
+  "ShowTargetInfo": {
+    "Name": {
+      "ScreenX": 920.0,
+      "ScreenY": 424.0,
+      "FontSize": 34.0,
+      "Color": "ffd0d0",
+      "Label": "目标角色："
+    },
+    "Hp": {
+      "ScreenX": 920.0,
+      "ScreenY": 470.0,
+      "FontSize": 34.0,
+      "Color": "ff5a5a",
+      "Label": "生命 "
+    },
+    "Atk": {
+      "ScreenX": 620.0,
+      "ScreenY": 470.0,
+      "FontSize": 34.0,
+      "Color": "ffffff",
+      "Label": "攻击 "
+    },
+    "DmgAddition": {
+      "ScreenX": 320.0,
+      "ScreenY": 470.0,
+      "FontSize": 32.0,
+      "Color": "ff9a4a",
+      "Label": "伤害加成 ",
+      "Suffix": "%",
+      "DivideBy": 100.0
+    },
+    "DmgDef": {
+      "ScreenX": 20.0,
+      "ScreenY": 470.0,
+      "FontSize": 32.0,
+      "Color": "ffffff",
+      "Label": "伤害减免 ",
+      "Suffix": "%",
+      "DivideBy": 100.0
+    },
+    "FreezeDef": {
+      "ScreenX": 920.0,
+      "ScreenY": 516.0,
+      "FontSize": 32.0,
+      "Color": "8ecbff",
+      "Label": "冰抗 ",
+      "HideIfZero": false
+    },
+    "BurnDef": {
+      "ScreenX": 620.0,
+      "ScreenY": 516.0,
+      "FontSize": 32.0,
+      "Color": "ff8c4a",
+      "Label": "火抗 ",
+      "HideIfZero": false
+    },
+    "PoisonDef": {
+      "ScreenX": 320.0,
+      "ScreenY": 516.0,
+      "FontSize": 32.0,
+      "Color": "a6e05a",
+      "Label": "毒抗 ",
+      "HideIfZero": false
+    },
+    "ThunderDef": {
+      "ScreenX": 20.0,
+      "ScreenY": 516.0,
+      "FontSize": 32.0,
+      "Color": "ffe066",
+      "Label": "雷抗 ",
+      "HideIfZero": false
+    },
+    "FreezeAtk": {
+      "ScreenX": 920.0,
+      "ScreenY": 562.0,
+      "FontSize": 32.0,
+      "Color": "8ecbff",
+      "Label": "冰攻 ",
+      "HideIfZero": false
+    },
+    "BurnAtk": {
+      "ScreenX": 620.0,
+      "ScreenY": 562.0,
+      "FontSize": 32.0,
+      "Color": "ff8c4a",
+      "Label": "火攻 ",
+      "HideIfZero": false
+    },
+    "PoisonAtk": {
+      "ScreenX": 320.0,
+      "ScreenY": 562.0,
+      "FontSize": 32.0,
+      "Color": "a6e05a",
+      "Label": "毒攻 ",
+      "HideIfZero": false
+    },
+    "ThunderAtk": {
+      "ScreenX": 20.0,
+      "ScreenY": 562.0,
+      "FontSize": 32.0,
+      "Color": "ffe066",
+      "Label": "雷攻 ",
+      "HideIfZero": false
+    }
+  },
+  "AttrAnchorRight": true
+}

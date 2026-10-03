@@ -1,0 +1,186 @@
+{
+  "_usage": [
+    "【素材库模板，不会被 Mod 加载】本文件只用来复制粘贴：",
+    "1) 把下面 'Bindings' 里你需要的条目复制到 游戏目录 CSharpLoader\\Mods\\ActionsMod\\actions.json 的 \"Bindings\" 数组里；",
+    "2) 或者 entire file 复制成 actions\\sound.json（顶层含 Bindings 的完整对象写法）后改按键；",
+    "3) Key 建议先改掉，避免与你已有绑定撞键（目前用 F7~F12）。",
+    "4) 同一组 Actions 里同类型动作只执行第一个，PlaySound 例外（可配多个一起响）。"
+  ],
+
+  "Bindings": [
+    {
+      "Key": "F7",
+      "name": "① 精确音效：UAkAudioEvent 资产路径，跟随角色胸骨插槽",
+      "Actions": [
+        {
+          "Type": "PlaySound",
+          "name": "拖 path 到 FModel 里 UAkAudioEvent 资产的完整路径即可",
+          "path": "/Game/00Main/Audio/SFX/Enemy/Template/YourFolder/EVT_xxx.EVT_xxx",
+          "SoundMode": "follow",
+          "SocketName": "spine_03"
+        }
+      ]
+    },
+
+    {
+      "Key": "F8",
+      "name": "② 精确音效：Wwise 事件名 + bank（2D 播放，不挂对象）",
+      "Actions": [
+        {
+          "Type": "PlaySound",
+          "name": "按事件名播必须 bank 已加载，否则静默失败；bank 名常与事件名同名",
+          "AkEventName": "EVT_your_event_name",
+          "Bank": "YourEventBank",
+          "SoundMode": "dummy",
+          "StopAfterMs": 3000
+        }
+      ]
+    },
+
+    {
+      "Key": "F9",
+      "name": "③ 一次按多个音效（PlaySound 可同组配多条）",
+      "Actions": [
+        {
+          "Type": "PlaySound",
+          "name": "挂角色身上（默认 actor 模式）",
+          "AkEventName": "EVT_xxx_basic_01",
+          "Bank": "Wukong_vo"
+        },
+        {
+          "Type": "PlaySound",
+          "name": "同时在角色位置再响一层",
+          "path": "/Game/00Main/Audio/SFX/XXX/AKE_yyy",
+          "SoundMode": "location"
+        }
+      ]
+    },
+
+    {
+      "Key": "F10",
+      "name": "④ 自定义台词 + 自己喊一声（VoiceResId=-1 = 当前角色自己）",
+      "Actions": [
+        {
+          "Type": "SayLine",
+          "name": "出招喊话最常用写法",
+          "Speaker": "天命人",
+          "Text": "俺老孙来也！",
+          "VoiceResId": -1,
+          "SubtitleDurationMs": 2500
+        }
+      ]
+    },
+
+    {
+      "Key": "F11",
+      "name": "⑤ 自定义台词 + 指定单位的声音（按单位名模糊匹配，不用记 ResID）",
+      "Actions": [
+        {
+          "Type": "SayLine",
+          "name": "VoiceName 在 FUStB2DUnitCommDesc 里按 Name/BPPath 子串匹配",
+          "Speaker": "蝎太子",
+          "Text": "哪里走！",
+          "VoiceName": "xiezitaizi",
+          "SubtitleDurationMs": 2500
+        }
+      ]
+    },
+
+    {
+      "Key": "F12",
+      "name": "⑥ 自定义台词 + 精确指定那句语音（最听话，但要自己找资源）",
+      "Actions": [
+        {
+          "Type": "SayLine",
+          "name": "path / AkEventName 二选一，path 更稳（不用管 bank）",
+          "Speaker": "夜叉王",
+          "Text": "受死！",
+          "path": "/Game/00Main/Audio/SFX/Enemy/YeChaWang/EVT_xxx_voice_atk_32",
+          "SubtitleDurationMs": 3000
+        }
+      ]
+    },
+
+    {
+      "Key": "P",
+      "name": "⑦ 原版台词：给台词 ID，自动反查语音（查不到就只出字幕）",
+      "Actions": [
+        {
+          "Type": "SpeakDialogue",
+          "name": "DialogueId = FUStDialogueDesc 的 ID",
+          "DialogueId": 349990003,
+          "SubtitleDurationMs": 2500
+        }
+      ]
+    },
+
+    {
+      "Key": "O",
+      "name": "⑧ 整段对话：AiConversationContentDesc 的 ID（语音+官方字幕，有 CD/过场中不播）",
+      "Actions": [
+        {
+          "Type": "PlayDialogue",
+          "name": "Values 可填多个 ID，按顺序播",
+          "Values": [ 10001 ]
+        }
+      ]
+    },
+
+    {
+      "Key": "I",
+      "name": "⑨ 只出字幕：自定义文本",
+      "Actions": [
+        {
+          "Type": "Subtitle",
+          "Speaker": "旁白",
+          "Text": "自定义字幕测试",
+          "SubtitleDurationMs": 3000
+        }
+      ]
+    },
+
+    {
+      "Key": "U",
+      "name": "⑩ 只出字幕：按台词 ID 取原版文本",
+      "Actions": [
+        {
+          "Type": "Subtitle",
+          "Value": 349990003,
+          "SubtitleDurationMs": 2500
+        }
+      ]
+    },
+
+    {
+      "Key": "Y",
+      "name": "⑪ 查单位语音：打印玩家/锁定目标的 ResID 与 SoundPrefix",
+      "Actions": [
+        { "Type": "ProbeVoice" }
+      ]
+    },
+
+    {
+      "Key": "T",
+      "name": "⑫ 按关键字搜单位语音（结果填 VoiceResId / VoiceName）",
+      "Actions": [
+        { "Type": "ProbeVoice", "Params": { "Keyword": "xiezi" } }
+      ]
+    },
+
+    {
+      "Key": "K",
+      "name": "⑬ 查音效资产路径：枚举全部 AkAudioEvent（路径写进 Mod 目录 AkDump\\*.txt，可直接当 path 用）",
+      "Actions": [
+        { "Type": "ProbeSoundAssets", "Params": { "Keyword": "xiez", "MaxPrint": 40 } }
+      ]
+    },
+
+    {
+      "Key": "L",
+      "name": "⑭ 按目录查音效资产（例：只列敌人语音，命中全写文件）",
+      "Actions": [
+        { "Type": "ProbeSoundAssets", "Params": { "Path": "/Game/00Main/Audio/SFX/Enemy", "MaxPrint": 100 } }
+      ]
+    }
+  ]
+}

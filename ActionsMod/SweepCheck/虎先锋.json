@@ -1,0 +1,59 @@
+[
+  {
+    "Animation": ".AM_HFM_Hu_Stone_Atk_Fast_20",
+    "addRadius": 800,
+    "name": "冲拳"
+  },
+
+  {
+    "Animation": ".AM_HFM_Hu_Stone_Atk_Fast_44",
+    "addRadius": 800,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 700,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "name": "肘击，石敢当沙波动，金沙",
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 1.314011,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [22050601, 1016262],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 800
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": ".AM_HFM_Hu_Stone_Atk_Fast_19",
+    "addRadius": 800,
+    "name": "跳砸，石敢当沙波动，巴山虎",
+
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [22050601, 1016262],
+          "SpawnOffsetX": 400,
+          "SpawnOffsetY": 400,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  }
+]

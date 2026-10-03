@@ -1,0 +1,126 @@
+[
+  {
+    "Animation": "AM_player_hfm_hu_Wind_R1_01",
+    "name": "剑气",
+    "cast_actions": [
+      {
+        "Type": "SpeakDialogue",
+        "name": "凉快去！",
+        "DialogueId": 320280001,
+        "SubtitleDurationMs": 2500,
+        "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_001",
+        "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_001"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.4,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileID": 20010102,
+              "BornDirOffsetX": 135,
+              "type": "shot",
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_player_hfm_hu_R2_End_01",
+    "name": "剑气",
+    "cast_actions": [
+      {
+        "Type": "SpeakDialogue",
+        "name": "扫尘",
+        "DialogueId": 320280005,
+        "SubtitleDurationMs": 2500,
+        "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_003",
+        "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_003"
+      }
+    ],
+    "addRadius": 800,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.733333,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileID": 20010101,
+              "type": "shot",
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_player_hfm_hu_R2_End_02",
+    "name": "剑气",
+    "cast_actions": [
+      {
+        "Type": "SpeakDialogue",
+        "name": "胡旋舞",
+        "DialogueId": 320280008,
+        "SubtitleDurationMs": 2500,
+        "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_005",
+        "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_005"
+      }
+    ],
+    "addRadius": 1800,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 1.433333,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileID": 20010101,
+              "type": "shot",
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_player_hfm_hu_R2_End_03",
+    "name": "蓄力3",
+    "cast_actions": [
+      {
+        "Type": "SpeakDialogue",
+        "name": "狼星碎",
+        "DialogueId": 320280009,
+        "SubtitleDurationMs": 2500,
+        "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_Hu_Wind/new/EVT_enm_hfm_hu_Wind_01_voice_dialogue_001",
+        "AkEventName": "EVT_enm_hfm_hu_Wind_01_voice_dialogue_006"
+      }
+    ],
+    "addRadius": 1800,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 1.766667,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "巴山虎",
+            "bulletConfig": {
+              "ProjectileIDs": [1016262],
+              "SpawnOffsetX": 500,
+              "SpawnOffsetY": 500,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,333 @@
+[
+  {
+    "Animation": ".AM_HYS_HongHaiEr_02A_Atk_10",
+    "addRadius": 800,
+    "name": "夜叉王，瞬发地刺",
+    "bullet_actions": [
+      {
+        "ID": 44051003,
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "地刺",
+            "bulletConfig": {
+              "ProjectileIDs": [44051001, 44051005],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+      {
+        "ID": 44051004,
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "地刺",
+            "bulletConfig": {
+              "ProjectileIDs": [44051002, 44051006, 44051007],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 1500
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_HYS_HongHaiEr_02A_Atk_08",
+    "addRadius": 800,
+    "name": "夜叉王，横扫",
+    "bullet_actions": [
+      {
+        "ID": 44050101,
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "地刺",
+            "bulletConfig": {
+              "ProjectileIDs": [44051005, 44051006, 44051007],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+
+      {
+        "ID": 44050102,
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "地刺",
+            "bulletConfig": {
+              "ProjectileIDs": [44051005, 44051006, 44051007],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+           {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 2200
+          }
+        ]
+      },
+
+      {
+        "ID": 44050103,
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "地刺",
+            "bulletConfig": {
+              "ProjectileIDs": [44051005, 44051006, 44051007],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_HYS_HongHaiEr_02A_Atk_06_dalei",
+    "name": "开局二连横扫",
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 1000,
+        "name": "跳到指定的秒数"
+      },
+
+      {
+        "Type": "Buff",
+        "name": "第一次二连斩之后，添加霸体buff，第二次二连斩后退出",
+        "Values": [440527],
+        "Duration": 5000
+      },
+      {
+        "Type": "setMagicBack",
+        "value": 0,
+        "Delay": 900,
+        "name": "不变回"
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_HYS_HongHaiEr_02A_Atk_16_C.AM_HYS_HongHaiEr_02A_Atk_16_C",
+    "name": "前摇顺时针大横扫",
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 1000,
+        "name": "跳到指定的秒数"
+      }
+    ],
+
+    "bullet_actions": [
+      {
+        "ID": 44050102,
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "地刺",
+            "bulletConfig": {
+              "ProjectileIDs": [44051005, 44051006, 44051007],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+
+      {
+        "ID": 44050102,
+        "actions": [
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 800
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_HYS_HongHaiEr_02A_Atk_07.AM_HYS_HongHaiEr_02A_Atk_07",
+    "name": "打打打，爆气，地刺",
+    "addRadius": 3000,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 2600,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 3.339809,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "红波动",
+            "bulletConfig": {
+              "ProjectileIDs": [30203000, 20060105],
+              "SpawnOffsetX": 300,
+              "SpawnOffsetY": 300,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "Montage_SetPosition",
+            "value": 4000,
+            "Delay": 500,
+            "name": "跳到指定的秒数"
+          }
+        ]
+      }
+    ],
+    "bullet_actions": [
+      {
+        "ID": 44051005,
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "地刺",
+            "bulletConfig": {
+              "ProjectileIDs": [44051006, 44051007],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": ".AM_HYS_HongHaiEr_02A_Atk_10_02_01",
+    "addRadius": 800,
+    "name": "夜叉王，很长的平a连招+跳起瞬发地刺",
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 3000,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "bullet_actions": [
+      {
+        "ID": 44051001,
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "地刺",
+            "bulletConfig": {
+              "ProjectileIDs": [44051005],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+      {
+        "ID": 44051002,
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "地刺",
+            "bulletConfig": {
+              "ProjectileIDs": [44051006, 44051007],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 1500
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": ".AM_HYS_HongHaiEr_02A_Atk_10_02_02",
+    "addRadius": 800,
+    "name": "夜叉王，较短平a连招+跳起瞬发地刺",
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 2900,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "bullet_actions": [
+      {
+        "ID": 44051001,
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "地刺",
+            "bulletConfig": {
+              "ProjectileIDs": [44051005],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+      {
+        "ID": 44051002,
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "地刺",
+            "bulletConfig": {
+              "ProjectileIDs": [44051006, 44051007],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 1500
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": ".AM_HYS_HongHaiEr_02A_Atk_05_02_02",
+    "addRadius": 800,
+    "name": "夜叉王，脚踩地刺",
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 1500,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "bullet_actions": [
+      {
+        "ID": 44051005,
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "地刺",
+            "bulletConfig": {
+              "ProjectileIDs": [44051006, 44051007],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 1000
+          }
+        ]
+      }
+    ]
+  }
+]

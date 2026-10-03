@@ -1,0 +1,40 @@
+[
+  {
+    "ID": 2401001,
+    "ResID": 24010,
+    "SummonAliveTime": 9990.0,
+    "SummonTamerTemplatePath": "/Game/00Main/Design/Units/Player/Tamer_player_mgd_yuan_summon.Tamer_player_mgd_yuan_summon_C",
+    "SummonBPTemplatePath": "/Game/00Main/Design/Units/Player/Unit_player_mgd_yuan_summon.Unit_player_mgd_yuan_summon_C",
+    "SummonUnitRotationType": 1,
+    "SummonUnitLocationType": 1,
+    "SelectPointRandom": 0,
+    "PointSetCachedReqID": 0,
+    "SummonDataAssetsPath": "BGWMonkeySummonDataAsset'/Game/00MainHZ/Characters/Transform/Player_mgd_yuan/DA_player_yuan_FS_summon.DA_player_yuan_FS_summon'",
+    "SummonSpawnEQSPath": "",
+    "SummonSpawnSceneItemTag": "",
+    "BornEffectPath": "",
+    "UseBornSkill": 0,
+    "BornMontagePathList": [
+      "AnimMontage'/Game/00Main/Animation/Player/Transform/Player_mgd_yuan_summon/Montage/Fashu/AM_player_mgd_yuan_FS_Enter.AM_player_mgd_yuan_FS_Enter'"
+    ],
+    "BornSkillList": [2031,132],
+    "DisappearMontagePathList": [
+      "AnimMontage'/Game/00Main/Animation/Player/Transform/Player_mgd_yuan_summon/Montage/Fashu/AM_player_mgd_yuan_FS_Exeunt.AM_player_mgd_yuan_FS_Exeunt'",
+      "",
+      "",
+      ""
+    ],
+    "BornDelayTime": 0.0,
+    "SummonTargetMethod": 1,
+    "BornEffDisplayTime": 0.2,
+    "DestroyDelayTime": 0.0,
+    "BuffList": [],
+    "InitSpeed": 0.0,
+    "SyncBattleSC": 0,
+    "IsCopyEquip": 1,
+    "CopyAttrConfigID": 2401001,
+    "IsDestroyWhenSummonerDead": 1,
+    "IsSummonerAsMaster": 1,
+    "BeforeBornTime": 0.0
+  }
+]

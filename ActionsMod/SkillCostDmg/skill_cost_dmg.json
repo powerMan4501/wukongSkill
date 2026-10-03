@@ -1,0 +1,16 @@
+[
+  {
+    "name": "每次伤害转资源 10%（等价于原 MagicMod increase_attr）",
+    "actions": [
+      { "Type": "add_attr", "AttrPercent": 0.1, "AttrMin": 10 }
+    ]
+  },
+  {
+    "name": "暴击额外：护盾 4 倍同一数值 + 回血次数 +10",
+    "NeedCrit": true,
+    "actions": [
+      { "Type": "add_attr", "AttrList": ["Shield"], "AttrPercent": 1, "AttrMin": 40 },
+      { "Type": "add_attr", "AttrList": ["BloodBottomNum"], "AttrValue": 10 }
+    ]
+  }
+]

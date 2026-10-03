@@ -1,0 +1,15 @@
+﻿{
+  "Bindings": [
+    {
+      "Key": "XBUTTON1",
+      "UnitName": "Unit_player_hfm_shi_C",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 200794,
+          "name": "石头人跳起砸地"
+        }
+      ]
+    }
+  ]
+}

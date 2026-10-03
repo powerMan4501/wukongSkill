@@ -1,0 +1,50 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "孩子哪里去了，为父恨……",
+    "DialogueId": 320050003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_ShaWuLiang/VOICE/EVT_enm_hfm_shawuliang_01_voice_dialogue_01",
+    "AkEventName": "EVT_enm_hfm_shawuliang_01_voice_dialogue_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "拿了你，换我儿",
+    "DialogueId": 320050004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_ShaWuLiang/VOICE/EVT_enm_hfm_shawuliang_01_voice_dialogue_01",
+    "AkEventName": "EVT_enm_hfm_shawuliang_01_voice_dialogue_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "悔不……当初……",
+    "DialogueId": 320050005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_ShaWuLiang/VOICE/EVT_enm_hfm_shawuliang_01_voice_dialogue_03",
+    "AkEventName": "EVT_enm_hfm_shawuliang_01_voice_dialogue_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "自食恶果……",
+    "DialogueId": 320050006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_ShaWuLiang/VOICE/EVT_enm_hfm_shawuliang_01_voice_dialogue_01",
+    "AkEventName": "EVT_enm_hfm_shawuliang_01_voice_dialogue_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "一生习武，竟不能……",
+    "DialogueId": 320050007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_ShaWuLiang/VOICE/EVT_enm_hfm_shawuliang_01_voice_dialogue_01",
+    "AkEventName": "EVT_enm_hfm_shawuliang_01_voice_dialogue_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "把你也送过去罢",
+    "DialogueId": 320050008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_ShaWuLiang/VOICE/EVT_enm_hfm_shawuliang_01_voice_dialogue_06",
+    "AkEventName": "EVT_enm_hfm_shawuliang_01_voice_dialogue_06"
+  }
+]

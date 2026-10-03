@@ -1,0 +1,155 @@
+[
+  {
+    "Animation": "AM_player_hfm_shi_R1_01",
+    "name": "石头人 Q1 磕头",
+    "cast_actions": [
+      {
+        "Type": "summon",
+        "SummonID": 220201,
+        "SummonCount": 1,
+        "desc": "召唤石头人"
+      }
+    ],
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "波动",
+        "bulletConfig": {
+          "ProjectileIDs": [30050301],
+          "SpawnOffsetX": 400,
+          "SpawnOffsetY": 400,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_player_hfm_shi_R1_02",
+    "name": "石头人 Q2 磕头",
+    "cast_actions": [
+      {
+        "Type": "summon",
+        "SummonID": 220201,
+        "SummonCount": 1,
+        "desc": "召唤石头人"
+      }
+    ],
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "波动",
+        "bulletConfig": {
+          "ProjectileIDs": [30050301],
+          "SpawnOffsetX": 400,
+          "SpawnOffsetY": 400,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_player_hfm_shi_R1_03",
+    "name": "石头人 Q3 磕头",
+    "cast_actions": [
+      {
+        "Type": "summon",
+        "SummonID": 220201,
+        "SummonCount": 1,
+        "desc": "召唤石头人"
+      }
+    ],
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "波动",
+        "bulletConfig": {
+          "ProjectileIDs": [22050601],
+          "SpawnOffsetX": 400,
+          "SpawnOffsetY": 400,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_player_hfm_shi_F1",
+    "name": "石头人 法术磕头，巴山虎",
+    "addRadius": 1800,
+    "cast_actions": [
+      {
+        "Type": "summon",
+        "SummonID": 220201,
+        "SummonCount": 3,
+        "desc": "召唤石头人"
+      }
+    ],
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "金沙",
+        "bulletConfig": {
+          "ProjectileIDs": [1016262, 22050601],
+          "SpawnOffsetX": 400,
+          "SpawnOffsetY": 400,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_HFM_ShanZhen_01_Atk_Fast_07",
+    "name": "石头人 飞天磕头，疯虎巴山虎",
+    "addRadius": 1800,
+    "cast_actions": [
+      {
+        "Type": "summon",
+        "SummonID": 220201,
+        "SummonCount": 3,
+        "desc": "召唤石头人"
+      }
+    ],
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "疯虎巴山虎",
+        "bulletConfig": {
+          "ProjectileIDs": [21020602],
+          "SpawnOffsetX": 400,
+          "SpawnOffsetY": 400,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_player_hfm_shi_R2_end_02",
+    "name": "石头人 飞天磕头，疯虎巴山虎",
+    "addRadius": 1800,
+    "cast_actions": [
+      {
+        "Type": "summon",
+        "SummonID": 220201,
+        "SummonCount": 3,
+        "desc": "召唤石头人"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 1.766667,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "疯虎巴山虎,沙波动",
+            "bulletConfig": {
+              "ProjectileIDs": [21020602, 22050601],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

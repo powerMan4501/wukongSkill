@@ -1,0 +1,122 @@
+[
+  [
+    {
+      "ID": 10,
+      "BeginPreciseWindowTime": 0.0,
+      "EndPreciseWindowTime": 1.0,
+      "StartTriggerInfoList": [
+        {
+          "BuffID": 0,
+          "IronBodyBuffTarget": 1
+        }
+      ],
+      "DefeatTriggerInfoList": [],
+      "PreciseTriggerInfoList": [
+        {
+          "BuffID": 227,
+          "IronBodyBuffTarget": 1
+        },
+        {
+          "BuffID": 1068,
+          "IronBodyBuffTarget": 1
+        },
+        {
+          "BuffID": 1070,
+          "IronBodyBuffTarget": 1
+        },
+        {
+          "BuffID": 1072,
+          "IronBodyBuffTarget": 1
+        },
+        {
+          "BuffID": 1073,
+          "IronBodyBuffTarget": 1
+        },
+        {
+          "BuffID": 0,
+          "IronBodyBuffTarget": 1
+        }
+      ],
+      "NotPreciseTriggerInfoList": [],
+      "PlayerDefense": 999,
+      "LowHitWeight": 0,
+      "MediueHitWeight": 11,
+      "HeightHitWeight": 10,
+      "HugeHitWeight": 7,
+      "MustDefeatHitWeight": 99
+    },
+    {
+      "ID": 50,
+      "BeginPreciseWindowTime": 0.0,
+      "EndPreciseWindowTime": 1.8,
+      "StartTriggerInfoList": [],
+      "DefeatTriggerInfoList": [],
+      "PreciseTriggerInfoList": [
+        {
+          "BuffID": 50008,
+          "IronBodyBuffTarget": 1
+        }
+      ],
+      "NotPreciseTriggerInfoList": [],
+      "PlayerDefense": 999,
+      "LowHitWeight": 0,
+      "MediueHitWeight": 11,
+      "HeightHitWeight": 10,
+      "HugeHitWeight": 7,
+      "MustDefeatHitWeight": 99
+    },
+    {
+      "ID": 25,
+      "BeginPreciseWindowTime": 0.0,
+      "EndPreciseWindowTime": 1.6,
+      "StartTriggerInfoList": [],
+      "DefeatTriggerInfoList": [
+        {
+          "BuffID": 25089,
+          "IronBodyBuffTarget": 1
+        }
+      ],
+      "PreciseTriggerInfoList": [
+        {
+          "BuffID": 25082,
+          "IronBodyBuffTarget": 1
+        },
+        {
+          "BuffID": 25083,
+          "IronBodyBuffTarget": 1
+        },
+        {
+          "BuffID": 25085,
+          "IronBodyBuffTarget": 1
+        }
+      ],
+      "NotPreciseTriggerInfoList": [],
+      "PlayerDefense": 999,
+      "LowHitWeight": 0,
+      "MediueHitWeight": 11,
+      "HeightHitWeight": 10,
+      "HugeHitWeight": 7,
+      "MustDefeatHitWeight": 99
+    },
+    {
+      "ID": 5555,
+      "BeginPreciseWindowTime": 0.0,
+      "EndPreciseWindowTime": 0.0,
+      "StartTriggerInfoList": [],
+      "DefeatTriggerInfoList": [
+        {
+          "BuffID": 20834,
+          "IronBodyBuffTarget": 1
+        }
+      ],
+      "PreciseTriggerInfoList": [],
+      "NotPreciseTriggerInfoList": [],
+      "PlayerDefense": 999,
+      "LowHitWeight": 0,
+      "MediueHitWeight": 11,
+      "HeightHitWeight": 10,
+      "HugeHitWeight": 7,
+      "MustDefeatHitWeight": 99
+    }
+  ]
+]

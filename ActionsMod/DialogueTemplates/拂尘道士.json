@@ -1,0 +1,18 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "仙道贵生，无量度人",
+    "DialogueId": 343120001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_daoshi_01/EVT_enm_psd_daoshi_01_voice_dialogue_kill",
+    "AkEventName": "EVT_enm_psd_daoshi_01_voice_dialogue_kill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "罪福禁戒，宿命因缘",
+    "DialogueId": 343120002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_daoshi_01/EVT_enm_psd_daoshi_01_voice_dialogue_kill",
+    "AkEventName": "EVT_enm_psd_daoshi_01_voice_dialogue_kill_02"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 41346101,
+    "name": "天将召唤的雷电伤害",
+    "actions": [
+      {
+        "Type": "bullet",
+        "name": "落雷",
+        "bulletConfig": {
+          "ProjectileIDs": [118],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  }
+]

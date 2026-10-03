@@ -1,0 +1,267 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "我儿威武，复兴有望！",
+    "DialogueId": 320240001,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "SFX_ENM_HFM_FuShu_Voice_Dialogue_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "刁民，都该死！",
+    "DialogueId": 320240002,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "SFX_ENM_HFM_FuShu_Voice_Dialogue_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "气煞寡人，看我把你砸成肉酱！",
+    "DialogueId": 320240003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_001_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "好个贼猴子，竟敢以下犯上！",
+    "DialogueId": 320240004,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_002_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "欺负我儿，教你知道厉害！",
+    "DialogueId": 320240005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_003",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_003_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大王不管，你这畜生也来添乱！",
+    "DialogueId": 320240006,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_004_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "下面脏了寡人的身子",
+    "DialogueId": 320240007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_007",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_007_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "高处才是寡人的位子",
+    "DialogueId": 320240008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_007",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_007_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "刁民！刁民！",
+    "DialogueId": 320240009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_011",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_011_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "刁民造反啦！",
+    "DialogueId": 320240010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_011",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_011_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "好孩子，爹助你一臂之力，砸烂这贼猴子！",
+    "DialogueId": 320240011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_012",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_012_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "饱人不知饿人饥，虎落平阳被犬欺",
+    "DialogueId": 320240012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_013",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_013_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "救驾，救驾！",
+    "DialogueId": 320240013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_014",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_014_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "哎呦，寡人的屁股！",
+    "DialogueId": 320240014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_015",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_015_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你这贼人，休想碰到寡人分毫",
+    "DialogueId": 320240015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_016",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_016_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "猴子又如何，还不是没寡人灵便",
+    "DialogueId": 320240016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_017",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_017_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "想追寡人，做梦",
+    "DialogueId": 320240017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_018",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_018_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "欺负寡人拿不动兵器",
+    "DialogueId": 320240018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_019",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_019_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "因地制宜，教你尝尝此处的厉害",
+    "DialogueId": 320240019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_020",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_020_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "儿啊，爹老了，只能帮你到这儿了",
+    "DialogueId": 320240020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_021",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_021_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你这刁民，还不快来给寡人磕头！",
+    "DialogueId": 320240021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/Voice/EVT_enm_hfm_fushu_voice_dialogue_008",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_008_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "休要欺辱我儿，寡人跟你拼了！",
+    "DialogueId": 320240022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_009",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_009_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "复兴大事，不能毁在你这贼人手里！",
+    "DialogueId": 320240023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/Voice/EVT_enm_hfm_fushu_voice_dialogue_010",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_010_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "砸死你这刁民！",
+    "DialogueId": 320240024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_022",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_022_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "吃寡人一子儿！",
+    "DialogueId": 320240025,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_023_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "儿啊，躲开！",
+    "DialogueId": 320240026,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_024_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "儿啊，看爹的威风！",
+    "DialogueId": 320240027,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_025_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "贼猴子，难道你不知我国有敬鼠令么！",
+    "DialogueId": 320240028,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_026",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_026"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "以鼠为尊，唯鼠最大！",
+    "DialogueId": 320240029,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_026",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_026"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "儿啊，老大关着，老三跑了，如今爹可全靠你了！",
+    "DialogueId": 320240030,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_027",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_027"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "想当初我们跟着大王何等辉煌",
+    "DialogueId": 320240031,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_028",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_028"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "可怜现在连只贼猴子都拿不下",
+    "DialogueId": 320240032,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_028",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_028"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大王啊，不要闭关了！",
+    "DialogueId": 320240033,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_029",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_029"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "既帮我等降服巨虫，再帮我等降了这贼猴子罢！",
+    "DialogueId": 320240034,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_FuZiShu/fushu_voice/EVT_enm_hfm_fushu_voice_dialogue_029",
+    "AkEventName": "EVT_enm_hfm_fushu_voice_dialogue_029"
+  }
+]

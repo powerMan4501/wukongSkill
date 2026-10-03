@@ -1,0 +1,282 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "无冤无仇，既然败了，何苦回来",
+    "DialogueId": 349990001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_enter_02",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_enter_02_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "血仇一日不报，我一日不走！",
+    "DialogueId": 349990002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_enter_02",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_enter_02_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "尾后针！",
+    "DialogueId": 349990003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_32",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_32_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "灸刺！",
+    "DialogueId": 349990004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_32",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_32_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "与我斗算什么本事，你若够胆，去斗那上头的恶禽",
+    "DialogueId": 349990005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_13",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_13_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "忍辱负重，只待异日手刃仇人，怎可败于你手！",
+    "DialogueId": 349990006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_13",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_13_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你的路",
+    "DialogueId": 349990007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_17",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_17"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "断了！",
+    "DialogueId": 349990008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_17",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_17"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "倒",
+    "DialogueId": 349990009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_17",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_17_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "马",
+    "DialogueId": 349990010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_17",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_17_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "毒！",
+    "DialogueId": 349990011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_17",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_17_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "尝尝我的……",
+    "DialogueId": 349990012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_16",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_16_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "丧妻之痛！",
+    "DialogueId": 349990013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_16",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_16_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看看你的心……",
+    "DialogueId": 349990014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_16",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_16_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "有多硬！",
+    "DialogueId": 349990015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_16",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_16_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "苦心孤诣，练得此技！",
+    "DialogueId": 349990016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_08_a",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_08_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "闪也没用！",
+    "DialogueId": 349990017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_08_a",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_atk_08_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这位小仙，我有大仇未报，你何不放我离去！",
+    "DialogueId": 349990018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_weak_01",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_weak_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "夫人，夫人呐！是我无能啊……",
+    "DialogueId": 349990019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_dep01",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_dep01_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "杀妻之仇，何日能报……",
+    "DialogueId": 349990020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_dep01",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_dep01_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这般身手，还想报仇？",
+    "DialogueId": 349990021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_kill",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_kill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "区区庸鄙，可惜了老子的酒",
+    "DialogueId": 349990022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_kill_02",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_kill_02_1"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "夫人，我来亲手替你报仇了！",
+    "DialogueId": 349990023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_01a/voice/EVT_enm_psd_xiezijing_voice_dialogue_001",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "猴子！何不与我联手，斗败这恶禽？",
+    "DialogueId": 349990024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_01a/voice/EVT_enm_psd_xiezijing_voice_dialogue_002",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这次，你可要撑到我与他有个了断",
+    "DialogueId": 349990025,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_01a/voice/EVT_enm_psd_xiezijing_voice_dialogue_001",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "休要得意！",
+    "DialogueId": 349990026,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_01a/voice/EVT_enm_psd_xiezijing_voice_dialogue_004",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "吾妻之命，血债血偿！",
+    "DialogueId": 349990027,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_01a/voice/EVT_enm_psd_xiezijing_voice_dialogue_005",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "绝不罢休",
+    "DialogueId": 349990028,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_01a/voice/EVT_enm_psd_xiezijing_voice_dialogue_006",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "恶禽受死",
+    "DialogueId": 349990029,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_01a/voice/EVT_enm_psd_xiezijing_voice_dialogue_007",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "今日，你我只能活一人！",
+    "DialogueId": 349990030,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_01a/voice/EVT_enm_psd_xiezijing_voice_dialogue_008",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_008"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "誓要报仇",
+    "DialogueId": 349990031,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_01a/voice/EVT_enm_psd_xiezijing_voice_dialogue_010",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你这鸟仙",
+    "DialogueId": 349990032,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_01a/voice/EVT_enm_psd_xiezijing_voice_dialogue_009",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_009"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "杀妻之仇，我定不负",
+    "DialogueId": 349990033,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_01a/voice/EVT_enm_psd_xiezijing_voice_dialogue_012",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_012"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你认命罢！",
+    "DialogueId": 349990034,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_01a/voice/EVT_enm_psd_xiezijing_voice_dialogue_015",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_015"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "避实击虚！",
+    "DialogueId": 349990035,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_01a/voice/EVT_enm_psd_xiezijing_voice_dialogue_011",
+    "AkEventName": "EVT_enm_psd_xiezijing_voice_dialogue_011"
+  }
+]

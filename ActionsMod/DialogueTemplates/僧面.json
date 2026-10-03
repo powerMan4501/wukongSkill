@@ -1,0 +1,178 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "权谋用尽终成空",
+    "DialogueId": 330120001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "机关算尽误性命！",
+    "DialogueId": 330120002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "假作真时真亦假",
+    "DialogueId": 330120003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_003",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "是非成败转头空",
+    "DialogueId": 330120004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "妄想喧宾夺主？",
+    "DialogueId": 330120005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_005",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "小心下不了台！",
+    "DialogueId": 330120006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "杂戏，不入流！",
+    "DialogueId": 330120007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_007",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "滚下来，同台！",
+    "DialogueId": 330120008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_008"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "好戏开场！",
+    "DialogueId": 330120009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_009",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_009"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "逢场作戏！",
+    "DialogueId": 330120010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_010",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "换角",
+    "DialogueId": 330120011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_011",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_011"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "易主",
+    "DialogueId": 330120012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_012"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "轮到我登台唱戏了",
+    "DialogueId": 330120013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_013",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_013"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你的身段像个丑角",
+    "DialogueId": 330120014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_014"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "粉墨亮相",
+    "DialogueId": 330120015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_rush_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "登台高坐",
+    "DialogueId": 330120016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_rush_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "小龙套！",
+    "DialogueId": 330120017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_rush_003",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_rush_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你不配！",
+    "DialogueId": 330120018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_rush_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "哑巴，当不了主角",
+    "DialogueId": 330120019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_rush_005",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_rush_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "别得意，戏未唱完",
+    "DialogueId": 330120020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_rush_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "身轻如燕",
+    "DialogueId": 330120021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_rush_007",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_rush_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "打不着",
+    "DialogueId": 330120022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/lys_sengmian/voice/EVT_enm_lys_sengmian_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_lys_sengmian_voice_dialogue_rush_008"
+  }
+]

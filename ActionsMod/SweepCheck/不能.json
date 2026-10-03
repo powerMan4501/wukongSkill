@@ -1,0 +1,496 @@
+[
+  {
+    "Animation": "AM_30_lys_tuiseng_02_comboAq4_atk_05a",
+    "name": "平A3不能精魄，砸地，冰暴波动",
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "冰暴",
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [2403371],
+          "SpawnOffsetX": 200,
+          "SpawnOffsetY": 200,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+
+      {
+        "Type": "bullet",
+        "name": "金沙",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [74011107],
+          "SpawnOffsetX": 200,
+          "SpawnOffsetY": 200,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+
+      {
+        "Type": "bullet",
+        "name": "金沙波动",
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [74011107],
+          "SpawnOffsetX": 200,
+          "SpawnOffsetY": 200,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+
+      {
+        "Type": "bullet",
+        "name": "金沙波动",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [74011107],
+          "SpawnOffsetX": 200,
+          "SpawnOffsetY": 200,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_30_lys_tuiseng_02_comboAq5_atk_03",
+    "name": "不能精魄，砸地，冰暴波动",
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 1.4,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "冰暴波动",
+            "Condition": {
+              "Type": "bullet_ice"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [2403371, 30050301],
+              "SpawnOffsetX": 200,
+              "SpawnOffsetY": 200,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙波动",
+            "Condition": {
+              "Type": "bullet_fire"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [74011107, 30050301],
+              "SpawnOffsetX": 200,
+              "SpawnOffsetY": 200,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙波动",
+            "Condition": {
+              "Type": "bullet_poison"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [74011107, 30050301],
+              "SpawnOffsetX": 200,
+              "SpawnOffsetY": 200,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙波动",
+            "Condition": {
+              "Type": "bullet_thunder"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [74011107, 30050301],
+              "SpawnOffsetX": 200,
+              "SpawnOffsetY": 200,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_LYS_TuiSeng_02_Atk_Fast_05a",
+    "addRadius": 500,
+    "name": "不能，以武入禅",
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 1.899189,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "冰暴",
+            "Condition": {
+              "Type": "bullet_ice"
+            },
+            "bulletConfig": {
+              "spawnBaseSocketName": "hand_l",
+              "ProjectileIDs": [2403371],
+              "SpawnOffsetX": 200,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙",
+            "Condition": {
+              "Type": "bullet_fire"
+            },
+            "bulletConfig": {
+              "spawnBaseSocketName": "hand_l",
+              "ProjectileIDs": [74011107],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙",
+            "Condition": {
+              "Type": "bullet_poison"
+            },
+            "bulletConfig": {
+              "spawnBaseSocketName": "hand_l",
+              "ProjectileIDs": [74011107],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙",
+            "Condition": {
+              "Type": "bullet_thunder"
+            },
+            "bulletConfig": {
+              "spawnBaseSocketName": "hand_l",
+              "ProjectileIDs": [74011107],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+      {
+        "NotifyBeginTime": 2.418176,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "冰暴",
+            "Condition": {
+              "Type": "bullet_ice"
+            },
+            "bulletConfig": {
+              "spawnBaseSocketName": "hand_l",
+              "ProjectileIDs": [2403371],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙",
+            "Condition": {
+              "Type": "bullet_fire"
+            },
+            "bulletConfig": {
+              "spawnBaseSocketName": "hand_l",
+              "ProjectileIDs": [74011107],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙",
+            "Condition": {
+              "Type": "bullet_poison"
+            },
+            "bulletConfig": {
+              "spawnBaseSocketName": "hand_l",
+              "ProjectileIDs": [74011107],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙",
+            "Condition": {
+              "Type": "bullet_thunder"
+            },
+            "bulletConfig": {
+              "spawnBaseSocketName": "hand_l",
+              "ProjectileIDs": [74011107],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+      {
+        "NotifyBeginTime": 3.265406,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "冰暴",
+            "Condition": {
+              "Type": "bullet_ice"
+            },
+            "bulletConfig": {
+              "spawnBaseSocketName": "hand_l",
+              "ProjectileIDs": [2403371],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙",
+            "Condition": {
+              "Type": "bullet_fire"
+            },
+            "bulletConfig": {
+              "spawnBaseSocketName": "hand_l",
+              "ProjectileIDs": [74011107],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙",
+            "Condition": {
+              "Type": "bullet_poison"
+            },
+            "bulletConfig": {
+              "spawnBaseSocketName": "hand_l",
+              "ProjectileIDs": [74011107],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙",
+            "Condition": {
+              "Type": "bullet_thunder"
+            },
+            "bulletConfig": {
+              "spawnBaseSocketName": "hand_l",
+              "ProjectileIDs": [74011107],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": ".AM_LYS_TuiSeng_02_Atk_Fast_06b",
+    "name": "蓄力很久打出一拳，跳过前摇",
+    "addRadius": 1000,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 5000,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 5.966395,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileID": 1016202,
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "type": "shot",
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+            }
+          }
+        ]
+      },
+      {
+        "NotifyBeginTime": 6.632019,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileID": 1016202,
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "type": "shot",
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanshanguan.BGW_Player_Wukong_Atk_sanshanguan'"
+            }
+          },
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 800
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": ".AM_LYS_TuiSeng_02_Atk_Fast_06a",
+    "name": "连续几个排云掌",
+    "addRadius": 1000,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 900,
+        "name": "跳到指定的秒数"
+      }
+    ]
+  },
+  {
+    "Animation": ".AM_LYS_TuiSeng_02_Atk_Fast_03_antiXuliB",
+    "name": "长连招之后砸出地爆",
+    "addRadius": 1000,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 3900,
+        "name": "跳到指定的秒数"
+      }
+    ],
+
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 4.734159,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "红孩儿砸地",
+            "bulletConfig": {
+              "ProjectileIDs": [30050301],
+              "SpawnOffsetX": 300,
+              "SpawnOffsetY": 300,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 800
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": ".AM_LYS_TuiSeng_02_Atk_Fast_05b",
+    "name": "不能肘击",
+    "addRadius": 1000,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 2000,
+        "name": "跳到指定的秒数"
+      }
+    ],
+
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 3.200299,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "发射巴山虎",
+            "bulletConfig": {
+              "spawnBaseSocketName": "hand_r",
+              "ProjectileIDs": [1016232],
+              "type": "shot",
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanjianliangren_02.BGW_Player_Wukong_Atk_sanjianliangren_02'"
+            }
+          },
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 800
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": ".AM_LYS_TuiSeng_02_Atk_Fast_08",
+    "name": "戳棍4，接，不能很长的摆架势前摇之后，打出好几个排云掌",
+    "addRadius": 1000,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 2000,
+        "name": "跳到指定的秒数"
+      }
+    ],
+
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 4.833344,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "发射巴山虎",
+            "bulletConfig": {
+              "spawnBaseSocketName": "hand_r",
+              "ProjectileIDs": [1016261],
+              "type": "shot",
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Wukong/Talent/BGW_Player_Wukong_Atk_sanjianliangren_02.BGW_Player_Wukong_Atk_sanjianliangren_02'"
+            }
+          },
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 2000
+          }
+        ]
+      }
+    ]
+  }
+]

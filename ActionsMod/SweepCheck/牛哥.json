@@ -1,0 +1,30 @@
+[
+  {
+    "Animation": "AM_hys_niumo_01_atk_06_1",
+    "name": "牛哥飞天砸击",
+    "addRadius": 800,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "name": "牛哥子弹",
+        "bulletConfig": {
+          "ProjectileIDs": [58111003,74010202],
+          "SpawnOffsetX": 400,
+          "SpawnOffsetY": 400,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "out_magic",
+        "name": "退出精魄",
+        "Delay": 800
+      },
+      {
+        "Type": "Buff",
+        "name": "时缓",
+        "Values": [20420],
+        "Duration": 1000
+      }
+    ]
+  }
+]

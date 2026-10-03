@@ -1,0 +1,92 @@
+[
+  {
+    "Animation": "AM_HYS_NiaoZui_Atk_02_1",
+    "name": "鳖宝重锤，鳖宝子弹",
+    "addRadius": 800,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 1.454781,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "红孩儿砸地",
+            "bulletConfig": {
+              "ProjectileIDs": [44011401, 40550101, 2403272],
+              "SpawnOffsetX": 300,
+              "SpawnOffsetY": 300,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "Buff",
+            "name": "时缓",
+            "Value": 20420,
+            "Duration": 1000
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_HYS_NiaoZui_Atk_04",
+    "name": "鳖宝重锤，鳖宝子弹",
+    "addRadius": 800,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 1.383527,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "红孩儿砸地",
+            "bulletConfig": {
+              "ProjectileIDs": [44011401, 40550101, 2403272],
+              "SpawnOffsetX": 300,
+              "SpawnOffsetY": 300,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "Buff",
+            "name": "时缓",
+            "Value": 20420,
+            "Duration": 1000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_HYS_NiaoZui_Atk_07",
+    "name": "鳖宝飞天大坐",
+    "addRadius": 1500,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 1.491695,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "红孩儿砸地",
+            "bulletConfig": {
+              "ProjectileIDs": [40550101, 40550101],
+              "SpawnOffsetX": 300,
+              "SpawnOffsetY": 300,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "Buff",
+            "name": "时缓",
+            "Value": 20420,
+            "Duration": 1000
+          },
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 800
+          }
+        ]
+      }
+    ]
+  }
+]

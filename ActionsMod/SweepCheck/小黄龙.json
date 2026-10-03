@@ -1,0 +1,145 @@
+[
+  {
+    "Animation": ".AM_player_psd_long_R2_0",
+    "name": "三千阳春，雷暴落雷",
+    "addRadius": 2500,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [39010112, 118],
+          "SpawnOffsetX": 10,
+          "SpawnOffsetY": 10,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_player_psd_long_R2_start_NoPE",
+    "name": "右键，雷暴红雷",
+    "addRadius": 2500,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [39010112, 154],
+          "SpawnOffsetX": 600,
+          "SpawnOffsetY": 600,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": "AM_player_psd_long_R1_to_R2_01.AM_player_psd_long_R1_to_R2_01",
+    "name": "切手技能,砸下去的那一段， 红雷落雷",
+    "addRadius": 500,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.8,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [154, 118],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": ".AM_player_psd_long_R1_0",
+    "name": "平A 落雷",
+    "addRadius": 300,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [118],
+          "SpawnOffsetX": 400,
+          "SpawnOffsetY": 400,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "Animation": ".AM_player_psd_long_R1_to_R2_02",
+    "name": "切手技能,砸下去的那一段， 红雷落雷",
+    "addRadius": 500,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.8666667,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [154, 118],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": ".AM_player_psd_long_R1_to_R2_03",
+    "name": "切手技能,砸下去的那一段， 红雷落雷",
+    "addRadius": 500,
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.8666667,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [154, 118],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+      {
+        "NotifyBeginTime": 0.866667,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [154, 118],
+              "SpawnOffsetX": 400,
+              "SpawnOffsetY": 400,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_player_psd_long_R1_to_R2_End",
+    "name": "切手技能连招 红雷落雷",
+    "addRadius": 2500,
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [154, 118],
+          "SpawnOffsetX": 400,
+          "SpawnOffsetY": 400,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  }
+]

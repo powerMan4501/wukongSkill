@@ -1,0 +1,28 @@
+{
+  "Note": "跨 Mod 公共按键台账：只登记每个 Mod 的「入口级」按键（开启/总开关/重载/重置这类），不登记 Mod 内部的游戏玩法键（那些由各自 Mod 自己的 json 维护）。实际是否生效取决于各 Mod 是否读取本文件（目前只有 ActionsMod 会读）。改动后需重启游戏 / 重载 Mod。Note 是说明字段，不会被当成按键。",
+  "Mods": {
+    "ActionsMod": {
+      "Note": "按键→动作 + 事件驱动；RegEvents 按过一次之后 SweepCheck/Effect/Buff/Projectile 那些配置才开始生效（其余玩法键见 actions.json 与 actions/）。LaserTest(定身调试) 不在此登记=不绑定（源码已无 V 默认值），需要时可自行加 \"LaserTest\": \"V\"",
+      "RegEvents": "F1",
+      "UnRegEvents": "F4",
+      "ShowHotKeys": "H"
+    },
+    "PanelActionsMod": {
+      "Note": "Boss/道具/变身 画板开关；注意 Open 与 ActionsMod 的 RegEvents 撞到同一个键，建议二选一挪开",
+      "Open": "F1"
+    },
+    "PlayerInfo": {
+      "Note": "属性面板开关",
+      "Open": "F2"
+    },
+    "LaodPBTableMod": {
+      "Note": "配表热重载 / 重置",
+      "Reload": "F1",
+      "Reset": "F4"
+    },
+    "ShieldBarMod": {
+      "Note": "主角护盾条（渲染在血条上方）开关；默认关闭，按一下开、再按一下关。实际按键以 ShieldBarMod.json 的 ToggleKey 为准",
+      "Toggle": "F3"
+    }
+  }
+}

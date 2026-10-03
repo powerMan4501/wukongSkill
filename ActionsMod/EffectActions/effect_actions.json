@@ -1,0 +1,510 @@
+[
+  {
+    "id": 1088401,
+    "name": "戳棍4蓄",
+    "actions": [
+      {
+        "Type": "Buff",
+        "name": "时缓",
+        "Values": [20420],
+        "Duration": 1000
+      },
+      {
+        "Type": "bullet",
+        "name": "火 ,鳖宝子弹，红孩儿砸地",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [40550101, 44011401],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰 , 巨猿lv3冰暴,冰刺",
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [2403371, 30123102],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "毒, 蛇毒,石双双毒气",
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [10380101, 22030101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "雷 ,金沙，金色雷电",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [74011107, 22104092],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "id": 1089001,
+    "name": "戳棍4蓄",
+    "actions": [
+      {
+        "Type": "Buff",
+        "name": "时缓",
+        "Values": [20420],
+        "Duration": 1000
+      },
+      {
+        "Type": "bullet",
+        "name": "火 ,鳖宝子弹，红孩儿砸地",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [40550101, 44011401],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰 , 巨猿lv3冰暴,冰刺",
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [2403371, 30123102],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "毒, 蛇毒,石双双毒气",
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [10380101, 22030101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "雷 ,金沙，金色雷电",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [74011107, 22104092],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "id": 1088301,
+    "name": "戳棍3蓄",
+    "actions": [
+      {
+        "Type": "Buff",
+        "name": "时缓",
+        "Values": [20420],
+        "Duration": 1000
+      },
+      {
+        "Type": "bullet",
+        "name": "火 , 鳖宝子弹",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [40550101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰 , 巨猿lv3冰暴",
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [2403371],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "毒,石双双毒气",
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [22030101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "雷 ,金色雷电",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [22104092],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "id": 1088901,
+    "name": "戳棍3蓄",
+    "actions": [
+      {
+        "Type": "Buff",
+        "name": "时缓",
+        "Values": [20420],
+        "Duration": 1000
+      },
+      {
+        "Type": "bullet",
+        "name": "火 , 鳖宝子弹",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [40550101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰 , 巨猿lv3冰暴",
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [2403371],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "毒,石双双毒气",
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [22030101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "雷 ,金色雷电",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [22104092],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "id": 10243301,
+    "name": "戳棍4蓄",
+    "actions": [
+      {
+        "Type": "bullet",
+        "name": "金沙",
+        "bulletConfig": {
+          "ProjectileIDs": [74011107],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "id": 1009601,
+    "name": "破隐一击",
+    "actions": [
+      {
+        "Type": "Buff",
+        "name": "时缓",
+        "Values": [20420],
+        "Duration": 1000
+      },
+      {
+        "Type": "bullet",
+        "name": "火 , 鳖宝子弹",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [40550101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰 , 巨猿lv3冰暴",
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [2403371],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "毒,石双双毒气",
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [22030101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "雷 ,金色雷电",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [22104092],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "id": 5010101,
+    "name": "破隐一击",
+    "actions": [
+      {
+        "Type": "Buff",
+        "name": "时缓",
+        "Values": [20420],
+        "Duration": 1000
+      },
+      {
+        "Type": "bullet",
+        "name": "火 , 鳖宝子弹",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [40550101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰 , 巨猿lv3冰暴",
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [2403371],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "毒,石双双毒气",
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [22030101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "雷 ,金色雷电",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [22104092],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "id": 5000301,
+    "name": "大圣Q2切手，横扫一下",
+    "actions": [
+      {
+        "Type": "bullet",
+        "name": "火 , 鳖宝子弹",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [40550101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰 , 巨猿lv3冰暴",
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [2403371],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "毒,石双双毒气",
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [22030101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "雷 ,金色雷电",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [22104092],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "id": 5000302,
+    "name": "大圣Q2切手，捅一下",
+    "actions": [
+      {
+        "Type": "bullet",
+        "name": "火 , 鳖宝子弹",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [40550101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰 , 巨猿lv3冰暴",
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [2403371],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "毒,石双双毒气",
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [22030101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "雷 ,金色雷电",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [22104092],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "id": 5000501,
+    "name": "大圣Q2切手，捅一下",
+    "actions": [
+      {
+        "Type": "bullet",
+        "name": "火 , 鳖宝子弹",
+        "Condition": {
+          "Type": "bullet_fire"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [40550101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰 , 巨猿lv3冰暴",
+        "Condition": {
+          "Type": "bullet_ice"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [2403371],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "毒,石双双毒气",
+        "Condition": {
+          "Type": "bullet_poison"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [22030101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "雷 ,金色雷电",
+        "Condition": {
+          "Type": "bullet_thunder"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [22104092],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  }
+]

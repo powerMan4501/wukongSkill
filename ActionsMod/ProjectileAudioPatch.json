@@ -1,0 +1,11 @@
+{
+  "Enabled": true,
+  "IntervalMs": 120,
+  "Entries": [
+    {
+      "MatchClass": "SanJianLiangRen",
+      "Mode": "mute",
+      "AkEventPath": ""
+    }
+  ]
+}

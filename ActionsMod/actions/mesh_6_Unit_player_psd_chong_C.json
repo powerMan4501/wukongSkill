@@ -1,0 +1,15 @@
+﻿{
+  "Bindings": [
+    {
+      "Key": "XBUTTON1",
+      "UnitName": "Unit_player_psd_chong_C",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 18071,
+          "name": "虫变身，引爆虫卵"
+        }
+      ]
+    }
+  ]
+}

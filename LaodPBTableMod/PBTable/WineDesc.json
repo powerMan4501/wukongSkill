@@ -1,0 +1,19 @@
+[
+  { "Id": 2001, "Series": 2000, "Level": 1, "NextId": 2002, "ItemListCount": 4, "CostItem": [ { "Id": 1998, "Num": 1 } ], "UpgradeDesc": [ "提升饮酒时的生命恢复量" ], "LocalizationTag": 1 },
+  { "Id": 2002, "Series": 2000, "Level": 2, "NextId": 2003, "ItemListCount": 4, "CostItem": [ { "Id": 1998, "Num": 1 } ], "UpgradeDesc": [ "提升饮酒时的生命恢复量" ], "LocalizationTag": 1 },
+  { "Id": 2003, "Series": 2000, "Level": 3, "NextId": 2004, "ItemListCount": 4, "CostItem": [ { "Id": 1998, "Num": 1 } ], "UpgradeDesc": [ "提升泡酒物栏位数量", "提升饮酒时的生命恢复量" ], "LocalizationTag": 1 },
+  { "Id": 2004, "Series": 2000, "Level": 4, "NextId": 2005, "ItemListCount": 4, "CostItem": [ { "Id": 1998, "Num": 2 } ], "UpgradeDesc": [ "提升饮酒时的生命恢复量" ], "LocalizationTag": 1 },
+  { "Id": 2005, "Series": 2000, "Level": 5, "NextId": 2006, "ItemListCount": 4, "CostItem": [ { "Id": 1998, "Num": 2 } ], "UpgradeDesc": [ "提升饮酒时的生命恢复量" ], "LocalizationTag": 1 },
+  { "Id": 2006, "Series": 2000, "Level": 6, "NextId": 2007, "ItemListCount": 4, "CostItem": [ { "Id": 1998, "Num": 3 } ], "UpgradeDesc": [ "提升泡酒物栏位数量", "提升饮酒时的生命恢复量" ], "LocalizationTag": 1 },
+  { "Id": 2007, "Series": 2000, "Level": 7, "NextId": 2021, "ItemListCount": 4, "CostItem": [ { "Id": 1998, "Num": 5 } ], "UpgradeDesc": [ "提升饮酒时的生命恢复量" ], "LocalizationTag": 1 },
+  { "Id": 2008, "Series": 3000, "Level": 2, "NextId": 0, "ItemListCount": 4, "CostItem": [], "UpgradeDesc": [], "LocalizationTag": 0 },
+  { "Id": 2010, "Series": 3000, "Level": 1, "NextId": 2008, "ItemListCount": 4, "CostItem": [ { "Id": 1998, "Num": 5 } ], "UpgradeDesc": [ "提升泡酒物栏位数量", "降低饮酒时的生命恢复量，但增强持续恢复效果" ], "LocalizationTag": 1 },
+  { "Id": 2021, "Series": 2000, "Level": 8, "NextId": 0, "ItemListCount": 4, "CostItem": [], "UpgradeDesc": [], "LocalizationTag": 0 },
+  { "Id": 2009, "ItemListCount": 4 },
+  { "Id": 2011, "ItemListCount": 4 },
+  { "Id": 2019, "ItemListCount": 4 },
+  { "Id": 2020, "ItemListCount": 4 },
+  { "Id": 2022, "ItemListCount": 4 },
+  { "Id": 2023, "ItemListCount": 4 },
+  { "Id": 2024, "ItemListCount": 4 }
+]

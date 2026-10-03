@@ -1,0 +1,252 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "愚弄我",
+    "DialogueId": 344070001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "便是求死！",
+    "DialogueId": 344070002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天地无倪",
+    "DialogueId": 344070003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "阴阳无穷！",
+    "DialogueId": 344070004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "盲修瞎炼",
+    "DialogueId": 344070005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_03",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "自寻短见！",
+    "DialogueId": 344070006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_03",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "阴阳离决",
+    "DialogueId": 344070007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "精气乃绝！",
+    "DialogueId": 344070008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "千般易学，一窍难通",
+    "DialogueId": 344070009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_08",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_08"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "要尔等开开眼！",
+    "DialogueId": 344070010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_08",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_08"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "三教之中无上品",
+    "DialogueId": 344070011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_05",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "古来惟道独称尊！",
+    "DialogueId": 344070012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_05",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你们把师姐藏在何处？",
+    "DialogueId": 344070013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_06",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_06"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "说！",
+    "DialogueId": 344070014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_06",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_06"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "修仙修道",
+    "DialogueId": 344070015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_07"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "为的就是除人世之妖！",
+    "DialogueId": 344070016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_skill_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_skill_07"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这便是戏弄我的下场",
+    "DialogueId": 344070017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_p1kill_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_p1kill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "在此境中，谁能坏我好事？",
+    "DialogueId": 344070018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_p1kill_02",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_p1kill_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "本性难移的下贱东西",
+    "DialogueId": 344070019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_p1paolu_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_p1paolu_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你的靠山跑了，你还要斗么？",
+    "DialogueId": 344070020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_p1paolu_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_p1paolu_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "是仙是佛，全没长进",
+    "DialogueId": 344070021,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不逃，还回来送死，成全你等！",
+    "DialogueId": 344070022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_opening_02",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_opening_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这遭死了，也做个阴兵服我使唤如何？",
+    "DialogueId": 344070023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_opening_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_opening_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "生也，死之徒",
+    "DialogueId": 344070024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_opening_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_opening_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "死也，生之始",
+    "DialogueId": 344070025,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_opening_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_opening_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "曾经我助你等西行",
+    "DialogueId": 344070026,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_voice_seq_hys_cpt070_seq016"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "今日不妨再送一程",
+    "DialogueId": 344070027,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_voice_seq_hys_cpt070_seq016"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "孽畜",
+    "DialogueId": 344070028,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_dia_seq_hys_cpt070_tudigong_01a_017"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "入我瓮中",
+    "DialogueId": 344070029,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看你还如何威风！",
+    "DialogueId": 344070030,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_dia_seq_hys_cpt070_tudigong_01a_017"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "火焰山的劫，你解不掉",
+    "DialogueId": 344070031,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_p2kill_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_p2kill_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "阴阳不调，有违天道",
+    "DialogueId": 344070032,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HYS/HYS_TuDiGong_01A/EVT_enm_hys_tudigong_01a_voice_dialogue_p2kill_01",
+    "AkEventName": "EVT_enm_hys_tudigong_01a_voice_dialogue_p2kill_02"
+  }
+]

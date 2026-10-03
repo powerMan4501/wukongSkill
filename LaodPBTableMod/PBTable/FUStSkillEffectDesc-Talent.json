@@ -1,0 +1,72 @@
+[
+  {
+    "ID": 1099943,
+    "EffectActiveCondition": {
+      "ConditionType": 3,
+      "ConditionParams": "288,2003"
+    },
+    "EffectType": 46,
+    "EffectCategory": 0,
+    "TargetBase": 0,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "FXTransUseConfig": 0,
+    "PlayFXSocketName": "",
+    "PlayFXLocalDirX": 0.0,
+    "PlayFXLocalDirY": 0.0,
+    "PlayFXLocalDirZ": 0.0,
+    "FXCameraOffset": 0.0,
+    "HitActionDir": 0,
+    "HitOrientationType": 0,
+    "HitOriBaseCompName": "",
+    "CanFractureVictim": 0,
+    "CanCutVictim": 0,
+    "EffectParamsInt": [2021],
+    "EffectParamsFloat": [0.0],
+    "EffectParamsStr": [],
+    "Guard": "Guard"
+  },
+
+  {
+    "ID": 1009602,
+    "name": "聚形散气还原后，销毁假身，改成回蓝",
+    "EffectActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": "900921"
+    },
+    "EffectType": 3,
+    "EffectCategory": 0,
+    "TargetBase": 0,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "FXTransUseConfig": 0,
+    "PlayFXSocketName": "",
+    "PlayFXLocalDirX": 0.0,
+    "PlayFXLocalDirY": 0.0,
+    "PlayFXLocalDirZ": 0.0,
+    "FXCameraOffset": 0.0,
+    "HitActionDir": 0,
+    "HitOrientationType": 0,
+    "HitOriBaseCompName": "",
+    "CanFractureVictim": 0,
+    "CanCutVictim": 0,
+    "EffectParamsInt": [0, 152, 1],
+    "EffectParamsFloat": [2500.0],
+    "EffectParamsStr": [],
+    "Guard": "Guard"
+  }
+]

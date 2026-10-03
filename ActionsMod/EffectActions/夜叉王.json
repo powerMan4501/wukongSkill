@@ -1,0 +1,82 @@
+[
+  {
+    "id": 44050603,
+    "name": "夜叉王隐藏地刺，横扫用",
+    "actions": [
+      {
+        "Type": "bullet",
+        "name": "猪八戒",
+        "bulletConfig": {
+          "ProjectileIDs": [51002002],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "id": 44050601,
+    "name": "夜叉王隐藏地刺，横扫用",
+    "actions": [
+      {
+        "Type": "bullet",
+        "name": "猪八戒",
+        "bulletConfig": {
+          "ProjectileIDs": [51002002],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+  {
+    "id": 44052601,
+    "name": "夜叉王隐藏地刺，横扫用",
+    "actions": [
+      {
+        "Type": "bullet",
+        "name": "猪八戒",
+        "bulletConfig": {
+          "ProjectileIDs": [51002002],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "id": 440506020,
+    "name": "夜叉王开局二连横扫，第二个横扫触发的效果，再次二连扫",
+    "actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "Delay": 500,
+        "Condition": {
+          "Type": "hasAnyBuff",
+          "params": "440527"
+        },
+        "value": 2300,
+        "name": "跳到指定的秒数"
+      },
+
+      {
+        "Type": "Skill",
+        "Delay": 500,
+        "Value": 440534,
+        "Condition": {
+          "Type": "noHasAnyBuff",
+          "params": "440527"
+        },
+        "name": "横扫"
+      },
+      {
+        "Type": "setMagicBack",
+        "Condition": {
+          "Type": "noHasAnyBuff",
+          "params": "440527"
+        },
+        "value": 1,
+        "Delay": 600,
+        "name": "变回"
+      }
+    ]
+  }
+]

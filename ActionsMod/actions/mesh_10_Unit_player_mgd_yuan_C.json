@@ -1,0 +1,47 @@
+﻿{
+  "Bindings": [
+    {
+      "Key": "XBUTTON1",
+      "UnitName": "Unit_player_mgd_yuan_C",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 25134,
+          "Condition": {
+            "Type": "hasAnyBuff",
+            "params": "24071"
+          },
+          "name": "巨猿，冰buff， 核爆冰拳"
+        },
+        {
+          "Type": "Skill",
+          "Value": 25257,
+          "Condition": {
+            "Type": "hasAnyBuff",
+            "params": "24072"
+          },
+          "name": "法相巨猿，核爆火拳"
+        },
+        {
+          "Type": "Skill",
+          "Value": 740157,
+          "Condition": {
+            "Type": "noHasAnyBuff",
+            "params": "24071,24072"
+          },
+          "name": "跳砸出碎片"
+        },
+        {
+          "Type": "Buff",
+          "Values": [24072],
+          "Duration": 1800000,
+          "Condition": {
+            "Type": "noHasAnyBuff",
+            "params": "24071,24072"
+          },
+          "name": "进入火buff"
+        }
+      ]
+    }
+  ]
+}

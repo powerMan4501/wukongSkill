@@ -1,0 +1,652 @@
+﻿{
+  "Verbose": false,
+  "Bindings": [
+    {
+      "Key": "F6",
+      "SKMesh": null,
+      "Actions": [
+        {
+          "name": "给敌人加血",
+          "Type": "range_buff",
+          "Values": [810001, 820061],
+          "range": 5000,
+          "Duration": 999999
+        }
+      ]
+    },
+    {
+      "Key": "J",
+      "SKMesh": null,
+      "Actions": [
+        {
+          "Type": "JingDouYun"
+        }
+      ]
+    },
+    {
+      "Key": "C",
+      "SKMesh": null,
+      "Actions": [
+        {
+          "Type": "ChangeMoveSpeed",
+          "MoveSpeedWalk": 15000,
+          "MoveSpeedRun": 25000,
+          "MoveSpeedSprint": 32000,
+          "Duration": 900000
+        },
+
+        {
+          "Type": "Buff",
+          "name": "九转还魂丹,青田葫芦",
+          "values": [92215, 2810]
+        }
+      ]
+    },
+    {
+      "Key": "XBUTTON1",
+      "SKMesh": "SK_Wukong_Simple",
+      "Actions": [
+        {
+          "Type": "Rushskill",
+          "RushDir": "Backward",
+          "name": "完美闪避，铜头/铜头反击接 聚形散气",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10311,10502,10505,10506,10507,10508,10509,10510"
+          },
+          "Duration": 0,
+          "Delay": 0
+        },
+        {
+          "Type": "Skill",
+          "Value": 10797,
+          "name": "翻滚，定身，完美定身接追击",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10301,10302,10303,10304,10305,50007,10517,10518,10519"
+          },
+          "Duration": 0,
+          "Delay": 0
+        },
+        {
+          "Type": "Skill",
+          "Value": 50005,
+          "name": " 追击接大圣切手技能",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10797"
+          },
+          "Duration": 0,
+          "Delay": 0
+        },
+        {
+          "Type": "Skill",
+          "Value": 50004,
+          "name": "破隐一击，接大圣切手2",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10096,50101"
+          }
+        },
+        {
+          "Type": "Skill",
+          "Value": 10096,
+          "name": "戳棍，接破隐一击",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10881,10882,10883,10884,10885,10886,10887,10888,10889,10890"
+          }
+        },
+        {
+          "Type": "Skill",
+          "Default": true,
+          "Value": 50001
+        },
+        {
+          "Type": "Skill",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "50001,10705,10706,10860,10861,10862,10863,10864"
+          },
+          "Value": 50002
+        },
+        {
+          "Type": "Skill",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "50013,10803,1001199"
+          },
+          "Value": 50005,
+          "Duration": 0,
+          "Delay": 0
+        },
+        {
+          "Type": "Skill",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "50005,10869,10721,10723"
+          },
+          "Value": 50006,
+          "Duration": 0,
+          "Delay": 0
+        },
+        {
+          "Type": "Skill",
+          "name": "接转身定",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10199"
+          },
+          "Value": 50007,
+          "Duration": 0,
+          "Delay": 0
+        },
+        {
+          "Type": "Skill",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "50007,10842,10843,10844,10845,10846,10847,10848,10849,10850,10851,10852,10724,10725,50006"
+          },
+          "Value": 50015,
+          "Duration": 0,
+          "Delay": 0
+        },
+        {
+          "Type": "Skill",
+          "name": "Q5接定风珠",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "50015"
+          },
+          "Value": 10992,
+          "Duration": 0,
+          "Delay": 0
+        },
+        {
+          "Type": "Skill",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10701,10702,10703,10704,10992,10830,10831,10832,10833,10834,50020,50021,50022,50023,50024"
+          },
+          "Value": 10713,
+          "Duration": 0,
+          "Delay": 0
+        },
+        {
+          "Type": "Skill",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10713"
+          },
+          "Value": 10714,
+          "Duration": 0,
+          "Delay": 0
+        },
+        {
+          "Type": "Skill",
+          "name": "进尺接分身的安身术",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10714,10715,10707,10708,50002,50004"
+          },
+          "Value": 1001199,
+          "Duration": 0,
+          "Delay": 0
+        }
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "SKMesh": "SK_Wukong_Simple",
+      "Actions": [
+        {
+          "Type": "AvatarSkill",
+          "Value": 700146,
+          "name": "(大圣残躯) 出招 700146",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10401,10530,10531,10532,10533,10534,10535,10536,50901"
+          }
+        },
+
+        {
+          "Type": "Magic",
+          "Value": 8587,
+          "name": "退寸，",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10713"
+          },
+          "magicSkill": 10187,
+          "MagicMaps": [
+            {
+              "Type": "bullet_ice",
+              "name": "(冰)，化身隼居士，扇阴风",
+              "Value": 8571,
+              "magicSkill": 11371
+            }
+          ]
+        },
+        {
+          "Type": "Magic",
+          "Value": 8530,
+          "name": "进尺接，尾后针",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10714,10715"
+          },
+          "magicSkill": 10130
+        },
+        {
+          "Type": "Magic",
+          "Value": 8522,
+          "name": "跳跃攻击，无量蝙蝠飞天",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10601,10605,10606,10607,10608,10609,10610,10611,10612,10613,10614,50030,50031,50032,50033,50034,,50035,50036,50037,50038,50039"
+          },
+          "magicSkill": 11322,
+          "MagicMaps": [
+            {
+              "Type": "bullet_fire",
+              "name": "(火)，点鬼火",
+              "Value": 8585,
+              "magicSkill": 11385
+            }
+          ]
+        },
+        {
+          "Type": "Magic",
+          "Value": 8517,
+          "name": "10705，虎伥，快刀",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10705,10706,50001,50003"
+          },
+          "magicSkill": 11317
+        },
+        {
+          "Type": "Magic",
+          "Value": 8563,
+          "name": "10707，沙二郎",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10707,10708,50002,50004"
+          },
+          "magicSkill": 11363
+        },
+        {
+          "Type": "Magic",
+          "Value": 8578,
+          "name": "风云转接，虫校尉",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10721,10723"
+          },
+          "magicSkill": 10178
+        },
+        {
+          "Type": "Magic",
+          "Value": 8526,
+          "name": "平A，接不能",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10802,10803,10804,50011,50012,50013,50014"
+          },
+          "magicSkill": 10126
+        },
+        {
+          "Type": "Magic",
+          "name": "平A1，百目真人",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10801"
+          },
+          "magicSkill": 11315,
+          "Value": 8515
+        },
+        {
+          "Type": "Magic",
+          "name": "枪平A1，接蜻蜓",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10701"
+          },
+          "magicSkill": 11379,
+          "Value": 8579
+        },
+        {
+          "Type": "Magic",
+          "name": "枪平A2，接鼠司空",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10702"
+          },
+          "magicSkill": 11314,
+          "Value": 8514
+        },
+        {
+          "Type": "Magic",
+          "name": "枪平A3，接赤发鬼",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10703"
+          },
+          "magicSkill": 11372,
+          "Value": 8572
+        },
+        {
+          "Type": "Magic",
+          "name": "平A5，接毒蛙",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10704"
+          },
+          "magicSkill": 11397,
+          "Value": 8597
+        },
+        {
+          "Type": "Magic",
+          "name": "平A5，接石蛙",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10805,50015"
+          },
+          "magicSkill": 11399,
+          "Value": 8599
+        },
+        {
+          "Type": "Magic",
+          "Value": 1111108,
+          "name": "劈棍3，接，天将召唤雷电",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10833,50021,50022"
+          },
+          "magicSkill": 413431
+        },
+        {
+          "Type": "Magic",
+          "Value": 8526,
+          "name": "劈棍2，跳起来砸出地爆",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10832,50020"
+          },
+          "magicSkill": 300513
+        },
+        {
+          "Type": "Magic",
+          "Value": 8526,
+          "name": "劈棍1，接不能蓄力很久一拳",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10831"
+          },
+          "magicSkill": 300516
+        },
+        {
+          "Type": "Magic",
+          "Value": 1111107,
+          "name": "劈棍0，鬼王脚踩",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10830"
+          },
+          "magicSkill": 401202
+        },
+        {
+          "Type": "Magic",
+          "Value": 8513,
+          "name": "劈棍4，接，幽魂四联地爆",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10834,50023,50024"
+          },
+          "magicSkill": 102432
+        },
+        {
+          "Type": "Magic",
+          "name": "江海翻，接，夜叉王瞬发地刺",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10724,10725,50006"
+          },
+          "Value": 1111101,
+          "magicSkill": 440515
+        },
+        {
+          "name": "立棍4，接，夜叉王很长的平a连招跳起瞬发地刺",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10864,50005"
+          },
+          "Type": "Magic",
+          "Value": 1111101,
+          "magicSkill": 440516
+        },
+        {
+          "name": "立棍23，接，夜叉王较短的平a连招跳起瞬发地刺",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10862,10863"
+          },
+          "Type": "Magic",
+          "Value": 1111101,
+          "magicSkill": 440517
+        },
+        {
+          "name": "立棍1，接，夜叉王爆气地刺",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10861"
+          },
+          "Type": "Magic",
+          "Value": 1111101,
+          "magicSkill": 440507
+        },
+        {
+          "name": "立棍0，接，夜叉王脚踩地刺",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10860"
+          },
+          "Type": "Magic",
+          "Value": 1111101,
+          "magicSkill": 440555
+        },
+        {
+          "name": "戳棍4，接，不能很长的摆架势前摇之后，打出好几个排云掌",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10885,10890"
+          },
+          "Type": "Magic",
+          "Value": 8526,
+          "magicSkill": 300508
+        },
+        {
+          "name": "戳棍3，接不能肘击 AM_LYS_TuiSeng_02_Atk_Fast_05b",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10884,10889"
+          },
+          "Type": "Magic",
+          "Value": 8526,
+          "magicSkill": 300515
+        },
+        {
+          "name": "戳棍2，接鳖宝飞天大坐",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10883,10888"
+          },
+          "Type": "Magic",
+          "Value": 8535,
+          "magicSkill": 405507
+        },
+        {
+          "name": "戳棍1，接，黄眉地板雷 AM_LYS_HuangMei_03_Atk_13",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10882,10887"
+          },
+          "Type": "Magic",
+          "Value": 1111109,
+          "magicSkill": 380013
+        },
+        {
+          "name": "戳棍0，接，小骊龙跳砸一下",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10881,10886"
+          },
+          "Type": "Magic",
+          "Value": 1111104,
+          "magicSkill": 302514
+        },
+        {
+          "Type": "Magic",
+          "Value": 8562,
+          "name": "定身，接，疯虎",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "50007,10517,10518,10519"
+          },
+          "magicSkill": 11362
+        },
+        {
+          "Type": "Buff",
+          "name": "大圣切手技，连招buff",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "50001,50003,50005"
+          },
+          "Values": [289],
+          "Duration": 0,
+          "Delay": 0
+        },
+        {
+          "Type": "Magic",
+          "Value": 8513,
+          "name": "翻滚，接，如来神掌",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10301,10302,10303,10304,10305"
+          },
+          "magicSkill": 102433
+        },
+        {
+          "Type": "Magic",
+          "Value": 8520,
+          "name": "蓄力动作，接，不空",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10811,10812,10813,10814,10815,10835,10836,10837,10838,10839,10870,10871,10872,10873,10874,10875,10876,10877,10878,10879,50025,50026,50027,50028,50029"
+          },
+          "magicSkill": 11320
+        },
+        {
+          "Type": "Magic",
+          "Value": 8513,
+          "name": "破隐一击，接，大头磕头",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10096,50101"
+          },
+          "magicSkill": 11313
+        },
+        {
+          "Type": "Magic",
+          "Value": 8569,
+          "name": "精魄返回技能，接，鼠弩手",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10199"
+          },
+          "magicSkill": 11369,
+          "MagicMaps": [
+            {
+              "Type": "bullet_ice",
+              "name": "(冰)，隼居士左右扇风",
+              "Value": 8571,
+              "magicSkill": 303005
+            }
+          ]
+        },
+        {
+          "Type": "Magic",
+          "Value": 8569,
+          "name": "鼠弩手",
+          "Default": true,
+          "magicSkill": 11369,
+          "MagicMaps": [
+            {
+              "Type": "bullet_ice",
+              "name": "(冰)，，隼居士左右扇风",
+              "Value": 8571,
+              "magicSkill": 303005
+            }
+          ]
+        },
+
+        {
+          "Type": "Magic",
+          "Value": 1111101,
+          "name": "Q定风珠接，夜叉王开局横扫",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10992"
+          },
+          "magicSkill": 440596
+        },
+        {
+          "Type": "Magic",
+          "Value": 8596,
+          "name": "冲刺平A，安身术接，火蛙",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "1001199,10700,10800"
+          },
+          "magicSkill": 11396,
+          "MagicMaps": [
+            {
+              "Type": "bullet_ice",
+              "name": "(冰)，冰蛙",
+              "Value": 8595,
+              "magicSkill": 11395
+            }
+          ]
+        },
+        {
+          "Type": "Magic",
+          "Value": 8598,
+          "name": "定身，棍花，接，雷蛙",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10842,10843,10844,10845,10846,10847,10848,10849,10850,10851,10852"
+          },
+          "magicSkill": 11398
+        },
+        {
+          "Type": "Magic",
+          "Value": 8595,
+          "name": "定身追击接，冰蛙",
+          "Condition": {
+            "Type": "LastSkillID",
+            "params": "10797"
+          },
+          "magicSkill": 11395,
+          "MagicMaps": [
+            {
+              "Type": "bullet_fire",
+              "name": "(火)，火蛙",
+              "Value": 8596,
+              "magicSkill": 11396
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,760 @@
+[
+  {
+    "ID": 22100,
+    "BuffTips": "※※※※变身通用※※※※ | 【轻击】轻攻击命中标记Buff",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 2000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0],
+        "EffectParamsFloat": [5]
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [211],
+        "EffectParamsFloat": [0.0]
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 20000,
+    "BuffTips": "变身通用-不退出变身Buff",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [136],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 7,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0],
+        "EffectParamsFloat": [50]
+      },
+      {
+        "EffectTrigger": 12,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0],
+        "EffectParamsFloat": [5]
+      },
+      {
+        "EffectTrigger": 12,
+        "EffectType": 14,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 12030,
+    "BuffTips": "【狼】变身-R2-01命中标识-持续1s | #允许使用R2-02-Max",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 9000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 14071,
+    "BuffTips": "【虎】变身-风状态检测 ，改成加50棍势",
+    "BuffActiveCondition": {
+      "ConditionType": 4,
+      "ConditionParams": "0,191,39,0,1"
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 500,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [1],
+        "EffectParamsFloat": [50.0]
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 23071,
+    "BuffTips": "【马】变身-检测移除引雷 ，改成加50棍势",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 1000,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [1],
+        "EffectParamsFloat": [50.0]
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 17079,
+    "BuffTips": "【猴】变身-移除爆气，改成加50棍势",
+    "BuffActiveCondition": {
+      "ConditionType": 4,
+      "ConditionParams": "0,191,39,0,1"
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 500,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [1],
+        "EffectParamsFloat": [50.0]
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 20534,
+    "BuffTips": "【化身】海罗刹-盾牌-5层满 再受击击碎 | 0.【Buff】满层添加普通破碎buff",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 5,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 24071,
+    "BuffTips": "【猿】变身-冰拳法术特效 | 0.冰免，火免",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 180000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [83, 84],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 24072,
+    "BuffTips": "【猿】变身-炎拳法术特效 | 0.火免，冰免",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 180000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [84, 83],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 24082,
+    "BuffTips": "【猿】变身-铜头铁臂 | 0.【状态】添加时-添加弹刀【45】",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 180000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [17, 45],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 14,
+        "EffectType": 134,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [0],
+        "EffectParamsFloat": [10]
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 21161,
+    "BuffTips": "【化身Lv1】缓慢恢复些微生命(1s回1.5%）",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 1000,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [151, 150, 0, 1],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 21461,
+    "BuffTips": "【化身Lv4】缓慢恢复些微生命(1s回1.75%）",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 1000,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [151, 175, 0, 1],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 21661,
+    "BuffTips": "【化身Lv6】缓慢恢复些微生命(1s回2%）",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 1000,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 2,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [151, 200, 0, 1],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 20129,
+    "BuffTips": "【化身】拟态树 | 0.【状态】禁止移动+拟态 | 1.【Buff】回血相关Buff和【20190】 | 2.【Buff】移除回血Buff和【20190】 | ※拟态没有动画，只能在拟态表里加buff",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 60000,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [157, 10],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 46,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [20229, 20329, 20190],
+        "EffectParamsFloat": [0.0, 0.0, 0.0]
+      },
+      {
+        "EffectTrigger": 3,
+        "EffectType": 5,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [20229, 20329, 20190],
+        "EffectParamsFloat": [99.0, 99.0, 99.0]
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 28,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [412304, 5, 0],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 20137,
+    "BuffTips": "【化身】燧先锋 | 0.【状态】添加时-添加免疫【84】火【85】毒【86】雷【7】弹子弹 | 1.【属性】添加时-伤害减免75%",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 7,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [7, 84, 85, 86],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [120, 9500, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 28,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [220203, 3, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 7,
+        "EffectType": 28,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [220203, 1, 0],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 13050,
+    "BuffTips": "【石】变身-受击特效（标识棍势积累）",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 0,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": 500,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 1,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 28,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [220203, 1, 0],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  },
+  {
+    "ID": 810001,
+    "BuffTips": "精魄怪-加生命-大怪版",
+    "BuffActiveCondition": {
+      "ConditionType": 0,
+      "ConditionParams": ""
+    },
+    "BuffLayerCounterType": 1,
+    "BuffCategory": 0,
+    "CanRemoveWhenAttackHit": 0,
+    "CanRemoveWhenAttacked": 0,
+    "Delay": 0,
+    "Duration": -1,
+    "Interval": 0,
+    "AlmostEndAheadTime": 0,
+    "MaxLayer": 5,
+    "TargetBase": 2,
+    "TargetCount": 1,
+    "TargetFilter": 1,
+    "TargetTypeFilter": 1,
+    "AffiliationTypeFilter": 0,
+    "Range": {
+      "RangeType": 0,
+      "RangeCenterType": 0,
+      "RangeParam": []
+    },
+    "BuffEffects": [
+      {
+        "EffectTrigger": 1,
+        "EffectType": 2,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [51, 10000, 0, 0],
+        "EffectParamsFloat": []
+      },
+      {
+        "EffectTrigger": 1,
+        "EffectType": 3,
+        "EffectTargetSelectType": 0,
+        "EffectParamsString": [],
+        "EffectParams": [151, 99999, 0, 0],
+        "EffectParamsFloat": []
+      }
+    ],
+    "IsExclusiveBuff": 0,
+    "CanBeInherited": 0,
+    "Guard": "Guard"
+  }
+]

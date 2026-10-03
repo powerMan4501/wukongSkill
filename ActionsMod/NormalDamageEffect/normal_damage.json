@@ -1,0 +1,10 @@
+[
+  {
+    "name": "自身带反弹类 Buff 时把伤害原样返还给攻击者（原 MagicMod OnTriggerNormalDamageEffect）",
+    "BuffIds": [229, 96036, 25080],
+    "CheckAttacker": false,
+    "actions": [
+      { "Type": "reflect_damage" }
+    ]
+  }
+]

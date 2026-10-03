@@ -1,0 +1,15 @@
+﻿{
+    "Bindings":  [
+                     {
+                         "Key":  "XBUTTON1",
+                         "UnitName":  "Unit_player_lys_shu_C",
+                         "Actions":  [
+                                         {
+                                             "Type":  "Skill",
+                                             "Value":  250164,
+                                             "name":  "双头鼠，后退一步喷油烟再喷火"
+                                         }
+                                     ]
+                     }
+                 ]
+}

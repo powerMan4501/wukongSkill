@@ -1,0 +1,146 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "赢不了咱，没趣没趣",
+    "DialogueId": 320190001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_038",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_038"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不倜傥，再来再来！",
+    "DialogueId": 320190002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_039"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "出神",
+    "DialogueId": 320190003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_032",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_032"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "入化！",
+    "DialogueId": 320190004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_032",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_032"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "臂枪",
+    "DialogueId": 320190005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_033"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "走马！",
+    "DialogueId": 320190006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_033"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "君子不拘小节",
+    "DialogueId": 320190007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_034",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_034"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "沙如雪，月似钩",
+    "DialogueId": 320190008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_035"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "边尘漠漠，朔气昏昏",
+    "DialogueId": 320190009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_036",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_036"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "风沙起，人心迷！",
+    "DialogueId": 320190010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_001",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_037"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "惹不起惹不起",
+    "DialogueId": 320190011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "架不住，咱躲！",
+    "DialogueId": 320190012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "大哥这招，当真酣畅！",
+    "DialogueId": 320190013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_003",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "剑锋起，气成虹！",
+    "DialogueId": 320190014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "仗剑",
+    "DialogueId": 320190015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_005",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "飞星！",
+    "DialogueId": 320190016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_005",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_005"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "剑在心",
+    "DialogueId": 320190017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "烁古今！",
+    "DialogueId": 320190018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/HFM/HFM_HuangPaoZhu/Voice/EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_hfm_huangpaozhu_voice_dialogue_rush_006"
+  }
+]

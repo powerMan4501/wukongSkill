@@ -1,0 +1,9 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "无论何时，小心戒备没错",
+    "DialogueId": 320150001,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  }
+]

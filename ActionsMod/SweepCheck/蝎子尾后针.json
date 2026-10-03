@@ -1,0 +1,11 @@
+[
+  {
+    "Animation": ".AM_40_psd_xiezijing_01a_atk_",
+    "addRadius": 500,
+    "cast_actions": [
+      { "Type": "SpeakDialogue", "name": "尾后针！", "DialogueId": 349990003,
+        "path": "/Game/00Main/Audio/SFX/Enemy/PSD/psd_xiezijing_og/EVT_enm_psd_xiezijing_og_voice_dialogue/EVT_enm_psd_xiezijing_voice_dialogue_atk_32",
+        "SubtitleDurationMs": 2500 }
+    ]
+  }
+]

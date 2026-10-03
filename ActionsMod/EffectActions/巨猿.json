@@ -1,0 +1,38 @@
+[
+  {
+    "id": 2408101,
+    "name": "jxsq攻击",
+    "actions": [
+      {
+        "Type": "Buff",
+        "name": "时缓",
+        "Values": [20420],
+        "Duration": 1000
+      },
+      {
+        "Type": "bullet",
+        "name": "鳖宝子弹，红孩儿砸地",
+        "Condition": {
+          "Type": "noHasAnyBuff",
+          "params": "24071"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [40550101],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      },
+      {
+        "Type": "bullet",
+        "name": "冰 , 巨猿lv3冰暴,冰刺",
+        "Condition": {
+          "Type": "hasAnyBuff",
+          "params": "24071"
+        },
+        "bulletConfig": {
+          "ProjectileIDs": [2403371],
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  }
+]

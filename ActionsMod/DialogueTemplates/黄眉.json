@@ -1,0 +1,955 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "扯甚么天命天道，最后不也一样打打杀杀丑态百出吗？",
+    "DialogueId": 338000001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_51",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_51"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "一路杀来，可觉得精神渐爽？",
+    "DialogueId": 338000002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_52",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_52"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这便是为师送你的礼物！",
+    "DialogueId": 338000003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_52",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_52"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "一味贪恋杀戮之力，只会害你",
+    "DialogueId": 338000004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_54",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_54"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "唯有失去，才能长进",
+    "DialogueId": 338000005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_54",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_54"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "梦该醒了！",
+    "DialogueId": 338000006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_55",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_55"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "万法归一！",
+    "DialogueId": 338000007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_56"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "人未伤心不得死，花残叶落是根枯",
+    "DialogueId": 338000008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_57",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_57"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "只有我在上，更无天与齐",
+    "DialogueId": 338000009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_58"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "何来极乐之境",
+    "DialogueId": 338000010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_59",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_59"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "只有地狱，我便是你的地狱！",
+    "DialogueId": 338000011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_59",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_59"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "谁许你的天命，孙悟空？",
+    "DialogueId": 338000012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_60"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我才是天！",
+    "DialogueId": 338000013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_60"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "为师观你悟性尚可，这才容你，不然……",
+    "DialogueId": 338000014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_61",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_61"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我此身臭皮囊一具，你执着于外在又有何用？",
+    "DialogueId": 338000015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_62"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我门下弟子皆求生，唯你，偏求死",
+    "DialogueId": 338000016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_63"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "佛向性中作，莫向身外求",
+    "DialogueId": 338000017,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_64",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_64"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你以色见我，以音声求我，好得很！",
+    "DialogueId": 338000018,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_65"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "挣扎，欣喜，决绝，快意",
+    "DialogueId": 338000019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_66",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_66"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "才是生命的真谛！",
+    "DialogueId": 338000020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_66",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_66"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "苦即是爱，爱即是苦",
+    "DialogueId": 338000021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_67",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_67"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "无爱无苦，亦无救赎！",
+    "DialogueId": 338000022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_67",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_67"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "法界清净！",
+    "DialogueId": 338000023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_68",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_68"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "正果金身！",
+    "DialogueId": 338000024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_69"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "法相庄严！",
+    "DialogueId": 338000025,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_70"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "去什么灵山，这就是西天，我就是真佛！",
+    "DialogueId": 338000026,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_71",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_71"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "雷音道场，只有救苦慈尊，还不磕头礼拜！",
+    "DialogueId": 338000027,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_72"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "心无戒定，慧眼高明！",
+    "DialogueId": 338000028,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_73",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_73"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "诸相非相，皆是虚妄！",
+    "DialogueId": 338000029,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_74"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "执于自我，凭添烦恼！",
+    "DialogueId": 338000030,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_75",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_75"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "想参禅打坐？我帮你！",
+    "DialogueId": 338000031,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_76"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这几个徒儿，为师笑纳了",
+    "DialogueId": 338000032,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_77",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_77"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "还未入门，便送大礼？",
+    "DialogueId": 338000033,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_78"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不取于相，如如不动",
+    "DialogueId": 338000034,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_79",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_79"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我无法不知，无法不识！",
+    "DialogueId": 338000035,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_80"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你肉身仍在，不是解脱",
+    "DialogueId": 338000036,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_81"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我受够了那些经文偈颂",
+    "DialogueId": 338000037,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_82",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_82"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "什么灵山天命，我要创立新的极乐！",
+    "DialogueId": 338000038,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_82",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_82"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "普天神将，四方星君，谁人不称我为师尊",
+    "DialogueId": 338000039,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_83"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天命人，算什么！",
+    "DialogueId": 338000040,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_83"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不恭敬，禅心于你滞碍",
+    "DialogueId": 338000041,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_voice_seq_lys_cpt050_seq032"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "看看我这大雄宝殿，难道不比那灵山气派！",
+    "DialogueId": 338000042,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_voice_seq_lys_cpt050_seq032"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这后天袋的至妙之处，便是让人脱胎换骨！",
+    "DialogueId": 338000043,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_voice_seq_lys_cpt050_seq033"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "信天命，却不信自己，这便是下场",
+    "DialogueId": 338000044,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_88",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_88"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "又想赌，那你已经输了",
+    "DialogueId": 338000045,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_89"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "好大的胆子！",
+    "DialogueId": 338000046,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_94"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你不会以为，真能赢过老天罢？",
+    "DialogueId": 338000047,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_95"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "呵佛骂祖，你不如我！",
+    "DialogueId": 338000048,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_96"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "前门紧关，何不就此入我门下",
+    "DialogueId": 339000001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "小的们，行者参拜，讲经说法！",
+    "DialogueId": 339000002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_02"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我设像显能，诱你进来，不如你我也打个赌赛？",
+    "DialogueId": 339000003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_03",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_03"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我一向知你有些手段，如若斗得过我，放你去便是",
+    "DialogueId": 339000004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_04"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "这里人都称我为师父，桃李不言，下自成蹊",
+    "DialogueId": 339000005,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_05"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "诳谬之徒，灵台之间，辱没佛门",
+    "DialogueId": 339000006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_06",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_06"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "冒犯仙山，不求宽恕，还要放肆？",
+    "DialogueId": 339000007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_07"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你毁得了金铙，斗得过这根狼牙棒么",
+    "DialogueId": 339000008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_08"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "徒儿们，此子无礼，该当何罪？",
+    "DialogueId": 339000009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_09",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_09"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "众僧且看，行者愚顽，为师如何点化",
+    "DialogueId": 339000010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_10"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "千山万水，来此是纳命？还是拜师？",
+    "DialogueId": 339000011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_11"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "今番一只手使棒，你也挣挫不得！",
+    "DialogueId": 339000012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_12",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_12"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我不使宝贝，只与你实打，比个雌雄",
+    "DialogueId": 339000013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_13"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你计穷力竭，又无处求人，还强撑什么？",
+    "DialogueId": 339000014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_14"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "诸恶不作，众善难行",
+    "DialogueId": 339000015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_15",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_15"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "自净其意，是诸佛教",
+    "DialogueId": 339000016,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_15",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_15"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "以我功德，诸佛加持",
+    "DialogueId": 339000017,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "法界流转，众生极乐",
+    "DialogueId": 339000018,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "天上天下，唯我独尊",
+    "DialogueId": 339000019,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_17"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "三界皆苦，我当安之",
+    "DialogueId": 339000020,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_17"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "烦恼深无底，生死海无边",
+    "DialogueId": 339000021,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_18",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_18"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "舍四重恩，尝三途苦",
+    "DialogueId": 339000022,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_18",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_18"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "除了业障，与我同登无上觉",
+    "DialogueId": 339000023,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_18",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_18"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "盗淫",
+    "DialogueId": 339000024,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_19"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "恶口",
+    "DialogueId": 339000025,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_19"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "妄言",
+    "DialogueId": 339000026,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_19"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "贪邪",
+    "DialogueId": 339000027,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_19"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "恚毒",
+    "DialogueId": 339000028,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_19"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "如是满世间！",
+    "DialogueId": 339000029,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_19"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "我乃明人导世，度脱邪众",
+    "DialogueId": 339000030,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_20"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "世皆有死，三界无安",
+    "DialogueId": 339000031,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_20"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "诸天虽乐，福尽亦丧！",
+    "DialogueId": 339000032,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_20"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "顽固不化！",
+    "DialogueId": 339000033,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_21",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_21"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "本座这搭包正是为迷途之人准备",
+    "DialogueId": 339000034,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_voice_seq_lys_cpt050_seq020_shot000"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你且进去悟上一悟！",
+    "DialogueId": 339000035,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_voice_seq_lys_cpt050_seq020_shot000"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "业障太重，做不了我的徒弟",
+    "DialogueId": 339000036,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_22",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_22"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "志大才疏，孽根祸胎，该死",
+    "DialogueId": 339000037,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_23"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "有戒有罪，无戒无罪，此乃涅槃！",
+    "DialogueId": 339000038,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_97"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "拜我门下，大彻大悟，就在此刻！",
+    "DialogueId": 339000039,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_91",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_91"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "好得很，好得很！",
+    "DialogueId": 339000040,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_92",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_92"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "敢杀师父，这就对了",
+    "DialogueId": 339000041,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_01",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_93"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "还记得盂兰会上，世尊说过",
+    "DialogueId": 339000050,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_90",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_90"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "众生之苦，多因不守戒律，放情纵欲",
+    "DialogueId": 339000051,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_90",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_90"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "要我说，放屁",
+    "DialogueId": 339000052,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_90",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_90"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不杀生，仇恨永无止息",
+    "DialogueId": 339000053,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_90",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_90"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不偷盗，强弱如我何异",
+    "DialogueId": 339000054,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_90",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_90"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不邪淫，一切有情皆孽",
+    "DialogueId": 339000055,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_90",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_90"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不妄语，梦幻泡影空虚",
+    "DialogueId": 339000056,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_90",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_90"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不馋酒，忧怖涨落无常",
+    "DialogueId": 339000057,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_90",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_90"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不耽乐，芳华刹那而已",
+    "DialogueId": 339000058,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_90",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_90"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不贪眠，苦苦不得解脱",
+    "DialogueId": 339000059,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_90",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_90"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不纵欲，诸行了无生趣",
+    "DialogueId": 339000060,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_90",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_90"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "使者莫怪，我与行者叙旧一番，故此来迟",
+    "DialogueId": 339000070,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_24",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_24"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "莫急莫急，亲故相见，要慢慢叙阔",
+    "DialogueId": 339000071,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_25",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_25"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "此言谬矣，不是他厉害，是我这搭包厉害",
+    "DialogueId": 339000072,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_26",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_26"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "进了我这搭包，管教你们一个个都骨软筋麻",
+    "DialogueId": 339000073,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_27",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_27"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "进我袋中，入我门下，我自然会教",
+    "DialogueId": 339000074,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_28",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_28"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "你虽已封为净坛使者，可还是放不下这争胜之念",
+    "DialogueId": 339000075,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_29",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_29"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "万法皆空，唯因果不空",
+    "DialogueId": 339000076,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_30",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_30"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "一切唯心造，心生万法生，心灭万法灭",
+    "DialogueId": 339000077,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_31",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_31"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "马猴，为师所讲斩断心魔，方能涅槃，你可曾记得？",
+    "DialogueId": 339000078,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_32",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_32"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "正所谓，亲不亲，故乡人",
+    "DialogueId": 339000079,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_33",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_33"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "无妨无妨，修行之人，时有散乱，乃是常情",
+    "DialogueId": 339000080,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_34",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_34"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "使者此言谬矣，若是不贪，如何取胜？",
+    "DialogueId": 339000081,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_35",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_35"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "武艺乃是外道，心无挂碍，无有恐怖",
+    "DialogueId": 339000082,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_36",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_36"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "慈心不嗔，嗔心生慈，无嗔无慈！",
+    "DialogueId": 339000083,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_37",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_37"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "不恶口，不两舌，使者忘了？",
+    "DialogueId": 339000084,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_38",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_38"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "怕？",
+    "DialogueId": 339000085,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_39",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_39"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "为断绝烦恼，日渐精进，这才是修行之理",
+    "DialogueId": 339000086,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_39",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_39"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "说什么是法平等，无有高下，诳语！",
+    "DialogueId": 339000087,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_40",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_40"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "徒儿勿忧，欲为诸佛龙象，先做牛马众生",
+    "DialogueId": 339000088,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_41",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_41"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "徒儿，但念无常，慎勿放逸",
+    "DialogueId": 339000089,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/LYS_huangmei_03/Voice/EVT_lys_huangmei_voice_dialogue_42",
+    "AkEventName": "EVT_lys_huangmei_voice_dialogue_42"
+  }
+]

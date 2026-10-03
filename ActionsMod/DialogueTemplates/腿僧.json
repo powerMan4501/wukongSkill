@@ -1,0 +1,121 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "善人不反，便是恶！",
+    "DialogueId": 330020001,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/TuiSeng/voice/P2/EVT_enm_lys_tuiseng_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_tuiseng_voice_dialogue_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "恶人当道，必除之",
+    "DialogueId": 330020002,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/TuiSeng/voice/P2/EVT_enm_lys_tuiseng_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_tuiseng_voice_dialogue_002"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "最恨高高在上之人！",
+    "DialogueId": 330020003,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/TuiSeng/voice/P2/EVT_enm_lys_tuiseng_voice_dialogue_003",
+    "AkEventName": "EVT_enm_lys_tuiseng_voice_dialogue_003"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "以强凌弱，算甚本事！",
+    "DialogueId": 330020004,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/TuiSeng/voice/P2/EVT_enm_lys_tuiseng_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_tuiseng_voice_dialogue_004"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "杀，无赦！",
+    "DialogueId": 330020005,
+    "SubtitleDurationMs": 2500,
+    "AkEventName": "EVT_voice_seq_lys_tuiseng_01"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "救苦，不救赌！",
+    "DialogueId": 330020006,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/TuiSeng/voice/P2/EVT_enm_lys_tuiseng_voice_dialogue_006",
+    "AkEventName": "EVT_enm_lys_tuiseng_voice_dialogue_006"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "造反，不造神！",
+    "DialogueId": 330020007,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/TuiSeng/voice/P2/EVT_enm_lys_tuiseng_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_tuiseng_voice_dialogue_007"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "以武入禅！",
+    "DialogueId": 330020008,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/TuiSeng/voice/P2/EVT_enm_lys_tuiseng_voice_dialogue_008",
+    "AkEventName": "EVT_enm_lys_tuiseng_voice_dialogue_008"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "除魔卫道！",
+    "DialogueId": 330020009,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/TuiSeng/voice/P2/EVT_enm_lys_tuiseng_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_tuiseng_voice_dialogue_009"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "除恶务尽！",
+    "DialogueId": 330020010,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/TuiSeng/voice/P2/EVT_enm_lys_tuiseng_voice_dialogue_010",
+    "AkEventName": "EVT_enm_lys_tuiseng_voice_dialogue_010"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "锄强扶弱！",
+    "DialogueId": 330020011,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/TuiSeng/voice/P2/EVT_enm_lys_tuiseng_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_tuiseng_voice_dialogue_011"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "来世，莫再欺凌弱小",
+    "DialogueId": 330020012,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/TuiSeng/voice/P2/EVT_enm_lys_tuiseng_voice_dialogue_012",
+    "AkEventName": "EVT_enm_lys_tuiseng_voice_dialogue_012"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "以杀止杀，以暴制暴……",
+    "DialogueId": 330020013,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/TuiSeng/voice/P2/EVT_enm_lys_tuiseng_voice_dialogue_001",
+    "AkEventName": "EVT_enm_lys_tuiseng_voice_dialogue_013"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "拈枪弄棒，弗如拳脚",
+    "DialogueId": 330020014,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/TuiSeng/voice/P2/EVT_enm_lys_tuiseng01_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_lys_tuiseng01_voice_dialogue_rush_001"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "赤手空拳，亦能降妖",
+    "DialogueId": 330020015,
+    "SubtitleDurationMs": 2500,
+    "path": "/Game/00Main/Audio/SFX/Enemy/LYS/TuiSeng/voice/P2/EVT_enm_lys_tuiseng01_voice_dialogue_rush_001",
+    "AkEventName": "EVT_enm_lys_tuiseng01_voice_dialogue_rush_002"
+  }
+]

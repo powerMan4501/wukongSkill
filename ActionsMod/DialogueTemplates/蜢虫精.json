@@ -1,0 +1,30 @@
+[
+  {
+    "Type": "SpeakDialogue",
+    "name": "听说没，洞内今日要办喜酒",
+    "DialogueId": 354020001,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "老夫人的情郎回来了",
+    "DialogueId": 354020002,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "什么情郎，是药引",
+    "DialogueId": 354020003,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  },
+  {
+    "Type": "SpeakDialogue",
+    "name": "来了咱们只管捉进洞去，抢个头功！",
+    "DialogueId": 354020004,
+    "SubtitleDurationMs": 2500,
+    "_note": "配表里没有对应语音事件，只出字幕"
+  }
+]

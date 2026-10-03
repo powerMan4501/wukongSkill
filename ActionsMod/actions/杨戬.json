@@ -1,0 +1,55 @@
+﻿{
+  "SKMesh": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_yangjian_01/Mesh/BattleUnit/SK_mgd_yangjian_01.SK_mgd_yangjian_01",
+  "Bindings": [
+    {
+      "Key": "LBUTTON",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 800000,
+          "name": "激光"
+        }
+      ]
+    },
+    {
+      "Key": "RBUTTON",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 800088,
+          "name": "巨大开山斧"
+        }
+      ]
+    },
+    {
+      "Key": "XBUTTON1",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 800029,
+          "name": "飞过去，用开山斧砍"
+        }
+      ]
+    },
+    {
+      "Key": "XBUTTON2",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 800083,
+          "name": "大招"
+        }
+      ]
+    },
+    {
+      "Key": "SPACE",
+      "Actions": [
+        {
+          "Type": "Skill",
+          "Value": 800032,
+          "name": "闪避"
+        }
+      ]
+    }
+  ]
+}

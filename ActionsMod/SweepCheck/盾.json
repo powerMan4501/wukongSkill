@@ -1,0 +1,24 @@
+[
+  {
+    "Animation": "AM_50_hys_huijingrenou_03_soulskill",
+    "name": "精魄重盾",
+    "addRadius": 900,
+    "Actions": [
+      {
+        "type": "addallsummonlifetime",
+        "SummonAliveTime": 9999,
+        "Name": "增加召唤物存活时间"
+      },
+      {
+        "Type": "bullet",
+        "name": "巴山虎",
+        "bulletConfig": {
+          "ProjectileIDs": [21020602],
+          "SpawnOffsetX": 200,
+          "SpawnOffsetY": 200,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  }
+]

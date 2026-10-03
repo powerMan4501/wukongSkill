@@ -1,0 +1,42 @@
+[
+  {
+    "ID": 1111107,
+    "BuffId": 20820,
+    "TamerPath": "/Game/00Main/Design/Units/HYS/Unit_HYS_LuoChaGui_01.Unit_HYS_LuoChaGui_01_C",
+    "BossConf": {
+      "CapsuleHalfHeight": 480.0,
+      "CapsuleRadius": 150.0,
+      "SKMesh": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_LuoChaGui_01/Mesh/SK_LuoChaGui_01.SK_LuoChaGui_01",
+      "ABPClass": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_LuoChaGui_01/ABP_HYS_LuoChaGui_01.ABP_HYS_LuoChaGui_01_C",
+      "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/HYS/HYS_LuoChaGui_01/Mesh/PA_LuoChaGui_01.PA_LuoChaGui_01",
+      "Weapons": null,
+      "TFXConfigs": null,
+      "InteractBones": [
+        {
+          "WeaponIndex": 0,
+          "FirstBoneName": "spine_01",
+          "FirstRadius": 90.5930939,
+          "NextBoneName": "Head",
+          "NextRadius": 63.630928
+        },
+        {
+          "WeaponIndex": 0,
+          "FirstBoneName": "calf_r",
+          "FirstRadius": 48.8800468,
+          "NextBoneName": "foot_r",
+          "NextRadius": 35.6001778
+        },
+        {
+          "WeaponIndex": 0,
+          "FirstBoneName": "calf_l",
+          "FirstRadius": 48.7922363,
+          "NextBoneName": "foot_l",
+          "NextRadius": 35.6009636
+        }
+      ],
+      "Override_AbnormalDispID_Attacker": 4014,
+      "Override_AbnormalDispID_Victim": 102,
+      "UnitScale": 0.5
+    }
+  }
+]

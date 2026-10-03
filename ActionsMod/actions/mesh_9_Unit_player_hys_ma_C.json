@@ -1,0 +1,24 @@
+﻿{
+    "Bindings":  [
+                     {
+                         "Key":  "XBUTTON1",
+                         "UnitName":  "Unit_player_hys_ma_C",
+                         "Actions":  [
+                                         {
+                                             "Type":  "Skill",
+                                             "Value":  23022,
+                                             "name":  "马哥，法术"
+                                         },
+                                         {
+                                             "Type":  "bullet",
+                                             "name":  "黄眉地板雷",
+                                             "Delay":  500,
+                                             "bulletConfig":  {
+                                                 "ProjectileIDs":  [ 38001305 ],
+                                                 "path":  "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+                                             }
+                                         }
+                                     ]
+                     }
+                 ]
+}

@@ -1,0 +1,15 @@
+﻿{
+    "Bindings":  [
+                     {
+                         "Key":  "XBUTTON1",
+                         "UnitName":  "Unit_player_gycy_lang_C",
+                         "Actions":  [
+                                         {
+                                             "Type":  "Skill",
+                                             "Value":  12043,
+                                             "name":  "广智，前砸地"
+                                         }
+                                     ]
+                     }
+                 ]
+}

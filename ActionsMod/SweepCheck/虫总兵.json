@@ -1,0 +1,69 @@
+[
+  {
+    "Animation": "AM_40_psd_jiachongzongbing_02_atk_10",
+    "addRadius": 2800,
+    "name": "虫总兵",
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.4333333,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "name": "冰暴波动",
+            "Condition": {
+              "Type": "bullet_ice"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [2403371, 30050301],
+              "SpawnOffsetX": 200,
+              "SpawnOffsetY": 200,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙波动",
+            "Condition": {
+              "Type": "bullet_fire"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [74011107, 30050301],
+              "SpawnOffsetX": 200,
+              "SpawnOffsetY": 200,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙波动",
+            "Condition": {
+              "Type": "bullet_poison"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [74011107, 30050301],
+              "SpawnOffsetX": 200,
+              "SpawnOffsetY": 200,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+
+          {
+            "Type": "bullet",
+            "name": "金沙波动",
+            "Condition": {
+              "Type": "bullet_thunder"
+            },
+            "bulletConfig": {
+              "ProjectileIDs": [74011107, 30050301],
+              "SpawnOffsetX": 200,
+              "SpawnOffsetY": 200,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

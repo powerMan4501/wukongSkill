@@ -1,0 +1,43 @@
+[
+  {
+    "Id": 100101,
+    "Name": "体健，让主角自带闭眼禅，清虚道果(加翻滚无敌时间),青田葫芦",
+    "TalentGroupId": 5901,
+    "UnitResIDStrs": "10",
+    "PassiveSkillIDs": "10101,92320",
+    "AddBuffIDs": "1093,2810",
+    "RequireTalentId": [],
+    "RequireSpellId": [],
+    "MaxLevel": 2,
+    "LevelUpCfg": [
+      {
+        "Level": 1,
+        "CostTalentPoint": 1,
+        "CostItem1Id": 0,
+        "CostItem1Num": 0,
+        "CostItem2Id": 0,
+        "CostItem2Num": 0,
+        "CostItem3Id": 0,
+        "CostItem3Num": 0,
+        "AttrEffectId": 0
+      },
+      {
+        "Level": 2,
+        "CostTalentPoint": 1,
+        "CostItem1Id": 0,
+        "CostItem1Num": 0,
+        "CostItem2Id": 0,
+        "CostItem2Num": 0,
+        "CostItem3Id": 0,
+        "CostItem3Num": 0,
+        "AttrEffectId": 0
+      }
+    ],
+    "Type": 0,
+    "Rank": 0,
+    "RequirePlayerLevel": 0,
+    "IsSpellOnly": 0,
+    "LocalizationTag": 0,
+    "IsHide": 0
+  }
+]

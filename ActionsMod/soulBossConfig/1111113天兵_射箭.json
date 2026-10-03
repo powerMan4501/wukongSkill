@@ -1,0 +1,19 @@
+[
+  {
+    "ID": 1111113,
+    "BuffId": 20820,
+    "TamerPath": "/Game/00Main/Design/Units/MGD/Unit_mgd_tianbing_03.Unit_mgd_tianbing_03_C",
+    "BossConf": {
+      "CapsuleHalfHeight": 220.0,
+      "CapsuleRadius": 60.0,
+      "SKMesh": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_tianbing_03/Mesh/SK_mgd_tianbing_03.SK_mgd_tianbing_03",
+      "ABPClass": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_tianbing_03/ABP_mgd_tianbing_03.ABP_mgd_tianbing_03_C",
+      "PhysicsAsset": "/Game/00MainHZ/Characters/Enemy/MGD/MGD_tianbing_03/Mesh/PA_mgd_tianbing_03.PA_mgd_tianbing_03",
+      "Weapons": null,
+      "TFXConfigs": null,
+      "InteractBones": null,
+      "Override_AbnormalDispID_Attacker": 0,
+      "Override_AbnormalDispID_Victim": 0
+    }
+  }
+]

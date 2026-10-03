@@ -1,0 +1,56 @@
+[
+  {
+    "Name": "工具",
+    "Tab": "CHECK",
+    "Items": [
+      { "name": "错开血条", "actions": [ { "Type": "BossBarOffset", "Delay": 500 } ] },
+      { "name": "错开血条(宽间距)", "actions": [ { "Type": "BossBarOffset", "Value": 20, "Delay": 500 } ] }
+    ]
+  },
+  {
+    "Name": "Boss",
+    "Tab": "MONSTER",
+    "Source": "boss",
+    "ItemActions": [ { "Type": "SpawnActor" } ]
+  },
+  {
+    "Name": "变身",
+    "Tab": "TRANS",
+    "Source": "trans",
+    "ItemActions": [ { "Type": "Trans" } ]
+  },
+  {
+    "Name": "珍玩",
+    "Tab": "ROLE",
+    "Source": "items",
+    "Ranges": [
+      { "Start": 15002, "Count": 1 },
+      { "Start": 15101, "Count": 1 },
+      { "Start": 12001, "Count": 4 },
+      { "Start": 16001, "Count": 1010 },
+      { "Start": 10501, "Count": 101 }
+    ],
+    "ItemActions": [ { "Type": "AddItem", "Count": 1 } ]
+  },
+  {
+    "Name": "丹药",
+    "Tab": "BATTLE",
+    "Source": "items",
+    "Ranges": [ { "Start": 2204, "Count": 51 } ],
+    "ItemActions": [ { "Type": "AddItem", "Count": 10 } ]
+  },
+  {
+    "Name": "材料",
+    "Tab": "PERFORM",
+    "Source": "items",
+    "Ranges": [ { "Start": 1996, "Count": 1967 } ],
+    "ItemActions": [ { "Type": "AddItem", "Count": 99 } ]
+  },
+  {
+    "Name": "道具",
+    "Tab": "CHECK",
+    "Source": "items",
+    "Ranges": [ { "Start": 3963, "Count": 2056 } ],
+    "ItemActions": [ { "Type": "AddItem", "Count": 1 } ]
+  }
+]

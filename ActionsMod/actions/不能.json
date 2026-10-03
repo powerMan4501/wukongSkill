@@ -1,0 +1,61 @@
+﻿{
+    "SKMesh":  "/Game/00MainHZ/Characters/Enemy/LYS/LYS_TuiSeng_P2/MeshUseP1SKEL/SK_LYS_TuiSeng_02.SK_LYS_TuiSeng_02",
+    "Bindings":  [
+                     {
+                         "Key":  "XBUTTON1",
+                         "Actions":  [
+                                         {
+                                             "Type":  "Skill",
+                                             "Value":  300508,
+                                             "name":  "不能·排云掌"
+                                         }
+                                     ]
+                     },
+                     {
+                         "Key":  "XBUTTON2",
+                         "Actions":  [
+                                         {
+                                             "Type":  "Skill",
+                                             "Value":  300513,
+                                             "name":  "不能·跳起砸地爆"
+                                         }
+                                     ]
+                     },
+                     {
+                         "Key":  "LBUTTON",
+                         "Actions":  [
+                                         {
+                                             "Type":  "Skill",
+                                             "Value":  300515,
+                                             "name":  "不能·肘击"
+                                         }
+                                     ]
+                     },
+                     {
+                         "Key":  "RBUTTON",
+                         "Actions":  [
+                                         {
+                                             "Type":  "Skill",
+                                             "Value":  300516,
+                                             "name":  "不能·蓄力很久一拳"
+                                         }
+                                     ]
+                     },
+                     {
+                         "Key":  "SPACE",
+                         "Actions":  [
+                                         {
+                                             "Type":  "Skill",
+                                             "Value":  300507,
+                                             "name":  "投技",
+                                             "grabConfig":  {
+                                                                "Scale3D":  {
+                                                                                "clearLock":  true
+                                                                            },
+                                                                "clearLock":  true
+                                                            }
+                                         }
+                                     ]
+                     }
+                 ]
+}

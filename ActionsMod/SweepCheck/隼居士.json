@@ -1,0 +1,79 @@
+[
+  {
+    "Animation": "AM_lys_baitouweng_atk_03_landfast",
+    "name": "飞天冰5下",
+    "cast_actions": [
+      {
+        "Type": "SetCamera",
+        "Duration": -1,
+        "Params": {
+          "ArmLengthAdd": 900,
+          "HeightAdd": 200,
+          "Fov": 88,
+          "PitchMin": -85,
+          "LerpSpeed": 10
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_30_lys_baitouweng_atk_04_Lv",
+    "name": "精魄技能",
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 500,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileID": 30302201,
+          "BornDirOffsetX": 70,
+          "type": "shot",
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_lys_baitouweng_atk_05",
+    "name": "左右扇风",
+
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.70031846,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileID": 30302201,
+              "BornDirOffsetX": 350,
+              "type": "shot",
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'"
+            }
+          }
+        ]
+      },
+      {
+        "NotifyBeginTime": 1.2011162,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileID": 30302201,
+              "BornDirOffsetX": 135,
+              "type": "shot",
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/PlayerBullets/Transform/VigorSkill/BGW_90_hfm_leiwa_Atk_41_Lv6_change.BGW_90_hfm_leiwa_Atk_41_Lv6_change'"
+            }
+          },
+          { "Type": "out_magic", "Delay": 800 }
+        ]
+      }
+    ]
+  }
+]

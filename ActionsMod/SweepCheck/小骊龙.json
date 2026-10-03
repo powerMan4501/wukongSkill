@@ -1,0 +1,181 @@
+[
+  {
+    "Animation": "AM_lys_chuilong_01a_attack_05_03",
+    "name": "连续锤击，电圈落雷",
+    "addRadius": 1200,
+
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 0.99221,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [30250101, 118],
+              "SpawnOffsetX": 300,
+              "SpawnOffsetY": 300,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+
+      {
+        "NotifyBeginTime": 2.50456,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [30250101, 118],
+              "SpawnOffsetX": 300,
+              "SpawnOffsetY": 300,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          }
+        ]
+      },
+      {
+        "NotifyBeginTime": 3.71788,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [30250101, 118],
+              "SpawnOffsetX": 300,
+              "SpawnOffsetY": 300,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 500
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_lys_chuilong_01a_attack_04_C",
+    "name": "跳砸，电圈落雷",
+    "addRadius": 1200,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 1000,
+        "name": "跳到指定的秒数"
+      }
+    ],
+
+    "sweep_actions": [
+      {
+        "NotifyBeginTime": 2.934751,
+        "Actions": [
+          {
+            "Type": "bullet",
+            "bulletConfig": {
+              "ProjectileIDs": [30250101, 39010112],
+              "SpawnOffsetX": 300,
+              "SpawnOffsetY": 300,
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 900
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Animation": "AM_lys_chuilong_01a_attack_13_01",
+    "name": "音游，雷暴",
+    "addRadius": 1200,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 12000,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "bullet_actions": [
+      {
+        "ID": 30250102,
+        "actions": [
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 2500
+          }
+        ]
+      }
+    ],
+    "Actions": [
+      {
+        "Type": "bullet",
+        "bulletConfig": {
+          "ProjectileIDs": [39010112],
+          "SpawnOffsetX": 300,
+          "SpawnOffsetY": 300,
+          "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+        }
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_lys_chuilong_01a_attack_09",
+    "name": "锤子互击三次释放三次小范围雷电",
+    "addRadius": 1200,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 1300,
+        "name": "跳到指定的秒数"
+      },
+      {
+        "Type": "out_magic",
+        "name": "退出精魄",
+        "Delay": 900
+      }
+    ]
+  },
+
+  {
+    "Animation": "AM_lys_chuilong_01a_attack_10",
+    "name": "锤子碰一下然后释放电圈，雷暴",
+    "addRadius": 1200,
+    "cast_actions": [
+      {
+        "Type": "Montage_SetPosition",
+        "value": 500,
+        "name": "跳到指定的秒数"
+      }
+    ],
+    "bullet_actions": [
+      {
+        "ID": 30250101,
+        "actions": [
+          {
+            "Type": "bullet",
+            "name": "雷暴",
+            "bulletConfig": {
+              "SpawnOffsetX": 500,
+              "SpawnOffsetY": 500,
+              "ProjectileIDs": [39010112],
+              "path": "BGWDataAsset_ProjectileSpawnConfig'/Game/00Main/Design/Bullets/Online/SL/SZLC_shujing_02/BGW_szlc_shujing_02_mf_5003.BGW_szlc_shujing_02_mf_5003'"
+            }
+          },
+          {
+            "Type": "out_magic",
+            "name": "退出精魄",
+            "Delay": 900
+          }
+        ]
+      }
+    ]
+  }
+]

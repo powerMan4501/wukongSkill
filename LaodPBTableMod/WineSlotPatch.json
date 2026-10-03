@@ -1,0 +1,6 @@
+{
+  "Slots": [
+    { "WineId": 2001, "SlotCount": 6 },
+    { "WineId": 2003, "SlotCount": 8 }
+  ]
+}
