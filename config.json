@@ -1,0 +1,60 @@
+{
+  "Config": [
+    {
+      "Name": "EnableChineseConsoleLog",
+      "DisplayName": "控制台中文输出",
+      "Type": "bool",
+      "ToolTip": "开启后把控制台代码页设为 UTF8，控制台能正常显示中文",
+      "DefaultValue": true,
+      "CurrentValue": true
+    },
+    {
+      "Name": "ShutUp",
+      "DisplayName": "屏蔽最详细日志",
+      "Type": "bool",
+      "ToolTip": "开启后不再输出 verLevel>=2 的日志",
+      "DefaultValue": false,
+      "CurrentValue": false
+    },
+    {
+      "Name": "ShuutUp",
+      "DisplayName": "屏蔽普通日志",
+      "Type": "bool",
+      "ToolTip": "开启后不再输出 verLevel>=1 的日志",
+      "DefaultValue": false,
+      "CurrentValue": false
+    },
+    {
+      "Name": "ShuuutUp",
+      "DisplayName": "屏蔽全部日志",
+      "Type": "bool",
+      "ToolTip": "开启后一条日志都不输出",
+      "DefaultValue": false,
+      "CurrentValue": false
+    },
+    {
+      "Name": "LoadKey",
+      "DisplayName": "重载配表按键",
+      "Type": "string",
+      "ToolTip": "重新加载 Mods\\ProtobufLoader 下的全部配表目录并刷新 DB 缓存。支持组合键，如 Ctrl+F7 / Alt+F7 / F7",
+      "DefaultValue": "Ctrl+F7",
+      "CurrentValue": "Ctrl+F7"
+    },
+    {
+      "Name": "ResetKey",
+      "DisplayName": "还原配表按键",
+      "Type": "string",
+      "ToolTip": "还原所有已加载的配表改动。支持组合键，如 Ctrl+F8 / F8",
+      "DefaultValue": "Ctrl+F8",
+      "CurrentValue": "Ctrl+F8"
+    },
+    {
+      "Name": "SuperResetKey",
+      "DisplayName": "强制刷新游戏DB按键",
+      "Type": "string",
+      "ToolTip": "调用 BGUFunctionLibraryCS.RefreshGameDB 强制刷新游戏内存里的配表。支持组合键，如 Ctrl+F9 / F9",
+      "DefaultValue": "Ctrl+F9",
+      "CurrentValue": "Ctrl+F9"
+    }
+  ]
+}

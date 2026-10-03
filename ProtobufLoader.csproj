@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>ProtobufLoader</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <!-- 依赖程序集位置：游戏 DLL 放在 ..\GameDll\，CSharpLoader 运行库放在 ..\CSharpLoader\。
+       加 HintPath 只是为了让本工程能在本机编译，不会把依赖复制到输出目录。 -->
+  <ItemGroup>
+    <Reference Include="BtlSvr.Main"><HintPath>..\GameDll\BtlSvr.Main.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="b1.Managed"><HintPath>..\GameDll\b1.Managed.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="Diana.Common"><HintPath>..\GameDll\Diana.Common.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="GSE.Core"><HintPath>..\GameDll\GSE.Core.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnrealEngine"><HintPath>..\GameDll\UnrealEngine.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnrealEngine.Runtime"><HintPath>..\GameDll\UnrealEngine.Runtime.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="Google.Protobuf"><HintPath>..\GameDll\Google.Protobuf.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="Protobuf.RunTime"><HintPath>..\GameDll\Protobuf.RunTime.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="GSE.ProtobufDB"><HintPath>..\GameDll\GSE.ProtobufDB.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="b1.Native"><HintPath>..\GameDll\b1.Native.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="System.Memory"><HintPath>..\GameDll\System.Memory.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="LitJson"><HintPath>..\GameDll\LitJson.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>..\CSharpLoader\0Harmony.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="CSharpModBase"><HintPath>..\CSharpLoader\CSharpModBase.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="System.Core" />
+  </ItemGroup>
+
+  <!-- 构建后自动部署（可选）：游戏里存在 CSharpLoader\Mods\ProtobufLoader 目录时才复制。
+       dll 每次都覆盖；config.json 只在目标不存在时放一份，不会覆盖你改过的按键配置。 -->
+  <PropertyGroup>
+    <GameProtobufLoaderModDir>F:\game\steam\steamapps\common\BlackMythWukong\b1\Binaries\Win64\CSharpLoader\Mods\ProtobufLoader</GameProtobufLoaderModDir>
+  </PropertyGroup>
+
+  <Target Name="DeployProtobufLoaderToGame" AfterTargets="Build" Condition="Exists('$(GameProtobufLoaderModDir)')">
+    <Copy SourceFiles="$(TargetPath)"
+          DestinationFolder="$(GameProtobufLoaderModDir)"
+          ContinueOnError="WarnAndContinue" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\config.json"
+          DestinationFiles="$(GameProtobufLoaderModDir)\config.json"
+          Condition="Exists('$(MSBuildProjectDirectory)\config.json') And !Exists('$(GameProtobufLoaderModDir)\config.json')"
+          ContinueOnError="WarnAndContinue" />
+    <Message Importance="high" Text="[ProtobufLoader] 已自动部署 $(TargetFileName) → $(GameProtobufLoaderModDir)" />
+  </Target>
+</Project>
