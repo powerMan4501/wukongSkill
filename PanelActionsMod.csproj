@@ -1,0 +1,87 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>PanelActionsMod</AssemblyName>
+    <RootNamespace>PanelActionsMod</RootNamespace>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CSharpModBase\CSharpModBase.csproj">
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BtlSvr.Main">
+      <HintPath>..\GameDll\BtlSvr.Main.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="b1.Native">
+      <HintPath>..\GameDll\b1.Native.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="b1.NativePlugins">
+      <HintPath>..\GameDll\b1.NativePlugins.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GSE.Core">
+      <HintPath>..\GameDll\GSE.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Diana.Common">
+      <HintPath>..\GameDll\Diana.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>..\GameDll\Google.Protobuf.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GSE.ProtobufDB">
+      <HintPath>..\GameDll\GSE.ProtobufDB.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Protobuf.RunTime">
+      <HintPath>..\GameDll\Protobuf.RunTime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>..\GameDll\System.Memory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="UnrealEngine.Runtime">
+      <HintPath>..\GameDll\UnrealEngine.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnrealEngine">
+      <HintPath>..\GameDll\UnrealEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnrealEngine">
+      <HintPath>..\GameDll\B1UI_GSE.Script.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <!-- 构建后自动部署：把产物 dll/pdb 复制到游戏里独立的 PanelActionsMod Mod 目录。
+       与 MagicMod / ActionsMod 完全分离（独立文件夹 CSharpLoader\Mods\PanelActionsMod\），互不覆盖。 -->
+  <PropertyGroup>
+    <GamePanelActionsModDir>F:\game\steam\steamapps\common\BlackMythWukong\b1\Binaries\Win64\CSharpLoader\Mods\PanelActionsMod</GamePanelActionsModDir>
+  </PropertyGroup>
+
+  <Target Name="DeployPanelActionsModToGame" AfterTargets="Build">
+    <MakeDir Directories="$(GamePanelActionsModDir)" Condition="!Exists('$(GamePanelActionsModDir)')" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GamePanelActionsModDir)" />
+    <Copy SourceFiles="@(IntermediateAssemblyPdb);@(_DebugSymbolsIntermediatePath)" DestinationFolder="$(GamePanelActionsModDir)" />
+    <Message Importance="high" Text="[PanelActionsMod] 已自动部署 $(TargetFileName) → $(GamePanelActionsModDir)" />
+  </Target>
+
+</Project>
